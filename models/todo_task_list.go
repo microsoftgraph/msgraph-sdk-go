@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTaskList provides operations to manage the collection of application entities.
+// TodoTaskList provides operations to manage the collection of agreement entities.
 type TodoTaskList struct {
     Entity
     // The name of the task list.
@@ -35,19 +35,11 @@ func CreateTodoTaskListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDisplayName gets the displayName property value. The name of the task list.
 func (m *TodoTaskList) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task list. Nullable.
 func (m *TodoTaskList) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,35 +116,19 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsOwner gets the isOwner property value. True if the user is owner of the given task list.
 func (m *TodoTaskList) GetIsOwner()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOwner
-    }
+    return m.isOwner
 }
 // GetIsShared gets the isShared property value. True if the task list is shared with other users
 func (m *TodoTaskList) GetIsShared()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isShared
-    }
+    return m.isShared
 }
 // GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskList) GetTasks()([]TodoTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // GetWellknownListName gets the wellknownListName property value. The wellknownListName property
 func (m *TodoTaskList) GetWellknownListName()(*WellknownListName) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wellknownListName
-    }
+    return m.wellknownListName
 }
 // Serialize serializes information the current object
 func (m *TodoTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -209,37 +185,25 @@ func (m *TodoTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDisplayName sets the displayName property value. The name of the task list.
 func (m *TodoTaskList) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task list. Nullable.
 func (m *TodoTaskList) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetIsOwner sets the isOwner property value. True if the user is owner of the given task list.
 func (m *TodoTaskList) SetIsOwner(value *bool)() {
-    if m != nil {
-        m.isOwner = value
-    }
+    m.isOwner = value
 }
 // SetIsShared sets the isShared property value. True if the task list is shared with other users
 func (m *TodoTaskList) SetIsShared(value *bool)() {
-    if m != nil {
-        m.isShared = value
-    }
+    m.isShared = value
 }
 // SetTasks sets the tasks property value. The tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskList) SetTasks(value []TodoTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }
 // SetWellknownListName sets the wellknownListName property value. The wellknownListName property
 func (m *TodoTaskList) SetWellknownListName(value *WellknownListName)() {
-    if m != nil {
-        m.wellknownListName = value
-    }
+    m.wellknownListName = value
 }

@@ -32,11 +32,7 @@ func CreateManagedAppDiagnosticStatusFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedAppDiagnosticStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppDiagnosticStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *ManagedAppDiagnosticStatus) GetFieldDeserializers()(map[string]func(i87
 }
 // GetMitigationInstruction gets the mitigationInstruction property value. Instruction on how to mitigate a failed validation
 func (m *ManagedAppDiagnosticStatus) GetMitigationInstruction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mitigationInstruction
-    }
+    return m.mitigationInstruction
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagedAppDiagnosticStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. The state of the operation
 func (m *ManagedAppDiagnosticStatus) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetValidationName gets the validationName property value. The validation friendly name
 func (m *ManagedAppDiagnosticStatus) GetValidationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.validationName
-    }
+    return m.validationName
 }
 // Serialize serializes information the current object
 func (m *ManagedAppDiagnosticStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ManagedAppDiagnosticStatus) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedAppDiagnosticStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMitigationInstruction sets the mitigationInstruction property value. Instruction on how to mitigate a failed validation
 func (m *ManagedAppDiagnosticStatus) SetMitigationInstruction(value *string)() {
-    if m != nil {
-        m.mitigationInstruction = value
-    }
+    m.mitigationInstruction = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagedAppDiagnosticStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. The state of the operation
 func (m *ManagedAppDiagnosticStatus) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetValidationName sets the validationName property value. The validation friendly name
 func (m *ManagedAppDiagnosticStatus) SetValidationName(value *string)() {
-    if m != nil {
-        m.validationName = value
-    }
+    m.validationName = value
 }

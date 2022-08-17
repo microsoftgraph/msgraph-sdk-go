@@ -34,19 +34,11 @@ func CreateScoredEmailAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScoredEmailAddress) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddress gets the address property value. The email address.
 func (m *ScoredEmailAddress) GetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetItemId gets the itemId property value. The itemId property
 func (m *ScoredEmailAddress) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
+    return m.itemId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ScoredEmailAddress) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRelevanceScore gets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
 func (m *ScoredEmailAddress) GetRelevanceScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relevanceScore
-    }
+    return m.relevanceScore
 }
 // GetSelectionLikelihood gets the selectionLikelihood property value. The selectionLikelihood property
 func (m *ScoredEmailAddress) GetSelectionLikelihood()(*SelectionLikelihoodInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selectionLikelihood
-    }
+    return m.selectionLikelihood
 }
 // Serialize serializes information the current object
 func (m *ScoredEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *ScoredEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScoredEmailAddress) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddress sets the address property value. The email address.
 func (m *ScoredEmailAddress) SetAddress(value *string)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetItemId sets the itemId property value. The itemId property
 func (m *ScoredEmailAddress) SetItemId(value *string)() {
-    if m != nil {
-        m.itemId = value
-    }
+    m.itemId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ScoredEmailAddress) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRelevanceScore sets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
 func (m *ScoredEmailAddress) SetRelevanceScore(value *float64)() {
-    if m != nil {
-        m.relevanceScore = value
-    }
+    m.relevanceScore = value
 }
 // SetSelectionLikelihood sets the selectionLikelihood property value. The selectionLikelihood property
 func (m *ScoredEmailAddress) SetSelectionLikelihood(value *SelectionLikelihoodInfo)() {
-    if m != nil {
-        m.selectionLikelihood = value
-    }
+    m.selectionLikelihood = value
 }

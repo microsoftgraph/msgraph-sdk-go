@@ -40,11 +40,7 @@ func (m *DomainDnsTxtRecord) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetText gets the text property value. Value used when configuring the text property at the DNS host.
 func (m *DomainDnsTxtRecord) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *DomainDnsTxtRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DomainDnsTxtRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetText sets the text property value. Value used when configuring the text property at the DNS host.
 func (m *DomainDnsTxtRecord) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

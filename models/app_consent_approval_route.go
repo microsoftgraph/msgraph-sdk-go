@@ -25,11 +25,7 @@ func CreateAppConsentApprovalRouteFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAppConsentRequests gets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
 func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConsentRequests
-    }
+    return m.appConsentRequests
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppConsentApprovalRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *AppConsentApprovalRoute) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAppConsentRequests sets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
 func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentRequestable)() {
-    if m != nil {
-        m.appConsentRequests = value
-    }
+    m.appConsentRequests = value
 }

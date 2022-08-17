@@ -31,11 +31,7 @@ func CreateIncompleteDataFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncompleteData) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IncompleteData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,27 +70,15 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetMissingDataBeforeDateTime gets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
 func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.missingDataBeforeDateTime
-    }
+    return m.missingDataBeforeDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IncompleteData) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetWasThrottled gets the wasThrottled property value. Some data was not recorded due to excessive activity.
 func (m *IncompleteData) GetWasThrottled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wasThrottled
-    }
+    return m.wasThrottled
 }
 // Serialize serializes information the current object
 func (m *IncompleteData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *IncompleteData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncompleteData) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMissingDataBeforeDateTime sets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
 func (m *IncompleteData) SetMissingDataBeforeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.missingDataBeforeDateTime = value
-    }
+    m.missingDataBeforeDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IncompleteData) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetWasThrottled sets the wasThrottled property value. Some data was not recorded due to excessive activity.
 func (m *IncompleteData) SetWasThrottled(value *bool)() {
-    if m != nil {
-        m.wasThrottled = value
-    }
+    m.wasThrottled = value
 }

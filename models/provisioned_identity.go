@@ -27,11 +27,7 @@ func CreateProvisionedIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDetails gets the details property value. Details of the identity.
 func (m *ProvisionedIdentity) GetDetails()(DetailsInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIdentityType gets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
 func (m *ProvisionedIdentity) GetIdentityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityType
-    }
+    return m.identityType
 }
 // Serialize serializes information the current object
 func (m *ProvisionedIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ProvisionedIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDetails sets the details property value. Details of the identity.
 func (m *ProvisionedIdentity) SetDetails(value DetailsInfoable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetIdentityType sets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
 func (m *ProvisionedIdentity) SetIdentityType(value *string)() {
-    if m != nil {
-        m.identityType = value
-    }
+    m.identityType = value
 }

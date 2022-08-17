@@ -81,59 +81,31 @@ func CreateDeviceCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAssignments gets the assignments property value. The collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicy) GetAssignments()([]DeviceCompliancePolicyAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceCompliancePolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceCompliancePolicy) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Compliance Setting State Device Summary
 func (m *DeviceCompliancePolicy) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceSettingStateSummaries
-    }
+    return m.deviceSettingStateSummaries
 }
 // GetDeviceStatuses gets the deviceStatuses property value. List of DeviceComplianceDeviceStatus.
 func (m *DeviceCompliancePolicy) GetDeviceStatuses()([]DeviceComplianceDeviceStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatuses
-    }
+    return m.deviceStatuses
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device compliance devices status overview
 func (m *DeviceCompliancePolicy) GetDeviceStatusOverview()(DeviceComplianceDeviceOverviewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatusOverview
-    }
+    return m.deviceStatusOverview
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceCompliancePolicy) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -282,43 +254,23 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action for this rule
 func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledActionsForRule
-    }
+    return m.scheduledActionsForRule
 }
 // GetUserStatuses gets the userStatuses property value. List of DeviceComplianceUserStatus.
 func (m *DeviceCompliancePolicy) GetUserStatuses()([]DeviceComplianceUserStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
+    return m.userStatuses
 }
 // GetUserStatusOverview gets the userStatusOverview property value. Device compliance users status overview
 func (m *DeviceCompliancePolicy) GetUserStatusOverview()(DeviceComplianceUserOverviewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatusOverview
-    }
+    return m.userStatusOverview
 }
 // GetVersion gets the version property value. Version of the device configuration.
 func (m *DeviceCompliancePolicy) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -422,73 +374,49 @@ func (m *DeviceCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAssignments sets the assignments property value. The collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicy) SetAssignments(value []DeviceCompliancePolicyAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceCompliancePolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceCompliancePolicy) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Compliance Setting State Device Summary
 func (m *DeviceCompliancePolicy) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)() {
-    if m != nil {
-        m.deviceSettingStateSummaries = value
-    }
+    m.deviceSettingStateSummaries = value
 }
 // SetDeviceStatuses sets the deviceStatuses property value. List of DeviceComplianceDeviceStatus.
 func (m *DeviceCompliancePolicy) SetDeviceStatuses(value []DeviceComplianceDeviceStatusable)() {
-    if m != nil {
-        m.deviceStatuses = value
-    }
+    m.deviceStatuses = value
 }
 // SetDeviceStatusOverview sets the deviceStatusOverview property value. Device compliance devices status overview
 func (m *DeviceCompliancePolicy) SetDeviceStatusOverview(value DeviceComplianceDeviceOverviewable)() {
-    if m != nil {
-        m.deviceStatusOverview = value
-    }
+    m.deviceStatusOverview = value
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceCompliancePolicy) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceCompliancePolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action for this rule
 func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRuleable)() {
-    if m != nil {
-        m.scheduledActionsForRule = value
-    }
+    m.scheduledActionsForRule = value
 }
 // SetUserStatuses sets the userStatuses property value. List of DeviceComplianceUserStatus.
 func (m *DeviceCompliancePolicy) SetUserStatuses(value []DeviceComplianceUserStatusable)() {
-    if m != nil {
-        m.userStatuses = value
-    }
+    m.userStatuses = value
 }
 // SetUserStatusOverview sets the userStatusOverview property value. Device compliance users status overview
 func (m *DeviceCompliancePolicy) SetUserStatusOverview(value DeviceComplianceUserOverviewable)() {
-    if m != nil {
-        m.userStatusOverview = value
-    }
+    m.userStatusOverview = value
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *DeviceCompliancePolicy) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

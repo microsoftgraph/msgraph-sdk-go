@@ -30,19 +30,11 @@ func CreatePrivacyProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivacyProfile) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContactEmail gets the contactEmail property value. A valid smtp email address for the privacy statement contact. Not required.
 func (m *PrivacyProfile) GetContactEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contactEmail
-    }
+    return m.contactEmail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivacyProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *PrivacyProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrivacyProfile) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatementUrl gets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
 func (m *PrivacyProfile) GetStatementUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statementUrl
-    }
+    return m.statementUrl
 }
 // Serialize serializes information the current object
 func (m *PrivacyProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *PrivacyProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivacyProfile) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContactEmail sets the contactEmail property value. A valid smtp email address for the privacy statement contact. Not required.
 func (m *PrivacyProfile) SetContactEmail(value *string)() {
-    if m != nil {
-        m.contactEmail = value
-    }
+    m.contactEmail = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrivacyProfile) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatementUrl sets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
 func (m *PrivacyProfile) SetStatementUrl(value *string)() {
-    if m != nil {
-        m.statementUrl = value
-    }
+    m.statementUrl = value
 }

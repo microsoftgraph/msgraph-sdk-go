@@ -44,27 +44,15 @@ func CreateIosVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) GetApplicableDeviceType()(IosDeviceTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableDeviceType
-    }
+    return m.applicableDeviceType
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The store URL.
 func (m *IosVppApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
 func (m *IosVppApp) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -173,59 +161,31 @@ func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetLicensingType gets the licensingType property value. The supported License Type.
 func (m *IosVppApp) GetLicensingType()(VppLicensingTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licensingType
-    }
+    return m.licensingType
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The VPP application release date and time.
 func (m *IosVppApp) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
-    }
+    return m.releaseDateTime
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *IosVppApp) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *IosVppApp) GetUsedLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usedLicenseCount
-    }
+    return m.usedLicenseCount
 }
 // GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *IosVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenAccountType
-    }
+    return m.vppTokenAccountType
 }
 // GetVppTokenAppleId gets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *IosVppApp) GetVppTokenAppleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenAppleId
-    }
+    return m.vppTokenAppleId
 }
 // GetVppTokenOrganizationName gets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *IosVppApp) GetVppTokenOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenOrganizationName
-    }
+    return m.vppTokenOrganizationName
 }
 // Serialize serializes information the current object
 func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -298,61 +258,41 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
-    if m != nil {
-        m.applicableDeviceType = value
-    }
+    m.applicableDeviceType = value
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The store URL.
 func (m *IosVppApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }
 // SetBundleId sets the bundleId property value. The Identity Name.
 func (m *IosVppApp) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetLicensingType sets the licensingType property value. The supported License Type.
 func (m *IosVppApp) SetLicensingType(value VppLicensingTypeable)() {
-    if m != nil {
-        m.licensingType = value
-    }
+    m.licensingType = value
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The VPP application release date and time.
 func (m *IosVppApp) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.releaseDateTime = value
-    }
+    m.releaseDateTime = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *IosVppApp) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *IosVppApp) SetUsedLicenseCount(value *int32)() {
-    if m != nil {
-        m.usedLicenseCount = value
-    }
+    m.usedLicenseCount = value
 }
 // SetVppTokenAccountType sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *IosVppApp) SetVppTokenAccountType(value *VppTokenAccountType)() {
-    if m != nil {
-        m.vppTokenAccountType = value
-    }
+    m.vppTokenAccountType = value
 }
 // SetVppTokenAppleId sets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *IosVppApp) SetVppTokenAppleId(value *string)() {
-    if m != nil {
-        m.vppTokenAppleId = value
-    }
+    m.vppTokenAppleId = value
 }
 // SetVppTokenOrganizationName sets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *IosVppApp) SetVppTokenOrganizationName(value *string)() {
-    if m != nil {
-        m.vppTokenOrganizationName = value
-    }
+    m.vppTokenOrganizationName = value
 }

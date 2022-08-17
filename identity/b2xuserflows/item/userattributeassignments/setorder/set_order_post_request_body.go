@@ -25,11 +25,7 @@ func CreateSetOrderPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetOrderPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SetOrderPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,11 +44,7 @@ func (m *SetOrderPostRequestBody) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetNewAssignmentOrder gets the newAssignmentOrder property value. The newAssignmentOrder property
 func (m *SetOrderPostRequestBody) GetNewAssignmentOrder()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignmentOrderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newAssignmentOrder
-    }
+    return m.newAssignmentOrder
 }
 // Serialize serializes information the current object
 func (m *SetOrderPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -72,13 +64,9 @@ func (m *SetOrderPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetOrderPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetNewAssignmentOrder sets the newAssignmentOrder property value. The newAssignmentOrder property
 func (m *SetOrderPostRequestBody) SetNewAssignmentOrder(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignmentOrderable)() {
-    if m != nil {
-        m.newAssignmentOrder = value
-    }
+    m.newAssignmentOrder = value
 }

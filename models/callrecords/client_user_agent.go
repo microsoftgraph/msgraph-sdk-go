@@ -52,19 +52,11 @@ func (m *ClientUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetPlatform gets the platform property value. The platform property
 func (m *ClientUserAgent) GetPlatform()(*ClientPlatform) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // GetProductFamily gets the productFamily property value. The productFamily property
 func (m *ClientUserAgent) GetProductFamily()(*ProductFamily) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productFamily
-    }
+    return m.productFamily
 }
 // Serialize serializes information the current object
 func (m *ClientUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -90,13 +82,9 @@ func (m *ClientUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetPlatform sets the platform property value. The platform property
 func (m *ClientUserAgent) SetPlatform(value *ClientPlatform)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }
 // SetProductFamily sets the productFamily property value. The productFamily property
 func (m *ClientUserAgent) SetProductFamily(value *ProductFamily)() {
-    if m != nil {
-        m.productFamily = value
-    }
+    m.productFamily = value
 }

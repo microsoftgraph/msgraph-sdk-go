@@ -30,27 +30,15 @@ func CreateAverageComparativeScoreFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AverageComparativeScore) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAverageScore gets the averageScore property value. Average score within specified basis.
 func (m *AverageComparativeScore) GetAverageScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageScore
-    }
+    return m.averageScore
 }
 // GetBasis gets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
 func (m *AverageComparativeScore) GetBasis()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.basis
-    }
+    return m.basis
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AverageComparativeScore) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AverageComparativeScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AverageComparativeScore) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AverageComparativeScore) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAverageScore sets the averageScore property value. Average score within specified basis.
 func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
-    if m != nil {
-        m.averageScore = value
-    }
+    m.averageScore = value
 }
 // SetBasis sets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
 func (m *AverageComparativeScore) SetBasis(value *string)() {
-    if m != nil {
-        m.basis = value
-    }
+    m.basis = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AverageComparativeScore) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

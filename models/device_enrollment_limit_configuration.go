@@ -40,11 +40,7 @@ func (m *DeviceEnrollmentLimitConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetLimit gets the limit property value. The maximum number of devices that a user can enroll
 func (m *DeviceEnrollmentLimitConfiguration) GetLimit()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.limit
-    }
+    return m.limit
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentLimitConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceEnrollmentLimitConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetLimit sets the limit property value. The maximum number of devices that a user can enroll
 func (m *DeviceEnrollmentLimitConfiguration) SetLimit(value *int32)() {
-    if m != nil {
-        m.limit = value
-    }
+    m.limit = value
 }

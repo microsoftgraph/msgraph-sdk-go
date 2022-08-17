@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityBaseModel provides operations to manage the collection of application entities.
+// OnenoteEntityBaseModel provides operations to manage the collection of agreement entities.
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
@@ -71,11 +71,7 @@ func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetSelf gets the self property value. The endpoint where you can get details about the page. Read-only.
 func (m *OnenoteEntityBaseModel) GetSelf()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.self
-    }
+    return m.self
 }
 // Serialize serializes information the current object
 func (m *OnenoteEntityBaseModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -93,7 +89,5 @@ func (m *OnenoteEntityBaseModel) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetSelf sets the self property value. The endpoint where you can get details about the page. Read-only.
 func (m *OnenoteEntityBaseModel) SetSelf(value *string)() {
-    if m != nil {
-        m.self = value
-    }
+    m.self = value
 }

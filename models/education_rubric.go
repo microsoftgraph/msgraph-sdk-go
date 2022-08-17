@@ -42,35 +42,19 @@ func CreateEducationRubricFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetCreatedBy gets the createdBy property value. The user who created this resource.
 func (m *EducationRubric) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationRubric) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description of this rubric.
 func (m *EducationRubric) GetDescription()(EducationItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The name of this rubric.
 func (m *EducationRubric) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationRubric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -177,43 +161,23 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetGrading gets the grading property value. The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
 func (m *EducationRubric) GetGrading()(EducationAssignmentGradeTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grading
-    }
+    return m.grading
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The last user to modify the resource.
 func (m *EducationRubric) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationRubric) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLevels gets the levels property value. The collection of levels making up this rubric.
 func (m *EducationRubric) GetLevels()([]RubricLevelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.levels
-    }
+    return m.levels
 }
 // GetQualities gets the qualities property value. The collection of qualities making up this rubric.
 func (m *EducationRubric) GetQualities()([]RubricQualityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualities
-    }
+    return m.qualities
 }
 // Serialize serializes information the current object
 func (m *EducationRubric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -287,55 +251,37 @@ func (m *EducationRubric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetCreatedBy sets the createdBy property value. The user who created this resource.
 func (m *EducationRubric) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationRubric) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description of this rubric.
 func (m *EducationRubric) SetDescription(value EducationItemBodyable)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The name of this rubric.
 func (m *EducationRubric) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGrading sets the grading property value. The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
 func (m *EducationRubric) SetGrading(value EducationAssignmentGradeTypeable)() {
-    if m != nil {
-        m.grading = value
-    }
+    m.grading = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user to modify the resource.
 func (m *EducationRubric) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationRubric) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLevels sets the levels property value. The collection of levels making up this rubric.
 func (m *EducationRubric) SetLevels(value []RubricLevelable)() {
-    if m != nil {
-        m.levels = value
-    }
+    m.levels = value
 }
 // SetQualities sets the qualities property value. The collection of qualities making up this rubric.
 func (m *EducationRubric) SetQualities(value []RubricQualityable)() {
-    if m != nil {
-        m.qualities = value
-    }
+    m.qualities = value
 }

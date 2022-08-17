@@ -25,11 +25,7 @@ func CreateManagedAppStatusRawFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetContent gets the content property value. Status report content.
 func (m *ManagedAppStatusRaw) GetContent()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppStatusRaw) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ManagedAppStatusRaw) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetContent sets the content property value. Status report content.
 func (m *ManagedAppStatusRaw) SetContent(value Jsonable)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }

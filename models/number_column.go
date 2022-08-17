@@ -34,27 +34,15 @@ func CreateNumberColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberColumn) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDecimalPlaces gets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
 func (m *NumberColumn) GetDecimalPlaces()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decimalPlaces
-    }
+    return m.decimalPlaces
 }
 // GetDisplayAs gets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
 func (m *NumberColumn) GetDisplayAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayAs
-    }
+    return m.displayAs
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NumberColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetMaximum gets the maximum property value. The maximum permitted value.
 func (m *NumberColumn) GetMaximum()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximum
-    }
+    return m.maximum
 }
 // GetMinimum gets the minimum property value. The minimum permitted value.
 func (m *NumberColumn) GetMinimum()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimum
-    }
+    return m.minimum
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *NumberColumn) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *NumberColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *NumberColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberColumn) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDecimalPlaces sets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
 func (m *NumberColumn) SetDecimalPlaces(value *string)() {
-    if m != nil {
-        m.decimalPlaces = value
-    }
+    m.decimalPlaces = value
 }
 // SetDisplayAs sets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
 func (m *NumberColumn) SetDisplayAs(value *string)() {
-    if m != nil {
-        m.displayAs = value
-    }
+    m.displayAs = value
 }
 // SetMaximum sets the maximum property value. The maximum permitted value.
 func (m *NumberColumn) SetMaximum(value *float64)() {
-    if m != nil {
-        m.maximum = value
-    }
+    m.maximum = value
 }
 // SetMinimum sets the minimum property value. The minimum permitted value.
 func (m *NumberColumn) SetMinimum(value *float64)() {
-    if m != nil {
-        m.minimum = value
-    }
+    m.minimum = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *NumberColumn) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

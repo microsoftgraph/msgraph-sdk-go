@@ -33,27 +33,15 @@ func CreateIdentityContainerFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetApiConnectors gets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apiConnectors
-    }
+    return m.apiConnectors
 }
 // GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2xUserFlows
-    }
+    return m.b2xUserFlows
 }
 // GetConditionalAccess gets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditionalAccess
-    }
+    return m.conditionalAccess
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,19 +116,11 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIdentityProviders gets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityProviders
-    }
+    return m.identityProviders
 }
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlowAttributes
-    }
+    return m.userFlowAttributes
 }
 // Serialize serializes information the current object
 func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -198,31 +178,21 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetApiConnectors sets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) SetApiConnectors(value []IdentityApiConnectorable)() {
-    if m != nil {
-        m.apiConnectors = value
-    }
+    m.apiConnectors = value
 }
 // SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlowable)() {
-    if m != nil {
-        m.b2xUserFlows = value
-    }
+    m.b2xUserFlows = value
 }
 // SetConditionalAccess sets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) SetConditionalAccess(value ConditionalAccessRootable)() {
-    if m != nil {
-        m.conditionalAccess = value
-    }
+    m.conditionalAccess = value
 }
 // SetIdentityProviders sets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseable)() {
-    if m != nil {
-        m.identityProviders = value
-    }
+    m.identityProviders = value
 }
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttributeable)() {
-    if m != nil {
-        m.userFlowAttributes = value
-    }
+    m.userFlowAttributes = value
 }

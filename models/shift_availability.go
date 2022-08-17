@@ -32,11 +32,7 @@ func CreateShiftAvailabilityFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftAvailability) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ShiftAvailability) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecurrence gets the recurrence property value. Specifies the pattern for recurrence
 func (m *ShiftAvailability) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetTimeSlots gets the timeSlots property value. The time slot(s) preferred by the user.
 func (m *ShiftAvailability) GetTimeSlots()([]TimeRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeSlots
-    }
+    return m.timeSlots
 }
 // GetTimeZone gets the timeZone property value. Specifies the time zone for the indicated time.
 func (m *ShiftAvailability) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
+    return m.timeZone
 }
 // Serialize serializes information the current object
 func (m *ShiftAvailability) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *ShiftAvailability) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftAvailability) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ShiftAvailability) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecurrence sets the recurrence property value. Specifies the pattern for recurrence
 func (m *ShiftAvailability) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetTimeSlots sets the timeSlots property value. The time slot(s) preferred by the user.
 func (m *ShiftAvailability) SetTimeSlots(value []TimeRangeable)() {
-    if m != nil {
-        m.timeSlots = value
-    }
+    m.timeSlots = value
 }
 // SetTimeZone sets the timeZone property value. Specifies the time zone for the indicated time.
 func (m *ShiftAvailability) SetTimeZone(value *string)() {
-    if m != nil {
-        m.timeZone = value
-    }
+    m.timeZone = value
 }

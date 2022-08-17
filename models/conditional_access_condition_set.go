@@ -46,43 +46,23 @@ func CreateConditionalAccessConditionSetFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessConditionSet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplications gets the applications property value. Applications and user actions included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) GetApplications()(ConditionalAccessApplicationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applications
-    }
+    return m.applications
 }
 // GetClientApplications gets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) GetClientApplications()(ConditionalAccessClientApplicationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientApplications
-    }
+    return m.clientApplications
 }
 // GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
 func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientAppTypes
-    }
+    return m.clientAppTypes
 }
 // GetDevices gets the devices property value. Devices in the policy.
 func (m *ConditionalAccessConditionSet) GetDevices()(ConditionalAccessDevicesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devices
-    }
+    return m.devices
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -217,59 +197,31 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
 }
 // GetLocations gets the locations property value. Locations included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) GetLocations()(ConditionalAccessLocationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locations
-    }
+    return m.locations
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessConditionSet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPlatforms gets the platforms property value. Platforms included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) GetPlatforms()(ConditionalAccessPlatformsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platforms
-    }
+    return m.platforms
 }
 // GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalRiskLevels
-    }
+    return m.servicePrincipalRiskLevels
 }
 // GetSignInRiskLevels gets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInRiskLevels
-    }
+    return m.signInRiskLevels
 }
 // GetUserRiskLevels gets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRiskLevels
-    }
+    return m.userRiskLevels
 }
 // GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) GetUsers()(ConditionalAccessUsersable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.users
-    }
+    return m.users
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -349,73 +301,49 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplications sets the applications property value. Applications and user actions included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) SetApplications(value ConditionalAccessApplicationsable)() {
-    if m != nil {
-        m.applications = value
-    }
+    m.applications = value
 }
 // SetClientApplications sets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) SetClientApplications(value ConditionalAccessClientApplicationsable)() {
-    if m != nil {
-        m.clientApplications = value
-    }
+    m.clientApplications = value
 }
 // SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
 func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []string)() {
-    if m != nil {
-        m.clientAppTypes = value
-    }
+    m.clientAppTypes = value
 }
 // SetDevices sets the devices property value. Devices in the policy.
 func (m *ConditionalAccessConditionSet) SetDevices(value ConditionalAccessDevicesable)() {
-    if m != nil {
-        m.devices = value
-    }
+    m.devices = value
 }
 // SetLocations sets the locations property value. Locations included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) SetLocations(value ConditionalAccessLocationsable)() {
-    if m != nil {
-        m.locations = value
-    }
+    m.locations = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessConditionSet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPlatforms sets the platforms property value. Platforms included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) SetPlatforms(value ConditionalAccessPlatformsable)() {
-    if m != nil {
-        m.platforms = value
-    }
+    m.platforms = value
 }
 // SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []string)() {
-    if m != nil {
-        m.servicePrincipalRiskLevels = value
-    }
+    m.servicePrincipalRiskLevels = value
 }
 // SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []string)() {
-    if m != nil {
-        m.signInRiskLevels = value
-    }
+    m.signInRiskLevels = value
 }
 // SetUserRiskLevels sets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []string)() {
-    if m != nil {
-        m.userRiskLevels = value
-    }
+    m.userRiskLevels = value
 }
 // SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) SetUsers(value ConditionalAccessUsersable)() {
-    if m != nil {
-        m.users = value
-    }
+    m.users = value
 }

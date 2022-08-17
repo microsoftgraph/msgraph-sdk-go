@@ -25,11 +25,7 @@ func CreateChangeScreenSharingRolePostRequestBodyFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeScreenSharingRolePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChangeScreenSharingRolePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,11 +44,7 @@ func (m *ChangeScreenSharingRolePostRequestBody) GetFieldDeserializers()(map[str
 }
 // GetRole gets the role property value. The role property
 func (m *ChangeScreenSharingRolePostRequestBody) GetRole()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScreenSharingRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.role
-    }
+    return m.role
 }
 // Serialize serializes information the current object
 func (m *ChangeScreenSharingRolePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -73,13 +65,9 @@ func (m *ChangeScreenSharingRolePostRequestBody) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeScreenSharingRolePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetRole sets the role property value. The role property
 func (m *ChangeScreenSharingRolePostRequestBody) SetRole(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScreenSharingRole)() {
-    if m != nil {
-        m.role = value
-    }
+    m.role = value
 }

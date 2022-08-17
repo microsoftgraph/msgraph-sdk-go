@@ -34,19 +34,11 @@ func CreateDataSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataSubject) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEmail gets the email property value. Email of the data subject.
 func (m *DataSubject) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetFirstName gets the firstName property value. First name of the data subject.
 func (m *DataSubject) GetFirstName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstName
-    }
+    return m.firstName
 }
 // GetLastName gets the lastName property value. Last Name of the data subject.
 func (m *DataSubject) GetLastName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastName
-    }
+    return m.lastName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DataSubject) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResidency gets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
 func (m *DataSubject) GetResidency()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.residency
-    }
+    return m.residency
 }
 // Serialize serializes information the current object
 func (m *DataSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *DataSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataSubject) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEmail sets the email property value. Email of the data subject.
 func (m *DataSubject) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetFirstName sets the firstName property value. First name of the data subject.
 func (m *DataSubject) SetFirstName(value *string)() {
-    if m != nil {
-        m.firstName = value
-    }
+    m.firstName = value
 }
 // SetLastName sets the lastName property value. Last Name of the data subject.
 func (m *DataSubject) SetLastName(value *string)() {
-    if m != nil {
-        m.lastName = value
-    }
+    m.lastName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DataSubject) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResidency sets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
 func (m *DataSubject) SetResidency(value *string)() {
-    if m != nil {
-        m.residency = value
-    }
+    m.residency = value
 }

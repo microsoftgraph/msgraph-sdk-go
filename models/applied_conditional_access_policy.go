@@ -36,35 +36,19 @@ func CreateAppliedConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Name of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnforcedGrantControls gets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
 func (m *AppliedConditionalAccessPolicy) GetEnforcedGrantControls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcedGrantControls
-    }
+    return m.enforcedGrantControls
 }
 // GetEnforcedSessionControls gets the enforcedSessionControls property value. Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
 func (m *AppliedConditionalAccessPolicy) GetEnforcedSessionControls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcedSessionControls
-    }
+    return m.enforcedSessionControls
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,27 +125,15 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
 }
 // GetId gets the id property value. Identifier of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
 func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.result
-    }
+    return m.result
 }
 // Serialize serializes information the current object
 func (m *AppliedConditionalAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -212,43 +184,29 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Name of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnforcedGrantControls sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
 func (m *AppliedConditionalAccessPolicy) SetEnforcedGrantControls(value []string)() {
-    if m != nil {
-        m.enforcedGrantControls = value
-    }
+    m.enforcedGrantControls = value
 }
 // SetEnforcedSessionControls sets the enforcedSessionControls property value. Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
 func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []string)() {
-    if m != nil {
-        m.enforcedSessionControls = value
-    }
+    m.enforcedSessionControls = value
 }
 // SetId sets the id property value. Identifier of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppliedConditionalAccessPolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
 func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
-    if m != nil {
-        m.result = value
-    }
+    m.result = value
 }

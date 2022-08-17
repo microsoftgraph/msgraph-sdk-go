@@ -98,91 +98,47 @@ func CreateContactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAssistantName gets the assistantName property value. The name of the contact's assistant.
 func (m *Contact) GetAssistantName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assistantName
-    }
+    return m.assistantName
 }
 // GetBirthday gets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Contact) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.birthday
-    }
+    return m.birthday
 }
 // GetBusinessAddress gets the businessAddress property value. The contact's business address.
 func (m *Contact) GetBusinessAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessAddress
-    }
+    return m.businessAddress
 }
 // GetBusinessHomePage gets the businessHomePage property value. The business home page of the contact.
 func (m *Contact) GetBusinessHomePage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessHomePage
-    }
+    return m.businessHomePage
 }
 // GetBusinessPhones gets the businessPhones property value. The contact's business phone numbers.
 func (m *Contact) GetBusinessPhones()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessPhones
-    }
+    return m.businessPhones
 }
 // GetChildren gets the children property value. The names of the contact's children.
 func (m *Contact) GetChildren()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.children
-    }
+    return m.children
 }
 // GetCompanyName gets the companyName property value. The name of the contact's company.
 func (m *Contact) GetCompanyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companyName
-    }
+    return m.companyName
 }
 // GetDepartment gets the department property value. The contact's department.
 func (m *Contact) GetDepartment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.department
-    }
+    return m.department
 }
 // GetDisplayName gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Contact) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmailAddresses gets the emailAddresses property value. The contact's email addresses.
 func (m *Contact) GetEmailAddresses()([]EmailAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddresses
-    }
+    return m.emailAddresses
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Contact) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -593,211 +549,107 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetFileAs gets the fileAs property value. The name the contact is filed under.
 func (m *Contact) GetFileAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileAs
-    }
+    return m.fileAs
 }
 // GetGeneration gets the generation property value. The contact's generation.
 func (m *Contact) GetGeneration()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.generation
-    }
+    return m.generation
 }
 // GetGivenName gets the givenName property value. The contact's given name.
 func (m *Contact) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
+    return m.givenName
 }
 // GetHomeAddress gets the homeAddress property value. The contact's home address.
 func (m *Contact) GetHomeAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeAddress
-    }
+    return m.homeAddress
 }
 // GetHomePhones gets the homePhones property value. The contact's home phone numbers.
 func (m *Contact) GetHomePhones()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homePhones
-    }
+    return m.homePhones
 }
 // GetImAddresses gets the imAddresses property value. The imAddresses property
 func (m *Contact) GetImAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imAddresses
-    }
+    return m.imAddresses
 }
 // GetInitials gets the initials property value. The initials property
 func (m *Contact) GetInitials()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initials
-    }
+    return m.initials
 }
 // GetJobTitle gets the jobTitle property value. The jobTitle property
 func (m *Contact) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
+    return m.jobTitle
 }
 // GetManager gets the manager property value. The manager property
 func (m *Contact) GetManager()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
+    return m.manager
 }
 // GetMiddleName gets the middleName property value. The middleName property
 func (m *Contact) GetMiddleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middleName
-    }
+    return m.middleName
 }
 // GetMobilePhone gets the mobilePhone property value. The mobilePhone property
 func (m *Contact) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
+    return m.mobilePhone
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
+    return m.multiValueExtendedProperties
 }
 // GetNickName gets the nickName property value. The nickName property
 func (m *Contact) GetNickName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nickName
-    }
+    return m.nickName
 }
 // GetOfficeLocation gets the officeLocation property value. The officeLocation property
 func (m *Contact) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
+    return m.officeLocation
 }
 // GetOtherAddress gets the otherAddress property value. The otherAddress property
 func (m *Contact) GetOtherAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.otherAddress
-    }
+    return m.otherAddress
 }
 // GetParentFolderId gets the parentFolderId property value. The parentFolderId property
 func (m *Contact) GetParentFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentFolderId
-    }
+    return m.parentFolderId
 }
 // GetPersonalNotes gets the personalNotes property value. The personalNotes property
 func (m *Contact) GetPersonalNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalNotes
-    }
+    return m.personalNotes
 }
 // GetPhoto gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
 func (m *Contact) GetPhoto()(ProfilePhotoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photo
-    }
+    return m.photo
 }
 // GetProfession gets the profession property value. The profession property
 func (m *Contact) GetProfession()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profession
-    }
+    return m.profession
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
+    return m.singleValueExtendedProperties
 }
 // GetSpouseName gets the spouseName property value. The spouseName property
 func (m *Contact) GetSpouseName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spouseName
-    }
+    return m.spouseName
 }
 // GetSurname gets the surname property value. The surname property
 func (m *Contact) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
+    return m.surname
 }
 // GetTitle gets the title property value. The title property
 func (m *Contact) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // GetYomiCompanyName gets the yomiCompanyName property value. The yomiCompanyName property
 func (m *Contact) GetYomiCompanyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiCompanyName
-    }
+    return m.yomiCompanyName
 }
 // GetYomiGivenName gets the yomiGivenName property value. The yomiGivenName property
 func (m *Contact) GetYomiGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiGivenName
-    }
+    return m.yomiGivenName
 }
 // GetYomiSurname gets the yomiSurname property value. The yomiSurname property
 func (m *Contact) GetYomiSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiSurname
-    }
+    return m.yomiSurname
 }
 // Serialize serializes information the current object
 func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1047,223 +899,149 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAssistantName sets the assistantName property value. The name of the contact's assistant.
 func (m *Contact) SetAssistantName(value *string)() {
-    if m != nil {
-        m.assistantName = value
-    }
+    m.assistantName = value
 }
 // SetBirthday sets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Contact) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.birthday = value
-    }
+    m.birthday = value
 }
 // SetBusinessAddress sets the businessAddress property value. The contact's business address.
 func (m *Contact) SetBusinessAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.businessAddress = value
-    }
+    m.businessAddress = value
 }
 // SetBusinessHomePage sets the businessHomePage property value. The business home page of the contact.
 func (m *Contact) SetBusinessHomePage(value *string)() {
-    if m != nil {
-        m.businessHomePage = value
-    }
+    m.businessHomePage = value
 }
 // SetBusinessPhones sets the businessPhones property value. The contact's business phone numbers.
 func (m *Contact) SetBusinessPhones(value []string)() {
-    if m != nil {
-        m.businessPhones = value
-    }
+    m.businessPhones = value
 }
 // SetChildren sets the children property value. The names of the contact's children.
 func (m *Contact) SetChildren(value []string)() {
-    if m != nil {
-        m.children = value
-    }
+    m.children = value
 }
 // SetCompanyName sets the companyName property value. The name of the contact's company.
 func (m *Contact) SetCompanyName(value *string)() {
-    if m != nil {
-        m.companyName = value
-    }
+    m.companyName = value
 }
 // SetDepartment sets the department property value. The contact's department.
 func (m *Contact) SetDepartment(value *string)() {
-    if m != nil {
-        m.department = value
-    }
+    m.department = value
 }
 // SetDisplayName sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Contact) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmailAddresses sets the emailAddresses property value. The contact's email addresses.
 func (m *Contact) SetEmailAddresses(value []EmailAddressable)() {
-    if m != nil {
-        m.emailAddresses = value
-    }
+    m.emailAddresses = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Contact) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetFileAs sets the fileAs property value. The name the contact is filed under.
 func (m *Contact) SetFileAs(value *string)() {
-    if m != nil {
-        m.fileAs = value
-    }
+    m.fileAs = value
 }
 // SetGeneration sets the generation property value. The contact's generation.
 func (m *Contact) SetGeneration(value *string)() {
-    if m != nil {
-        m.generation = value
-    }
+    m.generation = value
 }
 // SetGivenName sets the givenName property value. The contact's given name.
 func (m *Contact) SetGivenName(value *string)() {
-    if m != nil {
-        m.givenName = value
-    }
+    m.givenName = value
 }
 // SetHomeAddress sets the homeAddress property value. The contact's home address.
 func (m *Contact) SetHomeAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.homeAddress = value
-    }
+    m.homeAddress = value
 }
 // SetHomePhones sets the homePhones property value. The contact's home phone numbers.
 func (m *Contact) SetHomePhones(value []string)() {
-    if m != nil {
-        m.homePhones = value
-    }
+    m.homePhones = value
 }
 // SetImAddresses sets the imAddresses property value. The imAddresses property
 func (m *Contact) SetImAddresses(value []string)() {
-    if m != nil {
-        m.imAddresses = value
-    }
+    m.imAddresses = value
 }
 // SetInitials sets the initials property value. The initials property
 func (m *Contact) SetInitials(value *string)() {
-    if m != nil {
-        m.initials = value
-    }
+    m.initials = value
 }
 // SetJobTitle sets the jobTitle property value. The jobTitle property
 func (m *Contact) SetJobTitle(value *string)() {
-    if m != nil {
-        m.jobTitle = value
-    }
+    m.jobTitle = value
 }
 // SetManager sets the manager property value. The manager property
 func (m *Contact) SetManager(value *string)() {
-    if m != nil {
-        m.manager = value
-    }
+    m.manager = value
 }
 // SetMiddleName sets the middleName property value. The middleName property
 func (m *Contact) SetMiddleName(value *string)() {
-    if m != nil {
-        m.middleName = value
-    }
+    m.middleName = value
 }
 // SetMobilePhone sets the mobilePhone property value. The mobilePhone property
 func (m *Contact) SetMobilePhone(value *string)() {
-    if m != nil {
-        m.mobilePhone = value
-    }
+    m.mobilePhone = value
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.multiValueExtendedProperties = value
-    }
+    m.multiValueExtendedProperties = value
 }
 // SetNickName sets the nickName property value. The nickName property
 func (m *Contact) SetNickName(value *string)() {
-    if m != nil {
-        m.nickName = value
-    }
+    m.nickName = value
 }
 // SetOfficeLocation sets the officeLocation property value. The officeLocation property
 func (m *Contact) SetOfficeLocation(value *string)() {
-    if m != nil {
-        m.officeLocation = value
-    }
+    m.officeLocation = value
 }
 // SetOtherAddress sets the otherAddress property value. The otherAddress property
 func (m *Contact) SetOtherAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.otherAddress = value
-    }
+    m.otherAddress = value
 }
 // SetParentFolderId sets the parentFolderId property value. The parentFolderId property
 func (m *Contact) SetParentFolderId(value *string)() {
-    if m != nil {
-        m.parentFolderId = value
-    }
+    m.parentFolderId = value
 }
 // SetPersonalNotes sets the personalNotes property value. The personalNotes property
 func (m *Contact) SetPersonalNotes(value *string)() {
-    if m != nil {
-        m.personalNotes = value
-    }
+    m.personalNotes = value
 }
 // SetPhoto sets the photo property value. Optional contact picture. You can get or set a photo for a contact.
 func (m *Contact) SetPhoto(value ProfilePhotoable)() {
-    if m != nil {
-        m.photo = value
-    }
+    m.photo = value
 }
 // SetProfession sets the profession property value. The profession property
 func (m *Contact) SetProfession(value *string)() {
-    if m != nil {
-        m.profession = value
-    }
+    m.profession = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.singleValueExtendedProperties = value
-    }
+    m.singleValueExtendedProperties = value
 }
 // SetSpouseName sets the spouseName property value. The spouseName property
 func (m *Contact) SetSpouseName(value *string)() {
-    if m != nil {
-        m.spouseName = value
-    }
+    m.spouseName = value
 }
 // SetSurname sets the surname property value. The surname property
 func (m *Contact) SetSurname(value *string)() {
-    if m != nil {
-        m.surname = value
-    }
+    m.surname = value
 }
 // SetTitle sets the title property value. The title property
 func (m *Contact) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }
 // SetYomiCompanyName sets the yomiCompanyName property value. The yomiCompanyName property
 func (m *Contact) SetYomiCompanyName(value *string)() {
-    if m != nil {
-        m.yomiCompanyName = value
-    }
+    m.yomiCompanyName = value
 }
 // SetYomiGivenName sets the yomiGivenName property value. The yomiGivenName property
 func (m *Contact) SetYomiGivenName(value *string)() {
-    if m != nil {
-        m.yomiGivenName = value
-    }
+    m.yomiGivenName = value
 }
 // SetYomiSurname sets the yomiSurname property value. The yomiSurname property
 func (m *Contact) SetYomiSurname(value *string)() {
-    if m != nil {
-        m.yomiSurname = value
-    }
+    m.yomiSurname = value
 }

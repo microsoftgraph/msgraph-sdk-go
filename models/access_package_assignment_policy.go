@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentPolicy provides operations to manage the admin singleton.
+// AccessPackageAssignmentPolicy provides operations to manage the collection of agreement entities.
 type AccessPackageAssignmentPolicy struct {
     Entity
     // The access package with this policy. Read-only. Nullable. Supports $expand.
@@ -50,67 +50,35 @@ func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccessPackage gets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackage
-    }
+    return m.accessPackage
 }
 // GetAllowedTargetScope gets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
 func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedTargetScope
-    }
+    return m.allowedTargetScope
 }
 // GetAutomaticRequestSettings gets the automaticRequestSettings property value. The automaticRequestSettings property
 func (m *AccessPackageAssignmentPolicy) GetAutomaticRequestSettings()(AccessPackageAutomaticRequestSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.automaticRequestSettings
-    }
+    return m.automaticRequestSettings
 }
 // GetCatalog gets the catalog property value. Catalog of the access package containing this policy. Read-only.
 func (m *AccessPackageAssignmentPolicy) GetCatalog()(AccessPackageCatalogable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalog
-    }
+    return m.catalog
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExpiration gets the expiration property value. The expiration date for assignments created in this policy.
 func (m *AccessPackageAssignmentPolicy) GetExpiration()(ExpirationPatternable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiration
-    }
+    return m.expiration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -253,43 +221,23 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // GetRequestApprovalSettings gets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(AccessPackageAssignmentApprovalSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestApprovalSettings
-    }
+    return m.requestApprovalSettings
 }
 // GetRequestorSettings gets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(AccessPackageAssignmentRequestorSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorSettings
-    }
+    return m.requestorSettings
 }
 // GetReviewSettings gets the reviewSettings property value. Settings for access reviews of assignments through this policy.
 func (m *AccessPackageAssignmentPolicy) GetReviewSettings()(AccessPackageAssignmentReviewSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSettings
-    }
+    return m.reviewSettings
 }
 // GetSpecificAllowedTargets gets the specificAllowedTargets property value. The principals that can be assigned access from an access package through this policy.
 func (m *AccessPackageAssignmentPolicy) GetSpecificAllowedTargets()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.specificAllowedTargets
-    }
+    return m.specificAllowedTargets
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -384,79 +332,53 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable)() {
-    if m != nil {
-        m.accessPackage = value
-    }
+    m.accessPackage = value
 }
 // SetAllowedTargetScope sets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
 func (m *AccessPackageAssignmentPolicy) SetAllowedTargetScope(value *AllowedTargetScope)() {
-    if m != nil {
-        m.allowedTargetScope = value
-    }
+    m.allowedTargetScope = value
 }
 // SetAutomaticRequestSettings sets the automaticRequestSettings property value. The automaticRequestSettings property
 func (m *AccessPackageAssignmentPolicy) SetAutomaticRequestSettings(value AccessPackageAutomaticRequestSettingsable)() {
-    if m != nil {
-        m.automaticRequestSettings = value
-    }
+    m.automaticRequestSettings = value
 }
 // SetCatalog sets the catalog property value. Catalog of the access package containing this policy. Read-only.
 func (m *AccessPackageAssignmentPolicy) SetCatalog(value AccessPackageCatalogable)() {
-    if m != nil {
-        m.catalog = value
-    }
+    m.catalog = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExpiration sets the expiration property value. The expiration date for assignments created in this policy.
 func (m *AccessPackageAssignmentPolicy) SetExpiration(value ExpirationPatternable)() {
-    if m != nil {
-        m.expiration = value
-    }
+    m.expiration = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }
 // SetRequestApprovalSettings sets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value AccessPackageAssignmentApprovalSettingsable)() {
-    if m != nil {
-        m.requestApprovalSettings = value
-    }
+    m.requestApprovalSettings = value
 }
 // SetRequestorSettings sets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value AccessPackageAssignmentRequestorSettingsable)() {
-    if m != nil {
-        m.requestorSettings = value
-    }
+    m.requestorSettings = value
 }
 // SetReviewSettings sets the reviewSettings property value. Settings for access reviews of assignments through this policy.
 func (m *AccessPackageAssignmentPolicy) SetReviewSettings(value AccessPackageAssignmentReviewSettingsable)() {
-    if m != nil {
-        m.reviewSettings = value
-    }
+    m.reviewSettings = value
 }
 // SetSpecificAllowedTargets sets the specificAllowedTargets property value. The principals that can be assigned access from an access package through this policy.
 func (m *AccessPackageAssignmentPolicy) SetSpecificAllowedTargets(value []SubjectSetable)() {
-    if m != nil {
-        m.specificAllowedTargets = value
-    }
+    m.specificAllowedTargets = value
 }

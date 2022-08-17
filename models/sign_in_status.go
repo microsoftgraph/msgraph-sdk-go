@@ -32,35 +32,19 @@ func CreateSignInStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdditionalDetails gets the additionalDetails property value. Provides additional details on the sign-in activity
 func (m *SignInStatus) GetAdditionalDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalDetails
-    }
+    return m.additionalDetails
 }
 // GetErrorCode gets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
 func (m *SignInStatus) GetErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFailureReason gets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
 func (m *SignInStatus) GetFailureReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureReason
-    }
+    return m.failureReason
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignInStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +93,7 @@ func (m *SignInStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SignInStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SignInStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *SignInStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdditionalDetails sets the additionalDetails property value. Provides additional details on the sign-in activity
 func (m *SignInStatus) SetAdditionalDetails(value *string)() {
-    if m != nil {
-        m.additionalDetails = value
-    }
+    m.additionalDetails = value
 }
 // SetErrorCode sets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
 func (m *SignInStatus) SetErrorCode(value *int32)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetFailureReason sets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
 func (m *SignInStatus) SetFailureReason(value *string)() {
-    if m != nil {
-        m.failureReason = value
-    }
+    m.failureReason = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SignInStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

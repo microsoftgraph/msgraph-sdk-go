@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOrganization provides operations to manage the admin singleton.
+// EducationOrganization 
 type EducationOrganization struct {
     Entity
     // Organization description.
@@ -16,7 +16,7 @@ type EducationOrganization struct {
     // The name of the external source this resources was generated from.
     externalSourceDetail *string
 }
-// NewEducationOrganization instantiates a new educationOrganization and sets the default values.
+// NewEducationOrganization instantiates a new EducationOrganization and sets the default values.
 func NewEducationOrganization()(*EducationOrganization) {
     m := &EducationOrganization{
         Entity: *NewEntity(),
@@ -50,35 +50,19 @@ func CreateEducationOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDescription gets the description property value. Organization description.
 func (m *EducationOrganization) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Organization display name.
 func (m *EducationOrganization) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
 func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalSource
-    }
+    return m.externalSource
 }
 // GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resources was generated from.
 func (m *EducationOrganization) GetExternalSourceDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalSourceDetail
-    }
+    return m.externalSourceDetail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -160,25 +144,17 @@ func (m *EducationOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDescription sets the description property value. Organization description.
 func (m *EducationOrganization) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Organization display name.
 func (m *EducationOrganization) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExternalSource sets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
 func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource)() {
-    if m != nil {
-        m.externalSource = value
-    }
+    m.externalSource = value
 }
 // SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
 func (m *EducationOrganization) SetExternalSourceDetail(value *string)() {
-    if m != nil {
-        m.externalSourceDetail = value
-    }
+    m.externalSourceDetail = value
 }

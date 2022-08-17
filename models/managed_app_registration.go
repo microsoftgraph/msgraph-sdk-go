@@ -75,59 +75,31 @@ func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAppIdentifier gets the appIdentifier property value. The app package Identifier
 func (m *ManagedAppRegistration) GetAppIdentifier()(MobileAppIdentifierable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appIdentifier
-    }
+    return m.appIdentifier
 }
 // GetApplicationVersion gets the applicationVersion property value. App version
 func (m *ManagedAppRegistration) GetApplicationVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationVersion
-    }
+    return m.applicationVersion
 }
 // GetAppliedPolicies gets the appliedPolicies property value. Zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppRegistration) GetAppliedPolicies()([]ManagedAppPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliedPolicies
-    }
+    return m.appliedPolicies
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of creation
 func (m *ManagedAppRegistration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDeviceName gets the deviceName property value. Host device name
 func (m *ManagedAppRegistration) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDeviceTag gets the deviceTag property value. App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
 func (m *ManagedAppRegistration) GetDeviceTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceTag
-    }
+    return m.deviceTag
 }
 // GetDeviceType gets the deviceType property value. Host device type
 func (m *ManagedAppRegistration) GetDeviceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceType
-    }
+    return m.deviceType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -302,67 +274,35 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFlaggedReasons gets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
 func (m *ManagedAppRegistration) GetFlaggedReasons()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flaggedReasons
-    }
+    return m.flaggedReasons
 }
 // GetIntendedPolicies gets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.
 func (m *ManagedAppRegistration) GetIntendedPolicies()([]ManagedAppPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intendedPolicies
-    }
+    return m.intendedPolicies
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Date and time of last the app synced with management service.
 func (m *ManagedAppRegistration) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetManagementSdkVersion gets the managementSdkVersion property value. App management SDK version
 func (m *ManagedAppRegistration) GetManagementSdkVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementSdkVersion
-    }
+    return m.managementSdkVersion
 }
 // GetOperations gets the operations property value. Zero or more long running operations triggered on the app registration.
 func (m *ManagedAppRegistration) GetOperations()([]ManagedAppOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetPlatformVersion gets the platformVersion property value. Operating System version
 func (m *ManagedAppRegistration) GetPlatformVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformVersion
-    }
+    return m.platformVersion
 }
 // GetUserId gets the userId property value. The user Id to who this app registration belongs.
 func (m *ManagedAppRegistration) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetVersion gets the version property value. Version of the entity.
 func (m *ManagedAppRegistration) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -476,91 +416,61 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAppIdentifier sets the appIdentifier property value. The app package Identifier
 func (m *ManagedAppRegistration) SetAppIdentifier(value MobileAppIdentifierable)() {
-    if m != nil {
-        m.appIdentifier = value
-    }
+    m.appIdentifier = value
 }
 // SetApplicationVersion sets the applicationVersion property value. App version
 func (m *ManagedAppRegistration) SetApplicationVersion(value *string)() {
-    if m != nil {
-        m.applicationVersion = value
-    }
+    m.applicationVersion = value
 }
 // SetAppliedPolicies sets the appliedPolicies property value. Zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppRegistration) SetAppliedPolicies(value []ManagedAppPolicyable)() {
-    if m != nil {
-        m.appliedPolicies = value
-    }
+    m.appliedPolicies = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of creation
 func (m *ManagedAppRegistration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDeviceName sets the deviceName property value. Host device name
 func (m *ManagedAppRegistration) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDeviceTag sets the deviceTag property value. App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
 func (m *ManagedAppRegistration) SetDeviceTag(value *string)() {
-    if m != nil {
-        m.deviceTag = value
-    }
+    m.deviceTag = value
 }
 // SetDeviceType sets the deviceType property value. Host device type
 func (m *ManagedAppRegistration) SetDeviceType(value *string)() {
-    if m != nil {
-        m.deviceType = value
-    }
+    m.deviceType = value
 }
 // SetFlaggedReasons sets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
 func (m *ManagedAppRegistration) SetFlaggedReasons(value []string)() {
-    if m != nil {
-        m.flaggedReasons = value
-    }
+    m.flaggedReasons = value
 }
 // SetIntendedPolicies sets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.
 func (m *ManagedAppRegistration) SetIntendedPolicies(value []ManagedAppPolicyable)() {
-    if m != nil {
-        m.intendedPolicies = value
-    }
+    m.intendedPolicies = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Date and time of last the app synced with management service.
 func (m *ManagedAppRegistration) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetManagementSdkVersion sets the managementSdkVersion property value. App management SDK version
 func (m *ManagedAppRegistration) SetManagementSdkVersion(value *string)() {
-    if m != nil {
-        m.managementSdkVersion = value
-    }
+    m.managementSdkVersion = value
 }
 // SetOperations sets the operations property value. Zero or more long running operations triggered on the app registration.
 func (m *ManagedAppRegistration) SetOperations(value []ManagedAppOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetPlatformVersion sets the platformVersion property value. Operating System version
 func (m *ManagedAppRegistration) SetPlatformVersion(value *string)() {
-    if m != nil {
-        m.platformVersion = value
-    }
+    m.platformVersion = value
 }
 // SetUserId sets the userId property value. The user Id to who this app registration belongs.
 func (m *ManagedAppRegistration) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedAppRegistration) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

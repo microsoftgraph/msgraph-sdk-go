@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookCategory provides operations to manage the collection of application entities.
+// OutlookCategory provides operations to manage the collection of agreement entities.
 type OutlookCategory struct {
     Entity
     // A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
@@ -27,19 +27,11 @@ func CreateOutlookCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetColor gets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
 func (m *OutlookCategory) GetColor()(*CategoryColor) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetDisplayName gets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
 func (m *OutlookCategory) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,13 +81,9 @@ func (m *OutlookCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetColor sets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
 func (m *OutlookCategory) SetColor(value *CategoryColor)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }
 // SetDisplayName sets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
 func (m *OutlookCategory) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }

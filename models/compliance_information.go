@@ -30,27 +30,15 @@ func CreateComplianceInformationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComplianceInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertificationControls gets the certificationControls property value. Collection of the certification controls associated with certification
 func (m *ComplianceInformation) GetCertificationControls()([]CertificationControlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationControls
-    }
+    return m.certificationControls
 }
 // GetCertificationName gets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
 func (m *ComplianceInformation) GetCertificationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationName
-    }
+    return m.certificationName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComplianceInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,11 +81,7 @@ func (m *ComplianceInformation) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ComplianceInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ComplianceInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *ComplianceInformation) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComplianceInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertificationControls sets the certificationControls property value. Collection of the certification controls associated with certification
 func (m *ComplianceInformation) SetCertificationControls(value []CertificationControlable)() {
-    if m != nil {
-        m.certificationControls = value
-    }
+    m.certificationControls = value
 }
 // SetCertificationName sets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
 func (m *ComplianceInformation) SetCertificationName(value *string)() {
-    if m != nil {
-        m.certificationName = value
-    }
+    m.certificationName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ComplianceInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

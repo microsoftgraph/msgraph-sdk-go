@@ -31,11 +31,7 @@ func CreateAadUserConversationMemberFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetEmail gets the email property value. The email address of the user.
 func (m *AadUserConversationMember) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878
 }
 // GetTenantId gets the tenantId property value. TenantId which the Azure AD user belongs to.
 func (m *AadUserConversationMember) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetUser gets the user property value. The user property
 func (m *AadUserConversationMember) GetUser()(Userable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
+    return m.user
 }
 // GetUserId gets the userId property value. The GUID of the user.
 func (m *AadUserConversationMember) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *AadUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *AadUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetEmail sets the email property value. The email address of the user.
 func (m *AadUserConversationMember) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetTenantId sets the tenantId property value. TenantId which the Azure AD user belongs to.
 func (m *AadUserConversationMember) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetUser sets the user property value. The user property
 func (m *AadUserConversationMember) SetUser(value Userable)() {
-    if m != nil {
-        m.user = value
-    }
+    m.user = value
 }
 // SetUserId sets the userId property value. The GUID of the user.
 func (m *AadUserConversationMember) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

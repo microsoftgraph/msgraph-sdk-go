@@ -33,19 +33,11 @@ func CreateDirectoryRoleFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetDescription gets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,27 +104,15 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMembers gets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
 func (m *DirectoryRole) GetMembers()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) GetRoleTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleTemplateId
-    }
+    return m.roleTemplateId
 }
 // GetScopedMembers gets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *DirectoryRole) GetScopedMembers()([]ScopedRoleMembershipable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopedMembers
-    }
+    return m.scopedMembers
 }
 // Serialize serializes information the current object
 func (m *DirectoryRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -182,31 +162,21 @@ func (m *DirectoryRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetDescription sets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetMembers sets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
 func (m *DirectoryRole) SetMembers(value []DirectoryObjectable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }
 // SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) SetRoleTemplateId(value *string)() {
-    if m != nil {
-        m.roleTemplateId = value
-    }
+    m.roleTemplateId = value
 }
 // SetScopedMembers sets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *DirectoryRole) SetScopedMembers(value []ScopedRoleMembershipable)() {
-    if m != nil {
-        m.scopedMembers = value
-    }
+    m.scopedMembers = value
 }

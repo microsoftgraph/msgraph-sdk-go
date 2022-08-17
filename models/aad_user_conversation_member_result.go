@@ -40,11 +40,7 @@ func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]fun
 }
 // GetUserId gets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
 func (m *AadUserConversationMemberResult) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896
 }
 // SetUserId sets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
 func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

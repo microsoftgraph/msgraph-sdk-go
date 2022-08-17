@@ -26,11 +26,7 @@ func CreateUploadClientCertificatePostRequestBodyFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadClientCertificatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,19 +55,11 @@ func (m *UploadClientCertificatePostRequestBody) GetFieldDeserializers()(map[str
 }
 // GetPassword gets the password property value. The password property
 func (m *UploadClientCertificatePostRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // GetPkcs12Value gets the pkcs12Value property value. The pkcs12Value property
 func (m *UploadClientCertificatePostRequestBody) GetPkcs12Value()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pkcs12Value
-    }
+    return m.pkcs12Value
 }
 // Serialize serializes information the current object
 func (m *UploadClientCertificatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *UploadClientCertificatePostRequestBody) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetPassword sets the password property value. The password property
 func (m *UploadClientCertificatePostRequestBody) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
 // SetPkcs12Value sets the pkcs12Value property value. The pkcs12Value property
 func (m *UploadClientCertificatePostRequestBody) SetPkcs12Value(value *string)() {
-    if m != nil {
-        m.pkcs12Value = value
-    }
+    m.pkcs12Value = value
 }

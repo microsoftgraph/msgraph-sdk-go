@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAndAppManagementRoleAssignment 
+// DeviceAndAppManagementRoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
     // The list of ids of role member security groups. These are IDs from Azure Active Directory.
     members []string
 }
-// NewDeviceAndAppManagementRoleAssignment instantiates a new DeviceAndAppManagementRoleAssignment and sets the default values.
+// NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {
     m := &DeviceAndAppManagementRoleAssignment{
         RoleAssignment: *NewRoleAssignment(),
@@ -44,11 +44,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
 }
 // GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
 func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
 }
 // SetMembers sets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
 func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }

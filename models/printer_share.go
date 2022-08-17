@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrinterShare provides operations to manage the admin singleton.
+// PrinterShare provides operations to manage the collection of agreement entities.
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
@@ -34,35 +34,19 @@ func CreatePrinterShareFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAllowAllUsers gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
 func (m *PrinterShare) GetAllowAllUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAllUsers
-    }
+    return m.allowAllUsers
 }
 // GetAllowedGroups gets the allowedGroups property value. The groups whose users have access to print using the printer.
 func (m *PrinterShare) GetAllowedGroups()([]Groupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedGroups
-    }
+    return m.allowedGroups
 }
 // GetAllowedUsers gets the allowedUsers property value. The users who have access to print using the printer.
 func (m *PrinterShare) GetAllowedUsers()([]Userable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedUsers
-    }
+    return m.allowedUsers
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the printer share was created. Read-only.
 func (m *PrinterShare) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,11 +113,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetPrinter gets the printer property value. The printer that this printer share is related to.
 func (m *PrinterShare) GetPrinter()(Printerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printer
-    }
+    return m.printer
 }
 // Serialize serializes information the current object
 func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -183,31 +163,21 @@ func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAllowAllUsers sets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
 func (m *PrinterShare) SetAllowAllUsers(value *bool)() {
-    if m != nil {
-        m.allowAllUsers = value
-    }
+    m.allowAllUsers = value
 }
 // SetAllowedGroups sets the allowedGroups property value. The groups whose users have access to print using the printer.
 func (m *PrinterShare) SetAllowedGroups(value []Groupable)() {
-    if m != nil {
-        m.allowedGroups = value
-    }
+    m.allowedGroups = value
 }
 // SetAllowedUsers sets the allowedUsers property value. The users who have access to print using the printer.
 func (m *PrinterShare) SetAllowedUsers(value []Userable)() {
-    if m != nil {
-        m.allowedUsers = value
-    }
+    m.allowedUsers = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the printer share was created. Read-only.
 func (m *PrinterShare) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetPrinter sets the printer property value. The printer that this printer share is related to.
 func (m *PrinterShare) SetPrinter(value Printerable)() {
-    if m != nil {
-        m.printer = value
-    }
+    m.printer = value
 }

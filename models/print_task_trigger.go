@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskTrigger provides operations to manage the admin singleton.
+// PrintTaskTrigger provides operations to manage the collection of agreement entities.
 type PrintTaskTrigger struct {
     Entity
     // The definition property
@@ -27,19 +27,11 @@ func CreatePrintTaskTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *PrintTaskTrigger) GetDefinition()(PrintTaskDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definition
-    }
+    return m.definition
 }
 // GetEvent gets the event property value. The event property
 func (m *PrintTaskTrigger) GetEvent()(*PrintEvent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.event
-    }
+    return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,13 +81,9 @@ func (m *PrintTaskTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *PrintTaskTrigger) SetDefinition(value PrintTaskDefinitionable)() {
-    if m != nil {
-        m.definition = value
-    }
+    m.definition = value
 }
 // SetEvent sets the event property value. The event property
 func (m *PrintTaskTrigger) SetEvent(value *PrintEvent)() {
-    if m != nil {
-        m.event = value
-    }
+    m.event = value
 }

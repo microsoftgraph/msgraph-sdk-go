@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicySettingStateSummary device Compilance Policy Setting State summary across the account.
+// DeviceCompliancePolicySettingStateSummary 
 type DeviceCompliancePolicySettingStateSummary struct {
     Entity
     // Number of compliant devices
@@ -30,7 +30,7 @@ type DeviceCompliancePolicySettingStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
+// NewDeviceCompliancePolicySettingStateSummary instantiates a new DeviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
     m := &DeviceCompliancePolicySettingStateSummary{
         Entity: *NewEntity(),
@@ -45,35 +45,19 @@ func CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parse
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantDeviceCount
-    }
+    return m.compliantDeviceCount
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictDeviceCount
-    }
+    return m.conflictDeviceCount
 }
 // GetDeviceComplianceSettingStates gets the deviceComplianceSettingStates property value. Not yet documented
 func (m *DeviceCompliancePolicySettingStateSummary) GetDeviceComplianceSettingStates()([]DeviceComplianceSettingStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceComplianceSettingStates
-    }
+    return m.deviceComplianceSettingStates
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorDeviceCount
-    }
+    return m.errorDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -196,59 +180,31 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetNonCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantDeviceCount
-    }
+    return m.nonCompliantDeviceCount
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
+    return m.notApplicableDeviceCount
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPlatformType()(*PolicyPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
+    return m.platformType
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
+    return m.remediatedDeviceCount
 }
 // GetSetting gets the setting property value. The setting class name and property name.
 func (m *DeviceCompliancePolicySettingStateSummary) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
+    return m.setting
 }
 // GetSettingName gets the settingName property value. Name of the setting.
 func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicySettingStateSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
-    }
+    return m.unknownDeviceCount
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -331,67 +287,45 @@ func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d233
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetCompliantDeviceCount(value *int32)() {
-    if m != nil {
-        m.compliantDeviceCount = value
-    }
+    m.compliantDeviceCount = value
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetConflictDeviceCount(value *int32)() {
-    if m != nil {
-        m.conflictDeviceCount = value
-    }
+    m.conflictDeviceCount = value
 }
 // SetDeviceComplianceSettingStates sets the deviceComplianceSettingStates property value. Not yet documented
 func (m *DeviceCompliancePolicySettingStateSummary) SetDeviceComplianceSettingStates(value []DeviceComplianceSettingStateable)() {
-    if m != nil {
-        m.deviceComplianceSettingStates = value
-    }
+    m.deviceComplianceSettingStates = value
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetErrorDeviceCount(value *int32)() {
-    if m != nil {
-        m.errorDeviceCount = value
-    }
+    m.errorDeviceCount = value
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    if m != nil {
-        m.nonCompliantDeviceCount = value
-    }
+    m.nonCompliantDeviceCount = value
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    if m != nil {
-        m.notApplicableDeviceCount = value
-    }
+    m.notApplicableDeviceCount = value
 }
 // SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPlatformType(value *PolicyPlatformType)() {
-    if m != nil {
-        m.platformType = value
-    }
+    m.platformType = value
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    if m != nil {
-        m.remediatedDeviceCount = value
-    }
+    m.remediatedDeviceCount = value
 }
 // SetSetting sets the setting property value. The setting class name and property name.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSetting(value *string)() {
-    if m != nil {
-        m.setting = value
-    }
+    m.setting = value
 }
 // SetSettingName sets the settingName property value. Name of the setting.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetUnknownDeviceCount(value *int32)() {
-    if m != nil {
-        m.unknownDeviceCount = value
-    }
+    m.unknownDeviceCount = value
 }

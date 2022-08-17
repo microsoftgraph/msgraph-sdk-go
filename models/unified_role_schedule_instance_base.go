@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleScheduleInstanceBase provides operations to manage the admin singleton.
+// UnifiedRoleScheduleInstanceBase 
 type UnifiedRoleScheduleInstanceBase struct {
     Entity
     // Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
@@ -24,7 +24,7 @@ type UnifiedRoleScheduleInstanceBase struct {
     // Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
     roleDefinitionId *string
 }
-// NewUnifiedRoleScheduleInstanceBase instantiates a new unifiedRoleScheduleInstanceBase and sets the default values.
+// NewUnifiedRoleScheduleInstanceBase instantiates a new UnifiedRoleScheduleInstanceBase and sets the default values.
 func NewUnifiedRoleScheduleInstanceBase()(*UnifiedRoleScheduleInstanceBase) {
     m := &UnifiedRoleScheduleInstanceBase{
         Entity: *NewEntity(),
@@ -60,35 +60,19 @@ func CreateUnifiedRoleScheduleInstanceBaseFromDiscriminatorValue(parseNode i878a
 }
 // GetAppScope gets the appScope property value. Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
 func (m *UnifiedRoleScheduleInstanceBase) GetAppScope()(AppScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScope
-    }
+    return m.appScope
 }
 // GetAppScopeId gets the appScopeId property value. Identifier of the app-specific scope when the assignment or role eligibility is scoped to an app. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
 func (m *UnifiedRoleScheduleInstanceBase) GetAppScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScopeId
-    }
+    return m.appScopeId
 }
 // GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the assignment or role eligibility. Read-only.
 func (m *UnifiedRoleScheduleInstanceBase) GetDirectoryScope()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScope
-    }
+    return m.directoryScope
 }
 // GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment or role eligibility. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
 func (m *UnifiedRoleScheduleInstanceBase) GetDirectoryScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScopeId
-    }
+    return m.directoryScopeId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleScheduleInstanceBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -177,35 +161,19 @@ func (m *UnifiedRoleScheduleInstanceBase) GetFieldDeserializers()(map[string]fun
 }
 // GetPrincipal gets the principal property value. The principal that's getting a role assignment or role eligibility through the request.
 func (m *UnifiedRoleScheduleInstanceBase) GetPrincipal()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principal
-    }
+    return m.principal
 }
 // GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the role assignment or that's eligible for a role.
 func (m *UnifiedRoleScheduleInstanceBase) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
+    return m.principalId
 }
 // GetRoleDefinition gets the roleDefinition property value. Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
 func (m *UnifiedRoleScheduleInstanceBase) GetRoleDefinition()(UnifiedRoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
+    return m.roleDefinition
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
 func (m *UnifiedRoleScheduleInstanceBase) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
+    return m.roleDefinitionId
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleScheduleInstanceBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -265,49 +233,33 @@ func (m *UnifiedRoleScheduleInstanceBase) Serialize(writer i878a80d2330e89d26896
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
 func (m *UnifiedRoleScheduleInstanceBase) SetAppScope(value AppScopeable)() {
-    if m != nil {
-        m.appScope = value
-    }
+    m.appScope = value
 }
 // SetAppScopeId sets the appScopeId property value. Identifier of the app-specific scope when the assignment or role eligibility is scoped to an app. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
 func (m *UnifiedRoleScheduleInstanceBase) SetAppScopeId(value *string)() {
-    if m != nil {
-        m.appScopeId = value
-    }
+    m.appScopeId = value
 }
 // SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the assignment or role eligibility. Read-only.
 func (m *UnifiedRoleScheduleInstanceBase) SetDirectoryScope(value DirectoryObjectable)() {
-    if m != nil {
-        m.directoryScope = value
-    }
+    m.directoryScope = value
 }
 // SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment or role eligibility. The scope of an assignment or role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
 func (m *UnifiedRoleScheduleInstanceBase) SetDirectoryScopeId(value *string)() {
-    if m != nil {
-        m.directoryScopeId = value
-    }
+    m.directoryScopeId = value
 }
 // SetPrincipal sets the principal property value. The principal that's getting a role assignment or role eligibility through the request.
 func (m *UnifiedRoleScheduleInstanceBase) SetPrincipal(value DirectoryObjectable)() {
-    if m != nil {
-        m.principal = value
-    }
+    m.principal = value
 }
 // SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the role assignment or that's eligible for a role.
 func (m *UnifiedRoleScheduleInstanceBase) SetPrincipalId(value *string)() {
-    if m != nil {
-        m.principalId = value
-    }
+    m.principalId = value
 }
 // SetRoleDefinition sets the roleDefinition property value. Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
 func (m *UnifiedRoleScheduleInstanceBase) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
-    if m != nil {
-        m.roleDefinition = value
-    }
+    m.roleDefinition = value
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that the principal is eligible for.
 func (m *UnifiedRoleScheduleInstanceBase) SetRoleDefinitionId(value *string)() {
-    if m != nil {
-        m.roleDefinitionId = value
-    }
+    m.roleDefinitionId = value
 }

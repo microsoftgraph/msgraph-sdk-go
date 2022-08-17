@@ -30,27 +30,15 @@ func CreateEmployeeOrgDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmployeeOrgData) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCostCenter gets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
 func (m *EmployeeOrgData) GetCostCenter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.costCenter
-    }
+    return m.costCenter
 }
 // GetDivision gets the division property value. The name of the division in which the user works. Returned only on $select. Supports $filter.
 func (m *EmployeeOrgData) GetDivision()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.division
-    }
+    return m.division
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmployeeOrgData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *EmployeeOrgData) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EmployeeOrgData) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *EmployeeOrgData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *EmployeeOrgData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmployeeOrgData) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCostCenter sets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
 func (m *EmployeeOrgData) SetCostCenter(value *string)() {
-    if m != nil {
-        m.costCenter = value
-    }
+    m.costCenter = value
 }
 // SetDivision sets the division property value. The name of the division in which the user works. Returned only on $select. Supports $filter.
 func (m *EmployeeOrgData) SetDivision(value *string)() {
-    if m != nil {
-        m.division = value
-    }
+    m.division = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EmployeeOrgData) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

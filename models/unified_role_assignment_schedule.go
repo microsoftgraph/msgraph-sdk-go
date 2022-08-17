@@ -31,19 +31,11 @@ func CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue(parseNode i878a80
 }
 // GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
 func (m *UnifiedRoleAssignmentSchedule) GetActivatedUsing()(UnifiedRoleEligibilityScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activatedUsing
-    }
+    return m.activatedUsing
 }
 // GetAssignmentType gets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentSchedule) GetAssignmentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentType
-    }
+    return m.assignmentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(
 }
 // GetMemberType gets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentSchedule) GetMemberType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberType
-    }
+    return m.memberType
 }
 // GetScheduleInfo gets the scheduleInfo property value. The period of the role assignment. It can represent a single occurrence or multiple recurrences.
 func (m *UnifiedRoleAssignmentSchedule) GetScheduleInfo()(RequestScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleInfo
-    }
+    return m.scheduleInfo
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *UnifiedRoleAssignmentSchedule) Serialize(writer i878a80d2330e89d2689638
 }
 // SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
 func (m *UnifiedRoleAssignmentSchedule) SetActivatedUsing(value UnifiedRoleEligibilityScheduleable)() {
-    if m != nil {
-        m.activatedUsing = value
-    }
+    m.activatedUsing = value
 }
 // SetAssignmentType sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentSchedule) SetAssignmentType(value *string)() {
-    if m != nil {
-        m.assignmentType = value
-    }
+    m.assignmentType = value
 }
 // SetMemberType sets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentSchedule) SetMemberType(value *string)() {
-    if m != nil {
-        m.memberType = value
-    }
+    m.memberType = value
 }
 // SetScheduleInfo sets the scheduleInfo property value. The period of the role assignment. It can represent a single occurrence or multiple recurrences.
 func (m *UnifiedRoleAssignmentSchedule) SetScheduleInfo(value RequestScheduleable)() {
-    if m != nil {
-        m.scheduleInfo = value
-    }
+    m.scheduleInfo = value
 }

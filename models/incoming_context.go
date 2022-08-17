@@ -34,11 +34,7 @@ func CreateIncomingContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncomingContext) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IncomingContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetObservedParticipantId gets the observedParticipantId property value. The id of the participant that is under observation. Read-only.
 func (m *IncomingContext) GetObservedParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.observedParticipantId
-    }
+    return m.observedParticipantId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IncomingContext) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOnBehalfOf gets the onBehalfOf property value. The identity that the call is happening on behalf of.
 func (m *IncomingContext) GetOnBehalfOf()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onBehalfOf
-    }
+    return m.onBehalfOf
 }
 // GetSourceParticipantId gets the sourceParticipantId property value. The id of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) GetSourceParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceParticipantId
-    }
+    return m.sourceParticipantId
 }
 // GetTransferor gets the transferor property value. The identity that transferred the call.
 func (m *IncomingContext) GetTransferor()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transferor
-    }
+    return m.transferor
 }
 // Serialize serializes information the current object
 func (m *IncomingContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *IncomingContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncomingContext) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetObservedParticipantId sets the observedParticipantId property value. The id of the participant that is under observation. Read-only.
 func (m *IncomingContext) SetObservedParticipantId(value *string)() {
-    if m != nil {
-        m.observedParticipantId = value
-    }
+    m.observedParticipantId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IncomingContext) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOnBehalfOf sets the onBehalfOf property value. The identity that the call is happening on behalf of.
 func (m *IncomingContext) SetOnBehalfOf(value IdentitySetable)() {
-    if m != nil {
-        m.onBehalfOf = value
-    }
+    m.onBehalfOf = value
 }
 // SetSourceParticipantId sets the sourceParticipantId property value. The id of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) SetSourceParticipantId(value *string)() {
-    if m != nil {
-        m.sourceParticipantId = value
-    }
+    m.sourceParticipantId = value
 }
 // SetTransferor sets the transferor property value. The identity that transferred the call.
 func (m *IncomingContext) SetTransferor(value IdentitySetable)() {
-    if m != nil {
-        m.transferor = value
-    }
+    m.transferor = value
 }

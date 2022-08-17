@@ -29,27 +29,15 @@ func CreateWindowsInformationProtectionDesktopAppFromDiscriminatorValue(parseNod
 }
 // GetBinaryName gets the binaryName property value. The binary name.
 func (m *WindowsInformationProtectionDesktopApp) GetBinaryName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.binaryName
-    }
+    return m.binaryName
 }
 // GetBinaryVersionHigh gets the binaryVersionHigh property value. The high binary version.
 func (m *WindowsInformationProtectionDesktopApp) GetBinaryVersionHigh()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.binaryVersionHigh
-    }
+    return m.binaryVersionHigh
 }
 // GetBinaryVersionLow gets the binaryVersionLow property value. The lower binary version.
 func (m *WindowsInformationProtectionDesktopApp) GetBinaryVersionLow()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.binaryVersionLow
-    }
+    return m.binaryVersionLow
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionDesktopApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,19 +102,13 @@ func (m *WindowsInformationProtectionDesktopApp) Serialize(writer i878a80d2330e8
 }
 // SetBinaryName sets the binaryName property value. The binary name.
 func (m *WindowsInformationProtectionDesktopApp) SetBinaryName(value *string)() {
-    if m != nil {
-        m.binaryName = value
-    }
+    m.binaryName = value
 }
 // SetBinaryVersionHigh sets the binaryVersionHigh property value. The high binary version.
 func (m *WindowsInformationProtectionDesktopApp) SetBinaryVersionHigh(value *string)() {
-    if m != nil {
-        m.binaryVersionHigh = value
-    }
+    m.binaryVersionHigh = value
 }
 // SetBinaryVersionLow sets the binaryVersionLow property value. The lower binary version.
 func (m *WindowsInformationProtectionDesktopApp) SetBinaryVersionLow(value *string)() {
-    if m != nil {
-        m.binaryVersionLow = value
-    }
+    m.binaryVersionLow = value
 }

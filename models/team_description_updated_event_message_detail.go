@@ -64,27 +64,15 @@ func (m *TeamDescriptionUpdatedEventMessageDetail) GetFieldDeserializers()(map[s
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TeamDescriptionUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetTeamDescription gets the teamDescription property value. The updated description for the team.
 func (m *TeamDescriptionUpdatedEventMessageDetail) GetTeamDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamDescription
-    }
+    return m.teamDescription
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
 func (m *TeamDescriptionUpdatedEventMessageDetail) GetTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamId
-    }
+    return m.teamId
 }
 // Serialize serializes information the current object
 func (m *TeamDescriptionUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *TeamDescriptionUpdatedEventMessageDetail) Serialize(writer i878a80d2330
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamDescriptionUpdatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetTeamDescription sets the teamDescription property value. The updated description for the team.
 func (m *TeamDescriptionUpdatedEventMessageDetail) SetTeamDescription(value *string)() {
-    if m != nil {
-        m.teamDescription = value
-    }
+    m.teamDescription = value
 }
 // SetTeamId sets the teamId property value. Unique identifier of the team.
 func (m *TeamDescriptionUpdatedEventMessageDetail) SetTeamId(value *string)() {
-    if m != nil {
-        m.teamId = value
-    }
+    m.teamId = value
 }

@@ -40,11 +40,7 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
 }
 // GetMode gets the mode property value. Possible values are: always, never.
 func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mode
-    }
+    return m.mode
 }
 // Serialize serializes information the current object
 func (m *PersistentBrowserSessionControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *PersistentBrowserSessionControl) Serialize(writer i878a80d2330e89d26896
 }
 // SetMode sets the mode property value. Possible values are: always, never.
 func (m *PersistentBrowserSessionControl) SetMode(value *PersistentBrowserSessionMode)() {
-    if m != nil {
-        m.mode = value
-    }
+    m.mode = value
 }

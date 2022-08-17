@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InferenceClassificationOverride provides operations to manage the collection of application entities.
+// InferenceClassificationOverride provides operations to manage the collection of agreement entities.
 type InferenceClassificationOverride struct {
     Entity
     // Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
@@ -27,11 +27,7 @@ func CreateInferenceClassificationOverrideFromDiscriminatorValue(parseNode i878a
 }
 // GetClassifyAs gets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
 func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classifyAs
-    }
+    return m.classifyAs
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]fun
 }
 // GetSenderEmailAddress gets the senderEmailAddress property value. The email address information of the sender for whom the override is created.
 func (m *InferenceClassificationOverride) GetSenderEmailAddress()(EmailAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderEmailAddress
-    }
+    return m.senderEmailAddress
 }
 // Serialize serializes information the current object
 func (m *InferenceClassificationOverride) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *InferenceClassificationOverride) Serialize(writer i878a80d2330e89d26896
 }
 // SetClassifyAs sets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
 func (m *InferenceClassificationOverride) SetClassifyAs(value *InferenceClassificationType)() {
-    if m != nil {
-        m.classifyAs = value
-    }
+    m.classifyAs = value
 }
 // SetSenderEmailAddress sets the senderEmailAddress property value. The email address information of the sender for whom the override is created.
 func (m *InferenceClassificationOverride) SetSenderEmailAddress(value EmailAddressable)() {
-    if m != nil {
-        m.senderEmailAddress = value
-    }
+    m.senderEmailAddress = value
 }

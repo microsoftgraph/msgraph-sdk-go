@@ -40,11 +40,7 @@ func (m *AccessReviewInstanceDecisionItemAzureRoleResource) GetFieldDeserializer
 }
 // GetScope gets the scope property value. Details of the scope this role is associated with.
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) GetScope()(AccessReviewInstanceDecisionItemResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AccessReviewInstanceDecisionItemAzureRoleResource) Serialize(writer i87
 }
 // SetScope sets the scope property value. Details of the scope this role is associated with.
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) SetScope(value AccessReviewInstanceDecisionItemResourceable)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }

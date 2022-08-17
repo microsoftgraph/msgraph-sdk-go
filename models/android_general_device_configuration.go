@@ -119,139 +119,71 @@ func CreateAndroidGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i87
 }
 // GetAppsBlockClipboardSharing gets the appsBlockClipboardSharing property value. Indicates whether or not to block clipboard sharing to copy and paste between applications.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockClipboardSharing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsBlockClipboardSharing
-    }
+    return m.appsBlockClipboardSharing
 }
 // GetAppsBlockCopyPaste gets the appsBlockCopyPaste property value. Indicates whether or not to block copy and paste within applications.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockCopyPaste()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsBlockCopyPaste
-    }
+    return m.appsBlockCopyPaste
 }
 // GetAppsBlockYouTube gets the appsBlockYouTube property value. Indicates whether or not to block the YouTube app.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockYouTube()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsBlockYouTube
-    }
+    return m.appsBlockYouTube
 }
 // GetAppsHideList gets the appsHideList property value. List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsHideList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsHideList
-    }
+    return m.appsHideList
 }
 // GetAppsInstallAllowList gets the appsInstallAllowList property value. List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsInstallAllowList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsInstallAllowList
-    }
+    return m.appsInstallAllowList
 }
 // GetAppsLaunchBlockList gets the appsLaunchBlockList property value. List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsLaunchBlockList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsLaunchBlockList
-    }
+    return m.appsLaunchBlockList
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Indicates whether or not to block Bluetooth.
 func (m *AndroidGeneralDeviceConfiguration) GetBluetoothBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlocked
-    }
+    return m.bluetoothBlocked
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block the use of the camera.
 func (m *AndroidGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameraBlocked
-    }
+    return m.cameraBlocked
 }
 // GetCellularBlockDataRoaming gets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockDataRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockDataRoaming
-    }
+    return m.cellularBlockDataRoaming
 }
 // GetCellularBlockMessaging gets the cellularBlockMessaging property value. Indicates whether or not to block SMS/MMS messaging.
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockMessaging()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockMessaging
-    }
+    return m.cellularBlockMessaging
 }
 // GetCellularBlockVoiceRoaming gets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockVoiceRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockVoiceRoaming
-    }
+    return m.cellularBlockVoiceRoaming
 }
 // GetCellularBlockWiFiTethering gets the cellularBlockWiFiTethering property value. Indicates whether or not to block syncing Wi-Fi tethering.
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockWiFiTethering()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockWiFiTethering
-    }
+    return m.cellularBlockWiFiTethering
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantAppListType
-    }
+    return m.compliantAppListType
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantAppsList
-    }
+    return m.compliantAppsList
 }
 // GetDeviceSharingAllowed gets the deviceSharingAllowed property value. Indicates whether or not to allow device sharing mode.
 func (m *AndroidGeneralDeviceConfiguration) GetDeviceSharingAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceSharingAllowed
-    }
+    return m.deviceSharingAllowed
 }
 // GetDiagnosticDataBlockSubmission gets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *AndroidGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmission()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.diagnosticDataBlockSubmission
-    }
+    return m.diagnosticDataBlockSubmission
 }
 // GetFactoryResetBlocked gets the factoryResetBlocked property value. Indicates whether or not to block user performing a factory reset.
 func (m *AndroidGeneralDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.factoryResetBlocked
-    }
+    return m.factoryResetBlocked
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -760,251 +692,127 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
 }
 // GetGoogleAccountBlockAutoSync gets the googleAccountBlockAutoSync property value. Indicates whether or not to block Google account auto sync.
 func (m *AndroidGeneralDeviceConfiguration) GetGoogleAccountBlockAutoSync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.googleAccountBlockAutoSync
-    }
+    return m.googleAccountBlockAutoSync
 }
 // GetGooglePlayStoreBlocked gets the googlePlayStoreBlocked property value. Indicates whether or not to block the Google Play store.
 func (m *AndroidGeneralDeviceConfiguration) GetGooglePlayStoreBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.googlePlayStoreBlocked
-    }
+    return m.googlePlayStoreBlocked
 }
 // GetKioskModeApps gets the kioskModeApps property value. A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) GetKioskModeApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeApps
-    }
+    return m.kioskModeApps
 }
 // GetKioskModeBlockSleepButton gets the kioskModeBlockSleepButton property value. Indicates whether or not to block the screen sleep button while in Kiosk Mode.
 func (m *AndroidGeneralDeviceConfiguration) GetKioskModeBlockSleepButton()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeBlockSleepButton
-    }
+    return m.kioskModeBlockSleepButton
 }
 // GetKioskModeBlockVolumeButtons gets the kioskModeBlockVolumeButtons property value. Indicates whether or not to block the volume buttons while in Kiosk Mode.
 func (m *AndroidGeneralDeviceConfiguration) GetKioskModeBlockVolumeButtons()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeBlockVolumeButtons
-    }
+    return m.kioskModeBlockVolumeButtons
 }
 // GetLocationServicesBlocked gets the locationServicesBlocked property value. Indicates whether or not to block location services.
 func (m *AndroidGeneralDeviceConfiguration) GetLocationServicesBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationServicesBlocked
-    }
+    return m.locationServicesBlocked
 }
 // GetNfcBlocked gets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
 func (m *AndroidGeneralDeviceConfiguration) GetNfcBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nfcBlocked
-    }
+    return m.nfcBlocked
 }
 // GetPasswordBlockFingerprintUnlock gets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockFingerprintUnlock
-    }
+    return m.passwordBlockFingerprintUnlock
 }
 // GetPasswordBlockTrustAgents gets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockTrustAgents
-    }
+    return m.passwordBlockTrustAgents
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passwordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequired gets the passwordRequired property value. Indicates whether or not to require a password.
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetPowerOffBlocked gets the powerOffBlocked property value. Indicates whether or not to block powering off the device.
 func (m *AndroidGeneralDeviceConfiguration) GetPowerOffBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.powerOffBlocked
-    }
+    return m.powerOffBlocked
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
 func (m *AndroidGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
+    return m.screenCaptureBlocked
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireVerifyApps
-    }
+    return m.securityRequireVerifyApps
 }
 // GetStorageBlockGoogleBackup gets the storageBlockGoogleBackup property value. Indicates whether or not to block Google Backup.
 func (m *AndroidGeneralDeviceConfiguration) GetStorageBlockGoogleBackup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockGoogleBackup
-    }
+    return m.storageBlockGoogleBackup
 }
 // GetStorageBlockRemovableStorage gets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage usage.
 func (m *AndroidGeneralDeviceConfiguration) GetStorageBlockRemovableStorage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockRemovableStorage
-    }
+    return m.storageBlockRemovableStorage
 }
 // GetStorageRequireDeviceEncryption gets the storageRequireDeviceEncryption property value. Indicates whether or not to require device encryption.
 func (m *AndroidGeneralDeviceConfiguration) GetStorageRequireDeviceEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireDeviceEncryption
-    }
+    return m.storageRequireDeviceEncryption
 }
 // GetStorageRequireRemovableStorageEncryption gets the storageRequireRemovableStorageEncryption property value. Indicates whether or not to require removable storage encryption.
 func (m *AndroidGeneralDeviceConfiguration) GetStorageRequireRemovableStorageEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireRemovableStorageEncryption
-    }
+    return m.storageRequireRemovableStorageEncryption
 }
 // GetVoiceAssistantBlocked gets the voiceAssistantBlocked property value. Indicates whether or not to block the use of the Voice Assistant.
 func (m *AndroidGeneralDeviceConfiguration) GetVoiceAssistantBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.voiceAssistantBlocked
-    }
+    return m.voiceAssistantBlocked
 }
 // GetVoiceDialingBlocked gets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
 func (m *AndroidGeneralDeviceConfiguration) GetVoiceDialingBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.voiceDialingBlocked
-    }
+    return m.voiceDialingBlocked
 }
 // GetWebBrowserBlockAutofill gets the webBrowserBlockAutofill property value. Indicates whether or not to block the web browser's auto fill feature.
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockAutofill()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webBrowserBlockAutofill
-    }
+    return m.webBrowserBlockAutofill
 }
 // GetWebBrowserBlocked gets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webBrowserBlocked
-    }
+    return m.webBrowserBlocked
 }
 // GetWebBrowserBlockJavaScript gets the webBrowserBlockJavaScript property value. Indicates whether or not to block JavaScript within the web browser.
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockJavaScript()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webBrowserBlockJavaScript
-    }
+    return m.webBrowserBlockJavaScript
 }
 // GetWebBrowserBlockPopups gets the webBrowserBlockPopups property value. Indicates whether or not to block popups within the web browser.
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockPopups()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webBrowserBlockPopups
-    }
+    return m.webBrowserBlockPopups
 }
 // GetWebBrowserCookieSettings gets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserCookieSettings()(*WebBrowserCookieSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webBrowserCookieSettings
-    }
+    return m.webBrowserCookieSettings
 }
 // GetWiFiBlocked gets the wiFiBlocked property value. Indicates whether or not to block syncing Wi-Fi.
 func (m *AndroidGeneralDeviceConfiguration) GetWiFiBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wiFiBlocked
-    }
+    return m.wiFiBlocked
 }
 // Serialize serializes information the current object
 func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1327,289 +1135,193 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
 }
 // SetAppsBlockClipboardSharing sets the appsBlockClipboardSharing property value. Indicates whether or not to block clipboard sharing to copy and paste between applications.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsBlockClipboardSharing(value *bool)() {
-    if m != nil {
-        m.appsBlockClipboardSharing = value
-    }
+    m.appsBlockClipboardSharing = value
 }
 // SetAppsBlockCopyPaste sets the appsBlockCopyPaste property value. Indicates whether or not to block copy and paste within applications.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsBlockCopyPaste(value *bool)() {
-    if m != nil {
-        m.appsBlockCopyPaste = value
-    }
+    m.appsBlockCopyPaste = value
 }
 // SetAppsBlockYouTube sets the appsBlockYouTube property value. Indicates whether or not to block the YouTube app.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsBlockYouTube(value *bool)() {
-    if m != nil {
-        m.appsBlockYouTube = value
-    }
+    m.appsBlockYouTube = value
 }
 // SetAppsHideList sets the appsHideList property value. List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsHideList(value []AppListItemable)() {
-    if m != nil {
-        m.appsHideList = value
-    }
+    m.appsHideList = value
 }
 // SetAppsInstallAllowList sets the appsInstallAllowList property value. List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsInstallAllowList(value []AppListItemable)() {
-    if m != nil {
-        m.appsInstallAllowList = value
-    }
+    m.appsInstallAllowList = value
 }
 // SetAppsLaunchBlockList sets the appsLaunchBlockList property value. List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsLaunchBlockList(value []AppListItemable)() {
-    if m != nil {
-        m.appsLaunchBlockList = value
-    }
+    m.appsLaunchBlockList = value
 }
 // SetBluetoothBlocked sets the bluetoothBlocked property value. Indicates whether or not to block Bluetooth.
 func (m *AndroidGeneralDeviceConfiguration) SetBluetoothBlocked(value *bool)() {
-    if m != nil {
-        m.bluetoothBlocked = value
-    }
+    m.bluetoothBlocked = value
 }
 // SetCameraBlocked sets the cameraBlocked property value. Indicates whether or not to block the use of the camera.
 func (m *AndroidGeneralDeviceConfiguration) SetCameraBlocked(value *bool)() {
-    if m != nil {
-        m.cameraBlocked = value
-    }
+    m.cameraBlocked = value
 }
 // SetCellularBlockDataRoaming sets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
 func (m *AndroidGeneralDeviceConfiguration) SetCellularBlockDataRoaming(value *bool)() {
-    if m != nil {
-        m.cellularBlockDataRoaming = value
-    }
+    m.cellularBlockDataRoaming = value
 }
 // SetCellularBlockMessaging sets the cellularBlockMessaging property value. Indicates whether or not to block SMS/MMS messaging.
 func (m *AndroidGeneralDeviceConfiguration) SetCellularBlockMessaging(value *bool)() {
-    if m != nil {
-        m.cellularBlockMessaging = value
-    }
+    m.cellularBlockMessaging = value
 }
 // SetCellularBlockVoiceRoaming sets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
 func (m *AndroidGeneralDeviceConfiguration) SetCellularBlockVoiceRoaming(value *bool)() {
-    if m != nil {
-        m.cellularBlockVoiceRoaming = value
-    }
+    m.cellularBlockVoiceRoaming = value
 }
 // SetCellularBlockWiFiTethering sets the cellularBlockWiFiTethering property value. Indicates whether or not to block syncing Wi-Fi tethering.
 func (m *AndroidGeneralDeviceConfiguration) SetCellularBlockWiFiTethering(value *bool)() {
-    if m != nil {
-        m.cellularBlockWiFiTethering = value
-    }
+    m.cellularBlockWiFiTethering = value
 }
 // SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *AndroidGeneralDeviceConfiguration) SetCompliantAppListType(value *AppListType)() {
-    if m != nil {
-        m.compliantAppListType = value
-    }
+    m.compliantAppListType = value
 }
 // SetCompliantAppsList sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *AndroidGeneralDeviceConfiguration) SetCompliantAppsList(value []AppListItemable)() {
-    if m != nil {
-        m.compliantAppsList = value
-    }
+    m.compliantAppsList = value
 }
 // SetDeviceSharingAllowed sets the deviceSharingAllowed property value. Indicates whether or not to allow device sharing mode.
 func (m *AndroidGeneralDeviceConfiguration) SetDeviceSharingAllowed(value *bool)() {
-    if m != nil {
-        m.deviceSharingAllowed = value
-    }
+    m.deviceSharingAllowed = value
 }
 // SetDiagnosticDataBlockSubmission sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *AndroidGeneralDeviceConfiguration) SetDiagnosticDataBlockSubmission(value *bool)() {
-    if m != nil {
-        m.diagnosticDataBlockSubmission = value
-    }
+    m.diagnosticDataBlockSubmission = value
 }
 // SetFactoryResetBlocked sets the factoryResetBlocked property value. Indicates whether or not to block user performing a factory reset.
 func (m *AndroidGeneralDeviceConfiguration) SetFactoryResetBlocked(value *bool)() {
-    if m != nil {
-        m.factoryResetBlocked = value
-    }
+    m.factoryResetBlocked = value
 }
 // SetGoogleAccountBlockAutoSync sets the googleAccountBlockAutoSync property value. Indicates whether or not to block Google account auto sync.
 func (m *AndroidGeneralDeviceConfiguration) SetGoogleAccountBlockAutoSync(value *bool)() {
-    if m != nil {
-        m.googleAccountBlockAutoSync = value
-    }
+    m.googleAccountBlockAutoSync = value
 }
 // SetGooglePlayStoreBlocked sets the googlePlayStoreBlocked property value. Indicates whether or not to block the Google Play store.
 func (m *AndroidGeneralDeviceConfiguration) SetGooglePlayStoreBlocked(value *bool)() {
-    if m != nil {
-        m.googlePlayStoreBlocked = value
-    }
+    m.googlePlayStoreBlocked = value
 }
 // SetKioskModeApps sets the kioskModeApps property value. A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidGeneralDeviceConfiguration) SetKioskModeApps(value []AppListItemable)() {
-    if m != nil {
-        m.kioskModeApps = value
-    }
+    m.kioskModeApps = value
 }
 // SetKioskModeBlockSleepButton sets the kioskModeBlockSleepButton property value. Indicates whether or not to block the screen sleep button while in Kiosk Mode.
 func (m *AndroidGeneralDeviceConfiguration) SetKioskModeBlockSleepButton(value *bool)() {
-    if m != nil {
-        m.kioskModeBlockSleepButton = value
-    }
+    m.kioskModeBlockSleepButton = value
 }
 // SetKioskModeBlockVolumeButtons sets the kioskModeBlockVolumeButtons property value. Indicates whether or not to block the volume buttons while in Kiosk Mode.
 func (m *AndroidGeneralDeviceConfiguration) SetKioskModeBlockVolumeButtons(value *bool)() {
-    if m != nil {
-        m.kioskModeBlockVolumeButtons = value
-    }
+    m.kioskModeBlockVolumeButtons = value
 }
 // SetLocationServicesBlocked sets the locationServicesBlocked property value. Indicates whether or not to block location services.
 func (m *AndroidGeneralDeviceConfiguration) SetLocationServicesBlocked(value *bool)() {
-    if m != nil {
-        m.locationServicesBlocked = value
-    }
+    m.locationServicesBlocked = value
 }
 // SetNfcBlocked sets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
 func (m *AndroidGeneralDeviceConfiguration) SetNfcBlocked(value *bool)() {
-    if m != nil {
-        m.nfcBlocked = value
-    }
+    m.nfcBlocked = value
 }
 // SetPasswordBlockFingerprintUnlock sets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordBlockFingerprintUnlock(value *bool)() {
-    if m != nil {
-        m.passwordBlockFingerprintUnlock = value
-    }
+    m.passwordBlockFingerprintUnlock = value
 }
 // SetPasswordBlockTrustAgents sets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordBlockTrustAgents(value *bool)() {
-    if m != nil {
-        m.passwordBlockTrustAgents = value
-    }
+    m.passwordBlockTrustAgents = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Indicates whether or not to require a password.
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Android required password type.
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetPowerOffBlocked sets the powerOffBlocked property value. Indicates whether or not to block powering off the device.
 func (m *AndroidGeneralDeviceConfiguration) SetPowerOffBlocked(value *bool)() {
-    if m != nil {
-        m.powerOffBlocked = value
-    }
+    m.powerOffBlocked = value
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
 func (m *AndroidGeneralDeviceConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.screenCaptureBlocked = value
-    }
+    m.screenCaptureBlocked = value
 }
 // SetSecurityRequireVerifyApps sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidGeneralDeviceConfiguration) SetSecurityRequireVerifyApps(value *bool)() {
-    if m != nil {
-        m.securityRequireVerifyApps = value
-    }
+    m.securityRequireVerifyApps = value
 }
 // SetStorageBlockGoogleBackup sets the storageBlockGoogleBackup property value. Indicates whether or not to block Google Backup.
 func (m *AndroidGeneralDeviceConfiguration) SetStorageBlockGoogleBackup(value *bool)() {
-    if m != nil {
-        m.storageBlockGoogleBackup = value
-    }
+    m.storageBlockGoogleBackup = value
 }
 // SetStorageBlockRemovableStorage sets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage usage.
 func (m *AndroidGeneralDeviceConfiguration) SetStorageBlockRemovableStorage(value *bool)() {
-    if m != nil {
-        m.storageBlockRemovableStorage = value
-    }
+    m.storageBlockRemovableStorage = value
 }
 // SetStorageRequireDeviceEncryption sets the storageRequireDeviceEncryption property value. Indicates whether or not to require device encryption.
 func (m *AndroidGeneralDeviceConfiguration) SetStorageRequireDeviceEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireDeviceEncryption = value
-    }
+    m.storageRequireDeviceEncryption = value
 }
 // SetStorageRequireRemovableStorageEncryption sets the storageRequireRemovableStorageEncryption property value. Indicates whether or not to require removable storage encryption.
 func (m *AndroidGeneralDeviceConfiguration) SetStorageRequireRemovableStorageEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireRemovableStorageEncryption = value
-    }
+    m.storageRequireRemovableStorageEncryption = value
 }
 // SetVoiceAssistantBlocked sets the voiceAssistantBlocked property value. Indicates whether or not to block the use of the Voice Assistant.
 func (m *AndroidGeneralDeviceConfiguration) SetVoiceAssistantBlocked(value *bool)() {
-    if m != nil {
-        m.voiceAssistantBlocked = value
-    }
+    m.voiceAssistantBlocked = value
 }
 // SetVoiceDialingBlocked sets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
 func (m *AndroidGeneralDeviceConfiguration) SetVoiceDialingBlocked(value *bool)() {
-    if m != nil {
-        m.voiceDialingBlocked = value
-    }
+    m.voiceDialingBlocked = value
 }
 // SetWebBrowserBlockAutofill sets the webBrowserBlockAutofill property value. Indicates whether or not to block the web browser's auto fill feature.
 func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserBlockAutofill(value *bool)() {
-    if m != nil {
-        m.webBrowserBlockAutofill = value
-    }
+    m.webBrowserBlockAutofill = value
 }
 // SetWebBrowserBlocked sets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
 func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserBlocked(value *bool)() {
-    if m != nil {
-        m.webBrowserBlocked = value
-    }
+    m.webBrowserBlocked = value
 }
 // SetWebBrowserBlockJavaScript sets the webBrowserBlockJavaScript property value. Indicates whether or not to block JavaScript within the web browser.
 func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserBlockJavaScript(value *bool)() {
-    if m != nil {
-        m.webBrowserBlockJavaScript = value
-    }
+    m.webBrowserBlockJavaScript = value
 }
 // SetWebBrowserBlockPopups sets the webBrowserBlockPopups property value. Indicates whether or not to block popups within the web browser.
 func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserBlockPopups(value *bool)() {
-    if m != nil {
-        m.webBrowserBlockPopups = value
-    }
+    m.webBrowserBlockPopups = value
 }
 // SetWebBrowserCookieSettings sets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
 func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserCookieSettings(value *WebBrowserCookieSettings)() {
-    if m != nil {
-        m.webBrowserCookieSettings = value
-    }
+    m.webBrowserCookieSettings = value
 }
 // SetWiFiBlocked sets the wiFiBlocked property value. Indicates whether or not to block syncing Wi-Fi.
 func (m *AndroidGeneralDeviceConfiguration) SetWiFiBlocked(value *bool)() {
-    if m != nil {
-        m.wiFiBlocked = value
-    }
+    m.wiFiBlocked = value
 }

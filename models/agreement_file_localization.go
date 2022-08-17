@@ -44,11 +44,7 @@ func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(i878
 }
 // GetVersions gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileLocalization) GetVersions()([]AgreementFileVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versions
-    }
+    return m.versions
 }
 // Serialize serializes information the current object
 func (m *AgreementFileLocalization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AgreementFileLocalization) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetVersions sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileLocalization) SetVersions(value []AgreementFileVersionable)() {
-    if m != nil {
-        m.versions = value
-    }
+    m.versions = value
 }

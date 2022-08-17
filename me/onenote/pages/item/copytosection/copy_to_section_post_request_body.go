@@ -30,11 +30,7 @@ func CreateCopyToSectionPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToSectionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CopyToSectionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,35 +79,19 @@ func (m *CopyToSectionPostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetGroupId gets the groupId property value. The groupId property
 func (m *CopyToSectionPostRequestBody) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
+    return m.groupId
 }
 // GetId gets the id property value. The id property
 func (m *CopyToSectionPostRequestBody) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetSiteCollectionId gets the siteCollectionId property value. The siteCollectionId property
 func (m *CopyToSectionPostRequestBody) GetSiteCollectionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCollectionId
-    }
+    return m.siteCollectionId
 }
 // GetSiteId gets the siteId property value. The siteId property
 func (m *CopyToSectionPostRequestBody) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
-    }
+    return m.siteId
 }
 // Serialize serializes information the current object
 func (m *CopyToSectionPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *CopyToSectionPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToSectionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetGroupId sets the groupId property value. The groupId property
 func (m *CopyToSectionPostRequestBody) SetGroupId(value *string)() {
-    if m != nil {
-        m.groupId = value
-    }
+    m.groupId = value
 }
 // SetId sets the id property value. The id property
 func (m *CopyToSectionPostRequestBody) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetSiteCollectionId sets the siteCollectionId property value. The siteCollectionId property
 func (m *CopyToSectionPostRequestBody) SetSiteCollectionId(value *string)() {
-    if m != nil {
-        m.siteCollectionId = value
-    }
+    m.siteCollectionId = value
 }
 // SetSiteId sets the siteId property value. The siteId property
 func (m *CopyToSectionPostRequestBody) SetSiteId(value *string)() {
-    if m != nil {
-        m.siteId = value
-    }
+    m.siteId = value
 }

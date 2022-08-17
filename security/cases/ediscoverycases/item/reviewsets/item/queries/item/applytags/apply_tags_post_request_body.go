@@ -27,11 +27,7 @@ func CreateApplyTagsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyTagsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplyTagsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,19 +64,11 @@ func (m *ApplyTagsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetTagsToAdd gets the tagsToAdd property value. The tagsToAdd property
 func (m *ApplyTagsPostRequestBody) GetTagsToAdd()([]idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tagsToAdd
-    }
+    return m.tagsToAdd
 }
 // GetTagsToRemove gets the tagsToRemove property value. The tagsToRemove property
 func (m *ApplyTagsPostRequestBody) GetTagsToRemove()([]idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tagsToRemove
-    }
+    return m.tagsToRemove
 }
 // Serialize serializes information the current object
 func (m *ApplyTagsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *ApplyTagsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyTagsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetTagsToAdd sets the tagsToAdd property value. The tagsToAdd property
 func (m *ApplyTagsPostRequestBody) SetTagsToAdd(value []idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable)() {
-    if m != nil {
-        m.tagsToAdd = value
-    }
+    m.tagsToAdd = value
 }
 // SetTagsToRemove sets the tagsToRemove property value. The tagsToRemove property
 func (m *ApplyTagsPostRequestBody) SetTagsToRemove(value []idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable)() {
-    if m != nil {
-        m.tagsToRemove = value
-    }
+    m.tagsToRemove = value
 }

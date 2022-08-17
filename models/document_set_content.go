@@ -32,19 +32,11 @@ func CreateDocumentSetContentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSetContent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentType gets the contentType property value. Content type information of the file.
 func (m *DocumentSetContent) GetContentType()(ContentTypeInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set
 func (m *DocumentSetContent) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetFolderName gets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
 func (m *DocumentSetContent) GetFolderName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.folderName
-    }
+    return m.folderName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DocumentSetContent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSetContent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentType sets the contentType property value. Content type information of the file.
 func (m *DocumentSetContent) SetContentType(value ContentTypeInfoable)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetFileName sets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set
 func (m *DocumentSetContent) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetFolderName sets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
 func (m *DocumentSetContent) SetFolderName(value *string)() {
-    if m != nil {
-        m.folderName = value
-    }
+    m.folderName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DocumentSetContent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

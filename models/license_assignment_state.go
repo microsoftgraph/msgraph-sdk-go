@@ -39,35 +39,19 @@ func CreateLicenseAssignmentStateFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseAssignmentState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignedByGroup gets the assignedByGroup property value. The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
 func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedByGroup
-    }
+    return m.assignedByGroup
 }
 // GetDisabledPlans gets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
 func (m *LicenseAssignmentState) GetDisabledPlans()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disabledPlans
-    }
+    return m.disabledPlans
 }
 // GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
 func (m *LicenseAssignmentState) GetError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -150,35 +134,19 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
 func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *LicenseAssignmentState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSkuId gets the skuId property value. The unique identifier for the SKU. Read-Only.
 func (m *LicenseAssignmentState) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
-    }
+    return m.skuId
 }
 // GetState gets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
 func (m *LicenseAssignmentState) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -234,49 +202,33 @@ func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseAssignmentState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignedByGroup sets the assignedByGroup property value. The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
 func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
-    if m != nil {
-        m.assignedByGroup = value
-    }
+    m.assignedByGroup = value
 }
 // SetDisabledPlans sets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
 func (m *LicenseAssignmentState) SetDisabledPlans(value []string)() {
-    if m != nil {
-        m.disabledPlans = value
-    }
+    m.disabledPlans = value
 }
 // SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
 func (m *LicenseAssignmentState) SetError(value *string)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The timestamp when the state of the license assignment was last updated.
 func (m *LicenseAssignmentState) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *LicenseAssignmentState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSkuId sets the skuId property value. The unique identifier for the SKU. Read-Only.
 func (m *LicenseAssignmentState) SetSkuId(value *string)() {
-    if m != nil {
-        m.skuId = value
-    }
+    m.skuId = value
 }
 // SetState sets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
 func (m *LicenseAssignmentState) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

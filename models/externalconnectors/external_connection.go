@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalConnection provides operations to manage the collection of externalConnection entities.
+// ExternalConnection 
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
@@ -25,7 +25,7 @@ type ExternalConnection struct {
     // Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
     state *ConnectionState
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -40,19 +40,11 @@ func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configuration
-    }
+    return m.configuration
 }
 // GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,51 +145,27 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGroups gets the groups property value. The groups property
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groups
-    }
+    return m.groups
 }
 // GetItems gets the items property value. The items property
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOperations gets the operations property value. The operations property
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetSchema gets the schema property value. The schema property
 func (m *ExternalConnection) GetSchema()(Schemaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schema
-    }
+    return m.schema
 }
 // GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) GetState()(*ConnectionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -270,49 +238,33 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
-    if m != nil {
-        m.configuration = value
-    }
+    m.configuration = value
 }
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetGroups sets the groups property value. The groups property
 func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
-    if m != nil {
-        m.groups = value
-    }
+    m.groups = value
 }
 // SetItems sets the items property value. The items property
 func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetName sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOperations sets the operations property value. The operations property
 func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetSchema sets the schema property value. The schema property
 func (m *ExternalConnection) SetSchema(value Schemaable)() {
-    if m != nil {
-        m.schema = value
-    }
+    m.schema = value
 }
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

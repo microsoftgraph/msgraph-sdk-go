@@ -30,19 +30,11 @@ func CreatePersonTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonType) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClass gets the class property value. The type of data source, such as Person.
 func (m *PersonType) GetClass()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.class
-    }
+    return m.class
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *PersonType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PersonType) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSubclass gets the subclass property value. The secondary type of data source, such as OrganizationUser.
 func (m *PersonType) GetSubclass()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subclass
-    }
+    return m.subclass
 }
 // Serialize serializes information the current object
 func (m *PersonType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *PersonType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonType) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClass sets the class property value. The type of data source, such as Person.
 func (m *PersonType) SetClass(value *string)() {
-    if m != nil {
-        m.class = value
-    }
+    m.class = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PersonType) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSubclass sets the subclass property value. The secondary type of data source, such as OrganizationUser.
 func (m *PersonType) SetSubclass(value *string)() {
-    if m != nil {
-        m.subclass = value
-    }
+    m.subclass = value
 }

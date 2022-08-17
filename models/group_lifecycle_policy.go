@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupLifecyclePolicy provides operations to manage the admin singleton.
+// GroupLifecyclePolicy provides operations to manage the collection of agreementAcceptance entities.
 type GroupLifecyclePolicy struct {
     Entity
     // List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
@@ -29,11 +29,7 @@ func CreateGroupLifecyclePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAlternateNotificationEmails gets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
 func (m *GroupLifecyclePolicy) GetAlternateNotificationEmails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alternateNotificationEmails
-    }
+    return m.alternateNotificationEmails
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetGroupLifetimeInDays gets the groupLifetimeInDays property value. Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
 func (m *GroupLifecyclePolicy) GetGroupLifetimeInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupLifetimeInDays
-    }
+    return m.groupLifetimeInDays
 }
 // GetManagedGroupTypes gets the managedGroupTypes property value. The group type for which the expiration policy applies. Possible values are All, Selected or None.
 func (m *GroupLifecyclePolicy) GetManagedGroupTypes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedGroupTypes
-    }
+    return m.managedGroupTypes
 }
 // Serialize serializes information the current object
 func (m *GroupLifecyclePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *GroupLifecyclePolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAlternateNotificationEmails sets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
 func (m *GroupLifecyclePolicy) SetAlternateNotificationEmails(value *string)() {
-    if m != nil {
-        m.alternateNotificationEmails = value
-    }
+    m.alternateNotificationEmails = value
 }
 // SetGroupLifetimeInDays sets the groupLifetimeInDays property value. Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
 func (m *GroupLifecyclePolicy) SetGroupLifetimeInDays(value *int32)() {
-    if m != nil {
-        m.groupLifetimeInDays = value
-    }
+    m.groupLifetimeInDays = value
 }
 // SetManagedGroupTypes sets the managedGroupTypes property value. The group type for which the expiration policy applies. Possible values are All, Selected or None.
 func (m *GroupLifecyclePolicy) SetManagedGroupTypes(value *string)() {
-    if m != nil {
-        m.managedGroupTypes = value
-    }
+    m.managedGroupTypes = value
 }

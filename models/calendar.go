@@ -59,83 +59,43 @@ func CreateCalendarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAllowedOnlineMeetingProviders gets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
 func (m *Calendar) GetAllowedOnlineMeetingProviders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedOnlineMeetingProviders
-    }
+    return m.allowedOnlineMeetingProviders
 }
 // GetCalendarPermissions gets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
 func (m *Calendar) GetCalendarPermissions()([]CalendarPermissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarPermissions
-    }
+    return m.calendarPermissions
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Navigation property. Read-only.
 func (m *Calendar) GetCalendarView()([]Eventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarView
-    }
+    return m.calendarView
 }
 // GetCanEdit gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
 func (m *Calendar) GetCanEdit()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canEdit
-    }
+    return m.canEdit
 }
 // GetCanShare gets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
 func (m *Calendar) GetCanShare()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canShare
-    }
+    return m.canShare
 }
 // GetCanViewPrivateItems gets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
 func (m *Calendar) GetCanViewPrivateItems()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canViewPrivateItems
-    }
+    return m.canViewPrivateItems
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *Calendar) GetChangeKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changeKey
-    }
+    return m.changeKey
 }
 // GetColor gets the color property value. Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.
 func (m *Calendar) GetColor()(*CalendarColor) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetDefaultOnlineMeetingProvider gets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
 func (m *Calendar) GetDefaultOnlineMeetingProvider()(*OnlineMeetingProviderType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultOnlineMeetingProvider
-    }
+    return m.defaultOnlineMeetingProvider
 }
 // GetEvents gets the events property value. The events in the calendar. Navigation property. Read-only.
 func (m *Calendar) GetEvents()([]Eventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.events
-    }
+    return m.events
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -348,67 +308,35 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetHexColor gets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
 func (m *Calendar) GetHexColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hexColor
-    }
+    return m.hexColor
 }
 // GetIsDefaultCalendar gets the isDefaultCalendar property value. true if this is the default calendar where new events are created by default, false otherwise.
 func (m *Calendar) GetIsDefaultCalendar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultCalendar
-    }
+    return m.isDefaultCalendar
 }
 // GetIsRemovable gets the isRemovable property value. Indicates whether this user calendar can be deleted from the user mailbox.
 func (m *Calendar) GetIsRemovable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRemovable
-    }
+    return m.isRemovable
 }
 // GetIsTallyingResponses gets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
 func (m *Calendar) GetIsTallyingResponses()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTallyingResponses
-    }
+    return m.isTallyingResponses
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *Calendar) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
+    return m.multiValueExtendedProperties
 }
 // GetName gets the name property value. The calendar name.
 func (m *Calendar) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOwner gets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
 func (m *Calendar) GetOwner()(EmailAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
+    return m.owner
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *Calendar) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
+    return m.singleValueExtendedProperties
 }
 // Serialize serializes information the current object
 func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -550,109 +478,73 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAllowedOnlineMeetingProviders sets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
 func (m *Calendar) SetAllowedOnlineMeetingProviders(value []string)() {
-    if m != nil {
-        m.allowedOnlineMeetingProviders = value
-    }
+    m.allowedOnlineMeetingProviders = value
 }
 // SetCalendarPermissions sets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
 func (m *Calendar) SetCalendarPermissions(value []CalendarPermissionable)() {
-    if m != nil {
-        m.calendarPermissions = value
-    }
+    m.calendarPermissions = value
 }
 // SetCalendarView sets the calendarView property value. The calendar view for the calendar. Navigation property. Read-only.
 func (m *Calendar) SetCalendarView(value []Eventable)() {
-    if m != nil {
-        m.calendarView = value
-    }
+    m.calendarView = value
 }
 // SetCanEdit sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
 func (m *Calendar) SetCanEdit(value *bool)() {
-    if m != nil {
-        m.canEdit = value
-    }
+    m.canEdit = value
 }
 // SetCanShare sets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
 func (m *Calendar) SetCanShare(value *bool)() {
-    if m != nil {
-        m.canShare = value
-    }
+    m.canShare = value
 }
 // SetCanViewPrivateItems sets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
 func (m *Calendar) SetCanViewPrivateItems(value *bool)() {
-    if m != nil {
-        m.canViewPrivateItems = value
-    }
+    m.canViewPrivateItems = value
 }
 // SetChangeKey sets the changeKey property value. Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *Calendar) SetChangeKey(value *string)() {
-    if m != nil {
-        m.changeKey = value
-    }
+    m.changeKey = value
 }
 // SetColor sets the color property value. Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.
 func (m *Calendar) SetColor(value *CalendarColor)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }
 // SetDefaultOnlineMeetingProvider sets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
 func (m *Calendar) SetDefaultOnlineMeetingProvider(value *OnlineMeetingProviderType)() {
-    if m != nil {
-        m.defaultOnlineMeetingProvider = value
-    }
+    m.defaultOnlineMeetingProvider = value
 }
 // SetEvents sets the events property value. The events in the calendar. Navigation property. Read-only.
 func (m *Calendar) SetEvents(value []Eventable)() {
-    if m != nil {
-        m.events = value
-    }
+    m.events = value
 }
 // SetHexColor sets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
 func (m *Calendar) SetHexColor(value *string)() {
-    if m != nil {
-        m.hexColor = value
-    }
+    m.hexColor = value
 }
 // SetIsDefaultCalendar sets the isDefaultCalendar property value. true if this is the default calendar where new events are created by default, false otherwise.
 func (m *Calendar) SetIsDefaultCalendar(value *bool)() {
-    if m != nil {
-        m.isDefaultCalendar = value
-    }
+    m.isDefaultCalendar = value
 }
 // SetIsRemovable sets the isRemovable property value. Indicates whether this user calendar can be deleted from the user mailbox.
 func (m *Calendar) SetIsRemovable(value *bool)() {
-    if m != nil {
-        m.isRemovable = value
-    }
+    m.isRemovable = value
 }
 // SetIsTallyingResponses sets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
 func (m *Calendar) SetIsTallyingResponses(value *bool)() {
-    if m != nil {
-        m.isTallyingResponses = value
-    }
+    m.isTallyingResponses = value
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *Calendar) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.multiValueExtendedProperties = value
-    }
+    m.multiValueExtendedProperties = value
 }
 // SetName sets the name property value. The calendar name.
 func (m *Calendar) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOwner sets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
 func (m *Calendar) SetOwner(value EmailAddressable)() {
-    if m != nil {
-        m.owner = value
-    }
+    m.owner = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *Calendar) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.singleValueExtendedProperties = value
-    }
+    m.singleValueExtendedProperties = value
 }

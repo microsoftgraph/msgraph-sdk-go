@@ -60,19 +60,11 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.plans
-    }
+    return m.plans
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetTasks()([]PlannerTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.plans = value
-    }
+    m.plans = value
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetTasks(value []PlannerTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

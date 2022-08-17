@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceMobileAppConfiguration an abstract class for Mobile app configuration for enrolled devices.
+// ManagedDeviceMobileAppConfiguration 
 type ManagedDeviceMobileAppConfiguration struct {
     Entity
     // The list of group assignemenets for app configration.
@@ -31,7 +31,7 @@ type ManagedDeviceMobileAppConfiguration struct {
     // Version of the device configuration.
     version *int32
 }
-// NewManagedDeviceMobileAppConfiguration instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
+// NewManagedDeviceMobileAppConfiguration instantiates a new ManagedDeviceMobileAppConfiguration and sets the default values.
 func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfiguration) {
     m := &ManagedDeviceMobileAppConfiguration{
         Entity: *NewEntity(),
@@ -65,51 +65,27 @@ func CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue(parseNode i
 }
 // GetAssignments gets the assignments property value. The list of group assignemenets for app configration.
 func (m *ManagedDeviceMobileAppConfiguration) GetAssignments()([]ManagedDeviceMobileAppConfigurationAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *ManagedDeviceMobileAppConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *ManagedDeviceMobileAppConfiguration) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceStatuses gets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 func (m *ManagedDeviceMobileAppConfiguration) GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatuses
-    }
+    return m.deviceStatuses
 }
 // GetDeviceStatusSummary gets the deviceStatusSummary property value. App configuration device status summary.
 func (m *ManagedDeviceMobileAppConfiguration) GetDeviceStatusSummary()(ManagedDeviceMobileAppConfigurationDeviceSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatusSummary
-    }
+    return m.deviceStatusSummary
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *ManagedDeviceMobileAppConfiguration) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -244,43 +220,23 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *ManagedDeviceMobileAppConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. the associated app.
 func (m *ManagedDeviceMobileAppConfiguration) GetTargetedMobileApps()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedMobileApps
-    }
+    return m.targetedMobileApps
 }
 // GetUserStatuses gets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfiguration) GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
+    return m.userStatuses
 }
 // GetUserStatusSummary gets the userStatusSummary property value. App configuration user status summary.
 func (m *ManagedDeviceMobileAppConfiguration) GetUserStatusSummary()(ManagedDeviceMobileAppConfigurationUserSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatusSummary
-    }
+    return m.userStatusSummary
 }
 // GetVersion gets the version property value. Version of the device configuration.
 func (m *ManagedDeviceMobileAppConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -370,67 +326,45 @@ func (m *ManagedDeviceMobileAppConfiguration) Serialize(writer i878a80d2330e89d2
 }
 // SetAssignments sets the assignments property value. The list of group assignemenets for app configration.
 func (m *ManagedDeviceMobileAppConfiguration) SetAssignments(value []ManagedDeviceMobileAppConfigurationAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *ManagedDeviceMobileAppConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *ManagedDeviceMobileAppConfiguration) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceStatuses sets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 func (m *ManagedDeviceMobileAppConfiguration) SetDeviceStatuses(value []ManagedDeviceMobileAppConfigurationDeviceStatusable)() {
-    if m != nil {
-        m.deviceStatuses = value
-    }
+    m.deviceStatuses = value
 }
 // SetDeviceStatusSummary sets the deviceStatusSummary property value. App configuration device status summary.
 func (m *ManagedDeviceMobileAppConfiguration) SetDeviceStatusSummary(value ManagedDeviceMobileAppConfigurationDeviceSummaryable)() {
-    if m != nil {
-        m.deviceStatusSummary = value
-    }
+    m.deviceStatusSummary = value
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *ManagedDeviceMobileAppConfiguration) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *ManagedDeviceMobileAppConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetTargetedMobileApps sets the targetedMobileApps property value. the associated app.
 func (m *ManagedDeviceMobileAppConfiguration) SetTargetedMobileApps(value []string)() {
-    if m != nil {
-        m.targetedMobileApps = value
-    }
+    m.targetedMobileApps = value
 }
 // SetUserStatuses sets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfiguration) SetUserStatuses(value []ManagedDeviceMobileAppConfigurationUserStatusable)() {
-    if m != nil {
-        m.userStatuses = value
-    }
+    m.userStatuses = value
 }
 // SetUserStatusSummary sets the userStatusSummary property value. App configuration user status summary.
 func (m *ManagedDeviceMobileAppConfiguration) SetUserStatusSummary(value ManagedDeviceMobileAppConfigurationUserSummaryable)() {
-    if m != nil {
-        m.userStatusSummary = value
-    }
+    m.userStatusSummary = value
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *ManagedDeviceMobileAppConfiguration) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

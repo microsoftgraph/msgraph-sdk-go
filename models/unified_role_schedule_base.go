@@ -69,51 +69,27 @@ func CreateUnifiedRoleScheduleBaseFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAppScope gets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
 func (m *UnifiedRoleScheduleBase) GetAppScope()(AppScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScope
-    }
+    return m.appScope
 }
 // GetAppScopeId gets the appScopeId property value. Identifier of the app-specific scope when the assignment or eligibility is scoped to an app. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
 func (m *UnifiedRoleScheduleBase) GetAppScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScopeId
-    }
+    return m.appScopeId
 }
 // GetCreatedDateTime gets the createdDateTime property value. When the schedule was created.
 func (m *UnifiedRoleScheduleBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCreatedUsing gets the createdUsing property value. Identifier of the object through which this schedule was created.
 func (m *UnifiedRoleScheduleBase) GetCreatedUsing()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdUsing
-    }
+    return m.createdUsing
 }
 // GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the role eligibility or assignment. Read-only.
 func (m *UnifiedRoleScheduleBase) GetDirectoryScope()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScope
-    }
+    return m.directoryScope
 }
 // GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment or eligibility. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
 func (m *UnifiedRoleScheduleBase) GetDirectoryScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScopeId
-    }
+    return m.directoryScopeId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -242,51 +218,27 @@ func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. When the schedule was last modified.
 func (m *UnifiedRoleScheduleBase) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // GetPrincipal gets the principal property value. The principal that's getting a role assignment or that's eligible for a role through the request.
 func (m *UnifiedRoleScheduleBase) GetPrincipal()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principal
-    }
+    return m.principal
 }
 // GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the role assignment or eligibility.
 func (m *UnifiedRoleScheduleBase) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
+    return m.principalId
 }
 // GetRoleDefinition gets the roleDefinition property value. Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
 func (m *UnifiedRoleScheduleBase) GetRoleDefinition()(UnifiedRoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
+    return m.roleDefinition
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that a principal is eligible for.
 func (m *UnifiedRoleScheduleBase) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
+    return m.roleDefinitionId
 }
 // GetStatus gets the status property value. The status of the role assignment or eligibility request.
 func (m *UnifiedRoleScheduleBase) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleScheduleBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -370,73 +322,49 @@ func (m *UnifiedRoleScheduleBase) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
 func (m *UnifiedRoleScheduleBase) SetAppScope(value AppScopeable)() {
-    if m != nil {
-        m.appScope = value
-    }
+    m.appScope = value
 }
 // SetAppScopeId sets the appScopeId property value. Identifier of the app-specific scope when the assignment or eligibility is scoped to an app. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
 func (m *UnifiedRoleScheduleBase) SetAppScopeId(value *string)() {
-    if m != nil {
-        m.appScopeId = value
-    }
+    m.appScopeId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. When the schedule was created.
 func (m *UnifiedRoleScheduleBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCreatedUsing sets the createdUsing property value. Identifier of the object through which this schedule was created.
 func (m *UnifiedRoleScheduleBase) SetCreatedUsing(value *string)() {
-    if m != nil {
-        m.createdUsing = value
-    }
+    m.createdUsing = value
 }
 // SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the role eligibility or assignment. Read-only.
 func (m *UnifiedRoleScheduleBase) SetDirectoryScope(value DirectoryObjectable)() {
-    if m != nil {
-        m.directoryScope = value
-    }
+    m.directoryScope = value
 }
 // SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment or eligibility. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
 func (m *UnifiedRoleScheduleBase) SetDirectoryScopeId(value *string)() {
-    if m != nil {
-        m.directoryScopeId = value
-    }
+    m.directoryScopeId = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. When the schedule was last modified.
 func (m *UnifiedRoleScheduleBase) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }
 // SetPrincipal sets the principal property value. The principal that's getting a role assignment or that's eligible for a role through the request.
 func (m *UnifiedRoleScheduleBase) SetPrincipal(value DirectoryObjectable)() {
-    if m != nil {
-        m.principal = value
-    }
+    m.principal = value
 }
 // SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the role assignment or eligibility.
 func (m *UnifiedRoleScheduleBase) SetPrincipalId(value *string)() {
-    if m != nil {
-        m.principalId = value
-    }
+    m.principalId = value
 }
 // SetRoleDefinition sets the roleDefinition property value. Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
 func (m *UnifiedRoleScheduleBase) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
-    if m != nil {
-        m.roleDefinition = value
-    }
+    m.roleDefinition = value
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that a principal is eligible for.
 func (m *UnifiedRoleScheduleBase) SetRoleDefinitionId(value *string)() {
-    if m != nil {
-        m.roleDefinitionId = value
-    }
+    m.roleDefinitionId = value
 }
 // SetStatus sets the status property value. The status of the role assignment or eligibility request.
 func (m *UnifiedRoleScheduleBase) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

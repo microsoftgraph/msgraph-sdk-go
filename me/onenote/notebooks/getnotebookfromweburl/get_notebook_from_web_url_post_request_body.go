@@ -24,11 +24,7 @@ func CreateGetNotebookFromWebUrlPostRequestBodyFromDiscriminatorValue(parseNode 
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetNotebookFromWebUrlPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetNotebookFromWebUrlPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *GetNotebookFromWebUrlPostRequestBody) GetFieldDeserializers()(map[strin
 }
 // GetWebUrl gets the webUrl property value. The webUrl property
 func (m *GetNotebookFromWebUrlPostRequestBody) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *GetNotebookFromWebUrlPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *GetNotebookFromWebUrlPostRequestBody) Serialize(writer i878a80d2330e89d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetNotebookFromWebUrlPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetWebUrl sets the webUrl property value. The webUrl property
 func (m *GetNotebookFromWebUrlPostRequestBody) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

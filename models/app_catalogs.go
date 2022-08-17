@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppCatalogs provides operations to manage the appCatalogs singleton.
+// AppCatalogs 
 type AppCatalogs struct {
     Entity
     // The teamsApps property
     teamsApps []TeamsAppable
 }
-// NewAppCatalogs instantiates a new appCatalogs and sets the default values.
+// NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
         Entity: *NewEntity(),
@@ -44,11 +44,7 @@ func (m *AppCatalogs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetTeamsApps gets the teamsApps property value. The teamsApps property
 func (m *AppCatalogs) GetTeamsApps()([]TeamsAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsApps
-    }
+    return m.teamsApps
 }
 // Serialize serializes information the current object
 func (m *AppCatalogs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AppCatalogs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetTeamsApps sets the teamsApps property value. The teamsApps property
 func (m *AppCatalogs) SetTeamsApps(value []TeamsAppable)() {
-    if m != nil {
-        m.teamsApps = value
-    }
+    m.teamsApps = value
 }

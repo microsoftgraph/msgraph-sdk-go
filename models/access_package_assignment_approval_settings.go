@@ -32,11 +32,7 @@ func CreateAccessPackageAssignmentApprovalSettingsFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentApprovalSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *AccessPackageAssignmentApprovalSettings) GetFieldDeserializers()(map[st
 }
 // GetIsApprovalRequiredForAdd gets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForAdd()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequiredForAdd
-    }
+    return m.isApprovalRequiredForAdd
 }
 // GetIsApprovalRequiredForUpdate gets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForUpdate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequiredForUpdate
-    }
+    return m.isApprovalRequiredForUpdate
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentApprovalSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStages gets the stages property value. If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
 func (m *AccessPackageAssignmentApprovalSettings) GetStages()([]AccessPackageApprovalStageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stages
-    }
+    return m.stages
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *AccessPackageAssignmentApprovalSettings) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentApprovalSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsApprovalRequiredForAdd sets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForAdd(value *bool)() {
-    if m != nil {
-        m.isApprovalRequiredForAdd = value
-    }
+    m.isApprovalRequiredForAdd = value
 }
 // SetIsApprovalRequiredForUpdate sets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForUpdate(value *bool)() {
-    if m != nil {
-        m.isApprovalRequiredForUpdate = value
-    }
+    m.isApprovalRequiredForUpdate = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentApprovalSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStages sets the stages property value. If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
 func (m *AccessPackageAssignmentApprovalSettings) SetStages(value []AccessPackageApprovalStageable)() {
-    if m != nil {
-        m.stages = value
-    }
+    m.stages = value
 }

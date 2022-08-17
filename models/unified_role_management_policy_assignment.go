@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyAssignment provides operations to manage the admin singleton.
+// UnifiedRoleManagementPolicyAssignment 
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
     // The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
@@ -18,7 +18,7 @@ type UnifiedRoleManagementPolicyAssignment struct {
     // The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
     scopeType *string
 }
-// NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
+// NewUnifiedRoleManagementPolicyAssignment instantiates a new UnifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {
     m := &UnifiedRoleManagementPolicyAssignment{
         Entity: *NewEntity(),
@@ -88,43 +88,23 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
 }
 // GetPolicy gets the policy property value. The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
 func (m *UnifiedRoleManagementPolicyAssignment) GetPolicy()(UnifiedRoleManagementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policy
-    }
+    return m.policy
 }
 // GetPolicyId gets the policyId property value. The id of the policy. Inherited from entity.
 func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
+    return m.policyId
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
 func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
+    return m.roleDefinitionId
 }
 // GetScopeId gets the scopeId property value. The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
 func (m *UnifiedRoleManagementPolicyAssignment) GetScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeId
-    }
+    return m.scopeId
 }
 // GetScopeType gets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
 func (m *UnifiedRoleManagementPolicyAssignment) GetScopeType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeType
-    }
+    return m.scopeType
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *UnifiedRoleManagementPolicyAssignment) Serialize(writer i878a80d2330e89
 }
 // SetPolicy sets the policy property value. The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
 func (m *UnifiedRoleManagementPolicyAssignment) SetPolicy(value UnifiedRoleManagementPolicyable)() {
-    if m != nil {
-        m.policy = value
-    }
+    m.policy = value
 }
 // SetPolicyId sets the policyId property value. The id of the policy. Inherited from entity.
 func (m *UnifiedRoleManagementPolicyAssignment) SetPolicyId(value *string)() {
-    if m != nil {
-        m.policyId = value
-    }
+    m.policyId = value
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
 func (m *UnifiedRoleManagementPolicyAssignment) SetRoleDefinitionId(value *string)() {
-    if m != nil {
-        m.roleDefinitionId = value
-    }
+    m.roleDefinitionId = value
 }
 // SetScopeId sets the scopeId property value. The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
 func (m *UnifiedRoleManagementPolicyAssignment) SetScopeId(value *string)() {
-    if m != nil {
-        m.scopeId = value
-    }
+    m.scopeId = value
 }
 // SetScopeType sets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
 func (m *UnifiedRoleManagementPolicyAssignment) SetScopeType(value *string)() {
-    if m != nil {
-        m.scopeType = value
-    }
+    m.scopeType = value
 }

@@ -64,27 +64,15 @@ func (m *SharePointIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetGroup gets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) GetGroup()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.group
-    }
+    return m.group
 }
 // GetSiteGroup gets the siteGroup property value. The SharePoint group associated with this action. Optional.
 func (m *SharePointIdentitySet) GetSiteGroup()(SharePointIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteGroup
-    }
+    return m.siteGroup
 }
 // GetSiteUser gets the siteUser property value. The SharePoint user associated with this action. Optional.
 func (m *SharePointIdentitySet) GetSiteUser()(SharePointIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteUser
-    }
+    return m.siteUser
 }
 // Serialize serializes information the current object
 func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetGroup sets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetGroup(value Identityable)() {
-    if m != nil {
-        m.group = value
-    }
+    m.group = value
 }
 // SetSiteGroup sets the siteGroup property value. The SharePoint group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetSiteGroup(value SharePointIdentityable)() {
-    if m != nil {
-        m.siteGroup = value
-    }
+    m.siteGroup = value
 }
 // SetSiteUser sets the siteUser property value. The SharePoint user associated with this action. Optional.
 func (m *SharePointIdentitySet) SetSiteUser(value SharePointIdentityable)() {
-    if m != nil {
-        m.siteUser = value
-    }
+    m.siteUser = value
 }

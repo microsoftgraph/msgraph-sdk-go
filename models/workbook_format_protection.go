@@ -52,19 +52,11 @@ func (m *WorkbookFormatProtection) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetFormulaHidden gets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
 func (m *WorkbookFormatProtection) GetFormulaHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formulaHidden
-    }
+    return m.formulaHidden
 }
 // GetLocked gets the locked property value. Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
 func (m *WorkbookFormatProtection) GetLocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locked
-    }
+    return m.locked
 }
 // Serialize serializes information the current object
 func (m *WorkbookFormatProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WorkbookFormatProtection) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetFormulaHidden sets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
 func (m *WorkbookFormatProtection) SetFormulaHidden(value *bool)() {
-    if m != nil {
-        m.formulaHidden = value
-    }
+    m.formulaHidden = value
 }
 // SetLocked sets the locked property value. Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
 func (m *WorkbookFormatProtection) SetLocked(value *bool)() {
-    if m != nil {
-        m.locked = value
-    }
+    m.locked = value
 }

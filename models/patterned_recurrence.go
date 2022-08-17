@@ -30,11 +30,7 @@ func CreatePatternedRecurrenceFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PatternedRecurrence) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PatternedRecurrence) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPattern gets the pattern property value. The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
 func (m *PatternedRecurrence) GetPattern()(RecurrencePatternable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pattern
-    }
+    return m.pattern
 }
 // GetRange gets the range property value. The duration of an event.
 func (m *PatternedRecurrence) GetRange()(RecurrenceRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.range_escaped
-    }
+    return m.range_escaped
 }
 // Serialize serializes information the current object
 func (m *PatternedRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *PatternedRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PatternedRecurrence) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PatternedRecurrence) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPattern sets the pattern property value. The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
 func (m *PatternedRecurrence) SetPattern(value RecurrencePatternable)() {
-    if m != nil {
-        m.pattern = value
-    }
+    m.pattern = value
 }
 // SetRange sets the range property value. The duration of an event.
 func (m *PatternedRecurrence) SetRange(value RecurrenceRangeable)() {
-    if m != nil {
-        m.range_escaped = value
-    }
+    m.range_escaped = value
 }

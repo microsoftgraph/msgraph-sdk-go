@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisioningObjectSummary provides operations to manage the admin singleton.
+// ProvisioningObjectSummary provides operations to manage the collection of agreement entities.
 type ProvisioningObjectSummary struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -56,35 +56,19 @@ func CreateProvisioningObjectSummaryFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetActivityDateTime gets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ProvisioningObjectSummary) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityDateTime
-    }
+    return m.activityDateTime
 }
 // GetChangeId gets the changeId property value. Unique ID of this change in this cycle.
 func (m *ProvisioningObjectSummary) GetChangeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changeId
-    }
+    return m.changeId
 }
 // GetCycleId gets the cycleId property value. Unique ID per job iteration.
 func (m *ProvisioningObjectSummary) GetCycleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cycleId
-    }
+    return m.cycleId
 }
 // GetDurationInMilliseconds gets the durationInMilliseconds property value. Indicates how long this provisioning action took to finish. Measured in milliseconds.
 func (m *ProvisioningObjectSummary) GetDurationInMilliseconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationInMilliseconds
-    }
+    return m.durationInMilliseconds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -261,99 +245,51 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878
 }
 // GetInitiatedBy gets the initiatedBy property value. Details of who initiated this provisioning.
 func (m *ProvisioningObjectSummary) GetInitiatedBy()(Initiatorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedBy
-    }
+    return m.initiatedBy
 }
 // GetJobId gets the jobId property value. The unique ID for the whole provisioning job.
 func (m *ProvisioningObjectSummary) GetJobId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobId
-    }
+    return m.jobId
 }
 // GetModifiedProperties gets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
 func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedProperties
-    }
+    return m.modifiedProperties
 }
 // GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
 func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningAction
-    }
+    return m.provisioningAction
 }
 // GetProvisioningStatusInfo gets the provisioningStatusInfo property value. Details of provisioning status.
 func (m *ProvisioningObjectSummary) GetProvisioningStatusInfo()(ProvisioningStatusInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStatusInfo
-    }
+    return m.provisioningStatusInfo
 }
 // GetProvisioningSteps gets the provisioningSteps property value. Details of each step in provisioning.
 func (m *ProvisioningObjectSummary) GetProvisioningSteps()([]ProvisioningStepable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningSteps
-    }
+    return m.provisioningSteps
 }
 // GetServicePrincipal gets the servicePrincipal property value. Represents the service principal used for provisioning.
 func (m *ProvisioningObjectSummary) GetServicePrincipal()(ProvisioningServicePrincipalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipal
-    }
+    return m.servicePrincipal
 }
 // GetSourceIdentity gets the sourceIdentity property value. Details of source object being provisioned.
 func (m *ProvisioningObjectSummary) GetSourceIdentity()(ProvisionedIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceIdentity
-    }
+    return m.sourceIdentity
 }
 // GetSourceSystem gets the sourceSystem property value. Details of source system of the object being provisioned.
 func (m *ProvisioningObjectSummary) GetSourceSystem()(ProvisioningSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceSystem
-    }
+    return m.sourceSystem
 }
 // GetTargetIdentity gets the targetIdentity property value. Details of target object being provisioned.
 func (m *ProvisioningObjectSummary) GetTargetIdentity()(ProvisionedIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetIdentity
-    }
+    return m.targetIdentity
 }
 // GetTargetSystem gets the targetSystem property value. Details of target system of the object being provisioned.
 func (m *ProvisioningObjectSummary) GetTargetSystem()(ProvisioningSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetSystem
-    }
+    return m.targetSystem
 }
 // GetTenantId gets the tenantId property value. Unique Azure AD tenant ID.
 func (m *ProvisioningObjectSummary) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -470,97 +406,65 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetActivityDateTime sets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ProvisioningObjectSummary) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.activityDateTime = value
-    }
+    m.activityDateTime = value
 }
 // SetChangeId sets the changeId property value. Unique ID of this change in this cycle.
 func (m *ProvisioningObjectSummary) SetChangeId(value *string)() {
-    if m != nil {
-        m.changeId = value
-    }
+    m.changeId = value
 }
 // SetCycleId sets the cycleId property value. Unique ID per job iteration.
 func (m *ProvisioningObjectSummary) SetCycleId(value *string)() {
-    if m != nil {
-        m.cycleId = value
-    }
+    m.cycleId = value
 }
 // SetDurationInMilliseconds sets the durationInMilliseconds property value. Indicates how long this provisioning action took to finish. Measured in milliseconds.
 func (m *ProvisioningObjectSummary) SetDurationInMilliseconds(value *int32)() {
-    if m != nil {
-        m.durationInMilliseconds = value
-    }
+    m.durationInMilliseconds = value
 }
 // SetInitiatedBy sets the initiatedBy property value. Details of who initiated this provisioning.
 func (m *ProvisioningObjectSummary) SetInitiatedBy(value Initiatorable)() {
-    if m != nil {
-        m.initiatedBy = value
-    }
+    m.initiatedBy = value
 }
 // SetJobId sets the jobId property value. The unique ID for the whole provisioning job.
 func (m *ProvisioningObjectSummary) SetJobId(value *string)() {
-    if m != nil {
-        m.jobId = value
-    }
+    m.jobId = value
 }
 // SetModifiedProperties sets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
 func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedPropertyable)() {
-    if m != nil {
-        m.modifiedProperties = value
-    }
+    m.modifiedProperties = value
 }
 // SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
 func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningAction)() {
-    if m != nil {
-        m.provisioningAction = value
-    }
+    m.provisioningAction = value
 }
 // SetProvisioningStatusInfo sets the provisioningStatusInfo property value. Details of provisioning status.
 func (m *ProvisioningObjectSummary) SetProvisioningStatusInfo(value ProvisioningStatusInfoable)() {
-    if m != nil {
-        m.provisioningStatusInfo = value
-    }
+    m.provisioningStatusInfo = value
 }
 // SetProvisioningSteps sets the provisioningSteps property value. Details of each step in provisioning.
 func (m *ProvisioningObjectSummary) SetProvisioningSteps(value []ProvisioningStepable)() {
-    if m != nil {
-        m.provisioningSteps = value
-    }
+    m.provisioningSteps = value
 }
 // SetServicePrincipal sets the servicePrincipal property value. Represents the service principal used for provisioning.
 func (m *ProvisioningObjectSummary) SetServicePrincipal(value ProvisioningServicePrincipalable)() {
-    if m != nil {
-        m.servicePrincipal = value
-    }
+    m.servicePrincipal = value
 }
 // SetSourceIdentity sets the sourceIdentity property value. Details of source object being provisioned.
 func (m *ProvisioningObjectSummary) SetSourceIdentity(value ProvisionedIdentityable)() {
-    if m != nil {
-        m.sourceIdentity = value
-    }
+    m.sourceIdentity = value
 }
 // SetSourceSystem sets the sourceSystem property value. Details of source system of the object being provisioned.
 func (m *ProvisioningObjectSummary) SetSourceSystem(value ProvisioningSystemable)() {
-    if m != nil {
-        m.sourceSystem = value
-    }
+    m.sourceSystem = value
 }
 // SetTargetIdentity sets the targetIdentity property value. Details of target object being provisioned.
 func (m *ProvisioningObjectSummary) SetTargetIdentity(value ProvisionedIdentityable)() {
-    if m != nil {
-        m.targetIdentity = value
-    }
+    m.targetIdentity = value
 }
 // SetTargetSystem sets the targetSystem property value. Details of target system of the object being provisioned.
 func (m *ProvisioningObjectSummary) SetTargetSystem(value ProvisioningSystemable)() {
-    if m != nil {
-        m.targetSystem = value
-    }
+    m.targetSystem = value
 }
 // SetTenantId sets the tenantId property value. Unique Azure AD tenant ID.
 func (m *ProvisioningObjectSummary) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

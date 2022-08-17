@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Site provides operations to manage the collection of application entities.
+// Site 
 type Site struct {
     BaseItem
     // Analytics about the view activities that took place in this site.
@@ -42,7 +42,7 @@ type Site struct {
     // The collection of the sub-sites under this site.
     sites []Siteable
 }
-// NewSite instantiates a new site and sets the default values.
+// NewSite instantiates a new Site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
@@ -57,67 +57,35 @@ func CreateSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) GetAnalytics()(ItemAnalyticsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.analytics
-    }
+    return m.analytics
 }
 // GetColumns gets the columns property value. The collection of column definitions reusable across lists under this site.
 func (m *Site) GetColumns()([]ColumnDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.columns
-    }
+    return m.columns
 }
 // GetContentTypes gets the contentTypes property value. The collection of content types defined for this site.
 func (m *Site) GetContentTypes()([]ContentTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentTypes
-    }
+    return m.contentTypes
 }
 // GetDisplayName gets the displayName property value. The full title for the site. Read-only.
 func (m *Site) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDrive gets the drive property value. The default drive (document library) for this site.
 func (m *Site) GetDrive()(Driveable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.drive
-    }
+    return m.drive
 }
 // GetDrives gets the drives property value. The collection of drives (document libraries) under this site.
 func (m *Site) GetDrives()([]Driveable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.drives
-    }
+    return m.drives
 }
 // GetError gets the error property value. The error property
 func (m *Site) GetError()(PublicErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetExternalColumns gets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) GetExternalColumns()([]ColumnDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalColumns
-    }
+    return m.externalColumns
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -332,75 +300,39 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) GetItems()([]BaseItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetLists gets the lists property value. The collection of lists under this site.
 func (m *Site) GetLists()([]Listable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lists
-    }
+    return m.lists
 }
 // GetOnenote gets the onenote property value. Calls the OneNote service for notebook related operations.
 func (m *Site) GetOnenote()(Onenoteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onenote
-    }
+    return m.onenote
 }
 // GetOperations gets the operations property value. The collection of long running operations for the site.
 func (m *Site) GetOperations()([]RichLongRunningOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetPermissions gets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) GetPermissions()([]Permissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissions
-    }
+    return m.permissions
 }
 // GetRoot gets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
 func (m *Site) GetRoot()(Rootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.root
-    }
+    return m.root
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) GetSharepointIds()(SharepointIdsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
+    return m.sharepointIds
 }
 // GetSiteCollection gets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
 func (m *Site) GetSiteCollection()(SiteCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCollection
-    }
+    return m.siteCollection
 }
 // GetSites gets the sites property value. The collection of the sub-sites under this site.
 func (m *Site) GetSites()([]Siteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sites
-    }
+    return m.sites
 }
 // Serialize serializes information the current object
 func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -550,103 +482,69 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) SetAnalytics(value ItemAnalyticsable)() {
-    if m != nil {
-        m.analytics = value
-    }
+    m.analytics = value
 }
 // SetColumns sets the columns property value. The collection of column definitions reusable across lists under this site.
 func (m *Site) SetColumns(value []ColumnDefinitionable)() {
-    if m != nil {
-        m.columns = value
-    }
+    m.columns = value
 }
 // SetContentTypes sets the contentTypes property value. The collection of content types defined for this site.
 func (m *Site) SetContentTypes(value []ContentTypeable)() {
-    if m != nil {
-        m.contentTypes = value
-    }
+    m.contentTypes = value
 }
 // SetDisplayName sets the displayName property value. The full title for the site. Read-only.
 func (m *Site) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDrive sets the drive property value. The default drive (document library) for this site.
 func (m *Site) SetDrive(value Driveable)() {
-    if m != nil {
-        m.drive = value
-    }
+    m.drive = value
 }
 // SetDrives sets the drives property value. The collection of drives (document libraries) under this site.
 func (m *Site) SetDrives(value []Driveable)() {
-    if m != nil {
-        m.drives = value
-    }
+    m.drives = value
 }
 // SetError sets the error property value. The error property
 func (m *Site) SetError(value PublicErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetExternalColumns sets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
-    if m != nil {
-        m.externalColumns = value
-    }
+    m.externalColumns = value
 }
 // SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetLists sets the lists property value. The collection of lists under this site.
 func (m *Site) SetLists(value []Listable)() {
-    if m != nil {
-        m.lists = value
-    }
+    m.lists = value
 }
 // SetOnenote sets the onenote property value. Calls the OneNote service for notebook related operations.
 func (m *Site) SetOnenote(value Onenoteable)() {
-    if m != nil {
-        m.onenote = value
-    }
+    m.onenote = value
 }
 // SetOperations sets the operations property value. The collection of long running operations for the site.
 func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetPermissions sets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) SetPermissions(value []Permissionable)() {
-    if m != nil {
-        m.permissions = value
-    }
+    m.permissions = value
 }
 // SetRoot sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
 func (m *Site) SetRoot(value Rootable)() {
-    if m != nil {
-        m.root = value
-    }
+    m.root = value
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) SetSharepointIds(value SharepointIdsable)() {
-    if m != nil {
-        m.sharepointIds = value
-    }
+    m.sharepointIds = value
 }
 // SetSiteCollection sets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
 func (m *Site) SetSiteCollection(value SiteCollectionable)() {
-    if m != nil {
-        m.siteCollection = value
-    }
+    m.siteCollection = value
 }
 // SetSites sets the sites property value. The collection of the sub-sites under this site.
 func (m *Site) SetSites(value []Siteable)() {
-    if m != nil {
-        m.sites = value
-    }
+    m.sites = value
 }

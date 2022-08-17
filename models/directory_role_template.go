@@ -27,19 +27,11 @@ func CreateDirectoryRoleTemplateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDescription gets the description property value. The description to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRoleTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *DirectoryRoleTemplate) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDescription sets the description property value. The description to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }

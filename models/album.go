@@ -28,19 +28,11 @@ func CreateAlbumFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Album) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCoverImageItemId gets the coverImageItemId property value. Unique identifier of the [driveItem][] that is the cover of the album.
 func (m *Album) GetCoverImageItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coverImageItemId
-    }
+    return m.coverImageItemId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Album) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,11 +61,7 @@ func (m *Album) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Album) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Album) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *Album) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Album) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCoverImageItemId sets the coverImageItemId property value. Unique identifier of the [driveItem][] that is the cover of the album.
 func (m *Album) SetCoverImageItemId(value *string)() {
-    if m != nil {
-        m.coverImageItemId = value
-    }
+    m.coverImageItemId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Album) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -32,11 +32,7 @@ func CreateFolderViewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FolderView) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FolderView) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *FolderView) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FolderView) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSortBy gets the sortBy property value. The method by which the folder should be sorted.
 func (m *FolderView) GetSortBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortBy
-    }
+    return m.sortBy
 }
 // GetSortOrder gets the sortOrder property value. If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
 func (m *FolderView) GetSortOrder()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortOrder
-    }
+    return m.sortOrder
 }
 // GetViewType gets the viewType property value. The type of view that should be used to represent the folder.
 func (m *FolderView) GetViewType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.viewType
-    }
+    return m.viewType
 }
 // Serialize serializes information the current object
 func (m *FolderView) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *FolderView) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FolderView) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FolderView) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSortBy sets the sortBy property value. The method by which the folder should be sorted.
 func (m *FolderView) SetSortBy(value *string)() {
-    if m != nil {
-        m.sortBy = value
-    }
+    m.sortBy = value
 }
 // SetSortOrder sets the sortOrder property value. If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
 func (m *FolderView) SetSortOrder(value *string)() {
-    if m != nil {
-        m.sortOrder = value
-    }
+    m.sortOrder = value
 }
 // SetViewType sets the viewType property value. The type of view that should be used to represent the folder.
 func (m *FolderView) SetViewType(value *string)() {
-    if m != nil {
-        m.viewType = value
-    }
+    m.viewType = value
 }

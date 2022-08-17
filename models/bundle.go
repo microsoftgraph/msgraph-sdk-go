@@ -30,27 +30,15 @@ func CreateBundleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Bundle) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAlbum gets the album property value. If the bundle is an [album][], then the album property is included
 func (m *Bundle) GetAlbum()(Albumable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.album
-    }
+    return m.album
 }
 // GetChildCount gets the childCount property value. Number of children contained immediately within this container.
 func (m *Bundle) GetChildCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.childCount
-    }
+    return m.childCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Bundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *Bundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Bundle) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Bundle) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *Bundle) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Bundle) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAlbum sets the album property value. If the bundle is an [album][], then the album property is included
 func (m *Bundle) SetAlbum(value Albumable)() {
-    if m != nil {
-        m.album = value
-    }
+    m.album = value
 }
 // SetChildCount sets the childCount property value. Number of children contained immediately within this container.
 func (m *Bundle) SetChildCount(value *int32)() {
-    if m != nil {
-        m.childCount = value
-    }
+    m.childCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Bundle) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

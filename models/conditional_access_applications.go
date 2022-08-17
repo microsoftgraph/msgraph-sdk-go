@@ -34,19 +34,11 @@ func CreateConditionalAccessApplicationsFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExcludeApplications gets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeApplications
-    }
+    return m.excludeApplications
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,35 +113,19 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
 }
 // GetIncludeApplications gets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeApplications
-    }
+    return m.includeApplications
 }
 // GetIncludeAuthenticationContextClassReferences gets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
 func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassReferences()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAuthenticationContextClassReferences
-    }
+    return m.includeAuthenticationContextClassReferences
 }
 // GetIncludeUserActions gets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
 func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeUserActions
-    }
+    return m.includeUserActions
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessApplications) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExcludeApplications sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)() {
-    if m != nil {
-        m.excludeApplications = value
-    }
+    m.excludeApplications = value
 }
 // SetIncludeApplications sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
-    if m != nil {
-        m.includeApplications = value
-    }
+    m.includeApplications = value
 }
 // SetIncludeAuthenticationContextClassReferences sets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
 func (m *ConditionalAccessApplications) SetIncludeAuthenticationContextClassReferences(value []string)() {
-    if m != nil {
-        m.includeAuthenticationContextClassReferences = value
-    }
+    m.includeAuthenticationContextClassReferences = value
 }
 // SetIncludeUserActions sets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
 func (m *ConditionalAccessApplications) SetIncludeUserActions(value []string)() {
-    if m != nil {
-        m.includeUserActions = value
-    }
+    m.includeUserActions = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessApplications) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -30,19 +30,11 @@ func CreateBookingWorkHoursFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingWorkHours) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDay gets the day property value. The day property
 func (m *BookingWorkHours) GetDay()(*DayOfWeek) {
-    if m == nil {
-        return nil
-    } else {
-        return m.day
-    }
+    return m.day
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BookingWorkHours) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTimeSlots gets the timeSlots property value. A list of start/end times during a day.
 func (m *BookingWorkHours) GetTimeSlots()([]BookingWorkTimeSlotable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeSlots
-    }
+    return m.timeSlots
 }
 // Serialize serializes information the current object
 func (m *BookingWorkHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,25 +118,17 @@ func (m *BookingWorkHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingWorkHours) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDay sets the day property value. The day property
 func (m *BookingWorkHours) SetDay(value *DayOfWeek)() {
-    if m != nil {
-        m.day = value
-    }
+    m.day = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BookingWorkHours) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTimeSlots sets the timeSlots property value. A list of start/end times during a day.
 func (m *BookingWorkHours) SetTimeSlots(value []BookingWorkTimeSlotable)() {
-    if m != nil {
-        m.timeSlots = value
-    }
+    m.timeSlots = value
 }

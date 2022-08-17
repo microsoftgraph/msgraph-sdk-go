@@ -53,11 +53,7 @@ func CreateWin32LobAppRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Win32LobAppRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,19 +82,11 @@ func (m *Win32LobAppRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Win32LobAppRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleType gets the ruleType property value. Contains rule types for Win32 LOB apps.
 func (m *Win32LobAppRule) GetRuleType()(*Win32LobAppRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleType
-    }
+    return m.ruleType
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,19 +113,13 @@ func (m *Win32LobAppRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Win32LobAppRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Win32LobAppRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleType sets the ruleType property value. Contains rule types for Win32 LOB apps.
 func (m *Win32LobAppRule) SetRuleType(value *Win32LobAppRuleType)() {
-    if m != nil {
-        m.ruleType = value
-    }
+    m.ruleType = value
 }

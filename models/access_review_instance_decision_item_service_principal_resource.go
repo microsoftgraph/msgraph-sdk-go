@@ -25,11 +25,7 @@ func CreateAccessReviewInstanceDecisionItemServicePrincipalResourceFromDiscrimin
 }
 // GetAppId gets the appId property value. The appId property
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) Serialize(wri
 }
 // SetAppId sets the appId property value. The appId property
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }

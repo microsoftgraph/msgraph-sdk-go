@@ -43,19 +43,11 @@ func CreateDeviceGeoLocationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceGeoLocation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAltitude gets the altitude property value. Altitude, given in meters above sea level
 func (m *DeviceGeoLocation) GetAltitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.altitude
-    }
+    return m.altitude
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceGeoLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -154,67 +146,35 @@ func (m *DeviceGeoLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetHeading gets the heading property value. Heading in degrees from true north
 func (m *DeviceGeoLocation) GetHeading()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.heading
-    }
+    return m.heading
 }
 // GetHorizontalAccuracy gets the horizontalAccuracy property value. Accuracy of longitude and latitude in meters
 func (m *DeviceGeoLocation) GetHorizontalAccuracy()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.horizontalAccuracy
-    }
+    return m.horizontalAccuracy
 }
 // GetLastCollectedDateTime gets the lastCollectedDateTime property value. Time at which location was recorded, relative to UTC
 func (m *DeviceGeoLocation) GetLastCollectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCollectedDateTime
-    }
+    return m.lastCollectedDateTime
 }
 // GetLatitude gets the latitude property value. Latitude coordinate of the device's location
 func (m *DeviceGeoLocation) GetLatitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latitude
-    }
+    return m.latitude
 }
 // GetLongitude gets the longitude property value. Longitude coordinate of the device's location
 func (m *DeviceGeoLocation) GetLongitude()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.longitude
-    }
+    return m.longitude
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceGeoLocation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSpeed gets the speed property value. Speed the device is traveling in meters per second
 func (m *DeviceGeoLocation) GetSpeed()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speed
-    }
+    return m.speed
 }
 // GetVerticalAccuracy gets the verticalAccuracy property value. Accuracy of altitude in meters
 func (m *DeviceGeoLocation) GetVerticalAccuracy()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verticalAccuracy
-    }
+    return m.verticalAccuracy
 }
 // Serialize serializes information the current object
 func (m *DeviceGeoLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -282,61 +242,41 @@ func (m *DeviceGeoLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceGeoLocation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAltitude sets the altitude property value. Altitude, given in meters above sea level
 func (m *DeviceGeoLocation) SetAltitude(value *float64)() {
-    if m != nil {
-        m.altitude = value
-    }
+    m.altitude = value
 }
 // SetHeading sets the heading property value. Heading in degrees from true north
 func (m *DeviceGeoLocation) SetHeading(value *float64)() {
-    if m != nil {
-        m.heading = value
-    }
+    m.heading = value
 }
 // SetHorizontalAccuracy sets the horizontalAccuracy property value. Accuracy of longitude and latitude in meters
 func (m *DeviceGeoLocation) SetHorizontalAccuracy(value *float64)() {
-    if m != nil {
-        m.horizontalAccuracy = value
-    }
+    m.horizontalAccuracy = value
 }
 // SetLastCollectedDateTime sets the lastCollectedDateTime property value. Time at which location was recorded, relative to UTC
 func (m *DeviceGeoLocation) SetLastCollectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastCollectedDateTime = value
-    }
+    m.lastCollectedDateTime = value
 }
 // SetLatitude sets the latitude property value. Latitude coordinate of the device's location
 func (m *DeviceGeoLocation) SetLatitude(value *float64)() {
-    if m != nil {
-        m.latitude = value
-    }
+    m.latitude = value
 }
 // SetLongitude sets the longitude property value. Longitude coordinate of the device's location
 func (m *DeviceGeoLocation) SetLongitude(value *float64)() {
-    if m != nil {
-        m.longitude = value
-    }
+    m.longitude = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceGeoLocation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSpeed sets the speed property value. Speed the device is traveling in meters per second
 func (m *DeviceGeoLocation) SetSpeed(value *float64)() {
-    if m != nil {
-        m.speed = value
-    }
+    m.speed = value
 }
 // SetVerticalAccuracy sets the verticalAccuracy property value. Accuracy of altitude in meters
 func (m *DeviceGeoLocation) SetVerticalAccuracy(value *float64)() {
-    if m != nil {
-        m.verticalAccuracy = value
-    }
+    m.verticalAccuracy = value
 }

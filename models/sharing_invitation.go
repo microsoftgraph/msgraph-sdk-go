@@ -34,19 +34,11 @@ func CreateSharingInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingInvitation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEmail gets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.
 func (m *SharingInvitation) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetInvitedBy gets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
 func (m *SharingInvitation) GetInvitedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitedBy
-    }
+    return m.invitedBy
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharingInvitation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRedeemedBy gets the redeemedBy property value. The redeemedBy property
 func (m *SharingInvitation) GetRedeemedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redeemedBy
-    }
+    return m.redeemedBy
 }
 // GetSignInRequired gets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
 func (m *SharingInvitation) GetSignInRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInRequired
-    }
+    return m.signInRequired
 }
 // Serialize serializes information the current object
 func (m *SharingInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *SharingInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingInvitation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEmail sets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.
 func (m *SharingInvitation) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetInvitedBy sets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
 func (m *SharingInvitation) SetInvitedBy(value IdentitySetable)() {
-    if m != nil {
-        m.invitedBy = value
-    }
+    m.invitedBy = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharingInvitation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRedeemedBy sets the redeemedBy property value. The redeemedBy property
 func (m *SharingInvitation) SetRedeemedBy(value *string)() {
-    if m != nil {
-        m.redeemedBy = value
-    }
+    m.redeemedBy = value
 }
 // SetSignInRequired sets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
 func (m *SharingInvitation) SetSignInRequired(value *bool)() {
-    if m != nil {
-        m.signInRequired = value
-    }
+    m.signInRequired = value
 }

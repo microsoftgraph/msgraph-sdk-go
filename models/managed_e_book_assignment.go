@@ -71,19 +71,11 @@ func (m *ManagedEBookAssignment) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetInstallIntent gets the installIntent property value. Possible values for the install intent chosen by the admin.
 func (m *ManagedEBookAssignment) GetInstallIntent()(*InstallIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installIntent
-    }
+    return m.installIntent
 }
 // GetTarget gets the target property value. The assignment target for eBook.
 func (m *ManagedEBookAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *ManagedEBookAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +100,9 @@ func (m *ManagedEBookAssignment) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetInstallIntent sets the installIntent property value. Possible values for the install intent chosen by the admin.
 func (m *ManagedEBookAssignment) SetInstallIntent(value *InstallIntent)() {
-    if m != nil {
-        m.installIntent = value
-    }
+    m.installIntent = value
 }
 // SetTarget sets the target property value. The assignment target for eBook.
 func (m *ManagedEBookAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

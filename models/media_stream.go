@@ -36,19 +36,11 @@ func CreateMediaStreamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaStream) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDirection gets the direction property value. The direction property
 func (m *MediaStream) GetDirection()(*MediaDirection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.direction
-    }
+    return m.direction
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLabel gets the label property value. The media stream label.
 func (m *MediaStream) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetMediaType gets the mediaType property value. The mediaType property
 func (m *MediaStream) GetMediaType()(*Modality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
+    return m.mediaType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MediaStream) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetServerMuted gets the serverMuted property value. Indicates whether the media is muted by the server.
 func (m *MediaStream) GetServerMuted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverMuted
-    }
+    return m.serverMuted
 }
 // GetSourceId gets the sourceId property value. The source ID.
 func (m *MediaStream) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // Serialize serializes information the current object
 func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -205,43 +177,29 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaStream) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDirection sets the direction property value. The direction property
 func (m *MediaStream) SetDirection(value *MediaDirection)() {
-    if m != nil {
-        m.direction = value
-    }
+    m.direction = value
 }
 // SetLabel sets the label property value. The media stream label.
 func (m *MediaStream) SetLabel(value *string)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetMediaType sets the mediaType property value. The mediaType property
 func (m *MediaStream) SetMediaType(value *Modality)() {
-    if m != nil {
-        m.mediaType = value
-    }
+    m.mediaType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MediaStream) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetServerMuted sets the serverMuted property value. Indicates whether the media is muted by the server.
 func (m *MediaStream) SetServerMuted(value *bool)() {
-    if m != nil {
-        m.serverMuted = value
-    }
+    m.serverMuted = value
 }
 // SetSourceId sets the sourceId property value. The source ID.
 func (m *MediaStream) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }

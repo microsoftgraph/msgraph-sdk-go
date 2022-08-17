@@ -96,35 +96,19 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetRecipientActionDateTime gets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *OfferShiftRequest) GetRecipientActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientActionDateTime
-    }
+    return m.recipientActionDateTime
 }
 // GetRecipientActionMessage gets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
 func (m *OfferShiftRequest) GetRecipientActionMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientActionMessage
-    }
+    return m.recipientActionMessage
 }
 // GetRecipientUserId gets the recipientUserId property value. User id of the recipient of the offer shift request.
 func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientUserId
-    }
+    return m.recipientUserId
 }
 // GetSenderShiftId gets the senderShiftId property value. User id of the sender of the offer shift request.
 func (m *OfferShiftRequest) GetSenderShiftId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderShiftId
-    }
+    return m.senderShiftId
 }
 // Serialize serializes information the current object
 func (m *OfferShiftRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -160,25 +144,17 @@ func (m *OfferShiftRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetRecipientActionDateTime sets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *OfferShiftRequest) SetRecipientActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.recipientActionDateTime = value
-    }
+    m.recipientActionDateTime = value
 }
 // SetRecipientActionMessage sets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
 func (m *OfferShiftRequest) SetRecipientActionMessage(value *string)() {
-    if m != nil {
-        m.recipientActionMessage = value
-    }
+    m.recipientActionMessage = value
 }
 // SetRecipientUserId sets the recipientUserId property value. User id of the recipient of the offer shift request.
 func (m *OfferShiftRequest) SetRecipientUserId(value *string)() {
-    if m != nil {
-        m.recipientUserId = value
-    }
+    m.recipientUserId = value
 }
 // SetSenderShiftId sets the senderShiftId property value. User id of the sender of the offer shift request.
 func (m *OfferShiftRequest) SetSenderShiftId(value *string)() {
-    if m != nil {
-        m.senderShiftId = value
-    }
+    m.senderShiftId = value
 }

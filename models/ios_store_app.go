@@ -31,27 +31,15 @@ func CreateIosStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *IosStoreApp) GetApplicableDeviceType()(IosDeviceTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableDeviceType
-    }
+    return m.applicableDeviceType
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Apple App Store URL
 func (m *IosStoreApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
 func (m *IosStoreApp) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +88,7 @@ func (m *IosStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *IosStoreApp) GetMinimumSupportedOperatingSystem()(IosMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // Serialize serializes information the current object
 func (m *IosStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *IosStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *IosStoreApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
-    if m != nil {
-        m.applicableDeviceType = value
-    }
+    m.applicableDeviceType = value
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Apple App Store URL
 func (m *IosStoreApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }
 // SetBundleId sets the bundleId property value. The Identity Name.
 func (m *IosStoreApp) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *IosStoreApp) SetMinimumSupportedOperatingSystem(value IosMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }

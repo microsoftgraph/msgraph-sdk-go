@@ -115,59 +115,31 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceConfiguration) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
 func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceSettingStateSummaries
-    }
+    return m.deviceSettingStateSummaries
 }
 // GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
 func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatuses
-    }
+    return m.deviceStatuses
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
 func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatusOverview
-    }
+    return m.deviceStatusOverview
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceConfiguration) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -302,35 +274,19 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
 func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
+    return m.userStatuses
 }
 // GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
 func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOverviewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatusOverview
-    }
+    return m.userStatusOverview
 }
 // GetVersion gets the version property value. Version of the device configuration.
 func (m *DeviceConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -424,67 +380,45 @@ func (m *DeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceConfiguration) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
 func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)() {
-    if m != nil {
-        m.deviceSettingStateSummaries = value
-    }
+    m.deviceSettingStateSummaries = value
 }
 // SetDeviceStatuses sets the deviceStatuses property value. Device configuration installation status by device.
 func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatusable)() {
-    if m != nil {
-        m.deviceStatuses = value
-    }
+    m.deviceStatuses = value
 }
 // SetDeviceStatusOverview sets the deviceStatusOverview property value. Device Configuration devices status overview
 func (m *DeviceConfiguration) SetDeviceStatusOverview(value DeviceConfigurationDeviceOverviewable)() {
-    if m != nil {
-        m.deviceStatusOverview = value
-    }
+    m.deviceStatusOverview = value
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceConfiguration) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetUserStatuses sets the userStatuses property value. Device configuration installation status by user.
 func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatusable)() {
-    if m != nil {
-        m.userStatuses = value
-    }
+    m.userStatuses = value
 }
 // SetUserStatusOverview sets the userStatusOverview property value. Device Configuration users status overview
 func (m *DeviceConfiguration) SetUserStatusOverview(value DeviceConfigurationUserOverviewable)() {
-    if m != nil {
-        m.userStatusOverview = value
-    }
+    m.userStatusOverview = value
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *DeviceConfiguration) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

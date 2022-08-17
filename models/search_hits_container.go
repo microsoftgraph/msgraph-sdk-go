@@ -34,19 +34,11 @@ func CreateSearchHitsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHitsContainer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAggregations gets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
 func (m *SearchHitsContainer) GetAggregations()([]SearchAggregationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aggregations
-    }
+    return m.aggregations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,35 +105,19 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetHits gets the hits property value. A collection of the search results.
 func (m *SearchHitsContainer) GetHits()([]SearchHitable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hits
-    }
+    return m.hits
 }
 // GetMoreResultsAvailable gets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
 func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.moreResultsAvailable
-    }
+    return m.moreResultsAvailable
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchHitsContainer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTotal gets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) GetTotal()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.total
-    }
+    return m.total
 }
 // Serialize serializes information the current object
 func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHitsContainer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAggregations sets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
 func (m *SearchHitsContainer) SetAggregations(value []SearchAggregationable)() {
-    if m != nil {
-        m.aggregations = value
-    }
+    m.aggregations = value
 }
 // SetHits sets the hits property value. A collection of the search results.
 func (m *SearchHitsContainer) SetHits(value []SearchHitable)() {
-    if m != nil {
-        m.hits = value
-    }
+    m.hits = value
 }
 // SetMoreResultsAvailable sets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
 func (m *SearchHitsContainer) SetMoreResultsAvailable(value *bool)() {
-    if m != nil {
-        m.moreResultsAvailable = value
-    }
+    m.moreResultsAvailable = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchHitsContainer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTotal sets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) SetTotal(value *int32)() {
-    if m != nil {
-        m.total = value
-    }
+    m.total = value
 }

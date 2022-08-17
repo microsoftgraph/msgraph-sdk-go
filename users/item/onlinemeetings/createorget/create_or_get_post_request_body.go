@@ -36,35 +36,19 @@ func CreateCreateOrGetPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateOrGetPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChatInfo gets the chatInfo property value. The chatInfo property
 func (m *CreateOrGetPostRequestBody) GetChatInfo()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chatInfo
-    }
+    return m.chatInfo
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *CreateOrGetPostRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetExternalId gets the externalId property value. The externalId property
 func (m *CreateOrGetPostRequestBody) GetExternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalId
-    }
+    return m.externalId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CreateOrGetPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,27 +117,15 @@ func (m *CreateOrGetPostRequestBody) GetFieldDeserializers()(map[string]func(i87
 }
 // GetParticipants gets the participants property value. The participants property
 func (m *CreateOrGetPostRequestBody) GetParticipants()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingParticipantsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+    return m.participants
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *CreateOrGetPostRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetSubject gets the subject property value. The subject property
 func (m *CreateOrGetPostRequestBody) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // Serialize serializes information the current object
 func (m *CreateOrGetPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *CreateOrGetPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateOrGetPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChatInfo sets the chatInfo property value. The chatInfo property
 func (m *CreateOrGetPostRequestBody) SetChatInfo(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatInfoable)() {
-    if m != nil {
-        m.chatInfo = value
-    }
+    m.chatInfo = value
 }
 // SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *CreateOrGetPostRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetExternalId sets the externalId property value. The externalId property
 func (m *CreateOrGetPostRequestBody) SetExternalId(value *string)() {
-    if m != nil {
-        m.externalId = value
-    }
+    m.externalId = value
 }
 // SetParticipants sets the participants property value. The participants property
 func (m *CreateOrGetPostRequestBody) SetParticipants(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingParticipantsable)() {
-    if m != nil {
-        m.participants = value
-    }
+    m.participants = value
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *CreateOrGetPostRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetSubject sets the subject property value. The subject property
 func (m *CreateOrGetPostRequestBody) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }

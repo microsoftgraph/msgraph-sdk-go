@@ -42,27 +42,15 @@ func CreateAccessPackageAssignmentReviewSettingsFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentReviewSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpirationBehavior gets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
 func (m *AccessPackageAssignmentReviewSettings) GetExpirationBehavior()(*AccessReviewExpirationBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationBehavior
-    }
+    return m.expirationBehavior
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. This collection specifies the users who will be the fallback reviewers when the primary reviewers don't respond.
 func (m *AccessPackageAssignmentReviewSettings) GetFallbackReviewers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fallbackReviewers
-    }
+    return m.fallbackReviewers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,59 +157,31 @@ func (m *AccessPackageAssignmentReviewSettings) GetFieldDeserializers()(map[stri
 }
 // GetIsEnabled gets the isEnabled property value. If true, access reviews are required for assignments through this policy.
 func (m *AccessPackageAssignmentReviewSettings) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetIsRecommendationEnabled gets the isRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true.
 func (m *AccessPackageAssignmentReviewSettings) GetIsRecommendationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRecommendationEnabled
-    }
+    return m.isRecommendationEnabled
 }
 // GetIsReviewerJustificationRequired gets the isReviewerJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AccessPackageAssignmentReviewSettings) GetIsReviewerJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReviewerJustificationRequired
-    }
+    return m.isReviewerJustificationRequired
 }
 // GetIsSelfReview gets the isSelfReview property value. Specifies whether the principals can review their own assignments.
 func (m *AccessPackageAssignmentReviewSettings) GetIsSelfReview()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSelfReview
-    }
+    return m.isSelfReview
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentReviewSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPrimaryReviewers gets the primaryReviewers property value. This collection specifies the users or group of users who will review the access package assignments.
 func (m *AccessPackageAssignmentReviewSettings) GetPrimaryReviewers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryReviewers
-    }
+    return m.primaryReviewers
 }
 // GetSchedule gets the schedule property value. When the first review should start and how often it should recur.
 func (m *AccessPackageAssignmentReviewSettings) GetSchedule()(EntitlementManagementScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
+    return m.schedule
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -298,61 +258,41 @@ func (m *AccessPackageAssignmentReviewSettings) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentReviewSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpirationBehavior sets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
 func (m *AccessPackageAssignmentReviewSettings) SetExpirationBehavior(value *AccessReviewExpirationBehavior)() {
-    if m != nil {
-        m.expirationBehavior = value
-    }
+    m.expirationBehavior = value
 }
 // SetFallbackReviewers sets the fallbackReviewers property value. This collection specifies the users who will be the fallback reviewers when the primary reviewers don't respond.
 func (m *AccessPackageAssignmentReviewSettings) SetFallbackReviewers(value []SubjectSetable)() {
-    if m != nil {
-        m.fallbackReviewers = value
-    }
+    m.fallbackReviewers = value
 }
 // SetIsEnabled sets the isEnabled property value. If true, access reviews are required for assignments through this policy.
 func (m *AccessPackageAssignmentReviewSettings) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetIsRecommendationEnabled sets the isRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true.
 func (m *AccessPackageAssignmentReviewSettings) SetIsRecommendationEnabled(value *bool)() {
-    if m != nil {
-        m.isRecommendationEnabled = value
-    }
+    m.isRecommendationEnabled = value
 }
 // SetIsReviewerJustificationRequired sets the isReviewerJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AccessPackageAssignmentReviewSettings) SetIsReviewerJustificationRequired(value *bool)() {
-    if m != nil {
-        m.isReviewerJustificationRequired = value
-    }
+    m.isReviewerJustificationRequired = value
 }
 // SetIsSelfReview sets the isSelfReview property value. Specifies whether the principals can review their own assignments.
 func (m *AccessPackageAssignmentReviewSettings) SetIsSelfReview(value *bool)() {
-    if m != nil {
-        m.isSelfReview = value
-    }
+    m.isSelfReview = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentReviewSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPrimaryReviewers sets the primaryReviewers property value. This collection specifies the users or group of users who will review the access package assignments.
 func (m *AccessPackageAssignmentReviewSettings) SetPrimaryReviewers(value []SubjectSetable)() {
-    if m != nil {
-        m.primaryReviewers = value
-    }
+    m.primaryReviewers = value
 }
 // SetSchedule sets the schedule property value. When the first review should start and how often it should recur.
 func (m *AccessPackageAssignmentReviewSettings) SetSchedule(value EntitlementManagementScheduleable)() {
-    if m != nil {
-        m.schedule = value
-    }
+    m.schedule = value
 }

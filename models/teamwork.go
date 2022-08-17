@@ -44,11 +44,7 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workforceIntegrations
-    }
+    return m.workforceIntegrations
 }
 // Serialize serializes information the current object
 func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
-    if m != nil {
-        m.workforceIntegrations = value
-    }
+    m.workforceIntegrations = value
 }

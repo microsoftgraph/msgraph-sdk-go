@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodTarget provides operations to manage the collection of authenticationMethodConfiguration entities.
+// AuthenticationMethodTarget provides operations to manage the collection of agreement entities.
 type AuthenticationMethodTarget struct {
     Entity
     // Determines if the user is enforced to register the authentication method.
@@ -71,19 +71,11 @@ func (m *AuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIsRegistrationRequired gets the isRegistrationRequired property value. Determines if the user is enforced to register the authentication method.
 func (m *AuthenticationMethodTarget) GetIsRegistrationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRegistrationRequired
-    }
+    return m.isRegistrationRequired
 }
 // GetTargetType gets the targetType property value. The targetType property
 func (m *AuthenticationMethodTarget) GetTargetType()(*AuthenticationMethodTargetType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetType
-    }
+    return m.targetType
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +100,9 @@ func (m *AuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetIsRegistrationRequired sets the isRegistrationRequired property value. Determines if the user is enforced to register the authentication method.
 func (m *AuthenticationMethodTarget) SetIsRegistrationRequired(value *bool)() {
-    if m != nil {
-        m.isRegistrationRequired = value
-    }
+    m.isRegistrationRequired = value
 }
 // SetTargetType sets the targetType property value. The targetType property
 func (m *AuthenticationMethodTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
-    if m != nil {
-        m.targetType = value
-    }
+    m.targetType = value
 }

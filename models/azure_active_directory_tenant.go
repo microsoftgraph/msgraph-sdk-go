@@ -27,11 +27,7 @@ func CreateAzureActiveDirectoryTenantFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetDisplayName gets the displayName property value. The name of the Azure Active Directory tenant. Read only.
 func (m *AzureActiveDirectoryTenant) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureActiveDirectoryTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *AzureActiveDirectoryTenant) GetFieldDeserializers()(map[string]func(i87
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *AzureActiveDirectoryTenant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *AzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetDisplayName sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
 func (m *AzureActiveDirectoryTenant) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *AzureActiveDirectoryTenant) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

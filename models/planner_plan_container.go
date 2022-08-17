@@ -32,19 +32,11 @@ func CreatePlannerPlanContainerFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContainerId gets the containerId property value. The identifier of the resource that contains the plan.
 func (m *PlannerPlanContainer) GetContainerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containerId
-    }
+    return m.containerId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PlannerPlanContainer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetType gets the type property value. The type property
 func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetUrl gets the url property value. The full canonical URL of the container.
 func (m *PlannerPlanContainer) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContainerId sets the containerId property value. The identifier of the resource that contains the plan.
 func (m *PlannerPlanContainer) SetContainerId(value *string)() {
-    if m != nil {
-        m.containerId = value
-    }
+    m.containerId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerPlanContainer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetType sets the type property value. The type property
 func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetUrl sets the url property value. The full canonical URL of the container.
 func (m *PlannerPlanContainer) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

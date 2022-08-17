@@ -52,19 +52,11 @@ func (m *TeamArchivedEventMessageDetail) GetFieldDeserializers()(map[string]func
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TeamArchivedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
 func (m *TeamArchivedEventMessageDetail) GetTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamId
-    }
+    return m.teamId
 }
 // Serialize serializes information the current object
 func (m *TeamArchivedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *TeamArchivedEventMessageDetail) Serialize(writer i878a80d2330e89d268963
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamArchivedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetTeamId sets the teamId property value. Unique identifier of the team.
 func (m *TeamArchivedEventMessageDetail) SetTeamId(value *string)() {
-    if m != nil {
-        m.teamId = value
-    }
+    m.teamId = value
 }

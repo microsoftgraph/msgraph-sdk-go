@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AudioRoutingGroup provides operations to manage the cloudCommunications singleton.
+// AudioRoutingGroup provides operations to manage the collection of agreementAcceptance entities.
 type AudioRoutingGroup struct {
     Entity
     // List of receiving participant ids.
@@ -72,27 +72,15 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetReceivers gets the receivers property value. List of receiving participant ids.
 func (m *AudioRoutingGroup) GetReceivers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivers
-    }
+    return m.receivers
 }
 // GetRoutingMode gets the routingMode property value. The routingMode property
 func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routingMode
-    }
+    return m.routingMode
 }
 // GetSources gets the sources property value. List of source participant ids.
 func (m *AudioRoutingGroup) GetSources()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sources
-    }
+    return m.sources
 }
 // Serialize serializes information the current object
 func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetReceivers sets the receivers property value. List of receiving participant ids.
 func (m *AudioRoutingGroup) SetReceivers(value []string)() {
-    if m != nil {
-        m.receivers = value
-    }
+    m.receivers = value
 }
 // SetRoutingMode sets the routingMode property value. The routingMode property
 func (m *AudioRoutingGroup) SetRoutingMode(value *RoutingMode)() {
-    if m != nil {
-        m.routingMode = value
-    }
+    m.routingMode = value
 }
 // SetSources sets the sources property value. List of source participant ids.
 func (m *AudioRoutingGroup) SetSources(value []string)() {
-    if m != nil {
-        m.sources = value
-    }
+    m.sources = value
 }

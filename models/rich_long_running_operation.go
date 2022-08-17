@@ -31,11 +31,7 @@ func CreateRichLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetError gets the error property value. Error due to which the operation failed.
 func (m *RichLongRunningOperation) GetError()(PublicErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPercentageComplete gets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
 func (m *RichLongRunningOperation) GetPercentageComplete()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.percentageComplete
-    }
+    return m.percentageComplete
 }
 // GetResourceId gets the resourceId property value. A unique identifier for the result.
 func (m *RichLongRunningOperation) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // GetType gets the type property value. Type of the operation.
 func (m *RichLongRunningOperation) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetError sets the error property value. Error due to which the operation failed.
 func (m *RichLongRunningOperation) SetError(value PublicErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetPercentageComplete sets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
 func (m *RichLongRunningOperation) SetPercentageComplete(value *int32)() {
-    if m != nil {
-        m.percentageComplete = value
-    }
+    m.percentageComplete = value
 }
 // SetResourceId sets the resourceId property value. A unique identifier for the result.
 func (m *RichLongRunningOperation) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }
 // SetType sets the type property value. Type of the operation.
 func (m *RichLongRunningOperation) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Attachment provides operations to manage the admin singleton.
+// Attachment provides operations to manage the collection of agreement entities.
 type Attachment struct {
     Entity
     // The MIME type.
@@ -57,11 +57,7 @@ func CreateAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetContentType gets the contentType property value. The MIME type.
 func (m *Attachment) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,35 +116,19 @@ func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
 func (m *Attachment) GetIsInline()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInline
-    }
+    return m.isInline
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Attachment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetName gets the name property value. The display name of the attachment. This does not need to be the actual file name.
 func (m *Attachment) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetSize gets the size property value. The length of the attachment in bytes.
 func (m *Attachment) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // Serialize serializes information the current object
 func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -190,31 +170,21 @@ func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetContentType sets the contentType property value. The MIME type.
 func (m *Attachment) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
 func (m *Attachment) SetIsInline(value *bool)() {
-    if m != nil {
-        m.isInline = value
-    }
+    m.isInline = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Attachment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetName sets the name property value. The display name of the attachment. This does not need to be the actual file name.
 func (m *Attachment) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetSize sets the size property value. The length of the attachment in bytes.
 func (m *Attachment) SetSize(value *int32)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }

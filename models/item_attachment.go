@@ -40,11 +40,7 @@ func (m *ItemAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetItem gets the item property value. The attached contact, message or event. Navigation property.
 func (m *ItemAttachment) GetItem()(OutlookItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.item
-    }
+    return m.item
 }
 // Serialize serializes information the current object
 func (m *ItemAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ItemAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetItem sets the item property value. The attached contact, message or event. Navigation property.
 func (m *ItemAttachment) SetItem(value OutlookItemable)() {
-    if m != nil {
-        m.item = value
-    }
+    m.item = value
 }

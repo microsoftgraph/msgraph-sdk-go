@@ -36,35 +36,19 @@ func CreateRelatedContactFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAccessConsent gets the accessConsent property value. Indicates whether the user has been consented to access student data.
 func (m *RelatedContact) GetAccessConsent()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessConsent
-    }
+    return m.accessConsent
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Name of the contact. Required.
 func (m *RelatedContact) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the contact.
 func (m *RelatedContact) GetEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RelatedContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,27 +117,15 @@ func (m *RelatedContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetMobilePhone gets the mobilePhone property value. Mobile phone number of the contact.
 func (m *RelatedContact) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
+    return m.mobilePhone
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RelatedContact) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRelationship gets the relationship property value. The relationship property
 func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relationship
-    }
+    return m.relationship
 }
 // Serialize serializes information the current object
 func (m *RelatedContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *RelatedContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAccessConsent sets the accessConsent property value. Indicates whether the user has been consented to access student data.
 func (m *RelatedContact) SetAccessConsent(value *bool)() {
-    if m != nil {
-        m.accessConsent = value
-    }
+    m.accessConsent = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Name of the contact. Required.
 func (m *RelatedContact) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmailAddress sets the emailAddress property value. Email address of the contact.
 func (m *RelatedContact) SetEmailAddress(value *string)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }
 // SetMobilePhone sets the mobilePhone property value. Mobile phone number of the contact.
 func (m *RelatedContact) SetMobilePhone(value *string)() {
-    if m != nil {
-        m.mobilePhone = value
-    }
+    m.mobilePhone = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RelatedContact) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRelationship sets the relationship property value. The relationship property
 func (m *RelatedContact) SetRelationship(value *ContactRelationship)() {
-    if m != nil {
-        m.relationship = value
-    }
+    m.relationship = value
 }

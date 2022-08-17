@@ -64,27 +64,15 @@ func (m *AccessReviewNotificationRecipientQueryScope) GetFieldDeserializers()(ma
 }
 // GetQuery gets the query property value. This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
+    return m.query
 }
 // GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQueryRoot()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryRoot
-    }
+    return m.queryRoot
 }
 // GetQueryType gets the queryType property value. Indicates the type of query. Allowed value is MicrosoftGraph.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQueryType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryType
-    }
+    return m.queryType
 }
 // Serialize serializes information the current object
 func (m *AccessReviewNotificationRecipientQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *AccessReviewNotificationRecipientQueryScope) Serialize(writer i878a80d2
 }
 // SetQuery sets the query property value. This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQuery(value *string)() {
-    if m != nil {
-        m.query = value
-    }
+    m.query = value
 }
 // SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQueryRoot(value *string)() {
-    if m != nil {
-        m.queryRoot = value
-    }
+    m.queryRoot = value
 }
 // SetQueryType sets the queryType property value. Indicates the type of query. Allowed value is MicrosoftGraph.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQueryType(value *string)() {
-    if m != nil {
-        m.queryType = value
-    }
+    m.queryType = value
 }

@@ -29,19 +29,11 @@ func CreateConversationMemberRoleUpdatedEventMessageDetailFromDiscriminatorValue
 }
 // GetConversationMemberRoles gets the conversationMemberRoles property value. Roles for the coversation member user.
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetConversationMemberRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversationMemberRoles
-    }
+    return m.conversationMemberRoles
 }
 // GetConversationMemberUser gets the conversationMemberUser property value. Identity of the conversation member user.
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetConversationMemberUser()(TeamworkUserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversationMemberUser
-    }
+    return m.conversationMemberUser
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetFieldDeserializers(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // Serialize serializes information the current object
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,19 +106,13 @@ func (m *ConversationMemberRoleUpdatedEventMessageDetail) Serialize(writer i878a
 }
 // SetConversationMemberRoles sets the conversationMemberRoles property value. Roles for the coversation member user.
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) SetConversationMemberRoles(value []string)() {
-    if m != nil {
-        m.conversationMemberRoles = value
-    }
+    m.conversationMemberRoles = value
 }
 // SetConversationMemberUser sets the conversationMemberUser property value. Identity of the conversation member user.
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) SetConversationMemberUser(value TeamworkUserIdentityable)() {
-    if m != nil {
-        m.conversationMemberUser = value
-    }
+    m.conversationMemberUser = value
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *ConversationMemberRoleUpdatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }

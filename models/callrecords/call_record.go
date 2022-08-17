@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CallRecord provides operations to manage the cloudCommunications singleton.
+// CallRecord provides operations to manage the collection of agreementAcceptance entities.
 type CallRecord struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -45,11 +45,7 @@ func CreateCallRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetEndDateTime gets the endDateTime property value. UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,75 +166,39 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetJoinWebUrl gets the joinWebUrl property value. Meeting URL associated to the call. May not be available for a peerToPeer call record type.
 func (m *CallRecord) GetJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinWebUrl
-    }
+    return m.joinWebUrl
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetModalities gets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *CallRecord) GetModalities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modalities
-    }
+    return m.modalities
 }
 // GetOrganizer gets the organizer property value. The organizing party's identity.
 func (m *CallRecord) GetOrganizer()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizer
-    }
+    return m.organizer
 }
 // GetParticipants gets the participants property value. List of distinct identities involved in the call.
 func (m *CallRecord) GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+    return m.participants
 }
 // GetSessions gets the sessions property value. List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
 func (m *CallRecord) GetSessions()([]Sessionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessions
-    }
+    return m.sessions
 }
 // GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetType gets the type property value. The type property
 func (m *CallRecord) GetType()(*CallType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
 func (m *CallRecord) GetVersion()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -319,61 +279,41 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetEndDateTime sets the endDateTime property value. UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetJoinWebUrl sets the joinWebUrl property value. Meeting URL associated to the call. May not be available for a peerToPeer call record type.
 func (m *CallRecord) SetJoinWebUrl(value *string)() {
-    if m != nil {
-        m.joinWebUrl = value
-    }
+    m.joinWebUrl = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetModalities sets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *CallRecord) SetModalities(value []string)() {
-    if m != nil {
-        m.modalities = value
-    }
+    m.modalities = value
 }
 // SetOrganizer sets the organizer property value. The organizing party's identity.
 func (m *CallRecord) SetOrganizer(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
-    if m != nil {
-        m.organizer = value
-    }
+    m.organizer = value
 }
 // SetParticipants sets the participants property value. List of distinct identities involved in the call.
 func (m *CallRecord) SetParticipants(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
-    if m != nil {
-        m.participants = value
-    }
+    m.participants = value
 }
 // SetSessions sets the sessions property value. List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
 func (m *CallRecord) SetSessions(value []Sessionable)() {
-    if m != nil {
-        m.sessions = value
-    }
+    m.sessions = value
 }
 // SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetType sets the type property value. The type property
 func (m *CallRecord) SetType(value *CallType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
 func (m *CallRecord) SetVersion(value *int64)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

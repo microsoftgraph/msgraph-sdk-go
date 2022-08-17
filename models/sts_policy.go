@@ -56,19 +56,11 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetDefinition gets the definition property value. A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
 func (m *StsPolicy) GetDefinition()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definition
-    }
+    return m.definition
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,11 +107,7 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetIsOrganizationDefault gets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
 func (m *StsPolicy) GetIsOrganizationDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOrganizationDefault
-    }
+    return m.isOrganizationDefault
 }
 // Serialize serializes information the current object
 func (m *StsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,19 +141,13 @@ func (m *StsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *StsPolicy) SetAppliesTo(value []DirectoryObjectable)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetDefinition sets the definition property value. A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
 func (m *StsPolicy) SetDefinition(value []string)() {
-    if m != nil {
-        m.definition = value
-    }
+    m.definition = value
 }
 // SetIsOrganizationDefault sets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
 func (m *StsPolicy) SetIsOrganizationDefault(value *bool)() {
-    if m != nil {
-        m.isOrganizationDefault = value
-    }
+    m.isOrganizationDefault = value
 }

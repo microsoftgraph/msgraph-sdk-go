@@ -30,11 +30,7 @@ func CreateVppLicensingTypeFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VppLicensingType) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VppLicensingType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *VppLicensingType) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VppLicensingType) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSupportsDeviceLicensing gets the supportsDeviceLicensing property value. Whether the program supports the device licensing type.
 func (m *VppLicensingType) GetSupportsDeviceLicensing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportsDeviceLicensing
-    }
+    return m.supportsDeviceLicensing
 }
 // GetSupportsUserLicensing gets the supportsUserLicensing property value. Whether the program supports the user licensing type.
 func (m *VppLicensingType) GetSupportsUserLicensing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportsUserLicensing
-    }
+    return m.supportsUserLicensing
 }
 // Serialize serializes information the current object
 func (m *VppLicensingType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *VppLicensingType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VppLicensingType) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VppLicensingType) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSupportsDeviceLicensing sets the supportsDeviceLicensing property value. Whether the program supports the device licensing type.
 func (m *VppLicensingType) SetSupportsDeviceLicensing(value *bool)() {
-    if m != nil {
-        m.supportsDeviceLicensing = value
-    }
+    m.supportsDeviceLicensing = value
 }
 // SetSupportsUserLicensing sets the supportsUserLicensing property value. Whether the program supports the user licensing type.
 func (m *VppLicensingType) SetSupportsUserLicensing(value *bool)() {
-    if m != nil {
-        m.supportsUserLicensing = value
-    }
+    m.supportsUserLicensing = value
 }

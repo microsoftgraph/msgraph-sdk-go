@@ -25,11 +25,7 @@ func CreateUnifiedRoleManagementPolicyEnablementRuleFromDiscriminatorValue(parse
 }
 // GetEnabledRules gets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetEnabledRules()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabledRules
-    }
+    return m.enabledRules
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,7 +62,5 @@ func (m *UnifiedRoleManagementPolicyEnablementRule) Serialize(writer i878a80d233
 }
 // SetEnabledRules sets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
 func (m *UnifiedRoleManagementPolicyEnablementRule) SetEnabledRules(value []string)() {
-    if m != nil {
-        m.enabledRules = value
-    }
+    m.enabledRules = value
 }

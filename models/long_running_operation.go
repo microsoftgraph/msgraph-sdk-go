@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LongRunningOperation provides operations to manage the admin singleton.
+// LongRunningOperation provides operations to manage the collection of agreement entities.
 type LongRunningOperation struct {
     Entity
     // The createdDateTime property
@@ -53,11 +53,7 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *LongRunningOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +112,19 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetResourceLocation gets the resourceLocation property value. The resourceLocation property
 func (m *LongRunningOperation) GetResourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceLocation
-    }
+    return m.resourceLocation
 }
 // GetStatus gets the status property value. The status property
 func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetStatusDetail gets the statusDetail property value. The statusDetail property
 func (m *LongRunningOperation) GetStatusDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetail
-    }
+    return m.statusDetail
 }
 // Serialize serializes information the current object
 func (m *LongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -187,31 +167,21 @@ func (m *LongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *LongRunningOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *LongRunningOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetResourceLocation sets the resourceLocation property value. The resourceLocation property
 func (m *LongRunningOperation) SetResourceLocation(value *string)() {
-    if m != nil {
-        m.resourceLocation = value
-    }
+    m.resourceLocation = value
 }
 // SetStatus sets the status property value. The status property
 func (m *LongRunningOperation) SetStatus(value *LongRunningOperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetStatusDetail sets the statusDetail property value. The statusDetail property
 func (m *LongRunningOperation) SetStatusDetail(value *string)() {
-    if m != nil {
-        m.statusDetail = value
-    }
+    m.statusDetail = value
 }

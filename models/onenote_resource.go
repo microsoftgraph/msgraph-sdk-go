@@ -27,19 +27,11 @@ func CreateOnenoteResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetContent gets the content property value. The content stream
 func (m *OnenoteResource) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetContentUrl gets the contentUrl property value. The URL for downloading the content
 func (m *OnenoteResource) GetContentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentUrl
-    }
+    return m.contentUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *OnenoteResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetContent sets the content property value. The content stream
 func (m *OnenoteResource) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetContentUrl sets the contentUrl property value. The URL for downloading the content
 func (m *OnenoteResource) SetContentUrl(value *string)() {
-    if m != nil {
-        m.contentUrl = value
-    }
+    m.contentUrl = value
 }

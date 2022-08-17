@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Permission provides operations to manage the admin singleton.
+// Permission provides operations to manage the collection of agreement entities.
 type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -46,11 +46,7 @@ func CreatePermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetExpirationDateTime gets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
 func (m *Permission) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -181,83 +177,43 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetGrantedTo gets the grantedTo property value. The grantedTo property
 func (m *Permission) GetGrantedTo()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantedTo
-    }
+    return m.grantedTo
 }
 // GetGrantedToIdentities gets the grantedToIdentities property value. The grantedToIdentities property
 func (m *Permission) GetGrantedToIdentities()([]IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantedToIdentities
-    }
+    return m.grantedToIdentities
 }
 // GetGrantedToIdentitiesV2 gets the grantedToIdentitiesV2 property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
 func (m *Permission) GetGrantedToIdentitiesV2()([]SharePointIdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantedToIdentitiesV2
-    }
+    return m.grantedToIdentitiesV2
 }
 // GetGrantedToV2 gets the grantedToV2 property value. For user type permissions, the details of the users and applications for this permission. Read-only.
 func (m *Permission) GetGrantedToV2()(SharePointIdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantedToV2
-    }
+    return m.grantedToV2
 }
 // GetHasPassword gets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.
 func (m *Permission) GetHasPassword()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasPassword
-    }
+    return m.hasPassword
 }
 // GetInheritedFrom gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
 func (m *Permission) GetInheritedFrom()(ItemReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inheritedFrom
-    }
+    return m.inheritedFrom
 }
 // GetInvitation gets the invitation property value. Details of any associated sharing invitation for this permission. Read-only.
 func (m *Permission) GetInvitation()(SharingInvitationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitation
-    }
+    return m.invitation
 }
 // GetLink gets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
 func (m *Permission) GetLink()(SharingLinkable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.link
-    }
+    return m.link
 }
 // GetRoles gets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
 func (m *Permission) GetRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
+    return m.roles
 }
 // GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the [shares API][]. Read-only.
 func (m *Permission) GetShareId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shareId
-    }
+    return m.shareId
 }
 // Serialize serializes information the current object
 func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -343,67 +299,45 @@ func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetExpirationDateTime sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
 func (m *Permission) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetGrantedTo sets the grantedTo property value. The grantedTo property
 func (m *Permission) SetGrantedTo(value IdentitySetable)() {
-    if m != nil {
-        m.grantedTo = value
-    }
+    m.grantedTo = value
 }
 // SetGrantedToIdentities sets the grantedToIdentities property value. The grantedToIdentities property
 func (m *Permission) SetGrantedToIdentities(value []IdentitySetable)() {
-    if m != nil {
-        m.grantedToIdentities = value
-    }
+    m.grantedToIdentities = value
 }
 // SetGrantedToIdentitiesV2 sets the grantedToIdentitiesV2 property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
 func (m *Permission) SetGrantedToIdentitiesV2(value []SharePointIdentitySetable)() {
-    if m != nil {
-        m.grantedToIdentitiesV2 = value
-    }
+    m.grantedToIdentitiesV2 = value
 }
 // SetGrantedToV2 sets the grantedToV2 property value. For user type permissions, the details of the users and applications for this permission. Read-only.
 func (m *Permission) SetGrantedToV2(value SharePointIdentitySetable)() {
-    if m != nil {
-        m.grantedToV2 = value
-    }
+    m.grantedToV2 = value
 }
 // SetHasPassword sets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.
 func (m *Permission) SetHasPassword(value *bool)() {
-    if m != nil {
-        m.hasPassword = value
-    }
+    m.hasPassword = value
 }
 // SetInheritedFrom sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
 func (m *Permission) SetInheritedFrom(value ItemReferenceable)() {
-    if m != nil {
-        m.inheritedFrom = value
-    }
+    m.inheritedFrom = value
 }
 // SetInvitation sets the invitation property value. Details of any associated sharing invitation for this permission. Read-only.
 func (m *Permission) SetInvitation(value SharingInvitationable)() {
-    if m != nil {
-        m.invitation = value
-    }
+    m.invitation = value
 }
 // SetLink sets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
 func (m *Permission) SetLink(value SharingLinkable)() {
-    if m != nil {
-        m.link = value
-    }
+    m.link = value
 }
 // SetRoles sets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
 func (m *Permission) SetRoles(value []string)() {
-    if m != nil {
-        m.roles = value
-    }
+    m.roles = value
 }
 // SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the [shares API][]. Read-only.
 func (m *Permission) SetShareId(value *string)() {
-    if m != nil {
-        m.shareId = value
-    }
+    m.shareId = value
 }

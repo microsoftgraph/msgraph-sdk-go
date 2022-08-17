@@ -62,67 +62,35 @@ func CreateSubjectRightsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAssignedTo gets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) GetAssignedTo()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
 // GetClosedDateTime gets the closedDateTime property value. The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.closedDateTime
-    }
+    return m.closedDateTime
 }
 // GetCreatedBy gets the createdBy property value. Identity information for the entity that created the request.
 func (m *SubjectRightsRequest) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDataSubject gets the dataSubject property value. Information about the data subject.
 func (m *SubjectRightsRequest) GetDataSubject()(DataSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataSubject
-    }
+    return m.dataSubject
 }
 // GetDataSubjectType gets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
 func (m *SubjectRightsRequest) GetDataSubjectType()(*DataSubjectType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataSubjectType
-    }
+    return m.dataSubjectType
 }
 // GetDescription gets the description property value. Description for the request.
 func (m *SubjectRightsRequest) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The name of the request.
 func (m *SubjectRightsRequest) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -337,91 +305,47 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetHistory gets the history property value. Collection of history change events.
 func (m *SubjectRightsRequest) GetHistory()([]SubjectRightsRequestHistoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.history
-    }
+    return m.history
 }
 // GetInsight gets the insight property value. Insight about the request.
 func (m *SubjectRightsRequest) GetInsight()(SubjectRightsRequestDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insight
-    }
+    return m.insight
 }
 // GetInternalDueDateTime gets the internalDueDateTime property value. The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetInternalDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalDueDateTime
-    }
+    return m.internalDueDateTime
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity information for the entity that last modified the request.
 func (m *SubjectRightsRequest) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNotes gets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // GetRegulations gets the regulations property value. List of regulations that this request will fulfill.
 func (m *SubjectRightsRequest) GetRegulations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.regulations
-    }
+    return m.regulations
 }
 // GetStages gets the stages property value. Information about the different stages for the request.
 func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stages
-    }
+    return m.stages
 }
 // GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTeam gets the team property value. Information about the Microsoft Teams team that was created for the request.
 func (m *SubjectRightsRequest) GetTeam()(Teamable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.team
-    }
+    return m.team
 }
 // GetType gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) GetType()(*SubjectRightsRequestType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -562,115 +486,77 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAssignedTo sets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) SetAssignedTo(value Identityable)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
 // SetClosedDateTime sets the closedDateTime property value. The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.closedDateTime = value
-    }
+    m.closedDateTime = value
 }
 // SetCreatedBy sets the createdBy property value. Identity information for the entity that created the request.
 func (m *SubjectRightsRequest) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDataSubject sets the dataSubject property value. Information about the data subject.
 func (m *SubjectRightsRequest) SetDataSubject(value DataSubjectable)() {
-    if m != nil {
-        m.dataSubject = value
-    }
+    m.dataSubject = value
 }
 // SetDataSubjectType sets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
 func (m *SubjectRightsRequest) SetDataSubjectType(value *DataSubjectType)() {
-    if m != nil {
-        m.dataSubjectType = value
-    }
+    m.dataSubjectType = value
 }
 // SetDescription sets the description property value. Description for the request.
 func (m *SubjectRightsRequest) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The name of the request.
 func (m *SubjectRightsRequest) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHistory sets the history property value. Collection of history change events.
 func (m *SubjectRightsRequest) SetHistory(value []SubjectRightsRequestHistoryable)() {
-    if m != nil {
-        m.history = value
-    }
+    m.history = value
 }
 // SetInsight sets the insight property value. Insight about the request.
 func (m *SubjectRightsRequest) SetInsight(value SubjectRightsRequestDetailable)() {
-    if m != nil {
-        m.insight = value
-    }
+    m.insight = value
 }
 // SetInternalDueDateTime sets the internalDueDateTime property value. The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetInternalDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.internalDueDateTime = value
-    }
+    m.internalDueDateTime = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity information for the entity that last modified the request.
 func (m *SubjectRightsRequest) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNotes sets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) SetNotes(value []AuthoredNoteable)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }
 // SetRegulations sets the regulations property value. List of regulations that this request will fulfill.
 func (m *SubjectRightsRequest) SetRegulations(value []string)() {
-    if m != nil {
-        m.regulations = value
-    }
+    m.regulations = value
 }
 // SetStages sets the stages property value. Information about the different stages for the request.
 func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetailable)() {
-    if m != nil {
-        m.stages = value
-    }
+    m.stages = value
 }
 // SetStatus sets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTeam sets the team property value. Information about the Microsoft Teams team that was created for the request.
 func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
-    if m != nil {
-        m.team = value
-    }
+    m.team = value
 }
 // SetType sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) SetType(value *SubjectRightsRequestType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

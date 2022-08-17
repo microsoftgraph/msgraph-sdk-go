@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyRule provides operations to manage the admin singleton.
+// UnifiedRoleManagementPolicyRule provides operations to manage the collection of agreementAcceptance entities.
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
@@ -67,11 +67,7 @@ func (m *UnifiedRoleManagementPolicyRule) GetFieldDeserializers()(map[string]fun
 }
 // GetTarget gets the target property value. Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementPolicyRule) GetTarget()(UnifiedRoleManagementPolicyRuleTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,7 +85,5 @@ func (m *UnifiedRoleManagementPolicyRule) Serialize(writer i878a80d2330e89d26896
 }
 // SetTarget sets the target property value. Not implemented. Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementPolicyRule) SetTarget(value UnifiedRoleManagementPolicyRuleTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

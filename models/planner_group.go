@@ -44,11 +44,7 @@ func (m *PlannerGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlannerGroup) GetPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.plans
-    }
+    return m.plans
 }
 // Serialize serializes information the current object
 func (m *PlannerGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *PlannerGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlannerGroup) SetPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.plans = value
-    }
+    m.plans = value
 }

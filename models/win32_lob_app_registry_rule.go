@@ -35,19 +35,11 @@ func CreateWin32LobAppRegistryRuleFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether to search the 32-bit registry on 64-bit systems.
 func (m *Win32LobAppRegistryRule) GetCheck32BitOn64System()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.check32BitOn64System
-    }
+    return m.check32BitOn64System
 }
 // GetComparisonValue gets the comparisonValue property value. The registry comparison value.
 func (m *Win32LobAppRegistryRule) GetComparisonValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comparisonValue
-    }
+    return m.comparisonValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +108,19 @@ func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetKeyPath gets the keyPath property value. The full path of the registry entry containing the value to detect.
 func (m *Win32LobAppRegistryRule) GetKeyPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyPath
-    }
+    return m.keyPath
 }
 // GetOperationType gets the operationType property value. Contains all supported registry data detection type.
 func (m *Win32LobAppRegistryRule) GetOperationType()(*Win32LobAppRegistryRuleOperationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
+    return m.operationType
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppRegistryRule) GetOperator()(*Win32LobAppRuleOperator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
+    return m.operator
 }
 // GetValueName gets the valueName property value. The name of the registry value to detect.
 func (m *Win32LobAppRegistryRule) GetValueName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueName
-    }
+    return m.valueName
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppRegistryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *Win32LobAppRegistryRule) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCheck32BitOn64System sets the check32BitOn64System property value. A value indicating whether to search the 32-bit registry on 64-bit systems.
 func (m *Win32LobAppRegistryRule) SetCheck32BitOn64System(value *bool)() {
-    if m != nil {
-        m.check32BitOn64System = value
-    }
+    m.check32BitOn64System = value
 }
 // SetComparisonValue sets the comparisonValue property value. The registry comparison value.
 func (m *Win32LobAppRegistryRule) SetComparisonValue(value *string)() {
-    if m != nil {
-        m.comparisonValue = value
-    }
+    m.comparisonValue = value
 }
 // SetKeyPath sets the keyPath property value. The full path of the registry entry containing the value to detect.
 func (m *Win32LobAppRegistryRule) SetKeyPath(value *string)() {
-    if m != nil {
-        m.keyPath = value
-    }
+    m.keyPath = value
 }
 // SetOperationType sets the operationType property value. Contains all supported registry data detection type.
 func (m *Win32LobAppRegistryRule) SetOperationType(value *Win32LobAppRegistryRuleOperationType)() {
-    if m != nil {
-        m.operationType = value
-    }
+    m.operationType = value
 }
 // SetOperator sets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppRegistryRule) SetOperator(value *Win32LobAppRuleOperator)() {
-    if m != nil {
-        m.operator = value
-    }
+    m.operator = value
 }
 // SetValueName sets the valueName property value. The name of the registry value to detect.
 func (m *Win32LobAppRegistryRule) SetValueName(value *string)() {
-    if m != nil {
-        m.valueName = value
-    }
+    m.valueName = value
 }

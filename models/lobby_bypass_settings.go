@@ -30,11 +30,7 @@ func CreateLobbyBypassSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LobbyBypassSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIsDialInBypassEnabled gets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
 func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDialInBypassEnabled
-    }
+    return m.isDialInBypassEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *LobbyBypassSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetScope gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
 func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // Serialize serializes information the current object
 func (m *LobbyBypassSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *LobbyBypassSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LobbyBypassSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsDialInBypassEnabled sets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
 func (m *LobbyBypassSettings) SetIsDialInBypassEnabled(value *bool)() {
-    if m != nil {
-        m.isDialInBypassEnabled = value
-    }
+    m.isDialInBypassEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *LobbyBypassSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetScope sets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
 func (m *LobbyBypassSettings) SetScope(value *LobbyBypassScope)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }

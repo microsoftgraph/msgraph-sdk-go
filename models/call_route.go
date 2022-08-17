@@ -32,11 +32,7 @@ func CreateCallRouteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallRoute) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *CallRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetFinal gets the final property value. The final property
 func (m *CallRoute) GetFinal()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.final
-    }
+    return m.final
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CallRoute) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOriginal gets the original property value. The original property
 func (m *CallRoute) GetOriginal()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.original
-    }
+    return m.original
 }
 // GetRoutingType gets the routingType property value. The routingType property
 func (m *CallRoute) GetRoutingType()(*RoutingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routingType
-    }
+    return m.routingType
 }
 // Serialize serializes information the current object
 func (m *CallRoute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *CallRoute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallRoute) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFinal sets the final property value. The final property
 func (m *CallRoute) SetFinal(value IdentitySetable)() {
-    if m != nil {
-        m.final = value
-    }
+    m.final = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CallRoute) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOriginal sets the original property value. The original property
 func (m *CallRoute) SetOriginal(value IdentitySetable)() {
-    if m != nil {
-        m.original = value
-    }
+    m.original = value
 }
 // SetRoutingType sets the routingType property value. The routingType property
 func (m *CallRoute) SetRoutingType(value *RoutingType)() {
-    if m != nil {
-        m.routingType = value
-    }
+    m.routingType = value
 }

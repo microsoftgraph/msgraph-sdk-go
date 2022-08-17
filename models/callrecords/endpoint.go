@@ -49,11 +49,7 @@ func CreateEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Endpoint) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,19 +78,11 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Endpoint) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserAgent gets the userAgent property value. User-agent reported by this endpoint.
 func (m *Endpoint) GetUserAgent()(UserAgentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAgent
-    }
+    return m.userAgent
 }
 // Serialize serializes information the current object
 func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,19 +108,13 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Endpoint) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Endpoint) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserAgent sets the userAgent property value. User-agent reported by this endpoint.
 func (m *Endpoint) SetUserAgent(value UserAgentable)() {
-    if m != nil {
-        m.userAgent = value
-    }
+    m.userAgent = value
 }

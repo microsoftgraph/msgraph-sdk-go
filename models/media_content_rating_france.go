@@ -30,11 +30,7 @@ func CreateMediaContentRatingFranceFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaContentRatingFrance) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MediaContentRatingFrance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *MediaContentRatingFrance) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMovieRating gets the movieRating property value. Movies rating labels in France
 func (m *MediaContentRatingFrance) GetMovieRating()(*RatingFranceMoviesType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.movieRating
-    }
+    return m.movieRating
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MediaContentRatingFrance) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTvRating gets the tvRating property value. TV content rating labels in France
 func (m *MediaContentRatingFrance) GetTvRating()(*RatingFranceTelevisionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tvRating
-    }
+    return m.tvRating
 }
 // Serialize serializes information the current object
 func (m *MediaContentRatingFrance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,25 +111,17 @@ func (m *MediaContentRatingFrance) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaContentRatingFrance) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMovieRating sets the movieRating property value. Movies rating labels in France
 func (m *MediaContentRatingFrance) SetMovieRating(value *RatingFranceMoviesType)() {
-    if m != nil {
-        m.movieRating = value
-    }
+    m.movieRating = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MediaContentRatingFrance) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTvRating sets the tvRating property value. TV content rating labels in France
 func (m *MediaContentRatingFrance) SetTvRating(value *RatingFranceTelevisionType)() {
-    if m != nil {
-        m.tvRating = value
-    }
+    m.tvRating = value
 }

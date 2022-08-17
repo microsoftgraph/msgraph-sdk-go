@@ -34,27 +34,15 @@ func CreateAppIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppIdentity) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppId gets the appId property value. Refers to the unique identifier representing Application Id in the Azure Active Directory.
 func (m *AppIdentity) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetDisplayName gets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
 func (m *AppIdentity) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *AppIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppIdentity) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
 func (m *AppIdentity) GetServicePrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalId
-    }
+    return m.servicePrincipalId
 }
 // GetServicePrincipalName gets the servicePrincipalName property value. Refers to the Service Principal Name is the Application name in the tenant.
 func (m *AppIdentity) GetServicePrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalName
-    }
+    return m.servicePrincipalName
 }
 // Serialize serializes information the current object
 func (m *AppIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *AppIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppIdentity) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppId sets the appId property value. Refers to the unique identifier representing Application Id in the Azure Active Directory.
 func (m *AppIdentity) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetDisplayName sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
 func (m *AppIdentity) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppIdentity) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
 func (m *AppIdentity) SetServicePrincipalId(value *string)() {
-    if m != nil {
-        m.servicePrincipalId = value
-    }
+    m.servicePrincipalId = value
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. Refers to the Service Principal Name is the Application name in the tenant.
 func (m *AppIdentity) SetServicePrincipalName(value *string)() {
-    if m != nil {
-        m.servicePrincipalName = value
-    }
+    m.servicePrincipalName = value
 }

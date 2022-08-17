@@ -34,11 +34,7 @@ func CreatePhoneFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Phone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetLanguage gets the language property value. The language property
 func (m *Phone) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
+    return m.language
 }
 // GetNumber gets the number property value. The phone number.
 func (m *Phone) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Phone) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRegion gets the region property value. The region property
 func (m *Phone) GetRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
-    }
+    return m.region
 }
 // GetType gets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) GetType()(*PhoneType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *Phone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *Phone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLanguage sets the language property value. The language property
 func (m *Phone) SetLanguage(value *string)() {
-    if m != nil {
-        m.language = value
-    }
+    m.language = value
 }
 // SetNumber sets the number property value. The phone number.
 func (m *Phone) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Phone) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRegion sets the region property value. The region property
 func (m *Phone) SetRegion(value *string)() {
-    if m != nil {
-        m.region = value
-    }
+    m.region = value
 }
 // SetType sets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetType(value *PhoneType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

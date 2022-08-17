@@ -30,19 +30,11 @@ func CreateRubricQualityFeedbackModelFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricQualityFeedbackModel) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFeedback gets the feedback property value. Specific feedback for one quality of this rubric.
 func (m *RubricQualityFeedbackModel) GetFeedback()(EducationItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedback
-    }
+    return m.feedback
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RubricQualityFeedbackModel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *RubricQualityFeedbackModel) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RubricQualityFeedbackModel) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQualityId gets the qualityId property value. The ID of the rubricQuality that this feedback is related to.
 func (m *RubricQualityFeedbackModel) GetQualityId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityId
-    }
+    return m.qualityId
 }
 // Serialize serializes information the current object
 func (m *RubricQualityFeedbackModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *RubricQualityFeedbackModel) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricQualityFeedbackModel) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFeedback sets the feedback property value. Specific feedback for one quality of this rubric.
 func (m *RubricQualityFeedbackModel) SetFeedback(value EducationItemBodyable)() {
-    if m != nil {
-        m.feedback = value
-    }
+    m.feedback = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RubricQualityFeedbackModel) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQualityId sets the qualityId property value. The ID of the rubricQuality that this feedback is related to.
 func (m *RubricQualityFeedbackModel) SetQualityId(value *string)() {
-    if m != nil {
-        m.qualityId = value
-    }
+    m.qualityId = value
 }

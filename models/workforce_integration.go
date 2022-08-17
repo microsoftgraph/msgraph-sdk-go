@@ -35,27 +35,15 @@ func CreateWorkforceIntegrationFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetApiVersion gets the apiVersion property value. API version for the call back URL. Start with 1.
 func (m *WorkforceIntegration) GetApiVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apiVersion
-    }
+    return m.apiVersion
 }
 // GetDisplayName gets the displayName property value. Name of the workforce integration.
 func (m *WorkforceIntegration) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEncryption gets the encryption property value. The workforce integration encryption resource.
 func (m *WorkforceIntegration) GetEncryption()(WorkforceIntegrationEncryptionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryption
-    }
+    return m.encryption
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,27 +112,15 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsActive gets the isActive property value. Indicates whether this workforce integration is currently active and available.
 func (m *WorkforceIntegration) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
+    return m.isActive
 }
 // GetSupportedEntities gets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
 func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegrationSupportedEntities) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedEntities
-    }
+    return m.supportedEntities
 }
 // GetUrl gets the url property value. Workforce Integration URL for callbacks from the Shifts service.
 func (m *WorkforceIntegration) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *WorkforceIntegration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *WorkforceIntegration) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetApiVersion sets the apiVersion property value. API version for the call back URL. Start with 1.
 func (m *WorkforceIntegration) SetApiVersion(value *int32)() {
-    if m != nil {
-        m.apiVersion = value
-    }
+    m.apiVersion = value
 }
 // SetDisplayName sets the displayName property value. Name of the workforce integration.
 func (m *WorkforceIntegration) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEncryption sets the encryption property value. The workforce integration encryption resource.
 func (m *WorkforceIntegration) SetEncryption(value WorkforceIntegrationEncryptionable)() {
-    if m != nil {
-        m.encryption = value
-    }
+    m.encryption = value
 }
 // SetIsActive sets the isActive property value. Indicates whether this workforce integration is currently active and available.
 func (m *WorkforceIntegration) SetIsActive(value *bool)() {
-    if m != nil {
-        m.isActive = value
-    }
+    m.isActive = value
 }
 // SetSupportedEntities sets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
 func (m *WorkforceIntegration) SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)() {
-    if m != nil {
-        m.supportedEntities = value
-    }
+    m.supportedEntities = value
 }
 // SetUrl sets the url property value. Workforce Integration URL for callbacks from the Shifts service.
 func (m *WorkforceIntegration) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

@@ -35,27 +35,15 @@ func CreateAssignedPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedPlan) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignedDateTime gets the assignedDateTime property value. The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AssignedPlan) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedDateTime
-    }
+    return m.assignedDateTime
 }
 // GetCapabilityStatus gets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
 func (m *AssignedPlan) GetCapabilityStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capabilityStatus
-    }
+    return m.capabilityStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,27 +102,15 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignedPlan) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetService gets the service property value. The name of the service; for example, exchange.
 func (m *AssignedPlan) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetServicePlanId gets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
 func (m *AssignedPlan) GetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanId
-    }
+    return m.servicePlanId
 }
 // Serialize serializes information the current object
 func (m *AssignedPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *AssignedPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedPlan) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignedDateTime sets the assignedDateTime property value. The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AssignedPlan) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.assignedDateTime = value
-    }
+    m.assignedDateTime = value
 }
 // SetCapabilityStatus sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
 func (m *AssignedPlan) SetCapabilityStatus(value *string)() {
-    if m != nil {
-        m.capabilityStatus = value
-    }
+    m.capabilityStatus = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignedPlan) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetService sets the service property value. The name of the service; for example, exchange.
 func (m *AssignedPlan) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetServicePlanId sets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
 func (m *AssignedPlan) SetServicePlanId(value *string)() {
-    if m != nil {
-        m.servicePlanId = value
-    }
+    m.servicePlanId = value
 }

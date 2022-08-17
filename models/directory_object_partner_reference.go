@@ -31,27 +31,15 @@ func CreateDirectoryObjectPartnerReferenceFromDiscriminatorValue(parseNode i878a
 }
 // GetDescription gets the description property value. Description of the object returned. Read-only.
 func (m *DirectoryObjectPartnerReference) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Name of directory object being returned, like group or application. Read-only.
 func (m *DirectoryObjectPartnerReference) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExternalPartnerTenantId gets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) GetExternalPartnerTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalPartnerTenantId
-    }
+    return m.externalPartnerTenantId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +88,7 @@ func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]fun
 }
 // GetObjectType gets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) GetObjectType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objectType
-    }
+    return m.objectType
 }
 // Serialize serializes information the current object
 func (m *DirectoryObjectPartnerReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *DirectoryObjectPartnerReference) Serialize(writer i878a80d2330e89d26896
 }
 // SetDescription sets the description property value. Description of the object returned. Read-only.
 func (m *DirectoryObjectPartnerReference) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Name of directory object being returned, like group or application. Read-only.
 func (m *DirectoryObjectPartnerReference) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExternalPartnerTenantId sets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) SetExternalPartnerTenantId(value *string)() {
-    if m != nil {
-        m.externalPartnerTenantId = value
-    }
+    m.externalPartnerTenantId = value
 }
 // SetObjectType sets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) SetObjectType(value *string)() {
-    if m != nil {
-        m.objectType = value
-    }
+    m.objectType = value
 }

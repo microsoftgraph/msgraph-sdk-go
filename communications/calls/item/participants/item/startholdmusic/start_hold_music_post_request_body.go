@@ -27,27 +27,15 @@ func CreateStartHoldMusicPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartHoldMusicPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
 func (m *StartHoldMusicPostRequestBody) GetClientContext()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientContext
-    }
+    return m.clientContext
 }
 // GetCustomPrompt gets the customPrompt property value. The customPrompt property
 func (m *StartHoldMusicPostRequestBody) GetCustomPrompt()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customPrompt
-    }
+    return m.customPrompt
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StartHoldMusicPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,19 +86,13 @@ func (m *StartHoldMusicPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartHoldMusicPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property
 func (m *StartHoldMusicPostRequestBody) SetClientContext(value *string)() {
-    if m != nil {
-        m.clientContext = value
-    }
+    m.clientContext = value
 }
 // SetCustomPrompt sets the customPrompt property value. The customPrompt property
 func (m *StartHoldMusicPostRequestBody) SetCustomPrompt(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)() {
-    if m != nil {
-        m.customPrompt = value
-    }
+    m.customPrompt = value
 }

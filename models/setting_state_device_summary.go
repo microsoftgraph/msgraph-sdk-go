@@ -41,27 +41,15 @@ func CreateSettingStateDeviceSummaryFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) GetCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantDeviceCount
-    }
+    return m.compliantDeviceCount
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Device conflict error count for the setting
 func (m *SettingStateDeviceSummary) GetConflictDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictDeviceCount
-    }
+    return m.conflictDeviceCount
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Device error count for the setting
 func (m *SettingStateDeviceSummary) GetErrorDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorDeviceCount
-    }
+    return m.errorDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SettingStateDeviceSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -160,51 +148,27 @@ func (m *SettingStateDeviceSummary) GetFieldDeserializers()(map[string]func(i878
 }
 // GetInstancePath gets the instancePath property value. Name of the InstancePath for the setting
 func (m *SettingStateDeviceSummary) GetInstancePath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instancePath
-    }
+    return m.instancePath
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Device NonCompliant count for the setting
 func (m *SettingStateDeviceSummary) GetNonCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantDeviceCount
-    }
+    return m.nonCompliantDeviceCount
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Device Not Applicable count for the setting
 func (m *SettingStateDeviceSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
+    return m.notApplicableDeviceCount
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
+    return m.remediatedDeviceCount
 }
 // GetSettingName gets the settingName property value. Name of the setting
 func (m *SettingStateDeviceSummary) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Device Unkown count for the setting
 func (m *SettingStateDeviceSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
-    }
+    return m.unknownDeviceCount
 }
 // Serialize serializes information the current object
 func (m *SettingStateDeviceSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -270,55 +234,37 @@ func (m *SettingStateDeviceSummary) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) SetCompliantDeviceCount(value *int32)() {
-    if m != nil {
-        m.compliantDeviceCount = value
-    }
+    m.compliantDeviceCount = value
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Device conflict error count for the setting
 func (m *SettingStateDeviceSummary) SetConflictDeviceCount(value *int32)() {
-    if m != nil {
-        m.conflictDeviceCount = value
-    }
+    m.conflictDeviceCount = value
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Device error count for the setting
 func (m *SettingStateDeviceSummary) SetErrorDeviceCount(value *int32)() {
-    if m != nil {
-        m.errorDeviceCount = value
-    }
+    m.errorDeviceCount = value
 }
 // SetInstancePath sets the instancePath property value. Name of the InstancePath for the setting
 func (m *SettingStateDeviceSummary) SetInstancePath(value *string)() {
-    if m != nil {
-        m.instancePath = value
-    }
+    m.instancePath = value
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Device NonCompliant count for the setting
 func (m *SettingStateDeviceSummary) SetNonCompliantDeviceCount(value *int32)() {
-    if m != nil {
-        m.nonCompliantDeviceCount = value
-    }
+    m.nonCompliantDeviceCount = value
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Device Not Applicable count for the setting
 func (m *SettingStateDeviceSummary) SetNotApplicableDeviceCount(value *int32)() {
-    if m != nil {
-        m.notApplicableDeviceCount = value
-    }
+    m.notApplicableDeviceCount = value
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) SetRemediatedDeviceCount(value *int32)() {
-    if m != nil {
-        m.remediatedDeviceCount = value
-    }
+    m.remediatedDeviceCount = value
 }
 // SetSettingName sets the settingName property value. Name of the setting
 func (m *SettingStateDeviceSummary) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Device Unkown count for the setting
 func (m *SettingStateDeviceSummary) SetUnknownDeviceCount(value *int32)() {
-    if m != nil {
-        m.unknownDeviceCount = value
-    }
+    m.unknownDeviceCount = value
 }

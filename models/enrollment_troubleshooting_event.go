@@ -39,35 +39,19 @@ func CreateEnrollmentTroubleshootingEventFromDiscriminatorValue(parseNode i878a8
 }
 // GetDeviceId gets the deviceId property value. Azure AD device identifier.
 func (m *EnrollmentTroubleshootingEvent) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetEnrollmentType gets the enrollmentType property value. Possible ways of adding a mobile device to management.
 func (m *EnrollmentTroubleshootingEvent) GetEnrollmentType()(*DeviceEnrollmentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentType
-    }
+    return m.enrollmentType
 }
 // GetFailureCategory gets the failureCategory property value. Top level failure categories for enrollment.
 func (m *EnrollmentTroubleshootingEvent) GetFailureCategory()(*DeviceEnrollmentFailureReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureCategory
-    }
+    return m.failureCategory
 }
 // GetFailureReason gets the failureReason property value. Detailed failure reason.
 func (m *EnrollmentTroubleshootingEvent) GetFailureReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureReason
-    }
+    return m.failureReason
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EnrollmentTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,35 +140,19 @@ func (m *EnrollmentTroubleshootingEvent) GetFieldDeserializers()(map[string]func
 }
 // GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *EnrollmentTroubleshootingEvent) GetManagedDeviceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceIdentifier
-    }
+    return m.managedDeviceIdentifier
 }
 // GetOperatingSystem gets the operatingSystem property value. Operating System.
 func (m *EnrollmentTroubleshootingEvent) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
+    return m.operatingSystem
 }
 // GetOsVersion gets the osVersion property value. OS Version.
 func (m *EnrollmentTroubleshootingEvent) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *EnrollmentTroubleshootingEvent) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *EnrollmentTroubleshootingEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -246,49 +214,33 @@ func (m *EnrollmentTroubleshootingEvent) Serialize(writer i878a80d2330e89d268963
 }
 // SetDeviceId sets the deviceId property value. Azure AD device identifier.
 func (m *EnrollmentTroubleshootingEvent) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetEnrollmentType sets the enrollmentType property value. Possible ways of adding a mobile device to management.
 func (m *EnrollmentTroubleshootingEvent) SetEnrollmentType(value *DeviceEnrollmentType)() {
-    if m != nil {
-        m.enrollmentType = value
-    }
+    m.enrollmentType = value
 }
 // SetFailureCategory sets the failureCategory property value. Top level failure categories for enrollment.
 func (m *EnrollmentTroubleshootingEvent) SetFailureCategory(value *DeviceEnrollmentFailureReason)() {
-    if m != nil {
-        m.failureCategory = value
-    }
+    m.failureCategory = value
 }
 // SetFailureReason sets the failureReason property value. Detailed failure reason.
 func (m *EnrollmentTroubleshootingEvent) SetFailureReason(value *string)() {
-    if m != nil {
-        m.failureReason = value
-    }
+    m.failureReason = value
 }
 // SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *EnrollmentTroubleshootingEvent) SetManagedDeviceIdentifier(value *string)() {
-    if m != nil {
-        m.managedDeviceIdentifier = value
-    }
+    m.managedDeviceIdentifier = value
 }
 // SetOperatingSystem sets the operatingSystem property value. Operating System.
 func (m *EnrollmentTroubleshootingEvent) SetOperatingSystem(value *string)() {
-    if m != nil {
-        m.operatingSystem = value
-    }
+    m.operatingSystem = value
 }
 // SetOsVersion sets the osVersion property value. OS Version.
 func (m *EnrollmentTroubleshootingEvent) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *EnrollmentTroubleshootingEvent) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

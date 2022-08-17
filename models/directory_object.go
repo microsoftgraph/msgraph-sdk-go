@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryObject provides operations to manage the collection of application entities.
+// DirectoryObject 
 type DirectoryObject struct {
     Entity
     // Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -99,11 +99,7 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDeletedDateTime gets the deletedDateTime property value. Date and time when this object was deleted. Always null when the object hasn't been deleted.
 func (m *DirectoryObject) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedDateTime
-    }
+    return m.deletedDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryObject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,7 +132,5 @@ func (m *DirectoryObject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDeletedDateTime sets the deletedDateTime property value. Date and time when this object was deleted. Always null when the object hasn't been deleted.
 func (m *DirectoryObject) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.deletedDateTime = value
-    }
+    m.deletedDateTime = value
 }

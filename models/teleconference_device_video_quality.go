@@ -50,35 +50,19 @@ func CreateTeleconferenceDeviceVideoQualityFromDiscriminatorValue(parseNode i878
 }
 // GetAverageInboundBitRate gets the averageInboundBitRate property value. The average inbound stream video bit rate per second.
 func (m *TeleconferenceDeviceVideoQuality) GetAverageInboundBitRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageInboundBitRate
-    }
+    return m.averageInboundBitRate
 }
 // GetAverageInboundFrameRate gets the averageInboundFrameRate property value. The average inbound stream video frame rate per second.
 func (m *TeleconferenceDeviceVideoQuality) GetAverageInboundFrameRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageInboundFrameRate
-    }
+    return m.averageInboundFrameRate
 }
 // GetAverageOutboundBitRate gets the averageOutboundBitRate property value. The average outbound stream video bit rate per second.
 func (m *TeleconferenceDeviceVideoQuality) GetAverageOutboundBitRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageOutboundBitRate
-    }
+    return m.averageOutboundBitRate
 }
 // GetAverageOutboundFrameRate gets the averageOutboundFrameRate property value. The average outbound stream video frame rate per second.
 func (m *TeleconferenceDeviceVideoQuality) GetAverageOutboundFrameRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageOutboundFrameRate
-    }
+    return m.averageOutboundFrameRate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeleconferenceDeviceVideoQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -159,25 +143,17 @@ func (m *TeleconferenceDeviceVideoQuality) Serialize(writer i878a80d2330e89d2689
 }
 // SetAverageInboundBitRate sets the averageInboundBitRate property value. The average inbound stream video bit rate per second.
 func (m *TeleconferenceDeviceVideoQuality) SetAverageInboundBitRate(value *float64)() {
-    if m != nil {
-        m.averageInboundBitRate = value
-    }
+    m.averageInboundBitRate = value
 }
 // SetAverageInboundFrameRate sets the averageInboundFrameRate property value. The average inbound stream video frame rate per second.
 func (m *TeleconferenceDeviceVideoQuality) SetAverageInboundFrameRate(value *float64)() {
-    if m != nil {
-        m.averageInboundFrameRate = value
-    }
+    m.averageInboundFrameRate = value
 }
 // SetAverageOutboundBitRate sets the averageOutboundBitRate property value. The average outbound stream video bit rate per second.
 func (m *TeleconferenceDeviceVideoQuality) SetAverageOutboundBitRate(value *float64)() {
-    if m != nil {
-        m.averageOutboundBitRate = value
-    }
+    m.averageOutboundBitRate = value
 }
 // SetAverageOutboundFrameRate sets the averageOutboundFrameRate property value. The average outbound stream video frame rate per second.
 func (m *TeleconferenceDeviceVideoQuality) SetAverageOutboundFrameRate(value *float64)() {
-    if m != nil {
-        m.averageOutboundFrameRate = value
-    }
+    m.averageOutboundFrameRate = value
 }

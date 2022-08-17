@@ -27,19 +27,11 @@ func CreateConnectedOrganizationMembersFromDiscriminatorValue(parseNode i878a80d
 }
 // GetConnectedOrganizationId gets the connectedOrganizationId property value. The ID of the connected organization in entitlement management.
 func (m *ConnectedOrganizationMembers) GetConnectedOrganizationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectedOrganizationId
-    }
+    return m.connectedOrganizationId
 }
 // GetDescription gets the description property value. The name of the connected organization. Read only.
 func (m *ConnectedOrganizationMembers) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectedOrganizationMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *ConnectedOrganizationMembers) Serialize(writer i878a80d2330e89d26896388
 }
 // SetConnectedOrganizationId sets the connectedOrganizationId property value. The ID of the connected organization in entitlement management.
 func (m *ConnectedOrganizationMembers) SetConnectedOrganizationId(value *string)() {
-    if m != nil {
-        m.connectedOrganizationId = value
-    }
+    m.connectedOrganizationId = value
 }
 // SetDescription sets the description property value. The name of the connected organization. Read only.
 func (m *ConnectedOrganizationMembers) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }

@@ -32,35 +32,19 @@ func CreateAppConfigurationSettingItemFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppConfigurationSettingItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppConfigKey gets the appConfigKey property value. app configuration key.
 func (m *AppConfigurationSettingItem) GetAppConfigKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConfigKey
-    }
+    return m.appConfigKey
 }
 // GetAppConfigKeyType gets the appConfigKeyType property value. App configuration key types.
 func (m *AppConfigurationSettingItem) GetAppConfigKeyType()(*MdmAppConfigKeyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConfigKeyType
-    }
+    return m.appConfigKeyType
 }
 // GetAppConfigKeyValue gets the appConfigKeyValue property value. app configuration key value.
 func (m *AppConfigurationSettingItem) GetAppConfigKeyValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConfigKeyValue
-    }
+    return m.appConfigKeyValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppConfigurationSettingItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +93,7 @@ func (m *AppConfigurationSettingItem) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppConfigurationSettingItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AppConfigurationSettingItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *AppConfigurationSettingItem) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppConfigurationSettingItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppConfigKey sets the appConfigKey property value. app configuration key.
 func (m *AppConfigurationSettingItem) SetAppConfigKey(value *string)() {
-    if m != nil {
-        m.appConfigKey = value
-    }
+    m.appConfigKey = value
 }
 // SetAppConfigKeyType sets the appConfigKeyType property value. App configuration key types.
 func (m *AppConfigurationSettingItem) SetAppConfigKeyType(value *MdmAppConfigKeyType)() {
-    if m != nil {
-        m.appConfigKeyType = value
-    }
+    m.appConfigKeyType = value
 }
 // SetAppConfigKeyValue sets the appConfigKeyValue property value. app configuration key value.
 func (m *AppConfigurationSettingItem) SetAppConfigKeyValue(value *string)() {
-    if m != nil {
-        m.appConfigKeyValue = value
-    }
+    m.appConfigKeyValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppConfigurationSettingItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

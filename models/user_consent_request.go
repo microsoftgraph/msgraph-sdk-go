@@ -27,11 +27,7 @@ func CreateUserConsentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetApproval gets the approval property value. Approval decisions associated with a request.
 func (m *UserConsentRequest) GetApproval()(Approvalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approval
-    }
+    return m.approval
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *UserConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetReason gets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
 func (m *UserConsentRequest) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // Serialize serializes information the current object
 func (m *UserConsentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *UserConsentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetApproval sets the approval property value. Approval decisions associated with a request.
 func (m *UserConsentRequest) SetApproval(value Approvalable)() {
-    if m != nil {
-        m.approval = value
-    }
+    m.approval = value
 }
 // SetReason sets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
 func (m *UserConsentRequest) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }

@@ -37,19 +37,11 @@ func CreateWorkbookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetApplication gets the application property value. The application property
 func (m *Workbook) GetApplication()(WorkbookApplicationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.application
-    }
+    return m.application
 }
 // GetComments gets the comments property value. The comments property
 func (m *Workbook) GetComments()([]WorkbookCommentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comments
-    }
+    return m.comments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,43 +140,23 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFunctions gets the functions property value. The functions property
 func (m *Workbook) GetFunctions()(WorkbookFunctionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.functions
-    }
+    return m.functions
 }
 // GetNames gets the names property value. Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *Workbook) GetNames()([]WorkbookNamedItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.names
-    }
+    return m.names
 }
 // GetOperations gets the operations property value. The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
 func (m *Workbook) GetOperations()([]WorkbookOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetTables gets the tables property value. Represents a collection of tables associated with the workbook. Read-only.
 func (m *Workbook) GetTables()([]WorkbookTableable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tables
-    }
+    return m.tables
 }
 // GetWorksheets gets the worksheets property value. Represents a collection of worksheets associated with the workbook. Read-only.
 func (m *Workbook) GetWorksheets()([]WorkbookWorksheetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.worksheets
-    }
+    return m.worksheets
 }
 // Serialize serializes information the current object
 func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -258,43 +230,29 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetApplication sets the application property value. The application property
 func (m *Workbook) SetApplication(value WorkbookApplicationable)() {
-    if m != nil {
-        m.application = value
-    }
+    m.application = value
 }
 // SetComments sets the comments property value. The comments property
 func (m *Workbook) SetComments(value []WorkbookCommentable)() {
-    if m != nil {
-        m.comments = value
-    }
+    m.comments = value
 }
 // SetFunctions sets the functions property value. The functions property
 func (m *Workbook) SetFunctions(value WorkbookFunctionsable)() {
-    if m != nil {
-        m.functions = value
-    }
+    m.functions = value
 }
 // SetNames sets the names property value. Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *Workbook) SetNames(value []WorkbookNamedItemable)() {
-    if m != nil {
-        m.names = value
-    }
+    m.names = value
 }
 // SetOperations sets the operations property value. The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
 func (m *Workbook) SetOperations(value []WorkbookOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetTables sets the tables property value. Represents a collection of tables associated with the workbook. Read-only.
 func (m *Workbook) SetTables(value []WorkbookTableable)() {
-    if m != nil {
-        m.tables = value
-    }
+    m.tables = value
 }
 // SetWorksheets sets the worksheets property value. Represents a collection of worksheets associated with the workbook. Read-only.
 func (m *Workbook) SetWorksheets(value []WorkbookWorksheetable)() {
-    if m != nil {
-        m.worksheets = value
-    }
+    m.worksheets = value
 }

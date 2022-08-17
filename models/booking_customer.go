@@ -31,27 +31,15 @@ func CreateBookingCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAddresses gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addresses
-    }
+    return m.addresses
 }
 // GetDisplayName gets the displayName property value. The name of the customer.
 func (m *BookingCustomer) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmailAddress gets the emailAddress property value. The SMTP address of the customer.
 func (m *BookingCustomer) GetEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,11 +96,7 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) GetPhones()([]Phoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phones
-    }
+    return m.phones
 }
 // Serialize serializes information the current object
 func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,25 +140,17 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAddresses sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddressable)() {
-    if m != nil {
-        m.addresses = value
-    }
+    m.addresses = value
 }
 // SetDisplayName sets the displayName property value. The name of the customer.
 func (m *BookingCustomer) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmailAddress sets the emailAddress property value. The SMTP address of the customer.
 func (m *BookingCustomer) SetEmailAddress(value *string)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }
 // SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) SetPhones(value []Phoneable)() {
-    if m != nil {
-        m.phones = value
-    }
+    m.phones = value
 }

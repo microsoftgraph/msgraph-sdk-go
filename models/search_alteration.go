@@ -32,35 +32,19 @@ func CreateSearchAlterationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlteration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAlteredHighlightedQueryString gets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
 func (m *SearchAlteration) GetAlteredHighlightedQueryString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alteredHighlightedQueryString
-    }
+    return m.alteredHighlightedQueryString
 }
 // GetAlteredQueryString gets the alteredQueryString property value. Defines the altered query string with spelling correction.
 func (m *SearchAlteration) GetAlteredQueryString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alteredQueryString
-    }
+    return m.alteredQueryString
 }
 // GetAlteredQueryTokens gets the alteredQueryTokens property value. Represents changed segments with respect to original query.
 func (m *SearchAlteration) GetAlteredQueryTokens()([]AlteredQueryTokenable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alteredQueryTokens
-    }
+    return m.alteredQueryTokens
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,11 +97,7 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchAlteration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SearchAlteration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *SearchAlteration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlteration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAlteredHighlightedQueryString sets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
 func (m *SearchAlteration) SetAlteredHighlightedQueryString(value *string)() {
-    if m != nil {
-        m.alteredHighlightedQueryString = value
-    }
+    m.alteredHighlightedQueryString = value
 }
 // SetAlteredQueryString sets the alteredQueryString property value. Defines the altered query string with spelling correction.
 func (m *SearchAlteration) SetAlteredQueryString(value *string)() {
-    if m != nil {
-        m.alteredQueryString = value
-    }
+    m.alteredQueryString = value
 }
 // SetAlteredQueryTokens sets the alteredQueryTokens property value. Represents changed segments with respect to original query.
 func (m *SearchAlteration) SetAlteredQueryTokens(value []AlteredQueryTokenable)() {
-    if m != nil {
-        m.alteredQueryTokens = value
-    }
+    m.alteredQueryTokens = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchAlteration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

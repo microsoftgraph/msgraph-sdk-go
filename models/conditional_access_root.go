@@ -12,7 +12,7 @@ type ConditionalAccessRoot struct {
     // Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
     policies []ConditionalAccessPolicyable
 }
-// NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
+// NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),
@@ -60,19 +60,11 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.namedLocations
-    }
+    return m.namedLocations
 }
 // GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policies
-    }
+    return m.policies
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
-    if m != nil {
-        m.namedLocations = value
-    }
+    m.namedLocations = value
 }
 // SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
-    if m != nil {
-        m.policies = value
-    }
+    m.policies = value
 }

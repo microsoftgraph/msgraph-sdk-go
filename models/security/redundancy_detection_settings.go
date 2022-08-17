@@ -34,11 +34,7 @@ func CreateRedundancyDetectionSettingsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedundancyDetectionSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetMaxWords gets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxWords
-    }
+    return m.maxWords
 }
 // GetMinWords gets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minWords
-    }
+    return m.minWords
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RedundancyDetectionSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSimilarityThreshold gets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) GetSimilarityThreshold()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.similarityThreshold
-    }
+    return m.similarityThreshold
 }
 // Serialize serializes information the current object
 func (m *RedundancyDetectionSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *RedundancyDetectionSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedundancyDetectionSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetMaxWords sets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
-    if m != nil {
-        m.maxWords = value
-    }
+    m.maxWords = value
 }
 // SetMinWords sets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
-    if m != nil {
-        m.minWords = value
-    }
+    m.minWords = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RedundancyDetectionSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSimilarityThreshold sets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) SetSimilarityThreshold(value *int32)() {
-    if m != nil {
-        m.similarityThreshold = value
-    }
+    m.similarityThreshold = value
 }

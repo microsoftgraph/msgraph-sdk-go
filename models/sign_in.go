@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn provides operations to manage the admin singleton.
+// SignIn provides operations to manage the collection of agreement entities.
 type SignIn struct {
     Entity
     // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
@@ -89,67 +89,35 @@ func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetAppDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appDisplayName
-    }
+    return m.appDisplayName
 }
 // GetAppId gets the appId property value. The application identifier in Azure Active Directory. Supports $filter (eq operator only).
 func (m *SignIn) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliedConditionalAccessPolicies
-    }
+    return m.appliedConditionalAccessPolicies
 }
 // GetClientAppUsed gets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
 func (m *SignIn) GetClientAppUsed()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientAppUsed
-    }
+    return m.clientAppUsed
 }
 // GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditionalAccessStatus
-    }
+    return m.conditionalAccessStatus
 }
 // GetCorrelationId gets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
 func (m *SignIn) GetCorrelationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.correlationId
-    }
+    return m.correlationId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
 func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDeviceDetail gets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
 func (m *SignIn) GetDeviceDetail()(DeviceDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDetail
-    }
+    return m.deviceDetail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -400,123 +368,63 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetIpAddress gets the ipAddress property value. The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetIsInteractive gets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
 func (m *SignIn) GetIsInteractive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInteractive
-    }
+    return m.isInteractive
 }
 // GetLocation gets the location property value. The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
 func (m *SignIn) GetLocation()(SignInLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetResourceDisplayName gets the resourceDisplayName property value. The name of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) GetResourceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceDisplayName
-    }
+    return m.resourceDisplayName
 }
 // GetResourceId gets the resourceId property value. The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskDetail
-    }
+    return m.riskDetail
 }
 // GetRiskEventTypes gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) GetRiskEventTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskEventTypes
-    }
+    return m.riskEventTypes
 }
 // GetRiskEventTypes_v2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetRiskEventTypes_v2()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskEventTypes_v2
-    }
+    return m.riskEventTypes_v2
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskLevelAggregated
-    }
+    return m.riskLevelAggregated
 }
 // GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskLevelDuringSignIn
-    }
+    return m.riskLevelDuringSignIn
 }
 // GetRiskState gets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) GetRiskState()(*RiskState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskState
-    }
+    return m.riskState
 }
 // GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
 func (m *SignIn) GetStatus()(SignInStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUserDisplayName gets the userDisplayName property value. The display name of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserId gets the userId property value. The identifier of the user. Supports $filter (eq operator only).
 func (m *SignIn) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -675,139 +583,93 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetAppDisplayName(value *string)() {
-    if m != nil {
-        m.appDisplayName = value
-    }
+    m.appDisplayName = value
 }
 // SetAppId sets the appId property value. The application identifier in Azure Active Directory. Supports $filter (eq operator only).
 func (m *SignIn) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
-    if m != nil {
-        m.appliedConditionalAccessPolicies = value
-    }
+    m.appliedConditionalAccessPolicies = value
 }
 // SetClientAppUsed sets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
 func (m *SignIn) SetClientAppUsed(value *string)() {
-    if m != nil {
-        m.clientAppUsed = value
-    }
+    m.clientAppUsed = value
 }
 // SetConditionalAccessStatus sets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
-    if m != nil {
-        m.conditionalAccessStatus = value
-    }
+    m.conditionalAccessStatus = value
 }
 // SetCorrelationId sets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
 func (m *SignIn) SetCorrelationId(value *string)() {
-    if m != nil {
-        m.correlationId = value
-    }
+    m.correlationId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
 func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDeviceDetail sets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
 func (m *SignIn) SetDeviceDetail(value DeviceDetailable)() {
-    if m != nil {
-        m.deviceDetail = value
-    }
+    m.deviceDetail = value
 }
 // SetIpAddress sets the ipAddress property value. The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetIsInteractive sets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
 func (m *SignIn) SetIsInteractive(value *bool)() {
-    if m != nil {
-        m.isInteractive = value
-    }
+    m.isInteractive = value
 }
 // SetLocation sets the location property value. The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
 func (m *SignIn) SetLocation(value SignInLocationable)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetResourceDisplayName sets the resourceDisplayName property value. The name of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceDisplayName(value *string)() {
-    if m != nil {
-        m.resourceDisplayName = value
-    }
+    m.resourceDisplayName = value
 }
 // SetResourceId sets the resourceId property value. The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }
 // SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
-    if m != nil {
-        m.riskDetail = value
-    }
+    m.riskDetail = value
 }
 // SetRiskEventTypes sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetRiskEventTypes(value []string)() {
-    if m != nil {
-        m.riskEventTypes = value
-    }
+    m.riskEventTypes = value
 }
 // SetRiskEventTypes_v2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetRiskEventTypes_v2(value []string)() {
-    if m != nil {
-        m.riskEventTypes_v2 = value
-    }
+    m.riskEventTypes_v2 = value
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
-    if m != nil {
-        m.riskLevelAggregated = value
-    }
+    m.riskLevelAggregated = value
 }
 // SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
-    if m != nil {
-        m.riskLevelDuringSignIn = value
-    }
+    m.riskLevelDuringSignIn = value
 }
 // SetRiskState sets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetRiskState(value *RiskState)() {
-    if m != nil {
-        m.riskState = value
-    }
+    m.riskState = value
 }
 // SetStatus sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUserDisplayName sets the userDisplayName property value. The display name of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserId sets the userId property value. The identifier of the user. Supports $filter (eq operator only).
 func (m *SignIn) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

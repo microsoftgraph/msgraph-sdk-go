@@ -35,11 +35,7 @@ func CreateSharedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Shared) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Shared) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,43 +94,23 @@ func (m *Shared) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Shared) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOwner gets the owner property value. The identity of the owner of the shared item. Read-only.
 func (m *Shared) GetOwner()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
+    return m.owner
 }
 // GetScope gets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
 func (m *Shared) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetSharedBy gets the sharedBy property value. The identity of the user who shared the item. Read-only.
 func (m *Shared) GetSharedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedBy
-    }
+    return m.sharedBy
 }
 // GetSharedDateTime gets the sharedDateTime property value. The UTC date and time when the item was shared. Read-only.
 func (m *Shared) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedDateTime
-    }
+    return m.sharedDateTime
 }
 // Serialize serializes information the current object
 func (m *Shared) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *Shared) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Shared) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Shared) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOwner sets the owner property value. The identity of the owner of the shared item. Read-only.
 func (m *Shared) SetOwner(value IdentitySetable)() {
-    if m != nil {
-        m.owner = value
-    }
+    m.owner = value
 }
 // SetScope sets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
 func (m *Shared) SetScope(value *string)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetSharedBy sets the sharedBy property value. The identity of the user who shared the item. Read-only.
 func (m *Shared) SetSharedBy(value IdentitySetable)() {
-    if m != nil {
-        m.sharedBy = value
-    }
+    m.sharedBy = value
 }
 // SetSharedDateTime sets the sharedDateTime property value. The UTC date and time when the item was shared. Read-only.
 func (m *Shared) SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.sharedDateTime = value
-    }
+    m.sharedDateTime = value
 }

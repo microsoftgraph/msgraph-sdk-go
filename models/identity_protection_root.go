@@ -30,11 +30,7 @@ func CreateIdentityProtectionRootFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityProtectionRoot) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,27 +77,15 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentityProtectionRoot) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRiskDetections gets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskDetections
-    }
+    return m.riskDetections
 }
 // GetRiskyUsers gets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *IdentityProtectionRoot) GetRiskyUsers()([]RiskyUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskyUsers
-    }
+    return m.riskyUsers
 }
 // Serialize serializes information the current object
 func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityProtectionRoot) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentityProtectionRoot) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRiskDetections sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) SetRiskDetections(value []RiskDetectionable)() {
-    if m != nil {
-        m.riskDetections = value
-    }
+    m.riskDetections = value
 }
 // SetRiskyUsers sets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *IdentityProtectionRoot) SetRiskyUsers(value []RiskyUserable)() {
-    if m != nil {
-        m.riskyUsers = value
-    }
+    m.riskyUsers = value
 }

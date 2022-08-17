@@ -31,11 +31,7 @@ func CreateOnenoteOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetError gets the error property value. The error returned by the operation.
 func (m *OnenoteOperation) GetError()(OnenoteOperationErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *OnenoteOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetPercentComplete gets the percentComplete property value. The operation percent complete if the operation is still in running status.
 func (m *OnenoteOperation) GetPercentComplete()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.percentComplete
-    }
+    return m.percentComplete
 }
 // GetResourceId gets the resourceId property value. The resource id.
 func (m *OnenoteOperation) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // GetResourceLocation gets the resourceLocation property value. The resource URI for the object. For example, the resource URI for a copied page or section.
 func (m *OnenoteOperation) GetResourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceLocation
-    }
+    return m.resourceLocation
 }
 // Serialize serializes information the current object
 func (m *OnenoteOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *OnenoteOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetError sets the error property value. The error returned by the operation.
 func (m *OnenoteOperation) SetError(value OnenoteOperationErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetPercentComplete sets the percentComplete property value. The operation percent complete if the operation is still in running status.
 func (m *OnenoteOperation) SetPercentComplete(value *string)() {
-    if m != nil {
-        m.percentComplete = value
-    }
+    m.percentComplete = value
 }
 // SetResourceId sets the resourceId property value. The resource id.
 func (m *OnenoteOperation) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }
 // SetResourceLocation sets the resourceLocation property value. The resource URI for the object. For example, the resource URI for a copied page or section.
 func (m *OnenoteOperation) SetResourceLocation(value *string)() {
-    if m != nil {
-        m.resourceLocation = value
-    }
+    m.resourceLocation = value
 }

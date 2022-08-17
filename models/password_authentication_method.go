@@ -28,11 +28,7 @@ func CreatePasswordAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *PasswordAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,11 +57,7 @@ func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i
 }
 // GetPassword gets the password property value. For security, the password is always returned as null from a LIST or GET operation.
 func (m *PasswordAuthenticationMethod) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // Serialize serializes information the current object
 func (m *PasswordAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *PasswordAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *PasswordAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetPassword sets the password property value. For security, the password is always returned as null from a LIST or GET operation.
 func (m *PasswordAuthenticationMethod) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }

@@ -61,35 +61,19 @@ func CreateLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Location) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddress gets the address property value. The street address of the location.
 func (m *Location) GetAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetCoordinates gets the coordinates property value. The geographic coordinates and elevation of the location.
 func (m *Location) GetCoordinates()(OutlookGeoCoordinatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coordinates
-    }
+    return m.coordinates
 }
 // GetDisplayName gets the displayName property value. The name associated with the location.
 func (m *Location) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Location) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,51 +172,27 @@ func (m *Location) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetLocationEmailAddress gets the locationEmailAddress property value. Optional email address of the location.
 func (m *Location) GetLocationEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationEmailAddress
-    }
+    return m.locationEmailAddress
 }
 // GetLocationType gets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) GetLocationType()(*LocationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationType
-    }
+    return m.locationType
 }
 // GetLocationUri gets the locationUri property value. Optional URI representing the location.
 func (m *Location) GetLocationUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationUri
-    }
+    return m.locationUri
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Location) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUniqueId gets the uniqueId property value. For internal use only.
 func (m *Location) GetUniqueId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueId
-    }
+    return m.uniqueId
 }
 // GetUniqueIdType gets the uniqueIdType property value. For internal use only.
 func (m *Location) GetUniqueIdType()(*LocationUniqueIdType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueIdType
-    }
+    return m.uniqueIdType
 }
 // Serialize serializes information the current object
 func (m *Location) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -302,61 +262,41 @@ func (m *Location) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Location) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddress sets the address property value. The street address of the location.
 func (m *Location) SetAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetCoordinates sets the coordinates property value. The geographic coordinates and elevation of the location.
 func (m *Location) SetCoordinates(value OutlookGeoCoordinatesable)() {
-    if m != nil {
-        m.coordinates = value
-    }
+    m.coordinates = value
 }
 // SetDisplayName sets the displayName property value. The name associated with the location.
 func (m *Location) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLocationEmailAddress sets the locationEmailAddress property value. Optional email address of the location.
 func (m *Location) SetLocationEmailAddress(value *string)() {
-    if m != nil {
-        m.locationEmailAddress = value
-    }
+    m.locationEmailAddress = value
 }
 // SetLocationType sets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) SetLocationType(value *LocationType)() {
-    if m != nil {
-        m.locationType = value
-    }
+    m.locationType = value
 }
 // SetLocationUri sets the locationUri property value. Optional URI representing the location.
 func (m *Location) SetLocationUri(value *string)() {
-    if m != nil {
-        m.locationUri = value
-    }
+    m.locationUri = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Location) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUniqueId sets the uniqueId property value. For internal use only.
 func (m *Location) SetUniqueId(value *string)() {
-    if m != nil {
-        m.uniqueId = value
-    }
+    m.uniqueId = value
 }
 // SetUniqueIdType sets the uniqueIdType property value. For internal use only.
 func (m *Location) SetUniqueIdType(value *LocationUniqueIdType)() {
-    if m != nil {
-        m.uniqueIdType = value
-    }
+    m.uniqueIdType = value
 }

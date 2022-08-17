@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FeatureRolloutPolicy provides operations to manage the admin singleton.
+// FeatureRolloutPolicy provides operations to manage the collection of agreement entities.
 type FeatureRolloutPolicy struct {
     Entity
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -35,35 +35,19 @@ func CreateFeatureRolloutPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetDescription gets the description property value. A description for this feature rollout policy.
 func (m *FeatureRolloutPolicy) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name for this  feature rollout policy.
 func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFeature gets the feature property value. The feature property
 func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feature
-    }
+    return m.feature
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,19 +120,11 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsAppliedToOrganization gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
 func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAppliedToOrganization
-    }
+    return m.isAppliedToOrganization
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the feature rollout is enabled.
 func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // Serialize serializes information the current object
 func (m *FeatureRolloutPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -201,37 +177,25 @@ func (m *FeatureRolloutPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObjectable)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetDescription sets the description property value. A description for this feature rollout policy.
 func (m *FeatureRolloutPolicy) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name for this  feature rollout policy.
 func (m *FeatureRolloutPolicy) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFeature sets the feature property value. The feature property
 func (m *FeatureRolloutPolicy) SetFeature(value *StagedFeatureName)() {
-    if m != nil {
-        m.feature = value
-    }
+    m.feature = value
 }
 // SetIsAppliedToOrganization sets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
 func (m *FeatureRolloutPolicy) SetIsAppliedToOrganization(value *bool)() {
-    if m != nil {
-        m.isAppliedToOrganization = value
-    }
+    m.isAppliedToOrganization = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the feature rollout is enabled.
 func (m *FeatureRolloutPolicy) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }

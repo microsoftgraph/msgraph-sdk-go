@@ -80,35 +80,19 @@ func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *Fido2AuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeTargets
-    }
+    return m.includeTargets
 }
 // GetIsAttestationEnforced gets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
 func (m *Fido2AuthenticationMethodConfiguration) GetIsAttestationEnforced()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAttestationEnforced
-    }
+    return m.isAttestationEnforced
 }
 // GetIsSelfServiceRegistrationAllowed gets the isSelfServiceRegistrationAllowed property value. Determines if users can register new FIDO2 security keys.
 func (m *Fido2AuthenticationMethodConfiguration) GetIsSelfServiceRegistrationAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSelfServiceRegistrationAllowed
-    }
+    return m.isSelfServiceRegistrationAllowed
 }
 // GetKeyRestrictions gets the keyRestrictions property value. Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
 func (m *Fido2AuthenticationMethodConfiguration) GetKeyRestrictions()(Fido2KeyRestrictionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyRestrictions
-    }
+    return m.keyRestrictions
 }
 // Serialize serializes information the current object
 func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,25 +132,17 @@ func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *Fido2AuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
-    if m != nil {
-        m.includeTargets = value
-    }
+    m.includeTargets = value
 }
 // SetIsAttestationEnforced sets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
 func (m *Fido2AuthenticationMethodConfiguration) SetIsAttestationEnforced(value *bool)() {
-    if m != nil {
-        m.isAttestationEnforced = value
-    }
+    m.isAttestationEnforced = value
 }
 // SetIsSelfServiceRegistrationAllowed sets the isSelfServiceRegistrationAllowed property value. Determines if users can register new FIDO2 security keys.
 func (m *Fido2AuthenticationMethodConfiguration) SetIsSelfServiceRegistrationAllowed(value *bool)() {
-    if m != nil {
-        m.isSelfServiceRegistrationAllowed = value
-    }
+    m.isSelfServiceRegistrationAllowed = value
 }
 // SetKeyRestrictions sets the keyRestrictions property value. Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
 func (m *Fido2AuthenticationMethodConfiguration) SetKeyRestrictions(value Fido2KeyRestrictionsable)() {
-    if m != nil {
-        m.keyRestrictions = value
-    }
+    m.keyRestrictions = value
 }

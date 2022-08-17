@@ -28,19 +28,11 @@ func CreateErrorDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ErrorDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. The code property
 func (m *ErrorDetails) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ErrorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,19 +71,11 @@ func (m *ErrorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetMessage gets the message property value. The message property
 func (m *ErrorDetails) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetTarget gets the target property value. The target property
 func (m *ErrorDetails) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *ErrorDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,25 +107,17 @@ func (m *ErrorDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ErrorDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. The code property
 func (m *ErrorDetails) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetMessage sets the message property value. The message property
 func (m *ErrorDetails) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetTarget sets the target property value. The target property
 func (m *ErrorDetails) SetTarget(value *string)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

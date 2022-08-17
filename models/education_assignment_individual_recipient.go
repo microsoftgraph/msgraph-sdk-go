@@ -44,11 +44,7 @@ func (m *EducationAssignmentIndividualRecipient) GetFieldDeserializers()(map[str
 }
 // GetRecipients gets the recipients property value. A collection of ids of the recipients.
 func (m *EducationAssignmentIndividualRecipient) GetRecipients()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
+    return m.recipients
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentIndividualRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *EducationAssignmentIndividualRecipient) Serialize(writer i878a80d2330e8
 }
 // SetRecipients sets the recipients property value. A collection of ids of the recipients.
 func (m *EducationAssignmentIndividualRecipient) SetRecipients(value []string)() {
-    if m != nil {
-        m.recipients = value
-    }
+    m.recipients = value
 }

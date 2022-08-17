@@ -27,11 +27,7 @@ func CreateDriveItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetContent gets the content property value. The content property
 func (m *DriveItemVersion) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DriveItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *DriveItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetSize gets the size property value. Indicates the size of the content stream for this version of the item.
 func (m *DriveItemVersion) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // Serialize serializes information the current object
 func (m *DriveItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DriveItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetContent sets the content property value. The content property
 func (m *DriveItemVersion) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetSize sets the size property value. Indicates the size of the content stream for this version of the item.
 func (m *DriveItemVersion) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BitlockerRecoveryKey provides operations to manage the admin singleton.
+// BitlockerRecoveryKey provides operations to manage the collection of agreementAcceptance entities.
 type BitlockerRecoveryKey struct {
     Entity
     // The date and time when the key was originally backed up to Azure Active Directory.
@@ -32,19 +32,11 @@ func CreateBitlockerRecoveryKeyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
 func (m *BitlockerRecoveryKey) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDeviceId gets the deviceId property value. ID of the device the BitLocker key is originally backed up from.
 func (m *BitlockerRecoveryKey) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,19 +85,11 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetKey gets the key property value. The BitLocker recovery key.
 func (m *BitlockerRecoveryKey) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
+    return m.key
 }
 // GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
 func (m *BitlockerRecoveryKey) GetVolumeType()(*VolumeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.volumeType
-    }
+    return m.volumeType
 }
 // Serialize serializes information the current object
 func (m *BitlockerRecoveryKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *BitlockerRecoveryKey) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
 func (m *BitlockerRecoveryKey) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDeviceId sets the deviceId property value. ID of the device the BitLocker key is originally backed up from.
 func (m *BitlockerRecoveryKey) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetKey sets the key property value. The BitLocker recovery key.
 func (m *BitlockerRecoveryKey) SetKey(value *string)() {
-    if m != nil {
-        m.key = value
-    }
+    m.key = value
 }
 // SetVolumeType sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
 func (m *BitlockerRecoveryKey) SetVolumeType(value *VolumeType)() {
-    if m != nil {
-        m.volumeType = value
-    }
+    m.volumeType = value
 }

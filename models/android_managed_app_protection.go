@@ -43,59 +43,31 @@ func CreateAndroidManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apps
-    }
+    return m.apps
 }
 // GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customBrowserDisplayName
-    }
+    return m.customBrowserDisplayName
 }
 // GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customBrowserPackageId
-    }
+    return m.customBrowserPackageId
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *AndroidManagedAppProtection) GetDeployedAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployedAppCount
-    }
+    return m.deployedAppCount
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *AndroidManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentSummary
-    }
+    return m.deploymentSummary
 }
 // GetDisableAppEncryptionIfDeviceEncryptionIsEnabled gets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
 func (m *AndroidManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disableAppEncryptionIfDeviceEncryptionIsEnabled
-    }
+    return m.disableAppEncryptionIfDeviceEncryptionIsEnabled
 }
 // GetEncryptAppData gets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
 func (m *AndroidManagedAppProtection) GetEncryptAppData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptAppData
-    }
+    return m.encryptAppData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -208,27 +180,15 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
 }
 // GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
 func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredPatchVersion
-    }
+    return m.minimumRequiredPatchVersion
 }
 // GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
 func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningPatchVersion
-    }
+    return m.minimumWarningPatchVersion
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
 func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
+    return m.screenCaptureBlocked
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -304,61 +264,41 @@ func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
-    if m != nil {
-        m.apps = value
-    }
+    m.apps = value
 }
 // SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
-    if m != nil {
-        m.customBrowserDisplayName = value
-    }
+    m.customBrowserDisplayName = value
 }
 // SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
-    if m != nil {
-        m.customBrowserPackageId = value
-    }
+    m.customBrowserPackageId = value
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *AndroidManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    if m != nil {
-        m.deployedAppCount = value
-    }
+    m.deployedAppCount = value
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *AndroidManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
-    if m != nil {
-        m.deploymentSummary = value
-    }
+    m.deploymentSummary = value
 }
 // SetDisableAppEncryptionIfDeviceEncryptionIsEnabled sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
 func (m *AndroidManagedAppProtection) SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(value *bool)() {
-    if m != nil {
-        m.disableAppEncryptionIfDeviceEncryptionIsEnabled = value
-    }
+    m.disableAppEncryptionIfDeviceEncryptionIsEnabled = value
 }
 // SetEncryptAppData sets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
 func (m *AndroidManagedAppProtection) SetEncryptAppData(value *bool)() {
-    if m != nil {
-        m.encryptAppData = value
-    }
+    m.encryptAppData = value
 }
 // SetMinimumRequiredPatchVersion sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
 func (m *AndroidManagedAppProtection) SetMinimumRequiredPatchVersion(value *string)() {
-    if m != nil {
-        m.minimumRequiredPatchVersion = value
-    }
+    m.minimumRequiredPatchVersion = value
 }
 // SetMinimumWarningPatchVersion sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
 func (m *AndroidManagedAppProtection) SetMinimumWarningPatchVersion(value *string)() {
-    if m != nil {
-        m.minimumWarningPatchVersion = value
-    }
+    m.minimumWarningPatchVersion = value
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
 func (m *AndroidManagedAppProtection) SetScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.screenCaptureBlocked = value
-    }
+    m.screenCaptureBlocked = value
 }

@@ -38,11 +38,7 @@ func CreateGetHistoricalReportPostRequestBodyFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetHistoricalReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetHistoricalReportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -143,67 +139,35 @@ func (m *GetHistoricalReportPostRequestBody) GetFieldDeserializers()(map[string]
 }
 // GetFilter gets the filter property value. The filter property
 func (m *GetHistoricalReportPostRequestBody) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
+    return m.filter
 }
 // GetGroupBy gets the groupBy property value. The groupBy property
 func (m *GetHistoricalReportPostRequestBody) GetGroupBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupBy
-    }
+    return m.groupBy
 }
 // GetName gets the name property value. The name property
 func (m *GetHistoricalReportPostRequestBody) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOrderBy gets the orderBy property value. The orderBy property
 func (m *GetHistoricalReportPostRequestBody) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
+    return m.orderBy
 }
 // GetSearch gets the search property value. The search property
 func (m *GetHistoricalReportPostRequestBody) GetSearch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
+    return m.search
 }
 // GetSelect gets the select property value. The select property
 func (m *GetHistoricalReportPostRequestBody) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
+    return m.select_escaped
 }
 // GetSkip gets the skip property value. The skip property
 func (m *GetHistoricalReportPostRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
+    return m.skip
 }
 // GetTop gets the top property value. The top property
 func (m *GetHistoricalReportPostRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
+    return m.top
 }
 // Serialize serializes information the current object
 func (m *GetHistoricalReportPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -265,55 +229,37 @@ func (m *GetHistoricalReportPostRequestBody) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetHistoricalReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property
 func (m *GetHistoricalReportPostRequestBody) SetFilter(value *string)() {
-    if m != nil {
-        m.filter = value
-    }
+    m.filter = value
 }
 // SetGroupBy sets the groupBy property value. The groupBy property
 func (m *GetHistoricalReportPostRequestBody) SetGroupBy(value []string)() {
-    if m != nil {
-        m.groupBy = value
-    }
+    m.groupBy = value
 }
 // SetName sets the name property value. The name property
 func (m *GetHistoricalReportPostRequestBody) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOrderBy sets the orderBy property value. The orderBy property
 func (m *GetHistoricalReportPostRequestBody) SetOrderBy(value []string)() {
-    if m != nil {
-        m.orderBy = value
-    }
+    m.orderBy = value
 }
 // SetSearch sets the search property value. The search property
 func (m *GetHistoricalReportPostRequestBody) SetSearch(value *string)() {
-    if m != nil {
-        m.search = value
-    }
+    m.search = value
 }
 // SetSelect sets the select property value. The select property
 func (m *GetHistoricalReportPostRequestBody) SetSelect(value []string)() {
-    if m != nil {
-        m.select_escaped = value
-    }
+    m.select_escaped = value
 }
 // SetSkip sets the skip property value. The skip property
 func (m *GetHistoricalReportPostRequestBody) SetSkip(value *int32)() {
-    if m != nil {
-        m.skip = value
-    }
+    m.skip = value
 }
 // SetTop sets the top property value. The top property
 func (m *GetHistoricalReportPostRequestBody) SetTop(value *int32)() {
-    if m != nil {
-        m.top = value
-    }
+    m.top = value
 }

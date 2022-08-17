@@ -41,27 +41,15 @@ func CreateServiceHealthIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetClassification gets the classification property value. The classification property
 func (m *ServiceHealthIssue) GetClassification()(*ServiceHealthClassificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetFeature gets the feature property value. The feature name of the service issue.
 func (m *ServiceHealthIssue) GetFeature()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feature
-    }
+    return m.feature
 }
 // GetFeatureGroup gets the featureGroup property value. The feature group name of the service issue.
 func (m *ServiceHealthIssue) GetFeatureGroup()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureGroup
-    }
+    return m.featureGroup
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,51 +152,27 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetImpactDescription gets the impactDescription property value. The description of the service issue impact.
 func (m *ServiceHealthIssue) GetImpactDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactDescription
-    }
+    return m.impactDescription
 }
 // GetIsResolved gets the isResolved property value. Indicates whether the issue is resolved.
 func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isResolved
-    }
+    return m.isResolved
 }
 // GetOrigin gets the origin property value. The origin property
 func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
-    if m == nil {
-        return nil
-    } else {
-        return m.origin
-    }
+    return m.origin
 }
 // GetPosts gets the posts property value. Collection of historical posts for the service issue.
 func (m *ServiceHealthIssue) GetPosts()([]ServiceHealthIssuePostable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.posts
-    }
+    return m.posts
 }
 // GetService gets the service property value. Indicates the service affected by the issue.
 func (m *ServiceHealthIssue) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetStatus gets the status property value. The status property
 func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ServiceHealthIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,55 +245,37 @@ func (m *ServiceHealthIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetClassification sets the classification property value. The classification property
 func (m *ServiceHealthIssue) SetClassification(value *ServiceHealthClassificationType)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
 // SetFeature sets the feature property value. The feature name of the service issue.
 func (m *ServiceHealthIssue) SetFeature(value *string)() {
-    if m != nil {
-        m.feature = value
-    }
+    m.feature = value
 }
 // SetFeatureGroup sets the featureGroup property value. The feature group name of the service issue.
 func (m *ServiceHealthIssue) SetFeatureGroup(value *string)() {
-    if m != nil {
-        m.featureGroup = value
-    }
+    m.featureGroup = value
 }
 // SetImpactDescription sets the impactDescription property value. The description of the service issue impact.
 func (m *ServiceHealthIssue) SetImpactDescription(value *string)() {
-    if m != nil {
-        m.impactDescription = value
-    }
+    m.impactDescription = value
 }
 // SetIsResolved sets the isResolved property value. Indicates whether the issue is resolved.
 func (m *ServiceHealthIssue) SetIsResolved(value *bool)() {
-    if m != nil {
-        m.isResolved = value
-    }
+    m.isResolved = value
 }
 // SetOrigin sets the origin property value. The origin property
 func (m *ServiceHealthIssue) SetOrigin(value *ServiceHealthOrigin)() {
-    if m != nil {
-        m.origin = value
-    }
+    m.origin = value
 }
 // SetPosts sets the posts property value. Collection of historical posts for the service issue.
 func (m *ServiceHealthIssue) SetPosts(value []ServiceHealthIssuePostable)() {
-    if m != nil {
-        m.posts = value
-    }
+    m.posts = value
 }
 // SetService sets the service property value. Indicates the service affected by the issue.
 func (m *ServiceHealthIssue) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ServiceHealthIssue) SetStatus(value *ServiceHealthStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -27,19 +27,11 @@ func CreateEntitlementManagementSettingsFromDiscriminatorValue(parseNode i878a80
 }
 // GetDurationUntilExternalUserDeletedAfterBlocked gets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) GetDurationUntilExternalUserDeletedAfterBlocked()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationUntilExternalUserDeletedAfterBlocked
-    }
+    return m.durationUntilExternalUserDeletedAfterBlocked
 }
 // GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*AccessPackageExternalUserLifecycleAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUserLifecycleAction
-    }
+    return m.externalUserLifecycleAction
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,13 +81,9 @@ func (m *EntitlementManagementSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetDurationUntilExternalUserDeletedAfterBlocked sets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfterBlocked(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.durationUntilExternalUserDeletedAfterBlocked = value
-    }
+    m.durationUntilExternalUserDeletedAfterBlocked = value
 }
 // SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *AccessPackageExternalUserLifecycleAction)() {
-    if m != nil {
-        m.externalUserLifecycleAction = value
-    }
+    m.externalUserLifecycleAction = value
 }

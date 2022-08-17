@@ -40,11 +40,7 @@ func (m *EducationAssignmentPointsGradeType) GetFieldDeserializers()(map[string]
 }
 // GetMaxPoints gets the maxPoints property value. Max points possible for this assignment.
 func (m *EducationAssignmentPointsGradeType) GetMaxPoints()(*float32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxPoints
-    }
+    return m.maxPoints
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentPointsGradeType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *EducationAssignmentPointsGradeType) Serialize(writer i878a80d2330e89d26
 }
 // SetMaxPoints sets the maxPoints property value. Max points possible for this assignment.
 func (m *EducationAssignmentPointsGradeType) SetMaxPoints(value *float32)() {
-    if m != nil {
-        m.maxPoints = value
-    }
+    m.maxPoints = value
 }

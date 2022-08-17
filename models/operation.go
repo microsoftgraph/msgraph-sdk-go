@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Operation provides operations to manage the collection of application entities.
+// Operation provides operations to manage the collection of agreement entities.
 type Operation struct {
     Entity
     // The start time of the operation.
@@ -49,11 +49,7 @@ func CreateOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetCreatedDateTime gets the createdDateTime property value. The start time of the operation.
 func (m *Operation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Operation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +88,11 @@ func (m *Operation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action of the operation.
 func (m *Operation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetStatus gets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
 func (m *Operation) GetStatus()(*OperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *Operation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -135,19 +123,13 @@ func (m *Operation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetCreatedDateTime sets the createdDateTime property value. The start time of the operation.
 func (m *Operation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The time of the last action of the operation.
 func (m *Operation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetStatus sets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
 func (m *Operation) SetStatus(value *OperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

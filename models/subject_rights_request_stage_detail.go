@@ -32,19 +32,11 @@ func CreateSubjectRightsRequestStageDetailFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestStageDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetError gets the error property value. Describes the error, if any, for the current stage.
 func (m *SubjectRightsRequestStageDetail) GetError()(PublicErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SubjectRightsRequestStageDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stage
-    }
+    return m.stage
 }
 // GetStatus gets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStageStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestStageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *SubjectRightsRequestStageDetail) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetError sets the error property value. Describes the error, if any, for the current stage.
 func (m *SubjectRightsRequestStageDetail) SetError(value PublicErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SubjectRightsRequestStageDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStage)() {
-    if m != nil {
-        m.stage = value
-    }
+    m.stage = value
 }
 // SetStatus sets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStatus(value *SubjectRightsRequestStageStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

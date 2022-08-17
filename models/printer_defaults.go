@@ -60,51 +60,27 @@ func CreatePrinterDefaultsFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDefaults) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetColorMode gets the colorMode property value. The default color mode to use when printing the document. Valid values are described in the following table.
 func (m *PrinterDefaults) GetColorMode()(*PrintColorMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.colorMode
-    }
+    return m.colorMode
 }
 // GetContentType gets the contentType property value. The default content (MIME) type to use when processing documents.
 func (m *PrinterDefaults) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetCopiesPerJob gets the copiesPerJob property value. The default number of copies printed per job.
 func (m *PrinterDefaults) GetCopiesPerJob()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.copiesPerJob
-    }
+    return m.copiesPerJob
 }
 // GetDpi gets the dpi property value. The default resolution in DPI to use when printing the job.
 func (m *PrinterDefaults) GetDpi()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dpi
-    }
+    return m.dpi
 }
 // GetDuplexMode gets the duplexMode property value. The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.
 func (m *PrinterDefaults) GetDuplexMode()(*PrintDuplexMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duplexMode
-    }
+    return m.duplexMode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -297,107 +273,55 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetFinishings gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
 func (m *PrinterDefaults) GetFinishings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finishings
-    }
+    return m.finishings
 }
 // GetFitPdfToPage gets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
 func (m *PrinterDefaults) GetFitPdfToPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fitPdfToPage
-    }
+    return m.fitPdfToPage
 }
 // GetInputBin gets the inputBin property value. The default input bin that serves as the paper source.
 func (m *PrinterDefaults) GetInputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputBin
-    }
+    return m.inputBin
 }
 // GetMediaColor gets the mediaColor property value. The default media (such as paper) color to print the document on.
 func (m *PrinterDefaults) GetMediaColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaColor
-    }
+    return m.mediaColor
 }
 // GetMediaSize gets the mediaSize property value. The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
 func (m *PrinterDefaults) GetMediaSize()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSize
-    }
+    return m.mediaSize
 }
 // GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
 func (m *PrinterDefaults) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
+    return m.mediaType
 }
 // GetMultipageLayout gets the multipageLayout property value. The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
 func (m *PrinterDefaults) GetMultipageLayout()(*PrintMultipageLayout) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multipageLayout
-    }
+    return m.multipageLayout
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrinterDefaults) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOrientation gets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.
 func (m *PrinterDefaults) GetOrientation()(*PrintOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
+    return m.orientation
 }
 // GetOutputBin gets the outputBin property value. The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
 func (m *PrinterDefaults) GetOutputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputBin
-    }
+    return m.outputBin
 }
 // GetPagesPerSheet gets the pagesPerSheet property value. The default number of document pages to print on each sheet.
 func (m *PrinterDefaults) GetPagesPerSheet()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesPerSheet
-    }
+    return m.pagesPerSheet
 }
 // GetQuality gets the quality property value. The default quality to use when printing the document. Valid values are described in the following table.
 func (m *PrinterDefaults) GetQuality()(*PrintQuality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quality
-    }
+    return m.quality
 }
 // GetScaling gets the scaling property value. Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
 func (m *PrinterDefaults) GetScaling()(*PrintScaling) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scaling
-    }
+    return m.scaling
 }
 // Serialize serializes information the current object
 func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -525,115 +449,77 @@ func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDefaults) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetColorMode sets the colorMode property value. The default color mode to use when printing the document. Valid values are described in the following table.
 func (m *PrinterDefaults) SetColorMode(value *PrintColorMode)() {
-    if m != nil {
-        m.colorMode = value
-    }
+    m.colorMode = value
 }
 // SetContentType sets the contentType property value. The default content (MIME) type to use when processing documents.
 func (m *PrinterDefaults) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetCopiesPerJob sets the copiesPerJob property value. The default number of copies printed per job.
 func (m *PrinterDefaults) SetCopiesPerJob(value *int32)() {
-    if m != nil {
-        m.copiesPerJob = value
-    }
+    m.copiesPerJob = value
 }
 // SetDpi sets the dpi property value. The default resolution in DPI to use when printing the job.
 func (m *PrinterDefaults) SetDpi(value *int32)() {
-    if m != nil {
-        m.dpi = value
-    }
+    m.dpi = value
 }
 // SetDuplexMode sets the duplexMode property value. The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.
 func (m *PrinterDefaults) SetDuplexMode(value *PrintDuplexMode)() {
-    if m != nil {
-        m.duplexMode = value
-    }
+    m.duplexMode = value
 }
 // SetFinishings sets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
 func (m *PrinterDefaults) SetFinishings(value []string)() {
-    if m != nil {
-        m.finishings = value
-    }
+    m.finishings = value
 }
 // SetFitPdfToPage sets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
 func (m *PrinterDefaults) SetFitPdfToPage(value *bool)() {
-    if m != nil {
-        m.fitPdfToPage = value
-    }
+    m.fitPdfToPage = value
 }
 // SetInputBin sets the inputBin property value. The default input bin that serves as the paper source.
 func (m *PrinterDefaults) SetInputBin(value *string)() {
-    if m != nil {
-        m.inputBin = value
-    }
+    m.inputBin = value
 }
 // SetMediaColor sets the mediaColor property value. The default media (such as paper) color to print the document on.
 func (m *PrinterDefaults) SetMediaColor(value *string)() {
-    if m != nil {
-        m.mediaColor = value
-    }
+    m.mediaColor = value
 }
 // SetMediaSize sets the mediaSize property value. The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
 func (m *PrinterDefaults) SetMediaSize(value *string)() {
-    if m != nil {
-        m.mediaSize = value
-    }
+    m.mediaSize = value
 }
 // SetMediaType sets the mediaType property value. The default media (such as paper) type to print the document on.
 func (m *PrinterDefaults) SetMediaType(value *string)() {
-    if m != nil {
-        m.mediaType = value
-    }
+    m.mediaType = value
 }
 // SetMultipageLayout sets the multipageLayout property value. The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
 func (m *PrinterDefaults) SetMultipageLayout(value *PrintMultipageLayout)() {
-    if m != nil {
-        m.multipageLayout = value
-    }
+    m.multipageLayout = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrinterDefaults) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOrientation sets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.
 func (m *PrinterDefaults) SetOrientation(value *PrintOrientation)() {
-    if m != nil {
-        m.orientation = value
-    }
+    m.orientation = value
 }
 // SetOutputBin sets the outputBin property value. The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
 func (m *PrinterDefaults) SetOutputBin(value *string)() {
-    if m != nil {
-        m.outputBin = value
-    }
+    m.outputBin = value
 }
 // SetPagesPerSheet sets the pagesPerSheet property value. The default number of document pages to print on each sheet.
 func (m *PrinterDefaults) SetPagesPerSheet(value *int32)() {
-    if m != nil {
-        m.pagesPerSheet = value
-    }
+    m.pagesPerSheet = value
 }
 // SetQuality sets the quality property value. The default quality to use when printing the document. Valid values are described in the following table.
 func (m *PrinterDefaults) SetQuality(value *PrintQuality)() {
-    if m != nil {
-        m.quality = value
-    }
+    m.quality = value
 }
 // SetScaling sets the scaling property value. Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
 func (m *PrinterDefaults) SetScaling(value *PrintScaling)() {
-    if m != nil {
-        m.scaling = value
-    }
+    m.scaling = value
 }

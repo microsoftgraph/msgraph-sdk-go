@@ -38,27 +38,15 @@ func CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCaller gets the caller property value. The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetCaller()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.caller
-    }
+    return m.caller
 }
 // GetEnforcedSettings gets the enforcedSettings property value. The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetEnforcedSettings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcedSettings
-    }
+    return m.enforcedSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,43 +141,23 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
 }
 // GetInheritableSettings gets the inheritableSettings property value. The list of role settings that can be inherited by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inheritableSettings
-    }
+    return m.inheritableSettings
 }
 // GetLevel gets the level property value. The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.level
-    }
+    return m.level
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperations gets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetTargetObjects gets the targetObjects property value. The targetObjects property
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetObjects
-    }
+    return m.targetObjects
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -249,49 +217,33 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCaller sets the caller property value. The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetCaller(value *string)() {
-    if m != nil {
-        m.caller = value
-    }
+    m.caller = value
 }
 // SetEnforcedSettings sets the enforcedSettings property value. The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetEnforcedSettings(value []string)() {
-    if m != nil {
-        m.enforcedSettings = value
-    }
+    m.enforcedSettings = value
 }
 // SetInheritableSettings sets the inheritableSettings property value. The list of role settings that can be inherited by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetInheritableSettings(value []string)() {
-    if m != nil {
-        m.inheritableSettings = value
-    }
+    m.inheritableSettings = value
 }
 // SetLevel sets the level property value. The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetLevel(value *string)() {
-    if m != nil {
-        m.level = value
-    }
+    m.level = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperations sets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []string)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetTargetObjects sets the targetObjects property value. The targetObjects property
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []DirectoryObjectable)() {
-    if m != nil {
-        m.targetObjects = value
-    }
+    m.targetObjects = value
 }

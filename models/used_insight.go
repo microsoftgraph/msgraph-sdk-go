@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsedInsight provides operations to manage the collection of application entities.
+// UsedInsight provides operations to manage the collection of agreement entities.
 type UsedInsight struct {
     Entity
     // Information about when the item was last viewed or modified by the user. Read only.
@@ -76,35 +76,19 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLastUsed gets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
 func (m *UsedInsight) GetLastUsed()(UsageDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUsed
-    }
+    return m.lastUsed
 }
 // GetResource gets the resource property value. Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *UsedInsight) GetResource()(Entityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // GetResourceReference gets the resourceReference property value. Reference properties of the used document, such as the url and type of the document. Read-only
 func (m *UsedInsight) GetResourceReference()(ResourceReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceReference
-    }
+    return m.resourceReference
 }
 // GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *UsedInsight) GetResourceVisualization()(ResourceVisualizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceVisualization
-    }
+    return m.resourceVisualization
 }
 // Serialize serializes information the current object
 func (m *UsedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *UsedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetLastUsed sets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
 func (m *UsedInsight) SetLastUsed(value UsageDetailsable)() {
-    if m != nil {
-        m.lastUsed = value
-    }
+    m.lastUsed = value
 }
 // SetResource sets the resource property value. Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *UsedInsight) SetResource(value Entityable)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }
 // SetResourceReference sets the resourceReference property value. Reference properties of the used document, such as the url and type of the document. Read-only
 func (m *UsedInsight) SetResourceReference(value ResourceReferenceable)() {
-    if m != nil {
-        m.resourceReference = value
-    }
+    m.resourceReference = value
 }
 // SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *UsedInsight) SetResourceVisualization(value ResourceVisualizationable)() {
-    if m != nil {
-        m.resourceVisualization = value
-    }
+    m.resourceVisualization = value
 }

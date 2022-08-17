@@ -33,19 +33,11 @@ func CreateUploadSessionFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSession) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
 func (m *UploadSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,27 +90,15 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetNextExpectedRanges gets the nextExpectedRanges property value. When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) GetNextExpectedRanges()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nextExpectedRanges
-    }
+    return m.nextExpectedRanges
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UploadSession) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUploadUrl gets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
 func (m *UploadSession) GetUploadUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadUrl
-    }
+    return m.uploadUrl
 }
 // Serialize serializes information the current object
 func (m *UploadSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,31 +136,21 @@ func (m *UploadSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSession) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
 func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetNextExpectedRanges sets the nextExpectedRanges property value. When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
-    if m != nil {
-        m.nextExpectedRanges = value
-    }
+    m.nextExpectedRanges = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UploadSession) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUploadUrl sets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
 func (m *UploadSession) SetUploadUrl(value *string)() {
-    if m != nil {
-        m.uploadUrl = value
-    }
+    m.uploadUrl = value
 }

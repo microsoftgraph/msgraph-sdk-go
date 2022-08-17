@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DetectedApp a managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
+// DetectedApp 
 type DetectedApp struct {
     Entity
     // The number of devices that have installed this application
@@ -18,7 +18,7 @@ type DetectedApp struct {
     // Version of the discovered application. Read-only
     version *string
 }
-// NewDetectedApp instantiates a new detectedApp and sets the default values.
+// NewDetectedApp instantiates a new DetectedApp and sets the default values.
 func NewDetectedApp()(*DetectedApp) {
     m := &DetectedApp{
         Entity: *NewEntity(),
@@ -33,19 +33,11 @@ func CreateDetectedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetDeviceCount gets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) GetDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCount
-    }
+    return m.deviceCount
 }
 // GetDisplayName gets the displayName property value. Name of the discovered application. Read-only
 func (m *DetectedApp) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,27 +100,15 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetManagedDevices gets the managedDevices property value. The devices that have the discovered application installed
 func (m *DetectedApp) GetManagedDevices()([]ManagedDeviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevices
-    }
+    return m.managedDevices
 }
 // GetSizeInByte gets the sizeInByte property value. Discovered application size in bytes. Read-only
 func (m *DetectedApp) GetSizeInByte()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sizeInByte
-    }
+    return m.sizeInByte
 }
 // GetVersion gets the version property value. Version of the discovered application. Read-only
 func (m *DetectedApp) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DetectedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *DetectedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetDeviceCount sets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) SetDeviceCount(value *int32)() {
-    if m != nil {
-        m.deviceCount = value
-    }
+    m.deviceCount = value
 }
 // SetDisplayName sets the displayName property value. Name of the discovered application. Read-only
 func (m *DetectedApp) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetManagedDevices sets the managedDevices property value. The devices that have the discovered application installed
 func (m *DetectedApp) SetManagedDevices(value []ManagedDeviceable)() {
-    if m != nil {
-        m.managedDevices = value
-    }
+    m.managedDevices = value
 }
 // SetSizeInByte sets the sizeInByte property value. Discovered application size in bytes. Read-only
 func (m *DetectedApp) SetSizeInByte(value *int64)() {
-    if m != nil {
-        m.sizeInByte = value
-    }
+    m.sizeInByte = value
 }
 // SetVersion sets the version property value. Version of the discovered application. Read-only
 func (m *DetectedApp) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

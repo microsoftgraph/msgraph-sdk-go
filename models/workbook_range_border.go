@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeBorder provides operations to manage the admin singleton.
+// WorkbookRangeBorder provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookRangeBorder struct {
     Entity
     // HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
@@ -31,11 +31,7 @@ func CreateWorkbookRangeBorderFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetColor gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
 func (m *WorkbookRangeBorder) GetColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetSideIndex gets the sideIndex property value. Constant value that indicates the specific side of the border. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
 func (m *WorkbookRangeBorder) GetSideIndex()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sideIndex
-    }
+    return m.sideIndex
 }
 // GetStyle gets the style property value. One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
 func (m *WorkbookRangeBorder) GetStyle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.style
-    }
+    return m.style
 }
 // GetWeight gets the weight property value. Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.
 func (m *WorkbookRangeBorder) GetWeight()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.weight
-    }
+    return m.weight
 }
 // Serialize serializes information the current object
 func (m *WorkbookRangeBorder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *WorkbookRangeBorder) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetColor sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
 func (m *WorkbookRangeBorder) SetColor(value *string)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }
 // SetSideIndex sets the sideIndex property value. Constant value that indicates the specific side of the border. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
 func (m *WorkbookRangeBorder) SetSideIndex(value *string)() {
-    if m != nil {
-        m.sideIndex = value
-    }
+    m.sideIndex = value
 }
 // SetStyle sets the style property value. One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
 func (m *WorkbookRangeBorder) SetStyle(value *string)() {
-    if m != nil {
-        m.style = value
-    }
+    m.style = value
 }
 // SetWeight sets the weight property value. Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.
 func (m *WorkbookRangeBorder) SetWeight(value *string)() {
-    if m != nil {
-        m.weight = value
-    }
+    m.weight = value
 }

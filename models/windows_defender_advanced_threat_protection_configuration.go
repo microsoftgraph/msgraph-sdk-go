@@ -27,19 +27,11 @@ func CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminator
 }
 // GetAllowSampleSharing gets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAllowSampleSharing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowSampleSharing
-    }
+    return m.allowSampleSharing
 }
 // GetEnableExpeditedTelemetryReporting gets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetEnableExpeditedTelemetryReporting()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableExpeditedTelemetryReporting
-    }
+    return m.enableExpeditedTelemetryReporting
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) Serialize(writer 
 }
 // SetAllowSampleSharing sets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAllowSampleSharing(value *bool)() {
-    if m != nil {
-        m.allowSampleSharing = value
-    }
+    m.allowSampleSharing = value
 }
 // SetEnableExpeditedTelemetryReporting sets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetEnableExpeditedTelemetryReporting(value *bool)() {
-    if m != nil {
-        m.enableExpeditedTelemetryReporting = value
-    }
+    m.enableExpeditedTelemetryReporting = value
 }

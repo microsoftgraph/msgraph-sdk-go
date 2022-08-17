@@ -31,27 +31,15 @@ func CreateEducationAssignmentDefaultsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAddedStudentAction gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStudentAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addedStudentAction
-    }
+    return m.addedStudentAction
 }
 // GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
 func (m *EducationAssignmentDefaults) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addToCalendarAction
-    }
+    return m.addToCalendarAction
 }
 // GetDueTime gets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
 func (m *EducationAssignmentDefaults) GetDueTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueTime
-    }
+    return m.dueTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +88,7 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i8
 }
 // GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
 func (m *EducationAssignmentDefaults) GetNotificationChannelUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationChannelUrl
-    }
+    return m.notificationChannelUrl
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *EducationAssignmentDefaults) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAddedStudentAction)() {
-    if m != nil {
-        m.addedStudentAction = value
-    }
+    m.addedStudentAction = value
 }
 // SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
 func (m *EducationAssignmentDefaults) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
-    if m != nil {
-        m.addToCalendarAction = value
-    }
+    m.addToCalendarAction = value
 }
 // SetDueTime sets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
 func (m *EducationAssignmentDefaults) SetDueTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.dueTime = value
-    }
+    m.dueTime = value
 }
 // SetNotificationChannelUrl sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
 func (m *EducationAssignmentDefaults) SetNotificationChannelUrl(value *string)() {
-    if m != nil {
-        m.notificationChannelUrl = value
-    }
+    m.notificationChannelUrl = value
 }

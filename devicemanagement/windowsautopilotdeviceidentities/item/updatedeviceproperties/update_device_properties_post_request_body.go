@@ -30,27 +30,15 @@ func CreateUpdateDevicePropertiesPostRequestBodyFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDevicePropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
 func (m *UpdateDevicePropertiesPostRequestBody) GetAddressableUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addressableUserName
-    }
+    return m.addressableUserName
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *UpdateDevicePropertiesPostRequestBody) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateDevicePropertiesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,19 +87,11 @@ func (m *UpdateDevicePropertiesPostRequestBody) GetFieldDeserializers()(map[stri
 }
 // GetGroupTag gets the groupTag property value. The groupTag property
 func (m *UpdateDevicePropertiesPostRequestBody) GetGroupTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupTag
-    }
+    return m.groupTag
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *UpdateDevicePropertiesPostRequestBody) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *UpdateDevicePropertiesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *UpdateDevicePropertiesPostRequestBody) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDevicePropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddressableUserName sets the addressableUserName property value. The addressableUserName property
 func (m *UpdateDevicePropertiesPostRequestBody) SetAddressableUserName(value *string)() {
-    if m != nil {
-        m.addressableUserName = value
-    }
+    m.addressableUserName = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *UpdateDevicePropertiesPostRequestBody) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGroupTag sets the groupTag property value. The groupTag property
 func (m *UpdateDevicePropertiesPostRequestBody) SetGroupTag(value *string)() {
-    if m != nil {
-        m.groupTag = value
-    }
+    m.groupTag = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *UpdateDevicePropertiesPostRequestBody) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

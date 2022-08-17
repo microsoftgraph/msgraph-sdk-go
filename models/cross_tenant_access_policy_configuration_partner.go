@@ -40,43 +40,23 @@ func CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue(par
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2bCollaborationInbound
-    }
+    return m.b2bCollaborationInbound
 }
 // GetB2bCollaborationOutbound gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2bCollaborationOutbound
-    }
+    return m.b2bCollaborationOutbound
 }
 // GetB2bDirectConnectInbound gets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2bDirectConnectInbound
-    }
+    return m.b2bDirectConnectInbound
 }
 // GetB2bDirectConnectOutbound gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2bDirectConnectOutbound
-    }
+    return m.b2bDirectConnectOutbound
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,35 +145,19 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
 }
 // GetInboundTrust gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inboundTrust
-    }
+    return m.inboundTrust
 }
 // GetIsServiceProvider gets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isServiceProvider
-    }
+    return m.isServiceProvider
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,55 +219,37 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)() {
-    if m != nil {
-        m.b2bCollaborationInbound = value
-    }
+    m.b2bCollaborationInbound = value
 }
 // SetB2bCollaborationOutbound sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)() {
-    if m != nil {
-        m.b2bCollaborationOutbound = value
-    }
+    m.b2bCollaborationOutbound = value
 }
 // SetB2bDirectConnectInbound sets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)() {
-    if m != nil {
-        m.b2bDirectConnectInbound = value
-    }
+    m.b2bDirectConnectInbound = value
 }
 // SetB2bDirectConnectOutbound sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)() {
-    if m != nil {
-        m.b2bDirectConnectOutbound = value
-    }
+    m.b2bDirectConnectOutbound = value
 }
 // SetInboundTrust sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)() {
-    if m != nil {
-        m.inboundTrust = value
-    }
+    m.inboundTrust = value
 }
 // SetIsServiceProvider sets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value *bool)() {
-    if m != nil {
-        m.isServiceProvider = value
-    }
+    m.isServiceProvider = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenantId sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

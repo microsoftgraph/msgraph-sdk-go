@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenotePage provides operations to manage the collection of application entities.
+// OnenotePage provides operations to manage the collection of agreement entities.
 type OnenotePage struct {
     OnenoteEntitySchemaObjectModel
     // The page's HTML content.
@@ -46,27 +46,15 @@ func CreateOnenotePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetContent gets the content property value. The page's HTML content.
 func (m *OnenotePage) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetContentUrl gets the contentUrl property value. The URL for the page's HTML content.  Read-only.
 func (m *OnenotePage) GetContentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentUrl
-    }
+    return m.contentUrl
 }
 // GetCreatedByAppId gets the createdByAppId property value. The unique identifier of the application that created the page. Read-only.
 func (m *OnenotePage) GetCreatedByAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdByAppId
-    }
+    return m.createdByAppId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenotePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -189,67 +177,35 @@ func (m *OnenotePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *OnenotePage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLevel gets the level property value. The indentation level of the page. Read-only.
 func (m *OnenotePage) GetLevel()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.level
-    }
+    return m.level
 }
 // GetLinks gets the links property value. Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.
 func (m *OnenotePage) GetLinks()(PageLinksable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.links
-    }
+    return m.links
 }
 // GetOrder gets the order property value. The order of the page within its parent section. Read-only.
 func (m *OnenotePage) GetOrder()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.order
-    }
+    return m.order
 }
 // GetParentNotebook gets the parentNotebook property value. The notebook that contains the page.  Read-only.
 func (m *OnenotePage) GetParentNotebook()(Notebookable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentNotebook
-    }
+    return m.parentNotebook
 }
 // GetParentSection gets the parentSection property value. The section that contains the page. Read-only.
 func (m *OnenotePage) GetParentSection()(OnenoteSectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentSection
-    }
+    return m.parentSection
 }
 // GetTitle gets the title property value. The title of the page.
 func (m *OnenotePage) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // GetUserTags gets the userTags property value. The userTags property
 func (m *OnenotePage) GetUserTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userTags
-    }
+    return m.userTags
 }
 // Serialize serializes information the current object
 func (m *OnenotePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -327,67 +283,45 @@ func (m *OnenotePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetContent sets the content property value. The page's HTML content.
 func (m *OnenotePage) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetContentUrl sets the contentUrl property value. The URL for the page's HTML content.  Read-only.
 func (m *OnenotePage) SetContentUrl(value *string)() {
-    if m != nil {
-        m.contentUrl = value
-    }
+    m.contentUrl = value
 }
 // SetCreatedByAppId sets the createdByAppId property value. The unique identifier of the application that created the page. Read-only.
 func (m *OnenotePage) SetCreatedByAppId(value *string)() {
-    if m != nil {
-        m.createdByAppId = value
-    }
+    m.createdByAppId = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *OnenotePage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLevel sets the level property value. The indentation level of the page. Read-only.
 func (m *OnenotePage) SetLevel(value *int32)() {
-    if m != nil {
-        m.level = value
-    }
+    m.level = value
 }
 // SetLinks sets the links property value. Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.
 func (m *OnenotePage) SetLinks(value PageLinksable)() {
-    if m != nil {
-        m.links = value
-    }
+    m.links = value
 }
 // SetOrder sets the order property value. The order of the page within its parent section. Read-only.
 func (m *OnenotePage) SetOrder(value *int32)() {
-    if m != nil {
-        m.order = value
-    }
+    m.order = value
 }
 // SetParentNotebook sets the parentNotebook property value. The notebook that contains the page.  Read-only.
 func (m *OnenotePage) SetParentNotebook(value Notebookable)() {
-    if m != nil {
-        m.parentNotebook = value
-    }
+    m.parentNotebook = value
 }
 // SetParentSection sets the parentSection property value. The section that contains the page. Read-only.
 func (m *OnenotePage) SetParentSection(value OnenoteSectionable)() {
-    if m != nil {
-        m.parentSection = value
-    }
+    m.parentSection = value
 }
 // SetTitle sets the title property value. The title of the page.
 func (m *OnenotePage) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }
 // SetUserTags sets the userTags property value. The userTags property
 func (m *OnenotePage) SetUserTags(value []string)() {
-    if m != nil {
-        m.userTags = value
-    }
+    m.userTags = value
 }

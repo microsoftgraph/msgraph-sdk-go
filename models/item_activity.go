@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemActivity provides operations to manage the admin singleton.
+// ItemActivity provides operations to manage the collection of agreement entities.
 type ItemActivity struct {
     Entity
     // An item was accessed.
@@ -32,35 +32,19 @@ func CreateItemActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAccess gets the access property value. An item was accessed.
 func (m *ItemActivity) GetAccess()(AccessActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.access
-    }
+    return m.access
 }
 // GetActivityDateTime gets the activityDateTime property value. Details about when the activity took place. Read-only.
 func (m *ItemActivity) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityDateTime
-    }
+    return m.activityDateTime
 }
 // GetActor gets the actor property value. Identity of who performed the action. Read-only.
 func (m *ItemActivity) GetActor()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actor
-    }
+    return m.actor
 }
 // GetDriveItem gets the driveItem property value. Exposes the driveItem that was the target of this activity.
 func (m *ItemActivity) GetDriveItem()(DriveItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driveItem
-    }
+    return m.driveItem
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,25 +125,17 @@ func (m *ItemActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAccess sets the access property value. An item was accessed.
 func (m *ItemActivity) SetAccess(value AccessActionable)() {
-    if m != nil {
-        m.access = value
-    }
+    m.access = value
 }
 // SetActivityDateTime sets the activityDateTime property value. Details about when the activity took place. Read-only.
 func (m *ItemActivity) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.activityDateTime = value
-    }
+    m.activityDateTime = value
 }
 // SetActor sets the actor property value. Identity of who performed the action. Read-only.
 func (m *ItemActivity) SetActor(value IdentitySetable)() {
-    if m != nil {
-        m.actor = value
-    }
+    m.actor = value
 }
 // SetDriveItem sets the driveItem property value. Exposes the driveItem that was the target of this activity.
 func (m *ItemActivity) SetDriveItem(value DriveItemable)() {
-    if m != nil {
-        m.driveItem = value
-    }
+    m.driveItem = value
 }

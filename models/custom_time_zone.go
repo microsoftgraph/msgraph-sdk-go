@@ -29,19 +29,11 @@ func CreateCustomTimeZoneFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetBias gets the bias property value. The time offset of the time zone from Coordinated Universal Time (UTC). This value is in minutes. Time zones that are ahead of UTC have a positive offset; time zones that are behind UTC have a negative offset.
 func (m *CustomTimeZone) GetBias()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bias
-    }
+    return m.bias
 }
 // GetDaylightOffset gets the daylightOffset property value. Specifies when the time zone switches from standard time to daylight saving time.
 func (m *CustomTimeZone) GetDaylightOffset()(DaylightTimeZoneOffsetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.daylightOffset
-    }
+    return m.daylightOffset
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *CustomTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetStandardOffset gets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.
 func (m *CustomTimeZone) GetStandardOffset()(StandardTimeZoneOffsetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.standardOffset
-    }
+    return m.standardOffset
 }
 // Serialize serializes information the current object
 func (m *CustomTimeZone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *CustomTimeZone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetBias sets the bias property value. The time offset of the time zone from Coordinated Universal Time (UTC). This value is in minutes. Time zones that are ahead of UTC have a positive offset; time zones that are behind UTC have a negative offset.
 func (m *CustomTimeZone) SetBias(value *int32)() {
-    if m != nil {
-        m.bias = value
-    }
+    m.bias = value
 }
 // SetDaylightOffset sets the daylightOffset property value. Specifies when the time zone switches from standard time to daylight saving time.
 func (m *CustomTimeZone) SetDaylightOffset(value DaylightTimeZoneOffsetable)() {
-    if m != nil {
-        m.daylightOffset = value
-    }
+    m.daylightOffset = value
 }
 // SetStandardOffset sets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.
 func (m *CustomTimeZone) SetStandardOffset(value StandardTimeZoneOffsetable)() {
-    if m != nil {
-        m.standardOffset = value
-    }
+    m.standardOffset = value
 }

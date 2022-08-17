@@ -32,27 +32,15 @@ func CreateMainErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MainError) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. The code property
 func (m *MainError) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetDetails gets the details property value. The details property
 func (m *MainError) GetDetails()([]ErrorDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,27 +103,15 @@ func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetInnererror gets the innererror property value. The innererror property
 func (m *MainError) GetInnererror()(InnerErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innererror
-    }
+    return m.innererror
 }
 // GetMessage gets the message property value. The message property
 func (m *MainError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetTarget gets the target property value. The target property
 func (m *MainError) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *MainError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -183,37 +159,25 @@ func (m *MainError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MainError) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. The code property
 func (m *MainError) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetDetails sets the details property value. The details property
 func (m *MainError) SetDetails(value []ErrorDetailsable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetInnererror sets the innererror property value. The innererror property
 func (m *MainError) SetInnererror(value InnerErrorable)() {
-    if m != nil {
-        m.innererror = value
-    }
+    m.innererror = value
 }
 // SetMessage sets the message property value. The message property
 func (m *MainError) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetTarget sets the target property value. The target property
 func (m *MainError) SetTarget(value *string)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

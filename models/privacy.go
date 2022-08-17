@@ -28,11 +28,7 @@ func CreatePrivacyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Privacy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Privacy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,19 +61,11 @@ func (m *Privacy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Privacy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSubjectRightsRequests gets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Privacy) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectRightsRequests
-    }
+    return m.subjectRightsRequests
 }
 // Serialize serializes information the current object
 func (m *Privacy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,19 +95,13 @@ func (m *Privacy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Privacy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Privacy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSubjectRightsRequests sets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Privacy) SetSubjectRightsRequests(value []SubjectRightsRequestable)() {
-    if m != nil {
-        m.subjectRightsRequests = value
-    }
+    m.subjectRightsRequests = value
 }

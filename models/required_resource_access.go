@@ -30,11 +30,7 @@ func CreateRequiredResourceAccessFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequiredResourceAccess) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RequiredResourceAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *RequiredResourceAccess) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RequiredResourceAccess) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResourceAccess gets the resourceAccess property value. The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
 func (m *RequiredResourceAccess) GetResourceAccess()([]ResourceAccessable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAccess
-    }
+    return m.resourceAccess
 }
 // GetResourceAppId gets the resourceAppId property value. The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
 func (m *RequiredResourceAccess) GetResourceAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAppId
-    }
+    return m.resourceAppId
 }
 // Serialize serializes information the current object
 func (m *RequiredResourceAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *RequiredResourceAccess) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequiredResourceAccess) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RequiredResourceAccess) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResourceAccess sets the resourceAccess property value. The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
 func (m *RequiredResourceAccess) SetResourceAccess(value []ResourceAccessable)() {
-    if m != nil {
-        m.resourceAccess = value
-    }
+    m.resourceAccess = value
 }
 // SetResourceAppId sets the resourceAppId property value. The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
 func (m *RequiredResourceAccess) SetResourceAppId(value *string)() {
-    if m != nil {
-        m.resourceAppId = value
-    }
+    m.resourceAppId = value
 }

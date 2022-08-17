@@ -38,43 +38,23 @@ func CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCalendarSyncEnabled gets the calendarSyncEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetCalendarSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarSyncEnabled
-    }
+    return m.calendarSyncEnabled
 }
 // GetDeviceAccount gets the deviceAccount property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(WindowsDeviceAccountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAccount
-    }
+    return m.deviceAccount
 }
 // GetDeviceAccountEmail gets the deviceAccountEmail property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccountEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAccountEmail
-    }
+    return m.deviceAccountEmail
 }
 // GetExchangeServer gets the exchangeServer property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetExchangeServer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exchangeServer
-    }
+    return m.exchangeServer
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,27 +133,15 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UpdateWindowsDeviceAccountActionParameter) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPasswordRotationEnabled gets the passwordRotationEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRotationEnabled
-    }
+    return m.passwordRotationEnabled
 }
 // GetSessionInitiationProtocalAddress gets the sessionInitiationProtocalAddress property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) GetSessionInitiationProtocalAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionInitiationProtocalAddress
-    }
+    return m.sessionInitiationProtocalAddress
 }
 // Serialize serializes information the current object
 func (m *UpdateWindowsDeviceAccountActionParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *UpdateWindowsDeviceAccountActionParameter) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindowsDeviceAccountActionParameter) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCalendarSyncEnabled sets the calendarSyncEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetCalendarSyncEnabled(value *bool)() {
-    if m != nil {
-        m.calendarSyncEnabled = value
-    }
+    m.calendarSyncEnabled = value
 }
 // SetDeviceAccount sets the deviceAccount property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccount(value WindowsDeviceAccountable)() {
-    if m != nil {
-        m.deviceAccount = value
-    }
+    m.deviceAccount = value
 }
 // SetDeviceAccountEmail sets the deviceAccountEmail property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccountEmail(value *string)() {
-    if m != nil {
-        m.deviceAccountEmail = value
-    }
+    m.deviceAccountEmail = value
 }
 // SetExchangeServer sets the exchangeServer property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetExchangeServer(value *string)() {
-    if m != nil {
-        m.exchangeServer = value
-    }
+    m.exchangeServer = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UpdateWindowsDeviceAccountActionParameter) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPasswordRotationEnabled sets the passwordRotationEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetPasswordRotationEnabled(value *bool)() {
-    if m != nil {
-        m.passwordRotationEnabled = value
-    }
+    m.passwordRotationEnabled = value
 }
 // SetSessionInitiationProtocalAddress sets the sessionInitiationProtocalAddress property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetSessionInitiationProtocalAddress(value *string)() {
-    if m != nil {
-        m.sessionInitiationProtocalAddress = value
-    }
+    m.sessionInitiationProtocalAddress = value
 }

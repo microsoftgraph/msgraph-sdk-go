@@ -38,19 +38,11 @@ func CreateTargetResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetResource) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
 func (m *TargetResource) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,51 +125,27 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) GetGroupType()(*GroupType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupType
-    }
+    return m.groupType
 }
 // GetId gets the id property value. Indicates the unique ID of the resource.
 func (m *TargetResource) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetModifiedProperties gets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
 func (m *TargetResource) GetModifiedProperties()([]ModifiedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedProperties
-    }
+    return m.modifiedProperties
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TargetResource) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
 func (m *TargetResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetUserPrincipalName gets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
 func (m *TargetResource) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *TargetResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -238,49 +206,33 @@ func (m *TargetResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetResource) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
 func (m *TargetResource) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) SetGroupType(value *GroupType)() {
-    if m != nil {
-        m.groupType = value
-    }
+    m.groupType = value
 }
 // SetId sets the id property value. Indicates the unique ID of the resource.
 func (m *TargetResource) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetModifiedProperties sets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
 func (m *TargetResource) SetModifiedProperties(value []ModifiedPropertyable)() {
-    if m != nil {
-        m.modifiedProperties = value
-    }
+    m.modifiedProperties = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TargetResource) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetType sets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
 func (m *TargetResource) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
 func (m *TargetResource) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

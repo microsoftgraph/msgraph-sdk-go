@@ -285,331 +285,167 @@ func CreateIosGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccountBlockModification gets the accountBlockModification property value. Indicates whether or not to allow account modification when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetAccountBlockModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountBlockModification
-    }
+    return m.accountBlockModification
 }
 // GetActivationLockAllowWhenSupervised gets the activationLockAllowWhenSupervised property value. Indicates whether or not to allow activation lock when the device is in the supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetActivationLockAllowWhenSupervised()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activationLockAllowWhenSupervised
-    }
+    return m.activationLockAllowWhenSupervised
 }
 // GetAirDropBlocked gets the airDropBlocked property value. Indicates whether or not to allow AirDrop when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetAirDropBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.airDropBlocked
-    }
+    return m.airDropBlocked
 }
 // GetAirDropForceUnmanagedDropTarget gets the airDropForceUnmanagedDropTarget property value. Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetAirDropForceUnmanagedDropTarget()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.airDropForceUnmanagedDropTarget
-    }
+    return m.airDropForceUnmanagedDropTarget
 }
 // GetAirPlayForcePairingPasswordForOutgoingRequests gets the airPlayForcePairingPasswordForOutgoingRequests property value. Indicates whether or not to enforce all devices receiving AirPlay requests from this device to use a pairing password.
 func (m *IosGeneralDeviceConfiguration) GetAirPlayForcePairingPasswordForOutgoingRequests()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.airPlayForcePairingPasswordForOutgoingRequests
-    }
+    return m.airPlayForcePairingPasswordForOutgoingRequests
 }
 // GetAppleNewsBlocked gets the appleNewsBlocked property value. Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetAppleNewsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleNewsBlocked
-    }
+    return m.appleNewsBlocked
 }
 // GetAppleWatchBlockPairing gets the appleWatchBlockPairing property value. Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetAppleWatchBlockPairing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleWatchBlockPairing
-    }
+    return m.appleWatchBlockPairing
 }
 // GetAppleWatchForceWristDetection gets the appleWatchForceWristDetection property value. Indicates whether or not to force a paired Apple Watch to use Wrist Detection (iOS 8.2 and later).
 func (m *IosGeneralDeviceConfiguration) GetAppleWatchForceWristDetection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleWatchForceWristDetection
-    }
+    return m.appleWatchForceWristDetection
 }
 // GetAppsSingleAppModeList gets the appsSingleAppModeList property value. Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.
 func (m *IosGeneralDeviceConfiguration) GetAppsSingleAppModeList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsSingleAppModeList
-    }
+    return m.appsSingleAppModeList
 }
 // GetAppStoreBlockAutomaticDownloads gets the appStoreBlockAutomaticDownloads property value. Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockAutomaticDownloads()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreBlockAutomaticDownloads
-    }
+    return m.appStoreBlockAutomaticDownloads
 }
 // GetAppStoreBlocked gets the appStoreBlocked property value. Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreBlocked
-    }
+    return m.appStoreBlocked
 }
 // GetAppStoreBlockInAppPurchases gets the appStoreBlockInAppPurchases property value. Indicates whether or not to block the user from making in app purchases.
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockInAppPurchases()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreBlockInAppPurchases
-    }
+    return m.appStoreBlockInAppPurchases
 }
 // GetAppStoreBlockUIAppInstallation gets the appStoreBlockUIAppInstallation property value. Indicates whether or not to block the App Store app, not restricting installation through Host apps. Applies to supervised mode only (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockUIAppInstallation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreBlockUIAppInstallation
-    }
+    return m.appStoreBlockUIAppInstallation
 }
 // GetAppStoreRequirePassword gets the appStoreRequirePassword property value. Indicates whether or not to require a password when using the app store.
 func (m *IosGeneralDeviceConfiguration) GetAppStoreRequirePassword()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreRequirePassword
-    }
+    return m.appStoreRequirePassword
 }
 // GetAppsVisibilityList gets the appsVisibilityList property value. List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
 func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsVisibilityList
-    }
+    return m.appsVisibilityList
 }
 // GetAppsVisibilityListType gets the appsVisibilityListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityListType()(*AppListType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsVisibilityListType
-    }
+    return m.appsVisibilityListType
 }
 // GetBluetoothBlockModification gets the bluetoothBlockModification property value. Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetBluetoothBlockModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlockModification
-    }
+    return m.bluetoothBlockModification
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameraBlocked
-    }
+    return m.cameraBlocked
 }
 // GetCellularBlockDataRoaming gets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockDataRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockDataRoaming
-    }
+    return m.cellularBlockDataRoaming
 }
 // GetCellularBlockGlobalBackgroundFetchWhileRoaming gets the cellularBlockGlobalBackgroundFetchWhileRoaming property value. Indicates whether or not to block global background fetch while roaming.
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockGlobalBackgroundFetchWhileRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockGlobalBackgroundFetchWhileRoaming
-    }
+    return m.cellularBlockGlobalBackgroundFetchWhileRoaming
 }
 // GetCellularBlockPerAppDataModification gets the cellularBlockPerAppDataModification property value. Indicates whether or not to allow changes to cellular app data usage settings when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockPerAppDataModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockPerAppDataModification
-    }
+    return m.cellularBlockPerAppDataModification
 }
 // GetCellularBlockPersonalHotspot gets the cellularBlockPersonalHotspot property value. Indicates whether or not to block Personal Hotspot.
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockPersonalHotspot()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockPersonalHotspot
-    }
+    return m.cellularBlockPersonalHotspot
 }
 // GetCellularBlockVoiceRoaming gets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockVoiceRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockVoiceRoaming
-    }
+    return m.cellularBlockVoiceRoaming
 }
 // GetCertificatesBlockUntrustedTlsCertificates gets the certificatesBlockUntrustedTlsCertificates property value. Indicates whether or not to block untrusted TLS certificates.
 func (m *IosGeneralDeviceConfiguration) GetCertificatesBlockUntrustedTlsCertificates()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificatesBlockUntrustedTlsCertificates
-    }
+    return m.certificatesBlockUntrustedTlsCertificates
 }
 // GetClassroomAppBlockRemoteScreenObservation gets the classroomAppBlockRemoteScreenObservation property value. Indicates whether or not to allow remote screen observation by Classroom app when the device is in supervised mode (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetClassroomAppBlockRemoteScreenObservation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classroomAppBlockRemoteScreenObservation
-    }
+    return m.classroomAppBlockRemoteScreenObservation
 }
 // GetClassroomAppForceUnpromptedScreenObservation gets the classroomAppForceUnpromptedScreenObservation property value. Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetClassroomAppForceUnpromptedScreenObservation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classroomAppForceUnpromptedScreenObservation
-    }
+    return m.classroomAppForceUnpromptedScreenObservation
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantAppListType
-    }
+    return m.compliantAppListType
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *IosGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantAppsList
-    }
+    return m.compliantAppsList
 }
 // GetConfigurationProfileBlockChanges gets the configurationProfileBlockChanges property value. Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetConfigurationProfileBlockChanges()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationProfileBlockChanges
-    }
+    return m.configurationProfileBlockChanges
 }
 // GetDefinitionLookupBlocked gets the definitionLookupBlocked property value. Indicates whether or not to block definition lookup when the device is in supervised mode (iOS 8.1.3 and later ).
 func (m *IosGeneralDeviceConfiguration) GetDefinitionLookupBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definitionLookupBlocked
-    }
+    return m.definitionLookupBlocked
 }
 // GetDeviceBlockEnableRestrictions gets the deviceBlockEnableRestrictions property value. Indicates whether or not to allow the user to enables restrictions in the device settings when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetDeviceBlockEnableRestrictions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceBlockEnableRestrictions
-    }
+    return m.deviceBlockEnableRestrictions
 }
 // GetDeviceBlockEraseContentAndSettings gets the deviceBlockEraseContentAndSettings property value. Indicates whether or not to allow the use of the 'Erase all content and settings' option on the device when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetDeviceBlockEraseContentAndSettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceBlockEraseContentAndSettings
-    }
+    return m.deviceBlockEraseContentAndSettings
 }
 // GetDeviceBlockNameModification gets the deviceBlockNameModification property value. Indicates whether or not to allow device name modification when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetDeviceBlockNameModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceBlockNameModification
-    }
+    return m.deviceBlockNameModification
 }
 // GetDiagnosticDataBlockSubmission gets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *IosGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmission()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.diagnosticDataBlockSubmission
-    }
+    return m.diagnosticDataBlockSubmission
 }
 // GetDiagnosticDataBlockSubmissionModification gets the diagnosticDataBlockSubmissionModification property value. Indicates whether or not to allow diagnostics submission settings modification when the device is in supervised mode (iOS 9.3.2 and later).
 func (m *IosGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmissionModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.diagnosticDataBlockSubmissionModification
-    }
+    return m.diagnosticDataBlockSubmissionModification
 }
 // GetDocumentsBlockManagedDocumentsInUnmanagedApps gets the documentsBlockManagedDocumentsInUnmanagedApps property value. Indicates whether or not to block the user from viewing managed documents in unmanaged apps.
 func (m *IosGeneralDeviceConfiguration) GetDocumentsBlockManagedDocumentsInUnmanagedApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentsBlockManagedDocumentsInUnmanagedApps
-    }
+    return m.documentsBlockManagedDocumentsInUnmanagedApps
 }
 // GetDocumentsBlockUnmanagedDocumentsInManagedApps gets the documentsBlockUnmanagedDocumentsInManagedApps property value. Indicates whether or not to block the user from viewing unmanaged documents in managed apps.
 func (m *IosGeneralDeviceConfiguration) GetDocumentsBlockUnmanagedDocumentsInManagedApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentsBlockUnmanagedDocumentsInManagedApps
-    }
+    return m.documentsBlockUnmanagedDocumentsInManagedApps
 }
 // GetEmailInDomainSuffixes gets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
 func (m *IosGeneralDeviceConfiguration) GetEmailInDomainSuffixes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailInDomainSuffixes
-    }
+    return m.emailInDomainSuffixes
 }
 // GetEnterpriseAppBlockTrust gets the enterpriseAppBlockTrust property value. Indicates whether or not to block the user from trusting an enterprise app.
 func (m *IosGeneralDeviceConfiguration) GetEnterpriseAppBlockTrust()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseAppBlockTrust
-    }
+    return m.enterpriseAppBlockTrust
 }
 // GetEnterpriseAppBlockTrustModification gets the enterpriseAppBlockTrustModification property value. [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
 func (m *IosGeneralDeviceConfiguration) GetEnterpriseAppBlockTrustModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseAppBlockTrustModification
-    }
+    return m.enterpriseAppBlockTrustModification
 }
 // GetFaceTimeBlocked gets the faceTimeBlocked property value. Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetFaceTimeBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.faceTimeBlocked
-    }
+    return m.faceTimeBlocked
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -1956,723 +1792,363 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
 }
 // GetFindMyFriendsBlocked gets the findMyFriendsBlocked property value. Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetFindMyFriendsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.findMyFriendsBlocked
-    }
+    return m.findMyFriendsBlocked
 }
 // GetGameCenterBlocked gets the gameCenterBlocked property value. Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetGameCenterBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gameCenterBlocked
-    }
+    return m.gameCenterBlocked
 }
 // GetGamingBlockGameCenterFriends gets the gamingBlockGameCenterFriends property value. Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetGamingBlockGameCenterFriends()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gamingBlockGameCenterFriends
-    }
+    return m.gamingBlockGameCenterFriends
 }
 // GetGamingBlockMultiplayer gets the gamingBlockMultiplayer property value. Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetGamingBlockMultiplayer()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gamingBlockMultiplayer
-    }
+    return m.gamingBlockMultiplayer
 }
 // GetHostPairingBlocked gets the hostPairingBlocked property value. indicates whether or not to allow host pairing to control the devices an iOS device can pair with when the iOS device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetHostPairingBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostPairingBlocked
-    }
+    return m.hostPairingBlocked
 }
 // GetIBooksStoreBlocked gets the iBooksStoreBlocked property value. Indicates whether or not to block the user from using the iBooks Store when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetIBooksStoreBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iBooksStoreBlocked
-    }
+    return m.iBooksStoreBlocked
 }
 // GetIBooksStoreBlockErotica gets the iBooksStoreBlockErotica property value. Indicates whether or not to block the user from downloading media from the iBookstore that has been tagged as erotica.
 func (m *IosGeneralDeviceConfiguration) GetIBooksStoreBlockErotica()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iBooksStoreBlockErotica
-    }
+    return m.iBooksStoreBlockErotica
 }
 // GetICloudBlockActivityContinuation gets the iCloudBlockActivityContinuation property value. Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockActivityContinuation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockActivityContinuation
-    }
+    return m.iCloudBlockActivityContinuation
 }
 // GetICloudBlockBackup gets the iCloudBlockBackup property value. Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockBackup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockBackup
-    }
+    return m.iCloudBlockBackup
 }
 // GetICloudBlockDocumentSync gets the iCloudBlockDocumentSync property value. Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockDocumentSync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockDocumentSync
-    }
+    return m.iCloudBlockDocumentSync
 }
 // GetICloudBlockManagedAppsSync gets the iCloudBlockManagedAppsSync property value. Indicates whether or not to block Managed Apps Cloud Sync.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockManagedAppsSync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockManagedAppsSync
-    }
+    return m.iCloudBlockManagedAppsSync
 }
 // GetICloudBlockPhotoLibrary gets the iCloudBlockPhotoLibrary property value. Indicates whether or not to block iCloud Photo Library.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockPhotoLibrary()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockPhotoLibrary
-    }
+    return m.iCloudBlockPhotoLibrary
 }
 // GetICloudBlockPhotoStreamSync gets the iCloudBlockPhotoStreamSync property value. Indicates whether or not to block iCloud Photo Stream Sync.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockPhotoStreamSync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockPhotoStreamSync
-    }
+    return m.iCloudBlockPhotoStreamSync
 }
 // GetICloudBlockSharedPhotoStream gets the iCloudBlockSharedPhotoStream property value. Indicates whether or not to block Shared Photo Stream.
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockSharedPhotoStream()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudBlockSharedPhotoStream
-    }
+    return m.iCloudBlockSharedPhotoStream
 }
 // GetICloudRequireEncryptedBackup gets the iCloudRequireEncryptedBackup property value. Indicates whether or not to require backups to iCloud be encrypted.
 func (m *IosGeneralDeviceConfiguration) GetICloudRequireEncryptedBackup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudRequireEncryptedBackup
-    }
+    return m.iCloudRequireEncryptedBackup
 }
 // GetITunesBlockExplicitContent gets the iTunesBlockExplicitContent property value. Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetITunesBlockExplicitContent()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iTunesBlockExplicitContent
-    }
+    return m.iTunesBlockExplicitContent
 }
 // GetITunesBlockMusicService gets the iTunesBlockMusicService property value. Indicates whether or not to block Music service and revert Music app to classic mode when the device is in supervised mode (iOS 9.3 and later and macOS 10.12 and later).
 func (m *IosGeneralDeviceConfiguration) GetITunesBlockMusicService()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iTunesBlockMusicService
-    }
+    return m.iTunesBlockMusicService
 }
 // GetITunesBlockRadio gets the iTunesBlockRadio property value. Indicates whether or not to block the user from using iTunes Radio when the device is in supervised mode (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetITunesBlockRadio()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iTunesBlockRadio
-    }
+    return m.iTunesBlockRadio
 }
 // GetKeyboardBlockAutoCorrect gets the keyboardBlockAutoCorrect property value. Indicates whether or not to block keyboard auto-correction when the device is in supervised mode (iOS 8.1.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockAutoCorrect()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyboardBlockAutoCorrect
-    }
+    return m.keyboardBlockAutoCorrect
 }
 // GetKeyboardBlockDictation gets the keyboardBlockDictation property value. Indicates whether or not to block the user from using dictation input when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockDictation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyboardBlockDictation
-    }
+    return m.keyboardBlockDictation
 }
 // GetKeyboardBlockPredictive gets the keyboardBlockPredictive property value. Indicates whether or not to block predictive keyboards when device is in supervised mode (iOS 8.1.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockPredictive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyboardBlockPredictive
-    }
+    return m.keyboardBlockPredictive
 }
 // GetKeyboardBlockShortcuts gets the keyboardBlockShortcuts property value. Indicates whether or not to block keyboard shortcuts when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockShortcuts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyboardBlockShortcuts
-    }
+    return m.keyboardBlockShortcuts
 }
 // GetKeyboardBlockSpellCheck gets the keyboardBlockSpellCheck property value. Indicates whether or not to block keyboard spell-checking when the device is in supervised mode (iOS 8.1.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockSpellCheck()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyboardBlockSpellCheck
-    }
+    return m.keyboardBlockSpellCheck
 }
 // GetKioskModeAllowAssistiveSpeak gets the kioskModeAllowAssistiveSpeak property value. Indicates whether or not to allow assistive speak while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAssistiveSpeak()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowAssistiveSpeak
-    }
+    return m.kioskModeAllowAssistiveSpeak
 }
 // GetKioskModeAllowAssistiveTouchSettings gets the kioskModeAllowAssistiveTouchSettings property value. Indicates whether or not to allow access to the Assistive Touch Settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAssistiveTouchSettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowAssistiveTouchSettings
-    }
+    return m.kioskModeAllowAssistiveTouchSettings
 }
 // GetKioskModeAllowAutoLock gets the kioskModeAllowAutoLock property value. Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAutoLock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowAutoLock
-    }
+    return m.kioskModeAllowAutoLock
 }
 // GetKioskModeAllowColorInversionSettings gets the kioskModeAllowColorInversionSettings property value. Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowColorInversionSettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowColorInversionSettings
-    }
+    return m.kioskModeAllowColorInversionSettings
 }
 // GetKioskModeAllowRingerSwitch gets the kioskModeAllowRingerSwitch property value. Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowRingerSwitch()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowRingerSwitch
-    }
+    return m.kioskModeAllowRingerSwitch
 }
 // GetKioskModeAllowScreenRotation gets the kioskModeAllowScreenRotation property value. Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowScreenRotation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowScreenRotation
-    }
+    return m.kioskModeAllowScreenRotation
 }
 // GetKioskModeAllowSleepButton gets the kioskModeAllowSleepButton property value. Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowSleepButton()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowSleepButton
-    }
+    return m.kioskModeAllowSleepButton
 }
 // GetKioskModeAllowTouchscreen gets the kioskModeAllowTouchscreen property value. Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowTouchscreen()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowTouchscreen
-    }
+    return m.kioskModeAllowTouchscreen
 }
 // GetKioskModeAllowVoiceOverSettings gets the kioskModeAllowVoiceOverSettings property value. Indicates whether or not to allow access to the voice over settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVoiceOverSettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowVoiceOverSettings
-    }
+    return m.kioskModeAllowVoiceOverSettings
 }
 // GetKioskModeAllowVolumeButtons gets the kioskModeAllowVolumeButtons property value. Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVolumeButtons()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowVolumeButtons
-    }
+    return m.kioskModeAllowVolumeButtons
 }
 // GetKioskModeAllowZoomSettings gets the kioskModeAllowZoomSettings property value. Indicates whether or not to allow access to the zoom settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowZoomSettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAllowZoomSettings
-    }
+    return m.kioskModeAllowZoomSettings
 }
 // GetKioskModeAppStoreUrl gets the kioskModeAppStoreUrl property value. URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAppStoreUrl
-    }
+    return m.kioskModeAppStoreUrl
 }
 // GetKioskModeBuiltInAppId gets the kioskModeBuiltInAppId property value. ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBuiltInAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeBuiltInAppId
-    }
+    return m.kioskModeBuiltInAppId
 }
 // GetKioskModeManagedAppId gets the kioskModeManagedAppId property value. Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeManagedAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedAppId
-    }
+    return m.kioskModeManagedAppId
 }
 // GetKioskModeRequireAssistiveTouch gets the kioskModeRequireAssistiveTouch property value. Indicates whether or not to require assistive touch while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireAssistiveTouch()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeRequireAssistiveTouch
-    }
+    return m.kioskModeRequireAssistiveTouch
 }
 // GetKioskModeRequireColorInversion gets the kioskModeRequireColorInversion property value. Indicates whether or not to require color inversion while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireColorInversion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeRequireColorInversion
-    }
+    return m.kioskModeRequireColorInversion
 }
 // GetKioskModeRequireMonoAudio gets the kioskModeRequireMonoAudio property value. Indicates whether or not to require mono audio while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireMonoAudio()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeRequireMonoAudio
-    }
+    return m.kioskModeRequireMonoAudio
 }
 // GetKioskModeRequireVoiceOver gets the kioskModeRequireVoiceOver property value. Indicates whether or not to require voice over while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireVoiceOver()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeRequireVoiceOver
-    }
+    return m.kioskModeRequireVoiceOver
 }
 // GetKioskModeRequireZoom gets the kioskModeRequireZoom property value. Indicates whether or not to require zoom while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireZoom()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeRequireZoom
-    }
+    return m.kioskModeRequireZoom
 }
 // GetLockScreenBlockControlCenter gets the lockScreenBlockControlCenter property value. Indicates whether or not to block the user from using control center on the lock screen.
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockControlCenter()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lockScreenBlockControlCenter
-    }
+    return m.lockScreenBlockControlCenter
 }
 // GetLockScreenBlockNotificationView gets the lockScreenBlockNotificationView property value. Indicates whether or not to block the user from using the notification view on the lock screen.
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockNotificationView()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lockScreenBlockNotificationView
-    }
+    return m.lockScreenBlockNotificationView
 }
 // GetLockScreenBlockPassbook gets the lockScreenBlockPassbook property value. Indicates whether or not to block the user from using passbook when the device is locked.
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockPassbook()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lockScreenBlockPassbook
-    }
+    return m.lockScreenBlockPassbook
 }
 // GetLockScreenBlockTodayView gets the lockScreenBlockTodayView property value. Indicates whether or not to block the user from using the Today View on the lock screen.
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockTodayView()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lockScreenBlockTodayView
-    }
+    return m.lockScreenBlockTodayView
 }
 // GetMediaContentRatingApps gets the mediaContentRatingApps property value. Apps rating as in media content
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingApps()(*RatingAppsType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingApps
-    }
+    return m.mediaContentRatingApps
 }
 // GetMediaContentRatingAustralia gets the mediaContentRatingAustralia property value. Media content rating settings for Australia
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingAustralia()(MediaContentRatingAustraliaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingAustralia
-    }
+    return m.mediaContentRatingAustralia
 }
 // GetMediaContentRatingCanada gets the mediaContentRatingCanada property value. Media content rating settings for Canada
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingCanada()(MediaContentRatingCanadaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingCanada
-    }
+    return m.mediaContentRatingCanada
 }
 // GetMediaContentRatingFrance gets the mediaContentRatingFrance property value. Media content rating settings for France
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingFrance()(MediaContentRatingFranceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingFrance
-    }
+    return m.mediaContentRatingFrance
 }
 // GetMediaContentRatingGermany gets the mediaContentRatingGermany property value. Media content rating settings for Germany
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingGermany()(MediaContentRatingGermanyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingGermany
-    }
+    return m.mediaContentRatingGermany
 }
 // GetMediaContentRatingIreland gets the mediaContentRatingIreland property value. Media content rating settings for Ireland
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingIreland()(MediaContentRatingIrelandable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingIreland
-    }
+    return m.mediaContentRatingIreland
 }
 // GetMediaContentRatingJapan gets the mediaContentRatingJapan property value. Media content rating settings for Japan
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingJapan()(MediaContentRatingJapanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingJapan
-    }
+    return m.mediaContentRatingJapan
 }
 // GetMediaContentRatingNewZealand gets the mediaContentRatingNewZealand property value. Media content rating settings for New Zealand
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingNewZealand()(MediaContentRatingNewZealandable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingNewZealand
-    }
+    return m.mediaContentRatingNewZealand
 }
 // GetMediaContentRatingUnitedKingdom gets the mediaContentRatingUnitedKingdom property value. Media content rating settings for United Kingdom
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingUnitedKingdom()(MediaContentRatingUnitedKingdomable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingUnitedKingdom
-    }
+    return m.mediaContentRatingUnitedKingdom
 }
 // GetMediaContentRatingUnitedStates gets the mediaContentRatingUnitedStates property value. Media content rating settings for United States
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingUnitedStates()(MediaContentRatingUnitedStatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaContentRatingUnitedStates
-    }
+    return m.mediaContentRatingUnitedStates
 }
 // GetMessagesBlocked gets the messagesBlocked property value. Indicates whether or not to block the user from using the Messages app on the supervised device.
 func (m *IosGeneralDeviceConfiguration) GetMessagesBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messagesBlocked
-    }
+    return m.messagesBlocked
 }
 // GetNetworkUsageRules gets the networkUsageRules property value. List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
 func (m *IosGeneralDeviceConfiguration) GetNetworkUsageRules()([]IosNetworkUsageRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkUsageRules
-    }
+    return m.networkUsageRules
 }
 // GetNotificationsBlockSettingsModification gets the notificationsBlockSettingsModification property value. Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetNotificationsBlockSettingsModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationsBlockSettingsModification
-    }
+    return m.notificationsBlockSettingsModification
 }
 // GetPasscodeBlockFingerprintModification gets the passcodeBlockFingerprintModification property value. Block modification of registered Touch ID fingerprints when in supervised mode.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockFingerprintModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeBlockFingerprintModification
-    }
+    return m.passcodeBlockFingerprintModification
 }
 // GetPasscodeBlockFingerprintUnlock gets the passcodeBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockFingerprintUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeBlockFingerprintUnlock
-    }
+    return m.passcodeBlockFingerprintUnlock
 }
 // GetPasscodeBlockModification gets the passcodeBlockModification property value. Indicates whether or not to allow passcode modification on the supervised device (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeBlockModification
-    }
+    return m.passcodeBlockModification
 }
 // GetPasscodeBlockSimple gets the passcodeBlockSimple property value. Indicates whether or not to block simple passcodes.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockSimple()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeBlockSimple
-    }
+    return m.passcodeBlockSimple
 }
 // GetPasscodeExpirationDays gets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
 func (m *IosGeneralDeviceConfiguration) GetPasscodeExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeExpirationDays
-    }
+    return m.passcodeExpirationDays
 }
 // GetPasscodeMinimumCharacterSetCount gets the passcodeMinimumCharacterSetCount property value. Number of character sets a passcode must contain. Valid values 0 to 4
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinimumCharacterSetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeMinimumCharacterSetCount
-    }
+    return m.passcodeMinimumCharacterSetCount
 }
 // GetPasscodeMinimumLength gets the passcodeMinimumLength property value. Minimum length of passcode. Valid values 4 to 14
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeMinimumLength
-    }
+    return m.passcodeMinimumLength
 }
 // GetPasscodeMinutesOfInactivityBeforeLock gets the passcodeMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a passcode is required.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeMinutesOfInactivityBeforeLock
-    }
+    return m.passcodeMinutesOfInactivityBeforeLock
 }
 // GetPasscodeMinutesOfInactivityBeforeScreenTimeout gets the passcodeMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passcodeMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasscodePreviousPasscodeBlockCount gets the passcodePreviousPasscodeBlockCount property value. Number of previous passcodes to block. Valid values 1 to 24
 func (m *IosGeneralDeviceConfiguration) GetPasscodePreviousPasscodeBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodePreviousPasscodeBlockCount
-    }
+    return m.passcodePreviousPasscodeBlockCount
 }
 // GetPasscodeRequired gets the passcodeRequired property value. Indicates whether or not to require a passcode.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeRequired
-    }
+    return m.passcodeRequired
 }
 // GetPasscodeRequiredType gets the passcodeRequiredType property value. Possible values of required passwords.
 func (m *IosGeneralDeviceConfiguration) GetPasscodeRequiredType()(*RequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeRequiredType
-    }
+    return m.passcodeRequiredType
 }
 // GetPasscodeSignInFailureCountBeforeWipe gets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures allowed before wiping the device. Valid values 2 to 11
 func (m *IosGeneralDeviceConfiguration) GetPasscodeSignInFailureCountBeforeWipe()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeSignInFailureCountBeforeWipe
-    }
+    return m.passcodeSignInFailureCountBeforeWipe
 }
 // GetPodcastsBlocked gets the podcastsBlocked property value. Indicates whether or not to block the user from using podcasts on the supervised device (iOS 8.0 and later).
 func (m *IosGeneralDeviceConfiguration) GetPodcastsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.podcastsBlocked
-    }
+    return m.podcastsBlocked
 }
 // GetSafariBlockAutofill gets the safariBlockAutofill property value. Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetSafariBlockAutofill()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariBlockAutofill
-    }
+    return m.safariBlockAutofill
 }
 // GetSafariBlocked gets the safariBlocked property value. Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) GetSafariBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariBlocked
-    }
+    return m.safariBlocked
 }
 // GetSafariBlockJavaScript gets the safariBlockJavaScript property value. Indicates whether or not to block JavaScript in Safari.
 func (m *IosGeneralDeviceConfiguration) GetSafariBlockJavaScript()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariBlockJavaScript
-    }
+    return m.safariBlockJavaScript
 }
 // GetSafariBlockPopups gets the safariBlockPopups property value. Indicates whether or not to block popups in Safari.
 func (m *IosGeneralDeviceConfiguration) GetSafariBlockPopups()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariBlockPopups
-    }
+    return m.safariBlockPopups
 }
 // GetSafariCookieSettings gets the safariCookieSettings property value. Web Browser Cookie Settings.
 func (m *IosGeneralDeviceConfiguration) GetSafariCookieSettings()(*WebBrowserCookieSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariCookieSettings
-    }
+    return m.safariCookieSettings
 }
 // GetSafariManagedDomains gets the safariManagedDomains property value. URLs matching the patterns listed here will be considered managed.
 func (m *IosGeneralDeviceConfiguration) GetSafariManagedDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariManagedDomains
-    }
+    return m.safariManagedDomains
 }
 // GetSafariPasswordAutoFillDomains gets the safariPasswordAutoFillDomains property value. Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) GetSafariPasswordAutoFillDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariPasswordAutoFillDomains
-    }
+    return m.safariPasswordAutoFillDomains
 }
 // GetSafariRequireFraudWarning gets the safariRequireFraudWarning property value. Indicates whether or not to require fraud warning in Safari.
 func (m *IosGeneralDeviceConfiguration) GetSafariRequireFraudWarning()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safariRequireFraudWarning
-    }
+    return m.safariRequireFraudWarning
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block the user from taking Screenshots.
 func (m *IosGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
+    return m.screenCaptureBlocked
 }
 // GetSiriBlocked gets the siriBlocked property value. Indicates whether or not to block the user from using Siri.
 func (m *IosGeneralDeviceConfiguration) GetSiriBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siriBlocked
-    }
+    return m.siriBlocked
 }
 // GetSiriBlockedWhenLocked gets the siriBlockedWhenLocked property value. Indicates whether or not to block the user from using Siri when locked.
 func (m *IosGeneralDeviceConfiguration) GetSiriBlockedWhenLocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siriBlockedWhenLocked
-    }
+    return m.siriBlockedWhenLocked
 }
 // GetSiriBlockUserGeneratedContent gets the siriBlockUserGeneratedContent property value. Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.
 func (m *IosGeneralDeviceConfiguration) GetSiriBlockUserGeneratedContent()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siriBlockUserGeneratedContent
-    }
+    return m.siriBlockUserGeneratedContent
 }
 // GetSiriRequireProfanityFilter gets the siriRequireProfanityFilter property value. Indicates whether or not to prevent Siri from dictating, or speaking profane language on supervised device.
 func (m *IosGeneralDeviceConfiguration) GetSiriRequireProfanityFilter()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siriRequireProfanityFilter
-    }
+    return m.siriRequireProfanityFilter
 }
 // GetSpotlightBlockInternetResults gets the spotlightBlockInternetResults property value. Indicates whether or not to block Spotlight search from returning internet results on supervised device.
 func (m *IosGeneralDeviceConfiguration) GetSpotlightBlockInternetResults()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spotlightBlockInternetResults
-    }
+    return m.spotlightBlockInternetResults
 }
 // GetVoiceDialingBlocked gets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
 func (m *IosGeneralDeviceConfiguration) GetVoiceDialingBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.voiceDialingBlocked
-    }
+    return m.voiceDialingBlocked
 }
 // GetWallpaperBlockModification gets the wallpaperBlockModification property value. Indicates whether or not to allow wallpaper modification on supervised device (iOS 9.0 and later) .
 func (m *IosGeneralDeviceConfiguration) GetWallpaperBlockModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wallpaperBlockModification
-    }
+    return m.wallpaperBlockModification
 }
 // GetWiFiConnectOnlyToConfiguredNetworks gets the wiFiConnectOnlyToConfiguredNetworks property value. Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
 func (m *IosGeneralDeviceConfiguration) GetWiFiConnectOnlyToConfiguredNetworks()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wiFiConnectOnlyToConfiguredNetworks
-    }
+    return m.wiFiConnectOnlyToConfiguredNetworks
 }
 // Serialize serializes information the current object
 func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -3491,787 +2967,525 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccountBlockModification sets the accountBlockModification property value. Indicates whether or not to allow account modification when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetAccountBlockModification(value *bool)() {
-    if m != nil {
-        m.accountBlockModification = value
-    }
+    m.accountBlockModification = value
 }
 // SetActivationLockAllowWhenSupervised sets the activationLockAllowWhenSupervised property value. Indicates whether or not to allow activation lock when the device is in the supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetActivationLockAllowWhenSupervised(value *bool)() {
-    if m != nil {
-        m.activationLockAllowWhenSupervised = value
-    }
+    m.activationLockAllowWhenSupervised = value
 }
 // SetAirDropBlocked sets the airDropBlocked property value. Indicates whether or not to allow AirDrop when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetAirDropBlocked(value *bool)() {
-    if m != nil {
-        m.airDropBlocked = value
-    }
+    m.airDropBlocked = value
 }
 // SetAirDropForceUnmanagedDropTarget sets the airDropForceUnmanagedDropTarget property value. Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetAirDropForceUnmanagedDropTarget(value *bool)() {
-    if m != nil {
-        m.airDropForceUnmanagedDropTarget = value
-    }
+    m.airDropForceUnmanagedDropTarget = value
 }
 // SetAirPlayForcePairingPasswordForOutgoingRequests sets the airPlayForcePairingPasswordForOutgoingRequests property value. Indicates whether or not to enforce all devices receiving AirPlay requests from this device to use a pairing password.
 func (m *IosGeneralDeviceConfiguration) SetAirPlayForcePairingPasswordForOutgoingRequests(value *bool)() {
-    if m != nil {
-        m.airPlayForcePairingPasswordForOutgoingRequests = value
-    }
+    m.airPlayForcePairingPasswordForOutgoingRequests = value
 }
 // SetAppleNewsBlocked sets the appleNewsBlocked property value. Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetAppleNewsBlocked(value *bool)() {
-    if m != nil {
-        m.appleNewsBlocked = value
-    }
+    m.appleNewsBlocked = value
 }
 // SetAppleWatchBlockPairing sets the appleWatchBlockPairing property value. Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetAppleWatchBlockPairing(value *bool)() {
-    if m != nil {
-        m.appleWatchBlockPairing = value
-    }
+    m.appleWatchBlockPairing = value
 }
 // SetAppleWatchForceWristDetection sets the appleWatchForceWristDetection property value. Indicates whether or not to force a paired Apple Watch to use Wrist Detection (iOS 8.2 and later).
 func (m *IosGeneralDeviceConfiguration) SetAppleWatchForceWristDetection(value *bool)() {
-    if m != nil {
-        m.appleWatchForceWristDetection = value
-    }
+    m.appleWatchForceWristDetection = value
 }
 // SetAppsSingleAppModeList sets the appsSingleAppModeList property value. Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.
 func (m *IosGeneralDeviceConfiguration) SetAppsSingleAppModeList(value []AppListItemable)() {
-    if m != nil {
-        m.appsSingleAppModeList = value
-    }
+    m.appsSingleAppModeList = value
 }
 // SetAppStoreBlockAutomaticDownloads sets the appStoreBlockAutomaticDownloads property value. Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetAppStoreBlockAutomaticDownloads(value *bool)() {
-    if m != nil {
-        m.appStoreBlockAutomaticDownloads = value
-    }
+    m.appStoreBlockAutomaticDownloads = value
 }
 // SetAppStoreBlocked sets the appStoreBlocked property value. Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetAppStoreBlocked(value *bool)() {
-    if m != nil {
-        m.appStoreBlocked = value
-    }
+    m.appStoreBlocked = value
 }
 // SetAppStoreBlockInAppPurchases sets the appStoreBlockInAppPurchases property value. Indicates whether or not to block the user from making in app purchases.
 func (m *IosGeneralDeviceConfiguration) SetAppStoreBlockInAppPurchases(value *bool)() {
-    if m != nil {
-        m.appStoreBlockInAppPurchases = value
-    }
+    m.appStoreBlockInAppPurchases = value
 }
 // SetAppStoreBlockUIAppInstallation sets the appStoreBlockUIAppInstallation property value. Indicates whether or not to block the App Store app, not restricting installation through Host apps. Applies to supervised mode only (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetAppStoreBlockUIAppInstallation(value *bool)() {
-    if m != nil {
-        m.appStoreBlockUIAppInstallation = value
-    }
+    m.appStoreBlockUIAppInstallation = value
 }
 // SetAppStoreRequirePassword sets the appStoreRequirePassword property value. Indicates whether or not to require a password when using the app store.
 func (m *IosGeneralDeviceConfiguration) SetAppStoreRequirePassword(value *bool)() {
-    if m != nil {
-        m.appStoreRequirePassword = value
-    }
+    m.appStoreRequirePassword = value
 }
 // SetAppsVisibilityList sets the appsVisibilityList property value. List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
 func (m *IosGeneralDeviceConfiguration) SetAppsVisibilityList(value []AppListItemable)() {
-    if m != nil {
-        m.appsVisibilityList = value
-    }
+    m.appsVisibilityList = value
 }
 // SetAppsVisibilityListType sets the appsVisibilityListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) SetAppsVisibilityListType(value *AppListType)() {
-    if m != nil {
-        m.appsVisibilityListType = value
-    }
+    m.appsVisibilityListType = value
 }
 // SetBluetoothBlockModification sets the bluetoothBlockModification property value. Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetBluetoothBlockModification(value *bool)() {
-    if m != nil {
-        m.bluetoothBlockModification = value
-    }
+    m.bluetoothBlockModification = value
 }
 // SetCameraBlocked sets the cameraBlocked property value. Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetCameraBlocked(value *bool)() {
-    if m != nil {
-        m.cameraBlocked = value
-    }
+    m.cameraBlocked = value
 }
 // SetCellularBlockDataRoaming sets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
 func (m *IosGeneralDeviceConfiguration) SetCellularBlockDataRoaming(value *bool)() {
-    if m != nil {
-        m.cellularBlockDataRoaming = value
-    }
+    m.cellularBlockDataRoaming = value
 }
 // SetCellularBlockGlobalBackgroundFetchWhileRoaming sets the cellularBlockGlobalBackgroundFetchWhileRoaming property value. Indicates whether or not to block global background fetch while roaming.
 func (m *IosGeneralDeviceConfiguration) SetCellularBlockGlobalBackgroundFetchWhileRoaming(value *bool)() {
-    if m != nil {
-        m.cellularBlockGlobalBackgroundFetchWhileRoaming = value
-    }
+    m.cellularBlockGlobalBackgroundFetchWhileRoaming = value
 }
 // SetCellularBlockPerAppDataModification sets the cellularBlockPerAppDataModification property value. Indicates whether or not to allow changes to cellular app data usage settings when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetCellularBlockPerAppDataModification(value *bool)() {
-    if m != nil {
-        m.cellularBlockPerAppDataModification = value
-    }
+    m.cellularBlockPerAppDataModification = value
 }
 // SetCellularBlockPersonalHotspot sets the cellularBlockPersonalHotspot property value. Indicates whether or not to block Personal Hotspot.
 func (m *IosGeneralDeviceConfiguration) SetCellularBlockPersonalHotspot(value *bool)() {
-    if m != nil {
-        m.cellularBlockPersonalHotspot = value
-    }
+    m.cellularBlockPersonalHotspot = value
 }
 // SetCellularBlockVoiceRoaming sets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
 func (m *IosGeneralDeviceConfiguration) SetCellularBlockVoiceRoaming(value *bool)() {
-    if m != nil {
-        m.cellularBlockVoiceRoaming = value
-    }
+    m.cellularBlockVoiceRoaming = value
 }
 // SetCertificatesBlockUntrustedTlsCertificates sets the certificatesBlockUntrustedTlsCertificates property value. Indicates whether or not to block untrusted TLS certificates.
 func (m *IosGeneralDeviceConfiguration) SetCertificatesBlockUntrustedTlsCertificates(value *bool)() {
-    if m != nil {
-        m.certificatesBlockUntrustedTlsCertificates = value
-    }
+    m.certificatesBlockUntrustedTlsCertificates = value
 }
 // SetClassroomAppBlockRemoteScreenObservation sets the classroomAppBlockRemoteScreenObservation property value. Indicates whether or not to allow remote screen observation by Classroom app when the device is in supervised mode (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetClassroomAppBlockRemoteScreenObservation(value *bool)() {
-    if m != nil {
-        m.classroomAppBlockRemoteScreenObservation = value
-    }
+    m.classroomAppBlockRemoteScreenObservation = value
 }
 // SetClassroomAppForceUnpromptedScreenObservation sets the classroomAppForceUnpromptedScreenObservation property value. Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetClassroomAppForceUnpromptedScreenObservation(value *bool)() {
-    if m != nil {
-        m.classroomAppForceUnpromptedScreenObservation = value
-    }
+    m.classroomAppForceUnpromptedScreenObservation = value
 }
 // SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *IosGeneralDeviceConfiguration) SetCompliantAppListType(value *AppListType)() {
-    if m != nil {
-        m.compliantAppListType = value
-    }
+    m.compliantAppListType = value
 }
 // SetCompliantAppsList sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *IosGeneralDeviceConfiguration) SetCompliantAppsList(value []AppListItemable)() {
-    if m != nil {
-        m.compliantAppsList = value
-    }
+    m.compliantAppsList = value
 }
 // SetConfigurationProfileBlockChanges sets the configurationProfileBlockChanges property value. Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetConfigurationProfileBlockChanges(value *bool)() {
-    if m != nil {
-        m.configurationProfileBlockChanges = value
-    }
+    m.configurationProfileBlockChanges = value
 }
 // SetDefinitionLookupBlocked sets the definitionLookupBlocked property value. Indicates whether or not to block definition lookup when the device is in supervised mode (iOS 8.1.3 and later ).
 func (m *IosGeneralDeviceConfiguration) SetDefinitionLookupBlocked(value *bool)() {
-    if m != nil {
-        m.definitionLookupBlocked = value
-    }
+    m.definitionLookupBlocked = value
 }
 // SetDeviceBlockEnableRestrictions sets the deviceBlockEnableRestrictions property value. Indicates whether or not to allow the user to enables restrictions in the device settings when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetDeviceBlockEnableRestrictions(value *bool)() {
-    if m != nil {
-        m.deviceBlockEnableRestrictions = value
-    }
+    m.deviceBlockEnableRestrictions = value
 }
 // SetDeviceBlockEraseContentAndSettings sets the deviceBlockEraseContentAndSettings property value. Indicates whether or not to allow the use of the 'Erase all content and settings' option on the device when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetDeviceBlockEraseContentAndSettings(value *bool)() {
-    if m != nil {
-        m.deviceBlockEraseContentAndSettings = value
-    }
+    m.deviceBlockEraseContentAndSettings = value
 }
 // SetDeviceBlockNameModification sets the deviceBlockNameModification property value. Indicates whether or not to allow device name modification when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetDeviceBlockNameModification(value *bool)() {
-    if m != nil {
-        m.deviceBlockNameModification = value
-    }
+    m.deviceBlockNameModification = value
 }
 // SetDiagnosticDataBlockSubmission sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *IosGeneralDeviceConfiguration) SetDiagnosticDataBlockSubmission(value *bool)() {
-    if m != nil {
-        m.diagnosticDataBlockSubmission = value
-    }
+    m.diagnosticDataBlockSubmission = value
 }
 // SetDiagnosticDataBlockSubmissionModification sets the diagnosticDataBlockSubmissionModification property value. Indicates whether or not to allow diagnostics submission settings modification when the device is in supervised mode (iOS 9.3.2 and later).
 func (m *IosGeneralDeviceConfiguration) SetDiagnosticDataBlockSubmissionModification(value *bool)() {
-    if m != nil {
-        m.diagnosticDataBlockSubmissionModification = value
-    }
+    m.diagnosticDataBlockSubmissionModification = value
 }
 // SetDocumentsBlockManagedDocumentsInUnmanagedApps sets the documentsBlockManagedDocumentsInUnmanagedApps property value. Indicates whether or not to block the user from viewing managed documents in unmanaged apps.
 func (m *IosGeneralDeviceConfiguration) SetDocumentsBlockManagedDocumentsInUnmanagedApps(value *bool)() {
-    if m != nil {
-        m.documentsBlockManagedDocumentsInUnmanagedApps = value
-    }
+    m.documentsBlockManagedDocumentsInUnmanagedApps = value
 }
 // SetDocumentsBlockUnmanagedDocumentsInManagedApps sets the documentsBlockUnmanagedDocumentsInManagedApps property value. Indicates whether or not to block the user from viewing unmanaged documents in managed apps.
 func (m *IosGeneralDeviceConfiguration) SetDocumentsBlockUnmanagedDocumentsInManagedApps(value *bool)() {
-    if m != nil {
-        m.documentsBlockUnmanagedDocumentsInManagedApps = value
-    }
+    m.documentsBlockUnmanagedDocumentsInManagedApps = value
 }
 // SetEmailInDomainSuffixes sets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
 func (m *IosGeneralDeviceConfiguration) SetEmailInDomainSuffixes(value []string)() {
-    if m != nil {
-        m.emailInDomainSuffixes = value
-    }
+    m.emailInDomainSuffixes = value
 }
 // SetEnterpriseAppBlockTrust sets the enterpriseAppBlockTrust property value. Indicates whether or not to block the user from trusting an enterprise app.
 func (m *IosGeneralDeviceConfiguration) SetEnterpriseAppBlockTrust(value *bool)() {
-    if m != nil {
-        m.enterpriseAppBlockTrust = value
-    }
+    m.enterpriseAppBlockTrust = value
 }
 // SetEnterpriseAppBlockTrustModification sets the enterpriseAppBlockTrustModification property value. [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
 func (m *IosGeneralDeviceConfiguration) SetEnterpriseAppBlockTrustModification(value *bool)() {
-    if m != nil {
-        m.enterpriseAppBlockTrustModification = value
-    }
+    m.enterpriseAppBlockTrustModification = value
 }
 // SetFaceTimeBlocked sets the faceTimeBlocked property value. Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetFaceTimeBlocked(value *bool)() {
-    if m != nil {
-        m.faceTimeBlocked = value
-    }
+    m.faceTimeBlocked = value
 }
 // SetFindMyFriendsBlocked sets the findMyFriendsBlocked property value. Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetFindMyFriendsBlocked(value *bool)() {
-    if m != nil {
-        m.findMyFriendsBlocked = value
-    }
+    m.findMyFriendsBlocked = value
 }
 // SetGameCenterBlocked sets the gameCenterBlocked property value. Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetGameCenterBlocked(value *bool)() {
-    if m != nil {
-        m.gameCenterBlocked = value
-    }
+    m.gameCenterBlocked = value
 }
 // SetGamingBlockGameCenterFriends sets the gamingBlockGameCenterFriends property value. Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetGamingBlockGameCenterFriends(value *bool)() {
-    if m != nil {
-        m.gamingBlockGameCenterFriends = value
-    }
+    m.gamingBlockGameCenterFriends = value
 }
 // SetGamingBlockMultiplayer sets the gamingBlockMultiplayer property value. Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetGamingBlockMultiplayer(value *bool)() {
-    if m != nil {
-        m.gamingBlockMultiplayer = value
-    }
+    m.gamingBlockMultiplayer = value
 }
 // SetHostPairingBlocked sets the hostPairingBlocked property value. indicates whether or not to allow host pairing to control the devices an iOS device can pair with when the iOS device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetHostPairingBlocked(value *bool)() {
-    if m != nil {
-        m.hostPairingBlocked = value
-    }
+    m.hostPairingBlocked = value
 }
 // SetIBooksStoreBlocked sets the iBooksStoreBlocked property value. Indicates whether or not to block the user from using the iBooks Store when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetIBooksStoreBlocked(value *bool)() {
-    if m != nil {
-        m.iBooksStoreBlocked = value
-    }
+    m.iBooksStoreBlocked = value
 }
 // SetIBooksStoreBlockErotica sets the iBooksStoreBlockErotica property value. Indicates whether or not to block the user from downloading media from the iBookstore that has been tagged as erotica.
 func (m *IosGeneralDeviceConfiguration) SetIBooksStoreBlockErotica(value *bool)() {
-    if m != nil {
-        m.iBooksStoreBlockErotica = value
-    }
+    m.iBooksStoreBlockErotica = value
 }
 // SetICloudBlockActivityContinuation sets the iCloudBlockActivityContinuation property value. Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockActivityContinuation(value *bool)() {
-    if m != nil {
-        m.iCloudBlockActivityContinuation = value
-    }
+    m.iCloudBlockActivityContinuation = value
 }
 // SetICloudBlockBackup sets the iCloudBlockBackup property value. Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockBackup(value *bool)() {
-    if m != nil {
-        m.iCloudBlockBackup = value
-    }
+    m.iCloudBlockBackup = value
 }
 // SetICloudBlockDocumentSync sets the iCloudBlockDocumentSync property value. Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockDocumentSync(value *bool)() {
-    if m != nil {
-        m.iCloudBlockDocumentSync = value
-    }
+    m.iCloudBlockDocumentSync = value
 }
 // SetICloudBlockManagedAppsSync sets the iCloudBlockManagedAppsSync property value. Indicates whether or not to block Managed Apps Cloud Sync.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockManagedAppsSync(value *bool)() {
-    if m != nil {
-        m.iCloudBlockManagedAppsSync = value
-    }
+    m.iCloudBlockManagedAppsSync = value
 }
 // SetICloudBlockPhotoLibrary sets the iCloudBlockPhotoLibrary property value. Indicates whether or not to block iCloud Photo Library.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockPhotoLibrary(value *bool)() {
-    if m != nil {
-        m.iCloudBlockPhotoLibrary = value
-    }
+    m.iCloudBlockPhotoLibrary = value
 }
 // SetICloudBlockPhotoStreamSync sets the iCloudBlockPhotoStreamSync property value. Indicates whether or not to block iCloud Photo Stream Sync.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockPhotoStreamSync(value *bool)() {
-    if m != nil {
-        m.iCloudBlockPhotoStreamSync = value
-    }
+    m.iCloudBlockPhotoStreamSync = value
 }
 // SetICloudBlockSharedPhotoStream sets the iCloudBlockSharedPhotoStream property value. Indicates whether or not to block Shared Photo Stream.
 func (m *IosGeneralDeviceConfiguration) SetICloudBlockSharedPhotoStream(value *bool)() {
-    if m != nil {
-        m.iCloudBlockSharedPhotoStream = value
-    }
+    m.iCloudBlockSharedPhotoStream = value
 }
 // SetICloudRequireEncryptedBackup sets the iCloudRequireEncryptedBackup property value. Indicates whether or not to require backups to iCloud be encrypted.
 func (m *IosGeneralDeviceConfiguration) SetICloudRequireEncryptedBackup(value *bool)() {
-    if m != nil {
-        m.iCloudRequireEncryptedBackup = value
-    }
+    m.iCloudRequireEncryptedBackup = value
 }
 // SetITunesBlockExplicitContent sets the iTunesBlockExplicitContent property value. Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetITunesBlockExplicitContent(value *bool)() {
-    if m != nil {
-        m.iTunesBlockExplicitContent = value
-    }
+    m.iTunesBlockExplicitContent = value
 }
 // SetITunesBlockMusicService sets the iTunesBlockMusicService property value. Indicates whether or not to block Music service and revert Music app to classic mode when the device is in supervised mode (iOS 9.3 and later and macOS 10.12 and later).
 func (m *IosGeneralDeviceConfiguration) SetITunesBlockMusicService(value *bool)() {
-    if m != nil {
-        m.iTunesBlockMusicService = value
-    }
+    m.iTunesBlockMusicService = value
 }
 // SetITunesBlockRadio sets the iTunesBlockRadio property value. Indicates whether or not to block the user from using iTunes Radio when the device is in supervised mode (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetITunesBlockRadio(value *bool)() {
-    if m != nil {
-        m.iTunesBlockRadio = value
-    }
+    m.iTunesBlockRadio = value
 }
 // SetKeyboardBlockAutoCorrect sets the keyboardBlockAutoCorrect property value. Indicates whether or not to block keyboard auto-correction when the device is in supervised mode (iOS 8.1.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetKeyboardBlockAutoCorrect(value *bool)() {
-    if m != nil {
-        m.keyboardBlockAutoCorrect = value
-    }
+    m.keyboardBlockAutoCorrect = value
 }
 // SetKeyboardBlockDictation sets the keyboardBlockDictation property value. Indicates whether or not to block the user from using dictation input when the device is in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetKeyboardBlockDictation(value *bool)() {
-    if m != nil {
-        m.keyboardBlockDictation = value
-    }
+    m.keyboardBlockDictation = value
 }
 // SetKeyboardBlockPredictive sets the keyboardBlockPredictive property value. Indicates whether or not to block predictive keyboards when device is in supervised mode (iOS 8.1.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetKeyboardBlockPredictive(value *bool)() {
-    if m != nil {
-        m.keyboardBlockPredictive = value
-    }
+    m.keyboardBlockPredictive = value
 }
 // SetKeyboardBlockShortcuts sets the keyboardBlockShortcuts property value. Indicates whether or not to block keyboard shortcuts when the device is in supervised mode (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetKeyboardBlockShortcuts(value *bool)() {
-    if m != nil {
-        m.keyboardBlockShortcuts = value
-    }
+    m.keyboardBlockShortcuts = value
 }
 // SetKeyboardBlockSpellCheck sets the keyboardBlockSpellCheck property value. Indicates whether or not to block keyboard spell-checking when the device is in supervised mode (iOS 8.1.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetKeyboardBlockSpellCheck(value *bool)() {
-    if m != nil {
-        m.keyboardBlockSpellCheck = value
-    }
+    m.keyboardBlockSpellCheck = value
 }
 // SetKioskModeAllowAssistiveSpeak sets the kioskModeAllowAssistiveSpeak property value. Indicates whether or not to allow assistive speak while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowAssistiveSpeak(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowAssistiveSpeak = value
-    }
+    m.kioskModeAllowAssistiveSpeak = value
 }
 // SetKioskModeAllowAssistiveTouchSettings sets the kioskModeAllowAssistiveTouchSettings property value. Indicates whether or not to allow access to the Assistive Touch Settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowAssistiveTouchSettings(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowAssistiveTouchSettings = value
-    }
+    m.kioskModeAllowAssistiveTouchSettings = value
 }
 // SetKioskModeAllowAutoLock sets the kioskModeAllowAutoLock property value. Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowAutoLock(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowAutoLock = value
-    }
+    m.kioskModeAllowAutoLock = value
 }
 // SetKioskModeAllowColorInversionSettings sets the kioskModeAllowColorInversionSettings property value. Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowColorInversionSettings(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowColorInversionSettings = value
-    }
+    m.kioskModeAllowColorInversionSettings = value
 }
 // SetKioskModeAllowRingerSwitch sets the kioskModeAllowRingerSwitch property value. Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowRingerSwitch(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowRingerSwitch = value
-    }
+    m.kioskModeAllowRingerSwitch = value
 }
 // SetKioskModeAllowScreenRotation sets the kioskModeAllowScreenRotation property value. Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowScreenRotation(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowScreenRotation = value
-    }
+    m.kioskModeAllowScreenRotation = value
 }
 // SetKioskModeAllowSleepButton sets the kioskModeAllowSleepButton property value. Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowSleepButton(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowSleepButton = value
-    }
+    m.kioskModeAllowSleepButton = value
 }
 // SetKioskModeAllowTouchscreen sets the kioskModeAllowTouchscreen property value. Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowTouchscreen(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowTouchscreen = value
-    }
+    m.kioskModeAllowTouchscreen = value
 }
 // SetKioskModeAllowVoiceOverSettings sets the kioskModeAllowVoiceOverSettings property value. Indicates whether or not to allow access to the voice over settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowVoiceOverSettings(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowVoiceOverSettings = value
-    }
+    m.kioskModeAllowVoiceOverSettings = value
 }
 // SetKioskModeAllowVolumeButtons sets the kioskModeAllowVolumeButtons property value. Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowVolumeButtons(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowVolumeButtons = value
-    }
+    m.kioskModeAllowVolumeButtons = value
 }
 // SetKioskModeAllowZoomSettings sets the kioskModeAllowZoomSettings property value. Indicates whether or not to allow access to the zoom settings while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAllowZoomSettings(value *bool)() {
-    if m != nil {
-        m.kioskModeAllowZoomSettings = value
-    }
+    m.kioskModeAllowZoomSettings = value
 }
 // SetKioskModeAppStoreUrl sets the kioskModeAppStoreUrl property value. URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeAppStoreUrl(value *string)() {
-    if m != nil {
-        m.kioskModeAppStoreUrl = value
-    }
+    m.kioskModeAppStoreUrl = value
 }
 // SetKioskModeBuiltInAppId sets the kioskModeBuiltInAppId property value. ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeBuiltInAppId(value *string)() {
-    if m != nil {
-        m.kioskModeBuiltInAppId = value
-    }
+    m.kioskModeBuiltInAppId = value
 }
 // SetKioskModeManagedAppId sets the kioskModeManagedAppId property value. Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeManagedAppId(value *string)() {
-    if m != nil {
-        m.kioskModeManagedAppId = value
-    }
+    m.kioskModeManagedAppId = value
 }
 // SetKioskModeRequireAssistiveTouch sets the kioskModeRequireAssistiveTouch property value. Indicates whether or not to require assistive touch while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeRequireAssistiveTouch(value *bool)() {
-    if m != nil {
-        m.kioskModeRequireAssistiveTouch = value
-    }
+    m.kioskModeRequireAssistiveTouch = value
 }
 // SetKioskModeRequireColorInversion sets the kioskModeRequireColorInversion property value. Indicates whether or not to require color inversion while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeRequireColorInversion(value *bool)() {
-    if m != nil {
-        m.kioskModeRequireColorInversion = value
-    }
+    m.kioskModeRequireColorInversion = value
 }
 // SetKioskModeRequireMonoAudio sets the kioskModeRequireMonoAudio property value. Indicates whether or not to require mono audio while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeRequireMonoAudio(value *bool)() {
-    if m != nil {
-        m.kioskModeRequireMonoAudio = value
-    }
+    m.kioskModeRequireMonoAudio = value
 }
 // SetKioskModeRequireVoiceOver sets the kioskModeRequireVoiceOver property value. Indicates whether or not to require voice over while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeRequireVoiceOver(value *bool)() {
-    if m != nil {
-        m.kioskModeRequireVoiceOver = value
-    }
+    m.kioskModeRequireVoiceOver = value
 }
 // SetKioskModeRequireZoom sets the kioskModeRequireZoom property value. Indicates whether or not to require zoom while in kiosk mode.
 func (m *IosGeneralDeviceConfiguration) SetKioskModeRequireZoom(value *bool)() {
-    if m != nil {
-        m.kioskModeRequireZoom = value
-    }
+    m.kioskModeRequireZoom = value
 }
 // SetLockScreenBlockControlCenter sets the lockScreenBlockControlCenter property value. Indicates whether or not to block the user from using control center on the lock screen.
 func (m *IosGeneralDeviceConfiguration) SetLockScreenBlockControlCenter(value *bool)() {
-    if m != nil {
-        m.lockScreenBlockControlCenter = value
-    }
+    m.lockScreenBlockControlCenter = value
 }
 // SetLockScreenBlockNotificationView sets the lockScreenBlockNotificationView property value. Indicates whether or not to block the user from using the notification view on the lock screen.
 func (m *IosGeneralDeviceConfiguration) SetLockScreenBlockNotificationView(value *bool)() {
-    if m != nil {
-        m.lockScreenBlockNotificationView = value
-    }
+    m.lockScreenBlockNotificationView = value
 }
 // SetLockScreenBlockPassbook sets the lockScreenBlockPassbook property value. Indicates whether or not to block the user from using passbook when the device is locked.
 func (m *IosGeneralDeviceConfiguration) SetLockScreenBlockPassbook(value *bool)() {
-    if m != nil {
-        m.lockScreenBlockPassbook = value
-    }
+    m.lockScreenBlockPassbook = value
 }
 // SetLockScreenBlockTodayView sets the lockScreenBlockTodayView property value. Indicates whether or not to block the user from using the Today View on the lock screen.
 func (m *IosGeneralDeviceConfiguration) SetLockScreenBlockTodayView(value *bool)() {
-    if m != nil {
-        m.lockScreenBlockTodayView = value
-    }
+    m.lockScreenBlockTodayView = value
 }
 // SetMediaContentRatingApps sets the mediaContentRatingApps property value. Apps rating as in media content
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingApps(value *RatingAppsType)() {
-    if m != nil {
-        m.mediaContentRatingApps = value
-    }
+    m.mediaContentRatingApps = value
 }
 // SetMediaContentRatingAustralia sets the mediaContentRatingAustralia property value. Media content rating settings for Australia
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingAustralia(value MediaContentRatingAustraliaable)() {
-    if m != nil {
-        m.mediaContentRatingAustralia = value
-    }
+    m.mediaContentRatingAustralia = value
 }
 // SetMediaContentRatingCanada sets the mediaContentRatingCanada property value. Media content rating settings for Canada
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingCanada(value MediaContentRatingCanadaable)() {
-    if m != nil {
-        m.mediaContentRatingCanada = value
-    }
+    m.mediaContentRatingCanada = value
 }
 // SetMediaContentRatingFrance sets the mediaContentRatingFrance property value. Media content rating settings for France
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingFrance(value MediaContentRatingFranceable)() {
-    if m != nil {
-        m.mediaContentRatingFrance = value
-    }
+    m.mediaContentRatingFrance = value
 }
 // SetMediaContentRatingGermany sets the mediaContentRatingGermany property value. Media content rating settings for Germany
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingGermany(value MediaContentRatingGermanyable)() {
-    if m != nil {
-        m.mediaContentRatingGermany = value
-    }
+    m.mediaContentRatingGermany = value
 }
 // SetMediaContentRatingIreland sets the mediaContentRatingIreland property value. Media content rating settings for Ireland
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingIreland(value MediaContentRatingIrelandable)() {
-    if m != nil {
-        m.mediaContentRatingIreland = value
-    }
+    m.mediaContentRatingIreland = value
 }
 // SetMediaContentRatingJapan sets the mediaContentRatingJapan property value. Media content rating settings for Japan
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingJapan(value MediaContentRatingJapanable)() {
-    if m != nil {
-        m.mediaContentRatingJapan = value
-    }
+    m.mediaContentRatingJapan = value
 }
 // SetMediaContentRatingNewZealand sets the mediaContentRatingNewZealand property value. Media content rating settings for New Zealand
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingNewZealand(value MediaContentRatingNewZealandable)() {
-    if m != nil {
-        m.mediaContentRatingNewZealand = value
-    }
+    m.mediaContentRatingNewZealand = value
 }
 // SetMediaContentRatingUnitedKingdom sets the mediaContentRatingUnitedKingdom property value. Media content rating settings for United Kingdom
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingUnitedKingdom(value MediaContentRatingUnitedKingdomable)() {
-    if m != nil {
-        m.mediaContentRatingUnitedKingdom = value
-    }
+    m.mediaContentRatingUnitedKingdom = value
 }
 // SetMediaContentRatingUnitedStates sets the mediaContentRatingUnitedStates property value. Media content rating settings for United States
 func (m *IosGeneralDeviceConfiguration) SetMediaContentRatingUnitedStates(value MediaContentRatingUnitedStatesable)() {
-    if m != nil {
-        m.mediaContentRatingUnitedStates = value
-    }
+    m.mediaContentRatingUnitedStates = value
 }
 // SetMessagesBlocked sets the messagesBlocked property value. Indicates whether or not to block the user from using the Messages app on the supervised device.
 func (m *IosGeneralDeviceConfiguration) SetMessagesBlocked(value *bool)() {
-    if m != nil {
-        m.messagesBlocked = value
-    }
+    m.messagesBlocked = value
 }
 // SetNetworkUsageRules sets the networkUsageRules property value. List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
 func (m *IosGeneralDeviceConfiguration) SetNetworkUsageRules(value []IosNetworkUsageRuleable)() {
-    if m != nil {
-        m.networkUsageRules = value
-    }
+    m.networkUsageRules = value
 }
 // SetNotificationsBlockSettingsModification sets the notificationsBlockSettingsModification property value. Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetNotificationsBlockSettingsModification(value *bool)() {
-    if m != nil {
-        m.notificationsBlockSettingsModification = value
-    }
+    m.notificationsBlockSettingsModification = value
 }
 // SetPasscodeBlockFingerprintModification sets the passcodeBlockFingerprintModification property value. Block modification of registered Touch ID fingerprints when in supervised mode.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeBlockFingerprintModification(value *bool)() {
-    if m != nil {
-        m.passcodeBlockFingerprintModification = value
-    }
+    m.passcodeBlockFingerprintModification = value
 }
 // SetPasscodeBlockFingerprintUnlock sets the passcodeBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeBlockFingerprintUnlock(value *bool)() {
-    if m != nil {
-        m.passcodeBlockFingerprintUnlock = value
-    }
+    m.passcodeBlockFingerprintUnlock = value
 }
 // SetPasscodeBlockModification sets the passcodeBlockModification property value. Indicates whether or not to allow passcode modification on the supervised device (iOS 9.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetPasscodeBlockModification(value *bool)() {
-    if m != nil {
-        m.passcodeBlockModification = value
-    }
+    m.passcodeBlockModification = value
 }
 // SetPasscodeBlockSimple sets the passcodeBlockSimple property value. Indicates whether or not to block simple passcodes.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeBlockSimple(value *bool)() {
-    if m != nil {
-        m.passcodeBlockSimple = value
-    }
+    m.passcodeBlockSimple = value
 }
 // SetPasscodeExpirationDays sets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
 func (m *IosGeneralDeviceConfiguration) SetPasscodeExpirationDays(value *int32)() {
-    if m != nil {
-        m.passcodeExpirationDays = value
-    }
+    m.passcodeExpirationDays = value
 }
 // SetPasscodeMinimumCharacterSetCount sets the passcodeMinimumCharacterSetCount property value. Number of character sets a passcode must contain. Valid values 0 to 4
 func (m *IosGeneralDeviceConfiguration) SetPasscodeMinimumCharacterSetCount(value *int32)() {
-    if m != nil {
-        m.passcodeMinimumCharacterSetCount = value
-    }
+    m.passcodeMinimumCharacterSetCount = value
 }
 // SetPasscodeMinimumLength sets the passcodeMinimumLength property value. Minimum length of passcode. Valid values 4 to 14
 func (m *IosGeneralDeviceConfiguration) SetPasscodeMinimumLength(value *int32)() {
-    if m != nil {
-        m.passcodeMinimumLength = value
-    }
+    m.passcodeMinimumLength = value
 }
 // SetPasscodeMinutesOfInactivityBeforeLock sets the passcodeMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a passcode is required.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passcodeMinutesOfInactivityBeforeLock = value
-    }
+    m.passcodeMinutesOfInactivityBeforeLock = value
 }
 // SetPasscodeMinutesOfInactivityBeforeScreenTimeout sets the passcodeMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passcodeMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passcodeMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasscodePreviousPasscodeBlockCount sets the passcodePreviousPasscodeBlockCount property value. Number of previous passcodes to block. Valid values 1 to 24
 func (m *IosGeneralDeviceConfiguration) SetPasscodePreviousPasscodeBlockCount(value *int32)() {
-    if m != nil {
-        m.passcodePreviousPasscodeBlockCount = value
-    }
+    m.passcodePreviousPasscodeBlockCount = value
 }
 // SetPasscodeRequired sets the passcodeRequired property value. Indicates whether or not to require a passcode.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeRequired(value *bool)() {
-    if m != nil {
-        m.passcodeRequired = value
-    }
+    m.passcodeRequired = value
 }
 // SetPasscodeRequiredType sets the passcodeRequiredType property value. Possible values of required passwords.
 func (m *IosGeneralDeviceConfiguration) SetPasscodeRequiredType(value *RequiredPasswordType)() {
-    if m != nil {
-        m.passcodeRequiredType = value
-    }
+    m.passcodeRequiredType = value
 }
 // SetPasscodeSignInFailureCountBeforeWipe sets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures allowed before wiping the device. Valid values 2 to 11
 func (m *IosGeneralDeviceConfiguration) SetPasscodeSignInFailureCountBeforeWipe(value *int32)() {
-    if m != nil {
-        m.passcodeSignInFailureCountBeforeWipe = value
-    }
+    m.passcodeSignInFailureCountBeforeWipe = value
 }
 // SetPodcastsBlocked sets the podcastsBlocked property value. Indicates whether or not to block the user from using podcasts on the supervised device (iOS 8.0 and later).
 func (m *IosGeneralDeviceConfiguration) SetPodcastsBlocked(value *bool)() {
-    if m != nil {
-        m.podcastsBlocked = value
-    }
+    m.podcastsBlocked = value
 }
 // SetSafariBlockAutofill sets the safariBlockAutofill property value. Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetSafariBlockAutofill(value *bool)() {
-    if m != nil {
-        m.safariBlockAutofill = value
-    }
+    m.safariBlockAutofill = value
 }
 // SetSafariBlocked sets the safariBlocked property value. Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
 func (m *IosGeneralDeviceConfiguration) SetSafariBlocked(value *bool)() {
-    if m != nil {
-        m.safariBlocked = value
-    }
+    m.safariBlocked = value
 }
 // SetSafariBlockJavaScript sets the safariBlockJavaScript property value. Indicates whether or not to block JavaScript in Safari.
 func (m *IosGeneralDeviceConfiguration) SetSafariBlockJavaScript(value *bool)() {
-    if m != nil {
-        m.safariBlockJavaScript = value
-    }
+    m.safariBlockJavaScript = value
 }
 // SetSafariBlockPopups sets the safariBlockPopups property value. Indicates whether or not to block popups in Safari.
 func (m *IosGeneralDeviceConfiguration) SetSafariBlockPopups(value *bool)() {
-    if m != nil {
-        m.safariBlockPopups = value
-    }
+    m.safariBlockPopups = value
 }
 // SetSafariCookieSettings sets the safariCookieSettings property value. Web Browser Cookie Settings.
 func (m *IosGeneralDeviceConfiguration) SetSafariCookieSettings(value *WebBrowserCookieSettings)() {
-    if m != nil {
-        m.safariCookieSettings = value
-    }
+    m.safariCookieSettings = value
 }
 // SetSafariManagedDomains sets the safariManagedDomains property value. URLs matching the patterns listed here will be considered managed.
 func (m *IosGeneralDeviceConfiguration) SetSafariManagedDomains(value []string)() {
-    if m != nil {
-        m.safariManagedDomains = value
-    }
+    m.safariManagedDomains = value
 }
 // SetSafariPasswordAutoFillDomains sets the safariPasswordAutoFillDomains property value. Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).
 func (m *IosGeneralDeviceConfiguration) SetSafariPasswordAutoFillDomains(value []string)() {
-    if m != nil {
-        m.safariPasswordAutoFillDomains = value
-    }
+    m.safariPasswordAutoFillDomains = value
 }
 // SetSafariRequireFraudWarning sets the safariRequireFraudWarning property value. Indicates whether or not to require fraud warning in Safari.
 func (m *IosGeneralDeviceConfiguration) SetSafariRequireFraudWarning(value *bool)() {
-    if m != nil {
-        m.safariRequireFraudWarning = value
-    }
+    m.safariRequireFraudWarning = value
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to block the user from taking Screenshots.
 func (m *IosGeneralDeviceConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.screenCaptureBlocked = value
-    }
+    m.screenCaptureBlocked = value
 }
 // SetSiriBlocked sets the siriBlocked property value. Indicates whether or not to block the user from using Siri.
 func (m *IosGeneralDeviceConfiguration) SetSiriBlocked(value *bool)() {
-    if m != nil {
-        m.siriBlocked = value
-    }
+    m.siriBlocked = value
 }
 // SetSiriBlockedWhenLocked sets the siriBlockedWhenLocked property value. Indicates whether or not to block the user from using Siri when locked.
 func (m *IosGeneralDeviceConfiguration) SetSiriBlockedWhenLocked(value *bool)() {
-    if m != nil {
-        m.siriBlockedWhenLocked = value
-    }
+    m.siriBlockedWhenLocked = value
 }
 // SetSiriBlockUserGeneratedContent sets the siriBlockUserGeneratedContent property value. Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.
 func (m *IosGeneralDeviceConfiguration) SetSiriBlockUserGeneratedContent(value *bool)() {
-    if m != nil {
-        m.siriBlockUserGeneratedContent = value
-    }
+    m.siriBlockUserGeneratedContent = value
 }
 // SetSiriRequireProfanityFilter sets the siriRequireProfanityFilter property value. Indicates whether or not to prevent Siri from dictating, or speaking profane language on supervised device.
 func (m *IosGeneralDeviceConfiguration) SetSiriRequireProfanityFilter(value *bool)() {
-    if m != nil {
-        m.siriRequireProfanityFilter = value
-    }
+    m.siriRequireProfanityFilter = value
 }
 // SetSpotlightBlockInternetResults sets the spotlightBlockInternetResults property value. Indicates whether or not to block Spotlight search from returning internet results on supervised device.
 func (m *IosGeneralDeviceConfiguration) SetSpotlightBlockInternetResults(value *bool)() {
-    if m != nil {
-        m.spotlightBlockInternetResults = value
-    }
+    m.spotlightBlockInternetResults = value
 }
 // SetVoiceDialingBlocked sets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
 func (m *IosGeneralDeviceConfiguration) SetVoiceDialingBlocked(value *bool)() {
-    if m != nil {
-        m.voiceDialingBlocked = value
-    }
+    m.voiceDialingBlocked = value
 }
 // SetWallpaperBlockModification sets the wallpaperBlockModification property value. Indicates whether or not to allow wallpaper modification on supervised device (iOS 9.0 and later) .
 func (m *IosGeneralDeviceConfiguration) SetWallpaperBlockModification(value *bool)() {
-    if m != nil {
-        m.wallpaperBlockModification = value
-    }
+    m.wallpaperBlockModification = value
 }
 // SetWiFiConnectOnlyToConfiguredNetworks sets the wiFiConnectOnlyToConfiguredNetworks property value. Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
 func (m *IosGeneralDeviceConfiguration) SetWiFiConnectOnlyToConfiguredNetworks(value *bool)() {
-    if m != nil {
-        m.wiFiConnectOnlyToConfiguredNetworks = value
-    }
+    m.wiFiConnectOnlyToConfiguredNetworks = value
 }

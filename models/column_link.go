@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnLink provides operations to manage the admin singleton.
+// ColumnLink provides operations to manage the collection of agreement entities.
 type ColumnLink struct {
     Entity
     // The name of the column  in this content type.
@@ -40,11 +40,7 @@ func (m *ColumnLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetName gets the name property value. The name of the column  in this content type.
 func (m *ColumnLink) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // Serialize serializes information the current object
 func (m *ColumnLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ColumnLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetName sets the name property value. The name of the column  in this content type.
 func (m *ColumnLink) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }

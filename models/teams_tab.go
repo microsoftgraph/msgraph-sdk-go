@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsTab provides operations to manage the admin singleton.
+// TeamsTab provides operations to manage the collection of agreementAcceptance entities.
 type TeamsTab struct {
     Entity
     // Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
@@ -31,19 +31,11 @@ func CreateTeamsTabFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetConfiguration gets the configuration property value. Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
 func (m *TeamsTab) GetConfiguration()(TeamsTabConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configuration
-    }
+    return m.configuration
 }
 // GetDisplayName gets the displayName property value. Name of the tab.
 func (m *TeamsTab) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsTab) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetTeamsApp gets the teamsApp property value. The application that is linked to the tab.
 func (m *TeamsTab) GetTeamsApp()(TeamsAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsApp
-    }
+    return m.teamsApp
 }
 // GetWebUrl gets the webUrl property value. Deep link URL of the tab instance. Read only.
 func (m *TeamsTab) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *TeamsTab) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *TeamsTab) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetConfiguration sets the configuration property value. Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
 func (m *TeamsTab) SetConfiguration(value TeamsTabConfigurationable)() {
-    if m != nil {
-        m.configuration = value
-    }
+    m.configuration = value
 }
 // SetDisplayName sets the displayName property value. Name of the tab.
 func (m *TeamsTab) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTeamsApp sets the teamsApp property value. The application that is linked to the tab.
 func (m *TeamsTab) SetTeamsApp(value TeamsAppable)() {
-    if m != nil {
-        m.teamsApp = value
-    }
+    m.teamsApp = value
 }
 // SetWebUrl sets the webUrl property value. Deep link URL of the tab instance. Read only.
 func (m *TeamsTab) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

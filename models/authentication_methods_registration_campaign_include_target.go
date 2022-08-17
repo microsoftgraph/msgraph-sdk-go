@@ -32,11 +32,7 @@ func CreateAuthenticationMethodsRegistrationCampaignIncludeTargetFromDiscriminat
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
 }
 // GetId gets the id property value. The object identifier of an Azure AD user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTargetedAuthenticationMethod gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuthenticationMethod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedAuthenticationMethod
-    }
+    return m.targetedAuthenticationMethod
 }
 // GetTargetType gets the targetType property value. The targetType property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetType
-    }
+    return m.targetType
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(write
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetId sets the id property value. The object identifier of an Azure AD user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTargetedAuthenticationMethod sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetedAuthenticationMethod(value *string)() {
-    if m != nil {
-        m.targetedAuthenticationMethod = value
-    }
+    m.targetedAuthenticationMethod = value
 }
 // SetTargetType sets the targetType property value. The targetType property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
-    if m != nil {
-        m.targetType = value
-    }
+    m.targetType = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MultiValueLegacyExtendedProperty provides operations to manage the admin singleton.
+// MultiValueLegacyExtendedProperty provides operations to manage the collection of agreement entities.
 type MultiValueLegacyExtendedProperty struct {
     Entity
     // A collection of property values.
@@ -44,11 +44,7 @@ func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) GetValue()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *MultiValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) SetValue(value []string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

@@ -109,43 +109,23 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIssuerUri gets the issuerUri property value. Issuer URI of the federation server.
 func (m *SamlOrWsFedProvider) GetIssuerUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerUri
-    }
+    return m.issuerUri
 }
 // GetMetadataExchangeUri gets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
 func (m *SamlOrWsFedProvider) GetMetadataExchangeUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadataExchangeUri
-    }
+    return m.metadataExchangeUri
 }
 // GetPassiveSignInUri gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
 func (m *SamlOrWsFedProvider) GetPassiveSignInUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passiveSignInUri
-    }
+    return m.passiveSignInUri
 }
 // GetPreferredAuthenticationProtocol gets the preferredAuthenticationProtocol property value. Preferred authentication protocol. Supported values include saml or wsfed.
 func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*AuthenticationProtocol) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredAuthenticationProtocol
-    }
+    return m.preferredAuthenticationProtocol
 }
 // GetSigningCertificate gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
 func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signingCertificate
-    }
+    return m.signingCertificate
 }
 // Serialize serializes information the current object
 func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -188,31 +168,21 @@ func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetIssuerUri sets the issuerUri property value. Issuer URI of the federation server.
 func (m *SamlOrWsFedProvider) SetIssuerUri(value *string)() {
-    if m != nil {
-        m.issuerUri = value
-    }
+    m.issuerUri = value
 }
 // SetMetadataExchangeUri sets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
 func (m *SamlOrWsFedProvider) SetMetadataExchangeUri(value *string)() {
-    if m != nil {
-        m.metadataExchangeUri = value
-    }
+    m.metadataExchangeUri = value
 }
 // SetPassiveSignInUri sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
 func (m *SamlOrWsFedProvider) SetPassiveSignInUri(value *string)() {
-    if m != nil {
-        m.passiveSignInUri = value
-    }
+    m.passiveSignInUri = value
 }
 // SetPreferredAuthenticationProtocol sets the preferredAuthenticationProtocol property value. Preferred authentication protocol. Supported values include saml or wsfed.
 func (m *SamlOrWsFedProvider) SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)() {
-    if m != nil {
-        m.preferredAuthenticationProtocol = value
-    }
+    m.preferredAuthenticationProtocol = value
 }
 // SetSigningCertificate sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
 func (m *SamlOrWsFedProvider) SetSigningCertificate(value *string)() {
-    if m != nil {
-        m.signingCertificate = value
-    }
+    m.signingCertificate = value
 }

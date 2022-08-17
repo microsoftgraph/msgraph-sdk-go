@@ -34,19 +34,11 @@ func CreateServicePlanInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServicePlanInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppliesTo gets the appliesTo property value. The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
 func (m *ServicePlanInfo) GetAppliesTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePlanInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *ServicePlanInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ServicePlanInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProvisioningStatus gets the provisioningStatus property value. The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
 func (m *ServicePlanInfo) GetProvisioningStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStatus
-    }
+    return m.provisioningStatus
 }
 // GetServicePlanId gets the servicePlanId property value. The unique identifier of the service plan.
 func (m *ServicePlanInfo) GetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanId
-    }
+    return m.servicePlanId
 }
 // GetServicePlanName gets the servicePlanName property value. The name of the service plan.
 func (m *ServicePlanInfo) GetServicePlanName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanName
-    }
+    return m.servicePlanName
 }
 // Serialize serializes information the current object
 func (m *ServicePlanInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *ServicePlanInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServicePlanInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppliesTo sets the appliesTo property value. The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
 func (m *ServicePlanInfo) SetAppliesTo(value *string)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ServicePlanInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProvisioningStatus sets the provisioningStatus property value. The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
 func (m *ServicePlanInfo) SetProvisioningStatus(value *string)() {
-    if m != nil {
-        m.provisioningStatus = value
-    }
+    m.provisioningStatus = value
 }
 // SetServicePlanId sets the servicePlanId property value. The unique identifier of the service plan.
 func (m *ServicePlanInfo) SetServicePlanId(value *string)() {
-    if m != nil {
-        m.servicePlanId = value
-    }
+    m.servicePlanId = value
 }
 // SetServicePlanName sets the servicePlanName property value. The name of the service plan.
 func (m *ServicePlanInfo) SetServicePlanName(value *string)() {
-    if m != nil {
-        m.servicePlanName = value
-    }
+    m.servicePlanName = value
 }

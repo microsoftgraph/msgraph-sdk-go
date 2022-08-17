@@ -38,27 +38,15 @@ func CreateAudioConferencingFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AudioConferencing) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConferenceId gets the conferenceId property value. The conference id of the online meeting.
 func (m *AudioConferencing) GetConferenceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conferenceId
-    }
+    return m.conferenceId
 }
 // GetDialinUrl gets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
 func (m *AudioConferencing) GetDialinUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dialinUrl
-    }
+    return m.dialinUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,43 +133,23 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AudioConferencing) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTollFreeNumber gets the tollFreeNumber property value. The tollFreeNumber property
 func (m *AudioConferencing) GetTollFreeNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollFreeNumber
-    }
+    return m.tollFreeNumber
 }
 // GetTollFreeNumbers gets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) GetTollFreeNumbers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollFreeNumbers
-    }
+    return m.tollFreeNumbers
 }
 // GetTollNumber gets the tollNumber property value. The tollNumber property
 func (m *AudioConferencing) GetTollNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollNumber
-    }
+    return m.tollNumber
 }
 // GetTollNumbers gets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) GetTollNumbers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tollNumbers
-    }
+    return m.tollNumbers
 }
 // Serialize serializes information the current object
 func (m *AudioConferencing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -237,49 +205,33 @@ func (m *AudioConferencing) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AudioConferencing) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConferenceId sets the conferenceId property value. The conference id of the online meeting.
 func (m *AudioConferencing) SetConferenceId(value *string)() {
-    if m != nil {
-        m.conferenceId = value
-    }
+    m.conferenceId = value
 }
 // SetDialinUrl sets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
 func (m *AudioConferencing) SetDialinUrl(value *string)() {
-    if m != nil {
-        m.dialinUrl = value
-    }
+    m.dialinUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AudioConferencing) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTollFreeNumber sets the tollFreeNumber property value. The tollFreeNumber property
 func (m *AudioConferencing) SetTollFreeNumber(value *string)() {
-    if m != nil {
-        m.tollFreeNumber = value
-    }
+    m.tollFreeNumber = value
 }
 // SetTollFreeNumbers sets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) SetTollFreeNumbers(value []string)() {
-    if m != nil {
-        m.tollFreeNumbers = value
-    }
+    m.tollFreeNumbers = value
 }
 // SetTollNumber sets the tollNumber property value. The tollNumber property
 func (m *AudioConferencing) SetTollNumber(value *string)() {
-    if m != nil {
-        m.tollNumber = value
-    }
+    m.tollNumber = value
 }
 // SetTollNumbers sets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) SetTollNumbers(value []string)() {
-    if m != nil {
-        m.tollNumbers = value
-    }
+    m.tollNumbers = value
 }

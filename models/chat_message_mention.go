@@ -32,11 +32,7 @@ func CreateChatMessageMentionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageMention) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetId gets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
 func (m *ChatMessageMention) GetId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetMentioned gets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
 func (m *ChatMessageMention) GetMentioned()(ChatMessageMentionedIdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentioned
-    }
+    return m.mentioned
 }
 // GetMentionText gets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
 func (m *ChatMessageMention) GetMentionText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentionText
-    }
+    return m.mentionText
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChatMessageMention) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ChatMessageMention) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ChatMessageMention) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageMention) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetId sets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
 func (m *ChatMessageMention) SetId(value *int32)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetMentioned sets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
 func (m *ChatMessageMention) SetMentioned(value ChatMessageMentionedIdentitySetable)() {
-    if m != nil {
-        m.mentioned = value
-    }
+    m.mentioned = value
 }
 // SetMentionText sets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
 func (m *ChatMessageMention) SetMentionText(value *string)() {
-    if m != nil {
-        m.mentionText = value
-    }
+    m.mentionText = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChatMessageMention) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

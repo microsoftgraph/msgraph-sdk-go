@@ -91,131 +91,67 @@ func CreateDeviceHealthAttestationStateFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthAttestationState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttestationIdentityKey gets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
 func (m *DeviceHealthAttestationState) GetAttestationIdentityKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attestationIdentityKey
-    }
+    return m.attestationIdentityKey
 }
 // GetBitLockerStatus gets the bitLockerStatus property value. On or Off of BitLocker Drive Encryption
 func (m *DeviceHealthAttestationState) GetBitLockerStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitLockerStatus
-    }
+    return m.bitLockerStatus
 }
 // GetBootAppSecurityVersion gets the bootAppSecurityVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) GetBootAppSecurityVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootAppSecurityVersion
-    }
+    return m.bootAppSecurityVersion
 }
 // GetBootDebugging gets the bootDebugging property value. When bootDebugging is enabled, the device is used in development and testing
 func (m *DeviceHealthAttestationState) GetBootDebugging()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootDebugging
-    }
+    return m.bootDebugging
 }
 // GetBootManagerSecurityVersion gets the bootManagerSecurityVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) GetBootManagerSecurityVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootManagerSecurityVersion
-    }
+    return m.bootManagerSecurityVersion
 }
 // GetBootManagerVersion gets the bootManagerVersion property value. The version of the Boot Manager
 func (m *DeviceHealthAttestationState) GetBootManagerVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootManagerVersion
-    }
+    return m.bootManagerVersion
 }
 // GetBootRevisionListInfo gets the bootRevisionListInfo property value. The Boot Revision List that was loaded during initial boot on the attested device
 func (m *DeviceHealthAttestationState) GetBootRevisionListInfo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootRevisionListInfo
-    }
+    return m.bootRevisionListInfo
 }
 // GetCodeIntegrity gets the codeIntegrity property value. When code integrity is enabled, code execution is restricted to integrity verified code
 func (m *DeviceHealthAttestationState) GetCodeIntegrity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.codeIntegrity
-    }
+    return m.codeIntegrity
 }
 // GetCodeIntegrityCheckVersion gets the codeIntegrityCheckVersion property value. The version of the Boot Manager
 func (m *DeviceHealthAttestationState) GetCodeIntegrityCheckVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.codeIntegrityCheckVersion
-    }
+    return m.codeIntegrityCheckVersion
 }
 // GetCodeIntegrityPolicy gets the codeIntegrityPolicy property value. The Code Integrity policy that is controlling the security of the boot environment
 func (m *DeviceHealthAttestationState) GetCodeIntegrityPolicy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.codeIntegrityPolicy
-    }
+    return m.codeIntegrityPolicy
 }
 // GetContentNamespaceUrl gets the contentNamespaceUrl property value. The DHA report version. (Namespace version)
 func (m *DeviceHealthAttestationState) GetContentNamespaceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentNamespaceUrl
-    }
+    return m.contentNamespaceUrl
 }
 // GetContentVersion gets the contentVersion property value. The HealthAttestation state schema version
 func (m *DeviceHealthAttestationState) GetContentVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentVersion
-    }
+    return m.contentVersion
 }
 // GetDataExcutionPolicy gets the dataExcutionPolicy property value. DEP Policy defines a set of hardware and software technologies that perform additional checks on memory
 func (m *DeviceHealthAttestationState) GetDataExcutionPolicy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataExcutionPolicy
-    }
+    return m.dataExcutionPolicy
 }
 // GetDeviceHealthAttestationStatus gets the deviceHealthAttestationStatus property value. The DHA report version. (Namespace version)
 func (m *DeviceHealthAttestationState) GetDeviceHealthAttestationStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceHealthAttestationStatus
-    }
+    return m.deviceHealthAttestationStatus
 }
 // GetEarlyLaunchAntiMalwareDriverProtection gets the earlyLaunchAntiMalwareDriverProtection property value. ELAM provides protection for the computers in your network when they start up
 func (m *DeviceHealthAttestationState) GetEarlyLaunchAntiMalwareDriverProtection()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.earlyLaunchAntiMalwareDriverProtection
-    }
+    return m.earlyLaunchAntiMalwareDriverProtection
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -554,147 +490,75 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
 }
 // GetHealthAttestationSupportedStatus gets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
 func (m *DeviceHealthAttestationState) GetHealthAttestationSupportedStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthAttestationSupportedStatus
-    }
+    return m.healthAttestationSupportedStatus
 }
 // GetHealthStatusMismatchInfo gets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
 func (m *DeviceHealthAttestationState) GetHealthStatusMismatchInfo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatusMismatchInfo
-    }
+    return m.healthStatusMismatchInfo
 }
 // GetIssuedDateTime gets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
 func (m *DeviceHealthAttestationState) GetIssuedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuedDateTime
-    }
+    return m.issuedDateTime
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. The Timestamp of the last update.
 func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdateDateTime
-    }
+    return m.lastUpdateDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceHealthAttestationState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperatingSystemKernelDebugging gets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
 func (m *DeviceHealthAttestationState) GetOperatingSystemKernelDebugging()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemKernelDebugging
-    }
+    return m.operatingSystemKernelDebugging
 }
 // GetOperatingSystemRevListInfo gets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
 func (m *DeviceHealthAttestationState) GetOperatingSystemRevListInfo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemRevListInfo
-    }
+    return m.operatingSystemRevListInfo
 }
 // GetPcr0 gets the pcr0 property value. The measurement that is captured in PCR[0]
 func (m *DeviceHealthAttestationState) GetPcr0()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pcr0
-    }
+    return m.pcr0
 }
 // GetPcrHashAlgorithm gets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
 func (m *DeviceHealthAttestationState) GetPcrHashAlgorithm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pcrHashAlgorithm
-    }
+    return m.pcrHashAlgorithm
 }
 // GetResetCount gets the resetCount property value. The number of times a PC device has hibernated or resumed
 func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resetCount
-    }
+    return m.resetCount
 }
 // GetRestartCount gets the restartCount property value. The number of times a PC device has rebooted
 func (m *DeviceHealthAttestationState) GetRestartCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartCount
-    }
+    return m.restartCount
 }
 // GetSafeMode gets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
 func (m *DeviceHealthAttestationState) GetSafeMode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.safeMode
-    }
+    return m.safeMode
 }
 // GetSecureBoot gets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
 func (m *DeviceHealthAttestationState) GetSecureBoot()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureBoot
-    }
+    return m.secureBoot
 }
 // GetSecureBootConfigurationPolicyFingerPrint gets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
 func (m *DeviceHealthAttestationState) GetSecureBootConfigurationPolicyFingerPrint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureBootConfigurationPolicyFingerPrint
-    }
+    return m.secureBootConfigurationPolicyFingerPrint
 }
 // GetTestSigning gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
 func (m *DeviceHealthAttestationState) GetTestSigning()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.testSigning
-    }
+    return m.testSigning
 }
 // GetTpmVersion gets the tpmVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) GetTpmVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmVersion
-    }
+    return m.tpmVersion
 }
 // GetVirtualSecureMode gets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
 func (m *DeviceHealthAttestationState) GetVirtualSecureMode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.virtualSecureMode
-    }
+    return m.virtualSecureMode
 }
 // GetWindowsPE gets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
 func (m *DeviceHealthAttestationState) GetWindowsPE()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsPE
-    }
+    return m.windowsPE
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -906,205 +770,137 @@ func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthAttestationState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttestationIdentityKey sets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
 func (m *DeviceHealthAttestationState) SetAttestationIdentityKey(value *string)() {
-    if m != nil {
-        m.attestationIdentityKey = value
-    }
+    m.attestationIdentityKey = value
 }
 // SetBitLockerStatus sets the bitLockerStatus property value. On or Off of BitLocker Drive Encryption
 func (m *DeviceHealthAttestationState) SetBitLockerStatus(value *string)() {
-    if m != nil {
-        m.bitLockerStatus = value
-    }
+    m.bitLockerStatus = value
 }
 // SetBootAppSecurityVersion sets the bootAppSecurityVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) SetBootAppSecurityVersion(value *string)() {
-    if m != nil {
-        m.bootAppSecurityVersion = value
-    }
+    m.bootAppSecurityVersion = value
 }
 // SetBootDebugging sets the bootDebugging property value. When bootDebugging is enabled, the device is used in development and testing
 func (m *DeviceHealthAttestationState) SetBootDebugging(value *string)() {
-    if m != nil {
-        m.bootDebugging = value
-    }
+    m.bootDebugging = value
 }
 // SetBootManagerSecurityVersion sets the bootManagerSecurityVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) SetBootManagerSecurityVersion(value *string)() {
-    if m != nil {
-        m.bootManagerSecurityVersion = value
-    }
+    m.bootManagerSecurityVersion = value
 }
 // SetBootManagerVersion sets the bootManagerVersion property value. The version of the Boot Manager
 func (m *DeviceHealthAttestationState) SetBootManagerVersion(value *string)() {
-    if m != nil {
-        m.bootManagerVersion = value
-    }
+    m.bootManagerVersion = value
 }
 // SetBootRevisionListInfo sets the bootRevisionListInfo property value. The Boot Revision List that was loaded during initial boot on the attested device
 func (m *DeviceHealthAttestationState) SetBootRevisionListInfo(value *string)() {
-    if m != nil {
-        m.bootRevisionListInfo = value
-    }
+    m.bootRevisionListInfo = value
 }
 // SetCodeIntegrity sets the codeIntegrity property value. When code integrity is enabled, code execution is restricted to integrity verified code
 func (m *DeviceHealthAttestationState) SetCodeIntegrity(value *string)() {
-    if m != nil {
-        m.codeIntegrity = value
-    }
+    m.codeIntegrity = value
 }
 // SetCodeIntegrityCheckVersion sets the codeIntegrityCheckVersion property value. The version of the Boot Manager
 func (m *DeviceHealthAttestationState) SetCodeIntegrityCheckVersion(value *string)() {
-    if m != nil {
-        m.codeIntegrityCheckVersion = value
-    }
+    m.codeIntegrityCheckVersion = value
 }
 // SetCodeIntegrityPolicy sets the codeIntegrityPolicy property value. The Code Integrity policy that is controlling the security of the boot environment
 func (m *DeviceHealthAttestationState) SetCodeIntegrityPolicy(value *string)() {
-    if m != nil {
-        m.codeIntegrityPolicy = value
-    }
+    m.codeIntegrityPolicy = value
 }
 // SetContentNamespaceUrl sets the contentNamespaceUrl property value. The DHA report version. (Namespace version)
 func (m *DeviceHealthAttestationState) SetContentNamespaceUrl(value *string)() {
-    if m != nil {
-        m.contentNamespaceUrl = value
-    }
+    m.contentNamespaceUrl = value
 }
 // SetContentVersion sets the contentVersion property value. The HealthAttestation state schema version
 func (m *DeviceHealthAttestationState) SetContentVersion(value *string)() {
-    if m != nil {
-        m.contentVersion = value
-    }
+    m.contentVersion = value
 }
 // SetDataExcutionPolicy sets the dataExcutionPolicy property value. DEP Policy defines a set of hardware and software technologies that perform additional checks on memory
 func (m *DeviceHealthAttestationState) SetDataExcutionPolicy(value *string)() {
-    if m != nil {
-        m.dataExcutionPolicy = value
-    }
+    m.dataExcutionPolicy = value
 }
 // SetDeviceHealthAttestationStatus sets the deviceHealthAttestationStatus property value. The DHA report version. (Namespace version)
 func (m *DeviceHealthAttestationState) SetDeviceHealthAttestationStatus(value *string)() {
-    if m != nil {
-        m.deviceHealthAttestationStatus = value
-    }
+    m.deviceHealthAttestationStatus = value
 }
 // SetEarlyLaunchAntiMalwareDriverProtection sets the earlyLaunchAntiMalwareDriverProtection property value. ELAM provides protection for the computers in your network when they start up
 func (m *DeviceHealthAttestationState) SetEarlyLaunchAntiMalwareDriverProtection(value *string)() {
-    if m != nil {
-        m.earlyLaunchAntiMalwareDriverProtection = value
-    }
+    m.earlyLaunchAntiMalwareDriverProtection = value
 }
 // SetHealthAttestationSupportedStatus sets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
 func (m *DeviceHealthAttestationState) SetHealthAttestationSupportedStatus(value *string)() {
-    if m != nil {
-        m.healthAttestationSupportedStatus = value
-    }
+    m.healthAttestationSupportedStatus = value
 }
 // SetHealthStatusMismatchInfo sets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
 func (m *DeviceHealthAttestationState) SetHealthStatusMismatchInfo(value *string)() {
-    if m != nil {
-        m.healthStatusMismatchInfo = value
-    }
+    m.healthStatusMismatchInfo = value
 }
 // SetIssuedDateTime sets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
 func (m *DeviceHealthAttestationState) SetIssuedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.issuedDateTime = value
-    }
+    m.issuedDateTime = value
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. The Timestamp of the last update.
 func (m *DeviceHealthAttestationState) SetLastUpdateDateTime(value *string)() {
-    if m != nil {
-        m.lastUpdateDateTime = value
-    }
+    m.lastUpdateDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceHealthAttestationState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperatingSystemKernelDebugging sets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
 func (m *DeviceHealthAttestationState) SetOperatingSystemKernelDebugging(value *string)() {
-    if m != nil {
-        m.operatingSystemKernelDebugging = value
-    }
+    m.operatingSystemKernelDebugging = value
 }
 // SetOperatingSystemRevListInfo sets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
 func (m *DeviceHealthAttestationState) SetOperatingSystemRevListInfo(value *string)() {
-    if m != nil {
-        m.operatingSystemRevListInfo = value
-    }
+    m.operatingSystemRevListInfo = value
 }
 // SetPcr0 sets the pcr0 property value. The measurement that is captured in PCR[0]
 func (m *DeviceHealthAttestationState) SetPcr0(value *string)() {
-    if m != nil {
-        m.pcr0 = value
-    }
+    m.pcr0 = value
 }
 // SetPcrHashAlgorithm sets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
 func (m *DeviceHealthAttestationState) SetPcrHashAlgorithm(value *string)() {
-    if m != nil {
-        m.pcrHashAlgorithm = value
-    }
+    m.pcrHashAlgorithm = value
 }
 // SetResetCount sets the resetCount property value. The number of times a PC device has hibernated or resumed
 func (m *DeviceHealthAttestationState) SetResetCount(value *int64)() {
-    if m != nil {
-        m.resetCount = value
-    }
+    m.resetCount = value
 }
 // SetRestartCount sets the restartCount property value. The number of times a PC device has rebooted
 func (m *DeviceHealthAttestationState) SetRestartCount(value *int64)() {
-    if m != nil {
-        m.restartCount = value
-    }
+    m.restartCount = value
 }
 // SetSafeMode sets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
 func (m *DeviceHealthAttestationState) SetSafeMode(value *string)() {
-    if m != nil {
-        m.safeMode = value
-    }
+    m.safeMode = value
 }
 // SetSecureBoot sets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
 func (m *DeviceHealthAttestationState) SetSecureBoot(value *string)() {
-    if m != nil {
-        m.secureBoot = value
-    }
+    m.secureBoot = value
 }
 // SetSecureBootConfigurationPolicyFingerPrint sets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
 func (m *DeviceHealthAttestationState) SetSecureBootConfigurationPolicyFingerPrint(value *string)() {
-    if m != nil {
-        m.secureBootConfigurationPolicyFingerPrint = value
-    }
+    m.secureBootConfigurationPolicyFingerPrint = value
 }
 // SetTestSigning sets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
 func (m *DeviceHealthAttestationState) SetTestSigning(value *string)() {
-    if m != nil {
-        m.testSigning = value
-    }
+    m.testSigning = value
 }
 // SetTpmVersion sets the tpmVersion property value. The security version number of the Boot Application
 func (m *DeviceHealthAttestationState) SetTpmVersion(value *string)() {
-    if m != nil {
-        m.tpmVersion = value
-    }
+    m.tpmVersion = value
 }
 // SetVirtualSecureMode sets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
 func (m *DeviceHealthAttestationState) SetVirtualSecureMode(value *string)() {
-    if m != nil {
-        m.virtualSecureMode = value
-    }
+    m.virtualSecureMode = value
 }
 // SetWindowsPE sets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
 func (m *DeviceHealthAttestationState) SetWindowsPE(value *string)() {
-    if m != nil {
-        m.windowsPE = value
-    }
+    m.windowsPE = value
 }

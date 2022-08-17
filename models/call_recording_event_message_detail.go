@@ -37,43 +37,23 @@ func CreateCallRecordingEventMessageDetailFromDiscriminatorValue(parseNode i878a
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
 func (m *CallRecordingEventMessageDetail) GetCallId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callId
-    }
+    return m.callId
 }
 // GetCallRecordingDisplayName gets the callRecordingDisplayName property value. Display name for the call recording.
 func (m *CallRecordingEventMessageDetail) GetCallRecordingDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callRecordingDisplayName
-    }
+    return m.callRecordingDisplayName
 }
 // GetCallRecordingDuration gets the callRecordingDuration property value. Duration of the call recording.
 func (m *CallRecordingEventMessageDetail) GetCallRecordingDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callRecordingDuration
-    }
+    return m.callRecordingDuration
 }
 // GetCallRecordingStatus gets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
 func (m *CallRecordingEventMessageDetail) GetCallRecordingStatus()(*CallRecordingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callRecordingStatus
-    }
+    return m.callRecordingStatus
 }
 // GetCallRecordingUrl gets the callRecordingUrl property value. Call recording URL.
 func (m *CallRecordingEventMessageDetail) GetCallRecordingUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callRecordingUrl
-    }
+    return m.callRecordingUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallRecordingEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,19 +132,11 @@ func (m *CallRecordingEventMessageDetail) GetFieldDeserializers()(map[string]fun
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *CallRecordingEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetMeetingOrganizer gets the meetingOrganizer property value. Organizer of the meeting.
 func (m *CallRecordingEventMessageDetail) GetMeetingOrganizer()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingOrganizer
-    }
+    return m.meetingOrganizer
 }
 // Serialize serializes information the current object
 func (m *CallRecordingEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,43 +191,29 @@ func (m *CallRecordingEventMessageDetail) Serialize(writer i878a80d2330e89d26896
 }
 // SetCallId sets the callId property value. Unique identifier of the call.
 func (m *CallRecordingEventMessageDetail) SetCallId(value *string)() {
-    if m != nil {
-        m.callId = value
-    }
+    m.callId = value
 }
 // SetCallRecordingDisplayName sets the callRecordingDisplayName property value. Display name for the call recording.
 func (m *CallRecordingEventMessageDetail) SetCallRecordingDisplayName(value *string)() {
-    if m != nil {
-        m.callRecordingDisplayName = value
-    }
+    m.callRecordingDisplayName = value
 }
 // SetCallRecordingDuration sets the callRecordingDuration property value. Duration of the call recording.
 func (m *CallRecordingEventMessageDetail) SetCallRecordingDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.callRecordingDuration = value
-    }
+    m.callRecordingDuration = value
 }
 // SetCallRecordingStatus sets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
 func (m *CallRecordingEventMessageDetail) SetCallRecordingStatus(value *CallRecordingStatus)() {
-    if m != nil {
-        m.callRecordingStatus = value
-    }
+    m.callRecordingStatus = value
 }
 // SetCallRecordingUrl sets the callRecordingUrl property value. Call recording URL.
 func (m *CallRecordingEventMessageDetail) SetCallRecordingUrl(value *string)() {
-    if m != nil {
-        m.callRecordingUrl = value
-    }
+    m.callRecordingUrl = value
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *CallRecordingEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetMeetingOrganizer sets the meetingOrganizer property value. Organizer of the meeting.
 func (m *CallRecordingEventMessageDetail) SetMeetingOrganizer(value IdentitySetable)() {
-    if m != nil {
-        m.meetingOrganizer = value
-    }
+    m.meetingOrganizer = value
 }

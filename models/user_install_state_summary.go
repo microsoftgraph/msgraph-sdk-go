@@ -33,19 +33,11 @@ func CreateUserInstallStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDeviceStates gets the deviceStates property value. The install state of the eBook.
 func (m *UserInstallStateSummary) GetDeviceStates()([]DeviceInstallStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStates
-    }
+    return m.deviceStates
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Failed Device Count.
 func (m *UserInstallStateSummary) GetFailedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceCount
-    }
+    return m.failedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserInstallStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,27 +100,15 @@ func (m *UserInstallStateSummary) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
 func (m *UserInstallStateSummary) GetInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedDeviceCount
-    }
+    return m.installedDeviceCount
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
 func (m *UserInstallStateSummary) GetNotInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledDeviceCount
-    }
+    return m.notInstalledDeviceCount
 }
 // GetUserName gets the userName property value. User name.
 func (m *UserInstallStateSummary) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *UserInstallStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *UserInstallStateSummary) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDeviceStates sets the deviceStates property value. The install state of the eBook.
 func (m *UserInstallStateSummary) SetDeviceStates(value []DeviceInstallStateable)() {
-    if m != nil {
-        m.deviceStates = value
-    }
+    m.deviceStates = value
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Failed Device Count.
 func (m *UserInstallStateSummary) SetFailedDeviceCount(value *int32)() {
-    if m != nil {
-        m.failedDeviceCount = value
-    }
+    m.failedDeviceCount = value
 }
 // SetInstalledDeviceCount sets the installedDeviceCount property value. Installed Device Count.
 func (m *UserInstallStateSummary) SetInstalledDeviceCount(value *int32)() {
-    if m != nil {
-        m.installedDeviceCount = value
-    }
+    m.installedDeviceCount = value
 }
 // SetNotInstalledDeviceCount sets the notInstalledDeviceCount property value. Not installed device count.
 func (m *UserInstallStateSummary) SetNotInstalledDeviceCount(value *int32)() {
-    if m != nil {
-        m.notInstalledDeviceCount = value
-    }
+    m.notInstalledDeviceCount = value
 }
 // SetUserName sets the userName property value. User name.
 func (m *UserInstallStateSummary) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

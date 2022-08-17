@@ -25,11 +25,7 @@ func CreateWorkbookApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCalculationMode gets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
 func (m *WorkbookApplication) GetCalculationMode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calculationMode
-    }
+    return m.calculationMode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *WorkbookApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCalculationMode sets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
 func (m *WorkbookApplication) SetCalculationMode(value *string)() {
-    if m != nil {
-        m.calculationMode = value
-    }
+    m.calculationMode = value
 }

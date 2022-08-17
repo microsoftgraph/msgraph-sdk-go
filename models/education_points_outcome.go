@@ -52,19 +52,11 @@ func (m *EducationPointsOutcome) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPoints gets the points property value. The numeric grade the teacher has given the student for this assignment.
 func (m *EducationPointsOutcome) GetPoints()(EducationAssignmentPointsGradeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.points
-    }
+    return m.points
 }
 // GetPublishedPoints gets the publishedPoints property value. A copy of the points property that is made when the grade is released to the student.
 func (m *EducationPointsOutcome) GetPublishedPoints()(EducationAssignmentPointsGradeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedPoints
-    }
+    return m.publishedPoints
 }
 // Serialize serializes information the current object
 func (m *EducationPointsOutcome) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EducationPointsOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetPoints sets the points property value. The numeric grade the teacher has given the student for this assignment.
 func (m *EducationPointsOutcome) SetPoints(value EducationAssignmentPointsGradeable)() {
-    if m != nil {
-        m.points = value
-    }
+    m.points = value
 }
 // SetPublishedPoints sets the publishedPoints property value. A copy of the points property that is made when the grade is released to the student.
 func (m *EducationPointsOutcome) SetPublishedPoints(value EducationAssignmentPointsGradeable)() {
-    if m != nil {
-        m.publishedPoints = value
-    }
+    m.publishedPoints = value
 }

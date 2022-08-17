@@ -30,27 +30,15 @@ func CreateSearchAlterationOptionsFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlterationOptions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnableModification gets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
 func (m *SearchAlterationOptions) GetEnableModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableModification
-    }
+    return m.enableModification
 }
 // GetEnableSuggestion gets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
 func (m *SearchAlterationOptions) GetEnableSuggestion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableSuggestion
-    }
+    return m.enableSuggestion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchAlterationOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *SearchAlterationOptions) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchAlterationOptions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SearchAlterationOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *SearchAlterationOptions) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlterationOptions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnableModification sets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
 func (m *SearchAlterationOptions) SetEnableModification(value *bool)() {
-    if m != nil {
-        m.enableModification = value
-    }
+    m.enableModification = value
 }
 // SetEnableSuggestion sets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
 func (m *SearchAlterationOptions) SetEnableSuggestion(value *bool)() {
-    if m != nil {
-        m.enableSuggestion = value
-    }
+    m.enableSuggestion = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchAlterationOptions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

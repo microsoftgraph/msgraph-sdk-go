@@ -34,19 +34,11 @@ func CreateHashesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Hashes) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCrc32Hash gets the crc32Hash property value. The CRC32 value of the file (if available). Read-only.
 func (m *Hashes) GetCrc32Hash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.crc32Hash
-    }
+    return m.crc32Hash
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Hashes) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQuickXorHash gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
 func (m *Hashes) GetQuickXorHash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quickXorHash
-    }
+    return m.quickXorHash
 }
 // GetSha1Hash gets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
 func (m *Hashes) GetSha1Hash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sha1Hash
-    }
+    return m.sha1Hash
 }
 // GetSha256Hash gets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
 func (m *Hashes) GetSha256Hash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sha256Hash
-    }
+    return m.sha256Hash
 }
 // Serialize serializes information the current object
 func (m *Hashes) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *Hashes) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Hashes) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCrc32Hash sets the crc32Hash property value. The CRC32 value of the file (if available). Read-only.
 func (m *Hashes) SetCrc32Hash(value *string)() {
-    if m != nil {
-        m.crc32Hash = value
-    }
+    m.crc32Hash = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Hashes) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQuickXorHash sets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
 func (m *Hashes) SetQuickXorHash(value *string)() {
-    if m != nil {
-        m.quickXorHash = value
-    }
+    m.quickXorHash = value
 }
 // SetSha1Hash sets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
 func (m *Hashes) SetSha1Hash(value *string)() {
-    if m != nil {
-        m.sha1Hash = value
-    }
+    m.sha1Hash = value
 }
 // SetSha256Hash sets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
 func (m *Hashes) SetSha256Hash(value *string)() {
-    if m != nil {
-        m.sha256Hash = value
-    }
+    m.sha256Hash = value
 }

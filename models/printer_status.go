@@ -32,27 +32,15 @@ func CreatePrinterStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. A human-readable description of the printer's current processing state. Read-only.
 func (m *PrinterStatus) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDetails gets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
 func (m *PrinterStatus) GetDetails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,19 +93,11 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrinterStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. The state property
 func (m *PrinterStatus) GetState()(*PrinterProcessingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,31 +136,21 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. A human-readable description of the printer's current processing state. Read-only.
 func (m *PrinterStatus) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDetails sets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
 func (m *PrinterStatus) SetDetails(value []string)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrinterStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. The state property
 func (m *PrinterStatus) SetState(value *PrinterProcessingState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

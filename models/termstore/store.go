@@ -32,11 +32,7 @@ func CreateStoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetDefaultLanguageTag gets the defaultLanguageTag property value. Default language of the term store.
 func (m *Store) GetDefaultLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultLanguageTag
-    }
+    return m.defaultLanguageTag
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,27 +93,15 @@ func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetGroups gets the groups property value. Collection of all groups available in the term store.
 func (m *Store) GetGroups()([]Groupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groups
-    }
+    return m.groups
 }
 // GetLanguageTags gets the languageTags property value. List of languages for the term store.
 func (m *Store) GetLanguageTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTags
-    }
+    return m.languageTags
 }
 // GetSets gets the sets property value. Collection of all sets available in the term store.
 func (m *Store) GetSets()([]Setable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sets
-    }
+    return m.sets
 }
 // Serialize serializes information the current object
 func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,25 +145,17 @@ func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetDefaultLanguageTag sets the defaultLanguageTag property value. Default language of the term store.
 func (m *Store) SetDefaultLanguageTag(value *string)() {
-    if m != nil {
-        m.defaultLanguageTag = value
-    }
+    m.defaultLanguageTag = value
 }
 // SetGroups sets the groups property value. Collection of all groups available in the term store.
 func (m *Store) SetGroups(value []Groupable)() {
-    if m != nil {
-        m.groups = value
-    }
+    m.groups = value
 }
 // SetLanguageTags sets the languageTags property value. List of languages for the term store.
 func (m *Store) SetLanguageTags(value []string)() {
-    if m != nil {
-        m.languageTags = value
-    }
+    m.languageTags = value
 }
 // SetSets sets the sets property value. Collection of all sets available in the term store.
 func (m *Store) SetSets(value []Setable)() {
-    if m != nil {
-        m.sets = value
-    }
+    m.sets = value
 }

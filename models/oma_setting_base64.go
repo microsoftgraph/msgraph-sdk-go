@@ -52,19 +52,11 @@ func (m *OmaSettingBase64) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetFileName gets the fileName property value. File name associated with the Value property (.cer
 func (m *OmaSettingBase64) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetValue gets the value property value. Value. (Base64 encoded string)
 func (m *OmaSettingBase64) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *OmaSettingBase64) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *OmaSettingBase64) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetFileName sets the fileName property value. File name associated with the Value property (.cer
 func (m *OmaSettingBase64) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetValue sets the value property value. Value. (Base64 encoded string)
 func (m *OmaSettingBase64) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

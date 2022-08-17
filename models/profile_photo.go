@@ -52,19 +52,11 @@ func (m *ProfilePhoto) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetHeight gets the height property value. The height of the photo. Read-only.
 func (m *ProfilePhoto) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
+    return m.height
 }
 // GetWidth gets the width property value. The width of the photo. Read-only.
 func (m *ProfilePhoto) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
-    }
+    return m.width
 }
 // Serialize serializes information the current object
 func (m *ProfilePhoto) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ProfilePhoto) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetHeight sets the height property value. The height of the photo. Read-only.
 func (m *ProfilePhoto) SetHeight(value *int32)() {
-    if m != nil {
-        m.height = value
-    }
+    m.height = value
 }
 // SetWidth sets the width property value. The width of the photo. Read-only.
 func (m *ProfilePhoto) SetWidth(value *int32)() {
-    if m != nil {
-        m.width = value
-    }
+    m.width = value
 }

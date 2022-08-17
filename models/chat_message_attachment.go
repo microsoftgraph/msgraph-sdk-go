@@ -38,35 +38,19 @@ func CreateChatMessageAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageAttachment) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContent gets the content property value. The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
 func (m *ChatMessageAttachment) GetContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetContentType gets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
 func (m *ChatMessageAttachment) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetContentUrl gets the contentUrl property value. URL for the content of the attachment. Supported protocols: http, https, file and data.
 func (m *ChatMessageAttachment) GetContentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentUrl
-    }
+    return m.contentUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetId gets the id property value. Read-only. Unique id of the attachment.
 func (m *ChatMessageAttachment) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetName gets the name property value. Name of the attachment.
 func (m *ChatMessageAttachment) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChatMessageAttachment) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
 func (m *ChatMessageAttachment) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // Serialize serializes information the current object
 func (m *ChatMessageAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *ChatMessageAttachment) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageAttachment) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContent sets the content property value. The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
 func (m *ChatMessageAttachment) SetContent(value *string)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetContentType sets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
 func (m *ChatMessageAttachment) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetContentUrl sets the contentUrl property value. URL for the content of the attachment. Supported protocols: http, https, file and data.
 func (m *ChatMessageAttachment) SetContentUrl(value *string)() {
-    if m != nil {
-        m.contentUrl = value
-    }
+    m.contentUrl = value
 }
 // SetId sets the id property value. Read-only. Unique id of the attachment.
 func (m *ChatMessageAttachment) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetName sets the name property value. Name of the attachment.
 func (m *ChatMessageAttachment) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChatMessageAttachment) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
 func (m *ChatMessageAttachment) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }

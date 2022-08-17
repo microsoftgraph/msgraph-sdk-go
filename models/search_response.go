@@ -34,11 +34,7 @@ func CreateSearchResponseFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,43 +101,23 @@ func (m *SearchResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetHitsContainers gets the hitsContainers property value. A collection of search results.
 func (m *SearchResponse) GetHitsContainers()([]SearchHitsContainerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hitsContainers
-    }
+    return m.hitsContainers
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchResponse) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQueryAlterationResponse gets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
 func (m *SearchResponse) GetQueryAlterationResponse()(AlterationResponseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryAlterationResponse
-    }
+    return m.queryAlterationResponse
 }
 // GetResultTemplates gets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
 func (m *SearchResponse) GetResultTemplates()(ResultTemplateDictionaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultTemplates
-    }
+    return m.resultTemplates
 }
 // GetSearchTerms gets the searchTerms property value. Contains the search terms sent in the initial search query.
 func (m *SearchResponse) GetSearchTerms()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.searchTerms
-    }
+    return m.searchTerms
 }
 // Serialize serializes information the current object
 func (m *SearchResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -189,37 +165,25 @@ func (m *SearchResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHitsContainers sets the hitsContainers property value. A collection of search results.
 func (m *SearchResponse) SetHitsContainers(value []SearchHitsContainerable)() {
-    if m != nil {
-        m.hitsContainers = value
-    }
+    m.hitsContainers = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchResponse) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQueryAlterationResponse sets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
 func (m *SearchResponse) SetQueryAlterationResponse(value AlterationResponseable)() {
-    if m != nil {
-        m.queryAlterationResponse = value
-    }
+    m.queryAlterationResponse = value
 }
 // SetResultTemplates sets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
 func (m *SearchResponse) SetResultTemplates(value ResultTemplateDictionaryable)() {
-    if m != nil {
-        m.resultTemplates = value
-    }
+    m.resultTemplates = value
 }
 // SetSearchTerms sets the searchTerms property value. Contains the search terms sent in the initial search query.
 func (m *SearchResponse) SetSearchTerms(value []string)() {
-    if m != nil {
-        m.searchTerms = value
-    }
+    m.searchTerms = value
 }

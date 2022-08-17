@@ -40,11 +40,7 @@ func (m *WindowsDefenderScanActionResult) GetFieldDeserializers()(map[string]fun
 }
 // GetScanType gets the scanType property value. Scan type either full scan or quick scan
 func (m *WindowsDefenderScanActionResult) GetScanType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scanType
-    }
+    return m.scanType
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderScanActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsDefenderScanActionResult) Serialize(writer i878a80d2330e89d26896
 }
 // SetScanType sets the scanType property value. Scan type either full scan or quick scan
 func (m *WindowsDefenderScanActionResult) SetScanType(value *string)() {
-    if m != nil {
-        m.scanType = value
-    }
+    m.scanType = value
 }

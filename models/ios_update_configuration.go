@@ -31,19 +31,11 @@ func CreateIosUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetActiveHoursEnd gets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeHoursEnd
-    }
+    return m.activeHoursEnd
 }
 // GetActiveHoursStart gets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeHoursStart
-    }
+    return m.activeHoursStart
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,19 +88,11 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetScheduledInstallDays gets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledInstallDays
-    }
+    return m.scheduledInstallDays
 }
 // GetUtcTimeOffsetInMinutes gets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
 func (m *IosUpdateConfiguration) GetUtcTimeOffsetInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.utcTimeOffsetInMinutes
-    }
+    return m.utcTimeOffsetInMinutes
 }
 // Serialize serializes information the current object
 func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,25 +128,17 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetActiveHoursEnd sets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.activeHoursEnd = value
-    }
+    m.activeHoursEnd = value
 }
 // SetActiveHoursStart sets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) SetActiveHoursStart(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.activeHoursStart = value
-    }
+    m.activeHoursStart = value
 }
 // SetScheduledInstallDays sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []string)() {
-    if m != nil {
-        m.scheduledInstallDays = value
-    }
+    m.scheduledInstallDays = value
 }
 // SetUtcTimeOffsetInMinutes sets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
 func (m *IosUpdateConfiguration) SetUtcTimeOffsetInMinutes(value *int32)() {
-    if m != nil {
-        m.utcTimeOffsetInMinutes = value
-    }
+    m.utcTimeOffsetInMinutes = value
 }

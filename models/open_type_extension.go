@@ -25,11 +25,7 @@ func CreateOpenTypeExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetExtensionName gets the extensionName property value. A unique text identifier for an open type data extension. Required.
 func (m *OpenTypeExtension) GetExtensionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensionName
-    }
+    return m.extensionName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OpenTypeExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *OpenTypeExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetExtensionName sets the extensionName property value. A unique text identifier for an open type data extension. Required.
 func (m *OpenTypeExtension) SetExtensionName(value *string)() {
-    if m != nil {
-        m.extensionName = value
-    }
+    m.extensionName = value
 }

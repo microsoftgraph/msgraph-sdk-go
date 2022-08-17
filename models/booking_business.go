@@ -57,83 +57,43 @@ func CreateBookingBusinessFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) GetAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetAppointments gets the appointments property value. All the appointments of this business. Read-only. Nullable.
 func (m *BookingBusiness) GetAppointments()([]BookingAppointmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appointments
-    }
+    return m.appointments
 }
 // GetBusinessHours gets the businessHours property value. The hours of operation for the business.
 func (m *BookingBusiness) GetBusinessHours()([]BookingWorkHoursable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessHours
-    }
+    return m.businessHours
 }
 // GetBusinessType gets the businessType property value. The type of business.
 func (m *BookingBusiness) GetBusinessType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessType
-    }
+    return m.businessType
 }
 // GetCalendarView gets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingBusiness) GetCalendarView()([]BookingAppointmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarView
-    }
+    return m.calendarView
 }
 // GetCustomers gets the customers property value. All the customers of this business. Read-only. Nullable.
 func (m *BookingBusiness) GetCustomers()([]BookingCustomerBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customers
-    }
+    return m.customers
 }
 // GetCustomQuestions gets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
 func (m *BookingBusiness) GetCustomQuestions()([]BookingCustomQuestionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customQuestions
-    }
+    return m.customQuestions
 }
 // GetDefaultCurrencyIso gets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
 func (m *BookingBusiness) GetDefaultCurrencyIso()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultCurrencyIso
-    }
+    return m.defaultCurrencyIso
 }
 // GetDisplayName gets the displayName property value. The name of the business, which interfaces with customers. This name appears at the top of the business scheduling page.
 func (m *BookingBusiness) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmail gets the email property value. The email address for the business.
 func (m *BookingBusiness) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -340,59 +300,31 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIsPublished gets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
 func (m *BookingBusiness) GetIsPublished()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPublished
-    }
+    return m.isPublished
 }
 // GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
+    return m.phone
 }
 // GetPublicUrl gets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
 func (m *BookingBusiness) GetPublicUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicUrl
-    }
+    return m.publicUrl
 }
 // GetSchedulingPolicy gets the schedulingPolicy property value. Specifies how bookings can be created for this business.
 func (m *BookingBusiness) GetSchedulingPolicy()(BookingSchedulingPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingPolicy
-    }
+    return m.schedulingPolicy
 }
 // GetServices gets the services property value. All the services offered by this business. Read-only. Nullable.
 func (m *BookingBusiness) GetServices()([]BookingServiceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.services
-    }
+    return m.services
 }
 // GetStaffMembers gets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingBusiness) GetStaffMembers()([]BookingStaffMemberBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.staffMembers
-    }
+    return m.staffMembers
 }
 // GetWebSiteUrl gets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) GetWebSiteUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webSiteUrl
-    }
+    return m.webSiteUrl
 }
 // Serialize serializes information the current object
 func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -534,103 +466,69 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetAppointments sets the appointments property value. All the appointments of this business. Read-only. Nullable.
 func (m *BookingBusiness) SetAppointments(value []BookingAppointmentable)() {
-    if m != nil {
-        m.appointments = value
-    }
+    m.appointments = value
 }
 // SetBusinessHours sets the businessHours property value. The hours of operation for the business.
 func (m *BookingBusiness) SetBusinessHours(value []BookingWorkHoursable)() {
-    if m != nil {
-        m.businessHours = value
-    }
+    m.businessHours = value
 }
 // SetBusinessType sets the businessType property value. The type of business.
 func (m *BookingBusiness) SetBusinessType(value *string)() {
-    if m != nil {
-        m.businessType = value
-    }
+    m.businessType = value
 }
 // SetCalendarView sets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingBusiness) SetCalendarView(value []BookingAppointmentable)() {
-    if m != nil {
-        m.calendarView = value
-    }
+    m.calendarView = value
 }
 // SetCustomers sets the customers property value. All the customers of this business. Read-only. Nullable.
 func (m *BookingBusiness) SetCustomers(value []BookingCustomerBaseable)() {
-    if m != nil {
-        m.customers = value
-    }
+    m.customers = value
 }
 // SetCustomQuestions sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
 func (m *BookingBusiness) SetCustomQuestions(value []BookingCustomQuestionable)() {
-    if m != nil {
-        m.customQuestions = value
-    }
+    m.customQuestions = value
 }
 // SetDefaultCurrencyIso sets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
 func (m *BookingBusiness) SetDefaultCurrencyIso(value *string)() {
-    if m != nil {
-        m.defaultCurrencyIso = value
-    }
+    m.defaultCurrencyIso = value
 }
 // SetDisplayName sets the displayName property value. The name of the business, which interfaces with customers. This name appears at the top of the business scheduling page.
 func (m *BookingBusiness) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmail sets the email property value. The email address for the business.
 func (m *BookingBusiness) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetIsPublished sets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
 func (m *BookingBusiness) SetIsPublished(value *bool)() {
-    if m != nil {
-        m.isPublished = value
-    }
+    m.isPublished = value
 }
 // SetPhone sets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetPhone(value *string)() {
-    if m != nil {
-        m.phone = value
-    }
+    m.phone = value
 }
 // SetPublicUrl sets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
 func (m *BookingBusiness) SetPublicUrl(value *string)() {
-    if m != nil {
-        m.publicUrl = value
-    }
+    m.publicUrl = value
 }
 // SetSchedulingPolicy sets the schedulingPolicy property value. Specifies how bookings can be created for this business.
 func (m *BookingBusiness) SetSchedulingPolicy(value BookingSchedulingPolicyable)() {
-    if m != nil {
-        m.schedulingPolicy = value
-    }
+    m.schedulingPolicy = value
 }
 // SetServices sets the services property value. All the services offered by this business. Read-only. Nullable.
 func (m *BookingBusiness) SetServices(value []BookingServiceable)() {
-    if m != nil {
-        m.services = value
-    }
+    m.services = value
 }
 // SetStaffMembers sets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingBusiness) SetStaffMembers(value []BookingStaffMemberBaseable)() {
-    if m != nil {
-        m.staffMembers = value
-    }
+    m.staffMembers = value
 }
 // SetWebSiteUrl sets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetWebSiteUrl(value *string)() {
-    if m != nil {
-        m.webSiteUrl = value
-    }
+    m.webSiteUrl = value
 }

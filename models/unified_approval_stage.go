@@ -38,35 +38,19 @@ func CreateUnifiedApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedApprovalStage) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *UnifiedApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvalStageTimeOutInDays
-    }
+    return m.approvalStageTimeOutInDays
 }
 // GetEscalationApprovers gets the escalationApprovers property value. The escalation approvers for this stage when the primary approvers don't respond.
 func (m *UnifiedApprovalStage) GetEscalationApprovers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.escalationApprovers
-    }
+    return m.escalationApprovers
 }
 // GetEscalationTimeInMinutes gets the escalationTimeInMinutes property value. The time a request can be pending a response from a primary approver before it can be escalated to the escalation approvers.
 func (m *UnifiedApprovalStage) GetEscalationTimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.escalationTimeInMinutes
-    }
+    return m.escalationTimeInMinutes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,35 +137,19 @@ func (m *UnifiedApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsApproverJustificationRequired gets the isApproverJustificationRequired property value. Indicates whether the approver must provide justification for their reponse.
 func (m *UnifiedApprovalStage) GetIsApproverJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApproverJustificationRequired
-    }
+    return m.isApproverJustificationRequired
 }
 // GetIsEscalationEnabled gets the isEscalationEnabled property value. Indicates whether escalation if enabled.
 func (m *UnifiedApprovalStage) GetIsEscalationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEscalationEnabled
-    }
+    return m.isEscalationEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnifiedApprovalStage) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The primary approvers of this stage.
 func (m *UnifiedApprovalStage) GetPrimaryApprovers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryApprovers
-    }
+    return m.primaryApprovers
 }
 // Serialize serializes information the current object
 func (m *UnifiedApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -245,49 +213,33 @@ func (m *UnifiedApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedApprovalStage) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApprovalStageTimeOutInDays sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *UnifiedApprovalStage) SetApprovalStageTimeOutInDays(value *int32)() {
-    if m != nil {
-        m.approvalStageTimeOutInDays = value
-    }
+    m.approvalStageTimeOutInDays = value
 }
 // SetEscalationApprovers sets the escalationApprovers property value. The escalation approvers for this stage when the primary approvers don't respond.
 func (m *UnifiedApprovalStage) SetEscalationApprovers(value []SubjectSetable)() {
-    if m != nil {
-        m.escalationApprovers = value
-    }
+    m.escalationApprovers = value
 }
 // SetEscalationTimeInMinutes sets the escalationTimeInMinutes property value. The time a request can be pending a response from a primary approver before it can be escalated to the escalation approvers.
 func (m *UnifiedApprovalStage) SetEscalationTimeInMinutes(value *int32)() {
-    if m != nil {
-        m.escalationTimeInMinutes = value
-    }
+    m.escalationTimeInMinutes = value
 }
 // SetIsApproverJustificationRequired sets the isApproverJustificationRequired property value. Indicates whether the approver must provide justification for their reponse.
 func (m *UnifiedApprovalStage) SetIsApproverJustificationRequired(value *bool)() {
-    if m != nil {
-        m.isApproverJustificationRequired = value
-    }
+    m.isApproverJustificationRequired = value
 }
 // SetIsEscalationEnabled sets the isEscalationEnabled property value. Indicates whether escalation if enabled.
 func (m *UnifiedApprovalStage) SetIsEscalationEnabled(value *bool)() {
-    if m != nil {
-        m.isEscalationEnabled = value
-    }
+    m.isEscalationEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnifiedApprovalStage) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPrimaryApprovers sets the primaryApprovers property value. The primary approvers of this stage.
 func (m *UnifiedApprovalStage) SetPrimaryApprovers(value []SubjectSetable)() {
-    if m != nil {
-        m.primaryApprovers = value
-    }
+    m.primaryApprovers = value
 }

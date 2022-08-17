@@ -44,11 +44,7 @@ func CreateHostSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HostSecurityState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,83 +153,43 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFqdn gets the fqdn property value. Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
 func (m *HostSecurityState) GetFqdn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fqdn
-    }
+    return m.fqdn
 }
 // GetIsAzureAdJoined gets the isAzureAdJoined property value. The isAzureAdJoined property
 func (m *HostSecurityState) GetIsAzureAdJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdJoined
-    }
+    return m.isAzureAdJoined
 }
 // GetIsAzureAdRegistered gets the isAzureAdRegistered property value. The isAzureAdRegistered property
 func (m *HostSecurityState) GetIsAzureAdRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdRegistered
-    }
+    return m.isAzureAdRegistered
 }
 // GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. True if the host is domain joined to an on-premises Active Directory domain.
 func (m *HostSecurityState) GetIsHybridAzureDomainJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHybridAzureDomainJoined
-    }
+    return m.isHybridAzureDomainJoined
 }
 // GetNetBiosName gets the netBiosName property value. The local host name, without the DNS domain name.
 func (m *HostSecurityState) GetNetBiosName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netBiosName
-    }
+    return m.netBiosName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *HostSecurityState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOs gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
 func (m *HostSecurityState) GetOs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.os
-    }
+    return m.os
 }
 // GetPrivateIpAddress gets the privateIpAddress property value. Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
 func (m *HostSecurityState) GetPrivateIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privateIpAddress
-    }
+    return m.privateIpAddress
 }
 // GetPublicIpAddress gets the publicIpAddress property value. Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
 func (m *HostSecurityState) GetPublicIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicIpAddress
-    }
+    return m.publicIpAddress
 }
 // GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
 func (m *HostSecurityState) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // Serialize serializes information the current object
 func (m *HostSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -307,67 +263,45 @@ func (m *HostSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HostSecurityState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFqdn sets the fqdn property value. Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
 func (m *HostSecurityState) SetFqdn(value *string)() {
-    if m != nil {
-        m.fqdn = value
-    }
+    m.fqdn = value
 }
 // SetIsAzureAdJoined sets the isAzureAdJoined property value. The isAzureAdJoined property
 func (m *HostSecurityState) SetIsAzureAdJoined(value *bool)() {
-    if m != nil {
-        m.isAzureAdJoined = value
-    }
+    m.isAzureAdJoined = value
 }
 // SetIsAzureAdRegistered sets the isAzureAdRegistered property value. The isAzureAdRegistered property
 func (m *HostSecurityState) SetIsAzureAdRegistered(value *bool)() {
-    if m != nil {
-        m.isAzureAdRegistered = value
-    }
+    m.isAzureAdRegistered = value
 }
 // SetIsHybridAzureDomainJoined sets the isHybridAzureDomainJoined property value. True if the host is domain joined to an on-premises Active Directory domain.
 func (m *HostSecurityState) SetIsHybridAzureDomainJoined(value *bool)() {
-    if m != nil {
-        m.isHybridAzureDomainJoined = value
-    }
+    m.isHybridAzureDomainJoined = value
 }
 // SetNetBiosName sets the netBiosName property value. The local host name, without the DNS domain name.
 func (m *HostSecurityState) SetNetBiosName(value *string)() {
-    if m != nil {
-        m.netBiosName = value
-    }
+    m.netBiosName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *HostSecurityState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOs sets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
 func (m *HostSecurityState) SetOs(value *string)() {
-    if m != nil {
-        m.os = value
-    }
+    m.os = value
 }
 // SetPrivateIpAddress sets the privateIpAddress property value. Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
 func (m *HostSecurityState) SetPrivateIpAddress(value *string)() {
-    if m != nil {
-        m.privateIpAddress = value
-    }
+    m.privateIpAddress = value
 }
 // SetPublicIpAddress sets the publicIpAddress property value. Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
 func (m *HostSecurityState) SetPublicIpAddress(value *string)() {
-    if m != nil {
-        m.publicIpAddress = value
-    }
+    m.publicIpAddress = value
 }
 // SetRiskScore sets the riskScore property value. Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
 func (m *HostSecurityState) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }

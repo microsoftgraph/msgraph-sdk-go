@@ -32,11 +32,7 @@ func CreateTraceRouteHopFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TraceRouteHop) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TraceRouteHop) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *TraceRouteHop) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetHopCount gets the hopCount property value. The network path count of this hop that was used to compute the round-trip time.
 func (m *TraceRouteHop) GetHopCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hopCount
-    }
+    return m.hopCount
 }
 // GetIpAddress gets the ipAddress property value. IP address used for this hop in the network trace.
 func (m *TraceRouteHop) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TraceRouteHop) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRoundTripTime gets the roundTripTime property value. The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
 func (m *TraceRouteHop) GetRoundTripTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roundTripTime
-    }
+    return m.roundTripTime
 }
 // Serialize serializes information the current object
 func (m *TraceRouteHop) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *TraceRouteHop) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TraceRouteHop) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHopCount sets the hopCount property value. The network path count of this hop that was used to compute the round-trip time.
 func (m *TraceRouteHop) SetHopCount(value *int32)() {
-    if m != nil {
-        m.hopCount = value
-    }
+    m.hopCount = value
 }
 // SetIpAddress sets the ipAddress property value. IP address used for this hop in the network trace.
 func (m *TraceRouteHop) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TraceRouteHop) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRoundTripTime sets the roundTripTime property value. The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
 func (m *TraceRouteHop) SetRoundTripTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.roundTripTime = value
-    }
+    m.roundTripTime = value
 }

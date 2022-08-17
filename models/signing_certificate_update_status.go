@@ -31,19 +31,11 @@ func CreateSigningCertificateUpdateStatusFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SigningCertificateUpdateStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertificateUpdateResult gets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
 func (m *SigningCertificateUpdateStatus) GetCertificateUpdateResult()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateUpdateResult
-    }
+    return m.certificateUpdateResult
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,19 +74,11 @@ func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func
 }
 // GetLastRunDateTime gets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
 func (m *SigningCertificateUpdateStatus) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRunDateTime
-    }
+    return m.lastRunDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SigningCertificateUpdateStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SigningCertificateUpdateStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *SigningCertificateUpdateStatus) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SigningCertificateUpdateStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertificateUpdateResult sets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
 func (m *SigningCertificateUpdateStatus) SetCertificateUpdateResult(value *string)() {
-    if m != nil {
-        m.certificateUpdateResult = value
-    }
+    m.certificateUpdateResult = value
 }
 // SetLastRunDateTime sets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
 func (m *SigningCertificateUpdateStatus) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRunDateTime = value
-    }
+    m.lastRunDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SigningCertificateUpdateStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

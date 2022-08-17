@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseItemVersion provides operations to manage the admin singleton.
+// BaseItemVersion provides operations to manage the collection of agreement entities.
 type BaseItemVersion struct {
     Entity
     // Identity of the user which last modified the version. Read-only.
@@ -88,27 +88,15 @@ func (m *BaseItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPublication gets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) GetPublication()(PublicationFacetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publication
-    }
+    return m.publication
 }
 // Serialize serializes information the current object
 func (m *BaseItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -138,19 +126,13 @@ func (m *BaseItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPublication sets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) SetPublication(value PublicationFacetable)() {
-    if m != nil {
-        m.publication = value
-    }
+    m.publication = value
 }

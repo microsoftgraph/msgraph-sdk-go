@@ -40,11 +40,7 @@ func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetFieldDeserializers()
 }
 // GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetUseDeviceContext()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useDeviceContext
-    }
+    return m.useDeviceContext
 }
 // Serialize serializes information the current object
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *MicrosoftStoreForBusinessAppAssignmentSettings) Serialize(writer i878a8
 }
 // SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
-    if m != nil {
-        m.useDeviceContext = value
-    }
+    m.useDeviceContext = value
 }

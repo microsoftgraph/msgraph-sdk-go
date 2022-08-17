@@ -44,11 +44,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFieldDeseri
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIncludeTargets()([]MicrosoftAuthenticatorAuthenticationMethodTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeTargets
-    }
+    return m.includeTargets
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) Serialize(writ
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) SetIncludeTargets(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)() {
-    if m != nil {
-        m.includeTargets = value
-    }
+    m.includeTargets = value
 }

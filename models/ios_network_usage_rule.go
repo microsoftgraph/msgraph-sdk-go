@@ -32,27 +32,15 @@ func CreateIosNetworkUsageRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosNetworkUsageRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCellularDataBlocked gets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
 func (m *IosNetworkUsageRule) GetCellularDataBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularDataBlocked
-    }
+    return m.cellularDataBlocked
 }
 // GetCellularDataBlockWhenRoaming gets the cellularDataBlockWhenRoaming property value. If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
 func (m *IosNetworkUsageRule) GetCellularDataBlockWhenRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularDataBlockWhenRoaming
-    }
+    return m.cellularDataBlockWhenRoaming
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosNetworkUsageRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,19 +93,11 @@ func (m *IosNetworkUsageRule) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetManagedApps gets the managedApps property value. Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
 func (m *IosNetworkUsageRule) GetManagedApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedApps
-    }
+    return m.managedApps
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosNetworkUsageRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *IosNetworkUsageRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *IosNetworkUsageRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosNetworkUsageRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCellularDataBlocked sets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
 func (m *IosNetworkUsageRule) SetCellularDataBlocked(value *bool)() {
-    if m != nil {
-        m.cellularDataBlocked = value
-    }
+    m.cellularDataBlocked = value
 }
 // SetCellularDataBlockWhenRoaming sets the cellularDataBlockWhenRoaming property value. If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
 func (m *IosNetworkUsageRule) SetCellularDataBlockWhenRoaming(value *bool)() {
-    if m != nil {
-        m.cellularDataBlockWhenRoaming = value
-    }
+    m.cellularDataBlockWhenRoaming = value
 }
 // SetManagedApps sets the managedApps property value. Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
 func (m *IosNetworkUsageRule) SetManagedApps(value []AppListItemable)() {
-    if m != nil {
-        m.managedApps = value
-    }
+    m.managedApps = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosNetworkUsageRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

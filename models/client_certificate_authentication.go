@@ -25,11 +25,7 @@ func CreateClientCertificateAuthenticationFromDiscriminatorValue(parseNode i878a
 }
 // GetCertificateList gets the certificateList property value. The list of certificates uploaded for this API connector.
 func (m *ClientCertificateAuthentication) GetCertificateList()([]Pkcs12CertificateInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateList
-    }
+    return m.certificateList
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClientCertificateAuthentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *ClientCertificateAuthentication) Serialize(writer i878a80d2330e89d26896
 }
 // SetCertificateList sets the certificateList property value. The list of certificates uploaded for this API connector.
 func (m *ClientCertificateAuthentication) SetCertificateList(value []Pkcs12CertificateInformationable)() {
-    if m != nil {
-        m.certificateList = value
-    }
+    m.certificateList = value
 }

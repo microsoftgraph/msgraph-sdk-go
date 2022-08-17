@@ -27,19 +27,11 @@ func CreateCopyToDefaultContentLocationPostRequestBodyFromDiscriminatorValue(par
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToDefaultContentLocationPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDestinationFileName gets the destinationFileName property value. The destinationFileName property
 func (m *CopyToDefaultContentLocationPostRequestBody) GetDestinationFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationFileName
-    }
+    return m.destinationFileName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CopyToDefaultContentLocationPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +60,7 @@ func (m *CopyToDefaultContentLocationPostRequestBody) GetFieldDeserializers()(ma
 }
 // GetSourceFile gets the sourceFile property value. The sourceFile property
 func (m *CopyToDefaultContentLocationPostRequestBody) GetSourceFile()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceFile
-    }
+    return m.sourceFile
 }
 // Serialize serializes information the current object
 func (m *CopyToDefaultContentLocationPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -98,19 +86,13 @@ func (m *CopyToDefaultContentLocationPostRequestBody) Serialize(writer i878a80d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToDefaultContentLocationPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDestinationFileName sets the destinationFileName property value. The destinationFileName property
 func (m *CopyToDefaultContentLocationPostRequestBody) SetDestinationFileName(value *string)() {
-    if m != nil {
-        m.destinationFileName = value
-    }
+    m.destinationFileName = value
 }
 // SetSourceFile sets the sourceFile property value. The sourceFile property
 func (m *CopyToDefaultContentLocationPostRequestBody) SetSourceFile(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemReferenceable)() {
-    if m != nil {
-        m.sourceFile = value
-    }
+    m.sourceFile = value
 }

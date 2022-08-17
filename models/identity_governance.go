@@ -34,35 +34,19 @@ func CreateIdentityGovernanceFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAccessReviews gets the accessReviews property value. The accessReviews property
 func (m *IdentityGovernance) GetAccessReviews()(AccessReviewSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessReviews
-    }
+    return m.accessReviews
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityGovernance) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppConsent gets the appConsent property value. The appConsent property
 func (m *IdentityGovernance) GetAppConsent()(AppConsentApprovalRouteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConsent
-    }
+    return m.appConsent
 }
 // GetEntitlementManagement gets the entitlementManagement property value. The entitlementManagement property
 func (m *IdentityGovernance) GetEntitlementManagement()(EntitlementManagementable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.entitlementManagement
-    }
+    return m.entitlementManagement
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,19 +105,11 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentityGovernance) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTermsOfUse gets the termsOfUse property value. The termsOfUse property
 func (m *IdentityGovernance) GetTermsOfUse()(TermsOfUseContainerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsOfUse
-    }
+    return m.termsOfUse
 }
 // Serialize serializes information the current object
 func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAccessReviews sets the accessReviews property value. The accessReviews property
 func (m *IdentityGovernance) SetAccessReviews(value AccessReviewSetable)() {
-    if m != nil {
-        m.accessReviews = value
-    }
+    m.accessReviews = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityGovernance) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppConsent sets the appConsent property value. The appConsent property
 func (m *IdentityGovernance) SetAppConsent(value AppConsentApprovalRouteable)() {
-    if m != nil {
-        m.appConsent = value
-    }
+    m.appConsent = value
 }
 // SetEntitlementManagement sets the entitlementManagement property value. The entitlementManagement property
 func (m *IdentityGovernance) SetEntitlementManagement(value EntitlementManagementable)() {
-    if m != nil {
-        m.entitlementManagement = value
-    }
+    m.entitlementManagement = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentityGovernance) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTermsOfUse sets the termsOfUse property value. The termsOfUse property
 func (m *IdentityGovernance) SetTermsOfUse(value TermsOfUseContainerable)() {
-    if m != nil {
-        m.termsOfUse = value
-    }
+    m.termsOfUse = value
 }

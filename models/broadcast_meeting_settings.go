@@ -36,19 +36,11 @@ func CreateBroadcastMeetingSettingsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedAudience gets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
 func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingAudience) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedAudience
-    }
+    return m.allowedAudience
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsAttendeeReportEnabled gets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) GetIsAttendeeReportEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAttendeeReportEnabled
-    }
+    return m.isAttendeeReportEnabled
 }
 // GetIsQuestionAndAnswerEnabled gets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) GetIsQuestionAndAnswerEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isQuestionAndAnswerEnabled
-    }
+    return m.isQuestionAndAnswerEnabled
 }
 // GetIsRecordingEnabled gets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) GetIsRecordingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRecordingEnabled
-    }
+    return m.isRecordingEnabled
 }
 // GetIsVideoOnDemandEnabled gets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) GetIsVideoOnDemandEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isVideoOnDemandEnabled
-    }
+    return m.isVideoOnDemandEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BroadcastMeetingSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *BroadcastMeetingSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *BroadcastMeetingSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedAudience sets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
 func (m *BroadcastMeetingSettings) SetAllowedAudience(value *BroadcastMeetingAudience)() {
-    if m != nil {
-        m.allowedAudience = value
-    }
+    m.allowedAudience = value
 }
 // SetIsAttendeeReportEnabled sets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsAttendeeReportEnabled(value *bool)() {
-    if m != nil {
-        m.isAttendeeReportEnabled = value
-    }
+    m.isAttendeeReportEnabled = value
 }
 // SetIsQuestionAndAnswerEnabled sets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsQuestionAndAnswerEnabled(value *bool)() {
-    if m != nil {
-        m.isQuestionAndAnswerEnabled = value
-    }
+    m.isQuestionAndAnswerEnabled = value
 }
 // SetIsRecordingEnabled sets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsRecordingEnabled(value *bool)() {
-    if m != nil {
-        m.isRecordingEnabled = value
-    }
+    m.isRecordingEnabled = value
 }
 // SetIsVideoOnDemandEnabled sets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsVideoOnDemandEnabled(value *bool)() {
-    if m != nil {
-        m.isVideoOnDemandEnabled = value
-    }
+    m.isVideoOnDemandEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BroadcastMeetingSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

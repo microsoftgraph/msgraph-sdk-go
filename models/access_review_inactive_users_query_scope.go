@@ -40,11 +40,7 @@ func (m *AccessReviewInactiveUsersQueryScope) GetFieldDeserializers()(map[string
 }
 // GetInactiveDuration gets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
 func (m *AccessReviewInactiveUsersQueryScope) GetInactiveDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inactiveDuration
-    }
+    return m.inactiveDuration
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInactiveUsersQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AccessReviewInactiveUsersQueryScope) Serialize(writer i878a80d2330e89d2
 }
 // SetInactiveDuration sets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
 func (m *AccessReviewInactiveUsersQueryScope) SetInactiveDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.inactiveDuration = value
-    }
+    m.inactiveDuration = value
 }

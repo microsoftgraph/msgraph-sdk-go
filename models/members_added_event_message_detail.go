@@ -69,27 +69,15 @@ func (m *MembersAddedEventMessageDetail) GetFieldDeserializers()(map[string]func
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MembersAddedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetMembers gets the members property value. List of members added.
 func (m *MembersAddedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation members.
 func (m *MembersAddedEventMessageDetail) GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibleHistoryStartDateTime
-    }
+    return m.visibleHistoryStartDateTime
 }
 // Serialize serializes information the current object
 func (m *MembersAddedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *MembersAddedEventMessageDetail) Serialize(writer i878a80d2330e89d268963
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MembersAddedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetMembers sets the members property value. List of members added.
 func (m *MembersAddedEventMessageDetail) SetMembers(value []TeamworkUserIdentityable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }
 // SetVisibleHistoryStartDateTime sets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation members.
 func (m *MembersAddedEventMessageDetail) SetVisibleHistoryStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.visibleHistoryStartDateTime = value
-    }
+    m.visibleHistoryStartDateTime = value
 }

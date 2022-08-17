@@ -49,51 +49,27 @@ func CreateRoomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAudioDeviceName gets the audioDeviceName property value. Specifies the name of the audio device in the room.
 func (m *Room) GetAudioDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.audioDeviceName
-    }
+    return m.audioDeviceName
 }
 // GetBookingType gets the bookingType property value. Type of room. Possible values are standard, and reserved.
 func (m *Room) GetBookingType()(*BookingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bookingType
-    }
+    return m.bookingType
 }
 // GetBuilding gets the building property value. Specifies the building name or building number that the room is in.
 func (m *Room) GetBuilding()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.building
-    }
+    return m.building
 }
 // GetCapacity gets the capacity property value. Specifies the capacity of the room.
 func (m *Room) GetCapacity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capacity
-    }
+    return m.capacity
 }
 // GetDisplayDeviceName gets the displayDeviceName property value. Specifies the name of the display device in the room.
 func (m *Room) GetDisplayDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayDeviceName
-    }
+    return m.displayDeviceName
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the room.
 func (m *Room) GetEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -236,59 +212,31 @@ func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetFloorLabel gets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
 func (m *Room) GetFloorLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.floorLabel
-    }
+    return m.floorLabel
 }
 // GetFloorNumber gets the floorNumber property value. Specifies the floor number that the room is on.
 func (m *Room) GetFloorNumber()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.floorNumber
-    }
+    return m.floorNumber
 }
 // GetIsWheelChairAccessible gets the isWheelChairAccessible property value. Specifies whether the room is wheelchair accessible.
 func (m *Room) GetIsWheelChairAccessible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isWheelChairAccessible
-    }
+    return m.isWheelChairAccessible
 }
 // GetLabel gets the label property value. Specifies a descriptive label for the room, for example, a number or name.
 func (m *Room) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetNickname gets the nickname property value. Specifies a nickname for the room, for example, 'conf room'.
 func (m *Room) GetNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nickname
-    }
+    return m.nickname
 }
 // GetTags gets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
 func (m *Room) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetVideoDeviceName gets the videoDeviceName property value. Specifies the name of the video device in the room.
 func (m *Room) GetVideoDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.videoDeviceName
-    }
+    return m.videoDeviceName
 }
 // Serialize serializes information the current object
 func (m *Room) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -379,79 +327,53 @@ func (m *Room) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAudioDeviceName sets the audioDeviceName property value. Specifies the name of the audio device in the room.
 func (m *Room) SetAudioDeviceName(value *string)() {
-    if m != nil {
-        m.audioDeviceName = value
-    }
+    m.audioDeviceName = value
 }
 // SetBookingType sets the bookingType property value. Type of room. Possible values are standard, and reserved.
 func (m *Room) SetBookingType(value *BookingType)() {
-    if m != nil {
-        m.bookingType = value
-    }
+    m.bookingType = value
 }
 // SetBuilding sets the building property value. Specifies the building name or building number that the room is in.
 func (m *Room) SetBuilding(value *string)() {
-    if m != nil {
-        m.building = value
-    }
+    m.building = value
 }
 // SetCapacity sets the capacity property value. Specifies the capacity of the room.
 func (m *Room) SetCapacity(value *int32)() {
-    if m != nil {
-        m.capacity = value
-    }
+    m.capacity = value
 }
 // SetDisplayDeviceName sets the displayDeviceName property value. Specifies the name of the display device in the room.
 func (m *Room) SetDisplayDeviceName(value *string)() {
-    if m != nil {
-        m.displayDeviceName = value
-    }
+    m.displayDeviceName = value
 }
 // SetEmailAddress sets the emailAddress property value. Email address of the room.
 func (m *Room) SetEmailAddress(value *string)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }
 // SetFloorLabel sets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
 func (m *Room) SetFloorLabel(value *string)() {
-    if m != nil {
-        m.floorLabel = value
-    }
+    m.floorLabel = value
 }
 // SetFloorNumber sets the floorNumber property value. Specifies the floor number that the room is on.
 func (m *Room) SetFloorNumber(value *int32)() {
-    if m != nil {
-        m.floorNumber = value
-    }
+    m.floorNumber = value
 }
 // SetIsWheelChairAccessible sets the isWheelChairAccessible property value. Specifies whether the room is wheelchair accessible.
 func (m *Room) SetIsWheelChairAccessible(value *bool)() {
-    if m != nil {
-        m.isWheelChairAccessible = value
-    }
+    m.isWheelChairAccessible = value
 }
 // SetLabel sets the label property value. Specifies a descriptive label for the room, for example, a number or name.
 func (m *Room) SetLabel(value *string)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetNickname sets the nickname property value. Specifies a nickname for the room, for example, 'conf room'.
 func (m *Room) SetNickname(value *string)() {
-    if m != nil {
-        m.nickname = value
-    }
+    m.nickname = value
 }
 // SetTags sets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
 func (m *Room) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetVideoDeviceName sets the videoDeviceName property value. Specifies the name of the video device in the room.
 func (m *Room) SetVideoDeviceName(value *string)() {
-    if m != nil {
-        m.videoDeviceName = value
-    }
+    m.videoDeviceName = value
 }

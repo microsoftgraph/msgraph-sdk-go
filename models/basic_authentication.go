@@ -52,19 +52,11 @@ func (m *BasicAuthentication) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetPassword gets the password property value. The password. It is not returned in the responses.
 func (m *BasicAuthentication) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // GetUsername gets the username property value. The username.
 func (m *BasicAuthentication) GetUsername()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.username
-    }
+    return m.username
 }
 // Serialize serializes information the current object
 func (m *BasicAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *BasicAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetPassword sets the password property value. The password. It is not returned in the responses.
 func (m *BasicAuthentication) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
 // SetUsername sets the username property value. The username.
 func (m *BasicAuthentication) SetUsername(value *string)() {
-    if m != nil {
-        m.username = value
-    }
+    m.username = value
 }

@@ -68,27 +68,15 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFields gets the fields property value. Represents the current conditions used to last sort the table. Read-only.
 func (m *WorkbookTableSort) GetFields()([]WorkbookSortFieldable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fields
-    }
+    return m.fields
 }
 // GetMatchCase gets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
 func (m *WorkbookTableSort) GetMatchCase()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchCase
-    }
+    return m.matchCase
 }
 // GetMethod gets the method property value. Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) GetMethod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.method
-    }
+    return m.method
 }
 // Serialize serializes information the current object
 func (m *WorkbookTableSort) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *WorkbookTableSort) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetFields sets the fields property value. Represents the current conditions used to last sort the table. Read-only.
 func (m *WorkbookTableSort) SetFields(value []WorkbookSortFieldable)() {
-    if m != nil {
-        m.fields = value
-    }
+    m.fields = value
 }
 // SetMatchCase sets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
 func (m *WorkbookTableSort) SetMatchCase(value *bool)() {
-    if m != nil {
-        m.matchCase = value
-    }
+    m.matchCase = value
 }
 // SetMethod sets the method property value. Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) SetMethod(value *string)() {
-    if m != nil {
-        m.method = value
-    }
+    m.method = value
 }

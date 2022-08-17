@@ -52,19 +52,11 @@ func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOptions gets the options property value. Sheet protection options. Read-only.
 func (m *WorkbookWorksheetProtection) GetOptions()(WorkbookWorksheetProtectionOptionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.options
-    }
+    return m.options
 }
 // GetProtected gets the protected property value. Indicates if the worksheet is protected.  Read-only.
 func (m *WorkbookWorksheetProtection) GetProtected()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protected
-    }
+    return m.protected
 }
 // Serialize serializes information the current object
 func (m *WorkbookWorksheetProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WorkbookWorksheetProtection) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetOptions sets the options property value. Sheet protection options. Read-only.
 func (m *WorkbookWorksheetProtection) SetOptions(value WorkbookWorksheetProtectionOptionsable)() {
-    if m != nil {
-        m.options = value
-    }
+    m.options = value
 }
 // SetProtected sets the protected property value. Indicates if the worksheet is protected.  Read-only.
 func (m *WorkbookWorksheetProtection) SetProtected(value *bool)() {
-    if m != nil {
-        m.protected = value
-    }
+    m.protected = value
 }

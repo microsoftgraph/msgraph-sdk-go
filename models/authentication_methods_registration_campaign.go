@@ -34,19 +34,11 @@ func CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExcludeTargets gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]ExcludeTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeTargets
-    }
+    return m.excludeTargets
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,35 +105,19 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
 }
 // GetIncludeTargets gets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeTargets
-    }
+    return m.includeTargets
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
 func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snoozeDurationInDays
-    }
+    return m.snoozeDurationInDays
 }
 // GetState gets the state property value. The state property
 func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExcludeTargets sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []ExcludeTargetable)() {
-    if m != nil {
-        m.excludeTargets = value
-    }
+    m.excludeTargets = value
 }
 // SetIncludeTargets sets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)() {
-    if m != nil {
-        m.includeTargets = value
-    }
+    m.includeTargets = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationMethodsRegistrationCampaign) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSnoozeDurationInDays sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
 func (m *AuthenticationMethodsRegistrationCampaign) SetSnoozeDurationInDays(value *int32)() {
-    if m != nil {
-        m.snoozeDurationInDays = value
-    }
+    m.snoozeDurationInDays = value
 }
 // SetState sets the state property value. The state property
 func (m *AuthenticationMethodsRegistrationCampaign) SetState(value *AdvancedConfigState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChart provides operations to manage the admin singleton.
+// WorkbookChart provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookChart struct {
     Entity
     // Represents chart axes. Read-only.
@@ -47,19 +47,11 @@ func CreateWorkbookChartFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAxes gets the axes property value. Represents chart axes. Read-only.
 func (m *WorkbookChart) GetAxes()(WorkbookChartAxesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.axes
-    }
+    return m.axes
 }
 // GetDataLabels gets the dataLabels property value. Represents the datalabels on the chart. Read-only.
 func (m *WorkbookChart) GetDataLabels()(WorkbookChartDataLabelsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataLabels
-    }
+    return m.dataLabels
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -192,83 +184,43 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetFormat gets the format property value. Encapsulates the format properties for the chart area. Read-only.
 func (m *WorkbookChart) GetFormat()(WorkbookChartAreaFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetHeight gets the height property value. Represents the height, in points, of the chart object.
 func (m *WorkbookChart) GetHeight()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
+    return m.height
 }
 // GetLeft gets the left property value. The distance, in points, from the left side of the chart to the worksheet origin.
 func (m *WorkbookChart) GetLeft()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.left
-    }
+    return m.left
 }
 // GetLegend gets the legend property value. Represents the legend for the chart. Read-only.
 func (m *WorkbookChart) GetLegend()(WorkbookChartLegendable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.legend
-    }
+    return m.legend
 }
 // GetName gets the name property value. Represents the name of a chart object.
 func (m *WorkbookChart) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetSeries gets the series property value. Represents either a single series or collection of series in the chart. Read-only.
 func (m *WorkbookChart) GetSeries()([]WorkbookChartSeriesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.series
-    }
+    return m.series
 }
 // GetTitle gets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
 func (m *WorkbookChart) GetTitle()(WorkbookChartTitleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // GetTop gets the top property value. Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
 func (m *WorkbookChart) GetTop()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
+    return m.top
 }
 // GetWidth gets the width property value. Represents the width, in points, of the chart object.
 func (m *WorkbookChart) GetWidth()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
-    }
+    return m.width
 }
 // GetWorksheet gets the worksheet property value. The worksheet containing the current chart. Read-only.
 func (m *WorkbookChart) GetWorksheet()(WorkbookWorksheetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.worksheet
-    }
+    return m.worksheet
 }
 // Serialize serializes information the current object
 func (m *WorkbookChart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -356,73 +308,49 @@ func (m *WorkbookChart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAxes sets the axes property value. Represents chart axes. Read-only.
 func (m *WorkbookChart) SetAxes(value WorkbookChartAxesable)() {
-    if m != nil {
-        m.axes = value
-    }
+    m.axes = value
 }
 // SetDataLabels sets the dataLabels property value. Represents the datalabels on the chart. Read-only.
 func (m *WorkbookChart) SetDataLabels(value WorkbookChartDataLabelsable)() {
-    if m != nil {
-        m.dataLabels = value
-    }
+    m.dataLabels = value
 }
 // SetFormat sets the format property value. Encapsulates the format properties for the chart area. Read-only.
 func (m *WorkbookChart) SetFormat(value WorkbookChartAreaFormatable)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetHeight sets the height property value. Represents the height, in points, of the chart object.
 func (m *WorkbookChart) SetHeight(value *float64)() {
-    if m != nil {
-        m.height = value
-    }
+    m.height = value
 }
 // SetLeft sets the left property value. The distance, in points, from the left side of the chart to the worksheet origin.
 func (m *WorkbookChart) SetLeft(value *float64)() {
-    if m != nil {
-        m.left = value
-    }
+    m.left = value
 }
 // SetLegend sets the legend property value. Represents the legend for the chart. Read-only.
 func (m *WorkbookChart) SetLegend(value WorkbookChartLegendable)() {
-    if m != nil {
-        m.legend = value
-    }
+    m.legend = value
 }
 // SetName sets the name property value. Represents the name of a chart object.
 func (m *WorkbookChart) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetSeries sets the series property value. Represents either a single series or collection of series in the chart. Read-only.
 func (m *WorkbookChart) SetSeries(value []WorkbookChartSeriesable)() {
-    if m != nil {
-        m.series = value
-    }
+    m.series = value
 }
 // SetTitle sets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
 func (m *WorkbookChart) SetTitle(value WorkbookChartTitleable)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }
 // SetTop sets the top property value. Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
 func (m *WorkbookChart) SetTop(value *float64)() {
-    if m != nil {
-        m.top = value
-    }
+    m.top = value
 }
 // SetWidth sets the width property value. Represents the width, in points, of the chart object.
 func (m *WorkbookChart) SetWidth(value *float64)() {
-    if m != nil {
-        m.width = value
-    }
+    m.width = value
 }
 // SetWorksheet sets the worksheet property value. The worksheet containing the current chart. Read-only.
 func (m *WorkbookChart) SetWorksheet(value WorkbookWorksheetable)() {
-    if m != nil {
-        m.worksheet = value
-    }
+    m.worksheet = value
 }

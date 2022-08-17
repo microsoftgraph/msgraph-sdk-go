@@ -29,11 +29,7 @@ func CreateSchedulingGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDisplayName gets the displayName property value. The display name for the schedulingGroup. Required.
 func (m *SchedulingGroup) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SchedulingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *SchedulingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIsActive gets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
 func (m *SchedulingGroup) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
+    return m.isActive
 }
 // GetUserIds gets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
 func (m *SchedulingGroup) GetUserIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userIds
-    }
+    return m.userIds
 }
 // Serialize serializes information the current object
 func (m *SchedulingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,19 +106,13 @@ func (m *SchedulingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDisplayName sets the displayName property value. The display name for the schedulingGroup. Required.
 func (m *SchedulingGroup) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsActive sets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
 func (m *SchedulingGroup) SetIsActive(value *bool)() {
-    if m != nil {
-        m.isActive = value
-    }
+    m.isActive = value
 }
 // SetUserIds sets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
 func (m *SchedulingGroup) SetUserIds(value []string)() {
-    if m != nil {
-        m.userIds = value
-    }
+    m.userIds = value
 }

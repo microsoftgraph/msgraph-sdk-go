@@ -39,59 +39,31 @@ func CreateEntitlementManagementFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approvalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageAssignmentApprovals
-    }
+    return m.accessPackageAssignmentApprovals
 }
 // GetAccessPackages gets the accessPackages property value. Represents access package objects.
 func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackages
-    }
+    return m.accessPackages
 }
 // GetAssignmentPolicies gets the assignmentPolicies property value. Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 func (m *EntitlementManagement) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentPolicies
-    }
+    return m.assignmentPolicies
 }
 // GetAssignmentRequests gets the assignmentRequests property value. Access package assignment requests created by or on behalf of a subject.
 func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentRequests
-    }
+    return m.assignmentRequests
 }
 // GetAssignments gets the assignments property value. The assignment of an access package to a subject for a period of time.
 func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCatalogs gets the catalogs property value. A container for access packages.
 func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalogable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogs
-    }
+    return m.catalogs
 }
 // GetConnectedOrganizations gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectedOrganizations
-    }
+    return m.connectedOrganizations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -208,11 +180,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
 func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -300,49 +268,33 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approvalable)() {
-    if m != nil {
-        m.accessPackageAssignmentApprovals = value
-    }
+    m.accessPackageAssignmentApprovals = value
 }
 // SetAccessPackages sets the accessPackages property value. Represents access package objects.
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackageable)() {
-    if m != nil {
-        m.accessPackages = value
-    }
+    m.accessPackages = value
 }
 // SetAssignmentPolicies sets the assignmentPolicies property value. Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 func (m *EntitlementManagement) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
-    if m != nil {
-        m.assignmentPolicies = value
-    }
+    m.assignmentPolicies = value
 }
 // SetAssignmentRequests sets the assignmentRequests property value. Access package assignment requests created by or on behalf of a subject.
 func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
-    if m != nil {
-        m.assignmentRequests = value
-    }
+    m.assignmentRequests = value
 }
 // SetAssignments sets the assignments property value. The assignment of an access package to a subject for a period of time.
 func (m *EntitlementManagement) SetAssignments(value []AccessPackageAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCatalogs sets the catalogs property value. A container for access packages.
 func (m *EntitlementManagement) SetCatalogs(value []AccessPackageCatalogable)() {
-    if m != nil {
-        m.catalogs = value
-    }
+    m.catalogs = value
 }
 // SetConnectedOrganizations sets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganizationable)() {
-    if m != nil {
-        m.connectedOrganizations = value
-    }
+    m.connectedOrganizations = value
 }
 // SetSettings sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
 func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

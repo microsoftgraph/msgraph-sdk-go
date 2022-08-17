@@ -40,11 +40,7 @@ func (m *OmaSettingBoolean) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetValue gets the value property value. Value.
 func (m *OmaSettingBoolean) GetValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *OmaSettingBoolean) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *OmaSettingBoolean) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetValue sets the value property value. Value.
 func (m *OmaSettingBoolean) SetValue(value *bool)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

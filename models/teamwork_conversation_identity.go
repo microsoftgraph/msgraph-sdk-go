@@ -25,11 +25,7 @@ func CreateTeamworkConversationIdentityFromDiscriminatorValue(parseNode i878a80d
 }
 // GetConversationIdentityType gets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, and chat.
 func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkConversationIdentityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversationIdentityType
-    }
+    return m.conversationIdentityType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkConversationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,7 +59,5 @@ func (m *TeamworkConversationIdentity) Serialize(writer i878a80d2330e89d26896388
 }
 // SetConversationIdentityType sets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, and chat.
 func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *TeamworkConversationIdentityType)() {
-    if m != nil {
-        m.conversationIdentityType = value
-    }
+    m.conversationIdentityType = value
 }

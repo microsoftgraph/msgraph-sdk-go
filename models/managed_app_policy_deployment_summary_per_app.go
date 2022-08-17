@@ -30,19 +30,11 @@ func CreateManagedAppPolicyDeploymentSummaryPerAppFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfigurationAppliedUserCount gets the configurationAppliedUserCount property value. Number of users the policy is applied.
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetConfigurationAppliedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationAppliedUserCount
-    }
+    return m.configurationAppliedUserCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetFieldDeserializers()(map[st
 }
 // GetMobileAppIdentifier gets the mobileAppIdentifier property value. Deployment of an app.
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetMobileAppIdentifier()(MobileAppIdentifierable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppIdentifier
-    }
+    return m.mobileAppIdentifier
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ManagedAppPolicyDeploymentSummaryPerApp) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfigurationAppliedUserCount sets the configurationAppliedUserCount property value. Number of users the policy is applied.
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetConfigurationAppliedUserCount(value *int32)() {
-    if m != nil {
-        m.configurationAppliedUserCount = value
-    }
+    m.configurationAppliedUserCount = value
 }
 // SetMobileAppIdentifier sets the mobileAppIdentifier property value. Deployment of an app.
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetMobileAppIdentifier(value MobileAppIdentifierable)() {
-    if m != nil {
-        m.mobileAppIdentifier = value
-    }
+    m.mobileAppIdentifier = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

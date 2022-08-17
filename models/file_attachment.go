@@ -29,27 +29,15 @@ func CreateFileAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetContentBytes gets the contentBytes property value. The base64-encoded contents of the file.
 func (m *FileAttachment) GetContentBytes()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentBytes
-    }
+    return m.contentBytes
 }
 // GetContentId gets the contentId property value. The ID of the attachment in the Exchange store.
 func (m *FileAttachment) GetContentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentId
-    }
+    return m.contentId
 }
 // GetContentLocation gets the contentLocation property value. Do not use this property as it is not supported.
 func (m *FileAttachment) GetContentLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentLocation
-    }
+    return m.contentLocation
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,19 +102,13 @@ func (m *FileAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetContentBytes sets the contentBytes property value. The base64-encoded contents of the file.
 func (m *FileAttachment) SetContentBytes(value []byte)() {
-    if m != nil {
-        m.contentBytes = value
-    }
+    m.contentBytes = value
 }
 // SetContentId sets the contentId property value. The ID of the attachment in the Exchange store.
 func (m *FileAttachment) SetContentId(value *string)() {
-    if m != nil {
-        m.contentId = value
-    }
+    m.contentId = value
 }
 // SetContentLocation sets the contentLocation property value. Do not use this property as it is not supported.
 func (m *FileAttachment) SetContentLocation(value *string)() {
-    if m != nil {
-        m.contentLocation = value
-    }
+    m.contentLocation = value
 }

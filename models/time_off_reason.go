@@ -29,11 +29,7 @@ func CreateTimeOffReasonFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetDisplayName gets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIconType gets the iconType property value. Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
 func (m *TimeOffReason) GetIconType()(*TimeOffReasonIconType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iconType
-    }
+    return m.iconType
 }
 // GetIsActive gets the isActive property value. Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
 func (m *TimeOffReason) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
+    return m.isActive
 }
 // Serialize serializes information the current object
 func (m *TimeOffReason) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *TimeOffReason) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetDisplayName sets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIconType sets the iconType property value. Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
 func (m *TimeOffReason) SetIconType(value *TimeOffReasonIconType)() {
-    if m != nil {
-        m.iconType = value
-    }
+    m.iconType = value
 }
 // SetIsActive sets the isActive property value. Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
 func (m *TimeOffReason) SetIsActive(value *bool)() {
-    if m != nil {
-        m.isActive = value
-    }
+    m.isActive = value
 }

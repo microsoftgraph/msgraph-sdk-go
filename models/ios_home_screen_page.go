@@ -30,19 +30,11 @@ func CreateIosHomeScreenPageFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosHomeScreenPage) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Name of the page
 func (m *IosHomeScreenPage) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosHomeScreenPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *IosHomeScreenPage) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIcons gets the icons property value. A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
 func (m *IosHomeScreenPage) GetIcons()([]IosHomeScreenItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.icons
-    }
+    return m.icons
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosHomeScreenPage) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *IosHomeScreenPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *IosHomeScreenPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosHomeScreenPage) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Name of the page
 func (m *IosHomeScreenPage) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIcons sets the icons property value. A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
 func (m *IosHomeScreenPage) SetIcons(value []IosHomeScreenItemable)() {
-    if m != nil {
-        m.icons = value
-    }
+    m.icons = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosHomeScreenPage) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

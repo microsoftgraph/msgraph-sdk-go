@@ -43,35 +43,19 @@ func CreateKeyCredentialFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredential) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCustomKeyIdentifier gets the customKeyIdentifier property value. Custom key identifier
 func (m *KeyCredential) GetCustomKeyIdentifier()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customKeyIdentifier
-    }
+    return m.customKeyIdentifier
 }
 // GetDisplayName gets the displayName property value. Friendly name for the key. Optional.
 func (m *KeyCredential) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEndDateTime gets the endDateTime property value. The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,51 +154,27 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetKey gets the key property value. Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
 func (m *KeyCredential) GetKey()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
+    return m.key
 }
 // GetKeyId gets the keyId property value. The unique identifier for the key.
 func (m *KeyCredential) GetKeyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyId
-    }
+    return m.keyId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *KeyCredential) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
 func (m *KeyCredential) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
 func (m *KeyCredential) GetUsage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usage
-    }
+    return m.usage
 }
 // Serialize serializes information the current object
 func (m *KeyCredential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -282,61 +242,41 @@ func (m *KeyCredential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredential) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCustomKeyIdentifier sets the customKeyIdentifier property value. Custom key identifier
 func (m *KeyCredential) SetCustomKeyIdentifier(value []byte)() {
-    if m != nil {
-        m.customKeyIdentifier = value
-    }
+    m.customKeyIdentifier = value
 }
 // SetDisplayName sets the displayName property value. Friendly name for the key. Optional.
 func (m *KeyCredential) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEndDateTime sets the endDateTime property value. The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetKey sets the key property value. Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
 func (m *KeyCredential) SetKey(value []byte)() {
-    if m != nil {
-        m.key = value
-    }
+    m.key = value
 }
 // SetKeyId sets the keyId property value. The unique identifier for the key.
 func (m *KeyCredential) SetKeyId(value *string)() {
-    if m != nil {
-        m.keyId = value
-    }
+    m.keyId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *KeyCredential) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetType sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
 func (m *KeyCredential) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetUsage sets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
 func (m *KeyCredential) SetUsage(value *string)() {
-    if m != nil {
-        m.usage = value
-    }
+    m.usage = value
 }

@@ -48,99 +48,51 @@ func CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookWorksheetProtectionOptions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowAutoFilter gets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowAutoFilter()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAutoFilter
-    }
+    return m.allowAutoFilter
 }
 // GetAllowDeleteColumns gets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteColumns()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeleteColumns
-    }
+    return m.allowDeleteColumns
 }
 // GetAllowDeleteRows gets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteRows()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeleteRows
-    }
+    return m.allowDeleteRows
 }
 // GetAllowFormatCells gets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatCells()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowFormatCells
-    }
+    return m.allowFormatCells
 }
 // GetAllowFormatColumns gets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatColumns()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowFormatColumns
-    }
+    return m.allowFormatColumns
 }
 // GetAllowFormatRows gets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatRows()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowFormatRows
-    }
+    return m.allowFormatRows
 }
 // GetAllowInsertColumns gets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertColumns()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowInsertColumns
-    }
+    return m.allowInsertColumns
 }
 // GetAllowInsertHyperlinks gets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertHyperlinks()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowInsertHyperlinks
-    }
+    return m.allowInsertHyperlinks
 }
 // GetAllowInsertRows gets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertRows()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowInsertRows
-    }
+    return m.allowInsertRows
 }
 // GetAllowPivotTables gets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowPivotTables()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowPivotTables
-    }
+    return m.allowPivotTables
 }
 // GetAllowSort gets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowSort()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowSort
-    }
+    return m.allowSort
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -269,11 +221,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WorkbookWorksheetProtectionOptions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -359,79 +307,53 @@ func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookWorksheetProtectionOptions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowAutoFilter sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowAutoFilter(value *bool)() {
-    if m != nil {
-        m.allowAutoFilter = value
-    }
+    m.allowAutoFilter = value
 }
 // SetAllowDeleteColumns sets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowDeleteColumns(value *bool)() {
-    if m != nil {
-        m.allowDeleteColumns = value
-    }
+    m.allowDeleteColumns = value
 }
 // SetAllowDeleteRows sets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowDeleteRows(value *bool)() {
-    if m != nil {
-        m.allowDeleteRows = value
-    }
+    m.allowDeleteRows = value
 }
 // SetAllowFormatCells sets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatCells(value *bool)() {
-    if m != nil {
-        m.allowFormatCells = value
-    }
+    m.allowFormatCells = value
 }
 // SetAllowFormatColumns sets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatColumns(value *bool)() {
-    if m != nil {
-        m.allowFormatColumns = value
-    }
+    m.allowFormatColumns = value
 }
 // SetAllowFormatRows sets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatRows(value *bool)() {
-    if m != nil {
-        m.allowFormatRows = value
-    }
+    m.allowFormatRows = value
 }
 // SetAllowInsertColumns sets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertColumns(value *bool)() {
-    if m != nil {
-        m.allowInsertColumns = value
-    }
+    m.allowInsertColumns = value
 }
 // SetAllowInsertHyperlinks sets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertHyperlinks(value *bool)() {
-    if m != nil {
-        m.allowInsertHyperlinks = value
-    }
+    m.allowInsertHyperlinks = value
 }
 // SetAllowInsertRows sets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertRows(value *bool)() {
-    if m != nil {
-        m.allowInsertRows = value
-    }
+    m.allowInsertRows = value
 }
 // SetAllowPivotTables sets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowPivotTables(value *bool)() {
-    if m != nil {
-        m.allowPivotTables = value
-    }
+    m.allowPivotTables = value
 }
 // SetAllowSort sets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowSort(value *bool)() {
-    if m != nil {
-        m.allowSort = value
-    }
+    m.allowSort = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WorkbookWorksheetProtectionOptions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

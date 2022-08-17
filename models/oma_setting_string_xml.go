@@ -52,19 +52,11 @@ func (m *OmaSettingStringXml) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFileName gets the fileName property value. File name associated with the Value property (.xml).
 func (m *OmaSettingStringXml) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetValue gets the value property value. Value. (UTF8 encoded byte array)
 func (m *OmaSettingStringXml) GetValue()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *OmaSettingStringXml) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *OmaSettingStringXml) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFileName sets the fileName property value. File name associated with the Value property (.xml).
 func (m *OmaSettingStringXml) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetValue sets the value property value. Value. (UTF8 encoded byte array)
 func (m *OmaSettingStringXml) SetValue(value []byte)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

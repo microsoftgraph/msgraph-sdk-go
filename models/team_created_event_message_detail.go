@@ -76,35 +76,19 @@ func (m *TeamCreatedEventMessageDetail) GetFieldDeserializers()(map[string]func(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TeamCreatedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetTeamDescription gets the teamDescription property value. Description for the team.
 func (m *TeamCreatedEventMessageDetail) GetTeamDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamDescription
-    }
+    return m.teamDescription
 }
 // GetTeamDisplayName gets the teamDisplayName property value. Display name of the team.
 func (m *TeamCreatedEventMessageDetail) GetTeamDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamDisplayName
-    }
+    return m.teamDisplayName
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
 func (m *TeamCreatedEventMessageDetail) GetTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamId
-    }
+    return m.teamId
 }
 // Serialize serializes information the current object
 func (m *TeamCreatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *TeamCreatedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamCreatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetTeamDescription sets the teamDescription property value. Description for the team.
 func (m *TeamCreatedEventMessageDetail) SetTeamDescription(value *string)() {
-    if m != nil {
-        m.teamDescription = value
-    }
+    m.teamDescription = value
 }
 // SetTeamDisplayName sets the teamDisplayName property value. Display name of the team.
 func (m *TeamCreatedEventMessageDetail) SetTeamDisplayName(value *string)() {
-    if m != nil {
-        m.teamDisplayName = value
-    }
+    m.teamDisplayName = value
 }
 // SetTeamId sets the teamId property value. Unique identifier of the team.
 func (m *TeamCreatedEventMessageDetail) SetTeamId(value *string)() {
-    if m != nil {
-        m.teamId = value
-    }
+    m.teamId = value
 }

@@ -37,27 +37,15 @@ func CreateSubscribedSkuFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAppliesTo gets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) GetAppliesTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetCapabilityStatus gets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
 func (m *SubscribedSku) GetCapabilityStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capabilityStatus
-    }
+    return m.capabilityStatus
 }
 // GetConsumedUnits gets the consumedUnits property value. The number of licenses that have been assigned.
 func (m *SubscribedSku) GetConsumedUnits()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.consumedUnits
-    }
+    return m.consumedUnits
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,35 +128,19 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetPrepaidUnits gets the prepaidUnits property value. Information about the number and status of prepaid licenses.
 func (m *SubscribedSku) GetPrepaidUnits()(LicenseUnitsDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prepaidUnits
-    }
+    return m.prepaidUnits
 }
 // GetServicePlans gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
 func (m *SubscribedSku) GetServicePlans()([]ServicePlanInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlans
-    }
+    return m.servicePlans
 }
 // GetSkuId gets the skuId property value. The unique identifier (GUID) for the service SKU.
 func (m *SubscribedSku) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
-    }
+    return m.skuId
 }
 // GetSkuPartNumber gets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 func (m *SubscribedSku) GetSkuPartNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuPartNumber
-    }
+    return m.skuPartNumber
 }
 // Serialize serializes information the current object
 func (m *SubscribedSku) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -226,43 +198,29 @@ func (m *SubscribedSku) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAppliesTo sets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetCapabilityStatus sets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
 func (m *SubscribedSku) SetCapabilityStatus(value *string)() {
-    if m != nil {
-        m.capabilityStatus = value
-    }
+    m.capabilityStatus = value
 }
 // SetConsumedUnits sets the consumedUnits property value. The number of licenses that have been assigned.
 func (m *SubscribedSku) SetConsumedUnits(value *int32)() {
-    if m != nil {
-        m.consumedUnits = value
-    }
+    m.consumedUnits = value
 }
 // SetPrepaidUnits sets the prepaidUnits property value. Information about the number and status of prepaid licenses.
 func (m *SubscribedSku) SetPrepaidUnits(value LicenseUnitsDetailable)() {
-    if m != nil {
-        m.prepaidUnits = value
-    }
+    m.prepaidUnits = value
 }
 // SetServicePlans sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
 func (m *SubscribedSku) SetServicePlans(value []ServicePlanInfoable)() {
-    if m != nil {
-        m.servicePlans = value
-    }
+    m.servicePlans = value
 }
 // SetSkuId sets the skuId property value. The unique identifier (GUID) for the service SKU.
 func (m *SubscribedSku) SetSkuId(value *string)() {
-    if m != nil {
-        m.skuId = value
-    }
+    m.skuId = value
 }
 // SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 func (m *SubscribedSku) SetSkuPartNumber(value *string)() {
-    if m != nil {
-        m.skuPartNumber = value
-    }
+    m.skuPartNumber = value
 }

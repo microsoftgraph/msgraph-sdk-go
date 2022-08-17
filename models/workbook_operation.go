@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookOperation provides operations to manage the admin singleton.
+// WorkbookOperation provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookOperation struct {
     Entity
     // The error returned by the operation.
@@ -29,11 +29,7 @@ func CreateWorkbookOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetError gets the error property value. The error returned by the operation.
 func (m *WorkbookOperation) GetError()(WorkbookOperationErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetResourceLocation gets the resourceLocation property value. The resource URI for the result.
 func (m *WorkbookOperation) GetResourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceLocation
-    }
+    return m.resourceLocation
 }
 // GetStatus gets the status property value. The status property
 func (m *WorkbookOperation) GetStatus()(*WorkbookOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *WorkbookOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *WorkbookOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetError sets the error property value. The error returned by the operation.
 func (m *WorkbookOperation) SetError(value WorkbookOperationErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetResourceLocation sets the resourceLocation property value. The resource URI for the result.
 func (m *WorkbookOperation) SetResourceLocation(value *string)() {
-    if m != nil {
-        m.resourceLocation = value
-    }
+    m.resourceLocation = value
 }
 // SetStatus sets the status property value. The status property
 func (m *WorkbookOperation) SetStatus(value *WorkbookOperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -29,19 +29,11 @@ func CreateChannelDeletedEventMessageDetailFromDiscriminatorValue(parseNode i878
 }
 // GetChannelDisplayName gets the channelDisplayName property value. Display name of the channel.
 func (m *ChannelDeletedEventMessageDetail) GetChannelDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.channelDisplayName
-    }
+    return m.channelDisplayName
 }
 // GetChannelId gets the channelId property value. Unique identifier of the channel.
 func (m *ChannelDeletedEventMessageDetail) GetChannelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.channelId
-    }
+    return m.channelId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelDeletedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *ChannelDeletedEventMessageDetail) GetFieldDeserializers()(map[string]fu
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *ChannelDeletedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // Serialize serializes information the current object
 func (m *ChannelDeletedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *ChannelDeletedEventMessageDetail) Serialize(writer i878a80d2330e89d2689
 }
 // SetChannelDisplayName sets the channelDisplayName property value. Display name of the channel.
 func (m *ChannelDeletedEventMessageDetail) SetChannelDisplayName(value *string)() {
-    if m != nil {
-        m.channelDisplayName = value
-    }
+    m.channelDisplayName = value
 }
 // SetChannelId sets the channelId property value. Unique identifier of the channel.
 func (m *ChannelDeletedEventMessageDetail) SetChannelId(value *string)() {
-    if m != nil {
-        m.channelId = value
-    }
+    m.channelId = value
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *ChannelDeletedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }

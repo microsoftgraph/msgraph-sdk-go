@@ -16,7 +16,7 @@ type IdentityUserFlowAttribute struct {
     // The userFlowAttributeType property
     userFlowAttributeType *IdentityUserFlowAttributeType
 }
-// NewIdentityUserFlowAttribute instantiates a new identityUserFlowAttribute and sets the default values.
+// NewIdentityUserFlowAttribute instantiates a new IdentityUserFlowAttribute and sets the default values.
 func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
     m := &IdentityUserFlowAttribute{
         Entity: *NewEntity(),
@@ -52,27 +52,15 @@ func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetDataType gets the dataType property value. The dataType property
 func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeDataType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataType
-    }
+    return m.dataType
 }
 // GetDescription gets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
 func (m *IdentityUserFlowAttribute) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name of the user flow attribute.
 func (m *IdentityUserFlowAttribute) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,11 +109,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878
 }
 // GetUserFlowAttributeType gets the userFlowAttributeType property value. The userFlowAttributeType property
 func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlowAttributeType
-    }
+    return m.userFlowAttributeType
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlowAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -163,25 +147,17 @@ func (m *IdentityUserFlowAttribute) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetDataType sets the dataType property value. The dataType property
 func (m *IdentityUserFlowAttribute) SetDataType(value *IdentityUserFlowAttributeDataType)() {
-    if m != nil {
-        m.dataType = value
-    }
+    m.dataType = value
 }
 // SetDescription sets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
 func (m *IdentityUserFlowAttribute) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name of the user flow attribute.
 func (m *IdentityUserFlowAttribute) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetUserFlowAttributeType sets the userFlowAttributeType property value. The userFlowAttributeType property
 func (m *IdentityUserFlowAttribute) SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)() {
-    if m != nil {
-        m.userFlowAttributeType = value
-    }
+    m.userFlowAttributeType = value
 }

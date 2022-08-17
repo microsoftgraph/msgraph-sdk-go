@@ -38,35 +38,19 @@ func CreateCertificateAuthorityFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateAuthority) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertificate gets the certificate property value. Required. The base64 encoded string representing the public certificate.
 func (m *CertificateAuthority) GetCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificate
-    }
+    return m.certificate
 }
 // GetCertificateRevocationListUrl gets the certificateRevocationListUrl property value. The URL of the certificate revocation list.
 func (m *CertificateAuthority) GetCertificateRevocationListUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateRevocationListUrl
-    }
+    return m.certificateRevocationListUrl
 }
 // GetDeltaCertificateRevocationListUrl gets the deltaCertificateRevocationListUrl property value. The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
 func (m *CertificateAuthority) GetDeltaCertificateRevocationListUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deltaCertificateRevocationListUrl
-    }
+    return m.deltaCertificateRevocationListUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsRootAuthority gets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
 func (m *CertificateAuthority) GetIsRootAuthority()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRootAuthority
-    }
+    return m.isRootAuthority
 }
 // GetIssuer gets the issuer property value. The issuer of the certificate, calculated from the certificate value. Read-only.
 func (m *CertificateAuthority) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
+    return m.issuer
 }
 // GetIssuerSki gets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
 func (m *CertificateAuthority) GetIssuerSki()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerSki
-    }
+    return m.issuerSki
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CertificateAuthority) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *CertificateAuthority) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *CertificateAuthority) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateAuthority) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertificate sets the certificate property value. Required. The base64 encoded string representing the public certificate.
 func (m *CertificateAuthority) SetCertificate(value []byte)() {
-    if m != nil {
-        m.certificate = value
-    }
+    m.certificate = value
 }
 // SetCertificateRevocationListUrl sets the certificateRevocationListUrl property value. The URL of the certificate revocation list.
 func (m *CertificateAuthority) SetCertificateRevocationListUrl(value *string)() {
-    if m != nil {
-        m.certificateRevocationListUrl = value
-    }
+    m.certificateRevocationListUrl = value
 }
 // SetDeltaCertificateRevocationListUrl sets the deltaCertificateRevocationListUrl property value. The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
 func (m *CertificateAuthority) SetDeltaCertificateRevocationListUrl(value *string)() {
-    if m != nil {
-        m.deltaCertificateRevocationListUrl = value
-    }
+    m.deltaCertificateRevocationListUrl = value
 }
 // SetIsRootAuthority sets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
 func (m *CertificateAuthority) SetIsRootAuthority(value *bool)() {
-    if m != nil {
-        m.isRootAuthority = value
-    }
+    m.isRootAuthority = value
 }
 // SetIssuer sets the issuer property value. The issuer of the certificate, calculated from the certificate value. Read-only.
 func (m *CertificateAuthority) SetIssuer(value *string)() {
-    if m != nil {
-        m.issuer = value
-    }
+    m.issuer = value
 }
 // SetIssuerSki sets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
 func (m *CertificateAuthority) SetIssuerSki(value *string)() {
-    if m != nil {
-        m.issuerSki = value
-    }
+    m.issuerSki = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CertificateAuthority) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

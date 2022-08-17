@@ -68,27 +68,15 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIssues gets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealth) GetIssues()([]ServiceHealthIssueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issues
-    }
+    return m.issues
 }
 // GetService gets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
 func (m *ServiceHealth) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetStatus gets the status property value. The status property
 func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ServiceHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *ServiceHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetIssues sets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealth) SetIssues(value []ServiceHealthIssueable)() {
-    if m != nil {
-        m.issues = value
-    }
+    m.issues = value
 }
 // SetService sets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
 func (m *ServiceHealth) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

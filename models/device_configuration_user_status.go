@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationUserStatus provides operations to manage the admin singleton.
+// DeviceConfigurationUserStatus provides operations to manage the collection of agreement entities.
 type DeviceConfigurationUserStatus struct {
     Entity
     // Devices count for that user.
@@ -34,11 +34,7 @@ func CreateDeviceConfigurationUserStatusFromDiscriminatorValue(parseNode i878a80
 }
 // GetDevicesCount gets the devicesCount property value. Devices count for that user.
 func (m *DeviceConfigurationUserStatus) GetDevicesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devicesCount
-    }
+    return m.devicesCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationUserStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,35 +93,19 @@ func (m *DeviceConfigurationUserStatus) GetFieldDeserializers()(map[string]func(
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceConfigurationUserStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
+    return m.lastReportedDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *DeviceConfigurationUserStatus) GetStatus()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUserDisplayName gets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceConfigurationUserStatus) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationUserStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationUserStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,31 +148,21 @@ func (m *DeviceConfigurationUserStatus) Serialize(writer i878a80d2330e89d2689638
 }
 // SetDevicesCount sets the devicesCount property value. Devices count for that user.
 func (m *DeviceConfigurationUserStatus) SetDevicesCount(value *int32)() {
-    if m != nil {
-        m.devicesCount = value
-    }
+    m.devicesCount = value
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceConfigurationUserStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastReportedDateTime = value
-    }
+    m.lastReportedDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *DeviceConfigurationUserStatus) SetStatus(value *ComplianceStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUserDisplayName sets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceConfigurationUserStatus) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationUserStatus) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

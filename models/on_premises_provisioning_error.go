@@ -35,19 +35,11 @@ func CreateOnPremisesProvisioningErrorFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesProvisioningError) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCategory gets the category property value. Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
 func (m *OnPremisesProvisioningError) GetCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesProvisioningError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,35 +98,19 @@ func (m *OnPremisesProvisioningError) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOccurredDateTime gets the occurredDateTime property value. The date and time at which the error occurred.
 func (m *OnPremisesProvisioningError) GetOccurredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.occurredDateTime
-    }
+    return m.occurredDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OnPremisesProvisioningError) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPropertyCausingError gets the propertyCausingError property value. Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
 func (m *OnPremisesProvisioningError) GetPropertyCausingError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyCausingError
-    }
+    return m.propertyCausingError
 }
 // GetValue gets the value property value. Value of the property causing the error.
 func (m *OnPremisesProvisioningError) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *OnPremisesProvisioningError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *OnPremisesProvisioningError) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesProvisioningError) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCategory sets the category property value. Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
 func (m *OnPremisesProvisioningError) SetCategory(value *string)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetOccurredDateTime sets the occurredDateTime property value. The date and time at which the error occurred.
 func (m *OnPremisesProvisioningError) SetOccurredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.occurredDateTime = value
-    }
+    m.occurredDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OnPremisesProvisioningError) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPropertyCausingError sets the propertyCausingError property value. Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
 func (m *OnPremisesProvisioningError) SetPropertyCausingError(value *string)() {
-    if m != nil {
-        m.propertyCausingError = value
-    }
+    m.propertyCausingError = value
 }
 // SetValue sets the value property value. Value of the property causing the error.
 func (m *OnPremisesProvisioningError) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }
