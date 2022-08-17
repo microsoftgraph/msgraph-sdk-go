@@ -64,27 +64,15 @@ func (m *IosCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosCustomConfiguration) GetPayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
+    return m.payload
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileconfig
 func (m *IosCustomConfiguration) GetPayloadFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadFileName
-    }
+    return m.payloadFileName
 }
 // GetPayloadName gets the payloadName property value. Name that is displayed to the user.
 func (m *IosCustomConfiguration) GetPayloadName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadName
-    }
+    return m.payloadName
 }
 // Serialize serializes information the current object
 func (m *IosCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *IosCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosCustomConfiguration) SetPayload(value []byte)() {
-    if m != nil {
-        m.payload = value
-    }
+    m.payload = value
 }
 // SetPayloadFileName sets the payloadFileName property value. Payload file name (.mobileconfig
 func (m *IosCustomConfiguration) SetPayloadFileName(value *string)() {
-    if m != nil {
-        m.payloadFileName = value
-    }
+    m.payloadFileName = value
 }
 // SetPayloadName sets the payloadName property value. Name that is displayed to the user.
 func (m *IosCustomConfiguration) SetPayloadName(value *string)() {
-    if m != nil {
-        m.payloadName = value
-    }
+    m.payloadName = value
 }

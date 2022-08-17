@@ -52,19 +52,11 @@ func (m *WorkbookChartDataLabelFormat) GetFieldDeserializers()(map[string]func(i
 }
 // GetFill gets the fill property value. Represents the fill format of the current chart data label. Read-only.
 func (m *WorkbookChartDataLabelFormat) GetFill()(WorkbookChartFillable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fill
-    }
+    return m.fill
 }
 // GetFont gets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
 func (m *WorkbookChartDataLabelFormat) GetFont()(WorkbookChartFontable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.font
-    }
+    return m.font
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartDataLabelFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WorkbookChartDataLabelFormat) Serialize(writer i878a80d2330e89d26896388
 }
 // SetFill sets the fill property value. Represents the fill format of the current chart data label. Read-only.
 func (m *WorkbookChartDataLabelFormat) SetFill(value WorkbookChartFillable)() {
-    if m != nil {
-        m.fill = value
-    }
+    m.fill = value
 }
 // SetFont sets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
 func (m *WorkbookChartDataLabelFormat) SetFont(value WorkbookChartFontable)() {
-    if m != nil {
-        m.font = value
-    }
+    m.font = value
 }

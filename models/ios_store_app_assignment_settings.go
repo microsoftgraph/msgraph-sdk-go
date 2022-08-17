@@ -40,11 +40,7 @@ func (m *IosStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosStoreAppAssignmentSettings) GetVpnConfigurationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vpnConfigurationId
-    }
+    return m.vpnConfigurationId
 }
 // Serialize serializes information the current object
 func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosStoreAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
-    if m != nil {
-        m.vpnConfigurationId = value
-    }
+    m.vpnConfigurationId = value
 }

@@ -32,27 +32,15 @@ func CreateFido2KeyRestrictionsFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAaGuids gets the aaGuids property value. A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
 func (m *Fido2KeyRestrictions) GetAaGuids()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aaGuids
-    }
+    return m.aaGuids
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Fido2KeyRestrictions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnforcementType gets the enforcementType property value. Enforcement type. Possible values are: allow, block.
 func (m *Fido2KeyRestrictions) GetEnforcementType()(*Fido2RestrictionEnforcementType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcementType
-    }
+    return m.enforcementType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,19 +93,11 @@ func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsEnforced gets the isEnforced property value. Determines if the configured key enforcement is enabled.
 func (m *Fido2KeyRestrictions) GetIsEnforced()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnforced
-    }
+    return m.isEnforced
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Fido2KeyRestrictions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Fido2KeyRestrictions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,31 +136,21 @@ func (m *Fido2KeyRestrictions) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAaGuids sets the aaGuids property value. A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
 func (m *Fido2KeyRestrictions) SetAaGuids(value []string)() {
-    if m != nil {
-        m.aaGuids = value
-    }
+    m.aaGuids = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Fido2KeyRestrictions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnforcementType sets the enforcementType property value. Enforcement type. Possible values are: allow, block.
 func (m *Fido2KeyRestrictions) SetEnforcementType(value *Fido2RestrictionEnforcementType)() {
-    if m != nil {
-        m.enforcementType = value
-    }
+    m.enforcementType = value
 }
 // SetIsEnforced sets the isEnforced property value. Determines if the configured key enforcement is enabled.
 func (m *Fido2KeyRestrictions) SetIsEnforced(value *bool)() {
-    if m != nil {
-        m.isEnforced = value
-    }
+    m.isEnforced = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Fido2KeyRestrictions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

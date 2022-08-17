@@ -42,27 +42,15 @@ func CreateItemReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemReference) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDriveId gets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.
 func (m *ItemReference) GetDriveId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driveId
-    }
+    return m.driveId
 }
 // GetDriveType gets the driveType property value. Identifies the type of drive. See [drive][] resource for values.
 func (m *ItemReference) GetDriveType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driveType
-    }
+    return m.driveType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,59 +149,31 @@ func (m *ItemReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetId gets the id property value. Unique identifier of the item in the drive. Read-only.
 func (m *ItemReference) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetName gets the name property value. The name of the item being referenced. Read-only.
 func (m *ItemReference) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ItemReference) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
 func (m *ItemReference) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
+    return m.path
 }
 // GetShareId gets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
 func (m *ItemReference) GetShareId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shareId
-    }
+    return m.shareId
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ItemReference) GetSharepointIds()(SharepointIdsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
+    return m.sharepointIds
 }
 // GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 func (m *ItemReference) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
-    }
+    return m.siteId
 }
 // Serialize serializes information the current object
 func (m *ItemReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,61 +241,41 @@ func (m *ItemReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemReference) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDriveId sets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.
 func (m *ItemReference) SetDriveId(value *string)() {
-    if m != nil {
-        m.driveId = value
-    }
+    m.driveId = value
 }
 // SetDriveType sets the driveType property value. Identifies the type of drive. See [drive][] resource for values.
 func (m *ItemReference) SetDriveType(value *string)() {
-    if m != nil {
-        m.driveType = value
-    }
+    m.driveType = value
 }
 // SetId sets the id property value. Unique identifier of the item in the drive. Read-only.
 func (m *ItemReference) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetName sets the name property value. The name of the item being referenced. Read-only.
 func (m *ItemReference) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ItemReference) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPath sets the path property value. Path that can be used to navigate to the item. Read-only.
 func (m *ItemReference) SetPath(value *string)() {
-    if m != nil {
-        m.path = value
-    }
+    m.path = value
 }
 // SetShareId sets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
 func (m *ItemReference) SetShareId(value *string)() {
-    if m != nil {
-        m.shareId = value
-    }
+    m.shareId = value
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ItemReference) SetSharepointIds(value SharepointIdsable)() {
-    if m != nil {
-        m.sharepointIds = value
-    }
+    m.sharepointIds = value
 }
 // SetSiteId sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
 func (m *ItemReference) SetSiteId(value *string)() {
-    if m != nil {
-        m.siteId = value
-    }
+    m.siteId = value
 }

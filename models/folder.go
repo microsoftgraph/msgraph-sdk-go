@@ -30,19 +30,11 @@ func CreateFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Folder) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChildCount gets the childCount property value. Number of children contained immediately within this container.
 func (m *Folder) GetChildCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.childCount
-    }
+    return m.childCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Folder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *Folder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Folder) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetView gets the view property value. A collection of properties defining the recommended view for the folder.
 func (m *Folder) GetView()(FolderViewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.view
-    }
+    return m.view
 }
 // Serialize serializes information the current object
 func (m *Folder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *Folder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Folder) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChildCount sets the childCount property value. Number of children contained immediately within this container.
 func (m *Folder) SetChildCount(value *int32)() {
-    if m != nil {
-        m.childCount = value
-    }
+    m.childCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Folder) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetView sets the view property value. A collection of properties defining the recommended view for the folder.
 func (m *Folder) SetView(value FolderViewable)() {
-    if m != nil {
-        m.view = value
-    }
+    m.view = value
 }

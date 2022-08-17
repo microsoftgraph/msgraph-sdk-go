@@ -40,11 +40,7 @@ func (m *DeleteUserFromSharedAppleDeviceActionResult) GetFieldDeserializers()(ma
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user to be deleted
 func (m *DeleteUserFromSharedAppleDeviceActionResult) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *DeleteUserFromSharedAppleDeviceActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeleteUserFromSharedAppleDeviceActionResult) Serialize(writer i878a80d2
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user to be deleted
 func (m *DeleteUserFromSharedAppleDeviceActionResult) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

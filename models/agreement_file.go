@@ -44,11 +44,7 @@ func (m *AgreementFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetLocalizations gets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFile) GetLocalizations()([]AgreementFileLocalizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizations
-    }
+    return m.localizations
 }
 // Serialize serializes information the current object
 func (m *AgreementFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AgreementFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetLocalizations sets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFile) SetLocalizations(value []AgreementFileLocalizationable)() {
-    if m != nil {
-        m.localizations = value
-    }
+    m.localizations = value
 }

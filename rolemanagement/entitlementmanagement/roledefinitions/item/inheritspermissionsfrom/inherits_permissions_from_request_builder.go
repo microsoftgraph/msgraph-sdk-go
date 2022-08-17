@@ -16,7 +16,7 @@ type InheritsPermissionsFromRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// InheritsPermissionsFromRequestBuilderGetQueryParameters read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// InheritsPermissionsFromRequestBuilderGetQueryParameters read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 type InheritsPermissionsFromRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewInheritsPermissionsFromRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *InheritsPermissionsFromRequestBuilder) Count()(*i6926e639e507c373d4d40562fd3067d220dd5facc12b269171add15f9f48cb7e.CountRequestBuilder) {
     return i6926e639e507c373d4d40562fd3067d220dd5facc12b269171add15f9f48cb7e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// CreateGetRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// CreateGetRequestInformationWithRequestConfiguration read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 func (m *InheritsPermissionsFromRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *InheritsPermissionsFromRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *InheritsPermissionsFromRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 func (m *InheritsPermissionsFromRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+// GetWithRequestConfigurationAndResponseHandler read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 func (m *InheritsPermissionsFromRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InheritsPermissionsFromRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

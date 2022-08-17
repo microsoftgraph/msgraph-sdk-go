@@ -50,59 +50,31 @@ func CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue(parseNode
 }
 // GetAutomaticUpdateMode gets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*AutomaticUpdateMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.automaticUpdateMode
-    }
+    return m.automaticUpdateMode
 }
 // GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*WindowsUpdateType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessReadyUpdatesOnly
-    }
+    return m.businessReadyUpdatesOnly
 }
 // GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deliveryOptimizationMode
-    }
+    return m.deliveryOptimizationMode
 }
 // GetDriversExcluded gets the driversExcluded property value. Exclude Windows update Drivers
 func (m *WindowsUpdateForBusinessConfiguration) GetDriversExcluded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driversExcluded
-    }
+    return m.driversExcluded
 }
 // GetFeatureUpdatesDeferralPeriodInDays gets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesDeferralPeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesDeferralPeriodInDays
-    }
+    return m.featureUpdatesDeferralPeriodInDays
 }
 // GetFeatureUpdatesPaused gets the featureUpdatesPaused property value. Pause Feature Updates
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPaused()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesPaused
-    }
+    return m.featureUpdatesPaused
 }
 // GetFeatureUpdatesPauseExpiryDateTime gets the featureUpdatesPauseExpiryDateTime property value. Feature Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesPauseExpiryDateTime
-    }
+    return m.featureUpdatesPauseExpiryDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -241,51 +213,27 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
 }
 // GetInstallationSchedule gets the installationSchedule property value. Installation schedule
 func (m *WindowsUpdateForBusinessConfiguration) GetInstallationSchedule()(WindowsUpdateInstallScheduleTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installationSchedule
-    }
+    return m.installationSchedule
 }
 // GetMicrosoftUpdateServiceAllowed gets the microsoftUpdateServiceAllowed property value. Allow Microsoft Update Service
 func (m *WindowsUpdateForBusinessConfiguration) GetMicrosoftUpdateServiceAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftUpdateServiceAllowed
-    }
+    return m.microsoftUpdateServiceAllowed
 }
 // GetPrereleaseFeatures gets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*PrereleaseFeatures) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prereleaseFeatures
-    }
+    return m.prereleaseFeatures
 }
 // GetQualityUpdatesDeferralPeriodInDays gets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesDeferralPeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesDeferralPeriodInDays
-    }
+    return m.qualityUpdatesDeferralPeriodInDays
 }
 // GetQualityUpdatesPaused gets the qualityUpdatesPaused property value. Pause Quality Updates
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPaused()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesPaused
-    }
+    return m.qualityUpdatesPaused
 }
 // GetQualityUpdatesPauseExpiryDateTime gets the qualityUpdatesPauseExpiryDateTime property value. Quality Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesPauseExpiryDateTime
-    }
+    return m.qualityUpdatesPauseExpiryDateTime
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -379,79 +327,53 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
 }
 // SetAutomaticUpdateMode sets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) SetAutomaticUpdateMode(value *AutomaticUpdateMode)() {
-    if m != nil {
-        m.automaticUpdateMode = value
-    }
+    m.automaticUpdateMode = value
 }
 // SetBusinessReadyUpdatesOnly sets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) SetBusinessReadyUpdatesOnly(value *WindowsUpdateType)() {
-    if m != nil {
-        m.businessReadyUpdatesOnly = value
-    }
+    m.businessReadyUpdatesOnly = value
 }
 // SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
-    if m != nil {
-        m.deliveryOptimizationMode = value
-    }
+    m.deliveryOptimizationMode = value
 }
 // SetDriversExcluded sets the driversExcluded property value. Exclude Windows update Drivers
 func (m *WindowsUpdateForBusinessConfiguration) SetDriversExcluded(value *bool)() {
-    if m != nil {
-        m.driversExcluded = value
-    }
+    m.driversExcluded = value
 }
 // SetFeatureUpdatesDeferralPeriodInDays sets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesDeferralPeriodInDays(value *int32)() {
-    if m != nil {
-        m.featureUpdatesDeferralPeriodInDays = value
-    }
+    m.featureUpdatesDeferralPeriodInDays = value
 }
 // SetFeatureUpdatesPaused sets the featureUpdatesPaused property value. Pause Feature Updates
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPaused(value *bool)() {
-    if m != nil {
-        m.featureUpdatesPaused = value
-    }
+    m.featureUpdatesPaused = value
 }
 // SetFeatureUpdatesPauseExpiryDateTime sets the featureUpdatesPauseExpiryDateTime property value. Feature Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPauseExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.featureUpdatesPauseExpiryDateTime = value
-    }
+    m.featureUpdatesPauseExpiryDateTime = value
 }
 // SetInstallationSchedule sets the installationSchedule property value. Installation schedule
 func (m *WindowsUpdateForBusinessConfiguration) SetInstallationSchedule(value WindowsUpdateInstallScheduleTypeable)() {
-    if m != nil {
-        m.installationSchedule = value
-    }
+    m.installationSchedule = value
 }
 // SetMicrosoftUpdateServiceAllowed sets the microsoftUpdateServiceAllowed property value. Allow Microsoft Update Service
 func (m *WindowsUpdateForBusinessConfiguration) SetMicrosoftUpdateServiceAllowed(value *bool)() {
-    if m != nil {
-        m.microsoftUpdateServiceAllowed = value
-    }
+    m.microsoftUpdateServiceAllowed = value
 }
 // SetPrereleaseFeatures sets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) SetPrereleaseFeatures(value *PrereleaseFeatures)() {
-    if m != nil {
-        m.prereleaseFeatures = value
-    }
+    m.prereleaseFeatures = value
 }
 // SetQualityUpdatesDeferralPeriodInDays sets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesDeferralPeriodInDays(value *int32)() {
-    if m != nil {
-        m.qualityUpdatesDeferralPeriodInDays = value
-    }
+    m.qualityUpdatesDeferralPeriodInDays = value
 }
 // SetQualityUpdatesPaused sets the qualityUpdatesPaused property value. Pause Quality Updates
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPaused(value *bool)() {
-    if m != nil {
-        m.qualityUpdatesPaused = value
-    }
+    m.qualityUpdatesPaused = value
 }
 // SetQualityUpdatesPauseExpiryDateTime sets the qualityUpdatesPauseExpiryDateTime property value. Quality Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPauseExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.qualityUpdatesPauseExpiryDateTime = value
-    }
+    m.qualityUpdatesPauseExpiryDateTime = value
 }

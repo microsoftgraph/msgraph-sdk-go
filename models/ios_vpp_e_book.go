@@ -39,11 +39,7 @@ func CreateIosVppEBookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAppleId gets the appleId property value. The Apple ID associated with Vpp token.
 func (m *IosVppEBook) GetAppleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleId
-    }
+    return m.appleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,59 +132,31 @@ func (m *IosVppEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetGenres gets the genres property value. Genres.
 func (m *IosVppEBook) GetGenres()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.genres
-    }
+    return m.genres
 }
 // GetLanguage gets the language property value. Language.
 func (m *IosVppEBook) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
+    return m.language
 }
 // GetSeller gets the seller property value. Seller.
 func (m *IosVppEBook) GetSeller()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.seller
-    }
+    return m.seller
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. Total license count.
 func (m *IosVppEBook) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. Used license count.
 func (m *IosVppEBook) GetUsedLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usedLicenseCount
-    }
+    return m.usedLicenseCount
 }
 // GetVppOrganizationName gets the vppOrganizationName property value. The Vpp token's organization name.
 func (m *IosVppEBook) GetVppOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppOrganizationName
-    }
+    return m.vppOrganizationName
 }
 // GetVppTokenId gets the vppTokenId property value. The Vpp token ID.
 func (m *IosVppEBook) GetVppTokenId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenId
-    }
+    return m.vppTokenId
 }
 // Serialize serializes information the current object
 func (m *IosVppEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -248,49 +216,33 @@ func (m *IosVppEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAppleId sets the appleId property value. The Apple ID associated with Vpp token.
 func (m *IosVppEBook) SetAppleId(value *string)() {
-    if m != nil {
-        m.appleId = value
-    }
+    m.appleId = value
 }
 // SetGenres sets the genres property value. Genres.
 func (m *IosVppEBook) SetGenres(value []string)() {
-    if m != nil {
-        m.genres = value
-    }
+    m.genres = value
 }
 // SetLanguage sets the language property value. Language.
 func (m *IosVppEBook) SetLanguage(value *string)() {
-    if m != nil {
-        m.language = value
-    }
+    m.language = value
 }
 // SetSeller sets the seller property value. Seller.
 func (m *IosVppEBook) SetSeller(value *string)() {
-    if m != nil {
-        m.seller = value
-    }
+    m.seller = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. Total license count.
 func (m *IosVppEBook) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. Used license count.
 func (m *IosVppEBook) SetUsedLicenseCount(value *int32)() {
-    if m != nil {
-        m.usedLicenseCount = value
-    }
+    m.usedLicenseCount = value
 }
 // SetVppOrganizationName sets the vppOrganizationName property value. The Vpp token's organization name.
 func (m *IosVppEBook) SetVppOrganizationName(value *string)() {
-    if m != nil {
-        m.vppOrganizationName = value
-    }
+    m.vppOrganizationName = value
 }
 // SetVppTokenId sets the vppTokenId property value. The Vpp token ID.
 func (m *IosVppEBook) SetVppTokenId(value *string)() {
-    if m != nil {
-        m.vppTokenId = value
-    }
+    m.vppTokenId = value
 }

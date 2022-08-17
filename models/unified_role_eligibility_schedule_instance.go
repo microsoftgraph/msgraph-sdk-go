@@ -8,13 +8,13 @@ import (
 // UnifiedRoleEligibilityScheduleInstance 
 type UnifiedRoleEligibilityScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
-    // Time that the roleEligibilityScheduleInstance will expire.
+    // The end date of the schedule instance.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Membership type of the assignment. It can either be Inherited, Direct, or Group.
+    // How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
     memberType *string
-    // Identifier of the parent roleEligibilitySchedule for this instance.
+    // The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
     roleEligibilityScheduleId *string
-    // Time that the roleEligibilityScheduleInstance will start.
+    // When this instance starts.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUnifiedRoleEligibilityScheduleInstance instantiates a new unifiedRoleEligibilityScheduleInstance and sets the default values.
@@ -30,13 +30,9 @@ func NewUnifiedRoleEligibilityScheduleInstance()(*UnifiedRoleEligibilitySchedule
 func CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleEligibilityScheduleInstance(), nil
 }
-// GetEndDateTime gets the endDateTime property value. Time that the roleEligibilityScheduleInstance will expire.
+// GetEndDateTime gets the endDateTime property value. The end date of the schedule instance.
 func (m *UnifiedRoleEligibilityScheduleInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,29 +79,17 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetMemberType gets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
+// GetMemberType gets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleInstance) GetMemberType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberType
-    }
+    return m.memberType
 }
-// GetRoleEligibilityScheduleId gets the roleEligibilityScheduleId property value. Identifier of the parent roleEligibilitySchedule for this instance.
+// GetRoleEligibilityScheduleId gets the roleEligibilityScheduleId property value. The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleInstance) GetRoleEligibilityScheduleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleEligibilityScheduleId
-    }
+    return m.roleEligibilityScheduleId
 }
-// GetStartDateTime gets the startDateTime property value. Time that the roleEligibilityScheduleInstance will start.
+// GetStartDateTime gets the startDateTime property value. When this instance starts.
 func (m *UnifiedRoleEligibilityScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleEligibilityScheduleInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -139,27 +123,19 @@ func (m *UnifiedRoleEligibilityScheduleInstance) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetEndDateTime sets the endDateTime property value. Time that the roleEligibilityScheduleInstance will expire.
+// SetEndDateTime sets the endDateTime property value. The end date of the schedule instance.
 func (m *UnifiedRoleEligibilityScheduleInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
-// SetMemberType sets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
+// SetMemberType sets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleInstance) SetMemberType(value *string)() {
-    if m != nil {
-        m.memberType = value
-    }
+    m.memberType = value
 }
-// SetRoleEligibilityScheduleId sets the roleEligibilityScheduleId property value. Identifier of the parent roleEligibilitySchedule for this instance.
+// SetRoleEligibilityScheduleId sets the roleEligibilityScheduleId property value. The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleInstance) SetRoleEligibilityScheduleId(value *string)() {
-    if m != nil {
-        m.roleEligibilityScheduleId = value
-    }
+    m.roleEligibilityScheduleId = value
 }
-// SetStartDateTime sets the startDateTime property value. Time that the roleEligibilityScheduleInstance will start.
+// SetStartDateTime sets the startDateTime property value. When this instance starts.
 func (m *UnifiedRoleEligibilityScheduleInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

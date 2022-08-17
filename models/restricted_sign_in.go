@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RestrictedSignIn 
+// RestrictedSignIn provides operations to manage the collection of agreementAcceptance entities.
 type RestrictedSignIn struct {
     SignIn
     // The targetTenantId property
     targetTenantId *string
 }
-// NewRestrictedSignIn instantiates a new RestrictedSignIn and sets the default values.
+// NewRestrictedSignIn instantiates a new restrictedSignIn and sets the default values.
 func NewRestrictedSignIn()(*RestrictedSignIn) {
     m := &RestrictedSignIn{
         SignIn: *NewSignIn(),
@@ -40,11 +40,7 @@ func (m *RestrictedSignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetTargetTenantId gets the targetTenantId property value. The targetTenantId property
 func (m *RestrictedSignIn) GetTargetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetTenantId
-    }
+    return m.targetTenantId
 }
 // Serialize serializes information the current object
 func (m *RestrictedSignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *RestrictedSignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetTargetTenantId sets the targetTenantId property value. The targetTenantId property
 func (m *RestrictedSignIn) SetTargetTenantId(value *string)() {
-    if m != nil {
-        m.targetTenantId = value
-    }
+    m.targetTenantId = value
 }

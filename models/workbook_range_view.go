@@ -29,7 +29,7 @@ type WorkbookRangeView struct {
     text Jsonable
     // Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
     values Jsonable
-    // Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+    // Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
     valueTypes Jsonable
 }
 // NewWorkbookRangeView instantiates a new WorkbookRangeView and sets the default values.
@@ -47,19 +47,11 @@ func CreateWorkbookRangeViewFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetCellAddresses gets the cellAddresses property value. Represents the cell addresses
 func (m *WorkbookRangeView) GetCellAddresses()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellAddresses
-    }
+    return m.cellAddresses
 }
 // GetColumnCount gets the columnCount property value. Returns the number of visible columns. Read-only.
 func (m *WorkbookRangeView) GetColumnCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.columnCount
-    }
+    return m.columnCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -192,83 +184,43 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFormulas gets the formulas property value. Represents the formula in A1-style notation.
 func (m *WorkbookRangeView) GetFormulas()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formulas
-    }
+    return m.formulas
 }
 // GetFormulasLocal gets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
 func (m *WorkbookRangeView) GetFormulasLocal()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formulasLocal
-    }
+    return m.formulasLocal
 }
 // GetFormulasR1C1 gets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
 func (m *WorkbookRangeView) GetFormulasR1C1()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formulasR1C1
-    }
+    return m.formulasR1C1
 }
 // GetIndex gets the index property value. Index of the range.
 func (m *WorkbookRangeView) GetIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
+    return m.index
 }
 // GetNumberFormat gets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
 func (m *WorkbookRangeView) GetNumberFormat()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberFormat
-    }
+    return m.numberFormat
 }
 // GetRowCount gets the rowCount property value. Returns the number of visible rows. Read-only.
 func (m *WorkbookRangeView) GetRowCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rowCount
-    }
+    return m.rowCount
 }
 // GetRows gets the rows property value. Represents a collection of range views associated with the range. Read-only. Read-only.
 func (m *WorkbookRangeView) GetRows()([]WorkbookRangeViewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rows
-    }
+    return m.rows
 }
 // GetText gets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
 func (m *WorkbookRangeView) GetText()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // GetValues gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookRangeView) GetValues()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
-// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 func (m *WorkbookRangeView) GetValueTypes()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueTypes
-    }
+    return m.valueTypes
 }
 // Serialize serializes information the current object
 func (m *WorkbookRangeView) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -356,73 +308,49 @@ func (m *WorkbookRangeView) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetCellAddresses sets the cellAddresses property value. Represents the cell addresses
 func (m *WorkbookRangeView) SetCellAddresses(value Jsonable)() {
-    if m != nil {
-        m.cellAddresses = value
-    }
+    m.cellAddresses = value
 }
 // SetColumnCount sets the columnCount property value. Returns the number of visible columns. Read-only.
 func (m *WorkbookRangeView) SetColumnCount(value *int32)() {
-    if m != nil {
-        m.columnCount = value
-    }
+    m.columnCount = value
 }
 // SetFormulas sets the formulas property value. Represents the formula in A1-style notation.
 func (m *WorkbookRangeView) SetFormulas(value Jsonable)() {
-    if m != nil {
-        m.formulas = value
-    }
+    m.formulas = value
 }
 // SetFormulasLocal sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
 func (m *WorkbookRangeView) SetFormulasLocal(value Jsonable)() {
-    if m != nil {
-        m.formulasLocal = value
-    }
+    m.formulasLocal = value
 }
 // SetFormulasR1C1 sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
 func (m *WorkbookRangeView) SetFormulasR1C1(value Jsonable)() {
-    if m != nil {
-        m.formulasR1C1 = value
-    }
+    m.formulasR1C1 = value
 }
 // SetIndex sets the index property value. Index of the range.
 func (m *WorkbookRangeView) SetIndex(value *int32)() {
-    if m != nil {
-        m.index = value
-    }
+    m.index = value
 }
 // SetNumberFormat sets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
 func (m *WorkbookRangeView) SetNumberFormat(value Jsonable)() {
-    if m != nil {
-        m.numberFormat = value
-    }
+    m.numberFormat = value
 }
 // SetRowCount sets the rowCount property value. Returns the number of visible rows. Read-only.
 func (m *WorkbookRangeView) SetRowCount(value *int32)() {
-    if m != nil {
-        m.rowCount = value
-    }
+    m.rowCount = value
 }
 // SetRows sets the rows property value. Represents a collection of range views associated with the range. Read-only. Read-only.
 func (m *WorkbookRangeView) SetRows(value []WorkbookRangeViewable)() {
-    if m != nil {
-        m.rows = value
-    }
+    m.rows = value
 }
 // SetText sets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
 func (m *WorkbookRangeView) SetText(value Jsonable)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }
 // SetValues sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookRangeView) SetValues(value Jsonable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }
-// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 func (m *WorkbookRangeView) SetValueTypes(value Jsonable)() {
-    if m != nil {
-        m.valueTypes = value
-    }
+    m.valueTypes = value
 }

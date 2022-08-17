@@ -8,11 +8,11 @@ import (
 type AuditActivityInitiator struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+    // If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
     app AppIdentityable
     // The OdataType property
     odataType *string
-    // If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+    // If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
     user UserIdentityable
 }
 // NewAuditActivityInitiator instantiates a new auditActivityInitiator and sets the default values.
@@ -30,19 +30,11 @@ func CreateAuditActivityInitiatorFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditActivityInitiator) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetApp gets the app property value. If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+// GetApp gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
 func (m *AuditActivityInitiator) GetApp()(AppIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.app
-    }
+    return m.app
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuditActivityInitiator) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetUser gets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+// GetUser gets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
 func (m *AuditActivityInitiator) GetUser()(UserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
+    return m.user
 }
 // Serialize serializes information the current object
 func (m *AuditActivityInitiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AuditActivityInitiator) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditActivityInitiator) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetApp sets the app property value. If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+// SetApp sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
 func (m *AuditActivityInitiator) SetApp(value AppIdentityable)() {
-    if m != nil {
-        m.app = value
-    }
+    m.app = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuditActivityInitiator) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetUser sets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+// SetUser sets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
 func (m *AuditActivityInitiator) SetUser(value UserIdentityable)() {
-    if m != nil {
-        m.user = value
-    }
+    m.user = value
 }

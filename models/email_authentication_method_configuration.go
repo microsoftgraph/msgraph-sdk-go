@@ -27,11 +27,7 @@ func CreateEmailAuthenticationMethodConfigurationFromDiscriminatorValue(parseNod
 }
 // GetAllowExternalIdToUseEmailOtp gets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
 func (m *EmailAuthenticationMethodConfiguration) GetAllowExternalIdToUseEmailOtp()(*ExternalEmailOtpState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowExternalIdToUseEmailOtp
-    }
+    return m.allowExternalIdToUseEmailOtp
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *EmailAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeTargets
-    }
+    return m.includeTargets
 }
 // Serialize serializes information the current object
 func (m *EmailAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,13 +89,9 @@ func (m *EmailAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetAllowExternalIdToUseEmailOtp sets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
 func (m *EmailAuthenticationMethodConfiguration) SetAllowExternalIdToUseEmailOtp(value *ExternalEmailOtpState)() {
-    if m != nil {
-        m.allowExternalIdToUseEmailOtp = value
-    }
+    m.allowExternalIdToUseEmailOtp = value
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *EmailAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
-    if m != nil {
-        m.includeTargets = value
-    }
+    m.includeTargets = value
 }

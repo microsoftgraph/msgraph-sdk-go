@@ -52,19 +52,11 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetFieldDeserializers()(map[
 }
 // GetIsExpirationRequired gets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetIsExpirationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExpirationRequired
-    }
+    return m.isExpirationRequired
 }
 // GetMaximumDuration gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetMaximumDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumDuration
-    }
+    return m.maximumDuration
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyExpirationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) Serialize(writer i878a80d233
 }
 // SetIsExpirationRequired sets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
 func (m *UnifiedRoleManagementPolicyExpirationRule) SetIsExpirationRequired(value *bool)() {
-    if m != nil {
-        m.isExpirationRequired = value
-    }
+    m.isExpirationRequired = value
 }
 // SetMaximumDuration sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
 func (m *UnifiedRoleManagementPolicyExpirationRule) SetMaximumDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.maximumDuration = value
-    }
+    m.maximumDuration = value
 }

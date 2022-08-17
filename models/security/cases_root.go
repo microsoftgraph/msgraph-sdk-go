@@ -26,11 +26,7 @@ func CreateCasesRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetEdiscoveryCases gets the ediscoveryCases property value. The ediscoveryCases property
 func (m *CasesRoot) GetEdiscoveryCases()([]EdiscoveryCaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ediscoveryCases
-    }
+    return m.ediscoveryCases
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CasesRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,7 +67,5 @@ func (m *CasesRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetEdiscoveryCases sets the ediscoveryCases property value. The ediscoveryCases property
 func (m *CasesRoot) SetEdiscoveryCases(value []EdiscoveryCaseable)() {
-    if m != nil {
-        m.ediscoveryCases = value
-    }
+    m.ediscoveryCases = value
 }

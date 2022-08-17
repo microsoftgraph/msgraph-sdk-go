@@ -29,11 +29,7 @@ func CreateTranslateExchangeIdsPostRequestBodyFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslateExchangeIdsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TranslateExchangeIdsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,27 +72,15 @@ func (m *TranslateExchangeIdsPostRequestBody) GetFieldDeserializers()(map[string
 }
 // GetInputIds gets the inputIds property value. The InputIds property
 func (m *TranslateExchangeIdsPostRequestBody) GetInputIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputIds
-    }
+    return m.inputIds
 }
 // GetSourceIdType gets the sourceIdType property value. The SourceIdType property
 func (m *TranslateExchangeIdsPostRequestBody) GetSourceIdType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceIdType
-    }
+    return m.sourceIdType
 }
 // GetTargetIdType gets the targetIdType property value. The TargetIdType property
 func (m *TranslateExchangeIdsPostRequestBody) GetTargetIdType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetIdType
-    }
+    return m.targetIdType
 }
 // Serialize serializes information the current object
 func (m *TranslateExchangeIdsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,25 +114,17 @@ func (m *TranslateExchangeIdsPostRequestBody) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslateExchangeIdsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetInputIds sets the inputIds property value. The InputIds property
 func (m *TranslateExchangeIdsPostRequestBody) SetInputIds(value []string)() {
-    if m != nil {
-        m.inputIds = value
-    }
+    m.inputIds = value
 }
 // SetSourceIdType sets the sourceIdType property value. The SourceIdType property
 func (m *TranslateExchangeIdsPostRequestBody) SetSourceIdType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat)() {
-    if m != nil {
-        m.sourceIdType = value
-    }
+    m.sourceIdType = value
 }
 // SetTargetIdType sets the targetIdType property value. The TargetIdType property
 func (m *TranslateExchangeIdsPostRequestBody) SetTargetIdType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat)() {
-    if m != nil {
-        m.targetIdType = value
-    }
+    m.targetIdType = value
 }

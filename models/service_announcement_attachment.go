@@ -34,19 +34,11 @@ func CreateServiceAnnouncementAttachmentFromDiscriminatorValue(parseNode i878a80
 }
 // GetContent gets the content property value. The attachment content.
 func (m *ServiceAnnouncementAttachment) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetContentType gets the contentType property value. The contentType property
 func (m *ServiceAnnouncementAttachment) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceAnnouncementAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,27 +97,15 @@ func (m *ServiceAnnouncementAttachment) GetFieldDeserializers()(map[string]func(
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *ServiceAnnouncementAttachment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetName gets the name property value. The name property
 func (m *ServiceAnnouncementAttachment) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetSize gets the size property value. The size property
 func (m *ServiceAnnouncementAttachment) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // Serialize serializes information the current object
 func (m *ServiceAnnouncementAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *ServiceAnnouncementAttachment) Serialize(writer i878a80d2330e89d2689638
 }
 // SetContent sets the content property value. The attachment content.
 func (m *ServiceAnnouncementAttachment) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetContentType sets the contentType property value. The contentType property
 func (m *ServiceAnnouncementAttachment) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *ServiceAnnouncementAttachment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetName sets the name property value. The name property
 func (m *ServiceAnnouncementAttachment) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetSize sets the size property value. The size property
 func (m *ServiceAnnouncementAttachment) SetSize(value *int32)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }

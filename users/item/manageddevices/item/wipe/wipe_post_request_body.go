@@ -30,11 +30,7 @@ func CreateWipePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WipePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WipePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,35 +79,19 @@ func (m *WipePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetKeepEnrollmentData gets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *WipePostRequestBody) GetKeepEnrollmentData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keepEnrollmentData
-    }
+    return m.keepEnrollmentData
 }
 // GetKeepUserData gets the keepUserData property value. The keepUserData property
 func (m *WipePostRequestBody) GetKeepUserData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keepUserData
-    }
+    return m.keepUserData
 }
 // GetMacOsUnlockCode gets the macOsUnlockCode property value. The macOsUnlockCode property
 func (m *WipePostRequestBody) GetMacOsUnlockCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macOsUnlockCode
-    }
+    return m.macOsUnlockCode
 }
 // GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *WipePostRequestBody) GetPersistEsimDataPlan()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.persistEsimDataPlan
-    }
+    return m.persistEsimDataPlan
 }
 // Serialize serializes information the current object
 func (m *WipePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *WipePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WipePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKeepEnrollmentData sets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *WipePostRequestBody) SetKeepEnrollmentData(value *bool)() {
-    if m != nil {
-        m.keepEnrollmentData = value
-    }
+    m.keepEnrollmentData = value
 }
 // SetKeepUserData sets the keepUserData property value. The keepUserData property
 func (m *WipePostRequestBody) SetKeepUserData(value *bool)() {
-    if m != nil {
-        m.keepUserData = value
-    }
+    m.keepUserData = value
 }
 // SetMacOsUnlockCode sets the macOsUnlockCode property value. The macOsUnlockCode property
 func (m *WipePostRequestBody) SetMacOsUnlockCode(value *string)() {
-    if m != nil {
-        m.macOsUnlockCode = value
-    }
+    m.macOsUnlockCode = value
 }
 // SetPersistEsimDataPlan sets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *WipePostRequestBody) SetPersistEsimDataPlan(value *bool)() {
-    if m != nil {
-        m.persistEsimDataPlan = value
-    }
+    m.persistEsimDataPlan = value
 }

@@ -17,7 +17,7 @@ type AssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AssignmentsRequestBuilderGetQueryParameters list of assignments for the user. Nullable.
+// AssignmentsRequestBuilderGetQueryParameters assignments belonging to the user.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AssignmentsRequestBuilder) Count()(*ic462840f51a1acb9c5b02ba3a61cef8d610191760a62045e3643030f08477987.CountRequestBuilder) {
     return ic462840f51a1acb9c5b02ba3a61cef8d610191760a62045e3643030f08477987.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of assignments for the user. Nullable.
+// CreateGetRequestInformation assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of assignments for the user. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *AssignmentsRequestBuilder) Delta()(*i0581b4946b739409974c9d92c5b66410437085c3b99467ef0908dce6267705d1.DeltaRequestBuilder) {
     return i0581b4946b739409974c9d92c5b66410437085c3b99467ef0908dce6267705d1.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get list of assignments for the user. Nullable.
+// Get assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list of assignments for the user. Nullable.
+// GetWithRequestConfigurationAndResponseHandler assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

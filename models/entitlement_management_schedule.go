@@ -33,19 +33,11 @@ func CreateEntitlementManagementScheduleFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpiration gets the expiration property value. When the access should expire.
 func (m *EntitlementManagementSchedule) GetExpiration()(ExpirationPatternable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiration
-    }
+    return m.expiration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,27 +86,15 @@ func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EntitlementManagementSchedule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecurrence gets the recurrence property value. For recurring access reviews.  Not used in access requests.
 func (m *EntitlementManagementSchedule) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *EntitlementManagementSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *EntitlementManagementSchedule) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpiration sets the expiration property value. When the access should expire.
 func (m *EntitlementManagementSchedule) SetExpiration(value ExpirationPatternable)() {
-    if m != nil {
-        m.expiration = value
-    }
+    m.expiration = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EntitlementManagementSchedule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecurrence sets the recurrence property value. For recurring access reviews.  Not used in access requests.
 func (m *EntitlementManagementSchedule) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EntitlementManagementSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

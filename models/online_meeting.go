@@ -5,22 +5,22 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the collection of application entities.
+// OnlineMeeting 
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
     allowAttendeeToEnableCamera *bool
     // Indicates whether attendees can turn on their microphone.
     allowAttendeeToEnableMic *bool
-    // Specifies who can be a presenter in a meeting.
+    // Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
     allowedPresenters *OnlineMeetingPresenters
     // Specifies the mode of meeting chat.
     allowMeetingChat *MeetingChatMode
-    // Indicates if Teams reactions are enabled for the meeting.
+    // Indicates whether Teams reactions are enabled for the meeting.
     allowTeamworkReactions *bool
     // The attendance reports of an online meeting. Read-only.
     attendanceReports []MeetingAttendanceReportable
-    // The content stream of the attendee report of a Teams live event. Read-only.
+    // The content stream of the attendee report of a Microsoft Teams live event. Read-only.
     attendeeReport []byte
     // The phone access (dial-in) information for an online meeting. Read-only.
     audioConferencing AudioConferencingable
@@ -32,19 +32,19 @@ type OnlineMeeting struct {
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The meeting end time in UTC.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The external ID. A custom ID. Optional.
+    // The externalId property
     externalId *string
-    // Indicates whether this is a Teams live event.
+    // Indicates if this is a Teams live event.
     isBroadcast *bool
     // Indicates whether to announce when callers join or leave.
     isEntryExitAnnounced *bool
-    // The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
+    // The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
     joinInformation ItemBodyable
     // The join URL of the online meeting. Read-only.
     joinWebUrl *string
-    // Specifies which participants can bypass the meeting lobby.
+    // Specifies which participants can bypass the meeting   lobby.
     lobbyBypassSettings LobbyBypassSettingsable
-    // The participants associated with the online meeting. This includes the organizer and the attendees.
+    // The participants associated with the online meeting.  This includes the organizer and the attendees.
     participants MeetingParticipantsable
     // Indicates whether to record the meeting automatically.
     recordAutomatically *bool
@@ -55,7 +55,7 @@ type OnlineMeeting struct {
     // The video teleconferencing ID. Read-only.
     videoTeleconferenceId *string
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -70,107 +70,55 @@ func CreateOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAllowAttendeeToEnableCamera gets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
 func (m *OnlineMeeting) GetAllowAttendeeToEnableCamera()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAttendeeToEnableCamera
-    }
+    return m.allowAttendeeToEnableCamera
 }
 // GetAllowAttendeeToEnableMic gets the allowAttendeeToEnableMic property value. Indicates whether attendees can turn on their microphone.
 func (m *OnlineMeeting) GetAllowAttendeeToEnableMic()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAttendeeToEnableMic
-    }
+    return m.allowAttendeeToEnableMic
 }
-// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
 func (m *OnlineMeeting) GetAllowedPresenters()(*OnlineMeetingPresenters) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedPresenters
-    }
+    return m.allowedPresenters
 }
 // GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
 func (m *OnlineMeeting) GetAllowMeetingChat()(*MeetingChatMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowMeetingChat
-    }
+    return m.allowMeetingChat
 }
-// GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
+// GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowTeamworkReactions
-    }
+    return m.allowTeamworkReactions
 }
 // GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
 func (m *OnlineMeeting) GetAttendanceReports()([]MeetingAttendanceReportable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attendanceReports
-    }
+    return m.attendanceReports
 }
-// GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Teams live event. Read-only.
+// GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attendeeReport
-    }
+    return m.attendeeReport
 }
 // GetAudioConferencing gets the audioConferencing property value. The phone access (dial-in) information for an online meeting. Read-only.
 func (m *OnlineMeeting) GetAudioConferencing()(AudioConferencingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.audioConferencing
-    }
+    return m.audioConferencing
 }
 // GetBroadcastSettings gets the broadcastSettings property value. Settings related to a live event.
 func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.broadcastSettings
-    }
+    return m.broadcastSettings
 }
 // GetChatInfo gets the chatInfo property value. The chat information associated with this online meeting.
 func (m *OnlineMeeting) GetChatInfo()(ChatInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chatInfo
-    }
+    return m.chatInfo
 }
 // GetCreationDateTime gets the creationDateTime property value. The meeting creation time in UTC. Read-only.
 func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationDateTime
-    }
+    return m.creationDateTime
 }
 // GetEndDateTime gets the endDateTime property value. The meeting end time in UTC.
 func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
-// GetExternalId gets the externalId property value. The external ID. A custom ID. Optional.
+// GetExternalId gets the externalId property value. The externalId property
 func (m *OnlineMeeting) GetExternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalId
-    }
+    return m.externalId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -411,85 +359,45 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsBroadcast gets the isBroadcast property value. Indicates whether this is a Teams live event.
+// GetIsBroadcast gets the isBroadcast property value. Indicates if this is a Teams live event.
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBroadcast
-    }
+    return m.isBroadcast
 }
 // GetIsEntryExitAnnounced gets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
 func (m *OnlineMeeting) GetIsEntryExitAnnounced()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEntryExitAnnounced
-    }
+    return m.isEntryExitAnnounced
 }
-// GetJoinInformation gets the joinInformation property value. The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
+// GetJoinInformation gets the joinInformation property value. The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
 func (m *OnlineMeeting) GetJoinInformation()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinInformation
-    }
+    return m.joinInformation
 }
 // GetJoinWebUrl gets the joinWebUrl property value. The join URL of the online meeting. Read-only.
 func (m *OnlineMeeting) GetJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinWebUrl
-    }
+    return m.joinWebUrl
 }
-// GetLobbyBypassSettings gets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting lobby.
+// GetLobbyBypassSettings gets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting   lobby.
 func (m *OnlineMeeting) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lobbyBypassSettings
-    }
+    return m.lobbyBypassSettings
 }
-// GetParticipants gets the participants property value. The participants associated with the online meeting. This includes the organizer and the attendees.
+// GetParticipants gets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
 func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+    return m.participants
 }
 // GetRecordAutomatically gets the recordAutomatically property value. Indicates whether to record the meeting automatically.
 func (m *OnlineMeeting) GetRecordAutomatically()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordAutomatically
-    }
+    return m.recordAutomatically
 }
 // GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
 func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetSubject gets the subject property value. The subject of the online meeting.
 func (m *OnlineMeeting) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // GetVideoTeleconferenceId gets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 func (m *OnlineMeeting) GetVideoTeleconferenceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.videoTeleconferenceId
-    }
+    return m.videoTeleconferenceId
 }
 // Serialize serializes information the current object
 func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -645,139 +553,93 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAllowAttendeeToEnableCamera sets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
 func (m *OnlineMeeting) SetAllowAttendeeToEnableCamera(value *bool)() {
-    if m != nil {
-        m.allowAttendeeToEnableCamera = value
-    }
+    m.allowAttendeeToEnableCamera = value
 }
 // SetAllowAttendeeToEnableMic sets the allowAttendeeToEnableMic property value. Indicates whether attendees can turn on their microphone.
 func (m *OnlineMeeting) SetAllowAttendeeToEnableMic(value *bool)() {
-    if m != nil {
-        m.allowAttendeeToEnableMic = value
-    }
+    m.allowAttendeeToEnableMic = value
 }
-// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
 func (m *OnlineMeeting) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
-    if m != nil {
-        m.allowedPresenters = value
-    }
+    m.allowedPresenters = value
 }
 // SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat.
 func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
-    if m != nil {
-        m.allowMeetingChat = value
-    }
+    m.allowMeetingChat = value
 }
-// SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
+// SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
-    if m != nil {
-        m.allowTeamworkReactions = value
-    }
+    m.allowTeamworkReactions = value
 }
 // SetAttendanceReports sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
 func (m *OnlineMeeting) SetAttendanceReports(value []MeetingAttendanceReportable)() {
-    if m != nil {
-        m.attendanceReports = value
-    }
+    m.attendanceReports = value
 }
-// SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Teams live event. Read-only.
+// SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *OnlineMeeting) SetAttendeeReport(value []byte)() {
-    if m != nil {
-        m.attendeeReport = value
-    }
+    m.attendeeReport = value
 }
 // SetAudioConferencing sets the audioConferencing property value. The phone access (dial-in) information for an online meeting. Read-only.
 func (m *OnlineMeeting) SetAudioConferencing(value AudioConferencingable)() {
-    if m != nil {
-        m.audioConferencing = value
-    }
+    m.audioConferencing = value
 }
 // SetBroadcastSettings sets the broadcastSettings property value. Settings related to a live event.
 func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)() {
-    if m != nil {
-        m.broadcastSettings = value
-    }
+    m.broadcastSettings = value
 }
 // SetChatInfo sets the chatInfo property value. The chat information associated with this online meeting.
 func (m *OnlineMeeting) SetChatInfo(value ChatInfoable)() {
-    if m != nil {
-        m.chatInfo = value
-    }
+    m.chatInfo = value
 }
 // SetCreationDateTime sets the creationDateTime property value. The meeting creation time in UTC. Read-only.
 func (m *OnlineMeeting) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.creationDateTime = value
-    }
+    m.creationDateTime = value
 }
 // SetEndDateTime sets the endDateTime property value. The meeting end time in UTC.
 func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
-// SetExternalId sets the externalId property value. The external ID. A custom ID. Optional.
+// SetExternalId sets the externalId property value. The externalId property
 func (m *OnlineMeeting) SetExternalId(value *string)() {
-    if m != nil {
-        m.externalId = value
-    }
+    m.externalId = value
 }
-// SetIsBroadcast sets the isBroadcast property value. Indicates whether this is a Teams live event.
+// SetIsBroadcast sets the isBroadcast property value. Indicates if this is a Teams live event.
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
-    if m != nil {
-        m.isBroadcast = value
-    }
+    m.isBroadcast = value
 }
 // SetIsEntryExitAnnounced sets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
 func (m *OnlineMeeting) SetIsEntryExitAnnounced(value *bool)() {
-    if m != nil {
-        m.isEntryExitAnnounced = value
-    }
+    m.isEntryExitAnnounced = value
 }
-// SetJoinInformation sets the joinInformation property value. The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
+// SetJoinInformation sets the joinInformation property value. The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
 func (m *OnlineMeeting) SetJoinInformation(value ItemBodyable)() {
-    if m != nil {
-        m.joinInformation = value
-    }
+    m.joinInformation = value
 }
 // SetJoinWebUrl sets the joinWebUrl property value. The join URL of the online meeting. Read-only.
 func (m *OnlineMeeting) SetJoinWebUrl(value *string)() {
-    if m != nil {
-        m.joinWebUrl = value
-    }
+    m.joinWebUrl = value
 }
-// SetLobbyBypassSettings sets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting lobby.
+// SetLobbyBypassSettings sets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting   lobby.
 func (m *OnlineMeeting) SetLobbyBypassSettings(value LobbyBypassSettingsable)() {
-    if m != nil {
-        m.lobbyBypassSettings = value
-    }
+    m.lobbyBypassSettings = value
 }
-// SetParticipants sets the participants property value. The participants associated with the online meeting. This includes the organizer and the attendees.
+// SetParticipants sets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
 func (m *OnlineMeeting) SetParticipants(value MeetingParticipantsable)() {
-    if m != nil {
-        m.participants = value
-    }
+    m.participants = value
 }
 // SetRecordAutomatically sets the recordAutomatically property value. Indicates whether to record the meeting automatically.
 func (m *OnlineMeeting) SetRecordAutomatically(value *bool)() {
-    if m != nil {
-        m.recordAutomatically = value
-    }
+    m.recordAutomatically = value
 }
 // SetStartDateTime sets the startDateTime property value. The meeting start time in UTC.
 func (m *OnlineMeeting) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetSubject sets the subject property value. The subject of the online meeting.
 func (m *OnlineMeeting) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }
 // SetVideoTeleconferenceId sets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 func (m *OnlineMeeting) SetVideoTeleconferenceId(value *string)() {
-    if m != nil {
-        m.videoTeleconferenceId = value
-    }
+    m.videoTeleconferenceId = value
 }

@@ -32,27 +32,15 @@ func CreateWindows10NetworkProxyServerFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Windows10NetworkProxyServer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddress gets the address property value. Address to the proxy server. Specify an address in the format [':']
 func (m *Windows10NetworkProxyServer) GetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetExceptions gets the exceptions property value. Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
 func (m *Windows10NetworkProxyServer) GetExceptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exceptions
-    }
+    return m.exceptions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10NetworkProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,19 +93,11 @@ func (m *Windows10NetworkProxyServer) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Windows10NetworkProxyServer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUseForLocalAddresses gets the useForLocalAddresses property value. Specifies whether the proxy server should be used for local (intranet) addresses.
 func (m *Windows10NetworkProxyServer) GetUseForLocalAddresses()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useForLocalAddresses
-    }
+    return m.useForLocalAddresses
 }
 // Serialize serializes information the current object
 func (m *Windows10NetworkProxyServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -155,31 +135,21 @@ func (m *Windows10NetworkProxyServer) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Windows10NetworkProxyServer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddress sets the address property value. Address to the proxy server. Specify an address in the format [':']
 func (m *Windows10NetworkProxyServer) SetAddress(value *string)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetExceptions sets the exceptions property value. Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
 func (m *Windows10NetworkProxyServer) SetExceptions(value []string)() {
-    if m != nil {
-        m.exceptions = value
-    }
+    m.exceptions = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Windows10NetworkProxyServer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUseForLocalAddresses sets the useForLocalAddresses property value. Specifies whether the proxy server should be used for local (intranet) addresses.
 func (m *Windows10NetworkProxyServer) SetUseForLocalAddresses(value *bool)() {
-    if m != nil {
-        m.useForLocalAddresses = value
-    }
+    m.useForLocalAddresses = value
 }

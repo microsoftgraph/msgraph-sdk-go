@@ -33,19 +33,11 @@ func CreateAttendanceIntervalFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendanceInterval) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDurationInSeconds gets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
 func (m *AttendanceInterval) GetDurationInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationInSeconds
-    }
+    return m.durationInSeconds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,27 +86,15 @@ func (m *AttendanceInterval) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetJoinDateTime gets the joinDateTime property value. The time the attendee joined in UTC.
 func (m *AttendanceInterval) GetJoinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinDateTime
-    }
+    return m.joinDateTime
 }
 // GetLeaveDateTime gets the leaveDateTime property value. The time the attendee left in UTC.
 func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.leaveDateTime
-    }
+    return m.leaveDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttendanceInterval) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AttendanceInterval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *AttendanceInterval) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendanceInterval) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDurationInSeconds sets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
 func (m *AttendanceInterval) SetDurationInSeconds(value *int32)() {
-    if m != nil {
-        m.durationInSeconds = value
-    }
+    m.durationInSeconds = value
 }
 // SetJoinDateTime sets the joinDateTime property value. The time the attendee joined in UTC.
 func (m *AttendanceInterval) SetJoinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.joinDateTime = value
-    }
+    m.joinDateTime = value
 }
 // SetLeaveDateTime sets the leaveDateTime property value. The time the attendee left in UTC.
 func (m *AttendanceInterval) SetLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.leaveDateTime = value
-    }
+    m.leaveDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttendanceInterval) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

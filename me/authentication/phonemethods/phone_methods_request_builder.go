@@ -16,7 +16,7 @@ type PhoneMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PhoneMethodsRequestBuilderGetQueryParameters represents the phone registered to a user for authentication.
+// PhoneMethodsRequestBuilderGetQueryParameters the phone numbers registered to a user for authentication.
 type PhoneMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewPhoneMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *PhoneMethodsRequestBuilder) Count()(*iec5c840d6585103886a1d8cd7278c0b16f49f38259a5da2fc26d32de8762066b.CountRequestBuilder) {
     return iec5c840d6585103886a1d8cd7278c0b16f49f38259a5da2fc26d32de8762066b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the phone registered to a user for authentication.
+// CreateGetRequestInformation the phone numbers registered to a user for authentication.
 func (m *PhoneMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the phone registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration the phone numbers registered to a user for authentication.
 func (m *PhoneMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PhoneMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *PhoneMethodsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get represents the phone registered to a user for authentication.
+// Get the phone numbers registered to a user for authentication.
 func (m *PhoneMethodsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the phone registered to a user for authentication.
+// GetWithRequestConfigurationAndResponseHandler the phone numbers registered to a user for authentication.
 func (m *PhoneMethodsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PhoneMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

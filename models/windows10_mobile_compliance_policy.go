@@ -55,27 +55,15 @@ func CreateWindows10MobileCompliancePolicyFromDiscriminatorValue(parseNode i878a
 }
 // GetBitLockerEnabled gets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
 func (m *Windows10MobileCompliancePolicy) GetBitLockerEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitLockerEnabled
-    }
+    return m.bitLockerEnabled
 }
 // GetCodeIntegrityEnabled gets the codeIntegrityEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation.
 func (m *Windows10MobileCompliancePolicy) GetCodeIntegrityEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.codeIntegrityEnabled
-    }
+    return m.codeIntegrityEnabled
 }
 // GetEarlyLaunchAntiMalwareDriverEnabled gets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
 func (m *Windows10MobileCompliancePolicy) GetEarlyLaunchAntiMalwareDriverEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.earlyLaunchAntiMalwareDriverEnabled
-    }
+    return m.earlyLaunchAntiMalwareDriverEnabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10MobileCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -244,107 +232,55 @@ func (m *Windows10MobileCompliancePolicy) GetFieldDeserializers()(map[string]fun
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Windows Phone version.
 func (m *Windows10MobileCompliancePolicy) GetOsMaximumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMaximumVersion
-    }
+    return m.osMaximumVersion
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Windows Phone version.
 func (m *Windows10MobileCompliancePolicy) GetOsMinimumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMinimumVersion
-    }
+    return m.osMinimumVersion
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
 func (m *Windows10MobileCompliancePolicy) GetPasswordBlockSimple()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockSimple
-    }
+    return m.passwordBlockSimple
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before password expiration. Valid values 1 to 255
 func (m *Windows10MobileCompliancePolicy) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows10MobileCompliancePolicy) GetPasswordMinimumCharacterSetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumCharacterSetCount
-    }
+    return m.passwordMinimumCharacterSetCount
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *Windows10MobileCompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *Windows10MobileCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeLock
-    }
+    return m.passwordMinutesOfInactivityBeforeLock
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of.
 func (m *Windows10MobileCompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock Windows Phone device.
 func (m *Windows10MobileCompliancePolicy) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10MobileCompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordRequireToUnlockFromIdle gets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
 func (m *Windows10MobileCompliancePolicy) GetPasswordRequireToUnlockFromIdle()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequireToUnlockFromIdle
-    }
+    return m.passwordRequireToUnlockFromIdle
 }
 // GetSecureBootEnabled gets the secureBootEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
 func (m *Windows10MobileCompliancePolicy) GetSecureBootEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureBootEnabled
-    }
+    return m.secureBootEnabled
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on windows devices.
 func (m *Windows10MobileCompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // Serialize serializes information the current object
 func (m *Windows10MobileCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -453,97 +389,65 @@ func (m *Windows10MobileCompliancePolicy) Serialize(writer i878a80d2330e89d26896
 }
 // SetBitLockerEnabled sets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
 func (m *Windows10MobileCompliancePolicy) SetBitLockerEnabled(value *bool)() {
-    if m != nil {
-        m.bitLockerEnabled = value
-    }
+    m.bitLockerEnabled = value
 }
 // SetCodeIntegrityEnabled sets the codeIntegrityEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation.
 func (m *Windows10MobileCompliancePolicy) SetCodeIntegrityEnabled(value *bool)() {
-    if m != nil {
-        m.codeIntegrityEnabled = value
-    }
+    m.codeIntegrityEnabled = value
 }
 // SetEarlyLaunchAntiMalwareDriverEnabled sets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
 func (m *Windows10MobileCompliancePolicy) SetEarlyLaunchAntiMalwareDriverEnabled(value *bool)() {
-    if m != nil {
-        m.earlyLaunchAntiMalwareDriverEnabled = value
-    }
+    m.earlyLaunchAntiMalwareDriverEnabled = value
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Windows Phone version.
 func (m *Windows10MobileCompliancePolicy) SetOsMaximumVersion(value *string)() {
-    if m != nil {
-        m.osMaximumVersion = value
-    }
+    m.osMaximumVersion = value
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Windows Phone version.
 func (m *Windows10MobileCompliancePolicy) SetOsMinimumVersion(value *string)() {
-    if m != nil {
-        m.osMinimumVersion = value
-    }
+    m.osMinimumVersion = value
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
 func (m *Windows10MobileCompliancePolicy) SetPasswordBlockSimple(value *bool)() {
-    if m != nil {
-        m.passwordBlockSimple = value
-    }
+    m.passwordBlockSimple = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before password expiration. Valid values 1 to 255
 func (m *Windows10MobileCompliancePolicy) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows10MobileCompliancePolicy) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    if m != nil {
-        m.passwordMinimumCharacterSetCount = value
-    }
+    m.passwordMinimumCharacterSetCount = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *Windows10MobileCompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *Windows10MobileCompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeLock = value
-    }
+    m.passwordMinutesOfInactivityBeforeLock = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of.
 func (m *Windows10MobileCompliancePolicy) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Require a password to unlock Windows Phone device.
 func (m *Windows10MobileCompliancePolicy) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10MobileCompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordRequireToUnlockFromIdle sets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
 func (m *Windows10MobileCompliancePolicy) SetPasswordRequireToUnlockFromIdle(value *bool)() {
-    if m != nil {
-        m.passwordRequireToUnlockFromIdle = value
-    }
+    m.passwordRequireToUnlockFromIdle = value
 }
 // SetSecureBootEnabled sets the secureBootEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
 func (m *Windows10MobileCompliancePolicy) SetSecureBootEnabled(value *bool)() {
-    if m != nil {
-        m.secureBootEnabled = value
-    }
+    m.secureBootEnabled = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on windows devices.
 func (m *Windows10MobileCompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }

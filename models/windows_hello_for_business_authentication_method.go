@@ -32,27 +32,15 @@ func CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue(par
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
 func (m *WindowsHelloForBusinessAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDevice gets the device property value. The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 func (m *WindowsHelloForBusinessAuthenticationMethod) GetDevice()(Deviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.device
-    }
+    return m.device
 }
 // GetDisplayName gets the displayName property value. The name of the device on which Windows Hello for Business is registered
 func (m *WindowsHelloForBusinessAuthenticationMethod) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,11 +89,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
 }
 // GetKeyStrength gets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
 func (m *WindowsHelloForBusinessAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyStrength
-    }
+    return m.keyStrength
 }
 // Serialize serializes information the current object
 func (m *WindowsHelloForBusinessAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) Serialize(writer i878a80d2
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDevice sets the device property value. The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetDevice(value Deviceable)() {
-    if m != nil {
-        m.device = value
-    }
+    m.device = value
 }
 // SetDisplayName sets the displayName property value. The name of the device on which Windows Hello for Business is registered
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetKeyStrength sets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
-    if m != nil {
-        m.keyStrength = value
-    }
+    m.keyStrength = value
 }

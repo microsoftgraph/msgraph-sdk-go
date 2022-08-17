@@ -27,11 +27,7 @@ func CreateEducationFeedbackOutcomeFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetFeedback gets the feedback property value. Teacher's written feedback to the student.
 func (m *EducationFeedbackOutcome) GetFeedback()(EducationFeedbackable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedback
-    }
+    return m.feedback
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationFeedbackOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *EducationFeedbackOutcome) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPublishedFeedback gets the publishedFeedback property value. A copy of the feedback property that is made when the grade is released to the student.
 func (m *EducationFeedbackOutcome) GetPublishedFeedback()(EducationFeedbackable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedFeedback
-    }
+    return m.publishedFeedback
 }
 // Serialize serializes information the current object
 func (m *EducationFeedbackOutcome) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EducationFeedbackOutcome) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetFeedback sets the feedback property value. Teacher's written feedback to the student.
 func (m *EducationFeedbackOutcome) SetFeedback(value EducationFeedbackable)() {
-    if m != nil {
-        m.feedback = value
-    }
+    m.feedback = value
 }
 // SetPublishedFeedback sets the publishedFeedback property value. A copy of the feedback property that is made when the grade is released to the student.
 func (m *EducationFeedbackOutcome) SetPublishedFeedback(value EducationFeedbackable)() {
-    if m != nil {
-        m.publishedFeedback = value
-    }
+    m.publishedFeedback = value
 }

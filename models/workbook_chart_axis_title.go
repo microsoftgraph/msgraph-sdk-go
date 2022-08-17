@@ -64,27 +64,15 @@ func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFormat gets the format property value. Represents the formatting of chart axis title. Read-only.
 func (m *WorkbookChartAxisTitle) GetFormat()(WorkbookChartAxisTitleFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetText gets the text property value. Represents the axis title.
 func (m *WorkbookChartAxisTitle) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // GetVisible gets the visible property value. A boolean that specifies the visibility of an axis title.
 func (m *WorkbookChartAxisTitle) GetVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visible
-    }
+    return m.visible
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartAxisTitle) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *WorkbookChartAxisTitle) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetFormat sets the format property value. Represents the formatting of chart axis title. Read-only.
 func (m *WorkbookChartAxisTitle) SetFormat(value WorkbookChartAxisTitleFormatable)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetText sets the text property value. Represents the axis title.
 func (m *WorkbookChartAxisTitle) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }
 // SetVisible sets the visible property value. A boolean that specifies the visibility of an axis title.
 func (m *WorkbookChartAxisTitle) SetVisible(value *bool)() {
-    if m != nil {
-        m.visible = value
-    }
+    m.visible = value
 }

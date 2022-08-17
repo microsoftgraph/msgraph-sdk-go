@@ -29,19 +29,11 @@ func CreateGroupSettingTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDescription gets the description property value. Description of the template.
 func (m *GroupSettingTemplate) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
 func (m *GroupSettingTemplate) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
 func (m *GroupSettingTemplate) GetValues()([]SettingTemplateValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *GroupSettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *GroupSettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDescription sets the description property value. Description of the template.
 func (m *GroupSettingTemplate) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
 func (m *GroupSettingTemplate) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
 func (m *GroupSettingTemplate) SetValues(value []SettingTemplateValueable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

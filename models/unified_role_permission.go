@@ -8,7 +8,7 @@ import (
 type UnifiedRolePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Set of tasks that can be performed on a resource.
+    // Set of tasks that can be performed on a resource. Required.
     allowedResourceActions []string
     // Optional constraints that must be met for the permission to be effective.
     condition *string
@@ -32,35 +32,19 @@ func CreateUnifiedRolePermissionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRolePermission) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAllowedResourceActions gets the allowedResourceActions property value. Set of tasks that can be performed on a resource.
+// GetAllowedResourceActions gets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
 func (m *UnifiedRolePermission) GetAllowedResourceActions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedResourceActions
-    }
+    return m.allowedResourceActions
 }
 // GetCondition gets the condition property value. Optional constraints that must be met for the permission to be effective.
 func (m *UnifiedRolePermission) GetCondition()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.condition
-    }
+    return m.condition
 }
 // GetExcludedResourceActions gets the excludedResourceActions property value. Set of tasks that may not be performed on a resource. Not yet supported.
 func (m *UnifiedRolePermission) GetExcludedResourceActions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludedResourceActions
-    }
+    return m.excludedResourceActions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,11 +101,7 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnifiedRolePermission) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *UnifiedRolePermission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *UnifiedRolePermission) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRolePermission) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAllowedResourceActions sets the allowedResourceActions property value. Set of tasks that can be performed on a resource.
+// SetAllowedResourceActions sets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
 func (m *UnifiedRolePermission) SetAllowedResourceActions(value []string)() {
-    if m != nil {
-        m.allowedResourceActions = value
-    }
+    m.allowedResourceActions = value
 }
 // SetCondition sets the condition property value. Optional constraints that must be met for the permission to be effective.
 func (m *UnifiedRolePermission) SetCondition(value *string)() {
-    if m != nil {
-        m.condition = value
-    }
+    m.condition = value
 }
 // SetExcludedResourceActions sets the excludedResourceActions property value. Set of tasks that may not be performed on a resource. Not yet supported.
 func (m *UnifiedRolePermission) SetExcludedResourceActions(value []string)() {
-    if m != nil {
-        m.excludedResourceActions = value
-    }
+    m.excludedResourceActions = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnifiedRolePermission) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

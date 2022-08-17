@@ -30,19 +30,11 @@ func CreateIntegerRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntegerRange) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnd gets the end property value. The inclusive upper bound of the integer range.
 func (m *IntegerRange) GetEnd()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.end
-    }
+    return m.end
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IntegerRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IntegerRange) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStart gets the start property value. The inclusive lower bound of the integer range.
 func (m *IntegerRange) GetStart()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
-    }
+    return m.start
 }
 // Serialize serializes information the current object
 func (m *IntegerRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *IntegerRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntegerRange) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnd sets the end property value. The inclusive upper bound of the integer range.
 func (m *IntegerRange) SetEnd(value *int64)() {
-    if m != nil {
-        m.end = value
-    }
+    m.end = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IntegerRange) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStart sets the start property value. The inclusive lower bound of the integer range.
 func (m *IntegerRange) SetStart(value *int64)() {
-    if m != nil {
-        m.start = value
-    }
+    m.start = value
 }

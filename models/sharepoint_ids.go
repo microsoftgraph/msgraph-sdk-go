@@ -40,11 +40,7 @@ func CreateSharepointIdsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharepointIds) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharepointIds) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,67 +129,35 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetListId gets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
 func (m *SharepointIds) GetListId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listId
-    }
+    return m.listId
 }
 // GetListItemId gets the listItemId property value. An integer identifier for the item within the containing list.
 func (m *SharepointIds) GetListItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listItemId
-    }
+    return m.listItemId
 }
 // GetListItemUniqueId gets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
 func (m *SharepointIds) GetListItemUniqueId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listItemUniqueId
-    }
+    return m.listItemUniqueId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharepointIds) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSiteId gets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
 func (m *SharepointIds) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
-    }
+    return m.siteId
 }
 // GetSiteUrl gets the siteUrl property value. The SharePoint URL for the site that contains the item.
 func (m *SharepointIds) GetSiteUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteUrl
-    }
+    return m.siteUrl
 }
 // GetTenantId gets the tenantId property value. The unique identifier (guid) for the tenancy.
 func (m *SharepointIds) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetWebId gets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
 func (m *SharepointIds) GetWebId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webId
-    }
+    return m.webId
 }
 // Serialize serializes information the current object
 func (m *SharepointIds) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,55 +219,37 @@ func (m *SharepointIds) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharepointIds) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetListId sets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
 func (m *SharepointIds) SetListId(value *string)() {
-    if m != nil {
-        m.listId = value
-    }
+    m.listId = value
 }
 // SetListItemId sets the listItemId property value. An integer identifier for the item within the containing list.
 func (m *SharepointIds) SetListItemId(value *string)() {
-    if m != nil {
-        m.listItemId = value
-    }
+    m.listItemId = value
 }
 // SetListItemUniqueId sets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
 func (m *SharepointIds) SetListItemUniqueId(value *string)() {
-    if m != nil {
-        m.listItemUniqueId = value
-    }
+    m.listItemUniqueId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharepointIds) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSiteId sets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
 func (m *SharepointIds) SetSiteId(value *string)() {
-    if m != nil {
-        m.siteId = value
-    }
+    m.siteId = value
 }
 // SetSiteUrl sets the siteUrl property value. The SharePoint URL for the site that contains the item.
 func (m *SharepointIds) SetSiteUrl(value *string)() {
-    if m != nil {
-        m.siteUrl = value
-    }
+    m.siteUrl = value
 }
 // SetTenantId sets the tenantId property value. The unique identifier (guid) for the tenancy.
 func (m *SharepointIds) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetWebId sets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
 func (m *SharepointIds) SetWebId(value *string)() {
-    if m != nil {
-        m.webId = value
-    }
+    m.webId = value
 }

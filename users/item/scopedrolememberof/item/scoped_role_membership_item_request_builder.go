@@ -22,7 +22,7 @@ type ScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ScopedRoleMembershipItemRequestBuilderGetQueryParameters the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// ScopedRoleMembershipItemRequestBuilderGetQueryParameters get scopedRoleMemberOf from users
 type ScopedRoleMembershipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ScopedRoleMembershipItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// CreateGetRequestInformation get scopedRoleMemberOf from users
 func (m *ScopedRoleMembershipItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get scopedRoleMemberOf from users
 func (m *ScopedRoleMembershipItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ScopedRoleMembershipItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// Get get scopedRoleMemberOf from users
 func (m *ScopedRoleMembershipItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get scopedRoleMemberOf from users
 func (m *ScopedRoleMembershipItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ScopedRoleMembershipItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

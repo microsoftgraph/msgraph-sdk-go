@@ -89,171 +89,87 @@ func CreateWindows81GeneralConfigurationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccountsBlockAddingNonMicrosoftAccountEmail gets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
 func (m *Windows81GeneralConfiguration) GetAccountsBlockAddingNonMicrosoftAccountEmail()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountsBlockAddingNonMicrosoftAccountEmail
-    }
+    return m.accountsBlockAddingNonMicrosoftAccountEmail
 }
 // GetApplyOnlyToWindows81 gets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *Windows81GeneralConfiguration) GetApplyOnlyToWindows81()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyOnlyToWindows81
-    }
+    return m.applyOnlyToWindows81
 }
 // GetBrowserBlockAutofill gets the browserBlockAutofill property value. Indicates whether or not to block auto fill.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockAutofill()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockAutofill
-    }
+    return m.browserBlockAutofill
 }
 // GetBrowserBlockAutomaticDetectionOfIntranetSites gets the browserBlockAutomaticDetectionOfIntranetSites property value. Indicates whether or not to block automatic detection of Intranet sites.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockAutomaticDetectionOfIntranetSites()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockAutomaticDetectionOfIntranetSites
-    }
+    return m.browserBlockAutomaticDetectionOfIntranetSites
 }
 // GetBrowserBlockEnterpriseModeAccess gets the browserBlockEnterpriseModeAccess property value. Indicates whether or not to block enterprise mode access.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockEnterpriseModeAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockEnterpriseModeAccess
-    }
+    return m.browserBlockEnterpriseModeAccess
 }
 // GetBrowserBlockJavaScript gets the browserBlockJavaScript property value. Indicates whether or not to Block the user from using JavaScript.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockJavaScript()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockJavaScript
-    }
+    return m.browserBlockJavaScript
 }
 // GetBrowserBlockPlugins gets the browserBlockPlugins property value. Indicates whether or not to block plug-ins.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockPlugins()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockPlugins
-    }
+    return m.browserBlockPlugins
 }
 // GetBrowserBlockPopups gets the browserBlockPopups property value. Indicates whether or not to block popups.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockPopups()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockPopups
-    }
+    return m.browserBlockPopups
 }
 // GetBrowserBlockSendingDoNotTrackHeader gets the browserBlockSendingDoNotTrackHeader property value. Indicates whether or not to Block the user from sending the do not track header.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockSendingDoNotTrackHeader()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockSendingDoNotTrackHeader
-    }
+    return m.browserBlockSendingDoNotTrackHeader
 }
 // GetBrowserBlockSingleWordEntryOnIntranetSites gets the browserBlockSingleWordEntryOnIntranetSites property value. Indicates whether or not to block a single word entry on Intranet sites.
 func (m *Windows81GeneralConfiguration) GetBrowserBlockSingleWordEntryOnIntranetSites()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserBlockSingleWordEntryOnIntranetSites
-    }
+    return m.browserBlockSingleWordEntryOnIntranetSites
 }
 // GetBrowserEnterpriseModeSiteListLocation gets the browserEnterpriseModeSiteListLocation property value. The enterprise mode site list location. Could be a local file, local network or http location.
 func (m *Windows81GeneralConfiguration) GetBrowserEnterpriseModeSiteListLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserEnterpriseModeSiteListLocation
-    }
+    return m.browserEnterpriseModeSiteListLocation
 }
 // GetBrowserInternetSecurityLevel gets the browserInternetSecurityLevel property value. Possible values for internet site security level.
 func (m *Windows81GeneralConfiguration) GetBrowserInternetSecurityLevel()(*InternetSiteSecurityLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserInternetSecurityLevel
-    }
+    return m.browserInternetSecurityLevel
 }
 // GetBrowserIntranetSecurityLevel gets the browserIntranetSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) GetBrowserIntranetSecurityLevel()(*SiteSecurityLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserIntranetSecurityLevel
-    }
+    return m.browserIntranetSecurityLevel
 }
 // GetBrowserLoggingReportLocation gets the browserLoggingReportLocation property value. The logging report location.
 func (m *Windows81GeneralConfiguration) GetBrowserLoggingReportLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserLoggingReportLocation
-    }
+    return m.browserLoggingReportLocation
 }
 // GetBrowserRequireFirewall gets the browserRequireFirewall property value. Indicates whether or not to require a firewall.
 func (m *Windows81GeneralConfiguration) GetBrowserRequireFirewall()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserRequireFirewall
-    }
+    return m.browserRequireFirewall
 }
 // GetBrowserRequireFraudWarning gets the browserRequireFraudWarning property value. Indicates whether or not to require fraud warning.
 func (m *Windows81GeneralConfiguration) GetBrowserRequireFraudWarning()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserRequireFraudWarning
-    }
+    return m.browserRequireFraudWarning
 }
 // GetBrowserRequireHighSecurityForRestrictedSites gets the browserRequireHighSecurityForRestrictedSites property value. Indicates whether or not to require high security for restricted sites.
 func (m *Windows81GeneralConfiguration) GetBrowserRequireHighSecurityForRestrictedSites()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserRequireHighSecurityForRestrictedSites
-    }
+    return m.browserRequireHighSecurityForRestrictedSites
 }
 // GetBrowserRequireSmartScreen gets the browserRequireSmartScreen property value. Indicates whether or not to require the user to use the smart screen filter.
 func (m *Windows81GeneralConfiguration) GetBrowserRequireSmartScreen()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserRequireSmartScreen
-    }
+    return m.browserRequireSmartScreen
 }
 // GetBrowserTrustedSitesSecurityLevel gets the browserTrustedSitesSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) GetBrowserTrustedSitesSecurityLevel()(*SiteSecurityLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browserTrustedSitesSecurityLevel
-    }
+    return m.browserTrustedSitesSecurityLevel
 }
 // GetCellularBlockDataRoaming gets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
 func (m *Windows81GeneralConfiguration) GetCellularBlockDataRoaming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockDataRoaming
-    }
+    return m.cellularBlockDataRoaming
 }
 // GetDiagnosticsBlockDataSubmission gets the diagnosticsBlockDataSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *Windows81GeneralConfiguration) GetDiagnosticsBlockDataSubmission()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.diagnosticsBlockDataSubmission
-    }
+    return m.diagnosticsBlockDataSubmission
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81GeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -592,99 +508,51 @@ func (m *Windows81GeneralConfiguration) GetFieldDeserializers()(map[string]func(
 }
 // GetPasswordBlockPicturePasswordAndPin gets the passwordBlockPicturePasswordAndPin property value. Indicates whether or not to Block the user from using a pictures password and pin.
 func (m *Windows81GeneralConfiguration) GetPasswordBlockPicturePasswordAndPin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockPicturePasswordAndPin
-    }
+    return m.passwordBlockPicturePasswordAndPin
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Password expiration in days.
 func (m *Windows81GeneralConfiguration) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows81GeneralConfiguration) GetPasswordMinimumCharacterSetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumCharacterSetCount
-    }
+    return m.passwordMinimumCharacterSetCount
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. The minimum password length.
 func (m *Windows81GeneralConfiguration) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. The minutes of inactivity before the screen times out.
 func (m *Windows81GeneralConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passwordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of. Valid values 0 to 24
 func (m *Windows81GeneralConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. The number of sign in failures before factory reset.
 func (m *Windows81GeneralConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetStorageRequireDeviceEncryption gets the storageRequireDeviceEncryption property value. Indicates whether or not to require encryption on a mobile device.
 func (m *Windows81GeneralConfiguration) GetStorageRequireDeviceEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireDeviceEncryption
-    }
+    return m.storageRequireDeviceEncryption
 }
 // GetUpdatesRequireAutomaticUpdates gets the updatesRequireAutomaticUpdates property value. Indicates whether or not to require automatic updates.
 func (m *Windows81GeneralConfiguration) GetUpdatesRequireAutomaticUpdates()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatesRequireAutomaticUpdates
-    }
+    return m.updatesRequireAutomaticUpdates
 }
 // GetUserAccountControlSettings gets the userAccountControlSettings property value. Possible values for Windows user account control settings.
 func (m *Windows81GeneralConfiguration) GetUserAccountControlSettings()(*WindowsUserAccountControlSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccountControlSettings
-    }
+    return m.userAccountControlSettings
 }
 // GetWorkFoldersUrl gets the workFoldersUrl property value. The work folders url.
 func (m *Windows81GeneralConfiguration) GetWorkFoldersUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workFoldersUrl
-    }
+    return m.workFoldersUrl
 }
 // Serialize serializes information the current object
 func (m *Windows81GeneralConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -899,199 +767,133 @@ func (m *Windows81GeneralConfiguration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccountsBlockAddingNonMicrosoftAccountEmail sets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
 func (m *Windows81GeneralConfiguration) SetAccountsBlockAddingNonMicrosoftAccountEmail(value *bool)() {
-    if m != nil {
-        m.accountsBlockAddingNonMicrosoftAccountEmail = value
-    }
+    m.accountsBlockAddingNonMicrosoftAccountEmail = value
 }
 // SetApplyOnlyToWindows81 sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *Windows81GeneralConfiguration) SetApplyOnlyToWindows81(value *bool)() {
-    if m != nil {
-        m.applyOnlyToWindows81 = value
-    }
+    m.applyOnlyToWindows81 = value
 }
 // SetBrowserBlockAutofill sets the browserBlockAutofill property value. Indicates whether or not to block auto fill.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockAutofill(value *bool)() {
-    if m != nil {
-        m.browserBlockAutofill = value
-    }
+    m.browserBlockAutofill = value
 }
 // SetBrowserBlockAutomaticDetectionOfIntranetSites sets the browserBlockAutomaticDetectionOfIntranetSites property value. Indicates whether or not to block automatic detection of Intranet sites.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockAutomaticDetectionOfIntranetSites(value *bool)() {
-    if m != nil {
-        m.browserBlockAutomaticDetectionOfIntranetSites = value
-    }
+    m.browserBlockAutomaticDetectionOfIntranetSites = value
 }
 // SetBrowserBlockEnterpriseModeAccess sets the browserBlockEnterpriseModeAccess property value. Indicates whether or not to block enterprise mode access.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockEnterpriseModeAccess(value *bool)() {
-    if m != nil {
-        m.browserBlockEnterpriseModeAccess = value
-    }
+    m.browserBlockEnterpriseModeAccess = value
 }
 // SetBrowserBlockJavaScript sets the browserBlockJavaScript property value. Indicates whether or not to Block the user from using JavaScript.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockJavaScript(value *bool)() {
-    if m != nil {
-        m.browserBlockJavaScript = value
-    }
+    m.browserBlockJavaScript = value
 }
 // SetBrowserBlockPlugins sets the browserBlockPlugins property value. Indicates whether or not to block plug-ins.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockPlugins(value *bool)() {
-    if m != nil {
-        m.browserBlockPlugins = value
-    }
+    m.browserBlockPlugins = value
 }
 // SetBrowserBlockPopups sets the browserBlockPopups property value. Indicates whether or not to block popups.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockPopups(value *bool)() {
-    if m != nil {
-        m.browserBlockPopups = value
-    }
+    m.browserBlockPopups = value
 }
 // SetBrowserBlockSendingDoNotTrackHeader sets the browserBlockSendingDoNotTrackHeader property value. Indicates whether or not to Block the user from sending the do not track header.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockSendingDoNotTrackHeader(value *bool)() {
-    if m != nil {
-        m.browserBlockSendingDoNotTrackHeader = value
-    }
+    m.browserBlockSendingDoNotTrackHeader = value
 }
 // SetBrowserBlockSingleWordEntryOnIntranetSites sets the browserBlockSingleWordEntryOnIntranetSites property value. Indicates whether or not to block a single word entry on Intranet sites.
 func (m *Windows81GeneralConfiguration) SetBrowserBlockSingleWordEntryOnIntranetSites(value *bool)() {
-    if m != nil {
-        m.browserBlockSingleWordEntryOnIntranetSites = value
-    }
+    m.browserBlockSingleWordEntryOnIntranetSites = value
 }
 // SetBrowserEnterpriseModeSiteListLocation sets the browserEnterpriseModeSiteListLocation property value. The enterprise mode site list location. Could be a local file, local network or http location.
 func (m *Windows81GeneralConfiguration) SetBrowserEnterpriseModeSiteListLocation(value *string)() {
-    if m != nil {
-        m.browserEnterpriseModeSiteListLocation = value
-    }
+    m.browserEnterpriseModeSiteListLocation = value
 }
 // SetBrowserInternetSecurityLevel sets the browserInternetSecurityLevel property value. Possible values for internet site security level.
 func (m *Windows81GeneralConfiguration) SetBrowserInternetSecurityLevel(value *InternetSiteSecurityLevel)() {
-    if m != nil {
-        m.browserInternetSecurityLevel = value
-    }
+    m.browserInternetSecurityLevel = value
 }
 // SetBrowserIntranetSecurityLevel sets the browserIntranetSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) SetBrowserIntranetSecurityLevel(value *SiteSecurityLevel)() {
-    if m != nil {
-        m.browserIntranetSecurityLevel = value
-    }
+    m.browserIntranetSecurityLevel = value
 }
 // SetBrowserLoggingReportLocation sets the browserLoggingReportLocation property value. The logging report location.
 func (m *Windows81GeneralConfiguration) SetBrowserLoggingReportLocation(value *string)() {
-    if m != nil {
-        m.browserLoggingReportLocation = value
-    }
+    m.browserLoggingReportLocation = value
 }
 // SetBrowserRequireFirewall sets the browserRequireFirewall property value. Indicates whether or not to require a firewall.
 func (m *Windows81GeneralConfiguration) SetBrowserRequireFirewall(value *bool)() {
-    if m != nil {
-        m.browserRequireFirewall = value
-    }
+    m.browserRequireFirewall = value
 }
 // SetBrowserRequireFraudWarning sets the browserRequireFraudWarning property value. Indicates whether or not to require fraud warning.
 func (m *Windows81GeneralConfiguration) SetBrowserRequireFraudWarning(value *bool)() {
-    if m != nil {
-        m.browserRequireFraudWarning = value
-    }
+    m.browserRequireFraudWarning = value
 }
 // SetBrowserRequireHighSecurityForRestrictedSites sets the browserRequireHighSecurityForRestrictedSites property value. Indicates whether or not to require high security for restricted sites.
 func (m *Windows81GeneralConfiguration) SetBrowserRequireHighSecurityForRestrictedSites(value *bool)() {
-    if m != nil {
-        m.browserRequireHighSecurityForRestrictedSites = value
-    }
+    m.browserRequireHighSecurityForRestrictedSites = value
 }
 // SetBrowserRequireSmartScreen sets the browserRequireSmartScreen property value. Indicates whether or not to require the user to use the smart screen filter.
 func (m *Windows81GeneralConfiguration) SetBrowserRequireSmartScreen(value *bool)() {
-    if m != nil {
-        m.browserRequireSmartScreen = value
-    }
+    m.browserRequireSmartScreen = value
 }
 // SetBrowserTrustedSitesSecurityLevel sets the browserTrustedSitesSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) SetBrowserTrustedSitesSecurityLevel(value *SiteSecurityLevel)() {
-    if m != nil {
-        m.browserTrustedSitesSecurityLevel = value
-    }
+    m.browserTrustedSitesSecurityLevel = value
 }
 // SetCellularBlockDataRoaming sets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
 func (m *Windows81GeneralConfiguration) SetCellularBlockDataRoaming(value *bool)() {
-    if m != nil {
-        m.cellularBlockDataRoaming = value
-    }
+    m.cellularBlockDataRoaming = value
 }
 // SetDiagnosticsBlockDataSubmission sets the diagnosticsBlockDataSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *Windows81GeneralConfiguration) SetDiagnosticsBlockDataSubmission(value *bool)() {
-    if m != nil {
-        m.diagnosticsBlockDataSubmission = value
-    }
+    m.diagnosticsBlockDataSubmission = value
 }
 // SetPasswordBlockPicturePasswordAndPin sets the passwordBlockPicturePasswordAndPin property value. Indicates whether or not to Block the user from using a pictures password and pin.
 func (m *Windows81GeneralConfiguration) SetPasswordBlockPicturePasswordAndPin(value *bool)() {
-    if m != nil {
-        m.passwordBlockPicturePasswordAndPin = value
-    }
+    m.passwordBlockPicturePasswordAndPin = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Password expiration in days.
 func (m *Windows81GeneralConfiguration) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows81GeneralConfiguration) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    if m != nil {
-        m.passwordMinimumCharacterSetCount = value
-    }
+    m.passwordMinimumCharacterSetCount = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. The minimum password length.
 func (m *Windows81GeneralConfiguration) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. The minutes of inactivity before the screen times out.
 func (m *Windows81GeneralConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of. Valid values 0 to 24
 func (m *Windows81GeneralConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81GeneralConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. The number of sign in failures before factory reset.
 func (m *Windows81GeneralConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetStorageRequireDeviceEncryption sets the storageRequireDeviceEncryption property value. Indicates whether or not to require encryption on a mobile device.
 func (m *Windows81GeneralConfiguration) SetStorageRequireDeviceEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireDeviceEncryption = value
-    }
+    m.storageRequireDeviceEncryption = value
 }
 // SetUpdatesRequireAutomaticUpdates sets the updatesRequireAutomaticUpdates property value. Indicates whether or not to require automatic updates.
 func (m *Windows81GeneralConfiguration) SetUpdatesRequireAutomaticUpdates(value *bool)() {
-    if m != nil {
-        m.updatesRequireAutomaticUpdates = value
-    }
+    m.updatesRequireAutomaticUpdates = value
 }
 // SetUserAccountControlSettings sets the userAccountControlSettings property value. Possible values for Windows user account control settings.
 func (m *Windows81GeneralConfiguration) SetUserAccountControlSettings(value *WindowsUserAccountControlSettings)() {
-    if m != nil {
-        m.userAccountControlSettings = value
-    }
+    m.userAccountControlSettings = value
 }
 // SetWorkFoldersUrl sets the workFoldersUrl property value. The work folders url.
 func (m *Windows81GeneralConfiguration) SetWorkFoldersUrl(value *string)() {
-    if m != nil {
-        m.workFoldersUrl = value
-    }
+    m.workFoldersUrl = value
 }

@@ -38,27 +38,15 @@ func CreateManagedDeviceMobileAppConfigurationDeviceStatusFromDiscriminatorValue
 }
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceGracePeriodExpirationDateTime
-    }
+    return m.complianceGracePeriodExpirationDateTime
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetDeviceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDisplayName
-    }
+    return m.deviceDisplayName
 }
 // GetDeviceModel gets the deviceModel property value. The device model that is being reported
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetDeviceModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceModel
-    }
+    return m.deviceModel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,35 +125,19 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetFieldDeserializers(
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
+    return m.lastReportedDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUserName gets the userName property value. The User Name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -220,43 +192,29 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) Serialize(writer i878a
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.complianceGracePeriodExpirationDateTime = value
-    }
+    m.complianceGracePeriodExpirationDateTime = value
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetDeviceDisplayName(value *string)() {
-    if m != nil {
-        m.deviceDisplayName = value
-    }
+    m.deviceDisplayName = value
 }
 // SetDeviceModel sets the deviceModel property value. The device model that is being reported
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetDeviceModel(value *string)() {
-    if m != nil {
-        m.deviceModel = value
-    }
+    m.deviceModel = value
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastReportedDateTime = value
-    }
+    m.lastReportedDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetStatus(value *ComplianceStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUserName sets the userName property value. The User Name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

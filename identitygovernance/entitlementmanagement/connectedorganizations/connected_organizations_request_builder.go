@@ -16,7 +16,7 @@ type ConnectedOrganizationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ConnectedOrganizationsRequestBuilderGetQueryParameters represents references to a directory or domain of another organization whose users can request access.
+// ConnectedOrganizationsRequestBuilderGetQueryParameters references to a directory or domain of another organization whose users can request access.
 type ConnectedOrganizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewConnectedOrganizationsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ConnectedOrganizationsRequestBuilder) Count()(*i6383a8e947c3a7e7f69dd7f9c50afc04aaec2fbb44ffc27805ee85e20f2caf23.CountRequestBuilder) {
     return i6383a8e947c3a7e7f69dd7f9c50afc04aaec2fbb44ffc27805ee85e20f2caf23.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents references to a directory or domain of another organization whose users can request access.
+// CreateGetRequestInformation references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents references to a directory or domain of another organization whose users can request access.
+// CreateGetRequestInformationWithRequestConfiguration references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ConnectedOrganizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ConnectedOrganizationsRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get represents references to a directory or domain of another organization whose users can request access.
+// Get references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents references to a directory or domain of another organization whose users can request access.
+// GetWithRequestConfigurationAndResponseHandler references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectedOrganizationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

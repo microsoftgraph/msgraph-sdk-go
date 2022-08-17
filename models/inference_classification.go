@@ -44,11 +44,7 @@ func (m *InferenceClassification) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOverrides gets the overrides property value. A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *InferenceClassification) GetOverrides()([]InferenceClassificationOverrideable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overrides
-    }
+    return m.overrides
 }
 // Serialize serializes information the current object
 func (m *InferenceClassification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *InferenceClassification) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetOverrides sets the overrides property value. A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *InferenceClassification) SetOverrides(value []InferenceClassificationOverrideable)() {
-    if m != nil {
-        m.overrides = value
-    }
+    m.overrides = value
 }

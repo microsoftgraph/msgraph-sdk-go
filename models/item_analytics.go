@@ -29,11 +29,7 @@ func CreateItemAnalyticsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAllTime gets the allTime property value. The allTime property
 func (m *ItemAnalytics) GetAllTime()(ItemActivityStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allTime
-    }
+    return m.allTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetItemActivityStats gets the itemActivityStats property value. The itemActivityStats property
 func (m *ItemAnalytics) GetItemActivityStats()([]ItemActivityStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemActivityStats
-    }
+    return m.itemActivityStats
 }
 // GetLastSevenDays gets the lastSevenDays property value. The lastSevenDays property
 func (m *ItemAnalytics) GetLastSevenDays()(ItemActivityStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSevenDays
-    }
+    return m.lastSevenDays
 }
 // Serialize serializes information the current object
 func (m *ItemAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *ItemAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAllTime sets the allTime property value. The allTime property
 func (m *ItemAnalytics) SetAllTime(value ItemActivityStatable)() {
-    if m != nil {
-        m.allTime = value
-    }
+    m.allTime = value
 }
 // SetItemActivityStats sets the itemActivityStats property value. The itemActivityStats property
 func (m *ItemAnalytics) SetItemActivityStats(value []ItemActivityStatable)() {
-    if m != nil {
-        m.itemActivityStats = value
-    }
+    m.itemActivityStats = value
 }
 // SetLastSevenDays sets the lastSevenDays property value. The lastSevenDays property
 func (m *ItemAnalytics) SetLastSevenDays(value ItemActivityStatable)() {
-    if m != nil {
-        m.lastSevenDays = value
-    }
+    m.lastSevenDays = value
 }

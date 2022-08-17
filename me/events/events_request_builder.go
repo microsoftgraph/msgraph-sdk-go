@@ -17,7 +17,7 @@ type EventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EventsRequestBuilderGetQueryParameters the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// EventsRequestBuilderGetQueryParameters the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 type EventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -71,11 +71,11 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *EventsRequestBuilder) Count()(*i1da899d40aee2ed1ca90de52016fa8c4be237c3d6b940cbfa910a3e3d7cca2d8.CountRequestBuilder) {
     return i1da899d40aee2ed1ca90de52016fa8c4be237c3d6b940cbfa910a3e3d7cca2d8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreateGetRequestInformation the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,11 +113,11 @@ func (m *EventsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 func (m *EventsRequestBuilder) Delta()(*ie15d874b5bcea33f7d9bcad18e2db2fe525af2c6393359a2b909ba2d2a99585a.DeltaRequestBuilder) {
     return ie15d874b5bcea33f7d9bcad18e2db2fe525af2c6393359a2b909ba2d2a99585a.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// Get the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

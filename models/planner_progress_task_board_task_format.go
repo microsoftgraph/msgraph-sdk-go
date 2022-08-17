@@ -40,11 +40,7 @@ func (m *PlannerProgressTaskBoardTaskFormat) GetFieldDeserializers()(map[string]
 }
 // GetOrderHint gets the orderHint property value. Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
 func (m *PlannerProgressTaskBoardTaskFormat) GetOrderHint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderHint
-    }
+    return m.orderHint
 }
 // Serialize serializes information the current object
 func (m *PlannerProgressTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *PlannerProgressTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d26
 }
 // SetOrderHint sets the orderHint property value. Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
 func (m *PlannerProgressTaskBoardTaskFormat) SetOrderHint(value *string)() {
-    if m != nil {
-        m.orderHint = value
-    }
+    m.orderHint = value
 }

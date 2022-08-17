@@ -16,7 +16,7 @@ type PasswordMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PasswordMethodsRequestBuilderGetQueryParameters represents the details of the password authentication method registered to a user for authentication.
+// PasswordMethodsRequestBuilderGetQueryParameters represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 type PasswordMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewPasswordMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *PasswordMethodsRequestBuilder) Count()(*i9a22354225cef9d2de7ed94ccdb90cbed99cfa6beb7d9be01e7ca1728491aa24.CountRequestBuilder) {
     return i9a22354225cef9d2de7ed94ccdb90cbed99cfa6beb7d9be01e7ca1728491aa24.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the details of the password authentication method registered to a user for authentication.
+// CreateGetRequestInformation represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the details of the password authentication method registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PasswordMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *PasswordMethodsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get represents the details of the password authentication method registered to a user for authentication.
+// Get represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 func (m *PasswordMethodsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordAuthenticationMethodCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the details of the password authentication method registered to a user for authentication.
+// GetWithRequestConfigurationAndResponseHandler represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 func (m *PasswordMethodsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PasswordMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

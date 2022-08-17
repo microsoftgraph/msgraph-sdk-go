@@ -25,11 +25,7 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValu
 }
 // GetAuthenticationMode gets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMode
-    }
+    return m.authenticationMode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,7 +59,5 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) Serialize(writer i878
 }
 // SetAuthenticationMode sets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetAuthenticationMode(value *MicrosoftAuthenticatorAuthenticationMode)() {
-    if m != nil {
-        m.authenticationMode = value
-    }
+    m.authenticationMode = value
 }

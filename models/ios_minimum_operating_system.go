@@ -40,11 +40,7 @@ func CreateIosMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosMinimumOperatingSystem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,67 +129,35 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetV10_0 gets the v10_0 property value. Version 10.0 or later.
 func (m *IosMinimumOperatingSystem) GetV10_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_0
-    }
+    return m.v10_0
 }
 // GetV11_0 gets the v11_0 property value. Version 11.0 or later.
 func (m *IosMinimumOperatingSystem) GetV11_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v11_0
-    }
+    return m.v11_0
 }
 // GetV12_0 gets the v12_0 property value. Version 12.0 or later.
 func (m *IosMinimumOperatingSystem) GetV12_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v12_0
-    }
+    return m.v12_0
 }
 // GetV13_0 gets the v13_0 property value. Version 13.0 or later.
 func (m *IosMinimumOperatingSystem) GetV13_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v13_0
-    }
+    return m.v13_0
 }
 // GetV14_0 gets the v14_0 property value. Version 14.0 or later.
 func (m *IosMinimumOperatingSystem) GetV14_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v14_0
-    }
+    return m.v14_0
 }
 // GetV8_0 gets the v8_0 property value. Version 8.0 or later.
 func (m *IosMinimumOperatingSystem) GetV8_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v8_0
-    }
+    return m.v8_0
 }
 // GetV9_0 gets the v9_0 property value. Version 9.0 or later.
 func (m *IosMinimumOperatingSystem) GetV9_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v9_0
-    }
+    return m.v9_0
 }
 // Serialize serializes information the current object
 func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,55 +219,37 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosMinimumOperatingSystem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosMinimumOperatingSystem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetV10_0 sets the v10_0 property value. Version 10.0 or later.
 func (m *IosMinimumOperatingSystem) SetV10_0(value *bool)() {
-    if m != nil {
-        m.v10_0 = value
-    }
+    m.v10_0 = value
 }
 // SetV11_0 sets the v11_0 property value. Version 11.0 or later.
 func (m *IosMinimumOperatingSystem) SetV11_0(value *bool)() {
-    if m != nil {
-        m.v11_0 = value
-    }
+    m.v11_0 = value
 }
 // SetV12_0 sets the v12_0 property value. Version 12.0 or later.
 func (m *IosMinimumOperatingSystem) SetV12_0(value *bool)() {
-    if m != nil {
-        m.v12_0 = value
-    }
+    m.v12_0 = value
 }
 // SetV13_0 sets the v13_0 property value. Version 13.0 or later.
 func (m *IosMinimumOperatingSystem) SetV13_0(value *bool)() {
-    if m != nil {
-        m.v13_0 = value
-    }
+    m.v13_0 = value
 }
 // SetV14_0 sets the v14_0 property value. Version 14.0 or later.
 func (m *IosMinimumOperatingSystem) SetV14_0(value *bool)() {
-    if m != nil {
-        m.v14_0 = value
-    }
+    m.v14_0 = value
 }
 // SetV8_0 sets the v8_0 property value. Version 8.0 or later.
 func (m *IosMinimumOperatingSystem) SetV8_0(value *bool)() {
-    if m != nil {
-        m.v8_0 = value
-    }
+    m.v8_0 = value
 }
 // SetV9_0 sets the v9_0 property value. Version 9.0 or later.
 func (m *IosMinimumOperatingSystem) SetV9_0(value *bool)() {
-    if m != nil {
-        m.v9_0 = value
-    }
+    m.v9_0 = value
 }

@@ -30,19 +30,11 @@ func CreateConditionalAccessLocationsFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessLocations) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExcludeLocations gets the excludeLocations property value. Location IDs excluded from scope of policy.
 func (m *ConditionalAccessLocations) GetExcludeLocations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeLocations
-    }
+    return m.excludeLocations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessLocations) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,19 +81,11 @@ func (m *ConditionalAccessLocations) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIncludeLocations gets the includeLocations property value. Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
 func (m *ConditionalAccessLocations) GetIncludeLocations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeLocations
-    }
+    return m.includeLocations
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessLocations) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessLocations) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *ConditionalAccessLocations) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessLocations) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExcludeLocations sets the excludeLocations property value. Location IDs excluded from scope of policy.
 func (m *ConditionalAccessLocations) SetExcludeLocations(value []string)() {
-    if m != nil {
-        m.excludeLocations = value
-    }
+    m.excludeLocations = value
 }
 // SetIncludeLocations sets the includeLocations property value. Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
 func (m *ConditionalAccessLocations) SetIncludeLocations(value []string)() {
-    if m != nil {
-        m.includeLocations = value
-    }
+    m.includeLocations = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessLocations) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

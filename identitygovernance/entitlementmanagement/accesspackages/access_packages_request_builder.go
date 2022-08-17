@@ -17,7 +17,7 @@ type AccessPackagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackagesRequestBuilderGetQueryParameters represents access package objects.
+// AccessPackagesRequestBuilderGetQueryParameters access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *AccessPackagesRequestBuilder) Count()(*if2c87f0cb84c49ad66239bac5ecb558a20b38ee3160042fcf88158d1e49ee8a0.CountRequestBuilder) {
     return if2c87f0cb84c49ad66239bac5ecb558a20b38ee3160042fcf88158d1e49ee8a0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents access package objects.
+// CreateGetRequestInformation access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents access package objects.
+// CreateGetRequestInformationWithRequestConfiguration access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *AccessPackagesRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *AccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3.FilterByCurrentUserWithOnRequestBuilder) {
     return i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get represents access package objects.
+// Get access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackagesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents access package objects.
+// GetWithRequestConfigurationAndResponseHandler access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

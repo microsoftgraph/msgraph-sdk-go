@@ -94,123 +94,63 @@ func CreateWindowsInformationProtectionFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAssignments gets the assignments property value. Navigation property to list of security groups targeted for policy.
 func (m *WindowsInformationProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetAzureRightsManagementServicesAllowed gets the azureRightsManagementServicesAllowed property value. Specifies whether to allow Azure RMS encryption for WIP
 func (m *WindowsInformationProtection) GetAzureRightsManagementServicesAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureRightsManagementServicesAllowed
-    }
+    return m.azureRightsManagementServicesAllowed
 }
 // GetDataRecoveryCertificate gets the dataRecoveryCertificate property value. Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)
 func (m *WindowsInformationProtection) GetDataRecoveryCertificate()(WindowsInformationProtectionDataRecoveryCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataRecoveryCertificate
-    }
+    return m.dataRecoveryCertificate
 }
 // GetEnforcementLevel gets the enforcementLevel property value. Possible values for WIP Protection enforcement levels
 func (m *WindowsInformationProtection) GetEnforcementLevel()(*WindowsInformationProtectionEnforcementLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcementLevel
-    }
+    return m.enforcementLevel
 }
 // GetEnterpriseDomain gets the enterpriseDomain property value. Primary enterprise domain
 func (m *WindowsInformationProtection) GetEnterpriseDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseDomain
-    }
+    return m.enterpriseDomain
 }
 // GetEnterpriseInternalProxyServers gets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
 func (m *WindowsInformationProtection) GetEnterpriseInternalProxyServers()([]WindowsInformationProtectionResourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseInternalProxyServers
-    }
+    return m.enterpriseInternalProxyServers
 }
 // GetEnterpriseIPRanges gets the enterpriseIPRanges property value. Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
 func (m *WindowsInformationProtection) GetEnterpriseIPRanges()([]WindowsInformationProtectionIPRangeCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseIPRanges
-    }
+    return m.enterpriseIPRanges
 }
 // GetEnterpriseIPRangesAreAuthoritative gets the enterpriseIPRangesAreAuthoritative property value. Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
 func (m *WindowsInformationProtection) GetEnterpriseIPRangesAreAuthoritative()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseIPRangesAreAuthoritative
-    }
+    return m.enterpriseIPRangesAreAuthoritative
 }
 // GetEnterpriseNetworkDomainNames gets the enterpriseNetworkDomainNames property value. This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
 func (m *WindowsInformationProtection) GetEnterpriseNetworkDomainNames()([]WindowsInformationProtectionResourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseNetworkDomainNames
-    }
+    return m.enterpriseNetworkDomainNames
 }
 // GetEnterpriseProtectedDomainNames gets the enterpriseProtectedDomainNames property value. List of enterprise domains to be protected
 func (m *WindowsInformationProtection) GetEnterpriseProtectedDomainNames()([]WindowsInformationProtectionResourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseProtectedDomainNames
-    }
+    return m.enterpriseProtectedDomainNames
 }
 // GetEnterpriseProxiedDomains gets the enterpriseProxiedDomains property value. Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
 func (m *WindowsInformationProtection) GetEnterpriseProxiedDomains()([]WindowsInformationProtectionProxiedDomainCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseProxiedDomains
-    }
+    return m.enterpriseProxiedDomains
 }
 // GetEnterpriseProxyServers gets the enterpriseProxyServers property value. This is a list of proxy servers. Any server not on this list is considered non-enterprise
 func (m *WindowsInformationProtection) GetEnterpriseProxyServers()([]WindowsInformationProtectionResourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseProxyServers
-    }
+    return m.enterpriseProxyServers
 }
 // GetEnterpriseProxyServersAreAuthoritative gets the enterpriseProxyServersAreAuthoritative property value. Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
 func (m *WindowsInformationProtection) GetEnterpriseProxyServersAreAuthoritative()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseProxyServersAreAuthoritative
-    }
+    return m.enterpriseProxyServersAreAuthoritative
 }
 // GetExemptAppLockerFiles gets the exemptAppLockerFiles property value. Another way to input exempt apps through xml files
 func (m *WindowsInformationProtection) GetExemptAppLockerFiles()([]WindowsInformationProtectionAppLockerFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exemptAppLockerFiles
-    }
+    return m.exemptAppLockerFiles
 }
 // GetExemptApps gets the exemptApps property value. Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.
 func (m *WindowsInformationProtection) GetExemptApps()([]WindowsInformationProtectionAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exemptApps
-    }
+    return m.exemptApps
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -521,83 +461,43 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
 }
 // GetIconsVisible gets the iconsVisible property value. Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
 func (m *WindowsInformationProtection) GetIconsVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iconsVisible
-    }
+    return m.iconsVisible
 }
 // GetIndexingEncryptedStoresOrItemsBlocked gets the indexingEncryptedStoresOrItemsBlocked property value. This switch is for the Windows Search Indexer, to allow or disallow indexing of items
 func (m *WindowsInformationProtection) GetIndexingEncryptedStoresOrItemsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.indexingEncryptedStoresOrItemsBlocked
-    }
+    return m.indexingEncryptedStoresOrItemsBlocked
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *WindowsInformationProtection) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
-    }
+    return m.isAssigned
 }
 // GetNeutralDomainResources gets the neutralDomainResources property value. List of domain names that can used for work or personal resource
 func (m *WindowsInformationProtection) GetNeutralDomainResources()([]WindowsInformationProtectionResourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.neutralDomainResources
-    }
+    return m.neutralDomainResources
 }
 // GetProtectedAppLockerFiles gets the protectedAppLockerFiles property value. Another way to input protected apps through xml files
 func (m *WindowsInformationProtection) GetProtectedAppLockerFiles()([]WindowsInformationProtectionAppLockerFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protectedAppLockerFiles
-    }
+    return m.protectedAppLockerFiles
 }
 // GetProtectedApps gets the protectedApps property value. Protected applications can access enterprise data and the data handled by those applications are protected with encryption
 func (m *WindowsInformationProtection) GetProtectedApps()([]WindowsInformationProtectionAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protectedApps
-    }
+    return m.protectedApps
 }
 // GetProtectionUnderLockConfigRequired gets the protectionUnderLockConfigRequired property value. Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured
 func (m *WindowsInformationProtection) GetProtectionUnderLockConfigRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protectionUnderLockConfigRequired
-    }
+    return m.protectionUnderLockConfigRequired
 }
 // GetRevokeOnUnenrollDisabled gets the revokeOnUnenrollDisabled property value. This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don't revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.
 func (m *WindowsInformationProtection) GetRevokeOnUnenrollDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.revokeOnUnenrollDisabled
-    }
+    return m.revokeOnUnenrollDisabled
 }
 // GetRightsManagementServicesTemplateId gets the rightsManagementServicesTemplateId property value. TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access
 func (m *WindowsInformationProtection) GetRightsManagementServicesTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rightsManagementServicesTemplateId
-    }
+    return m.rightsManagementServicesTemplateId
 }
 // GetSmbAutoEncryptedFileExtensions gets the smbAutoEncryptedFileExtensions property value. Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
 func (m *WindowsInformationProtection) GetSmbAutoEncryptedFileExtensions()([]WindowsInformationProtectionResourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smbAutoEncryptedFileExtensions
-    }
+    return m.smbAutoEncryptedFileExtensions
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -812,151 +712,101 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAssignments sets the assignments property value. Navigation property to list of security groups targeted for policy.
 func (m *WindowsInformationProtection) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetAzureRightsManagementServicesAllowed sets the azureRightsManagementServicesAllowed property value. Specifies whether to allow Azure RMS encryption for WIP
 func (m *WindowsInformationProtection) SetAzureRightsManagementServicesAllowed(value *bool)() {
-    if m != nil {
-        m.azureRightsManagementServicesAllowed = value
-    }
+    m.azureRightsManagementServicesAllowed = value
 }
 // SetDataRecoveryCertificate sets the dataRecoveryCertificate property value. Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)
 func (m *WindowsInformationProtection) SetDataRecoveryCertificate(value WindowsInformationProtectionDataRecoveryCertificateable)() {
-    if m != nil {
-        m.dataRecoveryCertificate = value
-    }
+    m.dataRecoveryCertificate = value
 }
 // SetEnforcementLevel sets the enforcementLevel property value. Possible values for WIP Protection enforcement levels
 func (m *WindowsInformationProtection) SetEnforcementLevel(value *WindowsInformationProtectionEnforcementLevel)() {
-    if m != nil {
-        m.enforcementLevel = value
-    }
+    m.enforcementLevel = value
 }
 // SetEnterpriseDomain sets the enterpriseDomain property value. Primary enterprise domain
 func (m *WindowsInformationProtection) SetEnterpriseDomain(value *string)() {
-    if m != nil {
-        m.enterpriseDomain = value
-    }
+    m.enterpriseDomain = value
 }
 // SetEnterpriseInternalProxyServers sets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
 func (m *WindowsInformationProtection) SetEnterpriseInternalProxyServers(value []WindowsInformationProtectionResourceCollectionable)() {
-    if m != nil {
-        m.enterpriseInternalProxyServers = value
-    }
+    m.enterpriseInternalProxyServers = value
 }
 // SetEnterpriseIPRanges sets the enterpriseIPRanges property value. Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
 func (m *WindowsInformationProtection) SetEnterpriseIPRanges(value []WindowsInformationProtectionIPRangeCollectionable)() {
-    if m != nil {
-        m.enterpriseIPRanges = value
-    }
+    m.enterpriseIPRanges = value
 }
 // SetEnterpriseIPRangesAreAuthoritative sets the enterpriseIPRangesAreAuthoritative property value. Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
 func (m *WindowsInformationProtection) SetEnterpriseIPRangesAreAuthoritative(value *bool)() {
-    if m != nil {
-        m.enterpriseIPRangesAreAuthoritative = value
-    }
+    m.enterpriseIPRangesAreAuthoritative = value
 }
 // SetEnterpriseNetworkDomainNames sets the enterpriseNetworkDomainNames property value. This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
 func (m *WindowsInformationProtection) SetEnterpriseNetworkDomainNames(value []WindowsInformationProtectionResourceCollectionable)() {
-    if m != nil {
-        m.enterpriseNetworkDomainNames = value
-    }
+    m.enterpriseNetworkDomainNames = value
 }
 // SetEnterpriseProtectedDomainNames sets the enterpriseProtectedDomainNames property value. List of enterprise domains to be protected
 func (m *WindowsInformationProtection) SetEnterpriseProtectedDomainNames(value []WindowsInformationProtectionResourceCollectionable)() {
-    if m != nil {
-        m.enterpriseProtectedDomainNames = value
-    }
+    m.enterpriseProtectedDomainNames = value
 }
 // SetEnterpriseProxiedDomains sets the enterpriseProxiedDomains property value. Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
 func (m *WindowsInformationProtection) SetEnterpriseProxiedDomains(value []WindowsInformationProtectionProxiedDomainCollectionable)() {
-    if m != nil {
-        m.enterpriseProxiedDomains = value
-    }
+    m.enterpriseProxiedDomains = value
 }
 // SetEnterpriseProxyServers sets the enterpriseProxyServers property value. This is a list of proxy servers. Any server not on this list is considered non-enterprise
 func (m *WindowsInformationProtection) SetEnterpriseProxyServers(value []WindowsInformationProtectionResourceCollectionable)() {
-    if m != nil {
-        m.enterpriseProxyServers = value
-    }
+    m.enterpriseProxyServers = value
 }
 // SetEnterpriseProxyServersAreAuthoritative sets the enterpriseProxyServersAreAuthoritative property value. Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
 func (m *WindowsInformationProtection) SetEnterpriseProxyServersAreAuthoritative(value *bool)() {
-    if m != nil {
-        m.enterpriseProxyServersAreAuthoritative = value
-    }
+    m.enterpriseProxyServersAreAuthoritative = value
 }
 // SetExemptAppLockerFiles sets the exemptAppLockerFiles property value. Another way to input exempt apps through xml files
 func (m *WindowsInformationProtection) SetExemptAppLockerFiles(value []WindowsInformationProtectionAppLockerFileable)() {
-    if m != nil {
-        m.exemptAppLockerFiles = value
-    }
+    m.exemptAppLockerFiles = value
 }
 // SetExemptApps sets the exemptApps property value. Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.
 func (m *WindowsInformationProtection) SetExemptApps(value []WindowsInformationProtectionAppable)() {
-    if m != nil {
-        m.exemptApps = value
-    }
+    m.exemptApps = value
 }
 // SetIconsVisible sets the iconsVisible property value. Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
 func (m *WindowsInformationProtection) SetIconsVisible(value *bool)() {
-    if m != nil {
-        m.iconsVisible = value
-    }
+    m.iconsVisible = value
 }
 // SetIndexingEncryptedStoresOrItemsBlocked sets the indexingEncryptedStoresOrItemsBlocked property value. This switch is for the Windows Search Indexer, to allow or disallow indexing of items
 func (m *WindowsInformationProtection) SetIndexingEncryptedStoresOrItemsBlocked(value *bool)() {
-    if m != nil {
-        m.indexingEncryptedStoresOrItemsBlocked = value
-    }
+    m.indexingEncryptedStoresOrItemsBlocked = value
 }
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *WindowsInformationProtection) SetIsAssigned(value *bool)() {
-    if m != nil {
-        m.isAssigned = value
-    }
+    m.isAssigned = value
 }
 // SetNeutralDomainResources sets the neutralDomainResources property value. List of domain names that can used for work or personal resource
 func (m *WindowsInformationProtection) SetNeutralDomainResources(value []WindowsInformationProtectionResourceCollectionable)() {
-    if m != nil {
-        m.neutralDomainResources = value
-    }
+    m.neutralDomainResources = value
 }
 // SetProtectedAppLockerFiles sets the protectedAppLockerFiles property value. Another way to input protected apps through xml files
 func (m *WindowsInformationProtection) SetProtectedAppLockerFiles(value []WindowsInformationProtectionAppLockerFileable)() {
-    if m != nil {
-        m.protectedAppLockerFiles = value
-    }
+    m.protectedAppLockerFiles = value
 }
 // SetProtectedApps sets the protectedApps property value. Protected applications can access enterprise data and the data handled by those applications are protected with encryption
 func (m *WindowsInformationProtection) SetProtectedApps(value []WindowsInformationProtectionAppable)() {
-    if m != nil {
-        m.protectedApps = value
-    }
+    m.protectedApps = value
 }
 // SetProtectionUnderLockConfigRequired sets the protectionUnderLockConfigRequired property value. Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured
 func (m *WindowsInformationProtection) SetProtectionUnderLockConfigRequired(value *bool)() {
-    if m != nil {
-        m.protectionUnderLockConfigRequired = value
-    }
+    m.protectionUnderLockConfigRequired = value
 }
 // SetRevokeOnUnenrollDisabled sets the revokeOnUnenrollDisabled property value. This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don't revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.
 func (m *WindowsInformationProtection) SetRevokeOnUnenrollDisabled(value *bool)() {
-    if m != nil {
-        m.revokeOnUnenrollDisabled = value
-    }
+    m.revokeOnUnenrollDisabled = value
 }
 // SetRightsManagementServicesTemplateId sets the rightsManagementServicesTemplateId property value. TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access
 func (m *WindowsInformationProtection) SetRightsManagementServicesTemplateId(value *string)() {
-    if m != nil {
-        m.rightsManagementServicesTemplateId = value
-    }
+    m.rightsManagementServicesTemplateId = value
 }
 // SetSmbAutoEncryptedFileExtensions sets the smbAutoEncryptedFileExtensions property value. Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
 func (m *WindowsInformationProtection) SetSmbAutoEncryptedFileExtensions(value []WindowsInformationProtectionResourceCollectionable)() {
-    if m != nil {
-        m.smbAutoEncryptedFileExtensions = value
-    }
+    m.smbAutoEncryptedFileExtensions = value
 }

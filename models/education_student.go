@@ -12,7 +12,7 @@ type EducationStudent struct {
     birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // ID of the student in the source system.
     externalId *string
-    // Possible values are: female, male, other.
+    // The possible values are: female, male, other, unknownFutureValue.
     gender *EducationGender
     // Current grade level of the student.
     grade *string
@@ -38,27 +38,15 @@ func CreateEducationStudentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBirthDate gets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.birthDate
-    }
+    return m.birthDate
 }
 // GetExternalId gets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) GetExternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalId
-    }
+    return m.externalId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -135,45 +123,25 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetGender gets the gender property value. Possible values are: female, male, other.
+// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) GetGender()(*EducationGender) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gender
-    }
+    return m.gender
 }
 // GetGrade gets the grade property value. Current grade level of the student.
 func (m *EducationStudent) GetGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grade
-    }
+    return m.grade
 }
 // GetGraduationYear gets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) GetGraduationYear()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.graduationYear
-    }
+    return m.graduationYear
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationStudent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStudentNumber gets the studentNumber property value. Student Number.
 func (m *EducationStudent) GetStudentNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.studentNumber
-    }
+    return m.studentNumber
 }
 // Serialize serializes information the current object
 func (m *EducationStudent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *EducationStudent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBirthDate sets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.birthDate = value
-    }
+    m.birthDate = value
 }
 // SetExternalId sets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) SetExternalId(value *string)() {
-    if m != nil {
-        m.externalId = value
-    }
+    m.externalId = value
 }
-// SetGender sets the gender property value. Possible values are: female, male, other.
+// SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
-    if m != nil {
-        m.gender = value
-    }
+    m.gender = value
 }
 // SetGrade sets the grade property value. Current grade level of the student.
 func (m *EducationStudent) SetGrade(value *string)() {
-    if m != nil {
-        m.grade = value
-    }
+    m.grade = value
 }
 // SetGraduationYear sets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) SetGraduationYear(value *string)() {
-    if m != nil {
-        m.graduationYear = value
-    }
+    m.graduationYear = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationStudent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStudentNumber sets the studentNumber property value. Student Number.
 func (m *EducationStudent) SetStudentNumber(value *string)() {
-    if m != nil {
-        m.studentNumber = value
-    }
+    m.studentNumber = value
 }

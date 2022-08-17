@@ -29,19 +29,11 @@ func CreateEmailFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetContentData gets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
 func (m *EmailFileAssessmentRequest) GetContentData()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentData
-    }
+    return m.contentData
 }
 // GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 func (m *EmailFileAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationRoutingReason
-    }
+    return m.destinationRoutingReason
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailFileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *EmailFileAssessmentRequest) GetFieldDeserializers()(map[string]func(i87
 }
 // GetRecipientEmail gets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
 func (m *EmailFileAssessmentRequest) GetRecipientEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientEmail
-    }
+    return m.recipientEmail
 }
 // Serialize serializes information the current object
 func (m *EmailFileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *EmailFileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetContentData sets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
 func (m *EmailFileAssessmentRequest) SetContentData(value *string)() {
-    if m != nil {
-        m.contentData = value
-    }
+    m.contentData = value
 }
 // SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 func (m *EmailFileAssessmentRequest) SetDestinationRoutingReason(value *MailDestinationRoutingReason)() {
-    if m != nil {
-        m.destinationRoutingReason = value
-    }
+    m.destinationRoutingReason = value
 }
 // SetRecipientEmail sets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
 func (m *EmailFileAssessmentRequest) SetRecipientEmail(value *string)() {
-    if m != nil {
-        m.recipientEmail = value
-    }
+    m.recipientEmail = value
 }

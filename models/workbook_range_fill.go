@@ -25,11 +25,7 @@ func CreateWorkbookRangeFillFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetColor gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')
 func (m *WorkbookRangeFill) GetColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookRangeFill) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *WorkbookRangeFill) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetColor sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')
 func (m *WorkbookRangeFill) SetColor(value *string)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }

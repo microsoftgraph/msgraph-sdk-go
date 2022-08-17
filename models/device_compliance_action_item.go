@@ -31,11 +31,7 @@ func CreateDeviceComplianceActionItemFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetActionType gets the actionType property value. Scheduled Action Type Enum
 func (m *DeviceComplianceActionItem) GetActionType()(*DeviceComplianceActionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionType
-    }
+    return m.actionType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,27 +84,15 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(i87
 }
 // GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceComplianceActionItem) GetGracePeriodHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gracePeriodHours
-    }
+    return m.gracePeriodHours
 }
 // GetNotificationMessageCCList gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to.
 func (m *DeviceComplianceActionItem) GetNotificationMessageCCList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationMessageCCList
-    }
+    return m.notificationMessageCCList
 }
 // GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceComplianceActionItem) GetNotificationTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTemplateId
-    }
+    return m.notificationTemplateId
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceActionItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -145,25 +129,17 @@ func (m *DeviceComplianceActionItem) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetActionType sets the actionType property value. Scheduled Action Type Enum
 func (m *DeviceComplianceActionItem) SetActionType(value *DeviceComplianceActionType)() {
-    if m != nil {
-        m.actionType = value
-    }
+    m.actionType = value
 }
 // SetGracePeriodHours sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceComplianceActionItem) SetGracePeriodHours(value *int32)() {
-    if m != nil {
-        m.gracePeriodHours = value
-    }
+    m.gracePeriodHours = value
 }
 // SetNotificationMessageCCList sets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to.
 func (m *DeviceComplianceActionItem) SetNotificationMessageCCList(value []string)() {
-    if m != nil {
-        m.notificationMessageCCList = value
-    }
+    m.notificationMessageCCList = value
 }
 // SetNotificationTemplateId sets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceComplianceActionItem) SetNotificationTemplateId(value *string)() {
-    if m != nil {
-        m.notificationTemplateId = value
-    }
+    m.notificationTemplateId = value
 }

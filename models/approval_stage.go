@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalStage provides operations to manage the admin singleton.
+// ApprovalStage provides operations to manage the collection of agreement entities.
 type ApprovalStage struct {
     Entity
     // Indicates whether the stage is assigned to the calling user to review. Read-only.
@@ -14,7 +14,7 @@ type ApprovalStage struct {
     displayName *string
     // The justification associated with the approval stage decision.
     justification *string
-    // The identifier of the reviewer. Read-only.
+    // The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
     reviewedBy Identityable
     // The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     reviewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -38,19 +38,11 @@ func CreateApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAssignedToMe gets the assignedToMe property value. Indicates whether the stage is assigned to the calling user to review. Read-only.
 func (m *ApprovalStage) GetAssignedToMe()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedToMe
-    }
+    return m.assignedToMe
 }
 // GetDisplayName gets the displayName property value. The label provided by the policy creator to identify an approval stage. Read-only.
 func (m *ApprovalStage) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,43 +121,23 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetJustification gets the justification property value. The justification associated with the approval stage decision.
 func (m *ApprovalStage) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
+    return m.justification
 }
-// GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer. Read-only.
+// GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
 func (m *ApprovalStage) GetReviewedBy()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedBy
-    }
+    return m.reviewedBy
 }
 // GetReviewedDateTime gets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ApprovalStage) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedDateTime
-    }
+    return m.reviewedDateTime
 }
 // GetReviewResult gets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
 func (m *ApprovalStage) GetReviewResult()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewResult
-    }
+    return m.reviewResult
 }
 // GetStatus gets the status property value. The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
 func (m *ApprovalStage) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,43 +191,29 @@ func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAssignedToMe sets the assignedToMe property value. Indicates whether the stage is assigned to the calling user to review. Read-only.
 func (m *ApprovalStage) SetAssignedToMe(value *bool)() {
-    if m != nil {
-        m.assignedToMe = value
-    }
+    m.assignedToMe = value
 }
 // SetDisplayName sets the displayName property value. The label provided by the policy creator to identify an approval stage. Read-only.
 func (m *ApprovalStage) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetJustification sets the justification property value. The justification associated with the approval stage decision.
 func (m *ApprovalStage) SetJustification(value *string)() {
-    if m != nil {
-        m.justification = value
-    }
+    m.justification = value
 }
-// SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. Read-only.
+// SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
 func (m *ApprovalStage) SetReviewedBy(value Identityable)() {
-    if m != nil {
-        m.reviewedBy = value
-    }
+    m.reviewedBy = value
 }
 // SetReviewedDateTime sets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ApprovalStage) SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.reviewedDateTime = value
-    }
+    m.reviewedDateTime = value
 }
 // SetReviewResult sets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
 func (m *ApprovalStage) SetReviewResult(value *string)() {
-    if m != nil {
-        m.reviewResult = value
-    }
+    m.reviewResult = value
 }
 // SetStatus sets the status property value. The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
 func (m *ApprovalStage) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

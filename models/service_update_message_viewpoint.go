@@ -32,11 +32,7 @@ func CreateServiceUpdateMessageViewpointFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceUpdateMessageViewpoint) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(
 }
 // GetIsArchived gets the isArchived property value. Indicates whether the user archived the message.
 func (m *ServiceUpdateMessageViewpoint) GetIsArchived()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isArchived
-    }
+    return m.isArchived
 }
 // GetIsFavorited gets the isFavorited property value. Indicates whether the user marked the message as favorite.
 func (m *ServiceUpdateMessageViewpoint) GetIsFavorited()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFavorited
-    }
+    return m.isFavorited
 }
 // GetIsRead gets the isRead property value. Indicates whether the user read the message.
 func (m *ServiceUpdateMessageViewpoint) GetIsRead()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRead
-    }
+    return m.isRead
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ServiceUpdateMessageViewpoint) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ServiceUpdateMessageViewpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ServiceUpdateMessageViewpoint) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceUpdateMessageViewpoint) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsArchived sets the isArchived property value. Indicates whether the user archived the message.
 func (m *ServiceUpdateMessageViewpoint) SetIsArchived(value *bool)() {
-    if m != nil {
-        m.isArchived = value
-    }
+    m.isArchived = value
 }
 // SetIsFavorited sets the isFavorited property value. Indicates whether the user marked the message as favorite.
 func (m *ServiceUpdateMessageViewpoint) SetIsFavorited(value *bool)() {
-    if m != nil {
-        m.isFavorited = value
-    }
+    m.isFavorited = value
 }
 // SetIsRead sets the isRead property value. Indicates whether the user read the message.
 func (m *ServiceUpdateMessageViewpoint) SetIsRead(value *bool)() {
-    if m != nil {
-        m.isRead = value
-    }
+    m.isRead = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ServiceUpdateMessageViewpoint) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -25,11 +25,7 @@ func CreateQueryPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *QueryPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *QueryPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -52,11 +48,7 @@ func (m *QueryPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetRequests gets the requests property value. The requests property
 func (m *QueryPostRequestBody) GetRequests()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requests
-    }
+    return m.requests
 }
 // Serialize serializes information the current object
 func (m *QueryPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,13 +72,9 @@ func (m *QueryPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *QueryPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetRequests sets the requests property value. The requests property
 func (m *QueryPostRequestBody) SetRequests(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchRequestable)() {
-    if m != nil {
-        m.requests = value
-    }
+    m.requests = value
 }

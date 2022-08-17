@@ -57,27 +57,15 @@ func CreateIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentitySet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplication gets the application property value. Optional. The application associated with this action.
 func (m *IdentitySet) GetApplication()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.application
-    }
+    return m.application
 }
 // GetDevice gets the device property value. Optional. The device associated with this action.
 func (m *IdentitySet) GetDevice()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.device
-    }
+    return m.device
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,19 +114,11 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentitySet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUser gets the user property value. Optional. The user associated with this action.
 func (m *IdentitySet) GetUser()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
+    return m.user
 }
 // Serialize serializes information the current object
 func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,31 +156,21 @@ func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentitySet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplication sets the application property value. Optional. The application associated with this action.
 func (m *IdentitySet) SetApplication(value Identityable)() {
-    if m != nil {
-        m.application = value
-    }
+    m.application = value
 }
 // SetDevice sets the device property value. Optional. The device associated with this action.
 func (m *IdentitySet) SetDevice(value Identityable)() {
-    if m != nil {
-        m.device = value
-    }
+    m.device = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentitySet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUser sets the user property value. Optional. The user associated with this action.
 func (m *IdentitySet) SetUser(value Identityable)() {
-    if m != nil {
-        m.user = value
-    }
+    m.user = value
 }

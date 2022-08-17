@@ -47,11 +47,7 @@ func CreateWindowsInformationProtectionPolicyFromDiscriminatorValue(parseNode i8
 }
 // GetDaysWithoutContactBeforeUnenroll gets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days)
 func (m *WindowsInformationProtectionPolicy) GetDaysWithoutContactBeforeUnenroll()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.daysWithoutContactBeforeUnenroll
-    }
+    return m.daysWithoutContactBeforeUnenroll
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,91 +176,47 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
 }
 // GetMdmEnrollmentUrl gets the mdmEnrollmentUrl property value. Enrollment url for the MDM
 func (m *WindowsInformationProtectionPolicy) GetMdmEnrollmentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmEnrollmentUrl
-    }
+    return m.mdmEnrollmentUrl
 }
 // GetMinutesOfInactivityBeforeDeviceLock gets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
 func (m *WindowsInformationProtectionPolicy) GetMinutesOfInactivityBeforeDeviceLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minutesOfInactivityBeforeDeviceLock
-    }
+    return m.minutesOfInactivityBeforeDeviceLock
 }
 // GetNumberOfPastPinsRemembered gets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
 func (m *WindowsInformationProtectionPolicy) GetNumberOfPastPinsRemembered()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberOfPastPinsRemembered
-    }
+    return m.numberOfPastPinsRemembered
 }
 // GetPasswordMaximumAttemptCount gets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
 func (m *WindowsInformationProtectionPolicy) GetPasswordMaximumAttemptCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMaximumAttemptCount
-    }
+    return m.passwordMaximumAttemptCount
 }
 // GetPinExpirationDays gets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
 func (m *WindowsInformationProtectionPolicy) GetPinExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinExpirationDays
-    }
+    return m.pinExpirationDays
 }
 // GetPinLowercaseLetters gets the pinLowercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) GetPinLowercaseLetters()(*WindowsInformationProtectionPinCharacterRequirements) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinLowercaseLetters
-    }
+    return m.pinLowercaseLetters
 }
 // GetPinMinimumLength gets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
 func (m *WindowsInformationProtectionPolicy) GetPinMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinMinimumLength
-    }
+    return m.pinMinimumLength
 }
 // GetPinSpecialCharacters gets the pinSpecialCharacters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) GetPinSpecialCharacters()(*WindowsInformationProtectionPinCharacterRequirements) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinSpecialCharacters
-    }
+    return m.pinSpecialCharacters
 }
 // GetPinUppercaseLetters gets the pinUppercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) GetPinUppercaseLetters()(*WindowsInformationProtectionPinCharacterRequirements) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinUppercaseLetters
-    }
+    return m.pinUppercaseLetters
 }
 // GetRevokeOnMdmHandoffDisabled gets the revokeOnMdmHandoffDisabled property value. New property in RS2, pending documentation
 func (m *WindowsInformationProtectionPolicy) GetRevokeOnMdmHandoffDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.revokeOnMdmHandoffDisabled
-    }
+    return m.revokeOnMdmHandoffDisabled
 }
 // GetWindowsHelloForBusinessBlocked gets the windowsHelloForBusinessBlocked property value. Boolean value that sets Windows Hello for Business as a method for signing into Windows.
 func (m *WindowsInformationProtectionPolicy) GetWindowsHelloForBusinessBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsHelloForBusinessBlocked
-    }
+    return m.windowsHelloForBusinessBlocked
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -351,73 +303,49 @@ func (m *WindowsInformationProtectionPolicy) Serialize(writer i878a80d2330e89d26
 }
 // SetDaysWithoutContactBeforeUnenroll sets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days)
 func (m *WindowsInformationProtectionPolicy) SetDaysWithoutContactBeforeUnenroll(value *int32)() {
-    if m != nil {
-        m.daysWithoutContactBeforeUnenroll = value
-    }
+    m.daysWithoutContactBeforeUnenroll = value
 }
 // SetMdmEnrollmentUrl sets the mdmEnrollmentUrl property value. Enrollment url for the MDM
 func (m *WindowsInformationProtectionPolicy) SetMdmEnrollmentUrl(value *string)() {
-    if m != nil {
-        m.mdmEnrollmentUrl = value
-    }
+    m.mdmEnrollmentUrl = value
 }
 // SetMinutesOfInactivityBeforeDeviceLock sets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
 func (m *WindowsInformationProtectionPolicy) SetMinutesOfInactivityBeforeDeviceLock(value *int32)() {
-    if m != nil {
-        m.minutesOfInactivityBeforeDeviceLock = value
-    }
+    m.minutesOfInactivityBeforeDeviceLock = value
 }
 // SetNumberOfPastPinsRemembered sets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
 func (m *WindowsInformationProtectionPolicy) SetNumberOfPastPinsRemembered(value *int32)() {
-    if m != nil {
-        m.numberOfPastPinsRemembered = value
-    }
+    m.numberOfPastPinsRemembered = value
 }
 // SetPasswordMaximumAttemptCount sets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
 func (m *WindowsInformationProtectionPolicy) SetPasswordMaximumAttemptCount(value *int32)() {
-    if m != nil {
-        m.passwordMaximumAttemptCount = value
-    }
+    m.passwordMaximumAttemptCount = value
 }
 // SetPinExpirationDays sets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
 func (m *WindowsInformationProtectionPolicy) SetPinExpirationDays(value *int32)() {
-    if m != nil {
-        m.pinExpirationDays = value
-    }
+    m.pinExpirationDays = value
 }
 // SetPinLowercaseLetters sets the pinLowercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) SetPinLowercaseLetters(value *WindowsInformationProtectionPinCharacterRequirements)() {
-    if m != nil {
-        m.pinLowercaseLetters = value
-    }
+    m.pinLowercaseLetters = value
 }
 // SetPinMinimumLength sets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
 func (m *WindowsInformationProtectionPolicy) SetPinMinimumLength(value *int32)() {
-    if m != nil {
-        m.pinMinimumLength = value
-    }
+    m.pinMinimumLength = value
 }
 // SetPinSpecialCharacters sets the pinSpecialCharacters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) SetPinSpecialCharacters(value *WindowsInformationProtectionPinCharacterRequirements)() {
-    if m != nil {
-        m.pinSpecialCharacters = value
-    }
+    m.pinSpecialCharacters = value
 }
 // SetPinUppercaseLetters sets the pinUppercaseLetters property value. Pin Character Requirements
 func (m *WindowsInformationProtectionPolicy) SetPinUppercaseLetters(value *WindowsInformationProtectionPinCharacterRequirements)() {
-    if m != nil {
-        m.pinUppercaseLetters = value
-    }
+    m.pinUppercaseLetters = value
 }
 // SetRevokeOnMdmHandoffDisabled sets the revokeOnMdmHandoffDisabled property value. New property in RS2, pending documentation
 func (m *WindowsInformationProtectionPolicy) SetRevokeOnMdmHandoffDisabled(value *bool)() {
-    if m != nil {
-        m.revokeOnMdmHandoffDisabled = value
-    }
+    m.revokeOnMdmHandoffDisabled = value
 }
 // SetWindowsHelloForBusinessBlocked sets the windowsHelloForBusinessBlocked property value. Boolean value that sets Windows Hello for Business as a method for signing into Windows.
 func (m *WindowsInformationProtectionPolicy) SetWindowsHelloForBusinessBlocked(value *bool)() {
-    if m != nil {
-        m.windowsHelloForBusinessBlocked = value
-    }
+    m.windowsHelloForBusinessBlocked = value
 }

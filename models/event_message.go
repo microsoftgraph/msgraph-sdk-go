@@ -7,7 +7,7 @@ import (
 // EventMessage 
 type EventMessage struct {
     Message
-    // The end time of the requested meeting.
+    // The endDateTime property
     endDateTime DateTimeTimeZoneable
     // The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
     event Eventable
@@ -62,21 +62,13 @@ func CreateEventMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     }
     return NewEventMessage(), nil
 }
-// GetEndDateTime gets the endDateTime property value. The end time of the requested meeting.
+// GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *EventMessage) GetEndDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetEvent gets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
 func (m *EventMessage) GetEvent()(Eventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.event
-    }
+    return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -185,67 +177,35 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsAllDay gets the isAllDay property value. The isAllDay property
 func (m *EventMessage) GetIsAllDay()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAllDay
-    }
+    return m.isAllDay
 }
 // GetIsDelegated gets the isDelegated property value. The isDelegated property
 func (m *EventMessage) GetIsDelegated()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDelegated
-    }
+    return m.isDelegated
 }
 // GetIsOutOfDate gets the isOutOfDate property value. The isOutOfDate property
 func (m *EventMessage) GetIsOutOfDate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOutOfDate
-    }
+    return m.isOutOfDate
 }
 // GetLocation gets the location property value. The location property
 func (m *EventMessage) GetLocation()(Locationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetMeetingMessageType gets the meetingMessageType property value. The meetingMessageType property
 func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingMessageType
-    }
+    return m.meetingMessageType
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
 func (m *EventMessage) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetType gets the type property value. The type property
 func (m *EventMessage) GetType()(*EventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -317,63 +277,43 @@ func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetEndDateTime sets the endDateTime property value. The end time of the requested meeting.
+// SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *EventMessage) SetEndDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetEvent sets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
 func (m *EventMessage) SetEvent(value Eventable)() {
-    if m != nil {
-        m.event = value
-    }
+    m.event = value
 }
 // SetIsAllDay sets the isAllDay property value. The isAllDay property
 func (m *EventMessage) SetIsAllDay(value *bool)() {
-    if m != nil {
-        m.isAllDay = value
-    }
+    m.isAllDay = value
 }
 // SetIsDelegated sets the isDelegated property value. The isDelegated property
 func (m *EventMessage) SetIsDelegated(value *bool)() {
-    if m != nil {
-        m.isDelegated = value
-    }
+    m.isDelegated = value
 }
 // SetIsOutOfDate sets the isOutOfDate property value. The isOutOfDate property
 func (m *EventMessage) SetIsOutOfDate(value *bool)() {
-    if m != nil {
-        m.isOutOfDate = value
-    }
+    m.isOutOfDate = value
 }
 // SetLocation sets the location property value. The location property
 func (m *EventMessage) SetLocation(value Locationable)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetMeetingMessageType sets the meetingMessageType property value. The meetingMessageType property
 func (m *EventMessage) SetMeetingMessageType(value *MeetingMessageType)() {
-    if m != nil {
-        m.meetingMessageType = value
-    }
+    m.meetingMessageType = value
 }
 // SetRecurrence sets the recurrence property value. The recurrence property
 func (m *EventMessage) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetType sets the type property value. The type property
 func (m *EventMessage) SetType(value *EventType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

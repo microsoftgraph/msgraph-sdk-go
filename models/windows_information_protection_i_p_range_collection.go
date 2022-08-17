@@ -30,19 +30,11 @@ func CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue(p
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionIPRangeCollection) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name
 func (m *WindowsInformationProtectionIPRangeCollection) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsInformationProtectionIPRangeCollection) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRanges gets the ranges property value. Collection of ip ranges
 func (m *WindowsInformationProtectionIPRangeCollection) GetRanges()([]IpRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ranges
-    }
+    return m.ranges
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionIPRangeCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *WindowsInformationProtectionIPRangeCollection) Serialize(writer i878a80
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionIPRangeCollection) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name
 func (m *WindowsInformationProtectionIPRangeCollection) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsInformationProtectionIPRangeCollection) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRanges sets the ranges property value. Collection of ip ranges
 func (m *WindowsInformationProtectionIPRangeCollection) SetRanges(value []IpRangeable)() {
-    if m != nil {
-        m.ranges = value
-    }
+    m.ranges = value
 }

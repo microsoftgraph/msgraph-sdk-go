@@ -31,11 +31,7 @@ func CreateCalendarSharingMessageFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetCanAccept gets the canAccept property value. The canAccept property
 func (m *CalendarSharingMessage) GetCanAccept()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canAccept
-    }
+    return m.canAccept
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CalendarSharingMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,27 +84,15 @@ func (m *CalendarSharingMessage) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetSharingMessageAction gets the sharingMessageAction property value. The sharingMessageAction property
 func (m *CalendarSharingMessage) GetSharingMessageAction()(CalendarSharingMessageActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharingMessageAction
-    }
+    return m.sharingMessageAction
 }
 // GetSharingMessageActions gets the sharingMessageActions property value. The sharingMessageActions property
 func (m *CalendarSharingMessage) GetSharingMessageActions()([]CalendarSharingMessageActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharingMessageActions
-    }
+    return m.sharingMessageActions
 }
 // GetSuggestedCalendarName gets the suggestedCalendarName property value. The suggestedCalendarName property
 func (m *CalendarSharingMessage) GetSuggestedCalendarName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestedCalendarName
-    }
+    return m.suggestedCalendarName
 }
 // Serialize serializes information the current object
 func (m *CalendarSharingMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,25 +132,17 @@ func (m *CalendarSharingMessage) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetCanAccept sets the canAccept property value. The canAccept property
 func (m *CalendarSharingMessage) SetCanAccept(value *bool)() {
-    if m != nil {
-        m.canAccept = value
-    }
+    m.canAccept = value
 }
 // SetSharingMessageAction sets the sharingMessageAction property value. The sharingMessageAction property
 func (m *CalendarSharingMessage) SetSharingMessageAction(value CalendarSharingMessageActionable)() {
-    if m != nil {
-        m.sharingMessageAction = value
-    }
+    m.sharingMessageAction = value
 }
 // SetSharingMessageActions sets the sharingMessageActions property value. The sharingMessageActions property
 func (m *CalendarSharingMessage) SetSharingMessageActions(value []CalendarSharingMessageActionable)() {
-    if m != nil {
-        m.sharingMessageActions = value
-    }
+    m.sharingMessageActions = value
 }
 // SetSuggestedCalendarName sets the suggestedCalendarName property value. The suggestedCalendarName property
 func (m *CalendarSharingMessage) SetSuggestedCalendarName(value *string)() {
-    if m != nil {
-        m.suggestedCalendarName = value
-    }
+    m.suggestedCalendarName = value
 }

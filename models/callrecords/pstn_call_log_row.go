@@ -73,115 +73,59 @@ func CreatePstnCallLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PstnCallLogRow) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCallDurationSource gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
 func (m *PstnCallLogRow) GetCallDurationSource()(*PstnCallDurationSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callDurationSource
-    }
+    return m.callDurationSource
 }
 // GetCalleeNumber gets the calleeNumber property value. Number dialed in E.164 format.
 func (m *PstnCallLogRow) GetCalleeNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calleeNumber
-    }
+    return m.calleeNumber
 }
 // GetCallerNumber gets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
 func (m *PstnCallLogRow) GetCallerNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callerNumber
-    }
+    return m.callerNumber
 }
 // GetCallId gets the callId property value. Call identifier. Not guaranteed to be unique.
 func (m *PstnCallLogRow) GetCallId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callId
-    }
+    return m.callId
 }
 // GetCallType gets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
 func (m *PstnCallLogRow) GetCallType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callType
-    }
+    return m.callType
 }
 // GetCharge gets the charge property value. Amount of money or cost of the call that is charged to your account.
 func (m *PstnCallLogRow) GetCharge()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.charge
-    }
+    return m.charge
 }
 // GetConferenceId gets the conferenceId property value. ID of the audio conference.
 func (m *PstnCallLogRow) GetConferenceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conferenceId
-    }
+    return m.conferenceId
 }
 // GetConnectionCharge gets the connectionCharge property value. Connection fee price.
 func (m *PstnCallLogRow) GetConnectionCharge()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionCharge
-    }
+    return m.connectionCharge
 }
 // GetCurrency gets the currency property value. Type of currency used to calculate the cost of the call (ISO 4217).
 func (m *PstnCallLogRow) GetCurrency()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currency
-    }
+    return m.currency
 }
 // GetDestinationContext gets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
 func (m *PstnCallLogRow) GetDestinationContext()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationContext
-    }
+    return m.destinationContext
 }
 // GetDestinationName gets the destinationName property value. Country or region dialed.
 func (m *PstnCallLogRow) GetDestinationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationName
-    }
+    return m.destinationName
 }
 // GetDuration gets the duration property value. How long the call was connected, in seconds.
 func (m *PstnCallLogRow) GetDuration()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duration
-    }
+    return m.duration
 }
 // GetEndDateTime gets the endDateTime property value. Call end time.
 func (m *PstnCallLogRow) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -430,91 +374,47 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetId gets the id property value. Unique call identifier. GUID.
 func (m *PstnCallLogRow) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetInventoryType gets the inventoryType property value. User's phone number type, such as a service of toll-free number.
 func (m *PstnCallLogRow) GetInventoryType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventoryType
-    }
+    return m.inventoryType
 }
 // GetLicenseCapability gets the licenseCapability property value. The license used for the call.
 func (m *PstnCallLogRow) GetLicenseCapability()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseCapability
-    }
+    return m.licenseCapability
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PstnCallLogRow) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperator gets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) GetOperator()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
+    return m.operator
 }
 // GetStartDateTime gets the startDateTime property value. Call start time.
 func (m *PstnCallLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetTenantCountryCode gets the tenantCountryCode property value. Country code of the tenant, ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) GetTenantCountryCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantCountryCode
-    }
+    return m.tenantCountryCode
 }
 // GetUsageCountryCode gets the usageCountryCode property value. Country code of the user, ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) GetUsageCountryCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageCountryCode
-    }
+    return m.usageCountryCode
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user.
 func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserId gets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
 func (m *PstnCallLogRow) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
 func (m *PstnCallLogRow) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *PstnCallLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -673,151 +573,101 @@ func (m *PstnCallLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PstnCallLogRow) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCallDurationSource sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
 func (m *PstnCallLogRow) SetCallDurationSource(value *PstnCallDurationSource)() {
-    if m != nil {
-        m.callDurationSource = value
-    }
+    m.callDurationSource = value
 }
 // SetCalleeNumber sets the calleeNumber property value. Number dialed in E.164 format.
 func (m *PstnCallLogRow) SetCalleeNumber(value *string)() {
-    if m != nil {
-        m.calleeNumber = value
-    }
+    m.calleeNumber = value
 }
 // SetCallerNumber sets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
 func (m *PstnCallLogRow) SetCallerNumber(value *string)() {
-    if m != nil {
-        m.callerNumber = value
-    }
+    m.callerNumber = value
 }
 // SetCallId sets the callId property value. Call identifier. Not guaranteed to be unique.
 func (m *PstnCallLogRow) SetCallId(value *string)() {
-    if m != nil {
-        m.callId = value
-    }
+    m.callId = value
 }
 // SetCallType sets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
 func (m *PstnCallLogRow) SetCallType(value *string)() {
-    if m != nil {
-        m.callType = value
-    }
+    m.callType = value
 }
 // SetCharge sets the charge property value. Amount of money or cost of the call that is charged to your account.
 func (m *PstnCallLogRow) SetCharge(value *float64)() {
-    if m != nil {
-        m.charge = value
-    }
+    m.charge = value
 }
 // SetConferenceId sets the conferenceId property value. ID of the audio conference.
 func (m *PstnCallLogRow) SetConferenceId(value *string)() {
-    if m != nil {
-        m.conferenceId = value
-    }
+    m.conferenceId = value
 }
 // SetConnectionCharge sets the connectionCharge property value. Connection fee price.
 func (m *PstnCallLogRow) SetConnectionCharge(value *float64)() {
-    if m != nil {
-        m.connectionCharge = value
-    }
+    m.connectionCharge = value
 }
 // SetCurrency sets the currency property value. Type of currency used to calculate the cost of the call (ISO 4217).
 func (m *PstnCallLogRow) SetCurrency(value *string)() {
-    if m != nil {
-        m.currency = value
-    }
+    m.currency = value
 }
 // SetDestinationContext sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
 func (m *PstnCallLogRow) SetDestinationContext(value *string)() {
-    if m != nil {
-        m.destinationContext = value
-    }
+    m.destinationContext = value
 }
 // SetDestinationName sets the destinationName property value. Country or region dialed.
 func (m *PstnCallLogRow) SetDestinationName(value *string)() {
-    if m != nil {
-        m.destinationName = value
-    }
+    m.destinationName = value
 }
 // SetDuration sets the duration property value. How long the call was connected, in seconds.
 func (m *PstnCallLogRow) SetDuration(value *int32)() {
-    if m != nil {
-        m.duration = value
-    }
+    m.duration = value
 }
 // SetEndDateTime sets the endDateTime property value. Call end time.
 func (m *PstnCallLogRow) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetId sets the id property value. Unique call identifier. GUID.
 func (m *PstnCallLogRow) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetInventoryType sets the inventoryType property value. User's phone number type, such as a service of toll-free number.
 func (m *PstnCallLogRow) SetInventoryType(value *string)() {
-    if m != nil {
-        m.inventoryType = value
-    }
+    m.inventoryType = value
 }
 // SetLicenseCapability sets the licenseCapability property value. The license used for the call.
 func (m *PstnCallLogRow) SetLicenseCapability(value *string)() {
-    if m != nil {
-        m.licenseCapability = value
-    }
+    m.licenseCapability = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PstnCallLogRow) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperator sets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) SetOperator(value *string)() {
-    if m != nil {
-        m.operator = value
-    }
+    m.operator = value
 }
 // SetStartDateTime sets the startDateTime property value. Call start time.
 func (m *PstnCallLogRow) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetTenantCountryCode sets the tenantCountryCode property value. Country code of the tenant, ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) SetTenantCountryCode(value *string)() {
-    if m != nil {
-        m.tenantCountryCode = value
-    }
+    m.tenantCountryCode = value
 }
 // SetUsageCountryCode sets the usageCountryCode property value. Country code of the user, ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) SetUsageCountryCode(value *string)() {
-    if m != nil {
-        m.usageCountryCode = value
-    }
+    m.usageCountryCode = value
 }
 // SetUserDisplayName sets the userDisplayName property value. Display name of the user.
 func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserId sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
 func (m *PstnCallLogRow) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
 func (m *PstnCallLogRow) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

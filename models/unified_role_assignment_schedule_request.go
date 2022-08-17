@@ -55,51 +55,27 @@ func CreateUnifiedRoleAssignmentScheduleRequestFromDiscriminatorValue(parseNode 
 }
 // GetAction gets the action property value. Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetAction()(*UnifiedRoleScheduleRequestActions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetActivatedUsing()(UnifiedRoleEligibilityScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activatedUsing
-    }
+    return m.activatedUsing
 }
 // GetAppScope gets the appScope property value. Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetAppScope()(AppScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScope
-    }
+    return m.appScope
 }
 // GetAppScopeId gets the appScopeId property value. Identifier of the app-specific scope when the assignment is scoped to an app. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleAssignmentScheduleRequest) GetAppScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScopeId
-    }
+    return m.appScopeId
 }
 // GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetDirectoryScope()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScope
-    }
+    return m.directoryScope
 }
 // GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleAssignmentScheduleRequest) GetDirectoryScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScopeId
-    }
+    return m.directoryScopeId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -268,83 +244,43 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
 }
 // GetIsValidationOnly gets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetIsValidationOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValidationOnly
-    }
+    return m.isValidationOnly
 }
 // GetJustification gets the justification property value. A message provided by users and administrators when create they create the unifiedRoleAssignmentScheduleRequest object.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
+    return m.justification
 }
 // GetPrincipal gets the principal property value. The principal that's getting a role assignment through the request. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetPrincipal()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principal
-    }
+    return m.principal
 }
 // GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
+    return m.principalId
 }
 // GetRoleDefinition gets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetRoleDefinition()(UnifiedRoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
+    return m.roleDefinition
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
+    return m.roleDefinitionId
 }
 // GetScheduleInfo gets the scheduleInfo property value. The period of the role assignment. Recurring schedules are currently unsupported.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetScheduleInfo()(RequestScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleInfo
-    }
+    return m.scheduleInfo
 }
 // GetTargetSchedule gets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetTargetSchedule()(UnifiedRoleAssignmentScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetSchedule
-    }
+    return m.targetSchedule
 }
 // GetTargetScheduleId gets the targetScheduleId property value. Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) GetTargetScheduleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetScheduleId
-    }
+    return m.targetScheduleId
 }
 // GetTicketInfo gets the ticketInfo property value. Ticket details linked to the role assignment request including details of the ticket number and ticket system.
 func (m *UnifiedRoleAssignmentScheduleRequest) GetTicketInfo()(TicketInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketInfo
-    }
+    return m.ticketInfo
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentScheduleRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -453,97 +389,65 @@ func (m *UnifiedRoleAssignmentScheduleRequest) Serialize(writer i878a80d2330e89d
 }
 // SetAction sets the action property value. Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetAction(value *UnifiedRoleScheduleRequestActions)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetActivatedUsing(value UnifiedRoleEligibilityScheduleable)() {
-    if m != nil {
-        m.activatedUsing = value
-    }
+    m.activatedUsing = value
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetAppScope(value AppScopeable)() {
-    if m != nil {
-        m.appScope = value
-    }
+    m.appScope = value
 }
 // SetAppScopeId sets the appScopeId property value. Identifier of the app-specific scope when the assignment is scoped to an app. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleAssignmentScheduleRequest) SetAppScopeId(value *string)() {
-    if m != nil {
-        m.appScopeId = value
-    }
+    m.appScopeId = value
 }
 // SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetDirectoryScope(value DirectoryObjectable)() {
-    if m != nil {
-        m.directoryScope = value
-    }
+    m.directoryScope = value
 }
 // SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleAssignmentScheduleRequest) SetDirectoryScopeId(value *string)() {
-    if m != nil {
-        m.directoryScopeId = value
-    }
+    m.directoryScopeId = value
 }
 // SetIsValidationOnly sets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetIsValidationOnly(value *bool)() {
-    if m != nil {
-        m.isValidationOnly = value
-    }
+    m.isValidationOnly = value
 }
 // SetJustification sets the justification property value. A message provided by users and administrators when create they create the unifiedRoleAssignmentScheduleRequest object.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetJustification(value *string)() {
-    if m != nil {
-        m.justification = value
-    }
+    m.justification = value
 }
 // SetPrincipal sets the principal property value. The principal that's getting a role assignment through the request. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetPrincipal(value DirectoryObjectable)() {
-    if m != nil {
-        m.principal = value
-    }
+    m.principal = value
 }
 // SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) SetPrincipalId(value *string)() {
-    if m != nil {
-        m.principalId = value
-    }
+    m.principalId = value
 }
 // SetRoleDefinition sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
-    if m != nil {
-        m.roleDefinition = value
-    }
+    m.roleDefinition = value
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) SetRoleDefinitionId(value *string)() {
-    if m != nil {
-        m.roleDefinitionId = value
-    }
+    m.roleDefinitionId = value
 }
 // SetScheduleInfo sets the scheduleInfo property value. The period of the role assignment. Recurring schedules are currently unsupported.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetScheduleInfo(value RequestScheduleable)() {
-    if m != nil {
-        m.scheduleInfo = value
-    }
+    m.scheduleInfo = value
 }
 // SetTargetSchedule sets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetTargetSchedule(value UnifiedRoleAssignmentScheduleable)() {
-    if m != nil {
-        m.targetSchedule = value
-    }
+    m.targetSchedule = value
 }
 // SetTargetScheduleId sets the targetScheduleId property value. Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) SetTargetScheduleId(value *string)() {
-    if m != nil {
-        m.targetScheduleId = value
-    }
+    m.targetScheduleId = value
 }
 // SetTicketInfo sets the ticketInfo property value. Ticket details linked to the role assignment request including details of the ticket number and ticket system.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetTicketInfo(value TicketInfoable)() {
-    if m != nil {
-        m.ticketInfo = value
-    }
+    m.ticketInfo = value
 }

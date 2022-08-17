@@ -46,19 +46,11 @@ func CreateChatFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetChatType gets the chatType property value. The chatType property
 func (m *Chat) GetChatType()(*ChatType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chatType
-    }
+    return m.chatType
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time at which the chat was created. Read-only.
 func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -193,75 +185,39 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetInstalledApps gets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedApps
-    }
+    return m.installedApps
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetMembers gets the members property value. A collection of all the members in the chat. Nullable.
 func (m *Chat) GetMembers()([]ConversationMemberable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // GetMessages gets the messages property value. A collection of all the messages in the chat. Nullable.
 func (m *Chat) GetMessages()([]ChatMessageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messages
-    }
+    return m.messages
 }
 // GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetingInfo
-    }
+    return m.onlineMeetingInfo
 }
 // GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) GetTabs()([]TeamsTabable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tabs
-    }
+    return m.tabs
 }
 // GetTenantId gets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
 func (m *Chat) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetTopic gets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
 func (m *Chat) GetTopic()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topic
-    }
+    return m.topic
 }
 // GetWebUrl gets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -356,67 +312,45 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetChatType sets the chatType property value. The chatType property
 func (m *Chat) SetChatType(value *ChatType)() {
-    if m != nil {
-        m.chatType = value
-    }
+    m.chatType = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time at which the chat was created. Read-only.
 func (m *Chat) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetInstalledApps sets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) SetInstalledApps(value []TeamsAppInstallationable)() {
-    if m != nil {
-        m.installedApps = value
-    }
+    m.installedApps = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetMembers sets the members property value. A collection of all the members in the chat. Nullable.
 func (m *Chat) SetMembers(value []ConversationMemberable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }
 // SetMessages sets the messages property value. A collection of all the messages in the chat. Nullable.
 func (m *Chat) SetMessages(value []ChatMessageable)() {
-    if m != nil {
-        m.messages = value
-    }
+    m.messages = value
 }
 // SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)() {
-    if m != nil {
-        m.onlineMeetingInfo = value
-    }
+    m.onlineMeetingInfo = value
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) SetTabs(value []TeamsTabable)() {
-    if m != nil {
-        m.tabs = value
-    }
+    m.tabs = value
 }
 // SetTenantId sets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
 func (m *Chat) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetTopic sets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
 func (m *Chat) SetTopic(value *string)() {
-    if m != nil {
-        m.topic = value
-    }
+    m.topic = value
 }
 // SetWebUrl sets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

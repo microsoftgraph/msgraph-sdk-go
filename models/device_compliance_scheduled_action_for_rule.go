@@ -56,19 +56,11 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
 }
 // GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
 func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleName
-    }
+    return m.ruleName
 }
 // GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceComplianceActionItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledActionConfigurations
-    }
+    return m.scheduledActionConfigurations
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i878a80d2330e8
 }
 // SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
 func (m *DeviceComplianceScheduledActionForRule) SetRuleName(value *string)() {
-    if m != nil {
-        m.ruleName = value
-    }
+    m.ruleName = value
 }
 // SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceComplianceActionItemable)() {
-    if m != nil {
-        m.scheduledActionConfigurations = value
-    }
+    m.scheduledActionConfigurations = value
 }

@@ -55,19 +55,11 @@ func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDetails gets the details property value. Additional details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the service event.
 func (m *ServiceAnnouncementBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,27 +122,15 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time of the service event.
 func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the service event.
 func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetTitle gets the title property value. The title of the service event.
 func (m *ServiceAnnouncementBase) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *ServiceAnnouncementBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,31 +176,21 @@ func (m *ServiceAnnouncementBase) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDetails sets the details property value. Additional details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) SetDetails(value []KeyValuePairable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetEndDateTime sets the endDateTime property value. The end time of the service event.
 func (m *ServiceAnnouncementBase) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last modified time of the service event.
 func (m *ServiceAnnouncementBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetStartDateTime sets the startDateTime property value. The start time of the service event.
 func (m *ServiceAnnouncementBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetTitle sets the title property value. The title of the service event.
 func (m *ServiceAnnouncementBase) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

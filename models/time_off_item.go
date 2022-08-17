@@ -40,11 +40,7 @@ func (m *TimeOffItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetTimeOffReasonId gets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
 func (m *TimeOffItem) GetTimeOffReasonId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeOffReasonId
-    }
+    return m.timeOffReasonId
 }
 // Serialize serializes information the current object
 func (m *TimeOffItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *TimeOffItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetTimeOffReasonId sets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
 func (m *TimeOffItem) SetTimeOffReasonId(value *string)() {
-    if m != nil {
-        m.timeOffReasonId = value
-    }
+    m.timeOffReasonId = value
 }

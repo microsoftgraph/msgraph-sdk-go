@@ -31,11 +31,7 @@ func CreateShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetDraftShift gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) GetDraftShift()(ShiftItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.draftShift
-    }
+    return m.draftShift
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) GetSchedulingGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingGroupId
-    }
+    return m.schedulingGroupId
 }
 // GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) GetSharedShift()(ShiftItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedShift
-    }
+    return m.sharedShift
 }
 // GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetDraftShift sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) SetDraftShift(value ShiftItemable)() {
-    if m != nil {
-        m.draftShift = value
-    }
+    m.draftShift = value
 }
 // SetSchedulingGroupId sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) SetSchedulingGroupId(value *string)() {
-    if m != nil {
-        m.schedulingGroupId = value
-    }
+    m.schedulingGroupId = value
 }
 // SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) SetSharedShift(value ShiftItemable)() {
-    if m != nil {
-        m.sharedShift = value
-    }
+    m.sharedShift = value
 }
 // SetUserId sets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

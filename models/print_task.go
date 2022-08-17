@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTask provides operations to manage the admin singleton.
+// PrintTask provides operations to manage the collection of agreement entities.
 type PrintTask struct {
     Entity
     // The definition property
     definition PrintTaskDefinitionable
-    // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+    // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
     parentUrl *string
     // The status property
     status PrintTaskStatusable
@@ -31,11 +31,7 @@ func CreatePrintTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *PrintTask) GetDefinition()(PrintTaskDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definition
-    }
+    return m.definition
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,29 +78,17 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetParentUrl gets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+// GetParentUrl gets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
 func (m *PrintTask) GetParentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentUrl
-    }
+    return m.parentUrl
 }
 // GetStatus gets the status property value. The status property
 func (m *PrintTask) GetStatus()(PrintTaskStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTrigger gets the trigger property value. The trigger property
 func (m *PrintTask) GetTrigger()(PrintTaskTriggerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trigger
-    }
+    return m.trigger
 }
 // Serialize serializes information the current object
 func (m *PrintTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *PrintTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *PrintTask) SetDefinition(value PrintTaskDefinitionable)() {
-    if m != nil {
-        m.definition = value
-    }
+    m.definition = value
 }
-// SetParentUrl sets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
+// SetParentUrl sets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
 func (m *PrintTask) SetParentUrl(value *string)() {
-    if m != nil {
-        m.parentUrl = value
-    }
+    m.parentUrl = value
 }
 // SetStatus sets the status property value. The status property
 func (m *PrintTask) SetStatus(value PrintTaskStatusable)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTrigger sets the trigger property value. The trigger property
 func (m *PrintTask) SetTrigger(value PrintTaskTriggerable)() {
-    if m != nil {
-        m.trigger = value
-    }
+    m.trigger = value
 }

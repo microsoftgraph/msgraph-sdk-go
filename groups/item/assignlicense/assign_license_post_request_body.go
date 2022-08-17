@@ -27,19 +27,11 @@ func CreateAssignLicensePostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignLicensePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddLicenses gets the addLicenses property value. The addLicenses property
 func (m *AssignLicensePostRequestBody) GetAddLicenses()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addLicenses
-    }
+    return m.addLicenses
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignLicensePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,11 +68,7 @@ func (m *AssignLicensePostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetRemoveLicenses gets the removeLicenses property value. The removeLicenses property
 func (m *AssignLicensePostRequestBody) GetRemoveLicenses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeLicenses
-    }
+    return m.removeLicenses
 }
 // Serialize serializes information the current object
 func (m *AssignLicensePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -110,19 +98,13 @@ func (m *AssignLicensePostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignLicensePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddLicenses sets the addLicenses property value. The addLicenses property
 func (m *AssignLicensePostRequestBody) SetAddLicenses(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)() {
-    if m != nil {
-        m.addLicenses = value
-    }
+    m.addLicenses = value
 }
 // SetRemoveLicenses sets the removeLicenses property value. The removeLicenses property
 func (m *AssignLicensePostRequestBody) SetRemoveLicenses(value []string)() {
-    if m != nil {
-        m.removeLicenses = value
-    }
+    m.removeLicenses = value
 }

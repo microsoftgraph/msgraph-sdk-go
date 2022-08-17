@@ -13,7 +13,7 @@ type Set struct {
     children []Termable
     // Date and time of set creation. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Description giving details on the term usage.
+    // Description that gives details on the term usage.
     description *string
     // Name of the set for each languageTag.
     localizedNames []LocalizedNameable
@@ -41,27 +41,15 @@ func CreateSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef
 }
 // GetChildren gets the children property value. Children terms of set in term [store].
 func (m *Set) GetChildren()([]Termable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.children
-    }
+    return m.children
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of set creation. Read-only.
 func (m *Set) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
-// GetDescription gets the description property value. Description giving details on the term usage.
+// GetDescription gets the description property value. Description that gives details on the term usage.
 func (m *Set) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,43 +158,23 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
 }
 // GetLocalizedNames gets the localizedNames property value. Name of the set for each languageTag.
 func (m *Set) GetLocalizedNames()([]LocalizedNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizedNames
-    }
+    return m.localizedNames
 }
 // GetParentGroup gets the parentGroup property value. The parentGroup property
 func (m *Set) GetParentGroup()(Groupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentGroup
-    }
+    return m.parentGroup
 }
 // GetProperties gets the properties property value. Custom properties for the set.
 func (m *Set) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
+    return m.properties
 }
 // GetRelations gets the relations property value. Indicates which terms have been pinned or reused directly under the set.
 func (m *Set) GetRelations()([]Relationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relations
-    }
+    return m.relations
 }
 // GetTerms gets the terms property value. All the terms under the set.
 func (m *Set) GetTerms()([]Termable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.terms
-    }
+    return m.terms
 }
 // Serialize serializes information the current object
 func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -286,49 +254,33 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
 }
 // SetChildren sets the children property value. Children terms of set in term [store].
 func (m *Set) SetChildren(value []Termable)() {
-    if m != nil {
-        m.children = value
-    }
+    m.children = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of set creation. Read-only.
 func (m *Set) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
-// SetDescription sets the description property value. Description giving details on the term usage.
+// SetDescription sets the description property value. Description that gives details on the term usage.
 func (m *Set) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetLocalizedNames sets the localizedNames property value. Name of the set for each languageTag.
 func (m *Set) SetLocalizedNames(value []LocalizedNameable)() {
-    if m != nil {
-        m.localizedNames = value
-    }
+    m.localizedNames = value
 }
 // SetParentGroup sets the parentGroup property value. The parentGroup property
 func (m *Set) SetParentGroup(value Groupable)() {
-    if m != nil {
-        m.parentGroup = value
-    }
+    m.parentGroup = value
 }
 // SetProperties sets the properties property value. Custom properties for the set.
 func (m *Set) SetProperties(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)() {
-    if m != nil {
-        m.properties = value
-    }
+    m.properties = value
 }
 // SetRelations sets the relations property value. Indicates which terms have been pinned or reused directly under the set.
 func (m *Set) SetRelations(value []Relationable)() {
-    if m != nil {
-        m.relations = value
-    }
+    m.relations = value
 }
 // SetTerms sets the terms property value. All the terms under the set.
 func (m *Set) SetTerms(value []Termable)() {
-    if m != nil {
-        m.terms = value
-    }
+    m.terms = value
 }

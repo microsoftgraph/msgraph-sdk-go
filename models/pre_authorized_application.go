@@ -8,7 +8,7 @@ import (
 type PreAuthorizedApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The unique identifier for the client application.
+    // The unique identifier for the application.
     appId *string
     // The unique identifier for the oauth2PermissionScopes the application requires.
     delegatedPermissionIds []string
@@ -30,27 +30,15 @@ func CreatePreAuthorizedApplicationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreAuthorizedApplication) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAppId gets the appId property value. The unique identifier for the client application.
+// GetAppId gets the appId property value. The unique identifier for the application.
 func (m *PreAuthorizedApplication) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetDelegatedPermissionIds gets the delegatedPermissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
 func (m *PreAuthorizedApplication) GetDelegatedPermissionIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.delegatedPermissionIds
-    }
+    return m.delegatedPermissionIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,11 +81,7 @@ func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PreAuthorizedApplication) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *PreAuthorizedApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,25 +113,17 @@ func (m *PreAuthorizedApplication) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreAuthorizedApplication) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAppId sets the appId property value. The unique identifier for the client application.
+// SetAppId sets the appId property value. The unique identifier for the application.
 func (m *PreAuthorizedApplication) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetDelegatedPermissionIds sets the delegatedPermissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
 func (m *PreAuthorizedApplication) SetDelegatedPermissionIds(value []string)() {
-    if m != nil {
-        m.delegatedPermissionIds = value
-    }
+    m.delegatedPermissionIds = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PreAuthorizedApplication) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

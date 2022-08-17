@@ -34,19 +34,11 @@ func CreateTermsAndConditionsAcceptanceStatusFromDiscriminatorValue(parseNode i8
 }
 // GetAcceptedDateTime gets the acceptedDateTime property value. DateTime when the terms were last accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) GetAcceptedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acceptedDateTime
-    }
+    return m.acceptedDateTime
 }
 // GetAcceptedVersion gets the acceptedVersion property value. Most recent version number of the T&C accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) GetAcceptedVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acceptedVersion
-    }
+    return m.acceptedVersion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,27 +97,15 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
 }
 // GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsAcceptanceStatus) GetTermsAndConditions()(TermsAndConditionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsAndConditions
-    }
+    return m.termsAndConditions
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user whose acceptance the entity represents.
 func (m *TermsAndConditionsAcceptanceStatus) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName of the User that accepted the term.
 func (m *TermsAndConditionsAcceptanceStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsAcceptanceStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *TermsAndConditionsAcceptanceStatus) Serialize(writer i878a80d2330e89d26
 }
 // SetAcceptedDateTime sets the acceptedDateTime property value. DateTime when the terms were last accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.acceptedDateTime = value
-    }
+    m.acceptedDateTime = value
 }
 // SetAcceptedVersion sets the acceptedVersion property value. Most recent version number of the T&C accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedVersion(value *int32)() {
-    if m != nil {
-        m.acceptedVersion = value
-    }
+    m.acceptedVersion = value
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsAcceptanceStatus) SetTermsAndConditions(value TermsAndConditionsable)() {
-    if m != nil {
-        m.termsAndConditions = value
-    }
+    m.termsAndConditions = value
 }
 // SetUserDisplayName sets the userDisplayName property value. Display name of the user whose acceptance the entity represents.
 func (m *TermsAndConditionsAcceptanceStatus) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName of the User that accepted the term.
 func (m *TermsAndConditionsAcceptanceStatus) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

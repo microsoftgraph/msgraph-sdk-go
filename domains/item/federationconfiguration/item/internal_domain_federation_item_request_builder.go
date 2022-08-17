@@ -22,7 +22,7 @@ type InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// InternalDomainFederationItemRequestBuilderGetQueryParameters domain settings configured by customer when federated with Azure AD. Supports $expand.
+// InternalDomainFederationItemRequestBuilderGetQueryParameters domain settings configured by a customer when federated with Azure AD. Supports $expand.
 type InternalDomainFederationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *InternalDomainFederationItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation domain settings configured by customer when federated with Azure AD. Supports $expand.
+// CreateGetRequestInformation domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration domain settings configured by customer when federated with Azure AD. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *InternalDomainFederationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *InternalDomainFederationItemRequestBuilder) DeleteWithRequestConfigurat
     }
     return nil
 }
-// Get domain settings configured by customer when federated with Azure AD. Supports $expand.
+// Get domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *InternalDomainFederationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler domain settings configured by customer when federated with Azure AD. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *InternalDomainFederationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InternalDomainFederationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

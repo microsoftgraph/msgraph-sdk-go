@@ -69,75 +69,39 @@ func CreateDirectRoutingLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
 func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calleeNumber
-    }
+    return m.calleeNumber
 }
 // GetCallEndSubReason gets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
 func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callEndSubReason
-    }
+    return m.callEndSubReason
 }
 // GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
 func (m *DirectRoutingLogRow) GetCallerNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callerNumber
-    }
+    return m.callerNumber
 }
 // GetCallType gets the callType property value. Call type and direction.
 func (m *DirectRoutingLogRow) GetCallType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callType
-    }
+    return m.callType
 }
 // GetCorrelationId gets the correlationId property value. Identifier for the call that you can use when calling Microsoft Support. GUID.
 func (m *DirectRoutingLogRow) GetCorrelationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.correlationId
-    }
+    return m.correlationId
 }
 // GetDuration gets the duration property value. Duration of the call in seconds.
 func (m *DirectRoutingLogRow) GetDuration()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duration
-    }
+    return m.duration
 }
 // GetEndDateTime gets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
 func (m *DirectRoutingLogRow) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFailureDateTime gets the failureDateTime property value. Only exists for failed (not fully established) calls.
 func (m *DirectRoutingLogRow) GetFailureDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureDateTime
-    }
+    return m.failureDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -366,115 +330,59 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFinalSipCode gets the finalSipCode property value. The code with which the call ended, RFC 3261.
 func (m *DirectRoutingLogRow) GetFinalSipCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finalSipCode
-    }
+    return m.finalSipCode
 }
 // GetFinalSipCodePhrase gets the finalSipCodePhrase property value. Description of the SIP code and Microsoft subcode.
 func (m *DirectRoutingLogRow) GetFinalSipCodePhrase()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finalSipCodePhrase
-    }
+    return m.finalSipCodePhrase
 }
 // GetId gets the id property value. Unique call identifier. GUID.
 func (m *DirectRoutingLogRow) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetInviteDateTime gets the inviteDateTime property value. When the initial invite was sent.
 func (m *DirectRoutingLogRow) GetInviteDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inviteDateTime
-    }
+    return m.inviteDateTime
 }
 // GetMediaBypassEnabled gets the mediaBypassEnabled property value. Indicates if the trunk was enabled for media bypass or not.
 func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaBypassEnabled
-    }
+    return m.mediaBypassEnabled
 }
 // GetMediaPathLocation gets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
 func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaPathLocation
-    }
+    return m.mediaPathLocation
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DirectRoutingLogRow) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSignalingLocation gets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
 func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signalingLocation
-    }
+    return m.signalingLocation
 }
 // GetStartDateTime gets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
 func (m *DirectRoutingLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetSuccessfulCall gets the successfulCall property value. Success or attempt.
 func (m *DirectRoutingLogRow) GetSuccessfulCall()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulCall
-    }
+    return m.successfulCall
 }
 // GetTrunkFullyQualifiedDomainName gets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
 func (m *DirectRoutingLogRow) GetTrunkFullyQualifiedDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trunkFullyQualifiedDomainName
-    }
+    return m.trunkFullyQualifiedDomainName
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user.
 func (m *DirectRoutingLogRow) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserId gets the userId property value. Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
 func (m *DirectRoutingLogRow) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
 func (m *DirectRoutingLogRow) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *DirectRoutingLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -620,139 +528,93 @@ func (m *DirectRoutingLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DirectRoutingLogRow) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
 func (m *DirectRoutingLogRow) SetCalleeNumber(value *string)() {
-    if m != nil {
-        m.calleeNumber = value
-    }
+    m.calleeNumber = value
 }
 // SetCallEndSubReason sets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
 func (m *DirectRoutingLogRow) SetCallEndSubReason(value *int32)() {
-    if m != nil {
-        m.callEndSubReason = value
-    }
+    m.callEndSubReason = value
 }
 // SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
 func (m *DirectRoutingLogRow) SetCallerNumber(value *string)() {
-    if m != nil {
-        m.callerNumber = value
-    }
+    m.callerNumber = value
 }
 // SetCallType sets the callType property value. Call type and direction.
 func (m *DirectRoutingLogRow) SetCallType(value *string)() {
-    if m != nil {
-        m.callType = value
-    }
+    m.callType = value
 }
 // SetCorrelationId sets the correlationId property value. Identifier for the call that you can use when calling Microsoft Support. GUID.
 func (m *DirectRoutingLogRow) SetCorrelationId(value *string)() {
-    if m != nil {
-        m.correlationId = value
-    }
+    m.correlationId = value
 }
 // SetDuration sets the duration property value. Duration of the call in seconds.
 func (m *DirectRoutingLogRow) SetDuration(value *int32)() {
-    if m != nil {
-        m.duration = value
-    }
+    m.duration = value
 }
 // SetEndDateTime sets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
 func (m *DirectRoutingLogRow) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetFailureDateTime sets the failureDateTime property value. Only exists for failed (not fully established) calls.
 func (m *DirectRoutingLogRow) SetFailureDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.failureDateTime = value
-    }
+    m.failureDateTime = value
 }
 // SetFinalSipCode sets the finalSipCode property value. The code with which the call ended, RFC 3261.
 func (m *DirectRoutingLogRow) SetFinalSipCode(value *int32)() {
-    if m != nil {
-        m.finalSipCode = value
-    }
+    m.finalSipCode = value
 }
 // SetFinalSipCodePhrase sets the finalSipCodePhrase property value. Description of the SIP code and Microsoft subcode.
 func (m *DirectRoutingLogRow) SetFinalSipCodePhrase(value *string)() {
-    if m != nil {
-        m.finalSipCodePhrase = value
-    }
+    m.finalSipCodePhrase = value
 }
 // SetId sets the id property value. Unique call identifier. GUID.
 func (m *DirectRoutingLogRow) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetInviteDateTime sets the inviteDateTime property value. When the initial invite was sent.
 func (m *DirectRoutingLogRow) SetInviteDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.inviteDateTime = value
-    }
+    m.inviteDateTime = value
 }
 // SetMediaBypassEnabled sets the mediaBypassEnabled property value. Indicates if the trunk was enabled for media bypass or not.
 func (m *DirectRoutingLogRow) SetMediaBypassEnabled(value *bool)() {
-    if m != nil {
-        m.mediaBypassEnabled = value
-    }
+    m.mediaBypassEnabled = value
 }
 // SetMediaPathLocation sets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
 func (m *DirectRoutingLogRow) SetMediaPathLocation(value *string)() {
-    if m != nil {
-        m.mediaPathLocation = value
-    }
+    m.mediaPathLocation = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DirectRoutingLogRow) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSignalingLocation sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
 func (m *DirectRoutingLogRow) SetSignalingLocation(value *string)() {
-    if m != nil {
-        m.signalingLocation = value
-    }
+    m.signalingLocation = value
 }
 // SetStartDateTime sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
 func (m *DirectRoutingLogRow) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetSuccessfulCall sets the successfulCall property value. Success or attempt.
 func (m *DirectRoutingLogRow) SetSuccessfulCall(value *bool)() {
-    if m != nil {
-        m.successfulCall = value
-    }
+    m.successfulCall = value
 }
 // SetTrunkFullyQualifiedDomainName sets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
 func (m *DirectRoutingLogRow) SetTrunkFullyQualifiedDomainName(value *string)() {
-    if m != nil {
-        m.trunkFullyQualifiedDomainName = value
-    }
+    m.trunkFullyQualifiedDomainName = value
 }
 // SetUserDisplayName sets the userDisplayName property value. Display name of the user.
 func (m *DirectRoutingLogRow) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserId sets the userId property value. Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
 func (m *DirectRoutingLogRow) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
 func (m *DirectRoutingLogRow) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

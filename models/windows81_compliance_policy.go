@@ -160,91 +160,47 @@ func (m *Windows81CompliancePolicy) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Windows 8.1 version.
 func (m *Windows81CompliancePolicy) GetOsMaximumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMaximumVersion
-    }
+    return m.osMaximumVersion
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Windows 8.1 version.
 func (m *Windows81CompliancePolicy) GetOsMinimumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMinimumVersion
-    }
+    return m.osMinimumVersion
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Indicates whether or not to block simple password.
 func (m *Windows81CompliancePolicy) GetPasswordBlockSimple()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockSimple
-    }
+    return m.passwordBlockSimple
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Password expiration in days.
 func (m *Windows81CompliancePolicy) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows81CompliancePolicy) GetPasswordMinimumCharacterSetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumCharacterSetCount
-    }
+    return m.passwordMinimumCharacterSetCount
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. The minimum password length.
 func (m *Windows81CompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *Windows81CompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeLock
-    }
+    return m.passwordMinutesOfInactivityBeforeLock
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of. Valid values 0 to 24
 func (m *Windows81CompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock Windows device.
 func (m *Windows81CompliancePolicy) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81CompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Indicates whether or not to require encryption on a windows 8.1 device.
 func (m *Windows81CompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // Serialize serializes information the current object
 func (m *Windows81CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -323,67 +279,45 @@ func (m *Windows81CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Windows 8.1 version.
 func (m *Windows81CompliancePolicy) SetOsMaximumVersion(value *string)() {
-    if m != nil {
-        m.osMaximumVersion = value
-    }
+    m.osMaximumVersion = value
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Windows 8.1 version.
 func (m *Windows81CompliancePolicy) SetOsMinimumVersion(value *string)() {
-    if m != nil {
-        m.osMinimumVersion = value
-    }
+    m.osMinimumVersion = value
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Indicates whether or not to block simple password.
 func (m *Windows81CompliancePolicy) SetPasswordBlockSimple(value *bool)() {
-    if m != nil {
-        m.passwordBlockSimple = value
-    }
+    m.passwordBlockSimple = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Password expiration in days.
 func (m *Windows81CompliancePolicy) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *Windows81CompliancePolicy) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    if m != nil {
-        m.passwordMinimumCharacterSetCount = value
-    }
+    m.passwordMinimumCharacterSetCount = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. The minimum password length.
 func (m *Windows81CompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *Windows81CompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeLock = value
-    }
+    m.passwordMinutesOfInactivityBeforeLock = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of. Valid values 0 to 24
 func (m *Windows81CompliancePolicy) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Require a password to unlock Windows device.
 func (m *Windows81CompliancePolicy) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81CompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Indicates whether or not to require encryption on a windows 8.1 device.
 func (m *Windows81CompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }

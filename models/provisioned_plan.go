@@ -32,19 +32,11 @@ func CreateProvisionedPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionedPlan) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCapabilityStatus gets the capabilityStatus property value. For example, 'Enabled'.
 func (m *ProvisionedPlan) GetCapabilityStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capabilityStatus
-    }
+    return m.capabilityStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ProvisionedPlan) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProvisioningStatus gets the provisioningStatus property value. For example, 'Success'.
 func (m *ProvisionedPlan) GetProvisioningStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStatus
-    }
+    return m.provisioningStatus
 }
 // GetService gets the service property value. The name of the service; for example, 'AccessControlS2S'
 func (m *ProvisionedPlan) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // Serialize serializes information the current object
 func (m *ProvisionedPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ProvisionedPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionedPlan) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCapabilityStatus sets the capabilityStatus property value. For example, 'Enabled'.
 func (m *ProvisionedPlan) SetCapabilityStatus(value *string)() {
-    if m != nil {
-        m.capabilityStatus = value
-    }
+    m.capabilityStatus = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ProvisionedPlan) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProvisioningStatus sets the provisioningStatus property value. For example, 'Success'.
 func (m *ProvisionedPlan) SetProvisioningStatus(value *string)() {
-    if m != nil {
-        m.provisioningStatus = value
-    }
+    m.provisioningStatus = value
 }
 // SetService sets the service property value. The name of the service; for example, 'AccessControlS2S'
 func (m *ProvisionedPlan) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }

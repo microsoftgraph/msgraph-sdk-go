@@ -63,35 +63,19 @@ func CreateWindows10TeamGeneralConfigurationFromDiscriminatorValue(parseNode i87
 }
 // GetAzureOperationalInsightsBlockTelemetry gets the azureOperationalInsightsBlockTelemetry property value. Indicates whether or not to Block Azure Operational Insights.
 func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsBlockTelemetry()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureOperationalInsightsBlockTelemetry
-    }
+    return m.azureOperationalInsightsBlockTelemetry
 }
 // GetAzureOperationalInsightsWorkspaceId gets the azureOperationalInsightsWorkspaceId property value. The Azure Operational Insights workspace id.
 func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsWorkspaceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureOperationalInsightsWorkspaceId
-    }
+    return m.azureOperationalInsightsWorkspaceId
 }
 // GetAzureOperationalInsightsWorkspaceKey gets the azureOperationalInsightsWorkspaceKey property value. The Azure Operational Insights Workspace key.
 func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsWorkspaceKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureOperationalInsightsWorkspaceKey
-    }
+    return m.azureOperationalInsightsWorkspaceKey
 }
 // GetConnectAppBlockAutoLaunch gets the connectAppBlockAutoLaunch property value. Specifies whether to automatically launch the Connect app whenever a projection is initiated.
 func (m *Windows10TeamGeneralConfiguration) GetConnectAppBlockAutoLaunch()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectAppBlockAutoLaunch
-    }
+    return m.connectAppBlockAutoLaunch
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10TeamGeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -300,131 +284,67 @@ func (m *Windows10TeamGeneralConfiguration) GetFieldDeserializers()(map[string]f
 }
 // GetMaintenanceWindowBlocked gets the maintenanceWindowBlocked property value. Indicates whether or not to Block setting a maintenance window for device updates.
 func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maintenanceWindowBlocked
-    }
+    return m.maintenanceWindowBlocked
 }
 // GetMaintenanceWindowDurationInHours gets the maintenanceWindowDurationInHours property value. Maintenance window duration for device updates. Valid values 0 to 5
 func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowDurationInHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maintenanceWindowDurationInHours
-    }
+    return m.maintenanceWindowDurationInHours
 }
 // GetMaintenanceWindowStartTime gets the maintenanceWindowStartTime property value. Maintenance window start time for device updates.
 func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maintenanceWindowStartTime
-    }
+    return m.maintenanceWindowStartTime
 }
 // GetMiracastBlocked gets the miracastBlocked property value. Indicates whether or not to Block wireless projection.
 func (m *Windows10TeamGeneralConfiguration) GetMiracastBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.miracastBlocked
-    }
+    return m.miracastBlocked
 }
 // GetMiracastChannel gets the miracastChannel property value. Possible values for Miracast channel.
 func (m *Windows10TeamGeneralConfiguration) GetMiracastChannel()(*MiracastChannel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.miracastChannel
-    }
+    return m.miracastChannel
 }
 // GetMiracastRequirePin gets the miracastRequirePin property value. Indicates whether or not to require a pin for wireless projection.
 func (m *Windows10TeamGeneralConfiguration) GetMiracastRequirePin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.miracastRequirePin
-    }
+    return m.miracastRequirePin
 }
 // GetSettingsBlockMyMeetingsAndFiles gets the settingsBlockMyMeetingsAndFiles property value. Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
 func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockMyMeetingsAndFiles()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsBlockMyMeetingsAndFiles
-    }
+    return m.settingsBlockMyMeetingsAndFiles
 }
 // GetSettingsBlockSessionResume gets the settingsBlockSessionResume property value. Specifies whether to allow the ability to resume a session when the session times out.
 func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockSessionResume()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsBlockSessionResume
-    }
+    return m.settingsBlockSessionResume
 }
 // GetSettingsBlockSigninSuggestions gets the settingsBlockSigninSuggestions property value. Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.
 func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockSigninSuggestions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsBlockSigninSuggestions
-    }
+    return m.settingsBlockSigninSuggestions
 }
 // GetSettingsDefaultVolume gets the settingsDefaultVolume property value. Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100
 func (m *Windows10TeamGeneralConfiguration) GetSettingsDefaultVolume()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsDefaultVolume
-    }
+    return m.settingsDefaultVolume
 }
 // GetSettingsScreenTimeoutInMinutes gets the settingsScreenTimeoutInMinutes property value. Specifies the number of minutes until the Hub screen turns off.
 func (m *Windows10TeamGeneralConfiguration) GetSettingsScreenTimeoutInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsScreenTimeoutInMinutes
-    }
+    return m.settingsScreenTimeoutInMinutes
 }
 // GetSettingsSessionTimeoutInMinutes gets the settingsSessionTimeoutInMinutes property value. Specifies the number of minutes until the session times out.
 func (m *Windows10TeamGeneralConfiguration) GetSettingsSessionTimeoutInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsSessionTimeoutInMinutes
-    }
+    return m.settingsSessionTimeoutInMinutes
 }
 // GetSettingsSleepTimeoutInMinutes gets the settingsSleepTimeoutInMinutes property value. Specifies the number of minutes until the Hub enters sleep mode.
 func (m *Windows10TeamGeneralConfiguration) GetSettingsSleepTimeoutInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsSleepTimeoutInMinutes
-    }
+    return m.settingsSleepTimeoutInMinutes
 }
 // GetWelcomeScreenBackgroundImageUrl gets the welcomeScreenBackgroundImageUrl property value. The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBackgroundImageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomeScreenBackgroundImageUrl
-    }
+    return m.welcomeScreenBackgroundImageUrl
 }
 // GetWelcomeScreenBlockAutomaticWakeUp gets the welcomeScreenBlockAutomaticWakeUp property value. Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBlockAutomaticWakeUp()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomeScreenBlockAutomaticWakeUp
-    }
+    return m.welcomeScreenBlockAutomaticWakeUp
 }
 // GetWelcomeScreenMeetingInformation gets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenMeetingInformation()(*WelcomeScreenMeetingInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomeScreenMeetingInformation
-    }
+    return m.welcomeScreenMeetingInformation
 }
 // Serialize serializes information the current object
 func (m *Windows10TeamGeneralConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -558,121 +478,81 @@ func (m *Windows10TeamGeneralConfiguration) Serialize(writer i878a80d2330e89d268
 }
 // SetAzureOperationalInsightsBlockTelemetry sets the azureOperationalInsightsBlockTelemetry property value. Indicates whether or not to Block Azure Operational Insights.
 func (m *Windows10TeamGeneralConfiguration) SetAzureOperationalInsightsBlockTelemetry(value *bool)() {
-    if m != nil {
-        m.azureOperationalInsightsBlockTelemetry = value
-    }
+    m.azureOperationalInsightsBlockTelemetry = value
 }
 // SetAzureOperationalInsightsWorkspaceId sets the azureOperationalInsightsWorkspaceId property value. The Azure Operational Insights workspace id.
 func (m *Windows10TeamGeneralConfiguration) SetAzureOperationalInsightsWorkspaceId(value *string)() {
-    if m != nil {
-        m.azureOperationalInsightsWorkspaceId = value
-    }
+    m.azureOperationalInsightsWorkspaceId = value
 }
 // SetAzureOperationalInsightsWorkspaceKey sets the azureOperationalInsightsWorkspaceKey property value. The Azure Operational Insights Workspace key.
 func (m *Windows10TeamGeneralConfiguration) SetAzureOperationalInsightsWorkspaceKey(value *string)() {
-    if m != nil {
-        m.azureOperationalInsightsWorkspaceKey = value
-    }
+    m.azureOperationalInsightsWorkspaceKey = value
 }
 // SetConnectAppBlockAutoLaunch sets the connectAppBlockAutoLaunch property value. Specifies whether to automatically launch the Connect app whenever a projection is initiated.
 func (m *Windows10TeamGeneralConfiguration) SetConnectAppBlockAutoLaunch(value *bool)() {
-    if m != nil {
-        m.connectAppBlockAutoLaunch = value
-    }
+    m.connectAppBlockAutoLaunch = value
 }
 // SetMaintenanceWindowBlocked sets the maintenanceWindowBlocked property value. Indicates whether or not to Block setting a maintenance window for device updates.
 func (m *Windows10TeamGeneralConfiguration) SetMaintenanceWindowBlocked(value *bool)() {
-    if m != nil {
-        m.maintenanceWindowBlocked = value
-    }
+    m.maintenanceWindowBlocked = value
 }
 // SetMaintenanceWindowDurationInHours sets the maintenanceWindowDurationInHours property value. Maintenance window duration for device updates. Valid values 0 to 5
 func (m *Windows10TeamGeneralConfiguration) SetMaintenanceWindowDurationInHours(value *int32)() {
-    if m != nil {
-        m.maintenanceWindowDurationInHours = value
-    }
+    m.maintenanceWindowDurationInHours = value
 }
 // SetMaintenanceWindowStartTime sets the maintenanceWindowStartTime property value. Maintenance window start time for device updates.
 func (m *Windows10TeamGeneralConfiguration) SetMaintenanceWindowStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.maintenanceWindowStartTime = value
-    }
+    m.maintenanceWindowStartTime = value
 }
 // SetMiracastBlocked sets the miracastBlocked property value. Indicates whether or not to Block wireless projection.
 func (m *Windows10TeamGeneralConfiguration) SetMiracastBlocked(value *bool)() {
-    if m != nil {
-        m.miracastBlocked = value
-    }
+    m.miracastBlocked = value
 }
 // SetMiracastChannel sets the miracastChannel property value. Possible values for Miracast channel.
 func (m *Windows10TeamGeneralConfiguration) SetMiracastChannel(value *MiracastChannel)() {
-    if m != nil {
-        m.miracastChannel = value
-    }
+    m.miracastChannel = value
 }
 // SetMiracastRequirePin sets the miracastRequirePin property value. Indicates whether or not to require a pin for wireless projection.
 func (m *Windows10TeamGeneralConfiguration) SetMiracastRequirePin(value *bool)() {
-    if m != nil {
-        m.miracastRequirePin = value
-    }
+    m.miracastRequirePin = value
 }
 // SetSettingsBlockMyMeetingsAndFiles sets the settingsBlockMyMeetingsAndFiles property value. Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
 func (m *Windows10TeamGeneralConfiguration) SetSettingsBlockMyMeetingsAndFiles(value *bool)() {
-    if m != nil {
-        m.settingsBlockMyMeetingsAndFiles = value
-    }
+    m.settingsBlockMyMeetingsAndFiles = value
 }
 // SetSettingsBlockSessionResume sets the settingsBlockSessionResume property value. Specifies whether to allow the ability to resume a session when the session times out.
 func (m *Windows10TeamGeneralConfiguration) SetSettingsBlockSessionResume(value *bool)() {
-    if m != nil {
-        m.settingsBlockSessionResume = value
-    }
+    m.settingsBlockSessionResume = value
 }
 // SetSettingsBlockSigninSuggestions sets the settingsBlockSigninSuggestions property value. Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.
 func (m *Windows10TeamGeneralConfiguration) SetSettingsBlockSigninSuggestions(value *bool)() {
-    if m != nil {
-        m.settingsBlockSigninSuggestions = value
-    }
+    m.settingsBlockSigninSuggestions = value
 }
 // SetSettingsDefaultVolume sets the settingsDefaultVolume property value. Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100
 func (m *Windows10TeamGeneralConfiguration) SetSettingsDefaultVolume(value *int32)() {
-    if m != nil {
-        m.settingsDefaultVolume = value
-    }
+    m.settingsDefaultVolume = value
 }
 // SetSettingsScreenTimeoutInMinutes sets the settingsScreenTimeoutInMinutes property value. Specifies the number of minutes until the Hub screen turns off.
 func (m *Windows10TeamGeneralConfiguration) SetSettingsScreenTimeoutInMinutes(value *int32)() {
-    if m != nil {
-        m.settingsScreenTimeoutInMinutes = value
-    }
+    m.settingsScreenTimeoutInMinutes = value
 }
 // SetSettingsSessionTimeoutInMinutes sets the settingsSessionTimeoutInMinutes property value. Specifies the number of minutes until the session times out.
 func (m *Windows10TeamGeneralConfiguration) SetSettingsSessionTimeoutInMinutes(value *int32)() {
-    if m != nil {
-        m.settingsSessionTimeoutInMinutes = value
-    }
+    m.settingsSessionTimeoutInMinutes = value
 }
 // SetSettingsSleepTimeoutInMinutes sets the settingsSleepTimeoutInMinutes property value. Specifies the number of minutes until the Hub enters sleep mode.
 func (m *Windows10TeamGeneralConfiguration) SetSettingsSleepTimeoutInMinutes(value *int32)() {
-    if m != nil {
-        m.settingsSleepTimeoutInMinutes = value
-    }
+    m.settingsSleepTimeoutInMinutes = value
 }
 // SetWelcomeScreenBackgroundImageUrl sets the welcomeScreenBackgroundImageUrl property value. The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
 func (m *Windows10TeamGeneralConfiguration) SetWelcomeScreenBackgroundImageUrl(value *string)() {
-    if m != nil {
-        m.welcomeScreenBackgroundImageUrl = value
-    }
+    m.welcomeScreenBackgroundImageUrl = value
 }
 // SetWelcomeScreenBlockAutomaticWakeUp sets the welcomeScreenBlockAutomaticWakeUp property value. Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
 func (m *Windows10TeamGeneralConfiguration) SetWelcomeScreenBlockAutomaticWakeUp(value *bool)() {
-    if m != nil {
-        m.welcomeScreenBlockAutomaticWakeUp = value
-    }
+    m.welcomeScreenBlockAutomaticWakeUp = value
 }
 // SetWelcomeScreenMeetingInformation sets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
 func (m *Windows10TeamGeneralConfiguration) SetWelcomeScreenMeetingInformation(value *WelcomeScreenMeetingInformation)() {
-    if m != nil {
-        m.welcomeScreenMeetingInformation = value
-    }
+    m.welcomeScreenMeetingInformation = value
 }

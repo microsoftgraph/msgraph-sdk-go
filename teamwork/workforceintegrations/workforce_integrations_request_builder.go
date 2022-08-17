@@ -16,7 +16,7 @@ type WorkforceIntegrationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WorkforceIntegrationsRequestBuilderGetQueryParameters a workforce integration with shifts.
+// WorkforceIntegrationsRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
 type WorkforceIntegrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewWorkforceIntegrationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *WorkforceIntegrationsRequestBuilder) Count()(*i8246fcd383fd1fbb2735090abd23799f2f183f5675fcc13611be2ffe48bb2f74.CountRequestBuilder) {
     return i8246fcd383fd1fbb2735090abd23799f2f183f5675fcc13611be2ffe48bb2f74.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a workforce integration with shifts.
+// CreateGetRequestInformation get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a workforce integration with shifts.
+// CreateGetRequestInformationWithRequestConfiguration get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get a workforce integration with shifts.
+// Get get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a workforce integration with shifts.
+// GetWithRequestConfigurationAndResponseHandler get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

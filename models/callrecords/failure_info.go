@@ -30,11 +30,7 @@ func CreateFailureInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FailureInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FailureInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *FailureInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FailureInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetReason gets the reason property value. Classification of why a call or portion of a call failed.
 func (m *FailureInfo) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // GetStage gets the stage property value. The stage property
 func (m *FailureInfo) GetStage()(*FailureStage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stage
-    }
+    return m.stage
 }
 // Serialize serializes information the current object
 func (m *FailureInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *FailureInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FailureInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FailureInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetReason sets the reason property value. Classification of why a call or portion of a call failed.
 func (m *FailureInfo) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }
 // SetStage sets the stage property value. The stage property
 func (m *FailureInfo) SetStage(value *FailureStage)() {
-    if m != nil {
-        m.stage = value
-    }
+    m.stage = value
 }

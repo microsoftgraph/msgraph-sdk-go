@@ -54,11 +54,7 @@ func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAppAvailability gets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) GetAppAvailability()(*ManagedAppAvailability) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appAvailability
-    }
+    return m.appAvailability
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,11 +83,7 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetVersion gets the version property value. The Application's version.
 func (m *ManagedApp) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,13 +108,9 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAppAvailability sets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) SetAppAvailability(value *ManagedAppAvailability)() {
-    if m != nil {
-        m.appAvailability = value
-    }
+    m.appAvailability = value
 }
 // SetVersion sets the version property value. The Application's version.
 func (m *ManagedApp) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

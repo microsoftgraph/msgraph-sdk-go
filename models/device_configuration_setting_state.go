@@ -50,35 +50,19 @@ func CreateDeviceConfigurationSettingStateFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceConfigurationSettingState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCurrentValue gets the currentValue property value. Current value of setting on device
 func (m *DeviceConfigurationSettingState) GetCurrentValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currentValue
-    }
+    return m.currentValue
 }
 // GetErrorCode gets the errorCode property value. Error code for the setting
 func (m *DeviceConfigurationSettingState) GetErrorCode()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetErrorDescription gets the errorDescription property value. Error description
 func (m *DeviceConfigurationSettingState) GetErrorDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorDescription
-    }
+    return m.errorDescription
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -221,83 +205,43 @@ func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]fun
 }
 // GetInstanceDisplayName gets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *DeviceConfigurationSettingState) GetInstanceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceDisplayName
-    }
+    return m.instanceDisplayName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceConfigurationSettingState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSetting gets the setting property value. The setting that is being reported
 func (m *DeviceConfigurationSettingState) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
+    return m.setting
 }
 // GetSettingName gets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *DeviceConfigurationSettingState) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetSources gets the sources property value. Contributing policies
 func (m *DeviceConfigurationSettingState) GetSources()([]SettingSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sources
-    }
+    return m.sources
 }
 // GetState gets the state property value. The state property
 func (m *DeviceConfigurationSettingState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUserEmail gets the userEmail property value. UserEmail
 func (m *DeviceConfigurationSettingState) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
+    return m.userEmail
 }
 // GetUserId gets the userId property value. UserId
 func (m *DeviceConfigurationSettingState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserName gets the userName property value. UserName
 func (m *DeviceConfigurationSettingState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationSettingState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationSettingState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -394,85 +338,57 @@ func (m *DeviceConfigurationSettingState) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceConfigurationSettingState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device
 func (m *DeviceConfigurationSettingState) SetCurrentValue(value *string)() {
-    if m != nil {
-        m.currentValue = value
-    }
+    m.currentValue = value
 }
 // SetErrorCode sets the errorCode property value. Error code for the setting
 func (m *DeviceConfigurationSettingState) SetErrorCode(value *int64)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetErrorDescription sets the errorDescription property value. Error description
 func (m *DeviceConfigurationSettingState) SetErrorDescription(value *string)() {
-    if m != nil {
-        m.errorDescription = value
-    }
+    m.errorDescription = value
 }
 // SetInstanceDisplayName sets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *DeviceConfigurationSettingState) SetInstanceDisplayName(value *string)() {
-    if m != nil {
-        m.instanceDisplayName = value
-    }
+    m.instanceDisplayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceConfigurationSettingState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSetting sets the setting property value. The setting that is being reported
 func (m *DeviceConfigurationSettingState) SetSetting(value *string)() {
-    if m != nil {
-        m.setting = value
-    }
+    m.setting = value
 }
 // SetSettingName sets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *DeviceConfigurationSettingState) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetSources sets the sources property value. Contributing policies
 func (m *DeviceConfigurationSettingState) SetSources(value []SettingSourceable)() {
-    if m != nil {
-        m.sources = value
-    }
+    m.sources = value
 }
 // SetState sets the state property value. The state property
 func (m *DeviceConfigurationSettingState) SetState(value *ComplianceStatus)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUserEmail sets the userEmail property value. UserEmail
 func (m *DeviceConfigurationSettingState) SetUserEmail(value *string)() {
-    if m != nil {
-        m.userEmail = value
-    }
+    m.userEmail = value
 }
 // SetUserId sets the userId property value. UserId
 func (m *DeviceConfigurationSettingState) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserName sets the userName property value. UserName
 func (m *DeviceConfigurationSettingState) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationSettingState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

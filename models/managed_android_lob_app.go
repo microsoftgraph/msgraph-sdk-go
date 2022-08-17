@@ -76,35 +76,19 @@ func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *ManagedAndroidLobApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *ManagedAndroidLobApp) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // GetVersionCode gets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) GetVersionCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionCode
-    }
+    return m.versionCode
 }
 // GetVersionName gets the versionName property value. The version name of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) GetVersionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionName
-    }
+    return m.versionName
 }
 // Serialize serializes information the current object
 func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *ManagedAndroidLobApp) SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *ManagedAndroidLobApp) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }
 // SetVersionCode sets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) SetVersionCode(value *string)() {
-    if m != nil {
-        m.versionCode = value
-    }
+    m.versionCode = value
 }
 // SetVersionName sets the versionName property value. The version name of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) SetVersionName(value *string)() {
-    if m != nil {
-        m.versionName = value
-    }
+    m.versionName = value
 }

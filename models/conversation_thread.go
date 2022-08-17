@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationThread provides operations to manage the admin singleton.
+// ConversationThread provides operations to manage the collection of agreementAcceptance entities.
 type ConversationThread struct {
     Entity
     // The Cc: recipients for the thread. Returned only on $select.
@@ -14,7 +14,7 @@ type ConversationThread struct {
     hasAttachments *bool
     // Indicates if the thread is locked. Returned by default.
     isLocked *bool
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
     lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The posts property
     posts []Postable
@@ -42,11 +42,7 @@ func CreateConversationThreadFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetCcRecipients gets the ccRecipients property value. The Cc: recipients for the thread. Returned only on $select.
 func (m *ConversationThread) GetCcRecipients()([]Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ccRecipients
-    }
+    return m.ccRecipients
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,67 +157,35 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
 func (m *ConversationThread) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
+    return m.hasAttachments
 }
 // GetIsLocked gets the isLocked property value. Indicates if the thread is locked. Returned by default.
 func (m *ConversationThread) GetIsLocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLocked
-    }
+    return m.isLocked
 }
-// GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
+// GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
 func (m *ConversationThread) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastDeliveredDateTime
-    }
+    return m.lastDeliveredDateTime
 }
 // GetPosts gets the posts property value. The posts property
 func (m *ConversationThread) GetPosts()([]Postable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.posts
-    }
+    return m.posts
 }
 // GetPreview gets the preview property value. A short summary from the body of the latest post in this conversation. Returned by default.
 func (m *ConversationThread) GetPreview()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preview
-    }
+    return m.preview
 }
 // GetTopic gets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
 func (m *ConversationThread) GetTopic()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topic
-    }
+    return m.topic
 }
 // GetToRecipients gets the toRecipients property value. The To: recipients for the thread. Returned only on $select.
 func (m *ConversationThread) GetToRecipients()([]Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toRecipients
-    }
+    return m.toRecipients
 }
 // GetUniqueSenders gets the uniqueSenders property value. All the users that sent a message to this thread. Returned by default.
 func (m *ConversationThread) GetUniqueSenders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueSenders
-    }
+    return m.uniqueSenders
 }
 // Serialize serializes information the current object
 func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -299,55 +263,37 @@ func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the thread. Returned only on $select.
 func (m *ConversationThread) SetCcRecipients(value []Recipientable)() {
-    if m != nil {
-        m.ccRecipients = value
-    }
+    m.ccRecipients = value
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
 func (m *ConversationThread) SetHasAttachments(value *bool)() {
-    if m != nil {
-        m.hasAttachments = value
-    }
+    m.hasAttachments = value
 }
 // SetIsLocked sets the isLocked property value. Indicates if the thread is locked. Returned by default.
 func (m *ConversationThread) SetIsLocked(value *bool)() {
-    if m != nil {
-        m.isLocked = value
-    }
+    m.isLocked = value
 }
-// SetLastDeliveredDateTime sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
+// SetLastDeliveredDateTime sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
 func (m *ConversationThread) SetLastDeliveredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastDeliveredDateTime = value
-    }
+    m.lastDeliveredDateTime = value
 }
 // SetPosts sets the posts property value. The posts property
 func (m *ConversationThread) SetPosts(value []Postable)() {
-    if m != nil {
-        m.posts = value
-    }
+    m.posts = value
 }
 // SetPreview sets the preview property value. A short summary from the body of the latest post in this conversation. Returned by default.
 func (m *ConversationThread) SetPreview(value *string)() {
-    if m != nil {
-        m.preview = value
-    }
+    m.preview = value
 }
 // SetTopic sets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
 func (m *ConversationThread) SetTopic(value *string)() {
-    if m != nil {
-        m.topic = value
-    }
+    m.topic = value
 }
 // SetToRecipients sets the toRecipients property value. The To: recipients for the thread. Returned only on $select.
 func (m *ConversationThread) SetToRecipients(value []Recipientable)() {
-    if m != nil {
-        m.toRecipients = value
-    }
+    m.toRecipients = value
 }
 // SetUniqueSenders sets the uniqueSenders property value. All the users that sent a message to this thread. Returned by default.
 func (m *ConversationThread) SetUniqueSenders(value []string)() {
-    if m != nil {
-        m.uniqueSenders = value
-    }
+    m.uniqueSenders = value
 }

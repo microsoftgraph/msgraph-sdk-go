@@ -7,7 +7,7 @@ import (
 // TeamworkApplicationIdentity 
 type TeamworkApplicationIdentity struct {
     Identity
-    // Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.
+    // Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
     applicationIdentityType *TeamworkApplicationIdentityType
 }
 // NewTeamworkApplicationIdentity instantiates a new TeamworkApplicationIdentity and sets the default values.
@@ -23,13 +23,9 @@ func NewTeamworkApplicationIdentity()(*TeamworkApplicationIdentity) {
 func CreateTeamworkApplicationIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkApplicationIdentity(), nil
 }
-// GetApplicationIdentityType gets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.
+// GetApplicationIdentityType gets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
 func (m *TeamworkApplicationIdentity) GetApplicationIdentityType()(*TeamworkApplicationIdentityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationIdentityType
-    }
+    return m.applicationIdentityType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkApplicationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,9 +57,7 @@ func (m *TeamworkApplicationIdentity) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetApplicationIdentityType sets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.
+// SetApplicationIdentityType sets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
 func (m *TeamworkApplicationIdentity) SetApplicationIdentityType(value *TeamworkApplicationIdentityType)() {
-    if m != nil {
-        m.applicationIdentityType = value
-    }
+    m.applicationIdentityType = value
 }

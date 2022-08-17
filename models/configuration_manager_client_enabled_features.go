@@ -38,27 +38,15 @@ func CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientEnabledFeatures) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCompliancePolicy gets the compliancePolicy property value. Whether compliance policy is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetCompliancePolicy()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliancePolicy
-    }
+    return m.compliancePolicy
 }
 // GetDeviceConfiguration gets the deviceConfiguration property value. Whether device configuration is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetDeviceConfiguration()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceConfiguration
-    }
+    return m.deviceConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,43 +125,23 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
 }
 // GetInventory gets the inventory property value. Whether inventory is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventory
-    }
+    return m.inventory
 }
 // GetModernApps gets the modernApps property value. Whether modern application is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modernApps
-    }
+    return m.modernApps
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientEnabledFeatures) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResourceAccess gets the resourceAccess property value. Whether resource access is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetResourceAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAccess
-    }
+    return m.resourceAccess
 }
 // GetWindowsUpdateForBusiness gets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetWindowsUpdateForBusiness()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsUpdateForBusiness
-    }
+    return m.windowsUpdateForBusiness
 }
 // Serialize serializes information the current object
 func (m *ConfigurationManagerClientEnabledFeatures) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *ConfigurationManagerClientEnabledFeatures) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientEnabledFeatures) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCompliancePolicy sets the compliancePolicy property value. Whether compliance policy is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetCompliancePolicy(value *bool)() {
-    if m != nil {
-        m.compliancePolicy = value
-    }
+    m.compliancePolicy = value
 }
 // SetDeviceConfiguration sets the deviceConfiguration property value. Whether device configuration is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetDeviceConfiguration(value *bool)() {
-    if m != nil {
-        m.deviceConfiguration = value
-    }
+    m.deviceConfiguration = value
 }
 // SetInventory sets the inventory property value. Whether inventory is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetInventory(value *bool)() {
-    if m != nil {
-        m.inventory = value
-    }
+    m.inventory = value
 }
 // SetModernApps sets the modernApps property value. Whether modern application is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetModernApps(value *bool)() {
-    if m != nil {
-        m.modernApps = value
-    }
+    m.modernApps = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientEnabledFeatures) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResourceAccess sets the resourceAccess property value. Whether resource access is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetResourceAccess(value *bool)() {
-    if m != nil {
-        m.resourceAccess = value
-    }
+    m.resourceAccess = value
 }
 // SetWindowsUpdateForBusiness sets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetWindowsUpdateForBusiness(value *bool)() {
-    if m != nil {
-        m.windowsUpdateForBusiness = value
-    }
+    m.windowsUpdateForBusiness = value
 }

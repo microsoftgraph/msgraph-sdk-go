@@ -92,43 +92,23 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) GetFieldDeserializers()(ma
 }
 // GetIsDefaultRecipientsEnabled gets the isDefaultRecipientsEnabled property value. Indicates whether a default recipient will receive the notification email.
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetIsDefaultRecipientsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultRecipientsEnabled
-    }
+    return m.isDefaultRecipientsEnabled
 }
 // GetNotificationLevel gets the notificationLevel property value. The level of notification. The possible values are None, Critical, All.
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationLevel
-    }
+    return m.notificationLevel
 }
 // GetNotificationRecipients gets the notificationRecipients property value. The list of recipients of the email notifications.
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationRecipients()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationRecipients
-    }
+    return m.notificationRecipients
 }
 // GetNotificationType gets the notificationType property value. The type of notification. Only Email is supported.
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationType
-    }
+    return m.notificationType
 }
 // GetRecipientType gets the recipientType property value. The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetRecipientType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientType
-    }
+    return m.recipientType
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyNotificationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -170,31 +150,21 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) Serialize(writer i878a80d2
 }
 // SetIsDefaultRecipientsEnabled sets the isDefaultRecipientsEnabled property value. Indicates whether a default recipient will receive the notification email.
 func (m *UnifiedRoleManagementPolicyNotificationRule) SetIsDefaultRecipientsEnabled(value *bool)() {
-    if m != nil {
-        m.isDefaultRecipientsEnabled = value
-    }
+    m.isDefaultRecipientsEnabled = value
 }
 // SetNotificationLevel sets the notificationLevel property value. The level of notification. The possible values are None, Critical, All.
 func (m *UnifiedRoleManagementPolicyNotificationRule) SetNotificationLevel(value *string)() {
-    if m != nil {
-        m.notificationLevel = value
-    }
+    m.notificationLevel = value
 }
 // SetNotificationRecipients sets the notificationRecipients property value. The list of recipients of the email notifications.
 func (m *UnifiedRoleManagementPolicyNotificationRule) SetNotificationRecipients(value []string)() {
-    if m != nil {
-        m.notificationRecipients = value
-    }
+    m.notificationRecipients = value
 }
 // SetNotificationType sets the notificationType property value. The type of notification. Only Email is supported.
 func (m *UnifiedRoleManagementPolicyNotificationRule) SetNotificationType(value *string)() {
-    if m != nil {
-        m.notificationType = value
-    }
+    m.notificationType = value
 }
 // SetRecipientType sets the recipientType property value. The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
 func (m *UnifiedRoleManagementPolicyNotificationRule) SetRecipientType(value *string)() {
-    if m != nil {
-        m.recipientType = value
-    }
+    m.recipientType = value
 }

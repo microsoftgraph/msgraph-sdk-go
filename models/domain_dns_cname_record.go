@@ -25,11 +25,7 @@ func CreateDomainDnsCnameRecordFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCanonicalName gets the canonicalName property value. The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
 func (m *DomainDnsCnameRecord) GetCanonicalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canonicalName
-    }
+    return m.canonicalName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DomainDnsCnameRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *DomainDnsCnameRecord) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCanonicalName sets the canonicalName property value. The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
 func (m *DomainDnsCnameRecord) SetCanonicalName(value *string)() {
-    if m != nil {
-        m.canonicalName = value
-    }
+    m.canonicalName = value
 }

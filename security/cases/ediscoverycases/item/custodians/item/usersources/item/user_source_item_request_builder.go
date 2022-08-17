@@ -22,7 +22,7 @@ type UserSourceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserSourceItemRequestBuilderGetQueryParameters data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// UserSourceItemRequestBuilderGetQueryParameters data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 type UserSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *UserSourceItemRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// CreateGetRequestInformation data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// CreateGetRequestInformationWithRequestConfiguration data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *UserSourceItemRequestBuilder) DeleteWithRequestConfigurationAndResponse
     }
     return nil
 }
-// Get data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// Get data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourceItemRequestBuilder) Get()(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UserSourceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler data source entity for a custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// GetWithRequestConfigurationAndResponseHandler data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UserSourceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

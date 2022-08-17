@@ -26,19 +26,11 @@ func CreateValidatePermissionPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePermissionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChallengeToken gets the challengeToken property value. The challengeToken property
 func (m *ValidatePermissionPostRequestBody) GetChallengeToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.challengeToken
-    }
+    return m.challengeToken
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ValidatePermissionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,11 +59,7 @@ func (m *ValidatePermissionPostRequestBody) GetFieldDeserializers()(map[string]f
 }
 // GetPassword gets the password property value. The password property
 func (m *ValidatePermissionPostRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // Serialize serializes information the current object
 func (m *ValidatePermissionPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *ValidatePermissionPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePermissionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChallengeToken sets the challengeToken property value. The challengeToken property
 func (m *ValidatePermissionPostRequestBody) SetChallengeToken(value *string)() {
-    if m != nil {
-        m.challengeToken = value
-    }
+    m.challengeToken = value
 }
 // SetPassword sets the password property value. The password property
 func (m *ValidatePermissionPostRequestBody) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }

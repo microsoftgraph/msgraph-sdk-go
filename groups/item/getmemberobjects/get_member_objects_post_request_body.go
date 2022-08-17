@@ -24,11 +24,7 @@ func CreateGetMemberObjectsPostRequestBodyFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMemberObjectsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetMemberObjectsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *GetMemberObjectsPostRequestBody) GetFieldDeserializers()(map[string]fun
 }
 // GetSecurityEnabledOnly gets the securityEnabledOnly property value. The securityEnabledOnly property
 func (m *GetMemberObjectsPostRequestBody) GetSecurityEnabledOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityEnabledOnly
-    }
+    return m.securityEnabledOnly
 }
 // Serialize serializes information the current object
 func (m *GetMemberObjectsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *GetMemberObjectsPostRequestBody) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMemberObjectsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetSecurityEnabledOnly sets the securityEnabledOnly property value. The securityEnabledOnly property
 func (m *GetMemberObjectsPostRequestBody) SetSecurityEnabledOnly(value *bool)() {
-    if m != nil {
-        m.securityEnabledOnly = value
-    }
+    m.securityEnabledOnly = value
 }

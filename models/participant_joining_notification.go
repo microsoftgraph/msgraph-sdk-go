@@ -25,11 +25,7 @@ func CreateParticipantJoiningNotificationFromDiscriminatorValue(parseNode i878a8
 }
 // GetCall gets the call property value. The call property
 func (m *ParticipantJoiningNotification) GetCall()(Callable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.call
-    }
+    return m.call
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantJoiningNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ParticipantJoiningNotification) Serialize(writer i878a80d2330e89d268963
 }
 // SetCall sets the call property value. The call property
 func (m *ParticipantJoiningNotification) SetCall(value Callable)() {
-    if m != nil {
-        m.call = value
-    }
+    m.call = value
 }

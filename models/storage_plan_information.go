@@ -10,7 +10,7 @@ type StoragePlanInformation struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // Indicates if there are higher storage quota plans available. Read-only.
+    // Indicates whether there are higher storage quota plans available. Read-only.
     upgradeAvailable *bool
 }
 // NewStoragePlanInformation instantiates a new storagePlanInformation and sets the default values.
@@ -28,11 +28,7 @@ func CreateStoragePlanInformationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StoragePlanInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *StoragePlanInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetUpgradeAvailable gets the upgradeAvailable property value. Indicates if there are higher storage quota plans available. Read-only.
+// GetUpgradeAvailable gets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
 func (m *StoragePlanInformation) GetUpgradeAvailable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeAvailable
-    }
+    return m.upgradeAvailable
 }
 // Serialize serializes information the current object
 func (m *StoragePlanInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *StoragePlanInformation) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StoragePlanInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *StoragePlanInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetUpgradeAvailable sets the upgradeAvailable property value. Indicates if there are higher storage quota plans available. Read-only.
+// SetUpgradeAvailable sets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
 func (m *StoragePlanInformation) SetUpgradeAvailable(value *bool)() {
-    if m != nil {
-        m.upgradeAvailable = value
-    }
+    m.upgradeAvailable = value
 }

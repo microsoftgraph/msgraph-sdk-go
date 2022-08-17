@@ -8,7 +8,7 @@ import (
 type TermColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Specifies whether the column will allow more than one value
+    // Specifies whether the column will allow more than one value.
     allowMultipleValues *bool
     // The OdataType property
     odataType *string
@@ -30,19 +30,11 @@ func CreateTermColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TermColumn) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column will allow more than one value
+// GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
 func (m *TermColumn) GetAllowMultipleValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowMultipleValues
-    }
+    return m.allowMultipleValues
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TermColumn) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetShowFullyQualifiedName gets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
 func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showFullyQualifiedName
-    }
+    return m.showFullyQualifiedName
 }
 // Serialize serializes information the current object
 func (m *TermColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *TermColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TermColumn) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value
+// SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
 func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
-    if m != nil {
-        m.allowMultipleValues = value
-    }
+    m.allowMultipleValues = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TermColumn) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetShowFullyQualifiedName sets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
 func (m *TermColumn) SetShowFullyQualifiedName(value *bool)() {
-    if m != nil {
-        m.showFullyQualifiedName = value
-    }
+    m.showFullyQualifiedName = value
 }

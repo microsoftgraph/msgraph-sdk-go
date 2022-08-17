@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAsyncOperation provides operations to manage the admin singleton.
+// TeamsAsyncOperation provides operations to manage the collection of agreementAcceptance entities.
 type TeamsAsyncOperation struct {
     Entity
     // Number of times the operation was attempted before being marked successful or failed.
@@ -40,27 +40,15 @@ func CreateTeamsAsyncOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAttemptsCount gets the attemptsCount property value. Number of times the operation was attempted before being marked successful or failed.
 func (m *TeamsAsyncOperation) GetAttemptsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attemptsCount
-    }
+    return m.attemptsCount
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time when the operation was created.
 func (m *TeamsAsyncOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetError gets the error property value. Any error that causes the async operation to fail.
 func (m *TeamsAsyncOperation) GetError()(OperationErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,43 +137,23 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. Time when the async operation was last updated.
 func (m *TeamsAsyncOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetOperationType gets the operationType property value. The operationType property
 func (m *TeamsAsyncOperation) GetOperationType()(*TeamsAsyncOperationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
+    return m.operationType
 }
 // GetStatus gets the status property value. The status property
 func (m *TeamsAsyncOperation) GetStatus()(*TeamsAsyncOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTargetResourceId gets the targetResourceId property value. The ID of the object that's created or modified as result of this async operation, typically a team.
 func (m *TeamsAsyncOperation) GetTargetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetResourceId
-    }
+    return m.targetResourceId
 }
 // GetTargetResourceLocation gets the targetResourceLocation property value. The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
 func (m *TeamsAsyncOperation) GetTargetResourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetResourceLocation
-    }
+    return m.targetResourceLocation
 }
 // Serialize serializes information the current object
 func (m *TeamsAsyncOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -247,49 +215,33 @@ func (m *TeamsAsyncOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAttemptsCount sets the attemptsCount property value. Number of times the operation was attempted before being marked successful or failed.
 func (m *TeamsAsyncOperation) SetAttemptsCount(value *int32)() {
-    if m != nil {
-        m.attemptsCount = value
-    }
+    m.attemptsCount = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Time when the operation was created.
 func (m *TeamsAsyncOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetError sets the error property value. Any error that causes the async operation to fail.
 func (m *TeamsAsyncOperation) SetError(value OperationErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. Time when the async operation was last updated.
 func (m *TeamsAsyncOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetOperationType sets the operationType property value. The operationType property
 func (m *TeamsAsyncOperation) SetOperationType(value *TeamsAsyncOperationType)() {
-    if m != nil {
-        m.operationType = value
-    }
+    m.operationType = value
 }
 // SetStatus sets the status property value. The status property
 func (m *TeamsAsyncOperation) SetStatus(value *TeamsAsyncOperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTargetResourceId sets the targetResourceId property value. The ID of the object that's created or modified as result of this async operation, typically a team.
 func (m *TeamsAsyncOperation) SetTargetResourceId(value *string)() {
-    if m != nil {
-        m.targetResourceId = value
-    }
+    m.targetResourceId = value
 }
 // SetTargetResourceLocation sets the targetResourceLocation property value. The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
 func (m *TeamsAsyncOperation) SetTargetResourceLocation(value *string)() {
-    if m != nil {
-        m.targetResourceLocation = value
-    }
+    m.targetResourceLocation = value
 }

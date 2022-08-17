@@ -32,27 +32,15 @@ func CreateSearchBucketFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchBucket) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAggregationFilterToken gets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
 func (m *SearchBucket) GetAggregationFilterToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aggregationFilterToken
-    }
+    return m.aggregationFilterToken
 }
 // GetCount gets the count property value. The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
 func (m *SearchBucket) GetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.count
-    }
+    return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *SearchBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetKey gets the key property value. The discrete value of the field that an aggregation was computed on.
 func (m *SearchBucket) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
+    return m.key
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchBucket) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SearchBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *SearchBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchBucket) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAggregationFilterToken sets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
 func (m *SearchBucket) SetAggregationFilterToken(value *string)() {
-    if m != nil {
-        m.aggregationFilterToken = value
-    }
+    m.aggregationFilterToken = value
 }
 // SetCount sets the count property value. The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
 func (m *SearchBucket) SetCount(value *int32)() {
-    if m != nil {
-        m.count = value
-    }
+    m.count = value
 }
 // SetKey sets the key property value. The discrete value of the field that an aggregation was computed on.
 func (m *SearchBucket) SetKey(value *string)() {
-    if m != nil {
-        m.key = value
-    }
+    m.key = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchBucket) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

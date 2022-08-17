@@ -52,19 +52,11 @@ func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAddress gets the address property value. The street address of the place.
 func (m *Place) GetAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetDisplayName gets the displayName property value. The name associated with the place.
 func (m *Place) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +105,11 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
 func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.geoCoordinates
-    }
+    return m.geoCoordinates
 }
 // GetPhone gets the phone property value. The phone number of the place.
 func (m *Place) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
+    return m.phone
 }
 // Serialize serializes information the current object
 func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,25 +145,17 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAddress sets the address property value. The street address of the place.
 func (m *Place) SetAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetDisplayName sets the displayName property value. The name associated with the place.
 func (m *Place) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
 func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
-    if m != nil {
-        m.geoCoordinates = value
-    }
+    m.geoCoordinates = value
 }
 // SetPhone sets the phone property value. The phone number of the place.
 func (m *Place) SetPhone(value *string)() {
-    if m != nil {
-        m.phone = value
-    }
+    m.phone = value
 }

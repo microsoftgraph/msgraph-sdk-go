@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartSeries provides operations to manage the admin singleton.
+// WorkbookChartSeries provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookChartSeries struct {
     Entity
     // Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
@@ -68,27 +68,15 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFormat gets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
 func (m *WorkbookChartSeries) GetFormat()(WorkbookChartSeriesFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetName gets the name property value. Represents the name of a series in a chart.
 func (m *WorkbookChartSeries) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetPoints gets the points property value. Represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartSeries) GetPoints()([]WorkbookChartPointable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.points
-    }
+    return m.points
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartSeries) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *WorkbookChartSeries) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFormat sets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
 func (m *WorkbookChartSeries) SetFormat(value WorkbookChartSeriesFormatable)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetName sets the name property value. Represents the name of a series in a chart.
 func (m *WorkbookChartSeries) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetPoints sets the points property value. Represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartSeries) SetPoints(value []WorkbookChartPointable)() {
-    if m != nil {
-        m.points = value
-    }
+    m.points = value
 }

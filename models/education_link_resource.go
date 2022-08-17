@@ -40,11 +40,7 @@ func (m *EducationLinkResource) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLink gets the link property value. URL to the resource.
 func (m *EducationLinkResource) GetLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.link
-    }
+    return m.link
 }
 // Serialize serializes information the current object
 func (m *EducationLinkResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *EducationLinkResource) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetLink sets the link property value. URL to the resource.
 func (m *EducationLinkResource) SetLink(value *string)() {
-    if m != nil {
-        m.link = value
-    }
+    m.link = value
 }

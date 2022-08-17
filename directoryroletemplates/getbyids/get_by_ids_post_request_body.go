@@ -26,11 +26,7 @@ func CreateGetByIdsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetByIdsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetByIdsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,19 +63,11 @@ func (m *GetByIdsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIds gets the ids property value. The ids property
 func (m *GetByIdsPostRequestBody) GetIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ids
-    }
+    return m.ids
 }
 // GetTypes gets the types property value. The types property
 func (m *GetByIdsPostRequestBody) GetTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.types
-    }
+    return m.types
 }
 // Serialize serializes information the current object
 func (m *GetByIdsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,19 +93,13 @@ func (m *GetByIdsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetByIdsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIds sets the ids property value. The ids property
 func (m *GetByIdsPostRequestBody) SetIds(value []string)() {
-    if m != nil {
-        m.ids = value
-    }
+    m.ids = value
 }
 // SetTypes sets the types property value. The types property
 func (m *GetByIdsPostRequestBody) SetTypes(value []string)() {
-    if m != nil {
-        m.types = value
-    }
+    m.types = value
 }

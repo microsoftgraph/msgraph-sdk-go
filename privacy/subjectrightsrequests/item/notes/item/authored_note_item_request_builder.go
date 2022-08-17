@@ -22,7 +22,7 @@ type AuthoredNoteItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthoredNoteItemRequestBuilderGetQueryParameters list of notes associated with the request.
+// AuthoredNoteItemRequestBuilderGetQueryParameters list of notes associcated with the request.
 type AuthoredNoteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *AuthoredNoteItemRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation list of notes associated with the request.
+// CreateGetRequestInformation list of notes associcated with the request.
 func (m *AuthoredNoteItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of notes associated with the request.
+// CreateGetRequestInformationWithRequestConfiguration list of notes associcated with the request.
 func (m *AuthoredNoteItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AuthoredNoteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *AuthoredNoteItemRequestBuilder) DeleteWithRequestConfigurationAndRespon
     }
     return nil
 }
-// Get list of notes associated with the request.
+// Get list of notes associcated with the request.
 func (m *AuthoredNoteItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list of notes associated with the request.
+// GetWithRequestConfigurationAndResponseHandler list of notes associcated with the request.
 func (m *AuthoredNoteItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuthoredNoteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

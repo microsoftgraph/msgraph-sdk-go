@@ -25,11 +25,7 @@ func CreatePrintServiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetEndpoints gets the endpoints property value. Endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintService) GetEndpoints()([]PrintServiceEndpointable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endpoints
-    }
+    return m.endpoints
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *PrintService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetEndpoints sets the endpoints property value. Endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintService) SetEndpoints(value []PrintServiceEndpointable)() {
-    if m != nil {
-        m.endpoints = value
-    }
+    m.endpoints = value
 }

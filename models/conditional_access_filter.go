@@ -12,7 +12,7 @@ type ConditionalAccessFilter struct {
     mode *FilterMode
     // The OdataType property
     odataType *string
-    // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+    // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
     rule *string
 }
 // NewConditionalAccessFilter instantiates a new conditionalAccessFilter and sets the default values.
@@ -30,11 +30,7 @@ func CreateConditionalAccessFilterFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessFilter) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMode gets the mode property value. The mode property
 func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mode
-    }
+    return m.mode
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessFilter) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) GetRule()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rule
-    }
+    return m.rule
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *ConditionalAccessFilter) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMode sets the mode property value. The mode property
 func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
-    if m != nil {
-        m.mode = value
-    }
+    m.mode = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessFilter) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) SetRule(value *string)() {
-    if m != nil {
-        m.rule = value
-    }
+    m.rule = value
 }

@@ -32,27 +32,15 @@ func CreateCloudAppSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDestinationServiceIp gets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) GetDestinationServiceIp()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationServiceIp
-    }
+    return m.destinationServiceIp
 }
 // GetDestinationServiceName gets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) GetDestinationServiceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationServiceName
-    }
+    return m.destinationServiceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudAppSecurityState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // Serialize serializes information the current object
 func (m *CloudAppSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *CloudAppSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDestinationServiceIp sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) SetDestinationServiceIp(value *string)() {
-    if m != nil {
-        m.destinationServiceIp = value
-    }
+    m.destinationServiceIp = value
 }
 // SetDestinationServiceName sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) SetDestinationServiceName(value *string)() {
-    if m != nil {
-        m.destinationServiceName = value
-    }
+    m.destinationServiceName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudAppSecurityState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRiskScore sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }

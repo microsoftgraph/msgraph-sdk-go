@@ -17,7 +17,7 @@ type AccessPackagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackagesRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// AccessPackagesRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable.
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *AccessPackagesRequestBuilder) Count()(*idfe7820c3943d41b9c8c03c29b65de155cf4ba72ac2232251e9f34b53b8cb7fd.CountRequestBuilder) {
     return idfe7820c3943d41b9c8c03c29b65de155cf4ba72ac2232251e9f34b53b8cb7fd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *AccessPackagesRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *AccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i71596bdd3037d97bdc8df930ac9522c68f0949eb00e198e5c1ca3e9aecafe98b.FilterByCurrentUserWithOnRequestBuilder) {
     return i71596bdd3037d97bdc8df930ac9522c68f0949eb00e198e5c1ca3e9aecafe98b.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// Get the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackagesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

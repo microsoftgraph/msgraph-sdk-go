@@ -32,11 +32,7 @@ func CreateCopyToNotebookPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToNotebookPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CopyToNotebookPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,43 +91,23 @@ func (m *CopyToNotebookPostRequestBody) GetFieldDeserializers()(map[string]func(
 }
 // GetGroupId gets the groupId property value. The groupId property
 func (m *CopyToNotebookPostRequestBody) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
+    return m.groupId
 }
 // GetId gets the id property value. The id property
 func (m *CopyToNotebookPostRequestBody) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetRenameAs gets the renameAs property value. The renameAs property
 func (m *CopyToNotebookPostRequestBody) GetRenameAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.renameAs
-    }
+    return m.renameAs
 }
 // GetSiteCollectionId gets the siteCollectionId property value. The siteCollectionId property
 func (m *CopyToNotebookPostRequestBody) GetSiteCollectionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCollectionId
-    }
+    return m.siteCollectionId
 }
 // GetSiteId gets the siteId property value. The siteId property
 func (m *CopyToNotebookPostRequestBody) GetSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteId
-    }
+    return m.siteId
 }
 // Serialize serializes information the current object
 func (m *CopyToNotebookPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,37 +151,25 @@ func (m *CopyToNotebookPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToNotebookPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetGroupId sets the groupId property value. The groupId property
 func (m *CopyToNotebookPostRequestBody) SetGroupId(value *string)() {
-    if m != nil {
-        m.groupId = value
-    }
+    m.groupId = value
 }
 // SetId sets the id property value. The id property
 func (m *CopyToNotebookPostRequestBody) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetRenameAs sets the renameAs property value. The renameAs property
 func (m *CopyToNotebookPostRequestBody) SetRenameAs(value *string)() {
-    if m != nil {
-        m.renameAs = value
-    }
+    m.renameAs = value
 }
 // SetSiteCollectionId sets the siteCollectionId property value. The siteCollectionId property
 func (m *CopyToNotebookPostRequestBody) SetSiteCollectionId(value *string)() {
-    if m != nil {
-        m.siteCollectionId = value
-    }
+    m.siteCollectionId = value
 }
 // SetSiteId sets the siteId property value. The siteId property
 func (m *CopyToNotebookPostRequestBody) SetSiteId(value *string)() {
-    if m != nil {
-        m.siteId = value
-    }
+    m.siteId = value
 }

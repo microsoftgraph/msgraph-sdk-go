@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintUsage provides operations to manage the admin singleton.
+// PrintUsage provides operations to manage the collection of agreementAcceptance entities.
 type PrintUsage struct {
     Entity
     // The completedBlackAndWhiteJobCount property
@@ -52,19 +52,11 @@ func CreatePrintUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetCompletedBlackAndWhiteJobCount gets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
 func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedBlackAndWhiteJobCount
-    }
+    return m.completedBlackAndWhiteJobCount
 }
 // GetCompletedColorJobCount gets the completedColorJobCount property value. The completedColorJobCount property
 func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedColorJobCount
-    }
+    return m.completedColorJobCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +105,11 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIncompleteJobCount gets the incompleteJobCount property value. The incompleteJobCount property
 func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incompleteJobCount
-    }
+    return m.incompleteJobCount
 }
 // GetUsageDate gets the usageDate property value. The usageDate property
 func (m *PrintUsage) GetUsageDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageDate
-    }
+    return m.usageDate
 }
 // Serialize serializes information the current object
 func (m *PrintUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,25 +145,17 @@ func (m *PrintUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetCompletedBlackAndWhiteJobCount sets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
 func (m *PrintUsage) SetCompletedBlackAndWhiteJobCount(value *int64)() {
-    if m != nil {
-        m.completedBlackAndWhiteJobCount = value
-    }
+    m.completedBlackAndWhiteJobCount = value
 }
 // SetCompletedColorJobCount sets the completedColorJobCount property value. The completedColorJobCount property
 func (m *PrintUsage) SetCompletedColorJobCount(value *int64)() {
-    if m != nil {
-        m.completedColorJobCount = value
-    }
+    m.completedColorJobCount = value
 }
 // SetIncompleteJobCount sets the incompleteJobCount property value. The incompleteJobCount property
 func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
-    if m != nil {
-        m.incompleteJobCount = value
-    }
+    m.incompleteJobCount = value
 }
 // SetUsageDate sets the usageDate property value. The usageDate property
 func (m *PrintUsage) SetUsageDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.usageDate = value
-    }
+    m.usageDate = value
 }

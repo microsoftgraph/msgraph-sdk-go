@@ -15,7 +15,7 @@ type TokenLifetimePolicyItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TokenLifetimePolicyItemRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// TokenLifetimePolicyItemRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this service principal.
 type TokenLifetimePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewTokenLifetimePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// CreateGetRequestInformation the tokenLifetimePolicies assigned to this service principal.
 func (m *TokenLifetimePolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration the tokenLifetimePolicies assigned to this service principal.
 func (m *TokenLifetimePolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *TokenLifetimePolicyItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get the tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// Get the tokenLifetimePolicies assigned to this service principal.
 func (m *TokenLifetimePolicyItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler the tokenLifetimePolicies assigned to this service principal.
 func (m *TokenLifetimePolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

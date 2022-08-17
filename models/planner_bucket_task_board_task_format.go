@@ -40,11 +40,7 @@ func (m *PlannerBucketTaskBoardTaskFormat) GetFieldDeserializers()(map[string]fu
 }
 // GetOrderHint gets the orderHint property value. Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
 func (m *PlannerBucketTaskBoardTaskFormat) GetOrderHint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderHint
-    }
+    return m.orderHint
 }
 // Serialize serializes information the current object
 func (m *PlannerBucketTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *PlannerBucketTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d2689
 }
 // SetOrderHint sets the orderHint property value. Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
 func (m *PlannerBucketTaskBoardTaskFormat) SetOrderHint(value *string)() {
-    if m != nil {
-        m.orderHint = value
-    }
+    m.orderHint = value
 }

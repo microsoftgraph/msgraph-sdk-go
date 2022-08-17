@@ -34,27 +34,15 @@ func CreateTelecomExpenseManagementPartnerFromDiscriminatorValue(parseNode i878a
 }
 // GetAppAuthorized gets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
 func (m *TelecomExpenseManagementPartner) GetAppAuthorized()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appAuthorized
-    }
+    return m.appAuthorized
 }
 // GetDisplayName gets the displayName property value. Display name of the TEM partner.
 func (m *TelecomExpenseManagementPartner) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnabled gets the enabled property value. Whether Intune's connection to the TEM service is currently enabled or disabled.
 func (m *TelecomExpenseManagementPartner) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +101,11 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *TelecomExpenseManagementPartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionDateTime
-    }
+    return m.lastConnectionDateTime
 }
 // GetUrl gets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
 func (m *TelecomExpenseManagementPartner) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *TelecomExpenseManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *TelecomExpenseManagementPartner) Serialize(writer i878a80d2330e89d26896
 }
 // SetAppAuthorized sets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
 func (m *TelecomExpenseManagementPartner) SetAppAuthorized(value *bool)() {
-    if m != nil {
-        m.appAuthorized = value
-    }
+    m.appAuthorized = value
 }
 // SetDisplayName sets the displayName property value. Display name of the TEM partner.
 func (m *TelecomExpenseManagementPartner) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnabled sets the enabled property value. Whether Intune's connection to the TEM service is currently enabled or disabled.
 func (m *TelecomExpenseManagementPartner) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *TelecomExpenseManagementPartner) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastConnectionDateTime = value
-    }
+    m.lastConnectionDateTime = value
 }
 // SetUrl sets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
 func (m *TelecomExpenseManagementPartner) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

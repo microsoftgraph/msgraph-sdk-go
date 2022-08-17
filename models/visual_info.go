@@ -36,51 +36,27 @@ func CreateVisualInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttribution gets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
 func (m *VisualInfo) GetAttribution()(ImageInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attribution
-    }
+    return m.attribution
 }
 // GetBackgroundColor gets the backgroundColor property value. Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
 func (m *VisualInfo) GetBackgroundColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.backgroundColor
-    }
+    return m.backgroundColor
 }
 // GetContent gets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
 func (m *VisualInfo) GetContent()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetDescription gets the description property value. Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
 func (m *VisualInfo) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayText gets the displayText property value. Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
 func (m *VisualInfo) GetDisplayText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayText
-    }
+    return m.displayText
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VisualInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,11 +125,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VisualInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *VisualInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *VisualInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttribution sets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
 func (m *VisualInfo) SetAttribution(value ImageInfoable)() {
-    if m != nil {
-        m.attribution = value
-    }
+    m.attribution = value
 }
 // SetBackgroundColor sets the backgroundColor property value. Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
 func (m *VisualInfo) SetBackgroundColor(value *string)() {
-    if m != nil {
-        m.backgroundColor = value
-    }
+    m.backgroundColor = value
 }
 // SetContent sets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
 func (m *VisualInfo) SetContent(value Jsonable)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetDescription sets the description property value. Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
 func (m *VisualInfo) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayText sets the displayText property value. Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
 func (m *VisualInfo) SetDisplayText(value *string)() {
-    if m != nil {
-        m.displayText = value
-    }
+    m.displayText = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VisualInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -34,35 +34,19 @@ func CreateImageInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAddImageQuery gets the addImageQuery property value. Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
 func (m *ImageInfo) GetAddImageQuery()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addImageQuery
-    }
+    return m.addImageQuery
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImageInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAlternateText gets the alternateText property value. Optional; alt-text accessible content for the image
 func (m *ImageInfo) GetAlternateText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alternateText
-    }
+    return m.alternateText
 }
 // GetAlternativeText gets the alternativeText property value. The alternativeText property
 func (m *ImageInfo) GetAlternativeText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alternativeText
-    }
+    return m.alternativeText
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,19 +105,11 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetIconUrl gets the iconUrl property value. Optional; URI that points to an icon which represents the application used to generate the activity
 func (m *ImageInfo) GetIconUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iconUrl
-    }
+    return m.iconUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ImageInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ImageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *ImageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAddImageQuery sets the addImageQuery property value. Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
 func (m *ImageInfo) SetAddImageQuery(value *bool)() {
-    if m != nil {
-        m.addImageQuery = value
-    }
+    m.addImageQuery = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImageInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAlternateText sets the alternateText property value. Optional; alt-text accessible content for the image
 func (m *ImageInfo) SetAlternateText(value *string)() {
-    if m != nil {
-        m.alternateText = value
-    }
+    m.alternateText = value
 }
 // SetAlternativeText sets the alternativeText property value. The alternativeText property
 func (m *ImageInfo) SetAlternativeText(value *string)() {
-    if m != nil {
-        m.alternativeText = value
-    }
+    m.alternativeText = value
 }
 // SetIconUrl sets the iconUrl property value. Optional; URI that points to an icon which represents the application used to generate the activity
 func (m *ImageInfo) SetIconUrl(value *string)() {
-    if m != nil {
-        m.iconUrl = value
-    }
+    m.iconUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ImageInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

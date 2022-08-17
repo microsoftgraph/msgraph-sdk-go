@@ -32,19 +32,11 @@ func CreateResultInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResultInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. The result code.
 func (m *ResultInfo) GetCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResultInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *ResultInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetMessage gets the message property value. The message.
 func (m *ResultInfo) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ResultInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSubcode gets the subcode property value. The result sub-code.
 func (m *ResultInfo) GetSubcode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subcode
-    }
+    return m.subcode
 }
 // Serialize serializes information the current object
 func (m *ResultInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ResultInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResultInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. The result code.
 func (m *ResultInfo) SetCode(value *int32)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetMessage sets the message property value. The message.
 func (m *ResultInfo) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ResultInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSubcode sets the subcode property value. The result sub-code.
 func (m *ResultInfo) SetSubcode(value *int32)() {
-    if m != nil {
-        m.subcode = value
-    }
+    m.subcode = value
 }

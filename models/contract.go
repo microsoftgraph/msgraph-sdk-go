@@ -31,35 +31,19 @@ func CreateContractFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetContractType gets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) GetContractType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contractType
-    }
+    return m.contractType
 }
 // GetCustomerId gets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
 func (m *Contract) GetCustomerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerId
-    }
+    return m.customerId
 }
 // GetDefaultDomainName gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) GetDefaultDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultDomainName
-    }
+    return m.defaultDomainName
 }
 // GetDisplayName gets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 func (m *Contract) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Contract) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,25 +124,17 @@ func (m *Contract) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetContractType sets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) SetContractType(value *string)() {
-    if m != nil {
-        m.contractType = value
-    }
+    m.contractType = value
 }
 // SetCustomerId sets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
 func (m *Contract) SetCustomerId(value *string)() {
-    if m != nil {
-        m.customerId = value
-    }
+    m.customerId = value
 }
 // SetDefaultDomainName sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) SetDefaultDomainName(value *string)() {
-    if m != nil {
-        m.defaultDomainName = value
-    }
+    m.defaultDomainName = value
 }
 // SetDisplayName sets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 func (m *Contract) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }

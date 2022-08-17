@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriveItem provides operations to manage the admin singleton.
+// DriveItem provides operations to manage the collection of agreementAcceptance entities.
 type DriveItem struct {
     BaseItem
     // Analytics about the view activities that took place on this item.
     analytics ItemAnalyticsable
-    // Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+    // Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
     audio Audioable
     // Bundle metadata, if the item is a bundle. Read-only.
     bundle Bundleable
@@ -37,7 +37,7 @@ type DriveItem struct {
     malware Malwareable
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
     package_escaped Package_escapedable
-    // If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+    // If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
     pendingOperations PendingOperationsable
     // The set of permissions for the item. Read-only. Nullable.
     permissions []Permissionable
@@ -87,59 +87,31 @@ func CreateDriveItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *DriveItem) GetAnalytics()(ItemAnalyticsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.analytics
-    }
+    return m.analytics
 }
-// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) GetAudio()(Audioable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.audio
-    }
+    return m.audio
 }
 // GetBundle gets the bundle property value. Bundle metadata, if the item is a bundle. Read-only.
 func (m *DriveItem) GetBundle()(Bundleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundle
-    }
+    return m.bundle
 }
 // GetChildren gets the children property value. Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 func (m *DriveItem) GetChildren()([]DriveItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.children
-    }
+    return m.children
 }
 // GetContent gets the content property value. The content stream, if the item represents a file.
 func (m *DriveItem) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetCTag gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
 func (m *DriveItem) GetCTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cTag
-    }
+    return m.cTag
 }
 // GetDeleted gets the deleted property value. Information about the deleted state of the item. Read-only.
 func (m *DriveItem) GetDeleted()(Deletedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deleted
-    }
+    return m.deleted
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -488,203 +460,103 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetFile gets the file property value. File metadata, if the item is a file. Read-only.
 func (m *DriveItem) GetFile()(Fileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
+    return m.file
 }
 // GetFileSystemInfo gets the fileSystemInfo property value. File system information on client. Read-write.
 func (m *DriveItem) GetFileSystemInfo()(FileSystemInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSystemInfo
-    }
+    return m.fileSystemInfo
 }
 // GetFolder gets the folder property value. Folder metadata, if the item is a folder. Read-only.
 func (m *DriveItem) GetFolder()(Folderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.folder
-    }
+    return m.folder
 }
 // GetImage gets the image property value. Image metadata, if the item is an image. Read-only.
 func (m *DriveItem) GetImage()(Imageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.image
-    }
+    return m.image
 }
 // GetListItem gets the listItem property value. For drives in SharePoint, the associated document library list item. Read-only. Nullable.
 func (m *DriveItem) GetListItem()(ListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listItem
-    }
+    return m.listItem
 }
 // GetLocation gets the location property value. Location metadata, if the item has location data. Read-only.
 func (m *DriveItem) GetLocation()(GeoCoordinatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetMalware gets the malware property value. Malware metadata, if the item was detected to contain malware. Read-only.
 func (m *DriveItem) GetMalware()(Malwareable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.malware
-    }
+    return m.malware
 }
 // GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
 func (m *DriveItem) GetPackage()(Package_escapedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.package_escaped
-    }
+    return m.package_escaped
 }
-// GetPendingOperations gets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+// GetPendingOperations gets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) GetPendingOperations()(PendingOperationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingOperations
-    }
+    return m.pendingOperations
 }
 // GetPermissions gets the permissions property value. The set of permissions for the item. Read-only. Nullable.
 func (m *DriveItem) GetPermissions()([]Permissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissions
-    }
+    return m.permissions
 }
 // GetPhoto gets the photo property value. Photo metadata, if the item is a photo. Read-only.
 func (m *DriveItem) GetPhoto()(Photoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photo
-    }
+    return m.photo
 }
 // GetPublication gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
 func (m *DriveItem) GetPublication()(PublicationFacetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publication
-    }
+    return m.publication
 }
 // GetRemoteItem gets the remoteItem property value. Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
 func (m *DriveItem) GetRemoteItem()(RemoteItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteItem
-    }
+    return m.remoteItem
 }
 // GetRoot gets the root property value. If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 func (m *DriveItem) GetRoot()(Rootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.root
-    }
+    return m.root
 }
 // GetSearchResult gets the searchResult property value. Search metadata, if the item is from a search result. Read-only.
 func (m *DriveItem) GetSearchResult()(SearchResultable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.searchResult
-    }
+    return m.searchResult
 }
 // GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
 func (m *DriveItem) GetShared()(Sharedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shared
-    }
+    return m.shared
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *DriveItem) GetSharepointIds()(SharepointIdsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
+    return m.sharepointIds
 }
 // GetSize gets the size property value. Size of the item in bytes. Read-only.
 func (m *DriveItem) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // GetSpecialFolder gets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
 func (m *DriveItem) GetSpecialFolder()(SpecialFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.specialFolder
-    }
+    return m.specialFolder
 }
 // GetSubscriptions gets the subscriptions property value. The set of subscriptions on the item. Only supported on the root of a drive.
 func (m *DriveItem) GetSubscriptions()([]Subscriptionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptions
-    }
+    return m.subscriptions
 }
 // GetThumbnails gets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
 func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnails
-    }
+    return m.thumbnails
 }
 // GetVersions gets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItem) GetVersions()([]DriveItemVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versions
-    }
+    return m.versions
 }
 // GetVideo gets the video property value. Video metadata, if the item is a video. Read-only.
 func (m *DriveItem) GetVideo()(Videoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.video
-    }
+    return m.video
 }
 // GetWebDavUrl gets the webDavUrl property value. WebDAV compatible URL for the item.
 func (m *DriveItem) GetWebDavUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webDavUrl
-    }
+    return m.webDavUrl
 }
 // GetWorkbook gets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *DriveItem) GetWorkbook()(Workbookable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workbook
-    }
+    return m.workbook
 }
 // Serialize serializes information the current object
 func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -908,193 +780,129 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *DriveItem) SetAnalytics(value ItemAnalyticsable)() {
-    if m != nil {
-        m.analytics = value
-    }
+    m.analytics = value
 }
-// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
+// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) SetAudio(value Audioable)() {
-    if m != nil {
-        m.audio = value
-    }
+    m.audio = value
 }
 // SetBundle sets the bundle property value. Bundle metadata, if the item is a bundle. Read-only.
 func (m *DriveItem) SetBundle(value Bundleable)() {
-    if m != nil {
-        m.bundle = value
-    }
+    m.bundle = value
 }
 // SetChildren sets the children property value. Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 func (m *DriveItem) SetChildren(value []DriveItemable)() {
-    if m != nil {
-        m.children = value
-    }
+    m.children = value
 }
 // SetContent sets the content property value. The content stream, if the item represents a file.
 func (m *DriveItem) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetCTag sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
 func (m *DriveItem) SetCTag(value *string)() {
-    if m != nil {
-        m.cTag = value
-    }
+    m.cTag = value
 }
 // SetDeleted sets the deleted property value. Information about the deleted state of the item. Read-only.
 func (m *DriveItem) SetDeleted(value Deletedable)() {
-    if m != nil {
-        m.deleted = value
-    }
+    m.deleted = value
 }
 // SetFile sets the file property value. File metadata, if the item is a file. Read-only.
 func (m *DriveItem) SetFile(value Fileable)() {
-    if m != nil {
-        m.file = value
-    }
+    m.file = value
 }
 // SetFileSystemInfo sets the fileSystemInfo property value. File system information on client. Read-write.
 func (m *DriveItem) SetFileSystemInfo(value FileSystemInfoable)() {
-    if m != nil {
-        m.fileSystemInfo = value
-    }
+    m.fileSystemInfo = value
 }
 // SetFolder sets the folder property value. Folder metadata, if the item is a folder. Read-only.
 func (m *DriveItem) SetFolder(value Folderable)() {
-    if m != nil {
-        m.folder = value
-    }
+    m.folder = value
 }
 // SetImage sets the image property value. Image metadata, if the item is an image. Read-only.
 func (m *DriveItem) SetImage(value Imageable)() {
-    if m != nil {
-        m.image = value
-    }
+    m.image = value
 }
 // SetListItem sets the listItem property value. For drives in SharePoint, the associated document library list item. Read-only. Nullable.
 func (m *DriveItem) SetListItem(value ListItemable)() {
-    if m != nil {
-        m.listItem = value
-    }
+    m.listItem = value
 }
 // SetLocation sets the location property value. Location metadata, if the item has location data. Read-only.
 func (m *DriveItem) SetLocation(value GeoCoordinatesable)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetMalware sets the malware property value. Malware metadata, if the item was detected to contain malware. Read-only.
 func (m *DriveItem) SetMalware(value Malwareable)() {
-    if m != nil {
-        m.malware = value
-    }
+    m.malware = value
 }
 // SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
 func (m *DriveItem) SetPackage(value Package_escapedable)() {
-    if m != nil {
-        m.package_escaped = value
-    }
+    m.package_escaped = value
 }
-// SetPendingOperations sets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+// SetPendingOperations sets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) SetPendingOperations(value PendingOperationsable)() {
-    if m != nil {
-        m.pendingOperations = value
-    }
+    m.pendingOperations = value
 }
 // SetPermissions sets the permissions property value. The set of permissions for the item. Read-only. Nullable.
 func (m *DriveItem) SetPermissions(value []Permissionable)() {
-    if m != nil {
-        m.permissions = value
-    }
+    m.permissions = value
 }
 // SetPhoto sets the photo property value. Photo metadata, if the item is a photo. Read-only.
 func (m *DriveItem) SetPhoto(value Photoable)() {
-    if m != nil {
-        m.photo = value
-    }
+    m.photo = value
 }
 // SetPublication sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
 func (m *DriveItem) SetPublication(value PublicationFacetable)() {
-    if m != nil {
-        m.publication = value
-    }
+    m.publication = value
 }
 // SetRemoteItem sets the remoteItem property value. Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
 func (m *DriveItem) SetRemoteItem(value RemoteItemable)() {
-    if m != nil {
-        m.remoteItem = value
-    }
+    m.remoteItem = value
 }
 // SetRoot sets the root property value. If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 func (m *DriveItem) SetRoot(value Rootable)() {
-    if m != nil {
-        m.root = value
-    }
+    m.root = value
 }
 // SetSearchResult sets the searchResult property value. Search metadata, if the item is from a search result. Read-only.
 func (m *DriveItem) SetSearchResult(value SearchResultable)() {
-    if m != nil {
-        m.searchResult = value
-    }
+    m.searchResult = value
 }
 // SetShared sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
 func (m *DriveItem) SetShared(value Sharedable)() {
-    if m != nil {
-        m.shared = value
-    }
+    m.shared = value
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *DriveItem) SetSharepointIds(value SharepointIdsable)() {
-    if m != nil {
-        m.sharepointIds = value
-    }
+    m.sharepointIds = value
 }
 // SetSize sets the size property value. Size of the item in bytes. Read-only.
 func (m *DriveItem) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
 // SetSpecialFolder sets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
 func (m *DriveItem) SetSpecialFolder(value SpecialFolderable)() {
-    if m != nil {
-        m.specialFolder = value
-    }
+    m.specialFolder = value
 }
 // SetSubscriptions sets the subscriptions property value. The set of subscriptions on the item. Only supported on the root of a drive.
 func (m *DriveItem) SetSubscriptions(value []Subscriptionable)() {
-    if m != nil {
-        m.subscriptions = value
-    }
+    m.subscriptions = value
 }
 // SetThumbnails sets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
 func (m *DriveItem) SetThumbnails(value []ThumbnailSetable)() {
-    if m != nil {
-        m.thumbnails = value
-    }
+    m.thumbnails = value
 }
 // SetVersions sets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItem) SetVersions(value []DriveItemVersionable)() {
-    if m != nil {
-        m.versions = value
-    }
+    m.versions = value
 }
 // SetVideo sets the video property value. Video metadata, if the item is a video. Read-only.
 func (m *DriveItem) SetVideo(value Videoable)() {
-    if m != nil {
-        m.video = value
-    }
+    m.video = value
 }
 // SetWebDavUrl sets the webDavUrl property value. WebDAV compatible URL for the item.
 func (m *DriveItem) SetWebDavUrl(value *string)() {
-    if m != nil {
-        m.webDavUrl = value
-    }
+    m.webDavUrl = value
 }
 // SetWorkbook sets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *DriveItem) SetWorkbook(value Workbookable)() {
-    if m != nil {
-        m.workbook = value
-    }
+    m.workbook = value
 }

@@ -30,11 +30,7 @@ func CreatePublicationFacetFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicationFacet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PublicationFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *PublicationFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetLevel gets the level property value. The state of publication for this document. Either published or checkout. Read-only.
 func (m *PublicationFacet) GetLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.level
-    }
+    return m.level
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PublicationFacet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetVersionId gets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
 func (m *PublicationFacet) GetVersionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionId
-    }
+    return m.versionId
 }
 // Serialize serializes information the current object
 func (m *PublicationFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *PublicationFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicationFacet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLevel sets the level property value. The state of publication for this document. Either published or checkout. Read-only.
 func (m *PublicationFacet) SetLevel(value *string)() {
-    if m != nil {
-        m.level = value
-    }
+    m.level = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PublicationFacet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetVersionId sets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
 func (m *PublicationFacet) SetVersionId(value *string)() {
-    if m != nil {
-        m.versionId = value
-    }
+    m.versionId = value
 }

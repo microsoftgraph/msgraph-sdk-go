@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookPivotTable provides operations to manage the admin singleton.
+// WorkbookPivotTable provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookPivotTable struct {
     Entity
     // Name of the PivotTable.
@@ -52,19 +52,11 @@ func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetName gets the name property value. Name of the PivotTable.
 func (m *WorkbookPivotTable) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetWorksheet gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
 func (m *WorkbookPivotTable) GetWorksheet()(WorkbookWorksheetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.worksheet
-    }
+    return m.worksheet
 }
 // Serialize serializes information the current object
 func (m *WorkbookPivotTable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WorkbookPivotTable) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetName sets the name property value. Name of the PivotTable.
 func (m *WorkbookPivotTable) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetWorksheet sets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
 func (m *WorkbookPivotTable) SetWorksheet(value WorkbookWorksheetable)() {
-    if m != nil {
-        m.worksheet = value
-    }
+    m.worksheet = value
 }

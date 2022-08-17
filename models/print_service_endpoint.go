@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintServiceEndpoint provides operations to manage the admin singleton.
+// PrintServiceEndpoint provides operations to manage the collection of agreement entities.
 type PrintServiceEndpoint struct {
     Entity
     // A human-readable display name for the endpoint.
@@ -27,11 +27,7 @@ func CreatePrintServiceEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDisplayName gets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetUri gets the uri property value. The URI that can be used to access the service.
 func (m *PrintServiceEndpoint) GetUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uri
-    }
+    return m.uri
 }
 // Serialize serializes information the current object
 func (m *PrintServiceEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *PrintServiceEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDisplayName sets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetUri sets the uri property value. The URI that can be used to access the service.
 func (m *PrintServiceEndpoint) SetUri(value *string)() {
-    if m != nil {
-        m.uri = value
-    }
+    m.uri = value
 }

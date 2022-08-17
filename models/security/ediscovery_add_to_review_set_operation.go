@@ -52,19 +52,11 @@ func (m *EdiscoveryAddToReviewSetOperation) GetFieldDeserializers()(map[string]f
 }
 // GetReviewSet gets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) GetReviewSet()(EdiscoveryReviewSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSet
-    }
+    return m.reviewSet
 }
 // GetSearch gets the search property value. eDiscovery search that gets added to review set.
 func (m *EdiscoveryAddToReviewSetOperation) GetSearch()(EdiscoverySearchable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
+    return m.search
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d268
 }
 // SetReviewSet sets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) SetReviewSet(value EdiscoveryReviewSetable)() {
-    if m != nil {
-        m.reviewSet = value
-    }
+    m.reviewSet = value
 }
 // SetSearch sets the search property value. eDiscovery search that gets added to review set.
 func (m *EdiscoveryAddToReviewSetOperation) SetSearch(value EdiscoverySearchable)() {
-    if m != nil {
-        m.search = value
-    }
+    m.search = value
 }

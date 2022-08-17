@@ -76,35 +76,19 @@ func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFormat gets the format property value. Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartTitle) GetFormat()(WorkbookChartTitleFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetOverlay gets the overlay property value. Boolean value representing if the chart title will overlay the chart or not.
 func (m *WorkbookChartTitle) GetOverlay()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overlay
-    }
+    return m.overlay
 }
 // GetText gets the text property value. Represents the title text of a chart.
 func (m *WorkbookChartTitle) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // GetVisible gets the visible property value. A boolean value the represents the visibility of a chart title object.
 func (m *WorkbookChartTitle) GetVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visible
-    }
+    return m.visible
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartTitle) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *WorkbookChartTitle) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetFormat sets the format property value. Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartTitle) SetFormat(value WorkbookChartTitleFormatable)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetOverlay sets the overlay property value. Boolean value representing if the chart title will overlay the chart or not.
 func (m *WorkbookChartTitle) SetOverlay(value *bool)() {
-    if m != nil {
-        m.overlay = value
-    }
+    m.overlay = value
 }
 // SetText sets the text property value. Represents the title text of a chart.
 func (m *WorkbookChartTitle) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }
 // SetVisible sets the visible property value. A boolean value the represents the visibility of a chart title object.
 func (m *WorkbookChartTitle) SetVisible(value *bool)() {
-    if m != nil {
-        m.visible = value
-    }
+    m.visible = value
 }

@@ -27,11 +27,7 @@ func CreateUnifiedRoleManagementPolicyAuthenticationContextRuleFromDiscriminator
 }
 // GetClaimValue gets the claimValue property value. The value of the authentication context claim.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetClaimValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.claimValue
-    }
+    return m.claimValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetFieldDeseriali
 }
 // GetIsEnabled gets the isEnabled property value. Whether this rule is enabled.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) Serialize(writer 
 }
 // SetClaimValue sets the claimValue property value. The value of the authentication context claim.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) SetClaimValue(value *string)() {
-    if m != nil {
-        m.claimValue = value
-    }
+    m.claimValue = value
 }
 // SetIsEnabled sets the isEnabled property value. Whether this rule is enabled.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }

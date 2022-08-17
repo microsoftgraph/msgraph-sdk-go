@@ -32,11 +32,7 @@ func CreateCalculatedColumnFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CalculatedColumn) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CalculatedColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *CalculatedColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetFormat gets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
 func (m *CalculatedColumn) GetFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetFormula gets the formula property value. The formula used to compute the value for this column.
 func (m *CalculatedColumn) GetFormula()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.formula
-    }
+    return m.formula
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CalculatedColumn) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOutputType gets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
 func (m *CalculatedColumn) GetOutputType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputType
-    }
+    return m.outputType
 }
 // Serialize serializes information the current object
 func (m *CalculatedColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *CalculatedColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CalculatedColumn) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFormat sets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
 func (m *CalculatedColumn) SetFormat(value *string)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetFormula sets the formula property value. The formula used to compute the value for this column.
 func (m *CalculatedColumn) SetFormula(value *string)() {
-    if m != nil {
-        m.formula = value
-    }
+    m.formula = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CalculatedColumn) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOutputType sets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
 func (m *CalculatedColumn) SetOutputType(value *string)() {
-    if m != nil {
-        m.outputType = value
-    }
+    m.outputType = value
 }

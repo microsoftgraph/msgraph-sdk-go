@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintDocument provides operations to manage the admin singleton.
+// PrintDocument 
 type PrintDocument struct {
     Entity
     // The document's content (MIME) type. Read-only.
@@ -14,7 +14,7 @@ type PrintDocument struct {
     // The document's size in bytes. Read-only.
     size *int64
 }
-// NewPrintDocument instantiates a new printDocument and sets the default values.
+// NewPrintDocument instantiates a new PrintDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
     m := &PrintDocument{
         Entity: *NewEntity(),
@@ -29,19 +29,11 @@ func CreatePrintDocumentFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetContentType gets the contentType property value. The document's content (MIME) type. Read-only.
 func (m *PrintDocument) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetDisplayName gets the displayName property value. The document's name. Read-only.
 func (m *PrintDocument) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetSize gets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // Serialize serializes information the current object
 func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetContentType sets the contentType property value. The document's content (MIME) type. Read-only.
 func (m *PrintDocument) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetDisplayName sets the displayName property value. The document's name. Read-only.
 func (m *PrintDocument) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetSize sets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }

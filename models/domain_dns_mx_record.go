@@ -52,19 +52,11 @@ func (m *DomainDnsMxRecord) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetMailExchange gets the mailExchange property value. Value used when configuring the answer/destination/value of the MX record at the DNS host.
 func (m *DomainDnsMxRecord) GetMailExchange()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailExchange
-    }
+    return m.mailExchange
 }
 // GetPreference gets the preference property value. Value used when configuring the Preference/Priority property of the MX record at the DNS host.
 func (m *DomainDnsMxRecord) GetPreference()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preference
-    }
+    return m.preference
 }
 // Serialize serializes information the current object
 func (m *DomainDnsMxRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DomainDnsMxRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetMailExchange sets the mailExchange property value. Value used when configuring the answer/destination/value of the MX record at the DNS host.
 func (m *DomainDnsMxRecord) SetMailExchange(value *string)() {
-    if m != nil {
-        m.mailExchange = value
-    }
+    m.mailExchange = value
 }
 // SetPreference sets the preference property value. Value used when configuring the Preference/Priority property of the MX record at the DNS host.
 func (m *DomainDnsMxRecord) SetPreference(value *int32)() {
-    if m != nil {
-        m.preference = value
-    }
+    m.preference = value
 }

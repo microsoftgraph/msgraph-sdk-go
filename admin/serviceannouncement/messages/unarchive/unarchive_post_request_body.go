@@ -24,11 +24,7 @@ func CreateUnarchivePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnarchivePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnarchivePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -51,11 +47,7 @@ func (m *UnarchivePostRequestBody) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMessageIds gets the messageIds property value. The messageIds property
 func (m *UnarchivePostRequestBody) GetMessageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageIds
-    }
+    return m.messageIds
 }
 // Serialize serializes information the current object
 func (m *UnarchivePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -75,13 +67,9 @@ func (m *UnarchivePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnarchivePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMessageIds sets the messageIds property value. The messageIds property
 func (m *UnarchivePostRequestBody) SetMessageIds(value []string)() {
-    if m != nil {
-        m.messageIds = value
-    }
+    m.messageIds = value
 }

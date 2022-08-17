@@ -26,11 +26,7 @@ func CreateEducationOutcomeCollectionResponseFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationOutcomeCollectionResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationOutcomeCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,19 +59,11 @@ func (m *EducationOutcomeCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetOdataNextLink gets the @odata.nextLink property value. The OdataNextLink property
 func (m *EducationOutcomeCollectionResponse) GetOdataNextLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataNextLink
-    }
+    return m.odataNextLink
 }
 // GetValue gets the value property value. The value property
 func (m *EducationOutcomeCollectionResponse) GetValue()([]EducationOutcomeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *EducationOutcomeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,19 +93,13 @@ func (m *EducationOutcomeCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationOutcomeCollectionResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataNextLink sets the @odata.nextLink property value. The OdataNextLink property
 func (m *EducationOutcomeCollectionResponse) SetOdataNextLink(value *string)() {
-    if m != nil {
-        m.odataNextLink = value
-    }
+    m.odataNextLink = value
 }
 // SetValue sets the value property value. The value property
 func (m *EducationOutcomeCollectionResponse) SetValue(value []EducationOutcomeable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

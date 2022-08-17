@@ -52,19 +52,11 @@ func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIpAddress gets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
 func (m *UserIdentity) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName attribute of the user.
 func (m *UserIdentity) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *UserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *UserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetIpAddress sets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
 func (m *UserIdentity) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName attribute of the user.
 func (m *UserIdentity) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

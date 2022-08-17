@@ -36,35 +36,19 @@ func CreateProvisioningErrorInfoFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningErrorInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional details in case of error.
 func (m *ProvisioningErrorInfo) GetAdditionalDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalDetails
-    }
+    return m.additionalDetails
 }
 // GetErrorCategory gets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
 func (m *ProvisioningErrorInfo) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCategory
-    }
+    return m.errorCategory
 }
 // GetErrorCode gets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *ProvisioningErrorInfo) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,27 +117,15 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ProvisioningErrorInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetReason gets the reason property value. Summarizes the status and describes why the status happened.
 func (m *ProvisioningErrorInfo) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *ProvisioningErrorInfo) GetRecommendedAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedAction
-    }
+    return m.recommendedAction
 }
 // Serialize serializes information the current object
 func (m *ProvisioningErrorInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *ProvisioningErrorInfo) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningErrorInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
 func (m *ProvisioningErrorInfo) SetAdditionalDetails(value *string)() {
-    if m != nil {
-        m.additionalDetails = value
-    }
+    m.additionalDetails = value
 }
 // SetErrorCategory sets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
 func (m *ProvisioningErrorInfo) SetErrorCategory(value *ProvisioningStatusErrorCategory)() {
-    if m != nil {
-        m.errorCategory = value
-    }
+    m.errorCategory = value
 }
 // SetErrorCode sets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *ProvisioningErrorInfo) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ProvisioningErrorInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetReason sets the reason property value. Summarizes the status and describes why the status happened.
 func (m *ProvisioningErrorInfo) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }
 // SetRecommendedAction sets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *ProvisioningErrorInfo) SetRecommendedAction(value *string)() {
-    if m != nil {
-        m.recommendedAction = value
-    }
+    m.recommendedAction = value
 }

@@ -35,11 +35,7 @@ func CreateDeviceConfigurationStateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The name of the policy for this policyBase
 func (m *DeviceConfigurationState) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,43 +108,23 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceConfigurationState) GetPlatformType()(*PolicyPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
+    return m.platformType
 }
 // GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
 func (m *DeviceConfigurationState) GetSettingCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCount
-    }
+    return m.settingCount
 }
 // GetSettingStates gets the settingStates property value. The settingStates property
 func (m *DeviceConfigurationState) GetSettingStates()([]DeviceConfigurationSettingStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingStates
-    }
+    return m.settingStates
 }
 // GetState gets the state property value. The state property
 func (m *DeviceConfigurationState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetVersion gets the version property value. The version of the policy
 func (m *DeviceConfigurationState) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -202,37 +178,25 @@ func (m *DeviceConfigurationState) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The name of the policy for this policyBase
 func (m *DeviceConfigurationState) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceConfigurationState) SetPlatformType(value *PolicyPlatformType)() {
-    if m != nil {
-        m.platformType = value
-    }
+    m.platformType = value
 }
 // SetSettingCount sets the settingCount property value. Count of how many setting a policy holds
 func (m *DeviceConfigurationState) SetSettingCount(value *int32)() {
-    if m != nil {
-        m.settingCount = value
-    }
+    m.settingCount = value
 }
 // SetSettingStates sets the settingStates property value. The settingStates property
 func (m *DeviceConfigurationState) SetSettingStates(value []DeviceConfigurationSettingStateable)() {
-    if m != nil {
-        m.settingStates = value
-    }
+    m.settingStates = value
 }
 // SetState sets the state property value. The state property
 func (m *DeviceConfigurationState) SetState(value *ComplianceStatus)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetVersion sets the version property value. The version of the policy
 func (m *DeviceConfigurationState) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

@@ -76,211 +76,107 @@ func CreatePlannerCategoryDescriptionsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerCategoryDescriptions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCategory1 gets the category1 property value. The label associated with Category 1
 func (m *PlannerCategoryDescriptions) GetCategory1()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category1
-    }
+    return m.category1
 }
 // GetCategory10 gets the category10 property value. The label associated with Category 10
 func (m *PlannerCategoryDescriptions) GetCategory10()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category10
-    }
+    return m.category10
 }
 // GetCategory11 gets the category11 property value. The label associated with Category 11
 func (m *PlannerCategoryDescriptions) GetCategory11()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category11
-    }
+    return m.category11
 }
 // GetCategory12 gets the category12 property value. The label associated with Category 12
 func (m *PlannerCategoryDescriptions) GetCategory12()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category12
-    }
+    return m.category12
 }
 // GetCategory13 gets the category13 property value. The label associated with Category 13
 func (m *PlannerCategoryDescriptions) GetCategory13()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category13
-    }
+    return m.category13
 }
 // GetCategory14 gets the category14 property value. The label associated with Category 14
 func (m *PlannerCategoryDescriptions) GetCategory14()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category14
-    }
+    return m.category14
 }
 // GetCategory15 gets the category15 property value. The label associated with Category 15
 func (m *PlannerCategoryDescriptions) GetCategory15()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category15
-    }
+    return m.category15
 }
 // GetCategory16 gets the category16 property value. The label associated with Category 16
 func (m *PlannerCategoryDescriptions) GetCategory16()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category16
-    }
+    return m.category16
 }
 // GetCategory17 gets the category17 property value. The label associated with Category 17
 func (m *PlannerCategoryDescriptions) GetCategory17()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category17
-    }
+    return m.category17
 }
 // GetCategory18 gets the category18 property value. The label associated with Category 18
 func (m *PlannerCategoryDescriptions) GetCategory18()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category18
-    }
+    return m.category18
 }
 // GetCategory19 gets the category19 property value. The label associated with Category 19
 func (m *PlannerCategoryDescriptions) GetCategory19()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category19
-    }
+    return m.category19
 }
 // GetCategory2 gets the category2 property value. The label associated with Category 2
 func (m *PlannerCategoryDescriptions) GetCategory2()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category2
-    }
+    return m.category2
 }
 // GetCategory20 gets the category20 property value. The label associated with Category 20
 func (m *PlannerCategoryDescriptions) GetCategory20()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category20
-    }
+    return m.category20
 }
 // GetCategory21 gets the category21 property value. The label associated with Category 21
 func (m *PlannerCategoryDescriptions) GetCategory21()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category21
-    }
+    return m.category21
 }
 // GetCategory22 gets the category22 property value. The label associated with Category 22
 func (m *PlannerCategoryDescriptions) GetCategory22()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category22
-    }
+    return m.category22
 }
 // GetCategory23 gets the category23 property value. The label associated with Category 23
 func (m *PlannerCategoryDescriptions) GetCategory23()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category23
-    }
+    return m.category23
 }
 // GetCategory24 gets the category24 property value. The label associated with Category 24
 func (m *PlannerCategoryDescriptions) GetCategory24()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category24
-    }
+    return m.category24
 }
 // GetCategory25 gets the category25 property value. The label associated with Category 25
 func (m *PlannerCategoryDescriptions) GetCategory25()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category25
-    }
+    return m.category25
 }
 // GetCategory3 gets the category3 property value. The label associated with Category 3
 func (m *PlannerCategoryDescriptions) GetCategory3()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category3
-    }
+    return m.category3
 }
 // GetCategory4 gets the category4 property value. The label associated with Category 4
 func (m *PlannerCategoryDescriptions) GetCategory4()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category4
-    }
+    return m.category4
 }
 // GetCategory5 gets the category5 property value. The label associated with Category 5
 func (m *PlannerCategoryDescriptions) GetCategory5()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category5
-    }
+    return m.category5
 }
 // GetCategory6 gets the category6 property value. The label associated with Category 6
 func (m *PlannerCategoryDescriptions) GetCategory6()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category6
-    }
+    return m.category6
 }
 // GetCategory7 gets the category7 property value. The label associated with Category 7
 func (m *PlannerCategoryDescriptions) GetCategory7()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category7
-    }
+    return m.category7
 }
 // GetCategory8 gets the category8 property value. The label associated with Category 8
 func (m *PlannerCategoryDescriptions) GetCategory8()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category8
-    }
+    return m.category8
 }
 // GetCategory9 gets the category9 property value. The label associated with Category 9
 func (m *PlannerCategoryDescriptions) GetCategory9()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category9
-    }
+    return m.category9
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -549,11 +445,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PlannerCategoryDescriptions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *PlannerCategoryDescriptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -723,163 +615,109 @@ func (m *PlannerCategoryDescriptions) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerCategoryDescriptions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCategory1 sets the category1 property value. The label associated with Category 1
 func (m *PlannerCategoryDescriptions) SetCategory1(value *string)() {
-    if m != nil {
-        m.category1 = value
-    }
+    m.category1 = value
 }
 // SetCategory10 sets the category10 property value. The label associated with Category 10
 func (m *PlannerCategoryDescriptions) SetCategory10(value *string)() {
-    if m != nil {
-        m.category10 = value
-    }
+    m.category10 = value
 }
 // SetCategory11 sets the category11 property value. The label associated with Category 11
 func (m *PlannerCategoryDescriptions) SetCategory11(value *string)() {
-    if m != nil {
-        m.category11 = value
-    }
+    m.category11 = value
 }
 // SetCategory12 sets the category12 property value. The label associated with Category 12
 func (m *PlannerCategoryDescriptions) SetCategory12(value *string)() {
-    if m != nil {
-        m.category12 = value
-    }
+    m.category12 = value
 }
 // SetCategory13 sets the category13 property value. The label associated with Category 13
 func (m *PlannerCategoryDescriptions) SetCategory13(value *string)() {
-    if m != nil {
-        m.category13 = value
-    }
+    m.category13 = value
 }
 // SetCategory14 sets the category14 property value. The label associated with Category 14
 func (m *PlannerCategoryDescriptions) SetCategory14(value *string)() {
-    if m != nil {
-        m.category14 = value
-    }
+    m.category14 = value
 }
 // SetCategory15 sets the category15 property value. The label associated with Category 15
 func (m *PlannerCategoryDescriptions) SetCategory15(value *string)() {
-    if m != nil {
-        m.category15 = value
-    }
+    m.category15 = value
 }
 // SetCategory16 sets the category16 property value. The label associated with Category 16
 func (m *PlannerCategoryDescriptions) SetCategory16(value *string)() {
-    if m != nil {
-        m.category16 = value
-    }
+    m.category16 = value
 }
 // SetCategory17 sets the category17 property value. The label associated with Category 17
 func (m *PlannerCategoryDescriptions) SetCategory17(value *string)() {
-    if m != nil {
-        m.category17 = value
-    }
+    m.category17 = value
 }
 // SetCategory18 sets the category18 property value. The label associated with Category 18
 func (m *PlannerCategoryDescriptions) SetCategory18(value *string)() {
-    if m != nil {
-        m.category18 = value
-    }
+    m.category18 = value
 }
 // SetCategory19 sets the category19 property value. The label associated with Category 19
 func (m *PlannerCategoryDescriptions) SetCategory19(value *string)() {
-    if m != nil {
-        m.category19 = value
-    }
+    m.category19 = value
 }
 // SetCategory2 sets the category2 property value. The label associated with Category 2
 func (m *PlannerCategoryDescriptions) SetCategory2(value *string)() {
-    if m != nil {
-        m.category2 = value
-    }
+    m.category2 = value
 }
 // SetCategory20 sets the category20 property value. The label associated with Category 20
 func (m *PlannerCategoryDescriptions) SetCategory20(value *string)() {
-    if m != nil {
-        m.category20 = value
-    }
+    m.category20 = value
 }
 // SetCategory21 sets the category21 property value. The label associated with Category 21
 func (m *PlannerCategoryDescriptions) SetCategory21(value *string)() {
-    if m != nil {
-        m.category21 = value
-    }
+    m.category21 = value
 }
 // SetCategory22 sets the category22 property value. The label associated with Category 22
 func (m *PlannerCategoryDescriptions) SetCategory22(value *string)() {
-    if m != nil {
-        m.category22 = value
-    }
+    m.category22 = value
 }
 // SetCategory23 sets the category23 property value. The label associated with Category 23
 func (m *PlannerCategoryDescriptions) SetCategory23(value *string)() {
-    if m != nil {
-        m.category23 = value
-    }
+    m.category23 = value
 }
 // SetCategory24 sets the category24 property value. The label associated with Category 24
 func (m *PlannerCategoryDescriptions) SetCategory24(value *string)() {
-    if m != nil {
-        m.category24 = value
-    }
+    m.category24 = value
 }
 // SetCategory25 sets the category25 property value. The label associated with Category 25
 func (m *PlannerCategoryDescriptions) SetCategory25(value *string)() {
-    if m != nil {
-        m.category25 = value
-    }
+    m.category25 = value
 }
 // SetCategory3 sets the category3 property value. The label associated with Category 3
 func (m *PlannerCategoryDescriptions) SetCategory3(value *string)() {
-    if m != nil {
-        m.category3 = value
-    }
+    m.category3 = value
 }
 // SetCategory4 sets the category4 property value. The label associated with Category 4
 func (m *PlannerCategoryDescriptions) SetCategory4(value *string)() {
-    if m != nil {
-        m.category4 = value
-    }
+    m.category4 = value
 }
 // SetCategory5 sets the category5 property value. The label associated with Category 5
 func (m *PlannerCategoryDescriptions) SetCategory5(value *string)() {
-    if m != nil {
-        m.category5 = value
-    }
+    m.category5 = value
 }
 // SetCategory6 sets the category6 property value. The label associated with Category 6
 func (m *PlannerCategoryDescriptions) SetCategory6(value *string)() {
-    if m != nil {
-        m.category6 = value
-    }
+    m.category6 = value
 }
 // SetCategory7 sets the category7 property value. The label associated with Category 7
 func (m *PlannerCategoryDescriptions) SetCategory7(value *string)() {
-    if m != nil {
-        m.category7 = value
-    }
+    m.category7 = value
 }
 // SetCategory8 sets the category8 property value. The label associated with Category 8
 func (m *PlannerCategoryDescriptions) SetCategory8(value *string)() {
-    if m != nil {
-        m.category8 = value
-    }
+    m.category8 = value
 }
 // SetCategory9 sets the category9 property value. The label associated with Category 9
 func (m *PlannerCategoryDescriptions) SetCategory9(value *string)() {
-    if m != nil {
-        m.category9 = value
-    }
+    m.category9 = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerCategoryDescriptions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

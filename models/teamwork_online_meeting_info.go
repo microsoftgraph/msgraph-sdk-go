@@ -10,7 +10,7 @@ type TeamworkOnlineMeetingInfo struct {
     additionalData map[string]interface{}
     // The identifier of the calendar event associated with the meeting.
     calendarEventId *string
-    // The URL which can be clicked on to join or uniquely identify the meeting.
+    // The URL that users click to join or uniquely identify the meeting.
     joinWebUrl *string
     // The OdataType property
     odataType *string
@@ -32,19 +32,11 @@ func CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCalendarEventId gets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetCalendarEventId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarEventId
-    }
+    return m.calendarEventId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,29 +83,17 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetJoinWebUrl gets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
+// GetJoinWebUrl gets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinWebUrl
-    }
+    return m.joinWebUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkOnlineMeetingInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOrganizer gets the organizer property value. The organizer of the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetOrganizer()(TeamworkUserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizer
-    }
+    return m.organizer
 }
 // Serialize serializes information the current object
 func (m *TeamworkOnlineMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *TeamworkOnlineMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnlineMeetingInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCalendarEventId sets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetCalendarEventId(value *string)() {
-    if m != nil {
-        m.calendarEventId = value
-    }
+    m.calendarEventId = value
 }
-// SetJoinWebUrl sets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
+// SetJoinWebUrl sets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
-    if m != nil {
-        m.joinWebUrl = value
-    }
+    m.joinWebUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkOnlineMeetingInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOrganizer sets the organizer property value. The organizer of the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetOrganizer(value TeamworkUserIdentityable)() {
-    if m != nil {
-        m.organizer = value
-    }
+    m.organizer = value
 }

@@ -7,7 +7,7 @@ import (
 // UnifiedRoleEligibilityScheduleRequest 
 type UnifiedRoleEligibilityScheduleRequest struct {
     Request
-    // Represents the type of operation on the role eligibility request. The possible values are: AdminAssign: For administrators to assign eligible roles to principals.AdminRemove: For administrators to remove eligible roles from principals. AdminUpdate: For administrators to change existing role eligibilities.AdminExtend: For administrators to extend expiring role eligibilities.AdminRenew: For administrators to renew expired eligibilities.UserAdd: For users to activate their eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.
+    // Represents the type of operation on the role eligibility request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign eligible roles to principals.adminRemove: For administrators to remove eligible roles from principals. adminUpdate: For administrators to change existing role eligibilities.adminExtend: For administrators to extend expiring role eligibilities.adminRenew: For administrators to renew expired eligibilities.selfActivate: For users to activate their assignments.selfDeactivate: For users to deactivate their active assignments.selfExtend: For users to request to extend their expiring assignments.selfRenew: For users to request to renew their expired assignments.
     action *UnifiedRoleScheduleRequestActions
     // Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
     appScope AppScopeable
@@ -51,45 +51,25 @@ func NewUnifiedRoleEligibilityScheduleRequest()(*UnifiedRoleEligibilityScheduleR
 func CreateUnifiedRoleEligibilityScheduleRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleEligibilityScheduleRequest(), nil
 }
-// GetAction gets the action property value. Represents the type of operation on the role eligibility request. The possible values are: AdminAssign: For administrators to assign eligible roles to principals.AdminRemove: For administrators to remove eligible roles from principals. AdminUpdate: For administrators to change existing role eligibilities.AdminExtend: For administrators to extend expiring role eligibilities.AdminRenew: For administrators to renew expired eligibilities.UserAdd: For users to activate their eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.
+// GetAction gets the action property value. Represents the type of operation on the role eligibility request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign eligible roles to principals.adminRemove: For administrators to remove eligible roles from principals. adminUpdate: For administrators to change existing role eligibilities.adminExtend: For administrators to extend expiring role eligibilities.adminRenew: For administrators to renew expired eligibilities.selfActivate: For users to activate their assignments.selfDeactivate: For users to deactivate their active assignments.selfExtend: For users to request to extend their expiring assignments.selfRenew: For users to request to renew their expired assignments.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetAction()(*UnifiedRoleScheduleRequestActions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetAppScope gets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetAppScope()(AppScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScope
-    }
+    return m.appScope
 }
 // GetAppScopeId gets the appScopeId property value. Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleEligibilityScheduleRequest) GetAppScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appScopeId
-    }
+    return m.appScopeId
 }
 // GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetDirectoryScope()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScope
-    }
+    return m.directoryScope
 }
 // GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleEligibilityScheduleRequest) GetDirectoryScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryScopeId
-    }
+    return m.directoryScopeId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleEligibilityScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -248,83 +228,43 @@ func (m *UnifiedRoleEligibilityScheduleRequest) GetFieldDeserializers()(map[stri
 }
 // GetIsValidationOnly gets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetIsValidationOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValidationOnly
-    }
+    return m.isValidationOnly
 }
 // GetJustification gets the justification property value. A message provided by users and administrators when create they create the unifiedRoleEligibilityScheduleRequest object.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
+    return m.justification
 }
 // GetPrincipal gets the principal property value. The principal that's getting a role eligibility through the request. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetPrincipal()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principal
-    }
+    return m.principal
 }
 // GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
+    return m.principalId
 }
 // GetRoleDefinition gets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetRoleDefinition()(UnifiedRoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
+    return m.roleDefinition
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
+    return m.roleDefinitionId
 }
 // GetScheduleInfo gets the scheduleInfo property value. The period of the role eligibility. Recurring schedules are currently unsupported.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetScheduleInfo()(RequestScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleInfo
-    }
+    return m.scheduleInfo
 }
 // GetTargetSchedule gets the targetSchedule property value. The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetTargetSchedule()(UnifiedRoleEligibilityScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetSchedule
-    }
+    return m.targetSchedule
 }
 // GetTargetScheduleId gets the targetScheduleId property value. Identifier of the schedule object that's linked to the eligibility request. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) GetTargetScheduleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetScheduleId
-    }
+    return m.targetScheduleId
 }
 // GetTicketInfo gets the ticketInfo property value. Ticket details linked to the role eligibility request including details of the ticket number and ticket system. Optional.
 func (m *UnifiedRoleEligibilityScheduleRequest) GetTicketInfo()(TicketInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketInfo
-    }
+    return m.ticketInfo
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleEligibilityScheduleRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -425,93 +365,63 @@ func (m *UnifiedRoleEligibilityScheduleRequest) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetAction sets the action property value. Represents the type of operation on the role eligibility request. The possible values are: AdminAssign: For administrators to assign eligible roles to principals.AdminRemove: For administrators to remove eligible roles from principals. AdminUpdate: For administrators to change existing role eligibilities.AdminExtend: For administrators to extend expiring role eligibilities.AdminRenew: For administrators to renew expired eligibilities.UserAdd: For users to activate their eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.
+// SetAction sets the action property value. Represents the type of operation on the role eligibility request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign eligible roles to principals.adminRemove: For administrators to remove eligible roles from principals. adminUpdate: For administrators to change existing role eligibilities.adminExtend: For administrators to extend expiring role eligibilities.adminRenew: For administrators to renew expired eligibilities.selfActivate: For users to activate their assignments.selfDeactivate: For users to deactivate their active assignments.selfExtend: For users to request to extend their expiring assignments.selfRenew: For users to request to renew their expired assignments.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetAction(value *UnifiedRoleScheduleRequestActions)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetAppScope(value AppScopeable)() {
-    if m != nil {
-        m.appScope = value
-    }
+    m.appScope = value
 }
 // SetAppScopeId sets the appScopeId property value. Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleEligibilityScheduleRequest) SetAppScopeId(value *string)() {
-    if m != nil {
-        m.appScopeId = value
-    }
+    m.appScopeId = value
 }
 // SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetDirectoryScope(value DirectoryObjectable)() {
-    if m != nil {
-        m.directoryScope = value
-    }
+    m.directoryScope = value
 }
 // SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).
 func (m *UnifiedRoleEligibilityScheduleRequest) SetDirectoryScopeId(value *string)() {
-    if m != nil {
-        m.directoryScopeId = value
-    }
+    m.directoryScopeId = value
 }
 // SetIsValidationOnly sets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetIsValidationOnly(value *bool)() {
-    if m != nil {
-        m.isValidationOnly = value
-    }
+    m.isValidationOnly = value
 }
 // SetJustification sets the justification property value. A message provided by users and administrators when create they create the unifiedRoleEligibilityScheduleRequest object.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetJustification(value *string)() {
-    if m != nil {
-        m.justification = value
-    }
+    m.justification = value
 }
 // SetPrincipal sets the principal property value. The principal that's getting a role eligibility through the request. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetPrincipal(value DirectoryObjectable)() {
-    if m != nil {
-        m.principal = value
-    }
+    m.principal = value
 }
 // SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) SetPrincipalId(value *string)() {
-    if m != nil {
-        m.principalId = value
-    }
+    m.principalId = value
 }
 // SetRoleDefinition sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
-    if m != nil {
-        m.roleDefinition = value
-    }
+    m.roleDefinition = value
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) SetRoleDefinitionId(value *string)() {
-    if m != nil {
-        m.roleDefinitionId = value
-    }
+    m.roleDefinitionId = value
 }
 // SetScheduleInfo sets the scheduleInfo property value. The period of the role eligibility. Recurring schedules are currently unsupported.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetScheduleInfo(value RequestScheduleable)() {
-    if m != nil {
-        m.scheduleInfo = value
-    }
+    m.scheduleInfo = value
 }
 // SetTargetSchedule sets the targetSchedule property value. The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetTargetSchedule(value UnifiedRoleEligibilityScheduleable)() {
-    if m != nil {
-        m.targetSchedule = value
-    }
+    m.targetSchedule = value
 }
 // SetTargetScheduleId sets the targetScheduleId property value. Identifier of the schedule object that's linked to the eligibility request. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) SetTargetScheduleId(value *string)() {
-    if m != nil {
-        m.targetScheduleId = value
-    }
+    m.targetScheduleId = value
 }
 // SetTicketInfo sets the ticketInfo property value. Ticket details linked to the role eligibility request including details of the ticket number and ticket system. Optional.
 func (m *UnifiedRoleEligibilityScheduleRequest) SetTicketInfo(value TicketInfoable)() {
-    if m != nil {
-        m.ticketInfo = value
-    }
+    m.ticketInfo = value
 }

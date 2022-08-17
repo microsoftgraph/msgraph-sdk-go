@@ -24,11 +24,7 @@ func CreateReferenceCreateFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReferenceCreate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReferenceCreate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *ReferenceCreate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataId gets the @odata.id property value. The OdataId property
 func (m *ReferenceCreate) GetOdataId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataId
-    }
+    return m.odataId
 }
 // Serialize serializes information the current object
 func (m *ReferenceCreate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *ReferenceCreate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReferenceCreate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataId sets the @odata.id property value. The OdataId property
 func (m *ReferenceCreate) SetOdataId(value *string)() {
-    if m != nil {
-        m.odataId = value
-    }
+    m.odataId = value
 }

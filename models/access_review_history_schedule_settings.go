@@ -30,11 +30,7 @@ func CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewHistoryScheduleSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessReviewHistoryScheduleSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
 func (m *AccessReviewHistoryScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetReportRange gets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
 func (m *AccessReviewHistoryScheduleSettings) GetReportRange()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRange
-    }
+    return m.reportRange
 }
 // Serialize serializes information the current object
 func (m *AccessReviewHistoryScheduleSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AccessReviewHistoryScheduleSettings) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewHistoryScheduleSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessReviewHistoryScheduleSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecurrence sets the recurrence property value. The recurrence property
 func (m *AccessReviewHistoryScheduleSettings) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetReportRange sets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
 func (m *AccessReviewHistoryScheduleSettings) SetReportRange(value *string)() {
-    if m != nil {
-        m.reportRange = value
-    }
+    m.reportRange = value
 }

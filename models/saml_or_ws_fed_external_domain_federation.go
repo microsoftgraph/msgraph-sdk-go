@@ -25,11 +25,7 @@ func CreateSamlOrWsFedExternalDomainFederationFromDiscriminatorValue(parseNode i
 }
 // GetDomains gets the domains property value. Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).
 func (m *SamlOrWsFedExternalDomainFederation) GetDomains()([]ExternalDomainNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domains
-    }
+    return m.domains
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SamlOrWsFedExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *SamlOrWsFedExternalDomainFederation) Serialize(writer i878a80d2330e89d2
 }
 // SetDomains sets the domains property value. Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).
 func (m *SamlOrWsFedExternalDomainFederation) SetDomains(value []ExternalDomainNameable)() {
-    if m != nil {
-        m.domains = value
-    }
+    m.domains = value
 }

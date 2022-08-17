@@ -5,25 +5,25 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy singleton.
+// AuthenticationMethodsPolicy 
 type AuthenticationMethodsPolicy struct {
     Entity
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     authenticationMethodConfigurations []AuthenticationMethodConfigurationable
-    // A description of the policy.
+    // A description of the policy. Read-only.
     description *string
-    // The name of the policy.
+    // The name of the policy. Read-only.
     displayName *string
-    // The date and time of the last update to the policy.
+    // The date and time of the last update to the policy. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The version of the policy in use.
+    // The version of the policy in use. Read-only.
     policyVersion *string
     // The reconfirmationInDays property
     reconfirmationInDays *int32
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
     registrationEnforcement RegistrationEnforcementable
 }
-// NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
+// NewAuthenticationMethodsPolicy instantiates a new AuthenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     m := &AuthenticationMethodsPolicy{
         Entity: *NewEntity(),
@@ -38,27 +38,15 @@ func CreateAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAuthenticationMethodConfigurations gets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]AuthenticationMethodConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethodConfigurations
-    }
+    return m.authenticationMethodConfigurations
 }
-// GetDescription gets the description property value. A description of the policy.
+// GetDescription gets the description property value. A description of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
-// GetDisplayName gets the displayName property value. The name of the policy.
+// GetDisplayName gets the displayName property value. The name of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -139,37 +127,21 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
-// GetPolicyVersion gets the policyVersion property value. The version of the policy in use.
+// GetPolicyVersion gets the policyVersion property value. The version of the policy in use. Read-only.
 func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyVersion
-    }
+    return m.policyVersion
 }
 // GetReconfirmationInDays gets the reconfirmationInDays property value. The reconfirmationInDays property
 func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reconfirmationInDays
-    }
+    return m.reconfirmationInDays
 }
 // GetRegistrationEnforcement gets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
 func (m *AuthenticationMethodsPolicy) GetRegistrationEnforcement()(RegistrationEnforcementable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationEnforcement
-    }
+    return m.registrationEnforcement
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,43 +199,29 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfigurationable)() {
-    if m != nil {
-        m.authenticationMethodConfigurations = value
-    }
+    m.authenticationMethodConfigurations = value
 }
-// SetDescription sets the description property value. A description of the policy.
+// SetDescription sets the description property value. A description of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
-// SetDisplayName sets the displayName property value. The name of the policy.
+// SetDisplayName sets the displayName property value. The name of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of the last update to the policy.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
-// SetPolicyVersion sets the policyVersion property value. The version of the policy in use.
+// SetPolicyVersion sets the policyVersion property value. The version of the policy in use. Read-only.
 func (m *AuthenticationMethodsPolicy) SetPolicyVersion(value *string)() {
-    if m != nil {
-        m.policyVersion = value
-    }
+    m.policyVersion = value
 }
 // SetReconfirmationInDays sets the reconfirmationInDays property value. The reconfirmationInDays property
 func (m *AuthenticationMethodsPolicy) SetReconfirmationInDays(value *int32)() {
-    if m != nil {
-        m.reconfirmationInDays = value
-    }
+    m.reconfirmationInDays = value
 }
 // SetRegistrationEnforcement sets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
 func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value RegistrationEnforcementable)() {
-    if m != nil {
-        m.registrationEnforcement = value
-    }
+    m.registrationEnforcement = value
 }

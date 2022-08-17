@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookNamedItem provides operations to manage the admin singleton.
+// WorkbookNamedItem provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookNamedItem struct {
     Entity
     // Represents the comment associated with this name.
@@ -13,7 +13,7 @@ type WorkbookNamedItem struct {
     name *string
     // Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
     scope *string
-    // Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+    // Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
     type_escaped *string
     // Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
     value Jsonable
@@ -37,11 +37,7 @@ func CreateWorkbookNamedItemFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetComment gets the comment property value. Represents the comment associated with this name.
 func (m *WorkbookNamedItem) GetComment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comment
-    }
+    return m.comment
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,51 +116,27 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetName gets the name property value. The name of the object. Read-only.
 func (m *WorkbookNamedItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetScope gets the scope property value. Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
 func (m *WorkbookNamedItem) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
-// GetType gets the type property value. Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// GetType gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetValue gets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
 func (m *WorkbookNamedItem) GetValue()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // GetVisible gets the visible property value. Specifies whether the object is visible or not.
 func (m *WorkbookNamedItem) GetVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visible
-    }
+    return m.visible
 }
 // GetWorksheet gets the worksheet property value. Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorkbookNamedItem) GetWorksheet()(WorkbookWorksheetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.worksheet
-    }
+    return m.worksheet
 }
 // Serialize serializes information the current object
 func (m *WorkbookNamedItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -218,43 +190,29 @@ func (m *WorkbookNamedItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetComment sets the comment property value. Represents the comment associated with this name.
 func (m *WorkbookNamedItem) SetComment(value *string)() {
-    if m != nil {
-        m.comment = value
-    }
+    m.comment = value
 }
 // SetName sets the name property value. The name of the object. Read-only.
 func (m *WorkbookNamedItem) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetScope sets the scope property value. Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
 func (m *WorkbookNamedItem) SetScope(value *string)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
-// SetType sets the type property value. Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// SetType sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetValue sets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
 func (m *WorkbookNamedItem) SetValue(value Jsonable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }
 // SetVisible sets the visible property value. Specifies whether the object is visible or not.
 func (m *WorkbookNamedItem) SetVisible(value *bool)() {
-    if m != nil {
-        m.visible = value
-    }
+    m.visible = value
 }
 // SetWorksheet sets the worksheet property value. Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorkbookNamedItem) SetWorksheet(value WorkbookWorksheetable)() {
-    if m != nil {
-        m.worksheet = value
-    }
+    m.worksheet = value
 }

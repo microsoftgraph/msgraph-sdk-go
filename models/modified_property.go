@@ -8,13 +8,13 @@ import (
 type ModifiedProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Name of property that was modified.
+    // Indicates the property name of the target attribute that was changed.
     displayName *string
-    // New property value.
+    // Indicates the updated value for the propery.
     newValue *string
     // The OdataType property
     odataType *string
-    // Old property value.
+    // Indicates the previous value (before the update) for the property.
     oldValue *string
 }
 // NewModifiedProperty instantiates a new modifiedProperty and sets the default values.
@@ -32,19 +32,11 @@ func CreateModifiedPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ModifiedProperty) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetDisplayName gets the displayName property value. Name of property that was modified.
+// GetDisplayName gets the displayName property value. Indicates the property name of the target attribute that was changed.
 func (m *ModifiedProperty) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,29 +83,17 @@ func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetNewValue gets the newValue property value. New property value.
+// GetNewValue gets the newValue property value. Indicates the updated value for the propery.
 func (m *ModifiedProperty) GetNewValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newValue
-    }
+    return m.newValue
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ModifiedProperty) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetOldValue gets the oldValue property value. Old property value.
+// GetOldValue gets the oldValue property value. Indicates the previous value (before the update) for the property.
 func (m *ModifiedProperty) GetOldValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oldValue
-    }
+    return m.oldValue
 }
 // Serialize serializes information the current object
 func (m *ModifiedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ModifiedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ModifiedProperty) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. Name of property that was modified.
+// SetDisplayName sets the displayName property value. Indicates the property name of the target attribute that was changed.
 func (m *ModifiedProperty) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
-// SetNewValue sets the newValue property value. New property value.
+// SetNewValue sets the newValue property value. Indicates the updated value for the propery.
 func (m *ModifiedProperty) SetNewValue(value *string)() {
-    if m != nil {
-        m.newValue = value
-    }
+    m.newValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ModifiedProperty) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetOldValue sets the oldValue property value. Old property value.
+// SetOldValue sets the oldValue property value. Indicates the previous value (before the update) for the property.
 func (m *ModifiedProperty) SetOldValue(value *string)() {
-    if m != nil {
-        m.oldValue = value
-    }
+    m.oldValue = value
 }

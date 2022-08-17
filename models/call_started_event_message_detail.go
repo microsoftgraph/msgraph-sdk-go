@@ -29,19 +29,11 @@ func CreateCallStartedEventMessageDetailFromDiscriminatorValue(parseNode i878a80
 }
 // GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallStartedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callEventType
-    }
+    return m.callEventType
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
 func (m *CallStartedEventMessageDetail) GetCallId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callId
-    }
+    return m.callId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallStartedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *CallStartedEventMessageDetail) GetFieldDeserializers()(map[string]func(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *CallStartedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // Serialize serializes information the current object
 func (m *CallStartedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *CallStartedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
 }
 // SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallStartedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
-    if m != nil {
-        m.callEventType = value
-    }
+    m.callEventType = value
 }
 // SetCallId sets the callId property value. Unique identifier of the call.
 func (m *CallStartedEventMessageDetail) SetCallId(value *string)() {
-    if m != nil {
-        m.callId = value
-    }
+    m.callId = value
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *CallStartedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }

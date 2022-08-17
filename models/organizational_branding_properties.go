@@ -7,25 +7,25 @@ import (
 // OrganizationalBrandingProperties 
 type OrganizationalBrandingProperties struct {
     Entity
-    // Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
+    // Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
     backgroundColor *string
     // Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
     backgroundImage []byte
     // A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     backgroundImageRelativeUrl *string
-    // A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+    // A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
     bannerLogo []byte
-    // A relative URL for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+    // A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
     bannerLogoRelativeUrl *string
     // A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
     cdnList []string
-    // Text that appears at the bottom of the sign-in box. Use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be in Unicode format and not exceed 1024 characters.
+    // Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
     signInPageText *string
-    // A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+    // A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
     squareLogo []byte
-    // A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+    // A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     squareLogoRelativeUrl *string
-    // A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
+    // String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
     usernameHintText *string
 }
 // NewOrganizationalBrandingProperties instantiates a new organizationalBrandingProperties and sets the default values.
@@ -62,53 +62,29 @@ func CreateOrganizationalBrandingPropertiesFromDiscriminatorValue(parseNode i878
     }
     return NewOrganizationalBrandingProperties(), nil
 }
-// GetBackgroundColor gets the backgroundColor property value. Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
+// GetBackgroundColor gets the backgroundColor property value. Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
 func (m *OrganizationalBrandingProperties) GetBackgroundColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.backgroundColor
-    }
+    return m.backgroundColor
 }
 // GetBackgroundImage gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
 func (m *OrganizationalBrandingProperties) GetBackgroundImage()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.backgroundImage
-    }
+    return m.backgroundImage
 }
 // GetBackgroundImageRelativeUrl gets the backgroundImageRelativeUrl property value. A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) GetBackgroundImageRelativeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.backgroundImageRelativeUrl
-    }
+    return m.backgroundImageRelativeUrl
 }
-// GetBannerLogo gets the bannerLogo property value. A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+// GetBannerLogo gets the bannerLogo property value. A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 func (m *OrganizationalBrandingProperties) GetBannerLogo()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bannerLogo
-    }
+    return m.bannerLogo
 }
-// GetBannerLogoRelativeUrl gets the bannerLogoRelativeUrl property value. A relative URL for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+// GetBannerLogoRelativeUrl gets the bannerLogoRelativeUrl property value. A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) GetBannerLogoRelativeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bannerLogoRelativeUrl
-    }
+    return m.bannerLogoRelativeUrl
 }
 // GetCdnList gets the cdnList property value. A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
 func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cdnList
-    }
+    return m.cdnList
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -219,37 +195,21 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetSignInPageText gets the signInPageText property value. Text that appears at the bottom of the sign-in box. Use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be in Unicode format and not exceed 1024 characters.
+// GetSignInPageText gets the signInPageText property value. Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
 func (m *OrganizationalBrandingProperties) GetSignInPageText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInPageText
-    }
+    return m.signInPageText
 }
-// GetSquareLogo gets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+// GetSquareLogo gets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *OrganizationalBrandingProperties) GetSquareLogo()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.squareLogo
-    }
+    return m.squareLogo
 }
-// GetSquareLogoRelativeUrl gets the squareLogoRelativeUrl property value. A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// GetSquareLogoRelativeUrl gets the squareLogoRelativeUrl property value. A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) GetSquareLogoRelativeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.squareLogoRelativeUrl
-    }
+    return m.squareLogoRelativeUrl
 }
-// GetUsernameHintText gets the usernameHintText property value. A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
+// GetUsernameHintText gets the usernameHintText property value. String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
 func (m *OrganizationalBrandingProperties) GetUsernameHintText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usernameHintText
-    }
+    return m.usernameHintText
 }
 // Serialize serializes information the current object
 func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -319,63 +279,43 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetBackgroundColor sets the backgroundColor property value. Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
+// SetBackgroundColor sets the backgroundColor property value. Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
 func (m *OrganizationalBrandingProperties) SetBackgroundColor(value *string)() {
-    if m != nil {
-        m.backgroundColor = value
-    }
+    m.backgroundColor = value
 }
 // SetBackgroundImage sets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
 func (m *OrganizationalBrandingProperties) SetBackgroundImage(value []byte)() {
-    if m != nil {
-        m.backgroundImage = value
-    }
+    m.backgroundImage = value
 }
 // SetBackgroundImageRelativeUrl sets the backgroundImageRelativeUrl property value. A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) SetBackgroundImageRelativeUrl(value *string)() {
-    if m != nil {
-        m.backgroundImageRelativeUrl = value
-    }
+    m.backgroundImageRelativeUrl = value
 }
-// SetBannerLogo sets the bannerLogo property value. A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+// SetBannerLogo sets the bannerLogo property value. A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 func (m *OrganizationalBrandingProperties) SetBannerLogo(value []byte)() {
-    if m != nil {
-        m.bannerLogo = value
-    }
+    m.bannerLogo = value
 }
-// SetBannerLogoRelativeUrl sets the bannerLogoRelativeUrl property value. A relative URL for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+// SetBannerLogoRelativeUrl sets the bannerLogoRelativeUrl property value. A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) SetBannerLogoRelativeUrl(value *string)() {
-    if m != nil {
-        m.bannerLogoRelativeUrl = value
-    }
+    m.bannerLogoRelativeUrl = value
 }
 // SetCdnList sets the cdnList property value. A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
 func (m *OrganizationalBrandingProperties) SetCdnList(value []string)() {
-    if m != nil {
-        m.cdnList = value
-    }
+    m.cdnList = value
 }
-// SetSignInPageText sets the signInPageText property value. Text that appears at the bottom of the sign-in box. Use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be in Unicode format and not exceed 1024 characters.
+// SetSignInPageText sets the signInPageText property value. Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
 func (m *OrganizationalBrandingProperties) SetSignInPageText(value *string)() {
-    if m != nil {
-        m.signInPageText = value
-    }
+    m.signInPageText = value
 }
-// SetSquareLogo sets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+// SetSquareLogo sets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *OrganizationalBrandingProperties) SetSquareLogo(value []byte)() {
-    if m != nil {
-        m.squareLogo = value
-    }
+    m.squareLogo = value
 }
-// SetSquareLogoRelativeUrl sets the squareLogoRelativeUrl property value. A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// SetSquareLogoRelativeUrl sets the squareLogoRelativeUrl property value. A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) SetSquareLogoRelativeUrl(value *string)() {
-    if m != nil {
-        m.squareLogoRelativeUrl = value
-    }
+    m.squareLogoRelativeUrl = value
 }
-// SetUsernameHintText sets the usernameHintText property value. A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
+// SetUsernameHintText sets the usernameHintText property value. String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
 func (m *OrganizationalBrandingProperties) SetUsernameHintText(value *string)() {
-    if m != nil {
-        m.usernameHintText = value
-    }
+    m.usernameHintText = value
 }

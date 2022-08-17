@@ -27,19 +27,11 @@ func CreateDomainIdentitySourceFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDisplayName gets the displayName property value. The name of the identity source, typically also the domain name. Read only.
 func (m *DomainIdentitySource) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDomainName gets the domainName property value. The domain name. Read only.
 func (m *DomainIdentitySource) GetDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainName
-    }
+    return m.domainName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DomainIdentitySource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *DomainIdentitySource) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDisplayName sets the displayName property value. The name of the identity source, typically also the domain name. Read only.
 func (m *DomainIdentitySource) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDomainName sets the domainName property value. The domain name. Read only.
 func (m *DomainIdentitySource) SetDomainName(value *string)() {
-    if m != nil {
-        m.domainName = value
-    }
+    m.domainName = value
 }

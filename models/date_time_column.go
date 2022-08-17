@@ -30,19 +30,11 @@ func CreateDateTimeColumnFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DateTimeColumn) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayAs gets the displayAs property value. How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.
 func (m *DateTimeColumn) GetDisplayAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayAs
-    }
+    return m.displayAs
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetFormat gets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
 func (m *DateTimeColumn) GetFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DateTimeColumn) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DateTimeColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DateTimeColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DateTimeColumn) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayAs sets the displayAs property value. How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.
 func (m *DateTimeColumn) SetDisplayAs(value *string)() {
-    if m != nil {
-        m.displayAs = value
-    }
+    m.displayAs = value
 }
 // SetFormat sets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
 func (m *DateTimeColumn) SetFormat(value *string)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DateTimeColumn) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

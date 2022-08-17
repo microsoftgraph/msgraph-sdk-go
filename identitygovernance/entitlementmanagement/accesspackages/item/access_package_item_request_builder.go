@@ -26,7 +26,7 @@ type AccessPackageItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageItemRequestBuilderGetQueryParameters represents access package objects.
+// AccessPackageItemRequestBuilderGetQueryParameters access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 type AccessPackageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -103,11 +103,11 @@ func (m *AccessPackageItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents access package objects.
+// CreateGetRequestInformation access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackageItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents access package objects.
+// CreateGetRequestInformationWithRequestConfiguration access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackageItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,7 +160,7 @@ func (m *AccessPackageItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// Get represents access package objects.
+// Get access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackageItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -168,7 +168,7 @@ func (m *AccessPackageItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d
 func (m *AccessPackageItemRequestBuilder) GetApplicablePolicyRequirements()(*i161d6a842b6fc7e35133da25937154a2f211684ebd0fc91e42d9c04c808dcbb9.GetApplicablePolicyRequirementsRequestBuilder) {
     return i161d6a842b6fc7e35133da25937154a2f211684ebd0fc91e42d9c04c808dcbb9.NewGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler represents access package objects.
+// GetWithRequestConfigurationAndResponseHandler access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 func (m *AccessPackageItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

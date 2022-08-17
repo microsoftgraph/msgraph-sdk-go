@@ -40,11 +40,7 @@ func (m *WindowsDeviceAzureADAccount) GetFieldDeserializers()(map[string]func(i8
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Not yet documented
 func (m *WindowsDeviceAzureADAccount) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *WindowsDeviceAzureADAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsDeviceAzureADAccount) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Not yet documented
 func (m *WindowsDeviceAzureADAccount) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

@@ -22,7 +22,7 @@ type WorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkforceIntegrationItemRequestBuilderGetQueryParameters a workforce integration with shifts.
+// WorkforceIntegrationItemRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
 type WorkforceIntegrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *WorkforceIntegrationItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a workforce integration with shifts.
+// CreateGetRequestInformation get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a workforce integration with shifts.
+// CreateGetRequestInformationWithRequestConfiguration get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkforceIntegrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *WorkforceIntegrationItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get a workforce integration with shifts.
+// Get get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a workforce integration with shifts.
+// GetWithRequestConfigurationAndResponseHandler get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WorkforceIntegrationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

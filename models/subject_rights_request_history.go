@@ -37,27 +37,15 @@ func CreateSubjectRightsRequestHistoryFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChangedBy gets the changedBy property value. Identity of the user who changed the  subject rights request.
 func (m *SubjectRightsRequestHistory) GetChangedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changedBy
-    }
+    return m.changedBy
 }
 // GetEventDateTime gets the eventDateTime property value. Data and time when the entity was changed.
 func (m *SubjectRightsRequestHistory) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventDateTime
-    }
+    return m.eventDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,35 +114,19 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stage
-    }
+    return m.stage
 }
 // GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStageStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stageStatus
-    }
+    return m.stageStatus
 }
 // GetType gets the type property value. Type of history.
 func (m *SubjectRightsRequestHistory) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -206,43 +178,29 @@ func (m *SubjectRightsRequestHistory) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestHistory) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChangedBy sets the changedBy property value. Identity of the user who changed the  subject rights request.
 func (m *SubjectRightsRequestHistory) SetChangedBy(value IdentitySetable)() {
-    if m != nil {
-        m.changedBy = value
-    }
+    m.changedBy = value
 }
 // SetEventDateTime sets the eventDateTime property value. Data and time when the entity was changed.
 func (m *SubjectRightsRequestHistory) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.eventDateTime = value
-    }
+    m.eventDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SubjectRightsRequestHistory) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStage sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) SetStage(value *SubjectRightsRequestStage)() {
-    if m != nil {
-        m.stage = value
-    }
+    m.stage = value
 }
 // SetStageStatus sets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) SetStageStatus(value *SubjectRightsRequestStageStatus)() {
-    if m != nil {
-        m.stageStatus = value
-    }
+    m.stageStatus = value
 }
 // SetType sets the type property value. Type of history.
 func (m *SubjectRightsRequestHistory) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

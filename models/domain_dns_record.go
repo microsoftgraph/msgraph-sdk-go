@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainDnsRecord provides operations to manage the admin singleton.
+// DomainDnsRecord 
 type DomainDnsRecord struct {
     Entity
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
@@ -18,7 +18,7 @@ type DomainDnsRecord struct {
     // Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
     ttl *int32
 }
-// NewDomainDnsRecord instantiates a new domainDnsRecord and sets the default values.
+// NewDomainDnsRecord instantiates a new DomainDnsRecord and sets the default values.
 func NewDomainDnsRecord()(*DomainDnsRecord) {
     m := &DomainDnsRecord{
         Entity: *NewEntity(),
@@ -115,43 +115,23 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIsOptional gets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
 func (m *DomainDnsRecord) GetIsOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOptional
-    }
+    return m.isOptional
 }
 // GetLabel gets the label property value. Value used when configuring the name of the DNS record at the DNS host.
 func (m *DomainDnsRecord) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetRecordType gets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
 func (m *DomainDnsRecord) GetRecordType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordType
-    }
+    return m.recordType
 }
 // GetSupportedService gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
 func (m *DomainDnsRecord) GetSupportedService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedService
-    }
+    return m.supportedService
 }
 // GetTtl gets the ttl property value. Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
 func (m *DomainDnsRecord) GetTtl()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ttl
-    }
+    return m.ttl
 }
 // Serialize serializes information the current object
 func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,31 +173,21 @@ func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetIsOptional sets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
 func (m *DomainDnsRecord) SetIsOptional(value *bool)() {
-    if m != nil {
-        m.isOptional = value
-    }
+    m.isOptional = value
 }
 // SetLabel sets the label property value. Value used when configuring the name of the DNS record at the DNS host.
 func (m *DomainDnsRecord) SetLabel(value *string)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetRecordType sets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
 func (m *DomainDnsRecord) SetRecordType(value *string)() {
-    if m != nil {
-        m.recordType = value
-    }
+    m.recordType = value
 }
 // SetSupportedService sets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
 func (m *DomainDnsRecord) SetSupportedService(value *string)() {
-    if m != nil {
-        m.supportedService = value
-    }
+    m.supportedService = value
 }
 // SetTtl sets the ttl property value. Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
 func (m *DomainDnsRecord) SetTtl(value *int32)() {
-    if m != nil {
-        m.ttl = value
-    }
+    m.ttl = value
 }

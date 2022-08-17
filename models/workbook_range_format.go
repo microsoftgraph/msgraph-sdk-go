@@ -15,13 +15,13 @@ type WorkbookRangeFormat struct {
     fill WorkbookRangeFillable
     // Returns the font object defined on the overall range selected Read-only.
     font WorkbookRangeFontable
-    // Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+    // Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
     horizontalAlignment *string
     // Returns the format protection object for a range. Read-only.
     protection WorkbookFormatProtectionable
     // Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
     rowHeight *float64
-    // Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+    // Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
     verticalAlignment *string
     // Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
     wrapText *bool
@@ -41,19 +41,11 @@ func CreateWorkbookRangeFormatFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetBorders gets the borders property value. Collection of border objects that apply to the overall range selected Read-only.
 func (m *WorkbookRangeFormat) GetBorders()([]WorkbookRangeBorderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.borders
-    }
+    return m.borders
 }
 // GetColumnWidth gets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
 func (m *WorkbookRangeFormat) GetColumnWidth()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.columnWidth
-    }
+    return m.columnWidth
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,59 +148,31 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFill gets the fill property value. Returns the fill object defined on the overall range. Read-only.
 func (m *WorkbookRangeFormat) GetFill()(WorkbookRangeFillable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fill
-    }
+    return m.fill
 }
 // GetFont gets the font property value. Returns the font object defined on the overall range selected Read-only.
 func (m *WorkbookRangeFormat) GetFont()(WorkbookRangeFontable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.font
-    }
+    return m.font
 }
-// GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.horizontalAlignment
-    }
+    return m.horizontalAlignment
 }
 // GetProtection gets the protection property value. Returns the format protection object for a range. Read-only.
 func (m *WorkbookRangeFormat) GetProtection()(WorkbookFormatProtectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protection
-    }
+    return m.protection
 }
 // GetRowHeight gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
 func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rowHeight
-    }
+    return m.rowHeight
 }
-// GetVerticalAlignment gets the verticalAlignment property value. Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+// GetVerticalAlignment gets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
 func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verticalAlignment
-    }
+    return m.verticalAlignment
 }
 // GetWrapText gets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
 func (m *WorkbookRangeFormat) GetWrapText()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wrapText
-    }
+    return m.wrapText
 }
 // Serialize serializes information the current object
 func (m *WorkbookRangeFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -278,55 +242,37 @@ func (m *WorkbookRangeFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetBorders sets the borders property value. Collection of border objects that apply to the overall range selected Read-only.
 func (m *WorkbookRangeFormat) SetBorders(value []WorkbookRangeBorderable)() {
-    if m != nil {
-        m.borders = value
-    }
+    m.borders = value
 }
 // SetColumnWidth sets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
 func (m *WorkbookRangeFormat) SetColumnWidth(value *float64)() {
-    if m != nil {
-        m.columnWidth = value
-    }
+    m.columnWidth = value
 }
 // SetFill sets the fill property value. Returns the fill object defined on the overall range. Read-only.
 func (m *WorkbookRangeFormat) SetFill(value WorkbookRangeFillable)() {
-    if m != nil {
-        m.fill = value
-    }
+    m.fill = value
 }
 // SetFont sets the font property value. Returns the font object defined on the overall range selected Read-only.
 func (m *WorkbookRangeFormat) SetFont(value WorkbookRangeFontable)() {
-    if m != nil {
-        m.font = value
-    }
+    m.font = value
 }
-// SetHorizontalAlignment sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// SetHorizontalAlignment sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) SetHorizontalAlignment(value *string)() {
-    if m != nil {
-        m.horizontalAlignment = value
-    }
+    m.horizontalAlignment = value
 }
 // SetProtection sets the protection property value. Returns the format protection object for a range. Read-only.
 func (m *WorkbookRangeFormat) SetProtection(value WorkbookFormatProtectionable)() {
-    if m != nil {
-        m.protection = value
-    }
+    m.protection = value
 }
 // SetRowHeight sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
 func (m *WorkbookRangeFormat) SetRowHeight(value *float64)() {
-    if m != nil {
-        m.rowHeight = value
-    }
+    m.rowHeight = value
 }
-// SetVerticalAlignment sets the verticalAlignment property value. Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+// SetVerticalAlignment sets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
 func (m *WorkbookRangeFormat) SetVerticalAlignment(value *string)() {
-    if m != nil {
-        m.verticalAlignment = value
-    }
+    m.verticalAlignment = value
 }
 // SetWrapText sets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
 func (m *WorkbookRangeFormat) SetWrapText(value *bool)() {
-    if m != nil {
-        m.wrapText = value
-    }
+    m.wrapText = value
 }

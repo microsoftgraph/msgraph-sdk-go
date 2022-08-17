@@ -22,7 +22,7 @@ type TransitiveMemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TransitiveMemberOfRequestBuilderGetQueryParameters groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// TransitiveMemberOfRequestBuilderGetQueryParameters groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *TransitiveMemberOfRequestBuilder) Count()(*iff0ceace50e23f474764360dc6bd625962f6f949f4ad917480cdf47a29d74725.CountRequestBuilder) {
     return iff0ceace50e23f474764360dc6bd625962f6f949f4ad917480cdf47a29d74725.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// CreateGetRequestInformation groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithReques
 func (m *TransitiveMemberOfRequestBuilder) Device()(*i0770b55297c82b7d4e3bf29a215792f02aaa2f4074dcf70574cd4f04a531e278.DeviceRequestBuilder) {
     return i0770b55297c82b7d4e3bf29a215792f02aaa2f4074dcf70574cd4f04a531e278.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// Get groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TransitiveMemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

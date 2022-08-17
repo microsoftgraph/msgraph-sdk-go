@@ -26,11 +26,7 @@ func CreatePreviewPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PreviewPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,19 +55,11 @@ func (m *PreviewPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPage gets the page property value. The page property
 func (m *PreviewPostRequestBody) GetPage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.page
-    }
+    return m.page
 }
 // GetZoom gets the zoom property value. The zoom property
 func (m *PreviewPostRequestBody) GetZoom()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.zoom
-    }
+    return m.zoom
 }
 // Serialize serializes information the current object
 func (m *PreviewPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *PreviewPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetPage sets the page property value. The page property
 func (m *PreviewPostRequestBody) SetPage(value *string)() {
-    if m != nil {
-        m.page = value
-    }
+    m.page = value
 }
 // SetZoom sets the zoom property value. The zoom property
 func (m *PreviewPostRequestBody) SetZoom(value *float64)() {
-    if m != nil {
-        m.zoom = value
-    }
+    m.zoom = value
 }

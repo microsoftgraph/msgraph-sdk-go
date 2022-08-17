@@ -40,11 +40,7 @@ func (m *PrintUsageByPrinter) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetPrinterId gets the printerId property value. The printerId property
 func (m *PrintUsageByPrinter) GetPrinterId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printerId
-    }
+    return m.printerId
 }
 // Serialize serializes information the current object
 func (m *PrintUsageByPrinter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *PrintUsageByPrinter) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetPrinterId sets the printerId property value. The printerId property
 func (m *PrintUsageByPrinter) SetPrinterId(value *string)() {
-    if m != nil {
-        m.printerId = value
-    }
+    m.printerId = value
 }

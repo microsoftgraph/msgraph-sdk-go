@@ -30,11 +30,7 @@ func CreateProxiedDomainFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProxiedDomain) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProxiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *ProxiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIpAddressOrFQDN gets the ipAddressOrFQDN property value. The IP address or FQDN
 func (m *ProxiedDomain) GetIpAddressOrFQDN()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddressOrFQDN
-    }
+    return m.ipAddressOrFQDN
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ProxiedDomain) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProxy gets the proxy property value. Proxy IP or FQDN
 func (m *ProxiedDomain) GetProxy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxy
-    }
+    return m.proxy
 }
 // Serialize serializes information the current object
 func (m *ProxiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ProxiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProxiedDomain) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIpAddressOrFQDN sets the ipAddressOrFQDN property value. The IP address or FQDN
 func (m *ProxiedDomain) SetIpAddressOrFQDN(value *string)() {
-    if m != nil {
-        m.ipAddressOrFQDN = value
-    }
+    m.ipAddressOrFQDN = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ProxiedDomain) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProxy sets the proxy property value. Proxy IP or FQDN
 func (m *ProxiedDomain) SetProxy(value *string)() {
-    if m != nil {
-        m.proxy = value
-    }
+    m.proxy = value
 }

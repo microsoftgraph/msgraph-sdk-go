@@ -65,27 +65,15 @@ func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOcr gets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *EdiscoveryCaseSettings) GetOcr()(OcrSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ocr
-    }
+    return m.ocr
 }
 // GetRedundancyDetection gets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redundancyDetection
-    }
+    return m.redundancyDetection
 }
 // GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *EdiscoveryCaseSettings) GetTopicModeling()(TopicModelingSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topicModeling
-    }
+    return m.topicModeling
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *EdiscoveryCaseSettings) SetOcr(value OcrSettingsable)() {
-    if m != nil {
-        m.ocr = value
-    }
+    m.ocr = value
 }
 // SetRedundancyDetection sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *EdiscoveryCaseSettings) SetRedundancyDetection(value RedundancyDetectionSettingsable)() {
-    if m != nil {
-        m.redundancyDetection = value
-    }
+    m.redundancyDetection = value
 }
 // SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *EdiscoveryCaseSettings) SetTopicModeling(value TopicModelingSettingsable)() {
-    if m != nil {
-        m.topicModeling = value
-    }
+    m.topicModeling = value
 }

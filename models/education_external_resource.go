@@ -7,7 +7,7 @@ import (
 // EducationExternalResource 
 type EducationExternalResource struct {
     EducationResource
-    // Location of the resource. Required.
+    // Location of the resource. Required
     webUrl *string
 }
 // NewEducationExternalResource instantiates a new EducationExternalResource and sets the default values.
@@ -38,13 +38,9 @@ func (m *EducationExternalResource) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetWebUrl gets the webUrl property value. Location of the resource. Required.
+// GetWebUrl gets the webUrl property value. Location of the resource. Required
 func (m *EducationExternalResource) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *EducationExternalResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,9 +56,7 @@ func (m *EducationExternalResource) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetWebUrl sets the webUrl property value. Location of the resource. Required.
+// SetWebUrl sets the webUrl property value. Location of the resource. Required
 func (m *EducationExternalResource) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

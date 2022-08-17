@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamInfo provides operations to manage the admin singleton.
+// TeamInfo provides operations to manage the collection of agreementAcceptance entities.
 type TeamInfo struct {
     Entity
     // The name of the team.
@@ -50,11 +50,7 @@ func CreateTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetDisplayName gets the displayName property value. The name of the team.
 func (m *TeamInfo) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,19 +89,11 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetTeam gets the team property value. The team property
 func (m *TeamInfo) GetTeam()(Teamable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.team
-    }
+    return m.team
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *TeamInfo) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -135,19 +123,13 @@ func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetDisplayName sets the displayName property value. The name of the team.
 func (m *TeamInfo) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTeam sets the team property value. The team property
 func (m *TeamInfo) SetTeam(value Teamable)() {
-    if m != nil {
-        m.team = value
-    }
+    m.team = value
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *TeamInfo) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

@@ -32,19 +32,11 @@ func CreateConvertIdResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertIdResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetErrorDetails gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
 func (m *ConvertIdResult) GetErrorDetails()(GenericErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorDetails
-    }
+    return m.errorDetails
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConvertIdResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSourceId gets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
 func (m *ConvertIdResult) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // GetTargetId gets the targetId property value. The converted identifier. This value is not present if the conversion failed.
 func (m *ConvertIdResult) GetTargetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetId
-    }
+    return m.targetId
 }
 // Serialize serializes information the current object
 func (m *ConvertIdResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ConvertIdResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertIdResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetErrorDetails sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
 func (m *ConvertIdResult) SetErrorDetails(value GenericErrorable)() {
-    if m != nil {
-        m.errorDetails = value
-    }
+    m.errorDetails = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConvertIdResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSourceId sets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
 func (m *ConvertIdResult) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }
 // SetTargetId sets the targetId property value. The converted identifier. This value is not present if the conversion failed.
 func (m *ConvertIdResult) SetTargetId(value *string)() {
-    if m != nil {
-        m.targetId = value
-    }
+    m.targetId = value
 }

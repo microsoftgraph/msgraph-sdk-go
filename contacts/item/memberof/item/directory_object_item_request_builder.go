@@ -21,7 +21,7 @@ type DirectoryObjectItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DirectoryObjectItemRequestBuilderGetQueryParameters groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// DirectoryObjectItemRequestBuilderGetQueryParameters get memberOf from contacts
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -60,11 +60,11 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation get memberOf from contacts
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration get memberOf from contacts
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,11 +84,11 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
 func (m *DirectoryObjectItemRequestBuilder) Device()(*i98392f43fa1581870b9894175eeb17720557145a789bbced6cb0394398baa25c.DeviceRequestBuilder) {
     return i98392f43fa1581870b9894175eeb17720557145a789bbced6cb0394398baa25c.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// Get get memberOf from contacts
 func (m *DirectoryObjectItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler get memberOf from contacts
 func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

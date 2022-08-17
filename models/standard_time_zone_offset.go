@@ -55,27 +55,15 @@ func CreateStandardTimeZoneOffsetFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StandardTimeZoneOffset) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDayOccurrence gets the dayOccurrence property value. Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) GetDayOccurrence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dayOccurrence
-    }
+    return m.dayOccurrence
 }
 // GetDayOfWeek gets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
 func (m *StandardTimeZoneOffset) GetDayOfWeek()(*DayOfWeek) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dayOfWeek
-    }
+    return m.dayOfWeek
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StandardTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -144,35 +132,19 @@ func (m *StandardTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetMonth gets the month property value. Represents the month of the year when the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) GetMonth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.month
-    }
+    return m.month
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *StandardTimeZoneOffset) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTime gets the time property value. Represents the time of day when the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.time
-    }
+    return m.time
 }
 // GetYear gets the year property value. Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.
 func (m *StandardTimeZoneOffset) GetYear()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.year
-    }
+    return m.year
 }
 // Serialize serializes information the current object
 func (m *StandardTimeZoneOffset) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -223,43 +195,29 @@ func (m *StandardTimeZoneOffset) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StandardTimeZoneOffset) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDayOccurrence sets the dayOccurrence property value. Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) SetDayOccurrence(value *int32)() {
-    if m != nil {
-        m.dayOccurrence = value
-    }
+    m.dayOccurrence = value
 }
 // SetDayOfWeek sets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
 func (m *StandardTimeZoneOffset) SetDayOfWeek(value *DayOfWeek)() {
-    if m != nil {
-        m.dayOfWeek = value
-    }
+    m.dayOfWeek = value
 }
 // SetMonth sets the month property value. Represents the month of the year when the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) SetMonth(value *int32)() {
-    if m != nil {
-        m.month = value
-    }
+    m.month = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *StandardTimeZoneOffset) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTime sets the time property value. Represents the time of day when the transition from daylight saving time to standard time occurs.
 func (m *StandardTimeZoneOffset) SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.time = value
-    }
+    m.time = value
 }
 // SetYear sets the year property value. Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.
 func (m *StandardTimeZoneOffset) SetYear(value *int32)() {
-    if m != nil {
-        m.year = value
-    }
+    m.year = value
 }

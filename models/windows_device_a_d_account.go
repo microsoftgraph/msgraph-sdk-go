@@ -27,11 +27,7 @@ func CreateWindowsDeviceADAccountFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDomainName gets the domainName property value. Not yet documented
 func (m *WindowsDeviceADAccount) GetDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainName
-    }
+    return m.domainName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetUserName gets the userName property value. Not yet documented
 func (m *WindowsDeviceADAccount) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *WindowsDeviceADAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WindowsDeviceADAccount) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDomainName sets the domainName property value. Not yet documented
 func (m *WindowsDeviceADAccount) SetDomainName(value *string)() {
-    if m != nil {
-        m.domainName = value
-    }
+    m.domainName = value
 }
 // SetUserName sets the userName property value. Not yet documented
 func (m *WindowsDeviceADAccount) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

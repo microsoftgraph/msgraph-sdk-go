@@ -4,21 +4,21 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Endpoint 
+// Endpoint provides operations to manage the collection of agreementAcceptance entities.
 type Endpoint struct {
     DirectoryObject
-    // Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+    // The capability property
     capability *string
-    // Application id of the publishing underlying service. Not nullable. Read-only.
+    // The providerId property
     providerId *string
-    // Name of the publishing underlying service. Read-only.
+    // The providerName property
     providerName *string
-    // For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+    // The providerResourceId property
     providerResourceId *string
-    // URL of the published resource. Not nullable. Read-only.
+    // The uri property
     uri *string
 }
-// NewEndpoint instantiates a new Endpoint and sets the default values.
+// NewEndpoint instantiates a new endpoint and sets the default values.
 func NewEndpoint()(*Endpoint) {
     m := &Endpoint{
         DirectoryObject: *NewDirectoryObject(),
@@ -31,13 +31,9 @@ func NewEndpoint()(*Endpoint) {
 func CreateEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndpoint(), nil
 }
-// GetCapability gets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+// GetCapability gets the capability property value. The capability property
 func (m *Endpoint) GetCapability()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capability
-    }
+    return m.capability
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,37 +90,21 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetProviderId gets the providerId property value. Application id of the publishing underlying service. Not nullable. Read-only.
+// GetProviderId gets the providerId property value. The providerId property
 func (m *Endpoint) GetProviderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerId
-    }
+    return m.providerId
 }
-// GetProviderName gets the providerName property value. Name of the publishing underlying service. Read-only.
+// GetProviderName gets the providerName property value. The providerName property
 func (m *Endpoint) GetProviderName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerName
-    }
+    return m.providerName
 }
-// GetProviderResourceId gets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+// GetProviderResourceId gets the providerResourceId property value. The providerResourceId property
 func (m *Endpoint) GetProviderResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerResourceId
-    }
+    return m.providerResourceId
 }
-// GetUri gets the uri property value. URL of the published resource. Not nullable. Read-only.
+// GetUri gets the uri property value. The uri property
 func (m *Endpoint) GetUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uri
-    }
+    return m.uri
 }
 // Serialize serializes information the current object
 func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -164,33 +144,23 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCapability sets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+// SetCapability sets the capability property value. The capability property
 func (m *Endpoint) SetCapability(value *string)() {
-    if m != nil {
-        m.capability = value
-    }
+    m.capability = value
 }
-// SetProviderId sets the providerId property value. Application id of the publishing underlying service. Not nullable. Read-only.
+// SetProviderId sets the providerId property value. The providerId property
 func (m *Endpoint) SetProviderId(value *string)() {
-    if m != nil {
-        m.providerId = value
-    }
+    m.providerId = value
 }
-// SetProviderName sets the providerName property value. Name of the publishing underlying service. Read-only.
+// SetProviderName sets the providerName property value. The providerName property
 func (m *Endpoint) SetProviderName(value *string)() {
-    if m != nil {
-        m.providerName = value
-    }
+    m.providerName = value
 }
-// SetProviderResourceId sets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+// SetProviderResourceId sets the providerResourceId property value. The providerResourceId property
 func (m *Endpoint) SetProviderResourceId(value *string)() {
-    if m != nil {
-        m.providerResourceId = value
-    }
+    m.providerResourceId = value
 }
-// SetUri sets the uri property value. URL of the published resource. Not nullable. Read-only.
+// SetUri sets the uri property value. The uri property
 func (m *Endpoint) SetUri(value *string)() {
-    if m != nil {
-        m.uri = value
-    }
+    m.uri = value
 }

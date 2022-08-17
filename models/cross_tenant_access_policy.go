@@ -27,11 +27,7 @@ func CreateCrossTenantAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDefault gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.default_escaped
-    }
+    return m.default_escaped
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetPartners gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partners
-    }
+    return m.partners
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDefault sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)() {
-    if m != nil {
-        m.default_escaped = value
-    }
+    m.default_escaped = value
 }
 // SetPartners sets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)() {
-    if m != nil {
-        m.partners = value
-    }
+    m.partners = value
 }

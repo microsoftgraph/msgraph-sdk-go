@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAppInstallation provides operations to manage the admin singleton.
+// TeamsAppInstallation provides operations to manage the collection of agreementAcceptance entities.
 type TeamsAppInstallation struct {
     Entity
     // The app that is installed.
@@ -71,19 +71,11 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetTeamsApp gets the teamsApp property value. The app that is installed.
 func (m *TeamsAppInstallation) GetTeamsApp()(TeamsAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsApp
-    }
+    return m.teamsApp
 }
 // GetTeamsAppDefinition gets the teamsAppDefinition property value. The details of this version of the app.
 func (m *TeamsAppInstallation) GetTeamsAppDefinition()(TeamsAppDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppDefinition
-    }
+    return m.teamsAppDefinition
 }
 // Serialize serializes information the current object
 func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,13 +99,9 @@ func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetTeamsApp sets the teamsApp property value. The app that is installed.
 func (m *TeamsAppInstallation) SetTeamsApp(value TeamsAppable)() {
-    if m != nil {
-        m.teamsApp = value
-    }
+    m.teamsApp = value
 }
 // SetTeamsAppDefinition sets the teamsAppDefinition property value. The details of this version of the app.
 func (m *TeamsAppInstallation) SetTeamsAppDefinition(value TeamsAppDefinitionable)() {
-    if m != nil {
-        m.teamsAppDefinition = value
-    }
+    m.teamsAppDefinition = value
 }

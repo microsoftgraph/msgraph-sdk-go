@@ -44,11 +44,7 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetFiles gets the files property value. The list of files for this app content version.
 func (m *MobileAppContent) GetFiles()([]MobileAppContentFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.files
-    }
+    return m.files
 }
 // Serialize serializes information the current object
 func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetFiles sets the files property value. The list of files for this app content version.
 func (m *MobileAppContent) SetFiles(value []MobileAppContentFileable)() {
-    if m != nil {
-        m.files = value
-    }
+    m.files = value
 }

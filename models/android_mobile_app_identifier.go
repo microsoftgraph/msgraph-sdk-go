@@ -40,11 +40,7 @@ func (m *AndroidMobileAppIdentifier) GetFieldDeserializers()(map[string]func(i87
 }
 // GetPackageId gets the packageId property value. The identifier for an app, as specified in the play store.
 func (m *AndroidMobileAppIdentifier) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // Serialize serializes information the current object
 func (m *AndroidMobileAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AndroidMobileAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetPackageId sets the packageId property value. The identifier for an app, as specified in the play store.
 func (m *AndroidMobileAppIdentifier) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }

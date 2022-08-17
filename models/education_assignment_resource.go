@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentResource provides operations to manage the admin singleton.
+// EducationAssignmentResource 
 type EducationAssignmentResource struct {
     Entity
     // Indicates whether this resource should be copied to each student submission for modification and submission. Required
@@ -12,7 +12,7 @@ type EducationAssignmentResource struct {
     // Resource object that has been associated with this assignment.
     resource EducationResourceable
 }
-// NewEducationAssignmentResource instantiates a new educationAssignmentResource and sets the default values.
+// NewEducationAssignmentResource instantiates a new EducationAssignmentResource and sets the default values.
 func NewEducationAssignmentResource()(*EducationAssignmentResource) {
     m := &EducationAssignmentResource{
         Entity: *NewEntity(),
@@ -27,11 +27,7 @@ func CreateEducationAssignmentResourceFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetDistributeForStudentWork gets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) GetDistributeForStudentWork()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.distributeForStudentWork
-    }
+    return m.distributeForStudentWork
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(i8
 }
 // GetResource gets the resource property value. Resource object that has been associated with this assignment.
 func (m *EducationAssignmentResource) GetResource()(EducationResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetDistributeForStudentWork sets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) SetDistributeForStudentWork(value *bool)() {
-    if m != nil {
-        m.distributeForStudentWork = value
-    }
+    m.distributeForStudentWork = value
 }
 // SetResource sets the resource property value. Resource object that has been associated with this assignment.
 func (m *EducationAssignmentResource) SetResource(value EducationResourceable)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }

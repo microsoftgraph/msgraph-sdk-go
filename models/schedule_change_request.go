@@ -65,11 +65,7 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property
 func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -158,59 +154,31 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetManagerActionDateTime gets the managerActionDateTime property value. The managerActionDateTime property
 func (m *ScheduleChangeRequest) GetManagerActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managerActionDateTime
-    }
+    return m.managerActionDateTime
 }
 // GetManagerActionMessage gets the managerActionMessage property value. The managerActionMessage property
 func (m *ScheduleChangeRequest) GetManagerActionMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managerActionMessage
-    }
+    return m.managerActionMessage
 }
 // GetManagerUserId gets the managerUserId property value. The managerUserId property
 func (m *ScheduleChangeRequest) GetManagerUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managerUserId
-    }
+    return m.managerUserId
 }
 // GetSenderDateTime gets the senderDateTime property value. The senderDateTime property
 func (m *ScheduleChangeRequest) GetSenderDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderDateTime
-    }
+    return m.senderDateTime
 }
 // GetSenderMessage gets the senderMessage property value. The senderMessage property
 func (m *ScheduleChangeRequest) GetSenderMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderMessage
-    }
+    return m.senderMessage
 }
 // GetSenderUserId gets the senderUserId property value. The senderUserId property
 func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderUserId
-    }
+    return m.senderUserId
 }
 // GetState gets the state property value. The state property
 func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -272,49 +240,33 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAssignedTo sets the assignedTo property value. The assignedTo property
 func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
 // SetManagerActionDateTime sets the managerActionDateTime property value. The managerActionDateTime property
 func (m *ScheduleChangeRequest) SetManagerActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.managerActionDateTime = value
-    }
+    m.managerActionDateTime = value
 }
 // SetManagerActionMessage sets the managerActionMessage property value. The managerActionMessage property
 func (m *ScheduleChangeRequest) SetManagerActionMessage(value *string)() {
-    if m != nil {
-        m.managerActionMessage = value
-    }
+    m.managerActionMessage = value
 }
 // SetManagerUserId sets the managerUserId property value. The managerUserId property
 func (m *ScheduleChangeRequest) SetManagerUserId(value *string)() {
-    if m != nil {
-        m.managerUserId = value
-    }
+    m.managerUserId = value
 }
 // SetSenderDateTime sets the senderDateTime property value. The senderDateTime property
 func (m *ScheduleChangeRequest) SetSenderDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.senderDateTime = value
-    }
+    m.senderDateTime = value
 }
 // SetSenderMessage sets the senderMessage property value. The senderMessage property
 func (m *ScheduleChangeRequest) SetSenderMessage(value *string)() {
-    if m != nil {
-        m.senderMessage = value
-    }
+    m.senderMessage = value
 }
 // SetSenderUserId sets the senderUserId property value. The senderUserId property
 func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
-    if m != nil {
-        m.senderUserId = value
-    }
+    m.senderUserId = value
 }
 // SetState sets the state property value. The state property
 func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

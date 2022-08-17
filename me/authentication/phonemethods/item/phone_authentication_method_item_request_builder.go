@@ -24,7 +24,7 @@ type PhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters represents the phone registered to a user for authentication.
+// PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters the phone numbers registered to a user for authentication.
 type PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents the phone registered to a user for authentication.
+// CreateGetRequestInformation the phone numbers registered to a user for authentication.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the phone registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration the phone numbers registered to a user for authentication.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,11 +147,11 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*i43e70
 func (m *PhoneAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ibd3343b7d526111dbd5946c1d654aa19207ecef9f757c6fba8b376eb3c01389a.EnableSmsSignInRequestBuilder) {
     return ibd3343b7d526111dbd5946c1d654aa19207ecef9f757c6fba8b376eb3c01389a.NewEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get represents the phone registered to a user for authentication.
+// Get the phone numbers registered to a user for authentication.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the phone registered to a user for authentication.
+// GetWithRequestConfigurationAndResponseHandler the phone numbers registered to a user for authentication.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

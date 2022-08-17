@@ -51,35 +51,19 @@ func CreateProcessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAccountName gets the accountName property value. User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
 func (m *Process) GetAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountName
-    }
+    return m.accountName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Process) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCommandLine gets the commandLine property value. The full process invocation commandline including all parameters.
 func (m *Process) GetCommandLine()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.commandLine
-    }
+    return m.commandLine
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Process) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Process) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -218,83 +202,43 @@ func (m *Process) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *Process) GetFileHash()(FileHashable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
+    return m.fileHash
 }
 // GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
 func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.integrityLevel
-    }
+    return m.integrityLevel
 }
 // GetIsElevated gets the isElevated property value. True if the process is elevated.
 func (m *Process) GetIsElevated()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isElevated
-    }
+    return m.isElevated
 }
 // GetName gets the name property value. The name of the process' Image file.
 func (m *Process) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Process) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParentProcessCreatedDateTime gets the parentProcessCreatedDateTime property value. DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Process) GetParentProcessCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessCreatedDateTime
-    }
+    return m.parentProcessCreatedDateTime
 }
 // GetParentProcessId gets the parentProcessId property value. The Process ID (PID) of the parent process.
 func (m *Process) GetParentProcessId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessId
-    }
+    return m.parentProcessId
 }
 // GetParentProcessName gets the parentProcessName property value. The name of the image file of the parent process.
 func (m *Process) GetParentProcessName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessName
-    }
+    return m.parentProcessName
 }
 // GetPath gets the path property value. Full path, including filename.
 func (m *Process) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
+    return m.path
 }
 // GetProcessId gets the processId property value. The Process ID (PID) of the process.
 func (m *Process) GetProcessId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processId
-    }
+    return m.processId
 }
 // Serialize serializes information the current object
 func (m *Process) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -387,85 +331,57 @@ func (m *Process) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAccountName sets the accountName property value. User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
 func (m *Process) SetAccountName(value *string)() {
-    if m != nil {
-        m.accountName = value
-    }
+    m.accountName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Process) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCommandLine sets the commandLine property value. The full process invocation commandline including all parameters.
 func (m *Process) SetCommandLine(value *string)() {
-    if m != nil {
-        m.commandLine = value
-    }
+    m.commandLine = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Process) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *Process) SetFileHash(value FileHashable)() {
-    if m != nil {
-        m.fileHash = value
-    }
+    m.fileHash = value
 }
 // SetIntegrityLevel sets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
 func (m *Process) SetIntegrityLevel(value *ProcessIntegrityLevel)() {
-    if m != nil {
-        m.integrityLevel = value
-    }
+    m.integrityLevel = value
 }
 // SetIsElevated sets the isElevated property value. True if the process is elevated.
 func (m *Process) SetIsElevated(value *bool)() {
-    if m != nil {
-        m.isElevated = value
-    }
+    m.isElevated = value
 }
 // SetName sets the name property value. The name of the process' Image file.
 func (m *Process) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Process) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParentProcessCreatedDateTime sets the parentProcessCreatedDateTime property value. DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Process) SetParentProcessCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.parentProcessCreatedDateTime = value
-    }
+    m.parentProcessCreatedDateTime = value
 }
 // SetParentProcessId sets the parentProcessId property value. The Process ID (PID) of the parent process.
 func (m *Process) SetParentProcessId(value *int32)() {
-    if m != nil {
-        m.parentProcessId = value
-    }
+    m.parentProcessId = value
 }
 // SetParentProcessName sets the parentProcessName property value. The name of the image file of the parent process.
 func (m *Process) SetParentProcessName(value *string)() {
-    if m != nil {
-        m.parentProcessName = value
-    }
+    m.parentProcessName = value
 }
 // SetPath sets the path property value. Full path, including filename.
 func (m *Process) SetPath(value *string)() {
-    if m != nil {
-        m.path = value
-    }
+    m.path = value
 }
 // SetProcessId sets the processId property value. The Process ID (PID) of the process.
 func (m *Process) SetProcessId(value *int32)() {
-    if m != nil {
-        m.processId = value
-    }
+    m.processId = value
 }

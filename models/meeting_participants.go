@@ -8,11 +8,11 @@ import (
 type MeetingParticipants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Information of the meeting attendees.
+    // The attendees property
     attendees []MeetingParticipantInfoable
     // The OdataType property
     odataType *string
-    // Information of the meeting organizer.
+    // The organizer property
     organizer MeetingParticipantInfoable
 }
 // NewMeetingParticipants instantiates a new meetingParticipants and sets the default values.
@@ -30,19 +30,11 @@ func CreateMeetingParticipantsFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipants) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAttendees gets the attendees property value. Information of the meeting attendees.
+// GetAttendees gets the attendees property value. The attendees property
 func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attendees
-    }
+    return m.attendees
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MeetingParticipants) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetOrganizer gets the organizer property value. Information of the meeting organizer.
+// GetOrganizer gets the organizer property value. The organizer property
 func (m *MeetingParticipants) GetOrganizer()(MeetingParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizer
-    }
+    return m.organizer
 }
 // Serialize serializes information the current object
 func (m *MeetingParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *MeetingParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipants) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAttendees sets the attendees property value. Information of the meeting attendees.
+// SetAttendees sets the attendees property value. The attendees property
 func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfoable)() {
-    if m != nil {
-        m.attendees = value
-    }
+    m.attendees = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MeetingParticipants) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetOrganizer sets the organizer property value. Information of the meeting organizer.
+// SetOrganizer sets the organizer property value. The organizer property
 func (m *MeetingParticipants) SetOrganizer(value MeetingParticipantInfoable)() {
-    if m != nil {
-        m.organizer = value
-    }
+    m.organizer = value
 }

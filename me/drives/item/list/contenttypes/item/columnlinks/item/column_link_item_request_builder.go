@@ -22,7 +22,7 @@ type ColumnLinkItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ColumnLinkItemRequestBuilderGetQueryParameters the collection of columns that are required by this content type
+// ColumnLinkItemRequestBuilderGetQueryParameters the collection of columns that are required by this content type.
 type ColumnLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ColumnLinkItemRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of columns that are required by this content type
+// CreateGetRequestInformation the collection of columns that are required by this content type.
 func (m *ColumnLinkItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of columns that are required by this content type
+// CreateGetRequestInformationWithRequestConfiguration the collection of columns that are required by this content type.
 func (m *ColumnLinkItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ColumnLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ColumnLinkItemRequestBuilder) DeleteWithRequestConfigurationAndResponse
     }
     return nil
 }
-// Get the collection of columns that are required by this content type
+// Get the collection of columns that are required by this content type.
 func (m *ColumnLinkItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnLinkable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of columns that are required by this content type
+// GetWithRequestConfigurationAndResponseHandler the collection of columns that are required by this content type.
 func (m *ColumnLinkItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ColumnLinkItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnLinkable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

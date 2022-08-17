@@ -29,11 +29,7 @@ func CreateOpenShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetDraftOpenShift gets the draftOpenShift property value. An unpublished open shift.
 func (m *OpenShift) GetDraftOpenShift()(OpenShiftItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.draftOpenShift
-    }
+    return m.draftOpenShift
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
 func (m *OpenShift) GetSchedulingGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingGroupId
-    }
+    return m.schedulingGroupId
 }
 // GetSharedOpenShift gets the sharedOpenShift property value. A published open shift.
 func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedOpenShift
-    }
+    return m.sharedOpenShift
 }
 // Serialize serializes information the current object
 func (m *OpenShift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *OpenShift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetDraftOpenShift sets the draftOpenShift property value. An unpublished open shift.
 func (m *OpenShift) SetDraftOpenShift(value OpenShiftItemable)() {
-    if m != nil {
-        m.draftOpenShift = value
-    }
+    m.draftOpenShift = value
 }
 // SetSchedulingGroupId sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
 func (m *OpenShift) SetSchedulingGroupId(value *string)() {
-    if m != nil {
-        m.schedulingGroupId = value
-    }
+    m.schedulingGroupId = value
 }
 // SetSharedOpenShift sets the sharedOpenShift property value. A published open shift.
 func (m *OpenShift) SetSharedOpenShift(value OpenShiftItemable)() {
-    if m != nil {
-        m.sharedOpenShift = value
-    }
+    m.sharedOpenShift = value
 }

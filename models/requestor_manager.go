@@ -40,11 +40,7 @@ func (m *RequestorManager) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetManagerLevel gets the managerLevel property value. The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor's manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.
 func (m *RequestorManager) GetManagerLevel()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managerLevel
-    }
+    return m.managerLevel
 }
 // Serialize serializes information the current object
 func (m *RequestorManager) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *RequestorManager) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetManagerLevel sets the managerLevel property value. The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor's manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.
 func (m *RequestorManager) SetManagerLevel(value *int32)() {
-    if m != nil {
-        m.managerLevel = value
-    }
+    m.managerLevel = value
 }

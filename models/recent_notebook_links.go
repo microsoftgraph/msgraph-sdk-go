@@ -10,7 +10,7 @@ type RecentNotebookLinks struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // Opens the notebook in the OneNote client, if it's installed.
+    // Opens the notebook in the OneNote native client if it's installed.
     oneNoteClientUrl ExternalLinkable
     // Opens the notebook in OneNote on the web.
     oneNoteWebUrl ExternalLinkable
@@ -30,11 +30,7 @@ func CreateRecentNotebookLinksFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecentNotebookLinks) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecentNotebookLinks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *RecentNotebookLinks) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RecentNotebookLinks) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetOneNoteClientUrl gets the oneNoteClientUrl property value. Opens the notebook in the OneNote client, if it's installed.
+// GetOneNoteClientUrl gets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
 func (m *RecentNotebookLinks) GetOneNoteClientUrl()(ExternalLinkable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneNoteClientUrl
-    }
+    return m.oneNoteClientUrl
 }
 // GetOneNoteWebUrl gets the oneNoteWebUrl property value. Opens the notebook in OneNote on the web.
 func (m *RecentNotebookLinks) GetOneNoteWebUrl()(ExternalLinkable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneNoteWebUrl
-    }
+    return m.oneNoteWebUrl
 }
 // Serialize serializes information the current object
 func (m *RecentNotebookLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *RecentNotebookLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecentNotebookLinks) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RecentNotebookLinks) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the notebook in the OneNote client, if it's installed.
+// SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
 func (m *RecentNotebookLinks) SetOneNoteClientUrl(value ExternalLinkable)() {
-    if m != nil {
-        m.oneNoteClientUrl = value
-    }
+    m.oneNoteClientUrl = value
 }
 // SetOneNoteWebUrl sets the oneNoteWebUrl property value. Opens the notebook in OneNote on the web.
 func (m *RecentNotebookLinks) SetOneNoteWebUrl(value ExternalLinkable)() {
-    if m != nil {
-        m.oneNoteWebUrl = value
-    }
+    m.oneNoteWebUrl = value
 }

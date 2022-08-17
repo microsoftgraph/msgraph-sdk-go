@@ -39,27 +39,15 @@ func CreateUriClickSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UriClickSecurityState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClickAction gets the clickAction property value. The clickAction property
 func (m *UriClickSecurityState) GetClickAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clickAction
-    }
+    return m.clickAction
 }
 // GetClickDateTime gets the clickDateTime property value. The clickDateTime property
 func (m *UriClickSecurityState) GetClickDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clickDateTime
-    }
+    return m.clickDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,43 +126,23 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetId gets the id property value. The id property
 func (m *UriClickSecurityState) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UriClickSecurityState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSourceId gets the sourceId property value. The sourceId property
 func (m *UriClickSecurityState) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // GetUriDomain gets the uriDomain property value. The uriDomain property
 func (m *UriClickSecurityState) GetUriDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uriDomain
-    }
+    return m.uriDomain
 }
 // GetVerdict gets the verdict property value. The verdict property
 func (m *UriClickSecurityState) GetVerdict()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verdict
-    }
+    return m.verdict
 }
 // Serialize serializes information the current object
 func (m *UriClickSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *UriClickSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UriClickSecurityState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClickAction sets the clickAction property value. The clickAction property
 func (m *UriClickSecurityState) SetClickAction(value *string)() {
-    if m != nil {
-        m.clickAction = value
-    }
+    m.clickAction = value
 }
 // SetClickDateTime sets the clickDateTime property value. The clickDateTime property
 func (m *UriClickSecurityState) SetClickDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.clickDateTime = value
-    }
+    m.clickDateTime = value
 }
 // SetId sets the id property value. The id property
 func (m *UriClickSecurityState) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UriClickSecurityState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSourceId sets the sourceId property value. The sourceId property
 func (m *UriClickSecurityState) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }
 // SetUriDomain sets the uriDomain property value. The uriDomain property
 func (m *UriClickSecurityState) SetUriDomain(value *string)() {
-    if m != nil {
-        m.uriDomain = value
-    }
+    m.uriDomain = value
 }
 // SetVerdict sets the verdict property value. The verdict property
 func (m *UriClickSecurityState) SetVerdict(value *string)() {
-    if m != nil {
-        m.verdict = value
-    }
+    m.verdict = value
 }

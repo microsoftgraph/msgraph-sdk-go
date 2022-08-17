@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttributeAssignment provides operations to manage the admin singleton.
+// IdentityUserFlowAttributeAssignment provides operations to manage the collection of agreement entities.
 type IdentityUserFlowAttributeAssignment struct {
     Entity
     // The display name of the identityUserFlowAttribute within a user flow.
@@ -35,11 +35,7 @@ func CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue(parseNode i
 }
 // GetDisplayName gets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,43 +108,23 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
 }
 // GetIsOptional gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) GetIsOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOptional
-    }
+    return m.isOptional
 }
 // GetRequiresVerification gets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
 func (m *IdentityUserFlowAttributeAssignment) GetRequiresVerification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiresVerification
-    }
+    return m.requiresVerification
 }
 // GetUserAttribute gets the userAttribute property value. The user attribute that you want to add to your user flow.
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttribute()(IdentityUserFlowAttributeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAttribute
-    }
+    return m.userAttribute
 }
 // GetUserAttributeValues gets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttributeValues()([]UserAttributeValuesItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAttributeValues
-    }
+    return m.userAttributeValues
 }
 // GetUserInputType gets the userInputType property value. The userInputType property
 func (m *IdentityUserFlowAttributeAssignment) GetUserInputType()(*IdentityUserFlowAttributeInputType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userInputType
-    }
+    return m.userInputType
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -201,37 +177,25 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d2
 }
 // SetDisplayName sets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsOptional sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) SetIsOptional(value *bool)() {
-    if m != nil {
-        m.isOptional = value
-    }
+    m.isOptional = value
 }
 // SetRequiresVerification sets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
 func (m *IdentityUserFlowAttributeAssignment) SetRequiresVerification(value *bool)() {
-    if m != nil {
-        m.requiresVerification = value
-    }
+    m.requiresVerification = value
 }
 // SetUserAttribute sets the userAttribute property value. The user attribute that you want to add to your user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttribute(value IdentityUserFlowAttributeable)() {
-    if m != nil {
-        m.userAttribute = value
-    }
+    m.userAttribute = value
 }
 // SetUserAttributeValues sets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttributeValues(value []UserAttributeValuesItemable)() {
-    if m != nil {
-        m.userAttributeValues = value
-    }
+    m.userAttributeValues = value
 }
 // SetUserInputType sets the userInputType property value. The userInputType property
 func (m *IdentityUserFlowAttributeAssignment) SetUserInputType(value *IdentityUserFlowAttributeInputType)() {
-    if m != nil {
-        m.userInputType = value
-    }
+    m.userInputType = value
 }

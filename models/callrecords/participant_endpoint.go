@@ -28,11 +28,7 @@ func CreateParticipantEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetFeedback gets the feedback property value. The feedback provided by the user of this endpoint about the quality of the session.
 func (m *ParticipantEndpoint) GetFeedback()(UserFeedbackable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedback
-    }
+    return m.feedback
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,11 +57,7 @@ func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIdentity gets the identity property value. Identity associated with the endpoint.
 func (m *ParticipantEndpoint) GetIdentity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identity
-    }
+    return m.identity
 }
 // Serialize serializes information the current object
 func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFeedback sets the feedback property value. The feedback provided by the user of this endpoint about the quality of the session.
 func (m *ParticipantEndpoint) SetFeedback(value UserFeedbackable)() {
-    if m != nil {
-        m.feedback = value
-    }
+    m.feedback = value
 }
 // SetIdentity sets the identity property value. Identity associated with the endpoint.
 func (m *ParticipantEndpoint) SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
-    if m != nil {
-        m.identity = value
-    }
+    m.identity = value
 }

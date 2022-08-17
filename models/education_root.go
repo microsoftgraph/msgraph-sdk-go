@@ -34,19 +34,11 @@ func CreateEducationRootFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationRoot) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClasses gets the classes property value. The classes property
 func (m *EducationRoot) GetClasses()([]EducationClassable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classes
-    }
+    return m.classes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,35 +109,19 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMe gets the me property value. The me property
 func (m *EducationRoot) GetMe()(EducationUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.me
-    }
+    return m.me
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationRoot) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSchools gets the schools property value. The schools property
 func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schools
-    }
+    return m.schools
 }
 // GetUsers gets the users property value. The users property
 func (m *EducationRoot) GetUsers()([]EducationUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.users
-    }
+    return m.users
 }
 // Serialize serializes information the current object
 func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -201,37 +177,25 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationRoot) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClasses sets the classes property value. The classes property
 func (m *EducationRoot) SetClasses(value []EducationClassable)() {
-    if m != nil {
-        m.classes = value
-    }
+    m.classes = value
 }
 // SetMe sets the me property value. The me property
 func (m *EducationRoot) SetMe(value EducationUserable)() {
-    if m != nil {
-        m.me = value
-    }
+    m.me = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationRoot) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSchools sets the schools property value. The schools property
 func (m *EducationRoot) SetSchools(value []EducationSchoolable)() {
-    if m != nil {
-        m.schools = value
-    }
+    m.schools = value
 }
 // SetUsers sets the users property value. The users property
 func (m *EducationRoot) SetUsers(value []EducationUserable)() {
-    if m != nil {
-        m.users = value
-    }
+    m.users = value
 }

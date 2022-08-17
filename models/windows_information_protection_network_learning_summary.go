@@ -27,11 +27,7 @@ func CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorVa
 }
 // GetDeviceCount gets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCount
-    }
+    return m.deviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserialize
 }
 // GetUrl gets the url property value. Website url
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i8
 }
 // SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetDeviceCount(value *int32)() {
-    if m != nil {
-        m.deviceCount = value
-    }
+    m.deviceCount = value
 }
 // SetUrl sets the url property value. Website url
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

@@ -32,11 +32,7 @@ func CreateItemPreviewInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPreviewInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPreviewInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *ItemPreviewInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetGetUrl gets the getUrl property value. The getUrl property
 func (m *ItemPreviewInfo) GetGetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.getUrl
-    }
+    return m.getUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ItemPreviewInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPostParameters gets the postParameters property value. The postParameters property
 func (m *ItemPreviewInfo) GetPostParameters()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postParameters
-    }
+    return m.postParameters
 }
 // GetPostUrl gets the postUrl property value. The postUrl property
 func (m *ItemPreviewInfo) GetPostUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postUrl
-    }
+    return m.postUrl
 }
 // Serialize serializes information the current object
 func (m *ItemPreviewInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ItemPreviewInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPreviewInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetGetUrl sets the getUrl property value. The getUrl property
 func (m *ItemPreviewInfo) SetGetUrl(value *string)() {
-    if m != nil {
-        m.getUrl = value
-    }
+    m.getUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ItemPreviewInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPostParameters sets the postParameters property value. The postParameters property
 func (m *ItemPreviewInfo) SetPostParameters(value *string)() {
-    if m != nil {
-        m.postParameters = value
-    }
+    m.postParameters = value
 }
 // SetPostUrl sets the postUrl property value. The postUrl property
 func (m *ItemPreviewInfo) SetPostUrl(value *string)() {
-    if m != nil {
-        m.postUrl = value
-    }
+    m.postUrl = value
 }

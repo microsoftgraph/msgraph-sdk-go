@@ -40,11 +40,7 @@ func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetSymbol gets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) GetSymbol()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.symbol
-    }
+    return m.symbol
 }
 // Serialize serializes information the current object
 func (m *BookingCurrency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *BookingCurrency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetSymbol sets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) SetSymbol(value *string)() {
-    if m != nil {
-        m.symbol = value
-    }
+    m.symbol = value
 }

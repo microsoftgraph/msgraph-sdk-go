@@ -30,19 +30,11 @@ func CreateResourceActionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAction) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedResourceActions gets the allowedResourceActions property value. Allowed Actions
 func (m *ResourceAction) GetAllowedResourceActions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedResourceActions
-    }
+    return m.allowedResourceActions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResourceAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,19 +81,11 @@ func (m *ResourceAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetNotAllowedResourceActions gets the notAllowedResourceActions property value. Not Allowed Actions.
 func (m *ResourceAction) GetNotAllowedResourceActions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notAllowedResourceActions
-    }
+    return m.notAllowedResourceActions
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ResourceAction) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ResourceAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *ResourceAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAction) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedResourceActions sets the allowedResourceActions property value. Allowed Actions
 func (m *ResourceAction) SetAllowedResourceActions(value []string)() {
-    if m != nil {
-        m.allowedResourceActions = value
-    }
+    m.allowedResourceActions = value
 }
 // SetNotAllowedResourceActions sets the notAllowedResourceActions property value. Not Allowed Actions.
 func (m *ResourceAction) SetNotAllowedResourceActions(value []string)() {
-    if m != nil {
-        m.notAllowedResourceActions = value
-    }
+    m.notAllowedResourceActions = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ResourceAction) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -8,15 +8,15 @@ import (
 // AccessPackageCatalog 
 type AccessPackageCatalog struct {
     Entity
-    // The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    // The access packages in this catalog. Read-only. Nullable.
     accessPackages []AccessPackageable
-    // One of UserManaged or ServiceDefault.
+    // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
     catalogType *AccessPackageCatalogType
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the access package catalog.
     description *string
-    // The display name of the access package catalog. Supports $filter (eq, contains).
+    // The display name of the access package catalog.
     displayName *string
     // Whether the access packages in this catalog can be requested by users outside of the tenant.
     isExternallyVisible *bool
@@ -25,7 +25,7 @@ type AccessPackageCatalog struct {
     // Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
     state *AccessPackageCatalogState
 }
-// NewAccessPackageCatalog instantiates a new accessPackageCatalog and sets the default values.
+// NewAccessPackageCatalog instantiates a new AccessPackageCatalog and sets the default values.
 func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     m := &AccessPackageCatalog{
         Entity: *NewEntity(),
@@ -38,45 +38,25 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
 func CreateAccessPackageCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageCatalog(), nil
 }
-// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
+// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackages
-    }
+    return m.accessPackages
 }
-// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
+// GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogType
-    }
+    return m.catalogType
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
-// GetDisplayName gets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
+// GetDisplayName gets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,27 +149,15 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsExternallyVisible gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExternallyVisible
-    }
+    return m.isExternallyVisible
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // GetState gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
 func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -253,51 +221,35 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
+// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackageable)() {
-    if m != nil {
-        m.accessPackages = value
-    }
+    m.accessPackages = value
 }
-// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
+// SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) SetCatalogType(value *AccessPackageCatalogType)() {
-    if m != nil {
-        m.catalogType = value
-    }
+    m.catalogType = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
-// SetDisplayName sets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
+// SetDisplayName sets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsExternallyVisible sets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) SetIsExternallyVisible(value *bool)() {
-    if m != nil {
-        m.isExternallyVisible = value
-    }
+    m.isExternallyVisible = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }
 // SetState sets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
 func (m *AccessPackageCatalog) SetState(value *AccessPackageCatalogState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

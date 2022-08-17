@@ -27,19 +27,11 @@ func CreateAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
 }
 // GetAccessPackageDisplayName gets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageDisplayName
-    }
+    return m.accessPackageDisplayName
 }
 // GetAccessPackageId gets the accessPackageId property value. Identifier of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageId
-    }
+    return m.accessPackageId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
 }
 // SetAccessPackageDisplayName sets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) SetAccessPackageDisplayName(value *string)() {
-    if m != nil {
-        m.accessPackageDisplayName = value
-    }
+    m.accessPackageDisplayName = value
 }
 // SetAccessPackageId sets the accessPackageId property value. Identifier of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) SetAccessPackageId(value *string)() {
-    if m != nil {
-        m.accessPackageId = value
-    }
+    m.accessPackageId = value
 }

@@ -44,11 +44,7 @@ func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSettings
-    }
+    return m.customSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,7 +85,5 @@ func (m *ManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePairable)() {
-    if m != nil {
-        m.customSettings = value
-    }
+    m.customSettings = value
 }

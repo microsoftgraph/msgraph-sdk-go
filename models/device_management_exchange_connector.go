@@ -42,35 +42,19 @@ func CreateDeviceManagementExchangeConnectorFromDiscriminatorValue(parseNode i87
 }
 // GetConnectorServerName gets the connectorServerName property value. The name of the server hosting the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetConnectorServerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectorServerName
-    }
+    return m.connectorServerName
 }
 // GetExchangeAlias gets the exchangeAlias property value. An alias assigned to the Exchange server
 func (m *DeviceManagementExchangeConnector) GetExchangeAlias()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exchangeAlias
-    }
+    return m.exchangeAlias
 }
 // GetExchangeConnectorType gets the exchangeConnectorType property value. The type of Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetExchangeConnectorType()(*DeviceManagementExchangeConnectorType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exchangeConnectorType
-    }
+    return m.exchangeConnectorType
 }
 // GetExchangeOrganization gets the exchangeOrganization property value. Exchange Organization to the Exchange server
 func (m *DeviceManagementExchangeConnector) GetExchangeOrganization()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exchangeOrganization
-    }
+    return m.exchangeOrganization
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,43 +153,23 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync time for the Exchange Connector
 func (m *DeviceManagementExchangeConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetPrimarySmtpAddress gets the primarySmtpAddress property value. Email address used to configure the Service To Service Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetPrimarySmtpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primarySmtpAddress
-    }
+    return m.primarySmtpAddress
 }
 // GetServerName gets the serverName property value. The name of the Exchange server.
 func (m *DeviceManagementExchangeConnector) GetServerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverName
-    }
+    return m.serverName
 }
 // GetStatus gets the status property value. The current status of the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) GetStatus()(*DeviceManagementExchangeConnectorStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetVersion gets the version property value. The version of the ExchangeConnectorAgent
 func (m *DeviceManagementExchangeConnector) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -273,55 +237,37 @@ func (m *DeviceManagementExchangeConnector) Serialize(writer i878a80d2330e89d268
 }
 // SetConnectorServerName sets the connectorServerName property value. The name of the server hosting the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetConnectorServerName(value *string)() {
-    if m != nil {
-        m.connectorServerName = value
-    }
+    m.connectorServerName = value
 }
 // SetExchangeAlias sets the exchangeAlias property value. An alias assigned to the Exchange server
 func (m *DeviceManagementExchangeConnector) SetExchangeAlias(value *string)() {
-    if m != nil {
-        m.exchangeAlias = value
-    }
+    m.exchangeAlias = value
 }
 // SetExchangeConnectorType sets the exchangeConnectorType property value. The type of Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetExchangeConnectorType(value *DeviceManagementExchangeConnectorType)() {
-    if m != nil {
-        m.exchangeConnectorType = value
-    }
+    m.exchangeConnectorType = value
 }
 // SetExchangeOrganization sets the exchangeOrganization property value. Exchange Organization to the Exchange server
 func (m *DeviceManagementExchangeConnector) SetExchangeOrganization(value *string)() {
-    if m != nil {
-        m.exchangeOrganization = value
-    }
+    m.exchangeOrganization = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync time for the Exchange Connector
 func (m *DeviceManagementExchangeConnector) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetPrimarySmtpAddress sets the primarySmtpAddress property value. Email address used to configure the Service To Service Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetPrimarySmtpAddress(value *string)() {
-    if m != nil {
-        m.primarySmtpAddress = value
-    }
+    m.primarySmtpAddress = value
 }
 // SetServerName sets the serverName property value. The name of the Exchange server.
 func (m *DeviceManagementExchangeConnector) SetServerName(value *string)() {
-    if m != nil {
-        m.serverName = value
-    }
+    m.serverName = value
 }
 // SetStatus sets the status property value. The current status of the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetStatus(value *DeviceManagementExchangeConnectorStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetVersion sets the version property value. The version of the ExchangeConnectorAgent
 func (m *DeviceManagementExchangeConnector) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

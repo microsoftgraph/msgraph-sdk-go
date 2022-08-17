@@ -56,19 +56,11 @@ func (m *MembersDeletedEventMessageDetail) GetFieldDeserializers()(map[string]fu
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MembersDeletedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetMembers gets the members property value. List of members deleted.
 func (m *MembersDeletedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // Serialize serializes information the current object
 func (m *MembersDeletedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *MembersDeletedEventMessageDetail) Serialize(writer i878a80d2330e89d2689
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MembersDeletedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetMembers sets the members property value. List of members deleted.
 func (m *MembersDeletedEventMessageDetail) SetMembers(value []TeamworkUserIdentityable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }

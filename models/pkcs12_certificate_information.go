@@ -34,11 +34,7 @@ func CreatePkcs12CertificateInformationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Pkcs12CertificateInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Pkcs12CertificateInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *Pkcs12CertificateInformation) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsActive gets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
 func (m *Pkcs12CertificateInformation) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
+    return m.isActive
 }
 // GetNotAfter gets the notAfter property value. The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) GetNotAfter()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notAfter
-    }
+    return m.notAfter
 }
 // GetNotBefore gets the notBefore property value. The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) GetNotBefore()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notBefore
-    }
+    return m.notBefore
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Pkcs12CertificateInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetThumbprint gets the thumbprint property value. The certificate thumbprint.
 func (m *Pkcs12CertificateInformation) GetThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbprint
-    }
+    return m.thumbprint
 }
 // Serialize serializes information the current object
 func (m *Pkcs12CertificateInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *Pkcs12CertificateInformation) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Pkcs12CertificateInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsActive sets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
 func (m *Pkcs12CertificateInformation) SetIsActive(value *bool)() {
-    if m != nil {
-        m.isActive = value
-    }
+    m.isActive = value
 }
 // SetNotAfter sets the notAfter property value. The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) SetNotAfter(value *int64)() {
-    if m != nil {
-        m.notAfter = value
-    }
+    m.notAfter = value
 }
 // SetNotBefore sets the notBefore property value. The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) SetNotBefore(value *int64)() {
-    if m != nil {
-        m.notBefore = value
-    }
+    m.notBefore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Pkcs12CertificateInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetThumbprint sets the thumbprint property value. The certificate thumbprint.
 func (m *Pkcs12CertificateInformation) SetThumbprint(value *string)() {
-    if m != nil {
-        m.thumbprint = value
-    }
+    m.thumbprint = value
 }

@@ -16,7 +16,7 @@ type ColumnLinksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ColumnLinksRequestBuilderGetQueryParameters the collection of columns that are required by this content type
+// ColumnLinksRequestBuilderGetQueryParameters the collection of columns that are required by this content type.
 type ColumnLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewColumnLinksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ColumnLinksRequestBuilder) Count()(*i6e623875ef809989d7d933dcb1256271ef61229083b72237c95dec6c342cb043.CountRequestBuilder) {
     return i6e623875ef809989d7d933dcb1256271ef61229083b72237c95dec6c342cb043.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of columns that are required by this content type
+// CreateGetRequestInformation the collection of columns that are required by this content type.
 func (m *ColumnLinksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of columns that are required by this content type
+// CreateGetRequestInformationWithRequestConfiguration the collection of columns that are required by this content type.
 func (m *ColumnLinksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ColumnLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ColumnLinksRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get the collection of columns that are required by this content type
+// Get the collection of columns that are required by this content type.
 func (m *ColumnLinksRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnLinkCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of columns that are required by this content type
+// GetWithRequestConfigurationAndResponseHandler the collection of columns that are required by this content type.
 func (m *ColumnLinksRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ColumnLinksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnLinkCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

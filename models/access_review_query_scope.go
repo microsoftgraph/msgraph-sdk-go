@@ -83,27 +83,15 @@ func (m *AccessReviewQueryScope) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetQuery gets the query property value. The query representing what will be reviewed in an access review.
 func (m *AccessReviewQueryScope) GetQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
+    return m.query
 }
 // GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
 func (m *AccessReviewQueryScope) GetQueryRoot()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryRoot
-    }
+    return m.queryRoot
 }
 // GetQueryType gets the queryType property value. Indicates the type of query. Types include MicrosoftGraph and ARM.
 func (m *AccessReviewQueryScope) GetQueryType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryType
-    }
+    return m.queryType
 }
 // Serialize serializes information the current object
 func (m *AccessReviewQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,19 +121,13 @@ func (m *AccessReviewQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetQuery sets the query property value. The query representing what will be reviewed in an access review.
 func (m *AccessReviewQueryScope) SetQuery(value *string)() {
-    if m != nil {
-        m.query = value
-    }
+    m.query = value
 }
 // SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
 func (m *AccessReviewQueryScope) SetQueryRoot(value *string)() {
-    if m != nil {
-        m.queryRoot = value
-    }
+    m.queryRoot = value
 }
 // SetQueryType sets the queryType property value. Indicates the type of query. Types include MicrosoftGraph and ARM.
 func (m *AccessReviewQueryScope) SetQueryType(value *string)() {
-    if m != nil {
-        m.queryType = value
-    }
+    m.queryType = value
 }

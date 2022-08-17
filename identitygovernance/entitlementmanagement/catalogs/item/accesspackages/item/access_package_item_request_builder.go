@@ -26,7 +26,7 @@ type AccessPackageItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageItemRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// AccessPackageItemRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable.
 type AccessPackageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -103,11 +103,11 @@ func (m *AccessPackageItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,7 +160,7 @@ func (m *AccessPackageItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// Get the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// Get the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -168,7 +168,7 @@ func (m *AccessPackageItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d
 func (m *AccessPackageItemRequestBuilder) GetApplicablePolicyRequirements()(*i3af26ef062248fc936f438d7e7cc8fe358d3b1a890b9bcf59c9846f337791fa0.GetApplicablePolicyRequirementsRequestBuilder) {
     return i3af26ef062248fc936f438d7e7cc8fe358d3b1a890b9bcf59c9846f337791fa0.NewGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler the access packages in this catalog. Read-only. Nullable. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler the access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

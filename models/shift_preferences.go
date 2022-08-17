@@ -25,11 +25,7 @@ func CreateShiftPreferencesFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAvailability gets the availability property value. Availability of the user to be scheduled for work and its recurrence pattern.
 func (m *ShiftPreferences) GetAvailability()([]ShiftAvailabilityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availability
-    }
+    return m.availability
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *ShiftPreferences) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAvailability sets the availability property value. Availability of the user to be scheduled for work and its recurrence pattern.
 func (m *ShiftPreferences) SetAvailability(value []ShiftAvailabilityable)() {
-    if m != nil {
-        m.availability = value
-    }
+    m.availability = value
 }

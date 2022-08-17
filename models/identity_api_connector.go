@@ -29,19 +29,11 @@ func CreateIdentityApiConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
 func (m *IdentityApiConnector) GetAuthenticationConfiguration()(ApiAuthenticationConfigurationBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationConfiguration
-    }
+    return m.authenticationConfiguration
 }
 // GetDisplayName gets the displayName property value. The name of the API connector.
 func (m *IdentityApiConnector) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetTargetUrl gets the targetUrl property value. The URL of the API endpoint to call.
 func (m *IdentityApiConnector) GetTargetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetUrl
-    }
+    return m.targetUrl
 }
 // Serialize serializes information the current object
 func (m *IdentityApiConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *IdentityApiConnector) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
 func (m *IdentityApiConnector) SetAuthenticationConfiguration(value ApiAuthenticationConfigurationBaseable)() {
-    if m != nil {
-        m.authenticationConfiguration = value
-    }
+    m.authenticationConfiguration = value
 }
 // SetDisplayName sets the displayName property value. The name of the API connector.
 func (m *IdentityApiConnector) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTargetUrl sets the targetUrl property value. The URL of the API endpoint to call.
 func (m *IdentityApiConnector) SetTargetUrl(value *string)() {
-    if m != nil {
-        m.targetUrl = value
-    }
+    m.targetUrl = value
 }

@@ -40,11 +40,7 @@ func (m *UnifiedRoleManagementPolicyApprovalRule) GetFieldDeserializers()(map[st
 }
 // GetSetting gets the setting property value. The settings for approval of the role assignment.
 func (m *UnifiedRoleManagementPolicyApprovalRule) GetSetting()(ApprovalSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
+    return m.setting
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyApprovalRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *UnifiedRoleManagementPolicyApprovalRule) Serialize(writer i878a80d2330e
 }
 // SetSetting sets the setting property value. The settings for approval of the role assignment.
 func (m *UnifiedRoleManagementPolicyApprovalRule) SetSetting(value ApprovalSettingsable)() {
-    if m != nil {
-        m.setting = value
-    }
+    m.setting = value
 }

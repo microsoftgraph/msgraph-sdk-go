@@ -37,27 +37,15 @@ func CreateCertificationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Certification) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertificationDetailsUrl gets the certificationDetailsUrl property value. URL that shows certification details for the application.
 func (m *Certification) GetCertificationDetailsUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationDetailsUrl
-    }
+    return m.certificationDetailsUrl
 }
 // GetCertificationExpirationDateTime gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
 func (m *Certification) GetCertificationExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationExpirationDateTime
-    }
+    return m.certificationExpirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Certification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,35 +114,19 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIsCertifiedByMicrosoft gets the isCertifiedByMicrosoft property value. Indicates whether the application is certified by Microsoft.
 func (m *Certification) GetIsCertifiedByMicrosoft()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCertifiedByMicrosoft
-    }
+    return m.isCertifiedByMicrosoft
 }
 // GetIsPublisherAttested gets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
 func (m *Certification) GetIsPublisherAttested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPublisherAttested
-    }
+    return m.isPublisherAttested
 }
 // GetLastCertificationDateTime gets the lastCertificationDateTime property value. The timestamp when the certification for the application was most recently added or updated.
 func (m *Certification) GetLastCertificationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCertificationDateTime
-    }
+    return m.lastCertificationDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Certification) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Certification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *Certification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Certification) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertificationDetailsUrl sets the certificationDetailsUrl property value. URL that shows certification details for the application.
 func (m *Certification) SetCertificationDetailsUrl(value *string)() {
-    if m != nil {
-        m.certificationDetailsUrl = value
-    }
+    m.certificationDetailsUrl = value
 }
 // SetCertificationExpirationDateTime sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
 func (m *Certification) SetCertificationExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.certificationExpirationDateTime = value
-    }
+    m.certificationExpirationDateTime = value
 }
 // SetIsCertifiedByMicrosoft sets the isCertifiedByMicrosoft property value. Indicates whether the application is certified by Microsoft.
 func (m *Certification) SetIsCertifiedByMicrosoft(value *bool)() {
-    if m != nil {
-        m.isCertifiedByMicrosoft = value
-    }
+    m.isCertifiedByMicrosoft = value
 }
 // SetIsPublisherAttested sets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
 func (m *Certification) SetIsPublisherAttested(value *bool)() {
-    if m != nil {
-        m.isPublisherAttested = value
-    }
+    m.isPublisherAttested = value
 }
 // SetLastCertificationDateTime sets the lastCertificationDateTime property value. The timestamp when the certification for the application was most recently added or updated.
 func (m *Certification) SetLastCertificationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastCertificationDateTime = value
-    }
+    m.lastCertificationDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Certification) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

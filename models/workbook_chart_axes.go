@@ -29,11 +29,7 @@ func CreateWorkbookChartAxesFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetCategoryAxis gets the categoryAxis property value. Represents the category axis in a chart. Read-only.
 func (m *WorkbookChartAxes) GetCategoryAxis()(WorkbookChartAxisable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categoryAxis
-    }
+    return m.categoryAxis
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetSeriesAxis gets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
 func (m *WorkbookChartAxes) GetSeriesAxis()(WorkbookChartAxisable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.seriesAxis
-    }
+    return m.seriesAxis
 }
 // GetValueAxis gets the valueAxis property value. Represents the value axis in an axis. Read-only.
 func (m *WorkbookChartAxes) GetValueAxis()(WorkbookChartAxisable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueAxis
-    }
+    return m.valueAxis
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartAxes) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *WorkbookChartAxes) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetCategoryAxis sets the categoryAxis property value. Represents the category axis in a chart. Read-only.
 func (m *WorkbookChartAxes) SetCategoryAxis(value WorkbookChartAxisable)() {
-    if m != nil {
-        m.categoryAxis = value
-    }
+    m.categoryAxis = value
 }
 // SetSeriesAxis sets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
 func (m *WorkbookChartAxes) SetSeriesAxis(value WorkbookChartAxisable)() {
-    if m != nil {
-        m.seriesAxis = value
-    }
+    m.seriesAxis = value
 }
 // SetValueAxis sets the valueAxis property value. Represents the value axis in an axis. Read-only.
 func (m *WorkbookChartAxes) SetValueAxis(value WorkbookChartAxisable)() {
-    if m != nil {
-        m.valueAxis = value
-    }
+    m.valueAxis = value
 }

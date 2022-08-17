@@ -27,11 +27,7 @@ func CreatePermissionGrantPolicyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetExcludes gets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) GetExcludes()([]PermissionGrantConditionSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludes
-    }
+    return m.excludes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +64,7 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIncludes gets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includes
-    }
+    return m.includes
 }
 // Serialize serializes information the current object
 func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetExcludes sets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) SetExcludes(value []PermissionGrantConditionSetable)() {
-    if m != nil {
-        m.excludes = value
-    }
+    m.excludes = value
 }
 // SetIncludes sets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSetable)() {
-    if m != nil {
-        m.includes = value
-    }
+    m.includes = value
 }

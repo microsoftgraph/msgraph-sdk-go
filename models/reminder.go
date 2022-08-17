@@ -42,67 +42,35 @@ func CreateReminderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Reminder) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
 func (m *Reminder) GetChangeKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changeKey
-    }
+    return m.changeKey
 }
 // GetEventEndTime gets the eventEndTime property value. The date, time and time zone that the event ends.
 func (m *Reminder) GetEventEndTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventEndTime
-    }
+    return m.eventEndTime
 }
 // GetEventId gets the eventId property value. The unique ID of the event. Read only.
 func (m *Reminder) GetEventId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventId
-    }
+    return m.eventId
 }
 // GetEventLocation gets the eventLocation property value. The location of the event.
 func (m *Reminder) GetEventLocation()(Locationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventLocation
-    }
+    return m.eventLocation
 }
 // GetEventStartTime gets the eventStartTime property value. The date, time, and time zone that the event starts.
 func (m *Reminder) GetEventStartTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventStartTime
-    }
+    return m.eventStartTime
 }
 // GetEventSubject gets the eventSubject property value. The text of the event's subject line.
 func (m *Reminder) GetEventSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventSubject
-    }
+    return m.eventSubject
 }
 // GetEventWebLink gets the eventWebLink property value. The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
 func (m *Reminder) GetEventWebLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventWebLink
-    }
+    return m.eventWebLink
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -201,19 +169,11 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Reminder) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetReminderFireTime gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
 func (m *Reminder) GetReminderFireTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderFireTime
-    }
+    return m.reminderFireTime
 }
 // Serialize serializes information the current object
 func (m *Reminder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,61 +241,41 @@ func (m *Reminder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Reminder) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChangeKey sets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
 func (m *Reminder) SetChangeKey(value *string)() {
-    if m != nil {
-        m.changeKey = value
-    }
+    m.changeKey = value
 }
 // SetEventEndTime sets the eventEndTime property value. The date, time and time zone that the event ends.
 func (m *Reminder) SetEventEndTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.eventEndTime = value
-    }
+    m.eventEndTime = value
 }
 // SetEventId sets the eventId property value. The unique ID of the event. Read only.
 func (m *Reminder) SetEventId(value *string)() {
-    if m != nil {
-        m.eventId = value
-    }
+    m.eventId = value
 }
 // SetEventLocation sets the eventLocation property value. The location of the event.
 func (m *Reminder) SetEventLocation(value Locationable)() {
-    if m != nil {
-        m.eventLocation = value
-    }
+    m.eventLocation = value
 }
 // SetEventStartTime sets the eventStartTime property value. The date, time, and time zone that the event starts.
 func (m *Reminder) SetEventStartTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.eventStartTime = value
-    }
+    m.eventStartTime = value
 }
 // SetEventSubject sets the eventSubject property value. The text of the event's subject line.
 func (m *Reminder) SetEventSubject(value *string)() {
-    if m != nil {
-        m.eventSubject = value
-    }
+    m.eventSubject = value
 }
 // SetEventWebLink sets the eventWebLink property value. The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
 func (m *Reminder) SetEventWebLink(value *string)() {
-    if m != nil {
-        m.eventWebLink = value
-    }
+    m.eventWebLink = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Reminder) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetReminderFireTime sets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
 func (m *Reminder) SetReminderFireTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.reminderFireTime = value
-    }
+    m.reminderFireTime = value
 }

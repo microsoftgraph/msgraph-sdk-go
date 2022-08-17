@@ -12,7 +12,7 @@ type UserTeamwork struct {
     // The apps installed in the personal scope of this user.
     installedApps []UserScopeTeamsAppInstallationable
 }
-// NewUserTeamwork instantiates a new userTeamwork and sets the default values.
+// NewUserTeamwork instantiates a new UserTeamwork and sets the default values.
 func NewUserTeamwork()(*UserTeamwork) {
     m := &UserTeamwork{
         Entity: *NewEntity(),
@@ -27,11 +27,7 @@ func CreateUserTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAssociatedTeams gets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
 func (m *UserTeamwork) GetAssociatedTeams()([]AssociatedTeamInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.associatedTeams
-    }
+    return m.associatedTeams
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +64,7 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedApps
-    }
+    return m.installedApps
 }
 // Serialize serializes information the current object
 func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAssociatedTeams sets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
 func (m *UserTeamwork) SetAssociatedTeams(value []AssociatedTeamInfoable)() {
-    if m != nil {
-        m.associatedTeams = value
-    }
+    m.associatedTeams = value
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallationable)() {
-    if m != nil {
-        m.installedApps = value
-    }
+    m.installedApps = value
 }

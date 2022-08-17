@@ -22,7 +22,7 @@ type AccessReviewStageSettings struct {
     recommendationsEnabled *bool
     // Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
     reviewers []AccessReviewReviewerScopeable
-    // Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+    // Unique identifier of the accessReviewStageSettings object. The stageId will be used by the dependsOn property to indicate the order of the stages. Required.
     stageId *string
 }
 // NewAccessReviewStageSettings instantiates a new accessReviewStageSettings and sets the default values.
@@ -40,43 +40,23 @@ func CreateAccessReviewStageSettingsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewStageSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDecisionsThatWillMoveToNextStage gets the decisionsThatWillMoveToNextStage property value. Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
 func (m *AccessReviewStageSettings) GetDecisionsThatWillMoveToNextStage()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decisionsThatWillMoveToNextStage
-    }
+    return m.decisionsThatWillMoveToNextStage
 }
 // GetDependsOn gets the dependsOn property value. Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.
 func (m *AccessReviewStageSettings) GetDependsOn()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependsOn
-    }
+    return m.dependsOn
 }
 // GetDurationInDays gets the durationInDays property value. The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.
 func (m *AccessReviewStageSettings) GetDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationInDays
-    }
+    return m.durationInDays
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
 func (m *AccessReviewStageSettings) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fallbackReviewers
-    }
+    return m.fallbackReviewers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -181,35 +161,19 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessReviewStageSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
 func (m *AccessReviewStageSettings) GetRecommendationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationsEnabled
-    }
+    return m.recommendationsEnabled
 }
 // GetReviewers gets the reviewers property value. Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
 func (m *AccessReviewStageSettings) GetReviewers()([]AccessReviewReviewerScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
+    return m.reviewers
 }
-// GetStageId gets the stageId property value. Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+// GetStageId gets the stageId property value. Unique identifier of the accessReviewStageSettings object. The stageId will be used by the dependsOn property to indicate the order of the stages. Required.
 func (m *AccessReviewStageSettings) GetStageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stageId
-    }
+    return m.stageId
 }
 // Serialize serializes information the current object
 func (m *AccessReviewStageSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -279,55 +243,37 @@ func (m *AccessReviewStageSettings) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewStageSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDecisionsThatWillMoveToNextStage sets the decisionsThatWillMoveToNextStage property value. Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
 func (m *AccessReviewStageSettings) SetDecisionsThatWillMoveToNextStage(value []string)() {
-    if m != nil {
-        m.decisionsThatWillMoveToNextStage = value
-    }
+    m.decisionsThatWillMoveToNextStage = value
 }
 // SetDependsOn sets the dependsOn property value. Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.
 func (m *AccessReviewStageSettings) SetDependsOn(value []string)() {
-    if m != nil {
-        m.dependsOn = value
-    }
+    m.dependsOn = value
 }
 // SetDurationInDays sets the durationInDays property value. The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.
 func (m *AccessReviewStageSettings) SetDurationInDays(value *int32)() {
-    if m != nil {
-        m.durationInDays = value
-    }
+    m.durationInDays = value
 }
 // SetFallbackReviewers sets the fallbackReviewers property value. If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
 func (m *AccessReviewStageSettings) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
-    if m != nil {
-        m.fallbackReviewers = value
-    }
+    m.fallbackReviewers = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessReviewStageSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecommendationsEnabled sets the recommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
 func (m *AccessReviewStageSettings) SetRecommendationsEnabled(value *bool)() {
-    if m != nil {
-        m.recommendationsEnabled = value
-    }
+    m.recommendationsEnabled = value
 }
 // SetReviewers sets the reviewers property value. Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
 func (m *AccessReviewStageSettings) SetReviewers(value []AccessReviewReviewerScopeable)() {
-    if m != nil {
-        m.reviewers = value
-    }
+    m.reviewers = value
 }
-// SetStageId sets the stageId property value. Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+// SetStageId sets the stageId property value. Unique identifier of the accessReviewStageSettings object. The stageId will be used by the dependsOn property to indicate the order of the stages. Required.
 func (m *AccessReviewStageSettings) SetStageId(value *string)() {
-    if m != nil {
-        m.stageId = value
-    }
+    m.stageId = value
 }

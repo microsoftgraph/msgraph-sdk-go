@@ -27,19 +27,11 @@ func CreateInvitePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
 func (m *InvitePostRequestBody) GetClientContext()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientContext
-    }
+    return m.clientContext
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InvitePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,11 +64,7 @@ func (m *InvitePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetParticipants gets the participants property value. The participants property
 func (m *InvitePostRequestBody) GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InvitationParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+    return m.participants
 }
 // Serialize serializes information the current object
 func (m *InvitePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,19 +94,13 @@ func (m *InvitePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property
 func (m *InvitePostRequestBody) SetClientContext(value *string)() {
-    if m != nil {
-        m.clientContext = value
-    }
+    m.clientContext = value
 }
 // SetParticipants sets the participants property value. The participants property
 func (m *InvitePostRequestBody) SetParticipants(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InvitationParticipantInfoable)() {
-    if m != nil {
-        m.participants = value
-    }
+    m.participants = value
 }

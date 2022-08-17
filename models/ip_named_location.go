@@ -56,19 +56,11 @@ func (m *IpNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIpRanges gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
 func (m *IpNamedLocation) GetIpRanges()([]IpRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipRanges
-    }
+    return m.ipRanges
 }
 // GetIsTrusted gets the isTrusted property value. true if this location is explicitly trusted. Optional. Default value is false.
 func (m *IpNamedLocation) GetIsTrusted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTrusted
-    }
+    return m.isTrusted
 }
 // Serialize serializes information the current object
 func (m *IpNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *IpNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetIpRanges sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
 func (m *IpNamedLocation) SetIpRanges(value []IpRangeable)() {
-    if m != nil {
-        m.ipRanges = value
-    }
+    m.ipRanges = value
 }
 // SetIsTrusted sets the isTrusted property value. true if this location is explicitly trusted. Optional. Default value is false.
 func (m *IpNamedLocation) SetIsTrusted(value *bool)() {
-    if m != nil {
-        m.isTrusted = value
-    }
+    m.isTrusted = value
 }

@@ -25,11 +25,7 @@ func CreateLocateDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDeviceLocation gets the deviceLocation property value. device location
 func (m *LocateDeviceActionResult) GetDeviceLocation()(DeviceGeoLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceLocation
-    }
+    return m.deviceLocation
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LocateDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *LocateDeviceActionResult) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDeviceLocation sets the deviceLocation property value. device location
 func (m *LocateDeviceActionResult) SetDeviceLocation(value DeviceGeoLocationable)() {
-    if m != nil {
-        m.deviceLocation = value
-    }
+    m.deviceLocation = value
 }

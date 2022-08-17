@@ -28,11 +28,7 @@ func CreateEducationOnPremisesInfoFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationOnPremisesInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationOnPremisesInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *EducationOnPremisesInfo) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetImmutableId gets the immutableId property value. Unique identifier for the user object in Active Directory.
 func (m *EducationOnPremisesInfo) GetImmutableId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.immutableId
-    }
+    return m.immutableId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationOnPremisesInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *EducationOnPremisesInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *EducationOnPremisesInfo) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationOnPremisesInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetImmutableId sets the immutableId property value. Unique identifier for the user object in Active Directory.
 func (m *EducationOnPremisesInfo) SetImmutableId(value *string)() {
-    if m != nil {
-        m.immutableId = value
-    }
+    m.immutableId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationOnPremisesInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

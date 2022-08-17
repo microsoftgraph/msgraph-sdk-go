@@ -30,19 +30,11 @@ func CreateAssignedLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedLabel) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The display name of the label. Read-only.
 func (m *AssignedLabel) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignedLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *AssignedLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetLabelId gets the labelId property value. The unique identifier of the label.
 func (m *AssignedLabel) GetLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelId
-    }
+    return m.labelId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignedLabel) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AssignedLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AssignedLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedLabel) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The display name of the label. Read-only.
 func (m *AssignedLabel) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLabelId sets the labelId property value. The unique identifier of the label.
 func (m *AssignedLabel) SetLabelId(value *string)() {
-    if m != nil {
-        m.labelId = value
-    }
+    m.labelId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignedLabel) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

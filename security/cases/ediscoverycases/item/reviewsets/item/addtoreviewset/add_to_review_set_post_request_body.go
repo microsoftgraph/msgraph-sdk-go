@@ -27,19 +27,11 @@ func CreateAddToReviewSetPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddToReviewSetPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdditionalDataOptions gets the additionalDataOptions property value. The additionalDataOptions property
 func (m *AddToReviewSetPostRequestBody) GetAdditionalDataOptions()(*idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AdditionalDataOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalDataOptions
-    }
+    return m.additionalDataOptions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AddToReviewSetPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +60,7 @@ func (m *AddToReviewSetPostRequestBody) GetFieldDeserializers()(map[string]func(
 }
 // GetSearch gets the search property value. The search property
 func (m *AddToReviewSetPostRequestBody) GetSearch()(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoverySearchable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
+    return m.search
 }
 // Serialize serializes information the current object
 func (m *AddToReviewSetPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *AddToReviewSetPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddToReviewSetPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdditionalDataOptions sets the additionalDataOptions property value. The additionalDataOptions property
 func (m *AddToReviewSetPostRequestBody) SetAdditionalDataOptions(value *idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AdditionalDataOptions)() {
-    if m != nil {
-        m.additionalDataOptions = value
-    }
+    m.additionalDataOptions = value
 }
 // SetSearch sets the search property value. The search property
 func (m *AddToReviewSetPostRequestBody) SetSearch(value idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoverySearchable)() {
-    if m != nil {
-        m.search = value
-    }
+    m.search = value
 }

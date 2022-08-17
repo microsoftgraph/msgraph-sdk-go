@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Relation provides operations to manage the admin singleton.
+// Relation provides operations to manage the collection of agreement entities.
 type Relation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
@@ -77,35 +77,19 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFromTerm gets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *Relation) GetFromTerm()(Termable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fromTerm
-    }
+    return m.fromTerm
 }
 // GetRelationship gets the relationship property value. The type of relation. Possible values are: pin, reuse.
 func (m *Relation) GetRelationship()(*RelationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relationship
-    }
+    return m.relationship
 }
 // GetSet gets the set property value. The [set] in which the relation is relevant.
 func (m *Relation) GetSet()(Setable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.set
-    }
+    return m.set
 }
 // GetToTerm gets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
 func (m *Relation) GetToTerm()(Termable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toTerm
-    }
+    return m.toTerm
 }
 // Serialize serializes information the current object
 func (m *Relation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *Relation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetFromTerm sets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *Relation) SetFromTerm(value Termable)() {
-    if m != nil {
-        m.fromTerm = value
-    }
+    m.fromTerm = value
 }
 // SetRelationship sets the relationship property value. The type of relation. Possible values are: pin, reuse.
 func (m *Relation) SetRelationship(value *RelationType)() {
-    if m != nil {
-        m.relationship = value
-    }
+    m.relationship = value
 }
 // SetSet sets the set property value. The [set] in which the relation is relevant.
 func (m *Relation) SetSet(value Setable)() {
-    if m != nil {
-        m.set = value
-    }
+    m.set = value
 }
 // SetToTerm sets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
 func (m *Relation) SetToTerm(value Termable)() {
-    if m != nil {
-        m.toTerm = value
-    }
+    m.toTerm = value
 }

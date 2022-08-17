@@ -23,7 +23,7 @@ type PhotoRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PhotoRequestBuilderGetQueryParameters the team photo.
+// PhotoRequestBuilderGetQueryParameters the profile photo for the team.
 type PhotoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,11 +85,11 @@ func (m *PhotoRequestBuilder) CreateDeleteRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the team photo.
+// CreateGetRequestInformation the profile photo for the team.
 func (m *PhotoRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the team photo.
+// CreateGetRequestInformationWithRequestConfiguration the profile photo for the team.
 func (m *PhotoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PhotoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,11 +142,11 @@ func (m *PhotoRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(r
     }
     return nil
 }
-// Get the team photo.
+// Get the profile photo for the team.
 func (m *PhotoRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the team photo.
+// GetWithRequestConfigurationAndResponseHandler the profile photo for the team.
 func (m *PhotoRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PhotoRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

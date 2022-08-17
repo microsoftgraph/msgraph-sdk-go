@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask provides operations to manage the collection of application entities.
+// TodoTask provides operations to manage the collection of agreementAcceptance entities.
 type TodoTask struct {
     Entity
-    // A collection of file attachments for the task.
+    // The attachments property
     attachments []AttachmentBaseable
     // The attachmentSessions property
     attachmentSessions []AttachmentSessionable
@@ -18,7 +18,7 @@ type TodoTask struct {
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
     categories []string
-    // A collection of smaller subtasks linked to the more complex parent task.
+    // A collection of checklistItems linked to a task.
     checklistItems []ChecklistItemable
     // The date and time in the specified time zone that the task was finished.
     completedDateTime DateTimeTimeZoneable
@@ -28,7 +28,7 @@ type TodoTask struct {
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
-    // Indicates whether the task has attachments.
+    // The hasAttachments property
     hasAttachments *bool
     // The importance property
     importance *Importance
@@ -42,7 +42,7 @@ type TodoTask struct {
     recurrence PatternedRecurrenceable
     // The date and time in the specified time zone for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
-    // The date and time in the specified time zone at which the task is scheduled to start.
+    // The startDateTime property
     startDateTime DateTimeTimeZoneable
     // The status property
     status *TaskStatus
@@ -62,85 +62,45 @@ func NewTodoTask()(*TodoTask) {
 func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTodoTask(), nil
 }
-// GetAttachments gets the attachments property value. A collection of file attachments for the task.
+// GetAttachments gets the attachments property value. The attachments property
 func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachments
-    }
+    return m.attachments
 }
 // GetAttachmentSessions gets the attachmentSessions property value. The attachmentSessions property
 func (m *TodoTask) GetAttachmentSessions()([]AttachmentSessionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachmentSessions
-    }
+    return m.attachmentSessions
 }
 // GetBody gets the body property value. The task body that typically contains information about the task.
 func (m *TodoTask) GetBody()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
+    return m.body
 }
 // GetBodyLastModifiedDateTime gets the bodyLastModifiedDateTime property value. The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bodyLastModifiedDateTime
-    }
+    return m.bodyLastModifiedDateTime
 }
 // GetCategories gets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TodoTask) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
-// GetChecklistItems gets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
+// GetChecklistItems gets the checklistItems property value. A collection of checklistItems linked to a task.
 func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.checklistItems
-    }
+    return m.checklistItems
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
 func (m *TodoTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *TodoTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDueDateTime gets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
 func (m *TodoTask) GetDueDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueDateTime
-    }
+    return m.dueDateTime
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task. Nullable.
 func (m *TodoTask) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -371,85 +331,45 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHasAttachments gets the hasAttachments property value. Indicates whether the task has attachments.
+// GetHasAttachments gets the hasAttachments property value. The hasAttachments property
 func (m *TodoTask) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
+    return m.hasAttachments
 }
 // GetImportance gets the importance property value. The importance property
 func (m *TodoTask) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
+    return m.importance
 }
 // GetIsReminderOn gets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
 func (m *TodoTask) GetIsReminderOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReminderOn
-    }
+    return m.isReminderOn
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *TodoTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
 func (m *TodoTask) GetLinkedResources()([]LinkedResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.linkedResources
-    }
+    return m.linkedResources
 }
 // GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
 func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetReminderDateTime gets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
 func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderDateTime
-    }
+    return m.reminderDateTime
 }
-// GetStartDateTime gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
+// GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *TodoTask) GetStatus()(*TaskStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTitle gets the title property value. A brief description of the task.
 func (m *TodoTask) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -601,123 +521,83 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAttachments sets the attachments property value. A collection of file attachments for the task.
+// SetAttachments sets the attachments property value. The attachments property
 func (m *TodoTask) SetAttachments(value []AttachmentBaseable)() {
-    if m != nil {
-        m.attachments = value
-    }
+    m.attachments = value
 }
 // SetAttachmentSessions sets the attachmentSessions property value. The attachmentSessions property
 func (m *TodoTask) SetAttachmentSessions(value []AttachmentSessionable)() {
-    if m != nil {
-        m.attachmentSessions = value
-    }
+    m.attachmentSessions = value
 }
 // SetBody sets the body property value. The task body that typically contains information about the task.
 func (m *TodoTask) SetBody(value ItemBodyable)() {
-    if m != nil {
-        m.body = value
-    }
+    m.body = value
 }
 // SetBodyLastModifiedDateTime sets the bodyLastModifiedDateTime property value. The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *TodoTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.bodyLastModifiedDateTime = value
-    }
+    m.bodyLastModifiedDateTime = value
 }
 // SetCategories sets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TodoTask) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
-// SetChecklistItems sets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
+// SetChecklistItems sets the checklistItems property value. A collection of checklistItems linked to a task.
 func (m *TodoTask) SetChecklistItems(value []ChecklistItemable)() {
-    if m != nil {
-        m.checklistItems = value
-    }
+    m.checklistItems = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
 func (m *TodoTask) SetCompletedDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *TodoTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDueDateTime sets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
 func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.dueDateTime = value
-    }
+    m.dueDateTime = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task. Nullable.
 func (m *TodoTask) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
-// SetHasAttachments sets the hasAttachments property value. Indicates whether the task has attachments.
+// SetHasAttachments sets the hasAttachments property value. The hasAttachments property
 func (m *TodoTask) SetHasAttachments(value *bool)() {
-    if m != nil {
-        m.hasAttachments = value
-    }
+    m.hasAttachments = value
 }
 // SetImportance sets the importance property value. The importance property
 func (m *TodoTask) SetImportance(value *Importance)() {
-    if m != nil {
-        m.importance = value
-    }
+    m.importance = value
 }
 // SetIsReminderOn sets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
 func (m *TodoTask) SetIsReminderOn(value *bool)() {
-    if m != nil {
-        m.isReminderOn = value
-    }
+    m.isReminderOn = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *TodoTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLinkedResources sets the linkedResources property value. A collection of resources linked to the task.
 func (m *TodoTask) SetLinkedResources(value []LinkedResourceable)() {
-    if m != nil {
-        m.linkedResources = value
-    }
+    m.linkedResources = value
 }
 // SetRecurrence sets the recurrence property value. The recurrence pattern for the task.
 func (m *TodoTask) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetReminderDateTime sets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
 func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.reminderDateTime = value
-    }
+    m.reminderDateTime = value
 }
-// SetStartDateTime sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
+// SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *TodoTask) SetStatus(value *TaskStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTitle sets the title property value. A brief description of the task.
 func (m *TodoTask) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

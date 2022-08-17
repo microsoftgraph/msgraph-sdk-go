@@ -36,35 +36,19 @@ func CreateRubricQualityFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricQuality) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCriteria gets the criteria property value. The collection of criteria for this rubric quality.
 func (m *RubricQuality) GetCriteria()([]RubricCriterionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.criteria
-    }
+    return m.criteria
 }
 // GetDescription gets the description property value. The description of this rubric quality.
 func (m *RubricQuality) GetDescription()(EducationItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The name of this rubric quality.
 func (m *RubricQuality) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RubricQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,27 +121,15 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RubricQuality) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQualityId gets the qualityId property value. The ID of this resource.
 func (m *RubricQuality) GetQualityId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityId
-    }
+    return m.qualityId
 }
 // GetWeight gets the weight property value. If present, a numerical weight for this quality.  Weights must add up to 100.
 func (m *RubricQuality) GetWeight()(*float32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.weight
-    }
+    return m.weight
 }
 // Serialize serializes information the current object
 func (m *RubricQuality) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *RubricQuality) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricQuality) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCriteria sets the criteria property value. The collection of criteria for this rubric quality.
 func (m *RubricQuality) SetCriteria(value []RubricCriterionable)() {
-    if m != nil {
-        m.criteria = value
-    }
+    m.criteria = value
 }
 // SetDescription sets the description property value. The description of this rubric quality.
 func (m *RubricQuality) SetDescription(value EducationItemBodyable)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The name of this rubric quality.
 func (m *RubricQuality) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RubricQuality) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQualityId sets the qualityId property value. The ID of this resource.
 func (m *RubricQuality) SetQualityId(value *string)() {
-    if m != nil {
-        m.qualityId = value
-    }
+    m.qualityId = value
 }
 // SetWeight sets the weight property value. If present, a numerical weight for this quality.  Weights must add up to 100.
 func (m *RubricQuality) SetWeight(value *float32)() {
-    if m != nil {
-        m.weight = value
-    }
+    m.weight = value
 }

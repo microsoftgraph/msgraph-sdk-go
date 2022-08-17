@@ -38,19 +38,11 @@ func CreateScheduleItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnd gets the end property value. The date, time, and time zone that the corresponding event ends.
 func (m *ScheduleItem) GetEnd()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.end
-    }
+    return m.end
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScheduleItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,51 +121,27 @@ func (m *ScheduleItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsPrivate gets the isPrivate property value. The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
 func (m *ScheduleItem) GetIsPrivate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPrivate
-    }
+    return m.isPrivate
 }
 // GetLocation gets the location property value. The location where the corresponding event is held or attended from. Optional.
 func (m *ScheduleItem) GetLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ScheduleItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStart gets the start property value. The date, time, and time zone that the corresponding event starts.
 func (m *ScheduleItem) GetStart()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
-    }
+    return m.start
 }
 // GetStatus gets the status property value. The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *ScheduleItem) GetStatus()(*FreeBusyStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSubject gets the subject property value. The corresponding event's subject line. Optional.
 func (m *ScheduleItem) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // Serialize serializes information the current object
 func (m *ScheduleItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *ScheduleItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnd sets the end property value. The date, time, and time zone that the corresponding event ends.
 func (m *ScheduleItem) SetEnd(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.end = value
-    }
+    m.end = value
 }
 // SetIsPrivate sets the isPrivate property value. The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
 func (m *ScheduleItem) SetIsPrivate(value *bool)() {
-    if m != nil {
-        m.isPrivate = value
-    }
+    m.isPrivate = value
 }
 // SetLocation sets the location property value. The location where the corresponding event is held or attended from. Optional.
 func (m *ScheduleItem) SetLocation(value *string)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ScheduleItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStart sets the start property value. The date, time, and time zone that the corresponding event starts.
 func (m *ScheduleItem) SetStart(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.start = value
-    }
+    m.start = value
 }
 // SetStatus sets the status property value. The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *ScheduleItem) SetStatus(value *FreeBusyStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSubject sets the subject property value. The corresponding event's subject line. Optional.
 func (m *ScheduleItem) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }

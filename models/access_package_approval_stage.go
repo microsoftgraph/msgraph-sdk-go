@@ -42,51 +42,27 @@ func CreateAccessPackageApprovalStageFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageApprovalStage) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDurationBeforeAutomaticDenial gets the durationBeforeAutomaticDenial property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *AccessPackageApprovalStage) GetDurationBeforeAutomaticDenial()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationBeforeAutomaticDenial
-    }
+    return m.durationBeforeAutomaticDenial
 }
 // GetDurationBeforeEscalation gets the durationBeforeEscalation property value. If escalation is required, the time a request can be pending a response from a primary approver.
 func (m *AccessPackageApprovalStage) GetDurationBeforeEscalation()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationBeforeEscalation
-    }
+    return m.durationBeforeEscalation
 }
 // GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
 func (m *AccessPackageApprovalStage) GetEscalationApprovers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.escalationApprovers
-    }
+    return m.escalationApprovers
 }
 // GetFallbackEscalationApprovers gets the fallbackEscalationApprovers property value. The subjects, typically users, who are the fallback escalation approvers.
 func (m *AccessPackageApprovalStage) GetFallbackEscalationApprovers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fallbackEscalationApprovers
-    }
+    return m.fallbackEscalationApprovers
 }
 // GetFallbackPrimaryApprovers gets the fallbackPrimaryApprovers property value. The subjects, typically users, who are the fallback primary approvers.
 func (m *AccessPackageApprovalStage) GetFallbackPrimaryApprovers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fallbackPrimaryApprovers
-    }
+    return m.fallbackPrimaryApprovers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -201,35 +177,19 @@ func (m *AccessPackageApprovalStage) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIsApproverJustificationRequired gets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
 func (m *AccessPackageApprovalStage) GetIsApproverJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApproverJustificationRequired
-    }
+    return m.isApproverJustificationRequired
 }
 // GetIsEscalationEnabled gets the isEscalationEnabled property value. If true, then one or more escalationApprovers are configured in this approval stage.
 func (m *AccessPackageApprovalStage) GetIsEscalationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEscalationEnabled
-    }
+    return m.isEscalationEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageApprovalStage) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
 func (m *AccessPackageApprovalStage) GetPrimaryApprovers()([]SubjectSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryApprovers
-    }
+    return m.primaryApprovers
 }
 // Serialize serializes information the current object
 func (m *AccessPackageApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -313,61 +273,41 @@ func (m *AccessPackageApprovalStage) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageApprovalStage) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDurationBeforeAutomaticDenial sets the durationBeforeAutomaticDenial property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *AccessPackageApprovalStage) SetDurationBeforeAutomaticDenial(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.durationBeforeAutomaticDenial = value
-    }
+    m.durationBeforeAutomaticDenial = value
 }
 // SetDurationBeforeEscalation sets the durationBeforeEscalation property value. If escalation is required, the time a request can be pending a response from a primary approver.
 func (m *AccessPackageApprovalStage) SetDurationBeforeEscalation(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.durationBeforeEscalation = value
-    }
+    m.durationBeforeEscalation = value
 }
 // SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
 func (m *AccessPackageApprovalStage) SetEscalationApprovers(value []SubjectSetable)() {
-    if m != nil {
-        m.escalationApprovers = value
-    }
+    m.escalationApprovers = value
 }
 // SetFallbackEscalationApprovers sets the fallbackEscalationApprovers property value. The subjects, typically users, who are the fallback escalation approvers.
 func (m *AccessPackageApprovalStage) SetFallbackEscalationApprovers(value []SubjectSetable)() {
-    if m != nil {
-        m.fallbackEscalationApprovers = value
-    }
+    m.fallbackEscalationApprovers = value
 }
 // SetFallbackPrimaryApprovers sets the fallbackPrimaryApprovers property value. The subjects, typically users, who are the fallback primary approvers.
 func (m *AccessPackageApprovalStage) SetFallbackPrimaryApprovers(value []SubjectSetable)() {
-    if m != nil {
-        m.fallbackPrimaryApprovers = value
-    }
+    m.fallbackPrimaryApprovers = value
 }
 // SetIsApproverJustificationRequired sets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
 func (m *AccessPackageApprovalStage) SetIsApproverJustificationRequired(value *bool)() {
-    if m != nil {
-        m.isApproverJustificationRequired = value
-    }
+    m.isApproverJustificationRequired = value
 }
 // SetIsEscalationEnabled sets the isEscalationEnabled property value. If true, then one or more escalationApprovers are configured in this approval stage.
 func (m *AccessPackageApprovalStage) SetIsEscalationEnabled(value *bool)() {
-    if m != nil {
-        m.isEscalationEnabled = value
-    }
+    m.isEscalationEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageApprovalStage) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPrimaryApprovers sets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
 func (m *AccessPackageApprovalStage) SetPrimaryApprovers(value []SubjectSetable)() {
-    if m != nil {
-        m.primaryApprovers = value
-    }
+    m.primaryApprovers = value
 }

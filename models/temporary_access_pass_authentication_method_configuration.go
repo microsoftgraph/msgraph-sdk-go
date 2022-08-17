@@ -35,19 +35,11 @@ func CreateTemporaryAccessPassAuthenticationMethodConfigurationFromDiscriminator
 }
 // GetDefaultLength gets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetDefaultLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultLength
-    }
+    return m.defaultLength
 }
 // GetDefaultLifetimeInMinutes gets the defaultLifetimeInMinutes property value. Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetDefaultLifetimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultLifetimeInMinutes
-    }
+    return m.defaultLifetimeInMinutes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,35 +112,19 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetFieldDeseriali
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeTargets
-    }
+    return m.includeTargets
 }
 // GetIsUsableOnce gets the isUsableOnce property value. If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetIsUsableOnce()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isUsableOnce
-    }
+    return m.isUsableOnce
 }
 // GetMaximumLifetimeInMinutes gets the maximumLifetimeInMinutes property value. Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetMaximumLifetimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumLifetimeInMinutes
-    }
+    return m.maximumLifetimeInMinutes
 }
 // GetMinimumLifetimeInMinutes gets the minimumLifetimeInMinutes property value. Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetMinimumLifetimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumLifetimeInMinutes
-    }
+    return m.minimumLifetimeInMinutes
 }
 // Serialize serializes information the current object
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -200,37 +176,25 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) Serialize(writer 
 }
 // SetDefaultLength sets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLength(value *int32)() {
-    if m != nil {
-        m.defaultLength = value
-    }
+    m.defaultLength = value
 }
 // SetDefaultLifetimeInMinutes sets the defaultLifetimeInMinutes property value. Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLifetimeInMinutes(value *int32)() {
-    if m != nil {
-        m.defaultLifetimeInMinutes = value
-    }
+    m.defaultLifetimeInMinutes = value
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
-    if m != nil {
-        m.includeTargets = value
-    }
+    m.includeTargets = value
 }
 // SetIsUsableOnce sets the isUsableOnce property value. If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetIsUsableOnce(value *bool)() {
-    if m != nil {
-        m.isUsableOnce = value
-    }
+    m.isUsableOnce = value
 }
 // SetMaximumLifetimeInMinutes sets the maximumLifetimeInMinutes property value. Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetMaximumLifetimeInMinutes(value *int32)() {
-    if m != nil {
-        m.maximumLifetimeInMinutes = value
-    }
+    m.maximumLifetimeInMinutes = value
 }
 // SetMinimumLifetimeInMinutes sets the minimumLifetimeInMinutes property value. Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetMinimumLifetimeInMinutes(value *int32)() {
-    if m != nil {
-        m.minimumLifetimeInMinutes = value
-    }
+    m.minimumLifetimeInMinutes = value
 }

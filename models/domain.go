@@ -13,7 +13,7 @@ type Domain struct {
     availabilityStatus *string
     // The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
     domainNameReferences []DirectoryObjectable
-    // Domain settings configured by customer when federated with Azure AD. Supports $expand.
+    // Domain settings configured by a customer when federated with Azure AD. Supports $expand.
     federationConfiguration []InternalDomainFederationable
     // The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
     isAdminManaged *bool
@@ -37,7 +37,7 @@ type Domain struct {
     serviceConfigurationRecords []DomainDnsRecordable
     // Status of asynchronous operations scheduled for the domain.
     state DomainStateable
-    // The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+    // The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
     supportedServices []string
     // DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
     verificationDnsRecords []DomainDnsRecordable
@@ -57,35 +57,19 @@ func CreateDomainFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAuthenticationType gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
 func (m *Domain) GetAuthenticationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationType
-    }
+    return m.authenticationType
 }
 // GetAvailabilityStatus gets the availabilityStatus property value. This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
 func (m *Domain) GetAvailabilityStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availabilityStatus
-    }
+    return m.availabilityStatus
 }
 // GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainNameReferences
-    }
+    return m.domainNameReferences
 }
-// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by customer when federated with Azure AD. Supports $expand.
+// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.federationConfiguration
-    }
+    return m.federationConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -284,107 +268,55 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
 func (m *Domain) GetIsAdminManaged()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAdminManaged
-    }
+    return m.isAdminManaged
 }
 // GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
 func (m *Domain) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
+    return m.isDefault
 }
 // GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
 func (m *Domain) GetIsInitial()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInitial
-    }
+    return m.isInitial
 }
 // GetIsRoot gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
 func (m *Domain) GetIsRoot()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRoot
-    }
+    return m.isRoot
 }
 // GetIsVerified gets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
 func (m *Domain) GetIsVerified()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isVerified
-    }
+    return m.isVerified
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
 func (m *Domain) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The model property
 func (m *Domain) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
 func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordNotificationWindowInDays
-    }
+    return m.passwordNotificationWindowInDays
 }
 // GetPasswordValidityPeriodInDays gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
 func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordValidityPeriodInDays
-    }
+    return m.passwordValidityPeriodInDays
 }
 // GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
 func (m *Domain) GetServiceConfigurationRecords()([]DomainDnsRecordable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceConfigurationRecords
-    }
+    return m.serviceConfigurationRecords
 }
 // GetState gets the state property value. Status of asynchronous operations scheduled for the domain.
 func (m *Domain) GetState()(DomainStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
-// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
 func (m *Domain) GetSupportedServices()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedServices
-    }
+    return m.supportedServices
 }
 // GetVerificationDnsRecords gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
 func (m *Domain) GetVerificationDnsRecords()([]DomainDnsRecordable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verificationDnsRecords
-    }
+    return m.verificationDnsRecords
 }
 // Serialize serializes information the current object
 func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -514,103 +446,69 @@ func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAuthenticationType sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
 func (m *Domain) SetAuthenticationType(value *string)() {
-    if m != nil {
-        m.authenticationType = value
-    }
+    m.authenticationType = value
 }
 // SetAvailabilityStatus sets the availabilityStatus property value. This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
 func (m *Domain) SetAvailabilityStatus(value *string)() {
-    if m != nil {
-        m.availabilityStatus = value
-    }
+    m.availabilityStatus = value
 }
 // SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 func (m *Domain) SetDomainNameReferences(value []DirectoryObjectable)() {
-    if m != nil {
-        m.domainNameReferences = value
-    }
+    m.domainNameReferences = value
 }
-// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by customer when federated with Azure AD. Supports $expand.
+// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *Domain) SetFederationConfiguration(value []InternalDomainFederationable)() {
-    if m != nil {
-        m.federationConfiguration = value
-    }
+    m.federationConfiguration = value
 }
 // SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
 func (m *Domain) SetIsAdminManaged(value *bool)() {
-    if m != nil {
-        m.isAdminManaged = value
-    }
+    m.isAdminManaged = value
 }
 // SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
 func (m *Domain) SetIsDefault(value *bool)() {
-    if m != nil {
-        m.isDefault = value
-    }
+    m.isDefault = value
 }
 // SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
 func (m *Domain) SetIsInitial(value *bool)() {
-    if m != nil {
-        m.isInitial = value
-    }
+    m.isInitial = value
 }
 // SetIsRoot sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
 func (m *Domain) SetIsRoot(value *bool)() {
-    if m != nil {
-        m.isRoot = value
-    }
+    m.isRoot = value
 }
 // SetIsVerified sets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
 func (m *Domain) SetIsVerified(value *bool)() {
-    if m != nil {
-        m.isVerified = value
-    }
+    m.isVerified = value
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer property
 func (m *Domain) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The model property
 func (m *Domain) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
 func (m *Domain) SetPasswordNotificationWindowInDays(value *int32)() {
-    if m != nil {
-        m.passwordNotificationWindowInDays = value
-    }
+    m.passwordNotificationWindowInDays = value
 }
 // SetPasswordValidityPeriodInDays sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
 func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
-    if m != nil {
-        m.passwordValidityPeriodInDays = value
-    }
+    m.passwordValidityPeriodInDays = value
 }
 // SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
 func (m *Domain) SetServiceConfigurationRecords(value []DomainDnsRecordable)() {
-    if m != nil {
-        m.serviceConfigurationRecords = value
-    }
+    m.serviceConfigurationRecords = value
 }
 // SetState sets the state property value. Status of asynchronous operations scheduled for the domain.
 func (m *Domain) SetState(value DomainStateable)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
-// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
 func (m *Domain) SetSupportedServices(value []string)() {
-    if m != nil {
-        m.supportedServices = value
-    }
+    m.supportedServices = value
 }
 // SetVerificationDnsRecords sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
 func (m *Domain) SetVerificationDnsRecords(value []DomainDnsRecordable)() {
-    if m != nil {
-        m.verificationDnsRecords = value
-    }
+    m.verificationDnsRecords = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSubmissionResource provides operations to manage the admin singleton.
+// EducationSubmissionResource provides operations to manage the collection of agreement entities.
 type EducationSubmissionResource struct {
     Entity
     // Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
@@ -27,11 +27,7 @@ func CreateEducationSubmissionResourceFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAssignmentResourceUrl gets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
 func (m *EducationSubmissionResource) GetAssignmentResourceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentResourceUrl
-    }
+    return m.assignmentResourceUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSubmissionResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *EducationSubmissionResource) GetFieldDeserializers()(map[string]func(i8
 }
 // GetResource gets the resource property value. Resource object.
 func (m *EducationSubmissionResource) GetResource()(EducationResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // Serialize serializes information the current object
 func (m *EducationSubmissionResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EducationSubmissionResource) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAssignmentResourceUrl sets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
 func (m *EducationSubmissionResource) SetAssignmentResourceUrl(value *string)() {
-    if m != nil {
-        m.assignmentResourceUrl = value
-    }
+    m.assignmentResourceUrl = value
 }
 // SetResource sets the resource property value. Resource object.
 func (m *EducationSubmissionResource) SetResource(value EducationResourceable)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }

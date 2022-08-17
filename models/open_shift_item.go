@@ -40,11 +40,7 @@ func (m *OpenShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOpenSlotCount gets the openSlotCount property value. Count of the number of slots for the given open shift.
 func (m *OpenShiftItem) GetOpenSlotCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.openSlotCount
-    }
+    return m.openSlotCount
 }
 // Serialize serializes information the current object
 func (m *OpenShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *OpenShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetOpenSlotCount sets the openSlotCount property value. Count of the number of slots for the given open shift.
 func (m *OpenShiftItem) SetOpenSlotCount(value *int32)() {
-    if m != nil {
-        m.openSlotCount = value
-    }
+    m.openSlotCount = value
 }

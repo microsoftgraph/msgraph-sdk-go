@@ -9,10 +9,10 @@ type EntitlementManagementSettings struct {
     Entity
     // If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
     durationUntilExternalUserDeletedAfterBlocked *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // One of None, BlockSignIn, or BlockSignInAndDelete.
+    // Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
     externalUserLifecycleAction *AccessPackageExternalUserLifecycleAction
 }
-// NewEntitlementManagementSettings instantiates a new entitlementManagementSettings and sets the default values.
+// NewEntitlementManagementSettings instantiates a new EntitlementManagementSettings and sets the default values.
 func NewEntitlementManagementSettings()(*EntitlementManagementSettings) {
     m := &EntitlementManagementSettings{
         Entity: *NewEntity(),
@@ -27,19 +27,11 @@ func CreateEntitlementManagementSettingsFromDiscriminatorValue(parseNode i878a80
 }
 // GetDurationUntilExternalUserDeletedAfterBlocked gets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) GetDurationUntilExternalUserDeletedAfterBlocked()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationUntilExternalUserDeletedAfterBlocked
-    }
+    return m.durationUntilExternalUserDeletedAfterBlocked
 }
-// GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
+// GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
 func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*AccessPackageExternalUserLifecycleAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUserLifecycleAction
-    }
+    return m.externalUserLifecycleAction
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,13 +81,9 @@ func (m *EntitlementManagementSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetDurationUntilExternalUserDeletedAfterBlocked sets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfterBlocked(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.durationUntilExternalUserDeletedAfterBlocked = value
-    }
+    m.durationUntilExternalUserDeletedAfterBlocked = value
 }
-// SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
+// SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *AccessPackageExternalUserLifecycleAction)() {
-    if m != nil {
-        m.externalUserLifecycleAction = value
-    }
+    m.externalUserLifecycleAction = value
 }

@@ -36,19 +36,11 @@ func CreateThumbnailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Thumbnail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContent gets the content property value. The content stream for the thumbnail.
 func (m *Thumbnail) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Thumbnail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetHeight gets the height property value. The height of the thumbnail, in pixels.
 func (m *Thumbnail) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
+    return m.height
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Thumbnail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSourceItemId gets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
 func (m *Thumbnail) GetSourceItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceItemId
-    }
+    return m.sourceItemId
 }
 // GetUrl gets the url property value. The URL used to fetch the thumbnail content.
 func (m *Thumbnail) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // GetWidth gets the width property value. The width of the thumbnail, in pixels.
 func (m *Thumbnail) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
-    }
+    return m.width
 }
 // Serialize serializes information the current object
 func (m *Thumbnail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *Thumbnail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Thumbnail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContent sets the content property value. The content stream for the thumbnail.
 func (m *Thumbnail) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetHeight sets the height property value. The height of the thumbnail, in pixels.
 func (m *Thumbnail) SetHeight(value *int32)() {
-    if m != nil {
-        m.height = value
-    }
+    m.height = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Thumbnail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSourceItemId sets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
 func (m *Thumbnail) SetSourceItemId(value *string)() {
-    if m != nil {
-        m.sourceItemId = value
-    }
+    m.sourceItemId = value
 }
 // SetUrl sets the url property value. The URL used to fetch the thumbnail content.
 func (m *Thumbnail) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }
 // SetWidth sets the width property value. The width of the thumbnail, in pixels.
 func (m *Thumbnail) SetWidth(value *int32)() {
-    if m != nil {
-        m.width = value
-    }
+    m.width = value
 }

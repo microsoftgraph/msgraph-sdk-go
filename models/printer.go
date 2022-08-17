@@ -23,7 +23,7 @@ type Printer struct {
     // A list of task triggers that are associated with the printer.
     taskTriggers []PrintTaskTriggerable
 }
-// NewPrinter instantiates a new Printer and sets the default values.
+// NewPrinter instantiates a new printer and sets the default values.
 func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),
@@ -38,11 +38,7 @@ func CreatePrinterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetConnectors gets the connectors property value. The connectors that are associated with the printer.
 func (m *Printer) GetConnectors()([]PrintConnectorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectors
-    }
+    return m.connectors
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Printer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,51 +129,27 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetHasPhysicalDevice gets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
 func (m *Printer) GetHasPhysicalDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasPhysicalDevice
-    }
+    return m.hasPhysicalDevice
 }
 // GetIsShared gets the isShared property value. True if the printer is shared; false otherwise. Read-only.
 func (m *Printer) GetIsShared()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isShared
-    }
+    return m.isShared
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
 func (m *Printer) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
 func (m *Printer) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredDateTime
-    }
+    return m.registeredDateTime
 }
 // GetShares gets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *Printer) GetShares()([]PrinterShareable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shares
-    }
+    return m.shares
 }
 // GetTaskTriggers gets the taskTriggers property value. A list of task triggers that are associated with the printer.
 func (m *Printer) GetTaskTriggers()([]PrintTaskTriggerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taskTriggers
-    }
+    return m.taskTriggers
 }
 // Serialize serializes information the current object
 func (m *Printer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -243,43 +215,29 @@ func (m *Printer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetConnectors sets the connectors property value. The connectors that are associated with the printer.
 func (m *Printer) SetConnectors(value []PrintConnectorable)() {
-    if m != nil {
-        m.connectors = value
-    }
+    m.connectors = value
 }
 // SetHasPhysicalDevice sets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
 func (m *Printer) SetHasPhysicalDevice(value *bool)() {
-    if m != nil {
-        m.hasPhysicalDevice = value
-    }
+    m.hasPhysicalDevice = value
 }
 // SetIsShared sets the isShared property value. True if the printer is shared; false otherwise. Read-only.
 func (m *Printer) SetIsShared(value *bool)() {
-    if m != nil {
-        m.isShared = value
-    }
+    m.isShared = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
 func (m *Printer) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
 func (m *Printer) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.registeredDateTime = value
-    }
+    m.registeredDateTime = value
 }
 // SetShares sets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *Printer) SetShares(value []PrinterShareable)() {
-    if m != nil {
-        m.shares = value
-    }
+    m.shares = value
 }
 // SetTaskTriggers sets the taskTriggers property value. A list of task triggers that are associated with the printer.
 func (m *Printer) SetTaskTriggers(value []PrintTaskTriggerable)() {
-    if m != nil {
-        m.taskTriggers = value
-    }
+    m.taskTriggers = value
 }

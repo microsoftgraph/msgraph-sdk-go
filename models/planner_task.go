@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTask provides operations to manage the admin singleton.
+// PlannerTask provides operations to manage the collection of agreementAcceptance entities.
 type PlannerTask struct {
     Entity
     // Number of checklist items with value set to false, representing incomplete items.
@@ -46,9 +46,9 @@ type PlannerTask struct {
     percentComplete *int32
     // Plan ID to which the task belongs.
     planId *string
-    // This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+    // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
     previewType *PlannerPreviewType
-    // Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+    // Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2, 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Additionally, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
     priority *int32
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
     progressTaskBoardFormat PlannerProgressTaskBoardTaskFormatable
@@ -74,123 +74,63 @@ func CreatePlannerTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetActiveChecklistItemCount gets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
 func (m *PlannerTask) GetActiveChecklistItemCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeChecklistItemCount
-    }
+    return m.activeChecklistItemCount
 }
 // GetAppliedCategories gets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
 func (m *PlannerTask) GetAppliedCategories()(PlannerAppliedCategoriesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliedCategories
-    }
+    return m.appliedCategories
 }
 // GetAssignedToTaskBoardFormat gets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *PlannerTask) GetAssignedToTaskBoardFormat()(PlannerAssignedToTaskBoardTaskFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedToTaskBoardFormat
-    }
+    return m.assignedToTaskBoardFormat
 }
 // GetAssigneePriority gets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) GetAssigneePriority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assigneePriority
-    }
+    return m.assigneePriority
 }
 // GetAssignments gets the assignments property value. The set of assignees the task is assigned to.
 func (m *PlannerTask) GetAssignments()(PlannerAssignmentsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetBucketId gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
 func (m *PlannerTask) GetBucketId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bucketId
-    }
+    return m.bucketId
 }
 // GetBucketTaskBoardFormat gets the bucketTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *PlannerTask) GetBucketTaskBoardFormat()(PlannerBucketTaskBoardTaskFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bucketTaskBoardFormat
-    }
+    return m.bucketTaskBoardFormat
 }
 // GetChecklistItemCount gets the checklistItemCount property value. Number of checklist items that are present on the task.
 func (m *PlannerTask) GetChecklistItemCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.checklistItemCount
-    }
+    return m.checklistItemCount
 }
 // GetCompletedBy gets the completedBy property value. Identity of the user that completed the task.
 func (m *PlannerTask) GetCompletedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedBy
-    }
+    return m.completedBy
 }
 // GetCompletedDateTime gets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetConversationThreadId gets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
 func (m *PlannerTask) GetConversationThreadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversationThreadId
-    }
+    return m.conversationThreadId
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user that created the task.
 func (m *PlannerTask) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDetails gets the details property value. Read-only. Nullable. Additional details about the task.
 func (m *PlannerTask) GetDetails()(PlannerTaskDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetDueDateTime gets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueDateTime
-    }
+    return m.dueDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -449,83 +389,43 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetHasDescription gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
 func (m *PlannerTask) GetHasDescription()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasDescription
-    }
+    return m.hasDescription
 }
 // GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) GetOrderHint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderHint
-    }
+    return m.orderHint
 }
 // GetPercentComplete gets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
 func (m *PlannerTask) GetPercentComplete()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.percentComplete
-    }
+    return m.percentComplete
 }
 // GetPlanId gets the planId property value. Plan ID to which the task belongs.
 func (m *PlannerTask) GetPlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.planId
-    }
+    return m.planId
 }
-// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewType
-    }
+    return m.previewType
 }
-// GetPriority gets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// GetPriority gets the priority property value. Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2, 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Additionally, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 func (m *PlannerTask) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetProgressTaskBoardFormat gets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *PlannerTask) GetProgressTaskBoardFormat()(PlannerProgressTaskBoardTaskFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.progressTaskBoardFormat
-    }
+    return m.progressTaskBoardFormat
 }
 // GetReferenceCount gets the referenceCount property value. Number of external references that exist on the task.
 func (m *PlannerTask) GetReferenceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceCount
-    }
+    return m.referenceCount
 }
 // GetStartDateTime gets the startDateTime property value. Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetTitle gets the title property value. Title of the task.
 func (m *PlannerTask) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -688,151 +588,101 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetActiveChecklistItemCount sets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
 func (m *PlannerTask) SetActiveChecklistItemCount(value *int32)() {
-    if m != nil {
-        m.activeChecklistItemCount = value
-    }
+    m.activeChecklistItemCount = value
 }
 // SetAppliedCategories sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
 func (m *PlannerTask) SetAppliedCategories(value PlannerAppliedCategoriesable)() {
-    if m != nil {
-        m.appliedCategories = value
-    }
+    m.appliedCategories = value
 }
 // SetAssignedToTaskBoardFormat sets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *PlannerTask) SetAssignedToTaskBoardFormat(value PlannerAssignedToTaskBoardTaskFormatable)() {
-    if m != nil {
-        m.assignedToTaskBoardFormat = value
-    }
+    m.assignedToTaskBoardFormat = value
 }
 // SetAssigneePriority sets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) SetAssigneePriority(value *string)() {
-    if m != nil {
-        m.assigneePriority = value
-    }
+    m.assigneePriority = value
 }
 // SetAssignments sets the assignments property value. The set of assignees the task is assigned to.
 func (m *PlannerTask) SetAssignments(value PlannerAssignmentsable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
 func (m *PlannerTask) SetBucketId(value *string)() {
-    if m != nil {
-        m.bucketId = value
-    }
+    m.bucketId = value
 }
 // SetBucketTaskBoardFormat sets the bucketTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *PlannerTask) SetBucketTaskBoardFormat(value PlannerBucketTaskBoardTaskFormatable)() {
-    if m != nil {
-        m.bucketTaskBoardFormat = value
-    }
+    m.bucketTaskBoardFormat = value
 }
 // SetChecklistItemCount sets the checklistItemCount property value. Number of checklist items that are present on the task.
 func (m *PlannerTask) SetChecklistItemCount(value *int32)() {
-    if m != nil {
-        m.checklistItemCount = value
-    }
+    m.checklistItemCount = value
 }
 // SetCompletedBy sets the completedBy property value. Identity of the user that completed the task.
 func (m *PlannerTask) SetCompletedBy(value IdentitySetable)() {
-    if m != nil {
-        m.completedBy = value
-    }
+    m.completedBy = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetConversationThreadId sets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
 func (m *PlannerTask) SetConversationThreadId(value *string)() {
-    if m != nil {
-        m.conversationThreadId = value
-    }
+    m.conversationThreadId = value
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user that created the task.
 func (m *PlannerTask) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDetails sets the details property value. Read-only. Nullable. Additional details about the task.
 func (m *PlannerTask) SetDetails(value PlannerTaskDetailsable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetDueDateTime sets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.dueDateTime = value
-    }
+    m.dueDateTime = value
 }
 // SetHasDescription sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
 func (m *PlannerTask) SetHasDescription(value *bool)() {
-    if m != nil {
-        m.hasDescription = value
-    }
+    m.hasDescription = value
 }
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) SetOrderHint(value *string)() {
-    if m != nil {
-        m.orderHint = value
-    }
+    m.orderHint = value
 }
 // SetPercentComplete sets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
 func (m *PlannerTask) SetPercentComplete(value *int32)() {
-    if m != nil {
-        m.percentComplete = value
-    }
+    m.percentComplete = value
 }
 // SetPlanId sets the planId property value. Plan ID to which the task belongs.
 func (m *PlannerTask) SetPlanId(value *string)() {
-    if m != nil {
-        m.planId = value
-    }
+    m.planId = value
 }
-// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
-    if m != nil {
-        m.previewType = value
-    }
+    m.previewType = value
 }
-// SetPriority sets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// SetPriority sets the priority property value. Priority of the task. The valid range of values is between 0 and 10, with the increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2, 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Additionally, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 func (m *PlannerTask) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetProgressTaskBoardFormat sets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *PlannerTask) SetProgressTaskBoardFormat(value PlannerProgressTaskBoardTaskFormatable)() {
-    if m != nil {
-        m.progressTaskBoardFormat = value
-    }
+    m.progressTaskBoardFormat = value
 }
 // SetReferenceCount sets the referenceCount property value. Number of external references that exist on the task.
 func (m *PlannerTask) SetReferenceCount(value *int32)() {
-    if m != nil {
-        m.referenceCount = value
-    }
+    m.referenceCount = value
 }
 // SetStartDateTime sets the startDateTime property value. Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetTitle sets the title property value. Title of the task.
 func (m *PlannerTask) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

@@ -28,19 +28,11 @@ func CreateValidatePropertiesPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ValidatePropertiesPostRequestBody) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ValidatePropertiesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,19 +71,11 @@ func (m *ValidatePropertiesPostRequestBody) GetFieldDeserializers()(map[string]f
 }
 // GetMailNickname gets the mailNickname property value. The mailNickname property
 func (m *ValidatePropertiesPostRequestBody) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
+    return m.mailNickname
 }
 // GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onBehalfOfUserId
-    }
+    return m.onBehalfOfUserId
 }
 // Serialize serializes information the current object
 func (m *ValidatePropertiesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,25 +107,17 @@ func (m *ValidatePropertiesPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ValidatePropertiesPostRequestBody) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetMailNickname sets the mailNickname property value. The mailNickname property
 func (m *ValidatePropertiesPostRequestBody) SetMailNickname(value *string)() {
-    if m != nil {
-        m.mailNickname = value
-    }
+    m.mailNickname = value
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *string)() {
-    if m != nil {
-        m.onBehalfOfUserId = value
-    }
+    m.onBehalfOfUserId = value
 }

@@ -34,27 +34,15 @@ func CreateOptionalClaimFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaim) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdditionalProperties gets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
 func (m *OptionalClaim) GetAdditionalProperties()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalProperties
-    }
+    return m.additionalProperties
 }
 // GetEssential gets the essential property value. If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
 func (m *OptionalClaim) GetEssential()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.essential
-    }
+    return m.essential
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,27 +105,15 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetName gets the name property value. The name of the optional claim.
 func (m *OptionalClaim) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OptionalClaim) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSource gets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
 func (m *OptionalClaim) GetSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // Serialize serializes information the current object
 func (m *OptionalClaim) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -181,37 +157,25 @@ func (m *OptionalClaim) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaim) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdditionalProperties sets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
 func (m *OptionalClaim) SetAdditionalProperties(value []string)() {
-    if m != nil {
-        m.additionalProperties = value
-    }
+    m.additionalProperties = value
 }
 // SetEssential sets the essential property value. If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
 func (m *OptionalClaim) SetEssential(value *bool)() {
-    if m != nil {
-        m.essential = value
-    }
+    m.essential = value
 }
 // SetName sets the name property value. The name of the optional claim.
 func (m *OptionalClaim) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OptionalClaim) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSource sets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
 func (m *OptionalClaim) SetSource(value *string)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }

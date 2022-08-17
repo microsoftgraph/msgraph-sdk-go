@@ -29,27 +29,15 @@ func CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue(
 }
 // GetApplicationName gets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationName
-    }
+    return m.applicationName
 }
 // GetApplicationType gets the applicationType property value. Possible types of Application
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*ApplicationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationType
-    }
+    return m.applicationType
 }
 // GetDeviceCount gets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionAppLearningSummary) GetDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCount
-    }
+    return m.deviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +103,13 @@ func (m *WindowsInformationProtectionAppLearningSummary) Serialize(writer i878a8
 }
 // SetApplicationName sets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationName(value *string)() {
-    if m != nil {
-        m.applicationName = value
-    }
+    m.applicationName = value
 }
 // SetApplicationType sets the applicationType property value. Possible types of Application
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationType(value *ApplicationType)() {
-    if m != nil {
-        m.applicationType = value
-    }
+    m.applicationType = value
 }
 // SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionAppLearningSummary) SetDeviceCount(value *int32)() {
-    if m != nil {
-        m.deviceCount = value
-    }
+    m.deviceCount = value
 }

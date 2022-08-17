@@ -30,27 +30,15 @@ func CreateAuthoredNoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAuthor gets the author property value. Identity information about the note's author.
 func (m *AuthoredNote) GetAuthor()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.author
-    }
+    return m.author
 }
 // GetContent gets the content property value. The content of the note.
 func (m *AuthoredNote) GetContent()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AuthoredNote) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthoredNote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +103,13 @@ func (m *AuthoredNote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAuthor sets the author property value. Identity information about the note's author.
 func (m *AuthoredNote) SetAuthor(value Identityable)() {
-    if m != nil {
-        m.author = value
-    }
+    m.author = value
 }
 // SetContent sets the content property value. The content of the note.
 func (m *AuthoredNote) SetContent(value ItemBodyable)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AuthoredNote) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }

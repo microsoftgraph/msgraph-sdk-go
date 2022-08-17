@@ -39,19 +39,11 @@ func CreateInvitePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
 func (m *InvitePostRequestBody) GetExpirationDateTime()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InvitePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,59 +140,31 @@ func (m *InvitePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetMessage gets the message property value. The message property
 func (m *InvitePostRequestBody) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetPassword gets the password property value. The password property
 func (m *InvitePostRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // GetRecipients gets the recipients property value. The recipients property
 func (m *InvitePostRequestBody) GetRecipients()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
+    return m.recipients
 }
 // GetRequireSignIn gets the requireSignIn property value. The requireSignIn property
 func (m *InvitePostRequestBody) GetRequireSignIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireSignIn
-    }
+    return m.requireSignIn
 }
 // GetRetainInheritedPermissions gets the retainInheritedPermissions property value. The retainInheritedPermissions property
 func (m *InvitePostRequestBody) GetRetainInheritedPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retainInheritedPermissions
-    }
+    return m.retainInheritedPermissions
 }
 // GetRoles gets the roles property value. The roles property
 func (m *InvitePostRequestBody) GetRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
+    return m.roles
 }
 // GetSendInvitation gets the sendInvitation property value. The sendInvitation property
 func (m *InvitePostRequestBody) GetSendInvitation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendInvitation
-    }
+    return m.sendInvitation
 }
 // Serialize serializes information the current object
 func (m *InvitePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -266,55 +230,37 @@ func (m *InvitePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
 func (m *InvitePostRequestBody) SetExpirationDateTime(value *string)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetMessage sets the message property value. The message property
 func (m *InvitePostRequestBody) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetPassword sets the password property value. The password property
 func (m *InvitePostRequestBody) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
 // SetRecipients sets the recipients property value. The recipients property
 func (m *InvitePostRequestBody) SetRecipients(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable)() {
-    if m != nil {
-        m.recipients = value
-    }
+    m.recipients = value
 }
 // SetRequireSignIn sets the requireSignIn property value. The requireSignIn property
 func (m *InvitePostRequestBody) SetRequireSignIn(value *bool)() {
-    if m != nil {
-        m.requireSignIn = value
-    }
+    m.requireSignIn = value
 }
 // SetRetainInheritedPermissions sets the retainInheritedPermissions property value. The retainInheritedPermissions property
 func (m *InvitePostRequestBody) SetRetainInheritedPermissions(value *bool)() {
-    if m != nil {
-        m.retainInheritedPermissions = value
-    }
+    m.retainInheritedPermissions = value
 }
 // SetRoles sets the roles property value. The roles property
 func (m *InvitePostRequestBody) SetRoles(value []string)() {
-    if m != nil {
-        m.roles = value
-    }
+    m.roles = value
 }
 // SetSendInvitation sets the sendInvitation property value. The sendInvitation property
 func (m *InvitePostRequestBody) SetSendInvitation(value *bool)() {
-    if m != nil {
-        m.sendInvitation = value
-    }
+    m.sendInvitation = value
 }

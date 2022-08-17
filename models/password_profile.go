@@ -32,11 +32,7 @@ func CreatePasswordProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordProfile) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetForceChangePasswordNextSignIn gets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
 func (m *PasswordProfile) GetForceChangePasswordNextSignIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.forceChangePasswordNextSignIn
-    }
+    return m.forceChangePasswordNextSignIn
 }
 // GetForceChangePasswordNextSignInWithMfa gets the forceChangePasswordNextSignInWithMfa property value. If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
 func (m *PasswordProfile) GetForceChangePasswordNextSignInWithMfa()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.forceChangePasswordNextSignInWithMfa
-    }
+    return m.forceChangePasswordNextSignInWithMfa
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PasswordProfile) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPassword gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
 func (m *PasswordProfile) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // Serialize serializes information the current object
 func (m *PasswordProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *PasswordProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordProfile) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetForceChangePasswordNextSignIn sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
 func (m *PasswordProfile) SetForceChangePasswordNextSignIn(value *bool)() {
-    if m != nil {
-        m.forceChangePasswordNextSignIn = value
-    }
+    m.forceChangePasswordNextSignIn = value
 }
 // SetForceChangePasswordNextSignInWithMfa sets the forceChangePasswordNextSignInWithMfa property value. If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
 func (m *PasswordProfile) SetForceChangePasswordNextSignInWithMfa(value *bool)() {
-    if m != nil {
-        m.forceChangePasswordNextSignInWithMfa = value
-    }
+    m.forceChangePasswordNextSignInWithMfa = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PasswordProfile) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPassword sets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
 func (m *PasswordProfile) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
