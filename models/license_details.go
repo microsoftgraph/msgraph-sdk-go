@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LicenseDetails provides operations to manage the collection of application entities.
+// LicenseDetails provides operations to manage the collection of agreement entities.
 type LicenseDetails struct {
     Entity
     // Information about the service plans assigned with the license. Read-only, Not nullable
@@ -68,27 +68,15 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetServicePlans gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
 func (m *LicenseDetails) GetServicePlans()([]ServicePlanInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlans
-    }
+    return m.servicePlans
 }
 // GetSkuId gets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
 func (m *LicenseDetails) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
-    }
+    return m.skuId
 }
 // GetSkuPartNumber gets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
 func (m *LicenseDetails) GetSkuPartNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuPartNumber
-    }
+    return m.skuPartNumber
 }
 // Serialize serializes information the current object
 func (m *LicenseDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *LicenseDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetServicePlans sets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
 func (m *LicenseDetails) SetServicePlans(value []ServicePlanInfoable)() {
-    if m != nil {
-        m.servicePlans = value
-    }
+    m.servicePlans = value
 }
 // SetSkuId sets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
 func (m *LicenseDetails) SetSkuId(value *string)() {
-    if m != nil {
-        m.skuId = value
-    }
+    m.skuId = value
 }
 // SetSkuPartNumber sets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
 func (m *LicenseDetails) SetSkuPartNumber(value *string)() {
-    if m != nil {
-        m.skuPartNumber = value
-    }
+    m.skuPartNumber = value
 }

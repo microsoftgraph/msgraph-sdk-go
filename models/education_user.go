@@ -5,52 +5,52 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationUser provides operations to manage the admin singleton.
+// EducationUser provides operations to manage the collection of agreement entities.
 type EducationUser struct {
     Entity
-    // True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
+    // True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
     accountEnabled *bool
     // The licenses that are assigned to the user. Not nullable.
     assignedLicenses []AssignedLicenseable
     // The plans that are assigned to the user. Read-only. Not nullable.
     assignedPlans []AssignedPlanable
-    // List of assignments for the user. Nullable.
+    // Assignments belonging to the user.
     assignments []EducationAssignmentable
     // The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
     businessPhones []string
     // Classes to which the user belongs. Nullable.
     classes []EducationClassable
-    // Entity who created the user.
+    // The entity who created the user.
     createdBy IdentitySetable
-    // The name for the department in which the user works. Supports /$filter.
+    // The name for the department in which the user works. Supports $filter.
     department *string
-    // The name displayed in the address book for the user. Supports $filter and $orderby.
+    // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
     displayName *string
-    // The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+    // Where this user was created from. Possible values are: sis, manual.
     externalSource *EducationExternalSource
-    // The name of the external source this resources was generated from.
+    // The name of the external source this resource was generated from.
     externalSourceDetail *string
-    // The given name (first name) of the user. Supports /$filter.
+    // The given name (first name) of the user. Supports $filter.
     givenName *string
-    // The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+    // The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
     mail *string
-    // Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+    // The mail address of the user.
     mailingAddress PhysicalAddressable
-    // The mail alias for the user. This property must be specified when a user is created. Supports /$filter.
+    // The mail alias for the user. This property must be specified when a user is created. Supports $filter.
     mailNickname *string
-    // The middle name of user.
+    // The middle name of the user.
     middleName *string
     // The primary cellular telephone number for the user.
     mobilePhone *string
     // The officeLocation property
     officeLocation *string
-    // Additional information used to associate the AAD user with it's Active Directory counterpart.
+    // Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
     onPremisesInfo EducationOnPremisesInfoable
-    // Specifies password policies for the user. See standard [user] resource for additional details.
+    // Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
     passwordPolicies *string
-    // Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+    // Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
     passwordProfile PasswordProfileable
-    // The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
+    // The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
     preferredLanguage *string
     // The primaryRole property
     primaryRole *EducationUserRole
@@ -58,9 +58,9 @@ type EducationUser struct {
     provisionedPlans []ProvisionedPlanable
     // The refreshTokensValidFromDateTime property
     refreshTokensValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+    // Related records associated with the user. Read-only.
     relatedContacts []RelatedContactable
-    // Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+    // The address where the user lives.
     residenceAddress PhysicalAddressable
     // When set, the grading rubric attached to the assignment.
     rubrics []EducationRubricable
@@ -70,19 +70,19 @@ type EducationUser struct {
     showInAddressList *bool
     // If the primary role is student, this block will contain student specific data.
     student EducationStudentable
-    // The user's surname (family name or last name). Supports /$filter.
+    // The user's surname (family name or last name). Supports $filter.
     surname *string
     // Classes for which the user is a teacher.
     taughtClasses []EducationClassable
     // If the primary role is teacher, this block will contain teacher specific data.
     teacher EducationTeacherable
-    // A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+    // A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
     usageLocation *string
     // The directory user that corresponds to this user.
     user Userable
-    // The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+    // The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
     userPrincipalName *string
-    // A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
+    // A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
     userType *string
 }
 // NewEducationUser instantiates a new educationUser and sets the default values.
@@ -98,93 +98,49 @@ func NewEducationUser()(*EducationUser) {
 func CreateEducationUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationUser(), nil
 }
-// GetAccountEnabled gets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
+// GetAccountEnabled gets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
 func (m *EducationUser) GetAccountEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountEnabled
-    }
+    return m.accountEnabled
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user. Not nullable.
 func (m *EducationUser) GetAssignedLicenses()([]AssignedLicenseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedLicenses
-    }
+    return m.assignedLicenses
 }
 // GetAssignedPlans gets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.
 func (m *EducationUser) GetAssignedPlans()([]AssignedPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedPlans
-    }
+    return m.assignedPlans
 }
-// GetAssignments gets the assignments property value. List of assignments for the user. Nullable.
+// GetAssignments gets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) GetAssignments()([]EducationAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
 func (m *EducationUser) GetBusinessPhones()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessPhones
-    }
+    return m.businessPhones
 }
 // GetClasses gets the classes property value. Classes to which the user belongs. Nullable.
 func (m *EducationUser) GetClasses()([]EducationClassable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classes
-    }
+    return m.classes
 }
-// GetCreatedBy gets the createdBy property value. Entity who created the user.
+// GetCreatedBy gets the createdBy property value. The entity who created the user.
 func (m *EducationUser) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
-// GetDepartment gets the department property value. The name for the department in which the user works. Supports /$filter.
+// GetDepartment gets the department property value. The name for the department in which the user works. Supports $filter.
 func (m *EducationUser) GetDepartment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.department
-    }
+    return m.department
 }
-// GetDisplayName gets the displayName property value. The name displayed in the address book for the user. Supports $filter and $orderby.
+// GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
 func (m *EducationUser) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
-// GetExternalSource gets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+// GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
 func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalSource
-    }
+    return m.externalSource
 }
-// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resource was generated from.
 func (m *EducationUser) GetExternalSourceDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalSourceDetail
-    }
+    return m.externalSourceDetail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -611,221 +567,113 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetGivenName gets the givenName property value. The given name (first name) of the user. Supports /$filter.
+// GetGivenName gets the givenName property value. The given name (first name) of the user. Supports $filter.
 func (m *EducationUser) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
+    return m.givenName
 }
-// GetMail gets the mail property value. The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+// GetMail gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
 func (m *EducationUser) GetMail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mail
-    }
+    return m.mail
 }
-// GetMailingAddress gets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+// GetMailingAddress gets the mailingAddress property value. The mail address of the user.
 func (m *EducationUser) GetMailingAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailingAddress
-    }
+    return m.mailingAddress
 }
-// GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports /$filter.
+// GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports $filter.
 func (m *EducationUser) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
+    return m.mailNickname
 }
-// GetMiddleName gets the middleName property value. The middle name of user.
+// GetMiddleName gets the middleName property value. The middle name of the user.
 func (m *EducationUser) GetMiddleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middleName
-    }
+    return m.middleName
 }
 // GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user.
 func (m *EducationUser) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
+    return m.mobilePhone
 }
 // GetOfficeLocation gets the officeLocation property value. The officeLocation property
 func (m *EducationUser) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
+    return m.officeLocation
 }
-// GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the AAD user with it's Active Directory counterpart.
+// GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
 func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesInfo
-    }
+    return m.onPremisesInfo
 }
-// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for additional details.
+// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
 func (m *EducationUser) GetPasswordPolicies()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPolicies
-    }
+    return m.passwordPolicies
 }
-// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
 func (m *EducationUser) GetPasswordProfile()(PasswordProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordProfile
-    }
+    return m.passwordProfile
 }
-// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
+// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
 func (m *EducationUser) GetPreferredLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredLanguage
-    }
+    return m.preferredLanguage
 }
 // GetPrimaryRole gets the primaryRole property value. The primaryRole property
 func (m *EducationUser) GetPrimaryRole()(*EducationUserRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryRole
-    }
+    return m.primaryRole
 }
 // GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable.
 func (m *EducationUser) GetProvisionedPlans()([]ProvisionedPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisionedPlans
-    }
+    return m.provisionedPlans
 }
 // GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
 func (m *EducationUser) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.refreshTokensValidFromDateTime
-    }
+    return m.refreshTokensValidFromDateTime
 }
-// GetRelatedContacts gets the relatedContacts property value. Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+// GetRelatedContacts gets the relatedContacts property value. Related records associated with the user. Read-only.
 func (m *EducationUser) GetRelatedContacts()([]RelatedContactable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relatedContacts
-    }
+    return m.relatedContacts
 }
-// GetResidenceAddress gets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+// GetResidenceAddress gets the residenceAddress property value. The address where the user lives.
 func (m *EducationUser) GetResidenceAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.residenceAddress
-    }
+    return m.residenceAddress
 }
 // GetRubrics gets the rubrics property value. When set, the grading rubric attached to the assignment.
 func (m *EducationUser) GetRubrics()([]EducationRubricable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rubrics
-    }
+    return m.rubrics
 }
 // GetSchools gets the schools property value. Schools to which the user belongs. Nullable.
 func (m *EducationUser) GetSchools()([]EducationSchoolable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schools
-    }
+    return m.schools
 }
 // GetShowInAddressList gets the showInAddressList property value. True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
 func (m *EducationUser) GetShowInAddressList()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showInAddressList
-    }
+    return m.showInAddressList
 }
 // GetStudent gets the student property value. If the primary role is student, this block will contain student specific data.
 func (m *EducationUser) GetStudent()(EducationStudentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.student
-    }
+    return m.student
 }
-// GetSurname gets the surname property value. The user's surname (family name or last name). Supports /$filter.
+// GetSurname gets the surname property value. The user's surname (family name or last name). Supports $filter.
 func (m *EducationUser) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
+    return m.surname
 }
 // GetTaughtClasses gets the taughtClasses property value. Classes for which the user is a teacher.
 func (m *EducationUser) GetTaughtClasses()([]EducationClassable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taughtClasses
-    }
+    return m.taughtClasses
 }
 // GetTeacher gets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
 func (m *EducationUser) GetTeacher()(EducationTeacherable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teacher
-    }
+    return m.teacher
 }
-// GetUsageLocation gets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+// GetUsageLocation gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
 func (m *EducationUser) GetUsageLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageLocation
-    }
+    return m.usageLocation
 }
 // GetUser gets the user property value. The directory user that corresponds to this user.
 func (m *EducationUser) GetUser()(Userable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
+    return m.user
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
 func (m *EducationUser) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
-// GetUserType gets the userType property value. A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
+// GetUserType gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
 func (m *EducationUser) GetUserType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userType
-    }
+    return m.userType
 }
 // Serialize serializes information the current object
 func (m *EducationUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1101,231 +949,155 @@ func (m *EducationUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAccountEnabled sets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
+// SetAccountEnabled sets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
 func (m *EducationUser) SetAccountEnabled(value *bool)() {
-    if m != nil {
-        m.accountEnabled = value
-    }
+    m.accountEnabled = value
 }
 // SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user. Not nullable.
 func (m *EducationUser) SetAssignedLicenses(value []AssignedLicenseable)() {
-    if m != nil {
-        m.assignedLicenses = value
-    }
+    m.assignedLicenses = value
 }
 // SetAssignedPlans sets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.
 func (m *EducationUser) SetAssignedPlans(value []AssignedPlanable)() {
-    if m != nil {
-        m.assignedPlans = value
-    }
+    m.assignedPlans = value
 }
-// SetAssignments sets the assignments property value. List of assignments for the user. Nullable.
+// SetAssignments sets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) SetAssignments(value []EducationAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetBusinessPhones sets the businessPhones property value. The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
 func (m *EducationUser) SetBusinessPhones(value []string)() {
-    if m != nil {
-        m.businessPhones = value
-    }
+    m.businessPhones = value
 }
 // SetClasses sets the classes property value. Classes to which the user belongs. Nullable.
 func (m *EducationUser) SetClasses(value []EducationClassable)() {
-    if m != nil {
-        m.classes = value
-    }
+    m.classes = value
 }
-// SetCreatedBy sets the createdBy property value. Entity who created the user.
+// SetCreatedBy sets the createdBy property value. The entity who created the user.
 func (m *EducationUser) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
-// SetDepartment sets the department property value. The name for the department in which the user works. Supports /$filter.
+// SetDepartment sets the department property value. The name for the department in which the user works. Supports $filter.
 func (m *EducationUser) SetDepartment(value *string)() {
-    if m != nil {
-        m.department = value
-    }
+    m.department = value
 }
-// SetDisplayName sets the displayName property value. The name displayed in the address book for the user. Supports $filter and $orderby.
+// SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
 func (m *EducationUser) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
-// SetExternalSource sets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+// SetExternalSource sets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
 func (m *EducationUser) SetExternalSource(value *EducationExternalSource)() {
-    if m != nil {
-        m.externalSource = value
-    }
+    m.externalSource = value
 }
-// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resource was generated from.
 func (m *EducationUser) SetExternalSourceDetail(value *string)() {
-    if m != nil {
-        m.externalSourceDetail = value
-    }
+    m.externalSourceDetail = value
 }
-// SetGivenName sets the givenName property value. The given name (first name) of the user. Supports /$filter.
+// SetGivenName sets the givenName property value. The given name (first name) of the user. Supports $filter.
 func (m *EducationUser) SetGivenName(value *string)() {
-    if m != nil {
-        m.givenName = value
-    }
+    m.givenName = value
 }
-// SetMail sets the mail property value. The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+// SetMail sets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
 func (m *EducationUser) SetMail(value *string)() {
-    if m != nil {
-        m.mail = value
-    }
+    m.mail = value
 }
-// SetMailingAddress sets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+// SetMailingAddress sets the mailingAddress property value. The mail address of the user.
 func (m *EducationUser) SetMailingAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.mailingAddress = value
-    }
+    m.mailingAddress = value
 }
-// SetMailNickname sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports /$filter.
+// SetMailNickname sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports $filter.
 func (m *EducationUser) SetMailNickname(value *string)() {
-    if m != nil {
-        m.mailNickname = value
-    }
+    m.mailNickname = value
 }
-// SetMiddleName sets the middleName property value. The middle name of user.
+// SetMiddleName sets the middleName property value. The middle name of the user.
 func (m *EducationUser) SetMiddleName(value *string)() {
-    if m != nil {
-        m.middleName = value
-    }
+    m.middleName = value
 }
 // SetMobilePhone sets the mobilePhone property value. The primary cellular telephone number for the user.
 func (m *EducationUser) SetMobilePhone(value *string)() {
-    if m != nil {
-        m.mobilePhone = value
-    }
+    m.mobilePhone = value
 }
 // SetOfficeLocation sets the officeLocation property value. The officeLocation property
 func (m *EducationUser) SetOfficeLocation(value *string)() {
-    if m != nil {
-        m.officeLocation = value
-    }
+    m.officeLocation = value
 }
-// SetOnPremisesInfo sets the onPremisesInfo property value. Additional information used to associate the AAD user with it's Active Directory counterpart.
+// SetOnPremisesInfo sets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
 func (m *EducationUser) SetOnPremisesInfo(value EducationOnPremisesInfoable)() {
-    if m != nil {
-        m.onPremisesInfo = value
-    }
+    m.onPremisesInfo = value
 }
-// SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for additional details.
+// SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
 func (m *EducationUser) SetPasswordPolicies(value *string)() {
-    if m != nil {
-        m.passwordPolicies = value
-    }
+    m.passwordPolicies = value
 }
-// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
 func (m *EducationUser) SetPasswordProfile(value PasswordProfileable)() {
-    if m != nil {
-        m.passwordProfile = value
-    }
+    m.passwordProfile = value
 }
-// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
+// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
 func (m *EducationUser) SetPreferredLanguage(value *string)() {
-    if m != nil {
-        m.preferredLanguage = value
-    }
+    m.preferredLanguage = value
 }
 // SetPrimaryRole sets the primaryRole property value. The primaryRole property
 func (m *EducationUser) SetPrimaryRole(value *EducationUserRole)() {
-    if m != nil {
-        m.primaryRole = value
-    }
+    m.primaryRole = value
 }
 // SetProvisionedPlans sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable.
 func (m *EducationUser) SetProvisionedPlans(value []ProvisionedPlanable)() {
-    if m != nil {
-        m.provisionedPlans = value
-    }
+    m.provisionedPlans = value
 }
 // SetRefreshTokensValidFromDateTime sets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
 func (m *EducationUser) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.refreshTokensValidFromDateTime = value
-    }
+    m.refreshTokensValidFromDateTime = value
 }
-// SetRelatedContacts sets the relatedContacts property value. Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+// SetRelatedContacts sets the relatedContacts property value. Related records associated with the user. Read-only.
 func (m *EducationUser) SetRelatedContacts(value []RelatedContactable)() {
-    if m != nil {
-        m.relatedContacts = value
-    }
+    m.relatedContacts = value
 }
-// SetResidenceAddress sets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+// SetResidenceAddress sets the residenceAddress property value. The address where the user lives.
 func (m *EducationUser) SetResidenceAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.residenceAddress = value
-    }
+    m.residenceAddress = value
 }
 // SetRubrics sets the rubrics property value. When set, the grading rubric attached to the assignment.
 func (m *EducationUser) SetRubrics(value []EducationRubricable)() {
-    if m != nil {
-        m.rubrics = value
-    }
+    m.rubrics = value
 }
 // SetSchools sets the schools property value. Schools to which the user belongs. Nullable.
 func (m *EducationUser) SetSchools(value []EducationSchoolable)() {
-    if m != nil {
-        m.schools = value
-    }
+    m.schools = value
 }
 // SetShowInAddressList sets the showInAddressList property value. True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
 func (m *EducationUser) SetShowInAddressList(value *bool)() {
-    if m != nil {
-        m.showInAddressList = value
-    }
+    m.showInAddressList = value
 }
 // SetStudent sets the student property value. If the primary role is student, this block will contain student specific data.
 func (m *EducationUser) SetStudent(value EducationStudentable)() {
-    if m != nil {
-        m.student = value
-    }
+    m.student = value
 }
-// SetSurname sets the surname property value. The user's surname (family name or last name). Supports /$filter.
+// SetSurname sets the surname property value. The user's surname (family name or last name). Supports $filter.
 func (m *EducationUser) SetSurname(value *string)() {
-    if m != nil {
-        m.surname = value
-    }
+    m.surname = value
 }
 // SetTaughtClasses sets the taughtClasses property value. Classes for which the user is a teacher.
 func (m *EducationUser) SetTaughtClasses(value []EducationClassable)() {
-    if m != nil {
-        m.taughtClasses = value
-    }
+    m.taughtClasses = value
 }
 // SetTeacher sets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
 func (m *EducationUser) SetTeacher(value EducationTeacherable)() {
-    if m != nil {
-        m.teacher = value
-    }
+    m.teacher = value
 }
-// SetUsageLocation sets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+// SetUsageLocation sets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
 func (m *EducationUser) SetUsageLocation(value *string)() {
-    if m != nil {
-        m.usageLocation = value
-    }
+    m.usageLocation = value
 }
 // SetUser sets the user property value. The directory user that corresponds to this user.
 func (m *EducationUser) SetUser(value Userable)() {
-    if m != nil {
-        m.user = value
-    }
+    m.user = value
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
 func (m *EducationUser) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }
-// SetUserType sets the userType property value. A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
+// SetUserType sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
 func (m *EducationUser) SetUserType(value *string)() {
-    if m != nil {
-        m.userType = value
-    }
+    m.userType = value
 }

@@ -25,11 +25,7 @@ func CreateIosHomeScreenAppFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetBundleID gets the bundleID property value. BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
 func (m *IosHomeScreenApp) GetBundleID()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleID
-    }
+    return m.bundleID
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosHomeScreenApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *IosHomeScreenApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetBundleID sets the bundleID property value. BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
 func (m *IosHomeScreenApp) SetBundleID(value *string)() {
-    if m != nil {
-        m.bundleID = value
-    }
+    m.bundleID = value
 }

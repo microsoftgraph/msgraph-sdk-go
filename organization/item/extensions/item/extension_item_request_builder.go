@@ -22,7 +22,7 @@ type ExtensionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the organization resource. Nullable.
+// ExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the organization. Read-only. Nullable.
 type ExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ExtensionItemRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of open extensions defined for the organization resource. Nullable.
+// CreateGetRequestInformation the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the organization resource. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ExtensionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseH
     }
     return nil
 }
-// Get the collection of open extensions defined for the organization resource. Nullable.
+// Get the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the organization resource. Nullable.
+// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtensionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

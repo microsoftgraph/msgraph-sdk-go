@@ -81,75 +81,39 @@ func CreateWindowsPhone81GeneralConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetApplyOnlyToWindowsPhone81 gets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
 func (m *WindowsPhone81GeneralConfiguration) GetApplyOnlyToWindowsPhone81()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyOnlyToWindowsPhone81
-    }
+    return m.applyOnlyToWindowsPhone81
 }
 // GetAppsBlockCopyPaste gets the appsBlockCopyPaste property value. Indicates whether or not to block copy paste.
 func (m *WindowsPhone81GeneralConfiguration) GetAppsBlockCopyPaste()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsBlockCopyPaste
-    }
+    return m.appsBlockCopyPaste
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Indicates whether or not to block bluetooth.
 func (m *WindowsPhone81GeneralConfiguration) GetBluetoothBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlocked
-    }
+    return m.bluetoothBlocked
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block camera.
 func (m *WindowsPhone81GeneralConfiguration) GetCameraBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameraBlocked
-    }
+    return m.cameraBlocked
 }
 // GetCellularBlockWifiTethering gets the cellularBlockWifiTethering property value. Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
 func (m *WindowsPhone81GeneralConfiguration) GetCellularBlockWifiTethering()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockWifiTethering
-    }
+    return m.cellularBlockWifiTethering
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppListType()(*AppListType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantAppListType
-    }
+    return m.compliantAppListType
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppsList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantAppsList
-    }
+    return m.compliantAppsList
 }
 // GetDiagnosticDataBlockSubmission gets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *WindowsPhone81GeneralConfiguration) GetDiagnosticDataBlockSubmission()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.diagnosticDataBlockSubmission
-    }
+    return m.diagnosticDataBlockSubmission
 }
 // GetEmailBlockAddingAccounts gets the emailBlockAddingAccounts property value. Indicates whether or not to block custom email accounts.
 func (m *WindowsPhone81GeneralConfiguration) GetEmailBlockAddingAccounts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailBlockAddingAccounts
-    }
+    return m.emailBlockAddingAccounts
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81GeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -452,163 +416,83 @@ func (m *WindowsPhone81GeneralConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetLocationServicesBlocked gets the locationServicesBlocked property value. Indicates whether or not to block location services.
 func (m *WindowsPhone81GeneralConfiguration) GetLocationServicesBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationServicesBlocked
-    }
+    return m.locationServicesBlocked
 }
 // GetMicrosoftAccountBlocked gets the microsoftAccountBlocked property value. Indicates whether or not to block using a Microsoft Account.
 func (m *WindowsPhone81GeneralConfiguration) GetMicrosoftAccountBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftAccountBlocked
-    }
+    return m.microsoftAccountBlocked
 }
 // GetNfcBlocked gets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
 func (m *WindowsPhone81GeneralConfiguration) GetNfcBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nfcBlocked
-    }
+    return m.nfcBlocked
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Indicates whether or not to block syncing the calendar.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordBlockSimple()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockSimple
-    }
+    return m.passwordBlockSimple
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinimumCharacterSetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumCharacterSetCount
-    }
+    return m.passwordMinimumCharacterSetCount
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before screen timeout.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passwordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequired gets the passwordRequired property value. Indicates whether or not to require a password.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset.
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
 func (m *WindowsPhone81GeneralConfiguration) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
+    return m.screenCaptureBlocked
 }
 // GetStorageBlockRemovableStorage gets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage.
 func (m *WindowsPhone81GeneralConfiguration) GetStorageBlockRemovableStorage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockRemovableStorage
-    }
+    return m.storageBlockRemovableStorage
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Indicates whether or not to require encryption.
 func (m *WindowsPhone81GeneralConfiguration) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // GetWebBrowserBlocked gets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
 func (m *WindowsPhone81GeneralConfiguration) GetWebBrowserBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webBrowserBlocked
-    }
+    return m.webBrowserBlocked
 }
 // GetWifiBlockAutomaticConnectHotspots gets the wifiBlockAutomaticConnectHotspots property value. Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
 func (m *WindowsPhone81GeneralConfiguration) GetWifiBlockAutomaticConnectHotspots()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBlockAutomaticConnectHotspots
-    }
+    return m.wifiBlockAutomaticConnectHotspots
 }
 // GetWifiBlocked gets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
 func (m *WindowsPhone81GeneralConfiguration) GetWifiBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBlocked
-    }
+    return m.wifiBlocked
 }
 // GetWifiBlockHotspotReporting gets the wifiBlockHotspotReporting property value. Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
 func (m *WindowsPhone81GeneralConfiguration) GetWifiBlockHotspotReporting()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBlockHotspotReporting
-    }
+    return m.wifiBlockHotspotReporting
 }
 // GetWindowsStoreBlocked gets the windowsStoreBlocked property value. Indicates whether or not to block the Windows Store.
 func (m *WindowsPhone81GeneralConfiguration) GetWindowsStoreBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsStoreBlocked
-    }
+    return m.windowsStoreBlocked
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81GeneralConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -800,175 +684,117 @@ func (m *WindowsPhone81GeneralConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetApplyOnlyToWindowsPhone81 sets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
 func (m *WindowsPhone81GeneralConfiguration) SetApplyOnlyToWindowsPhone81(value *bool)() {
-    if m != nil {
-        m.applyOnlyToWindowsPhone81 = value
-    }
+    m.applyOnlyToWindowsPhone81 = value
 }
 // SetAppsBlockCopyPaste sets the appsBlockCopyPaste property value. Indicates whether or not to block copy paste.
 func (m *WindowsPhone81GeneralConfiguration) SetAppsBlockCopyPaste(value *bool)() {
-    if m != nil {
-        m.appsBlockCopyPaste = value
-    }
+    m.appsBlockCopyPaste = value
 }
 // SetBluetoothBlocked sets the bluetoothBlocked property value. Indicates whether or not to block bluetooth.
 func (m *WindowsPhone81GeneralConfiguration) SetBluetoothBlocked(value *bool)() {
-    if m != nil {
-        m.bluetoothBlocked = value
-    }
+    m.bluetoothBlocked = value
 }
 // SetCameraBlocked sets the cameraBlocked property value. Indicates whether or not to block camera.
 func (m *WindowsPhone81GeneralConfiguration) SetCameraBlocked(value *bool)() {
-    if m != nil {
-        m.cameraBlocked = value
-    }
+    m.cameraBlocked = value
 }
 // SetCellularBlockWifiTethering sets the cellularBlockWifiTethering property value. Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
 func (m *WindowsPhone81GeneralConfiguration) SetCellularBlockWifiTethering(value *bool)() {
-    if m != nil {
-        m.cellularBlockWifiTethering = value
-    }
+    m.cellularBlockWifiTethering = value
 }
 // SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *WindowsPhone81GeneralConfiguration) SetCompliantAppListType(value *AppListType)() {
-    if m != nil {
-        m.compliantAppListType = value
-    }
+    m.compliantAppListType = value
 }
 // SetCompliantAppsList sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
 func (m *WindowsPhone81GeneralConfiguration) SetCompliantAppsList(value []AppListItemable)() {
-    if m != nil {
-        m.compliantAppsList = value
-    }
+    m.compliantAppsList = value
 }
 // SetDiagnosticDataBlockSubmission sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
 func (m *WindowsPhone81GeneralConfiguration) SetDiagnosticDataBlockSubmission(value *bool)() {
-    if m != nil {
-        m.diagnosticDataBlockSubmission = value
-    }
+    m.diagnosticDataBlockSubmission = value
 }
 // SetEmailBlockAddingAccounts sets the emailBlockAddingAccounts property value. Indicates whether or not to block custom email accounts.
 func (m *WindowsPhone81GeneralConfiguration) SetEmailBlockAddingAccounts(value *bool)() {
-    if m != nil {
-        m.emailBlockAddingAccounts = value
-    }
+    m.emailBlockAddingAccounts = value
 }
 // SetLocationServicesBlocked sets the locationServicesBlocked property value. Indicates whether or not to block location services.
 func (m *WindowsPhone81GeneralConfiguration) SetLocationServicesBlocked(value *bool)() {
-    if m != nil {
-        m.locationServicesBlocked = value
-    }
+    m.locationServicesBlocked = value
 }
 // SetMicrosoftAccountBlocked sets the microsoftAccountBlocked property value. Indicates whether or not to block using a Microsoft Account.
 func (m *WindowsPhone81GeneralConfiguration) SetMicrosoftAccountBlocked(value *bool)() {
-    if m != nil {
-        m.microsoftAccountBlocked = value
-    }
+    m.microsoftAccountBlocked = value
 }
 // SetNfcBlocked sets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
 func (m *WindowsPhone81GeneralConfiguration) SetNfcBlocked(value *bool)() {
-    if m != nil {
-        m.nfcBlocked = value
-    }
+    m.nfcBlocked = value
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Indicates whether or not to block syncing the calendar.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordBlockSimple(value *bool)() {
-    if m != nil {
-        m.passwordBlockSimple = value
-    }
+    m.passwordBlockSimple = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    if m != nil {
-        m.passwordMinimumCharacterSetCount = value
-    }
+    m.passwordMinimumCharacterSetCount = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of passwords.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before screen timeout.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Indicates whether or not to require a password.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset.
 func (m *WindowsPhone81GeneralConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
 func (m *WindowsPhone81GeneralConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.screenCaptureBlocked = value
-    }
+    m.screenCaptureBlocked = value
 }
 // SetStorageBlockRemovableStorage sets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage.
 func (m *WindowsPhone81GeneralConfiguration) SetStorageBlockRemovableStorage(value *bool)() {
-    if m != nil {
-        m.storageBlockRemovableStorage = value
-    }
+    m.storageBlockRemovableStorage = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Indicates whether or not to require encryption.
 func (m *WindowsPhone81GeneralConfiguration) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }
 // SetWebBrowserBlocked sets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
 func (m *WindowsPhone81GeneralConfiguration) SetWebBrowserBlocked(value *bool)() {
-    if m != nil {
-        m.webBrowserBlocked = value
-    }
+    m.webBrowserBlocked = value
 }
 // SetWifiBlockAutomaticConnectHotspots sets the wifiBlockAutomaticConnectHotspots property value. Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
 func (m *WindowsPhone81GeneralConfiguration) SetWifiBlockAutomaticConnectHotspots(value *bool)() {
-    if m != nil {
-        m.wifiBlockAutomaticConnectHotspots = value
-    }
+    m.wifiBlockAutomaticConnectHotspots = value
 }
 // SetWifiBlocked sets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
 func (m *WindowsPhone81GeneralConfiguration) SetWifiBlocked(value *bool)() {
-    if m != nil {
-        m.wifiBlocked = value
-    }
+    m.wifiBlocked = value
 }
 // SetWifiBlockHotspotReporting sets the wifiBlockHotspotReporting property value. Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
 func (m *WindowsPhone81GeneralConfiguration) SetWifiBlockHotspotReporting(value *bool)() {
-    if m != nil {
-        m.wifiBlockHotspotReporting = value
-    }
+    m.wifiBlockHotspotReporting = value
 }
 // SetWindowsStoreBlocked sets the windowsStoreBlocked property value. Indicates whether or not to block the Windows Store.
 func (m *WindowsPhone81GeneralConfiguration) SetWindowsStoreBlocked(value *bool)() {
-    if m != nil {
-        m.windowsStoreBlocked = value
-    }
+    m.windowsStoreBlocked = value
 }

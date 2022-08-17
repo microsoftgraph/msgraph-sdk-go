@@ -34,35 +34,19 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(pars
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDevice gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDevice()(Deviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.device
-    }
+    return m.device
 }
 // GetDeviceTag gets the deviceTag property value. Tags containing app metadata.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDeviceTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceTag
-    }
+    return m.deviceTag
 }
 // GetDisplayName gets the displayName property value. The name of the device on which this app is registered.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,11 +105,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
 }
 // GetPhoneAppVersion gets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetPhoneAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneAppVersion
-    }
+    return m.phoneAppVersion
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d23
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDevice sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDevice(value Deviceable)() {
-    if m != nil {
-        m.device = value
-    }
+    m.device = value
 }
 // SetDeviceTag sets the deviceTag property value. Tags containing app metadata.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDeviceTag(value *string)() {
-    if m != nil {
-        m.deviceTag = value
-    }
+    m.deviceTag = value
 }
 // SetDisplayName sets the displayName property value. The name of the device on which this app is registered.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPhoneAppVersion sets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetPhoneAppVersion(value *string)() {
-    if m != nil {
-        m.phoneAppVersion = value
-    }
+    m.phoneAppVersion = value
 }

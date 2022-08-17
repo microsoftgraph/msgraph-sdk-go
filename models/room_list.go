@@ -27,11 +27,7 @@ func CreateRoomListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the room list.
 func (m *RoomList) GetEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetRooms gets the rooms property value. The rooms property
 func (m *RoomList) GetRooms()([]Roomable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rooms
-    }
+    return m.rooms
 }
 // Serialize serializes information the current object
 func (m *RoomList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *RoomList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the room list.
 func (m *RoomList) SetEmailAddress(value *string)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }
 // SetRooms sets the rooms property value. The rooms property
 func (m *RoomList) SetRooms(value []Roomable)() {
-    if m != nil {
-        m.rooms = value
-    }
+    m.rooms = value
 }

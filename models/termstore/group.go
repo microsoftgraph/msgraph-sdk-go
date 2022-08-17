@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Group provides operations to manage the admin singleton.
+// Group provides operations to manage the collection of agreement entities.
 type Group struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Date and time of the group creation. Read-only.
@@ -37,27 +37,15 @@ func CreateGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of the group creation. Read-only.
 func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Description that gives details on the term usage.
 func (m *Group) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Name of the group.
 func (m *Group) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,27 +118,15 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetParentSiteId gets the parentSiteId property value. ID of the parent site of this group.
 func (m *Group) GetParentSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentSiteId
-    }
+    return m.parentSiteId
 }
 // GetScope gets the scope property value. Returns the type of the group. Possible values are global, system, and siteCollection.
 func (m *Group) GetScope()(*TermGroupScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetSets gets the sets property value. All sets under the group in a term [store].
 func (m *Group) GetSets()([]Setable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sets
-    }
+    return m.sets
 }
 // Serialize serializes information the current object
 func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,37 +179,25 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of the group creation. Read-only.
 func (m *Group) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Description that gives details on the term usage.
 func (m *Group) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Name of the group.
 func (m *Group) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetParentSiteId sets the parentSiteId property value. ID of the parent site of this group.
 func (m *Group) SetParentSiteId(value *string)() {
-    if m != nil {
-        m.parentSiteId = value
-    }
+    m.parentSiteId = value
 }
 // SetScope sets the scope property value. Returns the type of the group. Possible values are global, system, and siteCollection.
 func (m *Group) SetScope(value *TermGroupScope)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetSets sets the sets property value. All sets under the group in a term [store].
 func (m *Group) SetSets(value []Setable)() {
-    if m != nil {
-        m.sets = value
-    }
+    m.sets = value
 }

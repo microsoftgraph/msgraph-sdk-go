@@ -29,19 +29,11 @@ func CreateRedirectPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
 func (m *RedirectPostRequestBody) GetCallbackUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callbackUri
-    }
+    return m.callbackUri
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,19 +76,11 @@ func (m *RedirectPostRequestBody) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetTargets gets the targets property value. The targets property
 func (m *RedirectPostRequestBody) GetTargets()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InvitationParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targets
-    }
+    return m.targets
 }
 // GetTimeout gets the timeout property value. The timeout property
 func (m *RedirectPostRequestBody) GetTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeout
-    }
+    return m.timeout
 }
 // Serialize serializes information the current object
 func (m *RedirectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -132,25 +116,17 @@ func (m *RedirectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property
 func (m *RedirectPostRequestBody) SetCallbackUri(value *string)() {
-    if m != nil {
-        m.callbackUri = value
-    }
+    m.callbackUri = value
 }
 // SetTargets sets the targets property value. The targets property
 func (m *RedirectPostRequestBody) SetTargets(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InvitationParticipantInfoable)() {
-    if m != nil {
-        m.targets = value
-    }
+    m.targets = value
 }
 // SetTimeout sets the timeout property value. The timeout property
 func (m *RedirectPostRequestBody) SetTimeout(value *int32)() {
-    if m != nil {
-        m.timeout = value
-    }
+    m.timeout = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarPermission provides operations to manage the collection of application entities.
+// CalendarPermission provides operations to manage the collection of agreement entities.
 type CalendarPermission struct {
     Entity
     // List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
@@ -33,19 +33,11 @@ func CreateCalendarPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAllowedRoles gets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
 func (m *CalendarPermission) GetAllowedRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedRoles
-    }
+    return m.allowedRoles
 }
 // GetEmailAddress gets the emailAddress property value. Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
 func (m *CalendarPermission) GetEmailAddress()(EmailAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,27 +100,15 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetIsInsideOrganization gets the isInsideOrganization property value. True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
 func (m *CalendarPermission) GetIsInsideOrganization()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInsideOrganization
-    }
+    return m.isInsideOrganization
 }
 // GetIsRemovable gets the isRemovable property value. True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
 func (m *CalendarPermission) GetIsRemovable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRemovable
-    }
+    return m.isRemovable
 }
 // GetRole gets the role property value. Current permission level of the calendar sharee or delegate.
 func (m *CalendarPermission) GetRole()(*CalendarRoleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.role
-    }
+    return m.role
 }
 // Serialize serializes information the current object
 func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,31 +151,21 @@ func (m *CalendarPermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAllowedRoles sets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
 func (m *CalendarPermission) SetAllowedRoles(value []string)() {
-    if m != nil {
-        m.allowedRoles = value
-    }
+    m.allowedRoles = value
 }
 // SetEmailAddress sets the emailAddress property value. Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
 func (m *CalendarPermission) SetEmailAddress(value EmailAddressable)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }
 // SetIsInsideOrganization sets the isInsideOrganization property value. True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
 func (m *CalendarPermission) SetIsInsideOrganization(value *bool)() {
-    if m != nil {
-        m.isInsideOrganization = value
-    }
+    m.isInsideOrganization = value
 }
 // SetIsRemovable sets the isRemovable property value. True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
 func (m *CalendarPermission) SetIsRemovable(value *bool)() {
-    if m != nil {
-        m.isRemovable = value
-    }
+    m.isRemovable = value
 }
 // SetRole sets the role property value. Current permission level of the calendar sharee or delegate.
 func (m *CalendarPermission) SetRole(value *CalendarRoleType)() {
-    if m != nil {
-        m.role = value
-    }
+    m.role = value
 }

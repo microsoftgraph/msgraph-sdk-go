@@ -34,27 +34,15 @@ func CreatePublicInnerErrorFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicInnerError) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. The error code.
 func (m *PublicInnerError) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetDetails gets the details property value. A collection of error details.
 func (m *PublicInnerError) GetDetails()([]PublicErrorDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PublicInnerError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,27 +105,15 @@ func (m *PublicInnerError) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetMessage gets the message property value. The error message.
 func (m *PublicInnerError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PublicInnerError) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTarget gets the target property value. The target of the error.
 func (m *PublicInnerError) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *PublicInnerError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *PublicInnerError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicInnerError) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. The error code.
 func (m *PublicInnerError) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetDetails sets the details property value. A collection of error details.
 func (m *PublicInnerError) SetDetails(value []PublicErrorDetailable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetMessage sets the message property value. The error message.
 func (m *PublicInnerError) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PublicInnerError) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTarget sets the target property value. The target of the error.
 func (m *PublicInnerError) SetTarget(value *string)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

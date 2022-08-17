@@ -26,11 +26,7 @@ func CreateRemoveKeyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveKeyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoveKeyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,19 +55,11 @@ func (m *RemoveKeyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetKeyId gets the keyId property value. The keyId property
 func (m *RemoveKeyPostRequestBody) GetKeyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyId
-    }
+    return m.keyId
 }
 // GetProof gets the proof property value. The proof property
 func (m *RemoveKeyPostRequestBody) GetProof()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proof
-    }
+    return m.proof
 }
 // Serialize serializes information the current object
 func (m *RemoveKeyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *RemoveKeyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveKeyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKeyId sets the keyId property value. The keyId property
 func (m *RemoveKeyPostRequestBody) SetKeyId(value *string)() {
-    if m != nil {
-        m.keyId = value
-    }
+    m.keyId = value
 }
 // SetProof sets the proof property value. The proof property
 func (m *RemoveKeyPostRequestBody) SetProof(value *string)() {
-    if m != nil {
-        m.proof = value
-    }
+    m.proof = value
 }

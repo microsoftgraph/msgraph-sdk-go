@@ -22,7 +22,7 @@ type DelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters get delegatedPermissionClassifications from servicePrincipals
 type DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// CreateGetRequestInformation get delegatedPermissionClassifications from servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration get delegatedPermissionClassifications from servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) DeleteWithRequestC
     }
     return nil
 }
-// Get the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// Get get delegatedPermissionClassifications from servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler get delegatedPermissionClassifications from servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

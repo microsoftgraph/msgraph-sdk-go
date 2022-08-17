@@ -9,7 +9,7 @@ import (
 type NetworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+    // Name of the application managing the network connection (for example, Facebook or SMTP).
     applicationName *string
     // Destination IP address (of the network connection).
     destinationAddress *string
@@ -67,75 +67,39 @@ func CreateNetworkConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkConnection) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+// GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
 func (m *NetworkConnection) GetApplicationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationName
-    }
+    return m.applicationName
 }
 // GetDestinationAddress gets the destinationAddress property value. Destination IP address (of the network connection).
 func (m *NetworkConnection) GetDestinationAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationAddress
-    }
+    return m.destinationAddress
 }
 // GetDestinationDomain gets the destinationDomain property value. Destination domain portion of the destination URL. (for example 'www.contoso.com').
 func (m *NetworkConnection) GetDestinationDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationDomain
-    }
+    return m.destinationDomain
 }
 // GetDestinationLocation gets the destinationLocation property value. Location (by IP address mapping) associated with the destination of a network connection.
 func (m *NetworkConnection) GetDestinationLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationLocation
-    }
+    return m.destinationLocation
 }
 // GetDestinationPort gets the destinationPort property value. Destination port (of the network connection).
 func (m *NetworkConnection) GetDestinationPort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationPort
-    }
+    return m.destinationPort
 }
 // GetDestinationUrl gets the destinationUrl property value. Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
 func (m *NetworkConnection) GetDestinationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationUrl
-    }
+    return m.destinationUrl
 }
 // GetDirection gets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
 func (m *NetworkConnection) GetDirection()(*ConnectionDirection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.direction
-    }
+    return m.direction
 }
 // GetDomainRegisteredDateTime gets the domainRegisteredDateTime property value. Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *NetworkConnection) GetDomainRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainRegisteredDateTime
-    }
+    return m.domainRegisteredDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -354,107 +318,55 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetLocalDnsName gets the localDnsName property value. The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
 func (m *NetworkConnection) GetLocalDnsName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localDnsName
-    }
+    return m.localDnsName
 }
 // GetNatDestinationAddress gets the natDestinationAddress property value. Network Address Translation destination IP address.
 func (m *NetworkConnection) GetNatDestinationAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natDestinationAddress
-    }
+    return m.natDestinationAddress
 }
 // GetNatDestinationPort gets the natDestinationPort property value. Network Address Translation destination port.
 func (m *NetworkConnection) GetNatDestinationPort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natDestinationPort
-    }
+    return m.natDestinationPort
 }
 // GetNatSourceAddress gets the natSourceAddress property value. Network Address Translation source IP address.
 func (m *NetworkConnection) GetNatSourceAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natSourceAddress
-    }
+    return m.natSourceAddress
 }
 // GetNatSourcePort gets the natSourcePort property value. Network Address Translation source port.
 func (m *NetworkConnection) GetNatSourcePort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natSourcePort
-    }
+    return m.natSourcePort
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *NetworkConnection) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
 func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protocol
-    }
+    return m.protocol
 }
 // GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
 func (m *NetworkConnection) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetSourceAddress gets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).
 func (m *NetworkConnection) GetSourceAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceAddress
-    }
+    return m.sourceAddress
 }
 // GetSourceLocation gets the sourceLocation property value. Location (by IP address mapping) associated with the source of a network connection.
 func (m *NetworkConnection) GetSourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceLocation
-    }
+    return m.sourceLocation
 }
 // GetSourcePort gets the sourcePort property value. Source (i.e. origin) IP port (of the network connection).
 func (m *NetworkConnection) GetSourcePort()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourcePort
-    }
+    return m.sourcePort
 }
 // GetStatus gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
 func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUrlParameters gets the urlParameters property value. Parameters (suffix) of the destination URL.
 func (m *NetworkConnection) GetUrlParameters()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urlParameters
-    }
+    return m.urlParameters
 }
 // Serialize serializes information the current object
 func (m *NetworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -597,133 +509,89 @@ func (m *NetworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkConnection) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+// SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
 func (m *NetworkConnection) SetApplicationName(value *string)() {
-    if m != nil {
-        m.applicationName = value
-    }
+    m.applicationName = value
 }
 // SetDestinationAddress sets the destinationAddress property value. Destination IP address (of the network connection).
 func (m *NetworkConnection) SetDestinationAddress(value *string)() {
-    if m != nil {
-        m.destinationAddress = value
-    }
+    m.destinationAddress = value
 }
 // SetDestinationDomain sets the destinationDomain property value. Destination domain portion of the destination URL. (for example 'www.contoso.com').
 func (m *NetworkConnection) SetDestinationDomain(value *string)() {
-    if m != nil {
-        m.destinationDomain = value
-    }
+    m.destinationDomain = value
 }
 // SetDestinationLocation sets the destinationLocation property value. Location (by IP address mapping) associated with the destination of a network connection.
 func (m *NetworkConnection) SetDestinationLocation(value *string)() {
-    if m != nil {
-        m.destinationLocation = value
-    }
+    m.destinationLocation = value
 }
 // SetDestinationPort sets the destinationPort property value. Destination port (of the network connection).
 func (m *NetworkConnection) SetDestinationPort(value *string)() {
-    if m != nil {
-        m.destinationPort = value
-    }
+    m.destinationPort = value
 }
 // SetDestinationUrl sets the destinationUrl property value. Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
 func (m *NetworkConnection) SetDestinationUrl(value *string)() {
-    if m != nil {
-        m.destinationUrl = value
-    }
+    m.destinationUrl = value
 }
 // SetDirection sets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
 func (m *NetworkConnection) SetDirection(value *ConnectionDirection)() {
-    if m != nil {
-        m.direction = value
-    }
+    m.direction = value
 }
 // SetDomainRegisteredDateTime sets the domainRegisteredDateTime property value. Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *NetworkConnection) SetDomainRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.domainRegisteredDateTime = value
-    }
+    m.domainRegisteredDateTime = value
 }
 // SetLocalDnsName sets the localDnsName property value. The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
 func (m *NetworkConnection) SetLocalDnsName(value *string)() {
-    if m != nil {
-        m.localDnsName = value
-    }
+    m.localDnsName = value
 }
 // SetNatDestinationAddress sets the natDestinationAddress property value. Network Address Translation destination IP address.
 func (m *NetworkConnection) SetNatDestinationAddress(value *string)() {
-    if m != nil {
-        m.natDestinationAddress = value
-    }
+    m.natDestinationAddress = value
 }
 // SetNatDestinationPort sets the natDestinationPort property value. Network Address Translation destination port.
 func (m *NetworkConnection) SetNatDestinationPort(value *string)() {
-    if m != nil {
-        m.natDestinationPort = value
-    }
+    m.natDestinationPort = value
 }
 // SetNatSourceAddress sets the natSourceAddress property value. Network Address Translation source IP address.
 func (m *NetworkConnection) SetNatSourceAddress(value *string)() {
-    if m != nil {
-        m.natSourceAddress = value
-    }
+    m.natSourceAddress = value
 }
 // SetNatSourcePort sets the natSourcePort property value. Network Address Translation source port.
 func (m *NetworkConnection) SetNatSourcePort(value *string)() {
-    if m != nil {
-        m.natSourcePort = value
-    }
+    m.natSourcePort = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *NetworkConnection) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProtocol sets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
 func (m *NetworkConnection) SetProtocol(value *SecurityNetworkProtocol)() {
-    if m != nil {
-        m.protocol = value
-    }
+    m.protocol = value
 }
 // SetRiskScore sets the riskScore property value. Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
 func (m *NetworkConnection) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetSourceAddress sets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).
 func (m *NetworkConnection) SetSourceAddress(value *string)() {
-    if m != nil {
-        m.sourceAddress = value
-    }
+    m.sourceAddress = value
 }
 // SetSourceLocation sets the sourceLocation property value. Location (by IP address mapping) associated with the source of a network connection.
 func (m *NetworkConnection) SetSourceLocation(value *string)() {
-    if m != nil {
-        m.sourceLocation = value
-    }
+    m.sourceLocation = value
 }
 // SetSourcePort sets the sourcePort property value. Source (i.e. origin) IP port (of the network connection).
 func (m *NetworkConnection) SetSourcePort(value *string)() {
-    if m != nil {
-        m.sourcePort = value
-    }
+    m.sourcePort = value
 }
 // SetStatus sets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
 func (m *NetworkConnection) SetStatus(value *ConnectionStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUrlParameters sets the urlParameters property value. Parameters (suffix) of the destination URL.
 func (m *NetworkConnection) SetUrlParameters(value *string)() {
-    if m != nil {
-        m.urlParameters = value
-    }
+    m.urlParameters = value
 }

@@ -10,7 +10,7 @@ type AttendeeAvailability struct {
     additionalData map[string]interface{}
     // The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
     attendee AttendeeBaseable
-    // The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+    // The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
     availability *FreeBusyStatus
     // The OdataType property
     odataType *string
@@ -30,27 +30,15 @@ func CreateAttendeeAvailabilityFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendeeAvailability) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttendee gets the attendee property value. The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
 func (m *AttendeeAvailability) GetAttendee()(AttendeeBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attendee
-    }
+    return m.attendee
 }
-// GetAvailability gets the availability property value. The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetAvailability gets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *AttendeeAvailability) GetAvailability()(*FreeBusyStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availability
-    }
+    return m.availability
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttendeeAvailability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *AttendeeAvailability) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttendeeAvailability) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AttendeeAvailability) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *AttendeeAvailability) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendeeAvailability) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttendee sets the attendee property value. The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
 func (m *AttendeeAvailability) SetAttendee(value AttendeeBaseable)() {
-    if m != nil {
-        m.attendee = value
-    }
+    m.attendee = value
 }
-// SetAvailability sets the availability property value. The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetAvailability sets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *AttendeeAvailability) SetAvailability(value *FreeBusyStatus)() {
-    if m != nil {
-        m.availability = value
-    }
+    m.availability = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttendeeAvailability) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -27,11 +27,7 @@ func CreateFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetContentData gets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
 func (m *FileAssessmentRequest) GetContentData()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentData
-    }
+    return m.contentData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *FileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFileName gets the fileName property value. The file name.
 func (m *FileAssessmentRequest) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // Serialize serializes information the current object
 func (m *FileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *FileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetContentData sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
 func (m *FileAssessmentRequest) SetContentData(value *string)() {
-    if m != nil {
-        m.contentData = value
-    }
+    m.contentData = value
 }
 // SetFileName sets the fileName property value. The file name.
 func (m *FileAssessmentRequest) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }

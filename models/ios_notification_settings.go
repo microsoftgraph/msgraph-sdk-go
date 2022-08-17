@@ -44,51 +44,27 @@ func CreateIosNotificationSettingsFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosNotificationSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAlertType gets the alertType property value. Notification Settings Alert Type.
 func (m *IosNotificationSettings) GetAlertType()(*IosNotificationAlertType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alertType
-    }
+    return m.alertType
 }
 // GetAppName gets the appName property value. Application name to be associated with the bundleID.
 func (m *IosNotificationSettings) GetAppName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appName
-    }
+    return m.appName
 }
 // GetBadgesEnabled gets the badgesEnabled property value. Indicates whether badges are allowed for this app.
 func (m *IosNotificationSettings) GetBadgesEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.badgesEnabled
-    }
+    return m.badgesEnabled
 }
 // GetBundleID gets the bundleID property value. Bundle id of app to which to apply these notification settings.
 func (m *IosNotificationSettings) GetBundleID()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleID
-    }
+    return m.bundleID
 }
 // GetEnabled gets the enabled property value. Indicates whether notifications are allowed for this app.
 func (m *IosNotificationSettings) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosNotificationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -197,43 +173,23 @@ func (m *IosNotificationSettings) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosNotificationSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPublisher gets the publisher property value. Publisher to be associated with the bundleID.
 func (m *IosNotificationSettings) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // GetShowInNotificationCenter gets the showInNotificationCenter property value. Indicates whether notifications can be shown in notification center.
 func (m *IosNotificationSettings) GetShowInNotificationCenter()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showInNotificationCenter
-    }
+    return m.showInNotificationCenter
 }
 // GetShowOnLockScreen gets the showOnLockScreen property value. Indicates whether notifications can be shown on the lock screen.
 func (m *IosNotificationSettings) GetShowOnLockScreen()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showOnLockScreen
-    }
+    return m.showOnLockScreen
 }
 // GetSoundsEnabled gets the soundsEnabled property value. Indicates whether sounds are allowed for this app.
 func (m *IosNotificationSettings) GetSoundsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.soundsEnabled
-    }
+    return m.soundsEnabled
 }
 // Serialize serializes information the current object
 func (m *IosNotificationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -308,67 +264,45 @@ func (m *IosNotificationSettings) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosNotificationSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAlertType sets the alertType property value. Notification Settings Alert Type.
 func (m *IosNotificationSettings) SetAlertType(value *IosNotificationAlertType)() {
-    if m != nil {
-        m.alertType = value
-    }
+    m.alertType = value
 }
 // SetAppName sets the appName property value. Application name to be associated with the bundleID.
 func (m *IosNotificationSettings) SetAppName(value *string)() {
-    if m != nil {
-        m.appName = value
-    }
+    m.appName = value
 }
 // SetBadgesEnabled sets the badgesEnabled property value. Indicates whether badges are allowed for this app.
 func (m *IosNotificationSettings) SetBadgesEnabled(value *bool)() {
-    if m != nil {
-        m.badgesEnabled = value
-    }
+    m.badgesEnabled = value
 }
 // SetBundleID sets the bundleID property value. Bundle id of app to which to apply these notification settings.
 func (m *IosNotificationSettings) SetBundleID(value *string)() {
-    if m != nil {
-        m.bundleID = value
-    }
+    m.bundleID = value
 }
 // SetEnabled sets the enabled property value. Indicates whether notifications are allowed for this app.
 func (m *IosNotificationSettings) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosNotificationSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPublisher sets the publisher property value. Publisher to be associated with the bundleID.
 func (m *IosNotificationSettings) SetPublisher(value *string)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }
 // SetShowInNotificationCenter sets the showInNotificationCenter property value. Indicates whether notifications can be shown in notification center.
 func (m *IosNotificationSettings) SetShowInNotificationCenter(value *bool)() {
-    if m != nil {
-        m.showInNotificationCenter = value
-    }
+    m.showInNotificationCenter = value
 }
 // SetShowOnLockScreen sets the showOnLockScreen property value. Indicates whether notifications can be shown on the lock screen.
 func (m *IosNotificationSettings) SetShowOnLockScreen(value *bool)() {
-    if m != nil {
-        m.showOnLockScreen = value
-    }
+    m.showOnLockScreen = value
 }
 // SetSoundsEnabled sets the soundsEnabled property value. Indicates whether sounds are allowed for this app.
 func (m *IosNotificationSettings) SetSoundsEnabled(value *bool)() {
-    if m != nil {
-        m.soundsEnabled = value
-    }
+    m.soundsEnabled = value
 }

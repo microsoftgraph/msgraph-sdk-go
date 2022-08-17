@@ -38,35 +38,19 @@ func CreateAttachmentItemFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttachmentItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttachmentType gets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
 func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachmentType
-    }
+    return m.attachmentType
 }
 // GetContentId gets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
 func (m *AttachmentItem) GetContentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentId
-    }
+    return m.contentId
 }
 // GetContentType gets the contentType property value. The nature of the data in the attachment. Optional.
 func (m *AttachmentItem) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
 func (m *AttachmentItem) GetIsInline()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInline
-    }
+    return m.isInline
 }
 // GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
 func (m *AttachmentItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttachmentItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSize gets the size property value. The length of the attachment in bytes. Required.
 func (m *AttachmentItem) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // Serialize serializes information the current object
 func (m *AttachmentItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *AttachmentItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttachmentItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttachmentType sets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
 func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
-    if m != nil {
-        m.attachmentType = value
-    }
+    m.attachmentType = value
 }
 // SetContentId sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
 func (m *AttachmentItem) SetContentId(value *string)() {
-    if m != nil {
-        m.contentId = value
-    }
+    m.contentId = value
 }
 // SetContentType sets the contentType property value. The nature of the data in the attachment. Optional.
 func (m *AttachmentItem) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
 func (m *AttachmentItem) SetIsInline(value *bool)() {
-    if m != nil {
-        m.isInline = value
-    }
+    m.isInline = value
 }
 // SetName sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
 func (m *AttachmentItem) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttachmentItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSize sets the size property value. The length of the attachment in bytes. Required.
 func (m *AttachmentItem) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }

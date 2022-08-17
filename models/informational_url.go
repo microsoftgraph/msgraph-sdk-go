@@ -36,11 +36,7 @@ func CreateInformationalUrlFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,51 +105,27 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetLogoUrl gets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) GetLogoUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logoUrl
-    }
+    return m.logoUrl
 }
 // GetMarketingUrl gets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) GetMarketingUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.marketingUrl
-    }
+    return m.marketingUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InformationalUrl) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPrivacyStatementUrl gets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacyStatementUrl
-    }
+    return m.privacyStatementUrl
 }
 // GetSupportUrl gets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) GetSupportUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportUrl
-    }
+    return m.supportUrl
 }
 // GetTermsOfServiceUrl gets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) GetTermsOfServiceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsOfServiceUrl
-    }
+    return m.termsOfServiceUrl
 }
 // Serialize serializes information the current object
 func (m *InformationalUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *InformationalUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLogoUrl sets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) SetLogoUrl(value *string)() {
-    if m != nil {
-        m.logoUrl = value
-    }
+    m.logoUrl = value
 }
 // SetMarketingUrl sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) SetMarketingUrl(value *string)() {
-    if m != nil {
-        m.marketingUrl = value
-    }
+    m.marketingUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InformationalUrl) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPrivacyStatementUrl sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) SetPrivacyStatementUrl(value *string)() {
-    if m != nil {
-        m.privacyStatementUrl = value
-    }
+    m.privacyStatementUrl = value
 }
 // SetSupportUrl sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) SetSupportUrl(value *string)() {
-    if m != nil {
-        m.supportUrl = value
-    }
+    m.supportUrl = value
 }
 // SetTermsOfServiceUrl sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) SetTermsOfServiceUrl(value *string)() {
-    if m != nil {
-        m.termsOfServiceUrl = value
-    }
+    m.termsOfServiceUrl = value
 }

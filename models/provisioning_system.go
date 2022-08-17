@@ -25,11 +25,7 @@ func CreateProvisioningSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDetails gets the details property value. Details of the system.
 func (m *ProvisioningSystem) GetDetails()(DetailsInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisioningSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ProvisioningSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDetails sets the details property value. Details of the system.
 func (m *ProvisioningSystem) SetDetails(value DetailsInfoable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }

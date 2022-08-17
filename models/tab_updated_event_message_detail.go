@@ -52,19 +52,11 @@ func (m *TabUpdatedEventMessageDetail) GetFieldDeserializers()(map[string]func(i
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TabUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetTabId gets the tabId property value. Unique identifier of the tab.
 func (m *TabUpdatedEventMessageDetail) GetTabId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tabId
-    }
+    return m.tabId
 }
 // Serialize serializes information the current object
 func (m *TabUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *TabUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TabUpdatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetTabId sets the tabId property value. Unique identifier of the tab.
 func (m *TabUpdatedEventMessageDetail) SetTabId(value *string)() {
-    if m != nil {
-        m.tabId = value
-    }
+    m.tabId = value
 }

@@ -7,7 +7,7 @@ import (
 // Security 
 type Security struct {
     Entity
-    // Notifications for suspicious or potential security issues in a customer’s tenant.
+    // The alerts property
     alerts []Alertable
     // The secureScoreControlProfiles property
     secureScoreControlProfiles []SecureScoreControlProfileable
@@ -27,13 +27,9 @@ func NewSecurity()(*Security) {
 func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurity(), nil
 }
-// GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
+// GetAlerts gets the alerts property value. The alerts property
 func (m *Security) GetAlerts()([]Alertable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alerts
-    }
+    return m.alerts
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,19 +80,11 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureScoreControlProfiles
-    }
+    return m.secureScoreControlProfiles
 }
 // GetSecureScores gets the secureScores property value. The secureScores property
 func (m *Security) GetSecureScores()([]SecureScoreable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureScores
-    }
+    return m.secureScores
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -136,21 +124,15 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
+// SetAlerts sets the alerts property value. The alerts property
 func (m *Security) SetAlerts(value []Alertable)() {
-    if m != nil {
-        m.alerts = value
-    }
+    m.alerts = value
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
-    if m != nil {
-        m.secureScoreControlProfiles = value
-    }
+    m.secureScoreControlProfiles = value
 }
 // SetSecureScores sets the secureScores property value. The secureScores property
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
-    if m != nil {
-        m.secureScores = value
-    }
+    m.secureScores = value
 }

@@ -44,51 +44,27 @@ func CreateItemActivityStatFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAccess gets the access property value. Statistics about the access actions in this interval. Read-only.
 func (m *ItemActivityStat) GetAccess()(ItemActionStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.access
-    }
+    return m.access
 }
 // GetActivities gets the activities property value. Exposes the itemActivities represented in this itemActivityStat resource.
 func (m *ItemActivityStat) GetActivities()([]ItemActivityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activities
-    }
+    return m.activities
 }
 // GetCreate gets the create property value. Statistics about the create actions in this interval. Read-only.
 func (m *ItemActivityStat) GetCreate()(ItemActionStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.create
-    }
+    return m.create
 }
 // GetDelete gets the delete property value. Statistics about the delete actions in this interval. Read-only.
 func (m *ItemActivityStat) GetDelete()(ItemActionStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.delete
-    }
+    return m.delete
 }
 // GetEdit gets the edit property value. Statistics about the edit actions in this interval. Read-only.
 func (m *ItemActivityStat) GetEdit()(ItemActionStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.edit
-    }
+    return m.edit
 }
 // GetEndDateTime gets the endDateTime property value. When the interval ends. Read-only.
 func (m *ItemActivityStat) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -201,35 +177,19 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIncompleteData gets the incompleteData property value. Indicates that the statistics in this interval are based on incomplete data. Read-only.
 func (m *ItemActivityStat) GetIncompleteData()(IncompleteDataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incompleteData
-    }
+    return m.incompleteData
 }
 // GetIsTrending gets the isTrending property value. Indicates whether the item is 'trending.' Read-only.
 func (m *ItemActivityStat) GetIsTrending()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTrending
-    }
+    return m.isTrending
 }
 // GetMove gets the move property value. Statistics about the move actions in this interval. Read-only.
 func (m *ItemActivityStat) GetMove()(ItemActionStatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.move
-    }
+    return m.move
 }
 // GetStartDateTime gets the startDateTime property value. When the interval starts. Read-only.
 func (m *ItemActivityStat) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *ItemActivityStat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -305,61 +265,41 @@ func (m *ItemActivityStat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAccess sets the access property value. Statistics about the access actions in this interval. Read-only.
 func (m *ItemActivityStat) SetAccess(value ItemActionStatable)() {
-    if m != nil {
-        m.access = value
-    }
+    m.access = value
 }
 // SetActivities sets the activities property value. Exposes the itemActivities represented in this itemActivityStat resource.
 func (m *ItemActivityStat) SetActivities(value []ItemActivityable)() {
-    if m != nil {
-        m.activities = value
-    }
+    m.activities = value
 }
 // SetCreate sets the create property value. Statistics about the create actions in this interval. Read-only.
 func (m *ItemActivityStat) SetCreate(value ItemActionStatable)() {
-    if m != nil {
-        m.create = value
-    }
+    m.create = value
 }
 // SetDelete sets the delete property value. Statistics about the delete actions in this interval. Read-only.
 func (m *ItemActivityStat) SetDelete(value ItemActionStatable)() {
-    if m != nil {
-        m.delete = value
-    }
+    m.delete = value
 }
 // SetEdit sets the edit property value. Statistics about the edit actions in this interval. Read-only.
 func (m *ItemActivityStat) SetEdit(value ItemActionStatable)() {
-    if m != nil {
-        m.edit = value
-    }
+    m.edit = value
 }
 // SetEndDateTime sets the endDateTime property value. When the interval ends. Read-only.
 func (m *ItemActivityStat) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetIncompleteData sets the incompleteData property value. Indicates that the statistics in this interval are based on incomplete data. Read-only.
 func (m *ItemActivityStat) SetIncompleteData(value IncompleteDataable)() {
-    if m != nil {
-        m.incompleteData = value
-    }
+    m.incompleteData = value
 }
 // SetIsTrending sets the isTrending property value. Indicates whether the item is 'trending.' Read-only.
 func (m *ItemActivityStat) SetIsTrending(value *bool)() {
-    if m != nil {
-        m.isTrending = value
-    }
+    m.isTrending = value
 }
 // SetMove sets the move property value. Statistics about the move actions in this interval. Read-only.
 func (m *ItemActivityStat) SetMove(value ItemActionStatable)() {
-    if m != nil {
-        m.move = value
-    }
+    m.move = value
 }
 // SetStartDateTime sets the startDateTime property value. When the interval starts. Read-only.
 func (m *ItemActivityStat) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

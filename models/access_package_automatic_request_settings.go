@@ -32,11 +32,7 @@ func CreateAccessPackageAutomaticRequestSettingsFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAutomaticRequestSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAutomaticRequestSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *AccessPackageAutomaticRequestSettings) GetFieldDeserializers()(map[stri
 }
 // GetGracePeriodBeforeAccessRemoval gets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
 func (m *AccessPackageAutomaticRequestSettings) GetGracePeriodBeforeAccessRemoval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gracePeriodBeforeAccessRemoval
-    }
+    return m.gracePeriodBeforeAccessRemoval
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageAutomaticRequestSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemoveAccessWhenTargetLeavesAllowedTargets gets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
 func (m *AccessPackageAutomaticRequestSettings) GetRemoveAccessWhenTargetLeavesAllowedTargets()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeAccessWhenTargetLeavesAllowedTargets
-    }
+    return m.removeAccessWhenTargetLeavesAllowedTargets
 }
 // GetRequestAccessForAllowedTargets gets the requestAccessForAllowedTargets property value. The requestAccessForAllowedTargets property
 func (m *AccessPackageAutomaticRequestSettings) GetRequestAccessForAllowedTargets()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestAccessForAllowedTargets
-    }
+    return m.requestAccessForAllowedTargets
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAutomaticRequestSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *AccessPackageAutomaticRequestSettings) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAutomaticRequestSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetGracePeriodBeforeAccessRemoval sets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
 func (m *AccessPackageAutomaticRequestSettings) SetGracePeriodBeforeAccessRemoval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.gracePeriodBeforeAccessRemoval = value
-    }
+    m.gracePeriodBeforeAccessRemoval = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageAutomaticRequestSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemoveAccessWhenTargetLeavesAllowedTargets sets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
 func (m *AccessPackageAutomaticRequestSettings) SetRemoveAccessWhenTargetLeavesAllowedTargets(value *bool)() {
-    if m != nil {
-        m.removeAccessWhenTargetLeavesAllowedTargets = value
-    }
+    m.removeAccessWhenTargetLeavesAllowedTargets = value
 }
 // SetRequestAccessForAllowedTargets sets the requestAccessForAllowedTargets property value. The requestAccessForAllowedTargets property
 func (m *AccessPackageAutomaticRequestSettings) SetRequestAccessForAllowedTargets(value *bool)() {
-    if m != nil {
-        m.requestAccessForAllowedTargets = value
-    }
+    m.requestAccessForAllowedTargets = value
 }

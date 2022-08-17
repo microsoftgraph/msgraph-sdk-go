@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskDefinition provides operations to manage the admin singleton.
+// PrintTaskDefinition provides operations to manage the collection of agreement entities.
 type PrintTaskDefinition struct {
     Entity
     // The createdBy property
@@ -29,19 +29,11 @@ func CreatePrintTaskDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *PrintTaskDefinition) GetCreatedBy()(AppIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetDisplayName gets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetTasks gets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) GetTasks()([]PrintTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *PrintTaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *PrintTaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *PrintTaskDefinition) SetCreatedBy(value AppIdentityable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetDisplayName sets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTasks sets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) SetTasks(value []PrintTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

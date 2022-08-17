@@ -30,19 +30,11 @@ func CreateWin32LobAppInstallExperienceFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Win32LobAppInstallExperience) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceRestartBehavior gets the deviceRestartBehavior property value. Indicates the type of restart action.
 func (m *Win32LobAppInstallExperience) GetDeviceRestartBehavior()(*Win32LobAppRestartBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceRestartBehavior
-    }
+    return m.deviceRestartBehavior
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Win32LobAppInstallExperience) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppInstallExperience) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
+    return m.runAsAccount
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppInstallExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,25 +111,17 @@ func (m *Win32LobAppInstallExperience) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Win32LobAppInstallExperience) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceRestartBehavior sets the deviceRestartBehavior property value. Indicates the type of restart action.
 func (m *Win32LobAppInstallExperience) SetDeviceRestartBehavior(value *Win32LobAppRestartBehavior)() {
-    if m != nil {
-        m.deviceRestartBehavior = value
-    }
+    m.deviceRestartBehavior = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Win32LobAppInstallExperience) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppInstallExperience) SetRunAsAccount(value *RunAsAccountType)() {
-    if m != nil {
-        m.runAsAccount = value
-    }
+    m.runAsAccount = value
 }

@@ -29,27 +29,15 @@ func CreateDirectoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.administrativeUnits
-    }
+    return m.administrativeUnits
 }
 // GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedItems
-    }
+    return m.deletedItems
 }
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.federationConfigurations
-    }
+    return m.federationConfigurations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,19 +126,13 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
-    if m != nil {
-        m.administrativeUnits = value
-    }
+    m.administrativeUnits = value
 }
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
-    if m != nil {
-        m.deletedItems = value
-    }
+    m.deletedItems = value
 }
 // SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable)() {
-    if m != nil {
-        m.federationConfigurations = value
-    }
+    m.federationConfigurations = value
 }

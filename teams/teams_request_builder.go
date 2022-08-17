@@ -17,7 +17,7 @@ type TeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TeamsRequestBuilderGetQueryParameters list all teams in an organization.
+// TeamsRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified team.
 type TeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *TeamsRequestBuilder) Count()(*i99a5c855792d913145f051810aef2158e85309cc0f7cdab719f05bd5a190f1fa.CountRequestBuilder) {
     return i99a5c855792d913145f051810aef2158e85309cc0f7cdab719f05bd5a190f1fa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list all teams in an organization.
+// CreateGetRequestInformation retrieve the properties and relationships of the specified team.
 func (m *TeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list all teams in an organization.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of the specified team.
 func (m *TeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TeamsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get list all teams in an organization.
+// Get retrieve the properties and relationships of the specified team.
 func (m *TeamsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -121,7 +121,7 @@ func (m *TeamsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380
 func (m *TeamsRequestBuilder) GetAllMessages()(*ifdc1da6e3cfa25cd17baf0b79816455f5cd5d93e270ce06d37ed873087ed641e.GetAllMessagesRequestBuilder) {
     return ifdc1da6e3cfa25cd17baf0b79816455f5cd5d93e270ce06d37ed873087ed641e.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler list all teams in an organization.
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of the specified team.
 func (m *TeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

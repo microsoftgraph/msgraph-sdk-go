@@ -30,27 +30,15 @@ func CreateImplicitGrantSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImplicitGrantSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnableAccessTokenIssuance gets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
 func (m *ImplicitGrantSettings) GetEnableAccessTokenIssuance()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableAccessTokenIssuance
-    }
+    return m.enableAccessTokenIssuance
 }
 // GetEnableIdTokenIssuance gets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
 func (m *ImplicitGrantSettings) GetEnableIdTokenIssuance()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableIdTokenIssuance
-    }
+    return m.enableIdTokenIssuance
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImplicitGrantSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *ImplicitGrantSettings) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ImplicitGrantSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ImplicitGrantSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ImplicitGrantSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImplicitGrantSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnableAccessTokenIssuance sets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
 func (m *ImplicitGrantSettings) SetEnableAccessTokenIssuance(value *bool)() {
-    if m != nil {
-        m.enableAccessTokenIssuance = value
-    }
+    m.enableAccessTokenIssuance = value
 }
 // SetEnableIdTokenIssuance sets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
 func (m *ImplicitGrantSettings) SetEnableIdTokenIssuance(value *bool)() {
-    if m != nil {
-        m.enableIdTokenIssuance = value
-    }
+    m.enableIdTokenIssuance = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ImplicitGrantSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

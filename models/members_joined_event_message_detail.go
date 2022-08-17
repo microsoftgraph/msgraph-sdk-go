@@ -56,19 +56,11 @@ func (m *MembersJoinedEventMessageDetail) GetFieldDeserializers()(map[string]fun
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MembersJoinedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetMembers gets the members property value. List of members who joined the chat.
 func (m *MembersJoinedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // Serialize serializes information the current object
 func (m *MembersJoinedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *MembersJoinedEventMessageDetail) Serialize(writer i878a80d2330e89d26896
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MembersJoinedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetMembers sets the members property value. List of members who joined the chat.
 func (m *MembersJoinedEventMessageDetail) SetMembers(value []TeamworkUserIdentityable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }

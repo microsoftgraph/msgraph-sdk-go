@@ -10,7 +10,7 @@ type ConditionalAccessGrantControls struct {
     additionalData map[string]interface{}
     // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
     builtInControls []string
-    // List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
+    // List of custom controls IDs required by the policy. For more information, see Custom controls.
     customAuthenticationFactors []string
     // The OdataType property
     odataType *string
@@ -34,27 +34,15 @@ func CreateConditionalAccessGrantControlsFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
 func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.builtInControls
-    }
+    return m.builtInControls
 }
-// GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
+// GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
 func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customAuthenticationFactors
-    }
+    return m.customAuthenticationFactors
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,27 +113,15 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessGrantControls) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperator gets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
 func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
+    return m.operator
 }
 // GetTermsOfUse gets the termsOfUse property value. List of terms of use IDs required by the policy.
 func (m *ConditionalAccessGrantControls) GetTermsOfUse()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsOfUse
-    }
+    return m.termsOfUse
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -189,37 +165,25 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
 func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []string)() {
-    if m != nil {
-        m.builtInControls = value
-    }
+    m.builtInControls = value
 }
-// SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
+// SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
 func (m *ConditionalAccessGrantControls) SetCustomAuthenticationFactors(value []string)() {
-    if m != nil {
-        m.customAuthenticationFactors = value
-    }
+    m.customAuthenticationFactors = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessGrantControls) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperator sets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
 func (m *ConditionalAccessGrantControls) SetOperator(value *string)() {
-    if m != nil {
-        m.operator = value
-    }
+    m.operator = value
 }
 // SetTermsOfUse sets the termsOfUse property value. List of terms of use IDs required by the policy.
 func (m *ConditionalAccessGrantControls) SetTermsOfUse(value []string)() {
-    if m != nil {
-        m.termsOfUse = value
-    }
+    m.termsOfUse = value
 }

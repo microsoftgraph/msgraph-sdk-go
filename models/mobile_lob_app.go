@@ -58,19 +58,11 @@ func CreateMobileLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetCommittedContentVersion gets the committedContentVersion property value. The internal committed content version.
 func (m *MobileLobApp) GetCommittedContentVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.committedContentVersion
-    }
+    return m.committedContentVersion
 }
 // GetContentVersions gets the contentVersions property value. The list of content versions for this app.
 func (m *MobileLobApp) GetContentVersions()([]MobileAppContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentVersions
-    }
+    return m.contentVersions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,19 +115,11 @@ func (m *MobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetFileName gets the fileName property value. The name of the main Lob application file.
 func (m *MobileLobApp) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetSize gets the size property value. The total size, including all uploaded files.
 func (m *MobileLobApp) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // Serialize serializes information the current object
 func (m *MobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,25 +159,17 @@ func (m *MobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetCommittedContentVersion sets the committedContentVersion property value. The internal committed content version.
 func (m *MobileLobApp) SetCommittedContentVersion(value *string)() {
-    if m != nil {
-        m.committedContentVersion = value
-    }
+    m.committedContentVersion = value
 }
 // SetContentVersions sets the contentVersions property value. The list of content versions for this app.
 func (m *MobileLobApp) SetContentVersions(value []MobileAppContentable)() {
-    if m != nil {
-        m.contentVersions = value
-    }
+    m.contentVersions = value
 }
 // SetFileName sets the fileName property value. The name of the main Lob application file.
 func (m *MobileLobApp) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetSize sets the size property value. The total size, including all uploaded files.
 func (m *MobileLobApp) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }

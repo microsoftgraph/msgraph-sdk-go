@@ -24,11 +24,7 @@ func CreateExportPersonalDataPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportPersonalDataPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExportPersonalDataPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *ExportPersonalDataPostRequestBody) GetFieldDeserializers()(map[string]f
 }
 // GetStorageLocation gets the storageLocation property value. The storageLocation property
 func (m *ExportPersonalDataPostRequestBody) GetStorageLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageLocation
-    }
+    return m.storageLocation
 }
 // Serialize serializes information the current object
 func (m *ExportPersonalDataPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *ExportPersonalDataPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportPersonalDataPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetStorageLocation sets the storageLocation property value. The storageLocation property
 func (m *ExportPersonalDataPostRequestBody) SetStorageLocation(value *string)() {
-    if m != nil {
-        m.storageLocation = value
-    }
+    m.storageLocation = value
 }

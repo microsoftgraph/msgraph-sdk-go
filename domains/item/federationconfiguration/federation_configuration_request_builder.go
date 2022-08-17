@@ -16,7 +16,7 @@ type FederationConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FederationConfigurationRequestBuilderGetQueryParameters domain settings configured by customer when federated with Azure AD. Supports $expand.
+// FederationConfigurationRequestBuilderGetQueryParameters domain settings configured by a customer when federated with Azure AD. Supports $expand.
 type FederationConfigurationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewFederationConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *FederationConfigurationRequestBuilder) Count()(*i4b32f1a7aa39c653614ded35b2c4279a25806cd4dd650adbf41a0e4b45588d77.CountRequestBuilder) {
     return i4b32f1a7aa39c653614ded35b2c4279a25806cd4dd650adbf41a0e4b45588d77.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation domain settings configured by customer when federated with Azure AD. Supports $expand.
+// CreateGetRequestInformation domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *FederationConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration domain settings configured by customer when federated with Azure AD. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *FederationConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FederationConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *FederationConfigurationRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get domain settings configured by customer when federated with Azure AD. Supports $expand.
+// Get domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *FederationConfigurationRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler domain settings configured by customer when federated with Azure AD. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *FederationConfigurationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FederationConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

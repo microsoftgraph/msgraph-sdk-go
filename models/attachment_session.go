@@ -5,14 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttachmentSession provides operations to manage the collection of application entities.
+// AttachmentSession provides operations to manage the collection of agreementAcceptance entities.
 type AttachmentSession struct {
     Entity
-    // The content streams that are uploaded.
+    // The content property
     content []byte
-    // The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+    // The expirationDateTime property
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates a single value {start} that represents the location in the file where the next upload should begin.
+    // The nextExpectedRanges property
     nextExpectedRanges []string
 }
 // NewAttachmentSession instantiates a new attachmentSession and sets the default values.
@@ -28,21 +28,13 @@ func NewAttachmentSession()(*AttachmentSession) {
 func CreateAttachmentSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttachmentSession(), nil
 }
-// GetContent gets the content property value. The content streams that are uploaded.
+// GetContent gets the content property value. The content property
 func (m *AttachmentSession) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
 func (m *AttachmentSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,13 +75,9 @@ func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetNextExpectedRanges gets the nextExpectedRanges property value. Indicates a single value {start} that represents the location in the file where the next upload should begin.
+// GetNextExpectedRanges gets the nextExpectedRanges property value. The nextExpectedRanges property
 func (m *AttachmentSession) GetNextExpectedRanges()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nextExpectedRanges
-    }
+    return m.nextExpectedRanges
 }
 // Serialize serializes information the current object
 func (m *AttachmentSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -117,21 +105,15 @@ func (m *AttachmentSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetContent sets the content property value. The content streams that are uploaded.
+// SetContent sets the content property value. The content property
 func (m *AttachmentSession) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
 func (m *AttachmentSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
-// SetNextExpectedRanges sets the nextExpectedRanges property value. Indicates a single value {start} that represents the location in the file where the next upload should begin.
+// SetNextExpectedRanges sets the nextExpectedRanges property value. The nextExpectedRanges property
 func (m *AttachmentSession) SetNextExpectedRanges(value []string)() {
-    if m != nil {
-        m.nextExpectedRanges = value
-    }
+    m.nextExpectedRanges = value
 }

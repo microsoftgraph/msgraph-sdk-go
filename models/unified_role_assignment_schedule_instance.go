@@ -16,9 +16,9 @@ type UnifiedRoleAssignmentScheduleInstance struct {
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
     memberType *string
-    // The identifier of the role assignment in Azure AD.
+    // The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
     roleAssignmentOriginId *string
-    // The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
+    // The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
     roleAssignmentScheduleId *string
     // When this instance starts.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -38,27 +38,15 @@ func CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue(parseNode
 }
 // GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(UnifiedRoleEligibilityScheduleInstanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activatedUsing
-    }
+    return m.activatedUsing
 }
 // GetAssignmentType gets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) GetAssignmentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentType
-    }
+    return m.assignmentType
 }
 // GetEndDateTime gets the endDateTime property value. The end date of the schedule instance.
 func (m *UnifiedRoleAssignmentScheduleInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,35 +125,19 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[stri
 }
 // GetMemberType gets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberType
-    }
+    return m.memberType
 }
-// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD.
+// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentOriginId
-    }
+    return m.roleAssignmentOriginId
 }
-// GetRoleAssignmentScheduleId gets the roleAssignmentScheduleId property value. The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
+// GetRoleAssignmentScheduleId gets the roleAssignmentScheduleId property value. The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentScheduleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentScheduleId
-    }
+    return m.roleAssignmentScheduleId
 }
 // GetStartDateTime gets the startDateTime property value. When this instance starts.
 func (m *UnifiedRoleAssignmentScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,43 +191,29 @@ func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i878a80d2330e89
 }
 // SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value UnifiedRoleEligibilityScheduleInstanceable)() {
-    if m != nil {
-        m.activatedUsing = value
-    }
+    m.activatedUsing = value
 }
 // SetAssignmentType sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetAssignmentType(value *string)() {
-    if m != nil {
-        m.assignmentType = value
-    }
+    m.assignmentType = value
 }
 // SetEndDateTime sets the endDateTime property value. The end date of the schedule instance.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetMemberType sets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetMemberType(value *string)() {
-    if m != nil {
-        m.memberType = value
-    }
+    m.memberType = value
 }
-// SetRoleAssignmentOriginId sets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD.
+// SetRoleAssignmentOriginId sets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentOriginId(value *string)() {
-    if m != nil {
-        m.roleAssignmentOriginId = value
-    }
+    m.roleAssignmentOriginId = value
 }
-// SetRoleAssignmentScheduleId sets the roleAssignmentScheduleId property value. The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
+// SetRoleAssignmentScheduleId sets the roleAssignmentScheduleId property value. The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentScheduleId(value *string)() {
-    if m != nil {
-        m.roleAssignmentScheduleId = value
-    }
+    m.roleAssignmentScheduleId = value
 }
 // SetStartDateTime sets the startDateTime property value. When this instance starts.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

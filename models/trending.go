@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Trending provides operations to manage the collection of application entities.
+// Trending provides operations to manage the collection of agreementAcceptance entities.
 type Trending struct {
     Entity
     // The lastModifiedDateTime property
@@ -89,43 +89,23 @@ func (m *Trending) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetResource gets the resource property value. Used for navigating to the trending document.
 func (m *Trending) GetResource()(Entityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // GetResourceReference gets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
 func (m *Trending) GetResourceReference()(ResourceReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceReference
-    }
+    return m.resourceReference
 }
 // GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
 func (m *Trending) GetResourceVisualization()(ResourceVisualizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceVisualization
-    }
+    return m.resourceVisualization
 }
 // GetWeight gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 func (m *Trending) GetWeight()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.weight
-    }
+    return m.weight
 }
 // Serialize serializes information the current object
 func (m *Trending) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *Trending) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Trending) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetResource sets the resource property value. Used for navigating to the trending document.
 func (m *Trending) SetResource(value Entityable)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }
 // SetResourceReference sets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
 func (m *Trending) SetResourceReference(value ResourceReferenceable)() {
-    if m != nil {
-        m.resourceReference = value
-    }
+    m.resourceReference = value
 }
 // SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
 func (m *Trending) SetResourceVisualization(value ResourceVisualizationable)() {
-    if m != nil {
-        m.resourceVisualization = value
-    }
+    m.resourceVisualization = value
 }
 // SetWeight sets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 func (m *Trending) SetWeight(value *float64)() {
-    if m != nil {
-        m.weight = value
-    }
+    m.weight = value
 }

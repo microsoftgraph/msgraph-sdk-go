@@ -46,67 +46,35 @@ func CreateTeleconferenceDeviceQualityFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCallChainId gets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
 func (m *TeleconferenceDeviceQuality) GetCallChainId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callChainId
-    }
+    return m.callChainId
 }
 // GetCloudServiceDeploymentEnvironment gets the cloudServiceDeploymentEnvironment property value. A geo-region where the service is deployed, such as ProdNoam.
 func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentEnvironment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudServiceDeploymentEnvironment
-    }
+    return m.cloudServiceDeploymentEnvironment
 }
 // GetCloudServiceDeploymentId gets the cloudServiceDeploymentId property value. A unique deployment identifier assigned by Azure.
 func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudServiceDeploymentId
-    }
+    return m.cloudServiceDeploymentId
 }
 // GetCloudServiceInstanceName gets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
 func (m *TeleconferenceDeviceQuality) GetCloudServiceInstanceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudServiceInstanceName
-    }
+    return m.cloudServiceInstanceName
 }
 // GetCloudServiceName gets the cloudServiceName property value. The Azure deployed cloud service name, such as contoso.cloudapp.net.
 func (m *TeleconferenceDeviceQuality) GetCloudServiceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudServiceName
-    }
+    return m.cloudServiceName
 }
 // GetDeviceDescription gets the deviceDescription property value. Any additional description, such as VTC Bldg 30/21.
 func (m *TeleconferenceDeviceQuality) GetDeviceDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDescription
-    }
+    return m.deviceDescription
 }
 // GetDeviceName gets the deviceName property value. The user media agent name, such as Cisco SX80.
 func (m *TeleconferenceDeviceQuality) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -229,35 +197,19 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i8
 }
 // GetMediaLegId gets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
 func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaLegId
-    }
+    return m.mediaLegId
 }
 // GetMediaQualityList gets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
 func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDeviceMediaQualityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaQualityList
-    }
+    return m.mediaQualityList
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeleconferenceDeviceQuality) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParticipantId gets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
 func (m *TeleconferenceDeviceQuality) GetParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantId
-    }
+    return m.participantId
 }
 // Serialize serializes information the current object
 func (m *TeleconferenceDeviceQuality) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -341,73 +293,49 @@ func (m *TeleconferenceDeviceQuality) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeleconferenceDeviceQuality) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCallChainId sets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
 func (m *TeleconferenceDeviceQuality) SetCallChainId(value *string)() {
-    if m != nil {
-        m.callChainId = value
-    }
+    m.callChainId = value
 }
 // SetCloudServiceDeploymentEnvironment sets the cloudServiceDeploymentEnvironment property value. A geo-region where the service is deployed, such as ProdNoam.
 func (m *TeleconferenceDeviceQuality) SetCloudServiceDeploymentEnvironment(value *string)() {
-    if m != nil {
-        m.cloudServiceDeploymentEnvironment = value
-    }
+    m.cloudServiceDeploymentEnvironment = value
 }
 // SetCloudServiceDeploymentId sets the cloudServiceDeploymentId property value. A unique deployment identifier assigned by Azure.
 func (m *TeleconferenceDeviceQuality) SetCloudServiceDeploymentId(value *string)() {
-    if m != nil {
-        m.cloudServiceDeploymentId = value
-    }
+    m.cloudServiceDeploymentId = value
 }
 // SetCloudServiceInstanceName sets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
 func (m *TeleconferenceDeviceQuality) SetCloudServiceInstanceName(value *string)() {
-    if m != nil {
-        m.cloudServiceInstanceName = value
-    }
+    m.cloudServiceInstanceName = value
 }
 // SetCloudServiceName sets the cloudServiceName property value. The Azure deployed cloud service name, such as contoso.cloudapp.net.
 func (m *TeleconferenceDeviceQuality) SetCloudServiceName(value *string)() {
-    if m != nil {
-        m.cloudServiceName = value
-    }
+    m.cloudServiceName = value
 }
 // SetDeviceDescription sets the deviceDescription property value. Any additional description, such as VTC Bldg 30/21.
 func (m *TeleconferenceDeviceQuality) SetDeviceDescription(value *string)() {
-    if m != nil {
-        m.deviceDescription = value
-    }
+    m.deviceDescription = value
 }
 // SetDeviceName sets the deviceName property value. The user media agent name, such as Cisco SX80.
 func (m *TeleconferenceDeviceQuality) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetMediaLegId sets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
 func (m *TeleconferenceDeviceQuality) SetMediaLegId(value *string)() {
-    if m != nil {
-        m.mediaLegId = value
-    }
+    m.mediaLegId = value
 }
 // SetMediaQualityList sets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
 func (m *TeleconferenceDeviceQuality) SetMediaQualityList(value []TeleconferenceDeviceMediaQualityable)() {
-    if m != nil {
-        m.mediaQualityList = value
-    }
+    m.mediaQualityList = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeleconferenceDeviceQuality) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParticipantId sets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
 func (m *TeleconferenceDeviceQuality) SetParticipantId(value *string)() {
-    if m != nil {
-        m.participantId = value
-    }
+    m.participantId = value
 }

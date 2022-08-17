@@ -16,7 +16,7 @@ type RoleManagementPolicyAssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters represents the role management policy assignments.
+// RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters the assignment of a role management policy to a role definition object.
 type RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewRoleManagementPolicyAssignmentsRequestBuilder(rawUrl string, requestAdap
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) Count()(*i6bfc4bf48b7dcaff81ab89392c14119291941b69990b76111ead136f94f5d415.CountRequestBuilder) {
     return i6bfc4bf48b7dcaff81ab89392c14119291941b69990b76111ead136f94f5d415.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the role management policy assignments.
+// CreateGetRequestInformation the assignment of a role management policy to a role definition object.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the role management policy assignments.
+// CreateGetRequestInformationWithRequestConfiguration the assignment of a role management policy to a role definition object.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleManagementPolicyAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Get represents the role management policy assignments.
+// Get the assignment of a role management policy to a role definition object.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyAssignmentCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the role management policy assignments.
+// GetWithRequestConfigurationAndResponseHandler the assignment of a role management policy to a role definition object.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleManagementPolicyAssignmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

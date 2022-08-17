@@ -7,9 +7,9 @@ import (
 // UnifiedRoleEligibilitySchedule 
 type UnifiedRoleEligibilitySchedule struct {
     UnifiedRoleScheduleBase
-    // Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
+    // How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
     memberType *string
-    // The schedule object of the eligible role assignment request.
+    // The period of the role eligibility.
     scheduleInfo RequestScheduleable
 }
 // NewUnifiedRoleEligibilitySchedule instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
@@ -50,21 +50,13 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetMemberType gets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
+// GetMemberType gets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilitySchedule) GetMemberType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberType
-    }
+    return m.memberType
 }
-// GetScheduleInfo gets the scheduleInfo property value. The schedule object of the eligible role assignment request.
+// GetScheduleInfo gets the scheduleInfo property value. The period of the role eligibility.
 func (m *UnifiedRoleEligibilitySchedule) GetScheduleInfo()(RequestScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleInfo
-    }
+    return m.scheduleInfo
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,15 +78,11 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetMemberType sets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).
+// SetMemberType sets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilitySchedule) SetMemberType(value *string)() {
-    if m != nil {
-        m.memberType = value
-    }
+    m.memberType = value
 }
-// SetScheduleInfo sets the scheduleInfo property value. The schedule object of the eligible role assignment request.
+// SetScheduleInfo sets the scheduleInfo property value. The period of the role eligibility.
 func (m *UnifiedRoleEligibilitySchedule) SetScheduleInfo(value RequestScheduleable)() {
-    if m != nil {
-        m.scheduleInfo = value
-    }
+    m.scheduleInfo = value
 }

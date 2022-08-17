@@ -31,11 +31,7 @@ func CreateWin32LobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80
 }
 // GetDeliveryOptimizationPriority gets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
 func (m *Win32LobAppAssignmentSettings) GetDeliveryOptimizationPriority()(*Win32LobAppDeliveryOptimizationPriority) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deliveryOptimizationPriority
-    }
+    return m.deliveryOptimizationPriority
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *Win32LobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
 }
 // GetInstallTimeSettings gets the installTimeSettings property value. The install time settings to apply for this app assignment.
 func (m *Win32LobAppAssignmentSettings) GetInstallTimeSettings()(MobileAppInstallTimeSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installTimeSettings
-    }
+    return m.installTimeSettings
 }
 // GetNotifications gets the notifications property value. Contains value for notification status.
 func (m *Win32LobAppAssignmentSettings) GetNotifications()(*Win32LobAppNotification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifications
-    }
+    return m.notifications
 }
 // GetRestartSettings gets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *Win32LobAppAssignmentSettings) GetRestartSettings()(Win32LobAppRestartSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartSettings
-    }
+    return m.restartSettings
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *Win32LobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetDeliveryOptimizationPriority sets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
 func (m *Win32LobAppAssignmentSettings) SetDeliveryOptimizationPriority(value *Win32LobAppDeliveryOptimizationPriority)() {
-    if m != nil {
-        m.deliveryOptimizationPriority = value
-    }
+    m.deliveryOptimizationPriority = value
 }
 // SetInstallTimeSettings sets the installTimeSettings property value. The install time settings to apply for this app assignment.
 func (m *Win32LobAppAssignmentSettings) SetInstallTimeSettings(value MobileAppInstallTimeSettingsable)() {
-    if m != nil {
-        m.installTimeSettings = value
-    }
+    m.installTimeSettings = value
 }
 // SetNotifications sets the notifications property value. Contains value for notification status.
 func (m *Win32LobAppAssignmentSettings) SetNotifications(value *Win32LobAppNotification)() {
-    if m != nil {
-        m.notifications = value
-    }
+    m.notifications = value
 }
 // SetRestartSettings sets the restartSettings property value. The reboot settings to apply for this app assignment.
 func (m *Win32LobAppAssignmentSettings) SetRestartSettings(value Win32LobAppRestartSettingsable)() {
-    if m != nil {
-        m.restartSettings = value
-    }
+    m.restartSettings = value
 }

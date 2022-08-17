@@ -36,19 +36,11 @@ func CreateVerifiedDomainFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedDomain) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCapabilities gets the capabilities property value. For example, Email, OfficeCommunicationsOnline.
 func (m *VerifiedDomain) GetCapabilities()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capabilities
-    }
+    return m.capabilities
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIsDefault gets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
+    return m.isDefault
 }
 // GetIsInitial gets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) GetIsInitial()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInitial
-    }
+    return m.isInitial
 }
 // GetName gets the name property value. The domain name; for example, contoso.onmicrosoft.com.
 func (m *VerifiedDomain) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VerifiedDomain) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetType gets the type property value. For example, Managed.
 func (m *VerifiedDomain) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *VerifiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *VerifiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedDomain) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCapabilities sets the capabilities property value. For example, Email, OfficeCommunicationsOnline.
 func (m *VerifiedDomain) SetCapabilities(value *string)() {
-    if m != nil {
-        m.capabilities = value
-    }
+    m.capabilities = value
 }
 // SetIsDefault sets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) SetIsDefault(value *bool)() {
-    if m != nil {
-        m.isDefault = value
-    }
+    m.isDefault = value
 }
 // SetIsInitial sets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) SetIsInitial(value *bool)() {
-    if m != nil {
-        m.isInitial = value
-    }
+    m.isInitial = value
 }
 // SetName sets the name property value. The domain name; for example, contoso.onmicrosoft.com.
 func (m *VerifiedDomain) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VerifiedDomain) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetType sets the type property value. For example, Managed.
 func (m *VerifiedDomain) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

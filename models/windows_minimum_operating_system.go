@@ -32,11 +32,7 @@ func CreateWindowsMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsMinimumOperatingSystem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsMinimumOperatingSystem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetV10_0 gets the v10_0 property value. Windows version 10.0 or later.
 func (m *WindowsMinimumOperatingSystem) GetV10_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_0
-    }
+    return m.v10_0
 }
 // GetV8_0 gets the v8_0 property value. Windows version 8.0 or later.
 func (m *WindowsMinimumOperatingSystem) GetV8_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v8_0
-    }
+    return m.v8_0
 }
 // GetV8_1 gets the v8_1 property value. Windows version 8.1 or later.
 func (m *WindowsMinimumOperatingSystem) GetV8_1()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v8_1
-    }
+    return m.v8_1
 }
 // Serialize serializes information the current object
 func (m *WindowsMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *WindowsMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsMinimumOperatingSystem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsMinimumOperatingSystem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetV10_0 sets the v10_0 property value. Windows version 10.0 or later.
 func (m *WindowsMinimumOperatingSystem) SetV10_0(value *bool)() {
-    if m != nil {
-        m.v10_0 = value
-    }
+    m.v10_0 = value
 }
 // SetV8_0 sets the v8_0 property value. Windows version 8.0 or later.
 func (m *WindowsMinimumOperatingSystem) SetV8_0(value *bool)() {
-    if m != nil {
-        m.v8_0 = value
-    }
+    m.v8_0 = value
 }
 // SetV8_1 sets the v8_1 property value. Windows version 8.1 or later.
 func (m *WindowsMinimumOperatingSystem) SetV8_1(value *bool)() {
-    if m != nil {
-        m.v8_1 = value
-    }
+    m.v8_1 = value
 }

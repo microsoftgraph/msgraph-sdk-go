@@ -8,15 +8,15 @@ import (
 type SettingTemplateValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Default value for the setting. Read-only.
+    // Default value for the setting.
     defaultValue *string
-    // Description of the setting. Read-only.
+    // Description of the setting.
     description *string
-    // Name of the setting. Read-only.
+    // Name of the setting.
     name *string
     // The OdataType property
     odataType *string
-    // Type of the setting. Read-only.
+    // Type of the setting.
     type_escaped *string
 }
 // NewSettingTemplateValue instantiates a new settingTemplateValue and sets the default values.
@@ -34,27 +34,15 @@ func CreateSettingTemplateValueFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingTemplateValue) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetDefaultValue gets the defaultValue property value. Default value for the setting. Read-only.
+// GetDefaultValue gets the defaultValue property value. Default value for the setting.
 func (m *SettingTemplateValue) GetDefaultValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
-// GetDescription gets the description property value. Description of the setting. Read-only.
+// GetDescription gets the description property value. Description of the setting.
 func (m *SettingTemplateValue) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,29 +99,17 @@ func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetName gets the name property value. Name of the setting. Read-only.
+// GetName gets the name property value. Name of the setting.
 func (m *SettingTemplateValue) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SettingTemplateValue) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetType gets the type property value. Type of the setting. Read-only.
+// GetType gets the type property value. Type of the setting.
 func (m *SettingTemplateValue) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *SettingTemplateValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *SettingTemplateValue) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingTemplateValue) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetDefaultValue sets the defaultValue property value. Default value for the setting. Read-only.
+// SetDefaultValue sets the defaultValue property value. Default value for the setting.
 func (m *SettingTemplateValue) SetDefaultValue(value *string)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
-// SetDescription sets the description property value. Description of the setting. Read-only.
+// SetDescription sets the description property value. Description of the setting.
 func (m *SettingTemplateValue) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
-// SetName sets the name property value. Name of the setting. Read-only.
+// SetName sets the name property value. Name of the setting.
 func (m *SettingTemplateValue) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SettingTemplateValue) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetType sets the type property value. Type of the setting. Read-only.
+// SetType sets the type property value. Type of the setting.
 func (m *SettingTemplateValue) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

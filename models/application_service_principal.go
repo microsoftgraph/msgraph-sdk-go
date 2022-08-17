@@ -30,19 +30,11 @@ func CreateApplicationServicePrincipalFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplicationServicePrincipal) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplication gets the application property value. The application property
 func (m *ApplicationServicePrincipal) GetApplication()(Applicationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.application
-    }
+    return m.application
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ApplicationServicePrincipal) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetServicePrincipal gets the servicePrincipal property value. The servicePrincipal property
 func (m *ApplicationServicePrincipal) GetServicePrincipal()(ServicePrincipalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipal
-    }
+    return m.servicePrincipal
 }
 // Serialize serializes information the current object
 func (m *ApplicationServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ApplicationServicePrincipal) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplicationServicePrincipal) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplication sets the application property value. The application property
 func (m *ApplicationServicePrincipal) SetApplication(value Applicationable)() {
-    if m != nil {
-        m.application = value
-    }
+    m.application = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ApplicationServicePrincipal) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetServicePrincipal sets the servicePrincipal property value. The servicePrincipal property
 func (m *ApplicationServicePrincipal) SetServicePrincipal(value ServicePrincipalable)() {
-    if m != nil {
-        m.servicePrincipal = value
-    }
+    m.servicePrincipal = value
 }

@@ -29,11 +29,7 @@ func CreateUserSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetEmail gets the email property value. Email address of the user's mailbox.
 func (m *UserSource) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UserSource) GetIncludedSources()(*SourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includedSources
-    }
+    return m.includedSources
 }
 // GetSiteWebUrl gets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
 func (m *UserSource) GetSiteWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteWebUrl
-    }
+    return m.siteWebUrl
 }
 // Serialize serializes information the current object
 func (m *UserSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *UserSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetEmail sets the email property value. Email address of the user's mailbox.
 func (m *UserSource) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UserSource) SetIncludedSources(value *SourceType)() {
-    if m != nil {
-        m.includedSources = value
-    }
+    m.includedSources = value
 }
 // SetSiteWebUrl sets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
 func (m *UserSource) SetSiteWebUrl(value *string)() {
-    if m != nil {
-        m.siteWebUrl = value
-    }
+    m.siteWebUrl = value
 }

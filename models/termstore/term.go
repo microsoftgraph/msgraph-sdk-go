@@ -41,27 +41,15 @@ func CreateTermFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetChildren gets the children property value. Children of current term.
 func (m *Term) GetChildren()([]Termable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.children
-    }
+    return m.children
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of term creation. Read-only.
 func (m *Term) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescriptions gets the descriptions property value. Description about term that is dependent on the languageTag.
 func (m *Term) GetDescriptions()([]LocalizedDescriptionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.descriptions
-    }
+    return m.descriptions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Term) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,43 +158,23 @@ func (m *Term) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetLabels gets the labels property value. Label metadata for a term.
 func (m *Term) GetLabels()([]LocalizedLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labels
-    }
+    return m.labels
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
 func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetProperties gets the properties property value. Collection of properties on the term.
 func (m *Term) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
+    return m.properties
 }
 // GetRelations gets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
 func (m *Term) GetRelations()([]Relationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relations
-    }
+    return m.relations
 }
 // GetSet gets the set property value. The [set] in which the term is created.
 func (m *Term) GetSet()(Setable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.set
-    }
+    return m.set
 }
 // Serialize serializes information the current object
 func (m *Term) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -286,49 +254,33 @@ func (m *Term) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetChildren sets the children property value. Children of current term.
 func (m *Term) SetChildren(value []Termable)() {
-    if m != nil {
-        m.children = value
-    }
+    m.children = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of term creation. Read-only.
 func (m *Term) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescriptions sets the descriptions property value. Description about term that is dependent on the languageTag.
 func (m *Term) SetDescriptions(value []LocalizedDescriptionable)() {
-    if m != nil {
-        m.descriptions = value
-    }
+    m.descriptions = value
 }
 // SetLabels sets the labels property value. Label metadata for a term.
 func (m *Term) SetLabels(value []LocalizedLabelable)() {
-    if m != nil {
-        m.labels = value
-    }
+    m.labels = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
 func (m *Term) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetProperties sets the properties property value. Collection of properties on the term.
 func (m *Term) SetProperties(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)() {
-    if m != nil {
-        m.properties = value
-    }
+    m.properties = value
 }
 // SetRelations sets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
 func (m *Term) SetRelations(value []Relationable)() {
-    if m != nil {
-        m.relations = value
-    }
+    m.relations = value
 }
 // SetSet sets the set property value. The [set] in which the term is created.
 func (m *Term) SetSet(value Setable)() {
-    if m != nil {
-        m.set = value
-    }
+    m.set = value
 }

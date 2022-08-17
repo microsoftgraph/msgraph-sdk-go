@@ -26,11 +26,7 @@ func CreateAssociateWithHubSitesPostRequestBodyFromDiscriminatorValue(parseNode 
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssociateWithHubSitesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssociateWithHubSitesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,19 +59,11 @@ func (m *AssociateWithHubSitesPostRequestBody) GetFieldDeserializers()(map[strin
 }
 // GetHubSiteUrls gets the hubSiteUrls property value. The hubSiteUrls property
 func (m *AssociateWithHubSitesPostRequestBody) GetHubSiteUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hubSiteUrls
-    }
+    return m.hubSiteUrls
 }
 // GetPropagateToExistingLists gets the propagateToExistingLists property value. The propagateToExistingLists property
 func (m *AssociateWithHubSitesPostRequestBody) GetPropagateToExistingLists()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propagateToExistingLists
-    }
+    return m.propagateToExistingLists
 }
 // Serialize serializes information the current object
 func (m *AssociateWithHubSitesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,19 +89,13 @@ func (m *AssociateWithHubSitesPostRequestBody) Serialize(writer i878a80d2330e89d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssociateWithHubSitesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHubSiteUrls sets the hubSiteUrls property value. The hubSiteUrls property
 func (m *AssociateWithHubSitesPostRequestBody) SetHubSiteUrls(value []string)() {
-    if m != nil {
-        m.hubSiteUrls = value
-    }
+    m.hubSiteUrls = value
 }
 // SetPropagateToExistingLists sets the propagateToExistingLists property value. The propagateToExistingLists property
 func (m *AssociateWithHubSitesPostRequestBody) SetPropagateToExistingLists(value *bool)() {
-    if m != nil {
-        m.propagateToExistingLists = value
-    }
+    m.propagateToExistingLists = value
 }

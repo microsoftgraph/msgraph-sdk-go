@@ -17,7 +17,7 @@ type UserConsentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserConsentRequestsRequestBuilderGetQueryParameters a list of pending user consent requests.
+// UserConsentRequestsRequestBuilderGetQueryParameters a list of pending user consent requests. Supports $filter (eq).
 type UserConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewUserConsentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *UserConsentRequestsRequestBuilder) Count()(*ibc63443549586cced5c1863a1080453aab822df8477c6349aa941db7a915c6a2.CountRequestBuilder) {
     return ibc63443549586cced5c1863a1080453aab822df8477c6349aa941db7a915c6a2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a list of pending user consent requests.
+// CreateGetRequestInformation a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of pending user consent requests.
+// CreateGetRequestInformationWithRequestConfiguration a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *UserConsentRequestsRequestBuilder) CreatePostRequestInformationWithRequ
 func (m *UserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*if6f0cf70701b4f2aa79ef6f9cb51865ad2fe8c75701d66dca93f7fda90ae70db.FilterByCurrentUserWithOnRequestBuilder) {
     return if6f0cf70701b4f2aa79ef6f9cb51865ad2fe8c75701d66dca93f7fda90ae70db.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get a list of pending user consent requests.
+// Get a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a list of pending user consent requests.
+// GetWithRequestConfigurationAndResponseHandler a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserConsentRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

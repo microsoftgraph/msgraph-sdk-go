@@ -64,27 +64,15 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetFieldDeserializers()(map[str
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetMeetingChatEnabled gets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingChatEnabled
-    }
+    return m.meetingChatEnabled
 }
 // GetMeetingChatId gets the meetingChatId property value. Unique identifier of the meeting chat.
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingChatId
-    }
+    return m.meetingChatId
 }
 // Serialize serializes information the current object
 func (m *MeetingPolicyUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) Serialize(writer i878a80d2330e8
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MeetingPolicyUpdatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetMeetingChatEnabled sets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
 func (m *MeetingPolicyUpdatedEventMessageDetail) SetMeetingChatEnabled(value *bool)() {
-    if m != nil {
-        m.meetingChatEnabled = value
-    }
+    m.meetingChatEnabled = value
 }
 // SetMeetingChatId sets the meetingChatId property value. Unique identifier of the meeting chat.
 func (m *MeetingPolicyUpdatedEventMessageDetail) SetMeetingChatId(value *string)() {
-    if m != nil {
-        m.meetingChatId = value
-    }
+    m.meetingChatId = value
 }

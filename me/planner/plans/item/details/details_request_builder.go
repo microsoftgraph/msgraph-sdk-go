@@ -22,7 +22,7 @@ type DetailsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DetailsRequestBuilderGetQueryParameters additional details about the plan. Read-only. Nullable.
+// DetailsRequestBuilderGetQueryParameters read-only. Nullable. Additional details about the plan.
 type DetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *DetailsRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation additional details about the plan. Read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration additional details about the plan. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *DetailsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler
     }
     return nil
 }
-// Get additional details about the plan. Read-only. Nullable.
+// Get read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanDetailsable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler additional details about the plan. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

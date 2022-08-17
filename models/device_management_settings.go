@@ -32,19 +32,11 @@ func CreateDeviceManagementSettingsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceComplianceCheckinThresholdDays gets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) GetDeviceComplianceCheckinThresholdDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceComplianceCheckinThresholdDays
-    }
+    return m.deviceComplianceCheckinThresholdDays
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isScheduledActionEnabled
-    }
+    return m.isScheduledActionEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureByDefault
-    }
+    return m.secureByDefault
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceComplianceCheckinThresholdDays sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value *int32)() {
-    if m != nil {
-        m.deviceComplianceCheckinThresholdDays = value
-    }
+    m.deviceComplianceCheckinThresholdDays = value
 }
 // SetIsScheduledActionEnabled sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
-    if m != nil {
-        m.isScheduledActionEnabled = value
-    }
+    m.isScheduledActionEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSecureByDefault sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) SetSecureByDefault(value *bool)() {
-    if m != nil {
-        m.secureByDefault = value
-    }
+    m.secureByDefault = value
 }

@@ -27,11 +27,7 @@ func CreateSingleServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDescription gets the description property value. Description of this service principal.
 func (m *SingleServicePrincipal) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SingleServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *SingleServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. ID of the servicePrincipal.
 func (m *SingleServicePrincipal) GetServicePrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalId
-    }
+    return m.servicePrincipalId
 }
 // Serialize serializes information the current object
 func (m *SingleServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *SingleServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDescription sets the description property value. Description of this service principal.
 func (m *SingleServicePrincipal) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. ID of the servicePrincipal.
 func (m *SingleServicePrincipal) SetServicePrincipalId(value *string)() {
-    if m != nil {
-        m.servicePrincipalId = value
-    }
+    m.servicePrincipalId = value
 }

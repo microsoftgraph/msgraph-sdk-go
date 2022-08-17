@@ -34,11 +34,7 @@ func CreateSecurityVendorInformationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityVendorInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SecurityVendorInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProvider gets the provider property value. Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
 func (m *SecurityVendorInformation) GetProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provider
-    }
+    return m.provider
 }
 // GetProviderVersion gets the providerVersion property value. Version of the provider or subprovider, if it exists, that generated the alert. Required
 func (m *SecurityVendorInformation) GetProviderVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerVersion
-    }
+    return m.providerVersion
 }
 // GetSubProvider gets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
 func (m *SecurityVendorInformation) GetSubProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subProvider
-    }
+    return m.subProvider
 }
 // GetVendor gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
-    }
+    return m.vendor_escaped
 }
 // Serialize serializes information the current object
 func (m *SecurityVendorInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *SecurityVendorInformation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityVendorInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SecurityVendorInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProvider sets the provider property value. Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
 func (m *SecurityVendorInformation) SetProvider(value *string)() {
-    if m != nil {
-        m.provider = value
-    }
+    m.provider = value
 }
 // SetProviderVersion sets the providerVersion property value. Version of the provider or subprovider, if it exists, that generated the alert. Required
 func (m *SecurityVendorInformation) SetProviderVersion(value *string)() {
-    if m != nil {
-        m.providerVersion = value
-    }
+    m.providerVersion = value
 }
 // SetSubProvider sets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
 func (m *SecurityVendorInformation) SetSubProvider(value *string)() {
-    if m != nil {
-        m.subProvider = value
-    }
+    m.subProvider = value
 }
 // SetVendor sets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) SetVendor(value *string)() {
-    if m != nil {
-        m.vendor_escaped = value
-    }
+    m.vendor_escaped = value
 }

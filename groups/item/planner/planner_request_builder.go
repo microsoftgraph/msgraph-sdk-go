@@ -24,7 +24,7 @@ type PlannerRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PlannerRequestBuilderGetQueryParameters selective Planner services available to the group. Read-only. Nullable.
+// PlannerRequestBuilderGetQueryParameters entry-point to Planner resource that might exist for a Unified Group.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *PlannerRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation selective Planner services available to the group. Read-only. Nullable.
+// CreateGetRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration selective Planner services available to the group. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,11 +139,11 @@ func (m *PlannerRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler
     }
     return nil
 }
-// Get selective Planner services available to the group. Read-only. Nullable.
+// Get entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerGroupable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler selective Planner services available to the group. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlannerRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

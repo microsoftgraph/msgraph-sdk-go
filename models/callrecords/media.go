@@ -38,43 +38,23 @@ func CreateMediaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCalleeDevice gets the calleeDevice property value. Device information associated with the callee endpoint of this media.
 func (m *Media) GetCalleeDevice()(DeviceInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calleeDevice
-    }
+    return m.calleeDevice
 }
 // GetCalleeNetwork gets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
 func (m *Media) GetCalleeNetwork()(NetworkInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calleeNetwork
-    }
+    return m.calleeNetwork
 }
 // GetCallerDevice gets the callerDevice property value. Device information associated with the caller endpoint of this media.
 func (m *Media) GetCallerDevice()(DeviceInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callerDevice
-    }
+    return m.callerDevice
 }
 // GetCallerNetwork gets the callerNetwork property value. Network information associated with the caller endpoint of this media.
 func (m *Media) GetCallerNetwork()(NetworkInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callerNetwork
-    }
+    return m.callerNetwork
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,27 +137,15 @@ func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetLabel gets the label property value. How the media was identified during media negotiation stage.
 func (m *Media) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Media) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStreams gets the streams property value. Network streams associated with this media.
 func (m *Media) GetStreams()([]MediaStreamable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.streams
-    }
+    return m.streams
 }
 // Serialize serializes information the current object
 func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -237,49 +205,33 @@ func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCalleeDevice sets the calleeDevice property value. Device information associated with the callee endpoint of this media.
 func (m *Media) SetCalleeDevice(value DeviceInfoable)() {
-    if m != nil {
-        m.calleeDevice = value
-    }
+    m.calleeDevice = value
 }
 // SetCalleeNetwork sets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
 func (m *Media) SetCalleeNetwork(value NetworkInfoable)() {
-    if m != nil {
-        m.calleeNetwork = value
-    }
+    m.calleeNetwork = value
 }
 // SetCallerDevice sets the callerDevice property value. Device information associated with the caller endpoint of this media.
 func (m *Media) SetCallerDevice(value DeviceInfoable)() {
-    if m != nil {
-        m.callerDevice = value
-    }
+    m.callerDevice = value
 }
 // SetCallerNetwork sets the callerNetwork property value. Network information associated with the caller endpoint of this media.
 func (m *Media) SetCallerNetwork(value NetworkInfoable)() {
-    if m != nil {
-        m.callerNetwork = value
-    }
+    m.callerNetwork = value
 }
 // SetLabel sets the label property value. How the media was identified during media negotiation stage.
 func (m *Media) SetLabel(value *string)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Media) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStreams sets the streams property value. Network streams associated with this media.
 func (m *Media) SetStreams(value []MediaStreamable)() {
-    if m != nil {
-        m.streams = value
-    }
+    m.streams = value
 }

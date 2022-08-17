@@ -16,7 +16,7 @@ type ExternalColumnsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExternalColumnsRequestBuilderGetQueryParameters the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// ExternalColumnsRequestBuilderGetQueryParameters get externalColumns from sites
 type ExternalColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewExternalColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ExternalColumnsRequestBuilder) Count()(*ie186ca9c901789b7c0b4c43e43a94be2f2119acb97be59ddf701d9aebd94b4f0.CountRequestBuilder) {
     return ie186ca9c901789b7c0b4c43e43a94be2f2119acb97be59ddf701d9aebd94b4f0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// CreateGetRequestInformation get externalColumns from sites
 func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// CreateGetRequestInformationWithRequestConfiguration get externalColumns from sites
 func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// Get get externalColumns from sites
 func (m *ExternalColumnsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// GetWithRequestConfigurationAndResponseHandler get externalColumns from sites
 func (m *ExternalColumnsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

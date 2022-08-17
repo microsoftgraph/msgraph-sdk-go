@@ -40,35 +40,19 @@ func CreateBookingQuestionAnswerFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingQuestionAnswer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAnswer gets the answer property value. The answer given by the user in case the answerInputType is text.
 func (m *BookingQuestionAnswer) GetAnswer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.answer
-    }
+    return m.answer
 }
 // GetAnswerInputType gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
 func (m *BookingQuestionAnswer) GetAnswerInputType()(*AnswerInputType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.answerInputType
-    }
+    return m.answerInputType
 }
 // GetAnswerOptions gets the answerOptions property value. In case the answerInputType is radioButton, this will consists of a list of possible answer values.
 func (m *BookingQuestionAnswer) GetAnswerOptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.answerOptions
-    }
+    return m.answerOptions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,43 +149,23 @@ func (m *BookingQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIsRequired gets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
 func (m *BookingQuestionAnswer) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
+    return m.isRequired
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BookingQuestionAnswer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQuestion gets the question property value. The question.
 func (m *BookingQuestionAnswer) GetQuestion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.question
-    }
+    return m.question
 }
 // GetQuestionId gets the questionId property value. The ID of the custom question.
 func (m *BookingQuestionAnswer) GetQuestionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.questionId
-    }
+    return m.questionId
 }
 // GetSelectedOptions gets the selectedOptions property value. The answers selected by the user.
 func (m *BookingQuestionAnswer) GetSelectedOptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selectedOptions
-    }
+    return m.selectedOptions
 }
 // Serialize serializes information the current object
 func (m *BookingQuestionAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -264,55 +228,37 @@ func (m *BookingQuestionAnswer) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingQuestionAnswer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAnswer sets the answer property value. The answer given by the user in case the answerInputType is text.
 func (m *BookingQuestionAnswer) SetAnswer(value *string)() {
-    if m != nil {
-        m.answer = value
-    }
+    m.answer = value
 }
 // SetAnswerInputType sets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
 func (m *BookingQuestionAnswer) SetAnswerInputType(value *AnswerInputType)() {
-    if m != nil {
-        m.answerInputType = value
-    }
+    m.answerInputType = value
 }
 // SetAnswerOptions sets the answerOptions property value. In case the answerInputType is radioButton, this will consists of a list of possible answer values.
 func (m *BookingQuestionAnswer) SetAnswerOptions(value []string)() {
-    if m != nil {
-        m.answerOptions = value
-    }
+    m.answerOptions = value
 }
 // SetIsRequired sets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
 func (m *BookingQuestionAnswer) SetIsRequired(value *bool)() {
-    if m != nil {
-        m.isRequired = value
-    }
+    m.isRequired = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BookingQuestionAnswer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQuestion sets the question property value. The question.
 func (m *BookingQuestionAnswer) SetQuestion(value *string)() {
-    if m != nil {
-        m.question = value
-    }
+    m.question = value
 }
 // SetQuestionId sets the questionId property value. The ID of the custom question.
 func (m *BookingQuestionAnswer) SetQuestionId(value *string)() {
-    if m != nil {
-        m.questionId = value
-    }
+    m.questionId = value
 }
 // SetSelectedOptions sets the selectedOptions property value. The answers selected by the user.
 func (m *BookingQuestionAnswer) SetSelectedOptions(value []string)() {
-    if m != nil {
-        m.selectedOptions = value
-    }
+    m.selectedOptions = value
 }

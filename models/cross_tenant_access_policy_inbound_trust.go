@@ -32,11 +32,7 @@ func CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyInboundTrust) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string
 }
 // GetIsCompliantDeviceAccepted gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsCompliantDeviceAccepted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCompliantDeviceAccepted
-    }
+    return m.isCompliantDeviceAccepted
 }
 // GetIsHybridAzureADJoinedDeviceAccepted gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsHybridAzureADJoinedDeviceAccepted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHybridAzureADJoinedDeviceAccepted
-    }
+    return m.isHybridAzureADJoinedDeviceAccepted
 }
 // GetIsMfaAccepted gets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsMfaAccepted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMfaAccepted
-    }
+    return m.isMfaAccepted
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CrossTenantAccessPolicyInboundTrust) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyInboundTrust) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *CrossTenantAccessPolicyInboundTrust) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyInboundTrust) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsCompliantDeviceAccepted sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsCompliantDeviceAccepted(value *bool)() {
-    if m != nil {
-        m.isCompliantDeviceAccepted = value
-    }
+    m.isCompliantDeviceAccepted = value
 }
 // SetIsHybridAzureADJoinedDeviceAccepted sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsHybridAzureADJoinedDeviceAccepted(value *bool)() {
-    if m != nil {
-        m.isHybridAzureADJoinedDeviceAccepted = value
-    }
+    m.isHybridAzureADJoinedDeviceAccepted = value
 }
 // SetIsMfaAccepted sets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsMfaAccepted(value *bool)() {
-    if m != nil {
-        m.isMfaAccepted = value
-    }
+    m.isMfaAccepted = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CrossTenantAccessPolicyInboundTrust) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

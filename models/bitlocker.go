@@ -44,11 +44,7 @@ func (m *Bitlocker) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetRecoveryKeys gets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
 func (m *Bitlocker) GetRecoveryKeys()([]BitlockerRecoveryKeyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recoveryKeys
-    }
+    return m.recoveryKeys
 }
 // Serialize serializes information the current object
 func (m *Bitlocker) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *Bitlocker) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetRecoveryKeys sets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
 func (m *Bitlocker) SetRecoveryKeys(value []BitlockerRecoveryKeyable)() {
-    if m != nil {
-        m.recoveryKeys = value
-    }
+    m.recoveryKeys = value
 }

@@ -27,11 +27,7 @@ func CreateAttributeRuleMembersFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDescription gets the description property value. The description property
 func (m *AttributeRuleMembers) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeRuleMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *AttributeRuleMembers) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMembershipRule gets the membershipRule property value. The membershipRule property
 func (m *AttributeRuleMembers) GetMembershipRule()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.membershipRule
-    }
+    return m.membershipRule
 }
 // Serialize serializes information the current object
 func (m *AttributeRuleMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AttributeRuleMembers) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDescription sets the description property value. The description property
 func (m *AttributeRuleMembers) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetMembershipRule sets the membershipRule property value. The membershipRule property
 func (m *AttributeRuleMembers) SetMembershipRule(value *string)() {
-    if m != nil {
-        m.membershipRule = value
-    }
+    m.membershipRule = value
 }

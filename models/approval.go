@@ -7,7 +7,7 @@ import (
 // Approval 
 type Approval struct {
     Entity
-    // Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
+    // A collection of stages in the approval decision.
     stages []ApprovalStageable
 }
 // NewApproval instantiates a new approval and sets the default values.
@@ -42,13 +42,9 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetStages gets the stages property value. Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
+// GetStages gets the stages property value. A collection of stages in the approval decision.
 func (m *Approval) GetStages()([]ApprovalStageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stages
-    }
+    return m.stages
 }
 // Serialize serializes information the current object
 func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -68,9 +64,7 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetStages sets the stages property value. Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
+// SetStages sets the stages property value. A collection of stages in the approval decision.
 func (m *Approval) SetStages(value []ApprovalStageable)() {
-    if m != nil {
-        m.stages = value
-    }
+    m.stages = value
 }

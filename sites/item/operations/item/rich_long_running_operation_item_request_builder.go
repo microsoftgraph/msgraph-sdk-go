@@ -22,7 +22,7 @@ type RichLongRunningOperationItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RichLongRunningOperationItemRequestBuilderGetQueryParameters the collection of long running operations for the site.
+// RichLongRunningOperationItemRequestBuilderGetQueryParameters the collection of long-running operations on the site.
 type RichLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *RichLongRunningOperationItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of long running operations for the site.
+// CreateGetRequestInformation the collection of long-running operations on the site.
 func (m *RichLongRunningOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of long running operations for the site.
+// CreateGetRequestInformationWithRequestConfiguration the collection of long-running operations on the site.
 func (m *RichLongRunningOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RichLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *RichLongRunningOperationItemRequestBuilder) DeleteWithRequestConfigurat
     }
     return nil
 }
-// Get the collection of long running operations for the site.
+// Get the collection of long-running operations on the site.
 func (m *RichLongRunningOperationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RichLongRunningOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of long running operations for the site.
+// GetWithRequestConfigurationAndResponseHandler the collection of long-running operations on the site.
 func (m *RichLongRunningOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RichLongRunningOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RichLongRunningOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

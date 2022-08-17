@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Segment provides operations to manage the cloudCommunications singleton.
+// Segment provides operations to manage the collection of agreement entities.
 type Segment struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Endpoint that answered this segment.
@@ -37,35 +37,19 @@ func CreateSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetCallee gets the callee property value. Endpoint that answered this segment.
 func (m *Segment) GetCallee()(Endpointable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callee
-    }
+    return m.callee
 }
 // GetCaller gets the caller property value. Endpoint that initiated this segment.
 func (m *Segment) GetCaller()(Endpointable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.caller
-    }
+    return m.caller
 }
 // GetEndDateTime gets the endDateTime property value. UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFailureInfo gets the failureInfo property value. Failure information associated with the segment if it failed.
 func (m *Segment) GetFailureInfo()(FailureInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureInfo
-    }
+    return m.failureInfo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Segment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,19 +122,11 @@ func (m *Segment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetMedia gets the media property value. Media associated with this segment.
 func (m *Segment) GetMedia()([]Mediaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.media
-    }
+    return m.media
 }
 // GetStartDateTime gets the startDateTime property value. UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *Segment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -202,37 +178,25 @@ func (m *Segment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetCallee sets the callee property value. Endpoint that answered this segment.
 func (m *Segment) SetCallee(value Endpointable)() {
-    if m != nil {
-        m.callee = value
-    }
+    m.callee = value
 }
 // SetCaller sets the caller property value. Endpoint that initiated this segment.
 func (m *Segment) SetCaller(value Endpointable)() {
-    if m != nil {
-        m.caller = value
-    }
+    m.caller = value
 }
 // SetEndDateTime sets the endDateTime property value. UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetFailureInfo sets the failureInfo property value. Failure information associated with the segment if it failed.
 func (m *Segment) SetFailureInfo(value FailureInfoable)() {
-    if m != nil {
-        m.failureInfo = value
-    }
+    m.failureInfo = value
 }
 // SetMedia sets the media property value. Media associated with this segment.
 func (m *Segment) SetMedia(value []Mediaable)() {
-    if m != nil {
-        m.media = value
-    }
+    m.media = value
 }
 // SetStartDateTime sets the startDateTime property value. UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

@@ -30,11 +30,7 @@ func CreateFileHashFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileHash) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileHash) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *FileHash) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetHashType gets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
 func (m *FileHash) GetHashType()(*FileHashType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashType
-    }
+    return m.hashType
 }
 // GetHashValue gets the hashValue property value. Value of the file hash.
 func (m *FileHash) GetHashValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashValue
-    }
+    return m.hashValue
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FileHash) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *FileHash) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *FileHash) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileHash) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHashType sets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
 func (m *FileHash) SetHashType(value *FileHashType)() {
-    if m != nil {
-        m.hashType = value
-    }
+    m.hashType = value
 }
 // SetHashValue sets the hashValue property value. Value of the file hash.
 func (m *FileHash) SetHashValue(value *string)() {
-    if m != nil {
-        m.hashValue = value
-    }
+    m.hashValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FileHash) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

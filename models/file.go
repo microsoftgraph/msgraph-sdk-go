@@ -32,11 +32,7 @@ func CreateFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *File) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetHashes gets the hashes property value. Hashes of the file's binary content, if available. Read-only.
 func (m *File) GetHashes()(Hashesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashes
-    }
+    return m.hashes
 }
 // GetMimeType gets the mimeType property value. The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
 func (m *File) GetMimeType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mimeType
-    }
+    return m.mimeType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *File) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProcessingMetadata gets the processingMetadata property value. The processingMetadata property
 func (m *File) GetProcessingMetadata()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processingMetadata
-    }
+    return m.processingMetadata
 }
 // Serialize serializes information the current object
 func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *File) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHashes sets the hashes property value. Hashes of the file's binary content, if available. Read-only.
 func (m *File) SetHashes(value Hashesable)() {
-    if m != nil {
-        m.hashes = value
-    }
+    m.hashes = value
 }
 // SetMimeType sets the mimeType property value. The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
 func (m *File) SetMimeType(value *string)() {
-    if m != nil {
-        m.mimeType = value
-    }
+    m.mimeType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *File) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProcessingMetadata sets the processingMetadata property value. The processingMetadata property
 func (m *File) SetProcessingMetadata(value *bool)() {
-    if m != nil {
-        m.processingMetadata = value
-    }
+    m.processingMetadata = value
 }

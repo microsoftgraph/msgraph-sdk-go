@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyUserHistoryItem provides operations to manage the admin singleton.
+// RiskyUserHistoryItem provides operations to manage the collection of agreement entities.
 type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
@@ -29,11 +29,7 @@ func CreateRiskyUserHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetActivity gets the activity property value. The activity related to user risk level change.
 func (m *RiskyUserHistoryItem) GetActivity()(RiskUserActivityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activity
-    }
+    return m.activity
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetInitiatedBy gets the initiatedBy property value. The id of actor that does the operation.
 func (m *RiskyUserHistoryItem) GetInitiatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedBy
-    }
+    return m.initiatedBy
 }
 // GetUserId gets the userId property value. The id of the user.
 func (m *RiskyUserHistoryItem) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *RiskyUserHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *RiskyUserHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetActivity sets the activity property value. The activity related to user risk level change.
 func (m *RiskyUserHistoryItem) SetActivity(value RiskUserActivityable)() {
-    if m != nil {
-        m.activity = value
-    }
+    m.activity = value
 }
 // SetInitiatedBy sets the initiatedBy property value. The id of actor that does the operation.
 func (m *RiskyUserHistoryItem) SetInitiatedBy(value *string)() {
-    if m != nil {
-        m.initiatedBy = value
-    }
+    m.initiatedBy = value
 }
 // SetUserId sets the userId property value. The id of the user.
 func (m *RiskyUserHistoryItem) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

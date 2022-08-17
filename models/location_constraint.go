@@ -32,11 +32,7 @@ func CreateLocationConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocationConstraint) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetIsRequired gets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
 func (m *LocationConstraint) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
+    return m.isRequired
 }
 // GetLocations gets the locations property value. Constraint information for one or more locations that the client requests for the meeting.
 func (m *LocationConstraint) GetLocations()([]LocationConstraintItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locations
-    }
+    return m.locations
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *LocationConstraint) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSuggestLocation gets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.
 func (m *LocationConstraint) GetSuggestLocation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestLocation
-    }
+    return m.suggestLocation
 }
 // Serialize serializes information the current object
 func (m *LocationConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *LocationConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocationConstraint) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsRequired sets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
 func (m *LocationConstraint) SetIsRequired(value *bool)() {
-    if m != nil {
-        m.isRequired = value
-    }
+    m.isRequired = value
 }
 // SetLocations sets the locations property value. Constraint information for one or more locations that the client requests for the meeting.
 func (m *LocationConstraint) SetLocations(value []LocationConstraintItemable)() {
-    if m != nil {
-        m.locations = value
-    }
+    m.locations = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *LocationConstraint) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSuggestLocation sets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.
 func (m *LocationConstraint) SetSuggestLocation(value *bool)() {
-    if m != nil {
-        m.suggestLocation = value
-    }
+    m.suggestLocation = value
 }

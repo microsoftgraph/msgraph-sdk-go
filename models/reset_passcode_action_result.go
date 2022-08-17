@@ -40,11 +40,7 @@ func (m *ResetPasscodeActionResult) GetFieldDeserializers()(map[string]func(i878
 }
 // GetPasscode gets the passcode property value. Newly generated passcode for the device
 func (m *ResetPasscodeActionResult) GetPasscode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcode
-    }
+    return m.passcode
 }
 // Serialize serializes information the current object
 func (m *ResetPasscodeActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ResetPasscodeActionResult) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetPasscode sets the passcode property value. Newly generated passcode for the device
 func (m *ResetPasscodeActionResult) SetPasscode(value *string)() {
-    if m != nil {
-        m.passcode = value
-    }
+    m.passcode = value
 }

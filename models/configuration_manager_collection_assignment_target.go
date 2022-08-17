@@ -25,11 +25,7 @@ func CreateConfigurationManagerCollectionAssignmentTargetFromDiscriminatorValue(
 }
 // GetCollectionId gets the collectionId property value. The collection Id that is the target of the assignment.
 func (m *ConfigurationManagerCollectionAssignmentTarget) GetCollectionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collectionId
-    }
+    return m.collectionId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerCollectionAssignmentTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ConfigurationManagerCollectionAssignmentTarget) Serialize(writer i878a8
 }
 // SetCollectionId sets the collectionId property value. The collection Id that is the target of the assignment.
 func (m *ConfigurationManagerCollectionAssignmentTarget) SetCollectionId(value *string)() {
-    if m != nil {
-        m.collectionId = value
-    }
+    m.collectionId = value
 }

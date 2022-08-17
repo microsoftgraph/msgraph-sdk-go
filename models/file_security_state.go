@@ -34,11 +34,7 @@ func CreateFileSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSecurityState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *FileSecurityState) GetFileHash()(FileHashable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
+    return m.fileHash
 }
 // GetName gets the name property value. File name (without path).
 func (m *FileSecurityState) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FileSecurityState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPath gets the path property value. Full file path of the file/imageFile.
 func (m *FileSecurityState) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
+    return m.path
 }
 // GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
 func (m *FileSecurityState) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // Serialize serializes information the current object
 func (m *FileSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *FileSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSecurityState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *FileSecurityState) SetFileHash(value FileHashable)() {
-    if m != nil {
-        m.fileHash = value
-    }
+    m.fileHash = value
 }
 // SetName sets the name property value. File name (without path).
 func (m *FileSecurityState) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FileSecurityState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPath sets the path property value. Full file path of the file/imageFile.
 func (m *FileSecurityState) SetPath(value *string)() {
-    if m != nil {
-        m.path = value
-    }
+    m.path = value
 }
 // SetRiskScore sets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
 func (m *FileSecurityState) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }

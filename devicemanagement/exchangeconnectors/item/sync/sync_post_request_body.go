@@ -25,11 +25,7 @@ func CreateSyncPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SyncPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SyncPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,11 +44,7 @@ func (m *SyncPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetSyncType gets the syncType property value. The type of Exchange Connector sync requested.
 func (m *SyncPostRequestBody) GetSyncType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorSyncType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncType
-    }
+    return m.syncType
 }
 // Serialize serializes information the current object
 func (m *SyncPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -73,13 +65,9 @@ func (m *SyncPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SyncPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetSyncType sets the syncType property value. The type of Exchange Connector sync requested.
 func (m *SyncPostRequestBody) SetSyncType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorSyncType)() {
-    if m != nil {
-        m.syncType = value
-    }
+    m.syncType = value
 }

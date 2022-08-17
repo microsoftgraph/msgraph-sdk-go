@@ -36,19 +36,11 @@ func CreateBookingSchedulingPolicyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingSchedulingPolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowStaffSelection gets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
 func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowStaffSelection
-    }
+    return m.allowStaffSelection
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMaximumAdvance gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAdvance
-    }
+    return m.maximumAdvance
 }
 // GetMinimumLeadTime gets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumLeadTime
-    }
+    return m.minimumLeadTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BookingSchedulingPolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSendConfirmationsToOwner gets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
 func (m *BookingSchedulingPolicy) GetSendConfirmationsToOwner()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendConfirmationsToOwner
-    }
+    return m.sendConfirmationsToOwner
 }
 // GetTimeSlotInterval gets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
 func (m *BookingSchedulingPolicy) GetTimeSlotInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeSlotInterval
-    }
+    return m.timeSlotInterval
 }
 // Serialize serializes information the current object
 func (m *BookingSchedulingPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *BookingSchedulingPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingSchedulingPolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowStaffSelection sets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
 func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
-    if m != nil {
-        m.allowStaffSelection = value
-    }
+    m.allowStaffSelection = value
 }
 // SetMaximumAdvance sets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.maximumAdvance = value
-    }
+    m.maximumAdvance = value
 }
 // SetMinimumLeadTime sets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetMinimumLeadTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.minimumLeadTime = value
-    }
+    m.minimumLeadTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BookingSchedulingPolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSendConfirmationsToOwner sets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
 func (m *BookingSchedulingPolicy) SetSendConfirmationsToOwner(value *bool)() {
-    if m != nil {
-        m.sendConfirmationsToOwner = value
-    }
+    m.sendConfirmationsToOwner = value
 }
 // SetTimeSlotInterval sets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetTimeSlotInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.timeSlotInterval = value
-    }
+    m.timeSlotInterval = value
 }

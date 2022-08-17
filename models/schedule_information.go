@@ -36,27 +36,15 @@ func CreateScheduleInformationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAvailabilityView gets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
 func (m *ScheduleInformation) GetAvailabilityView()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availabilityView
-    }
+    return m.availabilityView
 }
 // GetError gets the error property value. Error information from attempting to get the availability of the user, distribution list, or resource.
 func (m *ScheduleInformation) GetError()(FreeBusyErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,35 +117,19 @@ func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ScheduleInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetScheduleId gets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
 func (m *ScheduleInformation) GetScheduleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleId
-    }
+    return m.scheduleId
 }
 // GetScheduleItems gets the scheduleItems property value. Contains the items that describe the availability of the user or resource.
 func (m *ScheduleInformation) GetScheduleItems()([]ScheduleItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleItems
-    }
+    return m.scheduleItems
 }
 // GetWorkingHours gets the workingHours property value. The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.
 func (m *ScheduleInformation) GetWorkingHours()(WorkingHoursable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workingHours
-    }
+    return m.workingHours
 }
 // Serialize serializes information the current object
 func (m *ScheduleInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *ScheduleInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAvailabilityView sets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
 func (m *ScheduleInformation) SetAvailabilityView(value *string)() {
-    if m != nil {
-        m.availabilityView = value
-    }
+    m.availabilityView = value
 }
 // SetError sets the error property value. Error information from attempting to get the availability of the user, distribution list, or resource.
 func (m *ScheduleInformation) SetError(value FreeBusyErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ScheduleInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetScheduleId sets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
 func (m *ScheduleInformation) SetScheduleId(value *string)() {
-    if m != nil {
-        m.scheduleId = value
-    }
+    m.scheduleId = value
 }
 // SetScheduleItems sets the scheduleItems property value. Contains the items that describe the availability of the user or resource.
 func (m *ScheduleInformation) SetScheduleItems(value []ScheduleItemable)() {
-    if m != nil {
-        m.scheduleItems = value
-    }
+    m.scheduleItems = value
 }
 // SetWorkingHours sets the workingHours property value. The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.
 func (m *ScheduleInformation) SetWorkingHours(value WorkingHoursable)() {
-    if m != nil {
-        m.workingHours = value
-    }
+    m.workingHours = value
 }

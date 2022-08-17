@@ -71,19 +71,11 @@ func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetUserFlowType gets the userFlowType property value. The userFlowType property
 func (m *IdentityUserFlow) GetUserFlowType()(*UserFlowType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlowType
-    }
+    return m.userFlowType
 }
 // GetUserFlowTypeVersion gets the userFlowTypeVersion property value. The userFlowTypeVersion property
 func (m *IdentityUserFlow) GetUserFlowTypeVersion()(*float32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlowTypeVersion
-    }
+    return m.userFlowTypeVersion
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +100,9 @@ func (m *IdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetUserFlowType sets the userFlowType property value. The userFlowType property
 func (m *IdentityUserFlow) SetUserFlowType(value *UserFlowType)() {
-    if m != nil {
-        m.userFlowType = value
-    }
+    m.userFlowType = value
 }
 // SetUserFlowTypeVersion sets the userFlowTypeVersion property value. The userFlowTypeVersion property
 func (m *IdentityUserFlow) SetUserFlowTypeVersion(value *float32)() {
-    if m != nil {
-        m.userFlowTypeVersion = value
-    }
+    m.userFlowTypeVersion = value
 }

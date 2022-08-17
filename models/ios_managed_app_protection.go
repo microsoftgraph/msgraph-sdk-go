@@ -11,7 +11,7 @@ type IosManagedAppProtection struct {
     appDataEncryptionType *ManagedAppDataEncryptionType
     // List of apps to which the policy is deployed.
     apps []ManagedMobileAppable
-    // A custom browser protocol to open weblink on iOS.
+    // A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserProtocol *string
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32
@@ -37,51 +37,27 @@ func CreateIosManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAppDataEncryptionType gets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appDataEncryptionType
-    }
+    return m.appDataEncryptionType
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apps
-    }
+    return m.apps
 }
-// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customBrowserProtocol
-    }
+    return m.customBrowserProtocol
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *IosManagedAppProtection) GetDeployedAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployedAppCount
-    }
+    return m.deployedAppCount
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *IosManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentSummary
-    }
+    return m.deploymentSummary
 }
 // GetFaceIdBlocked gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.faceIdBlocked
-    }
+    return m.faceIdBlocked
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,11 +140,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredSdkVersion
-    }
+    return m.minimumRequiredSdkVersion
 }
 // Serialize serializes information the current object
 func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,43 +199,29 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAppDataEncryptionType sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *IosManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
-    if m != nil {
-        m.appDataEncryptionType = value
-    }
+    m.appDataEncryptionType = value
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *IosManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
-    if m != nil {
-        m.apps = value
-    }
+    m.apps = value
 }
-// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
-    if m != nil {
-        m.customBrowserProtocol = value
-    }
+    m.customBrowserProtocol = value
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *IosManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    if m != nil {
-        m.deployedAppCount = value
-    }
+    m.deployedAppCount = value
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *IosManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
-    if m != nil {
-        m.deploymentSummary = value
-    }
+    m.deploymentSummary = value
 }
 // SetFaceIdBlocked sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 func (m *IosManagedAppProtection) SetFaceIdBlocked(value *bool)() {
-    if m != nil {
-        m.faceIdBlocked = value
-    }
+    m.faceIdBlocked = value
 }
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
-    if m != nil {
-        m.minimumRequiredSdkVersion = value
-    }
+    m.minimumRequiredSdkVersion = value
 }

@@ -4,10 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookComment provides operations to manage the admin singleton.
+// WorkbookComment provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookComment struct {
     Entity
-    // The content of the comment.
+    // The content of comment.
     content *string
     // Indicates the type for the comment.
     contentType *string
@@ -27,21 +27,13 @@ func NewWorkbookComment()(*WorkbookComment) {
 func CreateWorkbookCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookComment(), nil
 }
-// GetContent gets the content property value. The content of the comment.
+// GetContent gets the content property value. The content of comment.
 func (m *WorkbookComment) GetContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetContentType gets the contentType property value. Indicates the type for the comment.
 func (m *WorkbookComment) GetContentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetReplies gets the replies property value. The replies property
 func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replies
-    }
+    return m.replies
 }
 // Serialize serializes information the current object
 func (m *WorkbookComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,21 +108,15 @@ func (m *WorkbookComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetContent sets the content property value. The content of the comment.
+// SetContent sets the content property value. The content of comment.
 func (m *WorkbookComment) SetContent(value *string)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetContentType sets the contentType property value. Indicates the type for the comment.
 func (m *WorkbookComment) SetContentType(value *string)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetReplies sets the replies property value. The replies property
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
-    if m != nil {
-        m.replies = value
-    }
+    m.replies = value
 }

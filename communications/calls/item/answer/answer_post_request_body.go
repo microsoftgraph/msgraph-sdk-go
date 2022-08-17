@@ -33,35 +33,19 @@ func CreateAnswerPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAcceptedModalities gets the acceptedModalities property value. The acceptedModalities property
 func (m *AnswerPostRequestBody) GetAcceptedModalities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acceptedModalities
-    }
+    return m.acceptedModalities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
 func (m *AnswerPostRequestBody) GetCallbackUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callbackUri
-    }
+    return m.callbackUri
 }
 // GetCallOptions gets the callOptions property value. The callOptions property
 func (m *AnswerPostRequestBody) GetCallOptions()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callOptions
-    }
+    return m.callOptions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AnswerPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,19 +108,11 @@ func (m *AnswerPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetMediaConfig gets the mediaConfig property value. The mediaConfig property
 func (m *AnswerPostRequestBody) GetMediaConfig()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaConfig
-    }
+    return m.mediaConfig
 }
 // GetParticipantCapacity gets the participantCapacity property value. The participantCapacity property
 func (m *AnswerPostRequestBody) GetParticipantCapacity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantCapacity
-    }
+    return m.participantCapacity
 }
 // Serialize serializes information the current object
 func (m *AnswerPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -180,37 +156,25 @@ func (m *AnswerPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAcceptedModalities sets the acceptedModalities property value. The acceptedModalities property
 func (m *AnswerPostRequestBody) SetAcceptedModalities(value []string)() {
-    if m != nil {
-        m.acceptedModalities = value
-    }
+    m.acceptedModalities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property
 func (m *AnswerPostRequestBody) SetCallbackUri(value *string)() {
-    if m != nil {
-        m.callbackUri = value
-    }
+    m.callbackUri = value
 }
 // SetCallOptions sets the callOptions property value. The callOptions property
 func (m *AnswerPostRequestBody) SetCallOptions(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IncomingCallOptionsable)() {
-    if m != nil {
-        m.callOptions = value
-    }
+    m.callOptions = value
 }
 // SetMediaConfig sets the mediaConfig property value. The mediaConfig property
 func (m *AnswerPostRequestBody) SetMediaConfig(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MediaConfigable)() {
-    if m != nil {
-        m.mediaConfig = value
-    }
+    m.mediaConfig = value
 }
 // SetParticipantCapacity sets the participantCapacity property value. The participantCapacity property
 func (m *AnswerPostRequestBody) SetParticipantCapacity(value *int32)() {
-    if m != nil {
-        m.participantCapacity = value
-    }
+    m.participantCapacity = value
 }

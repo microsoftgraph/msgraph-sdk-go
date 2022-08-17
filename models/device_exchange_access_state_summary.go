@@ -36,27 +36,15 @@ func CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceExchangeAccessStateSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedDeviceCount gets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
 func (m *DeviceExchangeAccessStateSummary) GetAllowedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedDeviceCount
-    }
+    return m.allowedDeviceCount
 }
 // GetBlockedDeviceCount gets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
 func (m *DeviceExchangeAccessStateSummary) GetBlockedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockedDeviceCount
-    }
+    return m.blockedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +113,19 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceExchangeAccessStateSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQuarantinedDeviceCount gets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
 func (m *DeviceExchangeAccessStateSummary) GetQuarantinedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quarantinedDeviceCount
-    }
+    return m.quarantinedDeviceCount
 }
 // GetUnavailableDeviceCount gets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
 func (m *DeviceExchangeAccessStateSummary) GetUnavailableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unavailableDeviceCount
-    }
+    return m.unavailableDeviceCount
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
 func (m *DeviceExchangeAccessStateSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
-    }
+    return m.unknownDeviceCount
 }
 // Serialize serializes information the current object
 func (m *DeviceExchangeAccessStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *DeviceExchangeAccessStateSummary) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceExchangeAccessStateSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedDeviceCount sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
 func (m *DeviceExchangeAccessStateSummary) SetAllowedDeviceCount(value *int32)() {
-    if m != nil {
-        m.allowedDeviceCount = value
-    }
+    m.allowedDeviceCount = value
 }
 // SetBlockedDeviceCount sets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
 func (m *DeviceExchangeAccessStateSummary) SetBlockedDeviceCount(value *int32)() {
-    if m != nil {
-        m.blockedDeviceCount = value
-    }
+    m.blockedDeviceCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceExchangeAccessStateSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQuarantinedDeviceCount sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
 func (m *DeviceExchangeAccessStateSummary) SetQuarantinedDeviceCount(value *int32)() {
-    if m != nil {
-        m.quarantinedDeviceCount = value
-    }
+    m.quarantinedDeviceCount = value
 }
 // SetUnavailableDeviceCount sets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
 func (m *DeviceExchangeAccessStateSummary) SetUnavailableDeviceCount(value *int32)() {
-    if m != nil {
-        m.unavailableDeviceCount = value
-    }
+    m.unavailableDeviceCount = value
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
 func (m *DeviceExchangeAccessStateSummary) SetUnknownDeviceCount(value *int32)() {
-    if m != nil {
-        m.unknownDeviceCount = value
-    }
+    m.unknownDeviceCount = value
 }

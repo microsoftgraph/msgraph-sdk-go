@@ -32,19 +32,11 @@ func CreateRgbColorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RgbColor) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetB gets the b property value. Blue value
 func (m *RgbColor) GetB()(*byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b
-    }
+    return m.b
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RgbColor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetG gets the g property value. Green value
 func (m *RgbColor) GetG()(*byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.g
-    }
+    return m.g
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RgbColor) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetR gets the r property value. Red value
 func (m *RgbColor) GetR()(*byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.r
-    }
+    return m.r
 }
 // Serialize serializes information the current object
 func (m *RgbColor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *RgbColor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RgbColor) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetB sets the b property value. Blue value
 func (m *RgbColor) SetB(value *byte)() {
-    if m != nil {
-        m.b = value
-    }
+    m.b = value
 }
 // SetG sets the g property value. Green value
 func (m *RgbColor) SetG(value *byte)() {
-    if m != nil {
-        m.g = value
-    }
+    m.g = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RgbColor) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetR sets the r property value. Red value
 func (m *RgbColor) SetR(value *byte)() {
-    if m != nil {
-        m.r = value
-    }
+    m.r = value
 }

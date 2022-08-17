@@ -40,11 +40,7 @@ func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetFill gets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
 func (m *WorkbookChartPointFormat) GetFill()(WorkbookChartFillable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fill
-    }
+    return m.fill
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartPointFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WorkbookChartPointFormat) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetFill sets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
 func (m *WorkbookChartPointFormat) SetFill(value WorkbookChartFillable)() {
-    if m != nil {
-        m.fill = value
-    }
+    m.fill = value
 }

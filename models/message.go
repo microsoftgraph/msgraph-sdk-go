@@ -14,7 +14,7 @@ type Message struct {
     bccRecipients []Recipientable
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
     body ItemBodyable
-    // The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+    // The first 255 characters of the message body. It is in text format.
     bodyPreview *string
     // The Cc: recipients for the message.
     ccRecipients []Recipientable
@@ -109,67 +109,35 @@ func CreateMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAttachments gets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
 func (m *Message) GetAttachments()([]Attachmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachments
-    }
+    return m.attachments
 }
 // GetBccRecipients gets the bccRecipients property value. The Bcc: recipients for the message.
 func (m *Message) GetBccRecipients()([]Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bccRecipients
-    }
+    return m.bccRecipients
 }
 // GetBody gets the body property value. The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
 func (m *Message) GetBody()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
+    return m.body
 }
-// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Message) GetBodyPreview()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bodyPreview
-    }
+    return m.bodyPreview
 }
 // GetCcRecipients gets the ccRecipients property value. The Cc: recipients for the message.
 func (m *Message) GetCcRecipients()([]Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ccRecipients
-    }
+    return m.ccRecipients
 }
 // GetConversationId gets the conversationId property value. The ID of the conversation the email belongs to.
 func (m *Message) GetConversationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversationId
-    }
+    return m.conversationId
 }
 // GetConversationIndex gets the conversationIndex property value. Indicates the position of the message within the conversation.
 func (m *Message) GetConversationIndex()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversationIndex
-    }
+    return m.conversationIndex
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the message. Nullable.
 func (m *Message) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Message) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -514,179 +482,91 @@ func (m *Message) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetFlag gets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
 func (m *Message) GetFlag()(FollowupFlagable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flag
-    }
+    return m.flag
 }
 // GetFrom gets the from property value. The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
 func (m *Message) GetFrom()(Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
+    return m.from
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
 func (m *Message) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
+    return m.hasAttachments
 }
 // GetImportance gets the importance property value. The importance property
 func (m *Message) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
+    return m.importance
 }
 // GetInferenceClassification gets the inferenceClassification property value. The inferenceClassification property
 func (m *Message) GetInferenceClassification()(*InferenceClassificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inferenceClassification
-    }
+    return m.inferenceClassification
 }
 // GetInternetMessageHeaders gets the internetMessageHeaders property value. The internetMessageHeaders property
 func (m *Message) GetInternetMessageHeaders()([]InternetMessageHeaderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internetMessageHeaders
-    }
+    return m.internetMessageHeaders
 }
 // GetInternetMessageId gets the internetMessageId property value. The internetMessageId property
 func (m *Message) GetInternetMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internetMessageId
-    }
+    return m.internetMessageId
 }
 // GetIsDeliveryReceiptRequested gets the isDeliveryReceiptRequested property value. The isDeliveryReceiptRequested property
 func (m *Message) GetIsDeliveryReceiptRequested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeliveryReceiptRequested
-    }
+    return m.isDeliveryReceiptRequested
 }
 // GetIsDraft gets the isDraft property value. The isDraft property
 func (m *Message) GetIsDraft()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDraft
-    }
+    return m.isDraft
 }
 // GetIsRead gets the isRead property value. The isRead property
 func (m *Message) GetIsRead()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRead
-    }
+    return m.isRead
 }
 // GetIsReadReceiptRequested gets the isReadReceiptRequested property value. The isReadReceiptRequested property
 func (m *Message) GetIsReadReceiptRequested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReadReceiptRequested
-    }
+    return m.isReadReceiptRequested
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the message. Nullable.
 func (m *Message) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
+    return m.multiValueExtendedProperties
 }
 // GetParentFolderId gets the parentFolderId property value. The parentFolderId property
 func (m *Message) GetParentFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentFolderId
-    }
+    return m.parentFolderId
 }
 // GetReceivedDateTime gets the receivedDateTime property value. The receivedDateTime property
 func (m *Message) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedDateTime
-    }
+    return m.receivedDateTime
 }
 // GetReplyTo gets the replyTo property value. The replyTo property
 func (m *Message) GetReplyTo()([]Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replyTo
-    }
+    return m.replyTo
 }
 // GetSender gets the sender property value. The sender property
 func (m *Message) GetSender()(Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sender
-    }
+    return m.sender
 }
 // GetSentDateTime gets the sentDateTime property value. The sentDateTime property
 func (m *Message) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sentDateTime
-    }
+    return m.sentDateTime
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.
 func (m *Message) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
+    return m.singleValueExtendedProperties
 }
 // GetSubject gets the subject property value. The subject property
 func (m *Message) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // GetToRecipients gets the toRecipients property value. The toRecipients property
 func (m *Message) GetToRecipients()([]Recipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toRecipients
-    }
+    return m.toRecipients
 }
 // GetUniqueBody gets the uniqueBody property value. The uniqueBody property
 func (m *Message) GetUniqueBody()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueBody
-    }
+    return m.uniqueBody
 }
 // GetWebLink gets the webLink property value. The webLink property
 func (m *Message) GetWebLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webLink
-    }
+    return m.webLink
 }
 // Serialize serializes information the current object
 func (m *Message) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -916,181 +796,121 @@ func (m *Message) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAttachments sets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
 func (m *Message) SetAttachments(value []Attachmentable)() {
-    if m != nil {
-        m.attachments = value
-    }
+    m.attachments = value
 }
 // SetBccRecipients sets the bccRecipients property value. The Bcc: recipients for the message.
 func (m *Message) SetBccRecipients(value []Recipientable)() {
-    if m != nil {
-        m.bccRecipients = value
-    }
+    m.bccRecipients = value
 }
 // SetBody sets the body property value. The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
 func (m *Message) SetBody(value ItemBodyable)() {
-    if m != nil {
-        m.body = value
-    }
+    m.body = value
 }
-// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Message) SetBodyPreview(value *string)() {
-    if m != nil {
-        m.bodyPreview = value
-    }
+    m.bodyPreview = value
 }
 // SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the message.
 func (m *Message) SetCcRecipients(value []Recipientable)() {
-    if m != nil {
-        m.ccRecipients = value
-    }
+    m.ccRecipients = value
 }
 // SetConversationId sets the conversationId property value. The ID of the conversation the email belongs to.
 func (m *Message) SetConversationId(value *string)() {
-    if m != nil {
-        m.conversationId = value
-    }
+    m.conversationId = value
 }
 // SetConversationIndex sets the conversationIndex property value. Indicates the position of the message within the conversation.
 func (m *Message) SetConversationIndex(value []byte)() {
-    if m != nil {
-        m.conversationIndex = value
-    }
+    m.conversationIndex = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the message. Nullable.
 func (m *Message) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetFlag sets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
 func (m *Message) SetFlag(value FollowupFlagable)() {
-    if m != nil {
-        m.flag = value
-    }
+    m.flag = value
 }
 // SetFrom sets the from property value. The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
 func (m *Message) SetFrom(value Recipientable)() {
-    if m != nil {
-        m.from = value
-    }
+    m.from = value
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
 func (m *Message) SetHasAttachments(value *bool)() {
-    if m != nil {
-        m.hasAttachments = value
-    }
+    m.hasAttachments = value
 }
 // SetImportance sets the importance property value. The importance property
 func (m *Message) SetImportance(value *Importance)() {
-    if m != nil {
-        m.importance = value
-    }
+    m.importance = value
 }
 // SetInferenceClassification sets the inferenceClassification property value. The inferenceClassification property
 func (m *Message) SetInferenceClassification(value *InferenceClassificationType)() {
-    if m != nil {
-        m.inferenceClassification = value
-    }
+    m.inferenceClassification = value
 }
 // SetInternetMessageHeaders sets the internetMessageHeaders property value. The internetMessageHeaders property
 func (m *Message) SetInternetMessageHeaders(value []InternetMessageHeaderable)() {
-    if m != nil {
-        m.internetMessageHeaders = value
-    }
+    m.internetMessageHeaders = value
 }
 // SetInternetMessageId sets the internetMessageId property value. The internetMessageId property
 func (m *Message) SetInternetMessageId(value *string)() {
-    if m != nil {
-        m.internetMessageId = value
-    }
+    m.internetMessageId = value
 }
 // SetIsDeliveryReceiptRequested sets the isDeliveryReceiptRequested property value. The isDeliveryReceiptRequested property
 func (m *Message) SetIsDeliveryReceiptRequested(value *bool)() {
-    if m != nil {
-        m.isDeliveryReceiptRequested = value
-    }
+    m.isDeliveryReceiptRequested = value
 }
 // SetIsDraft sets the isDraft property value. The isDraft property
 func (m *Message) SetIsDraft(value *bool)() {
-    if m != nil {
-        m.isDraft = value
-    }
+    m.isDraft = value
 }
 // SetIsRead sets the isRead property value. The isRead property
 func (m *Message) SetIsRead(value *bool)() {
-    if m != nil {
-        m.isRead = value
-    }
+    m.isRead = value
 }
 // SetIsReadReceiptRequested sets the isReadReceiptRequested property value. The isReadReceiptRequested property
 func (m *Message) SetIsReadReceiptRequested(value *bool)() {
-    if m != nil {
-        m.isReadReceiptRequested = value
-    }
+    m.isReadReceiptRequested = value
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the message. Nullable.
 func (m *Message) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.multiValueExtendedProperties = value
-    }
+    m.multiValueExtendedProperties = value
 }
 // SetParentFolderId sets the parentFolderId property value. The parentFolderId property
 func (m *Message) SetParentFolderId(value *string)() {
-    if m != nil {
-        m.parentFolderId = value
-    }
+    m.parentFolderId = value
 }
 // SetReceivedDateTime sets the receivedDateTime property value. The receivedDateTime property
 func (m *Message) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.receivedDateTime = value
-    }
+    m.receivedDateTime = value
 }
 // SetReplyTo sets the replyTo property value. The replyTo property
 func (m *Message) SetReplyTo(value []Recipientable)() {
-    if m != nil {
-        m.replyTo = value
-    }
+    m.replyTo = value
 }
 // SetSender sets the sender property value. The sender property
 func (m *Message) SetSender(value Recipientable)() {
-    if m != nil {
-        m.sender = value
-    }
+    m.sender = value
 }
 // SetSentDateTime sets the sentDateTime property value. The sentDateTime property
 func (m *Message) SetSentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.sentDateTime = value
-    }
+    m.sentDateTime = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.
 func (m *Message) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.singleValueExtendedProperties = value
-    }
+    m.singleValueExtendedProperties = value
 }
 // SetSubject sets the subject property value. The subject property
 func (m *Message) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }
 // SetToRecipients sets the toRecipients property value. The toRecipients property
 func (m *Message) SetToRecipients(value []Recipientable)() {
-    if m != nil {
-        m.toRecipients = value
-    }
+    m.toRecipients = value
 }
 // SetUniqueBody sets the uniqueBody property value. The uniqueBody property
 func (m *Message) SetUniqueBody(value ItemBodyable)() {
-    if m != nil {
-        m.uniqueBody = value
-    }
+    m.uniqueBody = value
 }
 // SetWebLink sets the webLink property value. The webLink property
 func (m *Message) SetWebLink(value *string)() {
-    if m != nil {
-        m.webLink = value
-    }
+    m.webLink = value
 }

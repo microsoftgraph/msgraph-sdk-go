@@ -27,7 +27,7 @@ type OutlookRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OutlookRequestBuilderGetQueryParameters selective Outlook services available to the user. Read-only. Nullable.
+// OutlookRequestBuilderGetQueryParameters get outlook from me
 type OutlookRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -83,11 +83,11 @@ func (m *OutlookRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation selective Outlook services available to the user. Read-only. Nullable.
+// CreateGetRequestInformation get outlook from me
 func (m *OutlookRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration selective Outlook services available to the user. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get outlook from me
 func (m *OutlookRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OutlookRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,11 +140,11 @@ func (m *OutlookRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler
     }
     return nil
 }
-// Get selective Outlook services available to the user. Read-only. Nullable.
+// Get get outlook from me
 func (m *OutlookRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookUserable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler selective Outlook services available to the user. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get outlook from me
 func (m *OutlookRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OutlookRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookUserable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

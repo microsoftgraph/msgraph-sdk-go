@@ -8,39 +8,39 @@ import (
 // OrgContact 
 type OrgContact struct {
     DirectoryObject
-    // Postal addresses for this organizational contact. For now a contact can only have one physical address.
+    // The addresses property
     addresses []PhysicalOfficeAddressable
-    // Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The companyName property
     companyName *string
-    // The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The department property
     department *string
-    // The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
+    // The directReports property
     directReports []DirectoryObjectable
-    // Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    // The displayName property
     displayName *string
-    // First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The givenName property
     givenName *string
-    // Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The jobTitle property
     jobTitle *string
-    // The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The mail property
     mail *string
-    // Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The mailNickname property
     mailNickname *string
-    // The user or contact that is this contact's manager. Read-only. Supports $expand.
+    // The manager property
     manager DirectoryObjectable
-    // Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+    // The memberOf property
     memberOf []DirectoryObjectable
-    // Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).
+    // The onPremisesLastSyncDateTime property
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
+    // The onPremisesProvisioningErrors property
     onPremisesProvisioningErrors []OnPremisesProvisioningErrorable
-    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
+    // The onPremisesSyncEnabled property
     onPremisesSyncEnabled *bool
-    // List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
+    // The phones property
     phones []Phoneable
-    // For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+    // The proxyAddresses property
     proxyAddresses []string
-    // Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+    // The surname property
     surname *string
     // The transitiveMemberOf property
     transitiveMemberOf []DirectoryObjectable
@@ -58,45 +58,25 @@ func NewOrgContact()(*OrgContact) {
 func CreateOrgContactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrgContact(), nil
 }
-// GetAddresses gets the addresses property value. Postal addresses for this organizational contact. For now a contact can only have one physical address.
+// GetAddresses gets the addresses property value. The addresses property
 func (m *OrgContact) GetAddresses()([]PhysicalOfficeAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addresses
-    }
+    return m.addresses
 }
-// GetCompanyName gets the companyName property value. Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetCompanyName gets the companyName property value. The companyName property
 func (m *OrgContact) GetCompanyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companyName
-    }
+    return m.companyName
 }
-// GetDepartment gets the department property value. The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetDepartment gets the department property value. The department property
 func (m *OrgContact) GetDepartment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.department
-    }
+    return m.department
 }
-// GetDirectReports gets the directReports property value. The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
+// GetDirectReports gets the directReports property value. The directReports property
 func (m *OrgContact) GetDirectReports()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directReports
-    }
+    return m.directReports
 }
-// GetDisplayName gets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. The displayName property
 func (m *OrgContact) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -311,109 +291,57 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetGivenName gets the givenName property value. First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetGivenName gets the givenName property value. The givenName property
 func (m *OrgContact) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
+    return m.givenName
 }
-// GetJobTitle gets the jobTitle property value. Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetJobTitle gets the jobTitle property value. The jobTitle property
 func (m *OrgContact) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
+    return m.jobTitle
 }
-// GetMail gets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetMail gets the mail property value. The mail property
 func (m *OrgContact) GetMail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mail
-    }
+    return m.mail
 }
-// GetMailNickname gets the mailNickname property value. Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetMailNickname gets the mailNickname property value. The mailNickname property
 func (m *OrgContact) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
+    return m.mailNickname
 }
-// GetManager gets the manager property value. The user or contact that is this contact's manager. Read-only. Supports $expand.
+// GetManager gets the manager property value. The manager property
 func (m *OrgContact) GetManager()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
+    return m.manager
 }
-// GetMemberOf gets the memberOf property value. Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// GetMemberOf gets the memberOf property value. The memberOf property
 func (m *OrgContact) GetMemberOf()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
+    return m.memberOf
 }
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
 func (m *OrgContact) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesLastSyncDateTime
-    }
+    return m.onPremisesLastSyncDateTime
 }
-// GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
+// GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
 func (m *OrgContact) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesProvisioningErrors
-    }
+    return m.onPremisesProvisioningErrors
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
 func (m *OrgContact) GetOnPremisesSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSyncEnabled
-    }
+    return m.onPremisesSyncEnabled
 }
-// GetPhones gets the phones property value. List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
+// GetPhones gets the phones property value. The phones property
 func (m *OrgContact) GetPhones()([]Phoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phones
-    }
+    return m.phones
 }
-// GetProxyAddresses gets the proxyAddresses property value. For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+// GetProxyAddresses gets the proxyAddresses property value. The proxyAddresses property
 func (m *OrgContact) GetProxyAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyAddresses
-    }
+    return m.proxyAddresses
 }
-// GetSurname gets the surname property value. Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+// GetSurname gets the surname property value. The surname property
 func (m *OrgContact) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
+    return m.surname
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *OrgContact) GetTransitiveMemberOf()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveMemberOf
-    }
+    return m.transitiveMemberOf
 }
 // Serialize serializes information the current object
 func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -555,111 +483,75 @@ func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAddresses sets the addresses property value. Postal addresses for this organizational contact. For now a contact can only have one physical address.
+// SetAddresses sets the addresses property value. The addresses property
 func (m *OrgContact) SetAddresses(value []PhysicalOfficeAddressable)() {
-    if m != nil {
-        m.addresses = value
-    }
+    m.addresses = value
 }
-// SetCompanyName sets the companyName property value. Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetCompanyName sets the companyName property value. The companyName property
 func (m *OrgContact) SetCompanyName(value *string)() {
-    if m != nil {
-        m.companyName = value
-    }
+    m.companyName = value
 }
-// SetDepartment sets the department property value. The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetDepartment sets the department property value. The department property
 func (m *OrgContact) SetDepartment(value *string)() {
-    if m != nil {
-        m.department = value
-    }
+    m.department = value
 }
-// SetDirectReports sets the directReports property value. The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
+// SetDirectReports sets the directReports property value. The directReports property
 func (m *OrgContact) SetDirectReports(value []DirectoryObjectable)() {
-    if m != nil {
-        m.directReports = value
-    }
+    m.directReports = value
 }
-// SetDisplayName sets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *OrgContact) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
-// SetGivenName sets the givenName property value. First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetGivenName sets the givenName property value. The givenName property
 func (m *OrgContact) SetGivenName(value *string)() {
-    if m != nil {
-        m.givenName = value
-    }
+    m.givenName = value
 }
-// SetJobTitle sets the jobTitle property value. Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetJobTitle sets the jobTitle property value. The jobTitle property
 func (m *OrgContact) SetJobTitle(value *string)() {
-    if m != nil {
-        m.jobTitle = value
-    }
+    m.jobTitle = value
 }
-// SetMail sets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetMail sets the mail property value. The mail property
 func (m *OrgContact) SetMail(value *string)() {
-    if m != nil {
-        m.mail = value
-    }
+    m.mail = value
 }
-// SetMailNickname sets the mailNickname property value. Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetMailNickname sets the mailNickname property value. The mailNickname property
 func (m *OrgContact) SetMailNickname(value *string)() {
-    if m != nil {
-        m.mailNickname = value
-    }
+    m.mailNickname = value
 }
-// SetManager sets the manager property value. The user or contact that is this contact's manager. Read-only. Supports $expand.
+// SetManager sets the manager property value. The manager property
 func (m *OrgContact) SetManager(value DirectoryObjectable)() {
-    if m != nil {
-        m.manager = value
-    }
+    m.manager = value
 }
-// SetMemberOf sets the memberOf property value. Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+// SetMemberOf sets the memberOf property value. The memberOf property
 func (m *OrgContact) SetMemberOf(value []DirectoryObjectable)() {
-    if m != nil {
-        m.memberOf = value
-    }
+    m.memberOf = value
 }
-// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).
+// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
 func (m *OrgContact) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.onPremisesLastSyncDateTime = value
-    }
+    m.onPremisesLastSyncDateTime = value
 }
-// SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
+// SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
 func (m *OrgContact) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)() {
-    if m != nil {
-        m.onPremisesProvisioningErrors = value
-    }
+    m.onPremisesProvisioningErrors = value
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
 func (m *OrgContact) SetOnPremisesSyncEnabled(value *bool)() {
-    if m != nil {
-        m.onPremisesSyncEnabled = value
-    }
+    m.onPremisesSyncEnabled = value
 }
-// SetPhones sets the phones property value. List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
+// SetPhones sets the phones property value. The phones property
 func (m *OrgContact) SetPhones(value []Phoneable)() {
-    if m != nil {
-        m.phones = value
-    }
+    m.phones = value
 }
-// SetProxyAddresses sets the proxyAddresses property value. For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+// SetProxyAddresses sets the proxyAddresses property value. The proxyAddresses property
 func (m *OrgContact) SetProxyAddresses(value []string)() {
-    if m != nil {
-        m.proxyAddresses = value
-    }
+    m.proxyAddresses = value
 }
-// SetSurname sets the surname property value. Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+// SetSurname sets the surname property value. The surname property
 func (m *OrgContact) SetSurname(value *string)() {
-    if m != nil {
-        m.surname = value
-    }
+    m.surname = value
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *OrgContact) SetTransitiveMemberOf(value []DirectoryObjectable)() {
-    if m != nil {
-        m.transitiveMemberOf = value
-    }
+    m.transitiveMemberOf = value
 }

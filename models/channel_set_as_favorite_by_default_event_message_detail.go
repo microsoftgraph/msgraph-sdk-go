@@ -27,11 +27,7 @@ func CreateChannelSetAsFavoriteByDefaultEventMessageDetailFromDiscriminatorValue
 }
 // GetChannelId gets the channelId property value. Unique identifier of the channel.
 func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) GetChannelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.channelId
-    }
+    return m.channelId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) GetFieldDeserializers(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // Serialize serializes information the current object
 func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) Serialize(writer i878a
 }
 // SetChannelId sets the channelId property value. Unique identifier of the channel.
 func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) SetChannelId(value *string)() {
-    if m != nil {
-        m.channelId = value
-    }
+    m.channelId = value
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *ChannelSetAsFavoriteByDefaultEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }

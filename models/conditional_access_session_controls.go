@@ -36,35 +36,19 @@ func CreateConditionalAccessSessionControlsFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessSessionControls) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationEnforcedRestrictions gets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
 func (m *ConditionalAccessSessionControls) GetApplicationEnforcedRestrictions()(ApplicationEnforcedRestrictionsSessionControlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationEnforcedRestrictions
-    }
+    return m.applicationEnforcedRestrictions
 }
 // GetCloudAppSecurity gets the cloudAppSecurity property value. Session control to apply cloud app security.
 func (m *ConditionalAccessSessionControls) GetCloudAppSecurity()(CloudAppSecuritySessionControlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudAppSecurity
-    }
+    return m.cloudAppSecurity
 }
 // GetDisableResilienceDefaults gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
 func (m *ConditionalAccessSessionControls) GetDisableResilienceDefaults()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disableResilienceDefaults
-    }
+    return m.disableResilienceDefaults
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,27 +117,15 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessSessionControls) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPersistentBrowser gets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
 func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(PersistentBrowserSessionControlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.persistentBrowser
-    }
+    return m.persistentBrowser
 }
 // GetSignInFrequency gets the signInFrequency property value. Session control to enforce signin frequency.
 func (m *ConditionalAccessSessionControls) GetSignInFrequency()(SignInFrequencySessionControlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInFrequency
-    }
+    return m.signInFrequency
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessSessionControls) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationEnforcedRestrictions sets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
 func (m *ConditionalAccessSessionControls) SetApplicationEnforcedRestrictions(value ApplicationEnforcedRestrictionsSessionControlable)() {
-    if m != nil {
-        m.applicationEnforcedRestrictions = value
-    }
+    m.applicationEnforcedRestrictions = value
 }
 // SetCloudAppSecurity sets the cloudAppSecurity property value. Session control to apply cloud app security.
 func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value CloudAppSecuritySessionControlable)() {
-    if m != nil {
-        m.cloudAppSecurity = value
-    }
+    m.cloudAppSecurity = value
 }
 // SetDisableResilienceDefaults sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
 func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *bool)() {
-    if m != nil {
-        m.disableResilienceDefaults = value
-    }
+    m.disableResilienceDefaults = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessSessionControls) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPersistentBrowser sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
 func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value PersistentBrowserSessionControlable)() {
-    if m != nil {
-        m.persistentBrowser = value
-    }
+    m.persistentBrowser = value
 }
 // SetSignInFrequency sets the signInFrequency property value. Session control to enforce signin frequency.
 func (m *ConditionalAccessSessionControls) SetSignInFrequency(value SignInFrequencySessionControlable)() {
-    if m != nil {
-        m.signInFrequency = value
-    }
+    m.signInFrequency = value
 }

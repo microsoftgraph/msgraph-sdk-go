@@ -48,19 +48,11 @@ func CreateShiftItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetActivities gets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
 func (m *ShiftItem) GetActivities()([]ShiftActivityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activities
-    }
+    return m.activities
 }
 // GetDisplayName gets the displayName property value. The shift label of the shiftItem.
 func (m *ShiftItem) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,11 +95,7 @@ func (m *ShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetNotes gets the notes property value. The shift notes for the shiftItem.
 func (m *ShiftItem) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // Serialize serializes information the current object
 func (m *ShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,19 +129,13 @@ func (m *ShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetActivities sets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
 func (m *ShiftItem) SetActivities(value []ShiftActivityable)() {
-    if m != nil {
-        m.activities = value
-    }
+    m.activities = value
 }
 // SetDisplayName sets the displayName property value. The shift label of the shiftItem.
 func (m *ShiftItem) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetNotes sets the notes property value. The shift notes for the shiftItem.
 func (m *ShiftItem) SetNotes(value *string)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }

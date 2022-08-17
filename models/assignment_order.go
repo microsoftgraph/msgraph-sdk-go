@@ -10,7 +10,7 @@ type AssignmentOrder struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+    // A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
     order []string
 }
 // NewAssignmentOrder instantiates a new assignmentOrder and sets the default values.
@@ -28,11 +28,7 @@ func CreateAssignmentOrderFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentOrder) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,19 +61,11 @@ func (m *AssignmentOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignmentOrder) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetOrder gets the order property value. A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+// GetOrder gets the order property value. A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 func (m *AssignmentOrder) GetOrder()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.order
-    }
+    return m.order
 }
 // Serialize serializes information the current object
 func (m *AssignmentOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,19 +91,13 @@ func (m *AssignmentOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentOrder) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignmentOrder) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetOrder sets the order property value. A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+// SetOrder sets the order property value. A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 func (m *AssignmentOrder) SetOrder(value []string)() {
-    if m != nil {
-        m.order = value
-    }
+    m.order = value
 }

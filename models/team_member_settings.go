@@ -12,7 +12,7 @@ type TeamMemberSettings struct {
     allowAddRemoveApps *bool
     // If set to true, members can add and update private channels.
     allowCreatePrivateChannels *bool
-    // If set to true, members can add and update any channels.
+    // If set to true, members can add and update channels.
     allowCreateUpdateChannels *bool
     // If set to true, members can add, update, and remove connectors.
     allowCreateUpdateRemoveConnectors *bool
@@ -38,59 +38,31 @@ func CreateTeamMemberSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamMemberSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowAddRemoveApps gets the allowAddRemoveApps property value. If set to true, members can add and remove apps.
 func (m *TeamMemberSettings) GetAllowAddRemoveApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAddRemoveApps
-    }
+    return m.allowAddRemoveApps
 }
 // GetAllowCreatePrivateChannels gets the allowCreatePrivateChannels property value. If set to true, members can add and update private channels.
 func (m *TeamMemberSettings) GetAllowCreatePrivateChannels()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowCreatePrivateChannels
-    }
+    return m.allowCreatePrivateChannels
 }
-// GetAllowCreateUpdateChannels gets the allowCreateUpdateChannels property value. If set to true, members can add and update any channels.
+// GetAllowCreateUpdateChannels gets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
 func (m *TeamMemberSettings) GetAllowCreateUpdateChannels()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowCreateUpdateChannels
-    }
+    return m.allowCreateUpdateChannels
 }
 // GetAllowCreateUpdateRemoveConnectors gets the allowCreateUpdateRemoveConnectors property value. If set to true, members can add, update, and remove connectors.
 func (m *TeamMemberSettings) GetAllowCreateUpdateRemoveConnectors()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowCreateUpdateRemoveConnectors
-    }
+    return m.allowCreateUpdateRemoveConnectors
 }
 // GetAllowCreateUpdateRemoveTabs gets the allowCreateUpdateRemoveTabs property value. If set to true, members can add, update, and remove tabs.
 func (m *TeamMemberSettings) GetAllowCreateUpdateRemoveTabs()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowCreateUpdateRemoveTabs
-    }
+    return m.allowCreateUpdateRemoveTabs
 }
 // GetAllowDeleteChannels gets the allowDeleteChannels property value. If set to true, members can delete channels.
 func (m *TeamMemberSettings) GetAllowDeleteChannels()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeleteChannels
-    }
+    return m.allowDeleteChannels
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,11 +141,7 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamMemberSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamMemberSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *TeamMemberSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamMemberSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowAddRemoveApps sets the allowAddRemoveApps property value. If set to true, members can add and remove apps.
 func (m *TeamMemberSettings) SetAllowAddRemoveApps(value *bool)() {
-    if m != nil {
-        m.allowAddRemoveApps = value
-    }
+    m.allowAddRemoveApps = value
 }
 // SetAllowCreatePrivateChannels sets the allowCreatePrivateChannels property value. If set to true, members can add and update private channels.
 func (m *TeamMemberSettings) SetAllowCreatePrivateChannels(value *bool)() {
-    if m != nil {
-        m.allowCreatePrivateChannels = value
-    }
+    m.allowCreatePrivateChannels = value
 }
-// SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, members can add and update any channels.
+// SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
 func (m *TeamMemberSettings) SetAllowCreateUpdateChannels(value *bool)() {
-    if m != nil {
-        m.allowCreateUpdateChannels = value
-    }
+    m.allowCreateUpdateChannels = value
 }
 // SetAllowCreateUpdateRemoveConnectors sets the allowCreateUpdateRemoveConnectors property value. If set to true, members can add, update, and remove connectors.
 func (m *TeamMemberSettings) SetAllowCreateUpdateRemoveConnectors(value *bool)() {
-    if m != nil {
-        m.allowCreateUpdateRemoveConnectors = value
-    }
+    m.allowCreateUpdateRemoveConnectors = value
 }
 // SetAllowCreateUpdateRemoveTabs sets the allowCreateUpdateRemoveTabs property value. If set to true, members can add, update, and remove tabs.
 func (m *TeamMemberSettings) SetAllowCreateUpdateRemoveTabs(value *bool)() {
-    if m != nil {
-        m.allowCreateUpdateRemoveTabs = value
-    }
+    m.allowCreateUpdateRemoveTabs = value
 }
 // SetAllowDeleteChannels sets the allowDeleteChannels property value. If set to true, members can delete channels.
 func (m *TeamMemberSettings) SetAllowDeleteChannels(value *bool)() {
-    if m != nil {
-        m.allowDeleteChannels = value
-    }
+    m.allowDeleteChannels = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamMemberSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

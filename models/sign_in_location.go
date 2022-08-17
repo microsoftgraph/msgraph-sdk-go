@@ -34,27 +34,15 @@ func CreateSignInLocationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInLocation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCity gets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetCity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.city
-    }
+    return m.city
 }
 // GetCountryOrRegion gets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetCountryOrRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countryOrRegion
-    }
+    return m.countryOrRegion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignInLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *SignInLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetGeoCoordinates gets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
 func (m *SignInLocation) GetGeoCoordinates()(GeoCoordinatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.geoCoordinates
-    }
+    return m.geoCoordinates
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SignInLocation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *SignInLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *SignInLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInLocation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCity sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCity(value *string)() {
-    if m != nil {
-        m.city = value
-    }
+    m.city = value
 }
 // SetCountryOrRegion sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCountryOrRegion(value *string)() {
-    if m != nil {
-        m.countryOrRegion = value
-    }
+    m.countryOrRegion = value
 }
 // SetGeoCoordinates sets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
 func (m *SignInLocation) SetGeoCoordinates(value GeoCoordinatesable)() {
-    if m != nil {
-        m.geoCoordinates = value
-    }
+    m.geoCoordinates = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SignInLocation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

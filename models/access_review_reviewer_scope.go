@@ -10,7 +10,7 @@ type AccessReviewReviewerScope struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The query specifying who will be the reviewer. See table for examples.
+    // The query specifying who will be the reviewer.
     query *string
     // In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
     queryRoot *string
@@ -32,11 +32,7 @@ func CreateAccessReviewReviewerScopeFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewReviewerScope) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessReviewReviewerScope) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetQuery gets the query property value. The query specifying who will be the reviewer. See table for examples.
+// GetQuery gets the query property value. The query specifying who will be the reviewer.
 func (m *AccessReviewReviewerScope) GetQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
+    return m.query
 }
 // GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
 func (m *AccessReviewReviewerScope) GetQueryRoot()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryRoot
-    }
+    return m.queryRoot
 }
 // GetQueryType gets the queryType property value. The type of query. Examples include MicrosoftGraph and ARM.
 func (m *AccessReviewReviewerScope) GetQueryType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryType
-    }
+    return m.queryType
 }
 // Serialize serializes information the current object
 func (m *AccessReviewReviewerScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *AccessReviewReviewerScope) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewReviewerScope) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessReviewReviewerScope) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetQuery sets the query property value. The query specifying who will be the reviewer. See table for examples.
+// SetQuery sets the query property value. The query specifying who will be the reviewer.
 func (m *AccessReviewReviewerScope) SetQuery(value *string)() {
-    if m != nil {
-        m.query = value
-    }
+    m.query = value
 }
 // SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
 func (m *AccessReviewReviewerScope) SetQueryRoot(value *string)() {
-    if m != nil {
-        m.queryRoot = value
-    }
+    m.queryRoot = value
 }
 // SetQueryType sets the queryType property value. The type of query. Examples include MicrosoftGraph and ARM.
 func (m *AccessReviewReviewerScope) SetQueryType(value *string)() {
-    if m != nil {
-        m.queryType = value
-    }
+    m.queryType = value
 }

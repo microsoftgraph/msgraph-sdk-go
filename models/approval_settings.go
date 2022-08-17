@@ -36,27 +36,15 @@ func CreateApprovalSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApprovalMode gets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) GetApprovalMode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvalMode
-    }
+    return m.approvalMode
 }
 // GetApprovalStages gets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
 func (m *ApprovalSettings) GetApprovalStages()([]UnifiedApprovalStageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvalStages
-    }
+    return m.approvalStages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,35 +117,19 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsApprovalRequired gets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
 func (m *ApprovalSettings) GetIsApprovalRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequired
-    }
+    return m.isApprovalRequired
 }
 // GetIsApprovalRequiredForExtension gets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
 func (m *ApprovalSettings) GetIsApprovalRequiredForExtension()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequiredForExtension
-    }
+    return m.isApprovalRequiredForExtension
 }
 // GetIsRequestorJustificationRequired gets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
 func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequestorJustificationRequired
-    }
+    return m.isRequestorJustificationRequired
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ApprovalSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *ApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApprovalMode sets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) SetApprovalMode(value *string)() {
-    if m != nil {
-        m.approvalMode = value
-    }
+    m.approvalMode = value
 }
 // SetApprovalStages sets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
 func (m *ApprovalSettings) SetApprovalStages(value []UnifiedApprovalStageable)() {
-    if m != nil {
-        m.approvalStages = value
-    }
+    m.approvalStages = value
 }
 // SetIsApprovalRequired sets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
 func (m *ApprovalSettings) SetIsApprovalRequired(value *bool)() {
-    if m != nil {
-        m.isApprovalRequired = value
-    }
+    m.isApprovalRequired = value
 }
 // SetIsApprovalRequiredForExtension sets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
 func (m *ApprovalSettings) SetIsApprovalRequiredForExtension(value *bool)() {
-    if m != nil {
-        m.isApprovalRequiredForExtension = value
-    }
+    m.isApprovalRequiredForExtension = value
 }
 // SetIsRequestorJustificationRequired sets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
 func (m *ApprovalSettings) SetIsRequestorJustificationRequired(value *bool)() {
-    if m != nil {
-        m.isRequestorJustificationRequired = value
-    }
+    m.isRequestorJustificationRequired = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ApprovalSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

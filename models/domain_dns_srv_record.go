@@ -100,51 +100,27 @@ func (m *DomainDnsSrvRecord) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetNameTarget gets the nameTarget property value. Value to use when configuring the Target property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetNameTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nameTarget
-    }
+    return m.nameTarget
 }
 // GetPort gets the port property value. Value to use when configuring the port property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.port
-    }
+    return m.port
 }
 // GetPriority gets the priority property value. Value to use when configuring the priority property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetProtocol gets the protocol property value. Value to use when configuring the protocol property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetProtocol()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protocol
-    }
+    return m.protocol
 }
 // GetService gets the service property value. Value to use when configuring the service property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetWeight gets the weight property value. Value to use when configuring the weight property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetWeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.weight
-    }
+    return m.weight
 }
 // Serialize serializes information the current object
 func (m *DomainDnsSrvRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *DomainDnsSrvRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetNameTarget sets the nameTarget property value. Value to use when configuring the Target property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetNameTarget(value *string)() {
-    if m != nil {
-        m.nameTarget = value
-    }
+    m.nameTarget = value
 }
 // SetPort sets the port property value. Value to use when configuring the port property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetPort(value *int32)() {
-    if m != nil {
-        m.port = value
-    }
+    m.port = value
 }
 // SetPriority sets the priority property value. Value to use when configuring the priority property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetProtocol sets the protocol property value. Value to use when configuring the protocol property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetProtocol(value *string)() {
-    if m != nil {
-        m.protocol = value
-    }
+    m.protocol = value
 }
 // SetService sets the service property value. Value to use when configuring the service property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetWeight sets the weight property value. Value to use when configuring the weight property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetWeight(value *int32)() {
-    if m != nil {
-        m.weight = value
-    }
+    m.weight = value
 }

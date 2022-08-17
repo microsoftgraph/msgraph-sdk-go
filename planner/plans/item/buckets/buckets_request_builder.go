@@ -16,7 +16,7 @@ type BucketsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BucketsRequestBuilderGetQueryParameters collection of buckets in the plan. Read-only. Nullable.
+// BucketsRequestBuilderGetQueryParameters read-only. Nullable. Collection of buckets in the plan.
 type BucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewBucketsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *BucketsRequestBuilder) Count()(*i72c982e4f6cf6702614f71724a090e3632b4b522cee9eea32e9d8cd3d01f1868.CountRequestBuilder) {
     return i72c982e4f6cf6702614f71724a090e3632b4b522cee9eea32e9d8cd3d01f1868.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Collection of buckets in the plan.
 func (m *BucketsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Collection of buckets in the plan.
 func (m *BucketsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *BucketsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get collection of buckets in the plan. Read-only. Nullable.
+// Get read-only. Nullable. Collection of buckets in the plan.
 func (m *BucketsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler collection of buckets in the plan. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Collection of buckets in the plan.
 func (m *BucketsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BucketsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

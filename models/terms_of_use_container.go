@@ -27,19 +27,11 @@ func CreateTermsOfUseContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAgreementAcceptances gets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agreementAcceptances
-    }
+    return m.agreementAcceptances
 }
 // GetAgreements gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseContainer) GetAgreements()([]Agreementable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agreements
-    }
+    return m.agreements
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,13 +96,9 @@ func (m *TermsOfUseContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAgreementAcceptances sets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *TermsOfUseContainer) SetAgreementAcceptances(value []AgreementAcceptanceable)() {
-    if m != nil {
-        m.agreementAcceptances = value
-    }
+    m.agreementAcceptances = value
 }
 // SetAgreements sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseContainer) SetAgreements(value []Agreementable)() {
-    if m != nil {
-        m.agreements = value
-    }
+    m.agreements = value
 }

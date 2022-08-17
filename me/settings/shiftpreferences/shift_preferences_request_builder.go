@@ -22,7 +22,7 @@ type ShiftPreferencesRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ShiftPreferencesRequestBuilderGetQueryParameters the shift preferences for the user.
+// ShiftPreferencesRequestBuilderGetQueryParameters get shiftPreferences from me
 type ShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ShiftPreferencesRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the shift preferences for the user.
+// CreateGetRequestInformation get shiftPreferences from me
 func (m *ShiftPreferencesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the shift preferences for the user.
+// CreateGetRequestInformationWithRequestConfiguration get shiftPreferences from me
 func (m *ShiftPreferencesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ShiftPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ShiftPreferencesRequestBuilder) DeleteWithRequestConfigurationAndRespon
     }
     return nil
 }
-// Get the shift preferences for the user.
+// Get get shiftPreferences from me
 func (m *ShiftPreferencesRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftPreferencesable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the shift preferences for the user.
+// GetWithRequestConfigurationAndResponseHandler get shiftPreferences from me
 func (m *ShiftPreferencesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ShiftPreferencesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftPreferencesable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

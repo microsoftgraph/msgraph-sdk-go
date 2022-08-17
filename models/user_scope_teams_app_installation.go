@@ -25,11 +25,7 @@ func CreateUserScopeTeamsAppInstallationFromDiscriminatorValue(parseNode i878a80
 }
 // GetChat gets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) GetChat()(Chatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chat
-    }
+    return m.chat
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *UserScopeTeamsAppInstallation) Serialize(writer i878a80d2330e89d2689638
 }
 // SetChat sets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) SetChat(value Chatable)() {
-    if m != nil {
-        m.chat = value
-    }
+    m.chat = value
 }

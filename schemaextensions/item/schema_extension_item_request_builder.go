@@ -22,7 +22,7 @@ type SchemaExtensionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SchemaExtensionItemRequestBuilderGetQueryParameters get the properties of the specified schemaExtension definition.
+// SchemaExtensionItemRequestBuilderGetQueryParameters get entity from schemaExtensions by key
 type SchemaExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *SchemaExtensionItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get the properties of the specified schemaExtension definition.
+// CreateGetRequestInformation get entity from schemaExtensions by key
 func (m *SchemaExtensionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get the properties of the specified schemaExtension definition.
+// CreateGetRequestInformationWithRequestConfiguration get entity from schemaExtensions by key
 func (m *SchemaExtensionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SchemaExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *SchemaExtensionItemRequestBuilder) DeleteWithRequestConfigurationAndRes
     }
     return nil
 }
-// Get get the properties of the specified schemaExtension definition.
+// Get get entity from schemaExtensions by key
 func (m *SchemaExtensionItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchemaExtensionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get the properties of the specified schemaExtension definition.
+// GetWithRequestConfigurationAndResponseHandler get entity from schemaExtensions by key
 func (m *SchemaExtensionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SchemaExtensionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchemaExtensionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

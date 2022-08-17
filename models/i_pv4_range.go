@@ -52,19 +52,11 @@ func (m *IPv4Range) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetLowerAddress gets the lowerAddress property value. Lower address.
 func (m *IPv4Range) GetLowerAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lowerAddress
-    }
+    return m.lowerAddress
 }
 // GetUpperAddress gets the upperAddress property value. Upper address.
 func (m *IPv4Range) GetUpperAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upperAddress
-    }
+    return m.upperAddress
 }
 // Serialize serializes information the current object
 func (m *IPv4Range) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *IPv4Range) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetLowerAddress sets the lowerAddress property value. Lower address.
 func (m *IPv4Range) SetLowerAddress(value *string)() {
-    if m != nil {
-        m.lowerAddress = value
-    }
+    m.lowerAddress = value
 }
 // SetUpperAddress sets the upperAddress property value. Upper address.
 func (m *IPv4Range) SetUpperAddress(value *string)() {
-    if m != nil {
-        m.upperAddress = value
-    }
+    m.upperAddress = value
 }

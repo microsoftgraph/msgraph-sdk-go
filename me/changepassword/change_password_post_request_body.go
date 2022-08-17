@@ -26,19 +26,11 @@ func CreateChangePasswordPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangePasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCurrentPassword gets the currentPassword property value. The currentPassword property
 func (m *ChangePasswordPostRequestBody) GetCurrentPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currentPassword
-    }
+    return m.currentPassword
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChangePasswordPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,11 +59,7 @@ func (m *ChangePasswordPostRequestBody) GetFieldDeserializers()(map[string]func(
 }
 // GetNewPassword gets the newPassword property value. The newPassword property
 func (m *ChangePasswordPostRequestBody) GetNewPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newPassword
-    }
+    return m.newPassword
 }
 // Serialize serializes information the current object
 func (m *ChangePasswordPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *ChangePasswordPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangePasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCurrentPassword sets the currentPassword property value. The currentPassword property
 func (m *ChangePasswordPostRequestBody) SetCurrentPassword(value *string)() {
-    if m != nil {
-        m.currentPassword = value
-    }
+    m.currentPassword = value
 }
 // SetNewPassword sets the newPassword property value. The newPassword property
 func (m *ChangePasswordPostRequestBody) SetNewPassword(value *string)() {
-    if m != nil {
-        m.newPassword = value
-    }
+    m.newPassword = value
 }

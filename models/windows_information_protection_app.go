@@ -57,35 +57,19 @@ func CreateWindowsInformationProtectionAppFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionApp) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDenied gets the denied property value. If true, app is denied protection or exemption.
 func (m *WindowsInformationProtectionApp) GetDenied()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.denied
-    }
+    return m.denied
 }
 // GetDescription gets the description property value. The app's description.
 func (m *WindowsInformationProtectionApp) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. App display name.
 func (m *WindowsInformationProtectionApp) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -154,27 +138,15 @@ func (m *WindowsInformationProtectionApp) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsInformationProtectionApp) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProductName gets the productName property value. The product name.
 func (m *WindowsInformationProtectionApp) GetProductName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productName
-    }
+    return m.productName
 }
 // GetPublisherName gets the publisherName property value. The publisher name
 func (m *WindowsInformationProtectionApp) GetPublisherName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisherName
-    }
+    return m.publisherName
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -224,43 +196,29 @@ func (m *WindowsInformationProtectionApp) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionApp) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDenied sets the denied property value. If true, app is denied protection or exemption.
 func (m *WindowsInformationProtectionApp) SetDenied(value *bool)() {
-    if m != nil {
-        m.denied = value
-    }
+    m.denied = value
 }
 // SetDescription sets the description property value. The app's description.
 func (m *WindowsInformationProtectionApp) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. App display name.
 func (m *WindowsInformationProtectionApp) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsInformationProtectionApp) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProductName sets the productName property value. The product name.
 func (m *WindowsInformationProtectionApp) SetProductName(value *string)() {
-    if m != nil {
-        m.productName = value
-    }
+    m.productName = value
 }
 // SetPublisherName sets the publisherName property value. The publisher name
 func (m *WindowsInformationProtectionApp) SetPublisherName(value *string)() {
-    if m != nil {
-        m.publisherName = value
-    }
+    m.publisherName = value
 }

@@ -47,11 +47,11 @@ func NewContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get content for the navigation property versions from workbooks
+// CreateGetRequestInformation the content stream for this version of the item.
 func (m *ContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get content for the navigation property versions from workbooks
+// CreateGetRequestInformationWithRequestConfiguration the content stream for this version of the item.
 func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -63,11 +63,11 @@ func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformation update content for the navigation property versions in workbooks
+// CreatePutRequestInformation the content stream for this version of the item.
 func (m *ContentRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePutRequestInformationWithRequestConfiguration update content for the navigation property versions in workbooks
+// CreatePutRequestInformationWithRequestConfiguration the content stream for this version of the item.
 func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -80,11 +80,11 @@ func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get content for the navigation property versions from workbooks
+// Get the content stream for this version of the item.
 func (m *ContentRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get content for the navigation property versions from workbooks
+// GetWithRequestConfigurationAndResponseHandler the content stream for this version of the item.
 func (m *ContentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -100,11 +100,11 @@ func (m *ContentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property versions in workbooks
+// Put the content stream for this version of the item.
 func (m *ContentRequestBuilder) Put(body []byte)(error) {
     return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithRequestConfigurationAndResponseHandler update content for the navigation property versions in workbooks
+// PutWithRequestConfigurationAndResponseHandler the content stream for this version of the item.
 func (m *ContentRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

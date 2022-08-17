@@ -24,7 +24,7 @@ type PlannerBucketItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PlannerBucketItemRequestBuilderGetQueryParameters collection of buckets in the plan. Read-only. Nullable.
+// PlannerBucketItemRequestBuilderGetQueryParameters read-only. Nullable. Collection of buckets in the plan.
 type PlannerBucketItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *PlannerBucketItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlannerBucketItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,11 +139,11 @@ func (m *PlannerBucketItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// Get collection of buckets in the plan. Read-only. Nullable.
+// Get read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler collection of buckets in the plan. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlannerBucketItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

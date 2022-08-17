@@ -24,19 +24,11 @@ func CreateCopyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDestinationId gets the destinationId property value. The DestinationId property
 func (m *CopyPostRequestBody) GetDestinationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationId
-    }
+    return m.destinationId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CopyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *CopyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDestinationId sets the destinationId property value. The DestinationId property
 func (m *CopyPostRequestBody) SetDestinationId(value *string)() {
-    if m != nil {
-        m.destinationId = value
-    }
+    m.destinationId = value
 }

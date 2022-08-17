@@ -25,19 +25,11 @@ func CreateCreateUploadSessionPostRequestBodyFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttachmentInfo gets the attachmentInfo property value. The attachmentInfo property
 func (m *CreateUploadSessionPostRequestBody) GetAttachmentInfo()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachmentInfo
-    }
+    return m.attachmentInfo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CreateUploadSessionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,13 +64,9 @@ func (m *CreateUploadSessionPostRequestBody) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttachmentInfo sets the attachmentInfo property value. The attachmentInfo property
 func (m *CreateUploadSessionPostRequestBody) SetAttachmentInfo(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentInfoable)() {
-    if m != nil {
-        m.attachmentInfo = value
-    }
+    m.attachmentInfo = value
 }

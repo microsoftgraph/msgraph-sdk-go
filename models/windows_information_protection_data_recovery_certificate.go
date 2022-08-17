@@ -35,35 +35,19 @@ func CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorV
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertificate gets the certificate property value. Data recovery Certificate
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificate
-    }
+    return m.certificate
 }
 // GetDescription gets the description property value. Data recovery Certificate description
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Data recovery Certificate expiration datetime
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +106,11 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializ
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSubjectName gets the subjectName property value. Data recovery Certificate subject name
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
-    }
+    return m.subjectName
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertificate sets the certificate property value. Data recovery Certificate
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetCertificate(value []byte)() {
-    if m != nil {
-        m.certificate = value
-    }
+    m.certificate = value
 }
 // SetDescription sets the description property value. Data recovery Certificate description
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Data recovery Certificate expiration datetime
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSubjectName sets the subjectName property value. Data recovery Certificate subject name
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetSubjectName(value *string)() {
-    if m != nil {
-        m.subjectName = value
-    }
+    m.subjectName = value
 }

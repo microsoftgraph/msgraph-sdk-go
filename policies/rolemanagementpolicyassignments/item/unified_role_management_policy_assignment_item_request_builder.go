@@ -23,7 +23,7 @@ type UnifiedRoleManagementPolicyAssignmentItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters represents the role management policy assignments.
+// UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters the assignment of a role management policy to a role definition object.
 type UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents the role management policy assignments.
+// CreateGetRequestInformation the assignment of a role management policy to a role definition object.
 func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the role management policy assignments.
+// CreateGetRequestInformationWithRequestConfiguration the assignment of a role management policy to a role definition object.
 func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) DeleteWithRequ
     }
     return nil
 }
-// Get represents the role management policy assignments.
+// Get the assignment of a role management policy to a role definition object.
 func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyAssignmentable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the role management policy assignments.
+// GetWithRequestConfigurationAndResponseHandler the assignment of a role management policy to a role definition object.
 func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

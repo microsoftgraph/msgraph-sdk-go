@@ -17,7 +17,7 @@ type EventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EventsRequestBuilderGetQueryParameters the group's events.
+// EventsRequestBuilderGetQueryParameters the group's calendar events.
 type EventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -71,11 +71,11 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *EventsRequestBuilder) Count()(*i4b63f11466401eedcd5fbe5e2e36d17df953da742dc7495215cb063825a2caa4.CountRequestBuilder) {
     return i4b63f11466401eedcd5fbe5e2e36d17df953da742dc7495215cb063825a2caa4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the group's events.
+// CreateGetRequestInformation the group's calendar events.
 func (m *EventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the group's events.
+// CreateGetRequestInformationWithRequestConfiguration the group's calendar events.
 func (m *EventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,11 +113,11 @@ func (m *EventsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 func (m *EventsRequestBuilder) Delta()(*ifc34b12619bcd3b97e8565d6c2649a841b036c32d02d4482e9b65662f2870a94.DeltaRequestBuilder) {
     return ifc34b12619bcd3b97e8565d6c2649a841b036c32d02d4482e9b65662f2870a94.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the group's events.
+// Get the group's calendar events.
 func (m *EventsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the group's events.
+// GetWithRequestConfigurationAndResponseHandler the group's calendar events.
 func (m *EventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

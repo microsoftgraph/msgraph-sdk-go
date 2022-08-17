@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScopedRoleMembership provides operations to manage the collection of application entities.
+// ScopedRoleMembership provides operations to manage the collection of agreement entities.
 type ScopedRoleMembership struct {
     Entity
     // Unique identifier for the administrative unit that the directory role is scoped to
@@ -29,11 +29,7 @@ func CreateScopedRoleMembershipFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdministrativeUnitId gets the administrativeUnitId property value. Unique identifier for the administrative unit that the directory role is scoped to
 func (m *ScopedRoleMembership) GetAdministrativeUnitId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.administrativeUnitId
-    }
+    return m.administrativeUnitId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScopedRoleMembership) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *ScopedRoleMembership) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetRoleId gets the roleId property value. Unique identifier for the directory role that the member is in.
 func (m *ScopedRoleMembership) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
+    return m.roleId
 }
 // GetRoleMemberInfo gets the roleMemberInfo property value. The roleMemberInfo property
 func (m *ScopedRoleMembership) GetRoleMemberInfo()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleMemberInfo
-    }
+    return m.roleMemberInfo
 }
 // Serialize serializes information the current object
 func (m *ScopedRoleMembership) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *ScopedRoleMembership) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdministrativeUnitId sets the administrativeUnitId property value. Unique identifier for the administrative unit that the directory role is scoped to
 func (m *ScopedRoleMembership) SetAdministrativeUnitId(value *string)() {
-    if m != nil {
-        m.administrativeUnitId = value
-    }
+    m.administrativeUnitId = value
 }
 // SetRoleId sets the roleId property value. Unique identifier for the directory role that the member is in.
 func (m *ScopedRoleMembership) SetRoleId(value *string)() {
-    if m != nil {
-        m.roleId = value
-    }
+    m.roleId = value
 }
 // SetRoleMemberInfo sets the roleMemberInfo property value. The roleMemberInfo property
 func (m *ScopedRoleMembership) SetRoleMemberInfo(value Identityable)() {
-    if m != nil {
-        m.roleMemberInfo = value
-    }
+    m.roleMemberInfo = value
 }

@@ -7,9 +7,9 @@ import (
 // Pkcs12Certificate 
 type Pkcs12Certificate struct {
     ApiAuthenticationConfigurationBase
-    // This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+    // The password for the pfx file. Required. If no password is used, you must still provide a value of ''.
     password *string
-    // This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+    // Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
     pkcs12Value *string
 }
 // NewPkcs12Certificate instantiates a new Pkcs12Certificate and sets the default values.
@@ -50,21 +50,13 @@ func (m *Pkcs12Certificate) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPassword gets the password property value. This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+// GetPassword gets the password property value. The password for the pfx file. Required. If no password is used, you must still provide a value of ''.
 func (m *Pkcs12Certificate) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
-// GetPkcs12Value gets the pkcs12Value property value. This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+// GetPkcs12Value gets the pkcs12Value property value. Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
 func (m *Pkcs12Certificate) GetPkcs12Value()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pkcs12Value
-    }
+    return m.pkcs12Value
 }
 // Serialize serializes information the current object
 func (m *Pkcs12Certificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,15 +78,11 @@ func (m *Pkcs12Certificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetPassword sets the password property value. This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+// SetPassword sets the password property value. The password for the pfx file. Required. If no password is used, you must still provide a value of ''.
 func (m *Pkcs12Certificate) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
-// SetPkcs12Value sets the pkcs12Value property value. This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+// SetPkcs12Value sets the pkcs12Value property value. Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
 func (m *Pkcs12Certificate) SetPkcs12Value(value *string)() {
-    if m != nil {
-        m.pkcs12Value = value
-    }
+    m.pkcs12Value = value
 }

@@ -16,7 +16,7 @@ type ChecklistItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChecklistItemsRequestBuilderGetQueryParameters a collection of smaller subtasks linked to the more complex parent task.
+// ChecklistItemsRequestBuilderGetQueryParameters a collection of checklistItems linked to a task.
 type ChecklistItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewChecklistItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ChecklistItemsRequestBuilder) Count()(*i1fc121b230ba0597fe15238df319515a5b4ad57e300dc22c16a461a81e1011f9.CountRequestBuilder) {
     return i1fc121b230ba0597fe15238df319515a5b4ad57e300dc22c16a461a81e1011f9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of smaller subtasks linked to the more complex parent task.
+// CreateGetRequestInformation a collection of checklistItems linked to a task.
 func (m *ChecklistItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of smaller subtasks linked to the more complex parent task.
+// CreateGetRequestInformationWithRequestConfiguration a collection of checklistItems linked to a task.
 func (m *ChecklistItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChecklistItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ChecklistItemsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get a collection of smaller subtasks linked to the more complex parent task.
+// Get a collection of checklistItems linked to a task.
 func (m *ChecklistItemsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a collection of smaller subtasks linked to the more complex parent task.
+// GetWithRequestConfigurationAndResponseHandler a collection of checklistItems linked to a task.
 func (m *ChecklistItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChecklistItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

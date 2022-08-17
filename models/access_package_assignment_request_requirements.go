@@ -40,19 +40,11 @@ func CreateAccessPackageAssignmentRequestRequirementsFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentRequestRequirements) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. Indicates whether the requestor is allowed to set a custom schedule.
 func (m *AccessPackageAssignmentRequestRequirements) GetAllowCustomAssignmentSchedule()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowCustomAssignmentSchedule
-    }
+    return m.allowCustomAssignmentSchedule
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,59 +133,31 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
 }
 // GetIsApprovalRequiredForAdd gets the isApprovalRequiredForAdd property value. Indicates whether a request to add must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) GetIsApprovalRequiredForAdd()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequiredForAdd
-    }
+    return m.isApprovalRequiredForAdd
 }
 // GetIsApprovalRequiredForUpdate gets the isApprovalRequiredForUpdate property value. Indicates whether a request to update must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) GetIsApprovalRequiredForUpdate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequiredForUpdate
-    }
+    return m.isApprovalRequiredForUpdate
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentRequestRequirements) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPolicyDescription gets the policyDescription property value. The description of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyDescription
-    }
+    return m.policyDescription
 }
 // GetPolicyDisplayName gets the policyDisplayName property value. The display name of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyDisplayName
-    }
+    return m.policyDisplayName
 }
 // GetPolicyId gets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
+    return m.policyId
 }
 // GetSchedule gets the schedule property value. Schedule restrictions enforced, if any.
 func (m *AccessPackageAssignmentRequestRequirements) GetSchedule()(EntitlementManagementScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
+    return m.schedule
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,55 +219,37 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentRequestRequirements) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. Indicates whether the requestor is allowed to set a custom schedule.
 func (m *AccessPackageAssignmentRequestRequirements) SetAllowCustomAssignmentSchedule(value *bool)() {
-    if m != nil {
-        m.allowCustomAssignmentSchedule = value
-    }
+    m.allowCustomAssignmentSchedule = value
 }
 // SetIsApprovalRequiredForAdd sets the isApprovalRequiredForAdd property value. Indicates whether a request to add must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) SetIsApprovalRequiredForAdd(value *bool)() {
-    if m != nil {
-        m.isApprovalRequiredForAdd = value
-    }
+    m.isApprovalRequiredForAdd = value
 }
 // SetIsApprovalRequiredForUpdate sets the isApprovalRequiredForUpdate property value. Indicates whether a request to update must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) SetIsApprovalRequiredForUpdate(value *bool)() {
-    if m != nil {
-        m.isApprovalRequiredForUpdate = value
-    }
+    m.isApprovalRequiredForUpdate = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentRequestRequirements) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPolicyDescription sets the policyDescription property value. The description of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyDescription(value *string)() {
-    if m != nil {
-        m.policyDescription = value
-    }
+    m.policyDescription = value
 }
 // SetPolicyDisplayName sets the policyDisplayName property value. The display name of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyDisplayName(value *string)() {
-    if m != nil {
-        m.policyDisplayName = value
-    }
+    m.policyDisplayName = value
 }
 // SetPolicyId sets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyId(value *string)() {
-    if m != nil {
-        m.policyId = value
-    }
+    m.policyId = value
 }
 // SetSchedule sets the schedule property value. Schedule restrictions enforced, if any.
 func (m *AccessPackageAssignmentRequestRequirements) SetSchedule(value EntitlementManagementScheduleable)() {
-    if m != nil {
-        m.schedule = value
-    }
+    m.schedule = value
 }

@@ -17,7 +17,7 @@ type JoinedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// JoinedTeamsRequestBuilderGetQueryParameters the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// JoinedTeamsRequestBuilderGetQueryParameters get joinedTeams from me
 type JoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *JoinedTeamsRequestBuilder) Count()(*ifef025f0d0787f76563e1d25fb6accd04c3cab03366c772f62656707801affda.CountRequestBuilder) {
     return ifef025f0d0787f76563e1d25fb6accd04c3cab03366c772f62656707801affda.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// CreateGetRequestInformation get joinedTeams from me
 func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get joinedTeams from me
 func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *JoinedTeamsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// Get get joinedTeams from me
 func (m *JoinedTeamsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -121,7 +121,7 @@ func (m *JoinedTeamsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17
 func (m *JoinedTeamsRequestBuilder) GetAllMessages()(*iefa2d87f0daffd3425686a80f08eb2e621fc6f090b90101d098ba6c37677e38e.GetAllMessagesRequestBuilder) {
     return iefa2d87f0daffd3425686a80f08eb2e621fc6f090b90101d098ba6c37677e38e.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get joinedTeams from me
 func (m *JoinedTeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -29,19 +29,11 @@ func CreateSharePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *SharePostRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +72,11 @@ func (m *SharePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetNotifyTeam gets the notifyTeam property value. The notifyTeam property
 func (m *SharePostRequestBody) GetNotifyTeam()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifyTeam
-    }
+    return m.notifyTeam
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *SharePostRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *SharePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,25 +108,17 @@ func (m *SharePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *SharePostRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetNotifyTeam sets the notifyTeam property value. The notifyTeam property
 func (m *SharePostRequestBody) SetNotifyTeam(value *bool)() {
-    if m != nil {
-        m.notifyTeam = value
-    }
+    m.notifyTeam = value
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *SharePostRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

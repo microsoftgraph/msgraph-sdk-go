@@ -22,7 +22,7 @@ type IdentityProviderBaseItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentityProviderBaseItemRequestBuilderGetQueryParameters represents entry point for identity provider base.
+// IdentityProviderBaseItemRequestBuilderGetQueryParameters get identityProviders from identity
 type IdentityProviderBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *IdentityProviderBaseItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents entry point for identity provider base.
+// CreateGetRequestInformation get identityProviders from identity
 func (m *IdentityProviderBaseItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents entry point for identity provider base.
+// CreateGetRequestInformationWithRequestConfiguration get identityProviders from identity
 func (m *IdentityProviderBaseItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProviderBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *IdentityProviderBaseItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get represents entry point for identity provider base.
+// Get get identityProviders from identity
 func (m *IdentityProviderBaseItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents entry point for identity provider base.
+// GetWithRequestConfigurationAndResponseHandler get identityProviders from identity
 func (m *IdentityProviderBaseItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityProviderBaseItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

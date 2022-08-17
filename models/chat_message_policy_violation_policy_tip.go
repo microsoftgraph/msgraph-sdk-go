@@ -32,19 +32,11 @@ func CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessagePolicyViolationPolicyTip) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComplianceUrl gets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
 func (m *ChatMessagePolicyViolationPolicyTip) GetComplianceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceUrl
-    }
+    return m.complianceUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessagePolicyViolationPolicyTip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,27 +89,15 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetFieldDeserializers()(map[string
 }
 // GetGeneralText gets the generalText property value. Explanatory text shown to the sender of the message.
 func (m *ChatMessagePolicyViolationPolicyTip) GetGeneralText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.generalText
-    }
+    return m.generalText
 }
 // GetMatchedConditionDescriptions gets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
 func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchedConditionDescriptions
-    }
+    return m.matchedConditionDescriptions
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChatMessagePolicyViolationPolicyTip) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -155,31 +135,21 @@ func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessagePolicyViolationPolicyTip) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComplianceUrl sets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
 func (m *ChatMessagePolicyViolationPolicyTip) SetComplianceUrl(value *string)() {
-    if m != nil {
-        m.complianceUrl = value
-    }
+    m.complianceUrl = value
 }
 // SetGeneralText sets the generalText property value. Explanatory text shown to the sender of the message.
 func (m *ChatMessagePolicyViolationPolicyTip) SetGeneralText(value *string)() {
-    if m != nil {
-        m.generalText = value
-    }
+    m.generalText = value
 }
 // SetMatchedConditionDescriptions sets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
 func (m *ChatMessagePolicyViolationPolicyTip) SetMatchedConditionDescriptions(value []string)() {
-    if m != nil {
-        m.matchedConditionDescriptions = value
-    }
+    m.matchedConditionDescriptions = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChatMessagePolicyViolationPolicyTip) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

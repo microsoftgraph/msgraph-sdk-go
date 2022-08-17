@@ -22,7 +22,7 @@ type LongRunningOperationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LongRunningOperationItemRequestBuilderGetQueryParameters get operations from me
+// LongRunningOperationItemRequestBuilderGetQueryParameters represents the status of a long-running operation.
 type LongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *LongRunningOperationItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get operations from me
+// CreateGetRequestInformation represents the status of a long-running operation.
 func (m *LongRunningOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get operations from me
+// CreateGetRequestInformationWithRequestConfiguration represents the status of a long-running operation.
 func (m *LongRunningOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *LongRunningOperationItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get get operations from me
+// Get represents the status of a long-running operation.
 func (m *LongRunningOperationItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LongRunningOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get operations from me
+// GetWithRequestConfigurationAndResponseHandler represents the status of a long-running operation.
 func (m *LongRunningOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LongRunningOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LongRunningOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

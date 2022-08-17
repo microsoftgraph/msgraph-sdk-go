@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// List 
+// List provides operations to manage the collection of agreement entities.
 type List struct {
     BaseItem
     // The collection of field definitions for this list.
@@ -19,7 +19,7 @@ type List struct {
     items []ListItemable
     // Provides additional details about the list.
     list ListInfoable
-    // The collection of long running operations for the list.
+    // The collection of long-running operations on the list.
     operations []RichLongRunningOperationable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds SharepointIdsable
@@ -43,35 +43,19 @@ func CreateListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetColumns gets the columns property value. The collection of field definitions for this list.
 func (m *List) GetColumns()([]ColumnDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.columns
-    }
+    return m.columns
 }
 // GetContentTypes gets the contentTypes property value. The collection of content types present in this list.
 func (m *List) GetContentTypes()([]ContentTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentTypes
-    }
+    return m.contentTypes
 }
 // GetDisplayName gets the displayName property value. The displayable title of the list.
 func (m *List) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDrive gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 func (m *List) GetDrive()(Driveable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.drive
-    }
+    return m.drive
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -200,51 +184,27 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetItems gets the items property value. All items contained in the list.
 func (m *List) GetItems()([]ListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetList gets the list property value. Provides additional details about the list.
 func (m *List) GetList()(ListInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.list
-    }
+    return m.list
 }
-// GetOperations gets the operations property value. The collection of long running operations for the list.
+// GetOperations gets the operations property value. The collection of long-running operations on the list.
 func (m *List) GetOperations()([]RichLongRunningOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) GetSharepointIds()(SharepointIdsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
+    return m.sharepointIds
 }
 // GetSubscriptions gets the subscriptions property value. The set of subscriptions on the list.
 func (m *List) GetSubscriptions()([]Subscriptionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptions
-    }
+    return m.subscriptions
 }
 // GetSystem gets the system property value. If present, indicates that this is a system-managed list. Read-only.
 func (m *List) GetSystem()(SystemFacetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.system
-    }
+    return m.system
 }
 // Serialize serializes information the current object
 func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -336,61 +296,41 @@ func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetColumns sets the columns property value. The collection of field definitions for this list.
 func (m *List) SetColumns(value []ColumnDefinitionable)() {
-    if m != nil {
-        m.columns = value
-    }
+    m.columns = value
 }
 // SetContentTypes sets the contentTypes property value. The collection of content types present in this list.
 func (m *List) SetContentTypes(value []ContentTypeable)() {
-    if m != nil {
-        m.contentTypes = value
-    }
+    m.contentTypes = value
 }
 // SetDisplayName sets the displayName property value. The displayable title of the list.
 func (m *List) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDrive sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 func (m *List) SetDrive(value Driveable)() {
-    if m != nil {
-        m.drive = value
-    }
+    m.drive = value
 }
 // SetItems sets the items property value. All items contained in the list.
 func (m *List) SetItems(value []ListItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetList sets the list property value. Provides additional details about the list.
 func (m *List) SetList(value ListInfoable)() {
-    if m != nil {
-        m.list = value
-    }
+    m.list = value
 }
-// SetOperations sets the operations property value. The collection of long running operations for the list.
+// SetOperations sets the operations property value. The collection of long-running operations on the list.
 func (m *List) SetOperations(value []RichLongRunningOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) SetSharepointIds(value SharepointIdsable)() {
-    if m != nil {
-        m.sharepointIds = value
-    }
+    m.sharepointIds = value
 }
 // SetSubscriptions sets the subscriptions property value. The set of subscriptions on the list.
 func (m *List) SetSubscriptions(value []Subscriptionable)() {
-    if m != nil {
-        m.subscriptions = value
-    }
+    m.subscriptions = value
 }
 // SetSystem sets the system property value. If present, indicates that this is a system-managed list. Read-only.
 func (m *List) SetSystem(value SystemFacetable)() {
-    if m != nil {
-        m.system = value
-    }
+    m.system = value
 }

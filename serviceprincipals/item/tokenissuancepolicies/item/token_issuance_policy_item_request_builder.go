@@ -15,7 +15,7 @@ type TokenIssuancePolicyItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TokenIssuancePolicyItemRequestBuilderGetQueryParameters the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// TokenIssuancePolicyItemRequestBuilderGetQueryParameters the tokenIssuancePolicies assigned to this service principal.
 type TokenIssuancePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewTokenIssuancePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// CreateGetRequestInformation the tokenIssuancePolicies assigned to this service principal.
 func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration the tokenIssuancePolicies assigned to this service principal.
 func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *TokenIssuancePolicyItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// Get the tokenIssuancePolicies assigned to this service principal.
 func (m *TokenIssuancePolicyItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// GetWithRequestConfigurationAndResponseHandler the tokenIssuancePolicies assigned to this service principal.
 func (m *TokenIssuancePolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

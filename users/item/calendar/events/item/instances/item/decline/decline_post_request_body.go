@@ -29,19 +29,11 @@ func CreateDeclinePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeclinePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
 func (m *DeclinePostRequestBody) GetComment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comment
-    }
+    return m.comment
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeclinePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +72,11 @@ func (m *DeclinePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetProposedNewTime gets the proposedNewTime property value. The ProposedNewTime property
 func (m *DeclinePostRequestBody) GetProposedNewTime()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeSlotable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proposedNewTime
-    }
+    return m.proposedNewTime
 }
 // GetSendResponse gets the sendResponse property value. The SendResponse property
 func (m *DeclinePostRequestBody) GetSendResponse()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendResponse
-    }
+    return m.sendResponse
 }
 // Serialize serializes information the current object
 func (m *DeclinePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,25 +108,17 @@ func (m *DeclinePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeclinePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property
 func (m *DeclinePostRequestBody) SetComment(value *string)() {
-    if m != nil {
-        m.comment = value
-    }
+    m.comment = value
 }
 // SetProposedNewTime sets the proposedNewTime property value. The ProposedNewTime property
 func (m *DeclinePostRequestBody) SetProposedNewTime(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeSlotable)() {
-    if m != nil {
-        m.proposedNewTime = value
-    }
+    m.proposedNewTime = value
 }
 // SetSendResponse sets the sendResponse property value. The SendResponse property
 func (m *DeclinePostRequestBody) SetSendResponse(value *bool)() {
-    if m != nil {
-        m.sendResponse = value
-    }
+    m.sendResponse = value
 }

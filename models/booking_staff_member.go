@@ -37,27 +37,15 @@ func CreateBookingStaffMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAvailabilityIsAffectedByPersonalCalendar gets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
 func (m *BookingStaffMember) GetAvailabilityIsAffectedByPersonalCalendar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availabilityIsAffectedByPersonalCalendar
-    }
+    return m.availabilityIsAffectedByPersonalCalendar
 }
 // GetDisplayName gets the displayName property value. The name of the staff member, as displayed to customers. Required.
 func (m *BookingStaffMember) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
 func (m *BookingStaffMember) GetEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,35 +128,19 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetRole gets the role property value. The role property
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.role
-    }
+    return m.role
 }
 // GetTimeZone gets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
 func (m *BookingStaffMember) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
+    return m.timeZone
 }
 // GetUseBusinessHours gets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
 func (m *BookingStaffMember) GetUseBusinessHours()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useBusinessHours
-    }
+    return m.useBusinessHours
 }
 // GetWorkingHours gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
 func (m *BookingStaffMember) GetWorkingHours()([]BookingWorkHoursable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workingHours
-    }
+    return m.workingHours
 }
 // Serialize serializes information the current object
 func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,43 +199,29 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAvailabilityIsAffectedByPersonalCalendar sets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
 func (m *BookingStaffMember) SetAvailabilityIsAffectedByPersonalCalendar(value *bool)() {
-    if m != nil {
-        m.availabilityIsAffectedByPersonalCalendar = value
-    }
+    m.availabilityIsAffectedByPersonalCalendar = value
 }
 // SetDisplayName sets the displayName property value. The name of the staff member, as displayed to customers. Required.
 func (m *BookingStaffMember) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
 func (m *BookingStaffMember) SetEmailAddress(value *string)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }
 // SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
-    if m != nil {
-        m.role = value
-    }
+    m.role = value
 }
 // SetTimeZone sets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
 func (m *BookingStaffMember) SetTimeZone(value *string)() {
-    if m != nil {
-        m.timeZone = value
-    }
+    m.timeZone = value
 }
 // SetUseBusinessHours sets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
 func (m *BookingStaffMember) SetUseBusinessHours(value *bool)() {
-    if m != nil {
-        m.useBusinessHours = value
-    }
+    m.useBusinessHours = value
 }
 // SetWorkingHours sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
 func (m *BookingStaffMember) SetWorkingHours(value []BookingWorkHoursable)() {
-    if m != nil {
-        m.workingHours = value
-    }
+    m.workingHours = value
 }

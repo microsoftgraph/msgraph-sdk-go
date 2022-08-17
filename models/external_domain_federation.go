@@ -29,19 +29,11 @@ func CreateExternalDomainFederationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The name of the identity source, typically also the domain name. Read only.
 func (m *ExternalDomainFederation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDomainName gets the domainName property value. The domain name. Read only.
 func (m *ExternalDomainFederation) GetDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainName
-    }
+    return m.domainName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *ExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIssuerUri gets the issuerUri property value. The issuerURI of the incoming federation. Read only.
 func (m *ExternalDomainFederation) GetIssuerUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerUri
-    }
+    return m.issuerUri
 }
 // Serialize serializes information the current object
 func (m *ExternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *ExternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The name of the identity source, typically also the domain name. Read only.
 func (m *ExternalDomainFederation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDomainName sets the domainName property value. The domain name. Read only.
 func (m *ExternalDomainFederation) SetDomainName(value *string)() {
-    if m != nil {
-        m.domainName = value
-    }
+    m.domainName = value
 }
 // SetIssuerUri sets the issuerUri property value. The issuerURI of the incoming federation. Read only.
 func (m *ExternalDomainFederation) SetIssuerUri(value *string)() {
-    if m != nil {
-        m.issuerUri = value
-    }
+    m.issuerUri = value
 }

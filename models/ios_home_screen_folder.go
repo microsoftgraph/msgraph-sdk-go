@@ -44,11 +44,7 @@ func (m *IosHomeScreenFolder) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetPages gets the pages property value. Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.
 func (m *IosHomeScreenFolder) GetPages()([]IosHomeScreenFolderPageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pages
-    }
+    return m.pages
 }
 // Serialize serializes information the current object
 func (m *IosHomeScreenFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *IosHomeScreenFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetPages sets the pages property value. Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.
 func (m *IosHomeScreenFolder) SetPages(value []IosHomeScreenFolderPageable)() {
-    if m != nil {
-        m.pages = value
-    }
+    m.pages = value
 }

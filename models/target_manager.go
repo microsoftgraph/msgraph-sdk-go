@@ -40,11 +40,7 @@ func (m *TargetManager) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetManagerLevel gets the managerLevel property value. Manager level, between 1 and 4. The direct manager is 1.
 func (m *TargetManager) GetManagerLevel()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managerLevel
-    }
+    return m.managerLevel
 }
 // Serialize serializes information the current object
 func (m *TargetManager) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *TargetManager) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetManagerLevel sets the managerLevel property value. Manager level, between 1 and 4. The direct manager is 1.
 func (m *TargetManager) SetManagerLevel(value *int32)() {
-    if m != nil {
-        m.managerLevel = value
-    }
+    m.managerLevel = value
 }

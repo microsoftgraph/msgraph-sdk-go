@@ -27,11 +27,7 @@ func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetBitlocker gets the bitlocker property value. The bitlocker property
 func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitlocker
-    }
+    return m.bitlocker
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetThreatAssessmentRequests gets the threatAssessmentRequests property value. The threatAssessmentRequests property
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatAssessmentRequests
-    }
+    return m.threatAssessmentRequests
 }
 // Serialize serializes information the current object
 func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetBitlocker sets the bitlocker property value. The bitlocker property
 func (m *InformationProtection) SetBitlocker(value Bitlockerable)() {
-    if m != nil {
-        m.bitlocker = value
-    }
+    m.bitlocker = value
 }
 // SetThreatAssessmentRequests sets the threatAssessmentRequests property value. The threatAssessmentRequests property
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequestable)() {
-    if m != nil {
-        m.threatAssessmentRequests = value
-    }
+    m.threatAssessmentRequests = value
 }

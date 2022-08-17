@@ -36,35 +36,19 @@ func CreateIosLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *IosLobApp) GetApplicableDeviceType()(IosDeviceTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableDeviceType
-    }
+    return m.applicableDeviceType
 }
 // GetBuildNumber gets the buildNumber property value. The build number of iOS Line of Business (LoB) app.
 func (m *IosLobApp) GetBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.buildNumber
-    }
+    return m.buildNumber
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
 func (m *IosLobApp) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration time.
 func (m *IosLobApp) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,19 +117,11 @@ func (m *IosLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *IosLobApp) GetMinimumSupportedOperatingSystem()(IosMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetVersionNumber gets the versionNumber property value. The version number of iOS Line of Business (LoB) app.
 func (m *IosLobApp) GetVersionNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionNumber
-    }
+    return m.versionNumber
 }
 // Serialize serializes information the current object
 func (m *IosLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *IosLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *IosLobApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
-    if m != nil {
-        m.applicableDeviceType = value
-    }
+    m.applicableDeviceType = value
 }
 // SetBuildNumber sets the buildNumber property value. The build number of iOS Line of Business (LoB) app.
 func (m *IosLobApp) SetBuildNumber(value *string)() {
-    if m != nil {
-        m.buildNumber = value
-    }
+    m.buildNumber = value
 }
 // SetBundleId sets the bundleId property value. The Identity Name.
 func (m *IosLobApp) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration time.
 func (m *IosLobApp) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *IosLobApp) SetMinimumSupportedOperatingSystem(value IosMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetVersionNumber sets the versionNumber property value. The version number of iOS Line of Business (LoB) app.
 func (m *IosLobApp) SetVersionNumber(value *string)() {
-    if m != nil {
-        m.versionNumber = value
-    }
+    m.versionNumber = value
 }

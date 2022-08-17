@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SectionGroup provides operations to manage the collection of application entities.
+// SectionGroup provides operations to manage the collection of agreementAcceptance entities.
 type SectionGroup struct {
     OnenoteEntityHierarchyModel
     // The notebook that contains the section group. Read-only.
@@ -108,51 +108,27 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetParentNotebook gets the parentNotebook property value. The notebook that contains the section group. Read-only.
 func (m *SectionGroup) GetParentNotebook()(Notebookable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentNotebook
-    }
+    return m.parentNotebook
 }
 // GetParentSectionGroup gets the parentSectionGroup property value. The section group that contains the section group. Read-only.
 func (m *SectionGroup) GetParentSectionGroup()(SectionGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentSectionGroup
-    }
+    return m.parentSectionGroup
 }
 // GetSectionGroups gets the sectionGroups property value. The section groups in the section. Read-only. Nullable.
 func (m *SectionGroup) GetSectionGroups()([]SectionGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sectionGroups
-    }
+    return m.sectionGroups
 }
 // GetSectionGroupsUrl gets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
 func (m *SectionGroup) GetSectionGroupsUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sectionGroupsUrl
-    }
+    return m.sectionGroupsUrl
 }
 // GetSections gets the sections property value. The sections in the section group. Read-only. Nullable.
 func (m *SectionGroup) GetSections()([]OnenoteSectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sections
-    }
+    return m.sections
 }
 // GetSectionsUrl gets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
 func (m *SectionGroup) GetSectionsUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sectionsUrl
-    }
+    return m.sectionsUrl
 }
 // Serialize serializes information the current object
 func (m *SectionGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -208,37 +184,25 @@ func (m *SectionGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetParentNotebook sets the parentNotebook property value. The notebook that contains the section group. Read-only.
 func (m *SectionGroup) SetParentNotebook(value Notebookable)() {
-    if m != nil {
-        m.parentNotebook = value
-    }
+    m.parentNotebook = value
 }
 // SetParentSectionGroup sets the parentSectionGroup property value. The section group that contains the section group. Read-only.
 func (m *SectionGroup) SetParentSectionGroup(value SectionGroupable)() {
-    if m != nil {
-        m.parentSectionGroup = value
-    }
+    m.parentSectionGroup = value
 }
 // SetSectionGroups sets the sectionGroups property value. The section groups in the section. Read-only. Nullable.
 func (m *SectionGroup) SetSectionGroups(value []SectionGroupable)() {
-    if m != nil {
-        m.sectionGroups = value
-    }
+    m.sectionGroups = value
 }
 // SetSectionGroupsUrl sets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
 func (m *SectionGroup) SetSectionGroupsUrl(value *string)() {
-    if m != nil {
-        m.sectionGroupsUrl = value
-    }
+    m.sectionGroupsUrl = value
 }
 // SetSections sets the sections property value. The sections in the section group. Read-only. Nullable.
 func (m *SectionGroup) SetSections(value []OnenoteSectionable)() {
-    if m != nil {
-        m.sections = value
-    }
+    m.sections = value
 }
 // SetSectionsUrl sets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
 func (m *SectionGroup) SetSectionsUrl(value *string)() {
-    if m != nil {
-        m.sectionsUrl = value
-    }
+    m.sectionsUrl = value
 }

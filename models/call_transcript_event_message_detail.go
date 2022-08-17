@@ -29,19 +29,11 @@ func CreateCallTranscriptEventMessageDetailFromDiscriminatorValue(parseNode i878
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
 func (m *CallTranscriptEventMessageDetail) GetCallId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callId
-    }
+    return m.callId
 }
 // GetCallTranscriptICalUid gets the callTranscriptICalUid property value. Unique identifier for a call transcript.
 func (m *CallTranscriptEventMessageDetail) GetCallTranscriptICalUid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callTranscriptICalUid
-    }
+    return m.callTranscriptICalUid
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallTranscriptEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *CallTranscriptEventMessageDetail) GetFieldDeserializers()(map[string]fu
 }
 // GetMeetingOrganizer gets the meetingOrganizer property value. The organizer of the meeting.
 func (m *CallTranscriptEventMessageDetail) GetMeetingOrganizer()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingOrganizer
-    }
+    return m.meetingOrganizer
 }
 // Serialize serializes information the current object
 func (m *CallTranscriptEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *CallTranscriptEventMessageDetail) Serialize(writer i878a80d2330e89d2689
 }
 // SetCallId sets the callId property value. Unique identifier of the call.
 func (m *CallTranscriptEventMessageDetail) SetCallId(value *string)() {
-    if m != nil {
-        m.callId = value
-    }
+    m.callId = value
 }
 // SetCallTranscriptICalUid sets the callTranscriptICalUid property value. Unique identifier for a call transcript.
 func (m *CallTranscriptEventMessageDetail) SetCallTranscriptICalUid(value *string)() {
-    if m != nil {
-        m.callTranscriptICalUid = value
-    }
+    m.callTranscriptICalUid = value
 }
 // SetMeetingOrganizer sets the meetingOrganizer property value. The organizer of the meeting.
 func (m *CallTranscriptEventMessageDetail) SetMeetingOrganizer(value IdentitySetable)() {
-    if m != nil {
-        m.meetingOrganizer = value
-    }
+    m.meetingOrganizer = value
 }

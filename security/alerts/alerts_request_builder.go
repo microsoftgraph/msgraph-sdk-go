@@ -16,7 +16,7 @@ type AlertsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AlertsRequestBuilderGetQueryParameters notifications for suspicious or potential security issues in a customer’s tenant.
+// AlertsRequestBuilderGetQueryParameters get alerts from security
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AlertsRequestBuilder) Count()(*i1a01fb8511a50259effce667795c9ad4f6aad15b1d752bbd8bacf4d7780fc38c.CountRequestBuilder) {
     return i1a01fb8511a50259effce667795c9ad4f6aad15b1d752bbd8bacf4d7780fc38c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
+// CreateGetRequestInformation get alerts from security
 func (m *AlertsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration notifications for suspicious or potential security issues in a customer’s tenant.
+// CreateGetRequestInformationWithRequestConfiguration get alerts from security
 func (m *AlertsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *AlertsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get notifications for suspicious or potential security issues in a customer’s tenant.
+// Get get alerts from security
 func (m *AlertsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler notifications for suspicious or potential security issues in a customer’s tenant.
+// GetWithRequestConfigurationAndResponseHandler get alerts from security
 func (m *AlertsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

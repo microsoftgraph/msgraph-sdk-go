@@ -44,11 +44,7 @@ func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLocalizations gets the localizations property value. Add different branding based on a locale.
 func (m *OrganizationalBranding) GetLocalizations()([]OrganizationalBrandingLocalizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizations
-    }
+    return m.localizations
 }
 // Serialize serializes information the current object
 func (m *OrganizationalBranding) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *OrganizationalBranding) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetLocalizations sets the localizations property value. Add different branding based on a locale.
 func (m *OrganizationalBranding) SetLocalizations(value []OrganizationalBrandingLocalizationable)() {
-    if m != nil {
-        m.localizations = value
-    }
+    m.localizations = value
 }

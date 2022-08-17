@@ -33,27 +33,15 @@ func CreateServiceHealthIssuePostFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceHealthIssuePost) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCreatedDateTime gets the createdDateTime property value. The published time of the post.
 func (m *ServiceHealthIssuePost) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The content of the service issue post.
 func (m *ServiceHealthIssuePost) GetDescription()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,19 +90,11 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPostType gets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
 func (m *ServiceHealthIssuePost) GetPostType()(*PostType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postType
-    }
+    return m.postType
 }
 // Serialize serializes information the current object
 func (m *ServiceHealthIssuePost) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *ServiceHealthIssuePost) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceHealthIssuePost) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The published time of the post.
 func (m *ServiceHealthIssuePost) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The content of the service issue post.
 func (m *ServiceHealthIssuePost) SetDescription(value ItemBodyable)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ServiceHealthIssuePost) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPostType sets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
 func (m *ServiceHealthIssuePost) SetPostType(value *PostType)() {
-    if m != nil {
-        m.postType = value
-    }
+    m.postType = value
 }

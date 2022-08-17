@@ -95,171 +95,87 @@ func CreateWindows10EndpointProtectionConfigurationFromDiscriminatorValue(parseN
 }
 // GetApplicationGuardAllowPersistence gets the applicationGuardAllowPersistence property value. Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPersistence()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardAllowPersistence
-    }
+    return m.applicationGuardAllowPersistence
 }
 // GetApplicationGuardAllowPrintToLocalPrinters gets the applicationGuardAllowPrintToLocalPrinters property value. Allow printing to Local Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToLocalPrinters()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardAllowPrintToLocalPrinters
-    }
+    return m.applicationGuardAllowPrintToLocalPrinters
 }
 // GetApplicationGuardAllowPrintToNetworkPrinters gets the applicationGuardAllowPrintToNetworkPrinters property value. Allow printing to Network Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToNetworkPrinters()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardAllowPrintToNetworkPrinters
-    }
+    return m.applicationGuardAllowPrintToNetworkPrinters
 }
 // GetApplicationGuardAllowPrintToPDF gets the applicationGuardAllowPrintToPDF property value. Allow printing to PDF from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToPDF()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardAllowPrintToPDF
-    }
+    return m.applicationGuardAllowPrintToPDF
 }
 // GetApplicationGuardAllowPrintToXPS gets the applicationGuardAllowPrintToXPS property value. Allow printing to XPS from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToXPS()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardAllowPrintToXPS
-    }
+    return m.applicationGuardAllowPrintToXPS
 }
 // GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipboardSharing()(*ApplicationGuardBlockClipboardSharingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardBlockClipboardSharing
-    }
+    return m.applicationGuardBlockClipboardSharing
 }
 // GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockFileTransfer()(*ApplicationGuardBlockFileTransferType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardBlockFileTransfer
-    }
+    return m.applicationGuardBlockFileTransfer
 }
 // GetApplicationGuardBlockNonEnterpriseContent gets the applicationGuardBlockNonEnterpriseContent property value. Block enterprise sites to load non-enterprise content, such as third party plug-ins
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockNonEnterpriseContent()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardBlockNonEnterpriseContent
-    }
+    return m.applicationGuardBlockNonEnterpriseContent
 }
 // GetApplicationGuardEnabled gets the applicationGuardEnabled property value. Enable Windows Defender Application Guard
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardEnabled
-    }
+    return m.applicationGuardEnabled
 }
 // GetApplicationGuardForceAuditing gets the applicationGuardForceAuditing property value. Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardForceAuditing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationGuardForceAuditing
-    }
+    return m.applicationGuardForceAuditing
 }
 // GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) GetAppLockerApplicationControl()(*AppLockerApplicationControlType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appLockerApplicationControl
-    }
+    return m.appLockerApplicationControl
 }
 // GetBitLockerDisableWarningForOtherDiskEncryption gets the bitLockerDisableWarningForOtherDiskEncryption property value. Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerDisableWarningForOtherDiskEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitLockerDisableWarningForOtherDiskEncryption
-    }
+    return m.bitLockerDisableWarningForOtherDiskEncryption
 }
 // GetBitLockerEnableStorageCardEncryptionOnMobile gets the bitLockerEnableStorageCardEncryptionOnMobile property value. Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEnableStorageCardEncryptionOnMobile()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitLockerEnableStorageCardEncryptionOnMobile
-    }
+    return m.bitLockerEnableStorageCardEncryptionOnMobile
 }
 // GetBitLockerEncryptDevice gets the bitLockerEncryptDevice property value. Allows the admin to require encryption to be turned on using BitLocker.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEncryptDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitLockerEncryptDevice
-    }
+    return m.bitLockerEncryptDevice
 }
 // GetBitLockerRemovableDrivePolicy gets the bitLockerRemovableDrivePolicy property value. BitLocker Removable Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerRemovableDrivePolicy()(BitLockerRemovableDrivePolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitLockerRemovableDrivePolicy
-    }
+    return m.bitLockerRemovableDrivePolicy
 }
 // GetDefenderAdditionalGuardedFolders gets the defenderAdditionalGuardedFolders property value. List of folder paths to be added to the list of protected folders
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdditionalGuardedFolders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderAdditionalGuardedFolders
-    }
+    return m.defenderAdditionalGuardedFolders
 }
 // GetDefenderAttackSurfaceReductionExcludedPaths gets the defenderAttackSurfaceReductionExcludedPaths property value. List of exe files and folders to be excluded from attack surface reduction rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAttackSurfaceReductionExcludedPaths()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderAttackSurfaceReductionExcludedPaths
-    }
+    return m.defenderAttackSurfaceReductionExcludedPaths
 }
 // GetDefenderExploitProtectionXml gets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderExploitProtectionXml
-    }
+    return m.defenderExploitProtectionXml
 }
 // GetDefenderExploitProtectionXmlFileName gets the defenderExploitProtectionXmlFileName property value. Name of the file from which DefenderExploitProtectionXml was obtained.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionXmlFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderExploitProtectionXmlFileName
-    }
+    return m.defenderExploitProtectionXmlFileName
 }
 // GetDefenderGuardedFoldersAllowedAppPaths gets the defenderGuardedFoldersAllowedAppPaths property value. List of paths to exe that are allowed to access protected folders
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardedFoldersAllowedAppPaths()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderGuardedFoldersAllowedAppPaths
-    }
+    return m.defenderGuardedFoldersAllowedAppPaths
 }
 // GetDefenderSecurityCenterBlockExploitProtectionOverride gets the defenderSecurityCenterBlockExploitProtectionOverride property value. Indicates whether or not to block user from overriding Exploit Protection settings.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterBlockExploitProtectionOverride()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderSecurityCenterBlockExploitProtectionOverride
-    }
+    return m.defenderSecurityCenterBlockExploitProtectionOverride
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -640,123 +556,63 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
 }
 // GetFirewallBlockStatefulFTP gets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallBlockStatefulFTP()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallBlockStatefulFTP
-    }
+    return m.firewallBlockStatefulFTP
 }
 // GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallCertificateRevocationListCheckMethod()(*FirewallCertificateRevocationListCheckMethodType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallCertificateRevocationListCheckMethod
-    }
+    return m.firewallCertificateRevocationListCheckMethod
 }
 // GetFirewallIdleTimeoutForSecurityAssociationInSeconds gets the firewallIdleTimeoutForSecurityAssociationInSeconds property value. Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIdleTimeoutForSecurityAssociationInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallIdleTimeoutForSecurityAssociationInSeconds
-    }
+    return m.firewallIdleTimeoutForSecurityAssociationInSeconds
 }
 // GetFirewallIPSecExemptionsAllowDHCP gets the firewallIPSecExemptionsAllowDHCP property value. Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowDHCP()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallIPSecExemptionsAllowDHCP
-    }
+    return m.firewallIPSecExemptionsAllowDHCP
 }
 // GetFirewallIPSecExemptionsAllowICMP gets the firewallIPSecExemptionsAllowICMP property value. Configures IPSec exemptions to allow ICMP
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowICMP()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallIPSecExemptionsAllowICMP
-    }
+    return m.firewallIPSecExemptionsAllowICMP
 }
 // GetFirewallIPSecExemptionsAllowNeighborDiscovery gets the firewallIPSecExemptionsAllowNeighborDiscovery property value. Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowNeighborDiscovery()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallIPSecExemptionsAllowNeighborDiscovery
-    }
+    return m.firewallIPSecExemptionsAllowNeighborDiscovery
 }
 // GetFirewallIPSecExemptionsAllowRouterDiscovery gets the firewallIPSecExemptionsAllowRouterDiscovery property value. Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowRouterDiscovery()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallIPSecExemptionsAllowRouterDiscovery
-    }
+    return m.firewallIPSecExemptionsAllowRouterDiscovery
 }
 // GetFirewallMergeKeyingModuleSettings gets the firewallMergeKeyingModuleSettings property value. If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallMergeKeyingModuleSettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallMergeKeyingModuleSettings
-    }
+    return m.firewallMergeKeyingModuleSettings
 }
 // GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMethod()(*FirewallPacketQueueingMethodType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallPacketQueueingMethod
-    }
+    return m.firewallPacketQueueingMethod
 }
 // GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPreSharedKeyEncodingMethod()(*FirewallPreSharedKeyEncodingMethodType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallPreSharedKeyEncodingMethod
-    }
+    return m.firewallPreSharedKeyEncodingMethod
 }
 // GetFirewallProfileDomain gets the firewallProfileDomain property value. Configures the firewall profile settings for domain networks
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfileDomain()(WindowsFirewallNetworkProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallProfileDomain
-    }
+    return m.firewallProfileDomain
 }
 // GetFirewallProfilePrivate gets the firewallProfilePrivate property value. Configures the firewall profile settings for private networks
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePrivate()(WindowsFirewallNetworkProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallProfilePrivate
-    }
+    return m.firewallProfilePrivate
 }
 // GetFirewallProfilePublic gets the firewallProfilePublic property value. Configures the firewall profile settings for public networks
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePublic()(WindowsFirewallNetworkProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallProfilePublic
-    }
+    return m.firewallProfilePublic
 }
 // GetSmartScreenBlockOverrideForFiles gets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
 func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenBlockOverrideForFiles()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smartScreenBlockOverrideForFiles
-    }
+    return m.smartScreenBlockOverrideForFiles
 }
 // GetSmartScreenEnableInShell gets the smartScreenEnableInShell property value. Allows IT Admins to configure SmartScreen for Windows.
 func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenEnableInShell()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smartScreenEnableInShell
-    }
+    return m.smartScreenEnableInShell
 }
 // Serialize serializes information the current object
 func (m *Windows10EndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -990,217 +846,145 @@ func (m *Windows10EndpointProtectionConfiguration) Serialize(writer i878a80d2330
 }
 // SetApplicationGuardAllowPersistence sets the applicationGuardAllowPersistence property value. Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPersistence(value *bool)() {
-    if m != nil {
-        m.applicationGuardAllowPersistence = value
-    }
+    m.applicationGuardAllowPersistence = value
 }
 // SetApplicationGuardAllowPrintToLocalPrinters sets the applicationGuardAllowPrintToLocalPrinters property value. Allow printing to Local Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToLocalPrinters(value *bool)() {
-    if m != nil {
-        m.applicationGuardAllowPrintToLocalPrinters = value
-    }
+    m.applicationGuardAllowPrintToLocalPrinters = value
 }
 // SetApplicationGuardAllowPrintToNetworkPrinters sets the applicationGuardAllowPrintToNetworkPrinters property value. Allow printing to Network Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToNetworkPrinters(value *bool)() {
-    if m != nil {
-        m.applicationGuardAllowPrintToNetworkPrinters = value
-    }
+    m.applicationGuardAllowPrintToNetworkPrinters = value
 }
 // SetApplicationGuardAllowPrintToPDF sets the applicationGuardAllowPrintToPDF property value. Allow printing to PDF from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToPDF(value *bool)() {
-    if m != nil {
-        m.applicationGuardAllowPrintToPDF = value
-    }
+    m.applicationGuardAllowPrintToPDF = value
 }
 // SetApplicationGuardAllowPrintToXPS sets the applicationGuardAllowPrintToXPS property value. Allow printing to XPS from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToXPS(value *bool)() {
-    if m != nil {
-        m.applicationGuardAllowPrintToXPS = value
-    }
+    m.applicationGuardAllowPrintToXPS = value
 }
 // SetApplicationGuardBlockClipboardSharing sets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockClipboardSharing(value *ApplicationGuardBlockClipboardSharingType)() {
-    if m != nil {
-        m.applicationGuardBlockClipboardSharing = value
-    }
+    m.applicationGuardBlockClipboardSharing = value
 }
 // SetApplicationGuardBlockFileTransfer sets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockFileTransfer(value *ApplicationGuardBlockFileTransferType)() {
-    if m != nil {
-        m.applicationGuardBlockFileTransfer = value
-    }
+    m.applicationGuardBlockFileTransfer = value
 }
 // SetApplicationGuardBlockNonEnterpriseContent sets the applicationGuardBlockNonEnterpriseContent property value. Block enterprise sites to load non-enterprise content, such as third party plug-ins
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockNonEnterpriseContent(value *bool)() {
-    if m != nil {
-        m.applicationGuardBlockNonEnterpriseContent = value
-    }
+    m.applicationGuardBlockNonEnterpriseContent = value
 }
 // SetApplicationGuardEnabled sets the applicationGuardEnabled property value. Enable Windows Defender Application Guard
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardEnabled(value *bool)() {
-    if m != nil {
-        m.applicationGuardEnabled = value
-    }
+    m.applicationGuardEnabled = value
 }
 // SetApplicationGuardForceAuditing sets the applicationGuardForceAuditing property value. Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardForceAuditing(value *bool)() {
-    if m != nil {
-        m.applicationGuardForceAuditing = value
-    }
+    m.applicationGuardForceAuditing = value
 }
 // SetAppLockerApplicationControl sets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) SetAppLockerApplicationControl(value *AppLockerApplicationControlType)() {
-    if m != nil {
-        m.appLockerApplicationControl = value
-    }
+    m.appLockerApplicationControl = value
 }
 // SetBitLockerDisableWarningForOtherDiskEncryption sets the bitLockerDisableWarningForOtherDiskEncryption property value. Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerDisableWarningForOtherDiskEncryption(value *bool)() {
-    if m != nil {
-        m.bitLockerDisableWarningForOtherDiskEncryption = value
-    }
+    m.bitLockerDisableWarningForOtherDiskEncryption = value
 }
 // SetBitLockerEnableStorageCardEncryptionOnMobile sets the bitLockerEnableStorageCardEncryptionOnMobile property value. Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerEnableStorageCardEncryptionOnMobile(value *bool)() {
-    if m != nil {
-        m.bitLockerEnableStorageCardEncryptionOnMobile = value
-    }
+    m.bitLockerEnableStorageCardEncryptionOnMobile = value
 }
 // SetBitLockerEncryptDevice sets the bitLockerEncryptDevice property value. Allows the admin to require encryption to be turned on using BitLocker.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerEncryptDevice(value *bool)() {
-    if m != nil {
-        m.bitLockerEncryptDevice = value
-    }
+    m.bitLockerEncryptDevice = value
 }
 // SetBitLockerRemovableDrivePolicy sets the bitLockerRemovableDrivePolicy property value. BitLocker Removable Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerRemovableDrivePolicy(value BitLockerRemovableDrivePolicyable)() {
-    if m != nil {
-        m.bitLockerRemovableDrivePolicy = value
-    }
+    m.bitLockerRemovableDrivePolicy = value
 }
 // SetDefenderAdditionalGuardedFolders sets the defenderAdditionalGuardedFolders property value. List of folder paths to be added to the list of protected folders
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdditionalGuardedFolders(value []string)() {
-    if m != nil {
-        m.defenderAdditionalGuardedFolders = value
-    }
+    m.defenderAdditionalGuardedFolders = value
 }
 // SetDefenderAttackSurfaceReductionExcludedPaths sets the defenderAttackSurfaceReductionExcludedPaths property value. List of exe files and folders to be excluded from attack surface reduction rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAttackSurfaceReductionExcludedPaths(value []string)() {
-    if m != nil {
-        m.defenderAttackSurfaceReductionExcludedPaths = value
-    }
+    m.defenderAttackSurfaceReductionExcludedPaths = value
 }
 // SetDefenderExploitProtectionXml sets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderExploitProtectionXml(value []byte)() {
-    if m != nil {
-        m.defenderExploitProtectionXml = value
-    }
+    m.defenderExploitProtectionXml = value
 }
 // SetDefenderExploitProtectionXmlFileName sets the defenderExploitProtectionXmlFileName property value. Name of the file from which DefenderExploitProtectionXml was obtained.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderExploitProtectionXmlFileName(value *string)() {
-    if m != nil {
-        m.defenderExploitProtectionXmlFileName = value
-    }
+    m.defenderExploitProtectionXmlFileName = value
 }
 // SetDefenderGuardedFoldersAllowedAppPaths sets the defenderGuardedFoldersAllowedAppPaths property value. List of paths to exe that are allowed to access protected folders
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderGuardedFoldersAllowedAppPaths(value []string)() {
-    if m != nil {
-        m.defenderGuardedFoldersAllowedAppPaths = value
-    }
+    m.defenderGuardedFoldersAllowedAppPaths = value
 }
 // SetDefenderSecurityCenterBlockExploitProtectionOverride sets the defenderSecurityCenterBlockExploitProtectionOverride property value. Indicates whether or not to block user from overriding Exploit Protection settings.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterBlockExploitProtectionOverride(value *bool)() {
-    if m != nil {
-        m.defenderSecurityCenterBlockExploitProtectionOverride = value
-    }
+    m.defenderSecurityCenterBlockExploitProtectionOverride = value
 }
 // SetFirewallBlockStatefulFTP sets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallBlockStatefulFTP(value *bool)() {
-    if m != nil {
-        m.firewallBlockStatefulFTP = value
-    }
+    m.firewallBlockStatefulFTP = value
 }
 // SetFirewallCertificateRevocationListCheckMethod sets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallCertificateRevocationListCheckMethod(value *FirewallCertificateRevocationListCheckMethodType)() {
-    if m != nil {
-        m.firewallCertificateRevocationListCheckMethod = value
-    }
+    m.firewallCertificateRevocationListCheckMethod = value
 }
 // SetFirewallIdleTimeoutForSecurityAssociationInSeconds sets the firewallIdleTimeoutForSecurityAssociationInSeconds property value. Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIdleTimeoutForSecurityAssociationInSeconds(value *int32)() {
-    if m != nil {
-        m.firewallIdleTimeoutForSecurityAssociationInSeconds = value
-    }
+    m.firewallIdleTimeoutForSecurityAssociationInSeconds = value
 }
 // SetFirewallIPSecExemptionsAllowDHCP sets the firewallIPSecExemptionsAllowDHCP property value. Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowDHCP(value *bool)() {
-    if m != nil {
-        m.firewallIPSecExemptionsAllowDHCP = value
-    }
+    m.firewallIPSecExemptionsAllowDHCP = value
 }
 // SetFirewallIPSecExemptionsAllowICMP sets the firewallIPSecExemptionsAllowICMP property value. Configures IPSec exemptions to allow ICMP
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowICMP(value *bool)() {
-    if m != nil {
-        m.firewallIPSecExemptionsAllowICMP = value
-    }
+    m.firewallIPSecExemptionsAllowICMP = value
 }
 // SetFirewallIPSecExemptionsAllowNeighborDiscovery sets the firewallIPSecExemptionsAllowNeighborDiscovery property value. Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowNeighborDiscovery(value *bool)() {
-    if m != nil {
-        m.firewallIPSecExemptionsAllowNeighborDiscovery = value
-    }
+    m.firewallIPSecExemptionsAllowNeighborDiscovery = value
 }
 // SetFirewallIPSecExemptionsAllowRouterDiscovery sets the firewallIPSecExemptionsAllowRouterDiscovery property value. Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowRouterDiscovery(value *bool)() {
-    if m != nil {
-        m.firewallIPSecExemptionsAllowRouterDiscovery = value
-    }
+    m.firewallIPSecExemptionsAllowRouterDiscovery = value
 }
 // SetFirewallMergeKeyingModuleSettings sets the firewallMergeKeyingModuleSettings property value. If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallMergeKeyingModuleSettings(value *bool)() {
-    if m != nil {
-        m.firewallMergeKeyingModuleSettings = value
-    }
+    m.firewallMergeKeyingModuleSettings = value
 }
 // SetFirewallPacketQueueingMethod sets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPacketQueueingMethod(value *FirewallPacketQueueingMethodType)() {
-    if m != nil {
-        m.firewallPacketQueueingMethod = value
-    }
+    m.firewallPacketQueueingMethod = value
 }
 // SetFirewallPreSharedKeyEncodingMethod sets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPreSharedKeyEncodingMethod(value *FirewallPreSharedKeyEncodingMethodType)() {
-    if m != nil {
-        m.firewallPreSharedKeyEncodingMethod = value
-    }
+    m.firewallPreSharedKeyEncodingMethod = value
 }
 // SetFirewallProfileDomain sets the firewallProfileDomain property value. Configures the firewall profile settings for domain networks
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallProfileDomain(value WindowsFirewallNetworkProfileable)() {
-    if m != nil {
-        m.firewallProfileDomain = value
-    }
+    m.firewallProfileDomain = value
 }
 // SetFirewallProfilePrivate sets the firewallProfilePrivate property value. Configures the firewall profile settings for private networks
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallProfilePrivate(value WindowsFirewallNetworkProfileable)() {
-    if m != nil {
-        m.firewallProfilePrivate = value
-    }
+    m.firewallProfilePrivate = value
 }
 // SetFirewallProfilePublic sets the firewallProfilePublic property value. Configures the firewall profile settings for public networks
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallProfilePublic(value WindowsFirewallNetworkProfileable)() {
-    if m != nil {
-        m.firewallProfilePublic = value
-    }
+    m.firewallProfilePublic = value
 }
 // SetSmartScreenBlockOverrideForFiles sets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
 func (m *Windows10EndpointProtectionConfiguration) SetSmartScreenBlockOverrideForFiles(value *bool)() {
-    if m != nil {
-        m.smartScreenBlockOverrideForFiles = value
-    }
+    m.smartScreenBlockOverrideForFiles = value
 }
 // SetSmartScreenEnableInShell sets the smartScreenEnableInShell property value. Allows IT Admins to configure SmartScreen for Windows.
 func (m *Windows10EndpointProtectionConfiguration) SetSmartScreenEnableInShell(value *bool)() {
-    if m != nil {
-        m.smartScreenEnableInShell = value
-    }
+    m.smartScreenEnableInShell = value
 }

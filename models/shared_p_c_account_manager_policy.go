@@ -34,27 +34,15 @@ func CreateSharedPCAccountManagerPolicyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAccountDeletionPolicy gets the accountDeletionPolicy property value. Possible values for when accounts are deleted on a shared PC.
 func (m *SharedPCAccountManagerPolicy) GetAccountDeletionPolicy()(*SharedPCAccountDeletionPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountDeletionPolicy
-    }
+    return m.accountDeletionPolicy
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedPCAccountManagerPolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCacheAccountsAboveDiskFreePercentage gets the cacheAccountsAboveDiskFreePercentage property value. Sets the percentage of available disk space a PC should have before it stops deleting cached shared PC accounts. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
 func (m *SharedPCAccountManagerPolicy) GetCacheAccountsAboveDiskFreePercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cacheAccountsAboveDiskFreePercentage
-    }
+    return m.cacheAccountsAboveDiskFreePercentage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharedPCAccountManagerPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *SharedPCAccountManagerPolicy) GetFieldDeserializers()(map[string]func(i
 }
 // GetInactiveThresholdDays gets the inactiveThresholdDays property value. Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.
 func (m *SharedPCAccountManagerPolicy) GetInactiveThresholdDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inactiveThresholdDays
-    }
+    return m.inactiveThresholdDays
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharedPCAccountManagerPolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemoveAccountsBelowDiskFreePercentage gets the removeAccountsBelowDiskFreePercentage property value. Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
 func (m *SharedPCAccountManagerPolicy) GetRemoveAccountsBelowDiskFreePercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeAccountsBelowDiskFreePercentage
-    }
+    return m.removeAccountsBelowDiskFreePercentage
 }
 // Serialize serializes information the current object
 func (m *SharedPCAccountManagerPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *SharedPCAccountManagerPolicy) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAccountDeletionPolicy sets the accountDeletionPolicy property value. Possible values for when accounts are deleted on a shared PC.
 func (m *SharedPCAccountManagerPolicy) SetAccountDeletionPolicy(value *SharedPCAccountDeletionPolicyType)() {
-    if m != nil {
-        m.accountDeletionPolicy = value
-    }
+    m.accountDeletionPolicy = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedPCAccountManagerPolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCacheAccountsAboveDiskFreePercentage sets the cacheAccountsAboveDiskFreePercentage property value. Sets the percentage of available disk space a PC should have before it stops deleting cached shared PC accounts. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
 func (m *SharedPCAccountManagerPolicy) SetCacheAccountsAboveDiskFreePercentage(value *int32)() {
-    if m != nil {
-        m.cacheAccountsAboveDiskFreePercentage = value
-    }
+    m.cacheAccountsAboveDiskFreePercentage = value
 }
 // SetInactiveThresholdDays sets the inactiveThresholdDays property value. Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.
 func (m *SharedPCAccountManagerPolicy) SetInactiveThresholdDays(value *int32)() {
-    if m != nil {
-        m.inactiveThresholdDays = value
-    }
+    m.inactiveThresholdDays = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharedPCAccountManagerPolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemoveAccountsBelowDiskFreePercentage sets the removeAccountsBelowDiskFreePercentage property value. Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
 func (m *SharedPCAccountManagerPolicy) SetRemoveAccountsBelowDiskFreePercentage(value *int32)() {
-    if m != nil {
-        m.removeAccountsBelowDiskFreePercentage = value
-    }
+    m.removeAccountsBelowDiskFreePercentage = value
 }

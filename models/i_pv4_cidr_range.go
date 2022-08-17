@@ -25,11 +25,7 @@ func CreateIPv4CidrRangeFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetCidrAddress gets the cidrAddress property value. IPv4 address in CIDR notation. Not nullable.
 func (m *IPv4CidrRange) GetCidrAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cidrAddress
-    }
+    return m.cidrAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IPv4CidrRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *IPv4CidrRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetCidrAddress sets the cidrAddress property value. IPv4 address in CIDR notation. Not nullable.
 func (m *IPv4CidrRange) SetCidrAddress(value *string)() {
-    if m != nil {
-        m.cidrAddress = value
-    }
+    m.cidrAddress = value
 }

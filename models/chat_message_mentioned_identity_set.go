@@ -25,11 +25,7 @@ func CreateChatMessageMentionedIdentitySetFromDiscriminatorValue(parseNode i878a
 }
 // GetConversation gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conversation
-    }
+    return m.conversation
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896
 }
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
-    if m != nil {
-        m.conversation = value
-    }
+    m.conversation = value
 }

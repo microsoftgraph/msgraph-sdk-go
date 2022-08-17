@@ -65,27 +65,15 @@ func CreateRemoteItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoteItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
 func (m *RemoteItem) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of item creation. Read-only.
 func (m *RemoteItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -294,147 +282,75 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetFile gets the file property value. Indicates that the remote item is a file. Read-only.
 func (m *RemoteItem) GetFile()(Fileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
+    return m.file
 }
 // GetFileSystemInfo gets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
 func (m *RemoteItem) GetFileSystemInfo()(FileSystemInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSystemInfo
-    }
+    return m.fileSystemInfo
 }
 // GetFolder gets the folder property value. Indicates that the remote item is a folder. Read-only.
 func (m *RemoteItem) GetFolder()(Folderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.folder
-    }
+    return m.folder
 }
 // GetId gets the id property value. Unique identifier for the remote item in its drive. Read-only.
 func (m *RemoteItem) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetImage gets the image property value. Image metadata, if the item is an image. Read-only.
 func (m *RemoteItem) GetImage()(Imageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.image
-    }
+    return m.image
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
 func (m *RemoteItem) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
 func (m *RemoteItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetName gets the name property value. Optional. Filename of the remote item. Read-only.
 func (m *RemoteItem) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RemoteItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
 func (m *RemoteItem) GetPackage()(Package_escapedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.package_escaped
-    }
+    return m.package_escaped
 }
 // GetParentReference gets the parentReference property value. Properties of the parent of the remote item. Read-only.
 func (m *RemoteItem) GetParentReference()(ItemReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentReference
-    }
+    return m.parentReference
 }
 // GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
 func (m *RemoteItem) GetShared()(Sharedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shared
-    }
+    return m.shared
 }
 // GetSharepointIds gets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
 func (m *RemoteItem) GetSharepointIds()(SharepointIdsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
+    return m.sharepointIds
 }
 // GetSize gets the size property value. Size of the remote item. Read-only.
 func (m *RemoteItem) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // GetSpecialFolder gets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
 func (m *RemoteItem) GetSpecialFolder()(SpecialFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.specialFolder
-    }
+    return m.specialFolder
 }
 // GetVideo gets the video property value. Video metadata, if the item is a video. Read-only.
 func (m *RemoteItem) GetVideo()(Videoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.video
-    }
+    return m.video
 }
 // GetWebDavUrl gets the webDavUrl property value. DAV compatible URL for the item.
 func (m *RemoteItem) GetWebDavUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webDavUrl
-    }
+    return m.webDavUrl
 }
 // GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
 func (m *RemoteItem) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *RemoteItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -568,127 +484,85 @@ func (m *RemoteItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoteItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
 func (m *RemoteItem) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of item creation. Read-only.
 func (m *RemoteItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetFile sets the file property value. Indicates that the remote item is a file. Read-only.
 func (m *RemoteItem) SetFile(value Fileable)() {
-    if m != nil {
-        m.file = value
-    }
+    m.file = value
 }
 // SetFileSystemInfo sets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
 func (m *RemoteItem) SetFileSystemInfo(value FileSystemInfoable)() {
-    if m != nil {
-        m.fileSystemInfo = value
-    }
+    m.fileSystemInfo = value
 }
 // SetFolder sets the folder property value. Indicates that the remote item is a folder. Read-only.
 func (m *RemoteItem) SetFolder(value Folderable)() {
-    if m != nil {
-        m.folder = value
-    }
+    m.folder = value
 }
 // SetId sets the id property value. Unique identifier for the remote item in its drive. Read-only.
 func (m *RemoteItem) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetImage sets the image property value. Image metadata, if the item is an image. Read-only.
 func (m *RemoteItem) SetImage(value Imageable)() {
-    if m != nil {
-        m.image = value
-    }
+    m.image = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
 func (m *RemoteItem) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
 func (m *RemoteItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetName sets the name property value. Optional. Filename of the remote item. Read-only.
 func (m *RemoteItem) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RemoteItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
 func (m *RemoteItem) SetPackage(value Package_escapedable)() {
-    if m != nil {
-        m.package_escaped = value
-    }
+    m.package_escaped = value
 }
 // SetParentReference sets the parentReference property value. Properties of the parent of the remote item. Read-only.
 func (m *RemoteItem) SetParentReference(value ItemReferenceable)() {
-    if m != nil {
-        m.parentReference = value
-    }
+    m.parentReference = value
 }
 // SetShared sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
 func (m *RemoteItem) SetShared(value Sharedable)() {
-    if m != nil {
-        m.shared = value
-    }
+    m.shared = value
 }
 // SetSharepointIds sets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
 func (m *RemoteItem) SetSharepointIds(value SharepointIdsable)() {
-    if m != nil {
-        m.sharepointIds = value
-    }
+    m.sharepointIds = value
 }
 // SetSize sets the size property value. Size of the remote item. Read-only.
 func (m *RemoteItem) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
 // SetSpecialFolder sets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
 func (m *RemoteItem) SetSpecialFolder(value SpecialFolderable)() {
-    if m != nil {
-        m.specialFolder = value
-    }
+    m.specialFolder = value
 }
 // SetVideo sets the video property value. Video metadata, if the item is a video. Read-only.
 func (m *RemoteItem) SetVideo(value Videoable)() {
-    if m != nil {
-        m.video = value
-    }
+    m.video = value
 }
 // SetWebDavUrl sets the webDavUrl property value. DAV compatible URL for the item.
 func (m *RemoteItem) SetWebDavUrl(value *string)() {
-    if m != nil {
-        m.webDavUrl = value
-    }
+    m.webDavUrl = value
 }
 // SetWebUrl sets the webUrl property value. URL that displays the resource in the browser. Read-only.
 func (m *RemoteItem) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

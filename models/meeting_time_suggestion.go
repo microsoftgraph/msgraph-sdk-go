@@ -20,7 +20,7 @@ type MeetingTimeSuggestion struct {
     odataType *string
     // Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
     order *int32
-    // Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+    // Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
     organizerAvailability *FreeBusyStatus
     // Reason for suggesting the meeting time.
     suggestionReason *string
@@ -40,27 +40,15 @@ func CreateMeetingTimeSuggestionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingTimeSuggestion) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttendeeAvailability gets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
 func (m *MeetingTimeSuggestion) GetAttendeeAvailability()([]AttendeeAvailabilityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attendeeAvailability
-    }
+    return m.attendeeAvailability
 }
 // GetConfidence gets the confidence property value. A percentage that represents the likelhood of all the attendees attending.
 func (m *MeetingTimeSuggestion) GetConfidence()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidence
-    }
+    return m.confidence
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,51 +145,27 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLocations gets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
 func (m *MeetingTimeSuggestion) GetLocations()([]Locationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locations
-    }
+    return m.locations
 }
 // GetMeetingTimeSlot gets the meetingTimeSlot property value. A time period suggested for the meeting.
 func (m *MeetingTimeSuggestion) GetMeetingTimeSlot()(TimeSlotable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meetingTimeSlot
-    }
+    return m.meetingTimeSlot
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MeetingTimeSuggestion) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOrder gets the order property value. Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
 func (m *MeetingTimeSuggestion) GetOrder()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.order
-    }
+    return m.order
 }
-// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*FreeBusyStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizerAvailability
-    }
+    return m.organizerAvailability
 }
 // GetSuggestionReason gets the suggestionReason property value. Reason for suggesting the meeting time.
 func (m *MeetingTimeSuggestion) GetSuggestionReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestionReason
-    }
+    return m.suggestionReason
 }
 // Serialize serializes information the current object
 func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -272,55 +236,37 @@ func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingTimeSuggestion) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttendeeAvailability sets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
 func (m *MeetingTimeSuggestion) SetAttendeeAvailability(value []AttendeeAvailabilityable)() {
-    if m != nil {
-        m.attendeeAvailability = value
-    }
+    m.attendeeAvailability = value
 }
 // SetConfidence sets the confidence property value. A percentage that represents the likelhood of all the attendees attending.
 func (m *MeetingTimeSuggestion) SetConfidence(value *float64)() {
-    if m != nil {
-        m.confidence = value
-    }
+    m.confidence = value
 }
 // SetLocations sets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
 func (m *MeetingTimeSuggestion) SetLocations(value []Locationable)() {
-    if m != nil {
-        m.locations = value
-    }
+    m.locations = value
 }
 // SetMeetingTimeSlot sets the meetingTimeSlot property value. A time period suggested for the meeting.
 func (m *MeetingTimeSuggestion) SetMeetingTimeSlot(value TimeSlotable)() {
-    if m != nil {
-        m.meetingTimeSlot = value
-    }
+    m.meetingTimeSlot = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MeetingTimeSuggestion) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOrder sets the order property value. Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
 func (m *MeetingTimeSuggestion) SetOrder(value *int32)() {
-    if m != nil {
-        m.order = value
-    }
+    m.order = value
 }
-// SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *MeetingTimeSuggestion) SetOrganizerAvailability(value *FreeBusyStatus)() {
-    if m != nil {
-        m.organizerAvailability = value
-    }
+    m.organizerAvailability = value
 }
 // SetSuggestionReason sets the suggestionReason property value. Reason for suggesting the meeting time.
 func (m *MeetingTimeSuggestion) SetSuggestionReason(value *string)() {
-    if m != nil {
-        m.suggestionReason = value
-    }
+    m.suggestionReason = value
 }

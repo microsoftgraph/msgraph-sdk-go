@@ -33,35 +33,19 @@ func CreateCallEndedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetCallDuration gets the callDuration property value. Duration of the call.
 func (m *CallEndedEventMessageDetail) GetCallDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callDuration
-    }
+    return m.callDuration
 }
 // GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallEndedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callEventType
-    }
+    return m.callEventType
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
 func (m *CallEndedEventMessageDetail) GetCallId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callId
-    }
+    return m.callId
 }
 // GetCallParticipants gets the callParticipants property value. List of call participants.
 func (m *CallEndedEventMessageDetail) GetCallParticipants()([]CallParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callParticipants
-    }
+    return m.callParticipants
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,11 +108,7 @@ func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i8
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *CallEndedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // Serialize serializes information the current object
 func (m *CallEndedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,31 +155,21 @@ func (m *CallEndedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetCallDuration sets the callDuration property value. Duration of the call.
 func (m *CallEndedEventMessageDetail) SetCallDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.callDuration = value
-    }
+    m.callDuration = value
 }
 // SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallEndedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
-    if m != nil {
-        m.callEventType = value
-    }
+    m.callEventType = value
 }
 // SetCallId sets the callId property value. Unique identifier of the call.
 func (m *CallEndedEventMessageDetail) SetCallId(value *string)() {
-    if m != nil {
-        m.callId = value
-    }
+    m.callId = value
 }
 // SetCallParticipants sets the callParticipants property value. List of call participants.
 func (m *CallEndedEventMessageDetail) SetCallParticipants(value []CallParticipantInfoable)() {
-    if m != nil {
-        m.callParticipants = value
-    }
+    m.callParticipants = value
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *CallEndedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }

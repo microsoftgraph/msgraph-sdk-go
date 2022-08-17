@@ -40,11 +40,7 @@ func (m *OpenShiftChangeRequest) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOpenShiftId gets the openShiftId property value. ID for the open shift.
 func (m *OpenShiftChangeRequest) GetOpenShiftId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.openShiftId
-    }
+    return m.openShiftId
 }
 // Serialize serializes information the current object
 func (m *OpenShiftChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *OpenShiftChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetOpenShiftId sets the openShiftId property value. ID for the open shift.
 func (m *OpenShiftChangeRequest) SetOpenShiftId(value *string)() {
-    if m != nil {
-        m.openShiftId = value
-    }
+    m.openShiftId = value
 }

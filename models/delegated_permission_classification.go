@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedPermissionClassification provides operations to call the instantiate method.
+// DelegatedPermissionClassification provides operations to manage the collection of agreementAcceptance entities.
 type DelegatedPermissionClassification struct {
     Entity
     // The classification value being given. Possible value: low. Does not support $filter.
     classification *PermissionClassificationType
-    // The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+    // The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
     permissionId *string
-    // The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+    // The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
     permissionName *string
 }
 // NewDelegatedPermissionClassification instantiates a new delegatedPermissionClassification and sets the default values.
@@ -29,11 +29,7 @@ func CreateDelegatedPermissionClassificationFromDiscriminatorValue(parseNode i87
 }
 // GetClassification gets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
 func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClassificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,21 +66,13 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetPermissionId gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+// GetPermissionId gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
 func (m *DelegatedPermissionClassification) GetPermissionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionId
-    }
+    return m.permissionId
 }
-// GetPermissionName gets the permissionName property value. The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+// GetPermissionName gets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
 func (m *DelegatedPermissionClassification) GetPermissionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionName
-    }
+    return m.permissionName
 }
 // Serialize serializes information the current object
 func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d268
 }
 // SetClassification sets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
 func (m *DelegatedPermissionClassification) SetClassification(value *PermissionClassificationType)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
-// SetPermissionId sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+// SetPermissionId sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
 func (m *DelegatedPermissionClassification) SetPermissionId(value *string)() {
-    if m != nil {
-        m.permissionId = value
-    }
+    m.permissionId = value
 }
-// SetPermissionName sets the permissionName property value. The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+// SetPermissionName sets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
 func (m *DelegatedPermissionClassification) SetPermissionName(value *string)() {
-    if m != nil {
-        m.permissionName = value
-    }
+    m.permissionName = value
 }

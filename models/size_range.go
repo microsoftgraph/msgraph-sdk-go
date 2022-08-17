@@ -30,11 +30,7 @@ func CreateSizeRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SizeRange) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SizeRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *SizeRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetMaximumSize gets the maximumSize property value. The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
 func (m *SizeRange) GetMaximumSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumSize
-    }
+    return m.maximumSize
 }
 // GetMinimumSize gets the minimumSize property value. The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
 func (m *SizeRange) GetMinimumSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSize
-    }
+    return m.minimumSize
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SizeRange) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SizeRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *SizeRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SizeRange) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaximumSize sets the maximumSize property value. The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
 func (m *SizeRange) SetMaximumSize(value *int32)() {
-    if m != nil {
-        m.maximumSize = value
-    }
+    m.maximumSize = value
 }
 // SetMinimumSize sets the minimumSize property value. The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
 func (m *SizeRange) SetMinimumSize(value *int32)() {
-    if m != nil {
-        m.minimumSize = value
-    }
+    m.minimumSize = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SizeRange) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

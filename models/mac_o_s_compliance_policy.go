@@ -57,19 +57,11 @@ func CreateMacOSCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDeviceThreatProtectionEnabled gets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 func (m *MacOSCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceThreatProtectionEnabled
-    }
+    return m.deviceThreatProtectionEnabled
 }
 // GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceThreatProtectionRequiredSecurityLevel
-    }
+    return m.deviceThreatProtectionRequiredSecurityLevel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -248,123 +240,63 @@ func (m *MacOSCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFirewallBlockAllIncoming gets the firewallBlockAllIncoming property value. Corresponds to the 'Block all incoming connections' option.
 func (m *MacOSCompliancePolicy) GetFirewallBlockAllIncoming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallBlockAllIncoming
-    }
+    return m.firewallBlockAllIncoming
 }
 // GetFirewallEnabled gets the firewallEnabled property value. Whether the firewall should be enabled or not.
 func (m *MacOSCompliancePolicy) GetFirewallEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallEnabled
-    }
+    return m.firewallEnabled
 }
 // GetFirewallEnableStealthMode gets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
 func (m *MacOSCompliancePolicy) GetFirewallEnableStealthMode()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallEnableStealthMode
-    }
+    return m.firewallEnableStealthMode
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum MacOS version.
 func (m *MacOSCompliancePolicy) GetOsMaximumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMaximumVersion
-    }
+    return m.osMaximumVersion
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum MacOS version.
 func (m *MacOSCompliancePolicy) GetOsMinimumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMinimumVersion
-    }
+    return m.osMinimumVersion
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Indicates whether or not to block simple passwords.
 func (m *MacOSCompliancePolicy) GetPasswordBlockSimple()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockSimple
-    }
+    return m.passwordBlockSimple
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 65535
 func (m *MacOSCompliancePolicy) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *MacOSCompliancePolicy) GetPasswordMinimumCharacterSetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumCharacterSetCount
-    }
+    return m.passwordMinimumCharacterSetCount
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of password. Valid values 4 to 14
 func (m *MacOSCompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *MacOSCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeLock
-    }
+    return m.passwordMinutesOfInactivityBeforeLock
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
 func (m *MacOSCompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequired gets the passwordRequired property value. Whether or not to require a password.
 func (m *MacOSCompliancePolicy) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSCompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on Mac OS devices.
 func (m *MacOSCompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // GetSystemIntegrityProtectionEnabled gets the systemIntegrityProtectionEnabled property value. Require that devices have enabled system integrity protection.
 func (m *MacOSCompliancePolicy) GetSystemIntegrityProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemIntegrityProtectionEnabled
-    }
+    return m.systemIntegrityProtectionEnabled
 }
 // Serialize serializes information the current object
 func (m *MacOSCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -480,103 +412,69 @@ func (m *MacOSCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDeviceThreatProtectionEnabled sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 func (m *MacOSCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.deviceThreatProtectionEnabled = value
-    }
+    m.deviceThreatProtectionEnabled = value
 }
 // SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
-    if m != nil {
-        m.deviceThreatProtectionRequiredSecurityLevel = value
-    }
+    m.deviceThreatProtectionRequiredSecurityLevel = value
 }
 // SetFirewallBlockAllIncoming sets the firewallBlockAllIncoming property value. Corresponds to the 'Block all incoming connections' option.
 func (m *MacOSCompliancePolicy) SetFirewallBlockAllIncoming(value *bool)() {
-    if m != nil {
-        m.firewallBlockAllIncoming = value
-    }
+    m.firewallBlockAllIncoming = value
 }
 // SetFirewallEnabled sets the firewallEnabled property value. Whether the firewall should be enabled or not.
 func (m *MacOSCompliancePolicy) SetFirewallEnabled(value *bool)() {
-    if m != nil {
-        m.firewallEnabled = value
-    }
+    m.firewallEnabled = value
 }
 // SetFirewallEnableStealthMode sets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
 func (m *MacOSCompliancePolicy) SetFirewallEnableStealthMode(value *bool)() {
-    if m != nil {
-        m.firewallEnableStealthMode = value
-    }
+    m.firewallEnableStealthMode = value
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum MacOS version.
 func (m *MacOSCompliancePolicy) SetOsMaximumVersion(value *string)() {
-    if m != nil {
-        m.osMaximumVersion = value
-    }
+    m.osMaximumVersion = value
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum MacOS version.
 func (m *MacOSCompliancePolicy) SetOsMinimumVersion(value *string)() {
-    if m != nil {
-        m.osMinimumVersion = value
-    }
+    m.osMinimumVersion = value
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Indicates whether or not to block simple passwords.
 func (m *MacOSCompliancePolicy) SetPasswordBlockSimple(value *bool)() {
-    if m != nil {
-        m.passwordBlockSimple = value
-    }
+    m.passwordBlockSimple = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 65535
 func (m *MacOSCompliancePolicy) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *MacOSCompliancePolicy) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    if m != nil {
-        m.passwordMinimumCharacterSetCount = value
-    }
+    m.passwordMinimumCharacterSetCount = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of password. Valid values 4 to 14
 func (m *MacOSCompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *MacOSCompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeLock = value
-    }
+    m.passwordMinutesOfInactivityBeforeLock = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
 func (m *MacOSCompliancePolicy) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Whether or not to require a password.
 func (m *MacOSCompliancePolicy) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSCompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on Mac OS devices.
 func (m *MacOSCompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }
 // SetSystemIntegrityProtectionEnabled sets the systemIntegrityProtectionEnabled property value. Require that devices have enabled system integrity protection.
 func (m *MacOSCompliancePolicy) SetSystemIntegrityProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.systemIntegrityProtectionEnabled = value
-    }
+    m.systemIntegrityProtectionEnabled = value
 }

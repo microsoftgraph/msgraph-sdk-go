@@ -10,7 +10,7 @@ type ParticipantInfo struct {
     additionalData map[string]interface{}
     // The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
     countryCode *string
-    // The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
+    // The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
     endpointType *EndpointType
     // The identity property
     identity IdentitySetable
@@ -20,7 +20,7 @@ type ParticipantInfo struct {
     odataType *string
     // The participant ID of the participant. Read-only.
     participantId *string
-    // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+    // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
     region *string
 }
 // NewParticipantInfo instantiates a new participantInfo and sets the default values.
@@ -38,27 +38,15 @@ func CreateParticipantInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParticipantInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCountryCode gets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
 func (m *ParticipantInfo) GetCountryCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countryCode
-    }
+    return m.countryCode
 }
-// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
+// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
 func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endpointType
-    }
+    return m.endpointType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,43 +125,23 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIdentity gets the identity property value. The identity property
 func (m *ParticipantInfo) GetIdentity()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identity
-    }
+    return m.identity
 }
 // GetLanguageId gets the languageId property value. The language culture string. Read-only.
 func (m *ParticipantInfo) GetLanguageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageId
-    }
+    return m.languageId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ParticipantInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParticipantId gets the participantId property value. The participant ID of the participant. Read-only.
 func (m *ParticipantInfo) GetParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantId
-    }
+    return m.participantId
 }
-// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) GetRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
-    }
+    return m.region
 }
 // Serialize serializes information the current object
 func (m *ParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *ParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParticipantInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCountryCode sets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
 func (m *ParticipantInfo) SetCountryCode(value *string)() {
-    if m != nil {
-        m.countryCode = value
-    }
+    m.countryCode = value
 }
-// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
+// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
 func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
-    if m != nil {
-        m.endpointType = value
-    }
+    m.endpointType = value
 }
 // SetIdentity sets the identity property value. The identity property
 func (m *ParticipantInfo) SetIdentity(value IdentitySetable)() {
-    if m != nil {
-        m.identity = value
-    }
+    m.identity = value
 }
 // SetLanguageId sets the languageId property value. The language culture string. Read-only.
 func (m *ParticipantInfo) SetLanguageId(value *string)() {
-    if m != nil {
-        m.languageId = value
-    }
+    m.languageId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ParticipantInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParticipantId sets the participantId property value. The participant ID of the participant. Read-only.
 func (m *ParticipantInfo) SetParticipantId(value *string)() {
-    if m != nil {
-        m.participantId = value
-    }
+    m.participantId = value
 }
-// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) SetRegion(value *string)() {
-    if m != nil {
-        m.region = value
-    }
+    m.region = value
 }

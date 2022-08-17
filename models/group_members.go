@@ -27,11 +27,7 @@ func CreateGroupMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDescription gets the description property value. The name of the group in Azure AD. Read only.
 func (m *GroupMembers) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetGroupId gets the groupId property value. The ID of the group in Azure AD.
 func (m *GroupMembers) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
+    return m.groupId
 }
 // Serialize serializes information the current object
 func (m *GroupMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *GroupMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDescription sets the description property value. The name of the group in Azure AD. Read only.
 func (m *GroupMembers) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetGroupId sets the groupId property value. The ID of the group in Azure AD.
 func (m *GroupMembers) SetGroupId(value *string)() {
-    if m != nil {
-        m.groupId = value
-    }
+    m.groupId = value
 }

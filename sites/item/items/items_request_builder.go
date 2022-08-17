@@ -16,7 +16,7 @@ type ItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemsRequestBuilderGetQueryParameters used to address any item contained in this site. This collection cannot be enumerated.
+// ItemsRequestBuilderGetQueryParameters used to address any item contained in this site. This collection can't be enumerated.
 type ItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *ItemsRequestBuilder) Count()(*i5d09e0a2fe2c44368e104efd05fbe23499f5d0cf4d4f6da2d6f9a26ab33f265a.CountRequestBuilder) {
     return i5d09e0a2fe2c44368e104efd05fbe23499f5d0cf4d4f6da2d6f9a26ab33f265a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
+// CreateGetRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration used to address any item contained in this site. This collection cannot be enumerated.
+// CreateGetRequestInformationWithRequestConfiguration used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *ItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get used to address any item contained in this site. This collection cannot be enumerated.
+// Get used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler used to address any item contained in this site. This collection cannot be enumerated.
+// GetWithRequestConfigurationAndResponseHandler used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

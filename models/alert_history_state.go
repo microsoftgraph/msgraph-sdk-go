@@ -9,21 +9,21 @@ import (
 type AlertHistoryState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
+    // The appId property
     appId *string
-    // UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
+    // The assignedTo property
     assignedTo *string
-    // Comment entered by signed-in user.
+    // The comments property
     comments []string
-    // Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
+    // The feedback property
     feedback *AlertFeedback
     // The OdataType property
     odataType *string
-    // Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+    // The status property
     status *AlertStatus
-    // Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // The updatedDateTime property
     updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
+    // The user property
     user *string
 }
 // NewAlertHistoryState instantiates a new alertHistoryState and sets the default values.
@@ -41,43 +41,23 @@ func CreateAlertHistoryStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertHistoryState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAppId gets the appId property value. The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
+// GetAppId gets the appId property value. The appId property
 func (m *AlertHistoryState) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
-// GetAssignedTo gets the assignedTo property value. UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
+// GetAssignedTo gets the assignedTo property value. The assignedTo property
 func (m *AlertHistoryState) GetAssignedTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
-// GetComments gets the comments property value. Comment entered by signed-in user.
+// GetComments gets the comments property value. The comments property
 func (m *AlertHistoryState) GetComments()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comments
-    }
+    return m.comments
 }
-// GetFeedback gets the feedback property value. Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
+// GetFeedback gets the feedback property value. The feedback property
 func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedback
-    }
+    return m.feedback
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,35 +150,19 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AlertHistoryState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetStatus gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+// GetStatus gets the status property value. The status property
 func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
-// GetUpdatedDateTime gets the updatedDateTime property value. Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetUpdatedDateTime gets the updatedDateTime property value. The updatedDateTime property
 func (m *AlertHistoryState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedDateTime
-    }
+    return m.updatedDateTime
 }
-// GetUser gets the user property value. UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
+// GetUser gets the user property value. The user property
 func (m *AlertHistoryState) GetUser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
+    return m.user
 }
 // Serialize serializes information the current object
 func (m *AlertHistoryState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -262,55 +226,37 @@ func (m *AlertHistoryState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertHistoryState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAppId sets the appId property value. The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
+// SetAppId sets the appId property value. The appId property
 func (m *AlertHistoryState) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
-// SetAssignedTo sets the assignedTo property value. UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
+// SetAssignedTo sets the assignedTo property value. The assignedTo property
 func (m *AlertHistoryState) SetAssignedTo(value *string)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
-// SetComments sets the comments property value. Comment entered by signed-in user.
+// SetComments sets the comments property value. The comments property
 func (m *AlertHistoryState) SetComments(value []string)() {
-    if m != nil {
-        m.comments = value
-    }
+    m.comments = value
 }
-// SetFeedback sets the feedback property value. Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
+// SetFeedback sets the feedback property value. The feedback property
 func (m *AlertHistoryState) SetFeedback(value *AlertFeedback)() {
-    if m != nil {
-        m.feedback = value
-    }
+    m.feedback = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AlertHistoryState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetStatus sets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+// SetStatus sets the status property value. The status property
 func (m *AlertHistoryState) SetStatus(value *AlertStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
-// SetUpdatedDateTime sets the updatedDateTime property value. Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetUpdatedDateTime sets the updatedDateTime property value. The updatedDateTime property
 func (m *AlertHistoryState) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.updatedDateTime = value
-    }
+    m.updatedDateTime = value
 }
-// SetUser sets the user property value. UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
+// SetUser sets the user property value. The user property
 func (m *AlertHistoryState) SetUser(value *string)() {
-    if m != nil {
-        m.user = value
-    }
+    m.user = value
 }

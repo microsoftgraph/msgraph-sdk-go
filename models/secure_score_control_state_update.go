@@ -37,27 +37,15 @@ func CreateSecureScoreControlStateUpdateFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecureScoreControlStateUpdate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignedTo gets the assignedTo property value. Assigns the control to the user who will take the action.
 func (m *SecureScoreControlStateUpdate) GetAssignedTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
 // GetComment gets the comment property value. Provides optional comment about the control.
 func (m *SecureScoreControlStateUpdate) GetComment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comment
-    }
+    return m.comment
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,35 +114,19 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SecureScoreControlStateUpdate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
 func (m *SecureScoreControlStateUpdate) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUpdatedBy gets the updatedBy property value. ID of the user who updated tenant state.
 func (m *SecureScoreControlStateUpdate) GetUpdatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedBy
-    }
+    return m.updatedBy
 }
 // GetUpdatedDateTime gets the updatedDateTime property value. Time at which the control state was updated.
 func (m *SecureScoreControlStateUpdate) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedDateTime
-    }
+    return m.updatedDateTime
 }
 // Serialize serializes information the current object
 func (m *SecureScoreControlStateUpdate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *SecureScoreControlStateUpdate) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecureScoreControlStateUpdate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignedTo sets the assignedTo property value. Assigns the control to the user who will take the action.
 func (m *SecureScoreControlStateUpdate) SetAssignedTo(value *string)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
 // SetComment sets the comment property value. Provides optional comment about the control.
 func (m *SecureScoreControlStateUpdate) SetComment(value *string)() {
-    if m != nil {
-        m.comment = value
-    }
+    m.comment = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SecureScoreControlStateUpdate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
 func (m *SecureScoreControlStateUpdate) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUpdatedBy sets the updatedBy property value. ID of the user who updated tenant state.
 func (m *SecureScoreControlStateUpdate) SetUpdatedBy(value *string)() {
-    if m != nil {
-        m.updatedBy = value
-    }
+    m.updatedBy = value
 }
 // SetUpdatedDateTime sets the updatedDateTime property value. Time at which the control state was updated.
 func (m *SecureScoreControlStateUpdate) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.updatedDateTime = value
-    }
+    m.updatedDateTime = value
 }

@@ -64,27 +64,15 @@ func (m *TeamRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TeamRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetTeamDisplayName gets the teamDisplayName property value. The updated name of the team.
 func (m *TeamRenamedEventMessageDetail) GetTeamDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamDisplayName
-    }
+    return m.teamDisplayName
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
 func (m *TeamRenamedEventMessageDetail) GetTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamId
-    }
+    return m.teamId
 }
 // Serialize serializes information the current object
 func (m *TeamRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *TeamRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamRenamedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetTeamDisplayName sets the teamDisplayName property value. The updated name of the team.
 func (m *TeamRenamedEventMessageDetail) SetTeamDisplayName(value *string)() {
-    if m != nil {
-        m.teamDisplayName = value
-    }
+    m.teamDisplayName = value
 }
 // SetTeamId sets the teamId property value. Unique identifier of the team.
 func (m *TeamRenamedEventMessageDetail) SetTeamId(value *string)() {
-    if m != nil {
-        m.teamId = value
-    }
+    m.teamId = value
 }

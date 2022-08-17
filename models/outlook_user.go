@@ -44,11 +44,7 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) GetMasterCategories()([]OutlookCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.masterCategories
-    }
+    return m.masterCategories
 }
 // Serialize serializes information the current object
 func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategoryable)() {
-    if m != nil {
-        m.masterCategories = value
-    }
+    m.masterCategories = value
 }

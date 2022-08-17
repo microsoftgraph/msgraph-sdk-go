@@ -49,11 +49,7 @@ func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableArchitectures
-    }
+    return m.applicableArchitectures
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -200,99 +196,51 @@ func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetInstallCommandLine gets the installCommandLine property value. The command line to install this app
 func (m *Win32LobApp) GetInstallCommandLine()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installCommandLine
-    }
+    return m.installCommandLine
 }
 // GetInstallExperience gets the installExperience property value. The install experience for this app.
 func (m *Win32LobApp) GetInstallExperience()(Win32LobAppInstallExperienceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installExperience
-    }
+    return m.installExperience
 }
 // GetMinimumCpuSpeedInMHz gets the minimumCpuSpeedInMHz property value. The value for the minimum CPU speed which is required to install this app.
 func (m *Win32LobApp) GetMinimumCpuSpeedInMHz()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumCpuSpeedInMHz
-    }
+    return m.minimumCpuSpeedInMHz
 }
 // GetMinimumFreeDiskSpaceInMB gets the minimumFreeDiskSpaceInMB property value. The value for the minimum free disk space which is required to install this app.
 func (m *Win32LobApp) GetMinimumFreeDiskSpaceInMB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumFreeDiskSpaceInMB
-    }
+    return m.minimumFreeDiskSpaceInMB
 }
 // GetMinimumMemoryInMB gets the minimumMemoryInMB property value. The value for the minimum physical memory which is required to install this app.
 func (m *Win32LobApp) GetMinimumMemoryInMB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumMemoryInMB
-    }
+    return m.minimumMemoryInMB
 }
 // GetMinimumNumberOfProcessors gets the minimumNumberOfProcessors property value. The value for the minimum number of processors which is required to install this app.
 func (m *Win32LobApp) GetMinimumNumberOfProcessors()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumNumberOfProcessors
-    }
+    return m.minimumNumberOfProcessors
 }
 // GetMinimumSupportedWindowsRelease gets the minimumSupportedWindowsRelease property value. The value for the minimum supported windows release.
 func (m *Win32LobApp) GetMinimumSupportedWindowsRelease()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedWindowsRelease
-    }
+    return m.minimumSupportedWindowsRelease
 }
 // GetMsiInformation gets the msiInformation property value. The MSI details if this Win32 app is an MSI app.
 func (m *Win32LobApp) GetMsiInformation()(Win32LobAppMsiInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.msiInformation
-    }
+    return m.msiInformation
 }
 // GetReturnCodes gets the returnCodes property value. The return codes for post installation behavior.
 func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.returnCodes
-    }
+    return m.returnCodes
 }
 // GetRules gets the rules property value. The detection and requirement rules for this app.
 func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rules
-    }
+    return m.rules
 }
 // GetSetupFilePath gets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.
 func (m *Win32LobApp) GetSetupFilePath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setupFilePath
-    }
+    return m.setupFilePath
 }
 // GetUninstallCommandLine gets the uninstallCommandLine property value. The command line to uninstall this app
 func (m *Win32LobApp) GetUninstallCommandLine()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uninstallCommandLine
-    }
+    return m.uninstallCommandLine
 }
 // Serialize serializes information the current object
 func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -391,79 +339,53 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) SetApplicableArchitectures(value *WindowsArchitecture)() {
-    if m != nil {
-        m.applicableArchitectures = value
-    }
+    m.applicableArchitectures = value
 }
 // SetInstallCommandLine sets the installCommandLine property value. The command line to install this app
 func (m *Win32LobApp) SetInstallCommandLine(value *string)() {
-    if m != nil {
-        m.installCommandLine = value
-    }
+    m.installCommandLine = value
 }
 // SetInstallExperience sets the installExperience property value. The install experience for this app.
 func (m *Win32LobApp) SetInstallExperience(value Win32LobAppInstallExperienceable)() {
-    if m != nil {
-        m.installExperience = value
-    }
+    m.installExperience = value
 }
 // SetMinimumCpuSpeedInMHz sets the minimumCpuSpeedInMHz property value. The value for the minimum CPU speed which is required to install this app.
 func (m *Win32LobApp) SetMinimumCpuSpeedInMHz(value *int32)() {
-    if m != nil {
-        m.minimumCpuSpeedInMHz = value
-    }
+    m.minimumCpuSpeedInMHz = value
 }
 // SetMinimumFreeDiskSpaceInMB sets the minimumFreeDiskSpaceInMB property value. The value for the minimum free disk space which is required to install this app.
 func (m *Win32LobApp) SetMinimumFreeDiskSpaceInMB(value *int32)() {
-    if m != nil {
-        m.minimumFreeDiskSpaceInMB = value
-    }
+    m.minimumFreeDiskSpaceInMB = value
 }
 // SetMinimumMemoryInMB sets the minimumMemoryInMB property value. The value for the minimum physical memory which is required to install this app.
 func (m *Win32LobApp) SetMinimumMemoryInMB(value *int32)() {
-    if m != nil {
-        m.minimumMemoryInMB = value
-    }
+    m.minimumMemoryInMB = value
 }
 // SetMinimumNumberOfProcessors sets the minimumNumberOfProcessors property value. The value for the minimum number of processors which is required to install this app.
 func (m *Win32LobApp) SetMinimumNumberOfProcessors(value *int32)() {
-    if m != nil {
-        m.minimumNumberOfProcessors = value
-    }
+    m.minimumNumberOfProcessors = value
 }
 // SetMinimumSupportedWindowsRelease sets the minimumSupportedWindowsRelease property value. The value for the minimum supported windows release.
 func (m *Win32LobApp) SetMinimumSupportedWindowsRelease(value *string)() {
-    if m != nil {
-        m.minimumSupportedWindowsRelease = value
-    }
+    m.minimumSupportedWindowsRelease = value
 }
 // SetMsiInformation sets the msiInformation property value. The MSI details if this Win32 app is an MSI app.
 func (m *Win32LobApp) SetMsiInformation(value Win32LobAppMsiInformationable)() {
-    if m != nil {
-        m.msiInformation = value
-    }
+    m.msiInformation = value
 }
 // SetReturnCodes sets the returnCodes property value. The return codes for post installation behavior.
 func (m *Win32LobApp) SetReturnCodes(value []Win32LobAppReturnCodeable)() {
-    if m != nil {
-        m.returnCodes = value
-    }
+    m.returnCodes = value
 }
 // SetRules sets the rules property value. The detection and requirement rules for this app.
 func (m *Win32LobApp) SetRules(value []Win32LobAppRuleable)() {
-    if m != nil {
-        m.rules = value
-    }
+    m.rules = value
 }
 // SetSetupFilePath sets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.
 func (m *Win32LobApp) SetSetupFilePath(value *string)() {
-    if m != nil {
-        m.setupFilePath = value
-    }
+    m.setupFilePath = value
 }
 // SetUninstallCommandLine sets the uninstallCommandLine property value. The command line to uninstall this app
 func (m *Win32LobApp) SetUninstallCommandLine(value *string)() {
-    if m != nil {
-        m.uninstallCommandLine = value
-    }
+    m.uninstallCommandLine = value
 }

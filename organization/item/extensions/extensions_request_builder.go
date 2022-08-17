@@ -16,7 +16,7 @@ type ExtensionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the organization resource. Nullable.
+// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the organization. Read-only. Nullable.
 type ExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewExtensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ExtensionsRequestBuilder) Count()(*i488aabbaf4f109acb13950cd3c82c5c661ed2779c9a4fb91f100f943f8f9e482.CountRequestBuilder) {
     return i488aabbaf4f109acb13950cd3c82c5c661ed2779c9a4fb91f100f943f8f9e482.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of open extensions defined for the organization resource. Nullable.
+// CreateGetRequestInformation the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the organization resource. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ExtensionsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get the collection of open extensions defined for the organization resource. Nullable.
+// Get the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the organization resource. Nullable.
+// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtensionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

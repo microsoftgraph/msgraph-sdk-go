@@ -26,7 +26,7 @@ type PrinterBase struct {
     // The status property
     status PrinterStatusable
 }
-// NewPrinterBase instantiates a new printerBase and sets the default values.
+// NewPrinterBase instantiates a new PrinterBase and sets the default values.
 func NewPrinterBase()(*PrinterBase) {
     m := &PrinterBase{
         Entity: *NewEntity(),
@@ -62,27 +62,15 @@ func CreatePrinterBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetCapabilities gets the capabilities property value. The capabilities of the printer/printerShare.
 func (m *PrinterBase) GetCapabilities()(PrinterCapabilitiesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.capabilities
-    }
+    return m.capabilities
 }
 // GetDefaults gets the defaults property value. The default print settings of printer/printerShare.
 func (m *PrinterBase) GetDefaults()(PrinterDefaultsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaults
-    }
+    return m.defaults
 }
 // GetDisplayName gets the displayName property value. The name of the printer/printerShare.
 func (m *PrinterBase) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -185,51 +173,27 @@ func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIsAcceptingJobs gets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
 func (m *PrinterBase) GetIsAcceptingJobs()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAcceptingJobs
-    }
+    return m.isAcceptingJobs
 }
 // GetJobs gets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
 func (m *PrinterBase) GetJobs()([]PrintJobable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobs
-    }
+    return m.jobs
 }
 // GetLocation gets the location property value. The physical and/or organizational location of the printer/printerShare.
 func (m *PrinterBase) GetLocation()(PrinterLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer of the printer/printerShare.
 func (m *PrinterBase) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The model name of the printer/printerShare.
 func (m *PrinterBase) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetStatus gets the status property value. The status property
 func (m *PrinterBase) GetStatus()(PrinterStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -299,55 +263,37 @@ func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetCapabilities sets the capabilities property value. The capabilities of the printer/printerShare.
 func (m *PrinterBase) SetCapabilities(value PrinterCapabilitiesable)() {
-    if m != nil {
-        m.capabilities = value
-    }
+    m.capabilities = value
 }
 // SetDefaults sets the defaults property value. The default print settings of printer/printerShare.
 func (m *PrinterBase) SetDefaults(value PrinterDefaultsable)() {
-    if m != nil {
-        m.defaults = value
-    }
+    m.defaults = value
 }
 // SetDisplayName sets the displayName property value. The name of the printer/printerShare.
 func (m *PrinterBase) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsAcceptingJobs sets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
 func (m *PrinterBase) SetIsAcceptingJobs(value *bool)() {
-    if m != nil {
-        m.isAcceptingJobs = value
-    }
+    m.isAcceptingJobs = value
 }
 // SetJobs sets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
 func (m *PrinterBase) SetJobs(value []PrintJobable)() {
-    if m != nil {
-        m.jobs = value
-    }
+    m.jobs = value
 }
 // SetLocation sets the location property value. The physical and/or organizational location of the printer/printerShare.
 func (m *PrinterBase) SetLocation(value PrinterLocationable)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer of the printer/printerShare.
 func (m *PrinterBase) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The model name of the printer/printerShare.
 func (m *PrinterBase) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetStatus sets the status property value. The status property
 func (m *PrinterBase) SetStatus(value PrinterStatusable)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

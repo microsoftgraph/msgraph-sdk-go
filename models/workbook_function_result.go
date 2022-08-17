@@ -27,11 +27,7 @@ func CreateWorkbookFunctionResultFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetError gets the error property value. The error property
 func (m *WorkbookFunctionResult) GetError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookFunctionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *WorkbookFunctionResult) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetValue gets the value property value. The value property
 func (m *WorkbookFunctionResult) GetValue()(Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *WorkbookFunctionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WorkbookFunctionResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetError sets the error property value. The error property
 func (m *WorkbookFunctionResult) SetError(value *string)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetValue sets the value property value. The value property
 func (m *WorkbookFunctionResult) SetValue(value Jsonable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

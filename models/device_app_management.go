@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
+// DeviceAppManagement 
 type DeviceAppManagement struct {
     Entity
     // Android managed app policies.
@@ -45,7 +45,7 @@ type DeviceAppManagement struct {
     // Windows information protection for apps running on devices which are not MDM enrolled.
     windowsInformationProtectionPolicies []WindowsInformationProtectionPolicyable
 }
-// NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
+// NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),
@@ -60,19 +60,11 @@ func CreateDeviceAppManagementFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAndroidManagedAppProtections gets the androidManagedAppProtections property value. Android managed app policies.
 func (m *DeviceAppManagement) GetAndroidManagedAppProtections()([]AndroidManagedAppProtectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.androidManagedAppProtections
-    }
+    return m.androidManagedAppProtections
 }
 // GetDefaultManagedAppProtections gets the defaultManagedAppProtections property value. Default managed app policies.
 func (m *DeviceAppManagement) GetDefaultManagedAppProtections()([]DefaultManagedAppProtectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultManagedAppProtections
-    }
+    return m.defaultManagedAppProtections
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -317,131 +309,67 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIosManagedAppProtections gets the iosManagedAppProtections property value. iOS managed app policies.
 func (m *DeviceAppManagement) GetIosManagedAppProtections()([]IosManagedAppProtectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosManagedAppProtections
-    }
+    return m.iosManagedAppProtections
 }
 // GetIsEnabledForMicrosoftStoreForBusiness gets the isEnabledForMicrosoftStoreForBusiness property value. Whether the account is enabled for syncing applications from the Microsoft Store for Business.
 func (m *DeviceAppManagement) GetIsEnabledForMicrosoftStoreForBusiness()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabledForMicrosoftStoreForBusiness
-    }
+    return m.isEnabledForMicrosoftStoreForBusiness
 }
 // GetManagedAppPolicies gets the managedAppPolicies property value. Managed app policies.
 func (m *DeviceAppManagement) GetManagedAppPolicies()([]ManagedAppPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedAppPolicies
-    }
+    return m.managedAppPolicies
 }
 // GetManagedAppRegistrations gets the managedAppRegistrations property value. The managed app registrations.
 func (m *DeviceAppManagement) GetManagedAppRegistrations()([]ManagedAppRegistrationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedAppRegistrations
-    }
+    return m.managedAppRegistrations
 }
 // GetManagedAppStatuses gets the managedAppStatuses property value. The managed app statuses.
 func (m *DeviceAppManagement) GetManagedAppStatuses()([]ManagedAppStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedAppStatuses
-    }
+    return m.managedAppStatuses
 }
 // GetManagedEBooks gets the managedEBooks property value. The Managed eBook.
 func (m *DeviceAppManagement) GetManagedEBooks()([]ManagedEBookable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedEBooks
-    }
+    return m.managedEBooks
 }
 // GetMdmWindowsInformationProtectionPolicies gets the mdmWindowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are MDM enrolled.
 func (m *DeviceAppManagement) GetMdmWindowsInformationProtectionPolicies()([]MdmWindowsInformationProtectionPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmWindowsInformationProtectionPolicies
-    }
+    return m.mdmWindowsInformationProtectionPolicies
 }
 // GetMicrosoftStoreForBusinessLanguage gets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftStoreForBusinessLanguage
-    }
+    return m.microsoftStoreForBusinessLanguage
 }
 // GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime gets the microsoftStoreForBusinessLastCompletedApplicationSyncTime property value. The last time an application sync from the Microsoft Store for Business was completed.
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftStoreForBusinessLastCompletedApplicationSyncTime
-    }
+    return m.microsoftStoreForBusinessLastCompletedApplicationSyncTime
 }
 // GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime gets the microsoftStoreForBusinessLastSuccessfulSyncDateTime property value. The last time the apps from the Microsoft Store for Business were synced successfully for the account.
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftStoreForBusinessLastSuccessfulSyncDateTime
-    }
+    return m.microsoftStoreForBusinessLastSuccessfulSyncDateTime
 }
 // GetMobileAppCategories gets the mobileAppCategories property value. The mobile app categories.
 func (m *DeviceAppManagement) GetMobileAppCategories()([]MobileAppCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppCategories
-    }
+    return m.mobileAppCategories
 }
 // GetMobileAppConfigurations gets the mobileAppConfigurations property value. The Managed Device Mobile Application Configurations.
 func (m *DeviceAppManagement) GetMobileAppConfigurations()([]ManagedDeviceMobileAppConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppConfigurations
-    }
+    return m.mobileAppConfigurations
 }
 // GetMobileApps gets the mobileApps property value. The mobile apps.
 func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileApps
-    }
+    return m.mobileApps
 }
 // GetTargetedManagedAppConfigurations gets the targetedManagedAppConfigurations property value. Targeted managed app configurations.
 func (m *DeviceAppManagement) GetTargetedManagedAppConfigurations()([]TargetedManagedAppConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedManagedAppConfigurations
-    }
+    return m.targetedManagedAppConfigurations
 }
 // GetVppTokens gets the vppTokens property value. List of Vpp tokens for this organization.
 func (m *DeviceAppManagement) GetVppTokens()([]VppTokenable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokens
-    }
+    return m.vppTokens
 }
 // GetWindowsInformationProtectionPolicies gets the windowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are not MDM enrolled.
 func (m *DeviceAppManagement) GetWindowsInformationProtectionPolicies()([]WindowsInformationProtectionPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsInformationProtectionPolicies
-    }
+    return m.windowsInformationProtectionPolicies
 }
 // Serialize serializes information the current object
 func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -617,109 +545,73 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAndroidManagedAppProtections sets the androidManagedAppProtections property value. Android managed app policies.
 func (m *DeviceAppManagement) SetAndroidManagedAppProtections(value []AndroidManagedAppProtectionable)() {
-    if m != nil {
-        m.androidManagedAppProtections = value
-    }
+    m.androidManagedAppProtections = value
 }
 // SetDefaultManagedAppProtections sets the defaultManagedAppProtections property value. Default managed app policies.
 func (m *DeviceAppManagement) SetDefaultManagedAppProtections(value []DefaultManagedAppProtectionable)() {
-    if m != nil {
-        m.defaultManagedAppProtections = value
-    }
+    m.defaultManagedAppProtections = value
 }
 // SetIosManagedAppProtections sets the iosManagedAppProtections property value. iOS managed app policies.
 func (m *DeviceAppManagement) SetIosManagedAppProtections(value []IosManagedAppProtectionable)() {
-    if m != nil {
-        m.iosManagedAppProtections = value
-    }
+    m.iosManagedAppProtections = value
 }
 // SetIsEnabledForMicrosoftStoreForBusiness sets the isEnabledForMicrosoftStoreForBusiness property value. Whether the account is enabled for syncing applications from the Microsoft Store for Business.
 func (m *DeviceAppManagement) SetIsEnabledForMicrosoftStoreForBusiness(value *bool)() {
-    if m != nil {
-        m.isEnabledForMicrosoftStoreForBusiness = value
-    }
+    m.isEnabledForMicrosoftStoreForBusiness = value
 }
 // SetManagedAppPolicies sets the managedAppPolicies property value. Managed app policies.
 func (m *DeviceAppManagement) SetManagedAppPolicies(value []ManagedAppPolicyable)() {
-    if m != nil {
-        m.managedAppPolicies = value
-    }
+    m.managedAppPolicies = value
 }
 // SetManagedAppRegistrations sets the managedAppRegistrations property value. The managed app registrations.
 func (m *DeviceAppManagement) SetManagedAppRegistrations(value []ManagedAppRegistrationable)() {
-    if m != nil {
-        m.managedAppRegistrations = value
-    }
+    m.managedAppRegistrations = value
 }
 // SetManagedAppStatuses sets the managedAppStatuses property value. The managed app statuses.
 func (m *DeviceAppManagement) SetManagedAppStatuses(value []ManagedAppStatusable)() {
-    if m != nil {
-        m.managedAppStatuses = value
-    }
+    m.managedAppStatuses = value
 }
 // SetManagedEBooks sets the managedEBooks property value. The Managed eBook.
 func (m *DeviceAppManagement) SetManagedEBooks(value []ManagedEBookable)() {
-    if m != nil {
-        m.managedEBooks = value
-    }
+    m.managedEBooks = value
 }
 // SetMdmWindowsInformationProtectionPolicies sets the mdmWindowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are MDM enrolled.
 func (m *DeviceAppManagement) SetMdmWindowsInformationProtectionPolicies(value []MdmWindowsInformationProtectionPolicyable)() {
-    if m != nil {
-        m.mdmWindowsInformationProtectionPolicies = value
-    }
+    m.mdmWindowsInformationProtectionPolicies = value
 }
 // SetMicrosoftStoreForBusinessLanguage sets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
 func (m *DeviceAppManagement) SetMicrosoftStoreForBusinessLanguage(value *string)() {
-    if m != nil {
-        m.microsoftStoreForBusinessLanguage = value
-    }
+    m.microsoftStoreForBusinessLanguage = value
 }
 // SetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime sets the microsoftStoreForBusinessLastCompletedApplicationSyncTime property value. The last time an application sync from the Microsoft Store for Business was completed.
 func (m *DeviceAppManagement) SetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.microsoftStoreForBusinessLastCompletedApplicationSyncTime = value
-    }
+    m.microsoftStoreForBusinessLastCompletedApplicationSyncTime = value
 }
 // SetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime sets the microsoftStoreForBusinessLastSuccessfulSyncDateTime property value. The last time the apps from the Microsoft Store for Business were synced successfully for the account.
 func (m *DeviceAppManagement) SetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.microsoftStoreForBusinessLastSuccessfulSyncDateTime = value
-    }
+    m.microsoftStoreForBusinessLastSuccessfulSyncDateTime = value
 }
 // SetMobileAppCategories sets the mobileAppCategories property value. The mobile app categories.
 func (m *DeviceAppManagement) SetMobileAppCategories(value []MobileAppCategoryable)() {
-    if m != nil {
-        m.mobileAppCategories = value
-    }
+    m.mobileAppCategories = value
 }
 // SetMobileAppConfigurations sets the mobileAppConfigurations property value. The Managed Device Mobile Application Configurations.
 func (m *DeviceAppManagement) SetMobileAppConfigurations(value []ManagedDeviceMobileAppConfigurationable)() {
-    if m != nil {
-        m.mobileAppConfigurations = value
-    }
+    m.mobileAppConfigurations = value
 }
 // SetMobileApps sets the mobileApps property value. The mobile apps.
 func (m *DeviceAppManagement) SetMobileApps(value []MobileAppable)() {
-    if m != nil {
-        m.mobileApps = value
-    }
+    m.mobileApps = value
 }
 // SetTargetedManagedAppConfigurations sets the targetedManagedAppConfigurations property value. Targeted managed app configurations.
 func (m *DeviceAppManagement) SetTargetedManagedAppConfigurations(value []TargetedManagedAppConfigurationable)() {
-    if m != nil {
-        m.targetedManagedAppConfigurations = value
-    }
+    m.targetedManagedAppConfigurations = value
 }
 // SetVppTokens sets the vppTokens property value. List of Vpp tokens for this organization.
 func (m *DeviceAppManagement) SetVppTokens(value []VppTokenable)() {
-    if m != nil {
-        m.vppTokens = value
-    }
+    m.vppTokens = value
 }
 // SetWindowsInformationProtectionPolicies sets the windowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are not MDM enrolled.
 func (m *DeviceAppManagement) SetWindowsInformationProtectionPolicies(value []WindowsInformationProtectionPolicyable)() {
-    if m != nil {
-        m.windowsInformationProtectionPolicies = value
-    }
+    m.windowsInformationProtectionPolicies = value
 }

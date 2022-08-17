@@ -40,27 +40,15 @@ func CreateDeviceInstallStateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDeviceId gets the deviceId property value. Device Id.
 func (m *DeviceInstallState) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceName gets the deviceName property value. Device name.
 func (m *DeviceInstallState) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetErrorCode gets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,43 +137,23 @@ func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetInstallState gets the installState property value. Possible values for install state.
 func (m *DeviceInstallState) GetInstallState()(*InstallState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
+    return m.installState
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetOsDescription gets the osDescription property value. OS Description.
 func (m *DeviceInstallState) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
+    return m.osDescription
 }
 // GetOsVersion gets the osVersion property value. OS Version.
 func (m *DeviceInstallState) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetUserName gets the userName property value. Device User Name.
 func (m *DeviceInstallState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *DeviceInstallState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -246,49 +214,33 @@ func (m *DeviceInstallState) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDeviceId sets the deviceId property value. Device Id.
 func (m *DeviceInstallState) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *DeviceInstallState) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetErrorCode sets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetInstallState sets the installState property value. Possible values for install state.
 func (m *DeviceInstallState) SetInstallState(value *InstallState)() {
-    if m != nil {
-        m.installState = value
-    }
+    m.installState = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetOsDescription sets the osDescription property value. OS Description.
 func (m *DeviceInstallState) SetOsDescription(value *string)() {
-    if m != nil {
-        m.osDescription = value
-    }
+    m.osDescription = value
 }
 // SetOsVersion sets the osVersion property value. OS Version.
 func (m *DeviceInstallState) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetUserName sets the userName property value. Device User Name.
 func (m *DeviceInstallState) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

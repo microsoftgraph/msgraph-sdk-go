@@ -14,11 +14,11 @@ type DocumentSet struct {
     defaultContents []DocumentSetContentable
     // The OdataType property
     odataType *string
-    // Indicates whether to add the name of the document set to each file name.
+    // Specifies whether to push welcome page changes to inherited content types.
     propagateWelcomePageChanges *bool
     // The sharedColumns property
     sharedColumns []ColumnDefinitionable
-    // Add the name of the Document Set to each file name.
+    // Indicates whether to add the name of the document set to each file name.
     shouldPrefixNameToFile *bool
     // The welcomePageColumns property
     welcomePageColumns []ColumnDefinitionable
@@ -40,27 +40,15 @@ func CreateDocumentSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedContentTypes gets the allowedContentTypes property value. Content types allowed in document set.
 func (m *DocumentSet) GetAllowedContentTypes()([]ContentTypeInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedContentTypes
-    }
+    return m.allowedContentTypes
 }
 // GetDefaultContents gets the defaultContents property value. Default contents of document set.
 func (m *DocumentSet) GetDefaultContents()([]DocumentSetContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultContents
-    }
+    return m.defaultContents
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,51 +153,27 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DocumentSet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Indicates whether to add the name of the document set to each file name.
+// GetPropagateWelcomePageChanges gets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
 func (m *DocumentSet) GetPropagateWelcomePageChanges()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propagateWelcomePageChanges
-    }
+    return m.propagateWelcomePageChanges
 }
 // GetSharedColumns gets the sharedColumns property value. The sharedColumns property
 func (m *DocumentSet) GetSharedColumns()([]ColumnDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedColumns
-    }
+    return m.sharedColumns
 }
-// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Add the name of the Document Set to each file name.
+// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Indicates whether to add the name of the document set to each file name.
 func (m *DocumentSet) GetShouldPrefixNameToFile()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shouldPrefixNameToFile
-    }
+    return m.shouldPrefixNameToFile
 }
 // GetWelcomePageColumns gets the welcomePageColumns property value. The welcomePageColumns property
 func (m *DocumentSet) GetWelcomePageColumns()([]ColumnDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomePageColumns
-    }
+    return m.welcomePageColumns
 }
 // GetWelcomePageUrl gets the welcomePageUrl property value. Welcome page absolute URL.
 func (m *DocumentSet) GetWelcomePageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomePageUrl
-    }
+    return m.welcomePageUrl
 }
 // Serialize serializes information the current object
 func (m *DocumentSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -287,55 +251,37 @@ func (m *DocumentSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedContentTypes sets the allowedContentTypes property value. Content types allowed in document set.
 func (m *DocumentSet) SetAllowedContentTypes(value []ContentTypeInfoable)() {
-    if m != nil {
-        m.allowedContentTypes = value
-    }
+    m.allowedContentTypes = value
 }
 // SetDefaultContents sets the defaultContents property value. Default contents of document set.
 func (m *DocumentSet) SetDefaultContents(value []DocumentSetContentable)() {
-    if m != nil {
-        m.defaultContents = value
-    }
+    m.defaultContents = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DocumentSet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetPropagateWelcomePageChanges sets the propagateWelcomePageChanges property value. Indicates whether to add the name of the document set to each file name.
+// SetPropagateWelcomePageChanges sets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
 func (m *DocumentSet) SetPropagateWelcomePageChanges(value *bool)() {
-    if m != nil {
-        m.propagateWelcomePageChanges = value
-    }
+    m.propagateWelcomePageChanges = value
 }
 // SetSharedColumns sets the sharedColumns property value. The sharedColumns property
 func (m *DocumentSet) SetSharedColumns(value []ColumnDefinitionable)() {
-    if m != nil {
-        m.sharedColumns = value
-    }
+    m.sharedColumns = value
 }
-// SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Add the name of the Document Set to each file name.
+// SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Indicates whether to add the name of the document set to each file name.
 func (m *DocumentSet) SetShouldPrefixNameToFile(value *bool)() {
-    if m != nil {
-        m.shouldPrefixNameToFile = value
-    }
+    m.shouldPrefixNameToFile = value
 }
 // SetWelcomePageColumns sets the welcomePageColumns property value. The welcomePageColumns property
 func (m *DocumentSet) SetWelcomePageColumns(value []ColumnDefinitionable)() {
-    if m != nil {
-        m.welcomePageColumns = value
-    }
+    m.welcomePageColumns = value
 }
 // SetWelcomePageUrl sets the welcomePageUrl property value. Welcome page absolute URL.
 func (m *DocumentSet) SetWelcomePageUrl(value *string)() {
-    if m != nil {
-        m.welcomePageUrl = value
-    }
+    m.welcomePageUrl = value
 }

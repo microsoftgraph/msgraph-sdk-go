@@ -33,35 +33,19 @@ func CreateWindows10SecureAssessmentConfigurationFromDiscriminatorValue(parseNod
 }
 // GetAllowPrinting gets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
 func (m *Windows10SecureAssessmentConfiguration) GetAllowPrinting()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowPrinting
-    }
+    return m.allowPrinting
 }
 // GetAllowScreenCapture gets the allowScreenCapture property value. Indicates whether or not to allow screen capture capability during a test.
 func (m *Windows10SecureAssessmentConfiguration) GetAllowScreenCapture()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowScreenCapture
-    }
+    return m.allowScreenCapture
 }
 // GetAllowTextSuggestion gets the allowTextSuggestion property value. Indicates whether or not to allow text suggestions during the test.
 func (m *Windows10SecureAssessmentConfiguration) GetAllowTextSuggestion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowTextSuggestion
-    }
+    return m.allowTextSuggestion
 }
 // GetConfigurationAccount gets the configurationAccount property value. The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
 func (m *Windows10SecureAssessmentConfiguration) GetConfigurationAccount()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationAccount
-    }
+    return m.configurationAccount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10SecureAssessmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,11 +104,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetFieldDeserializers()(map[str
 }
 // GetLaunchUri gets the launchUri property value. Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
 func (m *Windows10SecureAssessmentConfiguration) GetLaunchUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.launchUri
-    }
+    return m.launchUri
 }
 // Serialize serializes information the current object
 func (m *Windows10SecureAssessmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *Windows10SecureAssessmentConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetAllowPrinting sets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
 func (m *Windows10SecureAssessmentConfiguration) SetAllowPrinting(value *bool)() {
-    if m != nil {
-        m.allowPrinting = value
-    }
+    m.allowPrinting = value
 }
 // SetAllowScreenCapture sets the allowScreenCapture property value. Indicates whether or not to allow screen capture capability during a test.
 func (m *Windows10SecureAssessmentConfiguration) SetAllowScreenCapture(value *bool)() {
-    if m != nil {
-        m.allowScreenCapture = value
-    }
+    m.allowScreenCapture = value
 }
 // SetAllowTextSuggestion sets the allowTextSuggestion property value. Indicates whether or not to allow text suggestions during the test.
 func (m *Windows10SecureAssessmentConfiguration) SetAllowTextSuggestion(value *bool)() {
-    if m != nil {
-        m.allowTextSuggestion = value
-    }
+    m.allowTextSuggestion = value
 }
 // SetConfigurationAccount sets the configurationAccount property value. The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
 func (m *Windows10SecureAssessmentConfiguration) SetConfigurationAccount(value *string)() {
-    if m != nil {
-        m.configurationAccount = value
-    }
+    m.configurationAccount = value
 }
 // SetLaunchUri sets the launchUri property value. Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
 func (m *Windows10SecureAssessmentConfiguration) SetLaunchUri(value *string)() {
-    if m != nil {
-        m.launchUri = value
-    }
+    m.launchUri = value
 }

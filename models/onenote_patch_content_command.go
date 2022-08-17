@@ -14,9 +14,9 @@ type OnenotePatchContentCommand struct {
     content *string
     // The OdataType property
     odataType *string
-    // The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.
+    // The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
     position *OnenotePatchInsertPosition
-    // The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
+    // The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
     target *string
 }
 // NewOnenotePatchContentCommand instantiates a new onenotePatchContentCommand and sets the default values.
@@ -34,27 +34,15 @@ func CreateOnenotePatchContentCommandFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAction gets the action property value. The action property
 func (m *OnenotePatchContentCommand) GetAction()(*OnenotePatchActionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnenotePatchContentCommand) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContent gets the content property value. A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
 func (m *OnenotePatchContentCommand) GetContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OnenotePatchContentCommand) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
-// GetPosition gets the position property value. The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.
+// GetPosition gets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
 func (m *OnenotePatchContentCommand) GetPosition()(*OnenotePatchInsertPosition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
-    }
+    return m.position
 }
-// GetTarget gets the target property value. The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
+// GetTarget gets the target property value. The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
 func (m *OnenotePatchContentCommand) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *OnenotePatchContentCommand) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,37 +155,25 @@ func (m *OnenotePatchContentCommand) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAction sets the action property value. The action property
 func (m *OnenotePatchContentCommand) SetAction(value *OnenotePatchActionType)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnenotePatchContentCommand) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContent sets the content property value. A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
 func (m *OnenotePatchContentCommand) SetContent(value *string)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OnenotePatchContentCommand) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
-// SetPosition sets the position property value. The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.
+// SetPosition sets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
 func (m *OnenotePatchContentCommand) SetPosition(value *OnenotePatchInsertPosition)() {
-    if m != nil {
-        m.position = value
-    }
+    m.position = value
 }
-// SetTarget sets the target property value. The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
+// SetTarget sets the target property value. The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
 func (m *OnenotePatchContentCommand) SetTarget(value *string)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

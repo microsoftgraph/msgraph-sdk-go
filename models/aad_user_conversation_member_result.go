@@ -7,7 +7,7 @@ import (
 // AadUserConversationMemberResult 
 type AadUserConversationMemberResult struct {
     ActionResultPart
-    // The user object ID of the Azure AD user that was being added as part of the bulk operation.
+    // The userId property
     userId *string
 }
 // NewAadUserConversationMemberResult instantiates a new AadUserConversationMemberResult and sets the default values.
@@ -38,13 +38,9 @@ func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetUserId gets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
+// GetUserId gets the userId property value. The userId property
 func (m *AadUserConversationMemberResult) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,9 +56,7 @@ func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetUserId sets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
+// SetUserId sets the userId property value. The userId property
 func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

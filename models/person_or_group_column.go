@@ -32,35 +32,19 @@ func CreatePersonOrGroupColumnFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonOrGroupColumn) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowMultipleSelection gets the allowMultipleSelection property value. Indicates whether multiple values can be selected from the source.
 func (m *PersonOrGroupColumn) GetAllowMultipleSelection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowMultipleSelection
-    }
+    return m.allowMultipleSelection
 }
 // GetChooseFromType gets the chooseFromType property value. Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
 func (m *PersonOrGroupColumn) GetChooseFromType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chooseFromType
-    }
+    return m.chooseFromType
 }
 // GetDisplayAs gets the displayAs property value. How to display the information about the person or group chosen. See below.
 func (m *PersonOrGroupColumn) GetDisplayAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayAs
-    }
+    return m.displayAs
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonOrGroupColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +93,7 @@ func (m *PersonOrGroupColumn) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PersonOrGroupColumn) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *PersonOrGroupColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *PersonOrGroupColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonOrGroupColumn) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowMultipleSelection sets the allowMultipleSelection property value. Indicates whether multiple values can be selected from the source.
 func (m *PersonOrGroupColumn) SetAllowMultipleSelection(value *bool)() {
-    if m != nil {
-        m.allowMultipleSelection = value
-    }
+    m.allowMultipleSelection = value
 }
 // SetChooseFromType sets the chooseFromType property value. Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
 func (m *PersonOrGroupColumn) SetChooseFromType(value *string)() {
-    if m != nil {
-        m.chooseFromType = value
-    }
+    m.chooseFromType = value
 }
 // SetDisplayAs sets the displayAs property value. How to display the information about the person or group chosen. See below.
 func (m *PersonOrGroupColumn) SetDisplayAs(value *string)() {
-    if m != nil {
-        m.displayAs = value
-    }
+    m.displayAs = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PersonOrGroupColumn) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

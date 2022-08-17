@@ -27,11 +27,7 @@ func CreateAccessReviewSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDefinitions gets the definitions property value. Represents the template and scheduling for an access review.
 func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definitions
-    }
+    return m.definitions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +64,7 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.historyDefinitions
-    }
+    return m.historyDefinitions
 }
 // Serialize serializes information the current object
 func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDefinitions sets the definitions property value. Represents the template and scheduling for an access review.
 func (m *AccessReviewSet) SetDefinitions(value []AccessReviewScheduleDefinitionable)() {
-    if m != nil {
-        m.definitions = value
-    }
+    m.definitions = value
 }
 // SetHistoryDefinitions sets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefinitionable)() {
-    if m != nil {
-        m.historyDefinitions = value
-    }
+    m.historyDefinitions = value
 }

@@ -32,19 +32,11 @@ func CreateOptionalClaimsFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAccessToken gets the accessToken property value. The optional claims returned in the JWT access token.
 func (m *OptionalClaims) GetAccessToken()([]OptionalClaimable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessToken
-    }
+    return m.accessToken
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaims) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,27 +97,15 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIdToken gets the idToken property value. The optional claims returned in the JWT ID token.
 func (m *OptionalClaims) GetIdToken()([]OptionalClaimable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.idToken
-    }
+    return m.idToken
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OptionalClaims) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSaml2Token gets the saml2Token property value. The optional claims returned in the SAML token.
 func (m *OptionalClaims) GetSaml2Token()([]OptionalClaimable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.saml2Token
-    }
+    return m.saml2Token
 }
 // Serialize serializes information the current object
 func (m *OptionalClaims) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,31 +155,21 @@ func (m *OptionalClaims) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAccessToken sets the accessToken property value. The optional claims returned in the JWT access token.
 func (m *OptionalClaims) SetAccessToken(value []OptionalClaimable)() {
-    if m != nil {
-        m.accessToken = value
-    }
+    m.accessToken = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaims) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIdToken sets the idToken property value. The optional claims returned in the JWT ID token.
 func (m *OptionalClaims) SetIdToken(value []OptionalClaimable)() {
-    if m != nil {
-        m.idToken = value
-    }
+    m.idToken = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OptionalClaims) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSaml2Token sets the saml2Token property value. The optional claims returned in the SAML token.
 func (m *OptionalClaims) SetSaml2Token(value []OptionalClaimable)() {
-    if m != nil {
-        m.saml2Token = value
-    }
+    m.saml2Token = value
 }

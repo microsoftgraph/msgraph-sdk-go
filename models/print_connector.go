@@ -36,19 +36,11 @@ func CreatePrintConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAppVersion gets the appVersion property value. The connector's version.
 func (m *PrintConnector) GetAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appVersion
-    }
+    return m.appVersion
 }
 // GetDisplayName gets the displayName property value. The name of the connector.
 func (m *PrintConnector) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,35 +109,19 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetFullyQualifiedDomainName gets the fullyQualifiedDomainName property value. The connector machine's hostname.
 func (m *PrintConnector) GetFullyQualifiedDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fullyQualifiedDomainName
-    }
+    return m.fullyQualifiedDomainName
 }
 // GetLocation gets the location property value. The physical and/or organizational location of the connector.
 func (m *PrintConnector) GetLocation()(PrinterLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetOperatingSystem gets the operatingSystem property value. The connector machine's operating system version.
 func (m *PrintConnector) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
+    return m.operatingSystem
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
 func (m *PrintConnector) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredDateTime
-    }
+    return m.registeredDateTime
 }
 // Serialize serializes information the current object
 func (m *PrintConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *PrintConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAppVersion sets the appVersion property value. The connector's version.
 func (m *PrintConnector) SetAppVersion(value *string)() {
-    if m != nil {
-        m.appVersion = value
-    }
+    m.appVersion = value
 }
 // SetDisplayName sets the displayName property value. The name of the connector.
 func (m *PrintConnector) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFullyQualifiedDomainName sets the fullyQualifiedDomainName property value. The connector machine's hostname.
 func (m *PrintConnector) SetFullyQualifiedDomainName(value *string)() {
-    if m != nil {
-        m.fullyQualifiedDomainName = value
-    }
+    m.fullyQualifiedDomainName = value
 }
 // SetLocation sets the location property value. The physical and/or organizational location of the connector.
 func (m *PrintConnector) SetLocation(value PrinterLocationable)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetOperatingSystem sets the operatingSystem property value. The connector machine's operating system version.
 func (m *PrintConnector) SetOperatingSystem(value *string)() {
-    if m != nil {
-        m.operatingSystem = value
-    }
+    m.operatingSystem = value
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
 func (m *PrintConnector) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.registeredDateTime = value
-    }
+    m.registeredDateTime = value
 }

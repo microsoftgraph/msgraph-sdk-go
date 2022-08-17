@@ -35,19 +35,11 @@ func CreateCreateLinkPostRequestBodyFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
 func (m *CreateLinkPostRequestBody) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CreateLinkPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,43 +108,23 @@ func (m *CreateLinkPostRequestBody) GetFieldDeserializers()(map[string]func(i878
 }
 // GetMessage gets the message property value. The message property
 func (m *CreateLinkPostRequestBody) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetPassword gets the password property value. The password property
 func (m *CreateLinkPostRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // GetRetainInheritedPermissions gets the retainInheritedPermissions property value. The retainInheritedPermissions property
 func (m *CreateLinkPostRequestBody) GetRetainInheritedPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retainInheritedPermissions
-    }
+    return m.retainInheritedPermissions
 }
 // GetScope gets the scope property value. The scope property
 func (m *CreateLinkPostRequestBody) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetType gets the type property value. The type property
 func (m *CreateLinkPostRequestBody) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *CreateLinkPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -202,43 +174,29 @@ func (m *CreateLinkPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
 func (m *CreateLinkPostRequestBody) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetMessage sets the message property value. The message property
 func (m *CreateLinkPostRequestBody) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetPassword sets the password property value. The password property
 func (m *CreateLinkPostRequestBody) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
 // SetRetainInheritedPermissions sets the retainInheritedPermissions property value. The retainInheritedPermissions property
 func (m *CreateLinkPostRequestBody) SetRetainInheritedPermissions(value *bool)() {
-    if m != nil {
-        m.retainInheritedPermissions = value
-    }
+    m.retainInheritedPermissions = value
 }
 // SetScope sets the scope property value. The scope property
 func (m *CreateLinkPostRequestBody) SetScope(value *string)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetType sets the type property value. The type property
 func (m *CreateLinkPostRequestBody) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

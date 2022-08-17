@@ -34,27 +34,15 @@ func CreateFollowupFlagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowupFlag) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date and time that the follow-up was finished.
 func (m *FollowupFlag) GetCompletedDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetDueDateTime gets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
 func (m *FollowupFlag) GetDueDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueDateTime
-    }
+    return m.dueDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetFlagStatus gets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
 func (m *FollowupFlag) GetFlagStatus()(*FollowupFlagStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flagStatus
-    }
+    return m.flagStatus
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FollowupFlag) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. The date and time that the follow-up is to begin.
 func (m *FollowupFlag) GetStartDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *FollowupFlag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *FollowupFlag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowupFlag) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date and time that the follow-up was finished.
 func (m *FollowupFlag) SetCompletedDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetDueDateTime sets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
 func (m *FollowupFlag) SetDueDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.dueDateTime = value
-    }
+    m.dueDateTime = value
 }
 // SetFlagStatus sets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
 func (m *FollowupFlag) SetFlagStatus(value *FollowupFlagStatus)() {
-    if m != nil {
-        m.flagStatus = value
-    }
+    m.flagStatus = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FollowupFlag) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. The date and time that the follow-up is to begin.
 func (m *FollowupFlag) SetStartDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

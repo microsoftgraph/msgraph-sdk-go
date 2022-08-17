@@ -32,19 +32,11 @@ func CreateListInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ListInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentTypesEnabled gets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
 func (m *ListInfo) GetContentTypesEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentTypesEnabled
-    }
+    return m.contentTypesEnabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetHidden gets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
 func (m *ListInfo) GetHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidden
-    }
+    return m.hidden
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ListInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTemplate gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
 func (m *ListInfo) GetTemplate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.template
-    }
+    return m.template
 }
 // Serialize serializes information the current object
 func (m *ListInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ListInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ListInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentTypesEnabled sets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
 func (m *ListInfo) SetContentTypesEnabled(value *bool)() {
-    if m != nil {
-        m.contentTypesEnabled = value
-    }
+    m.contentTypesEnabled = value
 }
 // SetHidden sets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
 func (m *ListInfo) SetHidden(value *bool)() {
-    if m != nil {
-        m.hidden = value
-    }
+    m.hidden = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ListInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTemplate sets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
 func (m *ListInfo) SetTemplate(value *string)() {
-    if m != nil {
-        m.template = value
-    }
+    m.template = value
 }

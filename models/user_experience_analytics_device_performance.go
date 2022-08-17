@@ -63,75 +63,39 @@ func CreateUserExperienceAnalyticsDevicePerformanceFromDiscriminatorValue(parseN
 }
 // GetAverageBlueScreens gets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetAverageBlueScreens()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageBlueScreens
-    }
+    return m.averageBlueScreens
 }
 // GetAverageRestarts gets the averageRestarts property value. Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetAverageRestarts()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.averageRestarts
-    }
+    return m.averageRestarts
 }
 // GetBlueScreenCount gets the blueScreenCount property value. Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetBlueScreenCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blueScreenCount
-    }
+    return m.blueScreenCount
 }
 // GetBootScore gets the bootScore property value. The user experience analytics device boot score.
 func (m *UserExperienceAnalyticsDevicePerformance) GetBootScore()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootScore
-    }
+    return m.bootScore
 }
 // GetCoreBootTimeInMs gets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) GetCoreBootTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coreBootTimeInMs
-    }
+    return m.coreBootTimeInMs
 }
 // GetCoreLoginTimeInMs gets the coreLoginTimeInMs property value. The user experience analytics device core login time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) GetCoreLoginTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coreLoginTimeInMs
-    }
+    return m.coreLoginTimeInMs
 }
 // GetDeviceCount gets the deviceCount property value. User experience analytics summarized device count.
 func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCount
-    }
+    return m.deviceCount
 }
 // GetDeviceName gets the deviceName property value. The user experience analytics device name.
 func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDiskType gets the diskType property value. The diskType property
 func (m *UserExperienceAnalyticsDevicePerformance) GetDiskType()(*DiskType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.diskType
-    }
+    return m.diskType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -340,91 +304,47 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
 }
 // GetGroupPolicyBootTimeInMs gets the groupPolicyBootTimeInMs property value. The user experience analytics device group policy boot time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) GetGroupPolicyBootTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyBootTimeInMs
-    }
+    return m.groupPolicyBootTimeInMs
 }
 // GetGroupPolicyLoginTimeInMs gets the groupPolicyLoginTimeInMs property value. The user experience analytics device group policy login time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) GetGroupPolicyLoginTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyLoginTimeInMs
-    }
+    return m.groupPolicyLoginTimeInMs
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
+    return m.healthStatus
 }
 // GetLoginScore gets the loginScore property value. The user experience analytics device login score.
 func (m *UserExperienceAnalyticsDevicePerformance) GetLoginScore()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loginScore
-    }
+    return m.loginScore
 }
 // GetManufacturer gets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsDevicePerformance) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsDevicePerformance) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetModelStartupPerformanceScore gets the modelStartupPerformanceScore property value. The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDevicePerformance) GetModelStartupPerformanceScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelStartupPerformanceScore
-    }
+    return m.modelStartupPerformanceScore
 }
 // GetOperatingSystemVersion gets the operatingSystemVersion property value. The user experience analytics device Operating System version.
 func (m *UserExperienceAnalyticsDevicePerformance) GetOperatingSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemVersion
-    }
+    return m.operatingSystemVersion
 }
 // GetResponsiveDesktopTimeInMs gets the responsiveDesktopTimeInMs property value. The user experience analytics responsive desktop time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) GetResponsiveDesktopTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsiveDesktopTimeInMs
-    }
+    return m.responsiveDesktopTimeInMs
 }
 // GetRestartCount gets the restartCount property value. Number of Restarts in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetRestartCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartCount
-    }
+    return m.restartCount
 }
 // GetStartupPerformanceScore gets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDevicePerformance) GetStartupPerformanceScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupPerformanceScore
-    }
+    return m.startupPerformanceScore
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -558,121 +478,81 @@ func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i878a80d2330
 }
 // SetAverageBlueScreens sets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetAverageBlueScreens(value *float64)() {
-    if m != nil {
-        m.averageBlueScreens = value
-    }
+    m.averageBlueScreens = value
 }
 // SetAverageRestarts sets the averageRestarts property value. Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetAverageRestarts(value *float64)() {
-    if m != nil {
-        m.averageRestarts = value
-    }
+    m.averageRestarts = value
 }
 // SetBlueScreenCount sets the blueScreenCount property value. Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetBlueScreenCount(value *int32)() {
-    if m != nil {
-        m.blueScreenCount = value
-    }
+    m.blueScreenCount = value
 }
 // SetBootScore sets the bootScore property value. The user experience analytics device boot score.
 func (m *UserExperienceAnalyticsDevicePerformance) SetBootScore(value *int32)() {
-    if m != nil {
-        m.bootScore = value
-    }
+    m.bootScore = value
 }
 // SetCoreBootTimeInMs sets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) SetCoreBootTimeInMs(value *int32)() {
-    if m != nil {
-        m.coreBootTimeInMs = value
-    }
+    m.coreBootTimeInMs = value
 }
 // SetCoreLoginTimeInMs sets the coreLoginTimeInMs property value. The user experience analytics device core login time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) SetCoreLoginTimeInMs(value *int32)() {
-    if m != nil {
-        m.coreLoginTimeInMs = value
-    }
+    m.coreLoginTimeInMs = value
 }
 // SetDeviceCount sets the deviceCount property value. User experience analytics summarized device count.
 func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceCount(value *int64)() {
-    if m != nil {
-        m.deviceCount = value
-    }
+    m.deviceCount = value
 }
 // SetDeviceName sets the deviceName property value. The user experience analytics device name.
 func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDiskType sets the diskType property value. The diskType property
 func (m *UserExperienceAnalyticsDevicePerformance) SetDiskType(value *DiskType)() {
-    if m != nil {
-        m.diskType = value
-    }
+    m.diskType = value
 }
 // SetGroupPolicyBootTimeInMs sets the groupPolicyBootTimeInMs property value. The user experience analytics device group policy boot time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) SetGroupPolicyBootTimeInMs(value *int32)() {
-    if m != nil {
-        m.groupPolicyBootTimeInMs = value
-    }
+    m.groupPolicyBootTimeInMs = value
 }
 // SetGroupPolicyLoginTimeInMs sets the groupPolicyLoginTimeInMs property value. The user experience analytics device group policy login time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) SetGroupPolicyLoginTimeInMs(value *int32)() {
-    if m != nil {
-        m.groupPolicyLoginTimeInMs = value
-    }
+    m.groupPolicyLoginTimeInMs = value
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    if m != nil {
-        m.healthStatus = value
-    }
+    m.healthStatus = value
 }
 // SetLoginScore sets the loginScore property value. The user experience analytics device login score.
 func (m *UserExperienceAnalyticsDevicePerformance) SetLoginScore(value *int32)() {
-    if m != nil {
-        m.loginScore = value
-    }
+    m.loginScore = value
 }
 // SetManufacturer sets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsDevicePerformance) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsDevicePerformance) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetModelStartupPerformanceScore sets the modelStartupPerformanceScore property value. The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDevicePerformance) SetModelStartupPerformanceScore(value *float64)() {
-    if m != nil {
-        m.modelStartupPerformanceScore = value
-    }
+    m.modelStartupPerformanceScore = value
 }
 // SetOperatingSystemVersion sets the operatingSystemVersion property value. The user experience analytics device Operating System version.
 func (m *UserExperienceAnalyticsDevicePerformance) SetOperatingSystemVersion(value *string)() {
-    if m != nil {
-        m.operatingSystemVersion = value
-    }
+    m.operatingSystemVersion = value
 }
 // SetResponsiveDesktopTimeInMs sets the responsiveDesktopTimeInMs property value. The user experience analytics responsive desktop time in milliseconds.
 func (m *UserExperienceAnalyticsDevicePerformance) SetResponsiveDesktopTimeInMs(value *int32)() {
-    if m != nil {
-        m.responsiveDesktopTimeInMs = value
-    }
+    m.responsiveDesktopTimeInMs = value
 }
 // SetRestartCount sets the restartCount property value. Number of Restarts in the last 14 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetRestartCount(value *int32)() {
-    if m != nil {
-        m.restartCount = value
-    }
+    m.restartCount = value
 }
 // SetStartupPerformanceScore sets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDevicePerformance) SetStartupPerformanceScore(value *float64)() {
-    if m != nil {
-        m.startupPerformanceScore = value
-    }
+    m.startupPerformanceScore = value
 }

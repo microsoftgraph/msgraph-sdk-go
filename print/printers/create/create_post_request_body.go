@@ -37,35 +37,19 @@ func CreateCreatePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertificateSigningRequest gets the certificateSigningRequest property value. The certificateSigningRequest property
 func (m *CreatePostRequestBody) GetCertificateSigningRequest()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateSigningRequest
-    }
+    return m.certificateSigningRequest
 }
 // GetConnectorId gets the connectorId property value. The connectorId property
 func (m *CreatePostRequestBody) GetConnectorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectorId
-    }
+    return m.connectorId
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *CreatePostRequestBody) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CreatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -144,35 +128,19 @@ func (m *CreatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetHasPhysicalDevice gets the hasPhysicalDevice property value. The hasPhysicalDevice property
 func (m *CreatePostRequestBody) GetHasPhysicalDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasPhysicalDevice
-    }
+    return m.hasPhysicalDevice
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
 func (m *CreatePostRequestBody) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The model property
 func (m *CreatePostRequestBody) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetPhysicalDeviceId gets the physicalDeviceId property value. The physicalDeviceId property
 func (m *CreatePostRequestBody) GetPhysicalDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.physicalDeviceId
-    }
+    return m.physicalDeviceId
 }
 // Serialize serializes information the current object
 func (m *CreatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -228,49 +196,33 @@ func (m *CreatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertificateSigningRequest sets the certificateSigningRequest property value. The certificateSigningRequest property
 func (m *CreatePostRequestBody) SetCertificateSigningRequest(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable)() {
-    if m != nil {
-        m.certificateSigningRequest = value
-    }
+    m.certificateSigningRequest = value
 }
 // SetConnectorId sets the connectorId property value. The connectorId property
 func (m *CreatePostRequestBody) SetConnectorId(value *string)() {
-    if m != nil {
-        m.connectorId = value
-    }
+    m.connectorId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *CreatePostRequestBody) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHasPhysicalDevice sets the hasPhysicalDevice property value. The hasPhysicalDevice property
 func (m *CreatePostRequestBody) SetHasPhysicalDevice(value *bool)() {
-    if m != nil {
-        m.hasPhysicalDevice = value
-    }
+    m.hasPhysicalDevice = value
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer property
 func (m *CreatePostRequestBody) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The model property
 func (m *CreatePostRequestBody) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetPhysicalDeviceId sets the physicalDeviceId property value. The physicalDeviceId property
 func (m *CreatePostRequestBody) SetPhysicalDeviceId(value *string)() {
-    if m != nil {
-        m.physicalDeviceId = value
-    }
+    m.physicalDeviceId = value
 }

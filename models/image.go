@@ -30,11 +30,7 @@ func CreateImageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Image) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Image) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *Image) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetHeight gets the height property value. Optional. Height of the image, in pixels. Read-only.
 func (m *Image) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
+    return m.height
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Image) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetWidth gets the width property value. Optional. Width of the image, in pixels. Read-only.
 func (m *Image) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
-    }
+    return m.width
 }
 // Serialize serializes information the current object
 func (m *Image) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *Image) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Image) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHeight sets the height property value. Optional. Height of the image, in pixels. Read-only.
 func (m *Image) SetHeight(value *int32)() {
-    if m != nil {
-        m.height = value
-    }
+    m.height = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Image) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetWidth sets the width property value. Optional. Width of the image, in pixels. Read-only.
 func (m *Image) SetWidth(value *int32)() {
-    if m != nil {
-        m.width = value
-    }
+    m.width = value
 }

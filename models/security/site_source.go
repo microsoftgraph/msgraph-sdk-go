@@ -41,11 +41,7 @@ func (m *SiteSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetSite gets the site property value. The site property
 func (m *SiteSource) GetSite()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.site
-    }
+    return m.site
 }
 // Serialize serializes information the current object
 func (m *SiteSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *SiteSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetSite sets the site property value. The site property
 func (m *SiteSource) SetSite(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable)() {
-    if m != nil {
-        m.site = value
-    }
+    m.site = value
 }

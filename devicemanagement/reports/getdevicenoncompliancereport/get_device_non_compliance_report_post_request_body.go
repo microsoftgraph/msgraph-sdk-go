@@ -40,11 +40,7 @@ func CreateGetDeviceNonComplianceReportPostRequestBodyFromDiscriminatorValue(par
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,75 +151,39 @@ func (m *GetDeviceNonComplianceReportPostRequestBody) GetFieldDeserializers()(ma
 }
 // GetFilter gets the filter property value. The filter property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
+    return m.filter
 }
 // GetGroupBy gets the groupBy property value. The groupBy property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetGroupBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupBy
-    }
+    return m.groupBy
 }
 // GetName gets the name property value. The name property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOrderBy gets the orderBy property value. The orderBy property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
+    return m.orderBy
 }
 // GetSearch gets the search property value. The search property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetSearch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
+    return m.search
 }
 // GetSelect gets the select property value. The select property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
+    return m.select_escaped
 }
 // GetSessionId gets the sessionId property value. The sessionId property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetSessionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionId
-    }
+    return m.sessionId
 }
 // GetSkip gets the skip property value. The skip property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
+    return m.skip
 }
 // GetTop gets the top property value. The top property
 func (m *GetDeviceNonComplianceReportPostRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
+    return m.top
 }
 // Serialize serializes information the current object
 func (m *GetDeviceNonComplianceReportPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -291,61 +251,41 @@ func (m *GetDeviceNonComplianceReportPostRequestBody) Serialize(writer i878a80d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetFilter(value *string)() {
-    if m != nil {
-        m.filter = value
-    }
+    m.filter = value
 }
 // SetGroupBy sets the groupBy property value. The groupBy property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetGroupBy(value []string)() {
-    if m != nil {
-        m.groupBy = value
-    }
+    m.groupBy = value
 }
 // SetName sets the name property value. The name property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOrderBy sets the orderBy property value. The orderBy property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetOrderBy(value []string)() {
-    if m != nil {
-        m.orderBy = value
-    }
+    m.orderBy = value
 }
 // SetSearch sets the search property value. The search property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetSearch(value *string)() {
-    if m != nil {
-        m.search = value
-    }
+    m.search = value
 }
 // SetSelect sets the select property value. The select property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetSelect(value []string)() {
-    if m != nil {
-        m.select_escaped = value
-    }
+    m.select_escaped = value
 }
 // SetSessionId sets the sessionId property value. The sessionId property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetSessionId(value *string)() {
-    if m != nil {
-        m.sessionId = value
-    }
+    m.sessionId = value
 }
 // SetSkip sets the skip property value. The skip property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetSkip(value *int32)() {
-    if m != nil {
-        m.skip = value
-    }
+    m.skip = value
 }
 // SetTop sets the top property value. The top property
 func (m *GetDeviceNonComplianceReportPostRequestBody) SetTop(value *int32)() {
-    if m != nil {
-        m.top = value
-    }
+    m.top = value
 }

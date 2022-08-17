@@ -8,31 +8,31 @@ import (
 type SearchRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
+    // The aggregationFilters property
     aggregationFilters []string
-    // Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
+    // The aggregations property
     aggregations []AggregationOptionable
-    // Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
+    // The contentSources property
     contentSources []string
-    // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
+    // The enableTopResults property
     enableTopResults *bool
-    // One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+    // The entityTypes property
     entityTypes []string
-    // Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
+    // The fields property
     fields []string
-    // Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
+    // The from property
     from *int32
     // The OdataType property
     odataType *string
     // The query property
     query SearchQueryable
-    // Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
+    // The queryAlterationOptions property
     queryAlterationOptions SearchAlterationOptionsable
-    // Provides the search result templates options for rendering connectors search results.
+    // The resultTemplateOptions property
     resultTemplateOptions ResultTemplateOptionable
-    // The size of the page to be retrieved. Optional.
+    // The size property
     size *int32
-    // Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
+    // The sortProperties property
     sortProperties []SortPropertyable
 }
 // NewSearchRequest instantiates a new searchRequest and sets the default values.
@@ -50,51 +50,27 @@ func CreateSearchRequestFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchRequest) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAggregationFilters gets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
+// GetAggregationFilters gets the aggregationFilters property value. The aggregationFilters property
 func (m *SearchRequest) GetAggregationFilters()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aggregationFilters
-    }
+    return m.aggregationFilters
 }
-// GetAggregations gets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
+// GetAggregations gets the aggregations property value. The aggregations property
 func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aggregations
-    }
+    return m.aggregations
 }
-// GetContentSources gets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
+// GetContentSources gets the contentSources property value. The contentSources property
 func (m *SearchRequest) GetContentSources()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentSources
-    }
+    return m.contentSources
 }
-// GetEnableTopResults gets the enableTopResults property value. This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
+// GetEnableTopResults gets the enableTopResults property value. The enableTopResults property
 func (m *SearchRequest) GetEnableTopResults()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableTopResults
-    }
+    return m.enableTopResults
 }
-// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+// GetEntityTypes gets the entityTypes property value. The entityTypes property
 func (m *SearchRequest) GetEntityTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.entityTypes
-    }
+    return m.entityTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -255,69 +231,37 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFields gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
+// GetFields gets the fields property value. The fields property
 func (m *SearchRequest) GetFields()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fields
-    }
+    return m.fields
 }
-// GetFrom gets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
+// GetFrom gets the from property value. The from property
 func (m *SearchRequest) GetFrom()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
+    return m.from
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchRequest) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQuery gets the query property value. The query property
 func (m *SearchRequest) GetQuery()(SearchQueryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
+    return m.query
 }
-// GetQueryAlterationOptions gets the queryAlterationOptions property value. Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
+// GetQueryAlterationOptions gets the queryAlterationOptions property value. The queryAlterationOptions property
 func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryAlterationOptions
-    }
+    return m.queryAlterationOptions
 }
-// GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
+// GetResultTemplateOptions gets the resultTemplateOptions property value. The resultTemplateOptions property
 func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultTemplateOptions
-    }
+    return m.resultTemplateOptions
 }
-// GetSize gets the size property value. The size of the page to be retrieved. Optional.
+// GetSize gets the size property value. The size property
 func (m *SearchRequest) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
-// GetSortProperties gets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
+// GetSortProperties gets the sortProperties property value. The sortProperties property
 func (m *SearchRequest) GetSortProperties()([]SortPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortProperties
-    }
+    return m.sortProperties
 }
 // Serialize serializes information the current object
 func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -417,85 +361,57 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchRequest) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAggregationFilters sets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
+// SetAggregationFilters sets the aggregationFilters property value. The aggregationFilters property
 func (m *SearchRequest) SetAggregationFilters(value []string)() {
-    if m != nil {
-        m.aggregationFilters = value
-    }
+    m.aggregationFilters = value
 }
-// SetAggregations sets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
+// SetAggregations sets the aggregations property value. The aggregations property
 func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
-    if m != nil {
-        m.aggregations = value
-    }
+    m.aggregations = value
 }
-// SetContentSources sets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
+// SetContentSources sets the contentSources property value. The contentSources property
 func (m *SearchRequest) SetContentSources(value []string)() {
-    if m != nil {
-        m.contentSources = value
-    }
+    m.contentSources = value
 }
-// SetEnableTopResults sets the enableTopResults property value. This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
+// SetEnableTopResults sets the enableTopResults property value. The enableTopResults property
 func (m *SearchRequest) SetEnableTopResults(value *bool)() {
-    if m != nil {
-        m.enableTopResults = value
-    }
+    m.enableTopResults = value
 }
-// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+// SetEntityTypes sets the entityTypes property value. The entityTypes property
 func (m *SearchRequest) SetEntityTypes(value []string)() {
-    if m != nil {
-        m.entityTypes = value
-    }
+    m.entityTypes = value
 }
-// SetFields sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
+// SetFields sets the fields property value. The fields property
 func (m *SearchRequest) SetFields(value []string)() {
-    if m != nil {
-        m.fields = value
-    }
+    m.fields = value
 }
-// SetFrom sets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
+// SetFrom sets the from property value. The from property
 func (m *SearchRequest) SetFrom(value *int32)() {
-    if m != nil {
-        m.from = value
-    }
+    m.from = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchRequest) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQuery sets the query property value. The query property
 func (m *SearchRequest) SetQuery(value SearchQueryable)() {
-    if m != nil {
-        m.query = value
-    }
+    m.query = value
 }
-// SetQueryAlterationOptions sets the queryAlterationOptions property value. Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
+// SetQueryAlterationOptions sets the queryAlterationOptions property value. The queryAlterationOptions property
 func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
-    if m != nil {
-        m.queryAlterationOptions = value
-    }
+    m.queryAlterationOptions = value
 }
-// SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
+// SetResultTemplateOptions sets the resultTemplateOptions property value. The resultTemplateOptions property
 func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
-    if m != nil {
-        m.resultTemplateOptions = value
-    }
+    m.resultTemplateOptions = value
 }
-// SetSize sets the size property value. The size of the page to be retrieved. Optional.
+// SetSize sets the size property value. The size property
 func (m *SearchRequest) SetSize(value *int32)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
-// SetSortProperties sets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
+// SetSortProperties sets the sortProperties property value. The sortProperties property
 func (m *SearchRequest) SetSortProperties(value []SortPropertyable)() {
-    if m != nil {
-        m.sortProperties = value
-    }
+    m.sortProperties = value
 }

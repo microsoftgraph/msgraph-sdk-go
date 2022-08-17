@@ -32,11 +32,7 @@ func CreateUserFeedbackFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserFeedback) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserFeedback) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *UserFeedback) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserFeedback) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRating gets the rating property value. The rating property
 func (m *UserFeedback) GetRating()(*UserFeedbackRating) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rating
-    }
+    return m.rating
 }
 // GetText gets the text property value. The feedback text provided by the user of this endpoint for the session.
 func (m *UserFeedback) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // GetTokens gets the tokens property value. The set of feedback tokens provided by the user of this endpoint for the session. This is a set of Boolean properties. The property names should not be relied upon since they may change depending on what tokens are offered to the user.
 func (m *UserFeedback) GetTokens()(FeedbackTokenSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokens
-    }
+    return m.tokens
 }
 // Serialize serializes information the current object
 func (m *UserFeedback) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *UserFeedback) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserFeedback) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserFeedback) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRating sets the rating property value. The rating property
 func (m *UserFeedback) SetRating(value *UserFeedbackRating)() {
-    if m != nil {
-        m.rating = value
-    }
+    m.rating = value
 }
 // SetText sets the text property value. The feedback text provided by the user of this endpoint for the session.
 func (m *UserFeedback) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }
 // SetTokens sets the tokens property value. The set of feedback tokens provided by the user of this endpoint for the session. This is a set of Boolean properties. The property names should not be relied upon since they may change depending on what tokens are offered to the user.
 func (m *UserFeedback) SetTokens(value FeedbackTokenSetable)() {
-    if m != nil {
-        m.tokens = value
-    }
+    m.tokens = value
 }

@@ -39,35 +39,19 @@ func CreateShiftActivityFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftActivity) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. Customer defined code for the shiftActivity. Required.
 func (m *ShiftActivity) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetDisplayName gets the displayName property value. The name of the shiftActivity. Required.
 func (m *ShiftActivity) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEndDateTime gets the endDateTime property value. The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *ShiftActivity) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -146,35 +130,19 @@ func (m *ShiftActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIsPaid gets the isPaid property value. Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
 func (m *ShiftActivity) GetIsPaid()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPaid
-    }
+    return m.isPaid
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ShiftActivity) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *ShiftActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetTheme gets the theme property value. The theme property
 func (m *ShiftActivity) GetTheme()(*ScheduleEntityTheme) {
-    if m == nil {
-        return nil
-    } else {
-        return m.theme
-    }
+    return m.theme
 }
 // Serialize serializes information the current object
 func (m *ShiftActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -231,49 +199,33 @@ func (m *ShiftActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftActivity) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. Customer defined code for the shiftActivity. Required.
 func (m *ShiftActivity) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetDisplayName sets the displayName property value. The name of the shiftActivity. Required.
 func (m *ShiftActivity) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEndDateTime sets the endDateTime property value. The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *ShiftActivity) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetIsPaid sets the isPaid property value. Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
 func (m *ShiftActivity) SetIsPaid(value *bool)() {
-    if m != nil {
-        m.isPaid = value
-    }
+    m.isPaid = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ShiftActivity) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *ShiftActivity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetTheme sets the theme property value. The theme property
 func (m *ShiftActivity) SetTheme(value *ScheduleEntityTheme)() {
-    if m != nil {
-        m.theme = value
-    }
+    m.theme = value
 }

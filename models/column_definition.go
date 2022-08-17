@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnDefinition provides operations to manage the admin singleton.
+// ColumnDefinition provides operations to manage the collection of agreement entities.
 type ColumnDefinition struct {
     Entity
     // This column stores boolean values.
@@ -35,7 +35,7 @@ type ColumnDefinition struct {
     hidden *bool
     // This column stores hyperlink or picture values.
     hyperlinkOrPicture HyperlinkOrPictureColumnable
-    // Specifies whether the column values can used for sorting and searching.
+    // Specifies whether the column values can be used for sorting and searching.
     indexed *bool
     // Indicates whether this column can be deleted.
     isDeletable *bool
@@ -51,15 +51,15 @@ type ColumnDefinition struct {
     number NumberColumnable
     // This column stores Person or Group values.
     personOrGroup PersonOrGroupColumnable
-    // If true, changes to this column will be propagated to lists that implement the column.
+    // If 'true', changes to this column will be propagated to lists that implement the column.
     propagateChanges *bool
     // Specifies whether the column values can be modified.
     readOnly *bool
     // Specifies whether the column value isn't optional.
     required *bool
-    // The source column for content type column.
+    // The source column for the content type column.
     sourceColumn ColumnDefinitionable
-    // ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
+    // ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
     sourceContentType ContentTypeInfoable
     // This column stores taxonomy terms.
     term TermColumnable
@@ -87,91 +87,47 @@ func CreateColumnDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetBoolean gets the boolean property value. This column stores boolean values.
 func (m *ColumnDefinition) GetBoolean()(BooleanColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.boolean
-    }
+    return m.boolean
 }
 // GetCalculated gets the calculated property value. This column's data is calculated based on other columns.
 func (m *ColumnDefinition) GetCalculated()(CalculatedColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calculated
-    }
+    return m.calculated
 }
 // GetChoice gets the choice property value. This column stores data from a list of choices.
 func (m *ColumnDefinition) GetChoice()(ChoiceColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.choice
-    }
+    return m.choice
 }
 // GetColumnGroup gets the columnGroup property value. For site columns, the name of the group this column belongs to. Helps organize related columns.
 func (m *ColumnDefinition) GetColumnGroup()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.columnGroup
-    }
+    return m.columnGroup
 }
 // GetContentApprovalStatus gets the contentApprovalStatus property value. This column stores content approval status.
 func (m *ColumnDefinition) GetContentApprovalStatus()(ContentApprovalStatusColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentApprovalStatus
-    }
+    return m.contentApprovalStatus
 }
 // GetCurrency gets the currency property value. This column stores currency values.
 func (m *ColumnDefinition) GetCurrency()(CurrencyColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currency
-    }
+    return m.currency
 }
 // GetDateTime gets the dateTime property value. This column stores DateTime values.
 func (m *ColumnDefinition) GetDateTime()(DateTimeColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTime
-    }
+    return m.dateTime
 }
 // GetDefaultValue gets the defaultValue property value. The default value for this column.
 func (m *ColumnDefinition) GetDefaultValue()(DefaultColumnValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetDescription gets the description property value. The user-facing description of the column.
 func (m *ColumnDefinition) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The user-facing name of the column.
 func (m *ColumnDefinition) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnforceUniqueValues gets the enforceUniqueValues property value. If true, no two list items may have the same value for this column.
 func (m *ColumnDefinition) GetEnforceUniqueValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforceUniqueValues
-    }
+    return m.enforceUniqueValues
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -500,171 +456,87 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetGeolocation gets the geolocation property value. This column stores a geolocation.
 func (m *ColumnDefinition) GetGeolocation()(GeolocationColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.geolocation
-    }
+    return m.geolocation
 }
 // GetHidden gets the hidden property value. Specifies whether the column is displayed in the user interface.
 func (m *ColumnDefinition) GetHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidden
-    }
+    return m.hidden
 }
 // GetHyperlinkOrPicture gets the hyperlinkOrPicture property value. This column stores hyperlink or picture values.
 func (m *ColumnDefinition) GetHyperlinkOrPicture()(HyperlinkOrPictureColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hyperlinkOrPicture
-    }
+    return m.hyperlinkOrPicture
 }
-// GetIndexed gets the indexed property value. Specifies whether the column values can used for sorting and searching.
+// GetIndexed gets the indexed property value. Specifies whether the column values can be used for sorting and searching.
 func (m *ColumnDefinition) GetIndexed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.indexed
-    }
+    return m.indexed
 }
 // GetIsDeletable gets the isDeletable property value. Indicates whether this column can be deleted.
 func (m *ColumnDefinition) GetIsDeletable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeletable
-    }
+    return m.isDeletable
 }
 // GetIsReorderable gets the isReorderable property value. Indicates whether values in the column can be reordered. Read-only.
 func (m *ColumnDefinition) GetIsReorderable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReorderable
-    }
+    return m.isReorderable
 }
 // GetIsSealed gets the isSealed property value. Specifies whether the column can be changed.
 func (m *ColumnDefinition) GetIsSealed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSealed
-    }
+    return m.isSealed
 }
 // GetLookup gets the lookup property value. This column's data is looked up from another source in the site.
 func (m *ColumnDefinition) GetLookup()(LookupColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lookup
-    }
+    return m.lookup
 }
 // GetName gets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
 func (m *ColumnDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetNumber gets the number property value. This column stores number values.
 func (m *ColumnDefinition) GetNumber()(NumberColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetPersonOrGroup gets the personOrGroup property value. This column stores Person or Group values.
 func (m *ColumnDefinition) GetPersonOrGroup()(PersonOrGroupColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personOrGroup
-    }
+    return m.personOrGroup
 }
-// GetPropagateChanges gets the propagateChanges property value. If true, changes to this column will be propagated to lists that implement the column.
+// GetPropagateChanges gets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) GetPropagateChanges()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propagateChanges
-    }
+    return m.propagateChanges
 }
 // GetReadOnly gets the readOnly property value. Specifies whether the column values can be modified.
 func (m *ColumnDefinition) GetReadOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.readOnly
-    }
+    return m.readOnly
 }
 // GetRequired gets the required property value. Specifies whether the column value isn't optional.
 func (m *ColumnDefinition) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
-// GetSourceColumn gets the sourceColumn property value. The source column for content type column.
+// GetSourceColumn gets the sourceColumn property value. The source column for the content type column.
 func (m *ColumnDefinition) GetSourceColumn()(ColumnDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceColumn
-    }
+    return m.sourceColumn
 }
-// GetSourceContentType gets the sourceContentType property value. ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
+// GetSourceContentType gets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
 func (m *ColumnDefinition) GetSourceContentType()(ContentTypeInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceContentType
-    }
+    return m.sourceContentType
 }
 // GetTerm gets the term property value. This column stores taxonomy terms.
 func (m *ColumnDefinition) GetTerm()(TermColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.term
-    }
+    return m.term
 }
 // GetText gets the text property value. This column stores text values.
 func (m *ColumnDefinition) GetText()(TextColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // GetThumbnail gets the thumbnail property value. This column stores thumbnail values.
 func (m *ColumnDefinition) GetThumbnail()(ThumbnailColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnail
-    }
+    return m.thumbnail
 }
 // GetType gets the type property value. For site columns, the type of column. Read-only.
 func (m *ColumnDefinition) GetType()(*ColumnTypes) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetValidation gets the validation property value. This column stores validation formula and message for the column.
 func (m *ColumnDefinition) GetValidation()(ColumnValidationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.validation
-    }
+    return m.validation
 }
 // Serialize serializes information the current object
 func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -869,193 +741,129 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetBoolean sets the boolean property value. This column stores boolean values.
 func (m *ColumnDefinition) SetBoolean(value BooleanColumnable)() {
-    if m != nil {
-        m.boolean = value
-    }
+    m.boolean = value
 }
 // SetCalculated sets the calculated property value. This column's data is calculated based on other columns.
 func (m *ColumnDefinition) SetCalculated(value CalculatedColumnable)() {
-    if m != nil {
-        m.calculated = value
-    }
+    m.calculated = value
 }
 // SetChoice sets the choice property value. This column stores data from a list of choices.
 func (m *ColumnDefinition) SetChoice(value ChoiceColumnable)() {
-    if m != nil {
-        m.choice = value
-    }
+    m.choice = value
 }
 // SetColumnGroup sets the columnGroup property value. For site columns, the name of the group this column belongs to. Helps organize related columns.
 func (m *ColumnDefinition) SetColumnGroup(value *string)() {
-    if m != nil {
-        m.columnGroup = value
-    }
+    m.columnGroup = value
 }
 // SetContentApprovalStatus sets the contentApprovalStatus property value. This column stores content approval status.
 func (m *ColumnDefinition) SetContentApprovalStatus(value ContentApprovalStatusColumnable)() {
-    if m != nil {
-        m.contentApprovalStatus = value
-    }
+    m.contentApprovalStatus = value
 }
 // SetCurrency sets the currency property value. This column stores currency values.
 func (m *ColumnDefinition) SetCurrency(value CurrencyColumnable)() {
-    if m != nil {
-        m.currency = value
-    }
+    m.currency = value
 }
 // SetDateTime sets the dateTime property value. This column stores DateTime values.
 func (m *ColumnDefinition) SetDateTime(value DateTimeColumnable)() {
-    if m != nil {
-        m.dateTime = value
-    }
+    m.dateTime = value
 }
 // SetDefaultValue sets the defaultValue property value. The default value for this column.
 func (m *ColumnDefinition) SetDefaultValue(value DefaultColumnValueable)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
 // SetDescription sets the description property value. The user-facing description of the column.
 func (m *ColumnDefinition) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The user-facing name of the column.
 func (m *ColumnDefinition) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnforceUniqueValues sets the enforceUniqueValues property value. If true, no two list items may have the same value for this column.
 func (m *ColumnDefinition) SetEnforceUniqueValues(value *bool)() {
-    if m != nil {
-        m.enforceUniqueValues = value
-    }
+    m.enforceUniqueValues = value
 }
 // SetGeolocation sets the geolocation property value. This column stores a geolocation.
 func (m *ColumnDefinition) SetGeolocation(value GeolocationColumnable)() {
-    if m != nil {
-        m.geolocation = value
-    }
+    m.geolocation = value
 }
 // SetHidden sets the hidden property value. Specifies whether the column is displayed in the user interface.
 func (m *ColumnDefinition) SetHidden(value *bool)() {
-    if m != nil {
-        m.hidden = value
-    }
+    m.hidden = value
 }
 // SetHyperlinkOrPicture sets the hyperlinkOrPicture property value. This column stores hyperlink or picture values.
 func (m *ColumnDefinition) SetHyperlinkOrPicture(value HyperlinkOrPictureColumnable)() {
-    if m != nil {
-        m.hyperlinkOrPicture = value
-    }
+    m.hyperlinkOrPicture = value
 }
-// SetIndexed sets the indexed property value. Specifies whether the column values can used for sorting and searching.
+// SetIndexed sets the indexed property value. Specifies whether the column values can be used for sorting and searching.
 func (m *ColumnDefinition) SetIndexed(value *bool)() {
-    if m != nil {
-        m.indexed = value
-    }
+    m.indexed = value
 }
 // SetIsDeletable sets the isDeletable property value. Indicates whether this column can be deleted.
 func (m *ColumnDefinition) SetIsDeletable(value *bool)() {
-    if m != nil {
-        m.isDeletable = value
-    }
+    m.isDeletable = value
 }
 // SetIsReorderable sets the isReorderable property value. Indicates whether values in the column can be reordered. Read-only.
 func (m *ColumnDefinition) SetIsReorderable(value *bool)() {
-    if m != nil {
-        m.isReorderable = value
-    }
+    m.isReorderable = value
 }
 // SetIsSealed sets the isSealed property value. Specifies whether the column can be changed.
 func (m *ColumnDefinition) SetIsSealed(value *bool)() {
-    if m != nil {
-        m.isSealed = value
-    }
+    m.isSealed = value
 }
 // SetLookup sets the lookup property value. This column's data is looked up from another source in the site.
 func (m *ColumnDefinition) SetLookup(value LookupColumnable)() {
-    if m != nil {
-        m.lookup = value
-    }
+    m.lookup = value
 }
 // SetName sets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
 func (m *ColumnDefinition) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetNumber sets the number property value. This column stores number values.
 func (m *ColumnDefinition) SetNumber(value NumberColumnable)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetPersonOrGroup sets the personOrGroup property value. This column stores Person or Group values.
 func (m *ColumnDefinition) SetPersonOrGroup(value PersonOrGroupColumnable)() {
-    if m != nil {
-        m.personOrGroup = value
-    }
+    m.personOrGroup = value
 }
-// SetPropagateChanges sets the propagateChanges property value. If true, changes to this column will be propagated to lists that implement the column.
+// SetPropagateChanges sets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) SetPropagateChanges(value *bool)() {
-    if m != nil {
-        m.propagateChanges = value
-    }
+    m.propagateChanges = value
 }
 // SetReadOnly sets the readOnly property value. Specifies whether the column values can be modified.
 func (m *ColumnDefinition) SetReadOnly(value *bool)() {
-    if m != nil {
-        m.readOnly = value
-    }
+    m.readOnly = value
 }
 // SetRequired sets the required property value. Specifies whether the column value isn't optional.
 func (m *ColumnDefinition) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }
-// SetSourceColumn sets the sourceColumn property value. The source column for content type column.
+// SetSourceColumn sets the sourceColumn property value. The source column for the content type column.
 func (m *ColumnDefinition) SetSourceColumn(value ColumnDefinitionable)() {
-    if m != nil {
-        m.sourceColumn = value
-    }
+    m.sourceColumn = value
 }
-// SetSourceContentType sets the sourceContentType property value. ContentType from which this column is inherited from. Used only to fetch contentTypes columns.
+// SetSourceContentType sets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
 func (m *ColumnDefinition) SetSourceContentType(value ContentTypeInfoable)() {
-    if m != nil {
-        m.sourceContentType = value
-    }
+    m.sourceContentType = value
 }
 // SetTerm sets the term property value. This column stores taxonomy terms.
 func (m *ColumnDefinition) SetTerm(value TermColumnable)() {
-    if m != nil {
-        m.term = value
-    }
+    m.term = value
 }
 // SetText sets the text property value. This column stores text values.
 func (m *ColumnDefinition) SetText(value TextColumnable)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }
 // SetThumbnail sets the thumbnail property value. This column stores thumbnail values.
 func (m *ColumnDefinition) SetThumbnail(value ThumbnailColumnable)() {
-    if m != nil {
-        m.thumbnail = value
-    }
+    m.thumbnail = value
 }
 // SetType sets the type property value. For site columns, the type of column. Read-only.
 func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetValidation sets the validation property value. This column stores validation formula and message for the column.
 func (m *ColumnDefinition) SetValidation(value ColumnValidationable)() {
-    if m != nil {
-        m.validation = value
-    }
+    m.validation = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LinkedResource provides operations to manage the collection of application entities.
+// LinkedResource provides operations to manage the collection of agreementAcceptance entities.
 type LinkedResource struct {
     Entity
     // Field indicating the app name of the source that is sending the linkedResource.
@@ -31,27 +31,15 @@ func CreateLinkedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetApplicationName gets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
 func (m *LinkedResource) GetApplicationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationName
-    }
+    return m.applicationName
 }
 // GetDisplayName gets the displayName property value. Field indicating the title of the linkedResource.
 func (m *LinkedResource) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExternalId gets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
 func (m *LinkedResource) GetExternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalId
-    }
+    return m.externalId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LinkedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +88,7 @@ func (m *LinkedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetWebUrl gets the webUrl property value. Deep link to the linkedResource.
 func (m *LinkedResource) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *LinkedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *LinkedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetApplicationName sets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
 func (m *LinkedResource) SetApplicationName(value *string)() {
-    if m != nil {
-        m.applicationName = value
-    }
+    m.applicationName = value
 }
 // SetDisplayName sets the displayName property value. Field indicating the title of the linkedResource.
 func (m *LinkedResource) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExternalId sets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
 func (m *LinkedResource) SetExternalId(value *string)() {
-    if m != nil {
-        m.externalId = value
-    }
+    m.externalId = value
 }
 // SetWebUrl sets the webUrl property value. Deep link to the linkedResource.
 func (m *LinkedResource) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

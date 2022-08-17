@@ -24,11 +24,7 @@ func CreateSetMobileDeviceManagementAuthorityResponseFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetMobileDeviceManagementAuthorityResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SetMobileDeviceManagementAuthorityResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *SetMobileDeviceManagementAuthorityResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *SetMobileDeviceManagementAuthorityResponse) GetValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *SetMobileDeviceManagementAuthorityResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *SetMobileDeviceManagementAuthorityResponse) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetMobileDeviceManagementAuthorityResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetValue sets the value property value. The value property
 func (m *SetMobileDeviceManagementAuthorityResponse) SetValue(value *int32)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

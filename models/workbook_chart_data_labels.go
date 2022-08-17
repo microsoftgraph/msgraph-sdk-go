@@ -136,75 +136,39 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetFormat gets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartDataLabels) GetFormat()(WorkbookChartDataLabelFormatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetPosition gets the position property value. DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
 func (m *WorkbookChartDataLabels) GetPosition()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
-    }
+    return m.position
 }
 // GetSeparator gets the separator property value. String representing the separator used for the data labels on a chart.
 func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.separator
-    }
+    return m.separator
 }
 // GetShowBubbleSize gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
 func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showBubbleSize
-    }
+    return m.showBubbleSize
 }
 // GetShowCategoryName gets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
 func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showCategoryName
-    }
+    return m.showCategoryName
 }
 // GetShowLegendKey gets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
 func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showLegendKey
-    }
+    return m.showLegendKey
 }
 // GetShowPercentage gets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
 func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showPercentage
-    }
+    return m.showPercentage
 }
 // GetShowSeriesName gets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
 func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showSeriesName
-    }
+    return m.showSeriesName
 }
 // GetShowValue gets the showValue property value. Boolean value representing if the data label value is visible or not.
 func (m *WorkbookChartDataLabels) GetShowValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showValue
-    }
+    return m.showValue
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartDataLabels) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -270,55 +234,37 @@ func (m *WorkbookChartDataLabels) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetFormat sets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartDataLabels) SetFormat(value WorkbookChartDataLabelFormatable)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetPosition sets the position property value. DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
 func (m *WorkbookChartDataLabels) SetPosition(value *string)() {
-    if m != nil {
-        m.position = value
-    }
+    m.position = value
 }
 // SetSeparator sets the separator property value. String representing the separator used for the data labels on a chart.
 func (m *WorkbookChartDataLabels) SetSeparator(value *string)() {
-    if m != nil {
-        m.separator = value
-    }
+    m.separator = value
 }
 // SetShowBubbleSize sets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
 func (m *WorkbookChartDataLabels) SetShowBubbleSize(value *bool)() {
-    if m != nil {
-        m.showBubbleSize = value
-    }
+    m.showBubbleSize = value
 }
 // SetShowCategoryName sets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
 func (m *WorkbookChartDataLabels) SetShowCategoryName(value *bool)() {
-    if m != nil {
-        m.showCategoryName = value
-    }
+    m.showCategoryName = value
 }
 // SetShowLegendKey sets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
 func (m *WorkbookChartDataLabels) SetShowLegendKey(value *bool)() {
-    if m != nil {
-        m.showLegendKey = value
-    }
+    m.showLegendKey = value
 }
 // SetShowPercentage sets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
 func (m *WorkbookChartDataLabels) SetShowPercentage(value *bool)() {
-    if m != nil {
-        m.showPercentage = value
-    }
+    m.showPercentage = value
 }
 // SetShowSeriesName sets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
 func (m *WorkbookChartDataLabels) SetShowSeriesName(value *bool)() {
-    if m != nil {
-        m.showSeriesName = value
-    }
+    m.showSeriesName = value
 }
 // SetShowValue sets the showValue property value. Boolean value representing if the data label value is visible or not.
 func (m *WorkbookChartDataLabels) SetShowValue(value *bool)() {
-    if m != nil {
-        m.showValue = value
-    }
+    m.showValue = value
 }

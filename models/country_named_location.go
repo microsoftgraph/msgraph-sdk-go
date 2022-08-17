@@ -7,9 +7,9 @@ import (
 // CountryNamedLocation 
 type CountryNamedLocation struct {
     NamedLocation
-    // List of countries and/or regions in two-letter format specified by ISO 3166-2.
+    // List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.
     countriesAndRegions []string
-    // Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.
+    // Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
     countryLookupMethod *CountryLookupMethodType
     // true if IP addresses that don't map to a country or region should be included in the named location. Optional. Default value is false.
     includeUnknownCountriesAndRegions *bool
@@ -27,21 +27,13 @@ func NewCountryNamedLocation()(*CountryNamedLocation) {
 func CreateCountryNamedLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCountryNamedLocation(), nil
 }
-// GetCountriesAndRegions gets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2.
+// GetCountriesAndRegions gets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.
 func (m *CountryNamedLocation) GetCountriesAndRegions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countriesAndRegions
-    }
+    return m.countriesAndRegions
 }
-// GetCountryLookupMethod gets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.
+// GetCountryLookupMethod gets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
 func (m *CountryNamedLocation) GetCountryLookupMethod()(*CountryLookupMethodType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countryLookupMethod
-    }
+    return m.countryLookupMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CountryNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *CountryNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIncludeUnknownCountriesAndRegions gets the includeUnknownCountriesAndRegions property value. true if IP addresses that don't map to a country or region should be included in the named location. Optional. Default value is false.
 func (m *CountryNamedLocation) GetIncludeUnknownCountriesAndRegions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeUnknownCountriesAndRegions
-    }
+    return m.includeUnknownCountriesAndRegions
 }
 // Serialize serializes information the current object
 func (m *CountryNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -117,21 +105,15 @@ func (m *CountryNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCountriesAndRegions sets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2.
+// SetCountriesAndRegions sets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.
 func (m *CountryNamedLocation) SetCountriesAndRegions(value []string)() {
-    if m != nil {
-        m.countriesAndRegions = value
-    }
+    m.countriesAndRegions = value
 }
-// SetCountryLookupMethod sets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.
+// SetCountryLookupMethod sets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
 func (m *CountryNamedLocation) SetCountryLookupMethod(value *CountryLookupMethodType)() {
-    if m != nil {
-        m.countryLookupMethod = value
-    }
+    m.countryLookupMethod = value
 }
 // SetIncludeUnknownCountriesAndRegions sets the includeUnknownCountriesAndRegions property value. true if IP addresses that don't map to a country or region should be included in the named location. Optional. Default value is false.
 func (m *CountryNamedLocation) SetIncludeUnknownCountriesAndRegions(value *bool)() {
-    if m != nil {
-        m.includeUnknownCountriesAndRegions = value
-    }
+    m.includeUnknownCountriesAndRegions = value
 }

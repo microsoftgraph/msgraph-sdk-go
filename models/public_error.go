@@ -36,27 +36,15 @@ func CreatePublicErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicError) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. Represents the error code.
 func (m *PublicError) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetDetails gets the details property value. Details of the error.
 func (m *PublicError) GetDetails()([]PublicErrorDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PublicError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,35 +117,19 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetInnerError gets the innerError property value. Details of the inner error.
 func (m *PublicError) GetInnerError()(PublicInnerErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innerError
-    }
+    return m.innerError
 }
 // GetMessage gets the message property value. A non-localized message for the developer.
 func (m *PublicError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PublicError) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTarget gets the target property value. The target of the error.
 func (m *PublicError) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *PublicError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *PublicError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicError) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. Represents the error code.
 func (m *PublicError) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetDetails sets the details property value. Details of the error.
 func (m *PublicError) SetDetails(value []PublicErrorDetailable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetInnerError sets the innerError property value. Details of the inner error.
 func (m *PublicError) SetInnerError(value PublicInnerErrorable)() {
-    if m != nil {
-        m.innerError = value
-    }
+    m.innerError = value
 }
 // SetMessage sets the message property value. A non-localized message for the developer.
 func (m *PublicError) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PublicError) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTarget sets the target property value. The target of the error.
 func (m *PublicError) SetTarget(value *string)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

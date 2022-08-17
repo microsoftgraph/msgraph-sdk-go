@@ -38,19 +38,11 @@ func CreateSharingLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingLink) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplication gets the application property value. The app the link is associated with.
 func (m *SharingLink) GetApplication()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.application
-    }
+    return m.application
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,51 +121,27 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharingLink) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPreventsDownload gets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
 func (m *SharingLink) GetPreventsDownload()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preventsDownload
-    }
+    return m.preventsDownload
 }
 // GetScope gets the scope property value. The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
 func (m *SharingLink) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetType gets the type property value. The type of the link created.
 func (m *SharingLink) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetWebHtml gets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
 func (m *SharingLink) GetWebHtml()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webHtml
-    }
+    return m.webHtml
 }
 // GetWebUrl gets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
 func (m *SharingLink) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *SharingLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *SharingLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingLink) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplication sets the application property value. The app the link is associated with.
 func (m *SharingLink) SetApplication(value Identityable)() {
-    if m != nil {
-        m.application = value
-    }
+    m.application = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharingLink) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPreventsDownload sets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
 func (m *SharingLink) SetPreventsDownload(value *bool)() {
-    if m != nil {
-        m.preventsDownload = value
-    }
+    m.preventsDownload = value
 }
 // SetScope sets the scope property value. The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
 func (m *SharingLink) SetScope(value *string)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetType sets the type property value. The type of the link created.
 func (m *SharingLink) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetWebHtml sets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
 func (m *SharingLink) SetWebHtml(value *string)() {
-    if m != nil {
-        m.webHtml = value
-    }
+    m.webHtml = value
 }
 // SetWebUrl sets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
 func (m *SharingLink) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

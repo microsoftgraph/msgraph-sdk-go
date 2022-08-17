@@ -30,11 +30,7 @@ func CreateToneInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ToneInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ToneInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
 func (m *ToneInfo) GetSequenceId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sequenceId
-    }
+    return m.sequenceId
 }
 // GetTone gets the tone property value. The tone property
 func (m *ToneInfo) GetTone()(*Tone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tone
-    }
+    return m.tone
 }
 // Serialize serializes information the current object
 func (m *ToneInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *ToneInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ToneInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ToneInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSequenceId sets the sequenceId property value. An incremental identifier used for ordering DTMF events.
 func (m *ToneInfo) SetSequenceId(value *int64)() {
-    if m != nil {
-        m.sequenceId = value
-    }
+    m.sequenceId = value
 }
 // SetTone sets the tone property value. The tone property
 func (m *ToneInfo) SetTone(value *Tone)() {
-    if m != nil {
-        m.tone = value
-    }
+    m.tone = value
 }

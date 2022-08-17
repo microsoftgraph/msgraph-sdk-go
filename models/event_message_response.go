@@ -52,19 +52,11 @@ func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetProposedNewTime gets the proposedNewTime property value. The proposedNewTime property
 func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proposedNewTime
-    }
+    return m.proposedNewTime
 }
 // GetResponseType gets the responseType property value. The responseType property
 func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responseType
-    }
+    return m.responseType
 }
 // Serialize serializes information the current object
 func (m *EventMessageResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *EventMessageResponse) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetProposedNewTime sets the proposedNewTime property value. The proposedNewTime property
 func (m *EventMessageResponse) SetProposedNewTime(value TimeSlotable)() {
-    if m != nil {
-        m.proposedNewTime = value
-    }
+    m.proposedNewTime = value
 }
 // SetResponseType sets the responseType property value. The responseType property
 func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
-    if m != nil {
-        m.responseType = value
-    }
+    m.responseType = value
 }

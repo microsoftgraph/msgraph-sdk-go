@@ -64,27 +64,15 @@ func (m *TeamsAppInstalledEventMessageDetail) GetFieldDeserializers()(map[string
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TeamsAppInstalledEventMessageDetail) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetTeamsAppDisplayName gets the teamsAppDisplayName property value. Display name of the teamsApp.
 func (m *TeamsAppInstalledEventMessageDetail) GetTeamsAppDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppDisplayName
-    }
+    return m.teamsAppDisplayName
 }
 // GetTeamsAppId gets the teamsAppId property value. Unique identifier of the teamsApp.
 func (m *TeamsAppInstalledEventMessageDetail) GetTeamsAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppId
-    }
+    return m.teamsAppId
 }
 // Serialize serializes information the current object
 func (m *TeamsAppInstalledEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *TeamsAppInstalledEventMessageDetail) Serialize(writer i878a80d2330e89d2
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamsAppInstalledEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetTeamsAppDisplayName sets the teamsAppDisplayName property value. Display name of the teamsApp.
 func (m *TeamsAppInstalledEventMessageDetail) SetTeamsAppDisplayName(value *string)() {
-    if m != nil {
-        m.teamsAppDisplayName = value
-    }
+    m.teamsAppDisplayName = value
 }
 // SetTeamsAppId sets the teamsAppId property value. Unique identifier of the teamsApp.
 func (m *TeamsAppInstalledEventMessageDetail) SetTeamsAppId(value *string)() {
-    if m != nil {
-        m.teamsAppId = value
-    }
+    m.teamsAppId = value
 }

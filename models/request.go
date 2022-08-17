@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Request provides operations to manage the admin singleton.
+// Request provides operations to manage the collection of agreementAcceptance entities.
 type Request struct {
     Entity
     // The identifier of the approval of the request.
@@ -59,43 +59,23 @@ func CreateRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetApprovalId gets the approvalId property value. The identifier of the approval of the request.
 func (m *Request) GetApprovalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvalId
-    }
+    return m.approvalId
 }
 // GetCompletedDateTime gets the completedDateTime property value. The request completion date time.
 func (m *Request) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetCreatedBy gets the createdBy property value. The principal that created the request.
 func (m *Request) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The request creation date time.
 func (m *Request) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCustomData gets the customData property value. Free text field to define any custom data for the request. Not used.
 func (m *Request) GetCustomData()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customData
-    }
+    return m.customData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Request) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,11 +144,7 @@ func (m *Request) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetStatus gets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
 func (m *Request) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *Request) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -216,37 +192,25 @@ func (m *Request) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetApprovalId sets the approvalId property value. The identifier of the approval of the request.
 func (m *Request) SetApprovalId(value *string)() {
-    if m != nil {
-        m.approvalId = value
-    }
+    m.approvalId = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. The request completion date time.
 func (m *Request) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetCreatedBy sets the createdBy property value. The principal that created the request.
 func (m *Request) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The request creation date time.
 func (m *Request) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCustomData sets the customData property value. Free text field to define any custom data for the request. Not used.
 func (m *Request) SetCustomData(value *string)() {
-    if m != nil {
-        m.customData = value
-    }
+    m.customData = value
 }
 // SetStatus sets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
 func (m *Request) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

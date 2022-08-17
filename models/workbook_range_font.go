@@ -17,7 +17,7 @@ type WorkbookRangeFont struct {
     name *string
     // Font size.
     size *float64
-    // Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+    // Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
     underline *string
 }
 // NewWorkbookRangeFont instantiates a new workbookRangeFont and sets the default values.
@@ -35,19 +35,11 @@ func CreateWorkbookRangeFontFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetBold gets the bold property value. Represents the bold status of font.
 func (m *WorkbookRangeFont) GetBold()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bold
-    }
+    return m.bold
 }
 // GetColor gets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
 func (m *WorkbookRangeFont) GetColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookRangeFont) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +108,19 @@ func (m *WorkbookRangeFont) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetItalic gets the italic property value. Represents the italic status of the font.
 func (m *WorkbookRangeFont) GetItalic()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.italic
-    }
+    return m.italic
 }
 // GetName gets the name property value. Font name (e.g. 'Calibri')
 func (m *WorkbookRangeFont) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetSize gets the size property value. Font size.
 func (m *WorkbookRangeFont) GetSize()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
-// GetUnderline gets the underline property value. Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+// GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
 func (m *WorkbookRangeFont) GetUnderline()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.underline
-    }
+    return m.underline
 }
 // Serialize serializes information the current object
 func (m *WorkbookRangeFont) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *WorkbookRangeFont) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetBold sets the bold property value. Represents the bold status of font.
 func (m *WorkbookRangeFont) SetBold(value *bool)() {
-    if m != nil {
-        m.bold = value
-    }
+    m.bold = value
 }
 // SetColor sets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
 func (m *WorkbookRangeFont) SetColor(value *string)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }
 // SetItalic sets the italic property value. Represents the italic status of the font.
 func (m *WorkbookRangeFont) SetItalic(value *bool)() {
-    if m != nil {
-        m.italic = value
-    }
+    m.italic = value
 }
 // SetName sets the name property value. Font name (e.g. 'Calibri')
 func (m *WorkbookRangeFont) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetSize sets the size property value. Font size.
 func (m *WorkbookRangeFont) SetSize(value *float64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
-// SetUnderline sets the underline property value. Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+// SetUnderline sets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
 func (m *WorkbookRangeFont) SetUnderline(value *string)() {
-    if m != nil {
-        m.underline = value
-    }
+    m.underline = value
 }

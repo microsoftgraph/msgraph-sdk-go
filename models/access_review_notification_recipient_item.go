@@ -10,7 +10,7 @@ type AccessReviewNotificationRecipientItem struct {
     additionalData map[string]interface{}
     // Determines the recipient of the notification email.
     notificationRecipientScope AccessReviewNotificationRecipientScopeable
-    // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+    // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
     notificationTemplateType *string
     // The OdataType property
     odataType *string
@@ -30,11 +30,7 @@ func CreateAccessReviewNotificationRecipientItemFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewNotificationRecipientItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewNotificationRecipientItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *AccessReviewNotificationRecipientItem) GetFieldDeserializers()(map[stri
 }
 // GetNotificationRecipientScope gets the notificationRecipientScope property value. Determines the recipient of the notification email.
 func (m *AccessReviewNotificationRecipientItem) GetNotificationRecipientScope()(AccessReviewNotificationRecipientScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationRecipientScope
-    }
+    return m.notificationRecipientScope
 }
-// GetNotificationTemplateType gets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+// GetNotificationTemplateType gets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
 func (m *AccessReviewNotificationRecipientItem) GetNotificationTemplateType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTemplateType
-    }
+    return m.notificationTemplateType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessReviewNotificationRecipientItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AccessReviewNotificationRecipientItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AccessReviewNotificationRecipientItem) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewNotificationRecipientItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetNotificationRecipientScope sets the notificationRecipientScope property value. Determines the recipient of the notification email.
 func (m *AccessReviewNotificationRecipientItem) SetNotificationRecipientScope(value AccessReviewNotificationRecipientScopeable)() {
-    if m != nil {
-        m.notificationRecipientScope = value
-    }
+    m.notificationRecipientScope = value
 }
-// SetNotificationTemplateType sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+// SetNotificationTemplateType sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
 func (m *AccessReviewNotificationRecipientItem) SetNotificationTemplateType(value *string)() {
-    if m != nil {
-        m.notificationTemplateType = value
-    }
+    m.notificationTemplateType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessReviewNotificationRecipientItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

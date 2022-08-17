@@ -12,7 +12,7 @@ type Fido2AuthenticationMethod struct {
     aaGuid *string
     // The attestation certificate(s) attached to this security key.
     attestationCertificates []string
-    // The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+    // The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
     attestationLevel *AttestationLevel
     // The timestamp when this key was registered to the user.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -36,43 +36,23 @@ func CreateFido2AuthenticationMethodFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
 func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aaGuid
-    }
+    return m.aaGuid
 }
 // GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
 func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attestationCertificates
-    }
+    return m.attestationCertificates
 }
-// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
 func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attestationLevel
-    }
+    return m.attestationLevel
 }
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp when this key was registered to the user.
 func (m *Fido2AuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The display name of the key as given by the user.
 func (m *Fido2AuthenticationMethod) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,11 +125,7 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
 }
 // GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 security key.
 func (m *Fido2AuthenticationMethod) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // Serialize serializes information the current object
 func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -198,37 +174,25 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAaGuid sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
 func (m *Fido2AuthenticationMethod) SetAaGuid(value *string)() {
-    if m != nil {
-        m.aaGuid = value
-    }
+    m.aaGuid = value
 }
 // SetAttestationCertificates sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
 func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)() {
-    if m != nil {
-        m.attestationCertificates = value
-    }
+    m.attestationCertificates = value
 }
-// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
 func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)() {
-    if m != nil {
-        m.attestationLevel = value
-    }
+    m.attestationLevel = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The timestamp when this key was registered to the user.
 func (m *Fido2AuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The display name of the key as given by the user.
 func (m *Fido2AuthenticationMethod) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetModel sets the model property value. The manufacturer-assigned model of the FIDO2 security key.
 func (m *Fido2AuthenticationMethod) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }

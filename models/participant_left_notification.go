@@ -27,11 +27,7 @@ func CreateParticipantLeftNotificationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetCall gets the call property value. The call property
 func (m *ParticipantLeftNotification) GetCall()(Callable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.call
-    }
+    return m.call
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantLeftNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *ParticipantLeftNotification) GetFieldDeserializers()(map[string]func(i8
 }
 // GetParticipantId gets the participantId property value. ID of the participant under the policy who has left the meeting.
 func (m *ParticipantLeftNotification) GetParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantId
-    }
+    return m.participantId
 }
 // Serialize serializes information the current object
 func (m *ParticipantLeftNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ParticipantLeftNotification) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetCall sets the call property value. The call property
 func (m *ParticipantLeftNotification) SetCall(value Callable)() {
-    if m != nil {
-        m.call = value
-    }
+    m.call = value
 }
 // SetParticipantId sets the participantId property value. ID of the participant under the policy who has left the meeting.
 func (m *ParticipantLeftNotification) SetParticipantId(value *string)() {
-    if m != nil {
-        m.participantId = value
-    }
+    m.participantId = value
 }

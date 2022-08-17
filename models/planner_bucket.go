@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerBucket provides operations to manage the admin singleton.
+// PlannerBucket provides operations to manage the collection of agreementAcceptance entities.
 type PlannerBucket struct {
     Entity
     // Name of the bucket.
@@ -80,35 +80,19 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetName gets the name property value. Name of the bucket.
 func (m *PlannerBucket) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerBucket) GetOrderHint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderHint
-    }
+    return m.orderHint
 }
 // GetPlanId gets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) GetPlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.planId
-    }
+    return m.planId
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) GetTasks()([]PlannerTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,25 +132,17 @@ func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetName sets the name property value. Name of the bucket.
 func (m *PlannerBucket) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerBucket) SetOrderHint(value *string)() {
-    if m != nil {
-        m.orderHint = value
-    }
+    m.orderHint = value
 }
 // SetPlanId sets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) SetPlanId(value *string)() {
-    if m != nil {
-        m.planId = value
-    }
+    m.planId = value
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) SetTasks(value []PlannerTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

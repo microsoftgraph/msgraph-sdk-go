@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarGroup provides operations to manage the collection of application entities.
+// CalendarGroup provides operations to manage the collection of agreement entities.
 type CalendarGroup struct {
     Entity
     // The calendars in the calendar group. Navigation property. Read-only. Nullable.
@@ -31,27 +31,15 @@ func CreateCalendarGroupFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetCalendars gets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarGroup) GetCalendars()([]Calendarable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendars
-    }
+    return m.calendars
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *CalendarGroup) GetChangeKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changeKey
-    }
+    return m.changeKey
 }
 // GetClassId gets the classId property value. The class identifier. Read-only.
 func (m *CalendarGroup) GetClassId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classId
-    }
+    return m.classId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,11 +92,7 @@ func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetName gets the name property value. The group name.
 func (m *CalendarGroup) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // Serialize serializes information the current object
 func (m *CalendarGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,25 +132,17 @@ func (m *CalendarGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetCalendars sets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarGroup) SetCalendars(value []Calendarable)() {
-    if m != nil {
-        m.calendars = value
-    }
+    m.calendars = value
 }
 // SetChangeKey sets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *CalendarGroup) SetChangeKey(value *string)() {
-    if m != nil {
-        m.changeKey = value
-    }
+    m.changeKey = value
 }
 // SetClassId sets the classId property value. The class identifier. Read-only.
 func (m *CalendarGroup) SetClassId(value *string)() {
-    if m != nil {
-        m.classId = value
-    }
+    m.classId = value
 }
 // SetName sets the name property value. The group name.
 func (m *CalendarGroup) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }

@@ -34,27 +34,15 @@ func CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i87
 }
 // GetConfigurationDeployedUserCount gets the configurationDeployedUserCount property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationDeployedUserCount
-    }
+    return m.configurationDeployedUserCount
 }
 // GetConfigurationDeploymentSummaryPerApp gets the configurationDeploymentSummaryPerApp property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPerApp()([]ManagedAppPolicyDeploymentSummaryPerAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationDeploymentSummaryPerApp
-    }
+    return m.configurationDeploymentSummaryPerApp
 }
 // GetDisplayName gets the displayName property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,19 +105,11 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
 }
 // GetLastRefreshTime gets the lastRefreshTime property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) GetLastRefreshTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshTime
-    }
+    return m.lastRefreshTime
 }
 // GetVersion gets the version property value. Version of the entity.
 func (m *ManagedAppPolicyDeploymentSummary) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *ManagedAppPolicyDeploymentSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,31 +155,21 @@ func (m *ManagedAppPolicyDeploymentSummary) Serialize(writer i878a80d2330e89d268
 }
 // SetConfigurationDeployedUserCount sets the configurationDeployedUserCount property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeployedUserCount(value *int32)() {
-    if m != nil {
-        m.configurationDeployedUserCount = value
-    }
+    m.configurationDeployedUserCount = value
 }
 // SetConfigurationDeploymentSummaryPerApp sets the configurationDeploymentSummaryPerApp property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeploymentSummaryPerApp(value []ManagedAppPolicyDeploymentSummaryPerAppable)() {
-    if m != nil {
-        m.configurationDeploymentSummaryPerApp = value
-    }
+    m.configurationDeploymentSummaryPerApp = value
 }
 // SetDisplayName sets the displayName property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastRefreshTime sets the lastRefreshTime property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetLastRefreshTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRefreshTime = value
-    }
+    m.lastRefreshTime = value
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedAppPolicyDeploymentSummary) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

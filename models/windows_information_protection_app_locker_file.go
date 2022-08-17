@@ -31,11 +31,7 @@ func CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue(parse
 }
 // GetDisplayName gets the displayName property value. The friendly name
 func (m *WindowsInformationProtectionAppLockerFile) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
 }
 // GetFile gets the file property value. File as a byte array
 func (m *WindowsInformationProtectionAppLockerFile) GetFile()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
+    return m.file
 }
 // GetFileHash gets the fileHash property value. SHA256 hash of the file
 func (m *WindowsInformationProtectionAppLockerFile) GetFileHash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
+    return m.fileHash
 }
 // GetVersion gets the version property value. Version of the entity.
 func (m *WindowsInformationProtectionAppLockerFile) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionAppLockerFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *WindowsInformationProtectionAppLockerFile) Serialize(writer i878a80d233
 }
 // SetDisplayName sets the displayName property value. The friendly name
 func (m *WindowsInformationProtectionAppLockerFile) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFile sets the file property value. File as a byte array
 func (m *WindowsInformationProtectionAppLockerFile) SetFile(value []byte)() {
-    if m != nil {
-        m.file = value
-    }
+    m.file = value
 }
 // SetFileHash sets the fileHash property value. SHA256 hash of the file
 func (m *WindowsInformationProtectionAppLockerFile) SetFileHash(value *string)() {
-    if m != nil {
-        m.fileHash = value
-    }
+    m.fileHash = value
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *WindowsInformationProtectionAppLockerFile) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

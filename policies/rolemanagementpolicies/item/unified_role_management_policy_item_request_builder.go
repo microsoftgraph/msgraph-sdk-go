@@ -26,7 +26,7 @@ type UnifiedRoleManagementPolicyItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters represents the role management policies.
+// UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters specifies the various policies associated with scopes and roles.
 type UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -84,11 +84,11 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents the role management policies.
+// CreateGetRequestInformation specifies the various policies associated with scopes and roles.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the role management policies.
+// CreateGetRequestInformationWithRequestConfiguration specifies the various policies associated with scopes and roles.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,11 +156,11 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRulesById(id st
     }
     return ia3785e1690ecc29d604f1e07a50bcbaea0379ad7b2cfa5bfcec03fb25cb9211d.NewUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get represents the role management policies.
+// Get specifies the various policies associated with scopes and roles.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents the role management policies.
+// GetWithRequestConfigurationAndResponseHandler specifies the various policies associated with scopes and roles.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleManagementPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

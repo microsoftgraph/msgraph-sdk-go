@@ -59,11 +59,7 @@ func (m *GroupAssignmentTarget) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetGroupId gets the groupId property value. The group Id that is the target of the assignment.
 func (m *GroupAssignmentTarget) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
+    return m.groupId
 }
 // Serialize serializes information the current object
 func (m *GroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,7 +77,5 @@ func (m *GroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetGroupId sets the groupId property value. The group Id that is the target of the assignment.
 func (m *GroupAssignmentTarget) SetGroupId(value *string)() {
-    if m != nil {
-        m.groupId = value
-    }
+    m.groupId = value
 }

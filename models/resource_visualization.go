@@ -42,35 +42,19 @@ func CreateResourceVisualizationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceVisualization) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContainerDisplayName gets the containerDisplayName property value. A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
 func (m *ResourceVisualization) GetContainerDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containerDisplayName
-    }
+    return m.containerDisplayName
 }
 // GetContainerType gets the containerType property value. Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
 func (m *ResourceVisualization) GetContainerType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containerType
-    }
+    return m.containerType
 }
 // GetContainerWebUrl gets the containerWebUrl property value. A path leading to the folder in which the item is stored.
 func (m *ResourceVisualization) GetContainerWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containerWebUrl
-    }
+    return m.containerWebUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,51 +153,27 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetMediaType gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
 func (m *ResourceVisualization) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
+    return m.mediaType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ResourceVisualization) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPreviewImageUrl gets the previewImageUrl property value. A URL leading to the preview image for the item.
 func (m *ResourceVisualization) GetPreviewImageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewImageUrl
-    }
+    return m.previewImageUrl
 }
 // GetPreviewText gets the previewText property value. A preview text for the item.
 func (m *ResourceVisualization) GetPreviewText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewText
-    }
+    return m.previewText
 }
 // GetTitle gets the title property value. The item's title text.
 func (m *ResourceVisualization) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // GetType gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
 func (m *ResourceVisualization) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *ResourceVisualization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,61 +241,41 @@ func (m *ResourceVisualization) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceVisualization) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContainerDisplayName sets the containerDisplayName property value. A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
 func (m *ResourceVisualization) SetContainerDisplayName(value *string)() {
-    if m != nil {
-        m.containerDisplayName = value
-    }
+    m.containerDisplayName = value
 }
 // SetContainerType sets the containerType property value. Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
 func (m *ResourceVisualization) SetContainerType(value *string)() {
-    if m != nil {
-        m.containerType = value
-    }
+    m.containerType = value
 }
 // SetContainerWebUrl sets the containerWebUrl property value. A path leading to the folder in which the item is stored.
 func (m *ResourceVisualization) SetContainerWebUrl(value *string)() {
-    if m != nil {
-        m.containerWebUrl = value
-    }
+    m.containerWebUrl = value
 }
 // SetMediaType sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
 func (m *ResourceVisualization) SetMediaType(value *string)() {
-    if m != nil {
-        m.mediaType = value
-    }
+    m.mediaType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ResourceVisualization) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPreviewImageUrl sets the previewImageUrl property value. A URL leading to the preview image for the item.
 func (m *ResourceVisualization) SetPreviewImageUrl(value *string)() {
-    if m != nil {
-        m.previewImageUrl = value
-    }
+    m.previewImageUrl = value
 }
 // SetPreviewText sets the previewText property value. A preview text for the item.
 func (m *ResourceVisualization) SetPreviewText(value *string)() {
-    if m != nil {
-        m.previewText = value
-    }
+    m.previewText = value
 }
 // SetTitle sets the title property value. The item's title text.
 func (m *ResourceVisualization) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }
 // SetType sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
 func (m *ResourceVisualization) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

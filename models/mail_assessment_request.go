@@ -29,11 +29,7 @@ func CreateMailAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationRoutingReason
-    }
+    return m.destinationRoutingReason
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MailAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *MailAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetMessageUri gets the messageUri property value. The resource URI of the mail message for assessment.
 func (m *MailAssessmentRequest) GetMessageUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageUri
-    }
+    return m.messageUri
 }
 // GetRecipientEmail gets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
 func (m *MailAssessmentRequest) GetRecipientEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientEmail
-    }
+    return m.recipientEmail
 }
 // Serialize serializes information the current object
 func (m *MailAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *MailAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
 func (m *MailAssessmentRequest) SetDestinationRoutingReason(value *MailDestinationRoutingReason)() {
-    if m != nil {
-        m.destinationRoutingReason = value
-    }
+    m.destinationRoutingReason = value
 }
 // SetMessageUri sets the messageUri property value. The resource URI of the mail message for assessment.
 func (m *MailAssessmentRequest) SetMessageUri(value *string)() {
-    if m != nil {
-        m.messageUri = value
-    }
+    m.messageUri = value
 }
 // SetRecipientEmail sets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
 func (m *MailAssessmentRequest) SetRecipientEmail(value *string)() {
-    if m != nil {
-        m.recipientEmail = value
-    }
+    m.recipientEmail = value
 }

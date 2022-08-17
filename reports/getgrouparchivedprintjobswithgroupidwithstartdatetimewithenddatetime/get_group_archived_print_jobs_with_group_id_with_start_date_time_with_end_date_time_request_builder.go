@@ -32,13 +32,13 @@ func NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequ
         urlTplParams[idx] = item
     }
     if endDateTime != nil {
-        urlTplParams["endDateTime"] = (*endDateTime).String()
+        urlTplParams["endDateTime"] = (*endDateTime).Format(i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.RFC3339)
     }
     if groupId != nil {
         urlTplParams["groupId"] = *groupId
     }
     if startDateTime != nil {
-        urlTplParams["startDateTime"] = (*startDateTime).String()
+        urlTplParams["startDateTime"] = (*startDateTime).Format(i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.RFC3339)
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

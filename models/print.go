@@ -40,19 +40,11 @@ func CreatePrintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConnectors gets the connectors property value. The list of available print connectors.
 func (m *Print) GetConnectors()([]PrintConnectorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectors
-    }
+    return m.connectors
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,59 +157,31 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Print) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperations gets the operations property value. The list of print long running operations.
 func (m *Print) GetOperations()([]PrintOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetPrinters gets the printers property value. The list of printers registered in the tenant.
 func (m *Print) GetPrinters()([]Printerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printers
-    }
+    return m.printers
 }
 // GetServices gets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) GetServices()([]PrintServiceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.services
-    }
+    return m.services
 }
 // GetSettings gets the settings property value. Tenant-wide settings for the Universal Print service.
 func (m *Print) GetSettings()(PrintSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // GetShares gets the shares property value. The list of printer shares registered in the tenant.
 func (m *Print) GetShares()([]PrinterShareable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shares
-    }
+    return m.shares
 }
 // GetTaskDefinitions gets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *Print) GetTaskDefinitions()([]PrintTaskDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taskDefinitions
-    }
+    return m.taskDefinitions
 }
 // Serialize serializes information the current object
 func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -303,55 +267,37 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConnectors sets the connectors property value. The list of available print connectors.
 func (m *Print) SetConnectors(value []PrintConnectorable)() {
-    if m != nil {
-        m.connectors = value
-    }
+    m.connectors = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Print) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperations sets the operations property value. The list of print long running operations.
 func (m *Print) SetOperations(value []PrintOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetPrinters sets the printers property value. The list of printers registered in the tenant.
 func (m *Print) SetPrinters(value []Printerable)() {
-    if m != nil {
-        m.printers = value
-    }
+    m.printers = value
 }
 // SetServices sets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) SetServices(value []PrintServiceable)() {
-    if m != nil {
-        m.services = value
-    }
+    m.services = value
 }
 // SetSettings sets the settings property value. Tenant-wide settings for the Universal Print service.
 func (m *Print) SetSettings(value PrintSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }
 // SetShares sets the shares property value. The list of printer shares registered in the tenant.
 func (m *Print) SetShares(value []PrinterShareable)() {
-    if m != nil {
-        m.shares = value
-    }
+    m.shares = value
 }
 // SetTaskDefinitions sets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *Print) SetTaskDefinitions(value []PrintTaskDefinitionable)() {
-    if m != nil {
-        m.taskDefinitions = value
-    }
+    m.taskDefinitions = value
 }

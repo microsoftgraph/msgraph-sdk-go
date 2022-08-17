@@ -37,35 +37,19 @@ func CreateListItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *ListItem) GetAnalytics()(ItemAnalyticsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.analytics
-    }
+    return m.analytics
 }
 // GetContentType gets the contentType property value. The content type of this list item
 func (m *ListItem) GetContentType()(ContentTypeInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetDocumentSetVersions gets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentSetVersions
-    }
+    return m.documentSetVersions
 }
 // GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) GetDriveItem()(DriveItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driveItem
-    }
+    return m.driveItem
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,27 +136,15 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFields gets the fields property value. The values of the columns set on this list item.
 func (m *ListItem) GetFields()(FieldValueSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fields
-    }
+    return m.fields
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ListItem) GetSharepointIds()(SharepointIdsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharepointIds
-    }
+    return m.sharepointIds
 }
 // GetVersions gets the versions property value. The list of previous versions of the list item.
 func (m *ListItem) GetVersions()([]ListItemVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versions
-    }
+    return m.versions
 }
 // Serialize serializes information the current object
 func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -234,43 +206,29 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *ListItem) SetAnalytics(value ItemAnalyticsable)() {
-    if m != nil {
-        m.analytics = value
-    }
+    m.analytics = value
 }
 // SetContentType sets the contentType property value. The content type of this list item
 func (m *ListItem) SetContentType(value ContentTypeInfoable)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetDocumentSetVersions sets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
-    if m != nil {
-        m.documentSetVersions = value
-    }
+    m.documentSetVersions = value
 }
 // SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) SetDriveItem(value DriveItemable)() {
-    if m != nil {
-        m.driveItem = value
-    }
+    m.driveItem = value
 }
 // SetFields sets the fields property value. The values of the columns set on this list item.
 func (m *ListItem) SetFields(value FieldValueSetable)() {
-    if m != nil {
-        m.fields = value
-    }
+    m.fields = value
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ListItem) SetSharepointIds(value SharepointIdsable)() {
-    if m != nil {
-        m.sharepointIds = value
-    }
+    m.sharepointIds = value
 }
 // SetVersions sets the versions property value. The list of previous versions of the list item.
 func (m *ListItem) SetVersions(value []ListItemVersionable)() {
-    if m != nil {
-        m.versions = value
-    }
+    m.versions = value
 }
