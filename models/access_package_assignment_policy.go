@@ -5,14 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentPolicy provides operations to manage the collection of agreementAcceptance entities.
+// AccessPackageAssignmentPolicy provides operations to manage the collection of agreement entities.
 type AccessPackageAssignmentPolicy struct {
     Entity
     // Access package containing this policy. Read-only.
     accessPackage AccessPackageable
     // Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
     allowedTargetScope *AllowedTargetScope
-    // The automaticRequestSettings property
+    // This property is only present for an auto assignment policy; if absent, this is a request-based policy.
     automaticRequestSettings AccessPackageAutomaticRequestSettingsable
     // Catalog of the access package containing this policy. Read-only.
     catalog AccessPackageCatalogable
@@ -56,7 +56,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
 func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetScope) {
     return m.allowedTargetScope
 }
-// GetAutomaticRequestSettings gets the automaticRequestSettings property value. The automaticRequestSettings property
+// GetAutomaticRequestSettings gets the automaticRequestSettings property value. This property is only present for an auto assignment policy; if absent, this is a request-based policy.
 func (m *AccessPackageAssignmentPolicy) GetAutomaticRequestSettings()(AccessPackageAutomaticRequestSettingsable) {
     return m.automaticRequestSettings
 }
@@ -338,7 +338,7 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable
 func (m *AccessPackageAssignmentPolicy) SetAllowedTargetScope(value *AllowedTargetScope)() {
     m.allowedTargetScope = value
 }
-// SetAutomaticRequestSettings sets the automaticRequestSettings property value. The automaticRequestSettings property
+// SetAutomaticRequestSettings sets the automaticRequestSettings property value. This property is only present for an auto assignment policy; if absent, this is a request-based policy.
 func (m *AccessPackageAssignmentPolicy) SetAutomaticRequestSettings(value AccessPackageAutomaticRequestSettingsable)() {
     m.automaticRequestSettings = value
 }

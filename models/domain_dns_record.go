@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainDnsRecord 
+// DomainDnsRecord provides operations to manage the collection of agreement entities.
 type DomainDnsRecord struct {
     Entity
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
@@ -18,7 +18,7 @@ type DomainDnsRecord struct {
     // Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
     ttl *int32
 }
-// NewDomainDnsRecord instantiates a new DomainDnsRecord and sets the default values.
+// NewDomainDnsRecord instantiates a new domainDnsRecord and sets the default values.
 func NewDomainDnsRecord()(*DomainDnsRecord) {
     m := &DomainDnsRecord{
         Entity: *NewEntity(),

@@ -14,7 +14,7 @@ type OfficeGraphInsights struct {
     // Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
     used []UsedInsightable
 }
-// NewOfficeGraphInsights instantiates a new OfficeGraphInsights and sets the default values.
+// NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),

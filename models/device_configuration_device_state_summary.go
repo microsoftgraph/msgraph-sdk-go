@@ -22,7 +22,7 @@ type DeviceConfigurationDeviceStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceConfigurationDeviceStateSummary instantiates a new DeviceConfigurationDeviceStateSummary and sets the default values.
+// NewDeviceConfigurationDeviceStateSummary instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
 func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateSummary) {
     m := &DeviceConfigurationDeviceStateSummary{
         Entity: *NewEntity(),

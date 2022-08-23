@@ -13,7 +13,7 @@ type Schema struct {
     // The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
     properties []Propertyable
 }
-// NewSchema instantiates a new Schema and sets the default values.
+// NewSchema instantiates a new schema and sets the default values.
 func NewSchema()(*Schema) {
     m := &Schema{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsAndConditions 
+// TermsAndConditions a termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
 type TermsAndConditions struct {
     Entity
     // Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
@@ -29,7 +29,7 @@ type TermsAndConditions struct {
     // Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
     version *int32
 }
-// NewTermsAndConditions instantiates a new TermsAndConditions and sets the default values.
+// NewTermsAndConditions instantiates a new termsAndConditions and sets the default values.
 func NewTermsAndConditions()(*TermsAndConditions) {
     m := &TermsAndConditions{
         Entity: *NewEntity(),

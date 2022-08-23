@@ -14,7 +14,7 @@ type AccessPackageAutomaticRequestSettings struct {
     odataType *string
     // The removeAccessWhenTargetLeavesAllowedTargets property
     removeAccessWhenTargetLeavesAllowedTargets *bool
-    // The requestAccessForAllowedTargets property
+    // If set to true, automatic assignments will be created for targets in the allowed target scope.
     requestAccessForAllowedTargets *bool
 }
 // NewAccessPackageAutomaticRequestSettings instantiates a new accessPackageAutomaticRequestSettings and sets the default values.
@@ -91,7 +91,7 @@ func (m *AccessPackageAutomaticRequestSettings) GetOdataType()(*string) {
 func (m *AccessPackageAutomaticRequestSettings) GetRemoveAccessWhenTargetLeavesAllowedTargets()(*bool) {
     return m.removeAccessWhenTargetLeavesAllowedTargets
 }
-// GetRequestAccessForAllowedTargets gets the requestAccessForAllowedTargets property value. The requestAccessForAllowedTargets property
+// GetRequestAccessForAllowedTargets gets the requestAccessForAllowedTargets property value. If set to true, automatic assignments will be created for targets in the allowed target scope.
 func (m *AccessPackageAutomaticRequestSettings) GetRequestAccessForAllowedTargets()(*bool) {
     return m.requestAccessForAllowedTargets
 }
@@ -145,7 +145,7 @@ func (m *AccessPackageAutomaticRequestSettings) SetOdataType(value *string)() {
 func (m *AccessPackageAutomaticRequestSettings) SetRemoveAccessWhenTargetLeavesAllowedTargets(value *bool)() {
     m.removeAccessWhenTargetLeavesAllowedTargets = value
 }
-// SetRequestAccessForAllowedTargets sets the requestAccessForAllowedTargets property value. The requestAccessForAllowedTargets property
+// SetRequestAccessForAllowedTargets sets the requestAccessForAllowedTargets property value. If set to true, automatic assignments will be created for targets in the allowed target scope.
 func (m *AccessPackageAutomaticRequestSettings) SetRequestAccessForAllowedTargets(value *bool)() {
     m.requestAccessForAllowedTargets = value
 }

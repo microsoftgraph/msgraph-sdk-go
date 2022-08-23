@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipal 
+// ServicePrincipal casts the previous resource to servicePrincipal.
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -77,7 +77,7 @@ type ServicePrincipal struct {
     passwordCredentials []PasswordCredentialable
     // Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
     preferredSingleSignOnMode *string
-    // The preferredTokenSigningKeyThumbprint property
+    // Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
     preferredTokenSigningKeyThumbprint *string
     // The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
     replyUrls []string
@@ -101,8 +101,10 @@ type ServicePrincipal struct {
     tokenLifetimePolicies []TokenLifetimePolicyable
     // The transitiveMemberOf property
     transitiveMemberOf []DirectoryObjectable
+    // Specifies the verified publisher of the application which this service principal represents.
+    verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -772,6 +774,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["verifiedPublisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVerifiedPublisherFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiedPublisher(val.(VerifiedPublisherable))
+        }
+        return nil
+    }
     return res
 }
 // GetHomepage gets the homepage property value. Home page or landing page of the application.
@@ -834,7 +846,7 @@ func (m *ServicePrincipal) GetPasswordCredentials()([]PasswordCredentialable) {
 func (m *ServicePrincipal) GetPreferredSingleSignOnMode()(*string) {
     return m.preferredSingleSignOnMode
 }
-// GetPreferredTokenSigningKeyThumbprint gets the preferredTokenSigningKeyThumbprint property value. The preferredTokenSigningKeyThumbprint property
+// GetPreferredTokenSigningKeyThumbprint gets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
 func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
     return m.preferredTokenSigningKeyThumbprint
 }
@@ -881,6 +893,10 @@ func (m *ServicePrincipal) GetTokenLifetimePolicies()([]TokenLifetimePolicyable)
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *ServicePrincipal) GetTransitiveMemberOf()([]DirectoryObjectable) {
     return m.transitiveMemberOf
+}
+// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
+func (m *ServicePrincipal) GetVerifiedPublisher()(VerifiedPublisherable) {
+    return m.verifiedPublisher
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1254,6 +1270,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("verifiedPublisher", m.GetVerifiedPublisher())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -1396,7 +1418,7 @@ func (m *ServicePrincipal) SetPasswordCredentials(value []PasswordCredentialable
 func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
     m.preferredSingleSignOnMode = value
 }
-// SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. The preferredTokenSigningKeyThumbprint property
+// SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)() {
     m.preferredTokenSigningKeyThumbprint = value
 }
@@ -1443,4 +1465,8 @@ func (m *ServicePrincipal) SetTokenLifetimePolicies(value []TokenLifetimePolicya
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *ServicePrincipal) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     m.transitiveMemberOf = value
+}
+// SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
+func (m *ServicePrincipal) SetVerifiedPublisher(value VerifiedPublisherable)() {
+    m.verifiedPublisher = value
 }

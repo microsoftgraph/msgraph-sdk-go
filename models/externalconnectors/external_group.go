@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalGroup 
+// ExternalGroup provides operations to manage the collection of agreement entities.
 type ExternalGroup struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The description of the external group. Optional.
@@ -15,7 +15,7 @@ type ExternalGroup struct {
     // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
     members []Identityable
 }
-// NewExternalGroup instantiates a new ExternalGroup and sets the default values.
+// NewExternalGroup instantiates a new externalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {
     m := &ExternalGroup{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
