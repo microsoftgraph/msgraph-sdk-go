@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintDocument 
+// PrintDocument provides operations to manage the collection of agreement entities.
 type PrintDocument struct {
     Entity
     // The document's content (MIME) type. Read-only.
@@ -14,7 +14,7 @@ type PrintDocument struct {
     // The document's size in bytes. Read-only.
     size *int64
 }
-// NewPrintDocument instantiates a new PrintDocument and sets the default values.
+// NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
     m := &PrintDocument{
         Entity: *NewEntity(),

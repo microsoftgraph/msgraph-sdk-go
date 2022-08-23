@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicySettingStateSummary 
+// DeviceCompliancePolicySettingStateSummary device Compilance Policy Setting State summary across the account.
 type DeviceCompliancePolicySettingStateSummary struct {
     Entity
     // Number of compliant devices
@@ -30,7 +30,7 @@ type DeviceCompliancePolicySettingStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceCompliancePolicySettingStateSummary instantiates a new DeviceCompliancePolicySettingStateSummary and sets the default values.
+// NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
     m := &DeviceCompliancePolicySettingStateSummary{
         Entity: *NewEntity(),

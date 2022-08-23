@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecureScore 
+// SecureScore provides operations to manage the collection of agreement entities.
 type SecureScore struct {
     Entity
     // Active user count of the given tenant.
@@ -29,7 +29,7 @@ type SecureScore struct {
     // Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
     vendorInformation SecurityVendorInformationable
 }
-// NewSecureScore instantiates a new SecureScore and sets the default values.
+// NewSecureScore instantiates a new secureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {
     m := &SecureScore{
         Entity: *NewEntity(),

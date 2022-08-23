@@ -55,6 +55,7 @@ type ServicePrincipalable interface {
     GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
     GetTokenLifetimePolicies()([]TokenLifetimePolicyable)
     GetTransitiveMemberOf()([]DirectoryObjectable)
+    GetVerifiedPublisher()(VerifiedPublisherable)
     SetAccountEnabled(value *bool)()
     SetAddIns(value []AddInable)()
     SetAlternativeNames(value []string)()
@@ -102,4 +103,5 @@ type ServicePrincipalable interface {
     SetTokenIssuancePolicies(value []TokenIssuancePolicyable)()
     SetTokenLifetimePolicies(value []TokenLifetimePolicyable)()
     SetTransitiveMemberOf(value []DirectoryObjectable)()
+    SetVerifiedPublisher(value VerifiedPublisherable)()
 }

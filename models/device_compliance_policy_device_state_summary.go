@@ -26,7 +26,7 @@ type DeviceCompliancePolicyDeviceStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new DeviceCompliancePolicyDeviceStateSummary and sets the default values.
+// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
     m := &DeviceCompliancePolicyDeviceStateSummary{
         Entity: *NewEntity(),

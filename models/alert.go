@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Alert 
+// Alert provides operations to manage the collection of agreement entities.
 type Alert struct {
     Entity
     // Name or alias of the activity group (attacker) this alert is attributed to.
@@ -87,7 +87,7 @@ type Alert struct {
     // Threat intelligence pertaining to one or more vulnerabilities related to this alert.
     vulnerabilityStates []VulnerabilityStateable
 }
-// NewAlert instantiates a new Alert and sets the default values.
+// NewAlert instantiates a new alert and sets the default values.
 func NewAlert()(*Alert) {
     m := &Alert{
         Entity: *NewEntity(),

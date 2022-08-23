@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicy 
+// DeviceCompliancePolicy this is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. 
 type DeviceCompliancePolicy struct {
     Entity
     // The collection of assignments for this compliance policy.
@@ -33,7 +33,7 @@ type DeviceCompliancePolicy struct {
     // Version of the device configuration.
     version *int32
 }
-// NewDeviceCompliancePolicy instantiates a new DeviceCompliancePolicy and sets the default values.
+// NewDeviceCompliancePolicy instantiates a new deviceCompliancePolicy and sets the default values.
 func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {
     m := &DeviceCompliancePolicy{
         Entity: *NewEntity(),

@@ -23,7 +23,7 @@ type Printer struct {
     // A list of task triggers that are associated with the printer.
     taskTriggers []PrintTaskTriggerable
 }
-// NewPrinter instantiates a new printer and sets the default values.
+// NewPrinter instantiates a new Printer and sets the default values.
 func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),

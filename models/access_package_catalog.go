@@ -25,7 +25,7 @@ type AccessPackageCatalog struct {
     // Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
     state *AccessPackageCatalogState
 }
-// NewAccessPackageCatalog instantiates a new AccessPackageCatalog and sets the default values.
+// NewAccessPackageCatalog instantiates a new accessPackageCatalog and sets the default values.
 func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     m := &AccessPackageCatalog{
         Entity: *NewEntity(),

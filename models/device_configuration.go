@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfiguration 
+// DeviceConfiguration device Configuration.
 type DeviceConfiguration struct {
     Entity
     // The list of assignments for the device configuration profile.
@@ -31,7 +31,7 @@ type DeviceConfiguration struct {
     // Version of the device configuration.
     version *int32
 }
-// NewDeviceConfiguration instantiates a new DeviceConfiguration and sets the default values.
+// NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),

@@ -26,7 +26,7 @@ type PrinterBase struct {
     // The status property
     status PrinterStatusable
 }
-// NewPrinterBase instantiates a new PrinterBase and sets the default values.
+// NewPrinterBase instantiates a new printerBase and sets the default values.
 func NewPrinterBase()(*PrinterBase) {
     m := &PrinterBase{
         Entity: *NewEntity(),

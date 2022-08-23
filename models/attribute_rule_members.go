@@ -7,9 +7,9 @@ import (
 // AttributeRuleMembers 
 type AttributeRuleMembers struct {
     SubjectSet
-    // The description property
+    // A description of the membership rule.
     description *string
-    // The membershipRule property
+    // Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
     membershipRule *string
 }
 // NewAttributeRuleMembers instantiates a new AttributeRuleMembers and sets the default values.
@@ -25,7 +25,7 @@ func NewAttributeRuleMembers()(*AttributeRuleMembers) {
 func CreateAttributeRuleMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttributeRuleMembers(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A description of the membership rule.
 func (m *AttributeRuleMembers) GetDescription()(*string) {
     return m.description
 }
@@ -54,7 +54,7 @@ func (m *AttributeRuleMembers) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetMembershipRule gets the membershipRule property value. The membershipRule property
+// GetMembershipRule gets the membershipRule property value. Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
 func (m *AttributeRuleMembers) GetMembershipRule()(*string) {
     return m.membershipRule
 }
@@ -78,11 +78,11 @@ func (m *AttributeRuleMembers) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A description of the membership rule.
 func (m *AttributeRuleMembers) SetDescription(value *string)() {
     m.description = value
 }
-// SetMembershipRule sets the membershipRule property value. The membershipRule property
+// SetMembershipRule sets the membershipRule property value. Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
 func (m *AttributeRuleMembers) SetMembershipRule(value *string)() {
     m.membershipRule = value
 }
