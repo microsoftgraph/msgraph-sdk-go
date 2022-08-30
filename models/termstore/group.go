@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Group provides operations to manage the collection of agreement entities.
+// Group provides operations to manage the collection of agreementAcceptance entities.
 type Group struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Date and time of the group creation. Read-only.
@@ -17,7 +17,7 @@ type Group struct {
     displayName *string
     // ID of the parent site of this group.
     parentSiteId *string
-    // Returns the type of the group. Possible values are global, system, and siteCollection.
+    // Returns the type of the group. Possible values are: global, system, and siteCollection.
     scope *TermGroupScope
     // All sets under the group in a term [store].
     sets []Setable
@@ -120,7 +120,7 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 func (m *Group) GetParentSiteId()(*string) {
     return m.parentSiteId
 }
-// GetScope gets the scope property value. Returns the type of the group. Possible values are global, system, and siteCollection.
+// GetScope gets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
 func (m *Group) GetScope()(*TermGroupScope) {
     return m.scope
 }
@@ -193,7 +193,7 @@ func (m *Group) SetDisplayName(value *string)() {
 func (m *Group) SetParentSiteId(value *string)() {
     m.parentSiteId = value
 }
-// SetScope sets the scope property value. Returns the type of the group. Possible values are global, system, and siteCollection.
+// SetScope sets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
 func (m *Group) SetScope(value *TermGroupScope)() {
     m.scope = value
 }

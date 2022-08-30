@@ -7,7 +7,7 @@ import (
 // DeviceEnrollmentWindowsHelloForBusinessConfiguration 
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     DeviceEnrollmentConfiguration
-    // The enhancedBiometricsState property
+    // Possible values of a property
     enhancedBiometricsState *Enablement
     // Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
     pinExpirationInDays *int32
@@ -27,7 +27,7 @@ type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     remotePassportEnabled *bool
     // Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
     securityDeviceRequired *bool
-    // The state property
+    // Possible values of a property
     state *Enablement
     // Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
     unlockWithBiometricsEnabled *bool
@@ -45,7 +45,7 @@ func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollment
 func CreateDeviceEnrollmentWindowsHelloForBusinessConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentWindowsHelloForBusinessConfiguration(), nil
 }
-// GetEnhancedBiometricsState gets the enhancedBiometricsState property value. The enhancedBiometricsState property
+// GetEnhancedBiometricsState gets the enhancedBiometricsState property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedBiometricsState()(*Enablement) {
     return m.enhancedBiometricsState
 }
@@ -210,7 +210,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetRemotePassport
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetSecurityDeviceRequired()(*bool) {
     return m.securityDeviceRequired
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetState()(*Enablement) {
     return m.state
 }
@@ -303,7 +303,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) Serialize(writer 
     }
     return nil
 }
-// SetEnhancedBiometricsState sets the enhancedBiometricsState property value. The enhancedBiometricsState property
+// SetEnhancedBiometricsState sets the enhancedBiometricsState property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedBiometricsState(value *Enablement)() {
     m.enhancedBiometricsState = value
 }
@@ -343,7 +343,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetRemotePassport
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetSecurityDeviceRequired(value *bool)() {
     m.securityDeviceRequired = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetState(value *Enablement)() {
     m.state = value
 }

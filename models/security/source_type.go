@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type SourceType int
 
 const (

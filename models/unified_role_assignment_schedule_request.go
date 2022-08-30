@@ -25,7 +25,7 @@ type UnifiedRoleAssignmentScheduleRequest struct {
     justification *string
     // The principal that's getting a role assignment through the request. Supports $expand.
     principal DirectoryObjectable
-    // Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).
+    // Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).
     principalId *string
     // Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
     roleDefinition UnifiedRoleDefinitionable
@@ -254,7 +254,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetJustification()(*string) {
 func (m *UnifiedRoleAssignmentScheduleRequest) GetPrincipal()(DirectoryObjectable) {
     return m.principal
 }
-// GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).
+// GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) GetPrincipalId()(*string) {
     return m.principalId
 }
@@ -423,7 +423,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) SetJustification(value *string)()
 func (m *UnifiedRoleAssignmentScheduleRequest) SetPrincipal(value DirectoryObjectable)() {
     m.principal = value
 }
-// SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).
+// SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleRequest) SetPrincipalId(value *string)() {
     m.principalId = value
 }

@@ -7,6 +7,10 @@ import (
 // ClientUserAgent 
 type ClientUserAgent struct {
     UserAgent
+    // The unique identifier of the Azure AD application used by this endpoint.
+    azureADAppId *string
+    // Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
+    communicationServiceId *string
     // The platform property
     platform *ClientPlatform
     // The productFamily property
@@ -25,9 +29,37 @@ func NewClientUserAgent()(*ClientUserAgent) {
 func CreateClientUserAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClientUserAgent(), nil
 }
+// GetAzureADAppId gets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
+func (m *ClientUserAgent) GetAzureADAppId()(*string) {
+    return m.azureADAppId
+}
+// GetCommunicationServiceId gets the communicationServiceId property value. Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
+func (m *ClientUserAgent) GetCommunicationServiceId()(*string) {
+    return m.communicationServiceId
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClientUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserAgent.GetFieldDeserializers()
+    res["azureADAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAzureADAppId(val)
+        }
+        return nil
+    }
+    res["communicationServiceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommunicationServiceId(val)
+        }
+        return nil
+    }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseClientPlatform)
         if err != nil {
@@ -64,6 +96,18 @@ func (m *ClientUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("azureADAppId", m.GetAzureADAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("communicationServiceId", m.GetCommunicationServiceId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatform() != nil {
         cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
@@ -79,6 +123,14 @@ func (m *ClientUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     return nil
+}
+// SetAzureADAppId sets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
+func (m *ClientUserAgent) SetAzureADAppId(value *string)() {
+    m.azureADAppId = value
+}
+// SetCommunicationServiceId sets the communicationServiceId property value. Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
+func (m *ClientUserAgent) SetCommunicationServiceId(value *string)() {
+    m.communicationServiceId = value
 }
 // SetPlatform sets the platform property value. The platform property
 func (m *ClientUserAgent) SetPlatform(value *ClientPlatform)() {

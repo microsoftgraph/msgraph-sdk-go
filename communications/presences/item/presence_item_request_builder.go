@@ -5,6 +5,8 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i1d378ffae8e81941d1c016bbdd2a9a163b898c989dd391ea66fd9bee0c260e50 "github.com/microsoftgraph/msgraph-sdk-go/communications/presences/item/clearpresence"
+    i2ea1602e819dba0ac5b44c7f823a116ec9e7946c13a2b5ef42371bbaa44f90a8 "github.com/microsoftgraph/msgraph-sdk-go/communications/presences/item/clearuserpreferredpresence"
+    i69a0c2c7b2647c036f412a899488fdbd203de8188624535b1cd0683cd2b146d3 "github.com/microsoftgraph/msgraph-sdk-go/communications/presences/item/setuserpreferredpresence"
     id89b730d61511fa52f0552fe71ad19d83424438a28b480fd65f40619d13d7ea7 "github.com/microsoftgraph/msgraph-sdk-go/communications/presences/item/setpresence"
 )
 
@@ -50,6 +52,10 @@ type PresenceItemRequestBuilderPatchRequestConfiguration struct {
 // ClearPresence the clearPresence property
 func (m *PresenceItemRequestBuilder) ClearPresence()(*i1d378ffae8e81941d1c016bbdd2a9a163b898c989dd391ea66fd9bee0c260e50.ClearPresenceRequestBuilder) {
     return i1d378ffae8e81941d1c016bbdd2a9a163b898c989dd391ea66fd9bee0c260e50.NewClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ClearUserPreferredPresence the clearUserPreferredPresence property
+func (m *PresenceItemRequestBuilder) ClearUserPreferredPresence()(*i2ea1602e819dba0ac5b44c7f823a116ec9e7946c13a2b5ef42371bbaa44f90a8.ClearUserPreferredPresenceRequestBuilder) {
+    return i2ea1602e819dba0ac5b44c7f823a116ec9e7946c13a2b5ef42371bbaa44f90a8.NewClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewPresenceItemRequestBuilderInternal instantiates a new PresenceItemRequestBuilder and sets the default values.
 func NewPresenceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PresenceItemRequestBuilder) {
@@ -186,4 +192,8 @@ func (m *PresenceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHan
 // SetPresence the setPresence property
 func (m *PresenceItemRequestBuilder) SetPresence()(*id89b730d61511fa52f0552fe71ad19d83424438a28b480fd65f40619d13d7ea7.SetPresenceRequestBuilder) {
     return id89b730d61511fa52f0552fe71ad19d83424438a28b480fd65f40619d13d7ea7.NewSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SetUserPreferredPresence the setUserPreferredPresence property
+func (m *PresenceItemRequestBuilder) SetUserPreferredPresence()(*i69a0c2c7b2647c036f412a899488fdbd203de8188624535b1cd0683cd2b146d3.SetUserPreferredPresenceRequestBuilder) {
+    return i69a0c2c7b2647c036f412a899488fdbd203de8188624535b1cd0683cd2b146d3.NewSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

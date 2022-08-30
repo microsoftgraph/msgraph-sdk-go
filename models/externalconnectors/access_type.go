@@ -2,7 +2,7 @@ package externalconnectors
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the collection of externalConnection entities.
 type AccessType int
 
 const (

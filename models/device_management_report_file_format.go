@@ -2,18 +2,22 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type DeviceManagementReportFileFormat int
 
 const (
     // CSV Format
     CSV_DEVICEMANAGEMENTREPORTFILEFORMAT DeviceManagementReportFileFormat = iota
-    // Portable Document Format
+    // PDF Format
     PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
+    // JSON Format
+    JSON_DEVICEMANAGEMENTREPORTFILEFORMAT
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTREPORTFILEFORMAT
 )
 
 func (i DeviceManagementReportFileFormat) String() string {
-    return []string{"csv", "pdf"}[i]
+    return []string{"csv", "pdf", "json", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementReportFileFormat(v string) (interface{}, error) {
     result := CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
@@ -22,6 +26,10 @@ func ParseDeviceManagementReportFileFormat(v string) (interface{}, error) {
             result = CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
         case "pdf":
             result = PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
+        case "json":
+            result = JSON_DEVICEMANAGEMENTREPORTFILEFORMAT
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTREPORTFILEFORMAT
         default:
             return 0, errors.New("Unknown DeviceManagementReportFileFormat value: " + v)
     }
