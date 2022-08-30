@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProvider provides operations to manage the collection of agreement entities.
+// IdentityProvider provides operations to manage the collection of agreementAcceptance entities.
 type IdentityProvider struct {
     Entity
     // The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.

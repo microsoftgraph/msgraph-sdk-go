@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Subscription provides operations to manage the collection of agreement entities.
+// Subscription provides operations to manage the collection of agreementAcceptance entities.
 type Subscription struct {
     Entity
     // Optional. Identifier of the application used to create the subscription. Read-only.

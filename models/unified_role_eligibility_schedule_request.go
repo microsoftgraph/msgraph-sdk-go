@@ -23,7 +23,7 @@ type UnifiedRoleEligibilityScheduleRequest struct {
     justification *string
     // The principal that's getting a role eligibility through the request. Supports $expand.
     principal DirectoryObjectable
-    // Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
+    // Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).
     principalId *string
     // Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
     roleDefinition UnifiedRoleDefinitionable
@@ -238,7 +238,7 @@ func (m *UnifiedRoleEligibilityScheduleRequest) GetJustification()(*string) {
 func (m *UnifiedRoleEligibilityScheduleRequest) GetPrincipal()(DirectoryObjectable) {
     return m.principal
 }
-// GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
+// GetPrincipalId gets the principalId property value. Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) GetPrincipalId()(*string) {
     return m.principalId
 }
@@ -397,7 +397,7 @@ func (m *UnifiedRoleEligibilityScheduleRequest) SetJustification(value *string)(
 func (m *UnifiedRoleEligibilityScheduleRequest) SetPrincipal(value DirectoryObjectable)() {
     m.principal = value
 }
-// SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
+// SetPrincipalId sets the principalId property value. Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilityScheduleRequest) SetPrincipalId(value *string)() {
     m.principalId = value
 }
