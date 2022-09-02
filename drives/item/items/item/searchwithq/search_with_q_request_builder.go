@@ -1,6 +1,7 @@
 package searchwithq
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -61,11 +62,7 @@ func (m *SearchWithQRequestBuilder) CreateGetRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Get invoke function search
-func (m *SearchWithQRequestBuilder) Get()(SearchWithQResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler invoke function search
-func (m *SearchWithQRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SearchWithQRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SearchWithQResponseable, error) {
+func (m *SearchWithQRequestBuilder) Get(ctx context.Context, requestConfiguration *SearchWithQRequestBuilderGetRequestConfiguration)(SearchWithQResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -74,9 +71,12 @@ func (m *SearchWithQRequestBuilder) GetWithRequestConfigurationAndResponseHandle
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSearchWithQResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateSearchWithQResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(SearchWithQResponseable), nil
 }

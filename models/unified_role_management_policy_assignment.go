@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyAssignment provides operations to manage the collection of agreementAcceptance entities.
+// UnifiedRoleManagementPolicyAssignment provides operations to manage the admin singleton.
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
     // The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.

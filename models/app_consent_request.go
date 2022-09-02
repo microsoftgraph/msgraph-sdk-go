@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppConsentRequest provides operations to manage the collection of agreementAcceptance entities.
+// AppConsentRequest provides operations to manage the admin singleton.
 type AppConsentRequest struct {
     Entity
     // The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.

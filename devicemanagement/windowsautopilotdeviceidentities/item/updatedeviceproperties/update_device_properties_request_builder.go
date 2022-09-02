@@ -1,6 +1,7 @@
 package updatedeviceproperties
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformationWithR
     return requestInfo, nil
 }
 // Post updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) Post(body UpdateDevicePropertiesPostRequestBodyable)(error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler updates properties on Autopilot devices.
-func (m *UpdateDevicePropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateDevicePropertiesPostRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateDevicePropertiesRequestBuilder) Post(ctx context.Context, body UpdateDevicePropertiesPostRequestBodyable, requestConfiguration *UpdateDevicePropertiesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -71,7 +68,7 @@ func (m *UpdateDevicePropertiesRequestBuilder) PostWithRequestConfigurationAndRe
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

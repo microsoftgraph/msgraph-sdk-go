@@ -1,6 +1,7 @@
 package getnoncompliantdevicesandsettingsreport
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GetNoncompliantDevicesAndSettingsReportRequestBuilder) CreatePostReques
     return requestInfo, nil
 }
 // Post invoke action getNoncompliantDevicesAndSettingsReport
-func (m *GetNoncompliantDevicesAndSettingsReportRequestBuilder) Post(body GetNoncompliantDevicesAndSettingsReportPostRequestBodyable)([]byte, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action getNoncompliantDevicesAndSettingsReport
-func (m *GetNoncompliantDevicesAndSettingsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetNoncompliantDevicesAndSettingsReportPostRequestBodyable, requestConfiguration *GetNoncompliantDevicesAndSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+func (m *GetNoncompliantDevicesAndSettingsReportRequestBuilder) Post(ctx context.Context, body GetNoncompliantDevicesAndSettingsReportPostRequestBodyable, requestConfiguration *GetNoncompliantDevicesAndSettingsReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GetNoncompliantDevicesAndSettingsReportRequestBuilder) PostWithRequestC
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "[]byte", responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.([]byte), nil
 }

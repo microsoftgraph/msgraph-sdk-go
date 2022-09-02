@@ -1,6 +1,7 @@
 package checkmemberobjects
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *CheckMemberObjectsRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action checkMemberObjects
-func (m *CheckMemberObjectsRequestBuilder) Post(body CheckMemberObjectsPostRequestBodyable)(CheckMemberObjectsResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action checkMemberObjects
-func (m *CheckMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CheckMemberObjectsPostRequestBodyable, requestConfiguration *CheckMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckMemberObjectsResponseable, error) {
+func (m *CheckMemberObjectsRequestBuilder) Post(ctx context.Context, body CheckMemberObjectsPostRequestBodyable, requestConfiguration *CheckMemberObjectsRequestBuilderPostRequestConfiguration)(CheckMemberObjectsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *CheckMemberObjectsRequestBuilder) PostWithRequestConfigurationAndRespon
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCheckMemberObjectsResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateCheckMemberObjectsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(CheckMemberObjectsResponseable), nil
 }

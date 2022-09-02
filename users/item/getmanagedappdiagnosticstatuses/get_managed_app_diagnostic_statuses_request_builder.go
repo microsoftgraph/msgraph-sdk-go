@@ -1,6 +1,7 @@
 package getmanagedappdiagnosticstatuses
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GetManagedAppDiagnosticStatusesRequestBuilder) CreateGetRequestInformat
     return requestInfo, nil
 }
 // Get gets diagnostics validation status for a given user.
-func (m *GetManagedAppDiagnosticStatusesRequestBuilder) Get()(GetManagedAppDiagnosticStatusesResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler gets diagnostics validation status for a given user.
-func (m *GetManagedAppDiagnosticStatusesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppDiagnosticStatusesResponseable, error) {
+func (m *GetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(GetManagedAppDiagnosticStatusesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GetManagedAppDiagnosticStatusesRequestBuilder) GetWithRequestConfigurat
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedAppDiagnosticStatusesResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetManagedAppDiagnosticStatusesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetManagedAppDiagnosticStatusesResponseable), nil
 }
