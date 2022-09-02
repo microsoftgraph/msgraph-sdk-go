@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.37.0] - 2022-09-02
+
+### Changed
+
+- Added a context parameter to execution method.
+- Removed `WithConfigurationAndResponseHandler` overloads to reduce the size of the SDK.
+
+> `client.Me().Get()` now becomes `client.Me().Get(context.Background(), nil)` (or pass some higher level context).  
+> `client.Me().GetWithConfigurationAndResponseHandler(requestConfigurationValue, nil)` now becomes `client.Me().Get(context, requestConfigurationValue)`.  
+> `client.Me().GetWithConfigurationAndResponseHandler(nil, responseHandler)` now becomes `client.Me().Get(context, requestConfigurationValue)` where the request configuration has a `RequestHandlerOption` in its options (from abstractions).  
+> The body argument (POST, PATCH, PUT) is the second argument. (after the context)
+
 ## [0.36.0] - 2022-08-30
 
 ### Changed
