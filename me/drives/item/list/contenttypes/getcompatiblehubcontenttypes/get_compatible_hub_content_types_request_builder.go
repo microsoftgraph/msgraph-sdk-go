@@ -1,6 +1,7 @@
 package getcompatiblehubcontenttypes
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GetCompatibleHubContentTypesRequestBuilder) CreateGetRequestInformation
     return requestInfo, nil
 }
 // Get invoke function getCompatibleHubContentTypes
-func (m *GetCompatibleHubContentTypesRequestBuilder) Get()(GetCompatibleHubContentTypesResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler invoke function getCompatibleHubContentTypes
-func (m *GetCompatibleHubContentTypesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompatibleHubContentTypesResponseable, error) {
+func (m *GetCompatibleHubContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(GetCompatibleHubContentTypesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GetCompatibleHubContentTypesRequestBuilder) GetWithRequestConfiguration
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCompatibleHubContentTypesResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetCompatibleHubContentTypesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetCompatibleHubContentTypesResponseable), nil
 }

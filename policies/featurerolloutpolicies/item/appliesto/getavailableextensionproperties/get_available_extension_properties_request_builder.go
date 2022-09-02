@@ -1,6 +1,7 @@
 package getavailableextensionproperties
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *GetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInforma
     return requestInfo, nil
 }
 // Post invoke action getAvailableExtensionProperties
-func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(body GetAvailableExtensionPropertiesPostRequestBodyable)(GetAvailableExtensionPropertiesResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action getAvailableExtensionProperties
-func (m *GetAvailableExtensionPropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAvailableExtensionPropertiesResponseable, error) {
+func (m *GetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context, body GetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *GetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(GetAvailableExtensionPropertiesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *GetAvailableExtensionPropertiesRequestBuilder) PostWithRequestConfigura
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAvailableExtensionPropertiesResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetAvailableExtensionPropertiesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetAvailableExtensionPropertiesResponseable), nil
 }

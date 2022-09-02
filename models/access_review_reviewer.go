@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewReviewer provides operations to manage the collection of agreementAcceptance entities.
+// AccessReviewReviewer provides operations to manage the admin singleton.
 type AccessReviewReviewer struct {
     Entity
     // The date when the reviewer was added for the access review.

@@ -1,6 +1,7 @@
 package sendactivitynotification
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformationWit
     return requestInfo, nil
 }
 // Post invoke action sendActivityNotification
-func (m *SendActivityNotificationRequestBuilder) Post(body SendActivityNotificationPostRequestBodyable)(error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action sendActivityNotification
-func (m *SendActivityNotificationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendActivityNotificationPostRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SendActivityNotificationRequestBuilder) Post(ctx context.Context, body SendActivityNotificationPostRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -71,7 +68,7 @@ func (m *SendActivityNotificationRequestBuilder) PostWithRequestConfigurationAnd
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

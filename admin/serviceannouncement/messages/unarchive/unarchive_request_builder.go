@@ -1,6 +1,7 @@
 package unarchive
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *UnarchiveRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     return requestInfo, nil
 }
 // Post invoke action unarchive
-func (m *UnarchiveRequestBuilder) Post(body UnarchivePostRequestBodyable)(UnarchiveResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action unarchive
-func (m *UnarchiveRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnarchivePostRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UnarchiveResponseable, error) {
+func (m *UnarchiveRequestBuilder) Post(ctx context.Context, body UnarchivePostRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration)(UnarchiveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *UnarchiveRequestBuilder) PostWithRequestConfigurationAndResponseHandler
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUnarchiveResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateUnarchiveResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(UnarchiveResponseable), nil
 }

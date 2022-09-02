@@ -1,6 +1,7 @@
 package setmobiledevicemanagementauthority
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *SetMobileDeviceManagementAuthorityRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Post set mobile device management authority
-func (m *SetMobileDeviceManagementAuthorityRequestBuilder) Post()(SetMobileDeviceManagementAuthorityResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler set mobile device management authority
-func (m *SetMobileDeviceManagementAuthorityRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SetMobileDeviceManagementAuthorityResponseable, error) {
+func (m *SetMobileDeviceManagementAuthorityRequestBuilder) Post(ctx context.Context, requestConfiguration *SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(SetMobileDeviceManagementAuthorityResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *SetMobileDeviceManagementAuthorityRequestBuilder) PostWithRequestConfig
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSetMobileDeviceManagementAuthorityResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateSetMobileDeviceManagementAuthorityResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(SetMobileDeviceManagementAuthorityResponseable), nil
 }

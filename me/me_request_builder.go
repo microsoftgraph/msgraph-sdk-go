@@ -1,6 +1,7 @@
 package me
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     i010a9f35678b5a912313b7ffeba17283a4e8f5c5e57d7586280f5f222fde8365 "github.com/microsoftgraph/msgraph-sdk-go/me/settings"
@@ -468,8 +469,23 @@ func (m *MeRequestBuilder) FollowedSitesById(id string)(*i13b26c48e29ae7a719f51d
     return i13b26c48e29ae7a719f51dfa0917bf8696c975cf6dd9ae25d0438be0209dbda5.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
-func (m *MeRequestBuilder) Get()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+func (m *MeRequestBuilder) Get(ctx context.Context, requestConfiguration *MeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUserFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
 // GetMailTips the getMailTips property
 func (m *MeRequestBuilder) GetMailTips()(*i76e610fff791bfa8235b5911a528dc3f79ad06c1c1c1ee2d1b687504dcbe9474.GetMailTipsRequestBuilder) {
@@ -490,22 +506,6 @@ func (m *MeRequestBuilder) GetMemberGroups()(*i992c83c1628215a736c63aded31bdac51
 // GetMemberObjects the getMemberObjects property
 func (m *MeRequestBuilder) GetMemberObjects()(*i72454b2e896a5d46ccfa12b2d857be9f68cf4f97b5223742302c23e256370ecf.GetMemberObjectsRequestBuilder) {
     return i72454b2e896a5d46ccfa12b2d857be9f68cf4f97b5223742302c23e256370ecf.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetWithRequestConfigurationAndResponseHandler returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
-func (m *MeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUserFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
 // InferenceClassification the inferenceClassification property
 func (m *MeRequestBuilder) InferenceClassification()(*ia686aac8ef57825eafac8bf8956b37566d374128ec8d308a924e2493cce557c3.InferenceClassificationRequestBuilder) {
@@ -693,11 +693,7 @@ func (m *MeRequestBuilder) OwnedObjectsById(id string)(*i359e22728a63ee681d74d6f
     return i359e22728a63ee681d74d6f87258c4c50801300227cbd518621e95560d035112.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
-func (m *MeRequestBuilder) Patch(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)(error) {
-    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PatchWithRequestConfigurationAndResponseHandler update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
-func (m *MeRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, requestConfiguration *MeRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *MeRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, requestConfiguration *MeRequestBuilderPatchRequestConfiguration)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -706,7 +702,7 @@ func (m *MeRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body 
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

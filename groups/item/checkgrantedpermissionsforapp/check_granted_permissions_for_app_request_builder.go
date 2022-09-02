@@ -1,6 +1,7 @@
 package checkgrantedpermissionsforapp
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *CheckGrantedPermissionsForAppRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Post invoke action checkGrantedPermissionsForApp
-func (m *CheckGrantedPermissionsForAppRequestBuilder) Post()(CheckGrantedPermissionsForAppResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action checkGrantedPermissionsForApp
-func (m *CheckGrantedPermissionsForAppRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CheckGrantedPermissionsForAppResponseable, error) {
+func (m *CheckGrantedPermissionsForAppRequestBuilder) Post(ctx context.Context, requestConfiguration *CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(CheckGrantedPermissionsForAppResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *CheckGrantedPermissionsForAppRequestBuilder) PostWithRequestConfigurati
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCheckGrantedPermissionsForAppResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateCheckGrantedPermissionsForAppResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(CheckGrantedPermissionsForAppResponseable), nil
 }

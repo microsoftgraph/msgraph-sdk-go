@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreementAcceptance entities.
+// Provides operations to manage the admin singleton.
 type DataSourceContainerStatus int
 
 const (

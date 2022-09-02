@@ -1,6 +1,7 @@
 package syncdevice
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -57,11 +58,7 @@ func (m *SyncDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action syncDevice
-func (m *SyncDeviceRequestBuilder) Post()(error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action syncDevice
-func (m *SyncDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SyncDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SyncDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *SyncDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -70,7 +67,7 @@ func (m *SyncDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandle
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

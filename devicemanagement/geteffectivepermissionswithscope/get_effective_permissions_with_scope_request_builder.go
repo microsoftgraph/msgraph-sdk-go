@@ -1,6 +1,7 @@
 package geteffectivepermissionswithscope
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -61,11 +62,7 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInforma
     return requestInfo, nil
 }
 // Get retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get()(GetEffectivePermissionsWithScopeResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsWithScopeResponseable, error) {
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -74,9 +71,12 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithRequestConfigura
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEffectivePermissionsWithScopeResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetEffectivePermissionsWithScopeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetEffectivePermissionsWithScopeResponseable), nil
 }

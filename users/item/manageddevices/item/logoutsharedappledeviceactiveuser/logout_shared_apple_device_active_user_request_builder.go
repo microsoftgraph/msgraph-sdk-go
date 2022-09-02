@@ -1,6 +1,7 @@
 package logoutsharedappledeviceactiveuser
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -57,11 +58,7 @@ func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) CreatePostRequestInfor
     return requestInfo, nil
 }
 // Post logout shared Apple device active user
-func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) Post()(error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler logout shared Apple device active user
-func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *LogoutSharedAppleDeviceActiveUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) Post(ctx context.Context, requestConfiguration *LogoutSharedAppleDeviceActiveUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -70,7 +67,7 @@ func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) PostWithRequestConfigu
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

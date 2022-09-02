@@ -1,6 +1,7 @@
 package removegroup
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *RemoveGroupRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) Post(body RemoveGroupPostRequestBodyable)(RemoveGroupResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action removeGroup
-func (m *RemoveGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveGroupPostRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RemoveGroupResponseable, error) {
+func (m *RemoveGroupRequestBuilder) Post(ctx context.Context, body RemoveGroupPostRequestBodyable, requestConfiguration *RemoveGroupRequestBuilderPostRequestConfiguration)(RemoveGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *RemoveGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandl
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRemoveGroupResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateRemoveGroupResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(RemoveGroupResponseable), nil
 }

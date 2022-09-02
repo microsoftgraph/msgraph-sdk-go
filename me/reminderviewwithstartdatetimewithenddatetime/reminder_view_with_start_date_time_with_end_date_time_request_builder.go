@@ -1,6 +1,7 @@
 package reminderviewwithstartdatetimewithenddatetime
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
@@ -64,11 +65,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) CreateGetRe
     return requestInfo, nil
 }
 // Get invoke function reminderView
-func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get()(ReminderViewWithStartDateTimeWithEndDateTimeResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler invoke function reminderView
-func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ReminderViewWithStartDateTimeWithEndDateTimeResponseable, error) {
+func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReminderViewWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -77,9 +74,12 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetWithRequ
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateReminderViewWithStartDateTimeWithEndDateTimeResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateReminderViewWithStartDateTimeWithEndDateTimeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(ReminderViewWithStartDateTimeWithEndDateTimeResponseable), nil
 }
