@@ -85,7 +85,7 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-result, err := client.Me().Drive().Get()
+result, err := client.Me().Drive().Get(context.BackGround(), nil)
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
     printOdataError(err)
@@ -126,7 +126,7 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-result, err := client.Users().Get(nil)
+result, err := client.Users().Get(context.Background(), nil)
 if err != nil {
     fmt.Printf("Error getting users: %v\n", err)
     printOdataError(err error)
@@ -136,7 +136,7 @@ if err != nil {
 // Use PageIterator to iterate through all users
 pageIterator, err := msgraphcore.NewPageIterator(result, adapter, models.CreateUserCollectionResponseFromDiscriminatorValue)
 
-err = pageIterator.Iterate(func(pageItem interface{}) bool {
+err = pageIterator.Iterate(context.Background(), func(pageItem interface{}) bool {
     user := pageItem.(models.Userable)
     fmt.Printf("%s\n", *user.GetDisplayName())
     // Return true to continue the iteration
