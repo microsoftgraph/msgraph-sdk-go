@@ -2,7 +2,7 @@ package externalconnectors
 import (
     "errors"
 )
-// Provides operations to manage the collection of externalConnection entities.
+// Provides operations to manage the admin singleton.
 type AclType int
 
 const (

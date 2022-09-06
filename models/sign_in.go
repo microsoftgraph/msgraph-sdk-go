@@ -66,25 +66,6 @@ func NewSignIn()(*SignIn) {
 }
 // CreateSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
-                    case "#microsoft.graph.restrictedSignIn":
-                        return NewRestrictedSignIn(), nil
-                }
-            }
-        }
-    }
     return NewSignIn(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).

@@ -811,8 +811,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewResourceOperation(), nil
                     case "#microsoft.graph.resourceSpecificPermissionGrant":
                         return NewResourceSpecificPermissionGrant(), nil
-                    case "#microsoft.graph.restrictedSignIn":
-                        return NewRestrictedSignIn(), nil
                     case "#microsoft.graph.richLongRunningOperation":
                         return NewRichLongRunningOperation(), nil
                     case "#microsoft.graph.riskDetection":

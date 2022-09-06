@@ -11,8 +11,6 @@ type AuditLogRoot struct {
     directoryAudits []DirectoryAuditable
     // The provisioning property
     provisioning []ProvisioningObjectSummaryable
-    // The restrictedSignIns property
-    restrictedSignIns []RestrictedSignInable
     // The signIns property
     signIns []SignInable
 }
@@ -64,20 +62,6 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
-    res["restrictedSignIns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRestrictedSignInFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RestrictedSignInable, len(val))
-            for i, v := range val {
-                res[i] = v.(RestrictedSignInable)
-            }
-            m.SetRestrictedSignIns(res)
-        }
-        return nil
-    }
     res["signIns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSignInFromDiscriminatorValue)
         if err != nil {
@@ -97,10 +81,6 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 // GetProvisioning gets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
     return m.provisioning
-}
-// GetRestrictedSignIns gets the restrictedSignIns property value. The restrictedSignIns property
-func (m *AuditLogRoot) GetRestrictedSignIns()([]RestrictedSignInable) {
-    return m.restrictedSignIns
 }
 // GetSignIns gets the signIns property value. The signIns property
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
@@ -132,16 +112,6 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
-    if m.GetRestrictedSignIns() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRestrictedSignIns()))
-        for i, v := range m.GetRestrictedSignIns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("restrictedSignIns", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSignIns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignIns()))
         for i, v := range m.GetSignIns() {
@@ -161,10 +131,6 @@ func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
 // SetProvisioning sets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
     m.provisioning = value
-}
-// SetRestrictedSignIns sets the restrictedSignIns property value. The restrictedSignIns property
-func (m *AuditLogRoot) SetRestrictedSignIns(value []RestrictedSignInable)() {
-    m.restrictedSignIns = value
 }
 // SetSignIns sets the signIns property value. The signIns property
 func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
