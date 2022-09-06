@@ -214,6 +214,8 @@ type User struct {
     schools []string
     // The scopedRoleMemberOf property
     scopedRoleMemberOf []ScopedRoleMembershipable
+    // Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
+    securityIdentifier *string
     // The settings property
     settings UserSettingsable
     // Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -1631,6 +1633,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["securityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityIdentifier(val)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserSettingsFromDiscriminatorValue)
         if err != nil {
@@ -2018,6 +2030,10 @@ func (m *User) GetSchools()([]string) {
 // GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
 func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
     return m.scopedRoleMemberOf
+}
+// GetSecurityIdentifier gets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
+func (m *User) GetSecurityIdentifier()(*string) {
+    return m.securityIdentifier
 }
 // GetSettings gets the settings property value. The settings property
 func (m *User) GetSettings()(UserSettingsable) {
@@ -2844,6 +2860,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("securityIdentifier", m.GetSecurityIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
@@ -3338,6 +3360,10 @@ func (m *User) SetSchools(value []string)() {
 // SetScopedRoleMemberOf sets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
 func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
     m.scopedRoleMemberOf = value
+}
+// SetSecurityIdentifier sets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
+func (m *User) SetSecurityIdentifier(value *string)() {
+    m.securityIdentifier = value
 }
 // SetSettings sets the settings property value. The settings property
 func (m *User) SetSettings(value UserSettingsable)() {

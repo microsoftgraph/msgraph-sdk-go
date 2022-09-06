@@ -24,7 +24,7 @@ type WindowsUpdateForBusinessConfiguration struct {
     deadlineGracePeriodInDays *int32
     // Delivery optimization mode for peer distribution
     deliveryOptimizationMode *WindowsDeliveryOptimizationMode
-    // Exclude Windows update Drivers
+    // When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
     driversExcluded *bool
     // Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days. Returned by default. Query parameters are not supported.
     engagedRestartDeadlineInDays *int32
@@ -32,11 +32,11 @@ type WindowsUpdateForBusinessConfiguration struct {
     engagedRestartSnoozeScheduleInDays *int32
     // Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
     engagedRestartTransitionScheduleInDays *int32
-    // Defer Feature Updates by these many days
+    // Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
     featureUpdatesDeferralPeriodInDays *int32
-    // Pause Feature Updates
+    // When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s
     featureUpdatesPaused *bool
-    // Feature Updates Pause Expiry datetime
+    // The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
     featureUpdatesPauseExpiryDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Feature Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.
     featureUpdatesPauseStartDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
@@ -46,19 +46,19 @@ type WindowsUpdateForBusinessConfiguration struct {
     featureUpdatesRollbackWindowInDays *int32
     // When TRUE, rollback Feature Updates on the next device check in. When FALSE, do not rollback Feature Updates on the next device check in. Returned by default.Query parameters are not supported.
     featureUpdatesWillBeRolledBack *bool
-    // Installation schedule
+    // The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
     installationSchedule WindowsUpdateInstallScheduleTypeable
-    // Allow Microsoft Update Service
+    // When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.
     microsoftUpdateServiceAllowed *bool
     // When TRUE the device should wait until deadline for rebooting outside of active hours. When FALSE the device should not wait until deadline for rebooting outside of active hours. Returned by default. Query parameters are not supported.
     postponeRebootUntilAfterDeadline *bool
     // Possible values for pre-release features.
     prereleaseFeatures *PrereleaseFeatures
-    // Defer Quality Updates by these many days
+    // Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
     qualityUpdatesDeferralPeriodInDays *int32
-    // Pause Quality Updates
+    // When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.
     qualityUpdatesPaused *bool
-    // Quality Updates Pause Expiry datetime
+    // The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
     qualityUpdatesPauseExpiryDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Quality Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.
     qualityUpdatesPauseStartDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
@@ -74,7 +74,7 @@ type WindowsUpdateForBusinessConfiguration struct {
     skipChecksBeforeRestart *bool
     // Windows Update Notification Display Options
     updateNotificationLevel *WindowsUpdateNotificationDisplayOption
-    // Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported.
+    // Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
     updateWeeks *WindowsUpdateForBusinessUpdateWeeks
     // Possible values of a property
     userPauseAccess *Enablement
@@ -126,7 +126,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineGracePeriodInDays()(*
 func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
     return m.deliveryOptimizationMode
 }
-// GetDriversExcluded gets the driversExcluded property value. Exclude Windows update Drivers
+// GetDriversExcluded gets the driversExcluded property value. When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetDriversExcluded()(*bool) {
     return m.driversExcluded
 }
@@ -142,15 +142,15 @@ func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartSnoozeScheduleI
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartTransitionScheduleInDays()(*int32) {
     return m.engagedRestartTransitionScheduleInDays
 }
-// GetFeatureUpdatesDeferralPeriodInDays gets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days
+// GetFeatureUpdatesDeferralPeriodInDays gets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesDeferralPeriodInDays()(*int32) {
     return m.featureUpdatesDeferralPeriodInDays
 }
-// GetFeatureUpdatesPaused gets the featureUpdatesPaused property value. Pause Feature Updates
+// GetFeatureUpdatesPaused gets the featureUpdatesPaused property value. When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPaused()(*bool) {
     return m.featureUpdatesPaused
 }
-// GetFeatureUpdatesPauseExpiryDateTime gets the featureUpdatesPauseExpiryDateTime property value. Feature Updates Pause Expiry datetime
+// GetFeatureUpdatesPauseExpiryDateTime gets the featureUpdatesPauseExpiryDateTime property value. The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.featureUpdatesPauseExpiryDateTime
 }
@@ -535,11 +535,11 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetInstallationSchedule gets the installationSchedule property value. Installation schedule
+// GetInstallationSchedule gets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetInstallationSchedule()(WindowsUpdateInstallScheduleTypeable) {
     return m.installationSchedule
 }
-// GetMicrosoftUpdateServiceAllowed gets the microsoftUpdateServiceAllowed property value. Allow Microsoft Update Service
+// GetMicrosoftUpdateServiceAllowed gets the microsoftUpdateServiceAllowed property value. When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetMicrosoftUpdateServiceAllowed()(*bool) {
     return m.microsoftUpdateServiceAllowed
 }
@@ -551,15 +551,15 @@ func (m *WindowsUpdateForBusinessConfiguration) GetPostponeRebootUntilAfterDeadl
 func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*PrereleaseFeatures) {
     return m.prereleaseFeatures
 }
-// GetQualityUpdatesDeferralPeriodInDays gets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days
+// GetQualityUpdatesDeferralPeriodInDays gets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesDeferralPeriodInDays()(*int32) {
     return m.qualityUpdatesDeferralPeriodInDays
 }
-// GetQualityUpdatesPaused gets the qualityUpdatesPaused property value. Pause Quality Updates
+// GetQualityUpdatesPaused gets the qualityUpdatesPaused property value. When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPaused()(*bool) {
     return m.qualityUpdatesPaused
 }
-// GetQualityUpdatesPauseExpiryDateTime gets the qualityUpdatesPauseExpiryDateTime property value. Quality Updates Pause Expiry datetime
+// GetQualityUpdatesPauseExpiryDateTime gets the qualityUpdatesPauseExpiryDateTime property value. The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.qualityUpdatesPauseExpiryDateTime
 }
@@ -591,7 +591,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetSkipChecksBeforeRestart()(*bo
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*WindowsUpdateNotificationDisplayOption) {
     return m.updateNotificationLevel
 }
-// GetUpdateWeeks gets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported.
+// GetUpdateWeeks gets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateForBusinessUpdateWeeks) {
     return m.updateWeeks
 }
@@ -868,7 +868,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetDeadlineGracePeriodInDays(val
 func (m *WindowsUpdateForBusinessConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
     m.deliveryOptimizationMode = value
 }
-// SetDriversExcluded sets the driversExcluded property value. Exclude Windows update Drivers
+// SetDriversExcluded sets the driversExcluded property value. When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetDriversExcluded(value *bool)() {
     m.driversExcluded = value
 }
@@ -884,15 +884,15 @@ func (m *WindowsUpdateForBusinessConfiguration) SetEngagedRestartSnoozeScheduleI
 func (m *WindowsUpdateForBusinessConfiguration) SetEngagedRestartTransitionScheduleInDays(value *int32)() {
     m.engagedRestartTransitionScheduleInDays = value
 }
-// SetFeatureUpdatesDeferralPeriodInDays sets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days
+// SetFeatureUpdatesDeferralPeriodInDays sets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesDeferralPeriodInDays(value *int32)() {
     m.featureUpdatesDeferralPeriodInDays = value
 }
-// SetFeatureUpdatesPaused sets the featureUpdatesPaused property value. Pause Feature Updates
+// SetFeatureUpdatesPaused sets the featureUpdatesPaused property value. When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPaused(value *bool)() {
     m.featureUpdatesPaused = value
 }
-// SetFeatureUpdatesPauseExpiryDateTime sets the featureUpdatesPauseExpiryDateTime property value. Feature Updates Pause Expiry datetime
+// SetFeatureUpdatesPauseExpiryDateTime sets the featureUpdatesPauseExpiryDateTime property value. The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPauseExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.featureUpdatesPauseExpiryDateTime = value
 }
@@ -912,11 +912,11 @@ func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesRollbackWindowI
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesWillBeRolledBack(value *bool)() {
     m.featureUpdatesWillBeRolledBack = value
 }
-// SetInstallationSchedule sets the installationSchedule property value. Installation schedule
+// SetInstallationSchedule sets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetInstallationSchedule(value WindowsUpdateInstallScheduleTypeable)() {
     m.installationSchedule = value
 }
-// SetMicrosoftUpdateServiceAllowed sets the microsoftUpdateServiceAllowed property value. Allow Microsoft Update Service
+// SetMicrosoftUpdateServiceAllowed sets the microsoftUpdateServiceAllowed property value. When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetMicrosoftUpdateServiceAllowed(value *bool)() {
     m.microsoftUpdateServiceAllowed = value
 }
@@ -928,15 +928,15 @@ func (m *WindowsUpdateForBusinessConfiguration) SetPostponeRebootUntilAfterDeadl
 func (m *WindowsUpdateForBusinessConfiguration) SetPrereleaseFeatures(value *PrereleaseFeatures)() {
     m.prereleaseFeatures = value
 }
-// SetQualityUpdatesDeferralPeriodInDays sets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days
+// SetQualityUpdatesDeferralPeriodInDays sets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesDeferralPeriodInDays(value *int32)() {
     m.qualityUpdatesDeferralPeriodInDays = value
 }
-// SetQualityUpdatesPaused sets the qualityUpdatesPaused property value. Pause Quality Updates
+// SetQualityUpdatesPaused sets the qualityUpdatesPaused property value. When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPaused(value *bool)() {
     m.qualityUpdatesPaused = value
 }
-// SetQualityUpdatesPauseExpiryDateTime sets the qualityUpdatesPauseExpiryDateTime property value. Quality Updates Pause Expiry datetime
+// SetQualityUpdatesPauseExpiryDateTime sets the qualityUpdatesPauseExpiryDateTime property value. The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPauseExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.qualityUpdatesPauseExpiryDateTime = value
 }
@@ -968,7 +968,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetSkipChecksBeforeRestart(value
 func (m *WindowsUpdateForBusinessConfiguration) SetUpdateNotificationLevel(value *WindowsUpdateNotificationDisplayOption)() {
     m.updateNotificationLevel = value
 }
-// SetUpdateWeeks sets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported.
+// SetUpdateWeeks sets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
 func (m *WindowsUpdateForBusinessConfiguration) SetUpdateWeeks(value *WindowsUpdateForBusinessUpdateWeeks)() {
     m.updateWeeks = value
 }
