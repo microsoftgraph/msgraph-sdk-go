@@ -33,8 +33,7 @@ func CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue(parseNode i878a8
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.notebook":
                         return NewNotebook(), nil
                     case "#microsoft.graph.onenoteEntityHierarchyModel":

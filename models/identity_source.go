@@ -33,8 +33,7 @@ func CreateIdentitySourceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.azureActiveDirectoryTenant":
                         return NewAzureActiveDirectoryTenant(), nil
                     case "#microsoft.graph.domainIdentitySource":

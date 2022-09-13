@@ -75,8 +75,7 @@ func CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue(parseNode i878
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.teleconferenceDeviceAudioQuality":
                         return NewTeleconferenceDeviceAudioQuality(), nil
                     case "#microsoft.graph.teleconferenceDeviceScreenSharingQuality":

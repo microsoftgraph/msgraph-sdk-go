@@ -43,8 +43,7 @@ func CreateWindowsInformationProtectionAppFromDiscriminatorValue(parseNode i878a
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsInformationProtectionDesktopApp":
                         return NewWindowsInformationProtectionDesktopApp(), nil
                     case "#microsoft.graph.windowsInformationProtectionStoreApp":

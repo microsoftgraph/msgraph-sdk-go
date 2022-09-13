@@ -35,8 +35,7 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.aadUserConversationMember":
                         return NewAadUserConversationMember(), nil
                     case "#microsoft.graph.accessPackage":
@@ -725,6 +724,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPerson(), nil
                     case "#microsoft.graph.phoneAuthenticationMethod":
                         return NewPhoneAuthenticationMethod(), nil
+                    case "#microsoft.graph.pinnedChatMessageInfo":
+                        return NewPinnedChatMessageInfo(), nil
                     case "#microsoft.graph.place":
                         return NewPlace(), nil
                     case "#microsoft.graph.planner":

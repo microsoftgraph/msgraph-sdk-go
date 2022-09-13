@@ -80,8 +80,7 @@ func CreateWindowsInformationProtectionFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.mdmWindowsInformationProtectionPolicy":
                         return NewMdmWindowsInformationProtectionPolicy(), nil
                     case "#microsoft.graph.windowsInformationProtectionPolicy":

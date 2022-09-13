@@ -53,7 +53,7 @@ type ContactFoldersRequestBuilderPostRequestConfiguration struct {
 func NewContactFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactFoldersRequestBuilder) {
     m := &ContactFoldersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/contactFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/contactFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

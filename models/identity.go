@@ -37,8 +37,7 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.initiator":
                         return NewInitiator(), nil
                     case "#microsoft.graph.provisionedIdentity":

@@ -38,8 +38,7 @@ func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d233
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.identityBuiltInUserFlowAttribute":
                         return NewIdentityBuiltInUserFlowAttribute(), nil
                     case "#microsoft.graph.identityCustomUserFlowAttribute":

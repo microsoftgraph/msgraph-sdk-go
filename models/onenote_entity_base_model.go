@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityBaseModel provides operations to manage the admin singleton.
+// OnenoteEntityBaseModel provides operations to manage the collection of agreementAcceptance entities.
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
@@ -32,8 +32,7 @@ func CreateOnenoteEntityBaseModelFromDiscriminatorValue(parseNode i878a80d2330e8
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.notebook":
                         return NewNotebook(), nil
                     case "#microsoft.graph.onenoteEntityHierarchyModel":

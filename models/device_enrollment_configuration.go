@@ -45,8 +45,7 @@ func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceEnrollmentLimitConfiguration":
                         return NewDeviceEnrollmentLimitConfiguration(), nil
                     case "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration":

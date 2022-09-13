@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttachmentBase provides operations to manage the admin singleton.
+// AttachmentBase provides operations to manage the collection of agreementAcceptance entities.
 type AttachmentBase struct {
     Entity
     // The contentType property
@@ -39,8 +39,7 @@ func CreateAttachmentBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.taskFileAttachment":
                         return NewTaskFileAttachment(), nil
                 }

@@ -24,6 +24,8 @@ type Application struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Supports $filter (eq when counting empty collections). Read-only.
     createdOnBehalfOf DirectoryObjectable
+    // The defaultRedirectUri property
+    defaultRedirectUri *string
     // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
@@ -32,7 +34,7 @@ type Application struct {
     displayName *string
     // Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
     extensionProperties []ExtensionPropertyable
-    // Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+    // Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
@@ -134,6 +136,10 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     return m.createdOnBehalfOf
 }
+// GetDefaultRedirectUri gets the defaultRedirectUri property value. The defaultRedirectUri property
+func (m *Application) GetDefaultRedirectUri()(*string) {
+    return m.defaultRedirectUri
+}
 // GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) GetDescription()(*string) {
     return m.description
@@ -150,7 +156,7 @@ func (m *Application) GetDisplayName()(*string) {
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     return m.extensionProperties
 }
-// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     return m.federatedIdentityCredentials
 }
@@ -242,6 +248,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetCreatedOnBehalfOf(val.(DirectoryObjectable))
+        }
+        return nil
+    }
+    res["defaultRedirectUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultRedirectUri(val)
         }
         return nil
     }
@@ -782,6 +798,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("defaultRedirectUri", m.GetDefaultRedirectUri())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -1043,6 +1065,10 @@ func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
 func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     m.createdOnBehalfOf = value
 }
+// SetDefaultRedirectUri sets the defaultRedirectUri property value. The defaultRedirectUri property
+func (m *Application) SetDefaultRedirectUri(value *string)() {
+    m.defaultRedirectUri = value
+}
 // SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     m.description = value
@@ -1059,7 +1085,7 @@ func (m *Application) SetDisplayName(value *string)() {
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     m.extensionProperties = value
 }
-// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     m.federatedIdentityCredentials = value
 }

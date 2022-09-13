@@ -33,8 +33,7 @@ func CreateEducationSubmissionRecipientFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.educationSubmissionIndividualRecipient":
                         return NewEducationSubmissionIndividualRecipient(), nil
                 }

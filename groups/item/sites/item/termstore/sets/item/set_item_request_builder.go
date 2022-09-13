@@ -30,7 +30,7 @@ type SetItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SetItemRequestBuilderGetQueryParameters collection of all sets available in the term store.
+// SetItemRequestBuilderGetQueryParameters collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 type SetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -103,11 +103,11 @@ func (m *SetItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation collection of all sets available in the term store.
+// CreateGetRequestInformation collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 func (m *SetItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of all sets available in the term store.
+// CreateGetRequestInformationWithRequestConfiguration collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 func (m *SetItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,7 +156,7 @@ func (m *SetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// Get collection of all sets available in the term store.
+// Get collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 func (m *SetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SetItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

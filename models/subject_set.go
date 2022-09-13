@@ -33,8 +33,7 @@ func CreateSubjectSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.attributeRuleMembers":
                         return NewAttributeRuleMembers(), nil
                     case "#microsoft.graph.connectedOrganizationMembers":

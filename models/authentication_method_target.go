@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodTarget provides operations to manage the admin singleton.
+// AuthenticationMethodTarget provides operations to manage the collection of authenticationMethodConfiguration entities.
 type AuthenticationMethodTarget struct {
     Entity
     // Determines if the user is enforced to register the authentication method.
@@ -34,8 +34,7 @@ func CreateAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d23
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget":
                         return NewMicrosoftAuthenticatorAuthenticationMethodTarget(), nil
                 }

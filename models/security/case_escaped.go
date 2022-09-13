@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Case_escaped provides operations to manage the admin singleton.
+// Case_escaped provides operations to manage the collection of agreementAcceptance entities.
 type Case_escaped struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The createdDateTime property
@@ -44,8 +44,7 @@ func CreateCase_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.ediscoveryCase":
                         return NewEdiscoveryCase(), nil
                 }
