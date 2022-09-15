@@ -5,8 +5,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
-github.com/microsoft/kiota-abstractions-go v0.10.0 h1:agxJFTuOr4B4HBX4BfCjYIZ4SXnI1DpTsA1Ymixx+bI=
-github.com/microsoft/kiota-abstractions-go v0.10.0/go.mod h1:wOO+hpReDIJa3BxbLNz4qvtZk2llS555mejkMc203bQ=
+github.com/microsoft/kiota-abstractions-go v0.10.1 h1:R4vk1l/wn0Dij01yxVX5lD/1UKMEO9Hz5TXkBl6E8do=
+github.com/microsoft/kiota-abstractions-go v0.10.1/go.mod h1:wOO+hpReDIJa3BxbLNz4qvtZk2llS555mejkMc203bQ=
 github.com/microsoft/kiota-http-go v0.7.2 h1:R40vG0EkIFqGvVz5dZtLe4g1sXGVfBO5HxjdBjpwv8k=
 github.com/microsoft/kiota-http-go v0.7.2/go.mod h1:QTbXPh25mJsbxE23bFqw64BckCioCGfaE77hF/F3rIQ=
 github.com/microsoft/kiota-serialization-json-go v0.6.0 h1:irdhbaY2Vl9t2SLwIC5WyPKJRp3mE52GEBEbAyu7thk=
