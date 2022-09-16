@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Search provides operations to manage the admin singleton.
+// Search provides operations to manage the collection of agreementAcceptance entities.
 type Search struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The contentQuery property
@@ -46,8 +46,7 @@ func CreateSearchFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.ediscoveryReviewSetQuery":
                         return NewEdiscoveryReviewSetQuery(), nil
                     case "#microsoft.graph.security.ediscoverySearch":

@@ -33,8 +33,7 @@ func CreateApiAuthenticationConfigurationBaseFromDiscriminatorValue(parseNode i8
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.basicAuthentication":
                         return NewBasicAuthentication(), nil
                     case "#microsoft.graph.clientCertificateAuthentication":

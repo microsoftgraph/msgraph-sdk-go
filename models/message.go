@@ -91,8 +91,7 @@ func CreateMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.calendarSharingMessage":
                         return NewCalendarSharingMessage(), nil
                     case "#microsoft.graph.eventMessage":

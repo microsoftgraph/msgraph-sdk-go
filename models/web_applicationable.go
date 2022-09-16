@@ -13,9 +13,11 @@ type WebApplicationable interface {
     GetLogoutUrl()(*string)
     GetOdataType()(*string)
     GetRedirectUris()([]string)
+    GetRedirectUriSettings()([]RedirectUriSettingsable)
     SetHomePageUrl(value *string)()
     SetImplicitGrantSettings(value ImplicitGrantSettingsable)()
     SetLogoutUrl(value *string)()
     SetOdataType(value *string)()
     SetRedirectUris(value []string)()
+    SetRedirectUriSettings(value []RedirectUriSettingsable)()
 }

@@ -35,8 +35,7 @@ func CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue(parseNode 
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.enrollmentTroubleshootingEvent":
                         return NewEnrollmentTroubleshootingEvent(), nil
                 }

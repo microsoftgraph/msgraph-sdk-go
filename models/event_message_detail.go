@@ -33,8 +33,7 @@ func CreateEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.callEndedEventMessageDetail":
                         return NewCallEndedEventMessageDetail(), nil
                     case "#microsoft.graph.callRecordingEventMessageDetail":
@@ -69,6 +68,10 @@ func CreateEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26
                         return NewMembersJoinedEventMessageDetail(), nil
                     case "#microsoft.graph.membersLeftEventMessageDetail":
                         return NewMembersLeftEventMessageDetail(), nil
+                    case "#microsoft.graph.messagePinnedEventMessageDetail":
+                        return NewMessagePinnedEventMessageDetail(), nil
+                    case "#microsoft.graph.messageUnpinnedEventMessageDetail":
+                        return NewMessageUnpinnedEventMessageDetail(), nil
                     case "#microsoft.graph.tabUpdatedEventMessageDetail":
                         return NewTabUpdatedEventMessageDetail(), nil
                     case "#microsoft.graph.teamArchivedEventMessageDetail":

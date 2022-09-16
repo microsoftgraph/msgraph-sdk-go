@@ -10,10 +10,12 @@ import (
     i6e9937a477483db52c918f11ae44d2375f40192b050c02f9aaa34371ac1a12b8 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps"
     i6feff4d6e3d0767acb48ac48f31e0afd6402b4d1449e0aa23e2bbb0c98addc1a "github.com/microsoftgraph/msgraph-sdk-go/chats/item/sendactivitynotification"
     i75aa69acd6a8f7bab80f3af14760426f17ce1597f5155737243d02bac7efbc9b "github.com/microsoftgraph/msgraph-sdk-go/chats/item/members"
+    ie429cd3a59f9c2a7e91ada198f1b1cd17a6eabca6baa6bc1a6b2904876e96ca5 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/pinnedmessages"
     i837ff1257c18874e8d41607d659eb84e1e4dde73a2ec63b89aa3896598c0d0b1 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/tabs/item"
     ia1765451c54b694370a995b8293695056771707eceb99a55ae5f1a319717a9cd "github.com/microsoftgraph/msgraph-sdk-go/chats/item/members/item"
     ie48eb983af14f89a84a71353f7c41fc8847c3001c54421e947a07c7e5017ae2b "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item"
     if01cbefdd30a84f3f8ae04a8237bc738cd6d90ab68b9c2ccb4f8f2e8b18e5f34 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/item"
+    if9fa69e93dea7c66b64ee19841f68c83182c43780f205df8e472e307c0d41fc6 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/pinnedmessages/item"
 )
 
 // ChatItemRequestBuilder provides operations to manage the collection of chat entities.
@@ -222,6 +224,21 @@ func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
         return err
     }
     return nil
+}
+// PinnedMessages the pinnedMessages property
+func (m *ChatItemRequestBuilder) PinnedMessages()(*ie429cd3a59f9c2a7e91ada198f1b1cd17a6eabca6baa6bc1a6b2904876e96ca5.PinnedMessagesRequestBuilder) {
+    return ie429cd3a59f9c2a7e91ada198f1b1cd17a6eabca6baa6bc1a6b2904876e96ca5.NewPinnedMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// PinnedMessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.chats.item.pinnedMessages.item collection
+func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*if9fa69e93dea7c66b64ee19841f68c83182c43780f205df8e472e307c0d41fc6.PinnedChatMessageInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["pinnedChatMessageInfo%2Did"] = id
+    }
+    return if9fa69e93dea7c66b64ee19841f68c83182c43780f205df8e472e307c0d41fc6.NewPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SendActivityNotification the sendActivityNotification property
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*i6feff4d6e3d0767acb48ac48f31e0afd6402b4d1449e0aa23e2bbb0c98addc1a.SendActivityNotificationRequestBuilder) {

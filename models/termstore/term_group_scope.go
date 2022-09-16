@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type TermGroupScope int
 
 const (

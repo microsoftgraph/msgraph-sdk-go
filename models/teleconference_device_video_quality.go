@@ -38,8 +38,7 @@ func CreateTeleconferenceDeviceVideoQualityFromDiscriminatorValue(parseNode i878
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.teleconferenceDeviceScreenSharingQuality":
                         return NewTeleconferenceDeviceScreenSharingQuality(), nil
                 }

@@ -33,8 +33,7 @@ func CreateAccessReviewApplyActionFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.disableAndDeleteUserApplyAction":
                         return NewDisableAndDeleteUserApplyAction(), nil
                     case "#microsoft.graph.removeAccessApplyAction":

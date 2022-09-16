@@ -14,7 +14,7 @@ type Store struct {
     groups []Groupable
     // List of languages for the term store.
     languageTags []string
-    // Collection of all sets available in the term store.
+    // Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
     sets []Setable
 }
 // NewStore instantiates a new store and sets the default values.
@@ -99,7 +99,7 @@ func (m *Store) GetGroups()([]Groupable) {
 func (m *Store) GetLanguageTags()([]string) {
     return m.languageTags
 }
-// GetSets gets the sets property value. Collection of all sets available in the term store.
+// GetSets gets the sets property value. Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 func (m *Store) GetSets()([]Setable) {
     return m.sets
 }
@@ -155,7 +155,7 @@ func (m *Store) SetGroups(value []Groupable)() {
 func (m *Store) SetLanguageTags(value []string)() {
     m.languageTags = value
 }
-// SetSets sets the sets property value. Collection of all sets available in the term store.
+// SetSets sets the sets property value. Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 func (m *Store) SetSets(value []Setable)() {
     m.sets = value
 }

@@ -35,8 +35,7 @@ func CreateTimeZoneBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.customTimeZone":
                         return NewCustomTimeZone(), nil
                 }

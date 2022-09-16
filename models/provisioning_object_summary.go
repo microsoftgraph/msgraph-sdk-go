@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisioningObjectSummary provides operations to manage the admin singleton.
+// ProvisioningObjectSummary provides operations to manage the collection of agreementAcceptance entities.
 type ProvisioningObjectSummary struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

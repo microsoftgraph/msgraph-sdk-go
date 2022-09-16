@@ -18,6 +18,8 @@ type WebApplication struct {
     odataType *string
     // Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
     redirectUris []string
+    // The redirectUriSettings property
+    redirectUriSettings []RedirectUriSettingsable
 }
 // NewWebApplication instantiates a new webApplication and sets the default values.
 func NewWebApplication()(*WebApplication) {
@@ -93,6 +95,20 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["redirectUriSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRedirectUriSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RedirectUriSettingsable, len(val))
+            for i, v := range val {
+                res[i] = v.(RedirectUriSettingsable)
+            }
+            m.SetRedirectUriSettings(res)
+        }
+        return nil
+    }
     return res
 }
 // GetHomePageUrl gets the homePageUrl property value. Home page or landing page of the application.
@@ -114,6 +130,10 @@ func (m *WebApplication) GetOdataType()(*string) {
 // GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 func (m *WebApplication) GetRedirectUris()([]string) {
     return m.redirectUris
+}
+// GetRedirectUriSettings gets the redirectUriSettings property value. The redirectUriSettings property
+func (m *WebApplication) GetRedirectUriSettings()([]RedirectUriSettingsable) {
+    return m.redirectUriSettings
 }
 // Serialize serializes information the current object
 func (m *WebApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -143,6 +163,16 @@ func (m *WebApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     if m.GetRedirectUris() != nil {
         err := writer.WriteCollectionOfStringValues("redirectUris", m.GetRedirectUris())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRedirectUriSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRedirectUriSettings()))
+        for i, v := range m.GetRedirectUriSettings() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("redirectUriSettings", cast)
         if err != nil {
             return err
         }
@@ -178,4 +208,8 @@ func (m *WebApplication) SetOdataType(value *string)() {
 // SetRedirectUris sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 func (m *WebApplication) SetRedirectUris(value []string)() {
     m.redirectUris = value
+}
+// SetRedirectUriSettings sets the redirectUriSettings property value. The redirectUriSettings property
+func (m *WebApplication) SetRedirectUriSettings(value []RedirectUriSettingsable)() {
+    m.redirectUriSettings = value
 }

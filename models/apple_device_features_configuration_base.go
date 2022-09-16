@@ -30,8 +30,7 @@ func CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue(parseNode 
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.iosDeviceFeaturesConfiguration":
                         return NewIosDeviceFeaturesConfiguration(), nil
                     case "#microsoft.graph.macOSDeviceFeaturesConfiguration":

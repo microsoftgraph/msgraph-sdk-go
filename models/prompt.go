@@ -33,8 +33,7 @@ func CreatePromptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.mediaPrompt":
                         return NewMediaPrompt(), nil
                 }

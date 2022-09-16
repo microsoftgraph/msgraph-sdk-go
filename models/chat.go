@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Chat provides operations to manage the admin singleton.
+// Chat provides operations to manage the collection of agreementAcceptance entities.
 type Chat struct {
     Entity
     // The chatType property
@@ -22,6 +22,8 @@ type Chat struct {
     messages []ChatMessageable
     // Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
     onlineMeetingInfo TeamworkOnlineMeetingInfoable
+    // The pinnedMessages property
+    pinnedMessages []PinnedChatMessageInfoable
     // A collection of all the tabs in the chat. Nullable.
     tabs []TeamsTabable
     // The identifier of the tenant in which the chat was created. Read-only.
@@ -137,6 +139,20 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["pinnedMessages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePinnedChatMessageInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PinnedChatMessageInfoable, len(val))
+            for i, v := range val {
+                res[i] = v.(PinnedChatMessageInfoable)
+            }
+            m.SetPinnedMessages(res)
+        }
+        return nil
+    }
     res["tabs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
@@ -202,6 +218,10 @@ func (m *Chat) GetMessages()([]ChatMessageable) {
 // GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
     return m.onlineMeetingInfo
+}
+// GetPinnedMessages gets the pinnedMessages property value. The pinnedMessages property
+func (m *Chat) GetPinnedMessages()([]PinnedChatMessageInfoable) {
+    return m.pinnedMessages
 }
 // GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) GetTabs()([]TeamsTabable) {
@@ -280,6 +300,16 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPinnedMessages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPinnedMessages()))
+        for i, v := range m.GetPinnedMessages() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("pinnedMessages", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTabs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
@@ -337,6 +367,10 @@ func (m *Chat) SetMessages(value []ChatMessageable)() {
 // SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)() {
     m.onlineMeetingInfo = value
+}
+// SetPinnedMessages sets the pinnedMessages property value. The pinnedMessages property
+func (m *Chat) SetPinnedMessages(value []PinnedChatMessageInfoable)() {
+    m.pinnedMessages = value
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) SetTabs(value []TeamsTabable)() {

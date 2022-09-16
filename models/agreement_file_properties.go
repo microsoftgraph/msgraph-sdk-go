@@ -45,8 +45,7 @@ func CreateAgreementFilePropertiesFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.agreementFile":
                         return NewAgreementFile(), nil
                     case "#microsoft.graph.agreementFileLocalization":

@@ -61,7 +61,7 @@ func (m *MembersRequestBuilder) Add()(*ib113fbaca0760022878dc58540a742e1c1b8cf89
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembersRequestBuilder) {
     m := &MembersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

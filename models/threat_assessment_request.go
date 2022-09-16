@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentRequest provides operations to manage the admin singleton.
+// ThreatAssessmentRequest provides operations to manage the collection of agreementAcceptance entities.
 type ThreatAssessmentRequest struct {
     Entity
     // The category property
@@ -47,8 +47,7 @@ func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.emailFileAssessmentRequest":
                         return NewEmailFileAssessmentRequest(), nil
                     case "#microsoft.graph.fileAssessmentRequest":

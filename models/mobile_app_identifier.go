@@ -33,8 +33,7 @@ func CreateMobileAppIdentifierFromDiscriminatorValue(parseNode i878a80d2330e89d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidMobileAppIdentifier":
                         return NewAndroidMobileAppIdentifier(), nil
                     case "#microsoft.graph.iosMobileAppIdentifier":

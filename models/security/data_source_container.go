@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// DataSourceContainer provides operations to manage the admin singleton.
+// DataSourceContainer provides operations to manage the collection of agreementAcceptance entities.
 type DataSourceContainer struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Created date and time of the dataSourceContainer entity.
@@ -44,8 +44,7 @@ func CreateDataSourceContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.ediscoveryCustodian":
                         return NewEdiscoveryCustodian(), nil
                     case "#microsoft.graph.security.ediscoveryNoncustodialDataSource":

@@ -52,7 +52,7 @@ type CalendarPermissionsRequestBuilderPostRequestConfiguration struct {
 func NewCalendarPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarPermissionsRequestBuilder) {
     m := &CalendarPermissionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/calendar/calendarPermissions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/calendar/calendarPermissions{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

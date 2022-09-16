@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseItemVersion provides operations to manage the admin singleton.
+// BaseItemVersion provides operations to manage the collection of agreementAcceptance entities.
 type BaseItemVersion struct {
     Entity
     // Identity of the user which last modified the version. Read-only.
@@ -37,8 +37,7 @@ func CreateBaseItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.documentSetVersion":
                         return NewDocumentSetVersion(), nil
                     case "#microsoft.graph.driveItemVersion":

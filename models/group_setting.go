@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupSetting provides operations to manage the admin singleton.
+// GroupSetting provides operations to manage the collection of agreementAcceptance entities.
 type GroupSetting struct {
     Entity
     // Display name of this group of settings, which comes from the associated template.

@@ -33,8 +33,7 @@ func CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue(parseNod
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.allDevicesAssignmentTarget":
                         return NewAllDevicesAssignmentTarget(), nil
                     case "#microsoft.graph.allLicensedUsersAssignmentTarget":

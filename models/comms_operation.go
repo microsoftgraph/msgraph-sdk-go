@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommsOperation provides operations to manage the admin singleton.
+// CommsOperation provides operations to manage the cloudCommunications singleton.
 type CommsOperation struct {
     Entity
     // Unique Client Context string. Max limit is 256 chars.
@@ -36,8 +36,7 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.cancelMediaProcessingOperation":
                         return NewCancelMediaProcessingOperation(), nil
                     case "#microsoft.graph.inviteParticipantsOperation":

@@ -34,8 +34,7 @@ func CreateManagedAppStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2689
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.managedAppStatusRaw":
                         return NewManagedAppStatusRaw(), nil
                 }

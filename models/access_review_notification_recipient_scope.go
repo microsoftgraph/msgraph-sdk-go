@@ -33,8 +33,7 @@ func CreateAccessReviewNotificationRecipientScopeFromDiscriminatorValue(parseNod
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.accessReviewNotificationRecipientQueryScope":
                         return NewAccessReviewNotificationRecipientQueryScope(), nil
                 }

@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// DataSource provides operations to manage the admin singleton.
+// DataSource provides operations to manage the collection of agreementAcceptance entities.
 type DataSource struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The user who created the dataSource.
@@ -40,8 +40,7 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.siteSource":
                         return NewSiteSource(), nil
                     case "#microsoft.graph.security.unifiedGroupSource":
