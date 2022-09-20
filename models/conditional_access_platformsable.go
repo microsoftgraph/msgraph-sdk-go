@@ -8,10 +8,10 @@ import (
 type ConditionalAccessPlatformsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetExcludePlatforms()([]string)
-    GetIncludePlatforms()([]string)
+    GetExcludePlatforms()([]ConditionalAccessDevicePlatform)
+    GetIncludePlatforms()([]ConditionalAccessDevicePlatform)
     GetOdataType()(*string)
-    SetExcludePlatforms(value []string)()
-    SetIncludePlatforms(value []string)()
+    SetExcludePlatforms(value []ConditionalAccessDevicePlatform)()
+    SetIncludePlatforms(value []ConditionalAccessDevicePlatform)()
     SetOdataType(value *string)()
 }

@@ -19,6 +19,8 @@ type Call struct {
     callRoutes []CallRouteable
     // The chat information. Required information for joining a meeting.
     chatInfo ChatInfoable
+    // The contentSharingSessions property
+    contentSharingSessions []ContentSharingSessionable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection
     // The incomingContext property
@@ -36,7 +38,7 @@ type Call struct {
     // The participants property
     participants []Participantable
     // The requestedModalities property
-    requestedModalities []string
+    requestedModalities []Modality
     // The resultInfo property
     resultInfo ResultInfoable
     // The source property
@@ -90,6 +92,10 @@ func (m *Call) GetCallRoutes()([]CallRouteable) {
 // GetChatInfo gets the chatInfo property value. The chat information. Required information for joining a meeting.
 func (m *Call) GetChatInfo()(ChatInfoable) {
     return m.chatInfo
+}
+// GetContentSharingSessions gets the contentSharingSessions property value. The contentSharingSessions property
+func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
+    return m.contentSharingSessions
 }
 // GetDirection gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
 func (m *Call) GetDirection()(*CallDirection) {
@@ -163,6 +169,20 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetChatInfo(val.(ChatInfoable))
+        }
+        return nil
+    }
+    res["contentSharingSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateContentSharingSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ContentSharingSessionable, len(val))
+            for i, v := range val {
+                res[i] = v.(ContentSharingSessionable)
+            }
+            m.SetContentSharingSessions(res)
         }
         return nil
     }
@@ -255,14 +275,14 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["requestedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Modality))
             }
             m.SetRequestedModalities(res)
         }
@@ -383,7 +403,7 @@ func (m *Call) GetParticipants()([]Participantable) {
     return m.participants
 }
 // GetRequestedModalities gets the requestedModalities property value. The requestedModalities property
-func (m *Call) GetRequestedModalities()([]string) {
+func (m *Call) GetRequestedModalities()([]Modality) {
     return m.requestedModalities
 }
 // GetResultInfo gets the resultInfo property value. The resultInfo property
@@ -468,6 +488,16 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetContentSharingSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentSharingSessions()))
+        for i, v := range m.GetContentSharingSessions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("contentSharingSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDirection() != nil {
         cast := (*m.GetDirection()).String()
         err = writer.WriteStringValue("direction", &cast)
@@ -526,7 +556,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRequestedModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("requestedModalities", m.GetRequestedModalities())
+        err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeModality(m.GetRequestedModalities()))
         if err != nil {
             return err
         }
@@ -610,6 +640,10 @@ func (m *Call) SetCallRoutes(value []CallRouteable)() {
 func (m *Call) SetChatInfo(value ChatInfoable)() {
     m.chatInfo = value
 }
+// SetContentSharingSessions sets the contentSharingSessions property value. The contentSharingSessions property
+func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
+    m.contentSharingSessions = value
+}
 // SetDirection sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
 func (m *Call) SetDirection(value *CallDirection)() {
     m.direction = value
@@ -643,7 +677,7 @@ func (m *Call) SetParticipants(value []Participantable)() {
     m.participants = value
 }
 // SetRequestedModalities sets the requestedModalities property value. The requestedModalities property
-func (m *Call) SetRequestedModalities(value []string)() {
+func (m *Call) SetRequestedModalities(value []Modality)() {
     m.requestedModalities = value
 }
 // SetResultInfo sets the resultInfo property value. The resultInfo property

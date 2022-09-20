@@ -41,6 +41,8 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
                         return NewMicrosoftAuthenticatorAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration":
                         return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
+                        return NewX509CertificateAuthenticationMethodConfiguration(), nil
                 }
             }
         }

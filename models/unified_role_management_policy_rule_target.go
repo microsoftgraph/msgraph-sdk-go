@@ -19,7 +19,7 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
     // The OdataType property
     odataType *string
     // The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-    operations []string
+    operations []UnifiedRoleManagementPolicyRuleTargetOperations
     // The targetObjects property
     targetObjects []DirectoryObjectable
 }
@@ -110,14 +110,14 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         return nil
     }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseUnifiedRoleManagementPolicyRuleTargetOperations)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]UnifiedRoleManagementPolicyRuleTargetOperations, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*UnifiedRoleManagementPolicyRuleTargetOperations))
             }
             m.SetOperations(res)
         }
@@ -152,7 +152,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
     return m.odataType
 }
 // GetOperations gets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]UnifiedRoleManagementPolicyRuleTargetOperations) {
     return m.operations
 }
 // GetTargetObjects gets the targetObjects property value. The targetObjects property
@@ -192,7 +192,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89
         }
     }
     if m.GetOperations() != nil {
-        err := writer.WriteCollectionOfStringValues("operations", m.GetOperations())
+        err := writer.WriteCollectionOfStringValues("operations", SerializeUnifiedRoleManagementPolicyRuleTargetOperations(m.GetOperations()))
         if err != nil {
             return err
         }
@@ -240,7 +240,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetOperations sets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []string)() {
+func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []UnifiedRoleManagementPolicyRuleTargetOperations)() {
     m.operations = value
 }
 // SetTargetObjects sets the targetObjects property value. The targetObjects property

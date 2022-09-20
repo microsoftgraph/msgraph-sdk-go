@@ -23,7 +23,7 @@ type ManagedAppRegistration struct {
     // Host device type
     deviceType *string
     // Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-    flaggedReasons []string
+    flaggedReasons []ManagedAppFlaggedReason
     // Zero or more policies admin intended for the app as of now.
     intendedPolicies []ManagedAppPolicyable
     // Date and time of last the app synced with management service.
@@ -178,14 +178,14 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["flaggedReasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseManagedAppFlaggedReason)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]ManagedAppFlaggedReason, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*ManagedAppFlaggedReason))
             }
             m.SetFlaggedReasons(res)
         }
@@ -272,7 +272,7 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetFlaggedReasons gets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-func (m *ManagedAppRegistration) GetFlaggedReasons()([]string) {
+func (m *ManagedAppRegistration) GetFlaggedReasons()([]ManagedAppFlaggedReason) {
     return m.flaggedReasons
 }
 // GetIntendedPolicies gets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.
@@ -356,7 +356,7 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     if m.GetFlaggedReasons() != nil {
-        err = writer.WriteCollectionOfStringValues("flaggedReasons", m.GetFlaggedReasons())
+        err = writer.WriteCollectionOfStringValues("flaggedReasons", SerializeManagedAppFlaggedReason(m.GetFlaggedReasons()))
         if err != nil {
             return err
         }
@@ -442,7 +442,7 @@ func (m *ManagedAppRegistration) SetDeviceType(value *string)() {
     m.deviceType = value
 }
 // SetFlaggedReasons sets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-func (m *ManagedAppRegistration) SetFlaggedReasons(value []string)() {
+func (m *ManagedAppRegistration) SetFlaggedReasons(value []ManagedAppFlaggedReason)() {
     m.flaggedReasons = value
 }
 // SetIntendedPolicies sets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.

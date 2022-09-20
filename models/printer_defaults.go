@@ -19,7 +19,7 @@ type PrinterDefaults struct {
     // The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.
     duplexMode *PrintDuplexMode
     // The default set of finishings to apply to print jobs. Valid values are described in the following table.
-    finishings []string
+    finishings []PrintFinishing
     // The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
     fitPdfToPage *bool
     // The inputBin property
@@ -136,14 +136,14 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintFinishing, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintFinishing))
             }
             m.SetFinishings(res)
         }
@@ -272,7 +272,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFinishings gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-func (m *PrinterDefaults) GetFinishings()([]string) {
+func (m *PrinterDefaults) GetFinishings()([]PrintFinishing) {
     return m.finishings
 }
 // GetFitPdfToPage gets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
@@ -358,7 +358,7 @@ func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
+        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err
         }
@@ -472,7 +472,7 @@ func (m *PrinterDefaults) SetDuplexMode(value *PrintDuplexMode)() {
     m.duplexMode = value
 }
 // SetFinishings sets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-func (m *PrinterDefaults) SetFinishings(value []string)() {
+func (m *PrinterDefaults) SetFinishings(value []PrintFinishing)() {
     m.finishings = value
 }
 // SetFitPdfToPage sets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.

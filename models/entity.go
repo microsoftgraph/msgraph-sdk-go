@@ -240,6 +240,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewContact(), nil
                     case "#microsoft.graph.contactFolder":
                         return NewContactFolder(), nil
+                    case "#microsoft.graph.contentSharingSession":
+                        return NewContentSharingSession(), nil
                     case "#microsoft.graph.contentType":
                         return NewContentType(), nil
                     case "#microsoft.graph.contract":
@@ -1188,6 +1190,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookWorksheetProtection(), nil
                     case "#microsoft.graph.workforceIntegration":
                         return NewWorkforceIntegration(), nil
+                    case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
+                        return NewX509CertificateAuthenticationMethodConfiguration(), nil
                 }
             }
         }

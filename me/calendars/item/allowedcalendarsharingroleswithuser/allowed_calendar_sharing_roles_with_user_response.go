@@ -2,6 +2,7 @@ package allowedcalendarsharingroleswithuser
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // AllowedCalendarSharingRolesWithUserResponse provides operations to call the allowedCalendarSharingRoles method.
@@ -9,7 +10,7 @@ type AllowedCalendarSharingRolesWithUserResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The value property
-    value []string
+    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarRoleType
 }
 // NewAllowedCalendarSharingRolesWithUserResponse instantiates a new allowedCalendarSharingRolesWithUserResponse and sets the default values.
 func NewAllowedCalendarSharingRolesWithUserResponse()(*AllowedCalendarSharingRolesWithUserResponse) {
@@ -30,14 +31,14 @@ func (m *AllowedCalendarSharingRolesWithUserResponse) GetAdditionalData()(map[st
 func (m *AllowedCalendarSharingRolesWithUserResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseCalendarRoleType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarRoleType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarRoleType))
             }
             m.SetValue(res)
         }
@@ -46,13 +47,13 @@ func (m *AllowedCalendarSharingRolesWithUserResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
-func (m *AllowedCalendarSharingRolesWithUserResponse) GetValue()([]string) {
+func (m *AllowedCalendarSharingRolesWithUserResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarRoleType) {
     return m.value
 }
 // Serialize serializes information the current object
 func (m *AllowedCalendarSharingRolesWithUserResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetValue() != nil {
-        err := writer.WriteCollectionOfStringValues("value", m.GetValue())
+        err := writer.WriteCollectionOfStringValues("value", iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SerializeCalendarRoleType(m.GetValue()))
         if err != nil {
             return err
         }
@@ -70,6 +71,6 @@ func (m *AllowedCalendarSharingRolesWithUserResponse) SetAdditionalData(value ma
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property
-func (m *AllowedCalendarSharingRolesWithUserResponse) SetValue(value []string)() {
+func (m *AllowedCalendarSharingRolesWithUserResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarRoleType)() {
     m.value = value
 }

@@ -17,7 +17,7 @@ type SearchRequest struct {
     // The enableTopResults property
     enableTopResults *bool
     // The entityTypes property
-    entityTypes []string
+    entityTypes []EntityType
     // The fields property
     fields []string
     // The from property
@@ -69,7 +69,7 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     return m.enableTopResults
 }
 // GetEntityTypes gets the entityTypes property value. The entityTypes property
-func (m *SearchRequest) GetEntityTypes()([]string) {
+func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     return m.entityTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,14 +128,14 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseEntityType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]EntityType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*EntityType))
             }
             m.SetEntityTypes(res)
         }
@@ -294,7 +294,7 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetEntityTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("entityTypes", m.GetEntityTypes())
+        err := writer.WriteCollectionOfStringValues("entityTypes", SerializeEntityType(m.GetEntityTypes()))
         if err != nil {
             return err
         }
@@ -380,7 +380,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     m.enableTopResults = value
 }
 // SetEntityTypes sets the entityTypes property value. The entityTypes property
-func (m *SearchRequest) SetEntityTypes(value []string)() {
+func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     m.entityTypes = value
 }
 // SetFields sets the fields property value. The fields property

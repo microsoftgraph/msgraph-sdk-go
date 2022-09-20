@@ -8,7 +8,7 @@ import (
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
-    allowedDataStorageLocations []string
+    allowedDataStorageLocations []ManagedAppDataStorageLocation
     // Data can be transferred from/to these classes of apps
     allowedInboundDataTransferSources *ManagedAppDataTransferLevel
     // Represents the level to which the device's clipboard may be shared between apps
@@ -100,7 +100,7 @@ func CreateManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewManagedAppProtection(), nil
 }
 // GetAllowedDataStorageLocations gets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
-func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]string) {
+func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]ManagedAppDataStorageLocation) {
     return m.allowedDataStorageLocations
 }
 // GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
@@ -135,14 +135,14 @@ func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
 func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["allowedDataStorageLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseManagedAppDataStorageLocation)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]ManagedAppDataStorageLocation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*ManagedAppDataStorageLocation))
             }
             m.SetAllowedDataStorageLocations(res)
         }
@@ -493,7 +493,7 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     if m.GetAllowedDataStorageLocations() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedDataStorageLocations", m.GetAllowedDataStorageLocations())
+        err = writer.WriteCollectionOfStringValues("allowedDataStorageLocations", SerializeManagedAppDataStorageLocation(m.GetAllowedDataStorageLocations()))
         if err != nil {
             return err
         }
@@ -662,7 +662,7 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAllowedDataStorageLocations sets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
-func (m *ManagedAppProtection) SetAllowedDataStorageLocations(value []string)() {
+func (m *ManagedAppProtection) SetAllowedDataStorageLocations(value []ManagedAppDataStorageLocation)() {
     m.allowedDataStorageLocations = value
 }
 // SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps

@@ -16,7 +16,7 @@ type CallRecord struct {
     // UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-    modalities []string
+    modalities []Modality
     // The organizing party's identity.
     organizer iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable
     // List of distinct identities involved in the call.
@@ -81,14 +81,14 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["modalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Modality))
             }
             m.SetModalities(res)
         }
@@ -173,7 +173,7 @@ func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return m.lastModifiedDateTime
 }
 // GetModalities gets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *CallRecord) GetModalities()([]string) {
+func (m *CallRecord) GetModalities()([]Modality) {
     return m.modalities
 }
 // GetOrganizer gets the organizer property value. The organizing party's identity.
@@ -225,7 +225,7 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     if m.GetModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("modalities", m.GetModalities())
+        err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
         if err != nil {
             return err
         }
@@ -290,7 +290,7 @@ func (m *CallRecord) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
     m.lastModifiedDateTime = value
 }
 // SetModalities sets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *CallRecord) SetModalities(value []string)() {
+func (m *CallRecord) SetModalities(value []Modality)() {
     m.modalities = value
 }
 // SetOrganizer sets the organizer property value. The organizing party's identity.

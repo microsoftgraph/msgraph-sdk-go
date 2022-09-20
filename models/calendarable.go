@@ -8,7 +8,7 @@ import (
 type Calendarable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedOnlineMeetingProviders()([]string)
+    GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderType)
     GetCalendarPermissions()([]CalendarPermissionable)
     GetCalendarView()([]Eventable)
     GetCanEdit()(*bool)
@@ -26,7 +26,7 @@ type Calendarable interface {
     GetName()(*string)
     GetOwner()(EmailAddressable)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
-    SetAllowedOnlineMeetingProviders(value []string)()
+    SetAllowedOnlineMeetingProviders(value []OnlineMeetingProviderType)()
     SetCalendarPermissions(value []CalendarPermissionable)()
     SetCalendarView(value []Eventable)()
     SetCanEdit(value *bool)()
