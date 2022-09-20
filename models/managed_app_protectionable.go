@@ -8,7 +8,7 @@ import (
 type ManagedAppProtectionable interface {
     ManagedAppPolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedDataStorageLocations()([]string)
+    GetAllowedDataStorageLocations()([]ManagedAppDataStorageLocation)
     GetAllowedInboundDataTransferSources()(*ManagedAppDataTransferLevel)
     GetAllowedOutboundClipboardSharingLevel()(*ManagedAppClipboardSharingLevel)
     GetAllowedOutboundDataTransferDestinations()(*ManagedAppDataTransferLevel)
@@ -35,7 +35,7 @@ type ManagedAppProtectionable interface {
     GetPrintBlocked()(*bool)
     GetSaveAsBlocked()(*bool)
     GetSimplePinBlocked()(*bool)
-    SetAllowedDataStorageLocations(value []string)()
+    SetAllowedDataStorageLocations(value []ManagedAppDataStorageLocation)()
     SetAllowedInboundDataTransferSources(value *ManagedAppDataTransferLevel)()
     SetAllowedOutboundClipboardSharingLevel(value *ManagedAppClipboardSharingLevel)()
     SetAllowedOutboundDataTransferDestinations(value *ManagedAppDataTransferLevel)()

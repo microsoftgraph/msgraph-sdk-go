@@ -18,7 +18,7 @@ type Session struct {
     // Failure information associated with the session if the session failed.
     failureInfo FailureInfoable
     // List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-    modalities []string
+    modalities []Modality
     // The list of segments involved in the session. Read-only. Nullable.
     segments []Segmentable
     // UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -97,14 +97,14 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["modalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Modality))
             }
             m.SetModalities(res)
         }
@@ -137,7 +137,7 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *Session) GetModalities()([]string) {
+func (m *Session) GetModalities()([]Modality) {
     return m.modalities
 }
 // GetSegments gets the segments property value. The list of segments involved in the session. Read-only. Nullable.
@@ -179,7 +179,7 @@ func (m *Session) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     if m.GetModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("modalities", m.GetModalities())
+        err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
         if err != nil {
             return err
         }
@@ -219,7 +219,7 @@ func (m *Session) SetFailureInfo(value FailureInfoable)() {
     m.failureInfo = value
 }
 // SetModalities sets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *Session) SetModalities(value []string)() {
+func (m *Session) SetModalities(value []Modality)() {
     m.modalities = value
 }
 // SetSegments sets the segments property value. The list of segments involved in the session. Read-only. Nullable.

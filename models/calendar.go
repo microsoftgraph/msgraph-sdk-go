@@ -8,7 +8,7 @@ import (
 type Calendar struct {
     Entity
     // Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-    allowedOnlineMeetingProviders []string
+    allowedOnlineMeetingProviders []OnlineMeetingProviderType
     // The permissions of the users with whom the calendar is shared.
     calendarPermissions []CalendarPermissionable
     // The calendar view for the calendar. Navigation property. Read-only.
@@ -58,7 +58,7 @@ func CreateCalendarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewCalendar(), nil
 }
 // GetAllowedOnlineMeetingProviders gets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-func (m *Calendar) GetAllowedOnlineMeetingProviders()([]string) {
+func (m *Calendar) GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderType) {
     return m.allowedOnlineMeetingProviders
 }
 // GetCalendarPermissions gets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
@@ -101,14 +101,14 @@ func (m *Calendar) GetEvents()([]Eventable) {
 func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedOnlineMeetingProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseOnlineMeetingProviderType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]OnlineMeetingProviderType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*OnlineMeetingProviderType))
             }
             m.SetAllowedOnlineMeetingProviders(res)
         }
@@ -345,7 +345,7 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         return err
     }
     if m.GetAllowedOnlineMeetingProviders() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedOnlineMeetingProviders", m.GetAllowedOnlineMeetingProviders())
+        err = writer.WriteCollectionOfStringValues("allowedOnlineMeetingProviders", SerializeOnlineMeetingProviderType(m.GetAllowedOnlineMeetingProviders()))
         if err != nil {
             return err
         }
@@ -477,7 +477,7 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAllowedOnlineMeetingProviders sets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-func (m *Calendar) SetAllowedOnlineMeetingProviders(value []string)() {
+func (m *Calendar) SetAllowedOnlineMeetingProviders(value []OnlineMeetingProviderType)() {
     m.allowedOnlineMeetingProviders = value
 }
 // SetCalendarPermissions sets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.

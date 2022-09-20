@@ -19,7 +19,7 @@ type Property struct {
     // Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
     isSearchable *bool
     // Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.
-    labels []string
+    labels []Label
     // The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
     name *string
     // The OdataType property
@@ -106,14 +106,14 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseLabel)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Label, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Label))
             }
             m.SetLabels(res)
         }
@@ -168,7 +168,7 @@ func (m *Property) GetIsSearchable()(*bool) {
     return m.isSearchable
 }
 // GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.
-func (m *Property) GetLabels()([]string) {
+func (m *Property) GetLabels()([]Label) {
     return m.labels
 }
 // GetName gets the name property value. The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
@@ -216,7 +216,7 @@ func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetLabels() != nil {
-        err := writer.WriteCollectionOfStringValues("labels", m.GetLabels())
+        err := writer.WriteCollectionOfStringValues("labels", SerializeLabel(m.GetLabels()))
         if err != nil {
             return err
         }
@@ -273,7 +273,7 @@ func (m *Property) SetIsSearchable(value *bool)() {
     m.isSearchable = value
 }
 // SetLabels sets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.
-func (m *Property) SetLabels(value []string)() {
+func (m *Property) SetLabels(value []Label)() {
     m.labels = value
 }
 // SetName sets the name property value. The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.

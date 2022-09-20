@@ -11,7 +11,7 @@ type PrinterStatus struct {
     // A human-readable description of the printer's current processing state. Read-only.
     description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-    details []string
+    details []PrinterProcessingStateDetail
     // The OdataType property
     odataType *string
     // The state property
@@ -39,7 +39,7 @@ func (m *PrinterStatus) GetDescription()(*string) {
     return m.description
 }
 // GetDetails gets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-func (m *PrinterStatus) GetDetails()([]string) {
+func (m *PrinterStatus) GetDetails()([]PrinterProcessingStateDetail) {
     return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -56,14 +56,14 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrinterProcessingStateDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrinterProcessingStateDetail, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrinterProcessingStateDetail))
             }
             m.SetDetails(res)
         }
@@ -108,7 +108,7 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetDetails() != nil {
-        err := writer.WriteCollectionOfStringValues("details", m.GetDetails())
+        err := writer.WriteCollectionOfStringValues("details", SerializePrinterProcessingStateDetail(m.GetDetails()))
         if err != nil {
             return err
         }
@@ -143,7 +143,7 @@ func (m *PrinterStatus) SetDescription(value *string)() {
     m.description = value
 }
 // SetDetails sets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-func (m *PrinterStatus) SetDetails(value []string)() {
+func (m *PrinterStatus) SetDetails(value []PrinterProcessingStateDetail)() {
     m.details = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

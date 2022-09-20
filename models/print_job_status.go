@@ -11,7 +11,7 @@ type PrintJobStatus struct {
     // A human-readable description of the print job's current processing state. Read-only.
     description *string
     // Additional details for print job state. Valid values are described in the following table. Read-only.
-    details []string
+    details []PrintJobStateDetail
     // True if the job was acknowledged by a printer; false otherwise. Read-only.
     isAcquiredByPrinter *bool
     // The OdataType property
@@ -41,7 +41,7 @@ func (m *PrintJobStatus) GetDescription()(*string) {
     return m.description
 }
 // GetDetails gets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
-func (m *PrintJobStatus) GetDetails()([]string) {
+func (m *PrintJobStatus) GetDetails()([]PrintJobStateDetail) {
     return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -58,14 +58,14 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintJobStateDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintJobStateDetail, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintJobStateDetail))
             }
             m.SetDetails(res)
         }
@@ -124,7 +124,7 @@ func (m *PrintJobStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetDetails() != nil {
-        err := writer.WriteCollectionOfStringValues("details", m.GetDetails())
+        err := writer.WriteCollectionOfStringValues("details", SerializePrintJobStateDetail(m.GetDetails()))
         if err != nil {
             return err
         }
@@ -165,7 +165,7 @@ func (m *PrintJobStatus) SetDescription(value *string)() {
     m.description = value
 }
 // SetDetails sets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
-func (m *PrintJobStatus) SetDetails(value []string)() {
+func (m *PrintJobStatus) SetDetails(value []PrintJobStateDetail)() {
     m.details = value
 }
 // SetIsAcquiredByPrinter sets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.

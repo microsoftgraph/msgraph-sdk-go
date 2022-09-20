@@ -11,7 +11,7 @@ type RecurrencePattern struct {
     // The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
     dayOfMonth *int32
     // A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-    daysOfWeek []string
+    daysOfWeek []DayOfWeek
     // The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
     firstDayOfWeek *DayOfWeek
     // Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
@@ -47,7 +47,7 @@ func (m *RecurrencePattern) GetDayOfMonth()(*int32) {
     return m.dayOfMonth
 }
 // GetDaysOfWeek gets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-func (m *RecurrencePattern) GetDaysOfWeek()([]string) {
+func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
     return m.daysOfWeek
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -64,14 +64,14 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["daysOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]DayOfWeek, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*DayOfWeek))
             }
             m.SetDaysOfWeek(res)
         }
@@ -172,7 +172,7 @@ func (m *RecurrencePattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     if m.GetDaysOfWeek() != nil {
-        err := writer.WriteCollectionOfStringValues("daysOfWeek", m.GetDaysOfWeek())
+        err := writer.WriteCollectionOfStringValues("daysOfWeek", SerializeDayOfWeek(m.GetDaysOfWeek()))
         if err != nil {
             return err
         }
@@ -233,7 +233,7 @@ func (m *RecurrencePattern) SetDayOfMonth(value *int32)() {
     m.dayOfMonth = value
 }
 // SetDaysOfWeek sets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-func (m *RecurrencePattern) SetDaysOfWeek(value []string)() {
+func (m *RecurrencePattern) SetDaysOfWeek(value []DayOfWeek)() {
     m.daysOfWeek = value
 }
 // SetFirstDayOfWeek sets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.

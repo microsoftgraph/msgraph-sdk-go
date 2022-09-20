@@ -13,7 +13,7 @@ type ConditionalAccessConditionSet struct {
     // Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
     clientApplications ConditionalAccessClientApplicationsable
     // Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-    clientAppTypes []string
+    clientAppTypes []ConditionalAccessClientApp
     // Devices in the policy.
     devices ConditionalAccessDevicesable
     // Locations included in and excluded from the policy.
@@ -23,11 +23,11 @@ type ConditionalAccessConditionSet struct {
     // Platforms included in and excluded from the policy.
     platforms ConditionalAccessPlatformsable
     // The servicePrincipalRiskLevels property
-    servicePrincipalRiskLevels []string
+    servicePrincipalRiskLevels []RiskLevel
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    signInRiskLevels []string
+    signInRiskLevels []RiskLevel
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    userRiskLevels []string
+    userRiskLevels []RiskLevel
     // Users, groups, and roles included in and excluded from the policy. Required.
     users ConditionalAccessUsersable
 }
@@ -57,7 +57,7 @@ func (m *ConditionalAccessConditionSet) GetClientApplications()(ConditionalAcces
     return m.clientApplications
 }
 // GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]string) {
+func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]ConditionalAccessClientApp) {
     return m.clientAppTypes
 }
 // GetDevices gets the devices property value. Devices in the policy.
@@ -88,14 +88,14 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["clientAppTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessClientApp)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]ConditionalAccessClientApp, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*ConditionalAccessClientApp))
             }
             m.SetClientAppTypes(res)
         }
@@ -142,42 +142,42 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["servicePrincipalRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RiskLevel, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*RiskLevel))
             }
             m.SetServicePrincipalRiskLevels(res)
         }
         return nil
     }
     res["signInRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RiskLevel, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*RiskLevel))
             }
             m.SetSignInRiskLevels(res)
         }
         return nil
     }
     res["userRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RiskLevel, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*RiskLevel))
             }
             m.SetUserRiskLevels(res)
         }
@@ -208,15 +208,15 @@ func (m *ConditionalAccessConditionSet) GetPlatforms()(ConditionalAccessPlatform
     return m.platforms
 }
 // GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. The servicePrincipalRiskLevels property
-func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]string) {
+func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]RiskLevel) {
     return m.servicePrincipalRiskLevels
 }
 // GetSignInRiskLevels gets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]string) {
+func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]RiskLevel) {
     return m.signInRiskLevels
 }
 // GetUserRiskLevels gets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]string) {
+func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
     return m.userRiskLevels
 }
 // GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
@@ -238,7 +238,7 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetClientAppTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("clientAppTypes", m.GetClientAppTypes())
+        err := writer.WriteCollectionOfStringValues("clientAppTypes", SerializeConditionalAccessClientApp(m.GetClientAppTypes()))
         if err != nil {
             return err
         }
@@ -268,19 +268,19 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetServicePrincipalRiskLevels() != nil {
-        err := writer.WriteCollectionOfStringValues("servicePrincipalRiskLevels", m.GetServicePrincipalRiskLevels())
+        err := writer.WriteCollectionOfStringValues("servicePrincipalRiskLevels", SerializeRiskLevel(m.GetServicePrincipalRiskLevels()))
         if err != nil {
             return err
         }
     }
     if m.GetSignInRiskLevels() != nil {
-        err := writer.WriteCollectionOfStringValues("signInRiskLevels", m.GetSignInRiskLevels())
+        err := writer.WriteCollectionOfStringValues("signInRiskLevels", SerializeRiskLevel(m.GetSignInRiskLevels()))
         if err != nil {
             return err
         }
     }
     if m.GetUserRiskLevels() != nil {
-        err := writer.WriteCollectionOfStringValues("userRiskLevels", m.GetUserRiskLevels())
+        err := writer.WriteCollectionOfStringValues("userRiskLevels", SerializeRiskLevel(m.GetUserRiskLevels()))
         if err != nil {
             return err
         }
@@ -312,7 +312,7 @@ func (m *ConditionalAccessConditionSet) SetClientApplications(value ConditionalA
     m.clientApplications = value
 }
 // SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []string)() {
+func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []ConditionalAccessClientApp)() {
     m.clientAppTypes = value
 }
 // SetDevices sets the devices property value. Devices in the policy.
@@ -332,15 +332,15 @@ func (m *ConditionalAccessConditionSet) SetPlatforms(value ConditionalAccessPlat
     m.platforms = value
 }
 // SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. The servicePrincipalRiskLevels property
-func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []string)() {
+func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []RiskLevel)() {
     m.servicePrincipalRiskLevels = value
 }
 // SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []string)() {
+func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []RiskLevel)() {
     m.signInRiskLevels = value
 }
 // SetUserRiskLevels sets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []string)() {
+func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
     m.userRiskLevels = value
 }
 // SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Required.

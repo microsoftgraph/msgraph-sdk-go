@@ -8,7 +8,7 @@ import (
 // AnswerPostRequestBody provides operations to call the answer method.
 type AnswerPostRequestBody struct {
     // The acceptedModalities property
-    acceptedModalities []string
+    acceptedModalities []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The callbackUri property
@@ -32,7 +32,7 @@ func CreateAnswerPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAnswerPostRequestBody(), nil
 }
 // GetAcceptedModalities gets the acceptedModalities property value. The acceptedModalities property
-func (m *AnswerPostRequestBody) GetAcceptedModalities()([]string) {
+func (m *AnswerPostRequestBody) GetAcceptedModalities()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality) {
     return m.acceptedModalities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -51,14 +51,14 @@ func (m *AnswerPostRequestBody) GetCallOptions()(iadcd81124412c61e647227ecfc4449
 func (m *AnswerPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["acceptedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality))
             }
             m.SetAcceptedModalities(res)
         }
@@ -117,7 +117,7 @@ func (m *AnswerPostRequestBody) GetParticipantCapacity()(*int32) {
 // Serialize serializes information the current object
 func (m *AnswerPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAcceptedModalities() != nil {
-        err := writer.WriteCollectionOfStringValues("acceptedModalities", m.GetAcceptedModalities())
+        err := writer.WriteCollectionOfStringValues("acceptedModalities", iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SerializeModality(m.GetAcceptedModalities()))
         if err != nil {
             return err
         }
@@ -155,7 +155,7 @@ func (m *AnswerPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAcceptedModalities sets the acceptedModalities property value. The acceptedModalities property
-func (m *AnswerPostRequestBody) SetAcceptedModalities(value []string)() {
+func (m *AnswerPostRequestBody) SetAcceptedModalities(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality)() {
     m.acceptedModalities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

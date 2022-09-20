@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    i04528c690c1b9d5226f9263dd869eab6faf07704357db2be114e267574b1425d "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/contentsharingsessions"
     i07f45294889a4c0baadf8d3c66171a11e824128d56c5d5922e1b42e5a85ab314 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/participants"
     i16df7b37097565742989cf0afde62825b1acba1907c5e4f5f010c3897c194dc4 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/mute"
     i187513783d2415a284900df1ba8249d112b88ac196e6a9d030d285c03b187903 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/redirect"
@@ -22,6 +23,7 @@ import (
     ie2968de31b227a313ec19bfb3d49e7376b707c33a3ef61ee430fc608fc92b15d "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/keepalive"
     ie9da2770859e3dca5a85a6b4849aa09b988da20f525af2a9495d23bd3bfd686b "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/changescreensharingrole"
     i5809389356a44ad33cb003cb59127db82d834418c35f9604ed259b7fe5afd5ce "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/audioroutinggroups/item"
+    i8cb36f97cebb2754f8b0ffcc333f5f886370803d5c27386df6f7be414a4ada27 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/contentsharingsessions/item"
     ib16dc40ca9627c2186a56c4d731808da49ba6e8a34c17a076a47f881856366d7 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/participants/item"
     ied141ef3c3b82e58ad49b195ba5c23ec1d4cc768e035310e410fa372b3a1fc49 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/operations/item"
 )
@@ -110,6 +112,21 @@ func NewCallItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentSharingSessions the contentSharingSessions property
+func (m *CallItemRequestBuilder) ContentSharingSessions()(*i04528c690c1b9d5226f9263dd869eab6faf07704357db2be114e267574b1425d.ContentSharingSessionsRequestBuilder) {
+    return i04528c690c1b9d5226f9263dd869eab6faf07704357db2be114e267574b1425d.NewContentSharingSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ContentSharingSessionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.calls.item.contentSharingSessions.item collection
+func (m *CallItemRequestBuilder) ContentSharingSessionsById(id string)(*i8cb36f97cebb2754f8b0ffcc333f5f886370803d5c27386df6f7be414a4ada27.ContentSharingSessionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["contentSharingSession%2Did"] = id
+    }
+    return i8cb36f97cebb2754f8b0ffcc333f5f886370803d5c27386df6f7be414a4ada27.NewContentSharingSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property calls for communications
 func (m *CallItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -10,6 +10,8 @@ type CallOptions struct {
     additionalData map[string]interface{}
     // The hideBotAfterEscalation property
     hideBotAfterEscalation *bool
+    // The isContentSharingNotificationEnabled property
+    isContentSharingNotificationEnabled *bool
     // The OdataType property
     odataType *string
 }
@@ -63,6 +65,16 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["isContentSharingNotificationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsContentSharingNotificationEnabled(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -79,6 +91,10 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *CallOptions) GetHideBotAfterEscalation()(*bool) {
     return m.hideBotAfterEscalation
 }
+// GetIsContentSharingNotificationEnabled gets the isContentSharingNotificationEnabled property value. The isContentSharingNotificationEnabled property
+func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
+    return m.isContentSharingNotificationEnabled
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CallOptions) GetOdataType()(*string) {
     return m.odataType
@@ -87,6 +103,12 @@ func (m *CallOptions) GetOdataType()(*string) {
 func (m *CallOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("hideBotAfterEscalation", m.GetHideBotAfterEscalation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isContentSharingNotificationEnabled", m.GetIsContentSharingNotificationEnabled())
         if err != nil {
             return err
         }
@@ -112,6 +134,10 @@ func (m *CallOptions) SetAdditionalData(value map[string]interface{})() {
 // SetHideBotAfterEscalation sets the hideBotAfterEscalation property value. The hideBotAfterEscalation property
 func (m *CallOptions) SetHideBotAfterEscalation(value *bool)() {
     m.hideBotAfterEscalation = value
+}
+// SetIsContentSharingNotificationEnabled sets the isContentSharingNotificationEnabled property value. The isContentSharingNotificationEnabled property
+func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
+    m.isContentSharingNotificationEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CallOptions) SetOdataType(value *string)() {
