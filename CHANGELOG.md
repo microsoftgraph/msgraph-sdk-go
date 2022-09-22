@@ -11,12 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-## [0.41.0] - 2022-09-22
-
-### Added
-
-- Allows initialization of a client via a new `NewGraphServiceClientWithCredentials` method.
-
 ## [0.40.0] - 2022-09-20
 
 ### Changed

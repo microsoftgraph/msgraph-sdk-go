@@ -11,8 +11,8 @@ type GraphServiceClient struct {
 	*GraphBaseServiceClient
 }
 
-func NewGraphClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
-	client := NewGraphServiceClient(adapter)
+func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
+	client := NewBaseGraphServiceClient(adapter)
 	return &GraphServiceClient{
 		client,
 	}
@@ -30,7 +30,7 @@ func NewGraphServiceClientWithCredentials(credential azcore.TokenCredential, sco
 		return nil, err
 	}
 
-	client := NewGraphClient(adapter)
+	client := NewGraphServiceClient(adapter)
 	return client, nil
 }
 
