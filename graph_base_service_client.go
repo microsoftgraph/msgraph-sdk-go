@@ -1,10 +1,13 @@
 package msgraphsdkgo
 
 import (
+	"errors"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
+	abstractions "github.com/microsoft/kiota-abstractions-go"
 	az "github.com/microsoft/kiota-authentication-azure-go"
 )
 
+// NewGraphServiceClientWithCredentials instantiates a new GraphServiceClient with provided credentials and scope
 func NewGraphServiceClientWithCredentials(credential azcore.TokenCredential, scopes []string) (*GraphServiceClient, error) {
 	auth, err := az.NewAzureIdentityAuthenticationProviderWithScopes(credential, scopes)
 	if err != nil {
@@ -18,4 +21,12 @@ func NewGraphServiceClientWithCredentials(credential azcore.TokenCredential, sco
 
 	client := NewGraphServiceClient(adapter)
 	return client, nil
+}
+
+// GetAdapter returns the client current adapter, Method should only be called when the user is certain an adapter has been provided
+func (m *GraphServiceClient) GetAdapter() abstractions.RequestAdapter {
+	if m.requestAdapter != nil {
+		panic(errors.New("request adapter has not been initialized"))
+	}
+	return m.requestAdapter
 }
