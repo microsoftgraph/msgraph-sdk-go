@@ -49,26 +49,21 @@ if err != nil {
     fmt.Printf("Error creating credentials: %v\n", err)
 }
 
-auth, err := a.NewAzureIdentityAuthenticationProviderWithScopes(cred, []string{"Files.Read"})
-if err != nil {
-    fmt.Printf("Error authentication provider: %v\n", err)
-    return
-}
 ```
 
-### 2.3 Get a Graph Service Client Adapter object
+### 2.3 Get a Graph Service Client and Adapter object
 
 You must get a **GraphRequestAdapter** object to make requests against the service.
 
 ```Golang
 import msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
 
-adapter, err := msgraphsdk.NewGraphRequestAdapter(auth)
+client , err  := msgraphsdk.NewGraphServiceClientWithCredentials(cred, []string{"Files.Read"})
 if err != nil {
-    fmt.Printf("Error creating adapter: %v\n", err)
+    fmt.Printf("Error creating client: %v\n", err)
     return
 }
-client := msgraphsdk.NewGraphServiceClient(adapter)
+
 ```
 
 ## 3. Make requests against the service
@@ -133,7 +128,7 @@ if err != nil {
 }
 
 // Use PageIterator to iterate through all users
-pageIterator, err := msgraphcore.NewPageIterator(result, adapter, models.CreateUserCollectionResponseFromDiscriminatorValue)
+pageIterator, err := msgraphcore.NewPageIterator(result, client.GetAdapter(), models.CreateUserCollectionResponseFromDiscriminatorValue)
 
 err = pageIterator.Iterate(context.Background(), func(pageItem interface{}) bool {
     user := pageItem.(models.Userable)
