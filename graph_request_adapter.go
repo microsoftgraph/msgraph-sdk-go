@@ -18,7 +18,7 @@ func GetDefaultClientOptions() core.GraphClientOptions {
 	return clientOptions
 }
 
-// GraphRequestAdapter is the core service used by GraphServiceClient to make requests to Microsoft Graph.
+// GraphRequestAdapter is the core service used by GraphBaseServiceClient to make requests to Microsoft Graph.
 type GraphRequestAdapter struct {
 	core.GraphRequestAdapterBase
 }
@@ -72,19 +72,3 @@ func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndH
 
 	return result, nil
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
