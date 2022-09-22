@@ -31,6 +31,13 @@ func TestNewGraphServiceClientWithCredentialsInitializesAClient(t *testing.T) {
 	assert.NotNil(t, client)
 }
 
+func TestNewGraphServiceClientWithCredentialsAndHostsInitializesAClient(t *testing.T) {
+	cred := NewSimpleCredentials("asdasd")
+	client, _ := NewGraphServiceClientWithCredentialsAndHosts(cred, []string{"Files.Read"}, []string{"host1", "host2"})
+
+	assert.NotNil(t, client)
+}
+
 func TestClientAccessToGeneratedMethods(t *testing.T) {
 	cred := NewSimpleCredentials("asdasd")
 	client, _ := NewGraphServiceClientWithCredentials(cred, []string{"Files.Read"})

@@ -18,9 +18,25 @@ func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceCli
 	}
 }
 
-// NewGraphServiceClientWithCredentials instantiates a new GraphBaseServiceClient with provided credentials and scope
+// NewGraphServiceClientWithCredentials instantiates a new GraphServiceClient with provided credentials and scopes
 func NewGraphServiceClientWithCredentials(credential azcore.TokenCredential, scopes []string) (*GraphServiceClient, error) {
 	auth, err := az.NewAzureIdentityAuthenticationProviderWithScopes(credential, scopes)
+	if err != nil {
+		return nil, err
+	}
+
+	adapter, err := NewGraphRequestAdapter(auth)
+	if err != nil {
+		return nil, err
+	}
+
+	client := NewGraphServiceClient(adapter)
+	return client, nil
+}
+
+// NewGraphServiceClientWithCredentialsAndHosts instantiates a new GraphServiceClient with provided credentials , scopes and validhosts
+func NewGraphServiceClientWithCredentialsAndHosts(credential azcore.TokenCredential, scopes []string, validhosts []string) (*GraphServiceClient, error) {
+	auth, err := az.NewAzureIdentityAuthenticationProviderWithScopesAndValidHosts(credential, scopes, validhosts)
 	if err != nil {
 		return nil, err
 	}
