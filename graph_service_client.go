@@ -29,12 +29,12 @@ func NewGraphServiceClientWithCredentialsAndHosts(credential azcore.TokenCredent
 		return nil, errors.New("credential cannot be nil")
 	}
 
-	if len(validhosts) == 0 {
+	if validhosts == nil || len(validhosts) == 0 {
 		validhosts = []string{"graph.microsoft.com", "graph.microsoft.us", "dod-graph.microsoft.us", "graph.microsoft.de", "microsoftgraph.chinacloudapi.cn", "canary.graph.microsoft.com"}
 	}
 
-	if len(scopes) == 0 {
-		scopes = append(scopes, "https://graph.microsoft.com/.default")
+	if scopes == nil || len(scopes) == 0 {
+		scopes = []string{"https://graph.microsoft.com/.default"}
 	}
 
 	auth, err := az.NewAzureIdentityAuthenticationProviderWithScopesAndValidHosts(credential, scopes, validhosts)
