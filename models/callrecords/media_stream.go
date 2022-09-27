@@ -2,6 +2,7 @@ package callrecords
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -138,286 +139,34 @@ func (m *MediaStream) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["audioCodec"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAudioCodec)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAudioCodec(val.(*AudioCodec))
-        }
-        return nil
-    }
-    res["averageAudioDegradation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageAudioDegradation(val)
-        }
-        return nil
-    }
-    res["averageAudioNetworkJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageAudioNetworkJitter(val)
-        }
-        return nil
-    }
-    res["averageBandwidthEstimate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageBandwidthEstimate(val)
-        }
-        return nil
-    }
-    res["averageJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageJitter(val)
-        }
-        return nil
-    }
-    res["averagePacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAveragePacketLossRate(val)
-        }
-        return nil
-    }
-    res["averageRatioOfConcealedSamples"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageRatioOfConcealedSamples(val)
-        }
-        return nil
-    }
-    res["averageReceivedFrameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageReceivedFrameRate(val)
-        }
-        return nil
-    }
-    res["averageRoundTripTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageRoundTripTime(val)
-        }
-        return nil
-    }
-    res["averageVideoFrameLossPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageVideoFrameLossPercentage(val)
-        }
-        return nil
-    }
-    res["averageVideoFrameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageVideoFrameRate(val)
-        }
-        return nil
-    }
-    res["averageVideoPacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageVideoPacketLossRate(val)
-        }
-        return nil
-    }
-    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEndDateTime(val)
-        }
-        return nil
-    }
-    res["lowFrameRateRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLowFrameRateRatio(val)
-        }
-        return nil
-    }
-    res["lowVideoProcessingCapabilityRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLowVideoProcessingCapabilityRatio(val)
-        }
-        return nil
-    }
-    res["maxAudioNetworkJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaxAudioNetworkJitter(val)
-        }
-        return nil
-    }
-    res["maxJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaxJitter(val)
-        }
-        return nil
-    }
-    res["maxPacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaxPacketLossRate(val)
-        }
-        return nil
-    }
-    res["maxRatioOfConcealedSamples"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaxRatioOfConcealedSamples(val)
-        }
-        return nil
-    }
-    res["maxRoundTripTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaxRoundTripTime(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["packetUtilization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPacketUtilization(val)
-        }
-        return nil
-    }
-    res["postForwardErrorCorrectionPacketLossRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPostForwardErrorCorrectionPacketLossRate(val)
-        }
-        return nil
-    }
-    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartDateTime(val)
-        }
-        return nil
-    }
-    res["streamDirection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMediaStreamDirection)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStreamDirection(val.(*MediaStreamDirection))
-        }
-        return nil
-    }
-    res["streamId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStreamId(val)
-        }
-        return nil
-    }
-    res["videoCodec"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVideoCodec)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVideoCodec(val.(*VideoCodec))
-        }
-        return nil
-    }
-    res["wasMediaBypassed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWasMediaBypassed(val)
-        }
-        return nil
-    }
+    res["audioCodec"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAudioCodec , m.SetAudioCodec)
+    res["averageAudioDegradation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAverageAudioDegradation)
+    res["averageAudioNetworkJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageAudioNetworkJitter)
+    res["averageBandwidthEstimate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetAverageBandwidthEstimate)
+    res["averageJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageJitter)
+    res["averagePacketLossRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAveragePacketLossRate)
+    res["averageRatioOfConcealedSamples"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAverageRatioOfConcealedSamples)
+    res["averageReceivedFrameRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAverageReceivedFrameRate)
+    res["averageRoundTripTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageRoundTripTime)
+    res["averageVideoFrameLossPercentage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAverageVideoFrameLossPercentage)
+    res["averageVideoFrameRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAverageVideoFrameRate)
+    res["averageVideoPacketLossRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetAverageVideoPacketLossRate)
+    res["endDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetEndDateTime)
+    res["lowFrameRateRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetLowFrameRateRatio)
+    res["lowVideoProcessingCapabilityRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetLowVideoProcessingCapabilityRatio)
+    res["maxAudioNetworkJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaxAudioNetworkJitter)
+    res["maxJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaxJitter)
+    res["maxPacketLossRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetMaxPacketLossRate)
+    res["maxRatioOfConcealedSamples"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetMaxRatioOfConcealedSamples)
+    res["maxRoundTripTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaxRoundTripTime)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["packetUtilization"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetPacketUtilization)
+    res["postForwardErrorCorrectionPacketLossRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetPostForwardErrorCorrectionPacketLossRate)
+    res["startDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetStartDateTime)
+    res["streamDirection"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMediaStreamDirection , m.SetStreamDirection)
+    res["streamId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetStreamId)
+    res["videoCodec"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVideoCodec , m.SetVideoCodec)
+    res["wasMediaBypassed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWasMediaBypassed)
     return res
 }
 // GetLowFrameRateRatio gets the lowFrameRateRatio property value. Fraction of the call where frame rate is less than 7.5 frames per second.

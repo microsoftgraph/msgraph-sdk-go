@@ -41,11 +41,11 @@ func NewResetToSystemDefaultRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewResetToSystemDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action resetToSystemDefault
+// CreatePostRequestInformation reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action resetToSystemDefault
+// CreatePostRequestInformationWithRequestConfiguration reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ResetToSystemDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Post invoke action resetToSystemDefault
+// Post reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 func (m *ResetToSystemDefaultRequestBuilder) Post(ctx context.Context, requestConfiguration *ResetToSystemDefaultRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

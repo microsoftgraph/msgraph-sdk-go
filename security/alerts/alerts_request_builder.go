@@ -17,7 +17,7 @@ type AlertsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AlertsRequestBuilderGetQueryParameters get alerts from security
+// AlertsRequestBuilderGetQueryParameters retrieve a list of alert objects.
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AlertsRequestBuilderPostRequestConfiguration struct {
 func NewAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertsRequestBuilder) {
     m := &AlertsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/alerts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/alerts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AlertsRequestBuilder) Count()(*i1a01fb8511a50259effce667795c9ad4f6aad15b1d752bbd8bacf4d7780fc38c.CountRequestBuilder) {
     return i1a01fb8511a50259effce667795c9ad4f6aad15b1d752bbd8bacf4d7780fc38c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get alerts from security
+// CreateGetRequestInformation retrieve a list of alert objects.
 func (m *AlertsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get alerts from security
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of alert objects.
 func (m *AlertsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AlertsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get alerts from security
+// Get retrieve a list of alert objects.
 func (m *AlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

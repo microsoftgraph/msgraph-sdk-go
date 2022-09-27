@@ -41,11 +41,11 @@ func NewRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action remove
+// CreatePostRequestInformation unfollow a user's site or multiple sites.
 func (m *RemoveRequestBuilder) CreatePostRequestInformation(body RemovePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action remove
+// CreatePostRequestInformationWithRequestConfiguration unfollow a user's site or multiple sites.
 func (m *RemoveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemovePostRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *RemoveRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action remove
+// Post unfollow a user's site or multiple sites.
 func (m *RemoveRequestBuilder) Post(ctx context.Context, body RemovePostRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(RemoveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

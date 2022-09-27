@@ -41,11 +41,11 @@ func NewCopyToDefaultContentLocationRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewCopyToDefaultContentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action copyToDefaultContentLocation
+// CreatePostRequestInformation copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformation(body CopyToDefaultContentLocationPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action copyToDefaultContentLocation
+// CreatePostRequestInformationWithRequestConfiguration copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Post invoke action copyToDefaultContentLocation
+// Post copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 func (m *CopyToDefaultContentLocationRequestBuilder) Post(ctx context.Context, body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

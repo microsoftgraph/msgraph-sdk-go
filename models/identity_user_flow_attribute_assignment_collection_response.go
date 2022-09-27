@@ -1,65 +1,32 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // IdentityUserFlowAttributeAssignmentCollectionResponse 
 type IdentityUserFlowAttributeAssignmentCollectionResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
-    // The OdataNextLink property
-    odataNextLink *string
+    BaseCollectionPaginationCountResponse
     // The value property
     value []IdentityUserFlowAttributeAssignmentable
 }
 // NewIdentityUserFlowAttributeAssignmentCollectionResponse instantiates a new IdentityUserFlowAttributeAssignmentCollectionResponse and sets the default values.
 func NewIdentityUserFlowAttributeAssignmentCollectionResponse()(*IdentityUserFlowAttributeAssignmentCollectionResponse) {
     m := &IdentityUserFlowAttributeAssignmentCollectionResponse{
+        BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
     }
-    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIdentityUserFlowAttributeAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIdentityUserFlowAttributeAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityUserFlowAttributeAssignmentCollectionResponse(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetAdditionalData()(map[string]interface{}) {
-    return m.additionalData
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.nextLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataNextLink(val)
-        }
-        return nil
-    }
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityUserFlowAttributeAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityUserFlowAttributeAssignmentable)
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
+    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
+    res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue , m.SetValue)
     return res
-}
-// GetOdataNextLink gets the @odata.nextLink property value. The OdataNextLink property
-func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetOdataNextLink()(*string) {
-    return m.odataNextLink
 }
 // GetValue gets the value property value. The value property
 func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetValue()([]IdentityUserFlowAttributeAssignmentable) {
@@ -67,37 +34,18 @@ func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetValue()([]Ide
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetOdataNextLink())
-        if err != nil {
-            return err
-        }
+    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+    if err != nil {
+        return err
     }
     if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err := writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetValue())
+        err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
-}
-// SetOdataNextLink sets the @odata.nextLink property value. The OdataNextLink property
-func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) SetOdataNextLink(value *string)() {
-    m.odataNextLink = value
 }
 // SetValue sets the value property value. The value property
 func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) SetValue(value []IdentityUserFlowAttributeAssignmentable)() {

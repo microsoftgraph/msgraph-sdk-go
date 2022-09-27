@@ -41,11 +41,11 @@ func NewSnoozeReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action snoozeReminder
+// CreatePostRequestInformation postpone a reminder for an event in a user calendar until a new time.
 func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(body SnoozeReminderPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action snoozeReminder
+// CreatePostRequestInformationWithRequestConfiguration postpone a reminder for an event in a user calendar until a new time.
 func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action snoozeReminder
+// Post postpone a reminder for an event in a user calendar until a new time.
 func (m *SnoozeReminderRequestBuilder) Post(ctx context.Context, body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

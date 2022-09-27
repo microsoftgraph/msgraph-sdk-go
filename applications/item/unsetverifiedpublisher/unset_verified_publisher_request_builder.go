@@ -41,11 +41,11 @@ func NewUnsetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUnsetVerifiedPublisherRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unsetVerifiedPublisher
+// CreatePostRequestInformation unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
 func (m *UnsetVerifiedPublisherRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unsetVerifiedPublisher
+// CreatePostRequestInformationWithRequestConfiguration unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
 func (m *UnsetVerifiedPublisherRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnsetVerifiedPublisherRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *UnsetVerifiedPublisherRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Post invoke action unsetVerifiedPublisher
+// Post unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
 func (m *UnsetVerifiedPublisherRequestBuilder) Post(ctx context.Context, requestConfiguration *UnsetVerifiedPublisherRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

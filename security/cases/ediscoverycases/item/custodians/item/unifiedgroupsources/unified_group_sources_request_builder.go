@@ -17,7 +17,7 @@ type UnifiedGroupSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UnifiedGroupSourcesRequestBuilderGetQueryParameters data source entity for groups associated with the custodian.
+// UnifiedGroupSourcesRequestBuilderGetQueryParameters get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
 type UnifiedGroupSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type UnifiedGroupSourcesRequestBuilderPostRequestConfiguration struct {
 func NewUnifiedGroupSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UnifiedGroupSourcesRequestBuilder) {
     m := &UnifiedGroupSourcesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/unifiedGroupSources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/unifiedGroupSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewUnifiedGroupSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *UnifiedGroupSourcesRequestBuilder) Count()(*i2cecb4b4253180ef6f62e52a868665e33e808ef948ba7bba0a587d82ee914cbc.CountRequestBuilder) {
     return i2cecb4b4253180ef6f62e52a868665e33e808ef948ba7bba0a587d82ee914cbc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation data source entity for groups associated with the custodian.
+// CreateGetRequestInformation get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
 func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration data source entity for groups associated with the custodian.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
 func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to unifiedGroupSources for security
+// CreatePostRequestInformation create a new unifiedGroupSource object associated with an eDiscovery custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformation(body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to unifiedGroupSources for security
+// CreatePostRequestInformationWithRequestConfiguration create a new unifiedGroupSource object associated with an eDiscovery custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable, requestConfiguration *UnifiedGroupSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get data source entity for groups associated with the custodian.
+// Get get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
 func (m *UnifiedGroupSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *UnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *UnifiedGroupSourcesRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceCollectionResponseable), nil
 }
-// Post create new navigation property to unifiedGroupSources for security
+// Post create a new unifiedGroupSource object associated with an eDiscovery custodian.
 func (m *UnifiedGroupSourcesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable, requestConfiguration *UnifiedGroupSourcesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

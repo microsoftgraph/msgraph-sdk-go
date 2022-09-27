@@ -16,7 +16,7 @@ type LastEstimateStatisticsOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters the last estimate operation associated with the eDiscovery search.
+// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last  ediscoveryEstimateOperation objects and their properties.
 type LastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewLastEstimateStatisticsOperationRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the last estimate operation associated with the eDiscovery search.
+// CreateGetRequestInformation get the last  ediscoveryEstimateOperation objects and their properties.
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the last estimate operation associated with the eDiscovery search.
+// CreateGetRequestInformationWithRequestConfiguration get the last  ediscoveryEstimateOperation objects and their properties.
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Get the last estimate operation associated with the eDiscovery search.
+// Get get the last  ediscoveryEstimateOperation objects and their properties.
 func (m *LastEstimateStatisticsOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryEstimateOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

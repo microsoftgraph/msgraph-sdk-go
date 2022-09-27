@@ -41,11 +41,11 @@ func NewBatchRecordDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action batchRecordDecisions
+// CreatePostRequestInformation enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
 func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformation(body BatchRecordDecisionsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action batchRecordDecisions
+// CreatePostRequestInformationWithRequestConfiguration enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
 func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BatchRecordDecisionsPostRequestBodyable, requestConfiguration *BatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *BatchRecordDecisionsRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Post invoke action batchRecordDecisions
+// Post enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
 func (m *BatchRecordDecisionsRequestBuilder) Post(ctx context.Context, body BatchRecordDecisionsPostRequestBodyable, requestConfiguration *BatchRecordDecisionsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

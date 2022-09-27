@@ -15,18 +15,37 @@ type DeltaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// DeltaRequestBuilderGetQueryParameters invoke function delta
+type DeltaRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
 // DeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeltaRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *DeltaRequestBuilderGetQueryParameters
 }
 // NewDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
 func NewDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeltaRequestBuilder) {
     m := &DeltaRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/microsoft.graph.delta()";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/microsoft.graph.delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,6 +72,9 @@ func (m *DeltaRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

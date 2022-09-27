@@ -17,7 +17,7 @@ type SubmissionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SubmissionsRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// SubmissionsRequestBuilderGetQueryParameters list all the submissions associated with an assignment.  A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they are associated with.
 type SubmissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SubmissionsRequestBuilderPostRequestConfiguration struct {
 func NewSubmissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubmissionsRequestBuilder) {
     m := &SubmissionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSubmissionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *SubmissionsRequestBuilder) Count()(*ia906a06aa62dcbfb313df784f7fbfa203d28b9e28419f6316a22af4565d4735e.CountRequestBuilder) {
     return ia906a06aa62dcbfb313df784f7fbfa203d28b9e28419f6316a22af4565d4735e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// CreateGetRequestInformation list all the submissions associated with an assignment.  A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they are associated with.
 func (m *SubmissionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration list all the submissions associated with an assignment.  A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they are associated with.
 func (m *SubmissionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SubmissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SubmissionsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// Get list all the submissions associated with an assignment.  A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they are associated with.
 func (m *SubmissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SubmissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

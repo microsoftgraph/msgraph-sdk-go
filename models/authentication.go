@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -52,146 +53,16 @@ func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["emailMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEmailAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EmailAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(EmailAuthenticationMethodable)
-            }
-            m.SetEmailMethods(res)
-        }
-        return nil
-    }
-    res["fido2Methods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFido2AuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Fido2AuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(Fido2AuthenticationMethodable)
-            }
-            m.SetFido2Methods(res)
-        }
-        return nil
-    }
-    res["methods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuthenticationMethodable)
-            }
-            m.SetMethods(res)
-        }
-        return nil
-    }
-    res["microsoftAuthenticatorMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MicrosoftAuthenticatorAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(MicrosoftAuthenticatorAuthenticationMethodable)
-            }
-            m.SetMicrosoftAuthenticatorMethods(res)
-        }
-        return nil
-    }
-    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateLongRunningOperationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]LongRunningOperationable, len(val))
-            for i, v := range val {
-                res[i] = v.(LongRunningOperationable)
-            }
-            m.SetOperations(res)
-        }
-        return nil
-    }
-    res["passwordMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePasswordAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PasswordAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(PasswordAuthenticationMethodable)
-            }
-            m.SetPasswordMethods(res)
-        }
-        return nil
-    }
-    res["phoneMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePhoneAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PhoneAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(PhoneAuthenticationMethodable)
-            }
-            m.SetPhoneMethods(res)
-        }
-        return nil
-    }
-    res["softwareOathMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SoftwareOathAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(SoftwareOathAuthenticationMethodable)
-            }
-            m.SetSoftwareOathMethods(res)
-        }
-        return nil
-    }
-    res["temporaryAccessPassMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TemporaryAccessPassAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(TemporaryAccessPassAuthenticationMethodable)
-            }
-            m.SetTemporaryAccessPassMethods(res)
-        }
-        return nil
-    }
-    res["windowsHelloForBusinessMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsHelloForBusinessAuthenticationMethodable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsHelloForBusinessAuthenticationMethodable)
-            }
-            m.SetWindowsHelloForBusinessMethods(res)
-        }
-        return nil
-    }
+    res["emailMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEmailAuthenticationMethodFromDiscriminatorValue , m.SetEmailMethods)
+    res["fido2Methods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateFido2AuthenticationMethodFromDiscriminatorValue , m.SetFido2Methods)
+    res["methods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationMethodFromDiscriminatorValue , m.SetMethods)
+    res["microsoftAuthenticatorMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue , m.SetMicrosoftAuthenticatorMethods)
+    res["operations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateLongRunningOperationFromDiscriminatorValue , m.SetOperations)
+    res["passwordMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePasswordAuthenticationMethodFromDiscriminatorValue , m.SetPasswordMethods)
+    res["phoneMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePhoneAuthenticationMethodFromDiscriminatorValue , m.SetPhoneMethods)
+    res["softwareOathMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue , m.SetSoftwareOathMethods)
+    res["temporaryAccessPassMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue , m.SetTemporaryAccessPassMethods)
+    res["windowsHelloForBusinessMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue , m.SetWindowsHelloForBusinessMethods)
     return res
 }
 // GetMethods gets the methods property value. Represents all authentication methods registered to a user.
@@ -233,100 +104,70 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         return err
     }
     if m.GetEmailMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailMethods()))
-        for i, v := range m.GetEmailMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEmailMethods())
         err = writer.WriteCollectionOfObjectValues("emailMethods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetFido2Methods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFido2Methods()))
-        for i, v := range m.GetFido2Methods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetFido2Methods())
         err = writer.WriteCollectionOfObjectValues("fido2Methods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMethods()))
-        for i, v := range m.GetMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMethods())
         err = writer.WriteCollectionOfObjectValues("methods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetMicrosoftAuthenticatorMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMicrosoftAuthenticatorMethods()))
-        for i, v := range m.GetMicrosoftAuthenticatorMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMicrosoftAuthenticatorMethods())
         err = writer.WriteCollectionOfObjectValues("microsoftAuthenticatorMethods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetOperations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
-        for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOperations())
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
             return err
         }
     }
     if m.GetPasswordMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPasswordMethods()))
-        for i, v := range m.GetPasswordMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPasswordMethods())
         err = writer.WriteCollectionOfObjectValues("passwordMethods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetPhoneMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhoneMethods()))
-        for i, v := range m.GetPhoneMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPhoneMethods())
         err = writer.WriteCollectionOfObjectValues("phoneMethods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSoftwareOathMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSoftwareOathMethods()))
-        for i, v := range m.GetSoftwareOathMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSoftwareOathMethods())
         err = writer.WriteCollectionOfObjectValues("softwareOathMethods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTemporaryAccessPassMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemporaryAccessPassMethods()))
-        for i, v := range m.GetTemporaryAccessPassMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTemporaryAccessPassMethods())
         err = writer.WriteCollectionOfObjectValues("temporaryAccessPassMethods", cast)
         if err != nil {
             return err
         }
     }
     if m.GetWindowsHelloForBusinessMethods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsHelloForBusinessMethods()))
-        for i, v := range m.GetWindowsHelloForBusinessMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetWindowsHelloForBusinessMethods())
         err = writer.WriteCollectionOfObjectValues("windowsHelloForBusinessMethods", cast)
         if err != nil {
             return err

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -32,34 +33,8 @@ func (m *UserTeamwork) GetAssociatedTeams()([]AssociatedTeamInfoable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["associatedTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAssociatedTeamInfoFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AssociatedTeamInfoable, len(val))
-            for i, v := range val {
-                res[i] = v.(AssociatedTeamInfoable)
-            }
-            m.SetAssociatedTeams(res)
-        }
-        return nil
-    }
-    res["installedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserScopeTeamsAppInstallationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserScopeTeamsAppInstallationable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserScopeTeamsAppInstallationable)
-            }
-            m.SetInstalledApps(res)
-        }
-        return nil
-    }
+    res["associatedTeams"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAssociatedTeamInfoFromDiscriminatorValue , m.SetAssociatedTeams)
+    res["installedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserScopeTeamsAppInstallationFromDiscriminatorValue , m.SetInstalledApps)
     return res
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
@@ -73,20 +48,14 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         return err
     }
     if m.GetAssociatedTeams() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedTeams()))
-        for i, v := range m.GetAssociatedTeams() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssociatedTeams())
         err = writer.WriteCollectionOfObjectValues("associatedTeams", cast)
         if err != nil {
             return err
         }
     }
     if m.GetInstalledApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstalledApps()))
-        for i, v := range m.GetInstalledApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetInstalledApps())
         err = writer.WriteCollectionOfObjectValues("installedApps", cast)
         if err != nil {
             return err

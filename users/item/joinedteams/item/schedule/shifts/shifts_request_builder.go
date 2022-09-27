@@ -17,7 +17,7 @@ type ShiftsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ShiftsRequestBuilderGetQueryParameters the shifts in the schedule.
+// ShiftsRequestBuilderGetQueryParameters get the list of shift instances in a schedule.
 type ShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,7 +54,7 @@ type ShiftsRequestBuilderPostRequestConfiguration struct {
 func NewShiftsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ShiftsRequestBuilder) {
     m := &ShiftsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -73,11 +73,11 @@ func NewShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *ShiftsRequestBuilder) Count()(*ib757ededd681413325951499bfd0fc7f74a5efec73180008f928393e1a0eb02a.CountRequestBuilder) {
     return ib757ededd681413325951499bfd0fc7f74a5efec73180008f928393e1a0eb02a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the shifts in the schedule.
+// CreateGetRequestInformation get the list of shift instances in a schedule.
 func (m *ShiftsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the shifts in the schedule.
+// CreateGetRequestInformationWithRequestConfiguration get the list of shift instances in a schedule.
 func (m *ShiftsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,11 +93,11 @@ func (m *ShiftsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to shifts for users
+// CreatePostRequestInformation create a new shift instance in a schedule.
 func (m *ShiftsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to shifts for users
+// CreatePostRequestInformationWithRequestConfiguration create a new shift instance in a schedule.
 func (m *ShiftsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, requestConfiguration *ShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *ShiftsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get the shifts in the schedule.
+// Get get the list of shift instances in a schedule.
 func (m *ShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ShiftsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *ShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *Sh
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftCollectionResponseable), nil
 }
-// Post create new navigation property to shifts for users
+// Post create a new shift instance in a schedule.
 func (m *ShiftsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, requestConfiguration *ShiftsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

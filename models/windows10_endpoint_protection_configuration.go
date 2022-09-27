@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -180,378 +181,42 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterBloc
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["applicationGuardAllowPersistence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardAllowPersistence(val)
-        }
-        return nil
-    }
-    res["applicationGuardAllowPrintToLocalPrinters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardAllowPrintToLocalPrinters(val)
-        }
-        return nil
-    }
-    res["applicationGuardAllowPrintToNetworkPrinters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardAllowPrintToNetworkPrinters(val)
-        }
-        return nil
-    }
-    res["applicationGuardAllowPrintToPDF"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardAllowPrintToPDF(val)
-        }
-        return nil
-    }
-    res["applicationGuardAllowPrintToXPS"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardAllowPrintToXPS(val)
-        }
-        return nil
-    }
-    res["applicationGuardBlockClipboardSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationGuardBlockClipboardSharingType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardBlockClipboardSharing(val.(*ApplicationGuardBlockClipboardSharingType))
-        }
-        return nil
-    }
-    res["applicationGuardBlockFileTransfer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseApplicationGuardBlockFileTransferType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardBlockFileTransfer(val.(*ApplicationGuardBlockFileTransferType))
-        }
-        return nil
-    }
-    res["applicationGuardBlockNonEnterpriseContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardBlockNonEnterpriseContent(val)
-        }
-        return nil
-    }
-    res["applicationGuardEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardEnabled(val)
-        }
-        return nil
-    }
-    res["applicationGuardForceAuditing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationGuardForceAuditing(val)
-        }
-        return nil
-    }
-    res["appLockerApplicationControl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAppLockerApplicationControlType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppLockerApplicationControl(val.(*AppLockerApplicationControlType))
-        }
-        return nil
-    }
-    res["bitLockerDisableWarningForOtherDiskEncryption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBitLockerDisableWarningForOtherDiskEncryption(val)
-        }
-        return nil
-    }
-    res["bitLockerEnableStorageCardEncryptionOnMobile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBitLockerEnableStorageCardEncryptionOnMobile(val)
-        }
-        return nil
-    }
-    res["bitLockerEncryptDevice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBitLockerEncryptDevice(val)
-        }
-        return nil
-    }
-    res["bitLockerRemovableDrivePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateBitLockerRemovableDrivePolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBitLockerRemovableDrivePolicy(val.(BitLockerRemovableDrivePolicyable))
-        }
-        return nil
-    }
-    res["defenderAdditionalGuardedFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetDefenderAdditionalGuardedFolders(res)
-        }
-        return nil
-    }
-    res["defenderAttackSurfaceReductionExcludedPaths"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetDefenderAttackSurfaceReductionExcludedPaths(res)
-        }
-        return nil
-    }
-    res["defenderExploitProtectionXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefenderExploitProtectionXml(val)
-        }
-        return nil
-    }
-    res["defenderExploitProtectionXmlFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefenderExploitProtectionXmlFileName(val)
-        }
-        return nil
-    }
-    res["defenderGuardedFoldersAllowedAppPaths"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetDefenderGuardedFoldersAllowedAppPaths(res)
-        }
-        return nil
-    }
-    res["defenderSecurityCenterBlockExploitProtectionOverride"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefenderSecurityCenterBlockExploitProtectionOverride(val)
-        }
-        return nil
-    }
-    res["firewallBlockStatefulFTP"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallBlockStatefulFTP(val)
-        }
-        return nil
-    }
-    res["firewallCertificateRevocationListCheckMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFirewallCertificateRevocationListCheckMethodType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallCertificateRevocationListCheckMethod(val.(*FirewallCertificateRevocationListCheckMethodType))
-        }
-        return nil
-    }
-    res["firewallIdleTimeoutForSecurityAssociationInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallIdleTimeoutForSecurityAssociationInSeconds(val)
-        }
-        return nil
-    }
-    res["firewallIPSecExemptionsAllowDHCP"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallIPSecExemptionsAllowDHCP(val)
-        }
-        return nil
-    }
-    res["firewallIPSecExemptionsAllowICMP"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallIPSecExemptionsAllowICMP(val)
-        }
-        return nil
-    }
-    res["firewallIPSecExemptionsAllowNeighborDiscovery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallIPSecExemptionsAllowNeighborDiscovery(val)
-        }
-        return nil
-    }
-    res["firewallIPSecExemptionsAllowRouterDiscovery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallIPSecExemptionsAllowRouterDiscovery(val)
-        }
-        return nil
-    }
-    res["firewallMergeKeyingModuleSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallMergeKeyingModuleSettings(val)
-        }
-        return nil
-    }
-    res["firewallPacketQueueingMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFirewallPacketQueueingMethodType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallPacketQueueingMethod(val.(*FirewallPacketQueueingMethodType))
-        }
-        return nil
-    }
-    res["firewallPreSharedKeyEncodingMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFirewallPreSharedKeyEncodingMethodType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallPreSharedKeyEncodingMethod(val.(*FirewallPreSharedKeyEncodingMethodType))
-        }
-        return nil
-    }
-    res["firewallProfileDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsFirewallNetworkProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallProfileDomain(val.(WindowsFirewallNetworkProfileable))
-        }
-        return nil
-    }
-    res["firewallProfilePrivate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsFirewallNetworkProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallProfilePrivate(val.(WindowsFirewallNetworkProfileable))
-        }
-        return nil
-    }
-    res["firewallProfilePublic"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsFirewallNetworkProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallProfilePublic(val.(WindowsFirewallNetworkProfileable))
-        }
-        return nil
-    }
-    res["smartScreenBlockOverrideForFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSmartScreenBlockOverrideForFiles(val)
-        }
-        return nil
-    }
-    res["smartScreenEnableInShell"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSmartScreenEnableInShell(val)
-        }
-        return nil
-    }
+    res["applicationGuardAllowPersistence"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardAllowPersistence)
+    res["applicationGuardAllowPrintToLocalPrinters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardAllowPrintToLocalPrinters)
+    res["applicationGuardAllowPrintToNetworkPrinters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardAllowPrintToNetworkPrinters)
+    res["applicationGuardAllowPrintToPDF"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardAllowPrintToPDF)
+    res["applicationGuardAllowPrintToXPS"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardAllowPrintToXPS)
+    res["applicationGuardBlockClipboardSharing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseApplicationGuardBlockClipboardSharingType , m.SetApplicationGuardBlockClipboardSharing)
+    res["applicationGuardBlockFileTransfer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseApplicationGuardBlockFileTransferType , m.SetApplicationGuardBlockFileTransfer)
+    res["applicationGuardBlockNonEnterpriseContent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardBlockNonEnterpriseContent)
+    res["applicationGuardEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardEnabled)
+    res["applicationGuardForceAuditing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplicationGuardForceAuditing)
+    res["appLockerApplicationControl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAppLockerApplicationControlType , m.SetAppLockerApplicationControl)
+    res["bitLockerDisableWarningForOtherDiskEncryption"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBitLockerDisableWarningForOtherDiskEncryption)
+    res["bitLockerEnableStorageCardEncryptionOnMobile"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBitLockerEnableStorageCardEncryptionOnMobile)
+    res["bitLockerEncryptDevice"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBitLockerEncryptDevice)
+    res["bitLockerRemovableDrivePolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateBitLockerRemovableDrivePolicyFromDiscriminatorValue , m.SetBitLockerRemovableDrivePolicy)
+    res["defenderAdditionalGuardedFolders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetDefenderAdditionalGuardedFolders)
+    res["defenderAttackSurfaceReductionExcludedPaths"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetDefenderAttackSurfaceReductionExcludedPaths)
+    res["defenderExploitProtectionXml"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetDefenderExploitProtectionXml)
+    res["defenderExploitProtectionXmlFileName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDefenderExploitProtectionXmlFileName)
+    res["defenderGuardedFoldersAllowedAppPaths"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetDefenderGuardedFoldersAllowedAppPaths)
+    res["defenderSecurityCenterBlockExploitProtectionOverride"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDefenderSecurityCenterBlockExploitProtectionOverride)
+    res["firewallBlockStatefulFTP"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallBlockStatefulFTP)
+    res["firewallCertificateRevocationListCheckMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseFirewallCertificateRevocationListCheckMethodType , m.SetFirewallCertificateRevocationListCheckMethod)
+    res["firewallIdleTimeoutForSecurityAssociationInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetFirewallIdleTimeoutForSecurityAssociationInSeconds)
+    res["firewallIPSecExemptionsAllowDHCP"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallIPSecExemptionsAllowDHCP)
+    res["firewallIPSecExemptionsAllowICMP"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallIPSecExemptionsAllowICMP)
+    res["firewallIPSecExemptionsAllowNeighborDiscovery"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallIPSecExemptionsAllowNeighborDiscovery)
+    res["firewallIPSecExemptionsAllowRouterDiscovery"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallIPSecExemptionsAllowRouterDiscovery)
+    res["firewallMergeKeyingModuleSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallMergeKeyingModuleSettings)
+    res["firewallPacketQueueingMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseFirewallPacketQueueingMethodType , m.SetFirewallPacketQueueingMethod)
+    res["firewallPreSharedKeyEncodingMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseFirewallPreSharedKeyEncodingMethodType , m.SetFirewallPreSharedKeyEncodingMethod)
+    res["firewallProfileDomain"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsFirewallNetworkProfileFromDiscriminatorValue , m.SetFirewallProfileDomain)
+    res["firewallProfilePrivate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsFirewallNetworkProfileFromDiscriminatorValue , m.SetFirewallProfilePrivate)
+    res["firewallProfilePublic"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsFirewallNetworkProfileFromDiscriminatorValue , m.SetFirewallProfilePublic)
+    res["smartScreenBlockOverrideForFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmartScreenBlockOverrideForFiles)
+    res["smartScreenEnableInShell"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmartScreenEnableInShell)
     return res
 }
 // GetFirewallBlockStatefulFTP gets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device

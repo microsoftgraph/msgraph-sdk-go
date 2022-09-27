@@ -2,10 +2,11 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingAttendanceReport provides operations to manage the collection of agreement entities.
+// MeetingAttendanceReport provides operations to manage the collection of agreementAcceptance entities.
 type MeetingAttendanceReport struct {
     Entity
     // List of attendance records of an attendance report. Read-only.
@@ -37,50 +38,10 @@ func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable)
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["attendanceRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAttendanceRecordFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AttendanceRecordable, len(val))
-            for i, v := range val {
-                res[i] = v.(AttendanceRecordable)
-            }
-            m.SetAttendanceRecords(res)
-        }
-        return nil
-    }
-    res["meetingEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeetingEndDateTime(val)
-        }
-        return nil
-    }
-    res["meetingStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeetingStartDateTime(val)
-        }
-        return nil
-    }
-    res["totalParticipantCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalParticipantCount(val)
-        }
-        return nil
-    }
+    res["attendanceRecords"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAttendanceRecordFromDiscriminatorValue , m.SetAttendanceRecords)
+    res["meetingEndDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetMeetingEndDateTime)
+    res["meetingStartDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetMeetingStartDateTime)
+    res["totalParticipantCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetTotalParticipantCount)
     return res
 }
 // GetMeetingEndDateTime gets the meetingEndDateTime property value. UTC time when the meeting ended. Read-only.
@@ -102,10 +63,7 @@ func (m *MeetingAttendanceReport) Serialize(writer i878a80d2330e89d26896388a3f48
         return err
     }
     if m.GetAttendanceRecords() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendanceRecords()))
-        for i, v := range m.GetAttendanceRecords() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAttendanceRecords())
         err = writer.WriteCollectionOfObjectValues("attendanceRecords", cast)
         if err != nil {
             return err

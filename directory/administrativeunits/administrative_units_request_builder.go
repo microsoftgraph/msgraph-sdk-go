@@ -18,7 +18,7 @@ type AdministrativeUnitsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdministrativeUnitsRequestBuilderGetQueryParameters conceptual container for user and group directory objects.
+// AdministrativeUnitsRequestBuilderGetQueryParameters retrieve a list of administrativeUnit objects.
 type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type AdministrativeUnitsRequestBuilderPostRequestConfiguration struct {
 func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     m := &AdministrativeUnitsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory/administrativeUnits{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/directory/administrativeUnits{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *AdministrativeUnitsRequestBuilder) Count()(*ie41a16d1b65ef99c149f0c3ce38fce5820ac658c521b18d79e4ba436835bf410.CountRequestBuilder) {
     return ie41a16d1b65ef99c149f0c3ce38fce5820ac658c521b18d79e4ba436835bf410.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation conceptual container for user and group directory objects.
+// CreateGetRequestInformation retrieve a list of administrativeUnit objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration conceptual container for user and group directory objects.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of administrativeUnit objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to administrativeUnits for directory
+// CreatePostRequestInformation use this API to create a new administrativeUnit.
 func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to administrativeUnits for directory
+// CreatePostRequestInformationWithRequestConfiguration use this API to create a new administrativeUnit.
 func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformationWithRequ
 func (m *AdministrativeUnitsRequestBuilder) Delta()(*i46bd9804c40ad6fd220f710b85a7ba64d9419e51f0025c2e838de11ec2e0aa08.DeltaRequestBuilder) {
     return i46bd9804c40ad6fd220f710b85a7ba64d9419e51f0025c2e838de11ec2e0aa08.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get conceptual container for user and group directory objects.
+// Get retrieve a list of administrativeUnit objects.
 func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable), nil
 }
-// Post create new navigation property to administrativeUnits for directory
+// Post use this API to create a new administrativeUnit.
 func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type AssociatedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AssociatedTeamsRequestBuilderGetQueryParameters the list of associatedTeamInfo objects that a user is associated with.
+// AssociatedTeamsRequestBuilderGetQueryParameters get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
 type AssociatedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AssociatedTeamsRequestBuilderPostRequestConfiguration struct {
 func NewAssociatedTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssociatedTeamsRequestBuilder) {
     m := &AssociatedTeamsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/teamwork/associatedTeams{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/teamwork/associatedTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAssociatedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *AssociatedTeamsRequestBuilder) Count()(*i952a47498c60566a37b06dd7e0014fa1a5f18d9bf56bfbf071846a2df310e16b.CountRequestBuilder) {
     return i952a47498c60566a37b06dd7e0014fa1a5f18d9bf56bfbf071846a2df310e16b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of associatedTeamInfo objects that a user is associated with.
+// CreateGetRequestInformation get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
 func (m *AssociatedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of associatedTeamInfo objects that a user is associated with.
+// CreateGetRequestInformationWithRequestConfiguration get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
 func (m *AssociatedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AssociatedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AssociatedTeamsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get the list of associatedTeamInfo objects that a user is associated with.
+// Get get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
 func (m *AssociatedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *AssociatedTeamsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssociatedTeamInfoCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewAddToReviewSetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewAddToReviewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action addToReviewSet
+// CreatePostRequestInformation start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
 func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformation(body AddToReviewSetPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addToReviewSet
+// CreatePostRequestInformationWithRequestConfiguration start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
 func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddToReviewSetPostRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action addToReviewSet
+// Post start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
 func (m *AddToReviewSetRequestBuilder) Post(ctx context.Context, body AddToReviewSetPostRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

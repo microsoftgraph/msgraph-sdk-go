@@ -15,18 +15,37 @@ type GetAllMessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// GetAllMessagesRequestBuilderGetQueryParameters invoke function getAllMessages
+type GetAllMessagesRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
 // GetAllMessagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetAllMessagesRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *GetAllMessagesRequestBuilderGetQueryParameters
 }
 // NewGetAllMessagesRequestBuilderInternal instantiates a new GetAllMessagesRequestBuilder and sets the default values.
 func NewGetAllMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetAllMessagesRequestBuilder) {
     m := &GetAllMessagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/microsoft.graph.getAllMessages()";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/microsoft.graph.getAllMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,6 +72,9 @@ func (m *GetAllMessagesRequestBuilder) CreateGetRequestInformationWithRequestCon
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

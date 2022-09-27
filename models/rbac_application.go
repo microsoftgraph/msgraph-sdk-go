@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -40,118 +41,14 @@ func CreateRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["roleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleAssignmentable)
-            }
-            m.SetRoleAssignments(res)
-        }
-        return nil
-    }
-    res["roleAssignmentScheduleInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentScheduleInstanceable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleAssignmentScheduleInstanceable)
-            }
-            m.SetRoleAssignmentScheduleInstances(res)
-        }
-        return nil
-    }
-    res["roleAssignmentScheduleRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentScheduleRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleAssignmentScheduleRequestable)
-            }
-            m.SetRoleAssignmentScheduleRequests(res)
-        }
-        return nil
-    }
-    res["roleAssignmentSchedules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentScheduleable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleAssignmentScheduleable)
-            }
-            m.SetRoleAssignmentSchedules(res)
-        }
-        return nil
-    }
-    res["roleDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleDefinitionable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleDefinitionable)
-            }
-            m.SetRoleDefinitions(res)
-        }
-        return nil
-    }
-    res["roleEligibilityScheduleInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleEligibilityScheduleInstanceable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleEligibilityScheduleInstanceable)
-            }
-            m.SetRoleEligibilityScheduleInstances(res)
-        }
-        return nil
-    }
-    res["roleEligibilityScheduleRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleEligibilityScheduleRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleEligibilityScheduleRequestable)
-            }
-            m.SetRoleEligibilityScheduleRequests(res)
-        }
-        return nil
-    }
-    res["roleEligibilitySchedules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleEligibilityScheduleable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedRoleEligibilityScheduleable)
-            }
-            m.SetRoleEligibilitySchedules(res)
-        }
-        return nil
-    }
+    res["roleAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue , m.SetRoleAssignments)
+    res["roleAssignmentScheduleInstances"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue , m.SetRoleAssignmentScheduleInstances)
+    res["roleAssignmentScheduleRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleRequestFromDiscriminatorValue , m.SetRoleAssignmentScheduleRequests)
+    res["roleAssignmentSchedules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue , m.SetRoleAssignmentSchedules)
+    res["roleDefinitions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue , m.SetRoleDefinitions)
+    res["roleEligibilityScheduleInstances"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue , m.SetRoleEligibilityScheduleInstances)
+    res["roleEligibilityScheduleRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleRequestFromDiscriminatorValue , m.SetRoleEligibilityScheduleRequests)
+    res["roleEligibilitySchedules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue , m.SetRoleEligibilitySchedules)
     return res
 }
 // GetRoleAssignments gets the roleAssignments property value. Resource to grant access to users or groups.
@@ -193,80 +90,56 @@ func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     if m.GetRoleAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignments()))
-        for i, v := range m.GetRoleAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleAssignments())
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleAssignmentScheduleInstances() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignmentScheduleInstances()))
-        for i, v := range m.GetRoleAssignmentScheduleInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleAssignmentScheduleInstances())
         err = writer.WriteCollectionOfObjectValues("roleAssignmentScheduleInstances", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleAssignmentScheduleRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignmentScheduleRequests()))
-        for i, v := range m.GetRoleAssignmentScheduleRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleAssignmentScheduleRequests())
         err = writer.WriteCollectionOfObjectValues("roleAssignmentScheduleRequests", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleAssignmentSchedules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignmentSchedules()))
-        for i, v := range m.GetRoleAssignmentSchedules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleAssignmentSchedules())
         err = writer.WriteCollectionOfObjectValues("roleAssignmentSchedules", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleDefinitions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleDefinitions()))
-        for i, v := range m.GetRoleDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleDefinitions())
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleEligibilityScheduleInstances() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleEligibilityScheduleInstances()))
-        for i, v := range m.GetRoleEligibilityScheduleInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleEligibilityScheduleInstances())
         err = writer.WriteCollectionOfObjectValues("roleEligibilityScheduleInstances", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleEligibilityScheduleRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleEligibilityScheduleRequests()))
-        for i, v := range m.GetRoleEligibilityScheduleRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleEligibilityScheduleRequests())
         err = writer.WriteCollectionOfObjectValues("roleEligibilityScheduleRequests", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRoleEligibilitySchedules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleEligibilitySchedules()))
-        for i, v := range m.GetRoleEligibilitySchedules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoleEligibilitySchedules())
         err = writer.WriteCollectionOfObjectValues("roleEligibilitySchedules", cast)
         if err != nil {
             return err

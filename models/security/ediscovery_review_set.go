@@ -1,6 +1,7 @@
 package security
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -26,20 +27,7 @@ func CreateEdiscoveryReviewSetFromDiscriminatorValue(parseNode i878a80d2330e89d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSet.GetFieldDeserializers()
-    res["queries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryReviewSetQueryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EdiscoveryReviewSetQueryable, len(val))
-            for i, v := range val {
-                res[i] = v.(EdiscoveryReviewSetQueryable)
-            }
-            m.SetQueries(res)
-        }
-        return nil
-    }
+    res["queries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryReviewSetQueryFromDiscriminatorValue , m.SetQueries)
     return res
 }
 // GetQueries gets the queries property value. Represents queries within the review set.
@@ -53,10 +41,7 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     if m.GetQueries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQueries()))
-        for i, v := range m.GetQueries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetQueries())
         err = writer.WriteCollectionOfObjectValues("queries", cast)
         if err != nil {
             return err

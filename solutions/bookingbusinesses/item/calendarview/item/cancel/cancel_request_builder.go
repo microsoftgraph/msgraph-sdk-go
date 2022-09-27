@@ -41,11 +41,11 @@ func NewCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation cancels the giving booking appointment, sending a message to the involved parties.
+// CreatePostRequestInformation cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
 func (m *CancelRequestBuilder) CreatePostRequestInformation(body CancelPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration cancels the giving booking appointment, sending a message to the involved parties.
+// CreatePostRequestInformationWithRequestConfiguration cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
 func (m *CancelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CancelPostRequestBodyable, requestConfiguration *CancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *CancelRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post cancels the giving booking appointment, sending a message to the involved parties.
+// Post cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
 func (m *CancelRequestBuilder) Post(ctx context.Context, body CancelPostRequestBodyable, requestConfiguration *CancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

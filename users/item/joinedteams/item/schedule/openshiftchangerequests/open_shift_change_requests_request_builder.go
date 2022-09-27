@@ -17,7 +17,7 @@ type OpenShiftChangeRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OpenShiftChangeRequestsRequestBuilderGetQueryParameters get openShiftChangeRequests from users
+// OpenShiftChangeRequestsRequestBuilderGetQueryParameters retrieve a list of openShiftChangeRequest objects in a team.
 type OpenShiftChangeRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type OpenShiftChangeRequestsRequestBuilderPostRequestConfiguration struct {
 func NewOpenShiftChangeRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OpenShiftChangeRequestsRequestBuilder) {
     m := &OpenShiftChangeRequestsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/openShiftChangeRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/openShiftChangeRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewOpenShiftChangeRequestsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *OpenShiftChangeRequestsRequestBuilder) Count()(*i5afdd8b79938862d55c76ed87d303c7863e3fb824581711d54633db7982fa2a4.CountRequestBuilder) {
     return i5afdd8b79938862d55c76ed87d303c7863e3fb824581711d54633db7982fa2a4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get openShiftChangeRequests from users
+// CreateGetRequestInformation retrieve a list of openShiftChangeRequest objects in a team.
 func (m *OpenShiftChangeRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get openShiftChangeRequests from users
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of openShiftChangeRequest objects in a team.
 func (m *OpenShiftChangeRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OpenShiftChangeRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *OpenShiftChangeRequestsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to openShiftChangeRequests for users
+// CreatePostRequestInformation create instance of an openShiftChangeRequest object.
 func (m *OpenShiftChangeRequestsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftChangeRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to openShiftChangeRequests for users
+// CreatePostRequestInformationWithRequestConfiguration create instance of an openShiftChangeRequest object.
 func (m *OpenShiftChangeRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftChangeRequestable, requestConfiguration *OpenShiftChangeRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OpenShiftChangeRequestsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get get openShiftChangeRequests from users
+// Get retrieve a list of openShiftChangeRequest objects in a team.
 func (m *OpenShiftChangeRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *OpenShiftChangeRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftChangeRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *OpenShiftChangeRequestsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftChangeRequestCollectionResponseable), nil
 }
-// Post create new navigation property to openShiftChangeRequests for users
+// Post create instance of an openShiftChangeRequest object.
 func (m *OpenShiftChangeRequestsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftChangeRequestable, requestConfiguration *OpenShiftChangeRequestsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftChangeRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

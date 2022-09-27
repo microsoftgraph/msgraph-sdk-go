@@ -17,7 +17,7 @@ type SchoolsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SchoolsRequestBuilderGetQueryParameters schools to which the user belongs. Nullable.
+// SchoolsRequestBuilderGetQueryParameters retrieve a list of schools for a user.
 type SchoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type SchoolsRequestBuilderGetRequestConfiguration struct {
 func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsRequestBuilder) {
     m := &SchoolsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/me/schools{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/me/schools{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewSchoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *SchoolsRequestBuilder) Count()(*i0057541eb8aa75d7d8943024b3887a6543e18463f97f118f9aee90554893fd3f.CountRequestBuilder) {
     return i0057541eb8aa75d7d8943024b3887a6543e18463f97f118f9aee90554893fd3f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation schools to which the user belongs. Nullable.
+// CreateGetRequestInformation retrieve a list of schools for a user.
 func (m *SchoolsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration schools to which the user belongs. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of schools for a user.
 func (m *SchoolsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *SchoolsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get schools to which the user belongs. Nullable.
+// Get retrieve a list of schools for a user.
 func (m *SchoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

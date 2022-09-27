@@ -18,7 +18,7 @@ type AccessPackagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackagesRequestBuilderGetQueryParameters access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
+// AccessPackagesRequestBuilderGetQueryParameters retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type AccessPackagesRequestBuilderPostRequestConfiguration struct {
 func NewAccessPackagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessPackagesRequestBuilder) {
     m := &AccessPackagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *AccessPackagesRequestBuilder) Count()(*if2c87f0cb84c49ad66239bac5ecb558a20b38ee3160042fcf88158d1e49ee8a0.CountRequestBuilder) {
     return if2c87f0cb84c49ad66239bac5ecb558a20b38ee3160042fcf88158d1e49ee8a0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
+// CreateGetRequestInformation retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *AccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to accessPackages for identityGovernance
+// CreatePostRequestInformation create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
 func (m *AccessPackagesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackages for identityGovernance
+// CreatePostRequestInformationWithRequestConfiguration create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
 func (m *AccessPackagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *AccessPackagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AccessPackagesRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *AccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3.FilterByCurrentUserWithOnRequestBuilder) {
     return i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
+// Get retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
 func (m *AccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *AccessPackagesRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
 }
-// Post create new navigation property to accessPackages for identityGovernance
+// Post create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
 func (m *AccessPackagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *AccessPackagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

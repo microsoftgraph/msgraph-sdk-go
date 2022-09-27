@@ -17,7 +17,7 @@ type SectionGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SectionGroupsRequestBuilderGetQueryParameters the section groups in the section. Read-only. Nullable.
+// SectionGroupsRequestBuilderGetQueryParameters retrieve a list of section groups from the specified section group.
 type SectionGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type SectionGroupsRequestBuilderGetRequestConfiguration struct {
 func NewSectionGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SectionGroupsRequestBuilder) {
     m := &SectionGroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/sectionGroups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/sectionGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewSectionGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *SectionGroupsRequestBuilder) Count()(*i05ab8403c5575f32b4281994fd650ef6c668917062900b516cc9ddfcba42b5ca.CountRequestBuilder) {
     return i05ab8403c5575f32b4281994fd650ef6c668917062900b516cc9ddfcba42b5ca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the section groups in the section. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of section groups from the specified section group.
 func (m *SectionGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the section groups in the section. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of section groups from the specified section group.
 func (m *SectionGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *SectionGroupsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get the section groups in the section. Read-only. Nullable.
+// Get retrieve a list of section groups from the specified section group.
 func (m *SectionGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *SectionGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

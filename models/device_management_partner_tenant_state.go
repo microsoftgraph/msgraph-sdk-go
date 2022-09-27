@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementPartnerTenantState int
 
 const (

@@ -41,11 +41,11 @@ func NewRemovePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action removePassword
+// CreatePostRequestInformation remove a password from an application.
 func (m *RemovePasswordRequestBuilder) CreatePostRequestInformation(body RemovePasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removePassword
+// CreatePostRequestInformationWithRequestConfiguration remove a password from an application.
 func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemovePasswordPostRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *RemovePasswordRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action removePassword
+// Post remove a password from an application.
 func (m *RemovePasswordRequestBuilder) Post(ctx context.Context, body RemovePasswordPostRequestBodyable, requestConfiguration *RemovePasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

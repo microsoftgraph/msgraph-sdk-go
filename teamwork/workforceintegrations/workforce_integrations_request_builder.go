@@ -17,7 +17,7 @@ type WorkforceIntegrationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WorkforceIntegrationsRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
+// WorkforceIntegrationsRequestBuilderGetQueryParameters retrieve a list of workforceIntegration objects.
 type WorkforceIntegrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type WorkforceIntegrationsRequestBuilderPostRequestConfiguration struct {
 func NewWorkforceIntegrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkforceIntegrationsRequestBuilder) {
     m := &WorkforceIntegrationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/workforceIntegrations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teamwork/workforceIntegrations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewWorkforceIntegrationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *WorkforceIntegrationsRequestBuilder) Count()(*i8246fcd383fd1fbb2735090abd23799f2f183f5675fcc13611be2ffe48bb2f74.CountRequestBuilder) {
     return i8246fcd383fd1fbb2735090abd23799f2f183f5675fcc13611be2ffe48bb2f74.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get workforceIntegrations from teamwork
+// CreateGetRequestInformation retrieve a list of workforceIntegration objects.
 func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get workforceIntegrations from teamwork
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of workforceIntegration objects.
 func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to workforceIntegrations for teamwork
+// CreatePostRequestInformation create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
 func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to workforceIntegrations for teamwork
+// CreatePostRequestInformationWithRequestConfiguration create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
 func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get get workforceIntegrations from teamwork
+// Get retrieve a list of workforceIntegration objects.
 func (m *WorkforceIntegrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *WorkforceIntegrationsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable), nil
 }
-// Post create new navigation property to workforceIntegrations for teamwork
+// Post create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
 func (m *WorkforceIntegrationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewUnfollowRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewUnfollowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unfollow
+// CreatePostRequestInformation unfollow a driveItem.
 func (m *UnfollowRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unfollow
+// CreatePostRequestInformationWithRequestConfiguration unfollow a driveItem.
 func (m *UnfollowRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnfollowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *UnfollowRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action unfollow
+// Post unfollow a driveItem.
 func (m *UnfollowRequestBuilder) Post(ctx context.Context, requestConfiguration *UnfollowRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

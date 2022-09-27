@@ -17,7 +17,7 @@ type SectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SectionsRequestBuilderGetQueryParameters the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// SectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects.
 type SectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SectionsRequestBuilderPostRequestConfiguration struct {
 func NewSectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SectionsRequestBuilder) {
     m := &SectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/sections{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/sections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SectionsRequestBuilder) Count()(*i08e001092ac902f2e0197eeb172fdb19a9a9c73ea5744091f4d7c2e611a42bcb.CountRequestBuilder) {
     return i08e001092ac902f2e0197eeb172fdb19a9a9c73ea5744091f4d7c2e611a42bcb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of onenoteSection objects.
 func (m *SectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of onenoteSection objects.
 func (m *SectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SectionsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Get retrieve a list of onenoteSection objects.
 func (m *SectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

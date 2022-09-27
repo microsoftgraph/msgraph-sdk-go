@@ -41,11 +41,11 @@ func NewUpgradeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewUpgradeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action upgrade
+// CreatePostRequestInformation upgrade an app installation within a chat.
 func (m *UpgradeRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action upgrade
+// CreatePostRequestInformationWithRequestConfiguration upgrade an app installation within a chat.
 func (m *UpgradeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UpgradeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *UpgradeRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action upgrade
+// Post upgrade an app installation within a chat.
 func (m *UpgradeRequestBuilder) Post(ctx context.Context, requestConfiguration *UpgradeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

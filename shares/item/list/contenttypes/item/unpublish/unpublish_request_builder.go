@@ -41,11 +41,11 @@ func NewUnpublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewUnpublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unpublish
+// CreatePostRequestInformation unpublish a [contentType][] from a content type hub site.
 func (m *UnpublishRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unpublish
+// CreatePostRequestInformationWithRequestConfiguration unpublish a [contentType][] from a content type hub site.
 func (m *UnpublishRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *UnpublishRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Post invoke action unpublish
+// Post unpublish a [contentType][] from a content type hub site.
 func (m *UnpublishRequestBuilder) Post(ctx context.Context, requestConfiguration *UnpublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

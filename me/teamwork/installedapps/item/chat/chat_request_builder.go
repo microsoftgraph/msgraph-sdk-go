@@ -16,7 +16,7 @@ type ChatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChatRequestBuilderGetQueryParameters the chat between the user and Teams app.
+// ChatRequestBuilderGetQueryParameters retrieve the chat of the specified user and Teams app.
 type ChatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewChatRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewChatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the chat between the user and Teams app.
+// CreateGetRequestInformation retrieve the chat of the specified user and Teams app.
 func (m *ChatRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the chat between the user and Teams app.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the chat of the specified user and Teams app.
 func (m *ChatRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *ChatRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get the chat between the user and Teams app.
+// Get retrieve the chat of the specified user and Teams app.
 func (m *ChatRequestBuilder) Get(ctx context.Context, requestConfiguration *ChatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

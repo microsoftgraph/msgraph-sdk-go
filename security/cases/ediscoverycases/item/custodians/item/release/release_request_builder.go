@@ -41,11 +41,11 @@ func NewReleaseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewReleaseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action release
+// CreatePostRequestInformation release a custodian from a case. For details, see Release a custodian from a case.
 func (m *ReleaseRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action release
+// CreatePostRequestInformationWithRequestConfiguration release a custodian from a case. For details, see Release a custodian from a case.
 func (m *ReleaseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ReleaseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *ReleaseRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action release
+// Post release a custodian from a case. For details, see Release a custodian from a case.
 func (m *ReleaseRequestBuilder) Post(ctx context.Context, requestConfiguration *ReleaseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

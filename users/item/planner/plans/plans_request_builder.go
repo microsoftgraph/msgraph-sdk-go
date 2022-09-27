@@ -17,7 +17,7 @@ type PlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerTasks assigned to the user.
+// PlansRequestBuilderGetQueryParameters retrieve a list of **plannerplan** objects shared with a user object.
 type PlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type PlansRequestBuilderPostRequestConfiguration struct {
 func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansRequestBuilder) {
     m := &PlansRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/plans{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/plans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *PlansRequestBuilder) Count()(*ibc8396e486c1bf2c6b87aa207d15d458e077440bc962ed37187ed7b5e1156795.CountRequestBuilder) {
     return ibc8396e486c1bf2c6b87aa207d15d458e077440bc962ed37187ed7b5e1156795.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateGetRequestInformation retrieve a list of **plannerplan** objects shared with a user object.
 func (m *PlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of **plannerplan** objects shared with a user object.
 func (m *PlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PlansRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns the plannerTasks assigned to the user.
+// Get retrieve a list of **plannerplan** objects shared with a user object.
 func (m *PlansRequestBuilder) Get(ctx context.Context, requestConfiguration *PlansRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

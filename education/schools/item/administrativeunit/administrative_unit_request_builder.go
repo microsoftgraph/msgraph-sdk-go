@@ -16,7 +16,7 @@ type AdministrativeUnitRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdministrativeUnitRequestBuilderGetQueryParameters the underlying administrativeUnit for this school.
+// AdministrativeUnitRequestBuilderGetQueryParameters get a list of **administrativeUnits** associated with an educationSchool object.
 type AdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewAdministrativeUnitRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the underlying administrativeUnit for this school.
+// CreateGetRequestInformation get a list of **administrativeUnits** associated with an educationSchool object.
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the underlying administrativeUnit for this school.
+// CreateGetRequestInformationWithRequestConfiguration get a list of **administrativeUnits** associated with an educationSchool object.
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get the underlying administrativeUnit for this school.
+// Get get a list of **administrativeUnits** associated with an educationSchool object.
 func (m *AdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewAssociateWithHubSitesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewAssociateWithHubSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action associateWithHubSites
+// CreatePostRequestInformation associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformation(body AssociateWithHubSitesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action associateWithHubSites
+// CreatePostRequestInformationWithRequestConfiguration associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssociateWithHubSitesPostRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *AssociateWithHubSitesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Post invoke action associateWithHubSites
+// Post associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 func (m *AssociateWithHubSitesRequestBuilder) Post(ctx context.Context, body AssociateWithHubSitesPostRequestBodyable, requestConfiguration *AssociateWithHubSitesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

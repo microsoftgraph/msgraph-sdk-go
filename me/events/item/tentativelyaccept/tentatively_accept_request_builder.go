@@ -41,11 +41,11 @@ func NewTentativelyAcceptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewTentativelyAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action tentativelyAccept
+// CreatePostRequestInformation tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 func (m *TentativelyAcceptRequestBuilder) CreatePostRequestInformation(body TentativelyAcceptPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action tentativelyAccept
+// CreatePostRequestInformationWithRequestConfiguration tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 func (m *TentativelyAcceptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TentativelyAcceptPostRequestBodyable, requestConfiguration *TentativelyAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *TentativelyAcceptRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Post invoke action tentativelyAccept
+// Post tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 func (m *TentativelyAcceptRequestBuilder) Post(ctx context.Context, body TentativelyAcceptPostRequestBodyable, requestConfiguration *TentativelyAcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

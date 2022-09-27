@@ -41,11 +41,11 @@ func NewGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action grant
+// CreatePostRequestInformation grant users access to a link represented by a [permission][].
 func (m *GrantRequestBuilder) CreatePostRequestInformation(body GrantPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action grant
+// CreatePostRequestInformationWithRequestConfiguration grant users access to a link represented by a [permission][].
 func (m *GrantRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GrantPostRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *GrantRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action grant
+// Post grant users access to a link represented by a [permission][].
 func (m *GrantRequestBuilder) Post(ctx context.Context, body GrantPostRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration)(GrantResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

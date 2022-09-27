@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -63,136 +64,19 @@ func (m *WindowsFirewallNetworkProfile) GetConnectionSecurityRulesFromGroupPolic
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsFirewallNetworkProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["authorizedApplicationRulesFromGroupPolicyMerged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedApplicationRulesFromGroupPolicyMerged(val)
-        }
-        return nil
-    }
-    res["connectionSecurityRulesFromGroupPolicyMerged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnectionSecurityRulesFromGroupPolicyMerged(val)
-        }
-        return nil
-    }
-    res["firewallEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseStateManagementSetting)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallEnabled(val.(*StateManagementSetting))
-        }
-        return nil
-    }
-    res["globalPortRulesFromGroupPolicyMerged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGlobalPortRulesFromGroupPolicyMerged(val)
-        }
-        return nil
-    }
-    res["inboundConnectionsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInboundConnectionsBlocked(val)
-        }
-        return nil
-    }
-    res["inboundNotificationsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInboundNotificationsBlocked(val)
-        }
-        return nil
-    }
-    res["incomingTrafficBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIncomingTrafficBlocked(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["outboundConnectionsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOutboundConnectionsBlocked(val)
-        }
-        return nil
-    }
-    res["policyRulesFromGroupPolicyMerged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPolicyRulesFromGroupPolicyMerged(val)
-        }
-        return nil
-    }
-    res["securedPacketExemptionAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecuredPacketExemptionAllowed(val)
-        }
-        return nil
-    }
-    res["stealthModeBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStealthModeBlocked(val)
-        }
-        return nil
-    }
-    res["unicastResponsesToMulticastBroadcastsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUnicastResponsesToMulticastBroadcastsBlocked(val)
-        }
-        return nil
-    }
+    res["authorizedApplicationRulesFromGroupPolicyMerged"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedApplicationRulesFromGroupPolicyMerged)
+    res["connectionSecurityRulesFromGroupPolicyMerged"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetConnectionSecurityRulesFromGroupPolicyMerged)
+    res["firewallEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseStateManagementSetting , m.SetFirewallEnabled)
+    res["globalPortRulesFromGroupPolicyMerged"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetGlobalPortRulesFromGroupPolicyMerged)
+    res["inboundConnectionsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetInboundConnectionsBlocked)
+    res["inboundNotificationsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetInboundNotificationsBlocked)
+    res["incomingTrafficBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIncomingTrafficBlocked)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["outboundConnectionsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOutboundConnectionsBlocked)
+    res["policyRulesFromGroupPolicyMerged"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPolicyRulesFromGroupPolicyMerged)
+    res["securedPacketExemptionAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecuredPacketExemptionAllowed)
+    res["stealthModeBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStealthModeBlocked)
+    res["unicastResponsesToMulticastBroadcastsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUnicastResponsesToMulticastBroadcastsBlocked)
     return res
 }
 // GetFirewallEnabled gets the firewallEnabled property value. State Management Setting.

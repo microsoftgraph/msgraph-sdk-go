@@ -41,11 +41,11 @@ func NewArchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action archive
+// CreatePostRequestInformation archive a list of serviceUpdateMessages for the signed in user.
 func (m *ArchiveRequestBuilder) CreatePostRequestInformation(body ArchivePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action archive
+// CreatePostRequestInformationWithRequestConfiguration archive a list of serviceUpdateMessages for the signed in user.
 func (m *ArchiveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ArchivePostRequestBodyable, requestConfiguration *ArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *ArchiveRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action archive
+// Post archive a list of serviceUpdateMessages for the signed in user.
 func (m *ArchiveRequestBuilder) Post(ctx context.Context, body ArchivePostRequestBodyable, requestConfiguration *ArchiveRequestBuilderPostRequestConfiguration)(ArchiveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

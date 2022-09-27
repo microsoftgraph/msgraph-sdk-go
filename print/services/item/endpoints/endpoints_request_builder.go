@@ -17,7 +17,7 @@ type EndpointsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EndpointsRequestBuilderGetQueryParameters endpoints that can be used to access the service. Read-only. Nullable.
+// EndpointsRequestBuilderGetQueryParameters retrieve a list of endpoints exposed by a print service.
 type EndpointsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EndpointsRequestBuilderPostRequestConfiguration struct {
 func NewEndpointsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EndpointsRequestBuilder) {
     m := &EndpointsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/services/{printService%2Did}/endpoints{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/services/{printService%2Did}/endpoints{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEndpointsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *EndpointsRequestBuilder) Count()(*i890bebe7280d012a8b3f2c3b201467a694f1ec36de36581aa29b49e874a5ae06.CountRequestBuilder) {
     return i890bebe7280d012a8b3f2c3b201467a694f1ec36de36581aa29b49e874a5ae06.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation endpoints that can be used to access the service. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of endpoints exposed by a print service.
 func (m *EndpointsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration endpoints that can be used to access the service. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of endpoints exposed by a print service.
 func (m *EndpointsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EndpointsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EndpointsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get endpoints that can be used to access the service. Read-only. Nullable.
+// Get retrieve a list of endpoints exposed by a print service.
 func (m *EndpointsRequestBuilder) Get(ctx context.Context, requestConfiguration *EndpointsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintServiceEndpointCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
