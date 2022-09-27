@@ -41,11 +41,11 @@ func NewFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action favorite
+// CreatePostRequestInformation change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 func (m *FavoriteRequestBuilder) CreatePostRequestInformation(body FavoritePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action favorite
+// CreatePostRequestInformationWithRequestConfiguration change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body FavoritePostRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *FavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action favorite
+// Post change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 func (m *FavoriteRequestBuilder) Post(ctx context.Context, body FavoritePostRequestBodyable, requestConfiguration *FavoriteRequestBuilderPostRequestConfiguration)(FavoriteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

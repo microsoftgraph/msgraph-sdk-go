@@ -16,7 +16,7 @@ type ManagerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagerRequestBuilderGetQueryParameters get manager from contacts
+// ManagerRequestBuilderGetQueryParameters get this organizational contact's manager.
 type ManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewManagerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewManagerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get manager from contacts
+// CreateGetRequestInformation get this organizational contact's manager.
 func (m *ManagerRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get manager from contacts
+// CreateGetRequestInformationWithRequestConfiguration get this organizational contact's manager.
 func (m *ManagerRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *ManagerRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get manager from contacts
+// Get get this organizational contact's manager.
 func (m *ManagerRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagerRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

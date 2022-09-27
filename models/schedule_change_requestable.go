@@ -18,11 +18,7 @@ type ScheduleChangeRequestable interface {
     GetSenderUserId()(*string)
     GetState()(*ScheduleChangeState)
     SetAssignedTo(value *ScheduleChangeRequestActor)()
-    SetManagerActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagerActionMessage(value *string)()
-    SetManagerUserId(value *string)()
-    SetSenderDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSenderMessage(value *string)()
-    SetSenderUserId(value *string)()
     SetState(value *ScheduleChangeState)()
 }

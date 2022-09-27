@@ -17,7 +17,7 @@ type ScopedMembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ScopedMembersRequestBuilderGetQueryParameters members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// ScopedMembersRequestBuilderGetQueryParameters retrieve a list of scopedRoleMembership objects for a directory role.
 type ScopedMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ScopedMembersRequestBuilderPostRequestConfiguration struct {
 func NewScopedMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ScopedMembersRequestBuilder) {
     m := &ScopedMembersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}/scopedMembers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}/scopedMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewScopedMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ScopedMembersRequestBuilder) Count()(*id8140e18aaed3518cad23fe922b5925d27c46985863cf307b47ccfc9b68381d9.CountRequestBuilder) {
     return id8140e18aaed3518cad23fe922b5925d27c46985863cf307b47ccfc9b68381d9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of scopedRoleMembership objects for a directory role.
 func (m *ScopedMembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of scopedRoleMembership objects for a directory role.
 func (m *ScopedMembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ScopedMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ScopedMembersRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// Get retrieve a list of scopedRoleMembership objects for a directory role.
 func (m *ScopedMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ScopedMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

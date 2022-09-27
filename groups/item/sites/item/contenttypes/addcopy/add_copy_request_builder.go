@@ -42,11 +42,11 @@ func NewAddCopyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewAddCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action addCopy
+// CreatePostRequestInformation add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 func (m *AddCopyRequestBuilder) CreatePostRequestInformation(body AddCopyPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addCopy
+// CreatePostRequestInformationWithRequestConfiguration add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 func (m *AddCopyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddCopyPostRequestBodyable, requestConfiguration *AddCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *AddCopyRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action addCopy
+// Post add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 func (m *AddCopyRequestBuilder) Post(ctx context.Context, body AddCopyPostRequestBodyable, requestConfiguration *AddCopyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

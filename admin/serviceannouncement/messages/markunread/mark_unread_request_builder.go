@@ -41,11 +41,11 @@ func NewMarkUnreadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewMarkUnreadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action markUnread
+// CreatePostRequestInformation mark a list of serviceUpdateMessages as **unread** for the signed in user.
 func (m *MarkUnreadRequestBuilder) CreatePostRequestInformation(body MarkUnreadPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action markUnread
+// CreatePostRequestInformationWithRequestConfiguration mark a list of serviceUpdateMessages as **unread** for the signed in user.
 func (m *MarkUnreadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkUnreadPostRequestBodyable, requestConfiguration *MarkUnreadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *MarkUnreadRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Post invoke action markUnread
+// Post mark a list of serviceUpdateMessages as **unread** for the signed in user.
 func (m *MarkUnreadRequestBuilder) Post(ctx context.Context, body MarkUnreadPostRequestBodyable, requestConfiguration *MarkUnreadRequestBuilderPostRequestConfiguration)(MarkUnreadResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

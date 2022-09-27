@@ -14,6 +14,4 @@ type UsedInsightable interface {
     GetResourceVisualization()(ResourceVisualizationable)
     SetLastUsed(value UsageDetailsable)()
     SetResource(value Entityable)()
-    SetResourceReference(value ResourceReferenceable)()
-    SetResourceVisualization(value ResourceVisualizationable)()
 }

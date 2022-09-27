@@ -12,6 +12,5 @@ type SchedulingGroupable interface {
     GetIsActive()(*bool)
     GetUserIds()([]string)
     SetDisplayName(value *string)()
-    SetIsActive(value *bool)()
     SetUserIds(value []string)()
 }

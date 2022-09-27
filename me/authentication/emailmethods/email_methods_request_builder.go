@@ -17,7 +17,7 @@ type EmailMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EmailMethodsRequestBuilderGetQueryParameters the email address registered to a user for authentication.
+// EmailMethodsRequestBuilderGetQueryParameters retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
 type EmailMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EmailMethodsRequestBuilderPostRequestConfiguration struct {
 func NewEmailMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmailMethodsRequestBuilder) {
     m := &EmailMethodsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/emailMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/authentication/emailMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEmailMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *EmailMethodsRequestBuilder) Count()(*iabd5d5305eb10e0ce123336edc0a4bb733d48962fca751f08fe4e641d1749771.CountRequestBuilder) {
     return iabd5d5305eb10e0ce123336edc0a4bb733d48962fca751f08fe4e641d1749771.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the email address registered to a user for authentication.
+// CreateGetRequestInformation retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
 func (m *EmailMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the email address registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
 func (m *EmailMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EmailMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EmailMethodsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get the email address registered to a user for authentication.
+// Get retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
 func (m *EmailMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *EmailMethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

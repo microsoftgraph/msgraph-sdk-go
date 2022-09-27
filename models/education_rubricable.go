@@ -18,13 +18,9 @@ type EducationRubricable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLevels()([]RubricLevelable)
     GetQualities()([]RubricQualityable)
-    SetCreatedBy(value IdentitySetable)()
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value EducationItemBodyable)()
     SetDisplayName(value *string)()
     SetGrading(value EducationAssignmentGradeTypeable)()
-    SetLastModifiedBy(value IdentitySetable)()
-    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLevels(value []RubricLevelable)()
     SetQualities(value []RubricQualityable)()
 }

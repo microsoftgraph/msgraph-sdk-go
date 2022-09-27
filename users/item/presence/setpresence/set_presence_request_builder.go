@@ -41,11 +41,11 @@ func NewSetPresenceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewSetPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action setPresence
+// CreatePostRequestInformation set the state of a user's presence session as an application.
 func (m *SetPresenceRequestBuilder) CreatePostRequestInformation(body SetPresencePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setPresence
+// CreatePostRequestInformationWithRequestConfiguration set the state of a user's presence session as an application.
 func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetPresencePostRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *SetPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Post invoke action setPresence
+// Post set the state of a user's presence session as an application.
 func (m *SetPresenceRequestBuilder) Post(ctx context.Context, body SetPresencePostRequestBodyable, requestConfiguration *SetPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

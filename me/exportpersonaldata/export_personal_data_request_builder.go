@@ -41,11 +41,11 @@ func NewExportPersonalDataRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewExportPersonalDataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action exportPersonalData
+// CreatePostRequestInformation submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
 func (m *ExportPersonalDataRequestBuilder) CreatePostRequestInformation(body ExportPersonalDataPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action exportPersonalData
+// CreatePostRequestInformationWithRequestConfiguration submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
 func (m *ExportPersonalDataRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExportPersonalDataPostRequestBodyable, requestConfiguration *ExportPersonalDataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ExportPersonalDataRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Post invoke action exportPersonalData
+// Post submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
 func (m *ExportPersonalDataRequestBuilder) Post(ctx context.Context, body ExportPersonalDataPostRequestBodyable, requestConfiguration *ExportPersonalDataRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

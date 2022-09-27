@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -38,72 +39,11 @@ func (m *B2xIdentityUserFlow) GetApiConnectorConfiguration()(UserFlowApiConnecto
 // GetFieldDeserializers the deserialization information for the current model
 func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityUserFlow.GetFieldDeserializers()
-    res["apiConnectorConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateUserFlowApiConnectorConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApiConnectorConfiguration(val.(UserFlowApiConnectorConfigurationable))
-        }
-        return nil
-    }
-    res["identityProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityProviderable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityProviderable)
-            }
-            m.SetIdentityProviders(res)
-        }
-        return nil
-    }
-    res["languages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserFlowLanguageConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserFlowLanguageConfigurationable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserFlowLanguageConfigurationable)
-            }
-            m.SetLanguages(res)
-        }
-        return nil
-    }
-    res["userAttributeAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityUserFlowAttributeAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityUserFlowAttributeAssignmentable)
-            }
-            m.SetUserAttributeAssignments(res)
-        }
-        return nil
-    }
-    res["userFlowIdentityProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityProviderBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityProviderBaseable)
-            }
-            m.SetUserFlowIdentityProviders(res)
-        }
-        return nil
-    }
+    res["apiConnectorConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserFlowApiConnectorConfigurationFromDiscriminatorValue , m.SetApiConnectorConfiguration)
+    res["identityProviders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityProviderFromDiscriminatorValue , m.SetIdentityProviders)
+    res["languages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserFlowLanguageConfigurationFromDiscriminatorValue , m.SetLanguages)
+    res["userAttributeAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue , m.SetUserAttributeAssignments)
+    res["userFlowIdentityProviders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue , m.SetUserFlowIdentityProviders)
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. The identity providers included in the user flow.
@@ -135,40 +75,28 @@ func (m *B2xIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetIdentityProviders() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentityProviders()))
-        for i, v := range m.GetIdentityProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIdentityProviders())
         err = writer.WriteCollectionOfObjectValues("identityProviders", cast)
         if err != nil {
             return err
         }
     }
     if m.GetLanguages() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLanguages()))
-        for i, v := range m.GetLanguages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLanguages())
         err = writer.WriteCollectionOfObjectValues("languages", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserAttributeAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAttributeAssignments()))
-        for i, v := range m.GetUserAttributeAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserAttributeAssignments())
         err = writer.WriteCollectionOfObjectValues("userAttributeAssignments", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserFlowIdentityProviders() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowIdentityProviders()))
-        for i, v := range m.GetUserFlowIdentityProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserFlowIdentityProviders())
         err = writer.WriteCollectionOfObjectValues("userFlowIdentityProviders", cast)
         if err != nil {
             return err

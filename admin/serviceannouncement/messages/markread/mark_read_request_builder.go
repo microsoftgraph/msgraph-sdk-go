@@ -41,11 +41,11 @@ func NewMarkReadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewMarkReadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action markRead
+// CreatePostRequestInformation mark a list of serviceUpdateMessages as **read** for the signed in user.
 func (m *MarkReadRequestBuilder) CreatePostRequestInformation(body MarkReadPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action markRead
+// CreatePostRequestInformationWithRequestConfiguration mark a list of serviceUpdateMessages as **read** for the signed in user.
 func (m *MarkReadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkReadPostRequestBodyable, requestConfiguration *MarkReadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *MarkReadRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action markRead
+// Post mark a list of serviceUpdateMessages as **read** for the signed in user.
 func (m *MarkReadRequestBuilder) Post(ctx context.Context, body MarkReadPostRequestBodyable, requestConfiguration *MarkReadRequestBuilderPostRequestConfiguration)(MarkReadResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

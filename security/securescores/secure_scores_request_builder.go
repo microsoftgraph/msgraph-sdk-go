@@ -17,7 +17,7 @@ type SecureScoresRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SecureScoresRequestBuilderGetQueryParameters get secureScores from security
+// SecureScoresRequestBuilderGetQueryParameters retrieve a list of secureScore objects.
 type SecureScoresRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SecureScoresRequestBuilderPostRequestConfiguration struct {
 func NewSecureScoresRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecureScoresRequestBuilder) {
     m := &SecureScoresRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/secureScores{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/secureScores{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSecureScoresRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *SecureScoresRequestBuilder) Count()(*i78a9db111083c7c8931eded7081c3de236a39cbbc4738320ad649b3968889e30.CountRequestBuilder) {
     return i78a9db111083c7c8931eded7081c3de236a39cbbc4738320ad649b3968889e30.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get secureScores from security
+// CreateGetRequestInformation retrieve a list of secureScore objects.
 func (m *SecureScoresRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get secureScores from security
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of secureScore objects.
 func (m *SecureScoresRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SecureScoresRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SecureScoresRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get secureScores from security
+// Get retrieve a list of secureScore objects.
 func (m *SecureScoresRequestBuilder) Get(ctx context.Context, requestConfiguration *SecureScoresRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

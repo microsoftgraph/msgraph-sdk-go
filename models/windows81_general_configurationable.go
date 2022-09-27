@@ -42,7 +42,6 @@ type Windows81GeneralConfigurationable interface {
     GetUserAccountControlSettings()(*WindowsUserAccountControlSettings)
     GetWorkFoldersUrl()(*string)
     SetAccountsBlockAddingNonMicrosoftAccountEmail(value *bool)()
-    SetApplyOnlyToWindows81(value *bool)()
     SetBrowserBlockAutofill(value *bool)()
     SetBrowserBlockAutomaticDetectionOfIntranetSites(value *bool)()
     SetBrowserBlockEnterpriseModeAccess(value *bool)()

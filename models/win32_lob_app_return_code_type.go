@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the deviceAppManagement singleton.
 type Win32LobAppReturnCodeType int
 
 const (

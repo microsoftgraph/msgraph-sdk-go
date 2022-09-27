@@ -17,7 +17,7 @@ type SharedWithTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SharedWithTeamsRequestBuilderGetQueryParameters a collection of teams with which a channel is shared.
+// SharedWithTeamsRequestBuilderGetQueryParameters get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
 type SharedWithTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SharedWithTeamsRequestBuilderPostRequestConfiguration struct {
 func NewSharedWithTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharedWithTeamsRequestBuilder) {
     m := &SharedWithTeamsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/sharedWithTeams{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/sharedWithTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSharedWithTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *SharedWithTeamsRequestBuilder) Count()(*i1e3872ecdafe9f511621fc6e1a8ad20bf2345403b95bdcf255b88ff9603ad460.CountRequestBuilder) {
     return i1e3872ecdafe9f511621fc6e1a8ad20bf2345403b95bdcf255b88ff9603ad460.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of teams with which a channel is shared.
+// CreateGetRequestInformation get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
 func (m *SharedWithTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of teams with which a channel is shared.
+// CreateGetRequestInformationWithRequestConfiguration get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
 func (m *SharedWithTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SharedWithTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SharedWithTeamsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get a collection of teams with which a channel is shared.
+// Get get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
 func (m *SharedWithTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *SharedWithTeamsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedWithChannelTeamInfoCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -18,7 +18,7 @@ type RoleEligibilitySchedulesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleEligibilitySchedulesRequestBuilderGetQueryParameters schedules for role eligibility operations.
+// RoleEligibilitySchedulesRequestBuilderGetQueryParameters get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 type RoleEligibilitySchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type RoleEligibilitySchedulesRequestBuilderPostRequestConfiguration struct {
 func NewRoleEligibilitySchedulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleEligibilitySchedulesRequestBuilder) {
     m := &RoleEligibilitySchedulesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleEligibilitySchedules{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleEligibilitySchedules{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewRoleEligibilitySchedulesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *RoleEligibilitySchedulesRequestBuilder) Count()(*i28225719ea7fca053d92691407eb73f149a0e2bca5343a384b9c457437f668e5.CountRequestBuilder) {
     return i28225719ea7fca053d92691407eb73f149a0e2bca5343a384b9c457437f668e5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation schedules for role eligibility operations.
+// CreateGetRequestInformation get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 func (m *RoleEligibilitySchedulesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration schedules for role eligibility operations.
+// CreateGetRequestInformationWithRequestConfiguration get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 func (m *RoleEligibilitySchedulesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleEligibilitySchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *RoleEligibilitySchedulesRequestBuilder) CreatePostRequestInformationWit
 func (m *RoleEligibilitySchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i5c630b7ddb6ea4b151d66fb3c28131851cbbd62a74dd31bd5f757802143af70b.FilterByCurrentUserWithOnRequestBuilder) {
     return i5c630b7ddb6ea4b151d66fb3c28131851cbbd62a74dd31bd5f757802143af70b.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get schedules for role eligibility operations.
+// Get get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 func (m *RoleEligibilitySchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleEligibilitySchedulesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

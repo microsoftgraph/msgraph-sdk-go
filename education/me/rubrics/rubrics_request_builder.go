@@ -17,7 +17,7 @@ type RubricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RubricsRequestBuilderGetQueryParameters when set, the grading rubric attached to the assignment.
+// RubricsRequestBuilderGetQueryParameters retrieve a list of educationRubric objects.
 type RubricsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type RubricsRequestBuilderPostRequestConfiguration struct {
 func NewRubricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RubricsRequestBuilder) {
     m := &RubricsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/me/rubrics{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/me/rubrics{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewRubricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *RubricsRequestBuilder) Count()(*ie8bf4562f168f1e9950028bc068e083eaf24f13b2aa53c97453a8590f851fe9b.CountRequestBuilder) {
     return ie8bf4562f168f1e9950028bc068e083eaf24f13b2aa53c97453a8590f851fe9b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation when set, the grading rubric attached to the assignment.
+// CreateGetRequestInformation retrieve a list of educationRubric objects.
 func (m *RubricsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration when set, the grading rubric attached to the assignment.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of educationRubric objects.
 func (m *RubricsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RubricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *RubricsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to rubrics for education
+// CreatePostRequestInformation create a new educationRubric object.
 func (m *RubricsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to rubrics for education
+// CreatePostRequestInformationWithRequestConfiguration create a new educationRubric object.
 func (m *RubricsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *RubricsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RubricsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get when set, the grading rubric attached to the assignment.
+// Get retrieve a list of educationRubric objects.
 func (m *RubricsRequestBuilder) Get(ctx context.Context, requestConfiguration *RubricsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *RubricsRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricCollectionResponseable), nil
 }
-// Post create new navigation property to rubrics for education
+// Post create a new educationRubric object.
 func (m *RubricsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *RubricsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     urlParams["request-raw-url"] = rawUrl
     return NewAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action add
+// CreatePostRequestInformation follow a user's site or multiple sites.
 func (m *AddRequestBuilder) CreatePostRequestInformation(body AddPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action add
+// CreatePostRequestInformationWithRequestConfiguration follow a user's site or multiple sites.
 func (m *AddRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *AddRequestBuilder) CreatePostRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Post invoke action add
+// Post follow a user's site or multiple sites.
 func (m *AddRequestBuilder) Post(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(AddResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -42,11 +42,11 @@ func NewUploadClientCertificateRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewUploadClientCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action uploadClientCertificate
+// CreatePostRequestInformation upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
 func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformation(body UploadClientCertificatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action uploadClientCertificate
+// CreatePostRequestInformationWithRequestConfiguration upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
 func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadClientCertificatePostRequestBodyable, requestConfiguration *UploadClientCertificateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Post invoke action uploadClientCertificate
+// Post upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
 func (m *UploadClientCertificateRequestBuilder) Post(ctx context.Context, body UploadClientCertificatePostRequestBodyable, requestConfiguration *UploadClientCertificateRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

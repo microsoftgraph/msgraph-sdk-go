@@ -17,7 +17,5 @@ type SharedInsightable interface {
     SetLastShared(value SharingDetailable)()
     SetLastSharedMethod(value Entityable)()
     SetResource(value Entityable)()
-    SetResourceReference(value ResourceReferenceable)()
-    SetResourceVisualization(value ResourceVisualizationable)()
     SetSharingHistory(value []SharingDetailable)()
 }

@@ -45,5 +45,4 @@ type BookingServiceable interface {
     SetSchedulingPolicy(value BookingSchedulingPolicyable)()
     SetSmsNotificationsEnabled(value *bool)()
     SetStaffMemberIds(value []string)()
-    SetWebUrl(value *string)()
 }

@@ -18,7 +18,6 @@ type SharingDetailable interface {
     SetOdataType(value *string)()
     SetSharedBy(value InsightIdentityable)()
     SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSharingReference(value ResourceReferenceable)()
     SetSharingSubject(value *string)()
     SetSharingType(value *string)()
 }

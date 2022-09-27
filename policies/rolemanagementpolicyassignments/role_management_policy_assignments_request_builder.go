@@ -17,7 +17,7 @@ type RoleManagementPolicyAssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters the assignment of a role management policy to a role definition object.
+// RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
 type RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type RoleManagementPolicyAssignmentsRequestBuilderPostRequestConfiguration struc
 func NewRoleManagementPolicyAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementPolicyAssignmentsRequestBuilder) {
     m := &RoleManagementPolicyAssignmentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/roleManagementPolicyAssignments{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/roleManagementPolicyAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewRoleManagementPolicyAssignmentsRequestBuilder(rawUrl string, requestAdap
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) Count()(*i6bfc4bf48b7dcaff81ab89392c14119291941b69990b76111ead136f94f5d415.CountRequestBuilder) {
     return i6bfc4bf48b7dcaff81ab89392c14119291941b69990b76111ead136f94f5d415.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the assignment of a role management policy to a role definition object.
+// CreateGetRequestInformation get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the assignment of a role management policy to a role definition object.
+// CreateGetRequestInformationWithRequestConfiguration get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleManagementPolicyAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Get the assignment of a role management policy to a role definition object.
+// Get get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

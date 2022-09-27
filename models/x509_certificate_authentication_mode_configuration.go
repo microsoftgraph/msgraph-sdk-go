@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -35,40 +36,9 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetAdditionalData()(map
 // GetFieldDeserializers the deserialization information for the current model
 func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateX509CertificateRuleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]X509CertificateRuleable, len(val))
-            for i, v := range val {
-                res[i] = v.(X509CertificateRuleable)
-            }
-            m.SetRules(res)
-        }
-        return nil
-    }
-    res["x509CertificateAuthenticationDefaultMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetX509CertificateAuthenticationDefaultMode(val.(*X509CertificateAuthenticationMode))
-        }
-        return nil
-    }
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["rules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateX509CertificateRuleFromDiscriminatorValue , m.SetRules)
+    res["x509CertificateAuthenticationDefaultMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseX509CertificateAuthenticationMode , m.SetX509CertificateAuthenticationDefaultMode)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -92,10 +62,7 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
         }
     }
     if m.GetRules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
-        for i, v := range m.GetRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRules())
         err := writer.WriteCollectionOfObjectValues("rules", cast)
         if err != nil {
             return err

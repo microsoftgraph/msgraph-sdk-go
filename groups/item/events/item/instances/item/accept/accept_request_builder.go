@@ -41,11 +41,11 @@ func NewAcceptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action accept
+// CreatePostRequestInformation accept the specified event in a user calendar.
 func (m *AcceptRequestBuilder) CreatePostRequestInformation(body AcceptPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action accept
+// CreatePostRequestInformationWithRequestConfiguration accept the specified event in a user calendar.
 func (m *AcceptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AcceptPostRequestBodyable, requestConfiguration *AcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *AcceptRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action accept
+// Post accept the specified event in a user calendar.
 func (m *AcceptRequestBuilder) Post(ctx context.Context, body AcceptPostRequestBodyable, requestConfiguration *AcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

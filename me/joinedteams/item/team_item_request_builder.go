@@ -9,6 +9,7 @@ import (
     i1e6cfda39bf71ff6c49bf501ccb56055e496f12dd4a459a4c9f832017b3ed495 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/incomingchannels"
     i5cc953f63726e53531e5d00c609bd14469e1ce23944c22b6aea0986c18fb0043 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/primarychannel"
     i6bdaa0e5d28581a8a1e2d235e3e781f04d9c598ddc6abab4f4f4482948b402c4 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/clone"
+    i7a26ea73a074ce439c29db16635d2ace903fc13c34496531fb310f143a72ad46 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/tags"
     i85d270c8e10c233ea48f496d72490ff86a9da2a715ff50b98d9bb49990543826 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/completemigration"
     i8a1cdbeac728d5d9d3409d0d7085c53384ad37435e0292d966ed94bbc4155a05 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/group"
     i9fa0e9d329dc2b42ce0cc0330991bb8f8e864efaaef5061789d895e28321a6b2 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/operations"
@@ -23,6 +24,7 @@ import (
     ifd53534f50d40567e607c2213e794582e29aa46a0c07e2d406db231a42a0140a "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/schedule"
     i03b2a35397701f29dd92bcf0dd549e252ab75a1bd539b1b1ca11a58738ba2c51 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/members/item"
     i0c17287a3757a64da956e62a7d60ea201a306f2234f98185836c4750f17a3b18 "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/allchannels/item"
+    i289f2fd32e9a16e441f2a6b0e403b7f5f23d0c30924e6e4401734b1469fd06ce "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/tags/item"
     i77d75bcb3611254a7012d361f29a795e840693affe1de5861c58d310feff299c "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/operations/item"
     i986134cfb00ff93c88ffb51965b534e9da908849cf680fc5e4ff907a20066f7d "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/incomingchannels/item"
     id12792e5e45c250abd3ecec9bbc023cd6dc63edea08efc7907dcad0da46a8a0d "github.com/microsoftgraph/msgraph-sdk-go/me/joinedteams/item/channels/item"
@@ -175,6 +177,7 @@ func (m *TeamItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -282,20 +285,23 @@ func (m *TeamItemRequestBuilder) OperationsById(id string)(*i77d75bcb3611254a701
     return i77d75bcb3611254a7012d361f29a795e840693affe1de5861c58d310feff299c.NewTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property joinedTeams in me
-func (m *TeamItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *TeamItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *TeamItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *TeamItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTeamFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
 // Photo the photo property
 func (m *TeamItemRequestBuilder) Photo()(*ica5ec7aca95820534d087da722646ac0c0eb14565fc4c028141ff7080240b58d.PhotoRequestBuilder) {
@@ -312,6 +318,21 @@ func (m *TeamItemRequestBuilder) Schedule()(*ifd53534f50d40567e607c2213e794582e2
 // SendActivityNotification the sendActivityNotification property
 func (m *TeamItemRequestBuilder) SendActivityNotification()(*ie8c9d4ba2aa39351cc5580d10d45b8717b93a5d75b46c5be678a969e9175bcc6.SendActivityNotificationRequestBuilder) {
     return ie8c9d4ba2aa39351cc5580d10d45b8717b93a5d75b46c5be678a969e9175bcc6.NewSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Tags the tags property
+func (m *TeamItemRequestBuilder) Tags()(*i7a26ea73a074ce439c29db16635d2ace903fc13c34496531fb310f143a72ad46.TagsRequestBuilder) {
+    return i7a26ea73a074ce439c29db16635d2ace903fc13c34496531fb310f143a72ad46.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TagsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.joinedTeams.item.tags.item collection
+func (m *TeamItemRequestBuilder) TagsById(id string)(*i289f2fd32e9a16e441f2a6b0e403b7f5f23d0c30924e6e4401734b1469fd06ce.TeamworkTagItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["teamworkTag%2Did"] = id
+    }
+    return i289f2fd32e9a16e441f2a6b0e403b7f5f23d0c30924e6e4401734b1469fd06ce.NewTeamworkTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Template the template property
 func (m *TeamItemRequestBuilder) Template()(*i04a148e32be31a86cd21b897c8b55a4508d63dbae47a02eaeb122662dbd2ff9b.TemplateRequestBuilder) {

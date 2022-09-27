@@ -33,8 +33,6 @@ type Scheduleable interface {
     SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)()
     SetOpenShifts(value []OpenShiftable)()
     SetOpenShiftsEnabled(value *bool)()
-    SetProvisionStatus(value *OperationStatus)()
-    SetProvisionStatusCode(value *string)()
     SetSchedulingGroups(value []SchedulingGroupable)()
     SetShifts(value []Shiftable)()
     SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequestable)()

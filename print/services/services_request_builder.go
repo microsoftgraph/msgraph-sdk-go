@@ -17,7 +17,7 @@ type ServicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ServicesRequestBuilderGetQueryParameters the list of available Universal Print service endpoints.
+// ServicesRequestBuilderGetQueryParameters retrieve a list of **printService** objects that represent the services available to your tenant.
 type ServicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ServicesRequestBuilderPostRequestConfiguration struct {
 func NewServicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicesRequestBuilder) {
     m := &ServicesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/services{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/services{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewServicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ServicesRequestBuilder) Count()(*i927f583046a8f0e92aafe720bd10d10f51aa8dcc3758229b368b568e425f39fc.CountRequestBuilder) {
     return i927f583046a8f0e92aafe720bd10d10f51aa8dcc3758229b368b568e425f39fc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of available Universal Print service endpoints.
+// CreateGetRequestInformation retrieve a list of **printService** objects that represent the services available to your tenant.
 func (m *ServicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of available Universal Print service endpoints.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of **printService** objects that represent the services available to your tenant.
 func (m *ServicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ServicesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get the list of available Universal Print service endpoints.
+// Get retrieve a list of **printService** objects that represent the services available to your tenant.
 func (m *ServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintServiceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

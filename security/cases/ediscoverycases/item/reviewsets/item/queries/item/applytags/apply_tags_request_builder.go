@@ -41,11 +41,11 @@ func NewApplyTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewApplyTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action applyTags
+// CreatePostRequestInformation apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
 func (m *ApplyTagsRequestBuilder) CreatePostRequestInformation(body ApplyTagsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action applyTags
+// CreatePostRequestInformationWithRequestConfiguration apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
 func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Post invoke action applyTags
+// Post apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
 func (m *ApplyTagsRequestBuilder) Post(ctx context.Context, body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

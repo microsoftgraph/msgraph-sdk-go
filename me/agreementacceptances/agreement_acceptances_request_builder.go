@@ -17,7 +17,7 @@ type AgreementAcceptancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AgreementAcceptancesRequestBuilderGetQueryParameters the user's terms of use acceptance statuses. Read-only. Nullable.
+// AgreementAcceptancesRequestBuilderGetQueryParameters retrieve the signed-in user's agreementAcceptance objects.
 type AgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type AgreementAcceptancesRequestBuilderGetRequestConfiguration struct {
 func NewAgreementAcceptancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementAcceptancesRequestBuilder) {
     m := &AgreementAcceptancesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/agreementAcceptances{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/agreementAcceptances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *AgreementAcceptancesRequestBuilder) Count()(*i645fc394b9a958f312aac98c4391ccb7608349bf4eafdb0d31b9f312252a752a.CountRequestBuilder) {
     return i645fc394b9a958f312aac98c4391ccb7608349bf4eafdb0d31b9f312252a752a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the user's terms of use acceptance statuses. Read-only. Nullable.
+// CreateGetRequestInformation retrieve the signed-in user's agreementAcceptance objects.
 func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's terms of use acceptance statuses. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the signed-in user's agreementAcceptance objects.
 func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get the user's terms of use acceptance statuses. Read-only. Nullable.
+// Get retrieve the signed-in user's agreementAcceptance objects.
 func (m *AgreementAcceptancesRequestBuilder) Get(ctx context.Context, requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

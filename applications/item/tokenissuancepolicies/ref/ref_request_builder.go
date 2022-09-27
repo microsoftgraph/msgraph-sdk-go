@@ -16,7 +16,7 @@ type RefRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RefRequestBuilderGetQueryParameters get ref of tokenIssuancePolicies from applications
+// RefRequestBuilderGetQueryParameters list the tokenIssuancePolicy objects that are assigned to an application.
 type RefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,7 +51,7 @@ type RefRequestBuilderPostRequestConfiguration struct {
 func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RefRequestBuilder) {
     m := &RefRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/$ref{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -66,11 +66,11 @@ func NewRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     urlParams["request-raw-url"] = rawUrl
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get ref of tokenIssuancePolicies from applications
+// CreateGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *RefRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get ref of tokenIssuancePolicies from applications
+// CreateGetRequestInformationWithRequestConfiguration list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *RefRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,7 +103,7 @@ func (m *RefRequestBuilder) CreatePostRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get get ref of tokenIssuancePolicies from applications
+// Get list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *RefRequestBuilder) Get(ctx context.Context, requestConfiguration *RefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -19,7 +19,7 @@ type CategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CategoriesRequestBuilderGetQueryParameters when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// CategoriesRequestBuilderGetQueryParameters list all the categories associated with an assignment.
 type CategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,7 +58,7 @@ type CategoriesRequestBuilderPostRequestConfiguration struct {
 func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CategoriesRequestBuilder) {
     m := &CategoriesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -77,11 +77,11 @@ func NewCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *CategoriesRequestBuilder) Count()(*icb124b1d947145179c2df13cf763c2668779a80b8c4be8cf625c753f2384ca8e.CountRequestBuilder) {
     return icb124b1d947145179c2df13cf763c2668779a80b8c4be8cf625c753f2384ca8e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// CreateGetRequestInformation list all the categories associated with an assignment.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration list all the categories associated with an assignment.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *CategoriesRequestBuilder) CreatePostRequestInformationWithRequestConfig
 func (m *CategoriesRequestBuilder) Delta()(*ibef3c0e31c4bc54b4225ba7df8c22f82c822824a0e38a2981631e4eca29634c2.DeltaRequestBuilder) {
     return ibef3c0e31c4bc54b4225ba7df8c22f82c822824a0e38a2981631e4eca29634c2.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// Get list all the categories associated with an assignment.
 func (m *CategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *CategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -37,7 +37,6 @@ type WindowsPhone81GeneralConfigurationable interface {
     GetWifiBlocked()(*bool)
     GetWifiBlockHotspotReporting()(*bool)
     GetWindowsStoreBlocked()(*bool)
-    SetApplyOnlyToWindowsPhone81(value *bool)()
     SetAppsBlockCopyPaste(value *bool)()
     SetBluetoothBlocked(value *bool)()
     SetCameraBlocked(value *bool)()

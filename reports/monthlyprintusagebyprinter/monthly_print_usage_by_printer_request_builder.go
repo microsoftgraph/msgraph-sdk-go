@@ -17,7 +17,7 @@ type MonthlyPrintUsageByPrinterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters get monthlyPrintUsageByPrinter from reports
+// MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters retrieve a list of monthly print usage summaries, grouped by printer.
 type MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type MonthlyPrintUsageByPrinterRequestBuilderPostRequestConfiguration struct {
 func NewMonthlyPrintUsageByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonthlyPrintUsageByPrinterRequestBuilder) {
     m := &MonthlyPrintUsageByPrinterRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/monthlyPrintUsageByPrinter{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/reports/monthlyPrintUsageByPrinter{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewMonthlyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Count()(*i959b642cb38d15cce8e4f0801b90c06d5b792fdb4d8afd3c46061189c7814901.CountRequestBuilder) {
     return i959b642cb38d15cce8e4f0801b90c06d5b792fdb4d8afd3c46061189c7814901.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get monthlyPrintUsageByPrinter from reports
+// CreateGetRequestInformation retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get monthlyPrintUsageByPrinter from reports
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// Get get monthlyPrintUsageByPrinter from reports
+// Get retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get(ctx context.Context, requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

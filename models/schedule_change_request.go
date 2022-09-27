@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -69,86 +70,10 @@ func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
-    res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScheduleChangeRequestActor)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAssignedTo(val.(*ScheduleChangeRequestActor))
-        }
-        return nil
-    }
-    res["managerActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagerActionDateTime(val)
-        }
-        return nil
-    }
-    res["managerActionMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagerActionMessage(val)
-        }
-        return nil
-    }
-    res["managerUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagerUserId(val)
-        }
-        return nil
-    }
-    res["senderDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSenderDateTime(val)
-        }
-        return nil
-    }
-    res["senderMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSenderMessage(val)
-        }
-        return nil
-    }
-    res["senderUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSenderUserId(val)
-        }
-        return nil
-    }
-    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScheduleChangeState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetState(val.(*ScheduleChangeState))
-        }
-        return nil
-    }
+    res["assignedTo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseScheduleChangeRequestActor , m.SetAssignedTo)
+    res["managerActionMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetManagerActionMessage)
+    res["senderMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSenderMessage)
+    res["state"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseScheduleChangeState , m.SetState)
     return res
 }
 // GetManagerActionDateTime gets the managerActionDateTime property value. The managerActionDateTime property
@@ -193,37 +118,13 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteTimeValue("managerActionDateTime", m.GetManagerActionDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("managerActionMessage", m.GetManagerActionMessage())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("managerUserId", m.GetManagerUserId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("senderDateTime", m.GetSenderDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("senderMessage", m.GetSenderMessage())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("senderUserId", m.GetSenderUserId())
         if err != nil {
             return err
         }
@@ -241,29 +142,13 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {
     m.assignedTo = value
 }
-// SetManagerActionDateTime sets the managerActionDateTime property value. The managerActionDateTime property
-func (m *ScheduleChangeRequest) SetManagerActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.managerActionDateTime = value
-}
 // SetManagerActionMessage sets the managerActionMessage property value. The managerActionMessage property
 func (m *ScheduleChangeRequest) SetManagerActionMessage(value *string)() {
     m.managerActionMessage = value
 }
-// SetManagerUserId sets the managerUserId property value. The managerUserId property
-func (m *ScheduleChangeRequest) SetManagerUserId(value *string)() {
-    m.managerUserId = value
-}
-// SetSenderDateTime sets the senderDateTime property value. The senderDateTime property
-func (m *ScheduleChangeRequest) SetSenderDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.senderDateTime = value
-}
 // SetSenderMessage sets the senderMessage property value. The senderMessage property
 func (m *ScheduleChangeRequest) SetSenderMessage(value *string)() {
     m.senderMessage = value
-}
-// SetSenderUserId sets the senderUserId property value. The senderUserId property
-func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
-    m.senderUserId = value
 }
 // SetState sets the state property value. The state property
 func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {

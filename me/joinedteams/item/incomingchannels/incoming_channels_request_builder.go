@@ -17,7 +17,7 @@ type IncomingChannelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncomingChannelsRequestBuilderGetQueryParameters list of channels shared with the team.
+// IncomingChannelsRequestBuilderGetQueryParameters get the list of incoming channels (channels shared with a team).
 type IncomingChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type IncomingChannelsRequestBuilderGetRequestConfiguration struct {
 func NewIncomingChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncomingChannelsRequestBuilder) {
     m := &IncomingChannelsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}/incomingChannels{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}/incomingChannels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *IncomingChannelsRequestBuilder) Count()(*ie69aac13b2d24d8f64bbc0ef4a3e066290128b051ad0827f435a83d358802ce2.CountRequestBuilder) {
     return ie69aac13b2d24d8f64bbc0ef4a3e066290128b051ad0827f435a83d358802ce2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of channels shared with the team.
+// CreateGetRequestInformation get the list of incoming channels (channels shared with a team).
 func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of channels shared with the team.
+// CreateGetRequestInformationWithRequestConfiguration get the list of incoming channels (channels shared with a team).
 func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get list of channels shared with the team.
+// Get get the list of incoming channels (channels shared with a team).
 func (m *IncomingChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

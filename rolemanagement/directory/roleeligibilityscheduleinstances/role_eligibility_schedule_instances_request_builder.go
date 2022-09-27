@@ -18,7 +18,7 @@ type RoleEligibilityScheduleInstancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters instances for role eligibility requests.
+// RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters get the instances of role eligibilities.
 type RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type RoleEligibilityScheduleInstancesRequestBuilderPostRequestConfiguration stru
 func NewRoleEligibilityScheduleInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleEligibilityScheduleInstancesRequestBuilder) {
     m := &RoleEligibilityScheduleInstancesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleEligibilityScheduleInstances{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleEligibilityScheduleInstances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewRoleEligibilityScheduleInstancesRequestBuilder(rawUrl string, requestAda
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) Count()(*ibca854da4cefd43725d70f12c7fe98a2496693908e16611021d9d7869e38dd5b.CountRequestBuilder) {
     return ibca854da4cefd43725d70f12c7fe98a2496693908e16611021d9d7869e38dd5b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation instances for role eligibility requests.
+// CreateGetRequestInformation get the instances of role eligibilities.
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration instances for role eligibility requests.
+// CreateGetRequestInformationWithRequestConfiguration get the instances of role eligibilities.
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleEligibilityScheduleInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *RoleEligibilityScheduleInstancesRequestBuilder) CreatePostRequestInform
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i0637b2819a856f3c574c4565061640b04c5db038fd516d18e518a28db78df464.FilterByCurrentUserWithOnRequestBuilder) {
     return i0637b2819a856f3c574c4565061640b04c5db038fd516d18e518a28db78df464.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get instances for role eligibility requests.
+// Get get the instances of role eligibilities.
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleEligibilityScheduleInstancesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

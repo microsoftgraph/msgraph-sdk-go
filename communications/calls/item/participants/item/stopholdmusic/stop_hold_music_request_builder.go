@@ -42,11 +42,11 @@ func NewStopHoldMusicRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewStopHoldMusicRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action stopHoldMusic
+// CreatePostRequestInformation reincorporate a participant previously put on hold to the call.
 func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformation(body StopHoldMusicPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action stopHoldMusic
+// CreatePostRequestInformationWithRequestConfiguration reincorporate a participant previously put on hold to the call.
 func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StopHoldMusicPostRequestBodyable, requestConfiguration *StopHoldMusicRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Post invoke action stopHoldMusic
+// Post reincorporate a participant previously put on hold to the call.
 func (m *StopHoldMusicRequestBuilder) Post(ctx context.Context, body StopHoldMusicPostRequestBodyable, requestConfiguration *StopHoldMusicRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StopHoldMusicOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
