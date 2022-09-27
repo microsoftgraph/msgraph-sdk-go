@@ -1,5 +1,6 @@
 github.com/Azure/azure-sdk-for-go/sdk/azcore v1.1.3 h1:8LoU8N2lIUzkmstvwXvVfniMZlFbesfT2AmA1aqvRr8=
 github.com/Azure/azure-sdk-for-go/sdk/azcore v1.1.3/go.mod h1:uGG2W01BaETf0Ozp+QxxKJdMBNRWPdstHG0Fmdwn1/U=
+github.com/Azure/azure-sdk-for-go/sdk/internal v1.0.0 h1:jp0dGvZ7ZK0mgqnTSClMxa5xuRL7NZgHameVYF6BurY=
 github.com/cjlapao/common-go v0.0.27 h1:7k8R1Mz2LAudnPb1kaqQ/l+Ba7uL92FG7Rqp9W67mGM=
 github.com/cjlapao/common-go v0.0.27/go.mod h1:OyTAY388jfEj8uaRzx0uYneFghKDLL5KP+ewSydlQ5g=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -15,8 +16,8 @@ github.com/microsoft/kiota-http-go v0.7.2 h1:R40vG0EkIFqGvVz5dZtLe4g1sXGVfBO5Hxj
 github.com/microsoft/kiota-http-go v0.7.2/go.mod h1:QTbXPh25mJsbxE23bFqw64BckCioCGfaE77hF/F3rIQ=
 github.com/microsoft/kiota-serialization-json-go v0.6.0 h1:irdhbaY2Vl9t2SLwIC5WyPKJRp3mE52GEBEbAyu7thk=
 github.com/microsoft/kiota-serialization-json-go v0.6.0/go.mod h1:ceR++Qc8n6McdAR+Ili2UhV4iR8CEx3+RPtANi1UdXc=
-github.com/microsoft/kiota-serialization-text-go v0.5.0 h1:TWb9Y6IsIwzsMVcbBBDLFpVg47mRu2FhQJ6i1dqpLOs=
-github.com/microsoft/kiota-serialization-text-go v0.5.0/go.mod h1:x9h+VE4X4t8njowIZXyTaAzE6bGK8Zr90MLYV6J6S9U=
+github.com/microsoft/kiota-serialization-text-go v0.6.0 h1:3N2vftYZlwKdog69AN7ha+FZT0QxPG7xp/hLv0/W2OQ=
+github.com/microsoft/kiota-serialization-text-go v0.6.0/go.mod h1:OUA4dNH+f6afiJUs+rQAatJos7QVF5PJkyrqoD89lx4=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.28.1 h1:gN3pVVvx50KzhQdYwQKVnRSOSOIRaFpXj7pgPfqnNXw=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.28.1/go.mod h1:BnumnwWU8xUgX7ncgo68novbS1wMlO66Iny9iVhvHuM=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
