@@ -79,7 +79,7 @@ import (
     "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-result, err := client.Me().Drive().Get(context.BackGround(), nil)
+result, err := client.Me().Drive().Get(context.Background(), nil)
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
     printOdataError(err)
