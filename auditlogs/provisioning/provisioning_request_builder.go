@@ -17,7 +17,7 @@ type ProvisioningRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ProvisioningRequestBuilderGetQueryParameters get provisioning from auditLogs
+// ProvisioningRequestBuilderGetQueryParameters get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
 type ProvisioningRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ProvisioningRequestBuilderPostRequestConfiguration struct {
 func NewProvisioningRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProvisioningRequestBuilder) {
     m := &ProvisioningRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/auditLogs/provisioning{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/auditLogs/provisioning{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewProvisioningRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ProvisioningRequestBuilder) Count()(*iaf41d5689c96dd5839e30fb84c4302441ee3b92bb8751f584e432b09fc63ec69.CountRequestBuilder) {
     return iaf41d5689c96dd5839e30fb84c4302441ee3b92bb8751f584e432b09fc63ec69.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get provisioning from auditLogs
+// CreateGetRequestInformation get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
 func (m *ProvisioningRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get provisioning from auditLogs
+// CreateGetRequestInformationWithRequestConfiguration get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
 func (m *ProvisioningRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ProvisioningRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ProvisioningRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get provisioning from auditLogs
+// Get get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
 func (m *ProvisioningRequestBuilder) Get(ctx context.Context, requestConfiguration *ProvisioningRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProvisioningObjectSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type SubmittedResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SubmittedResourcesRequestBuilderGetQueryParameters get submittedResources from education
+// SubmittedResourcesRequestBuilderGetQueryParameters list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 type SubmittedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SubmittedResourcesRequestBuilderPostRequestConfiguration struct {
 func NewSubmittedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubmittedResourcesRequestBuilder) {
     m := &SubmittedResourcesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/submittedResources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/submittedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSubmittedResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *SubmittedResourcesRequestBuilder) Count()(*icb59faaadbb5a21099b680cd87e1070e82d7fcf98ec5ee02ef459f918cf39c68.CountRequestBuilder) {
     return icb59faaadbb5a21099b680cd87e1070e82d7fcf98ec5ee02ef459f918cf39c68.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get submittedResources from education
+// CreateGetRequestInformation list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 func (m *SubmittedResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get submittedResources from education
+// CreateGetRequestInformationWithRequestConfiguration list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 func (m *SubmittedResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SubmittedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SubmittedResourcesRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get get submittedResources from education
+// Get list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 func (m *SubmittedResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *SubmittedResourcesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

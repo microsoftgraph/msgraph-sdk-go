@@ -17,7 +17,7 @@ type ServicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ServicesRequestBuilderGetQueryParameters all the services offered by this business. Read-only. Nullable.
+// ServicesRequestBuilderGetQueryParameters get a list of bookingService objects in the specified bookingBusiness.
 type ServicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ServicesRequestBuilderPostRequestConfiguration struct {
 func NewServicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicesRequestBuilder) {
     m := &ServicesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/services{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/services{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewServicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ServicesRequestBuilder) Count()(*i6ceb676a4e89b0e4b243210be79f28c3dfb357c2bf98958e16a1f879234282de.CountRequestBuilder) {
     return i6ceb676a4e89b0e4b243210be79f28c3dfb357c2bf98958e16a1f879234282de.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all the services offered by this business. Read-only. Nullable.
+// CreateGetRequestInformation get a list of bookingService objects in the specified bookingBusiness.
 func (m *ServicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all the services offered by this business. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get a list of bookingService objects in the specified bookingBusiness.
 func (m *ServicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ServicesRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to services for solutions
+// CreatePostRequestInformation create a new bookingService for the specified bookingBusiness.
 func (m *ServicesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to services for solutions
+// CreatePostRequestInformationWithRequestConfiguration create a new bookingService for the specified bookingBusiness.
 func (m *ServicesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *ServicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ServicesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get all the services offered by this business. Read-only. Nullable.
+// Get get a list of bookingService objects in the specified bookingBusiness.
 func (m *ServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceCollectionResponseable), nil
 }
-// Post create new navigation property to services for solutions
+// Post create a new bookingService for the specified bookingBusiness.
 func (m *ServicesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *ServicesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

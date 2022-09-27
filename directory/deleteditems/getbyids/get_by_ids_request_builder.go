@@ -41,11 +41,11 @@ func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getByIds
+// CreatePostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
 func (m *GetByIdsRequestBuilder) CreatePostRequestInformation(body GetByIdsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getByIds
+// CreatePostRequestInformationWithRequestConfiguration return the directory objects specified in a list of IDs. Some common uses for this function are to:
 func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *GetByIdsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action getByIds
+// Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
 func (m *GetByIdsRequestBuilder) Post(ctx context.Context, body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(GetByIdsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

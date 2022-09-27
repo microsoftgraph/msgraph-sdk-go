@@ -17,7 +17,7 @@ type SetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SetsRequestBuilderGetQueryParameters all sets under the group in a term [store].
+// SetsRequestBuilderGetQueryParameters get a list of the set objects and their properties.
 type SetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SetsRequestBuilderPostRequestConfiguration struct {
 func NewSetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SetsRequestBuilder) {
     m := &SetsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/sets/{set%2Did}/parentGroup/sets{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/sets/{set%2Did}/parentGroup/sets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *SetsRequestBuilder) Count()(*i816933d5f790c1238e019e48c5e80ba1e2a28c451d783a3c36c1ffc61a91c700.CountRequestBuilder) {
     return i816933d5f790c1238e019e48c5e80ba1e2a28c451d783a3c36c1ffc61a91c700.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all sets under the group in a term [store].
+// CreateGetRequestInformation get a list of the set objects and their properties.
 func (m *SetsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all sets under the group in a term [store].
+// CreateGetRequestInformationWithRequestConfiguration get a list of the set objects and their properties.
 func (m *SetsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get all sets under the group in a term [store].
+// Get get a list of the set objects and their properties.
 func (m *SetsRequestBuilder) Get(ctx context.Context, requestConfiguration *SetsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

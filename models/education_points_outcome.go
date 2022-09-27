@@ -28,26 +28,8 @@ func CreateEducationPointsOutcomeFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationPointsOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
-    res["points"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEducationAssignmentPointsGradeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPoints(val.(EducationAssignmentPointsGradeable))
-        }
-        return nil
-    }
-    res["publishedPoints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEducationAssignmentPointsGradeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPublishedPoints(val.(EducationAssignmentPointsGradeable))
-        }
-        return nil
-    }
+    res["points"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEducationAssignmentPointsGradeFromDiscriminatorValue , m.SetPoints)
+    res["publishedPoints"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEducationAssignmentPointsGradeFromDiscriminatorValue , m.SetPublishedPoints)
     return res
 }
 // GetPoints gets the points property value. The numeric grade the teacher has given the student for this assignment.

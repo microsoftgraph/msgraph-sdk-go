@@ -18,7 +18,7 @@ type AttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttachmentsRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
+// AttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a post.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ type AttachmentsRequestBuilderPostRequestConfiguration struct {
 func NewAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttachmentsRequestBuilder) {
     m := &AttachmentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/attachments{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -74,11 +74,11 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AttachmentsRequestBuilder) Count()(*ic8a1edb1396d6f88604d4cbc908003c15e2781b631ed7b4e48b11c8e33cf6244.CountRequestBuilder) {
     return ic8a1edb1396d6f88604d4cbc908003c15e2781b631ed7b4e48b11c8e33cf6244.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation retrieve a list of attachment objects attached to a post.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of attachment objects attached to a post.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*iee935b04bcb42048f4855f26c76b8b9d0fa0093fabe5dcf3b737225b45f4b711.CreateUploadSessionRequestBuilder) {
     return iee935b04bcb42048f4855f26c76b8b9d0fa0093fabe5dcf3b737225b45f4b711.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get read-only. Nullable. Supports $expand.
+// Get retrieve a list of attachment objects attached to a post.
 func (m *AttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

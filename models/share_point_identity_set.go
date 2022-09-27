@@ -30,36 +30,9 @@ func CreateSharePointIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharePointIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentitySet.GetFieldDeserializers()
-    res["group"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGroup(val.(Identityable))
-        }
-        return nil
-    }
-    res["siteGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSharePointIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSiteGroup(val.(SharePointIdentityable))
-        }
-        return nil
-    }
-    res["siteUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSharePointIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSiteUser(val.(SharePointIdentityable))
-        }
-        return nil
-    }
+    res["group"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentityFromDiscriminatorValue , m.SetGroup)
+    res["siteGroup"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSharePointIdentityFromDiscriminatorValue , m.SetSiteGroup)
+    res["siteUser"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSharePointIdentityFromDiscriminatorValue , m.SetSiteUser)
     return res
 }
 // GetGroup gets the group property value. The group associated with this action. Optional.

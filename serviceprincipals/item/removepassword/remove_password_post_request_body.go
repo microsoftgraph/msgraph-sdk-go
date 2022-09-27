@@ -29,16 +29,7 @@ func (m *RemovePasswordPostRequestBody) GetAdditionalData()(map[string]interface
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemovePasswordPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["keyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKeyId(val)
-        }
-        return nil
-    }
+    res["keyId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKeyId)
     return res
 }
 // GetKeyId gets the keyId property value. The keyId property

@@ -44,70 +44,12 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetDefaultLifetim
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
-    res["defaultLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultLength(val)
-        }
-        return nil
-    }
-    res["defaultLifetimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultLifetimeInMinutes(val)
-        }
-        return nil
-    }
-    res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationMethodTargetable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuthenticationMethodTargetable)
-            }
-            m.SetIncludeTargets(res)
-        }
-        return nil
-    }
-    res["isUsableOnce"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsUsableOnce(val)
-        }
-        return nil
-    }
-    res["maximumLifetimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumLifetimeInMinutes(val)
-        }
-        return nil
-    }
-    res["minimumLifetimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumLifetimeInMinutes(val)
-        }
-        return nil
-    }
+    res["defaultLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDefaultLength)
+    res["defaultLifetimeInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDefaultLifetimeInMinutes)
+    res["includeTargets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue , m.SetIncludeTargets)
+    res["isUsableOnce"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsUsableOnce)
+    res["maximumLifetimeInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumLifetimeInMinutes)
+    res["minimumLifetimeInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumLifetimeInMinutes)
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
@@ -145,10 +87,7 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) Serialize(writer 
         }
     }
     if m.GetIncludeTargets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
-        for i, v := range m.GetIncludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIncludeTargets())
         err = writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {
             return err

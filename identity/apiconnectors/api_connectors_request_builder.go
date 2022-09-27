@@ -17,7 +17,7 @@ type ApiConnectorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ApiConnectorsRequestBuilderGetQueryParameters represents entry point for API connectors.
+// ApiConnectorsRequestBuilderGetQueryParameters read the properties of an identityApiConnector object.
 type ApiConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ApiConnectorsRequestBuilderPostRequestConfiguration struct {
 func NewApiConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApiConnectorsRequestBuilder) {
     m := &ApiConnectorsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/apiConnectors{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identity/apiConnectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewApiConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ApiConnectorsRequestBuilder) Count()(*i74353fb14ccfc4f8e853385222296b5a334f1f4b481ac177dacb7df38de3268f.CountRequestBuilder) {
     return i74353fb14ccfc4f8e853385222296b5a334f1f4b481ac177dacb7df38de3268f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents entry point for API connectors.
+// CreateGetRequestInformation read the properties of an identityApiConnector object.
 func (m *ApiConnectorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents entry point for API connectors.
+// CreateGetRequestInformationWithRequestConfiguration read the properties of an identityApiConnector object.
 func (m *ApiConnectorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApiConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ApiConnectorsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to apiConnectors for identity
+// CreatePostRequestInformation create a new identityApiConnector object.
 func (m *ApiConnectorsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to apiConnectors for identity
+// CreatePostRequestInformationWithRequestConfiguration create a new identityApiConnector object.
 func (m *ApiConnectorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ApiConnectorsRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get represents entry point for API connectors.
+// Get read the properties of an identityApiConnector object.
 func (m *ApiConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ApiConnectorsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ApiConnectorsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorCollectionResponseable), nil
 }
-// Post create new navigation property to apiConnectors for identity
+// Post create a new identityApiConnector object.
 func (m *ApiConnectorsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

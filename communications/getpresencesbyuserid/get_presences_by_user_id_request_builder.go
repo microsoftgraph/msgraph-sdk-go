@@ -41,11 +41,11 @@ func NewGetPresencesByUserIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewGetPresencesByUserIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getPresencesByUserId
+// CreatePostRequestInformation get the presence information for multiple users.
 func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformation(body GetPresencesByUserIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getPresencesByUserId
+// CreatePostRequestInformationWithRequestConfiguration get the presence information for multiple users.
 func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Post invoke action getPresencesByUserId
+// Post get the presence information for multiple users.
 func (m *GetPresencesByUserIdRequestBuilder) Post(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(GetPresencesByUserIdResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

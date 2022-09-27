@@ -24,7 +24,7 @@ type PinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PinnedChatMessageInfoItemRequestBuilderGetQueryParameters get pinnedMessages from users
+// PinnedChatMessageInfoItemRequestBuilderGetQueryParameters a collection of all the pinned messages in the chat. Nullable.
 type PinnedChatMessageInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *PinnedChatMessageInfoItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get pinnedMessages from users
+// CreateGetRequestInformation a collection of all the pinned messages in the chat. Nullable.
 func (m *PinnedChatMessageInfoItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get pinnedMessages from users
+// CreateGetRequestInformationWithRequestConfiguration a collection of all the pinned messages in the chat. Nullable.
 func (m *PinnedChatMessageInfoItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,6 +112,7 @@ func (m *PinnedChatMessageInfoItemRequestBuilder) CreatePatchRequestInformationW
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -135,7 +136,7 @@ func (m *PinnedChatMessageInfoItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get pinnedMessages from users
+// Get a collection of all the pinned messages in the chat. Nullable.
 func (m *PinnedChatMessageInfoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -159,18 +160,21 @@ func (m *PinnedChatMessageInfoItemRequestBuilder) Message()(*i3fbf0b7e0599279a7c
     return i3fbf0b7e0599279a7c580025f0f2032344cb253153de0919ddace0a447080f49.NewMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property pinnedMessages in users
-func (m *PinnedChatMessageInfoItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, requestConfiguration *PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *PinnedChatMessageInfoItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, requestConfiguration *PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePinnedChatMessageInfoFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable), nil
 }

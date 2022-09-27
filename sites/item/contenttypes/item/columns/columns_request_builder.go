@@ -17,7 +17,7 @@ type ColumnsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ColumnsRequestBuilderGetQueryParameters the collection of column definitions for this contentType.
+// ColumnsRequestBuilderGetQueryParameters get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
 type ColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ColumnsRequestBuilderPostRequestConfiguration struct {
 func NewColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ColumnsRequestBuilder) {
     m := &ColumnsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}/columns{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ColumnsRequestBuilder) Count()(*ie7236d0c8429831da1c61c23c64e8c065e69661d504bc3110195d1fdd205d7ad.CountRequestBuilder) {
     return ie7236d0c8429831da1c61c23c64e8c065e69661d504bc3110195d1fdd205d7ad.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of column definitions for this contentType.
+// CreateGetRequestInformation get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
 func (m *ColumnsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of column definitions for this contentType.
+// CreateGetRequestInformationWithRequestConfiguration get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
 func (m *ColumnsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ColumnsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to columns for sites
+// CreatePostRequestInformation add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 func (m *ColumnsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to columns for sites
+// CreatePostRequestInformationWithRequestConfiguration add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 func (m *ColumnsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ColumnsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get the collection of column definitions for this contentType.
+// Get get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
 func (m *ColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create new navigation property to columns for sites
+// Post add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 func (m *ColumnsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ColumnsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

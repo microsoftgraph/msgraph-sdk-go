@@ -30,36 +30,9 @@ func CreateMeetingPolicyUpdatedEventMessageDetailFromDiscriminatorValue(parseNod
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
-    res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInitiator(val.(IdentitySetable))
-        }
-        return nil
-    }
-    res["meetingChatEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeetingChatEnabled(val)
-        }
-        return nil
-    }
-    res["meetingChatId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeetingChatId(val)
-        }
-        return nil
-    }
+    res["initiator"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentitySetFromDiscriminatorValue , m.SetInitiator)
+    res["meetingChatEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMeetingChatEnabled)
+    res["meetingChatId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMeetingChatId)
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.

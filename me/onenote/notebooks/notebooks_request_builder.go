@@ -19,7 +19,7 @@ type NotebooksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// NotebooksRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// NotebooksRequestBuilderGetQueryParameters retrieve a list of notebook objects.
 type NotebooksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,7 +58,7 @@ type NotebooksRequestBuilderPostRequestConfiguration struct {
 func NewNotebooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotebooksRequestBuilder) {
     m := &NotebooksRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/onenote/notebooks{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/onenote/notebooks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -77,11 +77,11 @@ func NewNotebooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *NotebooksRequestBuilder) Count()(*i80f6e49ccfaa83d6e3a4f593b6a4f3b292a8c13dfab500cb7841ec8eaccfcfef.CountRequestBuilder) {
     return i80f6e49ccfaa83d6e3a4f593b6a4f3b292a8c13dfab500cb7841ec8eaccfcfef.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of notebook objects.
 func (m *NotebooksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of notebook objects.
 func (m *NotebooksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NotebooksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,11 +97,11 @@ func (m *NotebooksRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to notebooks for me
+// CreatePostRequestInformation create a new OneNote notebook.
 func (m *NotebooksRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to notebooks for me
+// CreatePostRequestInformationWithRequestConfiguration create a new OneNote notebook.
 func (m *NotebooksRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, requestConfiguration *NotebooksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *NotebooksRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// Get retrieve a list of notebook objects.
 func (m *NotebooksRequestBuilder) Get(ctx context.Context, requestConfiguration *NotebooksRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotebookCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *NotebooksRequestBuilder) GetNotebookFromWebUrl()(*iff7c4f8543e30753ac01
 func (m *NotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*i47f6f2c05868e3a75e5232a7c8da81a487ae696060792d87aac5c34ae0a590c6.GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
     return i47f6f2c05868e3a75e5232a7c8da81a487ae696060792d87aac5c34ae0a590c6.NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks);
 }
-// Post create new navigation property to notebooks for me
+// Post create a new OneNote notebook.
 func (m *NotebooksRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, requestConfiguration *NotebooksRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

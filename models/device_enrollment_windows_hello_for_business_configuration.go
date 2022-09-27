@@ -52,126 +52,18 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedBiomet
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
-    res["enhancedBiometricsState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnhancedBiometricsState(val.(*Enablement))
-        }
-        return nil
-    }
-    res["pinExpirationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinExpirationInDays(val)
-        }
-        return nil
-    }
-    res["pinLowercaseCharactersUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsHelloForBusinessPinUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinLowercaseCharactersUsage(val.(*WindowsHelloForBusinessPinUsage))
-        }
-        return nil
-    }
-    res["pinMaximumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinMaximumLength(val)
-        }
-        return nil
-    }
-    res["pinMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinMinimumLength(val)
-        }
-        return nil
-    }
-    res["pinPreviousBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinPreviousBlockCount(val)
-        }
-        return nil
-    }
-    res["pinSpecialCharactersUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsHelloForBusinessPinUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinSpecialCharactersUsage(val.(*WindowsHelloForBusinessPinUsage))
-        }
-        return nil
-    }
-    res["pinUppercaseCharactersUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsHelloForBusinessPinUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinUppercaseCharactersUsage(val.(*WindowsHelloForBusinessPinUsage))
-        }
-        return nil
-    }
-    res["remotePassportEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemotePassportEnabled(val)
-        }
-        return nil
-    }
-    res["securityDeviceRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityDeviceRequired(val)
-        }
-        return nil
-    }
-    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetState(val.(*Enablement))
-        }
-        return nil
-    }
-    res["unlockWithBiometricsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUnlockWithBiometricsEnabled(val)
-        }
-        return nil
-    }
+    res["enhancedBiometricsState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetEnhancedBiometricsState)
+    res["pinExpirationInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPinExpirationInDays)
+    res["pinLowercaseCharactersUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsHelloForBusinessPinUsage , m.SetPinLowercaseCharactersUsage)
+    res["pinMaximumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPinMaximumLength)
+    res["pinMinimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPinMinimumLength)
+    res["pinPreviousBlockCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPinPreviousBlockCount)
+    res["pinSpecialCharactersUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsHelloForBusinessPinUsage , m.SetPinSpecialCharactersUsage)
+    res["pinUppercaseCharactersUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsHelloForBusinessPinUsage , m.SetPinUppercaseCharactersUsage)
+    res["remotePassportEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRemotePassportEnabled)
+    res["securityDeviceRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityDeviceRequired)
+    res["state"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetState)
+    res["unlockWithBiometricsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUnlockWithBiometricsEnabled)
     return res
 }
 // GetPinExpirationInDays gets the pinExpirationInDays property value. Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire

@@ -32,30 +32,8 @@ func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["bitlocker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateBitlockerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBitlocker(val.(Bitlockerable))
-        }
-        return nil
-    }
-    res["threatAssessmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateThreatAssessmentRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ThreatAssessmentRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(ThreatAssessmentRequestable)
-            }
-            m.SetThreatAssessmentRequests(res)
-        }
-        return nil
-    }
+    res["bitlocker"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateBitlockerFromDiscriminatorValue , m.SetBitlocker)
+    res["threatAssessmentRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateThreatAssessmentRequestFromDiscriminatorValue , m.SetThreatAssessmentRequests)
     return res
 }
 // GetThreatAssessmentRequests gets the threatAssessmentRequests property value. The threatAssessmentRequests property
@@ -75,10 +53,7 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetThreatAssessmentRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreatAssessmentRequests()))
-        for i, v := range m.GetThreatAssessmentRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetThreatAssessmentRequests())
         err = writer.WriteCollectionOfObjectValues("threatAssessmentRequests", cast)
         if err != nil {
             return err

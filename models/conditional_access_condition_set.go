@@ -67,132 +67,17 @@ func (m *ConditionalAccessConditionSet) GetDevices()(ConditionalAccessDevicesabl
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessApplicationsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplications(val.(ConditionalAccessApplicationsable))
-        }
-        return nil
-    }
-    res["clientApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessClientApplicationsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClientApplications(val.(ConditionalAccessClientApplicationsable))
-        }
-        return nil
-    }
-    res["clientAppTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessClientApp)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessClientApp, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessClientApp))
-            }
-            m.SetClientAppTypes(res)
-        }
-        return nil
-    }
-    res["devices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessDevicesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDevices(val.(ConditionalAccessDevicesable))
-        }
-        return nil
-    }
-    res["locations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessLocationsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLocations(val.(ConditionalAccessLocationsable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessPlatformsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlatforms(val.(ConditionalAccessPlatformsable))
-        }
-        return nil
-    }
-    res["servicePrincipalRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RiskLevel, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*RiskLevel))
-            }
-            m.SetServicePrincipalRiskLevels(res)
-        }
-        return nil
-    }
-    res["signInRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RiskLevel, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*RiskLevel))
-            }
-            m.SetSignInRiskLevels(res)
-        }
-        return nil
-    }
-    res["userRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RiskLevel, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*RiskLevel))
-            }
-            m.SetUserRiskLevels(res)
-        }
-        return nil
-    }
-    res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessUsersFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUsers(val.(ConditionalAccessUsersable))
-        }
-        return nil
-    }
+    res["applications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessApplicationsFromDiscriminatorValue , m.SetApplications)
+    res["clientApplications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessClientApplicationsFromDiscriminatorValue , m.SetClientApplications)
+    res["clientAppTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseConditionalAccessClientApp , m.SetClientAppTypes)
+    res["devices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessDevicesFromDiscriminatorValue , m.SetDevices)
+    res["locations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessLocationsFromDiscriminatorValue , m.SetLocations)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["platforms"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessPlatformsFromDiscriminatorValue , m.SetPlatforms)
+    res["servicePrincipalRiskLevels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseRiskLevel , m.SetServicePrincipalRiskLevels)
+    res["signInRiskLevels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseRiskLevel , m.SetSignInRiskLevels)
+    res["userRiskLevels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseRiskLevel , m.SetUserRiskLevels)
+    res["users"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessUsersFromDiscriminatorValue , m.SetUsers)
     return res
 }
 // GetLocations gets the locations property value. Locations included in and excluded from the policy.

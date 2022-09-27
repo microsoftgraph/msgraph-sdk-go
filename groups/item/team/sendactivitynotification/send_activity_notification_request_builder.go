@@ -41,11 +41,11 @@ func NewSendActivityNotificationRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action sendActivityNotification
+// CreatePostRequestInformation send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformation(body SendActivityNotificationPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action sendActivityNotification
+// CreatePostRequestInformationWithRequestConfiguration send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendActivityNotificationPostRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// Post invoke action sendActivityNotification
+// Post send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 func (m *SendActivityNotificationRequestBuilder) Post(ctx context.Context, body SendActivityNotificationPostRequestBodyable, requestConfiguration *SendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

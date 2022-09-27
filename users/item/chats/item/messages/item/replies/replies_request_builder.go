@@ -18,7 +18,7 @@ type RepliesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RepliesRequestBuilderGetQueryParameters replies for a specified message. Supports $expand for channel messages.
+// RepliesRequestBuilderGetQueryParameters list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 type RepliesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type RepliesRequestBuilderPostRequestConfiguration struct {
 func NewRepliesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RepliesRequestBuilder) {
     m := &RepliesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewRepliesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *RepliesRequestBuilder) Count()(*i158d1cb3364803bf2fc2c838109f0b61149b91becbbb7542bb131e6c60c84bdc.CountRequestBuilder) {
     return i158d1cb3364803bf2fc2c838109f0b61149b91becbbb7542bb131e6c60c84bdc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation replies for a specified message. Supports $expand for channel messages.
+// CreateGetRequestInformation list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 func (m *RepliesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration replies for a specified message. Supports $expand for channel messages.
+// CreateGetRequestInformationWithRequestConfiguration list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 func (m *RepliesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *RepliesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to replies for users
+// CreatePostRequestInformation create a new reply to a chatMessage in a specified channel.
 func (m *RepliesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to replies for users
+// CreatePostRequestInformationWithRequestConfiguration create a new reply to a chatMessage in a specified channel.
 func (m *RepliesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *RepliesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *RepliesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 func (m *RepliesRequestBuilder) Delta()(*i4fe7790cd49cf3a58a0f8b0fc89c5a5311b55d220d0c5a4353a87e5c6739af2a.DeltaRequestBuilder) {
     return i4fe7790cd49cf3a58a0f8b0fc89c5a5311b55d220d0c5a4353a87e5c6739af2a.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get replies for a specified message. Supports $expand for channel messages.
+// Get list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 func (m *RepliesRequestBuilder) Get(ctx context.Context, requestConfiguration *RepliesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *RepliesRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable), nil
 }
-// Post create new navigation property to replies for users
+// Post create a new reply to a chatMessage in a specified channel.
 func (m *RepliesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *RepliesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -54,144 +54,19 @@ func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
-    res["applicableArchitectures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsArchitecture)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicableArchitectures(val.(*WindowsArchitecture))
-        }
-        return nil
-    }
-    res["installCommandLine"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInstallCommandLine(val)
-        }
-        return nil
-    }
-    res["installExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWin32LobAppInstallExperienceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInstallExperience(val.(Win32LobAppInstallExperienceable))
-        }
-        return nil
-    }
-    res["minimumCpuSpeedInMHz"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumCpuSpeedInMHz(val)
-        }
-        return nil
-    }
-    res["minimumFreeDiskSpaceInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumFreeDiskSpaceInMB(val)
-        }
-        return nil
-    }
-    res["minimumMemoryInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumMemoryInMB(val)
-        }
-        return nil
-    }
-    res["minimumNumberOfProcessors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumNumberOfProcessors(val)
-        }
-        return nil
-    }
-    res["minimumSupportedWindowsRelease"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumSupportedWindowsRelease(val)
-        }
-        return nil
-    }
-    res["msiInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWin32LobAppMsiInformationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMsiInformation(val.(Win32LobAppMsiInformationable))
-        }
-        return nil
-    }
-    res["returnCodes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWin32LobAppReturnCodeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Win32LobAppReturnCodeable, len(val))
-            for i, v := range val {
-                res[i] = v.(Win32LobAppReturnCodeable)
-            }
-            m.SetReturnCodes(res)
-        }
-        return nil
-    }
-    res["rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWin32LobAppRuleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Win32LobAppRuleable, len(val))
-            for i, v := range val {
-                res[i] = v.(Win32LobAppRuleable)
-            }
-            m.SetRules(res)
-        }
-        return nil
-    }
-    res["setupFilePath"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSetupFilePath(val)
-        }
-        return nil
-    }
-    res["uninstallCommandLine"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUninstallCommandLine(val)
-        }
-        return nil
-    }
+    res["applicableArchitectures"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsArchitecture , m.SetApplicableArchitectures)
+    res["installCommandLine"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInstallCommandLine)
+    res["installExperience"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWin32LobAppInstallExperienceFromDiscriminatorValue , m.SetInstallExperience)
+    res["minimumCpuSpeedInMHz"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumCpuSpeedInMHz)
+    res["minimumFreeDiskSpaceInMB"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumFreeDiskSpaceInMB)
+    res["minimumMemoryInMB"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumMemoryInMB)
+    res["minimumNumberOfProcessors"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumNumberOfProcessors)
+    res["minimumSupportedWindowsRelease"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumSupportedWindowsRelease)
+    res["msiInformation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWin32LobAppMsiInformationFromDiscriminatorValue , m.SetMsiInformation)
+    res["returnCodes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWin32LobAppReturnCodeFromDiscriminatorValue , m.SetReturnCodes)
+    res["rules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWin32LobAppRuleFromDiscriminatorValue , m.SetRules)
+    res["setupFilePath"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSetupFilePath)
+    res["uninstallCommandLine"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUninstallCommandLine)
     return res
 }
 // GetInstallCommandLine gets the installCommandLine property value. The command line to install this app
@@ -304,20 +179,14 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     if m.GetReturnCodes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReturnCodes()))
-        for i, v := range m.GetReturnCodes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetReturnCodes())
         err = writer.WriteCollectionOfObjectValues("returnCodes", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
-        for i, v := range m.GetRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRules())
         err = writer.WriteCollectionOfObjectValues("rules", cast)
         if err != nil {
             return err

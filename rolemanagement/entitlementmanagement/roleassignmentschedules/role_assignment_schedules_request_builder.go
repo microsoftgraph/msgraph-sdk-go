@@ -18,7 +18,7 @@ type RoleAssignmentSchedulesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleAssignmentSchedulesRequestBuilderGetQueryParameters schedules for active role assignment operations.
+// RoleAssignmentSchedulesRequestBuilderGetQueryParameters get the schedules for active role assignment operations.
 type RoleAssignmentSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type RoleAssignmentSchedulesRequestBuilderPostRequestConfiguration struct {
 func NewRoleAssignmentSchedulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleAssignmentSchedulesRequestBuilder) {
     m := &RoleAssignmentSchedulesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentSchedules{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentSchedules{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewRoleAssignmentSchedulesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *RoleAssignmentSchedulesRequestBuilder) Count()(*i19e99f0ffd7ed27b47c8950354df83ca43a28b8fc8abc6f9bc4a92bff2df2831.CountRequestBuilder) {
     return i19e99f0ffd7ed27b47c8950354df83ca43a28b8fc8abc6f9bc4a92bff2df2831.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation schedules for active role assignment operations.
+// CreateGetRequestInformation get the schedules for active role assignment operations.
 func (m *RoleAssignmentSchedulesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration schedules for active role assignment operations.
+// CreateGetRequestInformationWithRequestConfiguration get the schedules for active role assignment operations.
 func (m *RoleAssignmentSchedulesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *RoleAssignmentSchedulesRequestBuilder) CreatePostRequestInformationWith
 func (m *RoleAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i539db39cab3bb1dc06c581d138d2d7eb88c9dce5271074679fcbf8f1f33543fb.FilterByCurrentUserWithOnRequestBuilder) {
     return i539db39cab3bb1dc06c581d138d2d7eb88c9dce5271074679fcbf8f1f33543fb.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get schedules for active role assignment operations.
+// Get get the schedules for active role assignment operations.
 func (m *RoleAssignmentSchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

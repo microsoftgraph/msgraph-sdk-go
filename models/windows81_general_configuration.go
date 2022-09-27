@@ -174,336 +174,39 @@ func (m *Windows81GeneralConfiguration) GetDiagnosticsBlockDataSubmission()(*boo
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81GeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["accountsBlockAddingNonMicrosoftAccountEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccountsBlockAddingNonMicrosoftAccountEmail(val)
-        }
-        return nil
-    }
-    res["applyOnlyToWindows81"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplyOnlyToWindows81(val)
-        }
-        return nil
-    }
-    res["browserBlockAutofill"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockAutofill(val)
-        }
-        return nil
-    }
-    res["browserBlockAutomaticDetectionOfIntranetSites"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockAutomaticDetectionOfIntranetSites(val)
-        }
-        return nil
-    }
-    res["browserBlockEnterpriseModeAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockEnterpriseModeAccess(val)
-        }
-        return nil
-    }
-    res["browserBlockJavaScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockJavaScript(val)
-        }
-        return nil
-    }
-    res["browserBlockPlugins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockPlugins(val)
-        }
-        return nil
-    }
-    res["browserBlockPopups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockPopups(val)
-        }
-        return nil
-    }
-    res["browserBlockSendingDoNotTrackHeader"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockSendingDoNotTrackHeader(val)
-        }
-        return nil
-    }
-    res["browserBlockSingleWordEntryOnIntranetSites"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserBlockSingleWordEntryOnIntranetSites(val)
-        }
-        return nil
-    }
-    res["browserEnterpriseModeSiteListLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserEnterpriseModeSiteListLocation(val)
-        }
-        return nil
-    }
-    res["browserInternetSecurityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseInternetSiteSecurityLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserInternetSecurityLevel(val.(*InternetSiteSecurityLevel))
-        }
-        return nil
-    }
-    res["browserIntranetSecurityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSiteSecurityLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserIntranetSecurityLevel(val.(*SiteSecurityLevel))
-        }
-        return nil
-    }
-    res["browserLoggingReportLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserLoggingReportLocation(val)
-        }
-        return nil
-    }
-    res["browserRequireFirewall"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserRequireFirewall(val)
-        }
-        return nil
-    }
-    res["browserRequireFraudWarning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserRequireFraudWarning(val)
-        }
-        return nil
-    }
-    res["browserRequireHighSecurityForRestrictedSites"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserRequireHighSecurityForRestrictedSites(val)
-        }
-        return nil
-    }
-    res["browserRequireSmartScreen"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserRequireSmartScreen(val)
-        }
-        return nil
-    }
-    res["browserTrustedSitesSecurityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSiteSecurityLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowserTrustedSitesSecurityLevel(val.(*SiteSecurityLevel))
-        }
-        return nil
-    }
-    res["cellularBlockDataRoaming"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCellularBlockDataRoaming(val)
-        }
-        return nil
-    }
-    res["diagnosticsBlockDataSubmission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDiagnosticsBlockDataSubmission(val)
-        }
-        return nil
-    }
-    res["passwordBlockPicturePasswordAndPin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordBlockPicturePasswordAndPin(val)
-        }
-        return nil
-    }
-    res["passwordExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordExpirationDays(val)
-        }
-        return nil
-    }
-    res["passwordMinimumCharacterSetCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumCharacterSetCount(val)
-        }
-        return nil
-    }
-    res["passwordMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumLength(val)
-        }
-        return nil
-    }
-    res["passwordMinutesOfInactivityBeforeScreenTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinutesOfInactivityBeforeScreenTimeout(val)
-        }
-        return nil
-    }
-    res["passwordPreviousPasswordBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordPreviousPasswordBlockCount(val)
-        }
-        return nil
-    }
-    res["passwordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRequiredPasswordType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordRequiredType(val.(*RequiredPasswordType))
-        }
-        return nil
-    }
-    res["passwordSignInFailureCountBeforeFactoryReset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordSignInFailureCountBeforeFactoryReset(val)
-        }
-        return nil
-    }
-    res["storageRequireDeviceEncryption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStorageRequireDeviceEncryption(val)
-        }
-        return nil
-    }
-    res["updatesRequireAutomaticUpdates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdatesRequireAutomaticUpdates(val)
-        }
-        return nil
-    }
-    res["userAccountControlSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsUserAccountControlSettings)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserAccountControlSettings(val.(*WindowsUserAccountControlSettings))
-        }
-        return nil
-    }
-    res["workFoldersUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkFoldersUrl(val)
-        }
-        return nil
-    }
+    res["accountsBlockAddingNonMicrosoftAccountEmail"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAccountsBlockAddingNonMicrosoftAccountEmail)
+    res["applyOnlyToWindows81"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetApplyOnlyToWindows81)
+    res["browserBlockAutofill"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockAutofill)
+    res["browserBlockAutomaticDetectionOfIntranetSites"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockAutomaticDetectionOfIntranetSites)
+    res["browserBlockEnterpriseModeAccess"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockEnterpriseModeAccess)
+    res["browserBlockJavaScript"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockJavaScript)
+    res["browserBlockPlugins"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockPlugins)
+    res["browserBlockPopups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockPopups)
+    res["browserBlockSendingDoNotTrackHeader"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockSendingDoNotTrackHeader)
+    res["browserBlockSingleWordEntryOnIntranetSites"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserBlockSingleWordEntryOnIntranetSites)
+    res["browserEnterpriseModeSiteListLocation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetBrowserEnterpriseModeSiteListLocation)
+    res["browserInternetSecurityLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseInternetSiteSecurityLevel , m.SetBrowserInternetSecurityLevel)
+    res["browserIntranetSecurityLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSiteSecurityLevel , m.SetBrowserIntranetSecurityLevel)
+    res["browserLoggingReportLocation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetBrowserLoggingReportLocation)
+    res["browserRequireFirewall"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserRequireFirewall)
+    res["browserRequireFraudWarning"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserRequireFraudWarning)
+    res["browserRequireHighSecurityForRestrictedSites"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserRequireHighSecurityForRestrictedSites)
+    res["browserRequireSmartScreen"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBrowserRequireSmartScreen)
+    res["browserTrustedSitesSecurityLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSiteSecurityLevel , m.SetBrowserTrustedSitesSecurityLevel)
+    res["cellularBlockDataRoaming"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockDataRoaming)
+    res["diagnosticsBlockDataSubmission"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDiagnosticsBlockDataSubmission)
+    res["passwordBlockPicturePasswordAndPin"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasswordBlockPicturePasswordAndPin)
+    res["passwordExpirationDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordExpirationDays)
+    res["passwordMinimumCharacterSetCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumCharacterSetCount)
+    res["passwordMinimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumLength)
+    res["passwordMinutesOfInactivityBeforeScreenTimeout"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinutesOfInactivityBeforeScreenTimeout)
+    res["passwordPreviousPasswordBlockCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordPreviousPasswordBlockCount)
+    res["passwordRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseRequiredPasswordType , m.SetPasswordRequiredType)
+    res["passwordSignInFailureCountBeforeFactoryReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordSignInFailureCountBeforeFactoryReset)
+    res["storageRequireDeviceEncryption"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStorageRequireDeviceEncryption)
+    res["updatesRequireAutomaticUpdates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUpdatesRequireAutomaticUpdates)
+    res["userAccountControlSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsUserAccountControlSettings , m.SetUserAccountControlSettings)
+    res["workFoldersUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWorkFoldersUrl)
     return res
 }
 // GetPasswordBlockPicturePasswordAndPin gets the passwordBlockPicturePasswordAndPin property value. Indicates whether or not to Block the user from using a pictures password and pin.
@@ -562,12 +265,6 @@ func (m *Windows81GeneralConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err = writer.WriteBoolValue("accountsBlockAddingNonMicrosoftAccountEmail", m.GetAccountsBlockAddingNonMicrosoftAccountEmail())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("applyOnlyToWindows81", m.GetApplyOnlyToWindows81())
         if err != nil {
             return err
         }

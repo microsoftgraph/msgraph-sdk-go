@@ -41,11 +41,11 @@ func NewGetApplicablePolicyRequirementsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewGetApplicablePolicyRequirementsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getApplicablePolicyRequirements
+// CreatePostRequestInformation in Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 func (m *GetApplicablePolicyRequirementsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getApplicablePolicyRequirements
+// CreatePostRequestInformationWithRequestConfiguration in Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 func (m *GetApplicablePolicyRequirementsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *GetApplicablePolicyRequirementsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *GetApplicablePolicyRequirementsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Post invoke action getApplicablePolicyRequirements
+// Post in Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 func (m *GetApplicablePolicyRequirementsRequestBuilder) Post(ctx context.Context, requestConfiguration *GetApplicablePolicyRequirementsRequestBuilderPostRequestConfiguration)(GetApplicablePolicyRequirementsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -50,56 +50,11 @@ func (m *ManagedDeviceOverview) GetEnrolledDeviceCount()(*int32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceExchangeAccessStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceExchangeAccessStateSummary(val.(DeviceExchangeAccessStateSummaryable))
-        }
-        return nil
-    }
-    res["deviceOperatingSystemSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceOperatingSystemSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceOperatingSystemSummary(val.(DeviceOperatingSystemSummaryable))
-        }
-        return nil
-    }
-    res["dualEnrolledDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDualEnrolledDeviceCount(val)
-        }
-        return nil
-    }
-    res["enrolledDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnrolledDeviceCount(val)
-        }
-        return nil
-    }
-    res["mdmEnrolledCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMdmEnrolledCount(val)
-        }
-        return nil
-    }
+    res["deviceExchangeAccessStateSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue , m.SetDeviceExchangeAccessStateSummary)
+    res["deviceOperatingSystemSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceOperatingSystemSummaryFromDiscriminatorValue , m.SetDeviceOperatingSystemSummary)
+    res["dualEnrolledDeviceCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDualEnrolledDeviceCount)
+    res["enrolledDeviceCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetEnrolledDeviceCount)
+    res["mdmEnrolledCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMdmEnrolledCount)
     return res
 }
 // GetMdmEnrolledCount gets the mdmEnrolledCount property value. The number of devices enrolled in MDM

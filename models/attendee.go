@@ -28,26 +28,8 @@ func CreateAttendeeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Attendee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AttendeeBase.GetFieldDeserializers()
-    res["proposedNewTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTimeSlotFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProposedNewTime(val.(TimeSlotable))
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateResponseStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(ResponseStatusable))
-        }
-        return nil
-    }
+    res["proposedNewTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTimeSlotFromDiscriminatorValue , m.SetProposedNewTime)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResponseStatusFromDiscriminatorValue , m.SetStatus)
     return res
 }
 // GetProposedNewTime gets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.

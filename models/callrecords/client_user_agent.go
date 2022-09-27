@@ -40,46 +40,10 @@ func (m *ClientUserAgent) GetCommunicationServiceId()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClientUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserAgent.GetFieldDeserializers()
-    res["azureADAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAzureADAppId(val)
-        }
-        return nil
-    }
-    res["communicationServiceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCommunicationServiceId(val)
-        }
-        return nil
-    }
-    res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseClientPlatform)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlatform(val.(*ClientPlatform))
-        }
-        return nil
-    }
-    res["productFamily"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProductFamily)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProductFamily(val.(*ProductFamily))
-        }
-        return nil
-    }
+    res["azureADAppId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAzureADAppId)
+    res["communicationServiceId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCommunicationServiceId)
+    res["platform"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseClientPlatform , m.SetPlatform)
+    res["productFamily"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseProductFamily , m.SetProductFamily)
     return res
 }
 // GetPlatform gets the platform property value. The platform property

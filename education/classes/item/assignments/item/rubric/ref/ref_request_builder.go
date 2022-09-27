@@ -72,11 +72,11 @@ func (m *RefRequestBuilder) CreateDeleteRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation when set, the grading rubric attached to this assignment.
+// CreateGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RefRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration when set, the grading rubric attached to this assignment.
+// CreateGetRequestInformationWithRequestConfiguration get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RefRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,7 +122,7 @@ func (m *RefRequestBuilder) Delete(ctx context.Context, requestConfiguration *Re
     }
     return nil
 }
-// Get when set, the grading rubric attached to this assignment.
+// Get get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RefRequestBuilder) Get(ctx context.Context, requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

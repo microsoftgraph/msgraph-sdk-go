@@ -8,9 +8,9 @@ import (
 // MessageUnpinnedEventMessageDetail 
 type MessageUnpinnedEventMessageDetail struct {
     EventMessageDetail
-    // The eventDateTime property
+    // Date and time when the event occurred.
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The initiator property
+    // Initiator of the event.
     initiator IdentitySetable
 }
 // NewMessageUnpinnedEventMessageDetail instantiates a new MessageUnpinnedEventMessageDetail and sets the default values.
@@ -26,36 +26,18 @@ func NewMessageUnpinnedEventMessageDetail()(*MessageUnpinnedEventMessageDetail) 
 func CreateMessageUnpinnedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageUnpinnedEventMessageDetail(), nil
 }
-// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
+// GetEventDateTime gets the eventDateTime property value. Date and time when the event occurred.
 func (m *MessageUnpinnedEventMessageDetail) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.eventDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageUnpinnedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
-    res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEventDateTime(val)
-        }
-        return nil
-    }
-    res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInitiator(val.(IdentitySetable))
-        }
-        return nil
-    }
+    res["eventDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetEventDateTime)
+    res["initiator"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentitySetFromDiscriminatorValue , m.SetInitiator)
     return res
 }
-// GetInitiator gets the initiator property value. The initiator property
+// GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MessageUnpinnedEventMessageDetail) GetInitiator()(IdentitySetable) {
     return m.initiator
 }
@@ -79,11 +61,11 @@ func (m *MessageUnpinnedEventMessageDetail) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
+// SetEventDateTime sets the eventDateTime property value. Date and time when the event occurred.
 func (m *MessageUnpinnedEventMessageDetail) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.eventDateTime = value
 }
-// SetInitiator sets the initiator property value. The initiator property
+// SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MessageUnpinnedEventMessageDetail) SetInitiator(value IdentitySetable)() {
     m.initiator = value
 }

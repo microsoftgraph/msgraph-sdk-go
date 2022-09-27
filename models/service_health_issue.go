@@ -54,100 +54,15 @@ func (m *ServiceHealthIssue) GetFeatureGroup()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServiceAnnouncementBase.GetFieldDeserializers()
-    res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseServiceHealthClassificationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClassification(val.(*ServiceHealthClassificationType))
-        }
-        return nil
-    }
-    res["feature"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeature(val)
-        }
-        return nil
-    }
-    res["featureGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureGroup(val)
-        }
-        return nil
-    }
-    res["impactDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetImpactDescription(val)
-        }
-        return nil
-    }
-    res["isResolved"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsResolved(val)
-        }
-        return nil
-    }
-    res["origin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseServiceHealthOrigin)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrigin(val.(*ServiceHealthOrigin))
-        }
-        return nil
-    }
-    res["posts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateServiceHealthIssuePostFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ServiceHealthIssuePostable, len(val))
-            for i, v := range val {
-                res[i] = v.(ServiceHealthIssuePostable)
-            }
-            m.SetPosts(res)
-        }
-        return nil
-    }
-    res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetService(val)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseServiceHealthStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*ServiceHealthStatus))
-        }
-        return nil
-    }
+    res["classification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseServiceHealthClassificationType , m.SetClassification)
+    res["feature"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFeature)
+    res["featureGroup"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFeatureGroup)
+    res["impactDescription"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetImpactDescription)
+    res["isResolved"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsResolved)
+    res["origin"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseServiceHealthOrigin , m.SetOrigin)
+    res["posts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServiceHealthIssuePostFromDiscriminatorValue , m.SetPosts)
+    res["service"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetService)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseServiceHealthStatus , m.SetStatus)
     return res
 }
 // GetImpactDescription gets the impactDescription property value. The description of the service issue impact.
@@ -219,10 +134,7 @@ func (m *ServiceHealthIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     if m.GetPosts() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPosts()))
-        for i, v := range m.GetPosts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPosts())
         err = writer.WriteCollectionOfObjectValues("posts", cast)
         if err != nil {
             return err

@@ -17,7 +17,7 @@ type ExtensionPropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExtensionPropertiesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// ExtensionPropertiesRequestBuilderGetQueryParameters retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
 type ExtensionPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ExtensionPropertiesRequestBuilderPostRequestConfiguration struct {
 func NewExtensionPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExtensionPropertiesRequestBuilder) {
     m := &ExtensionPropertiesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/extensionProperties{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/extensionProperties{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewExtensionPropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ExtensionPropertiesRequestBuilder) Count()(*i490e288b9c01b7c8d6d9d2a2837effbb95fd38b69e6d7ced247744a27fb79bd8.CountRequestBuilder) {
     return i490e288b9c01b7c8d6d9d2a2837effbb95fd38b69e6d7ced247744a27fb79bd8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// CreateGetRequestInformation retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
 func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
 func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtensionPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to extensionProperties for applications
+// CreatePostRequestInformation create a new directory extension definition, represented by an extensionProperty object.
 func (m *ExtensionPropertiesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to extensionProperties for applications
+// CreatePostRequestInformationWithRequestConfiguration create a new directory extension definition, represented by an extensionProperty object.
 func (m *ExtensionPropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, requestConfiguration *ExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ExtensionPropertiesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// Get retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
 func (m *ExtensionPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExtensionPropertiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ExtensionPropertiesRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyCollectionResponseable), nil
 }
-// Post create new navigation property to extensionProperties for applications
+// Post create a new directory extension definition, represented by an extensionProperty object.
 func (m *ExtensionPropertiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, requestConfiguration *ExtensionPropertiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

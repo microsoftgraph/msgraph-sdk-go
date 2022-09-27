@@ -28,26 +28,8 @@ func CreateIosVppAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
-    res["useDeviceLicensing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUseDeviceLicensing(val)
-        }
-        return nil
-    }
-    res["vpnConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVpnConfigurationId(val)
-        }
-        return nil
-    }
+    res["useDeviceLicensing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseDeviceLicensing)
+    res["vpnConfigurationId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVpnConfigurationId)
     return res
 }
 // GetUseDeviceLicensing gets the useDeviceLicensing property value. Whether or not to use device licensing.

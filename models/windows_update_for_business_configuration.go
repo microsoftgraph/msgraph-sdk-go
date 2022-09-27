@@ -173,366 +173,42 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesWillBeRolledBac
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["allowWindows11Upgrade"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowWindows11Upgrade(val)
-        }
-        return nil
-    }
-    res["automaticUpdateMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAutomaticUpdateMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutomaticUpdateMode(val.(*AutomaticUpdateMode))
-        }
-        return nil
-    }
-    res["autoRestartNotificationDismissal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAutoRestartNotificationDismissalMethod)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutoRestartNotificationDismissal(val.(*AutoRestartNotificationDismissalMethod))
-        }
-        return nil
-    }
-    res["businessReadyUpdatesOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsUpdateType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBusinessReadyUpdatesOnly(val.(*WindowsUpdateType))
-        }
-        return nil
-    }
-    res["deadlineForFeatureUpdatesInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeadlineForFeatureUpdatesInDays(val)
-        }
-        return nil
-    }
-    res["deadlineForQualityUpdatesInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeadlineForQualityUpdatesInDays(val)
-        }
-        return nil
-    }
-    res["deadlineGracePeriodInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeadlineGracePeriodInDays(val)
-        }
-        return nil
-    }
-    res["deliveryOptimizationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsDeliveryOptimizationMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeliveryOptimizationMode(val.(*WindowsDeliveryOptimizationMode))
-        }
-        return nil
-    }
-    res["driversExcluded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDriversExcluded(val)
-        }
-        return nil
-    }
-    res["engagedRestartDeadlineInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEngagedRestartDeadlineInDays(val)
-        }
-        return nil
-    }
-    res["engagedRestartSnoozeScheduleInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEngagedRestartSnoozeScheduleInDays(val)
-        }
-        return nil
-    }
-    res["engagedRestartTransitionScheduleInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEngagedRestartTransitionScheduleInDays(val)
-        }
-        return nil
-    }
-    res["featureUpdatesDeferralPeriodInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesDeferralPeriodInDays(val)
-        }
-        return nil
-    }
-    res["featureUpdatesPaused"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesPaused(val)
-        }
-        return nil
-    }
-    res["featureUpdatesPauseExpiryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesPauseExpiryDateTime(val)
-        }
-        return nil
-    }
-    res["featureUpdatesPauseStartDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetDateOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesPauseStartDate(val)
-        }
-        return nil
-    }
-    res["featureUpdatesRollbackStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesRollbackStartDateTime(val)
-        }
-        return nil
-    }
-    res["featureUpdatesRollbackWindowInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesRollbackWindowInDays(val)
-        }
-        return nil
-    }
-    res["featureUpdatesWillBeRolledBack"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeatureUpdatesWillBeRolledBack(val)
-        }
-        return nil
-    }
-    res["installationSchedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsUpdateInstallScheduleTypeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInstallationSchedule(val.(WindowsUpdateInstallScheduleTypeable))
-        }
-        return nil
-    }
-    res["microsoftUpdateServiceAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftUpdateServiceAllowed(val)
-        }
-        return nil
-    }
-    res["postponeRebootUntilAfterDeadline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPostponeRebootUntilAfterDeadline(val)
-        }
-        return nil
-    }
-    res["prereleaseFeatures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrereleaseFeatures)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrereleaseFeatures(val.(*PrereleaseFeatures))
-        }
-        return nil
-    }
-    res["qualityUpdatesDeferralPeriodInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdatesDeferralPeriodInDays(val)
-        }
-        return nil
-    }
-    res["qualityUpdatesPaused"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdatesPaused(val)
-        }
-        return nil
-    }
-    res["qualityUpdatesPauseExpiryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdatesPauseExpiryDateTime(val)
-        }
-        return nil
-    }
-    res["qualityUpdatesPauseStartDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetDateOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdatesPauseStartDate(val)
-        }
-        return nil
-    }
-    res["qualityUpdatesRollbackStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdatesRollbackStartDateTime(val)
-        }
-        return nil
-    }
-    res["qualityUpdatesWillBeRolledBack"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdatesWillBeRolledBack(val)
-        }
-        return nil
-    }
-    res["scheduleImminentRestartWarningInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScheduleImminentRestartWarningInMinutes(val)
-        }
-        return nil
-    }
-    res["scheduleRestartWarningInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScheduleRestartWarningInHours(val)
-        }
-        return nil
-    }
-    res["skipChecksBeforeRestart"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSkipChecksBeforeRestart(val)
-        }
-        return nil
-    }
-    res["updateNotificationLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsUpdateNotificationDisplayOption)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdateNotificationLevel(val.(*WindowsUpdateNotificationDisplayOption))
-        }
-        return nil
-    }
-    res["updateWeeks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsUpdateForBusinessUpdateWeeks)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdateWeeks(val.(*WindowsUpdateForBusinessUpdateWeeks))
-        }
-        return nil
-    }
-    res["userPauseAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserPauseAccess(val.(*Enablement))
-        }
-        return nil
-    }
-    res["userWindowsUpdateScanAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserWindowsUpdateScanAccess(val.(*Enablement))
-        }
-        return nil
-    }
+    res["allowWindows11Upgrade"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowWindows11Upgrade)
+    res["automaticUpdateMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAutomaticUpdateMode , m.SetAutomaticUpdateMode)
+    res["autoRestartNotificationDismissal"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAutoRestartNotificationDismissalMethod , m.SetAutoRestartNotificationDismissal)
+    res["businessReadyUpdatesOnly"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsUpdateType , m.SetBusinessReadyUpdatesOnly)
+    res["deadlineForFeatureUpdatesInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDeadlineForFeatureUpdatesInDays)
+    res["deadlineForQualityUpdatesInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDeadlineForQualityUpdatesInDays)
+    res["deadlineGracePeriodInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDeadlineGracePeriodInDays)
+    res["deliveryOptimizationMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsDeliveryOptimizationMode , m.SetDeliveryOptimizationMode)
+    res["driversExcluded"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDriversExcluded)
+    res["engagedRestartDeadlineInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetEngagedRestartDeadlineInDays)
+    res["engagedRestartSnoozeScheduleInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetEngagedRestartSnoozeScheduleInDays)
+    res["engagedRestartTransitionScheduleInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetEngagedRestartTransitionScheduleInDays)
+    res["featureUpdatesDeferralPeriodInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetFeatureUpdatesDeferralPeriodInDays)
+    res["featureUpdatesPaused"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFeatureUpdatesPaused)
+    res["featureUpdatesPauseExpiryDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetFeatureUpdatesPauseExpiryDateTime)
+    res["featureUpdatesPauseStartDate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetDateOnlyValue(m.SetFeatureUpdatesPauseStartDate)
+    res["featureUpdatesRollbackStartDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetFeatureUpdatesRollbackStartDateTime)
+    res["featureUpdatesRollbackWindowInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetFeatureUpdatesRollbackWindowInDays)
+    res["featureUpdatesWillBeRolledBack"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFeatureUpdatesWillBeRolledBack)
+    res["installationSchedule"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsUpdateInstallScheduleTypeFromDiscriminatorValue , m.SetInstallationSchedule)
+    res["microsoftUpdateServiceAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftUpdateServiceAllowed)
+    res["postponeRebootUntilAfterDeadline"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPostponeRebootUntilAfterDeadline)
+    res["prereleaseFeatures"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrereleaseFeatures , m.SetPrereleaseFeatures)
+    res["qualityUpdatesDeferralPeriodInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetQualityUpdatesDeferralPeriodInDays)
+    res["qualityUpdatesPaused"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetQualityUpdatesPaused)
+    res["qualityUpdatesPauseExpiryDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetQualityUpdatesPauseExpiryDateTime)
+    res["qualityUpdatesPauseStartDate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetDateOnlyValue(m.SetQualityUpdatesPauseStartDate)
+    res["qualityUpdatesRollbackStartDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetQualityUpdatesRollbackStartDateTime)
+    res["qualityUpdatesWillBeRolledBack"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetQualityUpdatesWillBeRolledBack)
+    res["scheduleImminentRestartWarningInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetScheduleImminentRestartWarningInMinutes)
+    res["scheduleRestartWarningInHours"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetScheduleRestartWarningInHours)
+    res["skipChecksBeforeRestart"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSkipChecksBeforeRestart)
+    res["updateNotificationLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsUpdateNotificationDisplayOption , m.SetUpdateNotificationLevel)
+    res["updateWeeks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsUpdateForBusinessUpdateWeeks , m.SetUpdateWeeks)
+    res["userPauseAccess"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetUserPauseAccess)
+    res["userWindowsUpdateScanAccess"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetUserWindowsUpdateScanAccess)
     return res
 }
 // GetInstallationSchedule gets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
@@ -704,12 +380,6 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
         }
     }
     {
-        err = writer.WriteDateOnlyValue("featureUpdatesPauseStartDate", m.GetFeatureUpdatesPauseStartDate())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeValue("featureUpdatesRollbackStartDateTime", m.GetFeatureUpdatesRollbackStartDateTime())
         if err != nil {
             return err
@@ -766,12 +436,6 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
     }
     {
         err = writer.WriteTimeValue("qualityUpdatesPauseExpiryDateTime", m.GetQualityUpdatesPauseExpiryDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteDateOnlyValue("qualityUpdatesPauseStartDate", m.GetQualityUpdatesPauseStartDate())
         if err != nil {
             return err
         }

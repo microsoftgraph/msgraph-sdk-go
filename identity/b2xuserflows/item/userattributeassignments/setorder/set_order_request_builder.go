@@ -41,11 +41,11 @@ func NewSetOrderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action setOrder
+// CreatePostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 func (m *SetOrderRequestBuilder) CreatePostRequestInformation(body SetOrderPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setOrder
+// CreatePostRequestInformationWithRequestConfiguration set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action setOrder
+// Post set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 func (m *SetOrderRequestBuilder) Post(ctx context.Context, body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

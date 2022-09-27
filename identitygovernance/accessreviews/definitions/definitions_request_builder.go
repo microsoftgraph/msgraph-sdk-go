@@ -18,7 +18,7 @@ type DefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DefinitionsRequestBuilderGetQueryParameters represents the template and scheduling for an access review.
+// DefinitionsRequestBuilderGetQueryParameters get a list of the accessReviewScheduleDefinition objects and their properties.
 type DefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type DefinitionsRequestBuilderPostRequestConfiguration struct {
 func NewDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DefinitionsRequestBuilder) {
     m := &DefinitionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/definitions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/definitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *DefinitionsRequestBuilder) Count()(*i99ddb0514c45c043d3757af5ca3eeeae1349538e0f97db1604572bd83bc2ae57.CountRequestBuilder) {
     return i99ddb0514c45c043d3757af5ca3eeeae1349538e0f97db1604572bd83bc2ae57.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the template and scheduling for an access review.
+// CreateGetRequestInformation get a list of the accessReviewScheduleDefinition objects and their properties.
 func (m *DefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the template and scheduling for an access review.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the accessReviewScheduleDefinition objects and their properties.
 func (m *DefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *DefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to definitions for identityGovernance
+// CreatePostRequestInformation create a new accessReviewScheduleDefinition object.
 func (m *DefinitionsRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to definitions for identityGovernance
+// CreatePostRequestInformationWithRequestConfiguration create a new accessReviewScheduleDefinition object.
 func (m *DefinitionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, requestConfiguration *DefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *DefinitionsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *DefinitionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i83923d1578638caabfb5abb6641094364911d936d6586b5498a9161b9662981e.FilterByCurrentUserWithOnRequestBuilder) {
     return i83923d1578638caabfb5abb6641094364911d936d6586b5498a9161b9662981e.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get represents the template and scheduling for an access review.
+// Get get a list of the accessReviewScheduleDefinition objects and their properties.
 func (m *DefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *DefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionCollectionResponseable), nil
 }
-// Post create new navigation property to definitions for identityGovernance
+// Post create a new accessReviewScheduleDefinition object.
 func (m *DefinitionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, requestConfiguration *DefinitionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

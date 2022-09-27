@@ -18,7 +18,7 @@ type ChatsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChatsRequestBuilderGetQueryParameters get chats from users
+// ChatsRequestBuilderGetQueryParameters retrieve the list of chats that the user is part of.
 type ChatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsRequestBuilder) {
     m := &ChatsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewChatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *ChatsRequestBuilder) Count()(*i4d1bf18e56196e791d87578c574613a05df9ef75e9796ab3f3dd1c9129724ddb.CountRequestBuilder) {
     return i4d1bf18e56196e791d87578c574613a05df9ef75e9796ab3f3dd1c9129724ddb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get chats from users
+// CreateGetRequestInformation retrieve the list of chats that the user is part of.
 func (m *ChatsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get chats from users
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of chats that the user is part of.
 func (m *ChatsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *ChatsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get get chats from users
+// Get retrieve the list of chats that the user is part of.
 func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *ChatsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

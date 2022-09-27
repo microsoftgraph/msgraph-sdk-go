@@ -32,62 +32,10 @@ func CreateEducationRubricOutcomeFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationRubricOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
-    res["publishedRubricQualityFeedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRubricQualityFeedbackModelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RubricQualityFeedbackModelable, len(val))
-            for i, v := range val {
-                res[i] = v.(RubricQualityFeedbackModelable)
-            }
-            m.SetPublishedRubricQualityFeedback(res)
-        }
-        return nil
-    }
-    res["publishedRubricQualitySelectedLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRubricQualitySelectedColumnModelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RubricQualitySelectedColumnModelable, len(val))
-            for i, v := range val {
-                res[i] = v.(RubricQualitySelectedColumnModelable)
-            }
-            m.SetPublishedRubricQualitySelectedLevels(res)
-        }
-        return nil
-    }
-    res["rubricQualityFeedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRubricQualityFeedbackModelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RubricQualityFeedbackModelable, len(val))
-            for i, v := range val {
-                res[i] = v.(RubricQualityFeedbackModelable)
-            }
-            m.SetRubricQualityFeedback(res)
-        }
-        return nil
-    }
-    res["rubricQualitySelectedLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRubricQualitySelectedColumnModelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RubricQualitySelectedColumnModelable, len(val))
-            for i, v := range val {
-                res[i] = v.(RubricQualitySelectedColumnModelable)
-            }
-            m.SetRubricQualitySelectedLevels(res)
-        }
-        return nil
-    }
+    res["publishedRubricQualityFeedback"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRubricQualityFeedbackModelFromDiscriminatorValue , m.SetPublishedRubricQualityFeedback)
+    res["publishedRubricQualitySelectedLevels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRubricQualitySelectedColumnModelFromDiscriminatorValue , m.SetPublishedRubricQualitySelectedLevels)
+    res["rubricQualityFeedback"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRubricQualityFeedbackModelFromDiscriminatorValue , m.SetRubricQualityFeedback)
+    res["rubricQualitySelectedLevels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRubricQualitySelectedColumnModelFromDiscriminatorValue , m.SetRubricQualitySelectedLevels)
     return res
 }
 // GetPublishedRubricQualityFeedback gets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
@@ -113,40 +61,28 @@ func (m *EducationRubricOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
         return err
     }
     if m.GetPublishedRubricQualityFeedback() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedRubricQualityFeedback()))
-        for i, v := range m.GetPublishedRubricQualityFeedback() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPublishedRubricQualityFeedback())
         err = writer.WriteCollectionOfObjectValues("publishedRubricQualityFeedback", cast)
         if err != nil {
             return err
         }
     }
     if m.GetPublishedRubricQualitySelectedLevels() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedRubricQualitySelectedLevels()))
-        for i, v := range m.GetPublishedRubricQualitySelectedLevels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPublishedRubricQualitySelectedLevels())
         err = writer.WriteCollectionOfObjectValues("publishedRubricQualitySelectedLevels", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRubricQualityFeedback() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRubricQualityFeedback()))
-        for i, v := range m.GetRubricQualityFeedback() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRubricQualityFeedback())
         err = writer.WriteCollectionOfObjectValues("rubricQualityFeedback", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRubricQualitySelectedLevels() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRubricQualitySelectedLevels()))
-        for i, v := range m.GetRubricQualitySelectedLevels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRubricQualitySelectedLevels())
         err = writer.WriteCollectionOfObjectValues("rubricQualitySelectedLevels", cast)
         if err != nil {
             return err

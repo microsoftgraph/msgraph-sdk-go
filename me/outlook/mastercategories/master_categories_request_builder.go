@@ -17,7 +17,7 @@ type MasterCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MasterCategoriesRequestBuilderGetQueryParameters a list of categories defined for the user.
+// MasterCategoriesRequestBuilderGetQueryParameters get all the categories that have been defined for the user.
 type MasterCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ type MasterCategoriesRequestBuilderPostRequestConfiguration struct {
 func NewMasterCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MasterCategoriesRequestBuilder) {
     m := &MasterCategoriesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/outlook/masterCategories{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/outlook/masterCategories{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -71,11 +71,11 @@ func NewMasterCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *MasterCategoriesRequestBuilder) Count()(*id3fcb1e48cb0ffce4b95211def89cd248e33620b4a3b0f3e936e46eb321a908c.CountRequestBuilder) {
     return id3fcb1e48cb0ffce4b95211def89cd248e33620b4a3b0f3e936e46eb321a908c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a list of categories defined for the user.
+// CreateGetRequestInformation get all the categories that have been defined for the user.
 func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of categories defined for the user.
+// CreateGetRequestInformationWithRequestConfiguration get all the categories that have been defined for the user.
 func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MasterCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,11 +91,11 @@ func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to masterCategories for me
+// CreatePostRequestInformation create an outlookCategory object in the user's master list of categories.
 func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to masterCategories for me
+// CreatePostRequestInformationWithRequestConfiguration create an outlookCategory object in the user's master list of categories.
 func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, requestConfiguration *MasterCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get a list of categories defined for the user.
+// Get get all the categories that have been defined for the user.
 func (m *MasterCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *MasterCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *MasterCategoriesRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryCollectionResponseable), nil
 }
-// Post create new navigation property to masterCategories for me
+// Post create an outlookCategory object in the user's master list of categories.
 func (m *MasterCategoriesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, requestConfiguration *MasterCategoriesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type AttendanceReportsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttendanceReportsRequestBuilderGetQueryParameters the attendance reports of an online meeting. Read-only.
+// AttendanceReportsRequestBuilderGetQueryParameters get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 type AttendanceReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AttendanceReportsRequestBuilderPostRequestConfiguration struct {
 func NewAttendanceReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttendanceReportsRequestBuilder) {
     m := &AttendanceReportsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/attendanceReports{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/attendanceReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAttendanceReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *AttendanceReportsRequestBuilder) Count()(*i0618ed814bbc7cc11d9cce9dc4d68b3d852f8f3fb1122d5a8649af944628b5fb.CountRequestBuilder) {
     return i0618ed814bbc7cc11d9cce9dc4d68b3d852f8f3fb1122d5a8649af944628b5fb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the attendance reports of an online meeting. Read-only.
+// CreateGetRequestInformation get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 func (m *AttendanceReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the attendance reports of an online meeting. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 func (m *AttendanceReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AttendanceReportsRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get the attendance reports of an online meeting. Read-only.
+// Get get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 func (m *AttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttendanceReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

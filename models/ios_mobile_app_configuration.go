@@ -32,30 +32,8 @@ func (m *IosMobileAppConfiguration) GetEncodedSettingXml()([]byte) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedDeviceMobileAppConfiguration.GetFieldDeserializers()
-    res["encodedSettingXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEncodedSettingXml(val)
-        }
-        return nil
-    }
-    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAppConfigurationSettingItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppConfigurationSettingItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AppConfigurationSettingItemable)
-            }
-            m.SetSettings(res)
-        }
-        return nil
-    }
+    res["encodedSettingXml"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetEncodedSettingXml)
+    res["settings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppConfigurationSettingItemFromDiscriminatorValue , m.SetSettings)
     return res
 }
 // GetSettings gets the settings property value. app configuration setting items.
@@ -75,10 +53,7 @@ func (m *IosMobileAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettings()))
-        for i, v := range m.GetSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSettings())
         err = writer.WriteCollectionOfObjectValues("settings", cast)
         if err != nil {
             return err

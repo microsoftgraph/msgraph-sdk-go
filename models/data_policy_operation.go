@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataPolicyOperation 
+// DataPolicyOperation provides operations to manage the collection of dataPolicyOperation entities.
 type DataPolicyOperation struct {
     Entity
     // Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
@@ -21,7 +21,7 @@ type DataPolicyOperation struct {
     // The id for the user on whom the operation is performed.
     userId *string
 }
-// NewDataPolicyOperation instantiates a new DataPolicyOperation and sets the default values.
+// NewDataPolicyOperation instantiates a new dataPolicyOperation and sets the default values.
 func NewDataPolicyOperation()(*DataPolicyOperation) {
     m := &DataPolicyOperation{
         Entity: *NewEntity(),
@@ -41,66 +41,12 @@ func (m *DataPolicyOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCompletedDateTime(val)
-        }
-        return nil
-    }
-    res["progress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProgress(val)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataPolicyOperationStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*DataPolicyOperationStatus))
-        }
-        return nil
-    }
-    res["storageLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStorageLocation(val)
-        }
-        return nil
-    }
-    res["submittedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSubmittedDateTime(val)
-        }
-        return nil
-    }
-    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserId(val)
-        }
-        return nil
-    }
+    res["completedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCompletedDateTime)
+    res["progress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetProgress)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDataPolicyOperationStatus , m.SetStatus)
+    res["storageLocation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetStorageLocation)
+    res["submittedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetSubmittedDateTime)
+    res["userId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUserId)
     return res
 }
 // GetProgress gets the progress property value. Specifies the progress of an operation.

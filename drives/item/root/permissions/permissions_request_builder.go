@@ -17,7 +17,7 @@ type PermissionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PermissionsRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
+// PermissionsRequestBuilderGetQueryParameters list the effective sharing permissions on a driveItem.
 type PermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type PermissionsRequestBuilderPostRequestConfiguration struct {
 func NewPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionsRequestBuilder) {
     m := &PermissionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/root/permissions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/root/permissions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewPermissionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *PermissionsRequestBuilder) Count()(*i951dca1c53c8f6b945beefe3875e7788925d4299aa019fcb91954eafbbfd02be.CountRequestBuilder) {
     return i951dca1c53c8f6b945beefe3875e7788925d4299aa019fcb91954eafbbfd02be.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the set of permissions for the item. Read-only. Nullable.
+// CreateGetRequestInformation list the effective sharing permissions on a driveItem.
 func (m *PermissionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the set of permissions for the item. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration list the effective sharing permissions on a driveItem.
 func (m *PermissionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PermissionsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get the set of permissions for the item. Read-only. Nullable.
+// Get list the effective sharing permissions on a driveItem.
 func (m *PermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

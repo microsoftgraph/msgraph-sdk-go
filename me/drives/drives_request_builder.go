@@ -17,7 +17,7 @@ type DrivesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DrivesRequestBuilderGetQueryParameters a collection of drives available for this user. Read-only.
+// DrivesRequestBuilderGetQueryParameters retrieve the list of Drive resources available for a target User, Group, or Site.
 type DrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type DrivesRequestBuilderPostRequestConfiguration struct {
 func NewDrivesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DrivesRequestBuilder) {
     m := &DrivesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/drives{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *DrivesRequestBuilder) Count()(*i961a85e95fdd926b307c882505ffbbecdc8c42ac07b4678a0f65d498391d403c.CountRequestBuilder) {
     return i961a85e95fdd926b307c882505ffbbecdc8c42ac07b4678a0f65d498391d403c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of drives available for this user. Read-only.
+// CreateGetRequestInformation retrieve the list of Drive resources available for a target User, Group, or Site.
 func (m *DrivesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of drives available for this user. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of Drive resources available for a target User, Group, or Site.
 func (m *DrivesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DrivesRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get a collection of drives available for this user. Read-only.
+// Get retrieve the list of Drive resources available for a target User, Group, or Site.
 func (m *DrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -26,16 +26,7 @@ func CreateTargetManagerFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetManager) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectSet.GetFieldDeserializers()
-    res["managerLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagerLevel(val)
-        }
-        return nil
-    }
+    res["managerLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetManagerLevel)
     return res
 }
 // GetManagerLevel gets the managerLevel property value. Manager level, between 1 and 4. The direct manager is 1.

@@ -42,11 +42,11 @@ func NewAddPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAddPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action addPassword
+// CreatePostRequestInformation add a strong password or secret to a servicePrincipal object.
 func (m *AddPasswordRequestBuilder) CreatePostRequestInformation(body AddPasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addPassword
+// CreatePostRequestInformationWithRequestConfiguration add a strong password or secret to a servicePrincipal object.
 func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddPasswordPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Post invoke action addPassword
+// Post add a strong password or secret to a servicePrincipal object.
 func (m *AddPasswordRequestBuilder) Post(ctx context.Context, body AddPasswordPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

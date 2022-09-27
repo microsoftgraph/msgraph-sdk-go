@@ -41,11 +41,11 @@ func NewClearPresenceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewClearPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action clearPresence
+// CreatePostRequestInformation clear the application's presence session for a user. If it is the user's only presence session, the user's presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.
 func (m *ClearPresenceRequestBuilder) CreatePostRequestInformation(body ClearPresencePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action clearPresence
+// CreatePostRequestInformationWithRequestConfiguration clear the application's presence session for a user. If it is the user's only presence session, the user's presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.
 func (m *ClearPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClearPresencePostRequestBodyable, requestConfiguration *ClearPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ClearPresenceRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Post invoke action clearPresence
+// Post clear the application's presence session for a user. If it is the user's only presence session, the user's presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.
 func (m *ClearPresenceRequestBuilder) Post(ctx context.Context, body ClearPresencePostRequestBodyable, requestConfiguration *ClearPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

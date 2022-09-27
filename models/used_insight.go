@@ -32,46 +32,10 @@ func CreateUsedInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UsedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastUsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateUsageDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastUsed(val.(UsageDetailsable))
-        }
-        return nil
-    }
-    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResource(val.(Entityable))
-        }
-        return nil
-    }
-    res["resourceReference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateResourceReferenceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceReference(val.(ResourceReferenceable))
-        }
-        return nil
-    }
-    res["resourceVisualization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateResourceVisualizationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceVisualization(val.(ResourceVisualizationable))
-        }
-        return nil
-    }
+    res["lastUsed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUsageDetailsFromDiscriminatorValue , m.SetLastUsed)
+    res["resource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEntityFromDiscriminatorValue , m.SetResource)
+    res["resourceReference"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResourceReferenceFromDiscriminatorValue , m.SetResourceReference)
+    res["resourceVisualization"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResourceVisualizationFromDiscriminatorValue , m.SetResourceVisualization)
     return res
 }
 // GetLastUsed gets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
@@ -104,18 +68,6 @@ func (m *UsedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err = writer.WriteObjectValue("resource", m.GetResource())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("resourceReference", m.GetResourceReference())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("resourceVisualization", m.GetResourceVisualization())
         if err != nil {
             return err
         }

@@ -32,34 +32,8 @@ func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinitionable)
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["definitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewScheduleDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessReviewScheduleDefinitionable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessReviewScheduleDefinitionable)
-            }
-            m.SetDefinitions(res)
-        }
-        return nil
-    }
-    res["historyDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewHistoryDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessReviewHistoryDefinitionable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessReviewHistoryDefinitionable)
-            }
-            m.SetHistoryDefinitions(res)
-        }
-        return nil
-    }
+    res["definitions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessReviewScheduleDefinitionFromDiscriminatorValue , m.SetDefinitions)
+    res["historyDefinitions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessReviewHistoryDefinitionFromDiscriminatorValue , m.SetHistoryDefinitions)
     return res
 }
 // GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
@@ -73,20 +47,14 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     if m.GetDefinitions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitions()))
-        for i, v := range m.GetDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDefinitions())
         err = writer.WriteCollectionOfObjectValues("definitions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetHistoryDefinitions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistoryDefinitions()))
-        for i, v := range m.GetHistoryDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetHistoryDefinitions())
         err = writer.WriteCollectionOfObjectValues("historyDefinitions", cast)
         if err != nil {
             return err

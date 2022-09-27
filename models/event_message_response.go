@@ -28,26 +28,8 @@ func CreateEventMessageResponseFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessage.GetFieldDeserializers()
-    res["proposedNewTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTimeSlotFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProposedNewTime(val.(TimeSlotable))
-        }
-        return nil
-    }
-    res["responseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseResponseType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResponseType(val.(*ResponseType))
-        }
-        return nil
-    }
+    res["proposedNewTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTimeSlotFromDiscriminatorValue , m.SetProposedNewTime)
+    res["responseType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseResponseType , m.SetResponseType)
     return res
 }
 // GetProposedNewTime gets the proposedNewTime property value. The proposedNewTime property

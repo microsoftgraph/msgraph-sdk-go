@@ -98,204 +98,23 @@ func (m *BookingBusiness) GetEmail()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAddress(val.(PhysicalAddressable))
-        }
-        return nil
-    }
-    res["appointments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingAppointmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingAppointmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingAppointmentable)
-            }
-            m.SetAppointments(res)
-        }
-        return nil
-    }
-    res["businessHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingWorkHoursable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingWorkHoursable)
-            }
-            m.SetBusinessHours(res)
-        }
-        return nil
-    }
-    res["businessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBusinessType(val)
-        }
-        return nil
-    }
-    res["calendarView"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingAppointmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingAppointmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingAppointmentable)
-            }
-            m.SetCalendarView(res)
-        }
-        return nil
-    }
-    res["customers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingCustomerBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingCustomerBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingCustomerBaseable)
-            }
-            m.SetCustomers(res)
-        }
-        return nil
-    }
-    res["customQuestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingCustomQuestionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingCustomQuestionable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingCustomQuestionable)
-            }
-            m.SetCustomQuestions(res)
-        }
-        return nil
-    }
-    res["defaultCurrencyIso"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultCurrencyIso(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEmail(val)
-        }
-        return nil
-    }
-    res["isPublished"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsPublished(val)
-        }
-        return nil
-    }
-    res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPhone(val)
-        }
-        return nil
-    }
-    res["publicUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPublicUrl(val)
-        }
-        return nil
-    }
-    res["schedulingPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateBookingSchedulingPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSchedulingPolicy(val.(BookingSchedulingPolicyable))
-        }
-        return nil
-    }
-    res["services"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingServiceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingServiceable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingServiceable)
-            }
-            m.SetServices(res)
-        }
-        return nil
-    }
-    res["staffMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBookingStaffMemberBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BookingStaffMemberBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(BookingStaffMemberBaseable)
-            }
-            m.SetStaffMembers(res)
-        }
-        return nil
-    }
-    res["webSiteUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWebSiteUrl(val)
-        }
-        return nil
-    }
+    res["address"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePhysicalAddressFromDiscriminatorValue , m.SetAddress)
+    res["appointments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingAppointmentFromDiscriminatorValue , m.SetAppointments)
+    res["businessHours"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue , m.SetBusinessHours)
+    res["businessType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetBusinessType)
+    res["calendarView"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingAppointmentFromDiscriminatorValue , m.SetCalendarView)
+    res["customers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingCustomerBaseFromDiscriminatorValue , m.SetCustomers)
+    res["customQuestions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingCustomQuestionFromDiscriminatorValue , m.SetCustomQuestions)
+    res["defaultCurrencyIso"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDefaultCurrencyIso)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["email"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEmail)
+    res["isPublished"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsPublished)
+    res["phone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPhone)
+    res["publicUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPublicUrl)
+    res["schedulingPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateBookingSchedulingPolicyFromDiscriminatorValue , m.SetSchedulingPolicy)
+    res["services"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingServiceFromDiscriminatorValue , m.SetServices)
+    res["staffMembers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingStaffMemberBaseFromDiscriminatorValue , m.SetStaffMembers)
+    res["webSiteUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWebSiteUrl)
     return res
 }
 // GetIsPublished gets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
@@ -339,20 +158,14 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetAppointments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppointments()))
-        for i, v := range m.GetAppointments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAppointments())
         err = writer.WriteCollectionOfObjectValues("appointments", cast)
         if err != nil {
             return err
         }
     }
     if m.GetBusinessHours() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBusinessHours()))
-        for i, v := range m.GetBusinessHours() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetBusinessHours())
         err = writer.WriteCollectionOfObjectValues("businessHours", cast)
         if err != nil {
             return err
@@ -365,30 +178,21 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetCalendarView() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCalendarView()))
-        for i, v := range m.GetCalendarView() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCalendarView())
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCustomers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomers()))
-        for i, v := range m.GetCustomers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustomers())
         err = writer.WriteCollectionOfObjectValues("customers", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCustomQuestions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomQuestions()))
-        for i, v := range m.GetCustomQuestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustomQuestions())
         err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
         if err != nil {
             return err
@@ -413,19 +217,7 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteBoolValue("isPublished", m.GetIsPublished())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("phone", m.GetPhone())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("publicUrl", m.GetPublicUrl())
         if err != nil {
             return err
         }
@@ -437,20 +229,14 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetServices() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServices()))
-        for i, v := range m.GetServices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetServices())
         err = writer.WriteCollectionOfObjectValues("services", cast)
         if err != nil {
             return err
         }
     }
     if m.GetStaffMembers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStaffMembers()))
-        for i, v := range m.GetStaffMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetStaffMembers())
         err = writer.WriteCollectionOfObjectValues("staffMembers", cast)
         if err != nil {
             return err

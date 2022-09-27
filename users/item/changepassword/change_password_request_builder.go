@@ -41,11 +41,11 @@ func NewChangePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action changePassword
+// CreatePostRequestInformation enable the user to update their password. Any user can update their password without belonging to any administrator role.
 func (m *ChangePasswordRequestBuilder) CreatePostRequestInformation(body ChangePasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action changePassword
+// CreatePostRequestInformationWithRequestConfiguration enable the user to update their password. Any user can update their password without belonging to any administrator role.
 func (m *ChangePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangePasswordPostRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ChangePasswordRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action changePassword
+// Post enable the user to update their password. Any user can update their password without belonging to any administrator role.
 func (m *ChangePasswordRequestBuilder) Post(ctx context.Context, body ChangePasswordPostRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

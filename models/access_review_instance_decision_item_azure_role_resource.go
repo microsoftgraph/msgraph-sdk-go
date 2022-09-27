@@ -26,16 +26,7 @@ func CreateAccessReviewInstanceDecisionItemAzureRoleResourceFromDiscriminatorVal
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewInstanceDecisionItemResource.GetFieldDeserializers()
-    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScope(val.(AccessReviewInstanceDecisionItemResourceable))
-        }
-        return nil
-    }
+    res["scope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue , m.SetScope)
     return res
 }
 // GetScope gets the scope property value. Details of the scope this role is associated with.

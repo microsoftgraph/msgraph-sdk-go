@@ -18,7 +18,7 @@ type ParticipantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ParticipantsRequestBuilderGetQueryParameters get participants from communications
+// ParticipantsRequestBuilderGetQueryParameters retrieve a list of participant objects in the call.
 type ParticipantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type ParticipantsRequestBuilderPostRequestConfiguration struct {
 func NewParticipantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ParticipantsRequestBuilder) {
     m := &ParticipantsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewParticipantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ParticipantsRequestBuilder) Count()(*if587a03d7236a2c5054f6f8d45d300c95da028ba5df2f739af5caeb07ddd3920.CountRequestBuilder) {
     return if587a03d7236a2c5054f6f8d45d300c95da028ba5df2f739af5caeb07ddd3920.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get participants from communications
+// CreateGetRequestInformation retrieve a list of participant objects in the call.
 func (m *ParticipantsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get participants from communications
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of participant objects in the call.
 func (m *ParticipantsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ParticipantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *ParticipantsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get participants from communications
+// Get retrieve a list of participant objects in the call.
 func (m *ParticipantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ParticipantsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParticipantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

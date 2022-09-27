@@ -41,11 +41,11 @@ func NewGetStaffAvailabilityRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewGetStaffAvailabilityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getStaffAvailability
+// CreatePostRequestInformation get the availability information of staff members of a Microsoft Bookings calendar.
 func (m *GetStaffAvailabilityRequestBuilder) CreatePostRequestInformation(body GetStaffAvailabilityPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getStaffAvailability
+// CreatePostRequestInformationWithRequestConfiguration get the availability information of staff members of a Microsoft Bookings calendar.
 func (m *GetStaffAvailabilityRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetStaffAvailabilityPostRequestBodyable, requestConfiguration *GetStaffAvailabilityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *GetStaffAvailabilityRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Post invoke action getStaffAvailability
+// Post get the availability information of staff members of a Microsoft Bookings calendar.
 func (m *GetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body GetStaffAvailabilityPostRequestBodyable, requestConfiguration *GetStaffAvailabilityRequestBuilderPostRequestConfiguration)(GetStaffAvailabilityResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

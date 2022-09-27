@@ -17,7 +17,7 @@ type ManagerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagerRequestBuilderGetQueryParameters the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// ManagerRequestBuilderGetQueryParameters returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 type ManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -52,11 +52,11 @@ func NewManagerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewManagerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// CreateGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *ManagerRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *ManagerRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,7 +72,7 @@ func (m *ManagerRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *ManagerRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagerRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

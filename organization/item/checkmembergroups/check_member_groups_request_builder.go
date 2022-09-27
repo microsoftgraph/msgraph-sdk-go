@@ -41,11 +41,11 @@ func NewCheckMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCheckMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action checkMemberGroups
+// CreatePostRequestInformation check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformation(body CheckMemberGroupsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action checkMemberGroups
+// CreatePostRequestInformationWithRequestConfiguration check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CheckMemberGroupsPostRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *CheckMemberGroupsRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Post invoke action checkMemberGroups
+// Post check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 func (m *CheckMemberGroupsRequestBuilder) Post(ctx context.Context, body CheckMemberGroupsPostRequestBodyable, requestConfiguration *CheckMemberGroupsRequestBuilderPostRequestConfiguration)(CheckMemberGroupsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

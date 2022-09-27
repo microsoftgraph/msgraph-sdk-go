@@ -41,11 +41,11 @@ func NewPublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action publish
+// CreatePostRequestInformation publishes a [contentType][] present in the content type hub site.
 func (m *PublishRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action publish
+// CreatePostRequestInformationWithRequestConfiguration publishes a [contentType][] present in the content type hub site.
 func (m *PublishRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *PublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *PublishRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action publish
+// Post publishes a [contentType][] present in the content type hub site.
 func (m *PublishRequestBuilder) Post(ctx context.Context, requestConfiguration *PublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

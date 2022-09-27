@@ -32,26 +32,8 @@ func (m *EdiscoveryNoncustodialDataSource) GetDataSource()(DataSourceable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryNoncustodialDataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
-    res["dataSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDataSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDataSource(val.(DataSourceable))
-        }
-        return nil
-    }
-    res["lastIndexOperation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEdiscoveryIndexOperationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastIndexOperation(val.(EdiscoveryIndexOperationable))
-        }
-        return nil
-    }
+    res["dataSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDataSourceFromDiscriminatorValue , m.SetDataSource)
+    res["lastIndexOperation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEdiscoveryIndexOperationFromDiscriminatorValue , m.SetLastIndexOperation)
     return res
 }
 // GetLastIndexOperation gets the lastIndexOperation property value. Operation entity that represents the latest indexing for the non-custodial data source.

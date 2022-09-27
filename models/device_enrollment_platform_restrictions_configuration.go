@@ -38,56 +38,11 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidRestrictio
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
-    res["androidRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAndroidRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
-        }
-        return nil
-    }
-    res["iosRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIosRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
-        }
-        return nil
-    }
-    res["macOSRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMacOSRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
-        }
-        return nil
-    }
-    res["windowsMobileRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsMobileRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
-        }
-        return nil
-    }
-    res["windowsRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
-        }
-        return nil
-    }
+    res["androidRestriction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue , m.SetAndroidRestriction)
+    res["iosRestriction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue , m.SetIosRestriction)
+    res["macOSRestriction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue , m.SetMacOSRestriction)
+    res["windowsMobileRestriction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue , m.SetWindowsMobileRestriction)
+    res["windowsRestriction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue , m.SetWindowsRestriction)
     return res
 }
 // GetIosRestriction gets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership

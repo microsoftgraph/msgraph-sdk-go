@@ -39,40 +39,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetDeviceIdentities()([]I
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTimeUtc"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTimeUtc(val)
-        }
-        return nil
-    }
-    res["deviceIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ImportedWindowsAutopilotDeviceIdentityable, len(val))
-            for i, v := range val {
-                res[i] = v.(ImportedWindowsAutopilotDeviceIdentityable)
-            }
-            m.SetDeviceIdentities(res)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportedWindowsAutopilotDeviceIdentityUploadStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*ImportedWindowsAutopilotDeviceIdentityUploadStatus))
-        }
-        return nil
-    }
+    res["createdDateTimeUtc"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTimeUtc)
+    res["deviceIdentities"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue , m.SetDeviceIdentities)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseImportedWindowsAutopilotDeviceIdentityUploadStatus , m.SetStatus)
     return res
 }
 // GetStatus gets the status property value. The status property
@@ -92,10 +61,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) Serialize(writer i878a80d
         }
     }
     if m.GetDeviceIdentities() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceIdentities()))
-        for i, v := range m.GetDeviceIdentities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceIdentities())
         err = writer.WriteCollectionOfObjectValues("deviceIdentities", cast)
         if err != nil {
             return err

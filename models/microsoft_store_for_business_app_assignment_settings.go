@@ -26,16 +26,7 @@ func CreateMicrosoftStoreForBusinessAppAssignmentSettingsFromDiscriminatorValue(
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
-    res["useDeviceContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUseDeviceContext(val)
-        }
-        return nil
-    }
+    res["useDeviceContext"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseDeviceContext)
     return res
 }
 // GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.

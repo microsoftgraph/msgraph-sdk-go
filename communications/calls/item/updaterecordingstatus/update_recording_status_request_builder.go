@@ -42,11 +42,11 @@ func NewUpdateRecordingStatusRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateRecordingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action updateRecordingStatus
+// CreatePostRequestInformation update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
 func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformation(body UpdateRecordingStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateRecordingStatus
+// CreatePostRequestInformationWithRequestConfiguration update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
 func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateRecordingStatusPostRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Post invoke action updateRecordingStatus
+// Post update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
 func (m *UpdateRecordingStatusRequestBuilder) Post(ctx context.Context, body UpdateRecordingStatusPostRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UpdateRecordingStatusOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

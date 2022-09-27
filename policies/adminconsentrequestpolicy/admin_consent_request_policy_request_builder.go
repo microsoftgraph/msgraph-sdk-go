@@ -23,7 +23,7 @@ type AdminConsentRequestPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdminConsentRequestPolicyRequestBuilderGetQueryParameters the policy by which consent requests are created and managed for the entire tenant.
+// AdminConsentRequestPolicyRequestBuilderGetQueryParameters read the properties and relationships of an adminConsentRequestPolicy object.
 type AdminConsentRequestPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *AdminConsentRequestPolicyRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the policy by which consent requests are created and managed for the entire tenant.
+// CreateGetRequestInformation read the properties and relationships of an adminConsentRequestPolicy object.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy by which consent requests are created and managed for the entire tenant.
+// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of an adminConsentRequestPolicy object.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,16 +101,17 @@ func (m *AdminConsentRequestPolicyRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property adminConsentRequestPolicy in policies
+// CreatePatchRequestInformation update the properties of an adminConsentRequestPolicy object.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property adminConsentRequestPolicy in policies
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of an adminConsentRequestPolicy object.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, requestConfiguration *AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -134,7 +135,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get the policy by which consent requests are created and managed for the entire tenant.
+// Get read the properties and relationships of an adminConsentRequestPolicy object.
 func (m *AdminConsentRequestPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -153,19 +154,22 @@ func (m *AdminConsentRequestPolicyRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable), nil
 }
-// Patch update the navigation property adminConsentRequestPolicy in policies
-func (m *AdminConsentRequestPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, requestConfiguration *AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of an adminConsentRequestPolicy object.
+func (m *AdminConsentRequestPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, requestConfiguration *AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAdminConsentRequestPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable), nil
 }

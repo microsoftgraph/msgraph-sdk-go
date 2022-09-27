@@ -18,7 +18,7 @@ type AllowedUsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AllowedUsersRequestBuilderGetQueryParameters the users who have access to print using the printer.
+// AllowedUsersRequestBuilderGetQueryParameters retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 type AllowedUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type AllowedUsersRequestBuilderGetRequestConfiguration struct {
 func NewAllowedUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AllowedUsersRequestBuilder) {
     m := &AllowedUsersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewAllowedUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *AllowedUsersRequestBuilder) Count()(*ia8dbd0396aee5356408c980f3cada5002debd95ceaf1a90756c478eb7583baf8.CountRequestBuilder) {
     return ia8dbd0396aee5356408c980f3cada5002debd95ceaf1a90756c478eb7583baf8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the users who have access to print using the printer.
+// CreateGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedUsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the users who have access to print using the printer.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AllowedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get the users who have access to print using the printer.
+// Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

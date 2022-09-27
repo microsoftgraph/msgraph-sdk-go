@@ -42,11 +42,11 @@ func NewCopyToSectionGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewCopyToSectionGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action copyToSectionGroup
+// CreatePostRequestInformation for Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 func (m *CopyToSectionGroupRequestBuilder) CreatePostRequestInformation(body CopyToSectionGroupPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action copyToSectionGroup
+// CreatePostRequestInformationWithRequestConfiguration for Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 func (m *CopyToSectionGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyToSectionGroupPostRequestBodyable, requestConfiguration *CopyToSectionGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *CopyToSectionGroupRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Post invoke action copyToSectionGroup
+// Post for Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 func (m *CopyToSectionGroupRequestBuilder) Post(ctx context.Context, body CopyToSectionGroupPostRequestBodyable, requestConfiguration *CopyToSectionGroupRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type OpenShiftsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OpenShiftsRequestBuilderGetQueryParameters get openShifts from groups
+// OpenShiftsRequestBuilderGetQueryParameters list openShift objects in a team.
 type OpenShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type OpenShiftsRequestBuilderPostRequestConfiguration struct {
 func NewOpenShiftsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OpenShiftsRequestBuilder) {
     m := &OpenShiftsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/openShifts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/openShifts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewOpenShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OpenShiftsRequestBuilder) Count()(*i61b4908135bf27893a36db2c0f55f2a887e999fa928094c0e9cd8783a1a361a7.CountRequestBuilder) {
     return i61b4908135bf27893a36db2c0f55f2a887e999fa928094c0e9cd8783a1a361a7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get openShifts from groups
+// CreateGetRequestInformation list openShift objects in a team.
 func (m *OpenShiftsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get openShifts from groups
+// CreateGetRequestInformationWithRequestConfiguration list openShift objects in a team.
 func (m *OpenShiftsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OpenShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OpenShiftsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get get openShifts from groups
+// Get list openShift objects in a team.
 func (m *OpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *OpenShiftsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

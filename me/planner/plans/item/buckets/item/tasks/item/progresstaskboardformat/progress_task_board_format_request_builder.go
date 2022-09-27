@@ -23,7 +23,7 @@ type ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ProgressTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// ProgressTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
 type ProgressTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// CreateGetRequestInformation retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,16 +101,17 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property progressTaskBoardFormat in me
+// CreatePatchRequestInformation update the properties of **plannerProgressTaskBoardTaskFormat** object.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property progressTaskBoardFormat in me
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of **plannerProgressTaskBoardTaskFormat** object.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -134,7 +135,7 @@ func (m *ProgressTaskBoardFormatRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// Get retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
 func (m *ProgressTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -153,19 +154,22 @@ func (m *ProgressTaskBoardFormatRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable), nil
 }
-// Patch update the navigation property progressTaskBoardFormat in me
-func (m *ProgressTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of **plannerProgressTaskBoardTaskFormat** object.
+func (m *ProgressTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerProgressTaskBoardTaskFormatFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable), nil
 }

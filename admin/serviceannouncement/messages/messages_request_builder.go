@@ -23,7 +23,7 @@ type MessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MessagesRequestBuilderGetQueryParameters a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// MessagesRequestBuilderGetQueryParameters retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -66,7 +66,7 @@ func (m *MessagesRequestBuilder) Archive()(*i7c8002d50d3d01307f13e1746331c6c44c1
 func NewMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessagesRequestBuilder) {
     m := &MessagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/messages{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -85,11 +85,11 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MessagesRequestBuilder) Count()(*i5b2e93574c1603b0456a604836b4dcf3f5b0f24d49a3a2258788e9fa0c9b58f1.CountRequestBuilder) {
     return i5b2e93574c1603b0456a604836b4dcf3f5b0f24d49a3a2258788e9fa0c9b58f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// CreateGetRequestInformation retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
 func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 func (m *MessagesRequestBuilder) Favorite()(*i0a1ac23d2ad4f7421bfe2ad68e1ae9861244745d3a0eb9b2339dfa4bf574093b.FavoriteRequestBuilder) {
     return i0a1ac23d2ad4f7421bfe2ad68e1ae9861244745d3a0eb9b2339dfa4bf574093b.NewFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// Get retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
 func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

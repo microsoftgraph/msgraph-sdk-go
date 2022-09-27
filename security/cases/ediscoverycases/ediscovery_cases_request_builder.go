@@ -17,7 +17,7 @@ type EdiscoveryCasesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EdiscoveryCasesRequestBuilderGetQueryParameters get ediscoveryCases from security
+// EdiscoveryCasesRequestBuilderGetQueryParameters get a list of the ediscoveryCase objects and their properties.
 type EdiscoveryCasesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EdiscoveryCasesRequestBuilderPostRequestConfiguration struct {
 func NewEdiscoveryCasesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesRequestBuilder) {
     m := &EdiscoveryCasesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEdiscoveryCasesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *EdiscoveryCasesRequestBuilder) Count()(*i0b2e5ec4842b4ee43b50618891386ee5dd7ce45d393ba07f115589e2bc4fe603.CountRequestBuilder) {
     return i0b2e5ec4842b4ee43b50618891386ee5dd7ce45d393ba07f115589e2bc4fe603.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get ediscoveryCases from security
+// CreateGetRequestInformation get a list of the ediscoveryCase objects and their properties.
 func (m *EdiscoveryCasesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get ediscoveryCases from security
+// CreateGetRequestInformationWithRequestConfiguration get a list of the ediscoveryCase objects and their properties.
 func (m *EdiscoveryCasesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryCasesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *EdiscoveryCasesRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to ediscoveryCases for security
+// CreatePostRequestInformation create a new ediscoveryCase object.
 func (m *EdiscoveryCasesRequestBuilder) CreatePostRequestInformation(body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to ediscoveryCases for security
+// CreatePostRequestInformationWithRequestConfiguration create a new ediscoveryCase object.
 func (m *EdiscoveryCasesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EdiscoveryCasesRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get get ediscoveryCases from security
+// Get get a list of the ediscoveryCase objects and their properties.
 func (m *EdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *EdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseCollectionResponseable), nil
 }
-// Post create new navigation property to ediscoveryCases for security
+// Post create a new ediscoveryCase object.
 func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

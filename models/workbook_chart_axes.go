@@ -34,36 +34,9 @@ func (m *WorkbookChartAxes) GetCategoryAxis()(WorkbookChartAxisable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["categoryAxis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCategoryAxis(val.(WorkbookChartAxisable))
-        }
-        return nil
-    }
-    res["seriesAxis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSeriesAxis(val.(WorkbookChartAxisable))
-        }
-        return nil
-    }
-    res["valueAxis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetValueAxis(val.(WorkbookChartAxisable))
-        }
-        return nil
-    }
+    res["categoryAxis"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue , m.SetCategoryAxis)
+    res["seriesAxis"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue , m.SetSeriesAxis)
+    res["valueAxis"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue , m.SetValueAxis)
     return res
 }
 // GetSeriesAxis gets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.

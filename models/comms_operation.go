@@ -37,6 +37,8 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.addLargeGalleryViewOperation":
+                        return NewAddLargeGalleryViewOperation(), nil
                     case "#microsoft.graph.cancelMediaProcessingOperation":
                         return NewCancelMediaProcessingOperation(), nil
                     case "#microsoft.graph.inviteParticipantsOperation":
@@ -70,36 +72,9 @@ func (m *CommsOperation) GetClientContext()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["clientContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClientContext(val)
-        }
-        return nil
-    }
-    res["resultInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateResultInfoFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResultInfo(val.(ResultInfoable))
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*OperationStatus))
-        }
-        return nil
-    }
+    res["clientContext"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetClientContext)
+    res["resultInfo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResultInfoFromDiscriminatorValue , m.SetResultInfo)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOperationStatus , m.SetStatus)
     return res
 }
 // GetResultInfo gets the resultInfo property value. The result information. Read-only.

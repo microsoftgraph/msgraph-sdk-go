@@ -16,6 +16,7 @@ import (
     i6c297ccbb463969476936203bb9956529571241de2ba0f09753156e86f7c8519 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/transfer"
     i6f0caf07b9d5829ba084ad4149cb4986ad69a13c935041d3da78c3cf1a5e3699 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/updaterecordingstatus"
     i9597d4ee7219b291ed6ed4ac94f7ebb5f0666e8551606a8052e7ef400c7bf200 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/cancelmediaprocessing"
+    i9ca9d76293c092c549cbb458fa21c7d616d12ca9462513072343dba15ef176d9 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/addlargegalleryview"
     ia71afd593ae0c607d4acf1137eef2551b24d75551eb2631d48f91f4361dc4882 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/answer"
     ib42114d547ae3a5efaa8e2718244399826bae33e41e3785ade01e865ab37b3dd "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/audioroutinggroups"
     ic39f6d760e484c6cb7e55f7c08819553f2edb8148ca9b866c4410d6f117ebec5 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/recordresponse"
@@ -66,6 +67,10 @@ type CallItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AddLargeGalleryView the addLargeGalleryView property
+func (m *CallItemRequestBuilder) AddLargeGalleryView()(*i9ca9d76293c092c549cbb458fa21c7d616d12ca9462513072343dba15ef176d9.AddLargeGalleryViewRequestBuilder) {
+    return i9ca9d76293c092c549cbb458fa21c7d616d12ca9462513072343dba15ef176d9.NewAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Answer the answer property
 func (m *CallItemRequestBuilder) Answer()(*ia71afd593ae0c607d4acf1137eef2551b24d75551eb2631d48f91f4361dc4882.AnswerRequestBuilder) {
@@ -174,6 +179,7 @@ func (m *CallItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -255,20 +261,23 @@ func (m *CallItemRequestBuilder) ParticipantsById(id string)(*ib16dc40ca9627c218
     return ib16dc40ca9627c2186a56c4d731808da49ba6e8a34c17a076a47f881856366d7.NewParticipantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property calls in communications
-func (m *CallItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, requestConfiguration *CallItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *CallItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, requestConfiguration *CallItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCallFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable), nil
 }
 // PlayPrompt the playPrompt property
 func (m *CallItemRequestBuilder) PlayPrompt()(*i1dad219920e40389a4ebc6644b092da3826fe4c3784204c96119e935c730a5e9.PlayPromptRequestBuilder) {

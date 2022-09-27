@@ -17,7 +17,7 @@ type CalendarViewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CalendarViewRequestBuilderGetQueryParameters the set of appointments of this business in a specified date range. Read-only. Nullable.
+// CalendarViewRequestBuilderGetQueryParameters get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 type CalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CalendarViewRequestBuilderPostRequestConfiguration struct {
 func NewCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarViewRequestBuilder) {
     m := &CalendarViewRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCalendarViewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *CalendarViewRequestBuilder) Count()(*i7ddcc8a9393d3e8b546445d0dfdef9a5e33e8e9b50d72efcd6104f2d8bef0d9a.CountRequestBuilder) {
     return i7ddcc8a9393d3e8b546445d0dfdef9a5e33e8e9b50d72efcd6104f2d8bef0d9a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
+// CreateGetRequestInformation get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 func (m *CalendarViewRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the set of appointments of this business in a specified date range. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 func (m *CalendarViewRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CalendarViewRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get the set of appointments of this business in a specified date range. Read-only. Nullable.
+// Get get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 func (m *CalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarViewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

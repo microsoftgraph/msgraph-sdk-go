@@ -45,78 +45,12 @@ func (m *EdiscoveryCustodian) GetEmail()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryCustodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
-    res["acknowledgedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAcknowledgedDateTime(val)
-        }
-        return nil
-    }
-    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEmail(val)
-        }
-        return nil
-    }
-    res["lastIndexOperation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEdiscoveryIndexOperationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastIndexOperation(val.(EdiscoveryIndexOperationable))
-        }
-        return nil
-    }
-    res["siteSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SiteSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(SiteSourceable)
-            }
-            m.SetSiteSources(res)
-        }
-        return nil
-    }
-    res["unifiedGroupSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedGroupSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedGroupSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnifiedGroupSourceable)
-            }
-            m.SetUnifiedGroupSources(res)
-        }
-        return nil
-    }
-    res["userSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserSourceable)
-            }
-            m.SetUserSources(res)
-        }
-        return nil
-    }
+    res["acknowledgedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetAcknowledgedDateTime)
+    res["email"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEmail)
+    res["lastIndexOperation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEdiscoveryIndexOperationFromDiscriminatorValue , m.SetLastIndexOperation)
+    res["siteSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue , m.SetSiteSources)
+    res["unifiedGroupSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnifiedGroupSourceFromDiscriminatorValue , m.SetUnifiedGroupSources)
+    res["userSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserSourceFromDiscriminatorValue , m.SetUserSources)
     return res
 }
 // GetLastIndexOperation gets the lastIndexOperation property value. Operation entity that represents the latest indexing for the custodian.
@@ -160,30 +94,21 @@ func (m *EdiscoveryCustodian) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetSiteSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteSources()))
-        for i, v := range m.GetSiteSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSiteSources())
         err = writer.WriteCollectionOfObjectValues("siteSources", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUnifiedGroupSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUnifiedGroupSources()))
-        for i, v := range m.GetUnifiedGroupSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUnifiedGroupSources())
         err = writer.WriteCollectionOfObjectValues("unifiedGroupSources", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserSources()))
-        for i, v := range m.GetUserSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserSources())
         err = writer.WriteCollectionOfObjectValues("userSources", cast)
         if err != nil {
             return err

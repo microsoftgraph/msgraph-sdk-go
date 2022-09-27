@@ -32,30 +32,8 @@ func (m *EmailAuthenticationMethodConfiguration) GetAllowExternalIdToUseEmailOtp
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
-    res["allowExternalIdToUseEmailOtp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExternalEmailOtpState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowExternalIdToUseEmailOtp(val.(*ExternalEmailOtpState))
-        }
-        return nil
-    }
-    res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationMethodTargetable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuthenticationMethodTargetable)
-            }
-            m.SetIncludeTargets(res)
-        }
-        return nil
-    }
+    res["allowExternalIdToUseEmailOtp"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseExternalEmailOtpState , m.SetAllowExternalIdToUseEmailOtp)
+    res["includeTargets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue , m.SetIncludeTargets)
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
@@ -76,10 +54,7 @@ func (m *EmailAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
         }
     }
     if m.GetIncludeTargets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
-        for i, v := range m.GetIncludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIncludeTargets())
         err = writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {
             return err

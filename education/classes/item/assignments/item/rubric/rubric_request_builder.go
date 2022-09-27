@@ -24,7 +24,7 @@ type RubricRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RubricRequestBuilderGetQueryParameters when set, the grading rubric attached to this assignment.
+// RubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists.
 type RubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *RubricRequestBuilder) CreateDeleteRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation when set, the grading rubric attached to this assignment.
+// CreateGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RubricRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration when set, the grading rubric attached to this assignment.
+// CreateGetRequestInformationWithRequestConfiguration get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RubricRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RubricRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,6 +112,7 @@ func (m *RubricRequestBuilder) CreatePatchRequestInformationWithRequestConfigura
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -135,7 +136,7 @@ func (m *RubricRequestBuilder) Delete(ctx context.Context, requestConfiguration 
     }
     return nil
 }
-// Get when set, the grading rubric attached to this assignment.
+// Get get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RubricRequestBuilder) Get(ctx context.Context, requestConfiguration *RubricRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -155,20 +156,23 @@ func (m *RubricRequestBuilder) Get(ctx context.Context, requestConfiguration *Ru
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable), nil
 }
 // Patch update the navigation property rubric in education
-func (m *RubricRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *RubricRequestBuilderPatchRequestConfiguration)(error) {
+func (m *RubricRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *RubricRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationRubricFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable), nil
 }
 // Ref the Ref property
 func (m *RubricRequestBuilder) Ref()(*ia0c43e63fd147198f1f253e60f9733647003888b43875ee80e725499e580d271.RefRequestBuilder) {

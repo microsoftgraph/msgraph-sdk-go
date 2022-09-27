@@ -42,11 +42,11 @@ func NewGetNotebookFromWebUrlRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGetNotebookFromWebUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getNotebookFromWebUrl
+// CreatePostRequestInformation retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformation(body GetNotebookFromWebUrlPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getNotebookFromWebUrl
+// CreatePostRequestInformationWithRequestConfiguration retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetNotebookFromWebUrlPostRequestBodyable, requestConfiguration *GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Post invoke action getNotebookFromWebUrl
+// Post retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 func (m *GetNotebookFromWebUrlRequestBuilder) Post(ctx context.Context, body GetNotebookFromWebUrlPostRequestBodyable, requestConfiguration *GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CopyNotebookModelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type ConnectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ConnectionsRequestBuilderGetQueryParameters get connections from external
+// ConnectionsRequestBuilderGetQueryParameters get a list of the externalConnection objects and their properties.
 type ConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ConnectionsRequestBuilderPostRequestConfiguration struct {
 func NewConnectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsRequestBuilder) {
     m := &ConnectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/external/connections{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/external/connections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewConnectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ConnectionsRequestBuilder) Count()(*ie75e32eab9dc6f4f700186a56182af4f5d0ea3758e080cd1aaa770babed7600c.CountRequestBuilder) {
     return ie75e32eab9dc6f4f700186a56182af4f5d0ea3758e080cd1aaa770babed7600c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get connections from external
+// CreateGetRequestInformation get a list of the externalConnection objects and their properties.
 func (m *ConnectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get connections from external
+// CreateGetRequestInformationWithRequestConfiguration get a list of the externalConnection objects and their properties.
 func (m *ConnectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ConnectionsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to connections for external
+// CreatePostRequestInformation create a new externalConnection object.
 func (m *ConnectionsRequestBuilder) CreatePostRequestInformation(body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to connections for external
+// CreatePostRequestInformationWithRequestConfiguration create a new externalConnection object.
 func (m *ConnectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ConnectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ConnectionsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get connections from external
+// Get get a list of the externalConnection objects and their properties.
 func (m *ConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionCollectionResponseable), nil
 }
-// Post create new navigation property to connections for external
+// Post create a new externalConnection object.
 func (m *ConnectionsRequestBuilder) Post(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ConnectionsRequestBuilderPostRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

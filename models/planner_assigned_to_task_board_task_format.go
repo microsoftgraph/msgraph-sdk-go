@@ -28,26 +28,8 @@ func CreatePlannerAssignedToTaskBoardTaskFormatFromDiscriminatorValue(parseNode 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["orderHintsByAssignee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePlannerOrderHintsByAssigneeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrderHintsByAssignee(val.(PlannerOrderHintsByAssigneeable))
-        }
-        return nil
-    }
-    res["unassignedOrderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUnassignedOrderHint(val)
-        }
-        return nil
-    }
+    res["orderHintsByAssignee"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerOrderHintsByAssigneeFromDiscriminatorValue , m.SetOrderHintsByAssignee)
+    res["unassignedOrderHint"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUnassignedOrderHint)
     return res
 }
 // GetOrderHintsByAssignee gets the orderHintsByAssignee property value. Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.

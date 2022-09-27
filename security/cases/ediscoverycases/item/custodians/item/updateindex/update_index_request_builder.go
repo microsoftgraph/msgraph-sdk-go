@@ -41,11 +41,11 @@ func NewUpdateIndexRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateIndexRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action updateIndex
+// CreatePostRequestInformation trigger an indexOperation to make a custodian and associated sources searchable.
 func (m *UpdateIndexRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateIndex
+// CreatePostRequestInformationWithRequestConfiguration trigger an indexOperation to make a custodian and associated sources searchable.
 func (m *UpdateIndexRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UpdateIndexRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *UpdateIndexRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Post invoke action updateIndex
+// Post trigger an indexOperation to make a custodian and associated sources searchable.
 func (m *UpdateIndexRequestBuilder) Post(ctx context.Context, requestConfiguration *UpdateIndexRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

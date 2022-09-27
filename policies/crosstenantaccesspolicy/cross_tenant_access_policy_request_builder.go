@@ -26,7 +26,7 @@ type CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CrossTenantAccessPolicyRequestBuilderGetQueryParameters the custom rules that define an access scenario when interacting with external Azure AD tenants.
+// CrossTenantAccessPolicyRequestBuilderGetQueryParameters read the properties and relationships of a crossTenantAccessPolicy object.
 type CrossTenantAccessPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -84,11 +84,11 @@ func (m *CrossTenantAccessPolicyRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the custom rules that define an access scenario when interacting with external Azure AD tenants.
+// CreateGetRequestInformation read the properties and relationships of a crossTenantAccessPolicy object.
 func (m *CrossTenantAccessPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the custom rules that define an access scenario when interacting with external Azure AD tenants.
+// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of a crossTenantAccessPolicy object.
 func (m *CrossTenantAccessPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,16 +104,17 @@ func (m *CrossTenantAccessPolicyRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property crossTenantAccessPolicy in policies
+// CreatePatchRequestInformation update the properties of a cross-tenant access policy.
 func (m *CrossTenantAccessPolicyRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property crossTenantAccessPolicy in policies
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a cross-tenant access policy.
 func (m *CrossTenantAccessPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -141,7 +142,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get the custom rules that define an access scenario when interacting with external Azure AD tenants.
+// Get read the properties and relationships of a crossTenantAccessPolicy object.
 func (m *CrossTenantAccessPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -175,19 +176,22 @@ func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i942f76
     }
     return i942f76e8fcfc288876416b046c9c24718eb0f9cbc52dccced876ec03d4620766.NewCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update the navigation property crossTenantAccessPolicy in policies
-func (m *CrossTenantAccessPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of a cross-tenant access policy.
+func (m *CrossTenantAccessPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCrossTenantAccessPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable), nil
 }

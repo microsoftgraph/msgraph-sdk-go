@@ -17,7 +17,7 @@ type SessionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SessionsRequestBuilderGetQueryParameters list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+// SessionsRequestBuilderGetQueryParameters retrieve the list of sessions associated with a callRecord object.
 type SessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SessionsRequestBuilderPostRequestConfiguration struct {
 func NewSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SessionsRequestBuilder) {
     m := &SessionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SessionsRequestBuilder) Count()(*i0cf6d0b5a27a60989e8084e0a061ff1ea9a34f70d7d5450a48e60fccd2a997e3.CountRequestBuilder) {
     return i0cf6d0b5a27a60989e8084e0a061ff1ea9a34f70d7d5450a48e60fccd2a997e3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+// CreateGetRequestInformation retrieve the list of sessions associated with a callRecord object.
 func (m *SessionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of sessions associated with a callRecord object.
 func (m *SessionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SessionsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+// Get retrieve the list of sessions associated with a callRecord object.
 func (m *SessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SessionsRequestBuilderGetRequestConfiguration)(iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.SessionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -18,7 +18,7 @@ type UsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UsersRequestBuilderGetQueryParameters users in the school. Nullable.
+// UsersRequestBuilderGetQueryParameters get the educationUser resources associated with an educationSchool.
 type UsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type UsersRequestBuilderGetRequestConfiguration struct {
 func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersRequestBuilder) {
     m := &UsersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}/users{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *UsersRequestBuilder) Count()(*i7cde53fdd27d3c52de1397fbf09d573d2a212c717c2f77a0375b017610e29055.CountRequestBuilder) {
     return i7cde53fdd27d3c52de1397fbf09d573d2a212c717c2f77a0375b017610e29055.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation users in the school. Nullable.
+// CreateGetRequestInformation get the educationUser resources associated with an educationSchool.
 func (m *UsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration users in the school. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get the educationUser resources associated with an educationSchool.
 func (m *UsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *UsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get users in the school. Nullable.
+// Get get the educationUser resources associated with an educationSchool.
 func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

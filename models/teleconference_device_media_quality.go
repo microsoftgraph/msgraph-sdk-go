@@ -123,226 +123,28 @@ func (m *TeleconferenceDeviceMediaQuality) GetChannelIndex()(*int32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["averageInboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageInboundJitter(val)
-        }
-        return nil
-    }
-    res["averageInboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageInboundPacketLossRateInPercentage(val)
-        }
-        return nil
-    }
-    res["averageInboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageInboundRoundTripDelay(val)
-        }
-        return nil
-    }
-    res["averageOutboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageOutboundJitter(val)
-        }
-        return nil
-    }
-    res["averageOutboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageOutboundPacketLossRateInPercentage(val)
-        }
-        return nil
-    }
-    res["averageOutboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAverageOutboundRoundTripDelay(val)
-        }
-        return nil
-    }
-    res["channelIndex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetChannelIndex(val)
-        }
-        return nil
-    }
-    res["inboundPackets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInboundPackets(val)
-        }
-        return nil
-    }
-    res["localIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLocalIPAddress(val)
-        }
-        return nil
-    }
-    res["localPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLocalPort(val)
-        }
-        return nil
-    }
-    res["maximumInboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumInboundJitter(val)
-        }
-        return nil
-    }
-    res["maximumInboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumInboundPacketLossRateInPercentage(val)
-        }
-        return nil
-    }
-    res["maximumInboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumInboundRoundTripDelay(val)
-        }
-        return nil
-    }
-    res["maximumOutboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumOutboundJitter(val)
-        }
-        return nil
-    }
-    res["maximumOutboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumOutboundPacketLossRateInPercentage(val)
-        }
-        return nil
-    }
-    res["maximumOutboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumOutboundRoundTripDelay(val)
-        }
-        return nil
-    }
-    res["mediaDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMediaDuration(val)
-        }
-        return nil
-    }
-    res["networkLinkSpeedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkLinkSpeedInBytes(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["outboundPackets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOutboundPackets(val)
-        }
-        return nil
-    }
-    res["remoteIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemoteIPAddress(val)
-        }
-        return nil
-    }
-    res["remotePort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemotePort(val)
-        }
-        return nil
-    }
+    res["averageInboundJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageInboundJitter)
+    res["averageInboundPacketLossRateInPercentage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetAverageInboundPacketLossRateInPercentage)
+    res["averageInboundRoundTripDelay"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageInboundRoundTripDelay)
+    res["averageOutboundJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageOutboundJitter)
+    res["averageOutboundPacketLossRateInPercentage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetAverageOutboundPacketLossRateInPercentage)
+    res["averageOutboundRoundTripDelay"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetAverageOutboundRoundTripDelay)
+    res["channelIndex"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetChannelIndex)
+    res["inboundPackets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetInboundPackets)
+    res["localIPAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLocalIPAddress)
+    res["localPort"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetLocalPort)
+    res["maximumInboundJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaximumInboundJitter)
+    res["maximumInboundPacketLossRateInPercentage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetMaximumInboundPacketLossRateInPercentage)
+    res["maximumInboundRoundTripDelay"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaximumInboundRoundTripDelay)
+    res["maximumOutboundJitter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaximumOutboundJitter)
+    res["maximumOutboundPacketLossRateInPercentage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetMaximumOutboundPacketLossRateInPercentage)
+    res["maximumOutboundRoundTripDelay"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMaximumOutboundRoundTripDelay)
+    res["mediaDuration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetMediaDuration)
+    res["networkLinkSpeedInBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetNetworkLinkSpeedInBytes)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["outboundPackets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetOutboundPackets)
+    res["remoteIPAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRemoteIPAddress)
+    res["remotePort"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetRemotePort)
     return res
 }
 // GetInboundPackets gets the inboundPackets property value. The total number of the inbound packets.

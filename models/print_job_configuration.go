@@ -93,214 +93,26 @@ func (m *PrintJobConfiguration) GetFeedOrientation()(*PrinterFeedOrientation) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["collate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCollate(val)
-        }
-        return nil
-    }
-    res["colorMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintColorMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetColorMode(val.(*PrintColorMode))
-        }
-        return nil
-    }
-    res["copies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCopies(val)
-        }
-        return nil
-    }
-    res["dpi"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDpi(val)
-        }
-        return nil
-    }
-    res["duplexMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintDuplexMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDuplexMode(val.(*PrintDuplexMode))
-        }
-        return nil
-    }
-    res["feedOrientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrinterFeedOrientation)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeedOrientation(val.(*PrinterFeedOrientation))
-        }
-        return nil
-    }
-    res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintFinishing, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintFinishing))
-            }
-            m.SetFinishings(res)
-        }
-        return nil
-    }
-    res["fitPdfToPage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFitPdfToPage(val)
-        }
-        return nil
-    }
-    res["inputBin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInputBin(val)
-        }
-        return nil
-    }
-    res["margin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePrintMarginFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMargin(val.(PrintMarginable))
-        }
-        return nil
-    }
-    res["mediaSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMediaSize(val)
-        }
-        return nil
-    }
-    res["mediaType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMediaType(val)
-        }
-        return nil
-    }
-    res["multipageLayout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintMultipageLayout)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMultipageLayout(val.(*PrintMultipageLayout))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["orientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintOrientation)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrientation(val.(*PrintOrientation))
-        }
-        return nil
-    }
-    res["outputBin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOutputBin(val)
-        }
-        return nil
-    }
-    res["pageRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIntegerRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IntegerRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IntegerRangeable)
-            }
-            m.SetPageRanges(res)
-        }
-        return nil
-    }
-    res["pagesPerSheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPagesPerSheet(val)
-        }
-        return nil
-    }
-    res["quality"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintQuality)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQuality(val.(*PrintQuality))
-        }
-        return nil
-    }
-    res["scaling"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrintScaling)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScaling(val.(*PrintScaling))
-        }
-        return nil
-    }
+    res["collate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCollate)
+    res["colorMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrintColorMode , m.SetColorMode)
+    res["copies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCopies)
+    res["dpi"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDpi)
+    res["duplexMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrintDuplexMode , m.SetDuplexMode)
+    res["feedOrientation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrinterFeedOrientation , m.SetFeedOrientation)
+    res["finishings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParsePrintFinishing , m.SetFinishings)
+    res["fitPdfToPage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFitPdfToPage)
+    res["inputBin"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInputBin)
+    res["margin"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePrintMarginFromDiscriminatorValue , m.SetMargin)
+    res["mediaSize"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMediaSize)
+    res["mediaType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMediaType)
+    res["multipageLayout"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrintMultipageLayout , m.SetMultipageLayout)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["orientation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrintOrientation , m.SetOrientation)
+    res["outputBin"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOutputBin)
+    res["pageRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIntegerRangeFromDiscriminatorValue , m.SetPageRanges)
+    res["pagesPerSheet"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPagesPerSheet)
+    res["quality"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrintQuality , m.SetQuality)
+    res["scaling"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePrintScaling , m.SetScaling)
     return res
 }
 // GetFinishings gets the finishings property value. Finishing processes to use when printing.
@@ -463,10 +275,7 @@ func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetPageRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPageRanges()))
-        for i, v := range m.GetPageRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPageRanges())
         err := writer.WriteCollectionOfObjectValues("pageRanges", cast)
         if err != nil {
             return err

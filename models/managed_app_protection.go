@@ -134,280 +134,33 @@ func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
-    res["allowedDataStorageLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseManagedAppDataStorageLocation)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedAppDataStorageLocation, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ManagedAppDataStorageLocation))
-            }
-            m.SetAllowedDataStorageLocations(res)
-        }
-        return nil
-    }
-    res["allowedInboundDataTransferSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppDataTransferLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedInboundDataTransferSources(val.(*ManagedAppDataTransferLevel))
-        }
-        return nil
-    }
-    res["allowedOutboundClipboardSharingLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppClipboardSharingLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedOutboundClipboardSharingLevel(val.(*ManagedAppClipboardSharingLevel))
-        }
-        return nil
-    }
-    res["allowedOutboundDataTransferDestinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppDataTransferLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedOutboundDataTransferDestinations(val.(*ManagedAppDataTransferLevel))
-        }
-        return nil
-    }
-    res["contactSyncBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContactSyncBlocked(val)
-        }
-        return nil
-    }
-    res["dataBackupBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDataBackupBlocked(val)
-        }
-        return nil
-    }
-    res["deviceComplianceRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceComplianceRequired(val)
-        }
-        return nil
-    }
-    res["disableAppPinIfDevicePinIsSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisableAppPinIfDevicePinIsSet(val)
-        }
-        return nil
-    }
-    res["fingerprintBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFingerprintBlocked(val)
-        }
-        return nil
-    }
-    res["managedBrowser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedBrowserType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedBrowser(val.(*ManagedBrowserType))
-        }
-        return nil
-    }
-    res["managedBrowserToOpenLinksRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedBrowserToOpenLinksRequired(val)
-        }
-        return nil
-    }
-    res["maximumPinRetries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumPinRetries(val)
-        }
-        return nil
-    }
-    res["minimumPinLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumPinLength(val)
-        }
-        return nil
-    }
-    res["minimumRequiredAppVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumRequiredAppVersion(val)
-        }
-        return nil
-    }
-    res["minimumRequiredOsVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumRequiredOsVersion(val)
-        }
-        return nil
-    }
-    res["minimumWarningAppVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumWarningAppVersion(val)
-        }
-        return nil
-    }
-    res["minimumWarningOsVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumWarningOsVersion(val)
-        }
-        return nil
-    }
-    res["organizationalCredentialsRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrganizationalCredentialsRequired(val)
-        }
-        return nil
-    }
-    res["periodBeforePinReset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPeriodBeforePinReset(val)
-        }
-        return nil
-    }
-    res["periodOfflineBeforeAccessCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPeriodOfflineBeforeAccessCheck(val)
-        }
-        return nil
-    }
-    res["periodOfflineBeforeWipeIsEnforced"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPeriodOfflineBeforeWipeIsEnforced(val)
-        }
-        return nil
-    }
-    res["periodOnlineBeforeAccessCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPeriodOnlineBeforeAccessCheck(val)
-        }
-        return nil
-    }
-    res["pinCharacterSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedAppPinCharacterSet)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinCharacterSet(val.(*ManagedAppPinCharacterSet))
-        }
-        return nil
-    }
-    res["pinRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPinRequired(val)
-        }
-        return nil
-    }
-    res["printBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrintBlocked(val)
-        }
-        return nil
-    }
-    res["saveAsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSaveAsBlocked(val)
-        }
-        return nil
-    }
-    res["simplePinBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSimplePinBlocked(val)
-        }
-        return nil
-    }
+    res["allowedDataStorageLocations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseManagedAppDataStorageLocation , m.SetAllowedDataStorageLocations)
+    res["allowedInboundDataTransferSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedAppDataTransferLevel , m.SetAllowedInboundDataTransferSources)
+    res["allowedOutboundClipboardSharingLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedAppClipboardSharingLevel , m.SetAllowedOutboundClipboardSharingLevel)
+    res["allowedOutboundDataTransferDestinations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedAppDataTransferLevel , m.SetAllowedOutboundDataTransferDestinations)
+    res["contactSyncBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContactSyncBlocked)
+    res["dataBackupBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDataBackupBlocked)
+    res["deviceComplianceRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDeviceComplianceRequired)
+    res["disableAppPinIfDevicePinIsSet"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDisableAppPinIfDevicePinIsSet)
+    res["fingerprintBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFingerprintBlocked)
+    res["managedBrowser"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedBrowserType , m.SetManagedBrowser)
+    res["managedBrowserToOpenLinksRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetManagedBrowserToOpenLinksRequired)
+    res["maximumPinRetries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumPinRetries)
+    res["minimumPinLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumPinLength)
+    res["minimumRequiredAppVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumRequiredAppVersion)
+    res["minimumRequiredOsVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumRequiredOsVersion)
+    res["minimumWarningAppVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningAppVersion)
+    res["minimumWarningOsVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningOsVersion)
+    res["organizationalCredentialsRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOrganizationalCredentialsRequired)
+    res["periodBeforePinReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetPeriodBeforePinReset)
+    res["periodOfflineBeforeAccessCheck"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetPeriodOfflineBeforeAccessCheck)
+    res["periodOfflineBeforeWipeIsEnforced"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetPeriodOfflineBeforeWipeIsEnforced)
+    res["periodOnlineBeforeAccessCheck"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetPeriodOnlineBeforeAccessCheck)
+    res["pinCharacterSet"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedAppPinCharacterSet , m.SetPinCharacterSet)
+    res["pinRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPinRequired)
+    res["printBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPrintBlocked)
+    res["saveAsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSaveAsBlocked)
+    res["simplePinBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSimplePinBlocked)
     return res
 }
 // GetFingerprintBlocked gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.

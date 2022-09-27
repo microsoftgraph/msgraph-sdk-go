@@ -23,7 +23,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters the policy that represents the security defaults that protect against common attacks.
+// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the policy that represents the security defaults that protect against common attacks.
+// CreateGetRequestInformation retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that represents the security defaults that protect against common attacks.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,16 +101,17 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+// CreatePatchRequestInformation update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -134,7 +135,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get the policy that represents the security defaults that protect against common attacks.
+// Get retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -153,19 +154,22 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable), nil
 }
-// Patch update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
-func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySecurityDefaultsEnforcementPolicyable), nil
 }

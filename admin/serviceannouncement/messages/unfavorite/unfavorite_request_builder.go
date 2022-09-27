@@ -41,11 +41,11 @@ func NewUnfavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewUnfavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unfavorite
+// CreatePostRequestInformation remove the favorite status of serviceUpdateMessages for the signed in user.
 func (m *UnfavoriteRequestBuilder) CreatePostRequestInformation(body UnfavoritePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unfavorite
+// CreatePostRequestInformationWithRequestConfiguration remove the favorite status of serviceUpdateMessages for the signed in user.
 func (m *UnfavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnfavoritePostRequestBodyable, requestConfiguration *UnfavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *UnfavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Post invoke action unfavorite
+// Post remove the favorite status of serviceUpdateMessages for the signed in user.
 func (m *UnfavoriteRequestBuilder) Post(ctx context.Context, body UnfavoritePostRequestBodyable, requestConfiguration *UnfavoriteRequestBuilderPostRequestConfiguration)(UnfavoriteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
