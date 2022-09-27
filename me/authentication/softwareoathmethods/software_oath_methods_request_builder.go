@@ -17,7 +17,7 @@ type SoftwareOathMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SoftwareOathMethodsRequestBuilderGetQueryParameters the software OATH TOTP applications registered to a user for authentication.
+// SoftwareOathMethodsRequestBuilderGetQueryParameters retrieve a list of a user's software OATH token authentication method objects and their properties.
 type SoftwareOathMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SoftwareOathMethodsRequestBuilderPostRequestConfiguration struct {
 func NewSoftwareOathMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SoftwareOathMethodsRequestBuilder) {
     m := &SoftwareOathMethodsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/softwareOathMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/authentication/softwareOathMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSoftwareOathMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *SoftwareOathMethodsRequestBuilder) Count()(*i295d20f8b9fdfc6423e1afb840d940dd2dae9b31f435ef9f7d7393377a4e4e57.CountRequestBuilder) {
     return i295d20f8b9fdfc6423e1afb840d940dd2dae9b31f435ef9f7d7393377a4e4e57.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the software OATH TOTP applications registered to a user for authentication.
+// CreateGetRequestInformation retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the software OATH TOTP applications registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SoftwareOathMethodsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get the software OATH TOTP applications registered to a user for authentication.
+// Get retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SoftwareOathAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

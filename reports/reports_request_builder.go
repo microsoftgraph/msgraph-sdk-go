@@ -30,6 +30,7 @@ import (
     i26d1169a1f986183917395a64e40bb9c1870a54b457336ef64e7efa21c214a15 "github.com/microsoftgraph/msgraph-sdk-go/reports/getoffice365groupsactivitystoragewithperiod"
     i285bf21395498d7467b7e1d3f62e43bbbab40d875429e2800566739471aaa586 "github.com/microsoftgraph/msgraph-sdk-go/reports/getemailappusageuserdetailwithperiod"
     i2e849a1f15987664ba1a6648f0c1d0eb9e2ca5965a632cc3761ad14bb91674bf "github.com/microsoftgraph/msgraph-sdk-go/reports/getskypeforbusinessorganizeractivitycountswithperiod"
+    i2ee11973211f7fc9312ca00d777ef8304aada9d21bbf7c226dda5bef84678886 "github.com/microsoftgraph/msgraph-sdk-go/reports/security"
     i2f04ee022b2f4dd0c31e5c7f89cc28c7d1e36585beb573c9c689634579fb8999 "github.com/microsoftgraph/msgraph-sdk-go/reports/getsharepointsiteusagepageswithperiod"
     i316dae3dc0a83b965993ba7f5a9d3b29d2b5dcbd706e8977d4a6cb34548c5275 "github.com/microsoftgraph/msgraph-sdk-go/reports/getonedriveusageaccountdetailwithperiod"
     i347d730506a06c407296d7557c653293a35a9c38b50c7256c1c7abb4c736ef9a "github.com/microsoftgraph/msgraph-sdk-go/reports/getsharepointsiteusagesitecountswithperiod"
@@ -190,6 +191,7 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -645,18 +647,25 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9
     return if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update reports
-func (m *ReportsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(error) {
+func (m *ReportsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateReportRootFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable), nil
+}
+// Security the security property
+func (m *ReportsRequestBuilder) Security()(*i2ee11973211f7fc9312ca00d777ef8304aada9d21bbf7c226dda5bef84678886.SecurityRequestBuilder) {
+    return i2ee11973211f7fc9312ca00d777ef8304aada9d21bbf7c226dda5bef84678886.NewSecurityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

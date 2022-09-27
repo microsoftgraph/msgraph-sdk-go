@@ -17,7 +17,7 @@ type FollowedSitesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FollowedSitesRequestBuilderGetQueryParameters get followedSites from users
+// FollowedSitesRequestBuilderGetQueryParameters list the sites that have been followed by the signed in user.
 type FollowedSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type FollowedSitesRequestBuilderGetRequestConfiguration struct {
 func NewFollowedSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FollowedSitesRequestBuilder) {
     m := &FollowedSitesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/followedSites{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/followedSites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewFollowedSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *FollowedSitesRequestBuilder) Count()(*i6345be524c50e5455d253d62c0cb4b9d671b0b5d5b63684ad4a0376c043b07e6.CountRequestBuilder) {
     return i6345be524c50e5455d253d62c0cb4b9d671b0b5d5b63684ad4a0376c043b07e6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get followedSites from users
+// CreateGetRequestInformation list the sites that have been followed by the signed in user.
 func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get followedSites from users
+// CreateGetRequestInformationWithRequestConfiguration list the sites that have been followed by the signed in user.
 func (m *FollowedSitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *FollowedSitesRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get followedSites from users
+// Get list the sites that have been followed by the signed in user.
 func (m *FollowedSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

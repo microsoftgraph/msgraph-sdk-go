@@ -2,12 +2,15 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackage provides operations to manage the collection of agreement entities.
+// AccessPackage provides operations to manage the collection of agreementAcceptance entities.
 type AccessPackage struct {
     Entity
+    // The accessPackagesIncompatibleWith property
+    accessPackagesIncompatibleWith []AccessPackageable
     // The assignmentPolicies property
     assignmentPolicies []AccessPackageAssignmentPolicyable
     // The catalog property
@@ -18,6 +21,10 @@ type AccessPackage struct {
     description *string
     // The display name of the access package. Supports $filter (eq, contains).
     displayName *string
+    // The incompatibleAccessPackages property
+    incompatibleAccessPackages []AccessPackageable
+    // The incompatibleGroups property
+    incompatibleGroups []Groupable
     // Whether the access package is hidden from the requestor.
     isHidden *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -35,6 +42,10 @@ func NewAccessPackage()(*AccessPackage) {
 // CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAccessPackageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackage(), nil
+}
+// GetAccessPackagesIncompatibleWith gets the accessPackagesIncompatibleWith property value. The accessPackagesIncompatibleWith property
+func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable) {
+    return m.accessPackagesIncompatibleWith
 }
 // GetAssignmentPolicies gets the assignmentPolicies property value. The assignmentPolicies property
 func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
@@ -59,81 +70,25 @@ func (m *AccessPackage) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignmentPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageAssignmentPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentPolicyable)
-            }
-            m.SetAssignmentPolicies(res)
-        }
-        return nil
-    }
-    res["catalog"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCatalog(val.(AccessPackageCatalogable))
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["isHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsHidden(val)
-        }
-        return nil
-    }
-    res["modifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetModifiedDateTime(val)
-        }
-        return nil
-    }
+    res["accessPackagesIncompatibleWith"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue , m.SetAccessPackagesIncompatibleWith)
+    res["assignmentPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue , m.SetAssignmentPolicies)
+    res["catalog"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue , m.SetCatalog)
+    res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
+    res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["incompatibleAccessPackages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue , m.SetIncompatibleAccessPackages)
+    res["incompatibleGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue , m.SetIncompatibleGroups)
+    res["isHidden"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsHidden)
+    res["modifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetModifiedDateTime)
     return res
+}
+// GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The incompatibleAccessPackages property
+func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackageable) {
+    return m.incompatibleAccessPackages
+}
+// GetIncompatibleGroups gets the incompatibleGroups property value. The incompatibleGroups property
+func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
+    return m.incompatibleGroups
 }
 // GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
 func (m *AccessPackage) GetIsHidden()(*bool) {
@@ -149,11 +104,15 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
-    if m.GetAssignmentPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentPolicies()))
-        for i, v := range m.GetAssignmentPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+    if m.GetAccessPackagesIncompatibleWith() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackagesIncompatibleWith())
+        err = writer.WriteCollectionOfObjectValues("accessPackagesIncompatibleWith", cast)
+        if err != nil {
+            return err
         }
+    }
+    if m.GetAssignmentPolicies() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssignmentPolicies())
         err = writer.WriteCollectionOfObjectValues("assignmentPolicies", cast)
         if err != nil {
             return err
@@ -183,6 +142,20 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetIncompatibleAccessPackages() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIncompatibleAccessPackages())
+        err = writer.WriteCollectionOfObjectValues("incompatibleAccessPackages", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetIncompatibleGroups() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIncompatibleGroups())
+        err = writer.WriteCollectionOfObjectValues("incompatibleGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isHidden", m.GetIsHidden())
         if err != nil {
@@ -196,6 +169,10 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     return nil
+}
+// SetAccessPackagesIncompatibleWith sets the accessPackagesIncompatibleWith property value. The accessPackagesIncompatibleWith property
+func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackageable)() {
+    m.accessPackagesIncompatibleWith = value
 }
 // SetAssignmentPolicies sets the assignmentPolicies property value. The assignmentPolicies property
 func (m *AccessPackage) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
@@ -216,6 +193,14 @@ func (m *AccessPackage) SetDescription(value *string)() {
 // SetDisplayName sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) SetDisplayName(value *string)() {
     m.displayName = value
+}
+// SetIncompatibleAccessPackages sets the incompatibleAccessPackages property value. The incompatibleAccessPackages property
+func (m *AccessPackage) SetIncompatibleAccessPackages(value []AccessPackageable)() {
+    m.incompatibleAccessPackages = value
+}
+// SetIncompatibleGroups sets the incompatibleGroups property value. The incompatibleGroups property
+func (m *AccessPackage) SetIncompatibleGroups(value []Groupable)() {
+    m.incompatibleGroups = value
 }
 // SetIsHidden sets the isHidden property value. Whether the access package is hidden from the requestor.
 func (m *AccessPackage) SetIsHidden(value *bool)() {

@@ -12,8 +12,10 @@ type ReportRootable interface {
     GetDailyPrintUsageByUser()([]PrintUsageByUserable)
     GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
+    GetSecurity()(SecurityReportsRootable)
     SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
     SetDailyPrintUsageByUser(value []PrintUsageByUserable)()
     SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
+    SetSecurity(value SecurityReportsRootable)()
 }

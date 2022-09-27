@@ -41,11 +41,11 @@ func NewTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action translateExchangeIds
+// CreatePostRequestInformation translate identifiers of Outlook-related resources between formats.
 func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformation(body TranslateExchangeIdsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action translateExchangeIds
+// CreatePostRequestInformationWithRequestConfiguration translate identifiers of Outlook-related resources between formats.
 func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TranslateExchangeIdsPostRequestBodyable, requestConfiguration *TranslateExchangeIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Post invoke action translateExchangeIds
+// Post translate identifiers of Outlook-related resources between formats.
 func (m *TranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body TranslateExchangeIdsPostRequestBodyable, requestConfiguration *TranslateExchangeIdsRequestBuilderPostRequestConfiguration)(TranslateExchangeIdsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

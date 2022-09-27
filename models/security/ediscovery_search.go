@@ -1,6 +1,7 @@
 package security
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -52,78 +53,12 @@ func (m *EdiscoverySearch) GetDataSourceScopes()(*DataSourceScopes) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Search.GetFieldDeserializers()
-    res["additionalSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDataSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DataSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(DataSourceable)
-            }
-            m.SetAdditionalSources(res)
-        }
-        return nil
-    }
-    res["addToReviewSetOperation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEdiscoveryAddToReviewSetOperationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAddToReviewSetOperation(val.(EdiscoveryAddToReviewSetOperationable))
-        }
-        return nil
-    }
-    res["custodianSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDataSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DataSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(DataSourceable)
-            }
-            m.SetCustodianSources(res)
-        }
-        return nil
-    }
-    res["dataSourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSourceScopes)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDataSourceScopes(val.(*DataSourceScopes))
-        }
-        return nil
-    }
-    res["lastEstimateStatisticsOperation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEdiscoveryEstimateOperationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastEstimateStatisticsOperation(val.(EdiscoveryEstimateOperationable))
-        }
-        return nil
-    }
-    res["noncustodialSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EdiscoveryNoncustodialDataSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(EdiscoveryNoncustodialDataSourceable)
-            }
-            m.SetNoncustodialSources(res)
-        }
-        return nil
-    }
+    res["additionalSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDataSourceFromDiscriminatorValue , m.SetAdditionalSources)
+    res["addToReviewSetOperation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEdiscoveryAddToReviewSetOperationFromDiscriminatorValue , m.SetAddToReviewSetOperation)
+    res["custodianSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDataSourceFromDiscriminatorValue , m.SetCustodianSources)
+    res["dataSourceScopes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDataSourceScopes , m.SetDataSourceScopes)
+    res["lastEstimateStatisticsOperation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEdiscoveryEstimateOperationFromDiscriminatorValue , m.SetLastEstimateStatisticsOperation)
+    res["noncustodialSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue , m.SetNoncustodialSources)
     return res
 }
 // GetLastEstimateStatisticsOperation gets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the eDiscovery search.
@@ -141,10 +76,7 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         return err
     }
     if m.GetAdditionalSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdditionalSources()))
-        for i, v := range m.GetAdditionalSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAdditionalSources())
         err = writer.WriteCollectionOfObjectValues("additionalSources", cast)
         if err != nil {
             return err
@@ -157,10 +89,7 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetCustodianSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustodianSources()))
-        for i, v := range m.GetCustodianSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustodianSources())
         err = writer.WriteCollectionOfObjectValues("custodianSources", cast)
         if err != nil {
             return err
@@ -180,10 +109,7 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetNoncustodialSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNoncustodialSources()))
-        for i, v := range m.GetNoncustodialSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNoncustodialSources())
         err = writer.WriteCollectionOfObjectValues("noncustodialSources", cast)
         if err != nil {
             return err

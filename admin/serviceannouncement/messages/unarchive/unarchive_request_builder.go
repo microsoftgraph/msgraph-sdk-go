@@ -41,11 +41,11 @@ func NewUnarchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unarchive
+// CreatePostRequestInformation unarchive a list of serviceUpdateMessages for the signed in user.
 func (m *UnarchiveRequestBuilder) CreatePostRequestInformation(body UnarchivePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unarchive
+// CreatePostRequestInformationWithRequestConfiguration unarchive a list of serviceUpdateMessages for the signed in user.
 func (m *UnarchiveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnarchivePostRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *UnarchiveRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Post invoke action unarchive
+// Post unarchive a list of serviceUpdateMessages for the signed in user.
 func (m *UnarchiveRequestBuilder) Post(ctx context.Context, body UnarchivePostRequestBodyable, requestConfiguration *UnarchiveRequestBuilderPostRequestConfiguration)(UnarchiveResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

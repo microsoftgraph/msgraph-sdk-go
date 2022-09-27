@@ -17,7 +17,7 @@ type CustodianSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CustodianSourcesRequestBuilderGetQueryParameters custodian sources that are included in the eDiscovery search.
+// CustodianSourcesRequestBuilderGetQueryParameters get the list of custodial data sources associated with an eDiscovery search.
 type CustodianSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type CustodianSourcesRequestBuilderGetRequestConfiguration struct {
 func NewCustodianSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustodianSourcesRequestBuilder) {
     m := &CustodianSourcesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/custodianSources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/custodianSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewCustodianSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *CustodianSourcesRequestBuilder) Count()(*ie28330384ad4bba1530418d0cca913b8fb01c6c8b8be9ca635a39b39c73a4891.CountRequestBuilder) {
     return ie28330384ad4bba1530418d0cca913b8fb01c6c8b8be9ca635a39b39c73a4891.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation custodian sources that are included in the eDiscovery search.
+// CreateGetRequestInformation get the list of custodial data sources associated with an eDiscovery search.
 func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration custodian sources that are included in the eDiscovery search.
+// CreateGetRequestInformationWithRequestConfiguration get the list of custodial data sources associated with an eDiscovery search.
 func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get custodian sources that are included in the eDiscovery search.
+// Get get the list of custodial data sources associated with an eDiscovery search.
 func (m *CustodianSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -7,7 +7,13 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i3af26ef062248fc936f438d7e7cc8fe358d3b1a890b9bcf59c9846f337791fa0 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/getapplicablepolicyrequirements"
     i717f71254096bee879057f5e946ada732407df581c92d78a2a9cf53bfbdcf41e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/catalog"
+    ia21dc7d26c4c2dce707a9163760dc7010237e9187cefd44162aa94c29118c8e9 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/incompatiblegroups"
+    ib0b4f50ad08171a6a2fc4fe982f1ccb3a5a5ba18e36413b5853c69ed1b5bc1d0 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/accesspackagesincompatiblewith"
     ic82697aaed3461913f1b2cee0ca18a05c44db320a3c1fb9e745b665258f9e63f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/assignmentpolicies"
+    id9f5a63318c2eef79bf7fac94ad7ad12d0f79a4223204889df7464ec23049ee7 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/incompatibleaccesspackages"
+    i536330ae5239cf40d108d64a831e8fbed0d4d24aa9f359584ef7fc432c91bbcd "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/incompatiblegroups/item"
+    i564b9fd01b7268c4ffc6762043cd6c1b89adee272d8d58849881da8f9172b4a7 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/accesspackagesincompatiblewith/item"
+    i69779ae93eb036471924b2bf0476d8a562da04a35f5f6ef2dc99f3ace4d48382 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/incompatibleaccesspackages/item"
     ia1916e1833ba6379a656d854d9addb1fc255aaed3c8365e594204fe629eaac7f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/assignmentpolicies/item"
 )
 
@@ -49,6 +55,21 @@ type AccessPackageItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AccessPackagesIncompatibleWith the accessPackagesIncompatibleWith property
+func (m *AccessPackageItemRequestBuilder) AccessPackagesIncompatibleWith()(*ib0b4f50ad08171a6a2fc4fe982f1ccb3a5a5ba18e36413b5853c69ed1b5bc1d0.AccessPackagesIncompatibleWithRequestBuilder) {
+    return ib0b4f50ad08171a6a2fc4fe982f1ccb3a5a5ba18e36413b5853c69ed1b5bc1d0.NewAccessPackagesIncompatibleWithRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AccessPackagesIncompatibleWithById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.accessPackagesIncompatibleWith.item collection
+func (m *AccessPackageItemRequestBuilder) AccessPackagesIncompatibleWithById(id string)(*i564b9fd01b7268c4ffc6762043cd6c1b89adee272d8d58849881da8f9172b4a7.AccessPackageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessPackage%2Did1"] = id
+    }
+    return i564b9fd01b7268c4ffc6762043cd6c1b89adee272d8d58849881da8f9172b4a7.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AssignmentPolicies the assignmentPolicies property
 func (m *AccessPackageItemRequestBuilder) AssignmentPolicies()(*ic82697aaed3461913f1b2cee0ca18a05c44db320a3c1fb9e745b665258f9e63f.AssignmentPoliciesRequestBuilder) {
@@ -134,6 +155,7 @@ func (m *AccessPackageItemRequestBuilder) CreatePatchRequestInformationWithReque
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -180,19 +202,52 @@ func (m *AccessPackageItemRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *AccessPackageItemRequestBuilder) GetApplicablePolicyRequirements()(*i3af26ef062248fc936f438d7e7cc8fe358d3b1a890b9bcf59c9846f337791fa0.GetApplicablePolicyRequirementsRequestBuilder) {
     return i3af26ef062248fc936f438d7e7cc8fe358d3b1a890b9bcf59c9846f337791fa0.NewGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// IncompatibleAccessPackages the incompatibleAccessPackages property
+func (m *AccessPackageItemRequestBuilder) IncompatibleAccessPackages()(*id9f5a63318c2eef79bf7fac94ad7ad12d0f79a4223204889df7464ec23049ee7.IncompatibleAccessPackagesRequestBuilder) {
+    return id9f5a63318c2eef79bf7fac94ad7ad12d0f79a4223204889df7464ec23049ee7.NewIncompatibleAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// IncompatibleAccessPackagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.incompatibleAccessPackages.item collection
+func (m *AccessPackageItemRequestBuilder) IncompatibleAccessPackagesById(id string)(*i69779ae93eb036471924b2bf0476d8a562da04a35f5f6ef2dc99f3ace4d48382.AccessPackageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessPackage%2Did1"] = id
+    }
+    return i69779ae93eb036471924b2bf0476d8a562da04a35f5f6ef2dc99f3ace4d48382.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// IncompatibleGroups the incompatibleGroups property
+func (m *AccessPackageItemRequestBuilder) IncompatibleGroups()(*ia21dc7d26c4c2dce707a9163760dc7010237e9187cefd44162aa94c29118c8e9.IncompatibleGroupsRequestBuilder) {
+    return ia21dc7d26c4c2dce707a9163760dc7010237e9187cefd44162aa94c29118c8e9.NewIncompatibleGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// IncompatibleGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.incompatibleGroups.item collection
+func (m *AccessPackageItemRequestBuilder) IncompatibleGroupsById(id string)(*i536330ae5239cf40d108d64a831e8fbed0d4d24aa9f359584ef7fc432c91bbcd.GroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["group%2Did"] = id
+    }
+    return i536330ae5239cf40d108d64a831e8fbed0d4d24aa9f359584ef7fc432c91bbcd.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // Patch update the navigation property accessPackages in identityGovernance
-func (m *AccessPackageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *AccessPackageItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *AccessPackageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *AccessPackageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAccessPackageFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable), nil
 }

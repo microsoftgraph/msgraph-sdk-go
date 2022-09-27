@@ -1,12 +1,15 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ConditionalAccessRoot 
 type ConditionalAccessRoot struct {
     Entity
+    // The authenticationContextClassReferences property
+    authenticationContextClassReferences []AuthenticationContextClassReferenceable
     // Read-only. Nullable. Returns a collection of the specified named locations.
     namedLocations []NamedLocationable
     // Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
@@ -25,37 +28,16 @@ func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
 func CreateConditionalAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessRoot(), nil
 }
+// GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. The authenticationContextClassReferences property
+func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable) {
+    return m.authenticationContextClassReferences
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["namedLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]NamedLocationable, len(val))
-            for i, v := range val {
-                res[i] = v.(NamedLocationable)
-            }
-            m.SetNamedLocations(res)
-        }
-        return nil
-    }
-    res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyable)
-            }
-            m.SetPolicies(res)
-        }
-        return nil
-    }
+    res["authenticationContextClassReferences"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationContextClassReferenceFromDiscriminatorValue , m.SetAuthenticationContextClassReferences)
+    res["namedLocations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue , m.SetNamedLocations)
+    res["policies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue , m.SetPolicies)
     return res
 }
 // GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
@@ -72,27 +54,32 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
-    if m.GetNamedLocations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNamedLocations()))
-        for i, v := range m.GetNamedLocations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+    if m.GetAuthenticationContextClassReferences() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuthenticationContextClassReferences())
+        err = writer.WriteCollectionOfObjectValues("authenticationContextClassReferences", cast)
+        if err != nil {
+            return err
         }
+    }
+    if m.GetNamedLocations() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNamedLocations())
         err = writer.WriteCollectionOfObjectValues("namedLocations", cast)
         if err != nil {
             return err
         }
     }
     if m.GetPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
-        for i, v := range m.GetPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPolicies())
         err = writer.WriteCollectionOfObjectValues("policies", cast)
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. The authenticationContextClassReferences property
+func (m *ConditionalAccessRoot) SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)() {
+    m.authenticationContextClassReferences = value
 }
 // SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {

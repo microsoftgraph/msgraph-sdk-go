@@ -41,11 +41,11 @@ func NewDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action dismiss
+// CreatePostRequestInformation dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
 func (m *DismissRequestBuilder) CreatePostRequestInformation(body DismissPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action dismiss
+// CreatePostRequestInformationWithRequestConfiguration dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
 func (m *DismissRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DismissPostRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *DismissRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action dismiss
+// Post dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
 func (m *DismissRequestBuilder) Post(ctx context.Context, body DismissPostRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

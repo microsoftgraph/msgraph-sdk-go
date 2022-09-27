@@ -41,11 +41,11 @@ func NewClearUserPreferredPresenceRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewClearUserPreferredPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action clearUserPreferredPresence
+// CreatePostRequestInformation clear the preferred availability and activity status for a user.
 func (m *ClearUserPreferredPresenceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action clearUserPreferredPresence
+// CreatePostRequestInformationWithRequestConfiguration clear the preferred availability and activity status for a user.
 func (m *ClearUserPreferredPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ClearUserPreferredPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *ClearUserPreferredPresenceRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// Post invoke action clearUserPreferredPresence
+// Post clear the preferred availability and activity status for a user.
 func (m *ClearUserPreferredPresenceRequestBuilder) Post(ctx context.Context, requestConfiguration *ClearUserPreferredPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

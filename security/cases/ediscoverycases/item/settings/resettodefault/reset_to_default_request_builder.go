@@ -41,11 +41,11 @@ func NewResetToDefaultRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewResetToDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action resetToDefault
+// CreatePostRequestInformation reset a caseSettings object to the default values.
 func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action resetToDefault
+// CreatePostRequestInformationWithRequestConfiguration reset a caseSettings object to the default values.
 func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ResetToDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action resetToDefault
+// Post reset a caseSettings object to the default values.
 func (m *ResetToDefaultRequestBuilder) Post(ctx context.Context, requestConfiguration *ResetToDefaultRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

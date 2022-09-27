@@ -18,7 +18,7 @@ type TeachersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TeachersRequestBuilderGetQueryParameters all teachers in the class. Nullable.
+// TeachersRequestBuilderGetQueryParameters retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 type TeachersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type TeachersRequestBuilderGetRequestConfiguration struct {
 func NewTeachersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeachersRequestBuilder) {
     m := &TeachersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/teachers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/teachers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewTeachersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *TeachersRequestBuilder) Count()(*i106c2d673603d490f3c13b88065191cfb0f250bd3abe05b15f7e4d965fbf987b.CountRequestBuilder) {
     return i106c2d673603d490f3c13b88065191cfb0f250bd3abe05b15f7e4d965fbf987b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all teachers in the class. Nullable.
+// CreateGetRequestInformation retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 func (m *TeachersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all teachers in the class. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 func (m *TeachersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeachersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *TeachersRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get all teachers in the class. Nullable.
+// Get retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 func (m *TeachersRequestBuilder) Get(ctx context.Context, requestConfiguration *TeachersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

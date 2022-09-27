@@ -1,6 +1,7 @@
 package callrecords
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -97,226 +98,28 @@ func (m *DeviceInfo) GetDeviceGlitchEventRatio()(*float32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["captureDeviceDriver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCaptureDeviceDriver(val)
-        }
-        return nil
-    }
-    res["captureDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCaptureDeviceName(val)
-        }
-        return nil
-    }
-    res["captureNotFunctioningEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCaptureNotFunctioningEventRatio(val)
-        }
-        return nil
-    }
-    res["cpuInsufficentEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCpuInsufficentEventRatio(val)
-        }
-        return nil
-    }
-    res["deviceClippingEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceClippingEventRatio(val)
-        }
-        return nil
-    }
-    res["deviceGlitchEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceGlitchEventRatio(val)
-        }
-        return nil
-    }
-    res["howlingEventCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHowlingEventCount(val)
-        }
-        return nil
-    }
-    res["initialSignalLevelRootMeanSquare"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInitialSignalLevelRootMeanSquare(val)
-        }
-        return nil
-    }
-    res["lowSpeechLevelEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLowSpeechLevelEventRatio(val)
-        }
-        return nil
-    }
-    res["lowSpeechToNoiseEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLowSpeechToNoiseEventRatio(val)
-        }
-        return nil
-    }
-    res["micGlitchRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicGlitchRate(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["receivedNoiseLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReceivedNoiseLevel(val)
-        }
-        return nil
-    }
-    res["receivedSignalLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReceivedSignalLevel(val)
-        }
-        return nil
-    }
-    res["renderDeviceDriver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRenderDeviceDriver(val)
-        }
-        return nil
-    }
-    res["renderDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRenderDeviceName(val)
-        }
-        return nil
-    }
-    res["renderMuteEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRenderMuteEventRatio(val)
-        }
-        return nil
-    }
-    res["renderNotFunctioningEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRenderNotFunctioningEventRatio(val)
-        }
-        return nil
-    }
-    res["renderZeroVolumeEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRenderZeroVolumeEventRatio(val)
-        }
-        return nil
-    }
-    res["sentNoiseLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSentNoiseLevel(val)
-        }
-        return nil
-    }
-    res["sentSignalLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSentSignalLevel(val)
-        }
-        return nil
-    }
-    res["speakerGlitchRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSpeakerGlitchRate(val)
-        }
-        return nil
-    }
+    res["captureDeviceDriver"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCaptureDeviceDriver)
+    res["captureDeviceName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCaptureDeviceName)
+    res["captureNotFunctioningEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetCaptureNotFunctioningEventRatio)
+    res["cpuInsufficentEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetCpuInsufficentEventRatio)
+    res["deviceClippingEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetDeviceClippingEventRatio)
+    res["deviceGlitchEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetDeviceGlitchEventRatio)
+    res["howlingEventCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetHowlingEventCount)
+    res["initialSignalLevelRootMeanSquare"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetInitialSignalLevelRootMeanSquare)
+    res["lowSpeechLevelEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetLowSpeechLevelEventRatio)
+    res["lowSpeechToNoiseEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetLowSpeechToNoiseEventRatio)
+    res["micGlitchRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetMicGlitchRate)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["receivedNoiseLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetReceivedNoiseLevel)
+    res["receivedSignalLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetReceivedSignalLevel)
+    res["renderDeviceDriver"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRenderDeviceDriver)
+    res["renderDeviceName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRenderDeviceName)
+    res["renderMuteEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetRenderMuteEventRatio)
+    res["renderNotFunctioningEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetRenderNotFunctioningEventRatio)
+    res["renderZeroVolumeEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetRenderZeroVolumeEventRatio)
+    res["sentNoiseLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSentNoiseLevel)
+    res["sentSignalLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSentSignalLevel)
+    res["speakerGlitchRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetSpeakerGlitchRate)
     return res
 }
 // GetHowlingEventCount gets the howlingEventCount property value. Number of times during the call that the media endpoint detected howling or screeching audio.

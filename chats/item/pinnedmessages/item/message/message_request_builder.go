@@ -16,7 +16,7 @@ type MessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MessageRequestBuilderGetQueryParameters get message from chats
+// MessageRequestBuilderGetQueryParameters represents details about the chat message that is pinned.
 type MessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewMessageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get message from chats
+// CreateGetRequestInformation represents details about the chat message that is pinned.
 func (m *MessageRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get message from chats
+// CreateGetRequestInformationWithRequestConfiguration represents details about the chat message that is pinned.
 func (m *MessageRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MessageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *MessageRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get message from chats
+// Get represents details about the chat message that is pinned.
 func (m *MessageRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

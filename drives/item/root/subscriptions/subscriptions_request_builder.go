@@ -56,7 +56,7 @@ type SubscriptionsRequestBuilderPostRequestConfiguration struct {
 func NewSubscriptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubscriptionsRequestBuilder) {
     m := &SubscriptionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/root/subscriptions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/root/subscriptions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

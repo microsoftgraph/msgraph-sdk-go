@@ -17,7 +17,7 @@ type RelationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RelationsRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
+// RelationsRequestBuilderGetQueryParameters get the different relation of a [term] or [set] from the relations navigation property.
 type RelationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type RelationsRequestBuilderPostRequestConfiguration struct {
 func NewRelationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RelationsRequestBuilder) {
     m := &RelationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/relations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/relations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewRelationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *RelationsRequestBuilder) Count()(*i88bf421a660ec9031cb612cdbfd39ef7e3f3e150857e8d68ca4f3508e57ae7d0.CountRequestBuilder) {
     return i88bf421a660ec9031cb612cdbfd39ef7e3f3e150857e8d68ca4f3508e57ae7d0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation indicates which terms have been pinned or reused directly under the set.
+// CreateGetRequestInformation get the different relation of a [term] or [set] from the relations navigation property.
 func (m *RelationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration indicates which terms have been pinned or reused directly under the set.
+// CreateGetRequestInformationWithRequestConfiguration get the different relation of a [term] or [set] from the relations navigation property.
 func (m *RelationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RelationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RelationsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get indicates which terms have been pinned or reused directly under the set.
+// Get get the different relation of a [term] or [set] from the relations navigation property.
 func (m *RelationsRequestBuilder) Get(ctx context.Context, requestConfiguration *RelationsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.RelationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

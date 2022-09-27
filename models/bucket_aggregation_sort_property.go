@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the query method.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type BucketAggregationSortProperty int
 
 const (

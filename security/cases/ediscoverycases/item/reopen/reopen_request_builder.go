@@ -41,11 +41,11 @@ func NewReopenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewReopenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action reopen
+// CreatePostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
 func (m *ReopenRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reopen
+// CreatePostRequestInformationWithRequestConfiguration reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
 func (m *ReopenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ReopenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *ReopenRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action reopen
+// Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
 func (m *ReopenRequestBuilder) Post(ctx context.Context, requestConfiguration *ReopenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

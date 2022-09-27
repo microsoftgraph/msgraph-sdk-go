@@ -42,11 +42,11 @@ func NewStartHoldMusicRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewStartHoldMusicRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action startHoldMusic
+// CreatePostRequestInformation put a participant on hold and play music in the background.
 func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformation(body StartHoldMusicPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action startHoldMusic
+// CreatePostRequestInformationWithRequestConfiguration put a participant on hold and play music in the background.
 func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StartHoldMusicPostRequestBodyable, requestConfiguration *StartHoldMusicRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action startHoldMusic
+// Post put a participant on hold and play music in the background.
 func (m *StartHoldMusicRequestBuilder) Post(ctx context.Context, body StartHoldMusicPostRequestBodyable, requestConfiguration *StartHoldMusicRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StartHoldMusicOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

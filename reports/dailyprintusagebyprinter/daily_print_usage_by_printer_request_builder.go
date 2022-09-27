@@ -17,7 +17,7 @@ type DailyPrintUsageByPrinterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DailyPrintUsageByPrinterRequestBuilderGetQueryParameters get dailyPrintUsageByPrinter from reports
+// DailyPrintUsageByPrinterRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by printer.
 type DailyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type DailyPrintUsageByPrinterRequestBuilderPostRequestConfiguration struct {
 func NewDailyPrintUsageByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DailyPrintUsageByPrinterRequestBuilder) {
     m := &DailyPrintUsageByPrinterRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/dailyPrintUsageByPrinter{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/reports/dailyPrintUsageByPrinter{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewDailyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *DailyPrintUsageByPrinterRequestBuilder) Count()(*i399cdcb69a2f283f44a11abf8f2d60df034d20b0c95dcd87273c567582e52f41.CountRequestBuilder) {
     return i399cdcb69a2f283f44a11abf8f2d60df034d20b0c95dcd87273c567582e52f41.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get dailyPrintUsageByPrinter from reports
+// CreateGetRequestInformation retrieve a list of daily print usage summaries, grouped by printer.
 func (m *DailyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get dailyPrintUsageByPrinter from reports
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of daily print usage summaries, grouped by printer.
 func (m *DailyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DailyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// Get get dailyPrintUsageByPrinter from reports
+// Get retrieve a list of daily print usage summaries, grouped by printer.
 func (m *DailyPrintUsageByPrinterRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

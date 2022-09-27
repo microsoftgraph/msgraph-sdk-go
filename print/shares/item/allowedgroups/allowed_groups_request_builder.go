@@ -18,7 +18,7 @@ type AllowedGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AllowedGroupsRequestBuilderGetQueryParameters the groups whose users have access to print using the printer.
+// AllowedGroupsRequestBuilderGetQueryParameters retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 type AllowedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type AllowedGroupsRequestBuilderGetRequestConfiguration struct {
 func NewAllowedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AllowedGroupsRequestBuilder) {
     m := &AllowedGroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewAllowedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *AllowedGroupsRequestBuilder) Count()(*i647e3e8ba60d13ec826f53bdc5dfa381dbef8b36e6db3d906684d954ea2532b3.CountRequestBuilder) {
     return i647e3e8ba60d13ec826f53bdc5dfa381dbef8b36e6db3d906684d954ea2532b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the groups whose users have access to print using the printer.
+// CreateGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the groups whose users have access to print using the printer.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get the groups whose users have access to print using the printer.
+// Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

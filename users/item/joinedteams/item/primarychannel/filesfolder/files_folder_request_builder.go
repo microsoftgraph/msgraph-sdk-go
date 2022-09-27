@@ -17,7 +17,7 @@ type FilesFolderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FilesFolderRequestBuilderGetQueryParameters metadata for the location where the channel's files are stored.
+// FilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. 
 type FilesFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -56,11 +56,11 @@ func NewFilesFolderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *FilesFolderRequestBuilder) Content()(*i3b5f38726c50cdaa7d43a2e5a7262a14c9eb59a56b646f1854338ac0505cca86.ContentRequestBuilder) {
     return i3b5f38726c50cdaa7d43a2e5a7262a14c9eb59a56b646f1854338ac0505cca86.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation metadata for the location where the channel's files are stored.
+// CreateGetRequestInformation get the metadata for the location where the files of a channel are stored. 
 func (m *FilesFolderRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration metadata for the location where the channel's files are stored.
+// CreateGetRequestInformationWithRequestConfiguration get the metadata for the location where the files of a channel are stored. 
 func (m *FilesFolderRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -76,7 +76,7 @@ func (m *FilesFolderRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get metadata for the location where the channel's files are stored.
+// Get get the metadata for the location where the files of a channel are stored. 
 func (m *FilesFolderRequestBuilder) Get(ctx context.Context, requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -16,7 +16,7 @@ type LastIndexOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastIndexOperationRequestBuilderGetQueryParameters operation entity that represents the latest indexing for the custodian.
+// LastIndexOperationRequestBuilderGetQueryParameters get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
 type LastIndexOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewLastIndexOperationRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewLastIndexOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation operation entity that represents the latest indexing for the custodian.
+// CreateGetRequestInformation get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
 func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration operation entity that represents the latest indexing for the custodian.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
 func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get operation entity that represents the latest indexing for the custodian.
+// Get get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
 func (m *LastIndexOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryIndexOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

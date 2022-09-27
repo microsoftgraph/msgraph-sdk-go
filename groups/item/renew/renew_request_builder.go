@@ -41,11 +41,11 @@ func NewRenewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewRenewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action renew
+// CreatePostRequestInformation renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 func (m *RenewRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action renew
+// CreatePostRequestInformationWithRequestConfiguration renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 func (m *RenewRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RenewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *RenewRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action renew
+// Post renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 func (m *RenewRequestBuilder) Post(ctx context.Context, requestConfiguration *RenewRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

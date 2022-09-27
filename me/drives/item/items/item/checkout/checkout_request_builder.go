@@ -41,11 +41,11 @@ func NewCheckoutRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewCheckoutRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action checkout
+// CreatePostRequestInformation check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 func (m *CheckoutRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action checkout
+// CreatePostRequestInformationWithRequestConfiguration check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 func (m *CheckoutRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *CheckoutRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *CheckoutRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action checkout
+// Post check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 func (m *CheckoutRequestBuilder) Post(ctx context.Context, requestConfiguration *CheckoutRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

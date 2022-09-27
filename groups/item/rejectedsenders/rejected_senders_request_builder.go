@@ -18,7 +18,7 @@ type RejectedSendersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RejectedSendersRequestBuilderGetQueryParameters the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+// RejectedSendersRequestBuilderGetQueryParameters users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 type RejectedSendersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,7 +46,7 @@ type RejectedSendersRequestBuilderGetRequestConfiguration struct {
 func NewRejectedSendersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RejectedSendersRequestBuilder) {
     m := &RejectedSendersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/rejectedSenders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/rejectedSenders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -65,11 +65,11 @@ func NewRejectedSendersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *RejectedSendersRequestBuilder) Count()(*ib060eebe61588bb8275c34866bc8370f2ca80b00dc40f957497cb47ad737d3e8.CountRequestBuilder) {
     return ib060eebe61588bb8275c34866bc8370f2ca80b00dc40f957497cb47ad737d3e8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+// CreateGetRequestInformation users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 func (m *RejectedSendersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+// CreateGetRequestInformationWithRequestConfiguration users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 func (m *RejectedSendersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RejectedSendersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -85,7 +85,7 @@ func (m *RejectedSendersRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+// Get users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 func (m *RejectedSendersRequestBuilder) Get(ctx context.Context, requestConfiguration *RejectedSendersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

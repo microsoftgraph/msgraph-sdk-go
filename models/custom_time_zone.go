@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -38,36 +39,9 @@ func (m *CustomTimeZone) GetDaylightOffset()(DaylightTimeZoneOffsetable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TimeZoneBase.GetFieldDeserializers()
-    res["bias"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBias(val)
-        }
-        return nil
-    }
-    res["daylightOffset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDaylightTimeZoneOffsetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDaylightOffset(val.(DaylightTimeZoneOffsetable))
-        }
-        return nil
-    }
-    res["standardOffset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateStandardTimeZoneOffsetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStandardOffset(val.(StandardTimeZoneOffsetable))
-        }
-        return nil
-    }
+    res["bias"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetBias)
+    res["daylightOffset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDaylightTimeZoneOffsetFromDiscriminatorValue , m.SetDaylightOffset)
+    res["standardOffset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateStandardTimeZoneOffsetFromDiscriminatorValue , m.SetStandardOffset)
     return res
 }
 // GetStandardOffset gets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.

@@ -41,11 +41,11 @@ func NewCloseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewCloseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action close
+// CreatePostRequestInformation close an eDiscovery case. For details, see Close a case.
 func (m *CloseRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action close
+// CreatePostRequestInformationWithRequestConfiguration close an eDiscovery case. For details, see Close a case.
 func (m *CloseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *CloseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *CloseRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action close
+// Post close an eDiscovery case. For details, see Close a case.
 func (m *CloseRequestBuilder) Post(ctx context.Context, requestConfiguration *CloseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

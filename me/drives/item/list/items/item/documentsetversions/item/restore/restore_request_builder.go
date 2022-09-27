@@ -41,11 +41,11 @@ func NewRestoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action restore
+// CreatePostRequestInformation restore a document set version.
 func (m *RestoreRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action restore
+// CreatePostRequestInformationWithRequestConfiguration restore a document set version.
 func (m *RestoreRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *RestoreRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action restore
+// Post restore a document set version.
 func (m *RestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *RestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

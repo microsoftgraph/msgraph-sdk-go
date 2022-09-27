@@ -17,7 +17,7 @@ type BundlesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BundlesRequestBuilderGetQueryParameters collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// BundlesRequestBuilderGetQueryParameters get a list of all the [bundles][bundle] in a user's drive.
 type BundlesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type BundlesRequestBuilderGetRequestConfiguration struct {
 func NewBundlesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BundlesRequestBuilder) {
     m := &BundlesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/bundles{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/bundles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewBundlesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *BundlesRequestBuilder) Count()(*i66ed6237ec32b1b2f9f50b6a4f87bd87f62c304784e35e3b09cec807dec3dc9d.CountRequestBuilder) {
     return i66ed6237ec32b1b2f9f50b6a4f87bd87f62c304784e35e3b09cec807dec3dc9d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// CreateGetRequestInformation get a list of all the [bundles][bundle] in a user's drive.
 func (m *BundlesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// CreateGetRequestInformationWithRequestConfiguration get a list of all the [bundles][bundle] in a user's drive.
 func (m *BundlesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BundlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *BundlesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// Get get a list of all the [bundles][bundle] in a user's drive.
 func (m *BundlesRequestBuilder) Get(ctx context.Context, requestConfiguration *BundlesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

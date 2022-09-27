@@ -17,7 +17,7 @@ type PartnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PartnersRequestBuilderGetQueryParameters defines partner-specific configurations for external Azure Active Directory organizations.
+// PartnersRequestBuilderGetQueryParameters get a list of all partner configurations within a cross-tenant access policy.
 type PartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type PartnersRequestBuilderPostRequestConfiguration struct {
 func NewPartnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnersRequestBuilder) {
     m := &PartnersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/crossTenantAccessPolicy/partners{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/crossTenantAccessPolicy/partners{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewPartnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *PartnersRequestBuilder) Count()(*i3b2bb191cd2fcd0851c3d5a9b09affa7f99a184ab2737386e60944d4783ac2aa.CountRequestBuilder) {
     return i3b2bb191cd2fcd0851c3d5a9b09affa7f99a184ab2737386e60944d4783ac2aa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation defines partner-specific configurations for external Azure Active Directory organizations.
+// CreateGetRequestInformation get a list of all partner configurations within a cross-tenant access policy.
 func (m *PartnersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration defines partner-specific configurations for external Azure Active Directory organizations.
+// CreateGetRequestInformationWithRequestConfiguration get a list of all partner configurations within a cross-tenant access policy.
 func (m *PartnersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PartnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *PartnersRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to partners for policies
+// CreatePostRequestInformation create a new partner configuration in a cross-tenant access policy.
 func (m *PartnersRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationPartnerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to partners for policies
+// CreatePostRequestInformationWithRequestConfiguration create a new partner configuration in a cross-tenant access policy.
 func (m *PartnersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationPartnerable, requestConfiguration *PartnersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PartnersRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get defines partner-specific configurations for external Azure Active Directory organizations.
+// Get get a list of all partner configurations within a cross-tenant access policy.
 func (m *PartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationPartnerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *PartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationPartnerCollectionResponseable), nil
 }
-// Post create new navigation property to partners for policies
+// Post create a new partner configuration in a cross-tenant access policy.
 func (m *PartnersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationPartnerable, requestConfiguration *PartnersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationPartnerable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
