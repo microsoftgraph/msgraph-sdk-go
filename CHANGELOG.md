@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.41.1] - 2022-09-28
+
+### Changed
+
+- Fixed a regression by the pipeline where simple authentication initialization would be missing.
+
 ## [0.41.0] - 2022-09-27
 
 ### Changed
