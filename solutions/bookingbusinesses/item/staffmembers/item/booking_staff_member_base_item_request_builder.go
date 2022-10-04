@@ -66,11 +66,7 @@ func NewBookingStaffMemberBaseItemRequestBuilder(rawUrl string, requestAdapter i
     return NewBookingStaffMemberBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property staffMembers for solutions
-func (m *BookingStaffMemberBaseItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property staffMembers for solutions
-func (m *BookingStaffMemberBaseItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *BookingStaffMemberBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BookingStaffMemberBaseItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *BookingStaffMemberBaseItemRequestBuilder) CreateDeleteRequestInformatio
     return requestInfo, nil
 }
 // CreateGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
-func (m *BookingStaffMemberBaseItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration all the staff members that provide services in this business. Read-only. Nullable.
-func (m *BookingStaffMemberBaseItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BookingStaffMemberBaseItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *BookingStaffMemberBaseItemRequestBuilder) CreateGetRequestInformationWi
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property staffMembers in solutions
-func (m *BookingStaffMemberBaseItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property staffMembers in solutions
-func (m *BookingStaffMemberBaseItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BookingStaffMemberBaseItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *BookingStaffMemberBaseItemRequestBuilder) CreatePatchRequestInformation
 }
 // Delete delete navigation property staffMembers for solutions
 func (m *BookingStaffMemberBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *BookingStaffMemberBaseItemRequestBuilder) Delete(ctx context.Context, r
 }
 // Get all the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingStaffMemberBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *BookingStaffMemberBaseItemRequestBuilder) Get(ctx context.Context, requ
 }
 // Patch update the navigation property staffMembers in solutions
 func (m *BookingStaffMemberBaseItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingStaffMemberBaseItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

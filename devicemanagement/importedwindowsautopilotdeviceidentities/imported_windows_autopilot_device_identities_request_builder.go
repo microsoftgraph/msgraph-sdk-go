@@ -77,11 +77,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*iaa29d
     return iaa29daa3c226776b057f1acdf0964b2ce382e6c77b1be10f0c9b676220be7b8e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -97,17 +93,13 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetReques
     return requestInfo, nil
 }
 // CreatePostRequestInformation create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -116,7 +108,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostReque
 }
 // Get collection of imported Windows autopilot devices.
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -139,7 +131,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Import_escaped(
 }
 // Post create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

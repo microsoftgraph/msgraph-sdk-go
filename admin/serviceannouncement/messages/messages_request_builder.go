@@ -86,11 +86,7 @@ func (m *MessagesRequestBuilder) Count()(*i5b2e93574c1603b0456a604836b4dcf3f5b0f
     return i5b2e93574c1603b0456a604836b4dcf3f5b0f24d49a3a2258788e9fa0c9b58f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
-func (m *MessagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
-func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MessagesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -106,17 +102,13 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // CreatePostRequestInformation create new navigation property to messages for admin
-func (m *MessagesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to messages for admin
-func (m *MessagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MessagesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -129,7 +121,7 @@ func (m *MessagesRequestBuilder) Favorite()(*i0a1ac23d2ad4f7421bfe2ad68e1ae98612
 }
 // Get retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
 func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +148,7 @@ func (m *MessagesRequestBuilder) MarkUnread()(*i184768f41f49a81af236b2a9bc61c929
 }
 // Post create new navigation property to messages for admin
 func (m *MessagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

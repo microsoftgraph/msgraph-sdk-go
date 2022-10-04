@@ -76,11 +76,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*i54e63b43d557
     return i54e63b43d5574b46c5b589d7475c701d90053c08976e7f3f032a74317afb35e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get entities from certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -96,17 +92,13 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInform
     return requestInfo, nil
 }
 // CreatePostRequestInformation add new entity to certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration add new entity to certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -115,7 +107,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInfor
 }
 // Get get entities from certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -134,7 +126,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) Get(ctx context.Contex
 }
 // Post add new entity to certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

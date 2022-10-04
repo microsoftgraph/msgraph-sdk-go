@@ -66,11 +66,7 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete an existing identityProvider.
-func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete an existing identityProvider.
-func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *IdentityProviderItemRequestBuilder) CreateDeleteRequestInformationWithR
     return requestInfo, nil
 }
 // CreateGetRequestInformation retrieve the properties of an existing identityProvider.
-func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of an existing identityProvider.
-func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformationWithRequ
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update properties in an existing identityProvider.
-func (m *IdentityProviderItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update properties in an existing identityProvider.
-func (m *IdentityProviderItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, requestConfiguration *IdentityProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IdentityProviderItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, requestConfiguration *IdentityProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *IdentityProviderItemRequestBuilder) CreatePatchRequestInformationWithRe
 }
 // Delete delete an existing identityProvider.
 func (m *IdentityProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *IdentityProviderItemRequestBuilder) Delete(ctx context.Context, request
 }
 // Get retrieve the properties of an existing identityProvider.
 func (m *IdentityProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *IdentityProviderItemRequestBuilder) Get(ctx context.Context, requestCon
 }
 // Patch update properties in an existing identityProvider.
 func (m *IdentityProviderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, requestConfiguration *IdentityProviderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

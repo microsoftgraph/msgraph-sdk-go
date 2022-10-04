@@ -66,11 +66,7 @@ func NewActivityBasedTimeoutPolicyItemRequestBuilder(rawUrl string, requestAdapt
     return NewActivityBasedTimeoutPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property activityBasedTimeoutPolicies for policies
-func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property activityBasedTimeoutPolicies for policies
-func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateDeleteRequestInform
     return requestInfo, nil
 }
 // CreateGetRequestInformation the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreateGetRequestInformati
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property activityBasedTimeoutPolicies in policies
-func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property activityBasedTimeoutPolicies in policies
-func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) CreatePatchRequestInforma
 }
 // Delete delete navigation property activityBasedTimeoutPolicies for policies
 func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) Delete(ctx context.Contex
 }
 // Get the policy that controls the idle time out for web sessions for applications.
 func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) Get(ctx context.Context, 
 }
 // Patch update the navigation property activityBasedTimeoutPolicies in policies
 func (m *ActivityBasedTimeoutPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

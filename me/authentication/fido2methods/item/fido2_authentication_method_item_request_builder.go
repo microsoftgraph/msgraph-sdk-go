@@ -66,11 +66,7 @@ func NewFido2AuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapte
     return NewFido2AuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property fido2Methods for me
-func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property fido2Methods for me
-func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInforma
     return requestInfo, nil
 }
 // CreateGetRequestInformation represents the FIDO2 security keys registered to a user for authentication.
-func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration represents the FIDO2 security keys registered to a user for authentication.
-func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) CreateGetRequestInformatio
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property fido2Methods in me
-func (m *Fido2AuthenticationMethodItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property fido2Methods in me
-func (m *Fido2AuthenticationMethodItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Fido2AuthenticationMethodItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) CreatePatchRequestInformat
 }
 // Delete delete navigation property fido2Methods for me
 func (m *Fido2AuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) Delete(ctx context.Context
 }
 // Get represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2AuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *Fido2AuthenticationMethodItemRequestBuilder) Get(ctx context.Context, r
 }
 // Patch update the navigation property fido2Methods in me
 func (m *Fido2AuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable, requestConfiguration *Fido2AuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -69,11 +69,7 @@ func (m *ChildTagsRequestBuilder) Count()(*i0e3d5e7ecf2b3c9655d00ce1ab6dcf7aec02
     return i0e3d5e7ecf2b3c9655d00ce1ab6dcf7aec0259fcbe75e99fb15bd774b4d2d54d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation returns the tags that are a child of a tag.
-func (m *ChildTagsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration returns the tags that are a child of a tag.
-func (m *ChildTagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChildTagsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *ChildTagsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
 }
 // Get returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -52,11 +52,7 @@ func NewBitlockerRecoveryKeyItemRequestBuilder(rawUrl string, requestAdapter i2a
     return NewBitlockerRecoveryKeyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the recovery keys associated with the bitlocker entity.
-func (m *BitlockerRecoveryKeyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the recovery keys associated with the bitlocker entity.
-func (m *BitlockerRecoveryKeyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BitlockerRecoveryKeyItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *BitlockerRecoveryKeyItemRequestBuilder) CreateGetRequestInformationWith
 }
 // Get the recovery keys associated with the bitlocker entity.
 func (m *BitlockerRecoveryKeyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BitlockerRecoveryKeyable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

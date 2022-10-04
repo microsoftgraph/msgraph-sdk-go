@@ -71,11 +71,7 @@ func (m *DirectReportsRequestBuilder) Count()(*i4199ad92b96c8f682e3697a566bd20fc
     return i4199ad92b96c8f682e3697a566bd20fc65c77155f4613ce4d65617354895b5d3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get directReports from contacts
-func (m *DirectReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get directReports from contacts
-func (m *DirectReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DirectReportsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -92,7 +88,7 @@ func (m *DirectReportsRequestBuilder) CreateGetRequestInformationWithRequestConf
 }
 // Get get directReports from contacts
 func (m *DirectReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

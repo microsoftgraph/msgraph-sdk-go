@@ -69,11 +69,7 @@ func (m *DomainNameReferencesRequestBuilder) Count()(*i1920ecb2aeba8dd27b7f3431d
     return i1920ecb2aeba8dd27b7f3431dfba4f3c44ae1de0f9ff7511f49d1e3ae0eb7952.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
-func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
-func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DomainNameReferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DomainNameReferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformationWithRequ
 }
 // Get retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
 func (m *DomainNameReferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *DomainNameReferencesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

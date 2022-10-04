@@ -49,11 +49,7 @@ func NewRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete ref of navigation property userFlowIdentityProviders for identity
-func (m *RefRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete ref of navigation property userFlowIdentityProviders for identity
-func (m *RefRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *RefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RefRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *RefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -69,7 +65,7 @@ func (m *RefRequestBuilder) CreateDeleteRequestInformationWithRequestConfigurati
 }
 // Delete delete ref of navigation property userFlowIdentityProviders for identity
 func (m *RefRequestBuilder) Delete(ctx context.Context, requestConfiguration *RefRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

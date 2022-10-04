@@ -45,11 +45,7 @@ func NewGetTeamsUserActivityCountsWithPeriodRequestBuilder(rawUrl string, reques
     return NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getTeamsUserActivityCounts
-func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsUserActivityCounts
-func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -62,7 +58,7 @@ func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInf
 }
 // Get invoke function getTeamsUserActivityCounts
 func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

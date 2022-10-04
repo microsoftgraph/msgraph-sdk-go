@@ -42,16 +42,12 @@ func NewGetConfigurationSettingNonComplianceReportRequestBuilder(rawUrl string, 
     return NewGetConfigurationSettingNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigurationSettingNonComplianceReport
-func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationSettingNonComplianceReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationSettingNonComplianceReport
-func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) CreatePostReq
 }
 // Post invoke action getConfigurationSettingNonComplianceReport
 func (m *GetConfigurationSettingNonComplianceReportRequestBuilder) Post(ctx context.Context, body GetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *GetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

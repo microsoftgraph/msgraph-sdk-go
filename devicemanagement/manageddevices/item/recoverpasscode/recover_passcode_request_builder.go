@@ -42,11 +42,7 @@ func NewRecoverPasscodeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewRecoverPasscodeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation recover passcode
-func (m *RecoverPasscodeRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration recover passcode
-func (m *RecoverPasscodeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RecoverPasscodeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RecoverPasscodeRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RecoverPasscodeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RecoverPasscodeRequestBuilder) CreatePostRequestInformationWithRequestC
 }
 // Post recover passcode
 func (m *RecoverPasscodeRequestBuilder) Post(ctx context.Context, requestConfiguration *RecoverPasscodeRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

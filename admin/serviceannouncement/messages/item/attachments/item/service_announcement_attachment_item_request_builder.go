@@ -71,11 +71,7 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Content()(*ifc74ad0cb3
     return ifc74ad0cb302a2f1acf1a510cb281c247c725b47385f29106fd4d5b70b371cfa.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property attachments for admin
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property attachments for admin
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -87,11 +83,7 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateDeleteRequestInf
     return requestInfo, nil
 }
 // CreateGetRequestInformation a collection of serviceAnnouncementAttachments.
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration a collection of serviceAnnouncementAttachments.
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -107,17 +99,13 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateGetRequestInform
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property attachments in admin
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementAttachmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property attachments in admin
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementAttachmentable, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementAttachmentable, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,7 +114,7 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreatePatchRequestInfo
 }
 // Delete delete navigation property attachments for admin
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -142,7 +130,7 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Delete(ctx context.Con
 }
 // Get a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementAttachmentable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -161,7 +149,7 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Get(ctx context.Contex
 }
 // Patch update the navigation property attachments in admin
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementAttachmentable, requestConfiguration *ServiceAnnouncementAttachmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementAttachmentable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

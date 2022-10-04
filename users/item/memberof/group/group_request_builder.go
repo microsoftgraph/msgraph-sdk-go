@@ -69,11 +69,7 @@ func (m *GroupRequestBuilder) Count()(*ide9c8d30516c972e404e9977b0654b48781c5dd5
     return ide9c8d30516c972e404e9977b0654b48781c5dd5b82d9cf2427e0a04fe66839a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-func (m *GroupRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-func (m *GroupRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GroupRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *GroupRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
 }
 // Get get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
 func (m *GroupRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

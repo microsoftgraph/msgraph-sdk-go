@@ -69,11 +69,7 @@ func (m *AllChannelsRequestBuilder) Count()(*i96cedb63fecbb6e39d2fd98d60912bc44c
     return i96cedb63fecbb6e39d2fd98d60912bc44c186ffba6b62b150980ffc783e24c0d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of channels either in this team or shared with this team (incoming channels).
-func (m *AllChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the list of channels either in this team or shared with this team (incoming channels).
-func (m *AllChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AllChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AllChannelsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AllChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *AllChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get get the list of channels either in this team or shared with this team (incoming channels).
 func (m *AllChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *AllChannelsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

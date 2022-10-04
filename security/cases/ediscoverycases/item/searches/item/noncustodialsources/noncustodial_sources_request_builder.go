@@ -69,11 +69,7 @@ func (m *NoncustodialSourcesRequestBuilder) Count()(*i6a66d1f2c7fba6bef2e02ac25b
     return i6a66d1f2c7fba6bef2e02ac25b0fab7c0b8c02f306b92e80e570ac33bffcf333.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation noncustodialDataSource sources that are included in the eDiscovery search
-func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration noncustodialDataSource sources that are included in the eDiscovery search
-func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NoncustodialSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *NoncustodialSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformationWithReque
 }
 // Get noncustodialDataSource sources that are included in the eDiscovery search
 func (m *NoncustodialSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *NoncustodialSourcesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryNoncustodialDataSourceCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

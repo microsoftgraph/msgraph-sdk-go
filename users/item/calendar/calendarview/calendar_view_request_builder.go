@@ -70,11 +70,7 @@ func (m *CalendarViewRequestBuilder) Count()(*if5f5918c8b257e54e4fc67d6a9c27f520
     return if5f5918c8b257e54e4fc67d6a9c27f520bf1df68c33c0302dff9e9829c8c2be5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
-func (m *CalendarViewRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the calendar view for the calendar. Navigation property. Read-only.
-func (m *CalendarViewRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CalendarViewRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -95,7 +91,7 @@ func (m *CalendarViewRequestBuilder) Delta()(*i26c1f3ce4c45c74794c07dc6f353951a3
 }
 // Get the calendar view for the calendar. Navigation property. Read-only.
 func (m *CalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarViewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

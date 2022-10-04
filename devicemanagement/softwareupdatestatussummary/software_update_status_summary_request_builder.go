@@ -52,11 +52,7 @@ func NewSoftwareUpdateStatusSummaryRequestBuilder(rawUrl string, requestAdapter 
     return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the software update status summary.
-func (m *SoftwareUpdateStatusSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the software update status summary.
-func (m *SoftwareUpdateStatusSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SoftwareUpdateStatusSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SoftwareUpdateStatusSummaryRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SoftwareUpdateStatusSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *SoftwareUpdateStatusSummaryRequestBuilder) CreateGetRequestInformationW
 }
 // Get the software update status summary.
 func (m *SoftwareUpdateStatusSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *SoftwareUpdateStatusSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SoftwareUpdateStatusSummaryable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

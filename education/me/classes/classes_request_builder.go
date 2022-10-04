@@ -69,11 +69,7 @@ func (m *ClassesRequestBuilder) Count()(*i849d7953a1039547758fb0ecae724c0778df29
     return i849d7953a1039547758fb0ecae724c0778df29559102abdda2149f2425e0c05b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the educationClass resources an educationUser is a member of.
-func (m *ClassesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the educationClass resources an educationUser is a member of.
-func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClassesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
 }
 // Get get the educationClass resources an educationUser is a member of.
 func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

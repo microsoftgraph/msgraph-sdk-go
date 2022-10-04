@@ -66,11 +66,7 @@ func NewDelegatedPermissionClassificationItemRequestBuilder(rawUrl string, reque
     return NewDelegatedPermissionClassificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property delegatedPermissionClassifications for servicePrincipals
-func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property delegatedPermissionClassifications for servicePrincipals
-func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateDeleteReques
     return requestInfo, nil
 }
 // CreateGetRequestInformation get delegatedPermissionClassifications from servicePrincipals
-func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get delegatedPermissionClassifications from servicePrincipals
-func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) CreateGetRequestIn
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property delegatedPermissionClassifications in servicePrincipals
-func (m *DelegatedPermissionClassificationItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property delegatedPermissionClassifications in servicePrincipals
-func (m *DelegatedPermissionClassificationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DelegatedPermissionClassificationItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) CreatePatchRequest
 }
 // Delete delete navigation property delegatedPermissionClassifications for servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) Delete(ctx context
 }
 // Get get delegatedPermissionClassifications from servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *DelegatedPermissionClassificationItemRequestBuilder) Get(ctx context.Co
 }
 // Patch update the navigation property delegatedPermissionClassifications in servicePrincipals
 func (m *DelegatedPermissionClassificationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, requestConfiguration *DelegatedPermissionClassificationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedPermissionClassificationable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

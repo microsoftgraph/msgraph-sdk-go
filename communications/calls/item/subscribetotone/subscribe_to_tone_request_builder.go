@@ -43,17 +43,13 @@ func NewSubscribeToToneRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewSubscribeToToneRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'dialpad'.
-func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformation(body SubscribeToTonePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'dialpad'.
-func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SubscribeToTonePostRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformation(ctx context.Context, body SubscribeToTonePostRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *SubscribeToToneRequestBuilder) CreatePostRequestInformationWithRequestC
 }
 // Post subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'dialpad'.
 func (m *SubscribeToToneRequestBuilder) Post(ctx context.Context, body SubscribeToTonePostRequestBodyable, requestConfiguration *SubscribeToToneRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribeToToneOperationable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,11 +42,7 @@ func NewStopRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewStopRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation stop an access review stage that is `inProgress`. After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
-func (m *StopRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration stop an access review stage that is `inProgress`. After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
-func (m *StopRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *StopRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *StopRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *StopRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *StopRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
 }
 // Post stop an access review stage that is `inProgress`. After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 func (m *StopRequestBuilder) Post(ctx context.Context, requestConfiguration *StopRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

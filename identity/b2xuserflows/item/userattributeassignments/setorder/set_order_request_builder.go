@@ -42,16 +42,12 @@ func NewSetOrderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-func (m *SetOrderRequestBuilder) CreatePostRequestInformation(body SetOrderPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetOrderRequestBuilder) CreatePostRequestInformation(ctx context.Context, body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *SetOrderRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 }
 // Post set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 func (m *SetOrderRequestBuilder) Post(ctx context.Context, body SetOrderPostRequestBodyable, requestConfiguration *SetOrderRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

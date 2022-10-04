@@ -69,11 +69,7 @@ func (m *SectionGroupsRequestBuilder) Count()(*i38f3bb1680a6d8d41ac484bfae4b8e74
     return i38f3bb1680a6d8d41ac484bfae4b8e746d2d426cd63521f1f2febb8dc8dc2cf9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of section groups from the specified section group.
-func (m *SectionGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of section groups from the specified section group.
-func (m *SectionGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SectionGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SectionGroupsRequestBuilder) CreateGetRequestInformationWithRequestConf
 }
 // Get retrieve a list of section groups from the specified section group.
 func (m *SectionGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *SectionGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

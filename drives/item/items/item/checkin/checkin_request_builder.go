@@ -42,16 +42,12 @@ func NewCheckinRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewCheckinRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation check in a checked out **driveItem** resource, which makes the version of the document available to others.
-func (m *CheckinRequestBuilder) CreatePostRequestInformation(body CheckinPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration check in a checked out **driveItem** resource, which makes the version of the document available to others.
-func (m *CheckinRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CheckinPostRequestBodyable, requestConfiguration *CheckinRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CheckinRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CheckinPostRequestBodyable, requestConfiguration *CheckinRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *CheckinRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 }
 // Post check in a checked out **driveItem** resource, which makes the version of the document available to others.
 func (m *CheckinRequestBuilder) Post(ctx context.Context, body CheckinPostRequestBodyable, requestConfiguration *CheckinRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

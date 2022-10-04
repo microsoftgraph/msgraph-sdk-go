@@ -57,11 +57,7 @@ func NewRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete ref of navigation property rubric for education
-func (m *RefRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete ref of navigation property rubric for education
-func (m *RefRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *RefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RefRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *RefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,11 +69,7 @@ func (m *RefRequestBuilder) CreateDeleteRequestInformationWithRequestConfigurati
     return requestInfo, nil
 }
 // CreateGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists.
-func (m *RefRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the educationRubric object attached to an educationAssignment, if one exists.
-func (m *RefRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RefRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,16 +82,12 @@ func (m *RefRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(
     return requestInfo, nil
 }
 // CreatePutRequestInformation update the ref of navigation property rubric in education
-func (m *RefRequestBuilder) CreatePutRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration update the ref of navigation property rubric in education
-func (m *RefRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable, requestConfiguration *RefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RefRequestBuilder) CreatePutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable, requestConfiguration *RefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -108,7 +96,7 @@ func (m *RefRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(
 }
 // Delete delete ref of navigation property rubric for education
 func (m *RefRequestBuilder) Delete(ctx context.Context, requestConfiguration *RefRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -124,7 +112,7 @@ func (m *RefRequestBuilder) Delete(ctx context.Context, requestConfiguration *Re
 }
 // Get get the educationRubric object attached to an educationAssignment, if one exists.
 func (m *RefRequestBuilder) Get(ctx context.Context, requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*string, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -143,7 +131,7 @@ func (m *RefRequestBuilder) Get(ctx context.Context, requestConfiguration *RefRe
 }
 // Put update the ref of navigation property rubric in education
 func (m *RefRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable, requestConfiguration *RefRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

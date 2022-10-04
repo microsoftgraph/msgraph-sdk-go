@@ -66,11 +66,7 @@ func NewLocalizedNotificationMessageItemRequestBuilder(rawUrl string, requestAda
     return NewLocalizedNotificationMessageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property localizedNotificationMessages for deviceManagement
-func (m *LocalizedNotificationMessageItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property localizedNotificationMessages for deviceManagement
-func (m *LocalizedNotificationMessageItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *LocalizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LocalizedNotificationMessageItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *LocalizedNotificationMessageItemRequestBuilder) CreateDeleteRequestInfo
     return requestInfo, nil
 }
 // CreateGetRequestInformation the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessageItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessageItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LocalizedNotificationMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LocalizedNotificationMessageItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *LocalizedNotificationMessageItemRequestBuilder) CreateGetRequestInforma
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property localizedNotificationMessages in deviceManagement
-func (m *LocalizedNotificationMessageItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property localizedNotificationMessages in deviceManagement
-func (m *LocalizedNotificationMessageItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LocalizedNotificationMessageItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *LocalizedNotificationMessageItemRequestBuilder) CreatePatchRequestInfor
 }
 // Delete delete navigation property localizedNotificationMessages for deviceManagement
 func (m *LocalizedNotificationMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *LocalizedNotificationMessageItemRequestBuilder) Delete(ctx context.Cont
 }
 // Get the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *LocalizedNotificationMessageItemRequestBuilder) Get(ctx context.Context
 }
 // Patch update the navigation property localizedNotificationMessages in deviceManagement
 func (m *LocalizedNotificationMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, requestConfiguration *LocalizedNotificationMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

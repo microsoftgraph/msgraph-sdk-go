@@ -69,11 +69,7 @@ func NewNotificationMessageTemplateItemRequestBuilder(rawUrl string, requestAdap
     return NewNotificationMessageTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property notificationMessageTemplates for deviceManagement
-func (m *NotificationMessageTemplateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property notificationMessageTemplates for deviceManagement
-func (m *NotificationMessageTemplateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *NotificationMessageTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *NotificationMessageTemplateItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *NotificationMessageTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -85,11 +81,7 @@ func (m *NotificationMessageTemplateItemRequestBuilder) CreateDeleteRequestInfor
     return requestInfo, nil
 }
 // CreateGetRequestInformation the Notification Message Templates.
-func (m *NotificationMessageTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the Notification Message Templates.
-func (m *NotificationMessageTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NotificationMessageTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *NotificationMessageTemplateItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *NotificationMessageTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -105,17 +97,13 @@ func (m *NotificationMessageTemplateItemRequestBuilder) CreateGetRequestInformat
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property notificationMessageTemplates in deviceManagement
-func (m *NotificationMessageTemplateItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property notificationMessageTemplates in deviceManagement
-func (m *NotificationMessageTemplateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *NotificationMessageTemplateItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -124,7 +112,7 @@ func (m *NotificationMessageTemplateItemRequestBuilder) CreatePatchRequestInform
 }
 // Delete delete navigation property notificationMessageTemplates for deviceManagement
 func (m *NotificationMessageTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *NotificationMessageTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -140,7 +128,7 @@ func (m *NotificationMessageTemplateItemRequestBuilder) Delete(ctx context.Conte
 }
 // Get the Notification Message Templates.
 func (m *NotificationMessageTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *NotificationMessageTemplateItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -174,7 +162,7 @@ func (m *NotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMes
 }
 // Patch update the navigation property notificationMessageTemplates in deviceManagement
 func (m *NotificationMessageTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

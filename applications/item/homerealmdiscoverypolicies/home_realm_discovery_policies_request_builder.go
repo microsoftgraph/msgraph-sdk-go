@@ -69,11 +69,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*i9403f2966154900b82f
     return i9403f2966154900b82f3ba4891bee0f59f41e6ede23c4d59c8d30438f363d122.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get homeRealmDiscoveryPolicies from applications
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get homeRealmDiscoveryPolicies from applications
-func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformationWi
 }
 // Get get homeRealmDiscoveryPolicies from applications
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

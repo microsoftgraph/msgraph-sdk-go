@@ -49,11 +49,7 @@ func NewSquareLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewSquareLogoRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-func (m *SquareLogoRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-func (m *SquareLogoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SquareLogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SquareLogoRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SquareLogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *SquareLogoRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     return requestInfo, nil
 }
 // CreatePutRequestInformation a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-func (m *SquareLogoRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-func (m *SquareLogoRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *SquareLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SquareLogoRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *SquareLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *SquareLogoRequestBuilder) CreatePutRequestInformationWithRequestConfigu
 }
 // Get a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *SquareLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *SquareLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *SquareLogoRequestBuilder) Get(ctx context.Context, requestConfiguration
 }
 // Put a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *SquareLogoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *SquareLogoRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

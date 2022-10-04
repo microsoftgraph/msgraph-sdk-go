@@ -76,11 +76,7 @@ func (m *RegisteredDevicesRequestBuilder) Count()(*i0038fbe769ee74c442a37b3f1aa7
     return i0038fbe769ee74c442a37b3f1aa7c1f69e95198e07d90c1b3cc63b03e661a509.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -105,7 +101,7 @@ func (m *RegisteredDevicesRequestBuilder) Endpoint()(*i55e406c2335376386e0a9cfc8
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

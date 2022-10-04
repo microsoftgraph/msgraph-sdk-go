@@ -9,11 +9,11 @@ import (
 type AttackSimulationRepeatOffender struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The attackSimulationUser property
+    // The user in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
     // The OdataType property
     odataType *string
-    // The repeatOffenceCount property
+    // Number of repeat offences of the user in attack simulation and training campaigns.
     repeatOffenceCount *int32
 }
 // NewAttackSimulationRepeatOffender instantiates a new attackSimulationRepeatOffender and sets the default values.
@@ -33,7 +33,7 @@ func CreateAttackSimulationRepeatOffenderFromDiscriminatorValue(parseNode i878a8
 func (m *AttackSimulationRepeatOffender) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAttackSimulationUser gets the attackSimulationUser property value. The attackSimulationUser property
+// GetAttackSimulationUser gets the attackSimulationUser property value. The user in an attack simulation and training campaign.
 func (m *AttackSimulationRepeatOffender) GetAttackSimulationUser()(AttackSimulationUserable) {
     return m.attackSimulationUser
 }
@@ -49,7 +49,7 @@ func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func
 func (m *AttackSimulationRepeatOffender) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRepeatOffenceCount gets the repeatOffenceCount property value. The repeatOffenceCount property
+// GetRepeatOffenceCount gets the repeatOffenceCount property value. Number of repeat offences of the user in attack simulation and training campaigns.
 func (m *AttackSimulationRepeatOffender) GetRepeatOffenceCount()(*int32) {
     return m.repeatOffenceCount
 }
@@ -85,7 +85,7 @@ func (m *AttackSimulationRepeatOffender) Serialize(writer i878a80d2330e89d268963
 func (m *AttackSimulationRepeatOffender) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAttackSimulationUser sets the attackSimulationUser property value. The attackSimulationUser property
+// SetAttackSimulationUser sets the attackSimulationUser property value. The user in an attack simulation and training campaign.
 func (m *AttackSimulationRepeatOffender) SetAttackSimulationUser(value AttackSimulationUserable)() {
     m.attackSimulationUser = value
 }
@@ -93,7 +93,7 @@ func (m *AttackSimulationRepeatOffender) SetAttackSimulationUser(value AttackSim
 func (m *AttackSimulationRepeatOffender) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRepeatOffenceCount sets the repeatOffenceCount property value. The repeatOffenceCount property
+// SetRepeatOffenceCount sets the repeatOffenceCount property value. Number of repeat offences of the user in attack simulation and training campaigns.
 func (m *AttackSimulationRepeatOffender) SetRepeatOffenceCount(value *int32)() {
     m.repeatOffenceCount = value
 }

@@ -64,11 +64,7 @@ func NewSearchWithQRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewSearchWithQRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function search
-func (m *SearchWithQRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function search
-func (m *SearchWithQRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SearchWithQRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SearchWithQRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SearchWithQRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -85,7 +81,7 @@ func (m *SearchWithQRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get invoke function search
 func (m *SearchWithQRequestBuilder) Get(ctx context.Context, requestConfiguration *SearchWithQRequestBuilderGetRequestConfiguration)(SearchWithQResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

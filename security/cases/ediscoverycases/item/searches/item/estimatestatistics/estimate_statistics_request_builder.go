@@ -42,11 +42,7 @@ func NewEstimateStatisticsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewEstimateStatisticsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
-func (m *EstimateStatisticsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
-func (m *EstimateStatisticsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *EstimateStatisticsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EstimateStatisticsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *EstimateStatisticsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *EstimateStatisticsRequestBuilder) CreatePostRequestInformationWithReque
 }
 // Post run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
 func (m *EstimateStatisticsRequestBuilder) Post(ctx context.Context, requestConfiguration *EstimateStatisticsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

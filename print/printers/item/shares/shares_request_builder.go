@@ -69,11 +69,7 @@ func (m *SharesRequestBuilder) Count()(*icb9f8a6fe1b5adb4688ea7ca062747453effa37
     return icb9f8a6fe1b5adb4688ea7ca062747453effa378f9c883897af7b144e2147413.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of printer shares associated with the printer.
-func (m *SharesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of printer shares associated with the printer.
-func (m *SharesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SharesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SharesRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
 }
 // Get retrieve a list of printer shares associated with the printer.
 func (m *SharesRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

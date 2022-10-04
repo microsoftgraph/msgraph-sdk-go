@@ -43,17 +43,13 @@ func NewStopHoldMusicRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewStopHoldMusicRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation reincorporate a participant previously put on hold to the call.
-func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformation(body StopHoldMusicPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration reincorporate a participant previously put on hold to the call.
-func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StopHoldMusicPostRequestBodyable, requestConfiguration *StopHoldMusicRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformation(ctx context.Context, body StopHoldMusicPostRequestBodyable, requestConfiguration *StopHoldMusicRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *StopHoldMusicRequestBuilder) CreatePostRequestInformationWithRequestCon
 }
 // Post reincorporate a participant previously put on hold to the call.
 func (m *StopHoldMusicRequestBuilder) Post(ctx context.Context, body StopHoldMusicPostRequestBodyable, requestConfiguration *StopHoldMusicRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StopHoldMusicOperationable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

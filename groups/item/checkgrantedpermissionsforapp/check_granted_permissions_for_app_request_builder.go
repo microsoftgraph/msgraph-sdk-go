@@ -42,11 +42,7 @@ func NewCheckGrantedPermissionsForAppRequestBuilder(rawUrl string, requestAdapte
     return NewCheckGrantedPermissionsForAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action checkGrantedPermissionsForApp
-func (m *CheckGrantedPermissionsForAppRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action checkGrantedPermissionsForApp
-func (m *CheckGrantedPermissionsForAppRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CheckGrantedPermissionsForAppRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *CheckGrantedPermissionsForAppRequestBuilder) CreatePostRequestInformati
 }
 // Post invoke action checkGrantedPermissionsForApp
 func (m *CheckGrantedPermissionsForAppRequestBuilder) Post(ctx context.Context, requestConfiguration *CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(CheckGrantedPermissionsForAppResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

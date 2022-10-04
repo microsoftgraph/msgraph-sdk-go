@@ -52,11 +52,7 @@ func NewSiteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewSiteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation used to access the underlying site
-func (m *SiteRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration used to access the underlying site
-func (m *SiteRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SiteRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SiteRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SiteRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *SiteRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
 }
 // Get used to access the underlying site
 func (m *SiteRequestBuilder) Get(ctx context.Context, requestConfiguration *SiteRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

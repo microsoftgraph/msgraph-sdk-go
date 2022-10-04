@@ -42,17 +42,13 @@ func NewGetPresencesByUserIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewGetPresencesByUserIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation get the presence information for multiple users.
-func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformation(body GetPresencesByUserIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration get the presence information for multiple users.
-func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *GetPresencesByUserIdRequestBuilder) CreatePostRequestInformationWithReq
 }
 // Post get the presence information for multiple users.
 func (m *GetPresencesByUserIdRequestBuilder) Post(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(GetPresencesByUserIdResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -66,11 +66,7 @@ func NewIosUpdateDeviceStatusItemRequestBuilder(rawUrl string, requestAdapter i2
     return NewIosUpdateDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property iosUpdateStatuses for deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property iosUpdateStatuses for deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateDeleteRequestInformation
     return requestInfo, nil
 }
 // CreateGetRequestInformation the IOS software update installation statuses for this account.
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the IOS software update installation statuses for this account.
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) CreateGetRequestInformationWit
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property iosUpdateStatuses in deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property iosUpdateStatuses in deviceManagement
-func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) CreatePatchRequestInformationW
 }
 // Delete delete navigation property iosUpdateStatuses for deviceManagement
 func (m *IosUpdateDeviceStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) Delete(ctx context.Context, re
 }
 // Get the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *IosUpdateDeviceStatusItemRequestBuilder) Get(ctx context.Context, reque
 }
 // Patch update the navigation property iosUpdateStatuses in deviceManagement
 func (m *IosUpdateDeviceStatusItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

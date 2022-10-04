@@ -52,11 +52,7 @@ func NewSectionGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewSectionGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the section groups in the section. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the section groups in the section. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SectionGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SectionGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Get the section groups in the section. Read-only. Nullable.
 func (m *SectionGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SectionGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

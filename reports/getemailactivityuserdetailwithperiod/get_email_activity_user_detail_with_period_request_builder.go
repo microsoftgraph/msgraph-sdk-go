@@ -45,11 +45,7 @@ func NewGetEmailActivityUserDetailWithPeriodRequestBuilder(rawUrl string, reques
     return NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEmailActivityUserDetail
-func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -62,7 +58,7 @@ func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInf
 }
 // Get invoke function getEmailActivityUserDetail
 func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

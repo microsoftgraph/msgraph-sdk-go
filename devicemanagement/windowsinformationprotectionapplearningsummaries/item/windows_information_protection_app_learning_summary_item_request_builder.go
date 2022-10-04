@@ -66,11 +66,7 @@ func NewWindowsInformationProtectionAppLearningSummaryItemRequestBuilder(rawUrl 
     return NewWindowsInformationProtectionAppLearningSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
-func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
-func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Creat
     return requestInfo, nil
 }
 // CreateGetRequestInformation the windows information protection app learning summaries.
-func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the windows information protection app learning summaries.
-func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Creat
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
-func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLearningSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
-func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLearningSummaryable, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLearningSummaryable, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Creat
 }
 // Delete delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
 func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Delet
 }
 // Get the windows information protection app learning summaries.
 func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLearningSummaryable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Get(c
 }
 // Patch update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
 func (m *WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLearningSummaryable, requestConfiguration *WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionAppLearningSummaryable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

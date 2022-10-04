@@ -42,11 +42,7 @@ func NewSendReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewSendReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation send a reminder to the reviewers of an active accessReviewInstance.
-func (m *SendReminderRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration send a reminder to the reviewers of an active accessReviewInstance.
-func (m *SendReminderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SendReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SendReminderRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SendReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *SendReminderRequestBuilder) CreatePostRequestInformationWithRequestConf
 }
 // Post send a reminder to the reviewers of an active accessReviewInstance.
 func (m *SendReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *SendReminderRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

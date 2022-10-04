@@ -69,11 +69,7 @@ func (m *BundlesRequestBuilder) Count()(*i9203d68348039925ded1f551136194e176d560
     return i9203d68348039925ded1f551136194e176d560a4d629614f1372205cbacf05d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a list of all the [bundles][bundle] in a user's drive.
-func (m *BundlesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get a list of all the [bundles][bundle] in a user's drive.
-func (m *BundlesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BundlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BundlesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BundlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *BundlesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
 }
 // Get get a list of all the [bundles][bundle] in a user's drive.
 func (m *BundlesRequestBuilder) Get(ctx context.Context, requestConfiguration *BundlesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

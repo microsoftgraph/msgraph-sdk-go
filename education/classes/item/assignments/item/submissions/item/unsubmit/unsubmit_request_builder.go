@@ -43,11 +43,7 @@ func NewUnsubmitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewUnsubmitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation indicate that a student wants to work on the submission of the assignment after it was turned in.  This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
-func (m *UnsubmitRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration indicate that a student wants to work on the submission of the assignment after it was turned in.  This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
-func (m *UnsubmitRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnsubmitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnsubmitRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UnsubmitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +57,7 @@ func (m *UnsubmitRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 }
 // Post indicate that a student wants to work on the submission of the assignment after it was turned in.  This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
 func (m *UnsubmitRequestBuilder) Post(ctx context.Context, requestConfiguration *UnsubmitRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

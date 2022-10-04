@@ -42,16 +42,12 @@ func NewGetHistoricalReportRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewGetHistoricalReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformation(body GetHistoricalReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action getHistoricalReport
-func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetHistoricalReportPostRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetHistoricalReportPostRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *GetHistoricalReportRequestBuilder) CreatePostRequestInformationWithRequ
 }
 // Post invoke action getHistoricalReport
 func (m *GetHistoricalReportRequestBuilder) Post(ctx context.Context, body GetHistoricalReportPostRequestBodyable, requestConfiguration *GetHistoricalReportRequestBuilderPostRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

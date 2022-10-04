@@ -76,11 +76,7 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) Count()(*i1fceebddf929b2938
     return i1fceebddf929b293833f8186abe31025fffd33773f54fa47bd51835e2913d0b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of multi-value extended properties defined for the event. Read-only. Nullable.
-func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the collection of multi-value extended properties defined for the event. Read-only. Nullable.
-func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -96,17 +92,13 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation
     return requestInfo, nil
 }
 // CreatePostRequestInformation create new navigation property to multiValueExtendedProperties for groups
-func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiValueLegacyExtendedPropertyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to multiValueExtendedProperties for groups
-func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiValueLegacyExtendedPropertyable, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiValueLegacyExtendedPropertyable, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -115,7 +107,7 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformatio
 }
 // Get the collection of multi-value extended properties defined for the event. Read-only. Nullable.
 func (m *MultiValueExtendedPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiValueLegacyExtendedPropertyCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -134,7 +126,7 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) Get(ctx context.Context, re
 }
 // Post create new navigation property to multiValueExtendedProperties for groups
 func (m *MultiValueExtendedPropertiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiValueLegacyExtendedPropertyable, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MultiValueLegacyExtendedPropertyable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,11 +42,7 @@ func NewReprocessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewReprocessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action reprocess
-func (m *ReprocessRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action reprocess
-func (m *ReprocessRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ReprocessRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReprocessRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ReprocessRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ReprocessRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 }
 // Post invoke action reprocess
 func (m *ReprocessRequestBuilder) Post(ctx context.Context, requestConfiguration *ReprocessRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

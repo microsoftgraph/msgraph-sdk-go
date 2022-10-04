@@ -9,25 +9,25 @@ import (
 // SimulationAutomation provides operations to manage the collection of agreementAcceptance entities.
 type SimulationAutomation struct {
     Entity
-    // The createdBy property
+    // Identity of the user who created the attack simulation automation.
     createdBy EmailIdentityable
-    // The createdDateTime property
+    // Date and time when the attack simulation automation was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // Description of the attack simulation automation.
     description *string
-    // The displayName property
+    // Display name of the attack simulation automation. Supports $filter and $orderby.
     displayName *string
-    // The lastModifiedBy property
+    // Identity of the user who most recently modified the attack simulation automation.
     lastModifiedBy EmailIdentityable
-    // The lastModifiedDateTime property
+    // Date and time when the attack simulation automation was most recently modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The lastRunDateTime property
+    // Date and time of the latest run of the attack simulation automation.
     lastRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The nextRunDateTime property
+    // Date and time of the upcoming run of the attack simulation automation.
     nextRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The runs property
+    // A collection of simulation automation runs.
     runs []SimulationAutomationRunable
-    // The status property
+    // Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.
     status *SimulationAutomationStatus
 }
 // NewSimulationAutomation instantiates a new simulationAutomation and sets the default values.
@@ -43,19 +43,19 @@ func NewSimulationAutomation()(*SimulationAutomation) {
 func CreateSimulationAutomationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationAutomation(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the attack simulation automation.
 func (m *SimulationAutomation) GetCreatedBy()(EmailIdentityable) {
     return m.createdBy
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the attack simulation automation was created.
 func (m *SimulationAutomation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the attack simulation automation.
 func (m *SimulationAutomation) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the attack simulation automation. Supports $filter and $orderby.
 func (m *SimulationAutomation) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -74,27 +74,27 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(i878a80d2
     res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSimulationAutomationStatus , m.SetStatus)
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation automation.
 func (m *SimulationAutomation) GetLastModifiedBy()(EmailIdentityable) {
     return m.lastModifiedBy
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the attack simulation automation was most recently modified.
 func (m *SimulationAutomation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetLastRunDateTime gets the lastRunDateTime property value. The lastRunDateTime property
+// GetLastRunDateTime gets the lastRunDateTime property value. Date and time of the latest run of the attack simulation automation.
 func (m *SimulationAutomation) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastRunDateTime
 }
-// GetNextRunDateTime gets the nextRunDateTime property value. The nextRunDateTime property
+// GetNextRunDateTime gets the nextRunDateTime property value. Date and time of the upcoming run of the attack simulation automation.
 func (m *SimulationAutomation) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.nextRunDateTime
 }
-// GetRuns gets the runs property value. The runs property
+// GetRuns gets the runs property value. A collection of simulation automation runs.
 func (m *SimulationAutomation) GetRuns()([]SimulationAutomationRunable) {
     return m.runs
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.
 func (m *SimulationAutomation) GetStatus()(*SimulationAutomationStatus) {
     return m.status
 }
@@ -168,43 +168,43 @@ func (m *SimulationAutomation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the attack simulation automation.
 func (m *SimulationAutomation) SetCreatedBy(value EmailIdentityable)() {
     m.createdBy = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the attack simulation automation was created.
 func (m *SimulationAutomation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the attack simulation automation.
 func (m *SimulationAutomation) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the attack simulation automation. Supports $filter and $orderby.
 func (m *SimulationAutomation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation automation.
 func (m *SimulationAutomation) SetLastModifiedBy(value EmailIdentityable)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the attack simulation automation was most recently modified.
 func (m *SimulationAutomation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetLastRunDateTime sets the lastRunDateTime property value. The lastRunDateTime property
+// SetLastRunDateTime sets the lastRunDateTime property value. Date and time of the latest run of the attack simulation automation.
 func (m *SimulationAutomation) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastRunDateTime = value
 }
-// SetNextRunDateTime sets the nextRunDateTime property value. The nextRunDateTime property
+// SetNextRunDateTime sets the nextRunDateTime property value. Date and time of the upcoming run of the attack simulation automation.
 func (m *SimulationAutomation) SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.nextRunDateTime = value
 }
-// SetRuns sets the runs property value. The runs property
+// SetRuns sets the runs property value. A collection of simulation automation runs.
 func (m *SimulationAutomation) SetRuns(value []SimulationAutomationRunable)() {
     m.runs = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.
 func (m *SimulationAutomation) SetStatus(value *SimulationAutomationStatus)() {
     m.status = value
 }

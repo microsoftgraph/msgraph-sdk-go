@@ -69,11 +69,7 @@ func (m *IdentityProvidersRequestBuilder) Count()(*i7a925f057fc8c09ce9296d492a73
     return i7a925f057fc8c09ce9296d492a733c73c7dcd917d594be5abd95ddd28c928875.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the identity providers in a b2xIdentityUserFlow object.
-func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the identity providers in a b2xIdentityUserFlow object.
-func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformationWithRequest
 }
 // Get get the identity providers in a b2xIdentityUserFlow object.
 func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

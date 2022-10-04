@@ -16,7 +16,7 @@ type OAuth2PermissionGrant struct {
     principalId *string
     // The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
     resourceId *string
-    // A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
+    // A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
     scope *string
 }
 // NewOAuth2PermissionGrant instantiates a new oAuth2PermissionGrant and sets the default values.
@@ -58,7 +58,7 @@ func (m *OAuth2PermissionGrant) GetPrincipalId()(*string) {
 func (m *OAuth2PermissionGrant) GetResourceId()(*string) {
     return m.resourceId
 }
-// GetScope gets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
+// GetScope gets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
 func (m *OAuth2PermissionGrant) GetScope()(*string) {
     return m.scope
 }
@@ -116,7 +116,7 @@ func (m *OAuth2PermissionGrant) SetPrincipalId(value *string)() {
 func (m *OAuth2PermissionGrant) SetResourceId(value *string)() {
     m.resourceId = value
 }
-// SetScope sets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
+// SetScope sets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
 func (m *OAuth2PermissionGrant) SetScope(value *string)() {
     m.scope = value
 }

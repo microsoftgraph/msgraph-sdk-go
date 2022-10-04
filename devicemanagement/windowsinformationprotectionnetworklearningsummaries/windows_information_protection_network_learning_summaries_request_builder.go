@@ -76,11 +76,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Cou
     return i57a865aa134e7925595a5ab81f1d4b6021c416a5b529e7a8ee1bdc7a02984e24.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the windows information protection network learning summaries.
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the windows information protection network learning summaries.
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -96,17 +92,13 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Cre
     return requestInfo, nil
 }
 // CreatePostRequestInformation create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -115,7 +107,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Cre
 }
 // Get the windows information protection network learning summaries.
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -134,7 +126,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get
 }
 // Post create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

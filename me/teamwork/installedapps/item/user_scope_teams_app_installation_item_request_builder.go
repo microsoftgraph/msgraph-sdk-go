@@ -71,11 +71,7 @@ func NewUserScopeTeamsAppInstallationItemRequestBuilder(rawUrl string, requestAd
     return NewUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property installedApps for me
-func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property installedApps for me
-func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -87,11 +83,7 @@ func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateDeleteRequestInf
     return requestInfo, nil
 }
 // CreateGetRequestInformation the apps installed in the personal scope of this user.
-func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the apps installed in the personal scope of this user.
-func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -107,17 +99,13 @@ func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreateGetRequestInform
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property installedApps in me
-func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property installedApps in me
-func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,7 +114,7 @@ func (m *UserScopeTeamsAppInstallationItemRequestBuilder) CreatePatchRequestInfo
 }
 // Delete delete navigation property installedApps for me
 func (m *UserScopeTeamsAppInstallationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -142,7 +130,7 @@ func (m *UserScopeTeamsAppInstallationItemRequestBuilder) Delete(ctx context.Con
 }
 // Get the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -161,7 +149,7 @@ func (m *UserScopeTeamsAppInstallationItemRequestBuilder) Get(ctx context.Contex
 }
 // Patch update the navigation property installedApps in me
 func (m *UserScopeTeamsAppInstallationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

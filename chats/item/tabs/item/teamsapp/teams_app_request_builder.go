@@ -52,11 +52,7 @@ func NewTeamsAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewTeamsAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the application that is linked to the tab. This cannot be changed after tab creation.
-func (m *TeamsAppRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the application that is linked to the tab. This cannot be changed after tab creation.
-func (m *TeamsAppRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeamsAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TeamsAppRequestBuilder) CreateGetRequestInformationWithRequestConfigura
 }
 // Get the application that is linked to the tab. This cannot be changed after tab creation.
 func (m *TeamsAppRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

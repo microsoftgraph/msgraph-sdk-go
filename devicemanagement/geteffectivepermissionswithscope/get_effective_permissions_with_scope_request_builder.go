@@ -60,11 +60,7 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
     return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieves the effective permissions of the currently authenticated user
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -81,7 +77,7 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInforma
 }
 // Get retrieves the effective permissions of the currently authenticated user
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

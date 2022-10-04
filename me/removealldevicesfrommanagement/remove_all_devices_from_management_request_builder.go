@@ -42,11 +42,7 @@ func NewRemoveAllDevicesFromManagementRequestBuilder(rawUrl string, requestAdapt
     return NewRemoveAllDevicesFromManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation retire all devices from management for this user
-func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration retire all devices from management for this user
-func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformat
 }
 // Post retire all devices from management for this user
 func (m *RemoveAllDevicesFromManagementRequestBuilder) Post(ctx context.Context, requestConfiguration *RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

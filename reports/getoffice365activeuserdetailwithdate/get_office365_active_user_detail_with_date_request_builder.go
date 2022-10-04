@@ -47,11 +47,7 @@ func NewGetOffice365ActiveUserDetailWithDateRequestBuilder(rawUrl string, reques
     return NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetOffice365ActiveUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365ActiveUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,7 +61,7 @@ func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) CreateGetRequestInf
 }
 // Get invoke function getOffice365ActiveUserDetail
 func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActiveUserDetailWithDateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Reportable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,11 +42,7 @@ func NewRevokeSignInSessionsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewRevokeSignInSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action revokeSignInSessions
-func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action revokeSignInSessions
-func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RevokeSignInSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RevokeSignInSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformationWithReq
 }
 // Post invoke action revokeSignInSessions
 func (m *RevokeSignInSessionsRequestBuilder) Post(ctx context.Context, requestConfiguration *RevokeSignInSessionsRequestBuilderPostRequestConfiguration)(RevokeSignInSessionsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

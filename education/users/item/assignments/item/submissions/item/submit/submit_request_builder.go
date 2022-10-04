@@ -43,11 +43,7 @@ func NewSubmitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewSubmitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation indicate that a student is done with the work and is ready to hand in the assignment.  This method changes the status of the submission from `working` to `submitted`. During the submit process, all the resources are copied to the **submittedResources** bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student's assignment on their behalf.
-func (m *SubmitRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration indicate that a student is done with the work and is ready to hand in the assignment.  This method changes the status of the submission from `working` to `submitted`. During the submit process, all the resources are copied to the **submittedResources** bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student's assignment on their behalf.
-func (m *SubmitRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SubmitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SubmitRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SubmitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +57,7 @@ func (m *SubmitRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post indicate that a student is done with the work and is ready to hand in the assignment.  This method changes the status of the submission from `working` to `submitted`. During the submit process, all the resources are copied to the **submittedResources** bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student's assignment on their behalf.
 func (m *SubmitRequestBuilder) Post(ctx context.Context, requestConfiguration *SubmitRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -76,11 +76,7 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Count()(*i1d7d6c25e8b7e08b3
     return i1d7d6c25e8b7e08b35ddc7ba346c1bc43503715b6ca043839b403cbc7296b8ee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a list of activityBasedTimeoutPolicy objects.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get a list of activityBasedTimeoutPolicy objects.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -96,17 +92,13 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation
     return requestInfo, nil
 }
 // CreatePostRequestInformation create a new activityBasedTimeoutPolicy object.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create a new activityBasedTimeoutPolicy object.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -115,7 +107,7 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformatio
 }
 // Get get a list of activityBasedTimeoutPolicy objects.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -134,7 +126,7 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get(ctx context.Context, re
 }
 // Post create a new activityBasedTimeoutPolicy object.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

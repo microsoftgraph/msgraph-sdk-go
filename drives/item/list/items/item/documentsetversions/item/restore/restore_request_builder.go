@@ -42,11 +42,7 @@ func NewRestoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation restore a document set version.
-func (m *RestoreRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration restore a document set version.
-func (m *RestoreRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RestoreRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RestoreRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 }
 // Post restore a document set version.
 func (m *RestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *RestoreRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

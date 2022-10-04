@@ -42,11 +42,7 @@ func NewLocateDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewLocateDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation locate a device
-func (m *LocateDeviceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration locate a device
-func (m *LocateDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *LocateDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LocateDeviceRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *LocateDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *LocateDeviceRequestBuilder) CreatePostRequestInformationWithRequestConf
 }
 // Post locate a device
 func (m *LocateDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *LocateDeviceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

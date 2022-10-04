@@ -69,11 +69,7 @@ func (m *BaseTypesRequestBuilder) Count()(*ic7478d9f902cc9c9b1f86a583b88e6f0af5d
     return ic7478d9f902cc9c9b1f86a583b88e6f0af5dc07379ed28a07a4bc2a16afbeaaa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of content types that are ancestors of this content type.
-func (m *BaseTypesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the collection of content types that are ancestors of this content type.
-func (m *BaseTypesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BaseTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BaseTypesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BaseTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *BaseTypesRequestBuilder) CreateGetRequestInformationWithRequestConfigur
 }
 // Get the collection of content types that are ancestors of this content type.
 func (m *BaseTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *BaseTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

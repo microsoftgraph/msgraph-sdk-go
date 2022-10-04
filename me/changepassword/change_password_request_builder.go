@@ -42,16 +42,12 @@ func NewChangePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation enable the user to update their password. Any user can update their password without belonging to any administrator role.
-func (m *ChangePasswordRequestBuilder) CreatePostRequestInformation(body ChangePasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration enable the user to update their password. Any user can update their password without belonging to any administrator role.
-func (m *ChangePasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangePasswordPostRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangePasswordRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ChangePasswordPostRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ChangePasswordRequestBuilder) CreatePostRequestInformationWithRequestCo
 }
 // Post enable the user to update their password. Any user can update their password without belonging to any administrator role.
 func (m *ChangePasswordRequestBuilder) Post(ctx context.Context, body ChangePasswordPostRequestBodyable, requestConfiguration *ChangePasswordRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

@@ -42,16 +42,12 @@ func NewAssignUserToDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewAssignUserToDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation assigns user to Autopilot devices.
-func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformation(body AssignUserToDevicePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration assigns user to Autopilot devices.
-func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignUserToDevicePostRequestBodyable, requestConfiguration *AssignUserToDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AssignUserToDevicePostRequestBodyable, requestConfiguration *AssignUserToDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformationWithReque
 }
 // Post assigns user to Autopilot devices.
 func (m *AssignUserToDeviceRequestBuilder) Post(ctx context.Context, body AssignUserToDevicePostRequestBodyable, requestConfiguration *AssignUserToDeviceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

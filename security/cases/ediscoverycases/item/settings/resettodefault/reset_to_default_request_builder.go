@@ -42,11 +42,7 @@ func NewResetToDefaultRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewResetToDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation reset a caseSettings object to the default values.
-func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration reset a caseSettings object to the default values.
-func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ResetToDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ResetToDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ResetToDefaultRequestBuilder) CreatePostRequestInformationWithRequestCo
 }
 // Post reset a caseSettings object to the default values.
 func (m *ResetToDefaultRequestBuilder) Post(ctx context.Context, requestConfiguration *ResetToDefaultRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

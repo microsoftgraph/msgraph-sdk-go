@@ -10,17 +10,17 @@ import (
 type AttackSimulationSimulationUserCoverage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The attackSimulationUser property
+    // User in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
-    // The clickCount property
+    // Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
     clickCount *int32
-    // The compromisedCount property
+    // Number of compromising actions by the user in attack simulation and training campaigns.
     compromisedCount *int32
-    // The latestSimulationDateTime property
+    // Date and time of the latest attack simulation and training campaign that the user was included in.
     latestSimulationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
     odataType *string
-    // The simulationCount property
+    // Number of attack simulation and training campaigns that the user was included in.
     simulationCount *int32
 }
 // NewAttackSimulationSimulationUserCoverage instantiates a new attackSimulationSimulationUserCoverage and sets the default values.
@@ -40,15 +40,15 @@ func CreateAttackSimulationSimulationUserCoverageFromDiscriminatorValue(parseNod
 func (m *AttackSimulationSimulationUserCoverage) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAttackSimulationUser gets the attackSimulationUser property value. The attackSimulationUser property
+// GetAttackSimulationUser gets the attackSimulationUser property value. User in an attack simulation and training campaign.
 func (m *AttackSimulationSimulationUserCoverage) GetAttackSimulationUser()(AttackSimulationUserable) {
     return m.attackSimulationUser
 }
-// GetClickCount gets the clickCount property value. The clickCount property
+// GetClickCount gets the clickCount property value. Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) GetClickCount()(*int32) {
     return m.clickCount
 }
-// GetCompromisedCount gets the compromisedCount property value. The compromisedCount property
+// GetCompromisedCount gets the compromisedCount property value. Number of compromising actions by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) GetCompromisedCount()(*int32) {
     return m.compromisedCount
 }
@@ -63,7 +63,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
     res["simulationCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSimulationCount)
     return res
 }
-// GetLatestSimulationDateTime gets the latestSimulationDateTime property value. The latestSimulationDateTime property
+// GetLatestSimulationDateTime gets the latestSimulationDateTime property value. Date and time of the latest attack simulation and training campaign that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) GetLatestSimulationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.latestSimulationDateTime
 }
@@ -71,7 +71,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetLatestSimulationDateTime()(*
 func (m *AttackSimulationSimulationUserCoverage) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSimulationCount gets the simulationCount property value. The simulationCount property
+// GetSimulationCount gets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) GetSimulationCount()(*int32) {
     return m.simulationCount
 }
@@ -125,19 +125,19 @@ func (m *AttackSimulationSimulationUserCoverage) Serialize(writer i878a80d2330e8
 func (m *AttackSimulationSimulationUserCoverage) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAttackSimulationUser sets the attackSimulationUser property value. The attackSimulationUser property
+// SetAttackSimulationUser sets the attackSimulationUser property value. User in an attack simulation and training campaign.
 func (m *AttackSimulationSimulationUserCoverage) SetAttackSimulationUser(value AttackSimulationUserable)() {
     m.attackSimulationUser = value
 }
-// SetClickCount sets the clickCount property value. The clickCount property
+// SetClickCount sets the clickCount property value. Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) SetClickCount(value *int32)() {
     m.clickCount = value
 }
-// SetCompromisedCount sets the compromisedCount property value. The compromisedCount property
+// SetCompromisedCount sets the compromisedCount property value. Number of compromising actions by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) SetCompromisedCount(value *int32)() {
     m.compromisedCount = value
 }
-// SetLatestSimulationDateTime sets the latestSimulationDateTime property value. The latestSimulationDateTime property
+// SetLatestSimulationDateTime sets the latestSimulationDateTime property value. Date and time of the latest attack simulation and training campaign that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) SetLatestSimulationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.latestSimulationDateTime = value
 }
@@ -145,7 +145,7 @@ func (m *AttackSimulationSimulationUserCoverage) SetLatestSimulationDateTime(val
 func (m *AttackSimulationSimulationUserCoverage) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSimulationCount sets the simulationCount property value. The simulationCount property
+// SetSimulationCount sets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) SetSimulationCount(value *int32)() {
     m.simulationCount = value
 }

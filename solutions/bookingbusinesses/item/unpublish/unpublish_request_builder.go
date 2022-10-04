@@ -42,11 +42,7 @@ func NewUnpublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewUnpublishRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation make the scheduling page of this business not available to external customers. Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
-func (m *UnpublishRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration make the scheduling page of this business not available to external customers. Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
-func (m *UnpublishRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnpublishRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *UnpublishRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 }
 // Post make the scheduling page of this business not available to external customers. Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
 func (m *UnpublishRequestBuilder) Post(ctx context.Context, requestConfiguration *UnpublishRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

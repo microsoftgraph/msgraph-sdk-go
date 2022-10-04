@@ -49,11 +49,7 @@ func NewAttachmentsArchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewAttachmentsArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the zip file that contains all attachments for a message.
-func (m *AttachmentsArchiveRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the zip file that contains all attachments for a message.
-func (m *AttachmentsArchiveRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentsArchiveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttachmentsArchiveRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AttachmentsArchiveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *AttachmentsArchiveRequestBuilder) CreateGetRequestInformationWithReques
     return requestInfo, nil
 }
 // CreatePutRequestInformation the zip file that contains all attachments for a message.
-func (m *AttachmentsArchiveRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration the zip file that contains all attachments for a message.
-func (m *AttachmentsArchiveRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *AttachmentsArchiveRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttachmentsArchiveRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *AttachmentsArchiveRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *AttachmentsArchiveRequestBuilder) CreatePutRequestInformationWithReques
 }
 // Get the zip file that contains all attachments for a message.
 func (m *AttachmentsArchiveRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentsArchiveRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *AttachmentsArchiveRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // Put the zip file that contains all attachments for a message.
 func (m *AttachmentsArchiveRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *AttachmentsArchiveRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

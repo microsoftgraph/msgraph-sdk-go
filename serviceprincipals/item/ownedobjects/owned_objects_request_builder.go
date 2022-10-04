@@ -82,11 +82,7 @@ func (m *OwnedObjectsRequestBuilder) Count()(*i3bd45a7989145bacecf06a82a4bf20417
     return i3bd45a7989145bacecf06a82a4bf204177f08a7d528fa9fa7c7793c38d76c6f6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
-func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
-func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -107,7 +103,7 @@ func (m *OwnedObjectsRequestBuilder) Endpoint()(*i17b02e26889fb0f080604a4de66ce6
 }
 // Get directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
 func (m *OwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -66,11 +66,7 @@ func NewInternalDomainFederationItemRequestBuilder(rawUrl string, requestAdapter
     return NewInternalDomainFederationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property federationConfiguration for domains
-func (m *InternalDomainFederationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property federationConfiguration for domains
-func (m *InternalDomainFederationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InternalDomainFederationItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *InternalDomainFederationItemRequestBuilder) CreateDeleteRequestInformat
     return requestInfo, nil
 }
 // CreateGetRequestInformation domain settings configured by a customer when federated with Azure AD. Supports $expand.
-func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration domain settings configured by a customer when federated with Azure AD. Supports $expand.
-func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *InternalDomainFederationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *InternalDomainFederationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformation
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property federationConfiguration in domains
-func (m *InternalDomainFederationItemRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property federationConfiguration in domains
-func (m *InternalDomainFederationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *InternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InternalDomainFederationItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *InternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *InternalDomainFederationItemRequestBuilder) CreatePatchRequestInformati
 }
 // Delete delete navigation property federationConfiguration for domains
 func (m *InternalDomainFederationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *InternalDomainFederationItemRequestBuilder) Delete(ctx context.Context,
 }
 // Get domain settings configured by a customer when federated with Azure AD. Supports $expand.
 func (m *InternalDomainFederationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *InternalDomainFederationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *InternalDomainFederationItemRequestBuilder) Get(ctx context.Context, re
 }
 // Patch update the navigation property federationConfiguration in domains
 func (m *InternalDomainFederationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *InternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

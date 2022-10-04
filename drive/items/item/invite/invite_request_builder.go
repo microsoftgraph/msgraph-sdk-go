@@ -42,17 +42,13 @@ func NewInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation sends a sharing invitation for a **driveItem**.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
-func (m *InviteRequestBuilder) CreatePostRequestInformation(body InvitePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration sends a sharing invitation for a **driveItem**.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
-func (m *InviteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body InvitePostRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InviteRequestBuilder) CreatePostRequestInformation(ctx context.Context, body InvitePostRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *InviteRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post sends a sharing invitation for a **driveItem**.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 func (m *InviteRequestBuilder) Post(ctx context.Context, body InvitePostRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration)(InviteResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -70,11 +70,7 @@ func (m *UserFlowIdentityProvidersRequestBuilder) Count()(*i924f0760c651935ce26a
     return i924f0760c651935ce26afba3cf1348d7af935115110567c070f46d26dd7488a6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get userFlowIdentityProviders from identity
-func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get userFlowIdentityProviders from identity
-func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformationWit
 }
 // Get get userFlowIdentityProviders from identity
 func (m *UserFlowIdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

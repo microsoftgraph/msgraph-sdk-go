@@ -42,11 +42,7 @@ func NewWindowsDefenderUpdateSignaturesRequestBuilder(rawUrl string, requestAdap
     return NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action windowsDefenderUpdateSignatures
-func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action windowsDefenderUpdateSignatures
-func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *WindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *WindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInforma
 }
 // Post invoke action windowsDefenderUpdateSignatures
 func (m *WindowsDefenderUpdateSignaturesRequestBuilder) Post(ctx context.Context, requestConfiguration *WindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

@@ -11,9 +11,9 @@ type SimulationReport struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The overview property
+    // Overview of an attack simulation and training campaign.
     overview SimulationReportOverviewable
-    // The simulationUsers property
+    // The tenant users and their online actions in an attack simulation and training campaign.
     simulationUsers []UserSimulationDetailsable
 }
 // NewSimulationReport instantiates a new simulationReport and sets the default values.
@@ -45,11 +45,11 @@ func (m *SimulationReport) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *SimulationReport) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOverview gets the overview property value. The overview property
+// GetOverview gets the overview property value. Overview of an attack simulation and training campaign.
 func (m *SimulationReport) GetOverview()(SimulationReportOverviewable) {
     return m.overview
 }
-// GetSimulationUsers gets the simulationUsers property value. The simulationUsers property
+// GetSimulationUsers gets the simulationUsers property value. The tenant users and their online actions in an attack simulation and training campaign.
 func (m *SimulationReport) GetSimulationUsers()([]UserSimulationDetailsable) {
     return m.simulationUsers
 }
@@ -90,11 +90,11 @@ func (m *SimulationReport) SetAdditionalData(value map[string]interface{})() {
 func (m *SimulationReport) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOverview sets the overview property value. The overview property
+// SetOverview sets the overview property value. Overview of an attack simulation and training campaign.
 func (m *SimulationReport) SetOverview(value SimulationReportOverviewable)() {
     m.overview = value
 }
-// SetSimulationUsers sets the simulationUsers property value. The simulationUsers property
+// SetSimulationUsers sets the simulationUsers property value. The tenant users and their online actions in an attack simulation and training campaign.
 func (m *SimulationReport) SetSimulationUsers(value []UserSimulationDetailsable)() {
     m.simulationUsers = value
 }

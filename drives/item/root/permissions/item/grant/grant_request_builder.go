@@ -42,17 +42,13 @@ func NewGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation grant users access to a link represented by a [permission][].
-func (m *GrantRequestBuilder) CreatePostRequestInformation(body GrantPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration grant users access to a link represented by a [permission][].
-func (m *GrantRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GrantPostRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GrantRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GrantPostRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *GrantRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
 }
 // Post grant users access to a link represented by a [permission][].
 func (m *GrantRequestBuilder) Post(ctx context.Context, body GrantPostRequestBodyable, requestConfiguration *GrantRequestBuilderPostRequestConfiguration)(GrantResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Contract 
+// Contract provides operations to manage the collection of contract entities.
 type Contract struct {
     DirectoryObject
     // Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
@@ -17,7 +17,7 @@ type Contract struct {
     // A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
     displayName *string
 }
-// NewContract instantiates a new Contract and sets the default values.
+// NewContract instantiates a new contract and sets the default values.
 func NewContract()(*Contract) {
     m := &Contract{
         DirectoryObject: *NewDirectoryObject(),

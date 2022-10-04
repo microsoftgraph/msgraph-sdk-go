@@ -69,11 +69,7 @@ func (m *SitesRequestBuilder) Count()(*ifbd265afd6e8dba3a958a589a3c69d2ed7e5473b
     return ifbd265afd6e8dba3a958a589a3c69d2ed7e5473b993b4a149c7ebabf718387b1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a collection of subsites defined for a [site][].
-func (m *SitesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get a collection of subsites defined for a [site][].
-func (m *SitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
 }
 // Get get a collection of subsites defined for a [site][].
 func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

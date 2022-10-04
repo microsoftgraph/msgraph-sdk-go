@@ -49,11 +49,7 @@ func NewLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewLogoRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LogoRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *LogoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     return requestInfo, nil
 }
 // CreatePutRequestInformation the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration the main logo for the application. Not nullable.
-func (m *LogoRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *LogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LogoRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *LogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *LogoRequestBuilder) CreatePutRequestInformationWithRequestConfiguration
 }
 // Get the main logo for the application. Not nullable.
 func (m *LogoRequestBuilder) Get(ctx context.Context, requestConfiguration *LogoRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *LogoRequestBuilder) Get(ctx context.Context, requestConfiguration *Logo
 }
 // Put the main logo for the application. Not nullable.
 func (m *LogoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *LogoRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

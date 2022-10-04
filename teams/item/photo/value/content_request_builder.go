@@ -49,11 +49,7 @@ func NewContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get media content for the navigation property photo from teams
-func (m *ContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get media content for the navigation property photo from teams
-func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ContentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *ContentRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     return requestInfo, nil
 }
 // CreatePutRequestInformation update media content for the navigation property photo in teams
-func (m *ContentRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration update media content for the navigation property photo in teams
-func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ContentRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *ContentRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
 }
 // Get get media content for the navigation property photo from teams
 func (m *ContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *ContentRequestBuilder) Get(ctx context.Context, requestConfiguration *C
 }
 // Put update media content for the navigation property photo in teams
 func (m *ContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ContentRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

@@ -9,11 +9,11 @@ import (
 type TrainingEventsContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The assignedTrainingsInfos property
+    // List of assigned trainings and their information in an attack simulation and training campaign.
     assignedTrainingsInfos []AssignedTrainingInfoable
     // The OdataType property
     odataType *string
-    // The trainingsAssignedUserCount property
+    // Number of users who were assigned trainings in an attack simulation and training campaign.
     trainingsAssignedUserCount *int32
 }
 // NewTrainingEventsContent instantiates a new trainingEventsContent and sets the default values.
@@ -33,7 +33,7 @@ func CreateTrainingEventsContentFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *TrainingEventsContent) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAssignedTrainingsInfos gets the assignedTrainingsInfos property value. The assignedTrainingsInfos property
+// GetAssignedTrainingsInfos gets the assignedTrainingsInfos property value. List of assigned trainings and their information in an attack simulation and training campaign.
 func (m *TrainingEventsContent) GetAssignedTrainingsInfos()([]AssignedTrainingInfoable) {
     return m.assignedTrainingsInfos
 }
@@ -49,7 +49,7 @@ func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *TrainingEventsContent) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTrainingsAssignedUserCount gets the trainingsAssignedUserCount property value. The trainingsAssignedUserCount property
+// GetTrainingsAssignedUserCount gets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
 func (m *TrainingEventsContent) GetTrainingsAssignedUserCount()(*int32) {
     return m.trainingsAssignedUserCount
 }
@@ -86,7 +86,7 @@ func (m *TrainingEventsContent) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *TrainingEventsContent) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAssignedTrainingsInfos sets the assignedTrainingsInfos property value. The assignedTrainingsInfos property
+// SetAssignedTrainingsInfos sets the assignedTrainingsInfos property value. List of assigned trainings and their information in an attack simulation and training campaign.
 func (m *TrainingEventsContent) SetAssignedTrainingsInfos(value []AssignedTrainingInfoable)() {
     m.assignedTrainingsInfos = value
 }
@@ -94,7 +94,7 @@ func (m *TrainingEventsContent) SetAssignedTrainingsInfos(value []AssignedTraini
 func (m *TrainingEventsContent) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTrainingsAssignedUserCount sets the trainingsAssignedUserCount property value. The trainingsAssignedUserCount property
+// SetTrainingsAssignedUserCount sets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
 func (m *TrainingEventsContent) SetTrainingsAssignedUserCount(value *int32)() {
     m.trainingsAssignedUserCount = value
 }

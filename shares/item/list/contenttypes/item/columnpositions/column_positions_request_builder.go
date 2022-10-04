@@ -69,11 +69,7 @@ func (m *ColumnPositionsRequestBuilder) Count()(*i0cae29c5509b80adf247ae034b537f
     return i0cae29c5509b80adf247ae034b537f819f861ca41af21d6d44cac10bb6ccf426.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation column order information in a content type.
-func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration column order information in a content type.
-func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ColumnPositionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ColumnPositionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformationWithRequestCo
 }
 // Get column order information in a content type.
 func (m *ColumnPositionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ColumnPositionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

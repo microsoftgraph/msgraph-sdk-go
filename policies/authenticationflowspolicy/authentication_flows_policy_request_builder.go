@@ -66,11 +66,7 @@ func NewAuthenticationFlowsPolicyRequestBuilder(rawUrl string, requestAdapter i2
     return NewAuthenticationFlowsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property authenticationFlowsPolicy for policies
-func (m *AuthenticationFlowsPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property authenticationFlowsPolicy for policies
-func (m *AuthenticationFlowsPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AuthenticationFlowsPolicyRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) CreateDeleteRequestInformation
     return requestInfo, nil
 }
 // CreateGetRequestInformation read the properties and relationships of an authenticationFlowsPolicy object.
-func (m *AuthenticationFlowsPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of an authenticationFlowsPolicy object.
-func (m *AuthenticationFlowsPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AuthenticationFlowsPolicyRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) CreateGetRequestInformationWit
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
-func (m *AuthenticationFlowsPolicyRequestBuilder) CreatePatchRequestInformation(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationFlowsPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
-func (m *AuthenticationFlowsPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationFlowsPolicyable, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AuthenticationFlowsPolicyRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationFlowsPolicyable, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) CreatePatchRequestInformationW
 }
 // Delete delete navigation property authenticationFlowsPolicy for policies
 func (m *AuthenticationFlowsPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) Delete(ctx context.Context, re
 }
 // Get read the properties and relationships of an authenticationFlowsPolicy object.
 func (m *AuthenticationFlowsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationFlowsPolicyable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) Get(ctx context.Context, reque
 }
 // Patch update the **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
 func (m *AuthenticationFlowsPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationFlowsPolicyable, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationFlowsPolicyable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,16 +42,12 @@ func NewScheduleActionsForRulesRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewScheduleActionsForRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action scheduleActionsForRules
-func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformation(body ScheduleActionsForRulesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action scheduleActionsForRules
-func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ScheduleActionsForRulesPostRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ScheduleActionsForRulesPostRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformationWith
 }
 // Post invoke action scheduleActionsForRules
 func (m *ScheduleActionsForRulesRequestBuilder) Post(ctx context.Context, body ScheduleActionsForRulesPostRequestBodyable, requestConfiguration *ScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

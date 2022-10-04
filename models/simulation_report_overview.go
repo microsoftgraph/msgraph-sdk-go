@@ -11,13 +11,13 @@ type SimulationReportOverview struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The recommendedActions property
+    // List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
     recommendedActions []RecommendedActionable
-    // The resolvedTargetsCount property
+    // Number of valid users in the attack simulation and training campaign.
     resolvedTargetsCount *int32
-    // The simulationEventsContent property
+    // Summary of simulation events in the attack simulation and training campaign.
     simulationEventsContent SimulationEventsContentable
-    // The trainingEventsContent property
+    // Summary of assigned trainings in the attack simulation and training campaign.
     trainingEventsContent TrainingEventsContentable
 }
 // NewSimulationReportOverview instantiates a new simulationReportOverview and sets the default values.
@@ -51,19 +51,19 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a
 func (m *SimulationReportOverview) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRecommendedActions gets the recommendedActions property value. The recommendedActions property
+// GetRecommendedActions gets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) GetRecommendedActions()([]RecommendedActionable) {
     return m.recommendedActions
 }
-// GetResolvedTargetsCount gets the resolvedTargetsCount property value. The resolvedTargetsCount property
+// GetResolvedTargetsCount gets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetResolvedTargetsCount()(*int32) {
     return m.resolvedTargetsCount
 }
-// GetSimulationEventsContent gets the simulationEventsContent property value. The simulationEventsContent property
+// GetSimulationEventsContent gets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetSimulationEventsContent()(SimulationEventsContentable) {
     return m.simulationEventsContent
 }
-// GetTrainingEventsContent gets the trainingEventsContent property value. The trainingEventsContent property
+// GetTrainingEventsContent gets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetTrainingEventsContent()(TrainingEventsContentable) {
     return m.trainingEventsContent
 }
@@ -116,19 +116,19 @@ func (m *SimulationReportOverview) SetAdditionalData(value map[string]interface{
 func (m *SimulationReportOverview) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRecommendedActions sets the recommendedActions property value. The recommendedActions property
+// SetRecommendedActions sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) SetRecommendedActions(value []RecommendedActionable)() {
     m.recommendedActions = value
 }
-// SetResolvedTargetsCount sets the resolvedTargetsCount property value. The resolvedTargetsCount property
+// SetResolvedTargetsCount sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetResolvedTargetsCount(value *int32)() {
     m.resolvedTargetsCount = value
 }
-// SetSimulationEventsContent sets the simulationEventsContent property value. The simulationEventsContent property
+// SetSimulationEventsContent sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetSimulationEventsContent(value SimulationEventsContentable)() {
     m.simulationEventsContent = value
 }
-// SetTrainingEventsContent sets the trainingEventsContent property value. The trainingEventsContent property
+// SetTrainingEventsContent sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetTrainingEventsContent(value TrainingEventsContentable)() {
     m.trainingEventsContent = value
 }

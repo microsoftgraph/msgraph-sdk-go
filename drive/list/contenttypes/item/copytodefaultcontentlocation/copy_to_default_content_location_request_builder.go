@@ -42,16 +42,12 @@ func NewCopyToDefaultContentLocationRequestBuilder(rawUrl string, requestAdapter
     return NewCopyToDefaultContentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
-func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformation(body CopyToDefaultContentLocationPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
-func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *CopyToDefaultContentLocationRequestBuilder) CreatePostRequestInformatio
 }
 // Post copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 func (m *CopyToDefaultContentLocationRequestBuilder) Post(ctx context.Context, body CopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *CopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

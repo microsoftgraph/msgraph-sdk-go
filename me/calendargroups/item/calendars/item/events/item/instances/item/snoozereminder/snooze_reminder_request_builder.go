@@ -42,16 +42,12 @@ func NewSnoozeReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation postpone a reminder for an event in a user calendar until a new time.
-func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(body SnoozeReminderPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration postpone a reminder for an event in a user calendar until a new time.
-func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(ctx context.Context, body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformationWithRequestCo
 }
 // Post postpone a reminder for an event in a user calendar until a new time.
 func (m *SnoozeReminderRequestBuilder) Post(ctx context.Context, body SnoozeReminderPostRequestBodyable, requestConfiguration *SnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

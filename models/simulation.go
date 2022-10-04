@@ -9,35 +9,35 @@ import (
 // Simulation provides operations to manage the collection of agreementAcceptance entities.
 type Simulation struct {
     Entity
-    // The attackTechnique property
+    // The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
     attackTechnique *SimulationAttackTechnique
-    // The attackType property
+    // Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
     attackType *SimulationAttackType
-    // The automationId property
+    // Unique identifier for the attack simulation automation.
     automationId *string
-    // The completionDateTime property
+    // Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The createdBy property
+    // Identity of the user who created the attack simulation and training campaign.
     createdBy EmailIdentityable
-    // The createdDateTime property
+    // Date and time of creation of the attack simulation and training campaign.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // Description of the attack simulation and training campaign.
     description *string
-    // The displayName property
+    // Display name of the attack simulation and training campaign. Supports $filter and $orderby.
     displayName *string
-    // The isAutomated property
+    // Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
     isAutomated *bool
-    // The lastModifiedBy property
+    // Identity of the user who most recently modified the attack simulation and training campaign.
     lastModifiedBy EmailIdentityable
-    // The lastModifiedDateTime property
+    // Date and time of the most recent modification of the attack simulation and training campaign.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The launchDateTime property
+    // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The payloadDeliveryPlatform property
+    // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform
-    // The report property
+    // Report of the attack simulation and training campaign.
     report SimulationReportable
-    // The status property
+    // Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
     status *SimulationStatus
 }
 // NewSimulation instantiates a new simulation and sets the default values.
@@ -53,35 +53,35 @@ func NewSimulation()(*Simulation) {
 func CreateSimulationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulation(), nil
 }
-// GetAttackTechnique gets the attackTechnique property value. The attackTechnique property
+// GetAttackTechnique gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Simulation) GetAttackTechnique()(*SimulationAttackTechnique) {
     return m.attackTechnique
 }
-// GetAttackType gets the attackType property value. The attackType property
+// GetAttackType gets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 func (m *Simulation) GetAttackType()(*SimulationAttackType) {
     return m.attackType
 }
-// GetAutomationId gets the automationId property value. The automationId property
+// GetAutomationId gets the automationId property value. Unique identifier for the attack simulation automation.
 func (m *Simulation) GetAutomationId()(*string) {
     return m.automationId
 }
-// GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
+// GetCompletionDateTime gets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completionDateTime
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
 func (m *Simulation) GetCreatedBy()(EmailIdentityable) {
     return m.createdBy
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time of creation of the attack simulation and training campaign.
 func (m *Simulation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the attack simulation and training campaign.
 func (m *Simulation) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -105,31 +105,31 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSimulationStatus , m.SetStatus)
     return res
 }
-// GetIsAutomated gets the isAutomated property value. The isAutomated property
+// GetIsAutomated gets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) GetIsAutomated()(*bool) {
     return m.isAutomated
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
 func (m *Simulation) GetLastModifiedBy()(EmailIdentityable) {
     return m.lastModifiedBy
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
 func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetLaunchDateTime gets the launchDateTime property value. The launchDateTime property
+// GetLaunchDateTime gets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.launchDateTime
 }
-// GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. The payloadDeliveryPlatform property
+// GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
     return m.payloadDeliveryPlatform
 }
-// GetReport gets the report property value. The report property
+// GetReport gets the report property value. Report of the attack simulation and training campaign.
 func (m *Simulation) GetReport()(SimulationReportable) {
     return m.report
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
 func (m *Simulation) GetStatus()(*SimulationStatus) {
     return m.status
 }
@@ -235,63 +235,63 @@ func (m *Simulation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAttackTechnique sets the attackTechnique property value. The attackTechnique property
+// SetAttackTechnique sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Simulation) SetAttackTechnique(value *SimulationAttackTechnique)() {
     m.attackTechnique = value
 }
-// SetAttackType sets the attackType property value. The attackType property
+// SetAttackType sets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 func (m *Simulation) SetAttackType(value *SimulationAttackType)() {
     m.attackType = value
 }
-// SetAutomationId sets the automationId property value. The automationId property
+// SetAutomationId sets the automationId property value. Unique identifier for the attack simulation automation.
 func (m *Simulation) SetAutomationId(value *string)() {
     m.automationId = value
 }
-// SetCompletionDateTime sets the completionDateTime property value. The completionDateTime property
+// SetCompletionDateTime sets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completionDateTime = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
 func (m *Simulation) SetCreatedBy(value EmailIdentityable)() {
     m.createdBy = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time of creation of the attack simulation and training campaign.
 func (m *Simulation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the attack simulation and training campaign.
 func (m *Simulation) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIsAutomated sets the isAutomated property value. The isAutomated property
+// SetIsAutomated sets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) SetIsAutomated(value *bool)() {
     m.isAutomated = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
 func (m *Simulation) SetLastModifiedBy(value EmailIdentityable)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
 func (m *Simulation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetLaunchDateTime sets the launchDateTime property value. The launchDateTime property
+// SetLaunchDateTime sets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.launchDateTime = value
 }
-// SetPayloadDeliveryPlatform sets the payloadDeliveryPlatform property value. The payloadDeliveryPlatform property
+// SetPayloadDeliveryPlatform sets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Simulation) SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)() {
     m.payloadDeliveryPlatform = value
 }
-// SetReport sets the report property value. The report property
+// SetReport sets the report property value. Report of the attack simulation and training campaign.
 func (m *Simulation) SetReport(value SimulationReportable)() {
     m.report = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
 func (m *Simulation) SetStatus(value *SimulationStatus)() {
     m.status = value
 }

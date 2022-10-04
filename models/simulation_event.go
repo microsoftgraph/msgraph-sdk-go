@@ -9,9 +9,9 @@ import (
 type SimulationEvent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The count property
+    // Count of the simulation event occurrence in an attack simulation and training campaign.
     count *int32
-    // The eventName property
+    // Name of the simulation event in an attack simulation and training campaign.
     eventName *string
     // The OdataType property
     odataType *string
@@ -33,11 +33,11 @@ func CreateSimulationEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 func (m *SimulationEvent) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCount gets the count property value. The count property
+// GetCount gets the count property value. Count of the simulation event occurrence in an attack simulation and training campaign.
 func (m *SimulationEvent) GetCount()(*int32) {
     return m.count
 }
-// GetEventName gets the eventName property value. The eventName property
+// GetEventName gets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) GetEventName()(*string) {
     return m.eventName
 }
@@ -85,11 +85,11 @@ func (m *SimulationEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 func (m *SimulationEvent) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCount sets the count property value. The count property
+// SetCount sets the count property value. Count of the simulation event occurrence in an attack simulation and training campaign.
 func (m *SimulationEvent) SetCount(value *int32)() {
     m.count = value
 }
-// SetEventName sets the eventName property value. The eventName property
+// SetEventName sets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetEventName(value *string)() {
     m.eventName = value
 }

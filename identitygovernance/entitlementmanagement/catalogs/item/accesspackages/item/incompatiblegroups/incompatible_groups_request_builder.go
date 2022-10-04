@@ -70,11 +70,7 @@ func (m *IncompatibleGroupsRequestBuilder) Count()(*ib8e76c09482f6210f0a6561a60e
     return ib8e76c09482f6210f0a6561a60e0e76217df29003ed251db58fb2e0b6ac1ebc3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get incompatibleGroups from identityGovernance
-func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get incompatibleGroups from identityGovernance
-func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get get incompatibleGroups from identityGovernance
 func (m *IncompatibleGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

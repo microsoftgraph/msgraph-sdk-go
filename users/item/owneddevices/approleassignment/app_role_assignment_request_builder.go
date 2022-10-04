@@ -69,11 +69,7 @@ func (m *AppRoleAssignmentRequestBuilder) Count()(*i562b62ff3744b6078df6fe86653b
     return i562b62ff3744b6078df6fe86653b4a6db011cd20f1ab47a1cad69fb8f902125a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppRoleAssignmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AppRoleAssignmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformationWithRequest
 }
 // Get get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
 func (m *AppRoleAssignmentRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRoleAssignmentRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppRoleAssignmentCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

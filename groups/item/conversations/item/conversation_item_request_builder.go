@@ -59,11 +59,7 @@ func NewConversationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewConversationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property conversations for groups
-func (m *ConversationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property conversations for groups
-func (m *ConversationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConversationItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -75,11 +71,7 @@ func (m *ConversationItemRequestBuilder) CreateDeleteRequestInformationWithReque
     return requestInfo, nil
 }
 // CreateGetRequestInformation the group's conversations.
-func (m *ConversationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the group's conversations.
-func (m *ConversationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ConversationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConversationItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ConversationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -96,7 +88,7 @@ func (m *ConversationItemRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Delete delete navigation property conversations for groups
 func (m *ConversationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConversationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -112,7 +104,7 @@ func (m *ConversationItemRequestBuilder) Delete(ctx context.Context, requestConf
 }
 // Get the group's conversations.
 func (m *ConversationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConversationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Conversationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

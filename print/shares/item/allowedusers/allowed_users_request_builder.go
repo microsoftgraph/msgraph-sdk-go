@@ -70,11 +70,7 @@ func (m *AllowedUsersRequestBuilder) Count()(*ia8dbd0396aee5356408c980f3cada5002
     return ia8dbd0396aee5356408c980f3cada5002debd95ceaf1a90756c478eb7583baf8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-func (m *AllowedUsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-func (m *AllowedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AllowedUsersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *AllowedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfi
 }
 // Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

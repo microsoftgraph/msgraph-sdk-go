@@ -62,11 +62,7 @@ func (m *AttachmentBaseItemRequestBuilder) Content()(*i2dd69132b39bcfdbe8d416e79
     return i2dd69132b39bcfdbe8d416e7937389aeba7148036ed1ca1e157bc2f8ef9750e7.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property attachments for users
-func (m *AttachmentBaseItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property attachments for users
-func (m *AttachmentBaseItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttachmentBaseItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *AttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -78,11 +74,7 @@ func (m *AttachmentBaseItemRequestBuilder) CreateDeleteRequestInformationWithReq
     return requestInfo, nil
 }
 // CreateGetRequestInformation get attachments from users
-func (m *AttachmentBaseItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get attachments from users
-func (m *AttachmentBaseItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttachmentBaseItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AttachmentBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -99,7 +91,7 @@ func (m *AttachmentBaseItemRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Delete delete navigation property attachments for users
 func (m *AttachmentBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -115,7 +107,7 @@ func (m *AttachmentBaseItemRequestBuilder) Delete(ctx context.Context, requestCo
 }
 // Get get attachments from users
 func (m *AttachmentBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

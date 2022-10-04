@@ -42,17 +42,13 @@ func NewGetMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.
-func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(body GetMemberObjectsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.
-func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequest
 }
 // Post return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.
 func (m *GetMemberObjectsRequestBuilder) Post(ctx context.Context, body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(GetMemberObjectsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

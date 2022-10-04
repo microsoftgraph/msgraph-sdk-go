@@ -52,11 +52,7 @@ func NewDirectoryScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewDirectoryScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the directory object that is the scope of the role eligibility. Read-only. Supports $expand.
-func (m *DirectoryScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the directory object that is the scope of the role eligibility. Read-only. Supports $expand.
-func (m *DirectoryScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DirectoryScopeRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *DirectoryScopeRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get the directory object that is the scope of the role eligibility. Read-only. Supports $expand.
 func (m *DirectoryScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryScopeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

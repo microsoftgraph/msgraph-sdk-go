@@ -42,11 +42,7 @@ func NewRemoveHoldRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewRemoveHoldRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.
-func (m *RemoveHoldRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.
-func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveHoldRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfig
 }
 // Post start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.
 func (m *RemoveHoldRequestBuilder) Post(ctx context.Context, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
