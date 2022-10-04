@@ -52,11 +52,7 @@ func NewCreatedOnBehalfOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewCreatedOnBehalfOfRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformationWithRequest
 }
 // Get the user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) Get(ctx context.Context, requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

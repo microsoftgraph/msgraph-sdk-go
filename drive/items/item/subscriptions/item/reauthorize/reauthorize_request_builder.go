@@ -42,11 +42,7 @@ func NewReauthorizeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewReauthorizeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action reauthorize
-func (m *ReauthorizeRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action reauthorize
-func (m *ReauthorizeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ReauthorizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReauthorizeRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ReauthorizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ReauthorizeRequestBuilder) CreatePostRequestInformationWithRequestConfi
 }
 // Post invoke action reauthorize
 func (m *ReauthorizeRequestBuilder) Post(ctx context.Context, requestConfiguration *ReauthorizeRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

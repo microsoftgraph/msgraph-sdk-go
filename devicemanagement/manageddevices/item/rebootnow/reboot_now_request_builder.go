@@ -42,11 +42,7 @@ func NewRebootNowRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewRebootNowRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation reboot device
-func (m *RebootNowRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration reboot device
-func (m *RebootNowRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RebootNowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RebootNowRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RebootNowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RebootNowRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 }
 // Post reboot device
 func (m *RebootNowRequestBuilder) Post(ctx context.Context, requestConfiguration *RebootNowRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

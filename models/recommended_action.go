@@ -7,15 +7,15 @@ import (
 
 // RecommendedAction 
 type RecommendedAction struct {
-    // The actionWebUrl property
+    // Web URL to the recommended action.
     actionWebUrl *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The potentialScoreImpact property
+    // Potential improvement in the tenant security score from the recommended action.
     potentialScoreImpact *float64
-    // The title property
+    // Title of the recommended action.
     title *string
 }
 // NewRecommendedAction instantiates a new recommendedAction and sets the default values.
@@ -31,7 +31,7 @@ func NewRecommendedAction()(*RecommendedAction) {
 func CreateRecommendedActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecommendedAction(), nil
 }
-// GetActionWebUrl gets the actionWebUrl property value. The actionWebUrl property
+// GetActionWebUrl gets the actionWebUrl property value. Web URL to the recommended action.
 func (m *RecommendedAction) GetActionWebUrl()(*string) {
     return m.actionWebUrl
 }
@@ -52,11 +52,11 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *RecommendedAction) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPotentialScoreImpact gets the potentialScoreImpact property value. The potentialScoreImpact property
+// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in the tenant security score from the recommended action.
 func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
     return m.potentialScoreImpact
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. Title of the recommended action.
 func (m *RecommendedAction) GetTitle()(*string) {
     return m.title
 }
@@ -94,7 +94,7 @@ func (m *RecommendedAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetActionWebUrl sets the actionWebUrl property value. The actionWebUrl property
+// SetActionWebUrl sets the actionWebUrl property value. Web URL to the recommended action.
 func (m *RecommendedAction) SetActionWebUrl(value *string)() {
     m.actionWebUrl = value
 }
@@ -106,11 +106,11 @@ func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
 func (m *RecommendedAction) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPotentialScoreImpact sets the potentialScoreImpact property value. The potentialScoreImpact property
+// SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in the tenant security score from the recommended action.
 func (m *RecommendedAction) SetPotentialScoreImpact(value *float64)() {
     m.potentialScoreImpact = value
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. Title of the recommended action.
 func (m *RecommendedAction) SetTitle(value *string)() {
     m.title = value
 }

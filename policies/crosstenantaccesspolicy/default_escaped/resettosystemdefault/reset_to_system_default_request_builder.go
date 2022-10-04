@@ -42,11 +42,7 @@ func NewResetToSystemDefaultRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewResetToSystemDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ResetToSystemDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ResetToSystemDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ResetToSystemDefaultRequestBuilder) CreatePostRequestInformationWithReq
 }
 // Post reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 func (m *ResetToSystemDefaultRequestBuilder) Post(ctx context.Context, requestConfiguration *ResetToSystemDefaultRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

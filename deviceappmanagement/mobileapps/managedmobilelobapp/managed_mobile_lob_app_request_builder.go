@@ -69,11 +69,7 @@ func (m *ManagedMobileLobAppRequestBuilder) Count()(*i3c4f3c264afa17e76544da32ee
     return i3c4f3c264afa17e76544da32ee9f596ebefb5ea63430d951fe4c3dad48bef91e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
-func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
-func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedMobileLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagedMobileLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformationWithReque
 }
 // Get get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
 func (m *ManagedMobileLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedMobileLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileLobAppCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

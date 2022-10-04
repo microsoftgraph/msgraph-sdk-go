@@ -69,11 +69,7 @@ func (m *ExternalColumnsRequestBuilder) Count()(*i0173ef17b05e4a5c0a516af9ab2bb4
     return i0173ef17b05e4a5c0a516af9ab2bb41b47dc784a02496af87025b4717edf19fa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get externalColumns from groups
-func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get externalColumns from groups
-func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformationWithRequestCo
 }
 // Get get externalColumns from groups
 func (m *ExternalColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

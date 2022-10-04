@@ -42,11 +42,7 @@ func NewAddFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewAddFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
-func (m *AddFavoriteRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
-func (m *AddFavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *AddFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddFavoriteRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *AddFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *AddFavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfi
 }
 // Post add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
 func (m *AddFavoriteRequestBuilder) Post(ctx context.Context, requestConfiguration *AddFavoriteRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

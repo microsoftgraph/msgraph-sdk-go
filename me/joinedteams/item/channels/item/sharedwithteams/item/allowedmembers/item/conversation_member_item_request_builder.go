@@ -52,11 +52,7 @@ func NewConversationMemberItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation a collection of team members who have access to the shared channel.
-func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration a collection of team members who have access to the shared channel.
-func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformationWithRe
 }
 // Get a collection of team members who have access to the shared channel.
 func (m *ConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConversationMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -9,13 +9,13 @@ import (
 type AttackSimulationUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The displayName property
+    // Display name of the user.
     displayName *string
-    // The email property
+    // Email address of the user.
     email *string
     // The OdataType property
     odataType *string
-    // The userId property
+    // This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
     userId *string
 }
 // NewAttackSimulationUser instantiates a new attackSimulationUser and sets the default values.
@@ -35,11 +35,11 @@ func CreateAttackSimulationUserFromDiscriminatorValue(parseNode i878a80d2330e89d
 func (m *AttackSimulationUser) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the user.
 func (m *AttackSimulationUser) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. Email address of the user.
 func (m *AttackSimulationUser) GetEmail()(*string) {
     return m.email
 }
@@ -56,7 +56,7 @@ func (m *AttackSimulationUser) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *AttackSimulationUser) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
 func (m *AttackSimulationUser) GetUserId()(*string) {
     return m.userId
 }
@@ -98,11 +98,11 @@ func (m *AttackSimulationUser) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *AttackSimulationUser) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the user.
 func (m *AttackSimulationUser) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. Email address of the user.
 func (m *AttackSimulationUser) SetEmail(value *string)() {
     m.email = value
 }
@@ -110,7 +110,7 @@ func (m *AttackSimulationUser) SetEmail(value *string)() {
 func (m *AttackSimulationUser) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
 func (m *AttackSimulationUser) SetUserId(value *string)() {
     m.userId = value
 }

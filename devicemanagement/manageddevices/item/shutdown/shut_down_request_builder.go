@@ -42,11 +42,7 @@ func NewShutDownRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewShutDownRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation shut down device
-func (m *ShutDownRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration shut down device
-func (m *ShutDownRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ShutDownRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ShutDownRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ShutDownRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ShutDownRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 }
 // Post shut down device
 func (m *ShutDownRequestBuilder) Post(ctx context.Context, requestConfiguration *ShutDownRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

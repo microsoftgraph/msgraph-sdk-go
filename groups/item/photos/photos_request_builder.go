@@ -65,11 +65,7 @@ func (m *PhotosRequestBuilder) Count()(*i2411f71222fa1372be005eeb822c0fe6d2db9dd
     return i2411f71222fa1372be005eeb822c0fe6d2db9ddc67317f6413a98a9adbbffbdb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of profilePhoto objects.
-func (m *PhotosRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of profilePhoto objects.
-func (m *PhotosRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PhotosRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -86,7 +82,7 @@ func (m *PhotosRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
 }
 // Get retrieve a list of profilePhoto objects.
 func (m *PhotosRequestBuilder) Get(ctx context.Context, requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,17 +42,13 @@ func NewUnfavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewUnfavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation remove the favorite status of serviceUpdateMessages for the signed in user.
-func (m *UnfavoriteRequestBuilder) CreatePostRequestInformation(body UnfavoritePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration remove the favorite status of serviceUpdateMessages for the signed in user.
-func (m *UnfavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnfavoritePostRequestBodyable, requestConfiguration *UnfavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnfavoriteRequestBuilder) CreatePostRequestInformation(ctx context.Context, body UnfavoritePostRequestBodyable, requestConfiguration *UnfavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *UnfavoriteRequestBuilder) CreatePostRequestInformationWithRequestConfig
 }
 // Post remove the favorite status of serviceUpdateMessages for the signed in user.
 func (m *UnfavoriteRequestBuilder) Post(ctx context.Context, body UnfavoritePostRequestBodyable, requestConfiguration *UnfavoriteRequestBuilderPostRequestConfiguration)(UnfavoriteResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

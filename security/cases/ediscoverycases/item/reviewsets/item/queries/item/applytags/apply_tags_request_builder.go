@@ -42,16 +42,12 @@ func NewApplyTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewApplyTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
-func (m *ApplyTagsRequestBuilder) CreatePostRequestInformation(body ApplyTagsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
-func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ApplyTagsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 }
 // Post apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
 func (m *ApplyTagsRequestBuilder) Post(ctx context.Context, body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

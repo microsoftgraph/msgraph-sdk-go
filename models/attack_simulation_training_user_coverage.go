@@ -9,11 +9,11 @@ import (
 type AttackSimulationTrainingUserCoverage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The attackSimulationUser property
+    // User in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
     // The OdataType property
     odataType *string
-    // The userTrainings property
+    // List of assigned trainings and their statuses for the user.
     userTrainings []UserTrainingStatusInfoable
 }
 // NewAttackSimulationTrainingUserCoverage instantiates a new attackSimulationTrainingUserCoverage and sets the default values.
@@ -33,7 +33,7 @@ func CreateAttackSimulationTrainingUserCoverageFromDiscriminatorValue(parseNode 
 func (m *AttackSimulationTrainingUserCoverage) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAttackSimulationUser gets the attackSimulationUser property value. The attackSimulationUser property
+// GetAttackSimulationUser gets the attackSimulationUser property value. User in an attack simulation and training campaign.
 func (m *AttackSimulationTrainingUserCoverage) GetAttackSimulationUser()(AttackSimulationUserable) {
     return m.attackSimulationUser
 }
@@ -49,7 +49,7 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
 func (m *AttackSimulationTrainingUserCoverage) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUserTrainings gets the userTrainings property value. The userTrainings property
+// GetUserTrainings gets the userTrainings property value. List of assigned trainings and their statuses for the user.
 func (m *AttackSimulationTrainingUserCoverage) GetUserTrainings()([]UserTrainingStatusInfoable) {
     return m.userTrainings
 }
@@ -86,7 +86,7 @@ func (m *AttackSimulationTrainingUserCoverage) Serialize(writer i878a80d2330e89d
 func (m *AttackSimulationTrainingUserCoverage) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAttackSimulationUser sets the attackSimulationUser property value. The attackSimulationUser property
+// SetAttackSimulationUser sets the attackSimulationUser property value. User in an attack simulation and training campaign.
 func (m *AttackSimulationTrainingUserCoverage) SetAttackSimulationUser(value AttackSimulationUserable)() {
     m.attackSimulationUser = value
 }
@@ -94,7 +94,7 @@ func (m *AttackSimulationTrainingUserCoverage) SetAttackSimulationUser(value Att
 func (m *AttackSimulationTrainingUserCoverage) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUserTrainings sets the userTrainings property value. The userTrainings property
+// SetUserTrainings sets the userTrainings property value. List of assigned trainings and their statuses for the user.
 func (m *AttackSimulationTrainingUserCoverage) SetUserTrainings(value []UserTrainingStatusInfoable)() {
     m.userTrainings = value
 }

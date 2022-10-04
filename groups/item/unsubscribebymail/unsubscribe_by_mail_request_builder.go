@@ -42,11 +42,7 @@ func NewUnsubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewUnsubscribeByMailRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
-func (m *UnsubscribeByMailRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
-func (m *UnsubscribeByMailRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnsubscribeByMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnsubscribeByMailRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UnsubscribeByMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *UnsubscribeByMailRequestBuilder) CreatePostRequestInformationWithReques
 }
 // Post calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
 func (m *UnsubscribeByMailRequestBuilder) Post(ctx context.Context, requestConfiguration *UnsubscribeByMailRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

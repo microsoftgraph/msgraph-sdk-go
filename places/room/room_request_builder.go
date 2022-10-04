@@ -69,11 +69,7 @@ func (m *RoomRequestBuilder) Count()(*iecee8c6e7b913a82df536c1eeb17ef3e842dee381
     return iecee8c6e7b913a82df536c1eeb17ef3e842dee38147e9f047fc42a754e2ba769.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the items of type microsoft.graph.room in the microsoft.graph.place collection
-func (m *RoomRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the items of type microsoft.graph.room in the microsoft.graph.place collection
-func (m *RoomRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoomRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RoomRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RoomRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *RoomRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
 }
 // Get get the items of type microsoft.graph.room in the microsoft.graph.place collection
 func (m *RoomRequestBuilder) Get(ctx context.Context, requestConfiguration *RoomRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoomCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

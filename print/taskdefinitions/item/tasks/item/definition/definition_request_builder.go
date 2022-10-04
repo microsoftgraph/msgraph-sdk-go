@@ -52,11 +52,7 @@ func NewDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the printTaskDefinition that was used to create this task. Read-only.
-func (m *DefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the printTaskDefinition that was used to create this task. Read-only.
-func (m *DefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DefinitionRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *DefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfigu
 }
 // Get the printTaskDefinition that was used to create this task. Read-only.
 func (m *DefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *DefinitionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskDefinitionable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

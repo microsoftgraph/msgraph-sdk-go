@@ -52,11 +52,7 @@ func NewToTermRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewToTermRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the to [term] of the relation. The term to which the relationship is defined.
-func (m *ToTermRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the to [term] of the relation. The term to which the relationship is defined.
-func (m *ToTermRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ToTermRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ToTermRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ToTermRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ToTermRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
 }
 // Get the to [term] of the relation. The term to which the relationship is defined.
 func (m *ToTermRequestBuilder) Get(ctx context.Context, requestConfiguration *ToTermRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -9,9 +9,9 @@ import (
 type SimulationEventsContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The compromisedRate property
+    // Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
     compromisedRate *float64
-    // The events property
+    // List of simulation events in an attack simulation and training campaign.
     events []SimulationEventable
     // The OdataType property
     odataType *string
@@ -33,11 +33,11 @@ func CreateSimulationEventsContentFromDiscriminatorValue(parseNode i878a80d2330e
 func (m *SimulationEventsContent) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCompromisedRate gets the compromisedRate property value. The compromisedRate property
+// GetCompromisedRate gets the compromisedRate property value. Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
 func (m *SimulationEventsContent) GetCompromisedRate()(*float64) {
     return m.compromisedRate
 }
-// GetEvents gets the events property value. The events property
+// GetEvents gets the events property value. List of simulation events in an attack simulation and training campaign.
 func (m *SimulationEventsContent) GetEvents()([]SimulationEventable) {
     return m.events
 }
@@ -86,11 +86,11 @@ func (m *SimulationEventsContent) Serialize(writer i878a80d2330e89d26896388a3f48
 func (m *SimulationEventsContent) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCompromisedRate sets the compromisedRate property value. The compromisedRate property
+// SetCompromisedRate sets the compromisedRate property value. Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
 func (m *SimulationEventsContent) SetCompromisedRate(value *float64)() {
     m.compromisedRate = value
 }
-// SetEvents sets the events property value. The events property
+// SetEvents sets the events property value. List of simulation events in an attack simulation and training campaign.
 func (m *SimulationEventsContent) SetEvents(value []SimulationEventable)() {
     m.events = value
 }

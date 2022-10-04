@@ -52,11 +52,7 @@ func NewTemplateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the template this team was created from. See available templates.
-func (m *TemplateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the template this team was created from. See available templates.
-func (m *TemplateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TemplateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TemplateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TemplateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TemplateRequestBuilder) CreateGetRequestInformationWithRequestConfigura
 }
 // Get the template this team was created from. See available templates.
 func (m *TemplateRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTemplateable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

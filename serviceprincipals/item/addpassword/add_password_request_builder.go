@@ -43,17 +43,13 @@ func NewAddPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewAddPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation add a strong password or secret to a servicePrincipal object.
-func (m *AddPasswordRequestBuilder) CreatePostRequestInformation(body AddPasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration add a strong password or secret to a servicePrincipal object.
-func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddPasswordPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddPasswordRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AddPasswordPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *AddPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfi
 }
 // Post add a strong password or secret to a servicePrincipal object.
 func (m *AddPasswordRequestBuilder) Post(ctx context.Context, body AddPasswordPostRequestBodyable, requestConfiguration *AddPasswordRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

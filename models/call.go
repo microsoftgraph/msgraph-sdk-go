@@ -14,7 +14,7 @@ type Call struct {
     callbackUri *string
     // A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
     callChainId *string
-    // The callOptions property
+    // Contains the optional features for the call.
     callOptions CallOptionsable
     // The routing information on how the call was retargeted. Read-only.
     callRoutes []CallRouteable
@@ -24,7 +24,7 @@ type Call struct {
     contentSharingSessions []ContentSharingSessionable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection
-    // The incomingContext property
+    // Call context associated with an incoming call.
     incomingContext IncomingContextable
     // The media configuration. Required.
     mediaConfig MediaConfigable
@@ -38,23 +38,23 @@ type Call struct {
     operations []CommsOperationable
     // The participants property
     participants []Participantable
-    // The requestedModalities property
+    // The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
     requestedModalities []Modality
-    // The resultInfo property
+    // The result information. For example can hold termination reason. Read-only.
     resultInfo ResultInfoable
-    // The source property
+    // The originator of the call.
     source ParticipantInfoable
-    // The state property
+    // The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
     state *CallState
-    // The subject property
+    // The subject of the conversation.
     subject *string
-    // The targets property
+    // The targets of the call. Required information for creating peer to peer call.
     targets []InvitationParticipantInfoable
     // The tenantId property
     tenantId *string
     // The toneInfo property
     toneInfo ToneInfoable
-    // The transcription property
+    // The transcription information for the call. Read-only.
     transcription CallTranscriptionInfoable
 }
 // NewCall instantiates a new call and sets the default values.
@@ -82,7 +82,7 @@ func (m *Call) GetCallbackUri()(*string) {
 func (m *Call) GetCallChainId()(*string) {
     return m.callChainId
 }
-// GetCallOptions gets the callOptions property value. The callOptions property
+// GetCallOptions gets the callOptions property value. Contains the optional features for the call.
 func (m *Call) GetCallOptions()(CallOptionsable) {
     return m.callOptions
 }
@@ -131,7 +131,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     res["transcription"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCallTranscriptionInfoFromDiscriminatorValue , m.SetTranscription)
     return res
 }
-// GetIncomingContext gets the incomingContext property value. The incomingContext property
+// GetIncomingContext gets the incomingContext property value. Call context associated with an incoming call.
 func (m *Call) GetIncomingContext()(IncomingContextable) {
     return m.incomingContext
 }
@@ -159,27 +159,27 @@ func (m *Call) GetOperations()([]CommsOperationable) {
 func (m *Call) GetParticipants()([]Participantable) {
     return m.participants
 }
-// GetRequestedModalities gets the requestedModalities property value. The requestedModalities property
+// GetRequestedModalities gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 func (m *Call) GetRequestedModalities()([]Modality) {
     return m.requestedModalities
 }
-// GetResultInfo gets the resultInfo property value. The resultInfo property
+// GetResultInfo gets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
 func (m *Call) GetResultInfo()(ResultInfoable) {
     return m.resultInfo
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. The originator of the call.
 func (m *Call) GetSource()(ParticipantInfoable) {
     return m.source
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
 func (m *Call) GetState()(*CallState) {
     return m.state
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The subject of the conversation.
 func (m *Call) GetSubject()(*string) {
     return m.subject
 }
-// GetTargets gets the targets property value. The targets property
+// GetTargets gets the targets property value. The targets of the call. Required information for creating peer to peer call.
 func (m *Call) GetTargets()([]InvitationParticipantInfoable) {
     return m.targets
 }
@@ -191,7 +191,7 @@ func (m *Call) GetTenantId()(*string) {
 func (m *Call) GetToneInfo()(ToneInfoable) {
     return m.toneInfo
 }
-// GetTranscription gets the transcription property value. The transcription property
+// GetTranscription gets the transcription property value. The transcription information for the call. Read-only.
 func (m *Call) GetTranscription()(CallTranscriptionInfoable) {
     return m.transcription
 }
@@ -367,7 +367,7 @@ func (m *Call) SetCallbackUri(value *string)() {
 func (m *Call) SetCallChainId(value *string)() {
     m.callChainId = value
 }
-// SetCallOptions sets the callOptions property value. The callOptions property
+// SetCallOptions sets the callOptions property value. Contains the optional features for the call.
 func (m *Call) SetCallOptions(value CallOptionsable)() {
     m.callOptions = value
 }
@@ -387,7 +387,7 @@ func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
 func (m *Call) SetDirection(value *CallDirection)() {
     m.direction = value
 }
-// SetIncomingContext sets the incomingContext property value. The incomingContext property
+// SetIncomingContext sets the incomingContext property value. Call context associated with an incoming call.
 func (m *Call) SetIncomingContext(value IncomingContextable)() {
     m.incomingContext = value
 }
@@ -415,27 +415,27 @@ func (m *Call) SetOperations(value []CommsOperationable)() {
 func (m *Call) SetParticipants(value []Participantable)() {
     m.participants = value
 }
-// SetRequestedModalities sets the requestedModalities property value. The requestedModalities property
+// SetRequestedModalities sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 func (m *Call) SetRequestedModalities(value []Modality)() {
     m.requestedModalities = value
 }
-// SetResultInfo sets the resultInfo property value. The resultInfo property
+// SetResultInfo sets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
 func (m *Call) SetResultInfo(value ResultInfoable)() {
     m.resultInfo = value
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. The originator of the call.
 func (m *Call) SetSource(value ParticipantInfoable)() {
     m.source = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
 func (m *Call) SetState(value *CallState)() {
     m.state = value
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The subject of the conversation.
 func (m *Call) SetSubject(value *string)() {
     m.subject = value
 }
-// SetTargets sets the targets property value. The targets property
+// SetTargets sets the targets property value. The targets of the call. Required information for creating peer to peer call.
 func (m *Call) SetTargets(value []InvitationParticipantInfoable)() {
     m.targets = value
 }
@@ -447,7 +447,7 @@ func (m *Call) SetTenantId(value *string)() {
 func (m *Call) SetToneInfo(value ToneInfoable)() {
     m.toneInfo = value
 }
-// SetTranscription sets the transcription property value. The transcription property
+// SetTranscription sets the transcription property value. The transcription information for the call. Read-only.
 func (m *Call) SetTranscription(value CallTranscriptionInfoable)() {
     m.transcription = value
 }

@@ -52,11 +52,7 @@ func NewManagedMobileLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewManagedMobileLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
-func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
-func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedMobileLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagedMobileLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ManagedMobileLobAppRequestBuilder) CreateGetRequestInformationWithReque
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
 func (m *ManagedMobileLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedMobileLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileLobAppable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

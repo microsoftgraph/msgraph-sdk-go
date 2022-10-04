@@ -69,11 +69,7 @@ func (m *EndpointRequestBuilder) Count()(*i3e3330aab578cac0a004a857834c2471e0b06
     return i3e3330aab578cac0a004a857834c2471e0b06926ecfddb75105d4fb766f7c3e2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-func (m *EndpointRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-func (m *EndpointRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EndpointRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EndpointRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *EndpointRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *EndpointRequestBuilder) CreateGetRequestInformationWithRequestConfigura
 }
 // Get get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
 func (m *EndpointRequestBuilder) Get(ctx context.Context, requestConfiguration *EndpointRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EndpointCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

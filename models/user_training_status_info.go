@@ -10,15 +10,15 @@ import (
 type UserTrainingStatusInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The assignedDateTime property
+    // Date and time of assignment of the training to the user.
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The completionDateTime property
+    // Date and time of completion of the training by the user.
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The displayName property
+    // Display name of the assigned training.
     displayName *string
     // The OdataType property
     odataType *string
-    // The trainingStatus property
+    // The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     trainingStatus *TrainingStatus
 }
 // NewUserTrainingStatusInfo instantiates a new userTrainingStatusInfo and sets the default values.
@@ -38,15 +38,15 @@ func CreateUserTrainingStatusInfoFromDiscriminatorValue(parseNode i878a80d2330e8
 func (m *UserTrainingStatusInfo) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAssignedDateTime gets the assignedDateTime property value. The assignedDateTime property
+// GetAssignedDateTime gets the assignedDateTime property value. Date and time of assignment of the training to the user.
 func (m *UserTrainingStatusInfo) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.assignedDateTime
 }
-// GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
+// GetCompletionDateTime gets the completionDateTime property value. Date and time of completion of the training by the user.
 func (m *UserTrainingStatusInfo) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completionDateTime
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the assigned training.
 func (m *UserTrainingStatusInfo) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -64,7 +64,7 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
 func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTrainingStatus gets the trainingStatus property value. The trainingStatus property
+// GetTrainingStatus gets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
     return m.trainingStatus
 }
@@ -113,15 +113,15 @@ func (m *UserTrainingStatusInfo) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *UserTrainingStatusInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAssignedDateTime sets the assignedDateTime property value. The assignedDateTime property
+// SetAssignedDateTime sets the assignedDateTime property value. Date and time of assignment of the training to the user.
 func (m *UserTrainingStatusInfo) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.assignedDateTime = value
 }
-// SetCompletionDateTime sets the completionDateTime property value. The completionDateTime property
+// SetCompletionDateTime sets the completionDateTime property value. Date and time of completion of the training by the user.
 func (m *UserTrainingStatusInfo) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completionDateTime = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the assigned training.
 func (m *UserTrainingStatusInfo) SetDisplayName(value *string)() {
     m.displayName = value
 }
@@ -129,7 +129,7 @@ func (m *UserTrainingStatusInfo) SetDisplayName(value *string)() {
 func (m *UserTrainingStatusInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTrainingStatus sets the trainingStatus property value. The trainingStatus property
+// SetTrainingStatus sets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
     m.trainingStatus = value
 }

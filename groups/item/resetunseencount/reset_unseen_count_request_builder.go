@@ -42,11 +42,7 @@ func NewResetUnseenCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewResetUnseenCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation reset the unseenCount of all the posts that the current user has not seen since their last visit. Supported for Microsoft 365 groups only.
-func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration reset the unseenCount of all the posts that the current user has not seen since their last visit. Supported for Microsoft 365 groups only.
-func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ResetUnseenCountRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ResetUnseenCountRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ResetUnseenCountRequestBuilder) CreatePostRequestInformationWithRequest
 }
 // Post reset the unseenCount of all the posts that the current user has not seen since their last visit. Supported for Microsoft 365 groups only.
 func (m *ResetUnseenCountRequestBuilder) Post(ctx context.Context, requestConfiguration *ResetUnseenCountRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

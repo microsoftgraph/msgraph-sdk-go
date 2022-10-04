@@ -43,17 +43,13 @@ func NewPlayPromptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewPlayPromptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation play a prompt in the call. For more information about how to handle operations, see commsOperation
-func (m *PlayPromptRequestBuilder) CreatePostRequestInformation(body PlayPromptPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration play a prompt in the call. For more information about how to handle operations, see commsOperation
-func (m *PlayPromptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayPromptPostRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PlayPromptRequestBuilder) CreatePostRequestInformation(ctx context.Context, body PlayPromptPostRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *PlayPromptRequestBuilder) CreatePostRequestInformationWithRequestConfig
 }
 // Post play a prompt in the call. For more information about how to handle operations, see commsOperation
 func (m *PlayPromptRequestBuilder) Post(ctx context.Context, body PlayPromptPostRequestBodyable, requestConfiguration *PlayPromptRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlayPromptOperationable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

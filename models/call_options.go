@@ -9,9 +9,9 @@ import (
 type CallOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The hideBotAfterEscalation property
+    // Indicates whether to hide the app after the call is escalated.
     hideBotAfterEscalation *bool
-    // The isContentSharingNotificationEnabled property
+    // Indicates whether content sharing notifications should be enabled for the call.
     isContentSharingNotificationEnabled *bool
     // The OdataType property
     odataType *string
@@ -61,11 +61,11 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetHideBotAfterEscalation gets the hideBotAfterEscalation property value. The hideBotAfterEscalation property
+// GetHideBotAfterEscalation gets the hideBotAfterEscalation property value. Indicates whether to hide the app after the call is escalated.
 func (m *CallOptions) GetHideBotAfterEscalation()(*bool) {
     return m.hideBotAfterEscalation
 }
-// GetIsContentSharingNotificationEnabled gets the isContentSharingNotificationEnabled property value. The isContentSharingNotificationEnabled property
+// GetIsContentSharingNotificationEnabled gets the isContentSharingNotificationEnabled property value. Indicates whether content sharing notifications should be enabled for the call.
 func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
     return m.isContentSharingNotificationEnabled
 }
@@ -105,11 +105,11 @@ func (m *CallOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *CallOptions) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetHideBotAfterEscalation sets the hideBotAfterEscalation property value. The hideBotAfterEscalation property
+// SetHideBotAfterEscalation sets the hideBotAfterEscalation property value. Indicates whether to hide the app after the call is escalated.
 func (m *CallOptions) SetHideBotAfterEscalation(value *bool)() {
     m.hideBotAfterEscalation = value
 }
-// SetIsContentSharingNotificationEnabled sets the isContentSharingNotificationEnabled property value. The isContentSharingNotificationEnabled property
+// SetIsContentSharingNotificationEnabled sets the isContentSharingNotificationEnabled property value. Indicates whether content sharing notifications should be enabled for the call.
 func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
     m.isContentSharingNotificationEnabled = value
 }

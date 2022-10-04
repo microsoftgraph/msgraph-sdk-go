@@ -9,7 +9,7 @@ import (
 type Entity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The id property
+    // The unique idenfier for an entity. Read-only.
     id *string
     // The OdataType property
     odataType *string
@@ -1228,7 +1228,7 @@ func (m *Entity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The unique idenfier for an entity. Read-only.
 func (m *Entity) GetId()(*string) {
     return m.id
 }
@@ -1262,7 +1262,7 @@ func (m *Entity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 func (m *Entity) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The unique idenfier for an entity. Read-only.
 func (m *Entity) SetId(value *string)() {
     m.id = value
 }

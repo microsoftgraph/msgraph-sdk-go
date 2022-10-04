@@ -42,17 +42,13 @@ func NewAssignRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action assign
-func (m *AssignRequestBuilder) CreatePostRequestInformation(body AssignPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action assign
-func (m *AssignRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignPostRequestBodyable, requestConfiguration *AssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AssignPostRequestBodyable, requestConfiguration *AssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *AssignRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post invoke action assign
 func (m *AssignRequestBuilder) Post(ctx context.Context, body AssignPostRequestBodyable, requestConfiguration *AssignRequestBuilderPostRequestConfiguration)(AssignResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

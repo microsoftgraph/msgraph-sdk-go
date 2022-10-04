@@ -42,11 +42,7 @@ func NewCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get the number of the resource
-func (m *CountRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the number of the resource
-func (m *CountRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CountRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *CountRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
 }
 // Get get the number of the resource
 func (m *CountRequestBuilder) Get(ctx context.Context, requestConfiguration *CountRequestBuilderGetRequestConfiguration)(*int32, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

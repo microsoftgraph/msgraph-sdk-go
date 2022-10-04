@@ -8,7 +8,7 @@ import (
 // ConditionalAccessRoot 
 type ConditionalAccessRoot struct {
     Entity
-    // The authenticationContextClassReferences property
+    // Read-only. Nullable. Returns a collection of the specified authentication context class references.
     authenticationContextClassReferences []AuthenticationContextClassReferenceable
     // Read-only. Nullable. Returns a collection of the specified named locations.
     namedLocations []NamedLocationable
@@ -28,7 +28,7 @@ func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
 func CreateConditionalAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessRoot(), nil
 }
-// GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. The authenticationContextClassReferences property
+// GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable) {
     return m.authenticationContextClassReferences
 }
@@ -77,7 +77,7 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. The authenticationContextClassReferences property
+// SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *ConditionalAccessRoot) SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)() {
     m.authenticationContextClassReferences = value
 }

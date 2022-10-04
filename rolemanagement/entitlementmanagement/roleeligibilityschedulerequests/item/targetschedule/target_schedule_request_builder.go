@@ -52,11 +52,7 @@ func NewTargetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewTargetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
-func (m *TargetScheduleRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
-func (m *TargetScheduleRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TargetScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TargetScheduleRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TargetScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TargetScheduleRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get the schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
 func (m *TargetScheduleRequestBuilder) Get(ctx context.Context, requestConfiguration *TargetScheduleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

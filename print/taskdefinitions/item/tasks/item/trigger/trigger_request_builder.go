@@ -52,11 +52,7 @@ func NewTriggerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewTriggerRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the printTaskTrigger that triggered this task's execution. Read-only.
-func (m *TriggerRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the printTaskTrigger that triggered this task's execution. Read-only.
-func (m *TriggerRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TriggerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TriggerRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TriggerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TriggerRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
 }
 // Get the printTaskTrigger that triggered this task's execution. Read-only.
 func (m *TriggerRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggerRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskTriggerable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

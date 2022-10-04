@@ -43,17 +43,13 @@ func NewUpdateRecordingStatusRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewUpdateRecordingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
-func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformation(body UpdateRecordingStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
-func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateRecordingStatusPostRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformation(ctx context.Context, body UpdateRecordingStatusPostRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformationWithRe
 }
 // Post update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
 func (m *UpdateRecordingStatusRequestBuilder) Post(ctx context.Context, body UpdateRecordingStatusPostRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UpdateRecordingStatusOperationable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -49,11 +49,7 @@ func NewAttendeeReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewAttendeeReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
-func (m *AttendeeReportRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the content stream of the attendee report of a Microsoft Teams live event. Read-only.
-func (m *AttendeeReportRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttendeeReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttendeeReportRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AttendeeReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *AttendeeReportRequestBuilder) CreateGetRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // CreatePutRequestInformation the content stream of the attendee report of a Microsoft Teams live event. Read-only.
-func (m *AttendeeReportRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration the content stream of the attendee report of a Microsoft Teams live event. Read-only.
-func (m *AttendeeReportRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *AttendeeReportRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttendeeReportRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *AttendeeReportRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *AttendeeReportRequestBuilder) CreatePutRequestInformationWithRequestCon
 }
 // Get the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *AttendeeReportRequestBuilder) Get(ctx context.Context, requestConfiguration *AttendeeReportRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *AttendeeReportRequestBuilder) Get(ctx context.Context, requestConfigura
 }
 // Put the content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *AttendeeReportRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *AttendeeReportRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

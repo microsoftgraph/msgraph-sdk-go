@@ -79,11 +79,7 @@ func (m *MembersWithLicenseErrorsRequestBuilder) Count()(*ia742a37f75ffa85a15c52
     return ia742a37f75ffa85a15c52758b54a8cfbacdcae12597cc38b77fd0f412aaa1e32.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
-func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration a list of group members with license errors from this group-based license assignment. Read-only.
-func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -104,7 +100,7 @@ func (m *MembersWithLicenseErrorsRequestBuilder) Device()(*i44b96843de9edb7831fe
 }
 // Get a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *MembersWithLicenseErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

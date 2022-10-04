@@ -9,17 +9,17 @@ import (
 type UserTrainingEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The displayName property
+    // Display name of the training.
     displayName *string
-    // The latestTrainingStatus property
+    // Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     latestTrainingStatus *TrainingStatus
     // The OdataType property
     odataType *string
-    // The trainingAssignedProperties property
+    // Event details of the training when it was assigned to the user.
     trainingAssignedProperties UserTrainingContentEventInfoable
-    // The trainingCompletedProperties property
+    // Event details of the training when it was completed by the user.
     trainingCompletedProperties UserTrainingContentEventInfoable
-    // The trainingUpdatedProperties property
+    // Event details of the training when it was updated/in-progress by the user.
     trainingUpdatedProperties UserTrainingContentEventInfoable
 }
 // NewUserTrainingEventInfo instantiates a new userTrainingEventInfo and sets the default values.
@@ -39,7 +39,7 @@ func CreateUserTrainingEventInfoFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *UserTrainingEventInfo) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -54,7 +54,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d
     res["trainingUpdatedProperties"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserTrainingContentEventInfoFromDiscriminatorValue , m.SetTrainingUpdatedProperties)
     return res
 }
-// GetLatestTrainingStatus gets the latestTrainingStatus property value. The latestTrainingStatus property
+// GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
     return m.latestTrainingStatus
 }
@@ -62,15 +62,15 @@ func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
 func (m *UserTrainingEventInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTrainingAssignedProperties gets the trainingAssignedProperties property value. The trainingAssignedProperties property
+// GetTrainingAssignedProperties gets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) GetTrainingAssignedProperties()(UserTrainingContentEventInfoable) {
     return m.trainingAssignedProperties
 }
-// GetTrainingCompletedProperties gets the trainingCompletedProperties property value. The trainingCompletedProperties property
+// GetTrainingCompletedProperties gets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) GetTrainingCompletedProperties()(UserTrainingContentEventInfoable) {
     return m.trainingCompletedProperties
 }
-// GetTrainingUpdatedProperties gets the trainingUpdatedProperties property value. The trainingUpdatedProperties property
+// GetTrainingUpdatedProperties gets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) GetTrainingUpdatedProperties()(UserTrainingContentEventInfoable) {
     return m.trainingUpdatedProperties
 }
@@ -125,11 +125,11 @@ func (m *UserTrainingEventInfo) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *UserTrainingEventInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetLatestTrainingStatus sets the latestTrainingStatus property value. The latestTrainingStatus property
+// SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
     m.latestTrainingStatus = value
 }
@@ -137,15 +137,15 @@ func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)()
 func (m *UserTrainingEventInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTrainingAssignedProperties sets the trainingAssignedProperties property value. The trainingAssignedProperties property
+// SetTrainingAssignedProperties sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) SetTrainingAssignedProperties(value UserTrainingContentEventInfoable)() {
     m.trainingAssignedProperties = value
 }
-// SetTrainingCompletedProperties sets the trainingCompletedProperties property value. The trainingCompletedProperties property
+// SetTrainingCompletedProperties sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) SetTrainingCompletedProperties(value UserTrainingContentEventInfoable)() {
     m.trainingCompletedProperties = value
 }
-// SetTrainingUpdatedProperties sets the trainingUpdatedProperties property value. The trainingUpdatedProperties property
+// SetTrainingUpdatedProperties sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) SetTrainingUpdatedProperties(value UserTrainingContentEventInfoable)() {
     m.trainingUpdatedProperties = value
 }

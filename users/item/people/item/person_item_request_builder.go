@@ -50,11 +50,7 @@ func NewPersonItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewPersonItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation people that are relevant to the user. Read-only. Nullable.
-func (m *PersonItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration people that are relevant to the user. Read-only. Nullable.
-func (m *PersonItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PersonItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PersonItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PersonItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -71,7 +67,7 @@ func (m *PersonItemRequestBuilder) CreateGetRequestInformationWithRequestConfigu
 }
 // Get people that are relevant to the user. Read-only. Nullable.
 func (m *PersonItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PersonItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Personable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

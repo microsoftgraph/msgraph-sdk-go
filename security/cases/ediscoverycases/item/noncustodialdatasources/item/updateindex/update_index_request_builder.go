@@ -42,11 +42,7 @@ func NewUpdateIndexRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewUpdateIndexRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
-func (m *UpdateIndexRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
-func (m *UpdateIndexRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UpdateIndexRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateIndexRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UpdateIndexRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *UpdateIndexRequestBuilder) CreatePostRequestInformationWithRequestConfi
 }
 // Post trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
 func (m *UpdateIndexRequestBuilder) Post(ctx context.Context, requestConfiguration *UpdateIndexRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

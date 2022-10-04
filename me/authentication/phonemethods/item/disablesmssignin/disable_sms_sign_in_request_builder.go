@@ -42,11 +42,7 @@ func NewDisableSmsSignInRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewDisableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation disable SMS sign-in for an existing `mobile` phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
-func (m *DisableSmsSignInRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration disable SMS sign-in for an existing `mobile` phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
-func (m *DisableSmsSignInRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *DisableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DisableSmsSignInRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DisableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *DisableSmsSignInRequestBuilder) CreatePostRequestInformationWithRequest
 }
 // Post disable SMS sign-in for an existing `mobile` phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
 func (m *DisableSmsSignInRequestBuilder) Post(ctx context.Context, requestConfiguration *DisableSmsSignInRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

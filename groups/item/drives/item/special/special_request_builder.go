@@ -69,11 +69,7 @@ func (m *SpecialRequestBuilder) Count()(*i657f148939ddffbd03abce4d3965647b1ccfbe
     return i657f148939ddffbd03abce4d3965647b1ccfbeb3d58cd724f40f5df624b80581.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
-func (m *SpecialRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration collection of common folders available in OneDrive. Read-only. Nullable.
-func (m *SpecialRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SpecialRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SpecialRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SpecialRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SpecialRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
 }
 // Get collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *SpecialRequestBuilder) Get(ctx context.Context, requestConfiguration *SpecialRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

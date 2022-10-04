@@ -42,11 +42,7 @@ func NewRestoreFactoryDefaultsRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewRestoreFactoryDefaultsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation restore a printer's default settings to the values specified by the manufacturer.
-func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration restore a printer's default settings to the values specified by the manufacturer.
-func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformationWithR
 }
 // Post restore a printer's default settings to the values specified by the manufacturer.
 func (m *RestoreFactoryDefaultsRequestBuilder) Post(ctx context.Context, requestConfiguration *RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

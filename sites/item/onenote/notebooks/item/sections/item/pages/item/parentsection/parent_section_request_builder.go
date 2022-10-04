@@ -52,11 +52,7 @@ func NewParentSectionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewParentSectionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ParentSectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ParentSectionRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ParentSectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ParentSectionRequestBuilder) CreateGetRequestInformationWithRequestConf
 }
 // Get the section that contains the page. Read-only.
 func (m *ParentSectionRequestBuilder) Get(ctx context.Context, requestConfiguration *ParentSectionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

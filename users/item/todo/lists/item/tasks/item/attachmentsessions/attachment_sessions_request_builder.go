@@ -65,11 +65,7 @@ func (m *AttachmentSessionsRequestBuilder) Count()(*if210382f89c9e0318fd4bdac824
     return if210382f89c9e0318fd4bdac8246a7a54eeb1302007b11a656496a823ddc785a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get attachmentSessions from users
-func (m *AttachmentSessionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get attachmentSessions from users
-func (m *AttachmentSessionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AttachmentSessionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AttachmentSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -86,7 +82,7 @@ func (m *AttachmentSessionsRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get get attachmentSessions from users
 func (m *AttachmentSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentSessionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentSessionCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
