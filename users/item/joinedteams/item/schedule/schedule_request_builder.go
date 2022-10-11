@@ -58,8 +58,8 @@ type ScheduleRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ScheduleRequestBuilderGetQueryParameters
 }
-// ScheduleRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ScheduleRequestBuilderPatchRequestConfiguration struct {
+// ScheduleRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ScheduleRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
@@ -112,12 +112,12 @@ func (m *ScheduleRequestBuilder) CreateGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property schedule in users
-func (m *ScheduleRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, requestConfiguration *ScheduleRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation update the navigation property schedule in users
+func (m *ScheduleRequestBuilder) CreatePutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, requestConfiguration *ScheduleRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
@@ -206,9 +206,9 @@ func (m *ScheduleRequestBuilder) OpenShiftsById(id string)(*i78242729c849fb24be5
     }
     return i78242729c849fb24be50e8793396cac5a437ebdcd77f00949f3f62b2d7bab779.NewOpenShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update the navigation property schedule in users
-func (m *ScheduleRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, requestConfiguration *ScheduleRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, error) {
-    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
+// Put update the navigation property schedule in users
+func (m *ScheduleRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, requestConfiguration *ScheduleRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, error) {
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

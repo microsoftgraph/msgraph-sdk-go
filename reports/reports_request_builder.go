@@ -21,6 +21,7 @@ import (
     i13fef70f90226be585263be7022fe29fa384901ba2188c080017c9272ca23e99 "github.com/microsoftgraph/msgraph-sdk-go/reports/getyammeractivityusercountswithperiod"
     i1bfeeda14fdcd3c4bc1c9b02a4d925837c77654498184deaffbfeb8f496c10c5 "github.com/microsoftgraph/msgraph-sdk-go/reports/getsharepointactivityfilecountswithperiod"
     i1ccdf78d8963c250d79813dd0917eaaaee794135fc39e35801b01ea5f2005034 "github.com/microsoftgraph/msgraph-sdk-go/reports/getonedriveactivityusercountswithperiod"
+    i1d4731cdb4991f39251caf5d5cbcc8c68036c8b25a8c59c7ee8b24f06ba15ead "github.com/microsoftgraph/msgraph-sdk-go/reports/getm365appuserdetailwithperiod"
     i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed "github.com/microsoftgraph/msgraph-sdk-go/reports/dailyprintusagebyuser"
     i200c880280f3a34037634650d2cd9969f9a07037f773af21ebb6141e40dde23b "github.com/microsoftgraph/msgraph-sdk-go/reports/getskypeforbusinesspeertopeeractivitycountswithperiod"
     i21ef6a6d7bc99608d2279d5cc2343f5300ae76d3d739202a0c1bc4ff2d13a391 "github.com/microsoftgraph/msgraph-sdk-go/reports/getoffice365groupsactivityfilecountswithperiod"
@@ -65,6 +66,7 @@ import (
     i6e8f025e6b5802865cf6c583d64d93f7e1c603ead045ca53bef1f6b9cde8a5b0 "github.com/microsoftgraph/msgraph-sdk-go/reports/getskypeforbusinessparticipantactivitycountswithperiod"
     i6edf15eaf951cb8d179890d37ee652592111a5bfeb9fd5709d3609c7593bed81 "github.com/microsoftgraph/msgraph-sdk-go/reports/getoffice365activeuserdetailwithperiod"
     i700e0ab2f1ea334038b3293b2396e12432ea3545b07ed127bb12d122bbb6bf90 "github.com/microsoftgraph/msgraph-sdk-go/reports/getmailboxusagemailboxcountswithperiod"
+    i753582442e8209033f45d1a367493028141a79145904e5dbd0343dc59d62d8c9 "github.com/microsoftgraph/msgraph-sdk-go/reports/getm365appuserdetailwithdate"
     i75a65b7f6cf316241684f8aeba4d08fb2c2e04274ef9390b6003ff2a3fe87418 "github.com/microsoftgraph/msgraph-sdk-go/reports/getonedriveusageaccountcountswithperiod"
     i7774a89bdd2b6bc2f70c1e7c58f236fd1f3aa68a40a72db4898fd9c5d4f66988 "github.com/microsoftgraph/msgraph-sdk-go/reports/getoffice365groupsactivitydetailwithperiod"
     i7c11427d5ee6b6eb1e984b209bd6cb9cd7704d1573048256590bf48fe10c95c2 "github.com/microsoftgraph/msgraph-sdk-go/reports/getemailappusageappsusercountswithperiod"
@@ -94,6 +96,7 @@ import (
     id7d2a94ac1ea97cc24d2cd9cb47182b168535107d0d09ad275c4e955f417e029 "github.com/microsoftgraph/msgraph-sdk-go/reports/getyammeractivityuserdetailwithdate"
     idcca069eb97aac5c90ca4ddb83fee2301a14619967cfdadbb5d0a81effc5cc59 "github.com/microsoftgraph/msgraph-sdk-go/reports/getskypeforbusinessparticipantactivityminutecountswithperiod"
     ie49c06630ffed10bc5667592819d2e6ba25594d178187e0c69a98a6cc5ca2e88 "github.com/microsoftgraph/msgraph-sdk-go/reports/getemailappusageuserdetailwithdate"
+    ie603b5f7e630bd6d2e83589da6d79d43b190e1d4c7fc28656991ffe48fca4828 "github.com/microsoftgraph/msgraph-sdk-go/reports/getm365appplatformusercountswithperiod"
     ie6b56eee43945ce24ada2464a67b7217385822eb4143ed753098debeb7fa82eb "github.com/microsoftgraph/msgraph-sdk-go/reports/getemailactivityuserdetailwithperiod"
     iec7256d00a8e37c8dec628d1626f62f1224b45c25e3c24418830b8fede7bc006 "github.com/microsoftgraph/msgraph-sdk-go/reports/getonedriveactivityfilecountswithperiod"
     ieef21740e587e5f9d695c0f6753ee2fd4da00a0ced4e73355cae511e81a4e3cf "github.com/microsoftgraph/msgraph-sdk-go/reports/getemailactivitycountswithperiod"
@@ -101,6 +104,7 @@ import (
     if97af71691601e0f0046051c8e82fb71f8db2f1d3b5f8e7e40346d3fa47b196f "github.com/microsoftgraph/msgraph-sdk-go/reports/getonedriveusagestoragewithperiod"
     if97f8cb01f2d6a02697169f75d571d9a67fc56f2041590c23f83bf2114377bda "github.com/microsoftgraph/msgraph-sdk-go/reports/getyammerdeviceusageuserdetailwithdate"
     ifb70744a42eac9e3054301d8328a61f22ab480c9dcaaaa3f398cf2a26e1b242b "github.com/microsoftgraph/msgraph-sdk-go/reports/getoffice365groupsactivitycountswithperiod"
+    ifd36d48788fa091c2ebd9158094174f0f9a871398672c26de206aab3755cc266 "github.com/microsoftgraph/msgraph-sdk-go/reports/getm365appusercountswithperiod"
     ifd45221e0ff465bb6f37fa740578c697634181cf333e3c01e4db49019e2ba5eb "github.com/microsoftgraph/msgraph-sdk-go/reports/getyammeractivitycountswithperiod"
     ife6d24553cc77853635c06a75c3587d7c978531be356ad656116b7742f60e1f7 "github.com/microsoftgraph/msgraph-sdk-go/reports/getonedriveactivityuserdetailwithdate"
     ife99981e20f3609c2111e3e2aff666b997075ba1e7c98ff44f1950f1d6265ccb "github.com/microsoftgraph/msgraph-sdk-go/reports/getteamsdeviceusageusercountswithperiod"
@@ -287,6 +291,22 @@ func (m *ReportsRequestBuilder) GetEmailAppUsageVersionsUserCountsWithPeriod(per
 // GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime provides operations to call the getGroupArchivedPrintJobs method.
 func (m *ReportsRequestBuilder) GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, groupId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i39400581189e192e8c3927b2ac378c799b30d5cb2c7a932a3e2f9802d2a2f95d.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return i39400581189e192e8c3927b2ac378c799b30d5cb2c7a932a3e2f9802d2a2f95d.NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, groupId, startDateTime);
+}
+// GetM365AppPlatformUserCountsWithPeriod provides operations to call the getM365AppPlatformUserCounts method.
+func (m *ReportsRequestBuilder) GetM365AppPlatformUserCountsWithPeriod(period *string)(*ie603b5f7e630bd6d2e83589da6d79d43b190e1d4c7fc28656991ffe48fca4828.GetM365AppPlatformUserCountsWithPeriodRequestBuilder) {
+    return ie603b5f7e630bd6d2e83589da6d79d43b190e1d4c7fc28656991ffe48fca4828.NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// GetM365AppUserCountsWithPeriod provides operations to call the getM365AppUserCounts method.
+func (m *ReportsRequestBuilder) GetM365AppUserCountsWithPeriod(period *string)(*ifd36d48788fa091c2ebd9158094174f0f9a871398672c26de206aab3755cc266.GetM365AppUserCountsWithPeriodRequestBuilder) {
+    return ifd36d48788fa091c2ebd9158094174f0f9a871398672c26de206aab3755cc266.NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// GetM365AppUserDetailWithDate provides operations to call the getM365AppUserDetail method.
+func (m *ReportsRequestBuilder) GetM365AppUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i753582442e8209033f45d1a367493028141a79145904e5dbd0343dc59d62d8c9.GetM365AppUserDetailWithDateRequestBuilder) {
+    return i753582442e8209033f45d1a367493028141a79145904e5dbd0343dc59d62d8c9.NewGetM365AppUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// GetM365AppUserDetailWithPeriod provides operations to call the getM365AppUserDetail method.
+func (m *ReportsRequestBuilder) GetM365AppUserDetailWithPeriod(period *string)(*i1d4731cdb4991f39251caf5d5cbcc8c68036c8b25a8c59c7ee8b24f06ba15ead.GetM365AppUserDetailWithPeriodRequestBuilder) {
+    return i1d4731cdb4991f39251caf5d5cbcc8c68036c8b25a8c59c7ee8b24f06ba15ead.NewGetM365AppUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetMailboxUsageDetailWithPeriod provides operations to call the getMailboxUsageDetail method.
 func (m *ReportsRequestBuilder) GetMailboxUsageDetailWithPeriod(period *string)(*i61a78ce1e0b6e2e60e6d50fe39c731a201868c12c59871387bf62c67fa03cc24.GetMailboxUsageDetailWithPeriodRequestBuilder) {

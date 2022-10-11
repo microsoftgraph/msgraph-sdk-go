@@ -30,6 +30,8 @@ type BookingBusiness struct {
     email *string
     // The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
     isPublished *bool
+    // The languageTag property
+    languageTag *string
     // The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
     phone *string
     // The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
@@ -110,6 +112,7 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["email"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEmail)
     res["isPublished"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsPublished)
+    res["languageTag"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLanguageTag)
     res["phone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPhone)
     res["publicUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPublicUrl)
     res["schedulingPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateBookingSchedulingPolicyFromDiscriminatorValue , m.SetSchedulingPolicy)
@@ -121,6 +124,10 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 // GetIsPublished gets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
 func (m *BookingBusiness) GetIsPublished()(*bool) {
     return m.isPublished
+}
+// GetLanguageTag gets the languageTag property value. The languageTag property
+func (m *BookingBusiness) GetLanguageTag()(*string) {
+    return m.languageTag
 }
 // GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) GetPhone()(*string) {
@@ -218,6 +225,12 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("phone", m.GetPhone())
         if err != nil {
             return err
@@ -294,6 +307,10 @@ func (m *BookingBusiness) SetEmail(value *string)() {
 // SetIsPublished sets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
 func (m *BookingBusiness) SetIsPublished(value *bool)() {
     m.isPublished = value
+}
+// SetLanguageTag sets the languageTag property value. The languageTag property
+func (m *BookingBusiness) SetLanguageTag(value *string)() {
+    m.languageTag = value
 }
 // SetPhone sets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetPhone(value *string)() {

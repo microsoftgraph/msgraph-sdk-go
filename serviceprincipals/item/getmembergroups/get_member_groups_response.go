@@ -3,33 +3,29 @@ package getmembergroups
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
 // GetMemberGroupsResponse provides operations to call the getMemberGroups method.
 type GetMemberGroupsResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
     // The value property
     value []string
 }
 // NewGetMemberGroupsResponse instantiates a new getMemberGroupsResponse and sets the default values.
 func NewGetMemberGroupsResponse()(*GetMemberGroupsResponse) {
     m := &GetMemberGroupsResponse{
+        BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),
     }
-    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGetMemberGroupsResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGetMemberGroupsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetMemberGroupsResponse(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetMemberGroupsResponse) GetAdditionalData()(map[string]interface{}) {
-    return m.additionalData
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetMemberGroupsResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetValue)
     return res
 }
@@ -39,23 +35,17 @@ func (m *GetMemberGroupsResponse) GetValue()([]string) {
 }
 // Serialize serializes information the current object
 func (m *GetMemberGroupsResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetValue() != nil {
-        err := writer.WriteCollectionOfStringValues("value", m.GetValue())
-        if err != nil {
-            return err
-        }
+    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+    if err != nil {
+        return err
     }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+    if m.GetValue() != nil {
+        err = writer.WriteCollectionOfStringValues("value", m.GetValue())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetMemberGroupsResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
 }
 // SetValue sets the value property value. The value property
 func (m *GetMemberGroupsResponse) SetValue(value []string)() {

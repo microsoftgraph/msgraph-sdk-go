@@ -53,7 +53,7 @@ type Team struct {
     specialization *TeamSpecialization
     // The summary property
     summary TeamSummaryable
-    // The tags property
+    // The tags associated with the team.
     tags []TeamworkTagable
     // The template this team was created from. See available templates.
     template TeamsTemplateable
@@ -197,7 +197,7 @@ func (m *Team) GetSpecialization()(*TeamSpecialization) {
 func (m *Team) GetSummary()(TeamSummaryable) {
     return m.summary
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. The tags associated with the team.
 func (m *Team) GetTags()([]TeamworkTagable) {
     return m.tags
 }
@@ -484,7 +484,7 @@ func (m *Team) SetSpecialization(value *TeamSpecialization)() {
 func (m *Team) SetSummary(value TeamSummaryable)() {
     m.summary = value
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. The tags associated with the team.
 func (m *Team) SetTags(value []TeamworkTagable)() {
     m.tags = value
 }

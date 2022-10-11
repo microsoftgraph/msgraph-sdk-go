@@ -19,6 +19,7 @@ import (
     i9daab2b0b5282b9d8617504ab740c1b4eeb654e8993c10684911865beb7f6513 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/devicecategory"
     ia76862a49870b0532e8c4b374ba7384c2818ea7114ca76a78ad21e98b0c92501 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/locatedevice"
     iad89fd53db2b505c2f511349b0beb9bdda197521ce058a20d54d9f5a00f41230 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/wipe"
+    ib6f3d272b640361ab70ab361d75bbbcd3009458c8853a93188c3a1a2a636b702 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/users"
     ic645e4837ba91a567171d12c28ba82eb15a0c5ba22dfc84e46d5174771406adc "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/windowsdefenderscan"
     ic9510153a0140fff3d042d83894479343cdd52e080d68ae1293f3eb456c459e3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/resetpasscode"
     icb15920be1a61530593e35306720a47cfee2b31808ee7b11ef7d482703361e75 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/rebootnow"
@@ -277,6 +278,10 @@ func (m *ManagedDeviceItemRequestBuilder) SyncDevice()(*i94ba78e1d9aea49972909e0
 // UpdateWindowsDeviceAccount the updateWindowsDeviceAccount property
 func (m *ManagedDeviceItemRequestBuilder) UpdateWindowsDeviceAccount()(*i2b3c6b981da171994b1b46a7294676fb6bdc0c93bb24e519dd1306595ead2c80.UpdateWindowsDeviceAccountRequestBuilder) {
     return i2b3c6b981da171994b1b46a7294676fb6bdc0c93bb24e519dd1306595ead2c80.NewUpdateWindowsDeviceAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Users the users property
+func (m *ManagedDeviceItemRequestBuilder) Users()(*ib6f3d272b640361ab70ab361d75bbbcd3009458c8853a93188c3a1a2a636b702.UsersRequestBuilder) {
+    return ib6f3d272b640361ab70ab361d75bbbcd3009458c8853a93188c3a1a2a636b702.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsDefenderScan the windowsDefenderScan property
 func (m *ManagedDeviceItemRequestBuilder) WindowsDefenderScan()(*ic645e4837ba91a567171d12c28ba82eb15a0c5ba22dfc84e46d5174771406adc.WindowsDefenderScanRequestBuilder) {

@@ -15,7 +15,7 @@ type DirectoryAudit struct {
     activityDisplayName *string
     // Indicates additional details on the activity.
     additionalDetails []KeyValueable
-    // Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
+    // Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
     category *string
     // Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
     correlationId *string
@@ -57,7 +57,7 @@ func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
 func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValueable) {
     return m.additionalDetails
 }
-// GetCategory gets the category property value. Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
+// GetCategory gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
 func (m *DirectoryAudit) GetCategory()(*string) {
     return m.category
 }
@@ -194,7 +194,7 @@ func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
 func (m *DirectoryAudit) SetAdditionalDetails(value []KeyValueable)() {
     m.additionalDetails = value
 }
-// SetCategory sets the category property value. Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
+// SetCategory sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
 func (m *DirectoryAudit) SetCategory(value *string)() {
     m.category = value
 }

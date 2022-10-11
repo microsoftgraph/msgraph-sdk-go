@@ -15,6 +15,10 @@ type ApplePushNotificationCertificate struct {
     certificate *string
     // Certificate serial number. This property is read-only.
     certificateSerialNumber *string
+    // The reason the certificate upload failed.
+    certificateUploadFailureReason *string
+    // The certificate upload status.
+    certificateUploadStatus *string
     // The expiration date and time for Apple push notification certificate.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last modified date and time for Apple push notification certificate.
@@ -47,6 +51,14 @@ func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
 func (m *ApplePushNotificationCertificate) GetCertificateSerialNumber()(*string) {
     return m.certificateSerialNumber
 }
+// GetCertificateUploadFailureReason gets the certificateUploadFailureReason property value. The reason the certificate upload failed.
+func (m *ApplePushNotificationCertificate) GetCertificateUploadFailureReason()(*string) {
+    return m.certificateUploadFailureReason
+}
+// GetCertificateUploadStatus gets the certificateUploadStatus property value. The certificate upload status.
+func (m *ApplePushNotificationCertificate) GetCertificateUploadStatus()(*string) {
+    return m.certificateUploadStatus
+}
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expirationDateTime
@@ -57,6 +69,8 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
     res["appleIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAppleIdentifier)
     res["certificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificate)
     res["certificateSerialNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateSerialNumber)
+    res["certificateUploadFailureReason"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateUploadFailureReason)
+    res["certificateUploadStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateUploadStatus)
     res["expirationDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetExpirationDateTime)
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
     res["topicIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTopicIdentifier)
@@ -84,6 +98,18 @@ func (m *ApplePushNotificationCertificate) Serialize(writer i878a80d2330e89d2689
     }
     {
         err = writer.WriteStringValue("certificate", m.GetCertificate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("certificateUploadFailureReason", m.GetCertificateUploadFailureReason())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("certificateUploadStatus", m.GetCertificateUploadStatus())
         if err != nil {
             return err
         }
@@ -119,6 +145,14 @@ func (m *ApplePushNotificationCertificate) SetCertificate(value *string)() {
 // SetCertificateSerialNumber sets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
 func (m *ApplePushNotificationCertificate) SetCertificateSerialNumber(value *string)() {
     m.certificateSerialNumber = value
+}
+// SetCertificateUploadFailureReason sets the certificateUploadFailureReason property value. The reason the certificate upload failed.
+func (m *ApplePushNotificationCertificate) SetCertificateUploadFailureReason(value *string)() {
+    m.certificateUploadFailureReason = value
+}
+// SetCertificateUploadStatus sets the certificateUploadStatus property value. The certificate upload status.
+func (m *ApplePushNotificationCertificate) SetCertificateUploadStatus(value *string)() {
+    m.certificateUploadStatus = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

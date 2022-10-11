@@ -14,6 +14,8 @@ type BookingStaffMember struct {
     displayName *string
     // The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
     emailAddress *string
+    // The isEmailNotificationEnabled property
+    isEmailNotificationEnabled *bool
     // The role property
     role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
@@ -54,11 +56,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
     res["availabilityIsAffectedByPersonalCalendar"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAvailabilityIsAffectedByPersonalCalendar)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["emailAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEmailAddress)
+    res["isEmailNotificationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsEmailNotificationEnabled)
     res["role"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseBookingStaffRole , m.SetRole)
     res["timeZone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTimeZone)
     res["useBusinessHours"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseBusinessHours)
     res["workingHours"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue , m.SetWorkingHours)
     return res
+}
+// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
+    return m.isEmailNotificationEnabled
 }
 // GetRole gets the role property value. The role property
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
@@ -96,6 +103,12 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("emailAddress", m.GetEmailAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isEmailNotificationEnabled", m.GetIsEmailNotificationEnabled())
         if err != nil {
             return err
         }
@@ -139,6 +152,10 @@ func (m *BookingStaffMember) SetDisplayName(value *string)() {
 // SetEmailAddress sets the emailAddress property value. The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
 func (m *BookingStaffMember) SetEmailAddress(value *string)() {
     m.emailAddress = value
+}
+// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
+    m.isEmailNotificationEnabled = value
 }
 // SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {

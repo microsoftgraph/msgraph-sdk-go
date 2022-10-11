@@ -17,7 +17,7 @@ type MembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MembersRequestBuilderGetQueryParameters get members from groups
+// MembersRequestBuilderGetQueryParameters get a list of the members of a standard tag in a team and their properties.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *MembersRequestBuilder) Count()(*if67acc8e50edc7e0e2a94c119fcd035b75f2be8f5a25db8fb262cedfcb4af208.CountRequestBuilder) {
     return if67acc8e50edc7e0e2a94c119fcd035b75f2be8f5a25db8fb262cedfcb4af208.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get members from groups
+// CreateGetRequestInformation get a list of the members of a standard tag in a team and their properties.
 func (m *MembersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *MembersRequestBuilder) CreateGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to members for groups
+// CreatePostRequestInformation create a new teamworkTagMember object in a team.
 func (m *MembersRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *MembersRequestBuilder) CreatePostRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// Get get members from groups
+// Get get a list of the members of a standard tag in a team and their properties.
 func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *M
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberCollectionResponseable), nil
 }
-// Post create new navigation property to members for groups
+// Post create a new teamworkTagMember object in a team.
 func (m *MembersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

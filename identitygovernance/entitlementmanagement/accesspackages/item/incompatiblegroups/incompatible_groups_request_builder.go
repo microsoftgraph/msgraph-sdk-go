@@ -18,7 +18,7 @@ type IncompatibleGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncompatibleGroupsRequestBuilderGetQueryParameters get incompatibleGroups from identityGovernance
+// IncompatibleGroupsRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 type IncompatibleGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewIncompatibleGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *IncompatibleGroupsRequestBuilder) Count()(*ibba12159ded5828fb15c5a15642da6ffb7a332123249af9cd4f09214004f8c30.CountRequestBuilder) {
     return ibba12159ded5828fb15c5a15642da6ffb7a332123249af9cd4f09214004f8c30.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get incompatibleGroups from identityGovernance
+// CreateGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -85,7 +85,7 @@ func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// Get get incompatibleGroups from identityGovernance
+// Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
