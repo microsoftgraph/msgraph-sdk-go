@@ -79,6 +79,8 @@ type ManagedDevice struct {
     managedDeviceOwnerType *ManagedDeviceOwnerType
     // The managementAgent property
     managementAgent *ManagementAgentType
+    // Reports device management certificate expiration date. This property is read-only.
+    managementCertificateExpirationDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Manufacturer of the device. This property is read-only.
     manufacturer *string
     // MEID. This property is read-only.
@@ -101,6 +103,8 @@ type ManagedDevice struct {
     remoteAssistanceSessionErrorDetails *string
     // Url that allows a Remote Assistance session to be established with the device. This property is read-only.
     remoteAssistanceSessionUrl *string
+    // Reports if the managed iOS device is user approval enrollment. This property is read-only.
+    requireUserEnrollmentApproval *bool
     // SerialNumber. This property is read-only.
     serialNumber *string
     // Subscriber Carrier. This property is read-only.
@@ -115,6 +119,8 @@ type ManagedDevice struct {
     userId *string
     // Device user principal name. This property is read-only.
     userPrincipalName *string
+    // The primary users associated with the managed device.
+    users []Userable
     // Wi-Fi MAC. This property is read-only.
     wiFiMacAddress *string
 }
@@ -269,6 +275,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["managedDeviceName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetManagedDeviceName)
     res["managedDeviceOwnerType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedDeviceOwnerType , m.SetManagedDeviceOwnerType)
     res["managementAgent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagementAgentType , m.SetManagementAgent)
+    res["managementCertificateExpirationDate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetManagementCertificateExpirationDate)
     res["manufacturer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetManufacturer)
     res["meid"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMeid)
     res["model"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetModel)
@@ -280,6 +287,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["physicalMemoryInBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetPhysicalMemoryInBytes)
     res["remoteAssistanceSessionErrorDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRemoteAssistanceSessionErrorDetails)
     res["remoteAssistanceSessionUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRemoteAssistanceSessionUrl)
+    res["requireUserEnrollmentApproval"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequireUserEnrollmentApproval)
     res["serialNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSerialNumber)
     res["subscriberCarrier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSubscriberCarrier)
     res["totalStorageSpaceInBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetTotalStorageSpaceInBytes)
@@ -287,6 +295,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["userDisplayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUserDisplayName)
     res["userId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUserId)
     res["userPrincipalName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUserPrincipalName)
+    res["users"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserFromDiscriminatorValue , m.SetUsers)
     res["wiFiMacAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWiFiMacAddress)
     return res
 }
@@ -329,6 +338,10 @@ func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
 // GetManagementAgent gets the managementAgent property value. The managementAgent property
 func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     return m.managementAgent
+}
+// GetManagementCertificateExpirationDate gets the managementCertificateExpirationDate property value. Reports device management certificate expiration date. This property is read-only.
+func (m *ManagedDevice) GetManagementCertificateExpirationDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.managementCertificateExpirationDate
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer of the device. This property is read-only.
 func (m *ManagedDevice) GetManufacturer()(*string) {
@@ -374,6 +387,10 @@ func (m *ManagedDevice) GetRemoteAssistanceSessionErrorDetails()(*string) {
 func (m *ManagedDevice) GetRemoteAssistanceSessionUrl()(*string) {
     return m.remoteAssistanceSessionUrl
 }
+// GetRequireUserEnrollmentApproval gets the requireUserEnrollmentApproval property value. Reports if the managed iOS device is user approval enrollment. This property is read-only.
+func (m *ManagedDevice) GetRequireUserEnrollmentApproval()(*bool) {
+    return m.requireUserEnrollmentApproval
+}
 // GetSerialNumber gets the serialNumber property value. SerialNumber. This property is read-only.
 func (m *ManagedDevice) GetSerialNumber()(*string) {
     return m.serialNumber
@@ -401,6 +418,10 @@ func (m *ManagedDevice) GetUserId()(*string) {
 // GetUserPrincipalName gets the userPrincipalName property value. Device user principal name. This property is read-only.
 func (m *ManagedDevice) GetUserPrincipalName()(*string) {
     return m.userPrincipalName
+}
+// GetUsers gets the users property value. The primary users associated with the managed device.
+func (m *ManagedDevice) GetUsers()([]Userable) {
+    return m.users
 }
 // GetWiFiMacAddress gets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
 func (m *ManagedDevice) GetWiFiMacAddress()(*string) {
@@ -496,6 +517,13 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetPartnerReportedThreatState() != nil {
         cast := (*m.GetPartnerReportedThreatState()).String()
         err = writer.WriteStringValue("partnerReportedThreatState", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUsers() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUsers())
+        err = writer.WriteCollectionOfObjectValues("users", cast)
         if err != nil {
             return err
         }
@@ -642,6 +670,10 @@ func (m *ManagedDevice) SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)
 func (m *ManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     m.managementAgent = value
 }
+// SetManagementCertificateExpirationDate sets the managementCertificateExpirationDate property value. Reports device management certificate expiration date. This property is read-only.
+func (m *ManagedDevice) SetManagementCertificateExpirationDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.managementCertificateExpirationDate = value
+}
 // SetManufacturer sets the manufacturer property value. Manufacturer of the device. This property is read-only.
 func (m *ManagedDevice) SetManufacturer(value *string)() {
     m.manufacturer = value
@@ -686,6 +718,10 @@ func (m *ManagedDevice) SetRemoteAssistanceSessionErrorDetails(value *string)() 
 func (m *ManagedDevice) SetRemoteAssistanceSessionUrl(value *string)() {
     m.remoteAssistanceSessionUrl = value
 }
+// SetRequireUserEnrollmentApproval sets the requireUserEnrollmentApproval property value. Reports if the managed iOS device is user approval enrollment. This property is read-only.
+func (m *ManagedDevice) SetRequireUserEnrollmentApproval(value *bool)() {
+    m.requireUserEnrollmentApproval = value
+}
 // SetSerialNumber sets the serialNumber property value. SerialNumber. This property is read-only.
 func (m *ManagedDevice) SetSerialNumber(value *string)() {
     m.serialNumber = value
@@ -713,6 +749,10 @@ func (m *ManagedDevice) SetUserId(value *string)() {
 // SetUserPrincipalName sets the userPrincipalName property value. Device user principal name. This property is read-only.
 func (m *ManagedDevice) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
+}
+// SetUsers sets the users property value. The primary users associated with the managed device.
+func (m *ManagedDevice) SetUsers(value []Userable)() {
+    m.users = value
 }
 // SetWiFiMacAddress sets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
 func (m *ManagedDevice) SetWiFiMacAddress(value *string)() {

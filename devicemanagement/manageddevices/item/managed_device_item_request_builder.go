@@ -8,6 +8,7 @@ import (
     i02e61d7c24506eb3092637591a2fe281450dbe31d56751354fa7a05f72a89a6d "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/disablelostmode"
     i15a1a10a0c024f930afef3b930ac6a0a48505b8f50dc765c9208ba2816bfb8fb "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/resetpasscode"
     i35e5de1b6d1217fb83cdfe34b93910dd53c07bcbaed491f2d9dd30bf097a2e27 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/cleanwindowsdevice"
+    i3f5657959eef872a8c3b583ceb3e90ed3871b1ab719ab6bf86fbd61313c45635 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/users"
     i4be1f6e23df553f3d25539b06b6e72e653c54673be6c256636259b2dfc46b028 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/deleteuserfromsharedappledevice"
     i5626258f553fa5ab744196016cddf3bdb99eca3ad27f9716b75a1816ddcac4e4 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/windowsdefenderupdatesignatures"
     i579420ac2331f8db64f4efb8f6b2f9b7e59da9e53c2f60c7189463b2f6729a66 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/retire"
@@ -277,6 +278,10 @@ func (m *ManagedDeviceItemRequestBuilder) SyncDevice()(*ic2df49236f6d10a558da472
 // UpdateWindowsDeviceAccount the updateWindowsDeviceAccount property
 func (m *ManagedDeviceItemRequestBuilder) UpdateWindowsDeviceAccount()(*i73fe8c13857767fd45ca26708823e85bca6083a2a2ebdb0dda0d4fe4e91cdf17.UpdateWindowsDeviceAccountRequestBuilder) {
     return i73fe8c13857767fd45ca26708823e85bca6083a2a2ebdb0dda0d4fe4e91cdf17.NewUpdateWindowsDeviceAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Users the users property
+func (m *ManagedDeviceItemRequestBuilder) Users()(*i3f5657959eef872a8c3b583ceb3e90ed3871b1ab719ab6bf86fbd61313c45635.UsersRequestBuilder) {
+    return i3f5657959eef872a8c3b583ceb3e90ed3871b1ab719ab6bf86fbd61313c45635.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsDefenderScan the windowsDefenderScan property
 func (m *ManagedDeviceItemRequestBuilder) WindowsDefenderScan()(*ic1c10c22035a19935689244731094da0d49c68bb4707c06ce0ecf896730268c2.WindowsDefenderScanRequestBuilder) {

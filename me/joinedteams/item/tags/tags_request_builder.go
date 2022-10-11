@@ -17,7 +17,7 @@ type TagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TagsRequestBuilderGetQueryParameters get tags from me
+// TagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *TagsRequestBuilder) Count()(*i505a5ad0ba7ef86494c0c4bd927e275321289b82dd45c8bde3903d92964571e0.CountRequestBuilder) {
     return i505a5ad0ba7ef86494c0c4bd927e275321289b82dd45c8bde3903d92964571e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get tags from me
+// CreateGetRequestInformation get a list of the tag objects and their properties.
 func (m *TagsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *TagsRequestBuilder) CreateGetRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to tags for me
+// CreatePostRequestInformation create a standard tag for members in a team.
 func (m *TagsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *TagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *TagsRequestBuilder) CreatePostRequestInformation(ctx context.Context, b
     }
     return requestInfo, nil
 }
-// Get get tags from me
+// Get get a list of the tag objects and their properties.
 func (m *TagsRequestBuilder) Get(ctx context.Context, requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *TagsRequestBuilder) Get(ctx context.Context, requestConfiguration *Tags
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagCollectionResponseable), nil
 }
-// Post create new navigation property to tags for me
+// Post create a standard tag for members in a team.
 func (m *TagsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *TagsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

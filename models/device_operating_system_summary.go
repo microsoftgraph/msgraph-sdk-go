@@ -9,8 +9,20 @@ import (
 type DeviceOperatingSystemSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
+    androidCorporateWorkProfileCount *int32
     // Number of android device count.
     androidCount *int32
+    // Number of dedicated Android devices.
+    androidDedicatedCount *int32
+    // Number of device admin Android devices.
+    androidDeviceAdminCount *int32
+    // Number of fully managed Android devices.
+    androidFullyManagedCount *int32
+    // Number of work profile Android devices.
+    androidWorkProfileCount *int32
+    // Number of ConfigMgr managed devices.
+    configMgrDeviceCount *int32
     // Number of iOS device count.
     iosCount *int32
     // Number of Mac OS X device count.
@@ -41,14 +53,44 @@ func CreateDeviceOperatingSystemSummaryFromDiscriminatorValue(parseNode i878a80d
 func (m *DeviceOperatingSystemSummary) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
+// GetAndroidCorporateWorkProfileCount gets the androidCorporateWorkProfileCount property value. The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
+func (m *DeviceOperatingSystemSummary) GetAndroidCorporateWorkProfileCount()(*int32) {
+    return m.androidCorporateWorkProfileCount
+}
 // GetAndroidCount gets the androidCount property value. Number of android device count.
 func (m *DeviceOperatingSystemSummary) GetAndroidCount()(*int32) {
     return m.androidCount
 }
+// GetAndroidDedicatedCount gets the androidDedicatedCount property value. Number of dedicated Android devices.
+func (m *DeviceOperatingSystemSummary) GetAndroidDedicatedCount()(*int32) {
+    return m.androidDedicatedCount
+}
+// GetAndroidDeviceAdminCount gets the androidDeviceAdminCount property value. Number of device admin Android devices.
+func (m *DeviceOperatingSystemSummary) GetAndroidDeviceAdminCount()(*int32) {
+    return m.androidDeviceAdminCount
+}
+// GetAndroidFullyManagedCount gets the androidFullyManagedCount property value. Number of fully managed Android devices.
+func (m *DeviceOperatingSystemSummary) GetAndroidFullyManagedCount()(*int32) {
+    return m.androidFullyManagedCount
+}
+// GetAndroidWorkProfileCount gets the androidWorkProfileCount property value. Number of work profile Android devices.
+func (m *DeviceOperatingSystemSummary) GetAndroidWorkProfileCount()(*int32) {
+    return m.androidWorkProfileCount
+}
+// GetConfigMgrDeviceCount gets the configMgrDeviceCount property value. Number of ConfigMgr managed devices.
+func (m *DeviceOperatingSystemSummary) GetConfigMgrDeviceCount()(*int32) {
+    return m.configMgrDeviceCount
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["androidCorporateWorkProfileCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAndroidCorporateWorkProfileCount)
     res["androidCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAndroidCount)
+    res["androidDedicatedCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAndroidDedicatedCount)
+    res["androidDeviceAdminCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAndroidDeviceAdminCount)
+    res["androidFullyManagedCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAndroidFullyManagedCount)
+    res["androidWorkProfileCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAndroidWorkProfileCount)
+    res["configMgrDeviceCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetConfigMgrDeviceCount)
     res["iosCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetIosCount)
     res["macOSCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMacOSCount)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
@@ -84,7 +126,43 @@ func (m *DeviceOperatingSystemSummary) GetWindowsMobileCount()(*int32) {
 // Serialize serializes information the current object
 func (m *DeviceOperatingSystemSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteInt32Value("androidCorporateWorkProfileCount", m.GetAndroidCorporateWorkProfileCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("androidCount", m.GetAndroidCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("androidDedicatedCount", m.GetAndroidDedicatedCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("androidDeviceAdminCount", m.GetAndroidDeviceAdminCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("androidFullyManagedCount", m.GetAndroidFullyManagedCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("androidWorkProfileCount", m.GetAndroidWorkProfileCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("configMgrDeviceCount", m.GetConfigMgrDeviceCount())
         if err != nil {
             return err
         }
@@ -137,9 +215,33 @@ func (m *DeviceOperatingSystemSummary) Serialize(writer i878a80d2330e89d26896388
 func (m *DeviceOperatingSystemSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// SetAndroidCorporateWorkProfileCount sets the androidCorporateWorkProfileCount property value. The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
+func (m *DeviceOperatingSystemSummary) SetAndroidCorporateWorkProfileCount(value *int32)() {
+    m.androidCorporateWorkProfileCount = value
+}
 // SetAndroidCount sets the androidCount property value. Number of android device count.
 func (m *DeviceOperatingSystemSummary) SetAndroidCount(value *int32)() {
     m.androidCount = value
+}
+// SetAndroidDedicatedCount sets the androidDedicatedCount property value. Number of dedicated Android devices.
+func (m *DeviceOperatingSystemSummary) SetAndroidDedicatedCount(value *int32)() {
+    m.androidDedicatedCount = value
+}
+// SetAndroidDeviceAdminCount sets the androidDeviceAdminCount property value. Number of device admin Android devices.
+func (m *DeviceOperatingSystemSummary) SetAndroidDeviceAdminCount(value *int32)() {
+    m.androidDeviceAdminCount = value
+}
+// SetAndroidFullyManagedCount sets the androidFullyManagedCount property value. Number of fully managed Android devices.
+func (m *DeviceOperatingSystemSummary) SetAndroidFullyManagedCount(value *int32)() {
+    m.androidFullyManagedCount = value
+}
+// SetAndroidWorkProfileCount sets the androidWorkProfileCount property value. Number of work profile Android devices.
+func (m *DeviceOperatingSystemSummary) SetAndroidWorkProfileCount(value *int32)() {
+    m.androidWorkProfileCount = value
+}
+// SetConfigMgrDeviceCount sets the configMgrDeviceCount property value. Number of ConfigMgr managed devices.
+func (m *DeviceOperatingSystemSummary) SetConfigMgrDeviceCount(value *int32)() {
+    m.configMgrDeviceCount = value
 }
 // SetIosCount sets the iosCount property value. Number of iOS device count.
 func (m *DeviceOperatingSystemSummary) SetIosCount(value *int32)() {

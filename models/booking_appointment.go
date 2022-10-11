@@ -10,6 +10,8 @@ type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string
+    // The anonymousJoinWebUrl property
+    anonymousJoinWebUrl *string
     // It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
     customers []BookingCustomerInformationBaseable
     // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
@@ -72,6 +74,10 @@ func CreateBookingAppointmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *BookingAppointment) GetAdditionalInformation()(*string) {
     return m.additionalInformation
 }
+// GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. The anonymousJoinWebUrl property
+func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
+    return m.anonymousJoinWebUrl
+}
 // GetCustomers gets the customers property value. It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable) {
     return m.customers
@@ -92,6 +98,7 @@ func (m *BookingAppointment) GetEndDateTime()(DateTimeTimeZoneable) {
 func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalInformation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAdditionalInformation)
+    res["anonymousJoinWebUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAnonymousJoinWebUrl)
     res["customers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingCustomerInformationBaseFromDiscriminatorValue , m.SetCustomers)
     res["customerTimeZone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomerTimeZone)
     res["duration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetDuration)
@@ -196,6 +203,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("additionalInformation", m.GetAdditionalInformation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("anonymousJoinWebUrl", m.GetAnonymousJoinWebUrl())
         if err != nil {
             return err
         }
@@ -328,6 +341,10 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetAdditionalInformation sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
     m.additionalInformation = value
+}
+// SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. The anonymousJoinWebUrl property
+func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
+    m.anonymousJoinWebUrl = value
 }
 // SetCustomers sets the customers property value. It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) SetCustomers(value []BookingCustomerInformationBaseable)() {

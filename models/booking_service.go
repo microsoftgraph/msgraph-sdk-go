@@ -26,10 +26,14 @@ type BookingService struct {
     description *string
     // A service name.
     displayName *string
+    // The isAnonymousJoinEnabled property
+    isAnonymousJoinEnabled *bool
     // True means this service is not available to customers for booking.
     isHiddenFromCustomers *bool
     // True indicates that the appointments for the service will be held online. Default value is false.
     isLocationOnline *bool
+    // The languageTag property
+    languageTag *string
     // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
     maximumAttendeesCount *int32
     // Additional information about this service.
@@ -108,8 +112,10 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     res["defaultReminders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBookingReminderFromDiscriminatorValue , m.SetDefaultReminders)
     res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["isAnonymousJoinEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsAnonymousJoinEnabled)
     res["isHiddenFromCustomers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsHiddenFromCustomers)
     res["isLocationOnline"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsLocationOnline)
+    res["languageTag"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLanguageTag)
     res["maximumAttendeesCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumAttendeesCount)
     res["notes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetNotes)
     res["postBuffer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetPostBuffer)
@@ -120,6 +126,10 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     res["webUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWebUrl)
     return res
 }
+// GetIsAnonymousJoinEnabled gets the isAnonymousJoinEnabled property value. The isAnonymousJoinEnabled property
+func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
+    return m.isAnonymousJoinEnabled
+}
 // GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
 func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
     return m.isHiddenFromCustomers
@@ -127,6 +137,10 @@ func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
 // GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
 func (m *BookingService) GetIsLocationOnline()(*bool) {
     return m.isLocationOnline
+}
+// GetLanguageTag gets the languageTag property value. The languageTag property
+func (m *BookingService) GetLanguageTag()(*string) {
+    return m.languageTag
 }
 // GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingService) GetMaximumAttendeesCount()(*int32) {
@@ -224,6 +238,12 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteBoolValue("isAnonymousJoinEnabled", m.GetIsAnonymousJoinEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isHiddenFromCustomers", m.GetIsHiddenFromCustomers())
         if err != nil {
             return err
@@ -231,6 +251,12 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteBoolValue("isLocationOnline", m.GetIsLocationOnline())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
         if err != nil {
             return err
         }
@@ -315,6 +341,10 @@ func (m *BookingService) SetDescription(value *string)() {
 func (m *BookingService) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// SetIsAnonymousJoinEnabled sets the isAnonymousJoinEnabled property value. The isAnonymousJoinEnabled property
+func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
+    m.isAnonymousJoinEnabled = value
+}
 // SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     m.isHiddenFromCustomers = value
@@ -322,6 +352,10 @@ func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
 // SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
 func (m *BookingService) SetIsLocationOnline(value *bool)() {
     m.isLocationOnline = value
+}
+// SetLanguageTag sets the languageTag property value. The languageTag property
+func (m *BookingService) SetLanguageTag(value *string)() {
+    m.languageTag = value
 }
 // SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingService) SetMaximumAttendeesCount(value *int32)() {

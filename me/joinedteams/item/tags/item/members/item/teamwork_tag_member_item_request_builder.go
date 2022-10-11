@@ -23,7 +23,7 @@ type TeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamworkTagMemberItemRequestBuilderGetQueryParameters get members from me
+// TeamworkTagMemberItemRequestBuilderGetQueryParameters users assigned to the tag.
 type TeamworkTagMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *TeamworkTagMemberItemRequestBuilder) CreateDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get members from me
+// CreateGetRequestInformation users assigned to the tag.
 func (m *TeamworkTagMemberItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *TeamworkTagMemberItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get members from me
+// Get users assigned to the tag.
 func (m *TeamworkTagMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagMemberable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

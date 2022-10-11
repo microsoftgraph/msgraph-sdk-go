@@ -9,6 +9,7 @@ type BookingAppointmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalInformation()(*string)
+    GetAnonymousJoinWebUrl()(*string)
     GetCustomers()([]BookingCustomerInformationBaseable)
     GetCustomerTimeZone()(*string)
     GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -32,6 +33,7 @@ type BookingAppointmentable interface {
     GetStaffMemberIds()([]string)
     GetStartDateTime()(DateTimeTimeZoneable)
     SetAdditionalInformation(value *string)()
+    SetAnonymousJoinWebUrl(value *string)()
     SetCustomers(value []BookingCustomerInformationBaseable)()
     SetCustomerTimeZone(value *string)()
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()

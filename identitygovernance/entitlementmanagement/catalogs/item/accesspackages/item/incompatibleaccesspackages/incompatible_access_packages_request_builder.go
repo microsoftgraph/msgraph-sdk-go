@@ -18,7 +18,7 @@ type IncompatibleAccessPackagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncompatibleAccessPackagesRequestBuilderGetQueryParameters get incompatibleAccessPackages from identityGovernance
+// IncompatibleAccessPackagesRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
 type IncompatibleAccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewIncompatibleAccessPackagesRequestBuilder(rawUrl string, requestAdapter i
 func (m *IncompatibleAccessPackagesRequestBuilder) Count()(*i9e34b1b4285fc0e3a2d81832ed1ca89f0cd469dcc627d3812d0998541e27e1fb.CountRequestBuilder) {
     return i9e34b1b4285fc0e3a2d81832ed1ca89f0cd469dcc627d3812d0998541e27e1fb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get incompatibleAccessPackages from identityGovernance
+// CreateGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -85,7 +85,7 @@ func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// Get get incompatibleAccessPackages from identityGovernance
+// Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleAccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

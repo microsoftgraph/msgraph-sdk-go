@@ -9,7 +9,7 @@ import (
 // AccessPackage provides operations to manage the collection of agreementAcceptance entities.
 type AccessPackage struct {
     Entity
-    // The accessPackagesIncompatibleWith property
+    // The access packages that are incompatible with this package. Read-only.
     accessPackagesIncompatibleWith []AccessPackageable
     // The assignmentPolicies property
     assignmentPolicies []AccessPackageAssignmentPolicyable
@@ -21,9 +21,9 @@ type AccessPackage struct {
     description *string
     // The display name of the access package. Supports $filter (eq, contains).
     displayName *string
-    // The incompatibleAccessPackages property
+    // The access packages whose assigned users are ineligible to be assigned this access package.
     incompatibleAccessPackages []AccessPackageable
-    // The incompatibleGroups property
+    // The groups whose members are ineligible to be assigned this access package.
     incompatibleGroups []Groupable
     // Whether the access package is hidden from the requestor.
     isHidden *bool
@@ -43,7 +43,7 @@ func NewAccessPackage()(*AccessPackage) {
 func CreateAccessPackageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackage(), nil
 }
-// GetAccessPackagesIncompatibleWith gets the accessPackagesIncompatibleWith property value. The accessPackagesIncompatibleWith property
+// GetAccessPackagesIncompatibleWith gets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
 func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable) {
     return m.accessPackagesIncompatibleWith
 }
@@ -82,11 +82,11 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["modifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetModifiedDateTime)
     return res
 }
-// GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The incompatibleAccessPackages property
+// GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The access packages whose assigned users are ineligible to be assigned this access package.
 func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackageable) {
     return m.incompatibleAccessPackages
 }
-// GetIncompatibleGroups gets the incompatibleGroups property value. The incompatibleGroups property
+// GetIncompatibleGroups gets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
 func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
     return m.incompatibleGroups
 }
@@ -170,7 +170,7 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAccessPackagesIncompatibleWith sets the accessPackagesIncompatibleWith property value. The accessPackagesIncompatibleWith property
+// SetAccessPackagesIncompatibleWith sets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
 func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackageable)() {
     m.accessPackagesIncompatibleWith = value
 }
@@ -194,11 +194,11 @@ func (m *AccessPackage) SetDescription(value *string)() {
 func (m *AccessPackage) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIncompatibleAccessPackages sets the incompatibleAccessPackages property value. The incompatibleAccessPackages property
+// SetIncompatibleAccessPackages sets the incompatibleAccessPackages property value. The access packages whose assigned users are ineligible to be assigned this access package.
 func (m *AccessPackage) SetIncompatibleAccessPackages(value []AccessPackageable)() {
     m.incompatibleAccessPackages = value
 }
-// SetIncompatibleGroups sets the incompatibleGroups property value. The incompatibleGroups property
+// SetIncompatibleGroups sets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
 func (m *AccessPackage) SetIncompatibleGroups(value []Groupable)() {
     m.incompatibleGroups = value
 }

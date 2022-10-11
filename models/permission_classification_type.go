@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the instantiate method.
+// Casts the previous resource to servicePrincipal.
 type PermissionClassificationType int
 
 const (

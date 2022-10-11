@@ -8,11 +8,11 @@ import (
 // UserExperienceAnalyticsDevicePerformance 
 type UserExperienceAnalyticsDevicePerformance struct {
     Entity
-    // Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+    // Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
     averageBlueScreens *float64
-    // Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+    // Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
     averageRestarts *float64
-    // Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+    // Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
     blueScreenCount *int32
     // The user experience analytics device boot score.
     bootScore *int32
@@ -44,7 +44,7 @@ type UserExperienceAnalyticsDevicePerformance struct {
     operatingSystemVersion *string
     // The user experience analytics responsive desktop time in milliseconds.
     responsiveDesktopTimeInMs *int32
-    // Number of Restarts in the last 14 days. Valid values 0 to 9999999
+    // Number of Restarts in the last 30 days. Valid values 0 to 9999999
     restartCount *int32
     // The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     startupPerformanceScore *float64
@@ -62,15 +62,15 @@ func NewUserExperienceAnalyticsDevicePerformance()(*UserExperienceAnalyticsDevic
 func CreateUserExperienceAnalyticsDevicePerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDevicePerformance(), nil
 }
-// GetAverageBlueScreens gets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+// GetAverageBlueScreens gets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetAverageBlueScreens()(*float64) {
     return m.averageBlueScreens
 }
-// GetAverageRestarts gets the averageRestarts property value. Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+// GetAverageRestarts gets the averageRestarts property value. Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetAverageRestarts()(*float64) {
     return m.averageRestarts
 }
-// GetBlueScreenCount gets the blueScreenCount property value. Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+// GetBlueScreenCount gets the blueScreenCount property value. Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetBlueScreenCount()(*int32) {
     return m.blueScreenCount
 }
@@ -159,7 +159,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetOperatingSystemVersion()(*
 func (m *UserExperienceAnalyticsDevicePerformance) GetResponsiveDesktopTimeInMs()(*int32) {
     return m.responsiveDesktopTimeInMs
 }
-// GetRestartCount gets the restartCount property value. Number of Restarts in the last 14 days. Valid values 0 to 9999999
+// GetRestartCount gets the restartCount property value. Number of Restarts in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) GetRestartCount()(*int32) {
     return m.restartCount
 }
@@ -297,15 +297,15 @@ func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetAverageBlueScreens sets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+// SetAverageBlueScreens sets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetAverageBlueScreens(value *float64)() {
     m.averageBlueScreens = value
 }
-// SetAverageRestarts sets the averageRestarts property value. Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+// SetAverageRestarts sets the averageRestarts property value. Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetAverageRestarts(value *float64)() {
     m.averageRestarts = value
 }
-// SetBlueScreenCount sets the blueScreenCount property value. Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+// SetBlueScreenCount sets the blueScreenCount property value. Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetBlueScreenCount(value *int32)() {
     m.blueScreenCount = value
 }
@@ -369,7 +369,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetOperatingSystemVersion(val
 func (m *UserExperienceAnalyticsDevicePerformance) SetResponsiveDesktopTimeInMs(value *int32)() {
     m.responsiveDesktopTimeInMs = value
 }
-// SetRestartCount sets the restartCount property value. Number of Restarts in the last 14 days. Valid values 0 to 9999999
+// SetRestartCount sets the restartCount property value. Number of Restarts in the last 30 days. Valid values 0 to 9999999
 func (m *UserExperienceAnalyticsDevicePerformance) SetRestartCount(value *int32)() {
     m.restartCount = value
 }
