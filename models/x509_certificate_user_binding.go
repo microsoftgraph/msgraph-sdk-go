@@ -11,11 +11,11 @@ type X509CertificateUserBinding struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The priority property
+    // The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
     priority *int32
-    // The userProperty property
+    // Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
     userProperty *string
-    // The x509CertificateField property
+    // The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name, SubjectKeyIdentifier, SHA1PublicKey.
     x509CertificateField *string
 }
 // NewX509CertificateUserBinding instantiates a new x509CertificateUserBinding and sets the default values.
@@ -48,15 +48,15 @@ func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i87
 func (m *X509CertificateUserBinding) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
 func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     return m.priority
 }
-// GetUserProperty gets the userProperty property value. The userProperty property
+// GetUserProperty gets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
 func (m *X509CertificateUserBinding) GetUserProperty()(*string) {
     return m.userProperty
 }
-// GetX509CertificateField gets the x509CertificateField property value. The x509CertificateField property
+// GetX509CertificateField gets the x509CertificateField property value. The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name, SubjectKeyIdentifier, SHA1PublicKey.
 func (m *X509CertificateUserBinding) GetX509CertificateField()(*string) {
     return m.x509CertificateField
 }
@@ -102,15 +102,15 @@ func (m *X509CertificateUserBinding) SetAdditionalData(value map[string]interfac
 func (m *X509CertificateUserBinding) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
 func (m *X509CertificateUserBinding) SetPriority(value *int32)() {
     m.priority = value
 }
-// SetUserProperty sets the userProperty property value. The userProperty property
+// SetUserProperty sets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
 func (m *X509CertificateUserBinding) SetUserProperty(value *string)() {
     m.userProperty = value
 }
-// SetX509CertificateField sets the x509CertificateField property value. The x509CertificateField property
+// SetX509CertificateField sets the x509CertificateField property value. The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name, SubjectKeyIdentifier, SHA1PublicKey.
 func (m *X509CertificateUserBinding) SetX509CertificateField(value *string)() {
     m.x509CertificateField = value
 }

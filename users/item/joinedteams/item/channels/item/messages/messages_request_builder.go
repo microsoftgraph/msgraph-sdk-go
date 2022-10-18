@@ -18,7 +18,7 @@ type MessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MessagesRequestBuilderGetQueryParameters retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. 
+// MessagesRequestBuilderGetQueryParameters retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MessagesRequestBuilder) Count()(*i98b1c93b29411ca324f1fe1859e0c93a8f7d8beea1ed2d95a1f64c2471be896d.CountRequestBuilder) {
     return i98b1c93b29411ca324f1fe1859e0c93a8f7d8beea1ed2d95a1f64c2471be896d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. 
+// CreateGetRequestInformation retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(ctx context.Contex
 func (m *MessagesRequestBuilder) Delta()(*ie1631a631fcd77f92a98280f9aa93b0b9fadc445d3787dcaaae5933e51ff7730.DeltaRequestBuilder) {
     return ie1631a631fcd77f92a98280f9aa93b0b9fadc445d3787dcaaae5933e51ff7730.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API. 
+// Get retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

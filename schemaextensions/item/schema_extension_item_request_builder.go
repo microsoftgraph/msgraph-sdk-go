@@ -23,7 +23,7 @@ type SchemaExtensionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SchemaExtensionItemRequestBuilderGetQueryParameters get entity from schemaExtensions by key
+// SchemaExtensionItemRequestBuilderGetQueryParameters get schemaExtension
 type SchemaExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *SchemaExtensionItemRequestBuilder) CreateDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get entity from schemaExtensions by key
+// CreateGetRequestInformation get schemaExtension
 func (m *SchemaExtensionItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SchemaExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *SchemaExtensionItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get entity from schemaExtensions by key
+// Get get schemaExtension
 func (m *SchemaExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaExtensionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchemaExtensionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

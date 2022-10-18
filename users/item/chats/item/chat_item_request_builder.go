@@ -8,9 +8,14 @@ import (
     i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/installedapps"
     i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/members"
     i359872a537fd70c716e7e5ba029dc803c22b94686718a3e10361f77d83422f79 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/pinnedmessages"
+    i4faa2569de9f59350ee6b8738c1c2f9f7d3be53a464b6fcf482f642b99a3ea1d "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/markchatunreadforuser"
     i747f2653d0182726c4364050b88c4c017361f81ae437c821457319c34de8bbe4 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/messages"
+    i7dd8f04ee639104b986c6c5422c345187262c5c456d2627297ccf5846978d15b "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/lastmessagepreview"
     i8bf0adcfacbb5b5e805bc0b691c0068ae5b5c5f80fce37bf131df5325929232d "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/sendactivitynotification"
+    ibdf68b59493fcbfe5243f120ca2b97f1b87a4f0eca5bbed6558b780e96d3beec "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/hideforuser"
+    ic3b0551739f3e070055bc2d75ba06c264a887bf783cdb8d1d265e7e955d9f288 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/unhideforuser"
     ic797b970aa8f13def47c8a9daa30e882f6b3ffba8f376b46454ecdca4bbfff2a "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/tabs"
+    ied1f558ecd84e0ae9eb5ca8fc926f3fa1232c1f5894efa8cae1410b1cd659c38 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/markchatreadforuser"
     i03a5d9d6f43c34754e384f5d06895085102259e8c0fd8d72b735c4f7e27e19e3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/members/item"
     i77281ca541a7a54c245fdd2770ea294bd7c00f30c47f9c268ae075c47417ee91 "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/pinnedmessages/item"
     i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae "github.com/microsoftgraph/msgraph-sdk-go/users/item/chats/item/tabs/item"
@@ -153,6 +158,10 @@ func (m *ChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
+// HideForUser the hideForUser property
+func (m *ChatItemRequestBuilder) HideForUser()(*ibdf68b59493fcbfe5243f120ca2b97f1b87a4f0eca5bbed6558b780e96d3beec.HideForUserRequestBuilder) {
+    return ibdf68b59493fcbfe5243f120ca2b97f1b87a4f0eca5bbed6558b780e96d3beec.NewHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // InstalledApps the installedApps property
 func (m *ChatItemRequestBuilder) InstalledApps()(*i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34.InstalledAppsRequestBuilder) {
     return i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -167,6 +176,18 @@ func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ice5d918650d80a2f
         urlTplParams["teamsAppInstallation%2Did"] = id
     }
     return ice5d918650d80a2fd00a96c09c41f928c4c75fc531425a6ae4f4cc396b70c4f2.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// LastMessagePreview the lastMessagePreview property
+func (m *ChatItemRequestBuilder) LastMessagePreview()(*i7dd8f04ee639104b986c6c5422c345187262c5c456d2627297ccf5846978d15b.LastMessagePreviewRequestBuilder) {
+    return i7dd8f04ee639104b986c6c5422c345187262c5c456d2627297ccf5846978d15b.NewLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MarkChatReadForUser the markChatReadForUser property
+func (m *ChatItemRequestBuilder) MarkChatReadForUser()(*ied1f558ecd84e0ae9eb5ca8fc926f3fa1232c1f5894efa8cae1410b1cd659c38.MarkChatReadForUserRequestBuilder) {
+    return ied1f558ecd84e0ae9eb5ca8fc926f3fa1232c1f5894efa8cae1410b1cd659c38.NewMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MarkChatUnreadForUser the markChatUnreadForUser property
+func (m *ChatItemRequestBuilder) MarkChatUnreadForUser()(*i4faa2569de9f59350ee6b8738c1c2f9f7d3be53a464b6fcf482f642b99a3ea1d.MarkChatUnreadForUserRequestBuilder) {
+    return i4faa2569de9f59350ee6b8738c1c2f9f7d3be53a464b6fcf482f642b99a3ea1d.NewMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Members the members property
 func (m *ChatItemRequestBuilder) Members()(*i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082.MembersRequestBuilder) {
@@ -250,4 +271,8 @@ func (m *ChatItemRequestBuilder) TabsById(id string)(*i89204df365cb0b4df35e680ee
         urlTplParams["teamsTab%2Did"] = id
     }
     return i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// UnhideForUser the unhideForUser property
+func (m *ChatItemRequestBuilder) UnhideForUser()(*ic3b0551739f3e070055bc2d75ba06c264a887bf783cdb8d1d265e7e955d9f288.UnhideForUserRequestBuilder) {
+    return ic3b0551739f3e070055bc2d75ba06c264a887bf783cdb8d1d265e7e955d9f288.NewUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

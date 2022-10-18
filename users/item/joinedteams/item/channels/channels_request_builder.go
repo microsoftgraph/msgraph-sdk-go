@@ -18,7 +18,7 @@ type ChannelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChannelsRequestBuilderGetQueryParameters retrieve the list of channels in this team.
+// ChannelsRequestBuilderGetQueryParameters retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
 type ChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ChannelsRequestBuilder) Count()(*icd758e58aa806a7e761fb896fdbd9b14cf999e0288d5ffec00f06fa48a143026.CountRequestBuilder) {
     return icd758e58aa806a7e761fb896fdbd9b14cf999e0288d5ffec00f06fa48a143026.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve the list of channels in this team.
+// CreateGetRequestInformation retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,7 +106,7 @@ func (m *ChannelsRequestBuilder) CreatePostRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// Get retrieve the list of channels in this team.
+// Get retrieve the list of channels in this team. This method supports federation. Any shared channel that the request initiator belongs to will be included in the response.
 func (m *ChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ChannelsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

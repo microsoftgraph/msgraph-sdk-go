@@ -9,13 +9,13 @@ import (
 type X509CertificateRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The identifier property
+    // The identifier of the X.509 certificate. Required.
     identifier *string
     // The OdataType property
     odataType *string
-    // The x509CertificateAuthenticationMode property
+    // The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
     x509CertificateAuthenticationMode *X509CertificateAuthenticationMode
-    // The x509CertificateRuleType property
+    // The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
     x509CertificateRuleType *X509CertificateRuleType
 }
 // NewX509CertificateRule instantiates a new x509CertificateRule and sets the default values.
@@ -44,7 +44,7 @@ func (m *X509CertificateRule) GetFieldDeserializers()(map[string]func(i878a80d23
     res["x509CertificateRuleType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseX509CertificateRuleType , m.SetX509CertificateRuleType)
     return res
 }
-// GetIdentifier gets the identifier property value. The identifier property
+// GetIdentifier gets the identifier property value. The identifier of the X.509 certificate. Required.
 func (m *X509CertificateRule) GetIdentifier()(*string) {
     return m.identifier
 }
@@ -52,11 +52,11 @@ func (m *X509CertificateRule) GetIdentifier()(*string) {
 func (m *X509CertificateRule) GetOdataType()(*string) {
     return m.odataType
 }
-// GetX509CertificateAuthenticationMode gets the x509CertificateAuthenticationMode property value. The x509CertificateAuthenticationMode property
+// GetX509CertificateAuthenticationMode gets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
 func (m *X509CertificateRule) GetX509CertificateAuthenticationMode()(*X509CertificateAuthenticationMode) {
     return m.x509CertificateAuthenticationMode
 }
-// GetX509CertificateRuleType gets the x509CertificateRuleType property value. The x509CertificateRuleType property
+// GetX509CertificateRuleType gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
 func (m *X509CertificateRule) GetX509CertificateRuleType()(*X509CertificateRuleType) {
     return m.x509CertificateRuleType
 }
@@ -100,7 +100,7 @@ func (m *X509CertificateRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *X509CertificateRule) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetIdentifier sets the identifier property value. The identifier property
+// SetIdentifier sets the identifier property value. The identifier of the X.509 certificate. Required.
 func (m *X509CertificateRule) SetIdentifier(value *string)() {
     m.identifier = value
 }
@@ -108,11 +108,11 @@ func (m *X509CertificateRule) SetIdentifier(value *string)() {
 func (m *X509CertificateRule) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetX509CertificateAuthenticationMode sets the x509CertificateAuthenticationMode property value. The x509CertificateAuthenticationMode property
+// SetX509CertificateAuthenticationMode sets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
 func (m *X509CertificateRule) SetX509CertificateAuthenticationMode(value *X509CertificateAuthenticationMode)() {
     m.x509CertificateAuthenticationMode = value
 }
-// SetX509CertificateRuleType sets the x509CertificateRuleType property value. The x509CertificateRuleType property
+// SetX509CertificateRuleType sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
 func (m *X509CertificateRule) SetX509CertificateRuleType(value *X509CertificateRuleType)() {
     m.x509CertificateRuleType = value
 }

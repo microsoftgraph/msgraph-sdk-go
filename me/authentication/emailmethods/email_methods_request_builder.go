@@ -91,7 +91,7 @@ func (m *EmailMethodsRequestBuilder) CreateGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to emailMethods for me
+// CreatePostRequestInformation set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
 func (m *EmailMethodsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, requestConfiguration *EmailMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,7 +124,7 @@ func (m *EmailMethodsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodCollectionResponseable), nil
 }
-// Post create new navigation property to emailMethods for me
+// Post set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
 func (m *EmailMethodsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, requestConfiguration *EmailMethodsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailAuthenticationMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

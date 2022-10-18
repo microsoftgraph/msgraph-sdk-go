@@ -23,7 +23,7 @@ type DetailsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DetailsRequestBuilderGetQueryParameters retrieve the properties and relationships of **plannerplandetails** object.
+// DetailsRequestBuilderGetQueryParameters retrieve the properties and relationships of a **plannerPlanDetails** object.
 type DetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *DetailsRequestBuilder) CreateDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation retrieve the properties and relationships of **plannerplandetails** object.
+// CreateGetRequestInformation retrieve the properties and relationships of a **plannerPlanDetails** object.
 func (m *DetailsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *DetailsRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// Get retrieve the properties and relationships of **plannerplandetails** object.
+// Get retrieve the properties and relationships of a **plannerPlanDetails** object.
 func (m *DetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *DetailsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
