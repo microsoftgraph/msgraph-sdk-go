@@ -8,11 +8,11 @@ import (
 // X509CertificateAuthenticationMethodConfiguration 
 type X509CertificateAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // The authenticationModeConfiguration property
+    // Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
     authenticationModeConfiguration X509CertificateAuthenticationModeConfigurationable
-    // The certificateUserBindings property
+    // Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
     certificateUserBindings []X509CertificateUserBindingable
-    // The includeTargets property
+    // A collection of users or groups who are enabled to use the authentication method.
     includeTargets []AuthenticationMethodTargetable
 }
 // NewX509CertificateAuthenticationMethodConfiguration instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
@@ -28,11 +28,11 @@ func NewX509CertificateAuthenticationMethodConfiguration()(*X509CertificateAuthe
 func CreateX509CertificateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewX509CertificateAuthenticationMethodConfiguration(), nil
 }
-// GetAuthenticationModeConfiguration gets the authenticationModeConfiguration property value. The authenticationModeConfiguration property
+// GetAuthenticationModeConfiguration gets the authenticationModeConfiguration property value. Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
 func (m *X509CertificateAuthenticationMethodConfiguration) GetAuthenticationModeConfiguration()(X509CertificateAuthenticationModeConfigurationable) {
     return m.authenticationModeConfiguration
 }
-// GetCertificateUserBindings gets the certificateUserBindings property value. The certificateUserBindings property
+// GetCertificateUserBindings gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
 func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateUserBindings()([]X509CertificateUserBindingable) {
     return m.certificateUserBindings
 }
@@ -44,7 +44,7 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
     res["includeTargets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue , m.SetIncludeTargets)
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. The includeTargets property
+// GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *X509CertificateAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     return m.includeTargets
 }
@@ -76,15 +76,15 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
     }
     return nil
 }
-// SetAuthenticationModeConfiguration sets the authenticationModeConfiguration property value. The authenticationModeConfiguration property
+// SetAuthenticationModeConfiguration sets the authenticationModeConfiguration property value. Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetAuthenticationModeConfiguration(value X509CertificateAuthenticationModeConfigurationable)() {
     m.authenticationModeConfiguration = value
 }
-// SetCertificateUserBindings sets the certificateUserBindings property value. The certificateUserBindings property
+// SetCertificateUserBindings sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetCertificateUserBindings(value []X509CertificateUserBindingable)() {
     m.certificateUserBindings = value
 }
-// SetIncludeTargets sets the includeTargets property value. The includeTargets property
+// SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
     m.includeTargets = value
 }

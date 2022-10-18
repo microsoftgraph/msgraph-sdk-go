@@ -15,6 +15,8 @@ type Chat struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of all the apps in the chat. Nullable.
     installedApps []TeamsAppInstallationable
+    // Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+    lastMessagePreview ChatMessageInfoable
     // Date and time at which the chat was renamed or list of members were last changed. Read-only.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of all the members in the chat. Nullable.
@@ -31,6 +33,8 @@ type Chat struct {
     tenantId *string
     // (Optional) Subject or topic for the chat. Only available for group chats.
     topic *string
+    // Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+    viewpoint ChatViewpointable
     // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
     webUrl *string
 }
@@ -61,6 +65,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     res["chatType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseChatType , m.SetChatType)
     res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
     res["installedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTeamsAppInstallationFromDiscriminatorValue , m.SetInstalledApps)
+    res["lastMessagePreview"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChatMessageInfoFromDiscriminatorValue , m.SetLastMessagePreview)
     res["lastUpdatedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastUpdatedDateTime)
     res["members"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue , m.SetMembers)
     res["messages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue , m.SetMessages)
@@ -69,12 +74,17 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     res["tabs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue , m.SetTabs)
     res["tenantId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTenantId)
     res["topic"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTopic)
+    res["viewpoint"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChatViewpointFromDiscriminatorValue , m.SetViewpoint)
     res["webUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWebUrl)
     return res
 }
 // GetInstalledApps gets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
     return m.installedApps
+}
+// GetLastMessagePreview gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+func (m *Chat) GetLastMessagePreview()(ChatMessageInfoable) {
+    return m.lastMessagePreview
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -108,6 +118,10 @@ func (m *Chat) GetTenantId()(*string) {
 func (m *Chat) GetTopic()(*string) {
     return m.topic
 }
+// GetViewpoint gets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+func (m *Chat) GetViewpoint()(ChatViewpointable) {
+    return m.viewpoint
+}
 // GetWebUrl gets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) GetWebUrl()(*string) {
     return m.webUrl
@@ -134,6 +148,12 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetInstalledApps() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetInstalledApps())
         err = writer.WriteCollectionOfObjectValues("installedApps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("lastMessagePreview", m.GetLastMessagePreview())
         if err != nil {
             return err
         }
@@ -191,6 +211,12 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("viewpoint", m.GetViewpoint())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webUrl", m.GetWebUrl())
         if err != nil {
             return err
@@ -209,6 +235,10 @@ func (m *Chat) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 // SetInstalledApps sets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) SetInstalledApps(value []TeamsAppInstallationable)() {
     m.installedApps = value
+}
+// SetLastMessagePreview sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+func (m *Chat) SetLastMessagePreview(value ChatMessageInfoable)() {
+    m.lastMessagePreview = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -241,6 +271,10 @@ func (m *Chat) SetTenantId(value *string)() {
 // SetTopic sets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
 func (m *Chat) SetTopic(value *string)() {
     m.topic = value
+}
+// SetViewpoint sets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+func (m *Chat) SetViewpoint(value ChatViewpointable)() {
+    m.viewpoint = value
 }
 // SetWebUrl sets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) SetWebUrl(value *string)() {

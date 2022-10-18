@@ -11,9 +11,9 @@ type X509CertificateAuthenticationModeConfiguration struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The rules property
+    // Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
     rules []X509CertificateRuleable
-    // The x509CertificateAuthenticationDefaultMode property
+    // The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
     x509CertificateAuthenticationDefaultMode *X509CertificateAuthenticationMode
 }
 // NewX509CertificateAuthenticationModeConfiguration instantiates a new x509CertificateAuthenticationModeConfiguration and sets the default values.
@@ -45,11 +45,11 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
 func (m *X509CertificateAuthenticationModeConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRules gets the rules property value. The rules property
+// GetRules gets the rules property value. Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
 func (m *X509CertificateAuthenticationModeConfiguration) GetRules()([]X509CertificateRuleable) {
     return m.rules
 }
-// GetX509CertificateAuthenticationDefaultMode gets the x509CertificateAuthenticationDefaultMode property value. The x509CertificateAuthenticationDefaultMode property
+// GetX509CertificateAuthenticationDefaultMode gets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
 func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode) {
     return m.x509CertificateAuthenticationDefaultMode
 }
@@ -91,11 +91,11 @@ func (m *X509CertificateAuthenticationModeConfiguration) SetAdditionalData(value
 func (m *X509CertificateAuthenticationModeConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRules sets the rules property value. The rules property
+// SetRules sets the rules property value. Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
 func (m *X509CertificateAuthenticationModeConfiguration) SetRules(value []X509CertificateRuleable)() {
     m.rules = value
 }
-// SetX509CertificateAuthenticationDefaultMode sets the x509CertificateAuthenticationDefaultMode property value. The x509CertificateAuthenticationDefaultMode property
+// SetX509CertificateAuthenticationDefaultMode sets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
 func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)() {
     m.x509CertificateAuthenticationDefaultMode = value
 }

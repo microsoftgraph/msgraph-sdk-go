@@ -223,6 +223,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewChatMessage(), nil
                     case "#microsoft.graph.chatMessageHostedContent":
                         return NewChatMessageHostedContent(), nil
+                    case "#microsoft.graph.chatMessageInfo":
+                        return NewChatMessageInfo(), nil
                     case "#microsoft.graph.checklistItem":
                         return NewChecklistItem(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
@@ -241,6 +243,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConditionalAccessPolicy(), nil
                     case "#microsoft.graph.conditionalAccessRoot":
                         return NewConditionalAccessRoot(), nil
+                    case "#microsoft.graph.conditionalAccessTemplate":
+                        return NewConditionalAccessTemplate(), nil
                     case "#microsoft.graph.connectedOrganization":
                         return NewConnectedOrganization(), nil
                     case "#microsoft.graph.contact":

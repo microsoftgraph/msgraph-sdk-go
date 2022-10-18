@@ -11,7 +11,9 @@ type ConditionalAccessRootable interface {
     GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable)
     GetNamedLocations()([]NamedLocationable)
     GetPolicies()([]ConditionalAccessPolicyable)
+    GetTemplates()([]ConditionalAccessTemplateable)
     SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)()
     SetNamedLocations(value []NamedLocationable)()
     SetPolicies(value []ConditionalAccessPolicyable)()
+    SetTemplates(value []ConditionalAccessTemplateable)()
 }

@@ -18,7 +18,7 @@ type MessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MessagesRequestBuilderGetQueryParameters retrieve the list of messages in a chat.
+// MessagesRequestBuilderGetQueryParameters retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MessagesRequestBuilder) Count()(*i9278b3061419a9fdb192479fef600777c65e57780eb41d01afc60be2365d1c5e.CountRequestBuilder) {
     return i9278b3061419a9fdb192479fef600777c65e57780eb41d01afc60be2365d1c5e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve the list of messages in a chat.
+// CreateGetRequestInformation retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(ctx context.Contex
 func (m *MessagesRequestBuilder) Delta()(*ibb2cc07f405d5a4c9c20e19644887a0d5891346c6ac6a83774f84d2c2b91c8b5.DeltaRequestBuilder) {
     return ibb2cc07f405d5a4c9c20e19644887a0d5891346c6ac6a83774f84d2c2b91c8b5.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get retrieve the list of messages in a chat.
+// Get retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

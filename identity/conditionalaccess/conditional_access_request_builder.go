@@ -7,7 +7,9 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
     i031da455aa638a5f89c85fdb0d3e8882b40650ad3a1e93d7b33885e282048fa5 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/authenticationcontextclassreferences"
     i27d3a1bae6f4577a4de2876ba58fad41be78be972958441916bfc0b15d805933 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/policies"
+    i6bf5a84cd951bc7d61e669aafc7a4d48a4738a1af268d702686266e96e8d6a44 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/templates"
     ie167212f1f78fb7bf5e6a91e4a3df660b8a5499daeed0e885580a0dde04d710e "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/namedlocations"
+    i574b61c7cf81bce24f5146815b9c92a366c8a4de82277e47a1fc7817eec71339 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/templates/item"
     i652ce65e13fdceb3d1ed10efc4a8f6c0d893a47d549accb475d48e05eedf3251 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/namedlocations/item"
     i91801d979eb0028b76d066e7195d63b5ed00d456ccdceaa9f6bb9a091401a467 "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/policies/item"
     ie664735c68cf367c24c6ad8cc3ee7e735baa549391a4d0ba0d619f7bf748294d "github.com/microsoftgraph/msgraph-sdk-go/identity/conditionalaccess/authenticationcontextclassreferences/item"
@@ -211,4 +213,19 @@ func (m *ConditionalAccessRequestBuilder) PoliciesById(id string)(*i91801d979eb0
         urlTplParams["conditionalAccessPolicy%2Did"] = id
     }
     return i91801d979eb0028b76d066e7195d63b5ed00d456ccdceaa9f6bb9a091401a467.NewConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Templates the templates property
+func (m *ConditionalAccessRequestBuilder) Templates()(*i6bf5a84cd951bc7d61e669aafc7a4d48a4738a1af268d702686266e96e8d6a44.TemplatesRequestBuilder) {
+    return i6bf5a84cd951bc7d61e669aafc7a4d48a4738a1af268d702686266e96e8d6a44.NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TemplatesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.conditionalAccess.templates.item collection
+func (m *ConditionalAccessRequestBuilder) TemplatesById(id string)(*i574b61c7cf81bce24f5146815b9c92a366c8a4de82277e47a1fc7817eec71339.ConditionalAccessTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["conditionalAccessTemplate%2Did"] = id
+    }
+    return i574b61c7cf81bce24f5146815b9c92a366c8a4de82277e47a1fc7817eec71339.NewConditionalAccessTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
