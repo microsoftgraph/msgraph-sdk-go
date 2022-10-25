@@ -15,6 +15,7 @@ type Invitationable interface {
     GetInvitedUserType()(*string)
     GetInviteRedeemUrl()(*string)
     GetInviteRedirectUrl()(*string)
+    GetResetRedemption()(*bool)
     GetSendInvitationMessage()(*bool)
     GetStatus()(*string)
     SetInvitedUser(value Userable)()
@@ -24,6 +25,7 @@ type Invitationable interface {
     SetInvitedUserType(value *string)()
     SetInviteRedeemUrl(value *string)()
     SetInviteRedirectUrl(value *string)()
+    SetResetRedemption(value *bool)()
     SetSendInvitationMessage(value *bool)()
     SetStatus(value *string)()
 }

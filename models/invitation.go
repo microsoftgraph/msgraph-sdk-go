@@ -22,6 +22,8 @@ type Invitation struct {
     inviteRedeemUrl *string
     // The URL the user should be redirected to once the invitation is redeemed. Required.
     inviteRedirectUrl *string
+    // The resetRedemption property
+    resetRedemption *bool
     // Indicates whether an email should be sent to the user being invited. The default is false.
     sendInvitationMessage *bool
     // The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
@@ -50,6 +52,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     res["invitedUserType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInvitedUserType)
     res["inviteRedeemUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInviteRedeemUrl)
     res["inviteRedirectUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInviteRedirectUrl)
+    res["resetRedemption"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetResetRedemption)
     res["sendInvitationMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSendInvitationMessage)
     res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetStatus)
     return res
@@ -81,6 +84,10 @@ func (m *Invitation) GetInviteRedeemUrl()(*string) {
 // GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
 func (m *Invitation) GetInviteRedirectUrl()(*string) {
     return m.inviteRedirectUrl
+}
+// GetResetRedemption gets the resetRedemption property value. The resetRedemption property
+func (m *Invitation) GetResetRedemption()(*bool) {
+    return m.resetRedemption
 }
 // GetSendInvitationMessage gets the sendInvitationMessage property value. Indicates whether an email should be sent to the user being invited. The default is false.
 func (m *Invitation) GetSendInvitationMessage()(*bool) {
@@ -139,6 +146,12 @@ func (m *Invitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteBoolValue("resetRedemption", m.GetResetRedemption())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("sendInvitationMessage", m.GetSendInvitationMessage())
         if err != nil {
             return err
@@ -179,6 +192,10 @@ func (m *Invitation) SetInviteRedeemUrl(value *string)() {
 // SetInviteRedirectUrl sets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
 func (m *Invitation) SetInviteRedirectUrl(value *string)() {
     m.inviteRedirectUrl = value
+}
+// SetResetRedemption sets the resetRedemption property value. The resetRedemption property
+func (m *Invitation) SetResetRedemption(value *bool)() {
+    m.resetRedemption = value
 }
 // SetSendInvitationMessage sets the sendInvitationMessage property value. Indicates whether an email should be sent to the user being invited. The default is false.
 func (m *Invitation) SetSendInvitationMessage(value *bool)() {
