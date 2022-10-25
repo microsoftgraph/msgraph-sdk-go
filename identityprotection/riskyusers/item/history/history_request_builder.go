@@ -17,7 +17,7 @@ type HistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// HistoryRequestBuilderGetQueryParameters read the properties and relationships of a riskyUserHistoryItem object.
+// HistoryRequestBuilderGetQueryParameters get the riskyUserHistoryItems from the history navigation property.
 type HistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewHistoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *HistoryRequestBuilder) Count()(*iec7573a06d5d2eac9af4705e7093de731b8b549672259e17bcf1ede98f880e4e.CountRequestBuilder) {
     return iec7573a06d5d2eac9af4705e7093de731b8b549672259e17bcf1ede98f880e4e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read the properties and relationships of a riskyUserHistoryItem object.
+// CreateGetRequestInformation get the riskyUserHistoryItems from the history navigation property.
 func (m *HistoryRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *HistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *HistoryRequestBuilder) CreatePostRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// Get read the properties and relationships of a riskyUserHistoryItem object.
+// Get get the riskyUserHistoryItems from the history navigation property.
 func (m *HistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *HistoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

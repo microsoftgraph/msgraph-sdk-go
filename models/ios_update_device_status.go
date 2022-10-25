@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosUpdateDeviceStatus provides operations to manage the collection of agreementAcceptance entities.
+// IosUpdateDeviceStatus 
 type IosUpdateDeviceStatus struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -32,7 +32,7 @@ type IosUpdateDeviceStatus struct {
     // UserPrincipalName.
     userPrincipalName *string
 }
-// NewIosUpdateDeviceStatus instantiates a new iosUpdateDeviceStatus and sets the default values.
+// NewIosUpdateDeviceStatus instantiates a new IosUpdateDeviceStatus and sets the default values.
 func NewIosUpdateDeviceStatus()(*IosUpdateDeviceStatus) {
     m := &IosUpdateDeviceStatus{
         Entity: *NewEntity(),

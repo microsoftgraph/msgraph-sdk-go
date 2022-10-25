@@ -17,7 +17,7 @@ type PeopleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PeopleRequestBuilderGetQueryParameters retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Get relevant information about people.
+// PeopleRequestBuilderGetQueryParameters retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.
 type PeopleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -66,7 +66,7 @@ func NewPeopleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *PeopleRequestBuilder) Count()(*i83684efb7d29636f148203af4bd6d21df197b70e00ee941b88ebaa55cf691b2d.CountRequestBuilder) {
     return i83684efb7d29636f148203af4bd6d21df197b70e00ee941b88ebaa55cf691b2d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Get relevant information about people.
+// CreateGetRequestInformation retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.
 func (m *PeopleRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -82,7 +82,7 @@ func (m *PeopleRequestBuilder) CreateGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// Get retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Get relevant information about people.
+// Get retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user's communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.
 func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PersonCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

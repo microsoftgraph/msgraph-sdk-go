@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentConfiguration the Base Class of Device Enrollment Configuration
+// DeviceEnrollmentConfiguration 
 type DeviceEnrollmentConfiguration struct {
     Entity
     // The list of group assignments for the device configuration profile
@@ -24,7 +24,7 @@ type DeviceEnrollmentConfiguration struct {
     // The version of the device enrollment configuration
     version *int32
 }
-// NewDeviceEnrollmentConfiguration instantiates a new deviceEnrollmentConfiguration and sets the default values.
+// NewDeviceEnrollmentConfiguration instantiates a new DeviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
