@@ -9,7 +9,7 @@ import (
 type InvitationParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The hidden property
+    // Optional. Whether to hide the participant from the roster.
     hidden *bool
     // The identity property
     identity IdentitySetable
@@ -17,7 +17,7 @@ type InvitationParticipantInfo struct {
     odataType *string
     // Optional. The ID of the target participant.
     participantId *string
-    // The removeFromDefaultAudioRoutingGroup property
+    // Optional. Whether to remove them from the main mixer.
     removeFromDefaultAudioRoutingGroup *bool
     // Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
     replacesCallId *string
@@ -50,7 +50,7 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878
     res["replacesCallId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetReplacesCallId)
     return res
 }
-// GetHidden gets the hidden property value. The hidden property
+// GetHidden gets the hidden property value. Optional. Whether to hide the participant from the roster.
 func (m *InvitationParticipantInfo) GetHidden()(*bool) {
     return m.hidden
 }
@@ -66,7 +66,7 @@ func (m *InvitationParticipantInfo) GetOdataType()(*string) {
 func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
     return m.participantId
 }
-// GetRemoveFromDefaultAudioRoutingGroup gets the removeFromDefaultAudioRoutingGroup property value. The removeFromDefaultAudioRoutingGroup property
+// GetRemoveFromDefaultAudioRoutingGroup gets the removeFromDefaultAudioRoutingGroup property value. Optional. Whether to remove them from the main mixer.
 func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*bool) {
     return m.removeFromDefaultAudioRoutingGroup
 }
@@ -124,7 +124,7 @@ func (m *InvitationParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetHidden sets the hidden property value. The hidden property
+// SetHidden sets the hidden property value. Optional. Whether to hide the participant from the roster.
 func (m *InvitationParticipantInfo) SetHidden(value *bool)() {
     m.hidden = value
 }
@@ -140,7 +140,7 @@ func (m *InvitationParticipantInfo) SetOdataType(value *string)() {
 func (m *InvitationParticipantInfo) SetParticipantId(value *string)() {
     m.participantId = value
 }
-// SetRemoveFromDefaultAudioRoutingGroup sets the removeFromDefaultAudioRoutingGroup property value. The removeFromDefaultAudioRoutingGroup property
+// SetRemoveFromDefaultAudioRoutingGroup sets the removeFromDefaultAudioRoutingGroup property value. Optional. Whether to remove them from the main mixer.
 func (m *InvitationParticipantInfo) SetRemoveFromDefaultAudioRoutingGroup(value *bool)() {
     m.removeFromDefaultAudioRoutingGroup = value
 }

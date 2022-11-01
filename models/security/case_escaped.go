@@ -7,7 +7,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Case_escaped provides operations to manage the collection of agreementAcceptance entities.
+// Case_escaped provides operations to manage the collection of agreement entities.
 type Case_escaped struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The createdDateTime property

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlow 
+// IdentityUserFlow provides operations to manage the collection of agreementAcceptance entities.
 type IdentityUserFlow struct {
     Entity
     // The userFlowType property
@@ -13,7 +13,7 @@ type IdentityUserFlow struct {
     // The userFlowTypeVersion property
     userFlowTypeVersion *float32
 }
-// NewIdentityUserFlow instantiates a new IdentityUserFlow and sets the default values.
+// NewIdentityUserFlow instantiates a new identityUserFlow and sets the default values.
 func NewIdentityUserFlow()(*IdentityUserFlow) {
     m := &IdentityUserFlow{
         Entity: *NewEntity(),

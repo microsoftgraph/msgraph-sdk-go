@@ -12,7 +12,7 @@ type ServiceHealthIssuePost struct {
     additionalData map[string]interface{}
     // The published time of the post.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The content of the service issue post.
+    // The content of the service issue post. The supported value for the contentType property is html.
     description ItemBodyable
     // The OdataType property
     odataType *string
@@ -40,7 +40,7 @@ func (m *ServiceHealthIssuePost) GetAdditionalData()(map[string]interface{}) {
 func (m *ServiceHealthIssuePost) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The content of the service issue post.
+// GetDescription gets the description property value. The content of the service issue post. The supported value for the contentType property is html.
 func (m *ServiceHealthIssuePost) GetDescription()(ItemBodyable) {
     return m.description
 }
@@ -104,7 +104,7 @@ func (m *ServiceHealthIssuePost) SetAdditionalData(value map[string]interface{})
 func (m *ServiceHealthIssuePost) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The content of the service issue post.
+// SetDescription sets the description property value. The content of the service issue post. The supported value for the contentType property is html.
 func (m *ServiceHealthIssuePost) SetDescription(value ItemBodyable)() {
     m.description = value
 }

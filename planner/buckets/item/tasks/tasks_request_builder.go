@@ -17,7 +17,7 @@ type TasksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TasksRequestBuilderGetQueryParameters retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+// TasksRequestBuilderGetQueryParameters retrieve a list of plannerTask objects associated to a plannerBucket object.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *TasksRequestBuilder) Count()(*ib41e759e8a469f408c73dc6fa18b2317975997d8784e79525c7f01346eb8928f.CountRequestBuilder) {
     return ib41e759e8a469f408c73dc6fa18b2317975997d8784e79525c7f01346eb8928f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+// CreateGetRequestInformation retrieve a list of plannerTask objects associated to a plannerBucket object.
 func (m *TasksRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *TasksRequestBuilder) CreatePostRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// Get retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+// Get retrieve a list of plannerTask objects associated to a plannerBucket object.
 func (m *TasksRequestBuilder) Get(ctx context.Context, requestConfiguration *TasksRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
