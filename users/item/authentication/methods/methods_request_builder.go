@@ -17,7 +17,7 @@ type MethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MethodsRequestBuilderGetQueryParameters represents all authentication methods registered to a user.
+// MethodsRequestBuilderGetQueryParameters retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 type MethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *MethodsRequestBuilder) Count()(*i93a21d172f20652515690f8dba25ee0a1c87eec0950e407ff9abd3c908d1b8fb.CountRequestBuilder) {
     return i93a21d172f20652515690f8dba25ee0a1c87eec0950e407ff9abd3c908d1b8fb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents all authentication methods registered to a user.
+// CreateGetRequestInformation retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 func (m *MethodsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *MethodsRequestBuilder) CreatePostRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// Get represents all authentication methods registered to a user.
+// Get retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 func (m *MethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *MethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

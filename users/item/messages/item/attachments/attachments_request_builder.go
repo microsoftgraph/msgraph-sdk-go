@@ -18,7 +18,7 @@ type AttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a message.
+// AttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AttachmentsRequestBuilder) Count()(*i1acc750932d76b6e22b7e0ce8b05cdef6e5a1339765537434b355c8d8e54ccee.CountRequestBuilder) {
     return i1acc750932d76b6e22b7e0ce8b05cdef6e5a1339765537434b355c8d8e54ccee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a list of attachment objects attached to a message.
+// CreateGetRequestInformation retrieve a list of attachment objects.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,7 +108,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(ctx context.Con
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*ic94a22eb47f2f9f62b852a9133e89fa1bb471a99036edfd36c06f4724a926045.CreateUploadSessionRequestBuilder) {
     return ic94a22eb47f2f9f62b852a9133e89fa1bb471a99036edfd36c06f4724a926045.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get retrieve a list of attachment objects attached to a message.
+// Get retrieve a list of attachment objects.
 func (m *AttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

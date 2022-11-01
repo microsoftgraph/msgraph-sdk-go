@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to servicePrincipal.
+// Provides operations to manage the collection of agreement entities.
 type PermissionClassificationType int
 
 const (
