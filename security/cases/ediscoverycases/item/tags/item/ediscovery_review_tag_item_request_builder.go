@@ -49,11 +49,11 @@ type EdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChildTags the childTags property
+// ChildTags provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
 func (m *EdiscoveryReviewTagItemRequestBuilder) ChildTags()(*ifa6caa09182b30cf47eda2a3518954b06b8275778723f919e08d26566374dde4.ChildTagsRequestBuilder) {
     return ifa6caa09182b30cf47eda2a3518954b06b8275778723f919e08d26566374dde4.NewChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildTagsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.tags.item.childTags.item collection
+// ChildTagsById provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
 func (m *EdiscoveryReviewTagItemRequestBuilder) ChildTagsById(id string)(*i36c0efe604e599f26de91e40350557bada3006e272d983a8aa8fe8305e410eae.EdiscoveryReviewTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *EdiscoveryReviewTagItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable), nil
 }
-// Parent the parent property
+// Parent provides operations to manage the parent property of the microsoft.graph.security.ediscoveryReviewTag entity.
 func (m *EdiscoveryReviewTagItemRequestBuilder) Parent()(*i7c1096ff76476d2f5ce50972b36ad2f6ae27f8c8e9f718cfd633d2edd69a9638.ParentRequestBuilder) {
     return i7c1096ff76476d2f5ce50972b36ad2f6ae27f8c8e9f718cfd633d2edd69a9638.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

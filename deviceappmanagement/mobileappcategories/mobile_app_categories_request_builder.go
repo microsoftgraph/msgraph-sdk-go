@@ -71,7 +71,7 @@ func NewMobileAppCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MobileAppCategoriesRequestBuilder) Count()(*i1e73cd92933df40d8564f7ba6559ea735fb72e9819f598e4bdfbed2e50d8bfa2.CountRequestBuilder) {
     return i1e73cd92933df40d8564f7ba6559ea735fb72e9819f598e4bdfbed2e50d8bfa2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

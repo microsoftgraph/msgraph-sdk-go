@@ -42,7 +42,7 @@ type InformationProtectionRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Bitlocker the bitlocker property
+// Bitlocker provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) Bitlocker()(*i95f740787d5c3273e5cb4961a85c1ba23d53ac6718715252e046b9f63c6b588b.BitlockerRequestBuilder) {
     return i95f740787d5c3273e5cb4961a85c1ba23d53ac6718715252e046b9f63c6b588b.NewBitlockerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -133,11 +133,11 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InformationProtectionable), nil
 }
-// ThreatAssessmentRequests the threatAssessmentRequests property
+// ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*i0b394b575452727fce48499d7162d9223046fb4ae501d85ca144b249ae2268bc.ThreatAssessmentRequestsRequestBuilder) {
     return i0b394b575452727fce48499d7162d9223046fb4ae501d85ca144b249ae2268bc.NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ThreatAssessmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.informationProtection.threatAssessmentRequests.item collection
+// ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*i14f47ed6c183afcd5e8bac6ad435c240ca6e8149d693e8188c8d94d2105fbc38.ThreatAssessmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

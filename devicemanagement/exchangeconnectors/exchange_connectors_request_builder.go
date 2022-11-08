@@ -71,7 +71,7 @@ func NewExchangeConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ExchangeConnectorsRequestBuilder) Count()(*id8bf2c442451424944360c419b1c8c0ed0b3f02a08e19784b0bb88877f593c3a.CountRequestBuilder) {
     return id8bf2c442451424944360c419b1c8c0ed0b3f02a08e19784b0bb88877f593c3a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

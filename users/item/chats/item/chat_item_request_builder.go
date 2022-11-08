@@ -158,15 +158,15 @@ func (m *ChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
-// HideForUser the hideForUser property
+// HideForUser provides operations to call the hideForUser method.
 func (m *ChatItemRequestBuilder) HideForUser()(*ibdf68b59493fcbfe5243f120ca2b97f1b87a4f0eca5bbed6558b780e96d3beec.HideForUserRequestBuilder) {
     return ibdf68b59493fcbfe5243f120ca2b97f1b87a4f0eca5bbed6558b780e96d3beec.NewHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InstalledApps the installedApps property
+// InstalledApps provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) InstalledApps()(*i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34.InstalledAppsRequestBuilder) {
     return i161ad19b0c7a99cae8a80283db44d458d311ea7ea0fda7b7bee6231e5a71bf34.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InstalledAppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.installedApps.item collection
+// InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ice5d918650d80a2fd00a96c09c41f928c4c75fc531425a6ae4f4cc396b70c4f2.TeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -177,23 +177,23 @@ func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ice5d918650d80a2f
     }
     return ice5d918650d80a2fd00a96c09c41f928c4c75fc531425a6ae4f4cc396b70c4f2.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// LastMessagePreview the lastMessagePreview property
+// LastMessagePreview provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) LastMessagePreview()(*i7dd8f04ee639104b986c6c5422c345187262c5c456d2627297ccf5846978d15b.LastMessagePreviewRequestBuilder) {
     return i7dd8f04ee639104b986c6c5422c345187262c5c456d2627297ccf5846978d15b.NewLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MarkChatReadForUser the markChatReadForUser property
+// MarkChatReadForUser provides operations to call the markChatReadForUser method.
 func (m *ChatItemRequestBuilder) MarkChatReadForUser()(*ied1f558ecd84e0ae9eb5ca8fc926f3fa1232c1f5894efa8cae1410b1cd659c38.MarkChatReadForUserRequestBuilder) {
     return ied1f558ecd84e0ae9eb5ca8fc926f3fa1232c1f5894efa8cae1410b1cd659c38.NewMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MarkChatUnreadForUser the markChatUnreadForUser property
+// MarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
 func (m *ChatItemRequestBuilder) MarkChatUnreadForUser()(*i4faa2569de9f59350ee6b8738c1c2f9f7d3be53a464b6fcf482f642b99a3ea1d.MarkChatUnreadForUserRequestBuilder) {
     return i4faa2569de9f59350ee6b8738c1c2f9f7d3be53a464b6fcf482f642b99a3ea1d.NewMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Members()(*i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082.MembersRequestBuilder) {
     return i29250e65d3047fac7086c3da168f1dc97b716e57040772b108c92eb7e41e5082.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.members.item collection
+// MembersById provides operations to manage the members property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) MembersById(id string)(*i03a5d9d6f43c34754e384f5d06895085102259e8c0fd8d72b735c4f7e27e19e3.ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,11 +204,11 @@ func (m *ChatItemRequestBuilder) MembersById(id string)(*i03a5d9d6f43c34754e384f
     }
     return i03a5d9d6f43c34754e384f5d06895085102259e8c0fd8d72b735c4f7e27e19e3.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Messages the messages property
+// Messages provides operations to manage the messages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Messages()(*i747f2653d0182726c4364050b88c4c017361f81ae437c821457319c34de8bbe4.MessagesRequestBuilder) {
     return i747f2653d0182726c4364050b88c4c017361f81ae437c821457319c34de8bbe4.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.messages.item collection
+// MessagesById provides operations to manage the messages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) MessagesById(id string)(*ia5fe7898b11b622f06cabbbf98b672db477f4cd5aa1bdc1f1091441663a7ac94.ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -238,11 +238,11 @@ func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
-// PinnedMessages the pinnedMessages property
+// PinnedMessages provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PinnedMessages()(*i359872a537fd70c716e7e5ba029dc803c22b94686718a3e10361f77d83422f79.PinnedMessagesRequestBuilder) {
     return i359872a537fd70c716e7e5ba029dc803c22b94686718a3e10361f77d83422f79.NewPinnedMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PinnedMessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.pinnedMessages.item collection
+// PinnedMessagesById provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*i77281ca541a7a54c245fdd2770ea294bd7c00f30c47f9c268ae075c47417ee91.PinnedChatMessageInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -253,15 +253,15 @@ func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*i77281ca541a7a54
     }
     return i77281ca541a7a54c245fdd2770ea294bd7c00f30c47f9c268ae075c47417ee91.NewPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SendActivityNotification the sendActivityNotification property
+// SendActivityNotification provides operations to call the sendActivityNotification method.
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*i8bf0adcfacbb5b5e805bc0b691c0068ae5b5c5f80fce37bf131df5325929232d.SendActivityNotificationRequestBuilder) {
     return i8bf0adcfacbb5b5e805bc0b691c0068ae5b5c5f80fce37bf131df5325929232d.NewSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Tabs the tabs property
+// Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) Tabs()(*ic797b970aa8f13def47c8a9daa30e882f6b3ffba8f376b46454ecdca4bbfff2a.TabsRequestBuilder) {
     return ic797b970aa8f13def47c8a9daa30e882f6b3ffba8f376b46454ecdca4bbfff2a.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TabsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item.tabs.item collection
+// TabsById provides operations to manage the tabs property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) TabsById(id string)(*i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae.TeamsTabItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -272,7 +272,7 @@ func (m *ChatItemRequestBuilder) TabsById(id string)(*i89204df365cb0b4df35e680ee
     }
     return i89204df365cb0b4df35e680ee9e843167bce6597538b2e059b21aa0890ed91ae.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UnhideForUser the unhideForUser property
+// UnhideForUser provides operations to call the unhideForUser method.
 func (m *ChatItemRequestBuilder) UnhideForUser()(*ic3b0551739f3e070055bc2d75ba06c264a887bf783cdb8d1d265e7e955d9f288.UnhideForUserRequestBuilder) {
     return ic3b0551739f3e070055bc2d75ba06c264a887bf783cdb8d1d265e7e955d9f288.NewUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

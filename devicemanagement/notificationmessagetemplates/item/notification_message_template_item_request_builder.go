@@ -145,11 +145,11 @@ func (m *NotificationMessageTemplateItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable), nil
 }
-// LocalizedNotificationMessages the localizedNotificationMessages property
+// LocalizedNotificationMessages provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
 func (m *NotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMessages()(*icc3fe1a1c8b964bc176be6a6d48621fc3548efaeadcb3b10e136af2f19764752.LocalizedNotificationMessagesRequestBuilder) {
     return icc3fe1a1c8b964bc176be6a6d48621fc3548efaeadcb3b10e136af2f19764752.NewLocalizedNotificationMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LocalizedNotificationMessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection
+// LocalizedNotificationMessagesById provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
 func (m *NotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMessagesById(id string)(*i079873d8184290e06e63c9a04520d4cbb886c99c078b4ea0a493ba22bc14901e.LocalizedNotificationMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *NotificationMessageTemplateItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable), nil
 }
-// SendTestMessage the sendTestMessage property
+// SendTestMessage provides operations to call the sendTestMessage method.
 func (m *NotificationMessageTemplateItemRequestBuilder) SendTestMessage()(*if10e6b46a7479cb721a918b2370be92792065fdd20e80c33685b2f50841a32b9.SendTestMessageRequestBuilder) {
     return if10e6b46a7479cb721a918b2370be92792065fdd20e80c33685b2f50841a32b9.NewSendTestMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

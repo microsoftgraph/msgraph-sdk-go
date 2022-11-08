@@ -11,8 +11,6 @@ type ResetPasswordPostRequestBody struct {
     additionalData map[string]interface{}
     // The newPassword property
     newPassword *string
-    // The requireChangeOnNextSignIn property
-    requireChangeOnNextSignIn *bool
 }
 // NewResetPasswordPostRequestBody instantiates a new resetPasswordPostRequestBody and sets the default values.
 func NewResetPasswordPostRequestBody()(*ResetPasswordPostRequestBody) {
@@ -33,27 +31,16 @@ func (m *ResetPasswordPostRequestBody) GetAdditionalData()(map[string]interface{
 func (m *ResetPasswordPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["newPassword"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetNewPassword)
-    res["requireChangeOnNextSignIn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequireChangeOnNextSignIn)
     return res
 }
 // GetNewPassword gets the newPassword property value. The newPassword property
 func (m *ResetPasswordPostRequestBody) GetNewPassword()(*string) {
     return m.newPassword
 }
-// GetRequireChangeOnNextSignIn gets the requireChangeOnNextSignIn property value. The requireChangeOnNextSignIn property
-func (m *ResetPasswordPostRequestBody) GetRequireChangeOnNextSignIn()(*bool) {
-    return m.requireChangeOnNextSignIn
-}
 // Serialize serializes information the current object
 func (m *ResetPasswordPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("newPassword", m.GetNewPassword())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("requireChangeOnNextSignIn", m.GetRequireChangeOnNextSignIn())
         if err != nil {
             return err
         }
@@ -73,8 +60,4 @@ func (m *ResetPasswordPostRequestBody) SetAdditionalData(value map[string]interf
 // SetNewPassword sets the newPassword property value. The newPassword property
 func (m *ResetPasswordPostRequestBody) SetNewPassword(value *string)() {
     m.newPassword = value
-}
-// SetRequireChangeOnNextSignIn sets the requireChangeOnNextSignIn property value. The requireChangeOnNextSignIn property
-func (m *ResetPasswordPostRequestBody) SetRequireChangeOnNextSignIn(value *bool)() {
-    m.requireChangeOnNextSignIn = value
 }

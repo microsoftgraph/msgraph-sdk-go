@@ -128,11 +128,11 @@ func (m *AppCatalogsRequestBuilder) Patch(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppCatalogsable), nil
 }
-// TeamsApps the teamsApps property
+// TeamsApps provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
 func (m *AppCatalogsRequestBuilder) TeamsApps()(*i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.TeamsAppsRequestBuilder) {
     return i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TeamsAppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.appCatalogs.teamsApps.item collection
+// TeamsAppsById provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
 func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.TeamsAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

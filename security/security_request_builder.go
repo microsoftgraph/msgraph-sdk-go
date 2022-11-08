@@ -47,11 +47,11 @@ type SecurityRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alerts the alerts property
+// Alerts provides operations to manage the alerts property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Alerts()(*ic55f4c3693b3458d37f169972d41697131ecfdb31a625c4fae6e024f02167222.AlertsRequestBuilder) {
     return ic55f4c3693b3458d37f169972d41697131ecfdb31a625c4fae6e024f02167222.NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.alerts.item collection
+// AlertsById provides operations to manage the alerts property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -62,11 +62,11 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e
     }
     return i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.NewAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttackSimulation the attackSimulation property
+// AttackSimulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) AttackSimulation()(*ie7d038ee19b31eb009a453ff789ed94976aee3a535728cdf937b5d42a5963d93.AttackSimulationRequestBuilder) {
     return ie7d038ee19b31eb009a453ff789ed94976aee3a535728cdf937b5d42a5963d93.NewAttackSimulationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Cases the cases property
+// Cases provides operations to manage the cases property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Cases()(*ifd8140bc5c892f85e2edd387a9c4f1aa051c63a62f5cbae31abf9d061b8b7b59.CasesRequestBuilder) {
     return ifd8140bc5c892f85e2edd387a9c4f1aa051c63a62f5cbae31abf9d061b8b7b59.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -157,11 +157,11 @@ func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable), nil
 }
-// SecureScoreControlProfiles the secureScoreControlProfiles property
+// SecureScoreControlProfiles provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*ie4328a6e5437e25d06c50bee3076698796ad30481e9e114d704c631aad9b6f5b.SecureScoreControlProfilesRequestBuilder) {
     return ie4328a6e5437e25d06c50bee3076698796ad30481e9e114d704c631aad9b6f5b.NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SecureScoreControlProfilesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.secureScoreControlProfiles.item collection
+// SecureScoreControlProfilesById provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.SecureScoreControlProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -172,11 +172,11 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341
     }
     return i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.NewSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SecureScores the secureScores property
+// SecureScores provides operations to manage the secureScores property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScores()(*i13bd20348dd8380732465deeb248cdc3f18bf1b888ea708c2518379965331b7d.SecureScoresRequestBuilder) {
     return i13bd20348dd8380732465deeb248cdc3f18bf1b888ea708c2518379965331b7d.NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SecureScoresById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.secureScores.item collection
+// SecureScoresById provides operations to manage the secureScores property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScoresById(id string)(*i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b.SecureScoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

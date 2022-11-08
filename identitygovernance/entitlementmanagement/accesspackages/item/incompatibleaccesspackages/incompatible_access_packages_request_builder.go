@@ -65,7 +65,7 @@ func NewIncompatibleAccessPackagesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewIncompatibleAccessPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *IncompatibleAccessPackagesRequestBuilder) Count()(*icef047e07d19909590222bd24d1e222b7ff2e03095c17a9f7ca4ab1bd5df1a46.CountRequestBuilder) {
     return icef047e07d19909590222bd24d1e222b7ff2e03095c17a9f7ca4ab1bd5df1a46.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *IncompatibleAccessPackagesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of identityGovernance entities.
 func (m *IncompatibleAccessPackagesRequestBuilder) Ref()(*i4ac7abc4549f1e176f674390570c1fcb8173d3eb41e3268431dc705a100523e8.RefRequestBuilder) {
     return i4ac7abc4549f1e176f674390570c1fcb8173d3eb41e3268431dc705a100523e8.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

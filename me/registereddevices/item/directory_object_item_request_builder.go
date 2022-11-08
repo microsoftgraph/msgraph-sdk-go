@@ -35,7 +35,7 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment the appRoleAssignment property
+// AppRoleAssignment casts the previous resource to appRoleAssignment.
 func (m *DirectoryObjectItemRequestBuilder) AppRoleAssignment()(*if92d9c95f3aef0bdc86ea9a85c8fbd64e97cb4bfac5ca0806090ed9da9aeadc9.AppRoleAssignmentRequestBuilder) {
     return if92d9c95f3aef0bdc86ea9a85c8fbd64e97cb4bfac5ca0806090ed9da9aeadc9.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -74,11 +74,11 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// Device the device property
+// Device casts the previous resource to device.
 func (m *DirectoryObjectItemRequestBuilder) Device()(*i1ac2ba0c203793e64ea816ae3345b8bbec3200ea47265b525eed61d9d45fd87a.DeviceRequestBuilder) {
     return i1ac2ba0c203793e64ea816ae3345b8bbec3200ea47265b525eed61d9d45fd87a.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i3f0c9c9742ab1e3d9ba0752582399dfaa92696b80261361b6059b4a04420c4c6.EndpointRequestBuilder) {
     return i3f0c9c9742ab1e3d9ba0752582399dfaa92696b80261361b6059b4a04420c4c6.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

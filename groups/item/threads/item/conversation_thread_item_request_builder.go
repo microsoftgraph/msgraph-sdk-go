@@ -162,11 +162,11 @@ func (m *ConversationThreadItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable), nil
 }
-// Posts the posts property
+// Posts provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
 func (m *ConversationThreadItemRequestBuilder) Posts()(*i5a7abfd1328ba5b847ef8b84b1d051d6e39374c970dc22edde14db8db120274b.PostsRequestBuilder) {
     return i5a7abfd1328ba5b847ef8b84b1d051d6e39374c970dc22edde14db8db120274b.NewPostsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.threads.item.posts.item collection
+// PostsById provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
 func (m *ConversationThreadItemRequestBuilder) PostsById(id string)(*i012cf83588255619c432f08ae9e700a7579e7a6a9fb261e3dc158bb5410ff5f0.PostItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -177,7 +177,7 @@ func (m *ConversationThreadItemRequestBuilder) PostsById(id string)(*i012cf83588
     }
     return i012cf83588255619c432f08ae9e700a7579e7a6a9fb261e3dc158bb5410ff5f0.NewPostItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Reply the reply property
+// Reply provides operations to call the reply method.
 func (m *ConversationThreadItemRequestBuilder) Reply()(*ia7c01d6fd0f825691464de84e3d45afc60f3735f37bb527928cfaf742a57dd92.ReplyRequestBuilder) {
     return ia7c01d6fd0f825691464de84e3d45afc60f3735f37bb527928cfaf742a57dd92.NewReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

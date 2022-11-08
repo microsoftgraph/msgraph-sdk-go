@@ -41,11 +41,11 @@ type AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationMethodConfigurations the authenticationMethodConfigurations property
+// AuthenticationMethodConfigurations provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.AuthenticationMethodConfigurationsRequestBuilder) {
     return i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AuthenticationMethodConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection
+// AuthenticationMethodConfigurationsById provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.AuthenticationMethodConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

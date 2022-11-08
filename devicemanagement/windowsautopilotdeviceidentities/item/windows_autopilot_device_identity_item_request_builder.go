@@ -49,7 +49,7 @@ type WindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssignUserToDevice the assignUserToDevice property
+// AssignUserToDevice provides operations to call the assignUserToDevice method.
 func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) AssignUserToDevice()(*i46e967e30b3e2ebfa4ff908160516ec25bc7b2130d0089dcadee4ef1eace18d6.AssignUserToDeviceRequestBuilder) {
     return i46e967e30b3e2ebfa4ff908160516ec25bc7b2130d0089dcadee4ef1eace18d6.NewAssignUserToDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable), nil
 }
-// UnassignUserFromDevice the unassignUserFromDevice property
+// UnassignUserFromDevice provides operations to call the unassignUserFromDevice method.
 func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) UnassignUserFromDevice()(*i61f366cffe0511c25120182704b917a2c085f27e6fcb6cc1453adc2f2f0c1f45.UnassignUserFromDeviceRequestBuilder) {
     return i61f366cffe0511c25120182704b917a2c085f27e6fcb6cc1453adc2f2f0c1f45.NewUnassignUserFromDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateDeviceProperties the updateDeviceProperties property
+// UpdateDeviceProperties provides operations to call the updateDeviceProperties method.
 func (m *WindowsAutopilotDeviceIdentityItemRequestBuilder) UpdateDeviceProperties()(*i7cd71639ba4ffd0557fb1cdc614568052b0ebbec5a93a34ab448d2d4bcced638.UpdateDevicePropertiesRequestBuilder) {
     return i7cd71639ba4ffd0557fb1cdc614568052b0ebbec5a93a34ab448d2d4bcced638.NewUpdateDevicePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

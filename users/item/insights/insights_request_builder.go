@@ -167,11 +167,11 @@ func (m *InsightsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfficeGraphInsightsable), nil
 }
-// Shared the shared property
+// Shared provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
 func (m *InsightsRequestBuilder) Shared()(*i3e4ce2336bbbc58648757b85760fb89c5881021a08e9098f363056f0c6a6195c.SharedRequestBuilder) {
     return i3e4ce2336bbbc58648757b85760fb89c5881021a08e9098f363056f0c6a6195c.NewSharedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SharedById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.insights.shared.item collection
+// SharedById provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
 func (m *InsightsRequestBuilder) SharedById(id string)(*if5106cc51c89d49dab777a3bad4d2f60f1791257ebdb9793f092fde43062bbe4.SharedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,11 +182,11 @@ func (m *InsightsRequestBuilder) SharedById(id string)(*if5106cc51c89d49dab777a3
     }
     return if5106cc51c89d49dab777a3bad4d2f60f1791257ebdb9793f092fde43062bbe4.NewSharedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Trending the trending property
+// Trending provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
 func (m *InsightsRequestBuilder) Trending()(*iab3e868bd74f90122481d659f92b93937dc248e664cb771faabf5f029a1a664f.TrendingRequestBuilder) {
     return iab3e868bd74f90122481d659f92b93937dc248e664cb771faabf5f029a1a664f.NewTrendingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TrendingById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.insights.trending.item collection
+// TrendingById provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
 func (m *InsightsRequestBuilder) TrendingById(id string)(*ie5cd453259522930b20937b7a3b030629926bd41d23d0488babbe3bc6a06c20c.TrendingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,11 +197,11 @@ func (m *InsightsRequestBuilder) TrendingById(id string)(*ie5cd453259522930b2093
     }
     return ie5cd453259522930b20937b7a3b030629926bd41d23d0488babbe3bc6a06c20c.NewTrendingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Used the used property
+// Used provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
 func (m *InsightsRequestBuilder) Used()(*i0179bb6fa871e13743008821796dbc9552d7f97c10cb54f6706fbdf6be05df6e.UsedRequestBuilder) {
     return i0179bb6fa871e13743008821796dbc9552d7f97c10cb54f6706fbdf6be05df6e.NewUsedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UsedById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.insights.used.item collection
+// UsedById provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
 func (m *InsightsRequestBuilder) UsedById(id string)(*ia144b1cd33e78603da2911ebd505e4e1bb01884db983335223d6dcd6008a9a5f.UsedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

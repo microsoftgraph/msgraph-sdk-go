@@ -90,11 +90,11 @@ func (m *RoleManagementRequestBuilder) CreatePatchRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// Directory the directory property
+// Directory provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
 func (m *RoleManagementRequestBuilder) Directory()(*iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5.DirectoryRequestBuilder) {
     return iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5.NewDirectoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EntitlementManagement the entitlementManagement property
+// EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
 func (m *RoleManagementRequestBuilder) EntitlementManagement()(*i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a.EntitlementManagementRequestBuilder) {
     return i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a.NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

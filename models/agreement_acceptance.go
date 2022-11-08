@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgreementAcceptance provides operations to manage the collection of agreementAcceptance entities.
+// AgreementAcceptance provides operations to manage the collection of agreement entities.
 type AgreementAcceptance struct {
     Entity
     // The identifier of the agreement file accepted by the user.
@@ -15,13 +15,13 @@ type AgreementAcceptance struct {
     agreementId *string
     // The display name of the device used for accepting the agreement.
     deviceDisplayName *string
-    // The unique identifier of the device used for accepting the agreement.
+    // The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
     deviceId *string
     // The operating system used to accept the agreement.
     deviceOSType *string
     // The operating system version of the device used to accept the agreement.
     deviceOSVersion *string
-    // The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -31,7 +31,7 @@ type AgreementAcceptance struct {
     userDisplayName *string
     // Email of the user when the acceptance was recorded.
     userEmail *string
-    // The identifier of the user who accepted the agreement.
+    // The identifier of the user who accepted the agreement. Supports $filter (eq).
     userId *string
     // UPN of the user when the acceptance was recorded.
     userPrincipalName *string
@@ -61,7 +61,7 @@ func (m *AgreementAcceptance) GetAgreementId()(*string) {
 func (m *AgreementAcceptance) GetDeviceDisplayName()(*string) {
     return m.deviceDisplayName
 }
-// GetDeviceId gets the deviceId property value. The unique identifier of the device used for accepting the agreement.
+// GetDeviceId gets the deviceId property value. The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
 func (m *AgreementAcceptance) GetDeviceId()(*string) {
     return m.deviceId
 }
@@ -73,7 +73,7 @@ func (m *AgreementAcceptance) GetDeviceOSType()(*string) {
 func (m *AgreementAcceptance) GetDeviceOSVersion()(*string) {
     return m.deviceOSVersion
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetExpirationDateTime gets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
 func (m *AgreementAcceptance) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expirationDateTime
 }
@@ -111,7 +111,7 @@ func (m *AgreementAcceptance) GetUserDisplayName()(*string) {
 func (m *AgreementAcceptance) GetUserEmail()(*string) {
     return m.userEmail
 }
-// GetUserId gets the userId property value. The identifier of the user who accepted the agreement.
+// GetUserId gets the userId property value. The identifier of the user who accepted the agreement. Supports $filter (eq).
 func (m *AgreementAcceptance) GetUserId()(*string) {
     return m.userId
 }
@@ -218,7 +218,7 @@ func (m *AgreementAcceptance) SetAgreementId(value *string)() {
 func (m *AgreementAcceptance) SetDeviceDisplayName(value *string)() {
     m.deviceDisplayName = value
 }
-// SetDeviceId sets the deviceId property value. The unique identifier of the device used for accepting the agreement.
+// SetDeviceId sets the deviceId property value. The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
 func (m *AgreementAcceptance) SetDeviceId(value *string)() {
     m.deviceId = value
 }
@@ -230,7 +230,7 @@ func (m *AgreementAcceptance) SetDeviceOSType(value *string)() {
 func (m *AgreementAcceptance) SetDeviceOSVersion(value *string)() {
     m.deviceOSVersion = value
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetExpirationDateTime sets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
 func (m *AgreementAcceptance) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
@@ -250,7 +250,7 @@ func (m *AgreementAcceptance) SetUserDisplayName(value *string)() {
 func (m *AgreementAcceptance) SetUserEmail(value *string)() {
     m.userEmail = value
 }
-// SetUserId sets the userId property value. The identifier of the user who accepted the agreement.
+// SetUserId sets the userId property value. The identifier of the user who accepted the agreement. Supports $filter (eq).
 func (m *AgreementAcceptance) SetUserId(value *string)() {
     m.userId = value
 }

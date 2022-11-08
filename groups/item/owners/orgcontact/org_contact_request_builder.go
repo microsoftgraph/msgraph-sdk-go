@@ -64,7 +64,7 @@ func NewOrgContactRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewOrgContactRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OrgContactRequestBuilder) Count()(*i4e228d87c4ec4e4c80fb99e22612624fcc550db7850ceeb04ebfc3e47e3a3a07.CountRequestBuilder) {
     return i4e228d87c4ec4e4c80fb99e22612624fcc550db7850ceeb04ebfc3e47e3a3a07.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -48,11 +48,11 @@ type TeamsAppItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppDefinitions the appDefinitions property
+// AppDefinitions provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 func (m *TeamsAppItemRequestBuilder) AppDefinitions()(*i048cb49cf3e85a5059ba0b619f93cec0ea03f1ed67b1a2e8f9cdc580df57bc70.AppDefinitionsRequestBuilder) {
     return i048cb49cf3e85a5059ba0b619f93cec0ea03f1ed67b1a2e8f9cdc580df57bc70.NewAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.appCatalogs.teamsApps.item.appDefinitions.item collection
+// AppDefinitionsById provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 func (m *TeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*ic0dc56f620001a78f10e220a38cfda92ea81c50e16ac619fcd0904e1ef140bb8.TeamsAppDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

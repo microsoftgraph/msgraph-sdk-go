@@ -48,11 +48,11 @@ type AccessPackageAssignmentPolicyItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackage the accessPackage property
+// AccessPackage provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) AccessPackage()(*i1691d13581dd602841159634157c2b25c53593cb283bdbbe864f6061b1a564f3.AccessPackageRequestBuilder) {
     return i1691d13581dd602841159634157c2b25c53593cb283bdbbe864f6061b1a564f3.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Catalog the catalog property
+// Catalog provides operations to manage the catalog property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Catalog()(*i9183f8bc8e07d136b6097f4bfb389fa82aa78e4f3156e4d0a976f3e6b95cde91.CatalogRequestBuilder) {
     return i9183f8bc8e07d136b6097f4bfb389fa82aa78e4f3156e4d0a976f3e6b95cde91.NewCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

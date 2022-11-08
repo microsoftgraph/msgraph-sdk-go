@@ -53,11 +53,11 @@ type PrinterItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Connectors the connectors property
+// Connectors provides operations to manage the connectors property of the microsoft.graph.printer entity.
 func (m *PrinterItemRequestBuilder) Connectors()(*i6ef3a73ca24cdfe4f01546d744e3ad5d5f17082ec1283caf5b2176d392cb9cd9.ConnectorsRequestBuilder) {
     return i6ef3a73ca24cdfe4f01546d744e3ad5d5f17082ec1283caf5b2176d392cb9cd9.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConnectorsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item.connectors.item collection
+// ConnectorsById provides operations to manage the connectors property of the microsoft.graph.printer entity.
 func (m *PrinterItemRequestBuilder) ConnectorsById(id string)(*i02acec2b11a647c1fc0601a6c9f6283bf36064facb17fdc38860e7fc02ca0db0.PrintConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -183,15 +183,15 @@ func (m *PrinterItemRequestBuilder) Patch(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable), nil
 }
-// RestoreFactoryDefaults the restoreFactoryDefaults property
+// RestoreFactoryDefaults provides operations to call the restoreFactoryDefaults method.
 func (m *PrinterItemRequestBuilder) RestoreFactoryDefaults()(*i95e425711e2e59b85807bfbd36bd18a7893a62957fccbb0dcc17647c9c3f5e90.RestoreFactoryDefaultsRequestBuilder) {
     return i95e425711e2e59b85807bfbd36bd18a7893a62957fccbb0dcc17647c9c3f5e90.NewRestoreFactoryDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Shares the shares property
+// Shares provides operations to manage the shares property of the microsoft.graph.printer entity.
 func (m *PrinterItemRequestBuilder) Shares()(*i74b470ddc01590a04dfc5ba245b7ccb094a2f7b819d0a4ea94773869da1de8bc.SharesRequestBuilder) {
     return i74b470ddc01590a04dfc5ba245b7ccb094a2f7b819d0a4ea94773869da1de8bc.NewSharesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SharesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item.shares.item collection
+// SharesById provides operations to manage the shares property of the microsoft.graph.printer entity.
 func (m *PrinterItemRequestBuilder) SharesById(id string)(*i652aa29a7f8828f592dc5bf3e9ada513fbcda2a67c9d060f001cc99e28d86159.PrinterShareItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,11 +202,11 @@ func (m *PrinterItemRequestBuilder) SharesById(id string)(*i652aa29a7f8828f592dc
     }
     return i652aa29a7f8828f592dc5bf3e9ada513fbcda2a67c9d060f001cc99e28d86159.NewPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TaskTriggers the taskTriggers property
+// TaskTriggers provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
 func (m *PrinterItemRequestBuilder) TaskTriggers()(*i05f5154d5dc8e1096ef3ba18fb5bdb890712250391686b0ffd44f043e05db1fb.TaskTriggersRequestBuilder) {
     return i05f5154d5dc8e1096ef3ba18fb5bdb890712250391686b0ffd44f043e05db1fb.NewTaskTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskTriggersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item.taskTriggers.item collection
+// TaskTriggersById provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
 func (m *PrinterItemRequestBuilder) TaskTriggersById(id string)(*i8a35ad54635f07016096adf7157efc92ede0057cd4a790d06a32332ce94f22cc.PrintTaskTriggerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

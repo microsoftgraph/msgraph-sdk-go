@@ -50,11 +50,11 @@ type PresenceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClearPresence the clearPresence property
+// ClearPresence provides operations to call the clearPresence method.
 func (m *PresenceRequestBuilder) ClearPresence()(*i3a9b8d01a7740b55864f171aecfe032d304f59a11ee0c238145533dff9ad2910.ClearPresenceRequestBuilder) {
     return i3a9b8d01a7740b55864f171aecfe032d304f59a11ee0c238145533dff9ad2910.NewClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ClearUserPreferredPresence the clearUserPreferredPresence property
+// ClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
 func (m *PresenceRequestBuilder) ClearUserPreferredPresence()(*i8d9a30a94f2d12f0b7396d98cd13d3b83c3ef0f41060ef7812e4841680a97177.ClearUserPreferredPresenceRequestBuilder) {
     return i8d9a30a94f2d12f0b7396d98cd13d3b83c3ef0f41060ef7812e4841680a97177.NewClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *PresenceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable), nil
 }
-// SetPresence the setPresence property
+// SetPresence provides operations to call the setPresence method.
 func (m *PresenceRequestBuilder) SetPresence()(*ie9f3d6636a19dc2982d31154f9d808e88d5ed9b5fd077aa65f4b406a36b3a3ef.SetPresenceRequestBuilder) {
     return ie9f3d6636a19dc2982d31154f9d808e88d5ed9b5fd077aa65f4b406a36b3a3ef.NewSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetUserPreferredPresence the setUserPreferredPresence property
+// SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
 func (m *PresenceRequestBuilder) SetUserPreferredPresence()(*ibbd152c67f05e9f7d74b7eda57ff68eededf94451c9d0500b72deec8347c1cfa.SetUserPreferredPresenceRequestBuilder) {
     return ibbd152c67f05e9f7d74b7eda57ff68eededf94451c9d0500b72deec8347c1cfa.NewSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -5,14 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyUserHistoryItem provides operations to manage the collection of agreement entities.
+// RiskyUserHistoryItem provides operations to manage the collection of agreementAcceptance entities.
 type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
     activity RiskUserActivityable
-    // The id of actor that does the operation.
+    // The ID of actor that does the operation.
     initiatedBy *string
-    // The id of the user.
+    // The ID of the user.
     userId *string
 }
 // NewRiskyUserHistoryItem instantiates a new riskyUserHistoryItem and sets the default values.
@@ -40,11 +40,11 @@ func (m *RiskyUserHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2
     res["userId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUserId)
     return res
 }
-// GetInitiatedBy gets the initiatedBy property value. The id of actor that does the operation.
+// GetInitiatedBy gets the initiatedBy property value. The ID of actor that does the operation.
 func (m *RiskyUserHistoryItem) GetInitiatedBy()(*string) {
     return m.initiatedBy
 }
-// GetUserId gets the userId property value. The id of the user.
+// GetUserId gets the userId property value. The ID of the user.
 func (m *RiskyUserHistoryItem) GetUserId()(*string) {
     return m.userId
 }
@@ -78,11 +78,11 @@ func (m *RiskyUserHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *RiskyUserHistoryItem) SetActivity(value RiskUserActivityable)() {
     m.activity = value
 }
-// SetInitiatedBy sets the initiatedBy property value. The id of actor that does the operation.
+// SetInitiatedBy sets the initiatedBy property value. The ID of actor that does the operation.
 func (m *RiskyUserHistoryItem) SetInitiatedBy(value *string)() {
     m.initiatedBy = value
 }
-// SetUserId sets the userId property value. The id of the user.
+// SetUserId sets the userId property value. The ID of the user.
 func (m *RiskyUserHistoryItem) SetUserId(value *string)() {
     m.userId = value
 }

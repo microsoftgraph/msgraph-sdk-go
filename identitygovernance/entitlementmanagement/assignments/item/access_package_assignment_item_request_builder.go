@@ -50,11 +50,11 @@ type AccessPackageAssignmentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackage the accessPackage property
+// AccessPackage provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignment entity.
 func (m *AccessPackageAssignmentItemRequestBuilder) AccessPackage()(*i8da3a952221aa4c7bde05a62c631de52f912d9f6898d19d970a88752a1c845e5.AccessPackageRequestBuilder) {
     return i8da3a952221aa4c7bde05a62c631de52f912d9f6898d19d970a88752a1c845e5.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentPolicy the assignmentPolicy property
+// AssignmentPolicy provides operations to manage the assignmentPolicy property of the microsoft.graph.accessPackageAssignment entity.
 func (m *AccessPackageAssignmentItemRequestBuilder) AssignmentPolicy()(*i89ce7f3453a99fc00ceb72ee142034423113f7282418e19187b392e880621914.AssignmentPolicyRequestBuilder) {
     return i89ce7f3453a99fc00ceb72ee142034423113f7282418e19187b392e880621914.NewAssignmentPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *AccessPackageAssignmentItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable), nil
 }
-// Reprocess the reprocess property
+// Reprocess provides operations to call the reprocess method.
 func (m *AccessPackageAssignmentItemRequestBuilder) Reprocess()(*i740a32cda16cd8a7f35813fa81f1d9cca14e072757e244629824f58d5deabdf5.ReprocessRequestBuilder) {
     return i740a32cda16cd8a7f35813fa81f1d9cca14e072757e244629824f58d5deabdf5.NewReprocessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Target the target property
+// Target provides operations to manage the target property of the microsoft.graph.accessPackageAssignment entity.
 func (m *AccessPackageAssignmentItemRequestBuilder) Target()(*i82c767b5012f97dcb46f02ff991f0c26a1a7967f84309e34ede909edfa1546e0.TargetRequestBuilder) {
     return i82c767b5012f97dcb46f02ff991f0c26a1a7967f84309e34ede909edfa1546e0.NewTargetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

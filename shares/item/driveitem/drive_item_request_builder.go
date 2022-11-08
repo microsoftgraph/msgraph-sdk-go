@@ -52,7 +52,7 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the sharedDriveItem entity.
 func (m *DriveItemRequestBuilder) Content()(*i47d3b89fc748d2e27955c74f78925c790cb5621ba2e51e45317f3596d6385a10.ContentRequestBuilder) {
     return i47d3b89fc748d2e27955c74f78925c790cb5621ba2e51e45317f3596d6385a10.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -18,7 +18,7 @@ type DirectoryObjectItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AppRoleAssignment the appRoleAssignment property
+// AppRoleAssignment casts the previous resource to appRoleAssignment.
 func (m *DirectoryObjectItemRequestBuilder) AppRoleAssignment()(*i20e984775a5e9f82dd6d9e24f9ffbbae22603db6b07af2a1143cfb24a29e71f9.AppRoleAssignmentRequestBuilder) {
     return i20e984775a5e9f82dd6d9e24f9ffbbae22603db6b07af2a1143cfb24a29e71f9.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -41,19 +41,19 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i55481771a625884c0b0d1361419ee69566b21c0f51c8274b69ce9a76280d32f9.EndpointRequestBuilder) {
     return i55481771a625884c0b0d1361419ee69566b21c0f51c8274b69ce9a76280d32f9.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of user entities.
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*i00967feecc7c4666a9920355ce33d30b6520ef377bfe05a1fa3309c68879d0b2.RefRequestBuilder) {
     return i00967feecc7c4666a9920355ce33d30b6520ef377bfe05a1fa3309c68879d0b2.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*ia5b5d1728b877f29f6389d5019ce78c3745fa24b00cae91253b20120526c1f59.ServicePrincipalRequestBuilder) {
     return ia5b5d1728b877f29f6389d5019ce78c3745fa24b00cae91253b20120526c1f59.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DirectoryObjectItemRequestBuilder) User()(*i64d0e684e9a720456d9863c0a91e227a729ff9f1a997e7c0ab1ae583487a75cd.UserRequestBuilder) {
     return i64d0e684e9a720456d9863c0a91e227a729ff9f1a997e7c0ab1ae583487a75cd.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

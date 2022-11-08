@@ -144,11 +144,11 @@ func (m *DetectedAppItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable), nil
 }
-// ManagedDevices the managedDevices property
+// ManagedDevices provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
 func (m *DetectedAppItemRequestBuilder) ManagedDevices()(*i9e190cfc2be35b3956b6774ad73eb9f9e3362f078f2087cb504d236ed7b9d85c.ManagedDevicesRequestBuilder) {
     return i9e190cfc2be35b3956b6774ad73eb9f9e3362f078f2087cb504d236ed7b9d85c.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ManagedDevicesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.detectedApps.item.managedDevices.item collection
+// ManagedDevicesById provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
 func (m *DetectedAppItemRequestBuilder) ManagedDevicesById(id string)(*ic1519d859d73635c09bf71bf55e09802b54e37335c3c0e9eba1e107f14d07eff.ManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

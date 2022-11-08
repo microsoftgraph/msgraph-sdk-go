@@ -52,11 +52,11 @@ type ContactFolderItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChildFolders the childFolders property
+// ChildFolders provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) ChildFolders()(*i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e.ChildFoldersRequestBuilder) {
     return i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e.NewChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildFoldersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.childFolders.item collection
+// ChildFoldersById provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) ChildFoldersById(id string)(*i313408c9cc7b38ecc6251cca569a0b7c6640fe8f5556623d6b010c4ad94526c7.ContactFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -86,11 +86,11 @@ func NewContactFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewContactFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Contacts the contacts property
+// Contacts provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) Contacts()(*ida83c3cad119a461d4351a90d275d85f7ab07a13493267b770834de6b0df1e46.ContactsRequestBuilder) {
     return ida83c3cad119a461d4351a90d275d85f7ab07a13493267b770834de6b0df1e46.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContactsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.contacts.item collection
+// ContactsById provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) ContactsById(id string)(*i316f60e76d66ed07f62c18eb8b9dbe052faea000d861699ea2e1e9ee3745269a.ContactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *ContactFolderItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedProperties()(*i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934.MultiValueExtendedPropertiesRequestBuilder) {
     return i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ibd6ce6f8bcc14aa05c644fdf6a85e41e90bf174f08ca7bfa4ed65ee287544500.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -212,11 +212,11 @@ func (m *ContactFolderItemRequestBuilder) Patch(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedProperties()(*i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1.SingleValueExtendedPropertiesRequestBuilder) {
     return i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ibb87b307fcec740337cd562826187e93e9cf34543efe25a06a3c17bea866ffc8.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

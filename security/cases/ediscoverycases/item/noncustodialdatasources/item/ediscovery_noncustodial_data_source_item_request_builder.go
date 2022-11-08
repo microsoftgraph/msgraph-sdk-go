@@ -52,7 +52,7 @@ type EdiscoveryNoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold the applyHold property
+// ApplyHold provides operations to call the applyHold method.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) ApplyHold()(*i4c807bf0834f9a44219fc0105bc5b369c9166feb6d7e3c88af28b243051a4a56.ApplyHoldRequestBuilder) {
     return i4c807bf0834f9a44219fc0105bc5b369c9166feb6d7e3c88af28b243051a4a56.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -117,7 +117,7 @@ func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// DataSource the dataSource property
+// DataSource provides operations to manage the dataSource property of the microsoft.graph.security.ediscoveryNoncustodialDataSource entity.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) DataSource()(*i934e0bd91eb5a2fa31d6b998fceba9fbe832263aa3c099f68bd1827387752af7.DataSourceRequestBuilder) {
     return i934e0bd91eb5a2fa31d6b998fceba9fbe832263aa3c099f68bd1827387752af7.NewDataSourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -156,7 +156,7 @@ func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Get(ctx context.Con
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryNoncustodialDataSourceable), nil
 }
-// LastIndexOperation the lastIndexOperation property
+// LastIndexOperation provides operations to manage the lastIndexOperation property of the microsoft.graph.security.ediscoveryNoncustodialDataSource entity.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) LastIndexOperation()(*if7b225650e0b7e73fe878c726f1da246ebfb91055c79d43fdf67fb77431dd716.LastIndexOperationRequestBuilder) {
     return if7b225650e0b7e73fe878c726f1da246ebfb91055c79d43fdf67fb77431dd716.NewLastIndexOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -179,15 +179,15 @@ func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Patch(ctx context.C
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryNoncustodialDataSourceable), nil
 }
-// Release the release property
+// Release provides operations to call the release method.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Release()(*i3ab864667d0344b888b69461334a5801c5ab281d8972963fe5973b72255f9c06.ReleaseRequestBuilder) {
     return i3ab864667d0344b888b69461334a5801c5ab281d8972963fe5973b72255f9c06.NewReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemoveHold the removeHold property
+// RemoveHold provides operations to call the removeHold method.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) RemoveHold()(*i6f45a7a263cac9097405f0ef443bd55fdcf3ba23c62da31ceb89231a3c3fd917.RemoveHoldRequestBuilder) {
     return i6f45a7a263cac9097405f0ef443bd55fdcf3ba23c62da31ceb89231a3c3fd917.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateIndex the updateIndex property
+// UpdateIndex provides operations to call the updateIndex method.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) UpdateIndex()(*i402c2432188faf66788736e86401111a5c90fe5625973d26cc4454aaa94cebca.UpdateIndexRequestBuilder) {
     return i402c2432188faf66788736e86401111a5c90fe5625973d26cc4454aaa94cebca.NewUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

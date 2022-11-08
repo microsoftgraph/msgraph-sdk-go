@@ -146,11 +146,11 @@ func (m *ChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
-// HostedContents the hostedContents property
+// HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ChatMessageItemRequestBuilder) HostedContents()(*i9c72256a59f4e5dbe49725445d9a8047105855d16d2c4edf47ef7a5ba28891f6.HostedContentsRequestBuilder) {
     return i9c72256a59f4e5dbe49725445d9a8047105855d16d2c4edf47ef7a5ba28891f6.NewHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HostedContentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.joinedTeams.item.primaryChannel.messages.item.hostedContents.item collection
+// HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ChatMessageItemRequestBuilder) HostedContentsById(id string)(*i4f631eb938dab48cb937b603cfd3530643c6d543b8046a74611cdc577c30e2f7.ChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *ChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
-// Replies the replies property
+// Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ChatMessageItemRequestBuilder) Replies()(*i1ebc8cbc8a69e6f9909811aefc25ce8c9ee0533a0b02820a6fcea06acf091503.RepliesRequestBuilder) {
     return i1ebc8cbc8a69e6f9909811aefc25ce8c9ee0533a0b02820a6fcea06acf091503.NewRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RepliesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.joinedTeams.item.primaryChannel.messages.item.replies.item collection
+// RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ChatMessageItemRequestBuilder) RepliesById(id string)(*ibe65c4a93645931e56029723be847c7610d72bf52e4a9de648993c7c133561c6.ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

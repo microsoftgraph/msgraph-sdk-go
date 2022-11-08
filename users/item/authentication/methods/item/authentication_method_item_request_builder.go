@@ -127,7 +127,7 @@ func (m *AuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable), nil
 }
-// ResetPassword the resetPassword property
+// ResetPassword provides operations to call the resetPassword method.
 func (m *AuthenticationMethodItemRequestBuilder) ResetPassword()(*if2ae42c68c4a5e3aa2884821b2939f26d230451d926dcb8fca21d88eece6fd43.ResetPasswordRequestBuilder) {
     return if2ae42c68c4a5e3aa2884821b2939f26d230451d926dcb8fca21d88eece6fd43.NewResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

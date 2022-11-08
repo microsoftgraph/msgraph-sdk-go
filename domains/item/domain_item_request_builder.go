@@ -133,11 +133,11 @@ func (m *DomainItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
     }
     return nil
 }
-// DomainNameReferences the domainNameReferences property
+// DomainNameReferences provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) DomainNameReferences()(*id6628f59c761c8d4beb30bc461b4a9033a596bf14d71905302fee3144bffe677.DomainNameReferencesRequestBuilder) {
     return id6628f59c761c8d4beb30bc461b4a9033a596bf14d71905302fee3144bffe677.NewDomainNameReferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DomainNameReferencesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.domains.item.domainNameReferences.item collection
+// DomainNameReferencesById provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) DomainNameReferencesById(id string)(*i4eeff4aea5c653c30cf74b43987a1c46ab8d4723858e572edb5f60ff78363be0.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -148,11 +148,11 @@ func (m *DomainItemRequestBuilder) DomainNameReferencesById(id string)(*i4eeff4a
     }
     return i4eeff4aea5c653c30cf74b43987a1c46ab8d4723858e572edb5f60ff78363be0.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// FederationConfiguration the federationConfiguration property
+// FederationConfiguration provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) FederationConfiguration()(*ic9cf916b096ab628ac94150eded9fad2da688dcaced99eb8551954b4daabff85.FederationConfigurationRequestBuilder) {
     return ic9cf916b096ab628ac94150eded9fad2da688dcaced99eb8551954b4daabff85.NewFederationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FederationConfigurationById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.domains.item.federationConfiguration.item collection
+// FederationConfigurationById provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) FederationConfigurationById(id string)(*ibe4d7e9a1d86de76f2fb6d99d1444ab26d987f71d4d6f5054eebc0aebb2d6687.InternalDomainFederationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -163,7 +163,7 @@ func (m *DomainItemRequestBuilder) FederationConfigurationById(id string)(*ibe4d
     }
     return ibe4d7e9a1d86de76f2fb6d99d1444ab26d987f71d4d6f5054eebc0aebb2d6687.NewInternalDomainFederationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ForceDelete the forceDelete property
+// ForceDelete provides operations to call the forceDelete method.
 func (m *DomainItemRequestBuilder) ForceDelete()(*i1881cafcb69c2a03b070eab982c3f40a50f879626e4f5a433adf3d53764e612f.ForceDeleteRequestBuilder) {
     return i1881cafcb69c2a03b070eab982c3f40a50f879626e4f5a433adf3d53764e612f.NewForceDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -205,11 +205,11 @@ func (m *DomainItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable), nil
 }
-// ServiceConfigurationRecords the serviceConfigurationRecords property
+// ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*if6c517fa3faff0b607727add22bace8751787df881a7f48b830e8ee8854493e1.ServiceConfigurationRecordsRequestBuilder) {
     return if6c517fa3faff0b607727add22bace8751787df881a7f48b830e8ee8854493e1.NewServiceConfigurationRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServiceConfigurationRecordsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.domains.item.serviceConfigurationRecords.item collection
+// ServiceConfigurationRecordsById provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecordsById(id string)(*if238474bb023ee1ae7b1e221337d6649adb30bb8a532c530686588c4d8f149e4.DomainDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -220,11 +220,11 @@ func (m *DomainItemRequestBuilder) ServiceConfigurationRecordsById(id string)(*i
     }
     return if238474bb023ee1ae7b1e221337d6649adb30bb8a532c530686588c4d8f149e4.NewDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// VerificationDnsRecords the verificationDnsRecords property
+// VerificationDnsRecords provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) VerificationDnsRecords()(*icf5b8e1a8b1c94340467eae996f377e8f09f9616367b7d5309238180fac55b36.VerificationDnsRecordsRequestBuilder) {
     return icf5b8e1a8b1c94340467eae996f377e8f09f9616367b7d5309238180fac55b36.NewVerificationDnsRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VerificationDnsRecordsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.domains.item.verificationDnsRecords.item collection
+// VerificationDnsRecordsById provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) VerificationDnsRecordsById(id string)(*i920c7da1a3bc0cc91d66e6345a870d4afe1c3ff7eadb815aed8f74ac233de19e.DomainDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -235,7 +235,7 @@ func (m *DomainItemRequestBuilder) VerificationDnsRecordsById(id string)(*i920c7
     }
     return i920c7da1a3bc0cc91d66e6345a870d4afe1c3ff7eadb815aed8f74ac233de19e.NewDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Verify the verify property
+// Verify provides operations to call the verify method.
 func (m *DomainItemRequestBuilder) Verify()(*iacad0a6834b5884a8d686d9e187dfb93e979024e3471c842fc86db3dd765352a.VerifyRequestBuilder) {
     return iacad0a6834b5884a8d686d9e187dfb93e979024e3471c842fc86db3dd765352a.NewVerifyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

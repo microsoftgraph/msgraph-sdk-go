@@ -33,7 +33,7 @@ func NewClaimsMappingPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *ClaimsMappingPolicyItemRequestBuilder) Ref()(*id596d9baf4431faf255161b3f48b6ab78efaf2b2a0636dee176263e72e58b5b0.RefRequestBuilder) {
     return id596d9baf4431faf255161b3f48b6ab78efaf2b2a0636dee176263e72e58b5b0.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

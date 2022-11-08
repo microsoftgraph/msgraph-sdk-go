@@ -51,15 +51,15 @@ type AccessPackageAssignmentRequestItemRequestBuilderPatchRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackage the accessPackage property
+// AccessPackage provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignmentRequest entity.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) AccessPackage()(*if6c1379b58039723b5baf775bd869822006180e1ec4a8ed31e699e042488794e.AccessPackageRequestBuilder) {
     return if6c1379b58039723b5baf775bd869822006180e1ec4a8ed31e699e042488794e.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignment the assignment property
+// Assignment provides operations to manage the assignment property of the microsoft.graph.accessPackageAssignmentRequest entity.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) Assignment()(*ib498f7ef8ff5f910a4aa1ac1da3f19d7068012349151e82a66f3b85b4ee5c843.AssignmentRequestBuilder) {
     return ib498f7ef8ff5f910a4aa1ac1da3f19d7068012349151e82a66f3b85b4ee5c843.NewAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) Cancel()(*if98f644e25be228d6e957c4164f416b338a91937249fd745a801630f4c1beb41.CancelRequestBuilder) {
     return if98f644e25be228d6e957c4164f416b338a91937249fd745a801630f4c1beb41.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -178,11 +178,11 @@ func (m *AccessPackageAssignmentRequestItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentRequestable), nil
 }
-// Reprocess the reprocess property
+// Reprocess provides operations to call the reprocess method.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) Reprocess()(*i6fcfba7c3cf2f80ff7eb56c464bf4c01dcb8779eda51a4d5b0aa111086c6f1d9.ReprocessRequestBuilder) {
     return i6fcfba7c3cf2f80ff7eb56c464bf4c01dcb8779eda51a4d5b0aa111086c6f1d9.NewReprocessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Requestor the requestor property
+// Requestor provides operations to manage the requestor property of the microsoft.graph.accessPackageAssignmentRequest entity.
 func (m *AccessPackageAssignmentRequestItemRequestBuilder) Requestor()(*i748dee09a8f1f14c9b723a15a9da9cdd5b2b3bca36dcdaaf8cbca1ebda06a99a.RequestorRequestBuilder) {
     return i748dee09a8f1f14c9b723a15a9da9cdd5b2b3bca36dcdaaf8cbca1ebda06a99a.NewRequestorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

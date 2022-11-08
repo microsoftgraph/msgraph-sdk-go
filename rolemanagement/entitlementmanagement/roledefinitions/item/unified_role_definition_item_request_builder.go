@@ -144,11 +144,11 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable), nil
 }
-// InheritsPermissionsFrom the inheritsPermissionsFrom property
+// InheritsPermissionsFrom provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
 func (m *UnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFrom()(*if43ff838a669d789f6bf5e5519a0db5b7c62c11b92b86af060a06f6beb730529.InheritsPermissionsFromRequestBuilder) {
     return if43ff838a669d789f6bf5e5519a0db5b7c62c11b92b86af060a06f6beb730529.NewInheritsPermissionsFromRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InheritsPermissionsFromById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection
+// InheritsPermissionsFromById provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
 func (m *UnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFromById(id string)(*ife007862126c9f65faff019cd009f1d0b9034527a12b551209fd7a081d559486.UnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

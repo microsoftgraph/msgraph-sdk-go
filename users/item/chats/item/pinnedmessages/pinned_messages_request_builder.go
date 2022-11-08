@@ -71,7 +71,7 @@ func NewPinnedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewPinnedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PinnedMessagesRequestBuilder) Count()(*i8a17101457bac3704c6fb0dfe6aa87f78827b1ac16d31b7db9302dd4db95eef7.CountRequestBuilder) {
     return i8a17101457bac3704c6fb0dfe6aa87f78827b1ac16d31b7db9302dd4db95eef7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

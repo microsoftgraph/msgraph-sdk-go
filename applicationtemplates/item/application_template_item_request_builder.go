@@ -143,7 +143,7 @@ func (m *ApplicationTemplateItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable), nil
 }
-// Instantiate the instantiate property
+// Instantiate provides operations to call the instantiate method.
 func (m *ApplicationTemplateItemRequestBuilder) Instantiate()(*i136461ffa9165f3471f6f3ee9d90583b6fc6e55fbeaabaf0122c150cc4fb8f8d.InstantiateRequestBuilder) {
     return i136461ffa9165f3471f6f3ee9d90583b6fc6e55fbeaabaf0122c150cc4fb8f8d.NewInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -154,11 +154,11 @@ func (m *OnenoteRequestBuilder) Get(ctx context.Context, requestConfiguration *O
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable), nil
 }
-// Notebooks the notebooks property
+// Notebooks provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) Notebooks()(*ieb61df1d5a7fd9e6e860ccddd58f15f53dabcafd6e50ba4704ac752bb5e98897.NotebooksRequestBuilder) {
     return ieb61df1d5a7fd9e6e860ccddd58f15f53dabcafd6e50ba4704ac752bb5e98897.NewNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NotebooksById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.notebooks.item collection
+// NotebooksById provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) NotebooksById(id string)(*ifa98a498cfd880b015264285e62bc7fee30c1a6cc2150f3d064f69448f9f5b27.NotebookItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -169,11 +169,11 @@ func (m *OnenoteRequestBuilder) NotebooksById(id string)(*ifa98a498cfd880b015264
     }
     return ifa98a498cfd880b015264285e62bc7fee30c1a6cc2150f3d064f69448f9f5b27.NewNotebookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) Operations()(*i3521324ea2fa03aac1ba1029060d9326077d780f41956c3996cc7c08c74175d5.OperationsRequestBuilder) {
     return i3521324ea2fa03aac1ba1029060d9326077d780f41956c3996cc7c08c74175d5.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) OperationsById(id string)(*i5ce07e3fde797b20643c20f1577367403edd721d4ddd3efd58a478430089aa94.OnenoteOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,11 +184,11 @@ func (m *OnenoteRequestBuilder) OperationsById(id string)(*i5ce07e3fde797b20643c
     }
     return i5ce07e3fde797b20643c20f1577367403edd721d4ddd3efd58a478430089aa94.NewOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Pages the pages property
+// Pages provides operations to manage the pages property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) Pages()(*ic1143c927ee5b190553f9b473aa6e674cb9c24f3a9e2793ca61c4126357f44d4.PagesRequestBuilder) {
     return ic1143c927ee5b190553f9b473aa6e674cb9c24f3a9e2793ca61c4126357f44d4.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.pages.item collection
+// PagesById provides operations to manage the pages property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) PagesById(id string)(*i1f7cd27e6d43acad4f65fde049e01af4f5167bbae163aa9f54817ce16f3eb17e.OnenotePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -218,11 +218,11 @@ func (m *OnenoteRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable), nil
 }
-// Resources the resources property
+// Resources provides operations to manage the resources property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) Resources()(*iac5f1f7ab3fe7f049908ebaa2118d2ae66da6365ddcc42c944df9fa3747dd82e.ResourcesRequestBuilder) {
     return iac5f1f7ab3fe7f049908ebaa2118d2ae66da6365ddcc42c944df9fa3747dd82e.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourcesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.resources.item collection
+// ResourcesById provides operations to manage the resources property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) ResourcesById(id string)(*ie9d18cbc4daa0c9f216a92bd04bfbd2e093269deb326c4499728b346448951ef.OnenoteResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -233,11 +233,11 @@ func (m *OnenoteRequestBuilder) ResourcesById(id string)(*ie9d18cbc4daa0c9f216a9
     }
     return ie9d18cbc4daa0c9f216a92bd04bfbd2e093269deb326c4499728b346448951ef.NewOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SectionGroups the sectionGroups property
+// SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) SectionGroups()(*i6ab0f57415f0f91846673c7144401d1ecb437b2ed9583ff3a324fce02d79d6ce.SectionGroupsRequestBuilder) {
     return i6ab0f57415f0f91846673c7144401d1ecb437b2ed9583ff3a324fce02d79d6ce.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.sectionGroups.item collection
+// SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*ief43f129f43e4e2e00209d40c6ab20f225d4a6be2f614f3de5c37ad2d36f6397.SectionGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -248,11 +248,11 @@ func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*ief43f129f43e4e2e0
     }
     return ief43f129f43e4e2e00209d40c6ab20f225d4a6be2f614f3de5c37ad2d36f6397.NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Sections the sections property
+// Sections provides operations to manage the sections property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) Sections()(*i89a64f4378390a1ff2c4709e25458a2484ce3ed41135ba5fb5e45f1f2c8feecd.SectionsRequestBuilder) {
     return i89a64f4378390a1ff2c4709e25458a2484ce3ed41135ba5fb5e45f1f2c8feecd.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SectionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onenote.sections.item collection
+// SectionsById provides operations to manage the sections property of the microsoft.graph.onenote entity.
 func (m *OnenoteRequestBuilder) SectionsById(id string)(*i2fd4361716803984f5766f676870e98432266f948b1f5e8bffb51c4c87176198.OnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

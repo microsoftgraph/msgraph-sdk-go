@@ -64,7 +64,7 @@ func NewMobileLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewMobileLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MobileLobAppRequestBuilder) Count()(*i6db5fbc558e7a26c01bf04d7a5c5feaf0029a1b44d4262b59badb2563a48673b.CountRequestBuilder) {
     return i6db5fbc558e7a26c01bf04d7a5c5feaf0029a1b44d4262b59badb2563a48673b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

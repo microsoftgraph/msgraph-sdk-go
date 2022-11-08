@@ -61,11 +61,11 @@ type BookingBusinessItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Appointments the appointments property
+// Appointments provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) Appointments()(*ic2d5072df0f8d04e99de862f3a1d2feb5ded47db9ddb8fabf60b325a3045df1c.AppointmentsRequestBuilder) {
     return ic2d5072df0f8d04e99de862f3a1d2feb5ded47db9ddb8fabf60b325a3045df1c.NewAppointmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppointmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item.appointments.item collection
+// AppointmentsById provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) AppointmentsById(id string)(*i13fa9f102f5550ee0debc695a8553b7bb18a56cacbb2474b92004bac21331107.BookingAppointmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -76,11 +76,11 @@ func (m *BookingBusinessItemRequestBuilder) AppointmentsById(id string)(*i13fa9f
     }
     return i13fa9f102f5550ee0debc695a8553b7bb18a56cacbb2474b92004bac21331107.NewBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CalendarView the calendarView property
+// CalendarView provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CalendarView()(*i5e926d6326c2dc0b5bbb51ebc6bd50b43309aebd5643876218683cae253f9690.CalendarViewRequestBuilder) {
     return i5e926d6326c2dc0b5bbb51ebc6bd50b43309aebd5643876218683cae253f9690.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CalendarViewById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item.calendarView.item collection
+// CalendarViewById provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CalendarViewById(id string)(*i666b4f4b64d4f34838144b722929f6fa3671d9928954f8b977c2e8b643847f95.BookingAppointmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -152,11 +152,11 @@ func (m *BookingBusinessItemRequestBuilder) CreatePatchRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// Customers the customers property
+// Customers provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) Customers()(*i8a847b504989836f4aab54084412c3710787a77712f49c9d87a30b7f9436f181.CustomersRequestBuilder) {
     return i8a847b504989836f4aab54084412c3710787a77712f49c9d87a30b7f9436f181.NewCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item.customers.item collection
+// CustomersById provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CustomersById(id string)(*i0c8d27942293fe15088aee376560cc63f01e0de684e17140e97deb80c8d67040.BookingCustomerBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -167,11 +167,11 @@ func (m *BookingBusinessItemRequestBuilder) CustomersById(id string)(*i0c8d27942
     }
     return i0c8d27942293fe15088aee376560cc63f01e0de684e17140e97deb80c8d67040.NewBookingCustomerBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CustomQuestions the customQuestions property
+// CustomQuestions provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CustomQuestions()(*i9e67c37e4d7e393bcaa474ec71c4d548047669ab57e739c8fee48bfec1f9a6ad.CustomQuestionsRequestBuilder) {
     return i9e67c37e4d7e393bcaa474ec71c4d548047669ab57e739c8fee48bfec1f9a6ad.NewCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomQuestionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item.customQuestions.item collection
+// CustomQuestionsById provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) CustomQuestionsById(id string)(*i69ae791b5e1d3acb35e488b8f8f9fc402d31eddf07089c2cc865d430ceef10d9.BookingCustomQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,7 +217,7 @@ func (m *BookingBusinessItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable), nil
 }
-// GetStaffAvailability the getStaffAvailability property
+// GetStaffAvailability provides operations to call the getStaffAvailability method.
 func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*iff1228112c3ef99b8f9131b112eff6095f2535886c2c76a9c32827e4a1d487dd.GetStaffAvailabilityRequestBuilder) {
     return iff1228112c3ef99b8f9131b112eff6095f2535886c2c76a9c32827e4a1d487dd.NewGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -240,15 +240,15 @@ func (m *BookingBusinessItemRequestBuilder) Patch(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable), nil
 }
-// Publish the publish property
+// Publish provides operations to call the publish method.
 func (m *BookingBusinessItemRequestBuilder) Publish()(*ifaa3c3903221e665c7d867678d13a4a80d73f3c4698dc3b85c36793d3ae5e782.PublishRequestBuilder) {
     return ifaa3c3903221e665c7d867678d13a4a80d73f3c4698dc3b85c36793d3ae5e782.NewPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Services the services property
+// Services provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) Services()(*i4466de1bcd62b1c15cfe7be86a5394e5ed5fecb749ab217db3d3ab04a429ade6.ServicesRequestBuilder) {
     return i4466de1bcd62b1c15cfe7be86a5394e5ed5fecb749ab217db3d3ab04a429ade6.NewServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item.services.item collection
+// ServicesById provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) ServicesById(id string)(*i1dac550ea6326e46204247bf797ccc6ac538b2fbe14da8d2f54928298a9ad4d6.BookingServiceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -259,11 +259,11 @@ func (m *BookingBusinessItemRequestBuilder) ServicesById(id string)(*i1dac550ea6
     }
     return i1dac550ea6326e46204247bf797ccc6ac538b2fbe14da8d2f54928298a9ad4d6.NewBookingServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// StaffMembers the staffMembers property
+// StaffMembers provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) StaffMembers()(*i027a46ae0e95e4e405d21a59eb6505ee2295984a990bf831237140753c099f9f.StaffMembersRequestBuilder) {
     return i027a46ae0e95e4e405d21a59eb6505ee2295984a990bf831237140753c099f9f.NewStaffMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// StaffMembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item.staffMembers.item collection
+// StaffMembersById provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessItemRequestBuilder) StaffMembersById(id string)(*i864a68457d2653b81efe9986ef9566d379d369000a1a4808dfb1ca609c7ea560.BookingStaffMemberBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -274,7 +274,7 @@ func (m *BookingBusinessItemRequestBuilder) StaffMembersById(id string)(*i864a68
     }
     return i864a68457d2653b81efe9986ef9566d379d369000a1a4808dfb1ca609c7ea560.NewBookingStaffMemberBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Unpublish the unpublish property
+// Unpublish provides operations to call the unpublish method.
 func (m *BookingBusinessItemRequestBuilder) Unpublish()(*i6bf58638d9684cbcac49ec92535cd01b9bdba8ece4bea2134c6d412b6ce1b72d.UnpublishRequestBuilder) {
     return i6bf58638d9684cbcac49ec92535cd01b9bdba8ece4bea2134c6d412b6ce1b72d.NewUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

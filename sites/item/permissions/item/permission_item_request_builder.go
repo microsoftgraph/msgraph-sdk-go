@@ -143,7 +143,7 @@ func (m *PermissionItemRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// Grant the grant property
+// Grant provides operations to call the grant method.
 func (m *PermissionItemRequestBuilder) Grant()(*i6fe268259ebf77068c0974b9675aebf27071d4788a26e53035ca908b5369bb56.GrantRequestBuilder) {
     return i6fe268259ebf77068c0974b9675aebf27071d4788a26e53035ca908b5369bb56.NewGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

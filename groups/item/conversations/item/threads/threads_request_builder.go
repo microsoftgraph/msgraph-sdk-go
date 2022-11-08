@@ -69,7 +69,7 @@ func NewThreadsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewThreadsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ThreadsRequestBuilder) Count()(*i6b80021a684849b26a6f887afbd2448ad9cdbb960c1a2699080ad0968b50f6cf.CountRequestBuilder) {
     return i6b80021a684849b26a6f887afbd2448ad9cdbb960c1a2699080ad0968b50f6cf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

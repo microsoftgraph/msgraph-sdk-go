@@ -163,11 +163,11 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerGroupable), nil
 }
-// Plans the plans property
+// Plans provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
 func (m *PlannerRequestBuilder) Plans()(*icffde7ab20afb870cc9b77013c660b5a60f1decad39740b28a0f1b5f4d318d32.PlansRequestBuilder) {
     return icffde7ab20afb870cc9b77013c660b5a60f1decad39740b28a0f1b5f4d318d32.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PlansById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.planner.plans.item collection
+// PlansById provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
 func (m *PlannerRequestBuilder) PlansById(id string)(*i8a69353b1b005763a981538691afe90300b184d370fe56031baad3f85ccdae01.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

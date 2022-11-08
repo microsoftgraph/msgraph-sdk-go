@@ -51,11 +51,11 @@ type TermItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Children the children property
+// Children provides operations to manage the children property of the microsoft.graph.termStore.term entity.
 func (m *TermItemRequestBuilder) Children()(*i1cf15f4ca094784af79b2111bf7e4ad38ebeffc6851b3751a7f940a54b1beee1.ChildrenRequestBuilder) {
     return i1cf15f4ca094784af79b2111bf7e4ad38ebeffc6851b3751a7f940a54b1beee1.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.termStore.sets.item.terms.item.children.item collection
+// ChildrenById provides operations to manage the children property of the microsoft.graph.termStore.term entity.
 func (m *TermItemRequestBuilder) ChildrenById(id string)(*i2382a36a907ed7cabb904b9a3992a646f22d8e2bd4c5624caca57d11548860cd.TermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -181,11 +181,11 @@ func (m *TermItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3e
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// Relations the relations property
+// Relations provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
 func (m *TermItemRequestBuilder) Relations()(*i9c1a455ada8d1337379b64f7d480543ef1a4e3ea309b9a3631cd80bfb895f904.RelationsRequestBuilder) {
     return i9c1a455ada8d1337379b64f7d480543ef1a4e3ea309b9a3631cd80bfb895f904.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RelationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.termStore.sets.item.terms.item.relations.item collection
+// RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
 func (m *TermItemRequestBuilder) RelationsById(id string)(*i31f0112ff12141369c799594ec7efcd5fe385c6c3d0267beb8f4261d38fd461b.RelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -196,7 +196,7 @@ func (m *TermItemRequestBuilder) RelationsById(id string)(*i31f0112ff12141369c79
     }
     return i31f0112ff12141369c799594ec7efcd5fe385c6c3d0267beb8f4261d38fd461b.NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Set the set property
+// Set provides operations to manage the set property of the microsoft.graph.termStore.term entity.
 func (m *TermItemRequestBuilder) Set()(*if217eca9af118e585083f79b3b72785646e84bef534c3f92b4ba8f2ad0fa46a2.SetRequestBuilder) {
     return if217eca9af118e585083f79b3b72785646e84bef534c3f92b4ba8f2ad0fa46a2.NewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

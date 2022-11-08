@@ -126,7 +126,7 @@ func (m *RelationItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// FromTerm the fromTerm property
+// FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
 func (m *RelationItemRequestBuilder) FromTerm()(*i1bfc14f357f1dc26c80d21155cf534adb82156357cd22253e756653383fabe88.FromTermRequestBuilder) {
     return i1bfc14f357f1dc26c80d21155cf534adb82156357cd22253e756653383fabe88.NewFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *RelationItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Relationable), nil
 }
-// Set the set property
+// Set provides operations to manage the set property of the microsoft.graph.termStore.relation entity.
 func (m *RelationItemRequestBuilder) Set()(*ie70b65fd96449c0bf8e798596cff3f95c2b281ae8695948474bbcc0e3a1b7835.SetRequestBuilder) {
     return ie70b65fd96449c0bf8e798596cff3f95c2b281ae8695948474bbcc0e3a1b7835.NewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToTerm the toTerm property
+// ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
 func (m *RelationItemRequestBuilder) ToTerm()(*iebe58f45787a24eacc56a30918f7ad7de928f47292674a7472fbd8f0f5234cf6.ToTermRequestBuilder) {
     return iebe58f45787a24eacc56a30918f7ad7de928f47292674a7472fbd8f0f5234cf6.NewToTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

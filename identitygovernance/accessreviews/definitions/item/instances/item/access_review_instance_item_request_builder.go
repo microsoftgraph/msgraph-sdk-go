@@ -58,15 +58,15 @@ type AccessReviewInstanceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AcceptRecommendations the acceptRecommendations property
+// AcceptRecommendations provides operations to call the acceptRecommendations method.
 func (m *AccessReviewInstanceItemRequestBuilder) AcceptRecommendations()(*i5451506c6a51cc37c7bd81ab078505ae9728ac07623e29e52b6897a016d027b2.AcceptRecommendationsRequestBuilder) {
     return i5451506c6a51cc37c7bd81ab078505ae9728ac07623e29e52b6897a016d027b2.NewAcceptRecommendationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApplyDecisions the applyDecisions property
+// ApplyDecisions provides operations to call the applyDecisions method.
 func (m *AccessReviewInstanceItemRequestBuilder) ApplyDecisions()(*icc113f5eb4a8c739b83f1517b406812dfa71ea84b8eb7fb9a3ca0629d5b5320a.ApplyDecisionsRequestBuilder) {
     return icc113f5eb4a8c739b83f1517b406812dfa71ea84b8eb7fb9a3ca0629d5b5320a.NewApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BatchRecordDecisions the batchRecordDecisions property
+// BatchRecordDecisions provides operations to call the batchRecordDecisions method.
 func (m *AccessReviewInstanceItemRequestBuilder) BatchRecordDecisions()(*i5e1ccb1ad78906f2443f054f53d5d0547e9eceac11b87f43d7d1e7073c4dbfcd.BatchRecordDecisionsRequestBuilder) {
     return i5e1ccb1ad78906f2443f054f53d5d0547e9eceac11b87f43d7d1e7073c4dbfcd.NewBatchRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -89,11 +89,11 @@ func NewAccessReviewInstanceItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewInstanceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContactedReviewers the contactedReviewers property
+// ContactedReviewers provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewInstanceItemRequestBuilder) ContactedReviewers()(*ibef71d2452748b7a1d404bef412390f9d6f26c7062269a40f953a67d2d0bd44e.ContactedReviewersRequestBuilder) {
     return ibef71d2452748b7a1d404bef412390f9d6f26c7062269a40f953a67d2d0bd44e.NewContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContactedReviewersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.contactedReviewers.item collection
+// ContactedReviewersById provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewInstanceItemRequestBuilder) ContactedReviewersById(id string)(*idbe515597f9c38cd733993c3ed77612e84f59bbc489b0a78f8c8a2160b9ac50d.AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -146,11 +146,11 @@ func (m *AccessReviewInstanceItemRequestBuilder) CreatePatchRequestInformation(c
     }
     return requestInfo, nil
 }
-// Decisions the decisions property
+// Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewInstanceItemRequestBuilder) Decisions()(*iaba5c5f8866d817198badccdab50ac168445b09d85f789a8f760044ae410a919.DecisionsRequestBuilder) {
     return iaba5c5f8866d817198badccdab50ac168445b09d85f789a8f760044ae410a919.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item collection
+// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewInstanceItemRequestBuilder) DecisionsById(id string)(*ia5228e75938f6cab481e6dee19c7eeb8666192ef9a8d846054e182dcf31deb9e.AccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -215,19 +215,19 @@ func (m *AccessReviewInstanceItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceable), nil
 }
-// ResetDecisions the resetDecisions property
+// ResetDecisions provides operations to call the resetDecisions method.
 func (m *AccessReviewInstanceItemRequestBuilder) ResetDecisions()(*i294ddceafef43eaa0b25cedb2839f1cbb0c453d7e7c544c63c38bf3fc140fa18.ResetDecisionsRequestBuilder) {
     return i294ddceafef43eaa0b25cedb2839f1cbb0c453d7e7c544c63c38bf3fc140fa18.NewResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SendReminder the sendReminder property
+// SendReminder provides operations to call the sendReminder method.
 func (m *AccessReviewInstanceItemRequestBuilder) SendReminder()(*i354cbd130706e9e98deafc9f1d5a9b5cef510bfe73b8928151750e8dc965ff4b.SendReminderRequestBuilder) {
     return i354cbd130706e9e98deafc9f1d5a9b5cef510bfe73b8928151750e8dc965ff4b.NewSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Stages the stages property
+// Stages provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewInstanceItemRequestBuilder) Stages()(*i570245405b4d6c39b5331aa62c7f2d77bb694d5897cd110fc4e36ffceab1ed08.StagesRequestBuilder) {
     return i570245405b4d6c39b5331aa62c7f2d77bb694d5897cd110fc4e36ffceab1ed08.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// StagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.stages.item collection
+// StagesById provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewInstanceItemRequestBuilder) StagesById(id string)(*ie5ba6f5395d27d911edefb7e9d1b2003707f831840974e3ada7efae77f0723f0.AccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -238,7 +238,7 @@ func (m *AccessReviewInstanceItemRequestBuilder) StagesById(id string)(*ie5ba6f5
     }
     return ie5ba6f5395d27d911edefb7e9d1b2003707f831840974e3ada7efae77f0723f0.NewAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Stop the stop property
+// Stop provides operations to call the stop method.
 func (m *AccessReviewInstanceItemRequestBuilder) Stop()(*i3011b416e1fbf818fb42fe3d7de3bb3ea3136fb606994268b64ee1859c2b3229.StopRequestBuilder) {
     return i3011b416e1fbf818fb42fe3d7de3bb3ea3136fb606994268b64ee1859c2b3229.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

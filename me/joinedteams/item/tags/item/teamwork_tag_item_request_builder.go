@@ -144,11 +144,11 @@ func (m *TeamworkTagItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable), nil
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
 func (m *TeamworkTagItemRequestBuilder) Members()(*i14ba8bdbabe4bc59022ef9e82be2527797007c2498fcf5f1a11cf5629d7a1ffa.MembersRequestBuilder) {
     return i14ba8bdbabe4bc59022ef9e82be2527797007c2498fcf5f1a11cf5629d7a1ffa.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.joinedTeams.item.tags.item.members.item collection
+// MembersById provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
 func (m *TeamworkTagItemRequestBuilder) MembersById(id string)(*i7d62732ad3f1f447dee4b12852bfae43f31f2f5c4b50daeda33a31388070e5dc.TeamworkTagMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

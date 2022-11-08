@@ -67,15 +67,15 @@ type SiteItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Analytics()(*ie977d634115f6edbcba02945f5f558e1f1060c3078fc1043cfc6a70da5598048.AnalyticsRequestBuilder) {
     return ie977d634115f6edbcba02945f5f558e1f1060c3078fc1043cfc6a70da5598048.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Columns the columns property
+// Columns provides operations to manage the columns property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Columns()(*i433a1560954e7a6c21be030d3739b5c8e7a3a62b25192a404e6284478dbdf361.ColumnsRequestBuilder) {
     return i433a1560954e7a6c21be030d3739b5c8e7a3a62b25192a404e6284478dbdf361.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ColumnsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.columns.item collection
+// ColumnsById provides operations to manage the columns property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ColumnsById(id string)(*i3d15a6f13c74ebb900c3f4d7e8b8cf4dc95de03aed0a0c4b8a2a4e6ed582e97e.ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -105,11 +105,11 @@ func NewSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContentTypes the contentTypes property
+// ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ContentTypes()(*ida62d1e3e0c3a4155187312adb160423df6f1b84474a7c37dac6b38ee0d57c30.ContentTypesRequestBuilder) {
     return ida62d1e3e0c3a4155187312adb160423df6f1b84474a7c37dac6b38ee0d57c30.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContentTypesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.contentTypes.item collection
+// ContentTypesById provides operations to manage the contentTypes property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*ic3cb2a24c56a0f014badb537b2e05366face417e10e73eda79e507ce267e5183.ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -150,15 +150,15 @@ func (m *SiteItemRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Drive the drive property
+// Drive provides operations to manage the drive property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Drive()(*ie2e0fba360015570188988834e1d1616938882b51276657b518960b0529c8395.DriveRequestBuilder) {
     return ie2e0fba360015570188988834e1d1616938882b51276657b518960b0529c8395.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Drives the drives property
+// Drives provides operations to manage the drives property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Drives()(*if423f3b786c94937b52a1c87021c6cf25ba0bba2b0405608a8d1629f108d2664.DrivesRequestBuilder) {
     return if423f3b786c94937b52a1c87021c6cf25ba0bba2b0405608a8d1629f108d2664.NewDrivesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DrivesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.drives.item collection
+// DrivesById provides operations to manage the drives property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) DrivesById(id string)(*i20d71e187e2869b1bf133549cf92b03dbdd4fcd7a6312d7e4cfab185397ec504.DriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -169,11 +169,11 @@ func (m *SiteItemRequestBuilder) DrivesById(id string)(*i20d71e187e2869b1bf13354
     }
     return i20d71e187e2869b1bf133549cf92b03dbdd4fcd7a6312d7e4cfab185397ec504.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ExternalColumns the externalColumns property
+// ExternalColumns provides operations to manage the externalColumns property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ExternalColumns()(*i5ff933dfab28b9bc528e49bf8331befadb5004877c8387d60f5e76079d8ba1a6.ExternalColumnsRequestBuilder) {
     return i5ff933dfab28b9bc528e49bf8331befadb5004877c8387d60f5e76079d8ba1a6.NewExternalColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExternalColumnsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.externalColumns.item collection
+// ExternalColumnsById provides operations to manage the externalColumns property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*i3eb82c303a8d1465dafb4c1bc15b34ff40013f94aac87f058c363a7aba92e4e8.ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -219,11 +219,11 @@ func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(list
 func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*id7f3688a19ad77598caac412c4d52e7de1d4e1280b3475235ac9cd72911b8374.GetByPathWithPathRequestBuilder) {
     return id7f3688a19ad77598caac412c4d52e7de1d4e1280b3475235ac9cd72911b8374.NewGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
-// Items the items property
+// Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Items()(*i23ed04a56449d98fcd568705a0cf04a1b544ee9821f049f84ae0c25b1d8a1f76.ItemsRequestBuilder) {
     return i23ed04a56449d98fcd568705a0cf04a1b544ee9821f049f84ae0c25b1d8a1f76.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.items.item collection
+// ItemsById provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ItemsById(id string)(*iba2aa0555939eae7c495b9747ca02d399d5a9d9768108b185661cc038711fdbc.BaseItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -234,11 +234,11 @@ func (m *SiteItemRequestBuilder) ItemsById(id string)(*iba2aa0555939eae7c495b974
     }
     return iba2aa0555939eae7c495b9747ca02d399d5a9d9768108b185661cc038711fdbc.NewBaseItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Lists the lists property
+// Lists provides operations to manage the lists property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Lists()(*i4530be9f2649e2da7651adc83045d48e03ce2d02fe5bbfac583977b13834180c.ListsRequestBuilder) {
     return i4530be9f2649e2da7651adc83045d48e03ce2d02fe5bbfac583977b13834180c.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ListsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.lists.item collection
+// ListsById provides operations to manage the lists property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ListsById(id string)(*iea900cf48c5d3da0d6a702e72cfb722443dcaaa70a27924a2c1a8b756a55448d.ListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -249,15 +249,15 @@ func (m *SiteItemRequestBuilder) ListsById(id string)(*iea900cf48c5d3da0d6a702e7
     }
     return iea900cf48c5d3da0d6a702e72cfb722443dcaaa70a27924a2c1a8b756a55448d.NewListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Onenote the onenote property
+// Onenote provides operations to manage the onenote property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Onenote()(*i7bf3dbc49a37a69a92d9c0b2f5894dbd2387cd5cf2c265de0a9f1307dedf7007.OnenoteRequestBuilder) {
     return i7bf3dbc49a37a69a92d9c0b2f5894dbd2387cd5cf2c265de0a9f1307dedf7007.NewOnenoteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Operations()(*ica4ea80f6f6f649de989441fa87ef61c9a4e8922191481297e55c79e72481491.OperationsRequestBuilder) {
     return ica4ea80f6f6f649de989441fa87ef61c9a4e8922191481297e55c79e72481491.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) OperationsById(id string)(*i41ed64eca1f91fe55946dd46e765c7ec66bd75b7a8e2a22aa52490bb8b7322de.RichLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -287,11 +287,11 @@ func (m *SiteItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
 }
-// Permissions the permissions property
+// Permissions provides operations to manage the permissions property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Permissions()(*ibe39270ba4e624ff4fe340aa2bd6d3631b4dd3b549fc6c5dbafcf7756c2cae95.PermissionsRequestBuilder) {
     return ibe39270ba4e624ff4fe340aa2bd6d3631b4dd3b549fc6c5dbafcf7756c2cae95.NewPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PermissionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.permissions.item collection
+// PermissionsById provides operations to manage the permissions property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) PermissionsById(id string)(*i542a41cec057b321ef1e41187fa571edf863979b732f2c19975560ced8e76f8b.PermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -302,11 +302,11 @@ func (m *SiteItemRequestBuilder) PermissionsById(id string)(*i542a41cec057b321ef
     }
     return i542a41cec057b321ef1e41187fa571edf863979b732f2c19975560ced8e76f8b.NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Sites the sites property
+// Sites provides operations to manage the sites property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Sites()(*i9619fa512c16d940bb8a99f87dcbb11e238865522dd9f8aa27e8eb6839d210c8.SitesRequestBuilder) {
     return i9619fa512c16d940bb8a99f87dcbb11e238865522dd9f8aa27e8eb6839d210c8.NewSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SitesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.sites.item collection
+// SitesById provides operations to manage the sites property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) SitesById(id string)(*icb7ef07a689e39fb1ed0e6596004ecf47a3815ad87f19c96bff8fb7ad90304b9.SiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -317,15 +317,15 @@ func (m *SiteItemRequestBuilder) SitesById(id string)(*icb7ef07a689e39fb1ed0e659
     }
     return icb7ef07a689e39fb1ed0e6596004ecf47a3815ad87f19c96bff8fb7ad90304b9.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TermStore the termStore property
+// TermStore provides operations to manage the termStore property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) TermStore()(*iabe6a78fc3f592fa955e512cf883dcc83f9a1c269265fa5904300f3f3c66d279.TermStoreRequestBuilder) {
     return iabe6a78fc3f592fa955e512cf883dcc83f9a1c269265fa5904300f3f3c66d279.NewTermStoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TermStores the termStores property
+// TermStores provides operations to manage the termStores property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) TermStores()(*i19d3b905956d0d5ab3e405e912ce5512047d11c0368cfb7b3532e4e86e5a07af.TermStoresRequestBuilder) {
     return i19d3b905956d0d5ab3e405e912ce5512047d11c0368cfb7b3532e4e86e5a07af.NewTermStoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TermStoresById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.sites.item.termStores.item collection
+// TermStoresById provides operations to manage the termStores property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) TermStoresById(id string)(*ia63bedd538371b0186a5b6eee2c0d77c2ae0f708dcde2fcdeeebb39fe26bd8b7.StoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

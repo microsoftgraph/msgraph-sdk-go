@@ -161,11 +161,11 @@ func (m *ScheduleRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
-// OfferShiftRequests the offerShiftRequests property
+// OfferShiftRequests provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) OfferShiftRequests()(*i303f2b59aaf94036e4c52e1f6eec495c231b2ea4269c6c620f1968cc7f37d29e.OfferShiftRequestsRequestBuilder) {
     return i303f2b59aaf94036e4c52e1f6eec495c231b2ea4269c6c620f1968cc7f37d29e.NewOfferShiftRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OfferShiftRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.offerShiftRequests.item collection
+// OfferShiftRequestsById provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) OfferShiftRequestsById(id string)(*i623731e26f5962ffc40ed47d9738052818c87601af17f1ad3e5cf3bfa9ff0675.OfferShiftRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -176,11 +176,11 @@ func (m *ScheduleRequestBuilder) OfferShiftRequestsById(id string)(*i623731e26f5
     }
     return i623731e26f5962ffc40ed47d9738052818c87601af17f1ad3e5cf3bfa9ff0675.NewOfferShiftRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// OpenShiftChangeRequests the openShiftChangeRequests property
+// OpenShiftChangeRequests provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) OpenShiftChangeRequests()(*i9ec7ccde7dc719a242dbb335c137486b82a7146d5e1fed1039608fadafbf62f6.OpenShiftChangeRequestsRequestBuilder) {
     return i9ec7ccde7dc719a242dbb335c137486b82a7146d5e1fed1039608fadafbf62f6.NewOpenShiftChangeRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OpenShiftChangeRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.openShiftChangeRequests.item collection
+// OpenShiftChangeRequestsById provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) OpenShiftChangeRequestsById(id string)(*i25d31ae09339a87264a818f06856b020d1f7f458ad5bcd376f77616d64336b31.OpenShiftChangeRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -191,11 +191,11 @@ func (m *ScheduleRequestBuilder) OpenShiftChangeRequestsById(id string)(*i25d31a
     }
     return i25d31ae09339a87264a818f06856b020d1f7f458ad5bcd376f77616d64336b31.NewOpenShiftChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// OpenShifts the openShifts property
+// OpenShifts provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) OpenShifts()(*i38b1d0cd4787f4c709deefdebc9011d65ea498ddd72bbe8c6d6753403d1da3a7.OpenShiftsRequestBuilder) {
     return i38b1d0cd4787f4c709deefdebc9011d65ea498ddd72bbe8c6d6753403d1da3a7.NewOpenShiftsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OpenShiftsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.openShifts.item collection
+// OpenShiftsById provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) OpenShiftsById(id string)(*i78242729c849fb24be50e8793396cac5a437ebdcd77f00949f3f62b2d7bab779.OpenShiftItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -225,11 +225,11 @@ func (m *ScheduleRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
-// SchedulingGroups the schedulingGroups property
+// SchedulingGroups provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) SchedulingGroups()(*i6977a5d84cfb8f3a7ca758621fa1892ac67095ec26831e278bead93844d09d6e.SchedulingGroupsRequestBuilder) {
     return i6977a5d84cfb8f3a7ca758621fa1892ac67095ec26831e278bead93844d09d6e.NewSchedulingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SchedulingGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.schedulingGroups.item collection
+// SchedulingGroupsById provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) SchedulingGroupsById(id string)(*i0d1a68bf16e77d2487a937577799dd6167ffee937d965666d69f6ad7f3c09a50.SchedulingGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -240,15 +240,15 @@ func (m *ScheduleRequestBuilder) SchedulingGroupsById(id string)(*i0d1a68bf16e77
     }
     return i0d1a68bf16e77d2487a937577799dd6167ffee937d965666d69f6ad7f3c09a50.NewSchedulingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Share the share property
+// Share provides operations to call the share method.
 func (m *ScheduleRequestBuilder) Share()(*i76a90b8fe290b0eb35da52697b88cc104e65700992ff3f7f1ebf7568fc69de62.ShareRequestBuilder) {
     return i76a90b8fe290b0eb35da52697b88cc104e65700992ff3f7f1ebf7568fc69de62.NewShareRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Shifts the shifts property
+// Shifts provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) Shifts()(*i26e1b177111f8a00c755a9493873e39cc8e54d97a7ed846fbab5e2b98e6086aa.ShiftsRequestBuilder) {
     return i26e1b177111f8a00c755a9493873e39cc8e54d97a7ed846fbab5e2b98e6086aa.NewShiftsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ShiftsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.shifts.item collection
+// ShiftsById provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) ShiftsById(id string)(*if4d4fbf86081722c0a7ebc0e19f822a786b3897e217dc778edba5c1aa53a731c.ShiftItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -259,11 +259,11 @@ func (m *ScheduleRequestBuilder) ShiftsById(id string)(*if4d4fbf86081722c0a7ebc0
     }
     return if4d4fbf86081722c0a7ebc0e19f822a786b3897e217dc778edba5c1aa53a731c.NewShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SwapShiftsChangeRequests the swapShiftsChangeRequests property
+// SwapShiftsChangeRequests provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) SwapShiftsChangeRequests()(*i86ba6ba234181696e23fb2cde502d1d1e9e082bb456412adf8467529ce308948.SwapShiftsChangeRequestsRequestBuilder) {
     return i86ba6ba234181696e23fb2cde502d1d1e9e082bb456412adf8467529ce308948.NewSwapShiftsChangeRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SwapShiftsChangeRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.swapShiftsChangeRequests.item collection
+// SwapShiftsChangeRequestsById provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) SwapShiftsChangeRequestsById(id string)(*if7aca6b7d8b5075b0972208f9d700383af1ec4e05db2a2e3d7672d44075b206f.SwapShiftsChangeRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -274,11 +274,11 @@ func (m *ScheduleRequestBuilder) SwapShiftsChangeRequestsById(id string)(*if7aca
     }
     return if7aca6b7d8b5075b0972208f9d700383af1ec4e05db2a2e3d7672d44075b206f.NewSwapShiftsChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TimeOffReasons the timeOffReasons property
+// TimeOffReasons provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) TimeOffReasons()(*i4d899631f98079a2a1e192a51bd5f13a4ad4dcf317b82c1ae84986c572375f9d.TimeOffReasonsRequestBuilder) {
     return i4d899631f98079a2a1e192a51bd5f13a4ad4dcf317b82c1ae84986c572375f9d.NewTimeOffReasonsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TimeOffReasonsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.timeOffReasons.item collection
+// TimeOffReasonsById provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) TimeOffReasonsById(id string)(*i75132cc5252e03a3d7b7df052ceea5cf0151431f6a6ebc0935d43698207d46b3.TimeOffReasonItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -289,11 +289,11 @@ func (m *ScheduleRequestBuilder) TimeOffReasonsById(id string)(*i75132cc5252e03a
     }
     return i75132cc5252e03a3d7b7df052ceea5cf0151431f6a6ebc0935d43698207d46b3.NewTimeOffReasonItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TimeOffRequests the timeOffRequests property
+// TimeOffRequests provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) TimeOffRequests()(*i6a080e6c11a55185c1b16614943b747c47e5b588cd0dda9a243670d6689511f5.TimeOffRequestsRequestBuilder) {
     return i6a080e6c11a55185c1b16614943b747c47e5b588cd0dda9a243670d6689511f5.NewTimeOffRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TimeOffRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.timeOffRequests.item collection
+// TimeOffRequestsById provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) TimeOffRequestsById(id string)(*i1081b52037899720d0759af03675121003d474a31d48434a51a13f00717d1de6.TimeOffRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -304,11 +304,11 @@ func (m *ScheduleRequestBuilder) TimeOffRequestsById(id string)(*i1081b520378997
     }
     return i1081b52037899720d0759af03675121003d474a31d48434a51a13f00717d1de6.NewTimeOffRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TimesOff the timesOff property
+// TimesOff provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) TimesOff()(*ib294d815ef40c29e26e10f3c1284fa16b88f1c5cd5c8c14103142614dd99c291.TimesOffRequestBuilder) {
     return ib294d815ef40c29e26e10f3c1284fa16b88f1c5cd5c8c14103142614dd99c291.NewTimesOffRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TimesOffById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.schedule.timesOff.item collection
+// TimesOffById provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
 func (m *ScheduleRequestBuilder) TimesOffById(id string)(*i544fd4f38bdf20701505814dc209e583f746b4b10fee5d775fea33949a2c1d8a.TimeOffItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

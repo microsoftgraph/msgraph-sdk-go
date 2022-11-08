@@ -130,11 +130,11 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProtectionRootable), nil
 }
-// RiskDetections the riskDetections property
+// RiskDetections provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskDetections()(*i734828c35d0209cc42d94bd3da5e79564f27866a2e7dd505cec26e26172ddd00.RiskDetectionsRequestBuilder) {
     return i734828c35d0209cc42d94bd3da5e79564f27866a2e7dd505cec26e26172ddd00.NewRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RiskDetectionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityProtection.riskDetections.item collection
+// RiskDetectionsById provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.RiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -145,11 +145,11 @@ func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d7
     }
     return i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.NewRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RiskyUsers the riskyUsers property
+// RiskyUsers provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81.RiskyUsersRequestBuilder) {
     return if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81.NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RiskyUsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityProtection.riskyUsers.item collection
+// RiskyUsersById provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.RiskyUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -75,23 +75,23 @@ type DriveItemItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) Analytics()(*if6e4b55b696c1aaead2907344730bf6b12310b52afb14a9ffd1ce42161325da9.AnalyticsRequestBuilder) {
     return if6e4b55b696c1aaead2907344730bf6b12310b52afb14a9ffd1ce42161325da9.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Checkin the checkin property
+// Checkin provides operations to call the checkin method.
 func (m *DriveItemItemRequestBuilder) Checkin()(*i6a156ef471bfddb5199d753c1547d8cfe0fed10a62269f71e40433faf09abb3c.CheckinRequestBuilder) {
     return i6a156ef471bfddb5199d753c1547d8cfe0fed10a62269f71e40433faf09abb3c.NewCheckinRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Checkout the checkout property
+// Checkout provides operations to call the checkout method.
 func (m *DriveItemItemRequestBuilder) Checkout()(*ia4d81037bc2b75bd1c85541272c51f69d1e647b3c24dd0fe76b688dc66888981.CheckoutRequestBuilder) {
     return ia4d81037bc2b75bd1c85541272c51f69d1e647b3c24dd0fe76b688dc66888981.NewCheckoutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Children the children property
+// Children provides operations to manage the children property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) Children()(*ic187abdb8f33a4cb81256b996a715ff597202bed85f8f4d64b6e8319f5022059.ChildrenRequestBuilder) {
     return ic187abdb8f33a4cb81256b996a715ff597202bed85f8f4d64b6e8319f5022059.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.items.item.children.item collection
+// ChildrenById provides operations to manage the children property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) ChildrenById(id string)(*i33b94f1f1fae365d235ffc10e8627c15caaca7be62b15dfd7f8cb6a23342e856.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -121,11 +121,11 @@ func NewDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the drive entity.
 func (m *DriveItemItemRequestBuilder) Content()(*ibad2dbd640f8438d505ec69c54f24d1b51b0428157e3df1a56b77ca2b617c307.ContentRequestBuilder) {
     return ibad2dbd640f8438d505ec69c54f24d1b51b0428157e3df1a56b77ca2b617c307.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Copy the copy property
+// Copy provides operations to call the copy method.
 func (m *DriveItemItemRequestBuilder) Copy()(*ibcc5304fa8c81ec8fc2559cf01425b91f72a11b2fe9749fc949b5246a6102146.CopyRequestBuilder) {
     return ibcc5304fa8c81ec8fc2559cf01425b91f72a11b2fe9749fc949b5246a6102146.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -157,7 +157,7 @@ func (m *DriveItemItemRequestBuilder) CreateGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// CreateLink the createLink property
+// CreateLink provides operations to call the createLink method.
 func (m *DriveItemItemRequestBuilder) CreateLink()(*ica3c1d93f94f1770bb123fd333161fa4d87f9717f224df595e97bf876ca7967e.CreateLinkRequestBuilder) {
     return ica3c1d93f94f1770bb123fd333161fa4d87f9717f224df595e97bf876ca7967e.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -175,7 +175,7 @@ func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// CreateUploadSession the createUploadSession property
+// CreateUploadSession provides operations to call the createUploadSession method.
 func (m *DriveItemItemRequestBuilder) CreateUploadSession()(*i4052aa75e096d48638bddada7f1cb8659fe3c25b1f0ad818070488e257ccbee4.CreateUploadSessionRequestBuilder) {
     return i4052aa75e096d48638bddada7f1cb8659fe3c25b1f0ad818070488e257ccbee4.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -203,7 +203,7 @@ func (m *DriveItemItemRequestBuilder) Delta()(*if28afa82f9d9e53dd623400a2be39b48
 func (m *DriveItemItemRequestBuilder) DeltaWithToken(token *string)(*i5258e8be91847b76242f45b58489af959fe0ae7cdbd06dca3e1f74c3073635e9.DeltaWithTokenRequestBuilder) {
     return i5258e8be91847b76242f45b58489af959fe0ae7cdbd06dca3e1f74c3073635e9.NewDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
 }
-// Follow the follow property
+// Follow provides operations to call the follow method.
 func (m *DriveItemItemRequestBuilder) Follow()(*ife52184499776c3c829efc37896f9c7578be8da410d81bb1866e5c91e78e9e4c.FollowRequestBuilder) {
     return ife52184499776c3c829efc37896f9c7578be8da410d81bb1866e5c91e78e9e4c.NewFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -234,11 +234,11 @@ func (m *DriveItemItemRequestBuilder) GetActivitiesByInterval()(*ie46cb62de11b25
 func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*i277bda5a06f6ce182900160c095232c5b28b7d856a168f362c33560d2bc3cc63.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return i277bda5a06f6ce182900160c095232c5b28b7d856a168f362c33560d2bc3cc63.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
-// Invite the invite property
+// Invite provides operations to call the invite method.
 func (m *DriveItemItemRequestBuilder) Invite()(*i413c7d3c5296661c95b513a28ba587f270281832de23c7984752b4a218f6019e.InviteRequestBuilder) {
     return i413c7d3c5296661c95b513a28ba587f270281832de23c7984752b4a218f6019e.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ListItem the listItem property
+// ListItem provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) ListItem()(*i977cc3182db94374759f872d55be1bd164691f41d3ef9934b2a1b2ee3a5022b9.ListItemRequestBuilder) {
     return i977cc3182db94374759f872d55be1bd164691f41d3ef9934b2a1b2ee3a5022b9.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -261,11 +261,11 @@ func (m *DriveItemItemRequestBuilder) Patch(ctx context.Context, body iadcd81124
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
-// Permissions the permissions property
+// Permissions provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) Permissions()(*i4c90a5b5af67ed60ab6adf5613edbcb1da1c9dcd2ea15d3712d431fabae295d2.PermissionsRequestBuilder) {
     return i4c90a5b5af67ed60ab6adf5613edbcb1da1c9dcd2ea15d3712d431fabae295d2.NewPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PermissionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.items.item.permissions.item collection
+// PermissionsById provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) PermissionsById(id string)(*i0a1467d2d422249bfaa9b52d3bde594deab07162016808ecd41602cbd68904ce.PermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -276,11 +276,11 @@ func (m *DriveItemItemRequestBuilder) PermissionsById(id string)(*i0a1467d2d4222
     }
     return i0a1467d2d422249bfaa9b52d3bde594deab07162016808ecd41602cbd68904ce.NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Preview the preview property
+// Preview provides operations to call the preview method.
 func (m *DriveItemItemRequestBuilder) Preview()(*i93d215297749f08e6a96baa42da7b41e3023fd3e6eb044d22abab4d04759c6b5.PreviewRequestBuilder) {
     return i93d215297749f08e6a96baa42da7b41e3023fd3e6eb044d22abab4d04759c6b5.NewPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *DriveItemItemRequestBuilder) Restore()(*i1173f8f46182265fd51edd487d8eb3467c7304d5472add2aa3d5d0685d556c1b.RestoreRequestBuilder) {
     return i1173f8f46182265fd51edd487d8eb3467c7304d5472add2aa3d5d0685d556c1b.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -288,11 +288,11 @@ func (m *DriveItemItemRequestBuilder) Restore()(*i1173f8f46182265fd51edd487d8eb3
 func (m *DriveItemItemRequestBuilder) SearchWithQ(q *string)(*i020cefc69abd9d840cd84135fe23fb1bebc2c214f437d47672da3069688efb65.SearchWithQRequestBuilder) {
     return i020cefc69abd9d840cd84135fe23fb1bebc2c214f437d47672da3069688efb65.NewSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
 }
-// Subscriptions the subscriptions property
+// Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) Subscriptions()(*i6d048e988ecd7a469df6e77aceb776b58b4b96a45ec000a5ade64874f4ef46af.SubscriptionsRequestBuilder) {
     return i6d048e988ecd7a469df6e77aceb776b58b4b96a45ec000a5ade64874f4ef46af.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubscriptionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.items.item.subscriptions.item collection
+// SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) SubscriptionsById(id string)(*i170fcbbf415e96234b1aa6424878a65c5d7b82ec53c144e5203f73656e625891.SubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -303,11 +303,11 @@ func (m *DriveItemItemRequestBuilder) SubscriptionsById(id string)(*i170fcbbf415
     }
     return i170fcbbf415e96234b1aa6424878a65c5d7b82ec53c144e5203f73656e625891.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Thumbnails the thumbnails property
+// Thumbnails provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) Thumbnails()(*i8de7c056a112237127b0dcc4ea8d6badfd1aba50e70ba16d561038ac278428e1.ThumbnailsRequestBuilder) {
     return i8de7c056a112237127b0dcc4ea8d6badfd1aba50e70ba16d561038ac278428e1.NewThumbnailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ThumbnailsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.items.item.thumbnails.item collection
+// ThumbnailsById provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) ThumbnailsById(id string)(*icf7102c66807ffb1835310fb1cb3f4be4c0c9d50a0fe651aac0d3390144ccfad.ThumbnailSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -318,19 +318,19 @@ func (m *DriveItemItemRequestBuilder) ThumbnailsById(id string)(*icf7102c66807ff
     }
     return icf7102c66807ffb1835310fb1cb3f4be4c0c9d50a0fe651aac0d3390144ccfad.NewThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Unfollow the unfollow property
+// Unfollow provides operations to call the unfollow method.
 func (m *DriveItemItemRequestBuilder) Unfollow()(*i9734f4cbac8b25e2d6dca093ff4a3a99bbdedd24599e80f4d0a511d780c8af84.UnfollowRequestBuilder) {
     return i9734f4cbac8b25e2d6dca093ff4a3a99bbdedd24599e80f4d0a511d780c8af84.NewUnfollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidatePermission the validatePermission property
+// ValidatePermission provides operations to call the validatePermission method.
 func (m *DriveItemItemRequestBuilder) ValidatePermission()(*i821430851f47c1fcc1bd23b2399a85e1051e8b3c866ed232120d55300cdc1128.ValidatePermissionRequestBuilder) {
     return i821430851f47c1fcc1bd23b2399a85e1051e8b3c866ed232120d55300cdc1128.NewValidatePermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) Versions()(*i8ed13773ce508ebebaa60ab9a3303a3ca02078bf14b6afa3519a1293144b0a57.VersionsRequestBuilder) {
     return i8ed13773ce508ebebaa60ab9a3303a3ca02078bf14b6afa3519a1293144b0a57.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.items.item.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 func (m *DriveItemItemRequestBuilder) VersionsById(id string)(*i01b95b3d57747e53543e8dadcce70427ca7796d7df1fa1a45329a65eae314015.DriveItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

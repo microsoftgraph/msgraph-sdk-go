@@ -162,7 +162,7 @@ func (m *IdentityApiConnectorItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
-// UploadClientCertificate the uploadClientCertificate property
+// UploadClientCertificate provides operations to call the uploadClientCertificate method.
 func (m *IdentityApiConnectorItemRequestBuilder) UploadClientCertificate()(*idaef3be371215ce7c6936adc16ee90036780ee92770faca0639bc219091cf188.UploadClientCertificateRequestBuilder) {
     return idaef3be371215ce7c6936adc16ee90036780ee92770faca0639bc219091cf188.NewUploadClientCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -47,7 +47,7 @@ type TeamsAppDefinitionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Bot the bot property
+// Bot provides operations to manage the bot property of the microsoft.graph.teamsAppDefinition entity.
 func (m *TeamsAppDefinitionItemRequestBuilder) Bot()(*ic912f2288b7848a8421be619dff435a964cc6d824a3baefab5334b3a699f668c.BotRequestBuilder) {
     return ic912f2288b7848a8421be619dff435a964cc6d824a3baefab5334b3a699f668c.NewBotRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

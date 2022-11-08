@@ -75,7 +75,7 @@ func NewApplicationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ApplicationsRequestBuilder) Count()(*i7e8a726e09ced7d4436bf674d1a81669775cb1463962eb805fe901152e21a7a1.CountRequestBuilder) {
     return i7e8a726e09ced7d4436bf674d1a81669775cb1463962eb805fe901152e21a7a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -132,11 +132,11 @@ func (m *ApplicationsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
 func (m *ApplicationsRequestBuilder) GetAvailableExtensionProperties()(*id0455efde9c006c43aa69fbd428002d35001851a48cc95647c179d7f5fe714d8.GetAvailableExtensionPropertiesRequestBuilder) {
     return id0455efde9c006c43aa69fbd428002d35001851a48cc95647c179d7f5fe714d8.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *ApplicationsRequestBuilder) GetByIds()(*id1a6f2211b8fade308e722e65256ccffe715e872816ec9b9e12b585d86dd4f21.GetByIdsRequestBuilder) {
     return id1a6f2211b8fade308e722e65256ccffe715e872816ec9b9e12b585d86dd4f21.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -159,7 +159,7 @@ func (m *ApplicationsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *ApplicationsRequestBuilder) ValidateProperties()(*i3bc7881f8d53ff46b80580bf2bbeca93ee226b9e556c80e1a29474dc201f2a62.ValidatePropertiesRequestBuilder) {
     return i3bc7881f8d53ff46b80580bf2bbeca93ee226b9e556c80e1a29474dc201f2a62.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

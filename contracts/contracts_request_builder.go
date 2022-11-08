@@ -74,7 +74,7 @@ func NewContractsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewContractsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ContractsRequestBuilder) Count()(*i867b02a599e2fe4975957837e47f1f3770752b7acb3571d09e7f6f35afd50812.CountRequestBuilder) {
     return i867b02a599e2fe4975957837e47f1f3770752b7acb3571d09e7f6f35afd50812.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -127,11 +127,11 @@ func (m *ContractsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContractCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
 func (m *ContractsRequestBuilder) GetAvailableExtensionProperties()(*ie41bc0d7fc615edaf4f5b6465175015a969250de7c7a50d08ad876a460d7a502.GetAvailableExtensionPropertiesRequestBuilder) {
     return ie41bc0d7fc615edaf4f5b6465175015a969250de7c7a50d08ad876a460d7a502.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *ContractsRequestBuilder) GetByIds()(*if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.GetByIdsRequestBuilder) {
     return if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -154,7 +154,7 @@ func (m *ContractsRequestBuilder) Post(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contractable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *ContractsRequestBuilder) ValidateProperties()(*iae7abf548284ce647bf1f0a3d0773f4d8311d2115e91f17453dc9718a3539233.ValidatePropertiesRequestBuilder) {
     return iae7abf548284ce647bf1f0a3d0773f4d8311d2115e91f17453dc9718a3539233.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

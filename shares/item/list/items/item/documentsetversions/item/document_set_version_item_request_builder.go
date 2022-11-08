@@ -162,7 +162,7 @@ func (m *DocumentSetVersionItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable), nil
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *DocumentSetVersionItemRequestBuilder) Restore()(*i68a29672d8fd3cdef415bc8d542e9f8b96ec71140acf6675d0e031d92ccce31c.RestoreRequestBuilder) {
     return i68a29672d8fd3cdef415bc8d542e9f8b96ec71140acf6675d0e031d92ccce31c.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

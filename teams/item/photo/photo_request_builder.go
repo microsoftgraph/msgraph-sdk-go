@@ -66,7 +66,7 @@ func NewPhotoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewPhotoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the team entity.
 func (m *PhotoRequestBuilder) Content()(*i1cccefa47fa794cd8a5b63b454223b6a10ad7e8aba2184ca75ddede9489651b5.ContentRequestBuilder) {
     return i1cccefa47fa794cd8a5b63b454223b6a10ad7e8aba2184ca75ddede9489651b5.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

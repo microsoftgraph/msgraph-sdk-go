@@ -64,7 +64,7 @@ func NewGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GroupRequestBuilder) Count()(*i509898b99c7221e81ee3306e6d4f19ab81c73891f6c77339118bc52462d49cdc.CountRequestBuilder) {
     return i509898b99c7221e81ee3306e6d4f19ab81c73891f6c77339118bc52462d49cdc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

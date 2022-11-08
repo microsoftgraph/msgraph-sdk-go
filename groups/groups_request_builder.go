@@ -75,7 +75,7 @@ func NewGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GroupsRequestBuilder) Count()(*ie608899362accd916bc52ec704231cadfa13c0670595006faa55af4662ba2041.CountRequestBuilder) {
     return ie608899362accd916bc52ec704231cadfa13c0670595006faa55af4662ba2041.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -132,11 +132,11 @@ func (m *GroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *Gr
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
 func (m *GroupsRequestBuilder) GetAvailableExtensionProperties()(*i7d29fae04c66ea80bde24e86409199f0dc0b080c7627ab830e7b0d952b484b63.GetAvailableExtensionPropertiesRequestBuilder) {
     return i7d29fae04c66ea80bde24e86409199f0dc0b080c7627ab830e7b0d952b484b63.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *GroupsRequestBuilder) GetByIds()(*ie4a7ad3df5c8c80560bac8c2104e630852fa61f5f273213cf3c31d43a94074b7.GetByIdsRequestBuilder) {
     return ie4a7ad3df5c8c80560bac8c2104e630852fa61f5f273213cf3c31d43a94074b7.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -159,7 +159,7 @@ func (m *GroupsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *GroupsRequestBuilder) ValidateProperties()(*i9c6908ad2efddeef83a4a1ca037a7f22d02065433e5fa1f90f3339315971262a.ValidatePropertiesRequestBuilder) {
     return i9c6908ad2efddeef83a4a1ca037a7f22d02065433e5fa1f90f3339315971262a.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

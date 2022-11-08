@@ -71,7 +71,7 @@ func NewScheduledActionConfigurationsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ScheduledActionConfigurationsRequestBuilder) Count()(*ic447aedded1ef9885fb659e966d8b350fa83b6c3f2f233058722352b4ae35d98.CountRequestBuilder) {
     return ic447aedded1ef9885fb659e966d8b350fa83b6c3f2f233058722352b4ae35d98.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

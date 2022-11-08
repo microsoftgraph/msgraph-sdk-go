@@ -72,7 +72,7 @@ func NewRoleEligibilitySchedulesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewRoleEligibilitySchedulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RoleEligibilitySchedulesRequestBuilder) Count()(*i28225719ea7fca053d92691407eb73f149a0e2bca5343a384b9c457437f668e5.CountRequestBuilder) {
     return i28225719ea7fca053d92691407eb73f149a0e2bca5343a384b9c457437f668e5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

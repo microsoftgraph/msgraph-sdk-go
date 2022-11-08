@@ -37,6 +37,8 @@ type EducationAssignment struct {
     displayName *string
     // Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Folder URL where all the feedback file resources for this assignment are stored.
+    feedbackResourcesFolderUrl *string
     // How the assignment will be graded.
     grading EducationAssignmentGradeTypeable
     // Instructions for the assignment.  This along with the display name tell the student what to do.
@@ -129,6 +131,10 @@ func (m *EducationAssignment) GetDisplayName()(*string) {
 func (m *EducationAssignment) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.dueDateTime
 }
+// GetFeedbackResourcesFolderUrl gets the feedbackResourcesFolderUrl property value. Folder URL where all the feedback file resources for this assignment are stored.
+func (m *EducationAssignment) GetFeedbackResourcesFolderUrl()(*string) {
+    return m.feedbackResourcesFolderUrl
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -146,6 +152,7 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
     res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["dueDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetDueDateTime)
+    res["feedbackResourcesFolderUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFeedbackResourcesFolderUrl)
     res["grading"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEducationAssignmentGradeTypeFromDiscriminatorValue , m.SetGrading)
     res["instructions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEducationItemBodyFromDiscriminatorValue , m.SetInstructions)
     res["lastModifiedBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentitySetFromDiscriminatorValue , m.SetLastModifiedBy)
@@ -367,6 +374,10 @@ func (m *EducationAssignment) SetDisplayName(value *string)() {
 // SetDueDateTime sets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.dueDateTime = value
+}
+// SetFeedbackResourcesFolderUrl sets the feedbackResourcesFolderUrl property value. Folder URL where all the feedback file resources for this assignment are stored.
+func (m *EducationAssignment) SetFeedbackResourcesFolderUrl(value *string)() {
+    m.feedbackResourcesFolderUrl = value
 }
 // SetGrading sets the grading property value. How the assignment will be graded.
 func (m *EducationAssignment) SetGrading(value EducationAssignmentGradeTypeable)() {

@@ -33,7 +33,7 @@ func NewGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of print entities.
 func (m *GroupItemRequestBuilder) Ref()(*i03c9265f4b12c9a07cf824efc8c8f5029162ea9c7c8c9b3e5102545ccdaae771.RefRequestBuilder) {
     return i03c9265f4b12c9a07cf824efc8c8f5029162ea9c7c8c9b3e5102545ccdaae771.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -55,11 +55,11 @@ type ContentTypesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddCopy the addCopy property
+// AddCopy provides operations to call the addCopy method.
 func (m *ContentTypesRequestBuilder) AddCopy()(*i0a99b5be6ce8dbfaf3da4af74892ca68a8c7e1b46f473ab21fe5062099f6f8a9.AddCopyRequestBuilder) {
     return i0a99b5be6ce8dbfaf3da4af74892ca68a8c7e1b46f473ab21fe5062099f6f8a9.NewAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AddCopyFromContentTypeHub the addCopyFromContentTypeHub property
+// AddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
 func (m *ContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*iac87ddc58bf85b42ed2c78617e9361b6913fc14f90728e2f71b2f5f4f570071f.AddCopyFromContentTypeHubRequestBuilder) {
     return iac87ddc58bf85b42ed2c78617e9361b6913fc14f90728e2f71b2f5f4f570071f.NewAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -82,7 +82,7 @@ func NewContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ContentTypesRequestBuilder) Count()(*ida095e62b5c067abbe9a9172b95b05e424d9afa6c89a063a73d56303f3173ae9.CountRequestBuilder) {
     return ida095e62b5c067abbe9a9172b95b05e424d9afa6c89a063a73d56303f3173ae9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

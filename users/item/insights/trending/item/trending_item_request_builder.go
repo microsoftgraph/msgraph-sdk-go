@@ -162,7 +162,7 @@ func (m *TrendingItemRequestBuilder) Patch(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Trendingable), nil
 }
-// Resource the resource property
+// Resource provides operations to manage the resource property of the microsoft.graph.trending entity.
 func (m *TrendingItemRequestBuilder) Resource()(*i09c89b405280cd1597608608b0d0c819d9c63ef00525b9cf521f43a5db826c5e.ResourceRequestBuilder) {
     return i09c89b405280cd1597608608b0d0c819d9c63ef00525b9cf521f43a5db826c5e.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

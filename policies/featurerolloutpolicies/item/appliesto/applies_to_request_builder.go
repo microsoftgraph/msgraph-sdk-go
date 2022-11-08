@@ -75,7 +75,7 @@ func NewAppliesToRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewAppliesToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AppliesToRequestBuilder) Count()(*i291ff03133de15263bbbb9161ec52a9fd3780244fb39767c57a0d3b944a877bb.CountRequestBuilder) {
     return i291ff03133de15263bbbb9161ec52a9fd3780244fb39767c57a0d3b944a877bb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -128,11 +128,11 @@ func (m *AppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
 func (m *AppliesToRequestBuilder) GetAvailableExtensionProperties()(*i01b7156a2542039015b03b4c145895442723775d50760476d6a858e7a38c0229.GetAvailableExtensionPropertiesRequestBuilder) {
     return i01b7156a2542039015b03b4c145895442723775d50760476d6a858e7a38c0229.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *AppliesToRequestBuilder) GetByIds()(*i5fcc1cbba281bf089e86d1f0fd053b72254efdc576b56f07f5f474773e8f4e0b.GetByIdsRequestBuilder) {
     return i5fcc1cbba281bf089e86d1f0fd053b72254efdc576b56f07f5f474773e8f4e0b.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *AppliesToRequestBuilder) Post(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of policyRoot entities.
 func (m *AppliesToRequestBuilder) Ref()(*i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c.RefRequestBuilder) {
     return i9be808779624fafbf1ab48016999de8af7668ec9c3d03a9ba21e6fa0fb30642c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *AppliesToRequestBuilder) ValidateProperties()(*ibb1e01f7e6a4c02e7b91f4bf4b3d9806fdaa9391df8c9da069d523afca17ae59.ValidatePropertiesRequestBuilder) {
     return ibb1e01f7e6a4c02e7b91f4bf4b3d9806fdaa9391df8c9da069d523afca17ae59.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

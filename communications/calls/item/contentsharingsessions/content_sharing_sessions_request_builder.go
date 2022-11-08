@@ -71,7 +71,7 @@ func NewContentSharingSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewContentSharingSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ContentSharingSessionsRequestBuilder) Count()(*ief1c0d4777d2a948b8b9b7cd554b55683e41ed18a5d3884fef01aab4f77ee19c.CountRequestBuilder) {
     return ief1c0d4777d2a948b8b9b7cd554b55683e41ed18a5d3884fef01aab4f77ee19c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

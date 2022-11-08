@@ -10,6 +10,7 @@ import (
     i710174f1350381dcd776625bf1b593be962f1d2c9b1e368ae0bd178d3495728f "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/submissions"
     i74b91723ec2102e06ba61f2eec38b8a338e711092e99e7a6121ae3287f6f5788 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/publish"
     i874a2b579f5eb892e97d9c0c157220e5118544d0dca2de101640f4b07a1c3fe3 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/resources"
+    ib7f8e3ce04c81d083f8ef638afdca65de5db8ffabbc758013b5a49cae3ee262d "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/setupfeedbackresourcesfolder"
     ie33a7d66ff2752d51b9a63d7758fc6c00305b565d547fa3e4e42f07c7a26bdec "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/setupresourcesfolder"
     i0a97b1183e4efc9029dbfdb7442c76c2d4fc13a243fc9089be3106c63fd1b7f2 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/submissions/item"
     i26284194e56af98cb4a7e2e347a5485f31cf2c535beac0528c6c3661c312a162 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item/categories/item"
@@ -55,7 +56,7 @@ type EducationAssignmentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Categories the categories property
+// Categories provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Categories()(*i608fa3df84918be40f4d961440af7a1df9cdc70cdcbcd01332c72421f74df332.CategoriesRequestBuilder) {
     return i608fa3df84918be40f4d961440af7a1df9cdc70cdcbcd01332c72421f74df332.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -185,15 +186,15 @@ func (m *EducationAssignmentItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable), nil
 }
-// Publish the publish property
+// Publish provides operations to call the publish method.
 func (m *EducationAssignmentItemRequestBuilder) Publish()(*i74b91723ec2102e06ba61f2eec38b8a338e711092e99e7a6121ae3287f6f5788.PublishRequestBuilder) {
     return i74b91723ec2102e06ba61f2eec38b8a338e711092e99e7a6121ae3287f6f5788.NewPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Resources the resources property
+// Resources provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Resources()(*i874a2b579f5eb892e97d9c0c157220e5118544d0dca2de101640f4b07a1c3fe3.ResourcesRequestBuilder) {
     return i874a2b579f5eb892e97d9c0c157220e5118544d0dca2de101640f4b07a1c3fe3.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourcesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.me.assignments.item.resources.item collection
+// ResourcesById provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) ResourcesById(id string)(*i7b969696e68843bc2d2d30122cafa6f7eaf8a9843bf04feaf8693f3f794c0d94.EducationAssignmentResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,19 +205,23 @@ func (m *EducationAssignmentItemRequestBuilder) ResourcesById(id string)(*i7b969
     }
     return i7b969696e68843bc2d2d30122cafa6f7eaf8a9843bf04feaf8693f3f794c0d94.NewEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Rubric the rubric property
+// Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Rubric()(*i6182b98a227da91892039c997d1742545d169f3ded56acfb9ebddc2b8754acb3.RubricRequestBuilder) {
     return i6182b98a227da91892039c997d1742545d169f3ded56acfb9ebddc2b8754acb3.NewRubricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetUpResourcesFolder the setUpResourcesFolder property
+// SetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
+func (m *EducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*ib7f8e3ce04c81d083f8ef638afdca65de5db8ffabbc758013b5a49cae3ee262d.SetUpFeedbackResourcesFolderRequestBuilder) {
+    return ib7f8e3ce04c81d083f8ef638afdca65de5db8ffabbc758013b5a49cae3ee262d.NewSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
 func (m *EducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*ie33a7d66ff2752d51b9a63d7758fc6c00305b565d547fa3e4e42f07c7a26bdec.SetUpResourcesFolderRequestBuilder) {
     return ie33a7d66ff2752d51b9a63d7758fc6c00305b565d547fa3e4e42f07c7a26bdec.NewSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Submissions the submissions property
+// Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Submissions()(*i710174f1350381dcd776625bf1b593be962f1d2c9b1e368ae0bd178d3495728f.SubmissionsRequestBuilder) {
     return i710174f1350381dcd776625bf1b593be962f1d2c9b1e368ae0bd178d3495728f.NewSubmissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubmissionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.me.assignments.item.submissions.item collection
+// SubmissionsById provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*i0a97b1183e4efc9029dbfdb7442c76c2d4fc13a243fc9089be3106c63fd1b7f2.EducationSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

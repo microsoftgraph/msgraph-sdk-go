@@ -47,7 +47,7 @@ type UserConsentRequestItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Approval the approval property
+// Approval provides operations to manage the approval property of the microsoft.graph.userConsentRequest entity.
 func (m *UserConsentRequestItemRequestBuilder) Approval()(*i521601d13f6de9b4e636f379203b06857b5159a6cc9842f8625a00ebd3cba62c.ApprovalRequestBuilder) {
     return i521601d13f6de9b4e636f379203b06857b5159a6cc9842f8625a00ebd3cba62c.NewApprovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

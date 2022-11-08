@@ -41,6 +41,8 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
                         return NewIosStoreAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosVppAppAssignmentSettings":
                         return NewIosVppAppAssignmentSettings(), nil
+                    case "#microsoft.graph.macOsLobAppAssignmentSettings":
+                        return NewMacOsLobAppAssignmentSettings(), nil
                     case "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings":
                         return NewMicrosoftStoreForBusinessAppAssignmentSettings(), nil
                     case "#microsoft.graph.win32LobAppAssignmentSettings":

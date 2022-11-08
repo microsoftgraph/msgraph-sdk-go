@@ -144,7 +144,7 @@ func (m *SharedInsightItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightable), nil
 }
-// LastSharedMethod the lastSharedMethod property
+// LastSharedMethod provides operations to manage the lastSharedMethod property of the microsoft.graph.sharedInsight entity.
 func (m *SharedInsightItemRequestBuilder) LastSharedMethod()(*i842917ab59524927fdc4f7a1948e2eb89d752e56a2d7a853caff95ff7c1ac1fa.LastSharedMethodRequestBuilder) {
     return i842917ab59524927fdc4f7a1948e2eb89d752e56a2d7a853caff95ff7c1ac1fa.NewLastSharedMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *SharedInsightItemRequestBuilder) Patch(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightable), nil
 }
-// Resource the resource property
+// Resource provides operations to manage the resource property of the microsoft.graph.sharedInsight entity.
 func (m *SharedInsightItemRequestBuilder) Resource()(*i7ba3d0774deee2792503f391de8f06f67d1f2e7e9ff82998a51ed173196befa5.ResourceRequestBuilder) {
     return i7ba3d0774deee2792503f391de8f06f67d1f2e7e9ff82998a51ed173196befa5.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

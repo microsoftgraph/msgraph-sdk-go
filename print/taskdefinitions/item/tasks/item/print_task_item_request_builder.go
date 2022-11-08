@@ -109,7 +109,7 @@ func (m *PrintTaskItemRequestBuilder) CreatePatchRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// Definition the definition property
+// Definition provides operations to manage the definition property of the microsoft.graph.printTask entity.
 func (m *PrintTaskItemRequestBuilder) Definition()(*i170d6bd96ed4765ab98f862d2ae3c962180e0a55343f7354a255a1938a1fcf7c.DefinitionRequestBuilder) {
     return i170d6bd96ed4765ab98f862d2ae3c962180e0a55343f7354a255a1938a1fcf7c.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *PrintTaskItemRequestBuilder) Patch(ctx context.Context, body iadcd81124
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable), nil
 }
-// Trigger the trigger property
+// Trigger provides operations to manage the trigger property of the microsoft.graph.printTask entity.
 func (m *PrintTaskItemRequestBuilder) Trigger()(*ibb48c7cafa0b5be5cfe11fb7d96c2e07c41ca9860e124963f4c1f62ae994a756.TriggerRequestBuilder) {
     return ibb48c7cafa0b5be5cfe11fb7d96c2e07c41ca9860e124963f4c1f62ae994a756.NewTriggerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

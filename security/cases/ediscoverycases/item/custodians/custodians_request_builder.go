@@ -54,7 +54,7 @@ type CustodiansRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold the applyHold property
+// ApplyHold provides operations to call the applyHold method.
 func (m *CustodiansRequestBuilder) ApplyHold()(*ia852d41c9f0f466eba2e6bf03a87e5d7feb15d7560f76454a2d62df39d9320fc.ApplyHoldRequestBuilder) {
     return ia852d41c9f0f466eba2e6bf03a87e5d7feb15d7560f76454a2d62df39d9320fc.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -77,7 +77,7 @@ func NewCustodiansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewCustodiansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CustodiansRequestBuilder) Count()(*i5a47ec2b665a4b46673969bc5bf8b8b4eda763a58017343ccb5ea770f87fcbd9.CountRequestBuilder) {
     return i5a47ec2b665a4b46673969bc5bf8b8b4eda763a58017343ccb5ea770f87fcbd9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *CustodiansRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable), nil
 }
-// RemoveHold the removeHold property
+// RemoveHold provides operations to call the removeHold method.
 func (m *CustodiansRequestBuilder) RemoveHold()(*i579532ff0d503078944ac35e373bb4ae5e59e58779be93a8857011d948bc525a.RemoveHoldRequestBuilder) {
     return i579532ff0d503078944ac35e373bb4ae5e59e58779be93a8857011d948bc525a.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -162,7 +162,7 @@ func (m *PlaceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
 }
-// Room the room property
+// Room casts the previous resource to room.
 func (m *PlaceItemRequestBuilder) Room()(*i29913232bbdc0b5748c87ebec7d33a4bbd7981e27e63e0e0bf6b2ef80d0ddef6.RoomRequestBuilder) {
     return i29913232bbdc0b5748c87ebec7d33a4bbd7981e27e63e0e0bf6b2ef80d0ddef6.NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

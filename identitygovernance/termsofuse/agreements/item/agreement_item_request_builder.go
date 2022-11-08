@@ -51,11 +51,11 @@ type AgreementItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Acceptances the acceptances property
+// Acceptances provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
 func (m *AgreementItemRequestBuilder) Acceptances()(*i497cbf408523a7308e7d74d59fe980755bb06512cff2a1505fefee52ffc5f482.AcceptancesRequestBuilder) {
     return i497cbf408523a7308e7d74d59fe980755bb06512cff2a1505fefee52ffc5f482.NewAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AcceptancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreements.item.acceptances.item collection
+// AcceptancesById provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
 func (m *AgreementItemRequestBuilder) AcceptancesById(id string)(*i22d600b0c4aaca0bdb6422ea093131f6b276800efda0ef10e38f62d8c5ee6950.AgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -143,15 +143,15 @@ func (m *AgreementItemRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// File the file property
+// File provides operations to manage the file property of the microsoft.graph.agreement entity.
 func (m *AgreementItemRequestBuilder) File()(*i70f02eb4dfaff6e6823bf1a53edf2c9ba3ecdf930d6d4a42d9df9b5a5a136631.FileRequestBuilder) {
     return i70f02eb4dfaff6e6823bf1a53edf2c9ba3ecdf930d6d4a42d9df9b5a5a136631.NewFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Files the files property
+// Files provides operations to manage the files property of the microsoft.graph.agreement entity.
 func (m *AgreementItemRequestBuilder) Files()(*i1bd9f6fcec8cad5cf057c73a59840be7a45f6df4cd6e9cf1680b44c2bc8d79e3.FilesRequestBuilder) {
     return i1bd9f6fcec8cad5cf057c73a59840be7a45f6df4cd6e9cf1680b44c2bc8d79e3.NewFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FilesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreements.item.files.item collection
+// FilesById provides operations to manage the files property of the microsoft.graph.agreement entity.
 func (m *AgreementItemRequestBuilder) FilesById(id string)(*iaac740f8096136ae314c81411ffdcd09c6315014dc38c6f4f71a1f25f94237bd.AgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -165,11 +165,11 @@ func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationRootable), nil
 }
-// SimulationAutomations the simulationAutomations property
+// SimulationAutomations provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*iebb7f059e19f2533c384ac9e663c03ccbdd74377f805d46bee2ca88e1c878fd7.SimulationAutomationsRequestBuilder) {
     return iebb7f059e19f2533c384ac9e663c03ccbdd74377f805d46bee2ca88e1c878fd7.NewSimulationAutomationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SimulationAutomationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.attackSimulation.simulationAutomations.item collection
+// SimulationAutomationsById provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*ifc84c9b1ed600ff7da48d2107b61eba13dcbd3e1d145474c927d0dd677cc2a82.SimulationAutomationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*i
     }
     return ifc84c9b1ed600ff7da48d2107b61eba13dcbd3e1d145474c927d0dd677cc2a82.NewSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Simulations the simulations property
+// Simulations provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) Simulations()(*i99d6ede3b39aad5863028c6e234a1c23c68829304e8e6fa46e522bb0a0dbbe53.SimulationsRequestBuilder) {
     return i99d6ede3b39aad5863028c6e234a1c23c68829304e8e6fa46e522bb0a0dbbe53.NewSimulationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SimulationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.attackSimulation.simulations.item collection
+// SimulationsById provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*iaccc03ae3a961df2ec3e59baa9882f6243464c8964795d683b336610423727f1.SimulationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

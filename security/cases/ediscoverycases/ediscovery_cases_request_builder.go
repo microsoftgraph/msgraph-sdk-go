@@ -71,7 +71,7 @@ func NewEdiscoveryCasesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesRequestBuilder) Count()(*i0b2e5ec4842b4ee43b50618891386ee5dd7ce45d393ba07f115589e2bc4fe603.CountRequestBuilder) {
     return i0b2e5ec4842b4ee43b50618891386ee5dd7ce45d393ba07f115589e2bc4fe603.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -164,15 +164,15 @@ func (m *TeamsAppInstallationItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable), nil
 }
-// TeamsApp the teamsApp property
+// TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
 func (m *TeamsAppInstallationItemRequestBuilder) TeamsApp()(*i048d351626e16b7438b5907fe81cee3f76494cb8c21df65d1cec627683334d06.TeamsAppRequestBuilder) {
     return i048d351626e16b7438b5907fe81cee3f76494cb8c21df65d1cec627683334d06.NewTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TeamsAppDefinition the teamsAppDefinition property
+// TeamsAppDefinition provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
 func (m *TeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*i53b7b6efb9b44b3c69b96d311d90b0284e6769e8aaaaee5615090dc7061cf638.TeamsAppDefinitionRequestBuilder) {
     return i53b7b6efb9b44b3c69b96d311d90b0284e6769e8aaaaee5615090dc7061cf638.NewTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Upgrade the upgrade property
+// Upgrade provides operations to call the upgrade method.
 func (m *TeamsAppInstallationItemRequestBuilder) Upgrade()(*i03f2cc65f225c8a86c9b1fe33f7332cfd5ede98fae3bde11ca070c06e4b0bb20.UpgradeRequestBuilder) {
     return i03f2cc65f225c8a86c9b1fe33f7332cfd5ede98fae3bde11ca070c06e4b0bb20.NewUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

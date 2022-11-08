@@ -143,11 +143,11 @@ func (m *AuthenticationRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// EmailMethods the emailMethods property
+// EmailMethods provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) EmailMethods()(*i90a80d7bdff82cdccc7ae0cf5840323e7a57f740d64043c727e023d114dba655.EmailMethodsRequestBuilder) {
     return i90a80d7bdff82cdccc7ae0cf5840323e7a57f740d64043c727e023d114dba655.NewEmailMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EmailMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.emailMethods.item collection
+// EmailMethodsById provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) EmailMethodsById(id string)(*i09344f5684814c94f5c0d49aa2a8a99853e6bd49c79b7af62c388b8280648cbe.EmailAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -158,11 +158,11 @@ func (m *AuthenticationRequestBuilder) EmailMethodsById(id string)(*i09344f56848
     }
     return i09344f5684814c94f5c0d49aa2a8a99853e6bd49c79b7af62c388b8280648cbe.NewEmailAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Fido2Methods the fido2Methods property
+// Fido2Methods provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) Fido2Methods()(*i17beca6845c8590a7993cf25977350ea5aff5795257953969bade065fb0a8c8e.Fido2MethodsRequestBuilder) {
     return i17beca6845c8590a7993cf25977350ea5aff5795257953969bade065fb0a8c8e.NewFido2MethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Fido2MethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.fido2Methods.item collection
+// Fido2MethodsById provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*i4f5c6f02fac27458fe06277174a65fe094c80b096c7dceec66f3bc6ab61be13b.Fido2AuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -192,11 +192,11 @@ func (m *AuthenticationRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Authenticationable), nil
 }
-// Methods the methods property
+// Methods provides operations to manage the methods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) Methods()(*i36d51fdd7beea498cf790dc7e6370ee500c1ae341f5d8a4c36d081226f91ee96.MethodsRequestBuilder) {
     return i36d51fdd7beea498cf790dc7e6370ee500c1ae341f5d8a4c36d081226f91ee96.NewMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.methods.item collection
+// MethodsById provides operations to manage the methods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) MethodsById(id string)(*ia6b9ba2f6ac4b661e1925c06219918528114879cf86ac1234330ab29aa5c8f58.AuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -207,11 +207,11 @@ func (m *AuthenticationRequestBuilder) MethodsById(id string)(*ia6b9ba2f6ac4b661
     }
     return ia6b9ba2f6ac4b661e1925c06219918528114879cf86ac1234330ab29aa5c8f58.NewAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MicrosoftAuthenticatorMethods the microsoftAuthenticatorMethods property
+// MicrosoftAuthenticatorMethods provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethods()(*i96e8d458309e5631e00b3cbc4d031fbc1d45f1137d2f6149c3e103603bd3dcf2.MicrosoftAuthenticatorMethodsRequestBuilder) {
     return i96e8d458309e5631e00b3cbc4d031fbc1d45f1137d2f6149c3e103603bd3dcf2.NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftAuthenticatorMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.microsoftAuthenticatorMethods.item collection
+// MicrosoftAuthenticatorMethodsById provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethodsById(id string)(*i33902446e72a35eb92a8d90a86021f50ebf6a7badd666e5dd29d39829615e81f.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -222,11 +222,11 @@ func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethodsById(id stri
     }
     return i33902446e72a35eb92a8d90a86021f50ebf6a7badd666e5dd29d39829615e81f.NewMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) Operations()(*i50a4dcc03253ad4d1a2378ba69f2c88826d5fdd0f9425f4e28c70575cac71416.OperationsRequestBuilder) {
     return i50a4dcc03253ad4d1a2378ba69f2c88826d5fdd0f9425f4e28c70575cac71416.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) OperationsById(id string)(*i84363a3b3ece14c5cf90a56909346b46410bd8cea98a319ba3b31fdc29a3fad5.LongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -237,11 +237,11 @@ func (m *AuthenticationRequestBuilder) OperationsById(id string)(*i84363a3b3ece1
     }
     return i84363a3b3ece14c5cf90a56909346b46410bd8cea98a319ba3b31fdc29a3fad5.NewLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PasswordMethods the passwordMethods property
+// PasswordMethods provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) PasswordMethods()(*ibf3d8b3b514222b0d1e0f731908a1dec434e70451a9c69a400c95a8636070ad7.PasswordMethodsRequestBuilder) {
     return ibf3d8b3b514222b0d1e0f731908a1dec434e70451a9c69a400c95a8636070ad7.NewPasswordMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PasswordMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.passwordMethods.item collection
+// PasswordMethodsById provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) PasswordMethodsById(id string)(*i35d593a027a6734cd04363b64e4ec23b3994926e2a5637f26d36b76f7d3c43a3.PasswordAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -271,11 +271,11 @@ func (m *AuthenticationRequestBuilder) Patch(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Authenticationable), nil
 }
-// PhoneMethods the phoneMethods property
+// PhoneMethods provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) PhoneMethods()(*ia4b56c953a28a84d229122b7e1aac46eb680356d4c1224fba222ec4ef02edf28.PhoneMethodsRequestBuilder) {
     return ia4b56c953a28a84d229122b7e1aac46eb680356d4c1224fba222ec4ef02edf28.NewPhoneMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PhoneMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.phoneMethods.item collection
+// PhoneMethodsById provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) PhoneMethodsById(id string)(*i376648a3fdba15b5dceca58336d2fd7c6dbc0c092186670d9080f160e7b0323d.PhoneAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -286,11 +286,11 @@ func (m *AuthenticationRequestBuilder) PhoneMethodsById(id string)(*i376648a3fdb
     }
     return i376648a3fdba15b5dceca58336d2fd7c6dbc0c092186670d9080f160e7b0323d.NewPhoneAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SoftwareOathMethods the softwareOathMethods property
+// SoftwareOathMethods provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) SoftwareOathMethods()(*i6430ca73853f3f695600e2a9f4e951ba2e344e4a2627154e62947ec642d87fd6.SoftwareOathMethodsRequestBuilder) {
     return i6430ca73853f3f695600e2a9f4e951ba2e344e4a2627154e62947ec642d87fd6.NewSoftwareOathMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SoftwareOathMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.softwareOathMethods.item collection
+// SoftwareOathMethodsById provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) SoftwareOathMethodsById(id string)(*i1639e8fff03af17d5d09a810d83e6d720afc46c6adb8ed991b86ed9970fa512a.SoftwareOathAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -301,11 +301,11 @@ func (m *AuthenticationRequestBuilder) SoftwareOathMethodsById(id string)(*i1639
     }
     return i1639e8fff03af17d5d09a810d83e6d720afc46c6adb8ed991b86ed9970fa512a.NewSoftwareOathAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TemporaryAccessPassMethods the temporaryAccessPassMethods property
+// TemporaryAccessPassMethods provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethods()(*if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3.TemporaryAccessPassMethodsRequestBuilder) {
     return if1ee18a3da4e8e27c6078dd6a39fae3b6b567ea5f3ebfaab6b86da5d3c9a22b3.NewTemporaryAccessPassMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TemporaryAccessPassMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.temporaryAccessPassMethods.item collection
+// TemporaryAccessPassMethodsById provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethodsById(id string)(*iaafaaf5d5b20e6d3863c502a3d1a4bb1a58d82360807d327e71876b1c02f0d7e.TemporaryAccessPassAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -316,11 +316,11 @@ func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethodsById(id string)
     }
     return iaafaaf5d5b20e6d3863c502a3d1a4bb1a58d82360807d327e71876b1c02f0d7e.NewTemporaryAccessPassAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsHelloForBusinessMethods the windowsHelloForBusinessMethods property
+// WindowsHelloForBusinessMethods provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethods()(*i3d41e7ad8d690559b414262fba543314187fe0d02cf0420f778314c36a9270af.WindowsHelloForBusinessMethodsRequestBuilder) {
     return i3d41e7ad8d690559b414262fba543314187fe0d02cf0420f778314c36a9270af.NewWindowsHelloForBusinessMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsHelloForBusinessMethodsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.authentication.windowsHelloForBusinessMethods.item collection
+// WindowsHelloForBusinessMethodsById provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
 func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethodsById(id string)(*i9204deeb9308a81051ecfbd988907f606e6330dbfc4b953a713d2803d2d5735a.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

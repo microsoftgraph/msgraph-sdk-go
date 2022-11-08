@@ -43,11 +43,11 @@ type IdentityGovernanceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviews the accessReviews property
+// AccessReviews provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*i1cda3b7fdbc22bd911cf3362278cc718553e52184a22fc83dfca175c3aa68d68.AccessReviewsRequestBuilder) {
     return i1cda3b7fdbc22bd911cf3362278cc718553e52184a22fc83dfca175c3aa68d68.NewAccessReviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppConsent the appConsent property
+// AppConsent provides operations to manage the appConsent property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) AppConsent()(*i3533004f4d40fc23d0e3aa97288bb203746287e045fd17464a9ddfc34309ec67.AppConsentRequestBuilder) {
     return i3533004f4d40fc23d0e3aa97288bb203746287e045fd17464a9ddfc34309ec67.NewAppConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -100,7 +100,7 @@ func (m *IdentityGovernanceRequestBuilder) CreatePatchRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// EntitlementManagement the entitlementManagement property
+// EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) EntitlementManagement()(*ife915c8a8f434e475a7b17efdcb242db3e0f1f1ef327268189874360082827ec.EntitlementManagementRequestBuilder) {
     return ife915c8a8f434e475a7b17efdcb242db3e0f1f1ef327268189874360082827ec.NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -142,7 +142,7 @@ func (m *IdentityGovernanceRequestBuilder) Patch(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable), nil
 }
-// TermsOfUse the termsOfUse property
+// TermsOfUse provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) TermsOfUse()(*i19843957d5edfe5fb320ce126acd252770b9df2ea52037acd5d5f2308496e3fb.TermsOfUseRequestBuilder) {
     return i19843957d5edfe5fb320ce126acd252770b9df2ea52037acd5d5f2308496e3fb.NewTermsOfUseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

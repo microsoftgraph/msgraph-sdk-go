@@ -71,7 +71,7 @@ func NewExportJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewExportJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ExportJobsRequestBuilder) Count()(*i40ebdab98f71a4b6865a4877e214a6907711324fcf0a628b2267a148dd451687.CountRequestBuilder) {
     return i40ebdab98f71a4b6865a4877e214a6907711324fcf0a628b2267a148dd451687.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

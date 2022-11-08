@@ -71,7 +71,7 @@ func NewUserStateSummaryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewUserStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserStateSummaryRequestBuilder) Count()(*i8e2cbb006e46141dd2380e7382e8e941157839b15bf08d9c73228033dc83ebf6.CountRequestBuilder) {
     return i8e2cbb006e46141dd2380e7382e8e941157839b15bf08d9c73228033dc83ebf6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

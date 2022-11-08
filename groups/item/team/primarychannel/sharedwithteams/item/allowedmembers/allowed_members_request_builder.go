@@ -64,7 +64,7 @@ func NewAllowedMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AllowedMembersRequestBuilder) Count()(*ifc46bdc851ba23868cdd2c59bc36d06e463bcb96debe4e76cef55791e6480486.CountRequestBuilder) {
     return ifc46bdc851ba23868cdd2c59bc36d06e463bcb96debe4e76cef55791e6480486.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

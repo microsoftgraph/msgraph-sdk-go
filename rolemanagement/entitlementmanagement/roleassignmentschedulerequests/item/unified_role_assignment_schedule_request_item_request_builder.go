@@ -53,15 +53,15 @@ type UnifiedRoleAssignmentScheduleRequestItemRequestBuilderPatchRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivatedUsing the activatedUsing property
+// ActivatedUsing provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) ActivatedUsing()(*i38ca64b8b058140def4153684e693311e56f0603177bcec236c50544a07a446a.ActivatedUsingRequestBuilder) {
     return i38ca64b8b058140def4153684e693311e56f0603177bcec236c50544a07a446a.NewActivatedUsingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppScope the appScope property
+// AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) AppScope()(*ibb3650c856589e0d8dd876ef57453246087e344aabb2cf09a6d4791fff2a9d45.AppScopeRequestBuilder) {
     return ibb3650c856589e0d8dd876ef57453246087e344aabb2cf09a6d4791fff2a9d45.NewAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) Cancel()(*ic1b7c918ee37633806f85e686be26c0f33a0767bb232031438f3dc8763be87ff.CancelRequestBuilder) {
     return ic1b7c918ee37633806f85e686be26c0f33a0767bb232031438f3dc8763be87ff.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -142,7 +142,7 @@ func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// DirectoryScope the directoryScope property
+// DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) DirectoryScope()(*i61bcc2628b8c7f8d8cf13f3357710e8ffb34ade9f23e103c82cf9bb901980c35.DirectoryScopeRequestBuilder) {
     return i61bcc2628b8c7f8d8cf13f3357710e8ffb34ade9f23e103c82cf9bb901980c35.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -184,15 +184,15 @@ func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) Patch(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable), nil
 }
-// Principal the principal property
+// Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) Principal()(*i43519742abaa7fdd577f8211a5a4de7a5a3ce6b75a0a3ecb63c73732a8129a36.PrincipalRequestBuilder) {
     return i43519742abaa7fdd577f8211a5a4de7a5a3ce6b75a0a3ecb63c73732a8129a36.NewPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinition the roleDefinition property
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) RoleDefinition()(*i49779d099fba6b7fdca0cde9f16a0863487cced229750a243d32f7caa3b02192.RoleDefinitionRequestBuilder) {
     return i49779d099fba6b7fdca0cde9f16a0863487cced229750a243d32f7caa3b02192.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TargetSchedule the targetSchedule property
+// TargetSchedule provides operations to manage the targetSchedule property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
 func (m *UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) TargetSchedule()(*i28469022081e100ad5feec64a0c99129191736547aadc119e5eacd4b98954919.TargetScheduleRequestBuilder) {
     return i28469022081e100ad5feec64a0c99129191736547aadc119e5eacd4b98954919.NewTargetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

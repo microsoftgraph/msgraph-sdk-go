@@ -162,7 +162,7 @@ func (m *ManagedAppPolicyItemRequestBuilder) Patch(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable), nil
 }
-// TargetApps the targetApps property
+// TargetApps provides operations to call the targetApps method.
 func (m *ManagedAppPolicyItemRequestBuilder) TargetApps()(*iece8e7ddbf399451514e3763c1358d8aada93c5bf96f4c2a68c0c6db1146ba76.TargetAppsRequestBuilder) {
     return iece8e7ddbf399451514e3763c1358d8aada93c5bf96f4c2a68c0c6db1146ba76.NewTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

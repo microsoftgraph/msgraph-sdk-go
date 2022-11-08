@@ -71,11 +71,11 @@ func NewContactFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewContactFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Contacts the contacts property
+// Contacts provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) Contacts()(*i406464ba074160302b2e22592953ab27f61556bf83b6dfbf91f7a94947a30a32.ContactsRequestBuilder) {
     return i406464ba074160302b2e22592953ab27f61556bf83b6dfbf91f7a94947a30a32.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContactsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.childFolders.item.contacts.item collection
+// ContactsById provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) ContactsById(id string)(*i38ff010514bdd06ac30256a8fde66c156ddb060c817e98305223cd511237967f.ContactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -163,11 +163,11 @@ func (m *ContactFolderItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedProperties()(*id1424b773482d0445e02425c49422ff933103c6df8dddf9bcc4ae002422cd4e6.MultiValueExtendedPropertiesRequestBuilder) {
     return id1424b773482d0445e02425c49422ff933103c6df8dddf9bcc4ae002422cd4e6.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.childFolders.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ib80760ef20cdf6d29054d8e25d659c5346ba4b7751768ff0841a30b2e80fb9dd.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,11 +197,11 @@ func (m *ContactFolderItemRequestBuilder) Patch(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedProperties()(*i46224b64b18c1dbcee01278fa5022127c2795c0823843f61887e5b1af5d79b17.SingleValueExtendedPropertiesRequestBuilder) {
     return i46224b64b18c1dbcee01278fa5022127c2795c0823843f61887e5b1af5d79b17.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.childFolders.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i1e23b9e482d9995f70d1ad17247e15297835d4397948baa64b19bc93fc5411ec.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

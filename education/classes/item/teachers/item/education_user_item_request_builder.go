@@ -33,7 +33,7 @@ func NewEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of educationRoot entities.
 func (m *EducationUserItemRequestBuilder) Ref()(*i0f8dc0305bf438d7e26602f61008f59616931acdaffd9759f3718775b75aba25.RefRequestBuilder) {
     return i0f8dc0305bf438d7e26602f61008f59616931acdaffd9759f3718775b75aba25.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

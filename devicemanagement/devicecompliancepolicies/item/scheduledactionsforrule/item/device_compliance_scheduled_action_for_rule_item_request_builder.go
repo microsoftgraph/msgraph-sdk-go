@@ -163,11 +163,11 @@ func (m *DeviceComplianceScheduledActionForRuleItemRequestBuilder) Patch(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable), nil
 }
-// ScheduledActionConfigurations the scheduledActionConfigurations property
+// ScheduledActionConfigurations provides operations to manage the scheduledActionConfigurations property of the microsoft.graph.deviceComplianceScheduledActionForRule entity.
 func (m *DeviceComplianceScheduledActionForRuleItemRequestBuilder) ScheduledActionConfigurations()(*i8d46a6185f24acca885ef9cf0754b19ecec8c203eeb5e10885b1c3f23865a1d4.ScheduledActionConfigurationsRequestBuilder) {
     return i8d46a6185f24acca885ef9cf0754b19ecec8c203eeb5e10885b1c3f23865a1d4.NewScheduledActionConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ScheduledActionConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection
+// ScheduledActionConfigurationsById provides operations to manage the scheduledActionConfigurations property of the microsoft.graph.deviceComplianceScheduledActionForRule entity.
 func (m *DeviceComplianceScheduledActionForRuleItemRequestBuilder) ScheduledActionConfigurationsById(id string)(*iec4d66d54f529f97b939337373c84e69dceab72c2e3a51099711260f728124dd.DeviceComplianceActionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -55,7 +55,7 @@ type ListItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Analytics()(*i789bdd57a9acbdf7c5c87f76af4b74c52ddac91e93f4cb0f612ebdf2d47c2d81.AnalyticsRequestBuilder) {
     return i789bdd57a9acbdf7c5c87f76af4b74c52ddac91e93f4cb0f612ebdf2d47c2d81.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,11 +136,11 @@ func (m *ListItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// DocumentSetVersions the documentSetVersions property
+// DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersions()(*i1583583ad7c3b4228bdacfbcd7124336372994c546633501a34372c518e1693a.DocumentSetVersionsRequestBuilder) {
     return i1583583ad7c3b4228bdacfbcd7124336372994c546633501a34372c518e1693a.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drives.item.items.item.listItem.documentSetVersions.item collection
+// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*iec18d8e4058cdf4166a5f813965e85ce22bd4d3662e86429f2ae8aa3825184a3.DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -151,11 +151,11 @@ func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*iec18d8e405
     }
     return iec18d8e4058cdf4166a5f813965e85ce22bd4d3662e86429f2ae8aa3825184a3.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DriveItem()(*i94fb83c3edb39a09bed0a4c99fcc9f9b4026802be80603de768d8db8e4ceb021.DriveItemRequestBuilder) {
     return i94fb83c3edb39a09bed0a4c99fcc9f9b4026802be80603de768d8db8e4ceb021.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Fields the fields property
+// Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Fields()(*id4fb0805fe6ec8e9a06151d9c127cc53a7343aa0ce1a65c928f50b89c311fa8a.FieldsRequestBuilder) {
     return id4fb0805fe6ec8e9a06151d9c127cc53a7343aa0ce1a65c928f50b89c311fa8a.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -205,11 +205,11 @@ func (m *ListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Versions()(*ia0b8257526075cde59caf49881004727d0862b90b83ed23e34cdf7cdf757636d.VersionsRequestBuilder) {
     return ia0b8257526075cde59caf49881004727d0862b90b83ed23e34cdf7cdf757636d.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drives.item.items.item.listItem.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) VersionsById(id string)(*i1df6d14e550d23e5d3dee0f8a9fee1b8d81d12dd3a064ace3e1e343504c7dc15.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -59,7 +59,7 @@ type PrimaryChannelRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CompleteMigration the completeMigration property
+// CompleteMigration provides operations to call the completeMigration method.
 func (m *PrimaryChannelRequestBuilder) CompleteMigration()(*ie7936a806322eabc26d4bac3d1049d6a6e65c4b59f4d8899adbeca160c339f01.CompleteMigrationRequestBuilder) {
     return ie7936a806322eabc26d4bac3d1049d6a6e65c4b59f4d8899adbeca160c339f01.NewCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *PrimaryChannelRequestBuilder) Delete(ctx context.Context, requestConfig
 func (m *PrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*i9b14eb39a7e5c1ffdc2c1d4786456b4d00217974730db20bea548f66f1476654.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return i9b14eb39a7e5c1ffdc2c1d4786456b4d00217974730db20bea548f66f1476654.NewDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FilesFolder the filesFolder property
+// FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) FilesFolder()(*i1edd6a970c3b4ab42c23d1b6eb53d6e64e98e80a0842bbf3bb7cba83b5d464e4.FilesFolderRequestBuilder) {
     return i1edd6a970c3b4ab42c23d1b6eb53d6e64e98e80a0842bbf3bb7cba83b5d464e4.NewFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,11 +167,11 @@ func (m *PrimaryChannelRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) Members()(*ib09a59de5c12db445e6f36aaba2d77a43c3728a772fd214f17547ae07e2614b4.MembersRequestBuilder) {
     return ib09a59de5c12db445e6f36aaba2d77a43c3728a772fd214f17547ae07e2614b4.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.primaryChannel.members.item collection
+// MembersById provides operations to manage the members property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) MembersById(id string)(*if0a6e5cbcdc9ab20e7dd380367a323df63997762be3102745e3275cb41762f3e.ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,11 +182,11 @@ func (m *PrimaryChannelRequestBuilder) MembersById(id string)(*if0a6e5cbcdc9ab20
     }
     return if0a6e5cbcdc9ab20e7dd380367a323df63997762be3102745e3275cb41762f3e.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Messages the messages property
+// Messages provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) Messages()(*i1cf55ca0a825cd1cac192481d048117f2a39d3c38bf116a271f891df4ec37b4e.MessagesRequestBuilder) {
     return i1cf55ca0a825cd1cac192481d048117f2a39d3c38bf116a271f891df4ec37b4e.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.primaryChannel.messages.item collection
+// MessagesById provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) MessagesById(id string)(*i3b1baf61208ab9a11e7db26e1306bcb1b020ac68643127b2262519ea13d8cf2b.ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -216,19 +216,19 @@ func (m *PrimaryChannelRequestBuilder) Patch(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
 }
-// ProvisionEmail the provisionEmail property
+// ProvisionEmail provides operations to call the provisionEmail method.
 func (m *PrimaryChannelRequestBuilder) ProvisionEmail()(*ifd249b5e7bc45bf262c727daac53c1d3c3d82a0be934c29c9acab3f62f5eb9b8.ProvisionEmailRequestBuilder) {
     return ifd249b5e7bc45bf262c727daac53c1d3c3d82a0be934c29c9acab3f62f5eb9b8.NewProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemoveEmail the removeEmail property
+// RemoveEmail provides operations to call the removeEmail method.
 func (m *PrimaryChannelRequestBuilder) RemoveEmail()(*i83ea2bc60b68a36c45c77a2f1476931aed5417ffec59dd4772298a0544d7d58f.RemoveEmailRequestBuilder) {
     return i83ea2bc60b68a36c45c77a2f1476931aed5417ffec59dd4772298a0544d7d58f.NewRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SharedWithTeams the sharedWithTeams property
+// SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) SharedWithTeams()(*i088b238319b5250557b39864d8d3c74d555659e596e1673f7a94fbcde0b2ed1a.SharedWithTeamsRequestBuilder) {
     return i088b238319b5250557b39864d8d3c74d555659e596e1673f7a94fbcde0b2ed1a.NewSharedWithTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SharedWithTeamsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.primaryChannel.sharedWithTeams.item collection
+// SharedWithTeamsById provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) SharedWithTeamsById(id string)(*idf42e0e625ec60873dcf4117181f59264c1d666a648124f9f973ec7af2e1ad2d.SharedWithChannelTeamInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -239,11 +239,11 @@ func (m *PrimaryChannelRequestBuilder) SharedWithTeamsById(id string)(*idf42e0e6
     }
     return idf42e0e625ec60873dcf4117181f59264c1d666a648124f9f973ec7af2e1ad2d.NewSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Tabs the tabs property
+// Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) Tabs()(*ib50348ec811d0ba0748f574b275ea09412ffa3079660cb0588275df9d54ccb92.TabsRequestBuilder) {
     return ib50348ec811d0ba0748f574b275ea09412ffa3079660cb0588275df9d54ccb92.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TabsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item.primaryChannel.tabs.item collection
+// TabsById provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *PrimaryChannelRequestBuilder) TabsById(id string)(*i0ca9484c89452a4bc89c2adb6fa50859ce27953ce6eeff8b05452f93cd422d0b.TeamsTabItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

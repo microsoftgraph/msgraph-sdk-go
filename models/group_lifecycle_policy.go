@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupLifecyclePolicy provides operations to manage the collection of agreement entities.
+// GroupLifecyclePolicy provides operations to manage the collection of agreementAcceptance entities.
 type GroupLifecyclePolicy struct {
     Entity
     // List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.

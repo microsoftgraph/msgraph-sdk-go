@@ -127,11 +127,11 @@ func (m *PermissionGrantPolicyItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Excludes the excludes property
+// Excludes provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPolicyItemRequestBuilder) Excludes()(*icde6cf197f013af55fc32ae765cd6718c8283b86b87581a48e55e766347fa252.ExcludesRequestBuilder) {
     return icde6cf197f013af55fc32ae765cd6718c8283b86b87581a48e55e766347fa252.NewExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExcludesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item.excludes.item collection
+// ExcludesById provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPolicyItemRequestBuilder) ExcludesById(id string)(*i02a33916c6ad92e2af8e1a1c3c5bb0b0e4ed56d4de269096ae95977b3c84a597.PermissionGrantConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,11 +161,11 @@ func (m *PermissionGrantPolicyItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable), nil
 }
-// Includes the includes property
+// Includes provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPolicyItemRequestBuilder) Includes()(*i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed.IncludesRequestBuilder) {
     return i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed.NewIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IncludesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item.includes.item collection
+// IncludesById provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPolicyItemRequestBuilder) IncludesById(id string)(*ia8e0f04a057817a8b64c99bfcfceca507e3ffc64a0ce4ab2cfcd9fc69349259f.PermissionGrantConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

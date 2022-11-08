@@ -87,7 +87,7 @@ func (m *ManagerRequestBuilder) Get(ctx context.Context, requestConfiguration *M
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of user entities.
 func (m *ManagerRequestBuilder) Ref()(*i18fbc9aaa34973bc01eafa7eb80a15471722c35e193d946a764faa56db7dcd4d.RefRequestBuilder) {
     return i18fbc9aaa34973bc01eafa7eb80a15471722c35e193d946a764faa56db7dcd4d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

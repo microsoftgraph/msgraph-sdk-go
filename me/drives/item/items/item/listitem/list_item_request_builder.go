@@ -55,7 +55,7 @@ type ListItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Analytics()(*ie4981718a4c6abf7929e660d264512a7b1aa5365085a0ff0f0e598259092e3c7.AnalyticsRequestBuilder) {
     return ie4981718a4c6abf7929e660d264512a7b1aa5365085a0ff0f0e598259092e3c7.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,11 +136,11 @@ func (m *ListItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// DocumentSetVersions the documentSetVersions property
+// DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersions()(*i10267a96ceed73df32c69e11e08c7745e6d5f28b9b3915499699c49f553ae96a.DocumentSetVersionsRequestBuilder) {
     return i10267a96ceed73df32c69e11e08c7745e6d5f28b9b3915499699c49f553ae96a.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.drives.item.items.item.listItem.documentSetVersions.item collection
+// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*icc39bc7d64eada018d8df4414210e31117b5f905e191576509e37968dc784123.DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -151,11 +151,11 @@ func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*icc39bc7d64
     }
     return icc39bc7d64eada018d8df4414210e31117b5f905e191576509e37968dc784123.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DriveItem()(*id84b4020e5c6272f381c0583806c2810f81c01475b4fcf0928882c5ccbad476b.DriveItemRequestBuilder) {
     return id84b4020e5c6272f381c0583806c2810f81c01475b4fcf0928882c5ccbad476b.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Fields the fields property
+// Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Fields()(*i82c573b9a037cb3b30c3a248fa34251232c762823479f8b09651197acb3ce0d4.FieldsRequestBuilder) {
     return i82c573b9a037cb3b30c3a248fa34251232c762823479f8b09651197acb3ce0d4.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -205,11 +205,11 @@ func (m *ListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Versions()(*i4d6da238aa9490724930ca2a66de64c7af1048aca37725b9ef3e146c08b247d0.VersionsRequestBuilder) {
     return i4d6da238aa9490724930ca2a66de64c7af1048aca37725b9ef3e146c08b247d0.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.drives.item.items.item.listItem.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) VersionsById(id string)(*i30f51544199d8e130c25d20051723988dd912568229fa513c517a305163d1447.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

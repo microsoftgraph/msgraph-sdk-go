@@ -195,11 +195,11 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// DailyPrintUsageByPrinter the dailyPrintUsageByPrinter property
+// DailyPrintUsageByPrinter provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*ic78e2d968f685321dafd3ca273401e484836d7ca84e4da07ae045edca4ca55a2.DailyPrintUsageByPrinterRequestBuilder) {
     return ic78e2d968f685321dafd3ca273401e484836d7ca84e4da07ae045edca4ca55a2.NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageByPrinterById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.dailyPrintUsageByPrinter.item collection
+// DailyPrintUsageByPrinterById provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -210,11 +210,11 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adff
     }
     return i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DailyPrintUsageByUser the dailyPrintUsageByUser property
+// DailyPrintUsageByUser provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed.DailyPrintUsageByUserRequestBuilder) {
     return i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed.NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageByUserById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.dailyPrintUsageByUser.item collection
+// DailyPrintUsageByUserById provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i80d61621ea489f37484a66bdee6bdaa9bbb8a0b83a1cc326a225bedfc4c6dd91.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -628,11 +628,11 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailures()(*i9d1992f64
 func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(period *string)(*i3f4aebd4163df4cb0a4f38097f15a9f8ba73853688cf5a50b93a222eb4832abe.ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder) {
     return i3f4aebd4163df4cb0a4f38097f15a9f8ba73853688cf5a50b93a222eb4832abe.NewManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
-// MonthlyPrintUsageByPrinter the monthlyPrintUsageByPrinter property
+// MonthlyPrintUsageByPrinter provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*if1205fb664936127831759fefe4c2c43852474a3fc0419f51e89975f0f281d32.MonthlyPrintUsageByPrinterRequestBuilder) {
     return if1205fb664936127831759fefe4c2c43852474a3fc0419f51e89975f0f281d32.NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MonthlyPrintUsageByPrinterById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.monthlyPrintUsageByPrinter.item collection
+// MonthlyPrintUsageByPrinterById provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -643,11 +643,11 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd
     }
     return i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MonthlyPrintUsageByUser the monthlyPrintUsageByUser property
+// MonthlyPrintUsageByUser provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*i3f12902a7f7457a60f97014c6db3b2bd89dac8cabe4d467b766677db3d6029d0.MonthlyPrintUsageByUserRequestBuilder) {
     return i3f12902a7f7457a60f97014c6db3b2bd89dac8cabe4d467b766677db3d6029d0.NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MonthlyPrintUsageByUserById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.monthlyPrintUsageByUser.item collection
+// MonthlyPrintUsageByUserById provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -677,7 +677,7 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable), nil
 }
-// Security the security property
+// Security provides operations to manage the security property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) Security()(*i2ee11973211f7fc9312ca00d777ef8304aada9d21bbf7c226dda5bef84678886.SecurityRequestBuilder) {
     return i2ee11973211f7fc9312ca00d777ef8304aada9d21bbf7c226dda5bef84678886.NewSecurityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

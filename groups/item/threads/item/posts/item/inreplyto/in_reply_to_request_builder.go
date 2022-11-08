@@ -42,11 +42,11 @@ type InReplyToRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *InReplyToRequestBuilderGetQueryParameters
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) Attachments()(*i4472ef305b18a9aa2e06ba2a54d4719d2be1f8fa6456051cb236477675c9cd03.AttachmentsRequestBuilder) {
     return i4472ef305b18a9aa2e06ba2a54d4719d2be1f8fa6456051cb236477675c9cd03.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.threads.item.posts.item.inReplyTo.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) AttachmentsById(id string)(*if6bf231e5b7a5b45b60ecc5a3d445a1512040b77f6170861144cf99bb398767d.AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -92,11 +92,11 @@ func (m *InReplyToRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) Extensions()(*i430f1d4a835b0b99d0b13f11ccfa4df1656409bcbf6bcf41f8ea5681dcb1aa92.ExtensionsRequestBuilder) {
     return i430f1d4a835b0b99d0b13f11ccfa4df1656409bcbf6bcf41f8ea5681dcb1aa92.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.threads.item.posts.item.inReplyTo.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) ExtensionsById(id string)(*i5876235ee8bac9db2eddf11773408040864058f168150e6b139e4e22f3fc5a94.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -107,7 +107,7 @@ func (m *InReplyToRequestBuilder) ExtensionsById(id string)(*i5876235ee8bac9db2e
     }
     return i5876235ee8bac9db2eddf11773408040864058f168150e6b139e4e22f3fc5a94.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Forward the forward property
+// Forward provides operations to call the forward method.
 func (m *InReplyToRequestBuilder) Forward()(*ic06046cc8c7f87f655d91876ca77d67f798d85de5c44c9e4974ce552215dfb8b.ForwardRequestBuilder) {
     return ic06046cc8c7f87f655d91876ca77d67f798d85de5c44c9e4974ce552215dfb8b.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -130,11 +130,11 @@ func (m *InReplyToRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) MultiValueExtendedProperties()(*i1bb01e9daad0a1d10bc19f61790389f463801a0f48cd11c98f185e03018bfca6.MultiValueExtendedPropertiesRequestBuilder) {
     return i1bb01e9daad0a1d10bc19f61790389f463801a0f48cd11c98f185e03018bfca6.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.threads.item.posts.item.inReplyTo.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i0f01ae290b75a0c7094161d59819ebc34d4806cd13012ae529843662aa5da593.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -145,15 +145,15 @@ func (m *InReplyToRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
     }
     return i0f01ae290b75a0c7094161d59819ebc34d4806cd13012ae529843662aa5da593.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Reply the reply property
+// Reply provides operations to call the reply method.
 func (m *InReplyToRequestBuilder) Reply()(*if1f9571513b1bb74e42cbc5688db7636642423bb6ccc5801422a1c43cfaa0c0c.ReplyRequestBuilder) {
     return if1f9571513b1bb74e42cbc5688db7636642423bb6ccc5801422a1c43cfaa0c0c.NewReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) SingleValueExtendedProperties()(*ie720d4183606c7d13bf38c1fb20010a0d54dbeb3dca324af9ff5dcc638b2a44c.SingleValueExtendedPropertiesRequestBuilder) {
     return ie720d4183606c7d13bf38c1fb20010a0d54dbeb3dca324af9ff5dcc638b2a44c.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.threads.item.posts.item.inReplyTo.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i7f4e85ba5983109d680cfb442209512e035a5aadc8b8e7867a3c3959956d86ba.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
