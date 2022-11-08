@@ -3,7 +3,7 @@ module github.com/microsoftgraph/msgraph-sdk-go
 go 1.18
 
 require (
-	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.1.4
+	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.2.0
 	github.com/microsoft/kiota-abstractions-go v0.14.0
 	github.com/microsoft/kiota-authentication-azure-go v0.5.0
 	github.com/microsoft/kiota-serialization-json-go v0.7.2
