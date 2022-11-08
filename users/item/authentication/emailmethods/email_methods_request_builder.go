@@ -71,7 +71,7 @@ func NewEmailMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewEmailMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *EmailMethodsRequestBuilder) Count()(*i6bf18a3ad308a24f182d6d6fde806224bc4c0d07627a1fd3589fc0f7958fbb11.CountRequestBuilder) {
     return i6bf18a3ad308a24f182d6d6fde806224bc4c0d07627a1fd3589fc0f7958fbb11.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

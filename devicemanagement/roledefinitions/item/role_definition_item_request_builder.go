@@ -163,11 +163,11 @@ func (m *RoleDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable), nil
 }
-// RoleAssignments the roleAssignments property
+// RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
 func (m *RoleDefinitionItemRequestBuilder) RoleAssignments()(*ifa547832647c7d9052c8c752460cc37f72b999f4001c299048bb286b36ca6660.RoleAssignmentsRequestBuilder) {
     return ifa547832647c7d9052c8c752460cc37f72b999f4001c299048bb286b36ca6660.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.roleDefinitions.item.roleAssignments.item collection
+// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
 func (m *RoleDefinitionItemRequestBuilder) RoleAssignmentsById(id string)(*i9a64128a6cdac7274657acec87208aa9284bb1683560f6445c50346fa4b38ae4.RoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

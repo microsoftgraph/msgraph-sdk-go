@@ -48,7 +48,7 @@ type RemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BeginOnboarding the beginOnboarding property
+// BeginOnboarding provides operations to call the beginOnboarding method.
 func (m *RemoteAssistancePartnerItemRequestBuilder) BeginOnboarding()(*ic5bdfe2606f3a79c6b660d0c71f836d999ab15327deb77f1ed5d14f148669db1.BeginOnboardingRequestBuilder) {
     return ic5bdfe2606f3a79c6b660d0c71f836d999ab15327deb77f1ed5d14f148669db1.NewBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -129,7 +129,7 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Disconnect the disconnect property
+// Disconnect provides operations to call the disconnect method.
 func (m *RemoteAssistancePartnerItemRequestBuilder) Disconnect()(*i29fbcbcb8e56dedcb7c4ccd053be8c6ac9c1cbee92fcef32794ed684b5ade934.DisconnectRequestBuilder) {
     return i29fbcbcb8e56dedcb7c4ccd053be8c6ac9c1cbee92fcef32794ed684b5ade934.NewDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

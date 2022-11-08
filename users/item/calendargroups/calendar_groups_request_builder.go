@@ -67,7 +67,7 @@ func NewCalendarGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CalendarGroupsRequestBuilder) Count()(*i73711ef191440fe0ee4f6c991856b925f74ee05ab9fc5f32ff9d41de3c22ce32.CountRequestBuilder) {
     return i73711ef191440fe0ee4f6c991856b925f74ee05ab9fc5f32ff9d41de3c22ce32.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -36,7 +36,7 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment the appRoleAssignment property
+// AppRoleAssignment casts the previous resource to appRoleAssignment.
 func (m *DirectoryObjectItemRequestBuilder) AppRoleAssignment()(*i446f781825467e27292594166d19e066f42fc85a1fcab142255669be3d733acc.AppRoleAssignmentRequestBuilder) {
     return i446f781825467e27292594166d19e066f42fc85a1fcab142255669be3d733acc.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -75,7 +75,7 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*ib7ae20c252a75d993687f2f0d2d430127e6a3c41fa367830f9a7b354f6a23803.EndpointRequestBuilder) {
     return ib7ae20c252a75d993687f2f0d2d430127e6a3c41fa367830f9a7b354f6a23803.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -98,11 +98,11 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*id29b6952a86f9d7a5c48117e47107fa2ed50cebd1fe6308853ba978fe4df7629.ServicePrincipalRequestBuilder) {
     return id29b6952a86f9d7a5c48117e47107fa2ed50cebd1fe6308853ba978fe4df7629.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DirectoryObjectItemRequestBuilder) User()(*i736204f3accca51cb03131e5325777b8b2be487c8dcdf807c4f56dde54b72897.UserRequestBuilder) {
     return i736204f3accca51cb03131e5325777b8b2be487c8dcdf807c4f56dde54b72897.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

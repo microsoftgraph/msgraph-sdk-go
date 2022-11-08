@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodsPolicy 
+// AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy singleton.
 type AuthenticationMethodsPolicy struct {
     Entity
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
@@ -24,7 +24,7 @@ type AuthenticationMethodsPolicy struct {
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
     registrationEnforcement RegistrationEnforcementable
 }
-// NewAuthenticationMethodsPolicy instantiates a new AuthenticationMethodsPolicy and sets the default values.
+// NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     m := &AuthenticationMethodsPolicy{
         Entity: *NewEntity(),

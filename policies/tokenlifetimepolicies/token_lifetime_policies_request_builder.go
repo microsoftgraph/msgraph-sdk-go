@@ -71,7 +71,7 @@ func NewTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TokenLifetimePoliciesRequestBuilder) Count()(*i6a6d9619894b041c4efdc97cf8ca13434cbb33a4b99d319dfd74ac5bddb3c5e9.CountRequestBuilder) {
     return i6a6d9619894b041c4efdc97cf8ca13434cbb33a4b99d319dfd74ac5bddb3c5e9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

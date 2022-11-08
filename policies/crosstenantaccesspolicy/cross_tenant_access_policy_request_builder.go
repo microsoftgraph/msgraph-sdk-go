@@ -110,7 +110,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) CreatePatchRequestInformation(ct
     }
     return requestInfo, nil
 }
-// Default_escaped the default property
+// Default_escaped provides operations to manage the default property of the microsoft.graph.crossTenantAccessPolicy entity.
 func (m *CrossTenantAccessPolicyRequestBuilder) Default_escaped()(*id6b631203e8543c3ec0fcba88901f15444094267dcc4fa0d473f1c0df3d5ff03.DefaultRequestBuilder) {
     return id6b631203e8543c3ec0fcba88901f15444094267dcc4fa0d473f1c0df3d5ff03.NewDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,11 +149,11 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyable), nil
 }
-// Partners the partners property
+// Partners provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
 func (m *CrossTenantAccessPolicyRequestBuilder) Partners()(*i0066fdb640c7827dd22081013b8c5450250b6cd981e41676bea50282f6cb61bc.PartnersRequestBuilder) {
     return i0066fdb640c7827dd22081013b8c5450250b6cd981e41676bea50282f6cb61bc.NewPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PartnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.crossTenantAccessPolicy.partners.item collection
+// PartnersById provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
 func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i942f76e8fcfc288876416b046c9c24718eb0f9cbc52dccced876ec03d4620766.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

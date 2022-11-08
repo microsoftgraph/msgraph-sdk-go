@@ -143,7 +143,7 @@ func (m *UnifiedGroupSourceItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable), nil
 }
-// Group the group property
+// Group provides operations to manage the group property of the microsoft.graph.security.unifiedGroupSource entity.
 func (m *UnifiedGroupSourceItemRequestBuilder) Group()(*ic7ec35a4eff2cda6c2ee78a4bf76d66fde4b829cf85b4d265986a8e1c5914be9.GroupRequestBuilder) {
     return ic7ec35a4eff2cda6c2ee78a4bf76d66fde4b829cf85b4d265986a8e1c5914be9.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewConditionalAccessPoliciesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ConditionalAccessPoliciesRequestBuilder) Count()(*i0638ca74f89626a5cbdfb27187643e04beb716aede7aa4588ff6804c9d8cf786.CountRequestBuilder) {
     return i0638ca74f89626a5cbdfb27187643e04beb716aede7aa4588ff6804c9d8cf786.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

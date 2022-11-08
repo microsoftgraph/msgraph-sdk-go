@@ -55,7 +55,7 @@ type ListItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Analytics()(*i7e4cfadd4aab1420dce652683e64e581a2a86c618f08f7c27f522d1668c2847d.AnalyticsRequestBuilder) {
     return i7e4cfadd4aab1420dce652683e64e581a2a86c618f08f7c27f522d1668c2847d.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,11 +136,11 @@ func (m *ListItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// DocumentSetVersions the documentSetVersions property
+// DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersions()(*i79a7e9679e523d8370e185e2fb2efc094642614fd885a80211aac7d9fe6cc025.DocumentSetVersionsRequestBuilder) {
     return i79a7e9679e523d8370e185e2fb2efc094642614fd885a80211aac7d9fe6cc025.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.drives.item.root.listItem.documentSetVersions.item collection
+// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*ibf09ece9779e4d3eb35e42a53e506d5b31a47cda04fbf94bb9add451550310fe.DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -151,11 +151,11 @@ func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*ibf09ece977
     }
     return ibf09ece9779e4d3eb35e42a53e506d5b31a47cda04fbf94bb9add451550310fe.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DriveItem()(*ic57e984e9605d9340e8d94abb8469f381861e1f73cac412567c6015c45babdab.DriveItemRequestBuilder) {
     return ic57e984e9605d9340e8d94abb8469f381861e1f73cac412567c6015c45babdab.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Fields the fields property
+// Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Fields()(*ie331e32e381ce325f037f9a537459fd40d8f8e9a3d296cff80506979358ccea3.FieldsRequestBuilder) {
     return ie331e32e381ce325f037f9a537459fd40d8f8e9a3d296cff80506979358ccea3.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -205,11 +205,11 @@ func (m *ListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Versions()(*i2af30d95b0b4f2faadb682f94563fbddeef78dc30c29d45a0d1df4e044362ee5.VersionsRequestBuilder) {
     return i2af30d95b0b4f2faadb682f94563fbddeef78dc30c29d45a0d1df4e044362ee5.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.drives.item.root.listItem.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) VersionsById(id string)(*ia3f55ac1c20b2a8d69e7ce88f3437a3c5c406b46f08054aa46ee0381de105d16.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

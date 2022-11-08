@@ -60,19 +60,19 @@ type ContentTypeItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssociateWithHubSites the associateWithHubSites property
+// AssociateWithHubSites provides operations to call the associateWithHubSites method.
 func (m *ContentTypeItemRequestBuilder) AssociateWithHubSites()(*ie20358a85b39ee8ba95363a576c6e46d8800c6b70c5da48febb10bffc24bd2c5.AssociateWithHubSitesRequestBuilder) {
     return ie20358a85b39ee8ba95363a576c6e46d8800c6b70c5da48febb10bffc24bd2c5.NewAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Base the base property
+// Base provides operations to manage the base property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) Base()(*i83b288356df169bec7c416a5445858c6b0c17e5aec455ccded399f5883855181.BaseRequestBuilder) {
     return i83b288356df169bec7c416a5445858c6b0c17e5aec455ccded399f5883855181.NewBaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BaseTypes the baseTypes property
+// BaseTypes provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) BaseTypes()(*i32d56bc0af1bf5c57d90c3ff019f678d038230a9bfe4aae915812c67795e46ec.BaseTypesRequestBuilder) {
     return i32d56bc0af1bf5c57d90c3ff019f678d038230a9bfe4aae915812c67795e46ec.NewBaseTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BaseTypesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.drives.item.list.contentTypes.item.baseTypes.item collection
+// BaseTypesById provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) BaseTypesById(id string)(*icc9a32d3c9a2d87f0bc748ba2498d23f75930fab9f3749d72ef6c4c2a1768058.ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -83,11 +83,11 @@ func (m *ContentTypeItemRequestBuilder) BaseTypesById(id string)(*icc9a32d3c9a2d
     }
     return icc9a32d3c9a2d87f0bc748ba2498d23f75930fab9f3749d72ef6c4c2a1768058.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ColumnLinks the columnLinks property
+// ColumnLinks provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) ColumnLinks()(*ib012a85189ac10702a8a311452bfa7b69e8ed59ec11032d5089b2a9cacd1e309.ColumnLinksRequestBuilder) {
     return ib012a85189ac10702a8a311452bfa7b69e8ed59ec11032d5089b2a9cacd1e309.NewColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ColumnLinksById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.drives.item.list.contentTypes.item.columnLinks.item collection
+// ColumnLinksById provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) ColumnLinksById(id string)(*ia4250265f061fb1dcec42f660bcab9c2e9fa481c6195e5768a60613bab0ca83f.ColumnLinkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -98,11 +98,11 @@ func (m *ContentTypeItemRequestBuilder) ColumnLinksById(id string)(*ia4250265f06
     }
     return ia4250265f061fb1dcec42f660bcab9c2e9fa481c6195e5768a60613bab0ca83f.NewColumnLinkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ColumnPositions the columnPositions property
+// ColumnPositions provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) ColumnPositions()(*i0f4b35070ae3fb3343fe356519400fd185fdc99c05b968ef8e5ff1f5951748ae.ColumnPositionsRequestBuilder) {
     return i0f4b35070ae3fb3343fe356519400fd185fdc99c05b968ef8e5ff1f5951748ae.NewColumnPositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ColumnPositionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.drives.item.list.contentTypes.item.columnPositions.item collection
+// ColumnPositionsById provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*i4c516dcbb87e6f393fb823d5471fd76632fb899dab27b71dc31731ea51d24234.ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -113,11 +113,11 @@ func (m *ContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*i4c516dc
     }
     return i4c516dcbb87e6f393fb823d5471fd76632fb899dab27b71dc31731ea51d24234.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Columns the columns property
+// Columns provides operations to manage the columns property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) Columns()(*i95e2f2ece45392396d7ed96f3c7c97e84076b4dfe1334b84148a29d5f47a116b.ColumnsRequestBuilder) {
     return i95e2f2ece45392396d7ed96f3c7c97e84076b4dfe1334b84148a29d5f47a116b.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ColumnsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.drives.item.list.contentTypes.item.columns.item collection
+// ColumnsById provides operations to manage the columns property of the microsoft.graph.contentType entity.
 func (m *ContentTypeItemRequestBuilder) ColumnsById(id string)(*id5f8ab988842a4e86e9ebbc90fc22f5ea8ba07bf75f2d44d596174e9e1cb94ef.ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -147,7 +147,7 @@ func NewContentTypeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewContentTypeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CopyToDefaultContentLocation the copyToDefaultContentLocation property
+// CopyToDefaultContentLocation provides operations to call the copyToDefaultContentLocation method.
 func (m *ContentTypeItemRequestBuilder) CopyToDefaultContentLocation()(*i9a4eeebb28c8455c06b95e00db7ffbb4cba1af454d9b5fae7735786753aa0a10.CopyToDefaultContentLocationRequestBuilder) {
     return i9a4eeebb28c8455c06b95e00db7ffbb4cba1af454d9b5fae7735786753aa0a10.NewCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -251,11 +251,11 @@ func (m *ContentTypeItemRequestBuilder) Patch(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// Publish the publish property
+// Publish provides operations to call the publish method.
 func (m *ContentTypeItemRequestBuilder) Publish()(*i9830bec44bb107f7d7b788fa185d37f3515f38f70df85c780f3baa07ce0333cd.PublishRequestBuilder) {
     return i9830bec44bb107f7d7b788fa185d37f3515f38f70df85c780f3baa07ce0333cd.NewPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Unpublish the unpublish property
+// Unpublish provides operations to call the unpublish method.
 func (m *ContentTypeItemRequestBuilder) Unpublish()(*if2999294f099d5c8f5ba396893319eb983c4f664d57ca41b1f865fe0776e16b5.UnpublishRequestBuilder) {
     return if2999294f099d5c8f5ba396893319eb983c4f664d57ca41b1f865fe0776e16b5.NewUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

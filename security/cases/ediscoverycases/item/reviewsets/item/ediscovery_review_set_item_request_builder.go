@@ -49,7 +49,7 @@ type EdiscoveryReviewSetItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddToReviewSet the addToReviewSet property
+// AddToReviewSet provides operations to call the addToReviewSet method.
 func (m *EdiscoveryReviewSetItemRequestBuilder) AddToReviewSet()(*i71a807439fe726577969ea482cb6fabb1e281b489f397bd37ccd6296ea3f7ab1.AddToReviewSetRequestBuilder) {
     return i71a807439fe726577969ea482cb6fabb1e281b489f397bd37ccd6296ea3f7ab1.NewAddToReviewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *EdiscoveryReviewSetItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetable), nil
 }
-// Queries the queries property
+// Queries provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *EdiscoveryReviewSetItemRequestBuilder) Queries()(*ie1a6e6e14b2692558465ec1193db07dbecbf71856c138a59e1967fcc3e0891b4.QueriesRequestBuilder) {
     return ie1a6e6e14b2692558465ec1193db07dbecbf71856c138a59e1967fcc3e0891b4.NewQueriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// QueriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.reviewSets.item.queries.item collection
+// QueriesById provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *EdiscoveryReviewSetItemRequestBuilder) QueriesById(id string)(*i98df3683835786b49bff9f6c83edbd31f24eccfb5acde40aa98bd405ca92c0b4.EdiscoveryReviewSetQueryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

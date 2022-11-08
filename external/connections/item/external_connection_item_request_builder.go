@@ -149,11 +149,11 @@ func (m *ExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable), nil
 }
-// Groups the groups property
+// Groups provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Groups()(*i274d667d8ec0c3d039333dd12b5455aea280c5cf9f73bb6338166f3c8da9dfaf.GroupsRequestBuilder) {
     return i274d667d8ec0c3d039333dd12b5455aea280c5cf9f73bb6338166f3c8da9dfaf.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.external.connections.item.groups.item collection
+// GroupsById provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*i64f7fe1781849551f0747409711376a931e53b1189f67fcc2365601b3c393b50.ExternalGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,11 +164,11 @@ func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*i64f7fe178
     }
     return i64f7fe1781849551f0747409711376a931e53b1189f67fcc2365601b3c393b50.NewExternalGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Items the items property
+// Items provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Items()(*i441e9592f00d41e5a711ec006f03afa66dec29cfee128954ccf7c3239af7d91e.ItemsRequestBuilder) {
     return i441e9592f00d41e5a711ec006f03afa66dec29cfee128954ccf7c3239af7d91e.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.external.connections.item.items.item collection
+// ItemsById provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*icaf66d026d8a409b8012b31d621993f6257dc2a500c4e095c199593a9b6dea77.ExternalItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,11 +179,11 @@ func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*icaf66d026d
     }
     return icaf66d026d8a409b8012b31d621993f6257dc2a500c4e095c199593a9b6dea77.NewExternalItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Operations()(*id2fc2789ff7ccaf3c3f408ae8fe33ddf43f1a9d079f3962d4b053c44e24b1121.OperationsRequestBuilder) {
     return id2fc2789ff7ccaf3c3f408ae8fe33ddf43f1a9d079f3962d4b053c44e24b1121.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.external.connections.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) OperationsById(id string)(*ib280bd1867c7c5e1ca1ef4564e9994b09cb6e6d7a7ffd961eaa450655177eefe.ConnectionOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -213,7 +213,7 @@ func (m *ExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable), nil
 }
-// Schema the schema property
+// Schema provides operations to manage the schema property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Schema()(*i970b7049d0cc43d708fa2e7d007e8e10fa290eecc038a57584def6b75c0b7cb9.SchemaRequestBuilder) {
     return i970b7049d0cc43d708fa2e7d007e8e10fa290eecc038a57584def6b75c0b7cb9.NewSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

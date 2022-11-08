@@ -61,7 +61,7 @@ type EdiscoveryCaseItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Close the close property
+// Close provides operations to call the close method.
 func (m *EdiscoveryCaseItemRequestBuilder) Close()(*i0dee13fbbfab71a50e5566f2661d1d03f919ad275cd6c579617271e19406c70a.CloseRequestBuilder) {
     return i0dee13fbbfab71a50e5566f2661d1d03f919ad275cd6c579617271e19406c70a.NewCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,11 +126,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) CreatePatchRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// Custodians the custodians property
+// Custodians provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Custodians()(*i9ef2d21b8fc69ba564a09403cd053d4d0735d936a826c7d2d564f1bb53c69740.CustodiansRequestBuilder) {
     return i9ef2d21b8fc69ba564a09403cd053d4d0735d936a826c7d2d564f1bb53c69740.NewCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustodiansById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.custodians.item collection
+// CustodiansById provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) CustodiansById(id string)(*i26ebee56f309e3e6f8bf82c3cafa9eb54ee770f662b556d38343cd3e2d5a4f06.EdiscoveryCustodianItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -176,11 +176,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable), nil
 }
-// NoncustodialDataSources the noncustodialDataSources property
+// NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) NoncustodialDataSources()(*id9d040632dbcbd497f9825c9a1eaf38b82b7529df01d632005643e53e9dcfec4.NoncustodialDataSourcesRequestBuilder) {
     return id9d040632dbcbd497f9825c9a1eaf38b82b7529df01d632005643e53e9dcfec4.NewNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NoncustodialDataSourcesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.noncustodialDataSources.item collection
+// NoncustodialDataSourcesById provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*i0e99de5ab7cd5bd59a2a5c7d8039ba39dca2c25d48df8731bc7a3ede70007471.EdiscoveryNoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -191,11 +191,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) NoncustodialDataSourcesById(id string
     }
     return i0e99de5ab7cd5bd59a2a5c7d8039ba39dca2c25d48df8731bc7a3ede70007471.NewEdiscoveryNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Operations()(*i717b9e1b2a0f68a8ec70146fa3075f72b30547f0b5fcbf201a3785ead600d336.OperationsRequestBuilder) {
     return i717b9e1b2a0f68a8ec70146fa3075f72b30547f0b5fcbf201a3785ead600d336.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) OperationsById(id string)(*iba98a13db08b2d0b6857419935b53645fd30ba64a9165c5ea608a98c1d80c1fd.CaseOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -225,15 +225,15 @@ func (m *EdiscoveryCaseItemRequestBuilder) Patch(ctx context.Context, body idd6d
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable), nil
 }
-// Reopen the reopen property
+// Reopen provides operations to call the reopen method.
 func (m *EdiscoveryCaseItemRequestBuilder) Reopen()(*i8e1fe4855aca99eeadcd9321ed9443a1ac8bfd382b0c3c9963910ac5b6cdaf07.ReopenRequestBuilder) {
     return i8e1fe4855aca99eeadcd9321ed9443a1ac8bfd382b0c3c9963910ac5b6cdaf07.NewReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewSets the reviewSets property
+// ReviewSets provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) ReviewSets()(*i8c393405892dbb22dfdddd56df47ec954195c0c6da1b1ae9c48e52cb7411d7ea.ReviewSetsRequestBuilder) {
     return i8c393405892dbb22dfdddd56df47ec954195c0c6da1b1ae9c48e52cb7411d7ea.NewReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewSetsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.reviewSets.item collection
+// ReviewSetsById provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) ReviewSetsById(id string)(*id47c4ed6a666e7b18c72bc095983bb1369ae6f56786b1801b7900b6fca3206c3.EdiscoveryReviewSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -244,11 +244,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) ReviewSetsById(id string)(*id47c4ed6a
     }
     return id47c4ed6a666e7b18c72bc095983bb1369ae6f56786b1801b7900b6fca3206c3.NewEdiscoveryReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Searches the searches property
+// Searches provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Searches()(*i67c4f3f8e8190f015213b2d3b265df2dc0747be0479d12355ccc5e0d7d8b8c58.SearchesRequestBuilder) {
     return i67c4f3f8e8190f015213b2d3b265df2dc0747be0479d12355ccc5e0d7d8b8c58.NewSearchesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SearchesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.searches.item collection
+// SearchesById provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) SearchesById(id string)(*i97075ede7eb61e89f265b8ed8ec733f32d0abd1e07e5332d37dd11cba36b083a.EdiscoverySearchItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -259,15 +259,15 @@ func (m *EdiscoveryCaseItemRequestBuilder) SearchesById(id string)(*i97075ede7eb
     }
     return i97075ede7eb61e89f265b8ed8ec733f32d0abd1e07e5332d37dd11cba36b083a.NewEdiscoverySearchItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Settings()(*icac6ae8eb04885268777e9e86122e96896ad10b410f9bb104f3cad628eaea4e3.SettingsRequestBuilder) {
     return icac6ae8eb04885268777e9e86122e96896ad10b410f9bb104f3cad628eaea4e3.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Tags the tags property
+// Tags provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Tags()(*i787ee6e6d3c618ac8b391b3b1878ff0a2bd1e97f1b0d46ead96271c983110e48.TagsRequestBuilder) {
     return i787ee6e6d3c618ac8b391b3b1878ff0a2bd1e97f1b0d46ead96271c983110e48.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TagsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item.tags.item collection
+// TagsById provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) TagsById(id string)(*i93ce34d72c05108db6d8c1ffc6122f45be91bc22789ccfccce5344ddbd4c8f99.EdiscoveryReviewTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

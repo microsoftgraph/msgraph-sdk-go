@@ -53,11 +53,11 @@ type SetItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Children the children property
+// Children provides operations to manage the children property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) Children()(*ieec65ad1ca1d01c340556d91630b2f2e19f4283f01b845b7eb8f2b149f1239d3.ChildrenRequestBuilder) {
     return ieec65ad1ca1d01c340556d91630b2f2e19f4283f01b845b7eb8f2b149f1239d3.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.sets.item.children.item collection
+// ChildrenById provides operations to manage the children property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) ChildrenById(id string)(*i6add9f2ac9e1c03c41f3593c206bb30367db44710541f6111e7233fbe3710d7a.TermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,7 +164,7 @@ func (m *SetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *S
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable), nil
 }
-// ParentGroup the parentGroup property
+// ParentGroup provides operations to manage the parentGroup property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) ParentGroup()(*ib50fe719b41297b226c038c3403f9fc36fc99fbb9cd41b4ffb1c75c3c3e244e0.ParentGroupRequestBuilder) {
     return ib50fe719b41297b226c038c3403f9fc36fc99fbb9cd41b4ffb1c75c3c3e244e0.NewParentGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -187,11 +187,11 @@ func (m *SetItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable), nil
 }
-// Relations the relations property
+// Relations provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) Relations()(*if8ad04d6afd501e6c191842628bbb732b74c6e6135337da4b3a96a9ab4ced94a.RelationsRequestBuilder) {
     return if8ad04d6afd501e6c191842628bbb732b74c6e6135337da4b3a96a9ab4ced94a.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RelationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.sets.item.relations.item collection
+// RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) RelationsById(id string)(*i6bbacacf32786b9a7dc430d497d260fe18ca363ecc82921008d5fdc715d0d70d.RelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,11 +202,11 @@ func (m *SetItemRequestBuilder) RelationsById(id string)(*i6bbacacf32786b9a7dc43
     }
     return i6bbacacf32786b9a7dc430d497d260fe18ca363ecc82921008d5fdc715d0d70d.NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Terms the terms property
+// Terms provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) Terms()(*ib67061c9a5ec7f54c1fceca2aa7982053498cb3be7809cad62a033dc35b973c3.TermsRequestBuilder) {
     return ib67061c9a5ec7f54c1fceca2aa7982053498cb3be7809cad62a033dc35b973c3.NewTermsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TermsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.sets.item.terms.item collection
+// TermsById provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) TermsById(id string)(*i285174a663ce0c2b2b0057b47643838a60db3b04b36225f624e5a9063261d49d.TermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

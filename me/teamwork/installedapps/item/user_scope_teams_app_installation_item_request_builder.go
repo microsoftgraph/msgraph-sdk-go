@@ -47,7 +47,7 @@ type UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Chat the chat property
+// Chat provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
 func (m *UserScopeTeamsAppInstallationItemRequestBuilder) Chat()(*i82ae2e3b126b0e2c2ce0859ada623300f796fca1ca04e53e697999c70dd48507.ChatRequestBuilder) {
     return i82ae2e3b126b0e2c2ce0859ada623300f796fca1ca04e53e697999c70dd48507.NewChatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -128,11 +128,11 @@ func (m *PrivacyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Privacyable), nil
 }
-// SubjectRightsRequests the subjectRightsRequests property
+// SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.SubjectRightsRequestsRequestBuilder) {
     return ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubjectRightsRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.privacy.subjectRightsRequests.item collection
+// SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.SubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

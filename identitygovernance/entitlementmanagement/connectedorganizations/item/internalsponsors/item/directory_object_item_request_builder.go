@@ -33,7 +33,7 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of identityGovernance entities.
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*i0e870461918c2052dc1d35a4dd5ee8b402665d9c2b350020b450ee935b249019.RefRequestBuilder) {
     return i0e870461918c2052dc1d35a4dd5ee8b402665d9c2b350020b450ee935b249019.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

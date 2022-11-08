@@ -127,7 +127,7 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchEntityable), nil
 }
-// Query the query property
+// Query provides operations to call the query method.
 func (m *SearchRequestBuilder) Query()(*i4c731a9250f2a75a2d813b64555abb0e7dbb7e8aa84744cc38445c3385832596.QueryRequestBuilder) {
     return i4c731a9250f2a75a2d813b64555abb0e7dbb7e8aa84744cc38445c3385832596.NewQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

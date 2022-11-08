@@ -125,11 +125,11 @@ func (m *CasesRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     }
     return nil
 }
-// EdiscoveryCases the ediscoveryCases property
+// EdiscoveryCases provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
 func (m *CasesRequestBuilder) EdiscoveryCases()(*i6261dcce7278d79e25cb49ecb1e2df16ab7047a4ffc6f0e34fdb528b52d2521b.EdiscoveryCasesRequestBuilder) {
     return i6261dcce7278d79e25cb49ecb1e2df16ab7047a4ffc6f0e34fdb528b52d2521b.NewEdiscoveryCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EdiscoveryCasesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.cases.ediscoveryCases.item collection
+// EdiscoveryCasesById provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
 func (m *CasesRequestBuilder) EdiscoveryCasesById(id string)(*i70b47d6d4fab95f46ed66919ac675678b5c9e47ff9aebc339423596cb81f36bb.EdiscoveryCaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

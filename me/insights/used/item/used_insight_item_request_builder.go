@@ -162,7 +162,7 @@ func (m *UsedInsightItemRequestBuilder) Patch(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UsedInsightable), nil
 }
-// Resource the resource property
+// Resource provides operations to manage the resource property of the microsoft.graph.usedInsight entity.
 func (m *UsedInsightItemRequestBuilder) Resource()(*i84d8c481d5191a233f95b2a55a7402ae62028a02f4fb363d4c4291c77072218c.ResourceRequestBuilder) {
     return i84d8c481d5191a233f95b2a55a7402ae62028a02f4fb363d4c4291c77072218c.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

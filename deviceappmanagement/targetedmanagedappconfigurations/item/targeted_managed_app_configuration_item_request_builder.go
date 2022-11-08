@@ -53,11 +53,11 @@ type TargetedManagedAppConfigurationItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Apps the apps property
+// Apps provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) Apps()(*if5f3e25c7fb7036c0005255cf83f278d6dbdc54efe6806e0f73b94dcc8769f54.AppsRequestBuilder) {
     return if5f3e25c7fb7036c0005255cf83f278d6dbdc54efe6806e0f73b94dcc8769f54.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection
+// AppsById provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) AppsById(id string)(*i0c58f5c03e1e1e1b14874efa5218a60bb1595c685ea667497c77cd45c45299ab.ManagedMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -68,15 +68,15 @@ func (m *TargetedManagedAppConfigurationItemRequestBuilder) AppsById(id string)(
     }
     return i0c58f5c03e1e1e1b14874efa5218a60bb1595c685ea667497c77cd45c45299ab.NewManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) Assign()(*i1bc0e847e41ebdc918b382210b618f57eecf34594ab8b85ee5961792f938a28b.AssignRequestBuilder) {
     return i1bc0e847e41ebdc918b382210b618f57eecf34594ab8b85ee5961792f938a28b.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) Assignments()(*i2e2aa2658be52cafac5b62880a98fc25ab296fd6408d08702a2e240e8e1ef1af.AssignmentsRequestBuilder) {
     return i2e2aa2658be52cafac5b62880a98fc25ab296fd6408d08702a2e240e8e1ef1af.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) AssignmentsById(id string)(*iae5cd0b807da9eeca622ea354242f60add20264ab977061a2f592e1e2bb4e2ef.TargetedManagedAppPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,7 +164,7 @@ func (m *TargetedManagedAppConfigurationItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// DeploymentSummary the deploymentSummary property
+// DeploymentSummary provides operations to manage the deploymentSummary property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) DeploymentSummary()(*i10df9e1d49ddd8e40cfbeb83f29b10a26d0a9bd66f497b5f5a6f0cac3ad0a238.DeploymentSummaryRequestBuilder) {
     return i10df9e1d49ddd8e40cfbeb83f29b10a26d0a9bd66f497b5f5a6f0cac3ad0a238.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -206,7 +206,7 @@ func (m *TargetedManagedAppConfigurationItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppConfigurationable), nil
 }
-// TargetApps the targetApps property
+// TargetApps provides operations to call the targetApps method.
 func (m *TargetedManagedAppConfigurationItemRequestBuilder) TargetApps()(*ibacc3af011a2e5c778e54915b40576462c31c68b752e932193de352b09cc3d55.TargetAppsRequestBuilder) {
     return ibacc3af011a2e5c778e54915b40576462c31c68b752e932193de352b09cc3d55.NewTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

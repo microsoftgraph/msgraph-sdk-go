@@ -55,7 +55,7 @@ type ListItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Analytics()(*i4f25788cd459b1a35b2ae2cb851bc2c78c7ce1577fc3401d58203e37ccfad748.AnalyticsRequestBuilder) {
     return i4f25788cd459b1a35b2ae2cb851bc2c78c7ce1577fc3401d58203e37ccfad748.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,11 +136,11 @@ func (m *ListItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// DocumentSetVersions the documentSetVersions property
+// DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersions()(*ib983358adf78faafc337fdd91ca6490a1bdf2da561d4eb65a5c22b04e554ce70.DocumentSetVersionsRequestBuilder) {
     return ib983358adf78faafc337fdd91ca6490a1bdf2da561d4eb65a5c22b04e554ce70.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.drives.item.items.item.listItem.documentSetVersions.item collection
+// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*i64dc2714f71942d7cb763148c7bb38ef9ec3d5316c67ba82827db01689e18dd6.DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -151,11 +151,11 @@ func (m *ListItemRequestBuilder) DocumentSetVersionsById(id string)(*i64dc2714f7
     }
     return i64dc2714f71942d7cb763148c7bb38ef9ec3d5316c67ba82827db01689e18dd6.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) DriveItem()(*i391e51d33199de962b6b48bc57da31cbac69fb4e7d73ade3e7eba00b1890ec3a.DriveItemRequestBuilder) {
     return i391e51d33199de962b6b48bc57da31cbac69fb4e7d73ade3e7eba00b1890ec3a.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Fields the fields property
+// Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Fields()(*i58742d712880cc3cc8269ab53383134bac7ea8b7ca7d3577d84010e20beb0334.FieldsRequestBuilder) {
     return i58742d712880cc3cc8269ab53383134bac7ea8b7ca7d3577d84010e20beb0334.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -205,11 +205,11 @@ func (m *ListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) Versions()(*i6cd0059328d76354877ec1575e805ede9bd8071c8f04e2e71c5168e2f2e0699a.VersionsRequestBuilder) {
     return i6cd0059328d76354877ec1575e805ede9bd8071c8f04e2e71c5168e2f2e0699a.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.drives.item.items.item.listItem.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemRequestBuilder) VersionsById(id string)(*icdcb8aa5acaf15b3de7913e7db70cb73ffba6743e3a34e3e1c1fff77a3a52646.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -94,11 +94,11 @@ func (m *AuditLogsRequestBuilder) CreatePatchRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// DirectoryAudits the directoryAudits property
+// DirectoryAudits provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) DirectoryAudits()(*i0ffcbd4df9c49ebdf92c325c07b99e822be86d1d7c8ef35696fe1f4c2ebe8ddd.DirectoryAuditsRequestBuilder) {
     return i0ffcbd4df9c49ebdf92c325c07b99e822be86d1d7c8ef35696fe1f4c2ebe8ddd.NewDirectoryAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DirectoryAuditsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.directoryAudits.item collection
+// DirectoryAuditsById provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*i8ab9c44a4a415e76c346c3f6eda2e19ce5ffba6ea1f21df106cb58013b2ec53f.DirectoryAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -147,11 +147,11 @@ func (m *AuditLogsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable), nil
 }
-// Provisioning the provisioning property
+// Provisioning provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) Provisioning()(*i097180ed0235aaf99aba24bd4318eaecbd7dc30663c7e16f228dcaf593408050.ProvisioningRequestBuilder) {
     return i097180ed0235aaf99aba24bd4318eaecbd7dc30663c7e16f228dcaf593408050.NewProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ProvisioningById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.provisioning.item collection
+// ProvisioningById provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*i1a750e38628ba45883889a3ea54a13c3e3772956da70ded7ae26f13e0bbbedd2.ProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -162,11 +162,11 @@ func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*i1a750e38628ba458
     }
     return i1a750e38628ba45883889a3ea54a13c3e3772956da70ded7ae26f13e0bbbedd2.NewProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SignIns the signIns property
+// SignIns provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) SignIns()(*i6856047a3d7bd4c97c5dd10b2289247f2be8a26b5d67f5c0130850c9e19185eb.SignInsRequestBuilder) {
     return i6856047a3d7bd4c97c5dd10b2289247f2be8a26b5d67f5c0130850c9e19185eb.NewSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SignInsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.signIns.item collection
+// SignInsById provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) SignInsById(id string)(*i72f75127bd05e9eb686f047ff40a72bc034bcb41296fc9a2b3b1cc35881c4f3e.SignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

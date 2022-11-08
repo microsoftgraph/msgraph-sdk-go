@@ -59,11 +59,11 @@ type EducationClassItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssignmentCategories the assignmentCategories property
+// AssignmentCategories provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) AssignmentCategories()(*i36a91c3cde131d885c49a7e8a965b98d9d4f243edffd1923ccbe125acab7c772.AssignmentCategoriesRequestBuilder) {
     return i36a91c3cde131d885c49a7e8a965b98d9d4f243edffd1923ccbe125acab7c772.NewAssignmentCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentCategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignmentCategories.item collection
+// AssignmentCategoriesById provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*if858bdb47736adc9d1c8aed87379aeb8381ad64cf3e897cb2b7ea10ddc52a603.EducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -74,15 +74,15 @@ func (m *EducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*
     }
     return if858bdb47736adc9d1c8aed87379aeb8381ad64cf3e897cb2b7ea10ddc52a603.NewEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AssignmentDefaults the assignmentDefaults property
+// AssignmentDefaults provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) AssignmentDefaults()(*ic4dc10e52534928362dffdbe18eac0369c86942de53b8d20f7fbf80483a50cd2.AssignmentDefaultsRequestBuilder) {
     return ic4dc10e52534928362dffdbe18eac0369c86942de53b8d20f7fbf80483a50cd2.NewAssignmentDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) Assignments()(*i42fbe0832799af6aa7a5885188a6c903dc87216edac7b8a194c043607700ec89.AssignmentsRequestBuilder) {
     return i42fbe0832799af6aa7a5885188a6c903dc87216edac7b8a194c043607700ec89.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) AssignmentsById(id string)(*i82d47a387f18ab75fa126f3d2f3697a6ff95af00e66e3604a99d5edbdd0dd896.EducationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -93,7 +93,7 @@ func (m *EducationClassItemRequestBuilder) AssignmentsById(id string)(*i82d47a38
     }
     return i82d47a387f18ab75fa126f3d2f3697a6ff95af00e66e3604a99d5edbdd0dd896.NewEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AssignmentSettings the assignmentSettings property
+// AssignmentSettings provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) AssignmentSettings()(*i67f45afa87d43202cad6adf1fc1ae035e41256f0f8e7dee433a1541e905db3ab.AssignmentSettingsRequestBuilder) {
     return i67f45afa87d43202cad6adf1fc1ae035e41256f0f8e7dee433a1541e905db3ab.NewAssignmentSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -193,11 +193,11 @@ func (m *EducationClassItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable), nil
 }
-// Group the group property
+// Group provides operations to manage the group property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) Group()(*ic516469149971cdf008fcb769390c2ccbe41fd313cb712c9badce208aa5d4d41.GroupRequestBuilder) {
     return ic516469149971cdf008fcb769390c2ccbe41fd313cb712c9badce208aa5d4d41.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) Members()(*i63a93640e2827ef945d2e110c4b1ac757012187dc92f53a4ff00468359ca90f5.MembersRequestBuilder) {
     return i63a93640e2827ef945d2e110c4b1ac757012187dc92f53a4ff00468359ca90f5.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -231,11 +231,11 @@ func (m *EducationClassItemRequestBuilder) Patch(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable), nil
 }
-// Schools the schools property
+// Schools provides operations to manage the schools property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) Schools()(*i31b3cf6cbbc7ebca2bad02cd9933ecb2bf3ccbf186efcbf5a9bac253b27a73f6.SchoolsRequestBuilder) {
     return i31b3cf6cbbc7ebca2bad02cd9933ecb2bf3ccbf186efcbf5a9bac253b27a73f6.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SchoolsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.schools.item collection
+// SchoolsById provides operations to manage the schools property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) SchoolsById(id string)(*ie06837c5d8d48e6cef6cb6b1bdc8fbe725c1239ff35cadfb51756b614376e50f.EducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -246,7 +246,7 @@ func (m *EducationClassItemRequestBuilder) SchoolsById(id string)(*ie06837c5d8d4
     }
     return ie06837c5d8d48e6cef6cb6b1bdc8fbe725c1239ff35cadfb51756b614376e50f.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Teachers the teachers property
+// Teachers provides operations to manage the teachers property of the microsoft.graph.educationClass entity.
 func (m *EducationClassItemRequestBuilder) Teachers()(*ifc98e6bb2c8fdd13d4f834e2e5e8ade09edf25227ad3c95c215307ff11544424.TeachersRequestBuilder) {
     return ifc98e6bb2c8fdd13d4f834e2e5e8ade09edf25227ad3c95c215307ff11544424.NewTeachersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

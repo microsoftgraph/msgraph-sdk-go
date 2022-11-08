@@ -49,11 +49,11 @@ type OnlineMeetingItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttendanceReports the attendanceReports property
+// AttendanceReports provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReports()(*i265584ac81a3e0ee3fc9ff56af9f755b8532b4ec220618281425507d20d6a545.AttendanceReportsRequestBuilder) {
     return i265584ac81a3e0ee3fc9ff56af9f755b8532b4ec220618281425507d20d6a545.NewAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReportsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.onlineMeetings.item.attendanceReports.item collection
+// AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*id6cb61e4b955d07f83d38b57a8028302a3e7c874ef433d4f304ca5d37174b56c.MeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -64,7 +64,7 @@ func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*id6c
     }
     return id6cb61e4b955d07f83d38b57a8028302a3e7c874ef433d4f304ca5d37174b56c.NewMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttendeeReport the attendeeReport property
+// AttendeeReport provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendeeReport()(*id31ac97457fb39fa6db717f9666ce3c685f8d4543bf55cbc5a792d02c5012725.AttendeeReportRequestBuilder) {
     return id31ac97457fb39fa6db717f9666ce3c685f8d4543bf55cbc5a792d02c5012725.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

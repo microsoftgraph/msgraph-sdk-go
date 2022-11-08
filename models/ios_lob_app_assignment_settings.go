@@ -8,7 +8,11 @@ import (
 // IosLobAppAssignmentSettings 
 type IosLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The VPN Configuration Id to apply for this app.
+    // When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
+    isRemovable *bool
+    // When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
+    uninstallOnDeviceRemoval *bool
+    // This is the unique identifier (Id) of the VPN Configuration to apply to the app.
     vpnConfigurationId *string
 }
 // NewIosLobAppAssignmentSettings instantiates a new IosLobAppAssignmentSettings and sets the default values.
@@ -27,10 +31,20 @@ func CreateIosLobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
+    res["isRemovable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsRemovable)
+    res["uninstallOnDeviceRemoval"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUninstallOnDeviceRemoval)
     res["vpnConfigurationId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVpnConfigurationId)
     return res
 }
-// GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// GetIsRemovable gets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
+func (m *IosLobAppAssignmentSettings) GetIsRemovable()(*bool) {
+    return m.isRemovable
+}
+// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
+func (m *IosLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
+    return m.uninstallOnDeviceRemoval
+}
+// GetVpnConfigurationId gets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
 func (m *IosLobAppAssignmentSettings) GetVpnConfigurationId()(*string) {
     return m.vpnConfigurationId
 }
@@ -41,6 +55,18 @@ func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
         return err
     }
     {
+        err = writer.WriteBoolValue("isRemovable", m.GetIsRemovable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("uninstallOnDeviceRemoval", m.GetUninstallOnDeviceRemoval())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("vpnConfigurationId", m.GetVpnConfigurationId())
         if err != nil {
             return err
@@ -48,7 +74,15 @@ func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// SetIsRemovable sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
+func (m *IosLobAppAssignmentSettings) SetIsRemovable(value *bool)() {
+    m.isRemovable = value
+}
+// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
+func (m *IosLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
+    m.uninstallOnDeviceRemoval = value
+}
+// SetVpnConfigurationId sets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
 func (m *IosLobAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
     m.vpnConfigurationId = value
 }

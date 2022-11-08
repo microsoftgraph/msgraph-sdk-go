@@ -48,7 +48,7 @@ type OwnedDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *OwnedDevicesRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment the appRoleAssignment property
+// AppRoleAssignment casts the previous resource to appRoleAssignment.
 func (m *OwnedDevicesRequestBuilder) AppRoleAssignment()(*i89097c36c495d7597e64b82c8566f859a6197db2d13442b71c501bdd7dab17af.AppRoleAssignmentRequestBuilder) {
     return i89097c36c495d7597e64b82c8566f859a6197db2d13442b71c501bdd7dab17af.NewAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -71,7 +71,7 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OwnedDevicesRequestBuilder) Count()(*i55394c7779df4b8da3a51e8d1f83fca12c066072829318f80daad28c0cc0954d.CountRequestBuilder) {
     return i55394c7779df4b8da3a51e8d1f83fca12c066072829318f80daad28c0cc0954d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -91,11 +91,11 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// Device the device property
+// Device casts the previous resource to device.
 func (m *OwnedDevicesRequestBuilder) Device()(*i7690090169a34cb9e7600b834812a49bef81e78171b44454312003371a939455.DeviceRequestBuilder) {
     return i7690090169a34cb9e7600b834812a49bef81e78171b44454312003371a939455.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *OwnedDevicesRequestBuilder) Endpoint()(*i355f16bd42aea358e8e430601708832725117055ecb49d88907fc3b331872ed9.EndpointRequestBuilder) {
     return i355f16bd42aea358e8e430601708832725117055ecb49d88907fc3b331872ed9.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

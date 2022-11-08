@@ -52,11 +52,11 @@ type UnifiedRoleEligibilityScheduleRequestItemRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppScope the appScope property
+// AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) AppScope()(*i1436e075ceda3211f28cd6c86c40328ef8a0635eacd86947f7d1d9da93b3d370.AppScopeRequestBuilder) {
     return i1436e075ceda3211f28cd6c86c40328ef8a0635eacd86947f7d1d9da93b3d370.NewAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) Cancel()(*i068716137e2995671c21eef72ec68f439e24e23e075243c2c047562ff086e084.CancelRequestBuilder) {
     return i068716137e2995671c21eef72ec68f439e24e23e075243c2c047562ff086e084.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -137,7 +137,7 @@ func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// DirectoryScope the directoryScope property
+// DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) DirectoryScope()(*i182d6f67ef6ebb70384f3b31a3ac9afef417e73ae4daba667f3f3c1e73861532.DirectoryScopeRequestBuilder) {
     return i182d6f67ef6ebb70384f3b31a3ac9afef417e73ae4daba667f3f3c1e73861532.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -179,15 +179,15 @@ func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) Patch(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleRequestable), nil
 }
-// Principal the principal property
+// Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) Principal()(*i1f15baaaf0166badd21f3d7ae6da3ffbfa83697d4cf586316554095c18e97895.PrincipalRequestBuilder) {
     return i1f15baaaf0166badd21f3d7ae6da3ffbfa83697d4cf586316554095c18e97895.NewPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinition the roleDefinition property
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) RoleDefinition()(*ie85b40180c5ab54474e0625656270f71998f76706b96c9d6a50a3ae8520469ca.RoleDefinitionRequestBuilder) {
     return ie85b40180c5ab54474e0625656270f71998f76706b96c9d6a50a3ae8520469ca.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TargetSchedule the targetSchedule property
+// TargetSchedule provides operations to manage the targetSchedule property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) TargetSchedule()(*ia04d9831fcf2650e3920b34ee6c643e1c72754c63c24e7ff1d0235fc55b22ae8.TargetScheduleRequestBuilder) {
     return ia04d9831fcf2650e3920b34ee6c643e1c72754c63c24e7ff1d0235fc55b22ae8.NewTargetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

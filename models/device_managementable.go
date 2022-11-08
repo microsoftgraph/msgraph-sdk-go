@@ -9,6 +9,7 @@ type DeviceManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplePushNotificationCertificate()(ApplePushNotificationCertificateable)
+    GetAuditEvents()([]AuditEventable)
     GetComplianceManagementPartners()([]ComplianceManagementPartnerable)
     GetConditionalAccessSettings()(OnPremisesConditionalAccessSettingsable)
     GetDetectedApps()([]DetectedAppable)
@@ -44,6 +45,7 @@ type DeviceManagementable interface {
     GetWindowsInformationProtectionAppLearningSummaries()([]WindowsInformationProtectionAppLearningSummaryable)
     GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummaryable)
     SetApplePushNotificationCertificate(value ApplePushNotificationCertificateable)()
+    SetAuditEvents(value []AuditEventable)()
     SetComplianceManagementPartners(value []ComplianceManagementPartnerable)()
     SetConditionalAccessSettings(value OnPremisesConditionalAccessSettingsable)()
     SetDetectedApps(value []DetectedAppable)()

@@ -72,7 +72,7 @@ func NewOnlineMeetingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OnlineMeetingsRequestBuilder) Count()(*i34a10bfc055322c79f201adf8764206a65680c371acd470629c65aa32deff001.CountRequestBuilder) {
     return i34a10bfc055322c79f201adf8764206a65680c371acd470629c65aa32deff001.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -92,7 +92,7 @@ func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// CreateOrGet the createOrGet property
+// CreateOrGet provides operations to call the createOrGet method.
 func (m *OnlineMeetingsRequestBuilder) CreateOrGet()(*ia7e77ca78c49018f1244c5492251f21b175af387522a2329993d957d1e9082c7.CreateOrGetRequestBuilder) {
     return ia7e77ca78c49018f1244c5492251f21b175af387522a2329993d957d1e9082c7.NewCreateOrGetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

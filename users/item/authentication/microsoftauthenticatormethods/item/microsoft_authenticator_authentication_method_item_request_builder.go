@@ -124,7 +124,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Device the device property
+// Device provides operations to manage the device property of the microsoft.graph.microsoftAuthenticatorAuthenticationMethod entity.
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Device()(*ifce57a57adfd7290b293a3e17c5be0796fea90e87fd8cf8b6f8988ea949ad506.DeviceRequestBuilder) {
     return ifce57a57adfd7290b293a3e17c5be0796fea90e87fd8cf8b6f8988ea949ad506.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

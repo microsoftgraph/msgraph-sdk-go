@@ -49,11 +49,11 @@ type DefaultManagedAppProtectionItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Apps the apps property
+// Apps provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.
 func (m *DefaultManagedAppProtectionItemRequestBuilder) Apps()(*ib58f8e07860703f9c02eb7bd9c28b3c1acc81af39864fcb1185d0ac405db866a.AppsRequestBuilder) {
     return ib58f8e07860703f9c02eb7bd9c28b3c1acc81af39864fcb1185d0ac405db866a.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.defaultManagedAppProtections.item.apps.item collection
+// AppsById provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.
 func (m *DefaultManagedAppProtectionItemRequestBuilder) AppsById(id string)(*i664cce9ac6a8d066456ffc5e2e02eef4dbe7ba1273babaff744dd6346838dd7d.ManagedMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -141,7 +141,7 @@ func (m *DefaultManagedAppProtectionItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// DeploymentSummary the deploymentSummary property
+// DeploymentSummary provides operations to manage the deploymentSummary property of the microsoft.graph.defaultManagedAppProtection entity.
 func (m *DefaultManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*i58d67781bee89f60845c2ad169d52bdec72a9d8e5555abb63214a4ea568a5dee.DeploymentSummaryRequestBuilder) {
     return i58d67781bee89f60845c2ad169d52bdec72a9d8e5555abb63214a4ea568a5dee.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

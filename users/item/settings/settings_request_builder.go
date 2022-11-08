@@ -162,7 +162,7 @@ func (m *SettingsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserSettingsable), nil
 }
-// ShiftPreferences the shiftPreferences property
+// ShiftPreferences provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ShiftPreferences()(*ied3041ff8388387a35b60f820a8b18cb81ef79fb99954cdaa8138f8f4fea1fc3.ShiftPreferencesRequestBuilder) {
     return ied3041ff8388387a35b60f820a8b18cb81ef79fb99954cdaa8138f8f4fea1fc3.NewShiftPreferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

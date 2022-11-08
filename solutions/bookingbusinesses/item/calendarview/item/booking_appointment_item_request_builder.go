@@ -47,7 +47,7 @@ type BookingAppointmentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *BookingAppointmentItemRequestBuilder) Cancel()(*ic9b04313ce66a117f2f498a30eb24422db3b399a39678e0495cc533aec72f4b8.CancelRequestBuilder) {
     return ic9b04313ce66a117f2f498a30eb24422db3b399a39678e0495cc533aec72f4b8.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

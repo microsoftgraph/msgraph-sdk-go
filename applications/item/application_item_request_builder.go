@@ -71,19 +71,19 @@ type ApplicationItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddKey the addKey property
+// AddKey provides operations to call the addKey method.
 func (m *ApplicationItemRequestBuilder) AddKey()(*i1cf4d6bdfc37eea0b8dc06a0fbf17ea8c1b58d8dc24649421cd74e454d266909.AddKeyRequestBuilder) {
     return i1cf4d6bdfc37eea0b8dc06a0fbf17ea8c1b58d8dc24649421cd74e454d266909.NewAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AddPassword the addPassword property
+// AddPassword provides operations to call the addPassword method.
 func (m *ApplicationItemRequestBuilder) AddPassword()(*id3ff5385c48c1f8ddd4e5f53452e89d8e30d638f1b87dc3265bf1f8adb5d3078.AddPasswordRequestBuilder) {
     return id3ff5385c48c1f8ddd4e5f53452e89d8e30d638f1b87dc3265bf1f8adb5d3078.NewAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberGroups the checkMemberGroups property
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *ApplicationItemRequestBuilder) CheckMemberGroups()(*i72720b8b61b527b526dacbdb4f1b2ebc44378e69b3a31f054e52851fc51aee5a.CheckMemberGroupsRequestBuilder) {
     return i72720b8b61b527b526dacbdb4f1b2ebc44378e69b3a31f054e52851fc51aee5a.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberObjects the checkMemberObjects property
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *ApplicationItemRequestBuilder) CheckMemberObjects()(*ia607556161094bfdb9a3407887dfa9b53a9d7a0857a0fd091dab27dd31a9459a.CheckMemberObjectsRequestBuilder) {
     return ia607556161094bfdb9a3407887dfa9b53a9d7a0857a0fd091dab27dd31a9459a.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -118,7 +118,7 @@ func (m *ApplicationItemRequestBuilder) CreateDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// CreatedOnBehalfOf the createdOnBehalfOf property
+// CreatedOnBehalfOf provides operations to manage the createdOnBehalfOf property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) CreatedOnBehalfOf()(*i8644212e8e36b861035674e39cad93b1868aca40e9292c7019cd29ae25503583.CreatedOnBehalfOfRequestBuilder) {
     return i8644212e8e36b861035674e39cad93b1868aca40e9292c7019cd29ae25503583.NewCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *ApplicationItemRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// ExtensionProperties the extensionProperties property
+// ExtensionProperties provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) ExtensionProperties()(*ida306ab63547733b6e18148e7f72a169be3442196d415312a52cbd9978ab6961.ExtensionPropertiesRequestBuilder) {
     return ida306ab63547733b6e18148e7f72a169be3442196d415312a52cbd9978ab6961.NewExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.extensionProperties.item collection
+// ExtensionPropertiesById provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77.ExtensionPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -183,11 +183,11 @@ func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*ie9d
     }
     return ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77.NewExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// FederatedIdentityCredentials the federatedIdentityCredentials property
+// FederatedIdentityCredentials provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*i02dc3442cb07e14dd6564850055582daa12c5271c29402a2eacef3296ce0336a.FederatedIdentityCredentialsRequestBuilder) {
     return i02dc3442cb07e14dd6564850055582daa12c5271c29402a2eacef3296ce0336a.NewFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FederatedIdentityCredentialsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.federatedIdentityCredentials.item collection
+// FederatedIdentityCredentialsById provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsById(id string)(*i07ab470de2cf9d615c15406822a9ab9154633fa9ed5641ce1d97bbfbb1863560.FederatedIdentityCredentialItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,19 +217,19 @@ func (m *ApplicationItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// GetMemberGroups the getMemberGroups property
+// GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *ApplicationItemRequestBuilder) GetMemberGroups()(*i8f079434e6086cc56be6ed0afce670e9aa0f7ff3ac0107e2f5d9ac8d358fe2dc.GetMemberGroupsRequestBuilder) {
     return i8f079434e6086cc56be6ed0afce670e9aa0f7ff3ac0107e2f5d9ac8d358fe2dc.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetMemberObjects the getMemberObjects property
+// GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *ApplicationItemRequestBuilder) GetMemberObjects()(*iafba803a7908a654425c76ab1e010310bb6222243e602ddaab50bc32848dac3c.GetMemberObjectsRequestBuilder) {
     return iafba803a7908a654425c76ab1e010310bb6222243e602ddaab50bc32848dac3c.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HomeRealmDiscoveryPolicies the homeRealmDiscoveryPolicies property
+// HomeRealmDiscoveryPolicies provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPolicies()(*i9dc2689198e150b8c4d03044f025827c3242c48569acd497be6fec72d51f6797.HomeRealmDiscoveryPoliciesRequestBuilder) {
     return i9dc2689198e150b8c4d03044f025827c3242c48569acd497be6fec72d51f6797.NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HomeRealmDiscoveryPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.homeRealmDiscoveryPolicies.item collection
+// HomeRealmDiscoveryPoliciesById provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*i2af67e5b951d866dcb390e8cdd53a703b8d1613ab54b5b0b111652d63e7426e3.HomeRealmDiscoveryPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -240,11 +240,11 @@ func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string
     }
     return i2af67e5b951d866dcb390e8cdd53a703b8d1613ab54b5b0b111652d63e7426e3.NewHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Logo the logo property
+// Logo provides operations to manage the media for the application entity.
 func (m *ApplicationItemRequestBuilder) Logo()(*i1a8360833e23698ad94af084d2df35cce4a1972916936379ed6648bfa6ba57ec.LogoRequestBuilder) {
     return i1a8360833e23698ad94af084d2df35cce4a1972916936379ed6648bfa6ba57ec.NewLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Owners the owners property
+// Owners provides operations to manage the owners property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) Owners()(*i9565e5e51a86644270ab0a3f267a0bbce14c338625e43342715917d0c6d5eec7.OwnersRequestBuilder) {
     return i9565e5e51a86644270ab0a3f267a0bbce14c338625e43342715917d0c6d5eec7.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -278,23 +278,23 @@ func (m *ApplicationItemRequestBuilder) Patch(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// RemoveKey the removeKey property
+// RemoveKey provides operations to call the removeKey method.
 func (m *ApplicationItemRequestBuilder) RemoveKey()(*i402e9b9506b4f160b32ff917d1b2fe43f4d4615296648051dc3eb89140278233.RemoveKeyRequestBuilder) {
     return i402e9b9506b4f160b32ff917d1b2fe43f4d4615296648051dc3eb89140278233.NewRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemovePassword the removePassword property
+// RemovePassword provides operations to call the removePassword method.
 func (m *ApplicationItemRequestBuilder) RemovePassword()(*i5a085ba4baea1613f7766106526258f582e52faf4f832b1ce2655815416aa722.RemovePasswordRequestBuilder) {
     return i5a085ba4baea1613f7766106526258f582e52faf4f832b1ce2655815416aa722.NewRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *ApplicationItemRequestBuilder) Restore()(*ib5b5951df8af6837ed6ea3344f5688d5f2483d29ea1c165d2d219ec5edf941da.RestoreRequestBuilder) {
     return ib5b5951df8af6837ed6ea3344f5688d5f2483d29ea1c165d2d219ec5edf941da.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetVerifiedPublisher the setVerifiedPublisher property
+// SetVerifiedPublisher provides operations to call the setVerifiedPublisher method.
 func (m *ApplicationItemRequestBuilder) SetVerifiedPublisher()(*i6f17a12e2de6cae814f546d592ddc360f0666722e94dabfd2392eaa13b36740a.SetVerifiedPublisherRequestBuilder) {
     return i6f17a12e2de6cae814f546d592ddc360f0666722e94dabfd2392eaa13b36740a.NewSetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TokenIssuancePolicies the tokenIssuancePolicies property
+// TokenIssuancePolicies provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) TokenIssuancePolicies()(*i1afcec2f462ce9653f6d9c178d0d0542f5684412e62323ab5a3f979e1b79b5b8.TokenIssuancePoliciesRequestBuilder) {
     return i1afcec2f462ce9653f6d9c178d0d0542f5684412e62323ab5a3f979e1b79b5b8.NewTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -309,7 +309,7 @@ func (m *ApplicationItemRequestBuilder) TokenIssuancePoliciesById(id string)(*id
     }
     return id868d42838b59366f189543d6b65b78e527af17acc61cbc962cae87c3c961e40.NewTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TokenLifetimePolicies the tokenLifetimePolicies property
+// TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) TokenLifetimePolicies()(*i486b52d4dad87ceeac08bd843c5504a58e010e9931346242f546e8106ff87250.TokenLifetimePoliciesRequestBuilder) {
     return i486b52d4dad87ceeac08bd843c5504a58e010e9931346242f546e8106ff87250.NewTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -324,7 +324,7 @@ func (m *ApplicationItemRequestBuilder) TokenLifetimePoliciesById(id string)(*i9
     }
     return i97c12a9c6c5e3dabf4cee7a203250908050ed917a949921ccf7e4f24cf095d25.NewTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UnsetVerifiedPublisher the unsetVerifiedPublisher property
+// UnsetVerifiedPublisher provides operations to call the unsetVerifiedPublisher method.
 func (m *ApplicationItemRequestBuilder) UnsetVerifiedPublisher()(*i0b84a273ded1e6669385f95709d9a7cf84a87df5fd73dc8c7af3710571de2128.UnsetVerifiedPublisherRequestBuilder) {
     return i0b84a273ded1e6669385f95709d9a7cf84a87df5fd73dc8c7af3710571de2128.NewUnsetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

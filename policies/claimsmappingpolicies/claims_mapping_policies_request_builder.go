@@ -71,7 +71,7 @@ func NewClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ClaimsMappingPoliciesRequestBuilder) Count()(*ia857f0850c2006fd6e5016a79f869e38336cc51c8e09257b403bb36242e4bac5.CountRequestBuilder) {
     return ia857f0850c2006fd6e5016a79f869e38336cc51c8e09257b403bb36242e4bac5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

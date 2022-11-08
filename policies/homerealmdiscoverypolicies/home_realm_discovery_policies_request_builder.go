@@ -71,7 +71,7 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*icfc4aa8a8563fab8dc3bc7cb743abb2d3b8d559dcdb5c6a1df27fe22aa321e6b.CountRequestBuilder) {
     return icfc4aa8a8563fab8dc3bc7cb743abb2d3b8d559dcdb5c6a1df27fe22aa321e6b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

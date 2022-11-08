@@ -71,7 +71,7 @@ func NewWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*i4ea778cce287f9335e133ebbd980ec1511ff32d1d2f689d709657db72743079b.CountRequestBuilder) {
     return i4ea778cce287f9335e133ebbd980ec1511ff32d1d2f689d709657db72743079b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

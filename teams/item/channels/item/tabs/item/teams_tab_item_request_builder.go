@@ -162,7 +162,7 @@ func (m *TeamsTabItemRequestBuilder) Patch(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// TeamsApp the teamsApp property
+// TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsTab entity.
 func (m *TeamsTabItemRequestBuilder) TeamsApp()(*i6d3a1045e1f42f4875ec0d2e94d8da0685ba7c422673e9807cda68b2800347d1.TeamsAppRequestBuilder) {
     return i6d3a1045e1f42f4875ec0d2e94d8da0685ba7c422673e9807cda68b2800347d1.NewTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

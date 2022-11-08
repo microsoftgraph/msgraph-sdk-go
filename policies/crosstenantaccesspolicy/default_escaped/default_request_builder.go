@@ -162,7 +162,7 @@ func (m *DefaultRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationDefaultable), nil
 }
-// ResetToSystemDefault the resetToSystemDefault property
+// ResetToSystemDefault provides operations to call the resetToSystemDefault method.
 func (m *DefaultRequestBuilder) ResetToSystemDefault()(*i442c9105e26664e55a0d96b356d9b10a1db3246d87ee68324e7e55e092851bb4.ResetToSystemDefaultRequestBuilder) {
     return i442c9105e26664e55a0d96b356d9b10a1db3246d87ee68324e7e55e092851bb4.NewResetToSystemDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

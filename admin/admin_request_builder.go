@@ -127,7 +127,7 @@ func (m *AdminRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Adminable), nil
 }
-// ServiceAnnouncement the serviceAnnouncement property
+// ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) ServiceAnnouncement()(*if40b4559e94698c766ed65239f17f339e1460f13bf684410177be06f98f5b6e8.ServiceAnnouncementRequestBuilder) {
     return if40b4559e94698c766ed65239f17f339e1460f13bf684410177be06f98f5b6e8.NewServiceAnnouncementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

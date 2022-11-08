@@ -116,11 +116,11 @@ func (m *PermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties the getAvailableExtensionProperties property
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
 func (m *PermissionGrantsRequestBuilder) GetAvailableExtensionProperties()(*ifcaa9d832f4ae331eb6283735454fc1d63fbb8fe8fc451decd5325a546ac8959.GetAvailableExtensionPropertiesRequestBuilder) {
     return ifcaa9d832f4ae331eb6283735454fc1d63fbb8fe8fc451decd5325a546ac8959.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *PermissionGrantsRequestBuilder) GetByIds()(*i2785fdd96d626c2c7aadcdf922e497a349278881d1a1bce772d851ca3361fc2b.GetByIdsRequestBuilder) {
     return i2785fdd96d626c2c7aadcdf922e497a349278881d1a1bce772d851ca3361fc2b.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -143,7 +143,7 @@ func (m *PermissionGrantsRequestBuilder) Post(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*iffadcbac55a44e33aa5cabcb042ed09d370ae5d82a912ade57cd794271f54f7e.ValidatePropertiesRequestBuilder) {
     return iffadcbac55a44e33aa5cabcb042ed09d370ae5d82a912ade57cd794271f54f7e.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

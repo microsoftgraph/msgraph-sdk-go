@@ -111,11 +111,11 @@ func (m *AccessReviewsRequestBuilder) CreatePatchRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// Definitions the definitions property
+// Definitions provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) Definitions()(*i9a0fc83be8a156b608969476f16987d6f0c56857cc62f3dec40c0a7819428e17.DefinitionsRequestBuilder) {
     return i9a0fc83be8a156b608969476f16987d6f0c56857cc62f3dec40c0a7819428e17.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item collection
+// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f.AccessReviewScheduleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,11 +161,11 @@ func (m *AccessReviewsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewSetable), nil
 }
-// HistoryDefinitions the historyDefinitions property
+// HistoryDefinitions provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*i3ed202ff0cbdf2b2edbf6f858dd5dd49845b59ab278423c07797fe43a9ccd40f.HistoryDefinitionsRequestBuilder) {
     return i3ed202ff0cbdf2b2edbf6f858dd5dd49845b59ab278423c07797fe43a9ccd40f.NewHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HistoryDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.historyDefinitions.item collection
+// HistoryDefinitionsById provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.AccessReviewHistoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

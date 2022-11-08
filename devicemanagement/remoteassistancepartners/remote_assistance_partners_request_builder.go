@@ -71,7 +71,7 @@ func NewRemoteAssistancePartnersRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistancePartnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RemoteAssistancePartnersRequestBuilder) Count()(*ibed55e253aad2804813d9f7dcdca54167ea91f734a5efb13eaa73e5522c4013d.CountRequestBuilder) {
     return ibed55e253aad2804813d9f7dcdca54167ea91f734a5efb13eaa73e5522c4013d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

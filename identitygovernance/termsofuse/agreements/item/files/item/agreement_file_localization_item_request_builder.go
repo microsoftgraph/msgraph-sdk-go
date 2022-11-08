@@ -163,11 +163,11 @@ func (m *AgreementFileLocalizationItemRequestBuilder) Patch(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementFileLocalizationable), nil
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
 func (m *AgreementFileLocalizationItemRequestBuilder) Versions()(*i42f5cd7bbe49b0762a526af5d16d9d18ca463ec071bcea329a40869d5fea6b59.VersionsRequestBuilder) {
     return i42f5cd7bbe49b0762a526af5d16d9d18ca463ec071bcea329a40869d5fea6b59.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreements.item.files.item.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
 func (m *AgreementFileLocalizationItemRequestBuilder) VersionsById(id string)(*ib89278cfe0cf3ce02f031747dba09b76b0aea64c4ee60eb619b9fa68e0c92286.AgreementFileVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

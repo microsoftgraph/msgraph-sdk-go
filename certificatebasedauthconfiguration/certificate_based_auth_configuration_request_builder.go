@@ -71,7 +71,7 @@ func NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewCertificateBasedAuthConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*i54e63b43d5574b46c5b589d7475c701d90053c08976e7f3f032a74317afb35e0.CountRequestBuilder) {
     return i54e63b43d5574b46c5b589d7475c701d90053c08976e7f3f032a74317afb35e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

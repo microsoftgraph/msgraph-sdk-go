@@ -127,11 +127,11 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// EffectiveRules the effectiveRules property
+// EffectiveRules provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRules()(*ibe4d3f36ee7e48ff6fbf90f642b667ee1bf879ea5f2ee207eb0b8785c6b700de.EffectiveRulesRequestBuilder) {
     return ibe4d3f36ee7e48ff6fbf90f642b667ee1bf879ea5f2ee207eb0b8785c6b700de.NewEffectiveRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EffectiveRulesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.roleManagementPolicies.item.effectiveRules.item collection
+// EffectiveRulesById provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRulesById(id string)(*ia3785e1690ecc29d604f1e07a50bcbaea0379ad7b2cfa5bfcec03fb25cb9211d.UnifiedRoleManagementPolicyRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyable), nil
 }
-// Rules the rules property
+// Rules provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Rules()(*i5986c1d2350638d2bad2c44b3c7439f10c6c947d38cb7e1406cf8d8a7e6ee5d1.RulesRequestBuilder) {
     return i5986c1d2350638d2bad2c44b3c7439f10c6c947d38cb7e1406cf8d8a7e6ee5d1.NewRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RulesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.roleManagementPolicies.item.rules.item collection
+// RulesById provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) RulesById(id string)(*i67dcb40f7679281f87611e3e2b416b5c602ae7bedef4a0eea74751c43465b66f.UnifiedRoleManagementPolicyRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

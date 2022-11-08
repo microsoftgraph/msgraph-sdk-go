@@ -129,15 +129,15 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable), nil
 }
-// SendActivityNotificationToRecipients the sendActivityNotificationToRecipients property
+// SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
 func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*i5813ce8fd98713d4b3971e214b67aa24b82b140b032e3ab2bced58810082b8ba.SendActivityNotificationToRecipientsRequestBuilder) {
     return i5813ce8fd98713d4b3971e214b67aa24b82b140b032e3ab2bced58810082b8ba.NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WorkforceIntegrations the workforceIntegrations property
+// WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.WorkforceIntegrationsRequestBuilder) {
     return iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WorkforceIntegrationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teamwork.workforceIntegrations.item collection
+// WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.WorkforceIntegrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

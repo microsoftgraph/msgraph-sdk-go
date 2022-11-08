@@ -143,7 +143,7 @@ func (m *PinnedChatMessageInfoItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable), nil
 }
-// Message the message property
+// Message provides operations to manage the message property of the microsoft.graph.pinnedChatMessageInfo entity.
 func (m *PinnedChatMessageInfoItemRequestBuilder) Message()(*i3fbf0b7e0599279a7c580025f0f2032344cb253153de0919ddace0a447080f49.MessageRequestBuilder) {
     return i3fbf0b7e0599279a7c580025f0f2032344cb253153de0919ddace0a447080f49.NewMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

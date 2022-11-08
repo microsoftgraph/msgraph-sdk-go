@@ -33,7 +33,7 @@ func NewAccessPackageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of identityGovernance entities.
 func (m *AccessPackageItemRequestBuilder) Ref()(*ia5da46116e7b2fed3547e218d71f4c12ca830cb82cfce652d910159dd38c117f.RefRequestBuilder) {
     return ia5da46116e7b2fed3547e218d71f4c12ca830cb82cfce652d910159dd38c117f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -149,6 +149,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAttendanceRecord(), nil
                     case "#microsoft.graph.audioRoutingGroup":
                         return NewAudioRoutingGroup(), nil
+                    case "#microsoft.graph.auditEvent":
+                        return NewAuditEvent(), nil
                     case "#microsoft.graph.auditLogRoot":
                         return NewAuditLogRoot(), nil
                     case "#microsoft.graph.authentication":
@@ -401,6 +403,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEducationClass(), nil
                     case "#microsoft.graph.educationFeedbackOutcome":
                         return NewEducationFeedbackOutcome(), nil
+                    case "#microsoft.graph.educationFeedbackResourceOutcome":
+                        return NewEducationFeedbackResourceOutcome(), nil
                     case "#microsoft.graph.educationOrganization":
                         return NewEducationOrganization(), nil
                     case "#microsoft.graph.educationOutcome":
@@ -571,6 +575,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOSDeviceFeaturesConfiguration(), nil
                     case "#microsoft.graph.macOSGeneralDeviceConfiguration":
                         return NewMacOSGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.macOSLobApp":
+                        return NewMacOSLobApp(), nil
+                    case "#microsoft.graph.macOSMicrosoftEdgeApp":
+                        return NewMacOSMicrosoftEdgeApp(), nil
                     case "#microsoft.graph.macOSOfficeSuiteApp":
                         return NewMacOSOfficeSuiteApp(), nil
                     case "#microsoft.graph.mailAssessmentRequest":

@@ -10,7 +10,7 @@ type TimeOffReason struct {
     ChangeTrackedEntity
     // The name of the timeOffReason. Required.
     displayName *string
-    // Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
+    // Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.
     iconType *TimeOffReasonIconType
     // Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
     isActive *bool
@@ -40,7 +40,7 @@ func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["isActive"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsActive)
     return res
 }
-// GetIconType gets the iconType property value. Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
+// GetIconType gets the iconType property value. Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.
 func (m *TimeOffReason) GetIconType()(*TimeOffReasonIconType) {
     return m.iconType
 }
@@ -79,7 +79,7 @@ func (m *TimeOffReason) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *TimeOffReason) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIconType sets the iconType property value. Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
+// SetIconType sets the iconType property value. Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.
 func (m *TimeOffReason) SetIconType(value *TimeOffReasonIconType)() {
     m.iconType = value
 }

@@ -69,7 +69,7 @@ func NewTimeOffReasonsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewTimeOffReasonsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TimeOffReasonsRequestBuilder) Count()(*i7611716599603321358712f6be0a4ffd8f7592e707e68b8c1530152bb8c10210.CountRequestBuilder) {
     return i7611716599603321358712f6be0a4ffd8f7592e707e68b8c1530152bb8c10210.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

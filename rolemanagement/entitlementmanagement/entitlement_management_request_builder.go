@@ -177,11 +177,11 @@ func (m *EntitlementManagementRequestBuilder) Patch(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RbacApplicationable), nil
 }
-// RoleAssignments the roleAssignments property
+// RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignments()(*iab5b1a7cf751122475647c02429db57a9207d8d85016b356d65e7aeb3a05d352.RoleAssignmentsRequestBuilder) {
     return iab5b1a7cf751122475647c02429db57a9207d8d85016b356d65e7aeb3a05d352.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleAssignments.item collection
+// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.UnifiedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -192,11 +192,11 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i0
     }
     return i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.NewUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleAssignmentScheduleInstances the roleAssignmentScheduleInstances property
+// RoleAssignmentScheduleInstances provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstances()(*i7fdde2c600ba1f94ea8ccc2b16da2d73b29fabb1bdfe5db21564f182303fa289.RoleAssignmentScheduleInstancesRequestBuilder) {
     return i7fdde2c600ba1f94ea8ccc2b16da2d73b29fabb1bdfe5db21564f182303fa289.NewRoleAssignmentScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentScheduleInstancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleAssignmentScheduleInstances.item collection
+// RoleAssignmentScheduleInstancesById provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesById(id string)(*i1e88f04b4de5bc9a33401e3c9b33e94251a138355ac41b0e707b0340e1fb8409.UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -207,11 +207,11 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesByI
     }
     return i1e88f04b4de5bc9a33401e3c9b33e94251a138355ac41b0e707b0340e1fb8409.NewUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleAssignmentScheduleRequests the roleAssignmentScheduleRequests property
+// RoleAssignmentScheduleRequests provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequests()(*iffc6a561bcf2356c17f04c85d6602846a02a99b2f78d88074e35ba71edbddf9f.RoleAssignmentScheduleRequestsRequestBuilder) {
     return iffc6a561bcf2356c17f04c85d6602846a02a99b2f78d88074e35ba71edbddf9f.NewRoleAssignmentScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentScheduleRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection
+// RoleAssignmentScheduleRequestsById provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(*i13c7c694392be2fc5947090399fe93a9fdab4dedaabe0939405a5313dd75bdae.UnifiedRoleAssignmentScheduleRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -222,11 +222,11 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById
     }
     return i13c7c694392be2fc5947090399fe93a9fdab4dedaabe0939405a5313dd75bdae.NewUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleAssignmentSchedules the roleAssignmentSchedules property
+// RoleAssignmentSchedules provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedules()(*ia00666d9c15220a15dcb7fcfb7faecbb7b75cddefc298ac4a352e53501419482.RoleAssignmentSchedulesRequestBuilder) {
     return ia00666d9c15220a15dcb7fcfb7faecbb7b75cddefc298ac4a352e53501419482.NewRoleAssignmentSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentSchedulesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleAssignmentSchedules.item collection
+// RoleAssignmentSchedulesById provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id string)(*i7c97a82666b511908e752f14b6d01e35e5f2565606757e69c0f6835e4ec31b4c.UnifiedRoleAssignmentScheduleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -237,11 +237,11 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id str
     }
     return i7c97a82666b511908e752f14b6d01e35e5f2565606757e69c0f6835e4ec31b4c.NewUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleDefinitions the roleDefinitions property
+// RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleDefinitions()(*i235730479c1a6cf49ab5074a2df5fee811eeaf00c02b8796d08bae7d0b1ac121.RoleDefinitionsRequestBuilder) {
     return i235730479c1a6cf49ab5074a2df5fee811eeaf00c02b8796d08bae7d0b1ac121.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleDefinitions.item collection
+// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.UnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -252,11 +252,11 @@ func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*i4
     }
     return i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleEligibilityScheduleInstances the roleEligibilityScheduleInstances property
+// RoleEligibilityScheduleInstances provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstances()(*i75e0187968a6021e302f1aa7a3eb2a876441acad1f351cff3d51d6d0c4cd52a4.RoleEligibilityScheduleInstancesRequestBuilder) {
     return i75e0187968a6021e302f1aa7a3eb2a876441acad1f351cff3d51d6d0c4cd52a4.NewRoleEligibilityScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleEligibilityScheduleInstancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleEligibilityScheduleInstances.item collection
+// RoleEligibilityScheduleInstancesById provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesById(id string)(*i987a32583667f0a5ef515c4455c9a8fa39e772a7676688f15e1cc180c13ae1c9.UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -267,11 +267,11 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesBy
     }
     return i987a32583667f0a5ef515c4455c9a8fa39e772a7676688f15e1cc180c13ae1c9.NewUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleEligibilityScheduleRequests the roleEligibilityScheduleRequests property
+// RoleEligibilityScheduleRequests provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequests()(*i6105172c68f51bb2e2927309c74148ed2bf9eaebff5fecc8144191485bb58a1c.RoleEligibilityScheduleRequestsRequestBuilder) {
     return i6105172c68f51bb2e2927309c74148ed2bf9eaebff5fecc8144191485bb58a1c.NewRoleEligibilityScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleEligibilityScheduleRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleEligibilityScheduleRequests.item collection
+// RoleEligibilityScheduleRequestsById provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsById(id string)(*i3b9e25b9426e31e4bcd53952d1b0865afd529e64b7d980cc74d8ef468d55a6ca.UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -282,11 +282,11 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsByI
     }
     return i3b9e25b9426e31e4bcd53952d1b0865afd529e64b7d980cc74d8ef468d55a6ca.NewUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleEligibilitySchedules the roleEligibilitySchedules property
+// RoleEligibilitySchedules provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedules()(*i3a967725e663f75605977fcee02eb4b2642ee31d0648ec4e2ed0f800882b32bc.RoleEligibilitySchedulesRequestBuilder) {
     return i3a967725e663f75605977fcee02eb4b2642ee31d0648ec4e2ed0f800882b32bc.NewRoleEligibilitySchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleEligibilitySchedulesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleEligibilitySchedules.item collection
+// RoleEligibilitySchedulesById provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedulesById(id string)(*i9737b224e822cfafa077e03d8ff571fad57ee6c6761c45f56482ea39d6af9c92.UnifiedRoleEligibilityScheduleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

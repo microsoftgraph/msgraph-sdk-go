@@ -51,7 +51,7 @@ type MemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MemberOfRequestBuilderGetQueryParameters
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *MemberOfRequestBuilder) Application()(*ic2a143b2939d2239e1efa411f086f94a415359b825b2a54fc16529918ca7874e.ApplicationRequestBuilder) {
     return ic2a143b2939d2239e1efa411f086f94a415359b825b2a54fc16529918ca7874e.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -74,7 +74,7 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MemberOfRequestBuilder) Count()(*i3c38244afbc94ef443f976fcbf26e66902e2700c62cf763afc106561e153230b.CountRequestBuilder) {
     return i3c38244afbc94ef443f976fcbf26e66902e2700c62cf763afc106561e153230b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -94,7 +94,7 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// Device the device property
+// Device casts the previous resource to device.
 func (m *MemberOfRequestBuilder) Device()(*ief81581961981cd816402c18b73e4ecbd9bcee122e8d0d321ea608494d8173c9.DeviceRequestBuilder) {
     return ief81581961981cd816402c18b73e4ecbd9bcee122e8d0d321ea608494d8173c9.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -117,19 +117,19 @@ func (m *MemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *MemberOfRequestBuilder) Group()(*i0cc44d6cf980dfc5445bf2da7be684c048796ced3eb7a986c0f7094828a2a39f.GroupRequestBuilder) {
     return i0cc44d6cf980dfc5445bf2da7be684c048796ced3eb7a986c0f7094828a2a39f.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OrgContact the orgContact property
+// OrgContact casts the previous resource to orgContact.
 func (m *MemberOfRequestBuilder) OrgContact()(*i774666a18b17f5bec878b0e258222046c46d65e24b1e04a48e55523a56450737.OrgContactRequestBuilder) {
     return i774666a18b17f5bec878b0e258222046c46d65e24b1e04a48e55523a56450737.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *MemberOfRequestBuilder) ServicePrincipal()(*i9c88243fa540b065fcae01e166edba8804321ce1262aa280893518490639a5b5.ServicePrincipalRequestBuilder) {
     return i9c88243fa540b065fcae01e166edba8804321ce1262aa280893518490639a5b5.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *MemberOfRequestBuilder) User()(*i1c538e6341b066bb5128c469c66d163b98ce090e679574a461852d74cae0f444.UserRequestBuilder) {
     return i1c538e6341b066bb5128c469c66d163b98ce090e679574a461852d74cae0f444.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

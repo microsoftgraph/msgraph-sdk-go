@@ -131,7 +131,7 @@ func (m *SharedDriveItemItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) DriveItem()(*ic21e3d9f3eaf63bbdce62fd14ebed43e30e12830422fa068b6c26780d7bb64a6.DriveItemRequestBuilder) {
     return ic21e3d9f3eaf63bbdce62fd14ebed43e30e12830422fa068b6c26780d7bb64a6.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -154,11 +154,11 @@ func (m *SharedDriveItemItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedDriveItemable), nil
 }
-// Items the items property
+// Items provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) Items()(*i05fb43f9021a0913de359c2cfdf1fcad6b4de0310980145d3c6276c460270205.ItemsRequestBuilder) {
     return i05fb43f9021a0913de359c2cfdf1fcad6b4de0310980145d3c6276c460270205.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.items.item collection
+// ItemsById provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) ItemsById(id string)(*i645f1e1a516727ccf24f1ba68b8f4137ee52e397b6e58438bccce4f0cb3d74b5.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -169,11 +169,11 @@ func (m *SharedDriveItemItemRequestBuilder) ItemsById(id string)(*i645f1e1a51672
     }
     return i645f1e1a516727ccf24f1ba68b8f4137ee52e397b6e58438bccce4f0cb3d74b5.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// List the list property
+// List provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) List()(*i00b23f7f86a982af8a15ee36120329e64b13d88be4f288d635f6ae65ae966124.ListRequestBuilder) {
     return i00b23f7f86a982af8a15ee36120329e64b13d88be4f288d635f6ae65ae966124.NewListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ListItem the listItem property
+// ListItem provides operations to manage the listItem property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) ListItem()(*i4c63c9b02f3ed101ac621ec88441d97587c19d3efeb627897c02cbe1ca7c6af4.ListItemRequestBuilder) {
     return i4c63c9b02f3ed101ac621ec88441d97587c19d3efeb627897c02cbe1ca7c6af4.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -196,15 +196,15 @@ func (m *SharedDriveItemItemRequestBuilder) Patch(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedDriveItemable), nil
 }
-// Permission the permission property
+// Permission provides operations to manage the permission property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) Permission()(*ia21810eb35790209720396d6baefa7bad436f4af7de39d51a975ac8ed17d9b90.PermissionRequestBuilder) {
     return ia21810eb35790209720396d6baefa7bad436f4af7de39d51a975ac8ed17d9b90.NewPermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Root the root property
+// Root provides operations to manage the root property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) Root()(*i2cbdf6d3a4841b26281917b6289b085e9cd675537f09928d44582bcd4533f5d2.RootRequestBuilder) {
     return i2cbdf6d3a4841b26281917b6289b085e9cd675537f09928d44582bcd4533f5d2.NewRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Site the site property
+// Site provides operations to manage the site property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) Site()(*i8c15d6975df59e7bff68ceaff8e2e7e5fb860064ce0c3fe87881dfa452f8d0f3.SiteRequestBuilder) {
     return i8c15d6975df59e7bff68ceaff8e2e7e5fb860064ce0c3fe87881dfa452f8d0f3.NewSiteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -45,11 +45,11 @@ type DirectoryRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdministrativeUnits the administrativeUnits property
+// AdministrativeUnits provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) AdministrativeUnits()(*i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5.AdministrativeUnitsRequestBuilder) {
     return i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5.NewAdministrativeUnitsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AdministrativeUnitsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item collection
+// AdministrativeUnitsById provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.AdministrativeUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -109,11 +109,11 @@ func (m *DirectoryRequestBuilder) CreatePatchRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// DeletedItems the deletedItems property
+// DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) DeletedItems()(*i608270f0d53df54d261f336ae52901ae79654f5ed54338f92dab3b2188e27aeb.DeletedItemsRequestBuilder) {
     return i608270f0d53df54d261f336ae52901ae79654f5ed54338f92dab3b2188e27aeb.NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeletedItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.deletedItems.item collection
+// DeletedItemsById provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -124,11 +124,11 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d4
     }
     return ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// FederationConfigurations the federationConfigurations property
+// FederationConfigurations provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) FederationConfigurations()(*i6a6db966e62dddb8d891e081b28d43a4d103521831d4e6129c1dd2ac8e69b9ec.FederationConfigurationsRequestBuilder) {
     return i6a6db966e62dddb8d891e081b28d43a4d103521831d4e6129c1dd2ac8e69b9ec.NewFederationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FederationConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.federationConfigurations.item collection
+// FederationConfigurationsById provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*i9ae5ec30df8eb6fe81d483055e3d12a0be1414778bad0e35f406a2127c7a27a5.IdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -42,7 +42,7 @@ func NewAddLargeGalleryViewRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAddLargeGalleryViewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation add the large gallery view to a call.
+// CreatePostRequestInformation add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
 func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AddLargeGalleryViewPostRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -56,7 +56,7 @@ func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// Post add the large gallery view to a call.
+// Post add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
 func (m *AddLargeGalleryViewRequestBuilder) Post(ctx context.Context, body AddLargeGalleryViewPostRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AddLargeGalleryViewOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

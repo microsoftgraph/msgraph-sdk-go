@@ -163,11 +163,11 @@ func (m *ApprovalRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable), nil
 }
-// Stages the stages property
+// Stages provides operations to manage the stages property of the microsoft.graph.approval entity.
 func (m *ApprovalRequestBuilder) Stages()(*id36a4d4dca3dc188c084b8a588a67c55237b92797cb4ff62a21f9303fd3cc0ea.StagesRequestBuilder) {
     return id36a4d4dca3dc188c084b8a588a67c55237b92797cb4ff62a21f9303fd3cc0ea.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// StagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.appConsent.appConsentRequests.item.userConsentRequests.item.approval.stages.item collection
+// StagesById provides operations to manage the stages property of the microsoft.graph.approval entity.
 func (m *ApprovalRequestBuilder) StagesById(id string)(*i14568e1ff2392ccb9d0ba3bdfad7cdfa2dee715cba8a018193738536c1616614.ApprovalStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

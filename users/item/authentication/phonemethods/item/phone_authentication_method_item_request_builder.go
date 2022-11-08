@@ -125,11 +125,11 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// DisableSmsSignIn the disableSmsSignIn property
+// DisableSmsSignIn provides operations to call the disableSmsSignIn method.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*i1d8bc300e93c9e2ac99b1d045d7003cf869e464977e21ff376e02ff2f3a3bb6b.DisableSmsSignInRequestBuilder) {
     return i1d8bc300e93c9e2ac99b1d045d7003cf869e464977e21ff376e02ff2f3a3bb6b.NewDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnableSmsSignIn the enableSmsSignIn property
+// EnableSmsSignIn provides operations to call the enableSmsSignIn method.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*i77abfc2b25befaab3bc92656c2b463c4143087500aeaa6a22e75597d8235c6f6.EnableSmsSignInRequestBuilder) {
     return i77abfc2b25befaab3bc92656c2b463c4143087500aeaa6a22e75597d8235c6f6.NewEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

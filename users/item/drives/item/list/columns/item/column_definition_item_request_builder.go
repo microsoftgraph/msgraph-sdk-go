@@ -162,7 +162,7 @@ func (m *ColumnDefinitionItemRequestBuilder) Patch(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// SourceColumn the sourceColumn property
+// SourceColumn provides operations to manage the sourceColumn property of the microsoft.graph.columnDefinition entity.
 func (m *ColumnDefinitionItemRequestBuilder) SourceColumn()(*icd603af440766a39d368b43c9a4080641618bb68e2fb1b4fd2076c76e53fe2dc.SourceColumnRequestBuilder) {
     return icd603af440766a39d368b43c9a4080641618bb68e2fb1b4fd2076c76e53fe2dc.NewSourceColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

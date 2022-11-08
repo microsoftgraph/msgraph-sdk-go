@@ -44,11 +44,11 @@ type BrandingRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackgroundImage the backgroundImage property
+// BackgroundImage provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) BackgroundImage()(*i66d3bf3612261a255368fda89fdc148f565c3afcfadd3d6aa59f39b9ca851cd3.BackgroundImageRequestBuilder) {
     return i66d3bf3612261a255368fda89fdc148f565c3afcfadd3d6aa59f39b9ca851cd3.NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BannerLogo the bannerLogo property
+// BannerLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) BannerLogo()(*i1bd33413feee997e32357cccfaf363eb0ea1df44f2f048b98d4bf0d8ba264765.BannerLogoRequestBuilder) {
     return i1bd33413feee997e32357cccfaf363eb0ea1df44f2f048b98d4bf0d8ba264765.NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -120,11 +120,11 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingable), nil
 }
-// Localizations the localizations property
+// Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) Localizations()(*i11606dfdbbf1d1bc678546ed98e21fe3520002d2ebc49f2e965d358c6ec48612.LocalizationsRequestBuilder) {
     return i11606dfdbbf1d1bc678546ed98e21fe3520002d2ebc49f2e965d358c6ec48612.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LocalizationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.branding.localizations.item collection
+// LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i91122bc73f66085eb8e21b0f9aeadfa4ab90c1d5f4782e2d5b68f2f03fbf9409.OrganizationalBrandingLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -154,7 +154,7 @@ func (m *BrandingRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingable), nil
 }
-// SquareLogo the squareLogo property
+// SquareLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) SquareLogo()(*icc91487517040d6fd90bfc70b7fdff5086c556c304c7d37df61cf4fa1927b390.SquareLogoRequestBuilder) {
     return icc91487517040d6fd90bfc70b7fdff5086c556c304c7d37df61cf4fa1927b390.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

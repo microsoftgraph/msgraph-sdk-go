@@ -37,6 +37,12 @@ func CreateTeamworkNotificationRecipientFromDiscriminatorValue(parseNode i878a80
                 switch *mappingValue {
                     case "#microsoft.graph.aadUserNotificationRecipient":
                         return NewAadUserNotificationRecipient(), nil
+                    case "#microsoft.graph.channelMembersNotificationRecipient":
+                        return NewChannelMembersNotificationRecipient(), nil
+                    case "#microsoft.graph.chatMembersNotificationRecipient":
+                        return NewChatMembersNotificationRecipient(), nil
+                    case "#microsoft.graph.teamMembersNotificationRecipient":
+                        return NewTeamMembersNotificationRecipient(), nil
                 }
             }
         }

@@ -162,7 +162,7 @@ func (m *SubscriptionItemRequestBuilder) Patch(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
 }
-// Reauthorize the reauthorize property
+// Reauthorize provides operations to call the reauthorize method.
 func (m *SubscriptionItemRequestBuilder) Reauthorize()(*ia92cb4355b3a4f41cb9f701e51a93a90c48cb312d8394333560047a3e1f818fd.ReauthorizeRequestBuilder) {
     return ia92cb4355b3a4f41cb9f701e51a93a90c48cb312d8394333560047a3e1f818fd.NewReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

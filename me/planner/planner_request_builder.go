@@ -165,11 +165,11 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerUserable), nil
 }
-// Plans the plans property
+// Plans provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Plans()(*ie4a45f6e29fee570f2c703bf98adc84b852882a446b0b48477fc0b59a9ab9d24.PlansRequestBuilder) {
     return ie4a45f6e29fee570f2c703bf98adc84b852882a446b0b48477fc0b59a9ab9d24.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PlansById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.planner.plans.item collection
+// PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) PlansById(id string)(*i56240115022859e0ae78e43a562fea702c163b3e89ba06e2dba02c5a32c7983b.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*i56240115022859e0ae78e43a5
     }
     return i56240115022859e0ae78e43a562fea702c163b3e89ba06e2dba02c5a32c7983b.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*ic91505b79e0fb326d51c5dad2da04c24c4e419c61736e32df9c14017c046a6c9.TasksRequestBuilder) {
     return ic91505b79e0fb326d51c5dad2da04c24c4e419c61736e32df9c14017c046a6c9.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.planner.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) TasksById(id string)(*if5d0e47a30b3381304690625a320d0592ca166a01a975435702e618eac2ef1eb.PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

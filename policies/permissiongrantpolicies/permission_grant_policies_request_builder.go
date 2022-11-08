@@ -71,7 +71,7 @@ func NewPermissionGrantPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PermissionGrantPoliciesRequestBuilder) Count()(*i1380612ed677c3fa45bf18fb3af6af1efd668208c7104f54e5fd54a3c7682d57.CountRequestBuilder) {
     return i1380612ed677c3fa45bf18fb3af6af1efd668208c7104f54e5fd54a3c7682d57.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,6 +10,8 @@ type DeviceManagement struct {
     Entity
     // Apple push notification certificate.
     applePushNotificationCertificate ApplePushNotificationCertificateable
+    // The Audit Events
+    auditEvents []AuditEventable
     // The list of Compliance Management Partners configured by the tenant.
     complianceManagementPartners []ComplianceManagementPartnerable
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
@@ -96,6 +98,10 @@ func CreateDeviceManagementFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *DeviceManagement) GetApplePushNotificationCertificate()(ApplePushNotificationCertificateable) {
     return m.applePushNotificationCertificate
 }
+// GetAuditEvents gets the auditEvents property value. The Audit Events
+func (m *DeviceManagement) GetAuditEvents()([]AuditEventable) {
+    return m.auditEvents
+}
 // GetComplianceManagementPartners gets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
 func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagementPartnerable) {
     return m.complianceManagementPartners
@@ -148,6 +154,7 @@ func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeCon
 func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applePushNotificationCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateApplePushNotificationCertificateFromDiscriminatorValue , m.SetApplePushNotificationCertificate)
+    res["auditEvents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuditEventFromDiscriminatorValue , m.SetAuditEvents)
     res["complianceManagementPartners"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateComplianceManagementPartnerFromDiscriminatorValue , m.SetComplianceManagementPartners)
     res["conditionalAccessSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue , m.SetConditionalAccessSettings)
     res["detectedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDetectedAppFromDiscriminatorValue , m.SetDetectedApps)
@@ -280,6 +287,13 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteObjectValue("applePushNotificationCertificate", m.GetApplePushNotificationCertificate())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAuditEvents() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuditEvents())
+        err = writer.WriteCollectionOfObjectValues("auditEvents", cast)
         if err != nil {
             return err
         }
@@ -518,6 +532,10 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetApplePushNotificationCertificate sets the applePushNotificationCertificate property value. Apple push notification certificate.
 func (m *DeviceManagement) SetApplePushNotificationCertificate(value ApplePushNotificationCertificateable)() {
     m.applePushNotificationCertificate = value
+}
+// SetAuditEvents sets the auditEvents property value. The Audit Events
+func (m *DeviceManagement) SetAuditEvents(value []AuditEventable)() {
+    m.auditEvents = value
 }
 // SetComplianceManagementPartners sets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
 func (m *DeviceManagement) SetComplianceManagementPartners(value []ComplianceManagementPartnerable)() {

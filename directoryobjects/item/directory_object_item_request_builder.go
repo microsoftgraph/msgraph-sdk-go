@@ -51,11 +51,11 @@ type DirectoryObjectItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups the checkMemberGroups property
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *DirectoryObjectItemRequestBuilder) CheckMemberGroups()(*i2758507168bd1524d08791dad930488bb4ad6c1ac5c35596f7a32c5ff685a27e.CheckMemberGroupsRequestBuilder) {
     return i2758507168bd1524d08791dad930488bb4ad6c1ac5c35596f7a32c5ff685a27e.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberObjects the checkMemberObjects property
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *DirectoryObjectItemRequestBuilder) CheckMemberObjects()(*i5994a0b59bfe11ed3ada24e78d793ae99219e1ed71fe61ccdd3181057f6b3b6d.CheckMemberObjectsRequestBuilder) {
     return i5994a0b59bfe11ed3ada24e78d793ae99219e1ed71fe61ccdd3181057f6b3b6d.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// GetMemberGroups the getMemberGroups property
+// GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *DirectoryObjectItemRequestBuilder) GetMemberGroups()(*i203da64f5c3eb0f67de839a1117fbf3b3dd4a1047527133ebe660175ca29b246.GetMemberGroupsRequestBuilder) {
     return i203da64f5c3eb0f67de839a1117fbf3b3dd4a1047527133ebe660175ca29b246.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetMemberObjects the getMemberObjects property
+// GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *DirectoryObjectItemRequestBuilder) GetMemberObjects()(*i4373f660e612558db4bd06bb08e3a35adaf199b212501b84beab70f8139714cd.GetMemberObjectsRequestBuilder) {
     return i4373f660e612558db4bd06bb08e3a35adaf199b212501b84beab70f8139714cd.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -182,7 +182,7 @@ func (m *DirectoryObjectItemRequestBuilder) Patch(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *DirectoryObjectItemRequestBuilder) Restore()(*i2f76d76157171c3fbdea89a016c5c257d482b75ce76155705d33a0037bed2188.RestoreRequestBuilder) {
     return i2f76d76157171c3fbdea89a016c5c257d482b75ce76155705d33a0037bed2188.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

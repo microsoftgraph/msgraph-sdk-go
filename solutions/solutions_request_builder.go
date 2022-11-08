@@ -43,11 +43,11 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinesses the bookingBusinesses property
+// BookingBusinesses provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingBusinesses()(*ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.BookingBusinessesRequestBuilder) {
     return ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.NewBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BookingBusinessesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item collection
+// BookingBusinessesById provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.BookingBusinessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -58,11 +58,11 @@ func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d439
     }
     return i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.NewBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// BookingCurrencies the bookingCurrencies property
+// BookingCurrencies provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingCurrencies()(*i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.BookingCurrenciesRequestBuilder) {
     return i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.NewBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BookingCurrenciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingCurrencies.item collection
+// BookingCurrenciesById provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.BookingCurrencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

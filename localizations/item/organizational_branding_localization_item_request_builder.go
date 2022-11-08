@@ -49,11 +49,11 @@ type OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackgroundImage the backgroundImage property
+// BackgroundImage provides operations to manage the media for the organizationalBrandingLocalization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) BackgroundImage()(*i0e0ada5ff83852dfb8f1965c10a21be8088d617a6ac74a4d759e4a2204c082d3.BackgroundImageRequestBuilder) {
     return i0e0ada5ff83852dfb8f1965c10a21be8088d617a6ac74a4d759e4a2204c082d3.NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BannerLogo the bannerLogo property
+// BannerLogo provides operations to manage the media for the organizationalBrandingLocalization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) BannerLogo()(*i1202dec5842da735bd2a7c25c5fc6f5176693a25d43a740bb7ad8413e36941e5.BannerLogoRequestBuilder) {
     return i1202dec5842da735bd2a7c25c5fc6f5176693a25d43a740bb7ad8413e36941e5.NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -172,7 +172,7 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable), nil
 }
-// SquareLogo the squareLogo property
+// SquareLogo provides operations to manage the media for the organizationalBrandingLocalization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*i97ae868c68d0788ba9c5f9961916a35ddcddb6d5b9726fd92d329a64d87638dd.SquareLogoRequestBuilder) {
     return i97ae868c68d0788ba9c5f9961916a35ddcddb6d5b9726fd92d329a64d87638dd.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

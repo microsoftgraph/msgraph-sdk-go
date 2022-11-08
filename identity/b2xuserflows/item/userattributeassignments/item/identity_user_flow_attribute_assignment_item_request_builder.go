@@ -162,7 +162,7 @@ func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) Patch(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeAssignmentable), nil
 }
-// UserAttribute the userAttribute property
+// UserAttribute provides operations to manage the userAttribute property of the microsoft.graph.identityUserFlowAttributeAssignment entity.
 func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) UserAttribute()(*i88edf949a04628ad6a57b407c823d5d70c810aca66a9df20e3440fa83a4f79e0.UserAttributeRequestBuilder) {
     return i88edf949a04628ad6a57b407c823d5d70c810aca66a9df20e3440fa83a4f79e0.NewUserAttributeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

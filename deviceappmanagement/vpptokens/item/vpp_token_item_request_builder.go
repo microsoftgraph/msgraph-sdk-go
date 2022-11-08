@@ -162,7 +162,7 @@ func (m *VppTokenItemRequestBuilder) Patch(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable), nil
 }
-// SyncLicenses the syncLicenses property
+// SyncLicenses provides operations to call the syncLicenses method.
 func (m *VppTokenItemRequestBuilder) SyncLicenses()(*i655eb9d80bf2790160527062220851ccbcd67717334cd52277772567d44d4432.SyncLicensesRequestBuilder) {
     return i655eb9d80bf2790160527062220851ccbcd67717334cd52277772567d44d4432.NewSyncLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

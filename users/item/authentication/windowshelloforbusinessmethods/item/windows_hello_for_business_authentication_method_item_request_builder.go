@@ -124,7 +124,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Device the device property
+// Device provides operations to manage the device property of the microsoft.graph.windowsHelloForBusinessAuthenticationMethod entity.
 func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Device()(*i17a551f6ae04520746ef7db241088a70d320ddb575bde71433bfc5f82f59e839.DeviceRequestBuilder) {
     return i17a551f6ae04520746ef7db241088a70d320ddb575bde71433bfc5f82f59e839.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

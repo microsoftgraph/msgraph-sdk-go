@@ -33,7 +33,7 @@ func NewTokenIssuancePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of application entities.
 func (m *TokenIssuancePolicyItemRequestBuilder) Ref()(*i083d9ad14fa1e44957def936929cba5238351218462d4ad39a246ee0bc99ba4a.RefRequestBuilder) {
     return i083d9ad14fa1e44957def936929cba5238351218462d4ad39a246ee0bc99ba4a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

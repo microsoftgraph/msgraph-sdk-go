@@ -47,7 +47,7 @@ type EdiscoveryReviewSetQueryItemRequestBuilderPatchRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyTags the applyTags property
+// ApplyTags provides operations to call the applyTags method.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) ApplyTags()(*icd202d644b2fea885ba9c480c31cf7e7caa84ac03df64c85abe78b5207bde727.ApplyTagsRequestBuilder) {
     return icd202d644b2fea885ba9c480c31cf7e7caa84ac03df64c85abe78b5207bde727.NewApplyTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

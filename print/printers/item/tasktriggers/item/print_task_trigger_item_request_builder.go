@@ -108,7 +108,7 @@ func (m *PrintTaskTriggerItemRequestBuilder) CreatePatchRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// Definition the definition property
+// Definition provides operations to manage the definition property of the microsoft.graph.printTaskTrigger entity.
 func (m *PrintTaskTriggerItemRequestBuilder) Definition()(*i48a5ff8a7cbdfd5dc93e134b1425b4fa1b93282c0fb50c2fe7958a0c02f09004.DefinitionRequestBuilder) {
     return i48a5ff8a7cbdfd5dc93e134b1425b4fa1b93282c0fb50c2fe7958a0c02f09004.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

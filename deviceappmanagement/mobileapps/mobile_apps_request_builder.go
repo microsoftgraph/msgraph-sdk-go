@@ -73,7 +73,7 @@ func NewMobileAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MobileAppsRequestBuilder) Count()(*id7d2fdbffd5a25c50c69d0cd0badc4edba2ed341c20ce4e6350391399d9239b2.CountRequestBuilder) {
     return id7d2fdbffd5a25c50c69d0cd0badc4edba2ed341c20ce4e6350391399d9239b2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,11 +126,11 @@ func (m *MobileAppsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCollectionResponseable), nil
 }
-// ManagedMobileLobApp the managedMobileLobApp property
+// ManagedMobileLobApp casts the previous resource to managedMobileLobApp.
 func (m *MobileAppsRequestBuilder) ManagedMobileLobApp()(*i65c97242e620fd0c9d68e46ec0eb75ba451a85c8c9d174114234d9d7649f77a6.ManagedMobileLobAppRequestBuilder) {
     return i65c97242e620fd0c9d68e46ec0eb75ba451a85c8c9d174114234d9d7649f77a6.NewManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MobileLobApp the mobileLobApp property
+// MobileLobApp casts the previous resource to mobileLobApp.
 func (m *MobileAppsRequestBuilder) MobileLobApp()(*i0abc631e125255709ac3cbf389c1dc71b4a65fe90e63cb355832a8152e077c33.MobileLobAppRequestBuilder) {
     return i0abc631e125255709ac3cbf389c1dc71b4a65fe90e63cb355832a8152e077c33.NewMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

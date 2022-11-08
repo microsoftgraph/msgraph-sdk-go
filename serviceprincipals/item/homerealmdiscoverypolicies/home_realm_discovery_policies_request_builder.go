@@ -65,7 +65,7 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*i3dfc6630970b4cf1bdc13ea02cd2bf16023fbf02df66d59f36ab6c7756c170e9.CountRequestBuilder) {
     return i3dfc6630970b4cf1bdc13ea02cd2bf16023fbf02df66d59f36ab6c7756c170e9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Ref()(*ie08f8d823a1fd503fb76ab6e1a00f7e20ee2b0c22dcbc7f47d1a71ff686c945a.RefRequestBuilder) {
     return ie08f8d823a1fd503fb76ab6e1a00f7e20ee2b0c22dcbc7f47d1a71ff686c945a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -89,11 +89,11 @@ func (m *OutlookRequestBuilder) Get(ctx context.Context, requestConfiguration *O
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookUserable), nil
 }
-// MasterCategories the masterCategories property
+// MasterCategories provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) MasterCategories()(*icc3e92b7111767420ec0be836502793f8a368fa468daf7fdf8e65cc66f0e087f.MasterCategoriesRequestBuilder) {
     return icc3e92b7111767420ec0be836502793f8a368fa468daf7fdf8e65cc66f0e087f.NewMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MasterCategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.outlook.masterCategories.item collection
+// MasterCategoriesById provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*ifa2143032fa73c15f7bf7cc659bb2bb69f28a378f9584ec6f7ccf4d2b3d29868.OutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

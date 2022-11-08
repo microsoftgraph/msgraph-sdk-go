@@ -64,7 +64,7 @@ func NewAllChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAllChannelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AllChannelsRequestBuilder) Count()(*iedee6168b678e5fba68c1fae62599145f7be0ac4b470c8e0bca81786e297a6a5.CountRequestBuilder) {
     return iedee6168b678e5fba68c1fae62599145f7be0ac4b470c8e0bca81786e297a6a5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

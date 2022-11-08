@@ -71,7 +71,7 @@ func NewDirectoryAuditsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryAuditsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DirectoryAuditsRequestBuilder) Count()(*ife7664223b3ee54348c23c0284f781e54945760039c67473846fc45e2fc2a52e.CountRequestBuilder) {
     return ife7664223b3ee54348c23c0284f781e54945760039c67473846fc45e2fc2a52e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

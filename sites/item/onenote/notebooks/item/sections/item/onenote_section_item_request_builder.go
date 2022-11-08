@@ -71,11 +71,11 @@ func NewOnenoteSectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewOnenoteSectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CopyToNotebook the copyToNotebook property
+// CopyToNotebook provides operations to call the copyToNotebook method.
 func (m *OnenoteSectionItemRequestBuilder) CopyToNotebook()(*i44235afe4d281e29e2cd6b9abe12f703ec1959f43cd3be6ea227b53da7492dd7.CopyToNotebookRequestBuilder) {
     return i44235afe4d281e29e2cd6b9abe12f703ec1959f43cd3be6ea227b53da7492dd7.NewCopyToNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CopyToSectionGroup the copyToSectionGroup property
+// CopyToSectionGroup provides operations to call the copyToSectionGroup method.
 func (m *OnenoteSectionItemRequestBuilder) CopyToSectionGroup()(*i0788ee8cc0f88534473ad867f6033f79c94d3ced1d865def09e887a4af6505f0.CopyToSectionGroupRequestBuilder) {
     return i0788ee8cc0f88534473ad867f6033f79c94d3ced1d865def09e887a4af6505f0.NewCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -156,11 +156,11 @@ func (m *OnenoteSectionItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
 }
-// Pages the pages property
+// Pages provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
 func (m *OnenoteSectionItemRequestBuilder) Pages()(*i090eb63c39e2c392547c70c8250c04ea9dc1ea28fd27551825475fe51dedb728.PagesRequestBuilder) {
     return i090eb63c39e2c392547c70c8250c04ea9dc1ea28fd27551825475fe51dedb728.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.onenote.notebooks.item.sections.item.pages.item collection
+// PagesById provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
 func (m *OnenoteSectionItemRequestBuilder) PagesById(id string)(*icd8f355cf1b63abcb90f8942bfacbc3a61d12900f6fa5545795d228102f51471.OnenotePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,11 +171,11 @@ func (m *OnenoteSectionItemRequestBuilder) PagesById(id string)(*icd8f355cf1b63a
     }
     return icd8f355cf1b63abcb90f8942bfacbc3a61d12900f6fa5545795d228102f51471.NewOnenotePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ParentNotebook the parentNotebook property
+// ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenoteSection entity.
 func (m *OnenoteSectionItemRequestBuilder) ParentNotebook()(*i7fda827a8abe7ff3582c46ee5993acec0f2c7f7fe245e0e35e98367e8db423c5.ParentNotebookRequestBuilder) {
     return i7fda827a8abe7ff3582c46ee5993acec0f2c7f7fe245e0e35e98367e8db423c5.NewParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ParentSectionGroup the parentSectionGroup property
+// ParentSectionGroup provides operations to manage the parentSectionGroup property of the microsoft.graph.onenoteSection entity.
 func (m *OnenoteSectionItemRequestBuilder) ParentSectionGroup()(*i84bdfed9ec30dc209a4c530b508d815c14183bd652a5999a2f6f72613165ac5b.ParentSectionGroupRequestBuilder) {
     return i84bdfed9ec30dc209a4c530b508d815c14183bd652a5999a2f6f72613165ac5b.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

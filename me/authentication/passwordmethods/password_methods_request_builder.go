@@ -71,7 +71,7 @@ func NewPasswordMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewPasswordMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PasswordMethodsRequestBuilder) Count()(*i9a22354225cef9d2de7ed94ccdb90cbed99cfa6beb7d9be01e7ca1728491aa24.CountRequestBuilder) {
     return i9a22354225cef9d2de7ed94ccdb90cbed99cfa6beb7d9be01e7ca1728491aa24.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

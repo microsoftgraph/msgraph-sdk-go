@@ -71,7 +71,7 @@ func NewWorkbooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WorkbooksRequestBuilder) Count()(*i8f28839636159abb8766505c2fe22b5ddc8bb66cce0effb233b5ed73395ef19a.CountRequestBuilder) {
     return i8f28839636159abb8766505c2fe22b5ddc8bb66cce0effb233b5ed73395ef19a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

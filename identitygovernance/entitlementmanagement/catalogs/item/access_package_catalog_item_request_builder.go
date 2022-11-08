@@ -48,11 +48,11 @@ type AccessPackageCatalogItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackages the accessPackages property
+// AccessPackages provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
 func (m *AccessPackageCatalogItemRequestBuilder) AccessPackages()(*ica7454f9cf5c4c21b0bcef6dd99bb1fabc3ca13ed31a91a66b798d4b2ee3b407.AccessPackagesRequestBuilder) {
     return ica7454f9cf5c4c21b0bcef6dd99bb1fabc3ca13ed31a91a66b798d4b2ee3b407.NewAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item collection
+// AccessPackagesById provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
 func (m *AccessPackageCatalogItemRequestBuilder) AccessPackagesById(id string)(*if2c5a5dede3638543a8b7db0a1884b98178699de8cb769c6cd95c2a9878161b1.AccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

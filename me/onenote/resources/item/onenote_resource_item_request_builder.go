@@ -66,7 +66,7 @@ func NewOnenoteResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewOnenoteResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the user entity.
 func (m *OnenoteResourceItemRequestBuilder) Content()(*i5151e72da41fce900eff8746bd7b93bd94e423cd65d12ad610664827bcae6b22.ContentRequestBuilder) {
     return i5151e72da41fce900eff8746bd7b93bd94e423cd65d12ad610664827bcae6b22.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
