@@ -13,7 +13,7 @@ type ProvisionedIdentity struct {
     // Type of identity that has been provisioned, such as 'user' or 'group'.
     identityType *string
 }
-// NewProvisionedIdentity instantiates a new ProvisionedIdentity and sets the default values.
+// NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {
     m := &ProvisionedIdentity{
         Identity: *NewIdentity(),

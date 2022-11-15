@@ -8,7 +8,7 @@ import (
 type WorkbookRangeSort struct {
     Entity
 }
-// NewWorkbookRangeSort instantiates a new workbookRangeSort and sets the default values.
+// NewWorkbookRangeSort instantiates a new WorkbookRangeSort and sets the default values.
 func NewWorkbookRangeSort()(*WorkbookRangeSort) {
     m := &WorkbookRangeSort{
         Entity: *NewEntity(),

@@ -11,7 +11,7 @@ type ProvisioningSystem struct {
     // Details of the system.
     details DetailsInfoable
 }
-// NewProvisioningSystem instantiates a new ProvisioningSystem and sets the default values.
+// NewProvisioningSystem instantiates a new provisioningSystem and sets the default values.
 func NewProvisioningSystem()(*ProvisioningSystem) {
     m := &ProvisioningSystem{
         Identity: *NewIdentity(),

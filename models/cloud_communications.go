@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudCommunications provides operations to manage the cloudCommunications singleton.
+// CloudCommunications 
 type CloudCommunications struct {
     Entity
     // The calls property
@@ -15,7 +15,7 @@ type CloudCommunications struct {
     // The presences property
     presences []Presenceable
 }
-// NewCloudCommunications instantiates a new cloudCommunications and sets the default values.
+// NewCloudCommunications instantiates a new CloudCommunications and sets the default values.
 func NewCloudCommunications()(*CloudCommunications) {
     m := &CloudCommunications{
         Entity: *NewEntity(),

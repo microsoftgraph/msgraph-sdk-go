@@ -8,7 +8,7 @@ import (
 // ServicePrincipal 
 type ServicePrincipal struct {
     DirectoryObject
-    // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+    // true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
     accountEnabled *bool
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
     addIns []AddInable
@@ -105,7 +105,7 @@ type ServicePrincipal struct {
     // Specifies the verified publisher of the application which this service principal represents.
     verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -118,7 +118,7 @@ func NewServicePrincipal()(*ServicePrincipal) {
 func CreateServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipal(), nil
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+// GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
 func (m *ServicePrincipal) GetAccountEnabled()(*bool) {
     return m.accountEnabled
 }
@@ -680,7 +680,7 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+// SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
 func (m *ServicePrincipal) SetAccountEnabled(value *bool)() {
     m.accountEnabled = value
 }

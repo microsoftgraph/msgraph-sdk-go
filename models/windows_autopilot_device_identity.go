@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAutopilotDeviceIdentity the windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
+// WindowsAutopilotDeviceIdentity 
 type WindowsAutopilotDeviceIdentity struct {
     Entity
     // Addressable user name.
@@ -42,7 +42,7 @@ type WindowsAutopilotDeviceIdentity struct {
     // User Principal Name.
     userPrincipalName *string
 }
-// NewWindowsAutopilotDeviceIdentity instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
+// NewWindowsAutopilotDeviceIdentity instantiates a new WindowsAutopilotDeviceIdentity and sets the default values.
 func NewWindowsAutopilotDeviceIdentity()(*WindowsAutopilotDeviceIdentity) {
     m := &WindowsAutopilotDeviceIdentity{
         Entity: *NewEntity(),

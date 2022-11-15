@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ConnectionOperation provides operations to manage the collection of externalConnection entities.
+// ConnectionOperation provides operations to manage the collection of agreement entities.
 type ConnectionOperation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // If status is failed, provides more information about the error that caused the failure.

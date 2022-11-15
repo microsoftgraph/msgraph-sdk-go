@@ -8,7 +8,7 @@ import (
 type EdiscoveryIndexOperation struct {
     CaseOperation
 }
-// NewEdiscoveryIndexOperation instantiates a new ediscoveryIndexOperation and sets the default values.
+// NewEdiscoveryIndexOperation instantiates a new EdiscoveryIndexOperation and sets the default values.
 func NewEdiscoveryIndexOperation()(*EdiscoveryIndexOperation) {
     m := &EdiscoveryIndexOperation{
         CaseOperation: *NewCaseOperation(),

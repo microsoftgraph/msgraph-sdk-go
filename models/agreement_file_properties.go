@@ -24,7 +24,7 @@ type AgreementFileProperties struct {
     // The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
     language *string
 }
-// NewAgreementFileProperties instantiates a new agreementFileProperties and sets the default values.
+// NewAgreementFileProperties instantiates a new AgreementFileProperties and sets the default values.
 func NewAgreementFileProperties()(*AgreementFileProperties) {
     m := &AgreementFileProperties{
         Entity: *NewEntity(),

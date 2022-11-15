@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Site 
+// Site provides operations to manage the collection of agreementAcceptance entities.
 type Site struct {
     BaseItem
     // Analytics about the view activities that took place in this site.
@@ -43,7 +43,7 @@ type Site struct {
     // The collection of the sub-sites under this site.
     sites []Siteable
 }
-// NewSite instantiates a new Site and sets the default values.
+// NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),

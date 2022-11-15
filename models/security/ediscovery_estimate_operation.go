@@ -23,7 +23,7 @@ type EdiscoveryEstimateOperation struct {
     // The estimated size of unindexed items for the collection.
     unindexedItemsSize *int64
 }
-// NewEdiscoveryEstimateOperation instantiates a new ediscoveryEstimateOperation and sets the default values.
+// NewEdiscoveryEstimateOperation instantiates a new EdiscoveryEstimateOperation and sets the default values.
 func NewEdiscoveryEstimateOperation()(*EdiscoveryEstimateOperation) {
     m := &EdiscoveryEstimateOperation{
         CaseOperation: *NewCaseOperation(),

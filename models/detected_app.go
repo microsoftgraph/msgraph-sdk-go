@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DetectedApp a managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
+// DetectedApp 
 type DetectedApp struct {
     Entity
     // The number of devices that have installed this application
@@ -23,7 +23,7 @@ type DetectedApp struct {
     // Version of the discovered application. Read-only
     version *string
 }
-// NewDetectedApp instantiates a new detectedApp and sets the default values.
+// NewDetectedApp instantiates a new DetectedApp and sets the default values.
 func NewDetectedApp()(*DetectedApp) {
     m := &DetectedApp{
         Entity: *NewEntity(),

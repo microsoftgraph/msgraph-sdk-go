@@ -8,7 +8,7 @@ import (
 type ProvisioningServicePrincipal struct {
     Identity
 }
-// NewProvisioningServicePrincipal instantiates a new ProvisioningServicePrincipal and sets the default values.
+// NewProvisioningServicePrincipal instantiates a new provisioningServicePrincipal and sets the default values.
 func NewProvisioningServicePrincipal()(*ProvisioningServicePrincipal) {
     m := &ProvisioningServicePrincipal{
         Identity: *NewIdentity(),

@@ -21,7 +21,7 @@ type AdminConsentRequestPolicy struct {
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     version *int32
 }
-// NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
+// NewAdminConsentRequestPolicy instantiates a new AdminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
     m := &AdminConsentRequestPolicy{
         Entity: *NewEntity(),

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the instantiate method.
+// Provides operations to manage the admin singleton.
 type PermissionClassificationType int
 
 const (

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionGrantConditionSet provides operations to manage the collection of application entities.
+// PermissionGrantConditionSet provides operations to manage the admin singleton.
 type PermissionGrantConditionSet struct {
     Entity
     // A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.

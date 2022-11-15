@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileLobApp 
+// MobileLobApp an abstract base class containing properties for all mobile line of business apps.
 type MobileLobApp struct {
     MobileApp
     // The internal committed content version.
@@ -17,7 +17,7 @@ type MobileLobApp struct {
     // The total size, including all uploaded files.
     size *int64
 }
-// NewMobileLobApp instantiates a new MobileLobApp and sets the default values.
+// NewMobileLobApp instantiates a new mobileLobApp and sets the default values.
 func NewMobileLobApp()(*MobileLobApp) {
     m := &MobileLobApp{
         MobileApp: *NewMobileApp(),

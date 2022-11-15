@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
+// Provides operations to manage the admin singleton.
 type DetectedAppPlatformType int
 
 const (

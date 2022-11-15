@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Agreement provides operations to manage the collection of agreement entities.
+// Agreement 
 type Agreement struct {
     Entity
     // Read-only. Information about acceptances of this agreement.
@@ -25,7 +25,7 @@ type Agreement struct {
     // The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
     userReacceptRequiredFrequency *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
-// NewAgreement instantiates a new agreement and sets the default values.
+// NewAgreement instantiates a new Agreement and sets the default values.
 func NewAgreement()(*Agreement) {
     m := &Agreement{
         Entity: *NewEntity(),

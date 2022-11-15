@@ -11,7 +11,7 @@ type AgreementFile struct {
     // The localized version of the terms of use agreement files attached to the agreement.
     localizations []AgreementFileLocalizationable
 }
-// NewAgreementFile instantiates a new AgreementFile and sets the default values.
+// NewAgreementFile instantiates a new agreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),

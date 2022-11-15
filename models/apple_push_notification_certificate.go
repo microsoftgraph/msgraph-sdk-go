@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplePushNotificationCertificate apple push notification certificate.
+// ApplePushNotificationCertificate 
 type ApplePushNotificationCertificate struct {
     Entity
     // Apple Id of the account used to create the MDM push certificate.
@@ -26,7 +26,7 @@ type ApplePushNotificationCertificate struct {
     // Topic Id.
     topicIdentifier *string
 }
-// NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
+// NewApplePushNotificationCertificate instantiates a new ApplePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     m := &ApplePushNotificationCertificate{
         Entity: *NewEntity(),

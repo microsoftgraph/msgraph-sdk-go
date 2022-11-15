@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryReviewSetQuery 
+// EdiscoveryReviewSetQuery provides operations to manage the collection of agreement entities.
 type EdiscoveryReviewSetQuery struct {
     Search
 }
-// NewEdiscoveryReviewSetQuery instantiates a new EdiscoveryReviewSetQuery and sets the default values.
+// NewEdiscoveryReviewSetQuery instantiates a new ediscoveryReviewSetQuery and sets the default values.
 func NewEdiscoveryReviewSetQuery()(*EdiscoveryReviewSetQuery) {
     m := &EdiscoveryReviewSetQuery{
         Search: *NewSearch(),

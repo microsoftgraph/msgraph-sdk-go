@@ -15,7 +15,7 @@ type AuthenticationFlowsPolicy struct {
     // Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
     selfServiceSignUp SelfServiceSignUpAuthenticationFlowConfigurationable
 }
-// NewAuthenticationFlowsPolicy instantiates a new authenticationFlowsPolicy and sets the default values.
+// NewAuthenticationFlowsPolicy instantiates a new AuthenticationFlowsPolicy and sets the default values.
 func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
     m := &AuthenticationFlowsPolicy{
         Entity: *NewEntity(),
