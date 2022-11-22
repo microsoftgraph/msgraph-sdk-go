@@ -16,8 +16,6 @@ func NewRemoteLockActionResult()(*RemoteLockActionResult) {
     m := &RemoteLockActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
     }
-    odataTypeValue := "#microsoft.graph.remoteLockActionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRemoteLockActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

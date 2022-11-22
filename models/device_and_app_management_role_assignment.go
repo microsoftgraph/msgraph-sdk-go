@@ -16,8 +16,6 @@ func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssign
     m := &DeviceAndAppManagementRoleAssignment{
         RoleAssignment: *NewRoleAssignment(),
     }
-    odataTypeValue := "#microsoft.graph.deviceAndAppManagementRoleAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

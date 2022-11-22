@@ -21,8 +21,6 @@ func NewEducationTeacher()(*EducationTeacher) {
     m := &EducationTeacher{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationTeacher";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationTeacherFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

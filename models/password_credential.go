@@ -32,8 +32,6 @@ func NewPasswordCredential()(*PasswordCredential) {
     m := &PasswordCredential{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.passwordCredential";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

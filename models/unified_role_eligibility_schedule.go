@@ -18,8 +18,6 @@ func NewUnifiedRoleEligibilitySchedule()(*UnifiedRoleEligibilitySchedule) {
     m := &UnifiedRoleEligibilitySchedule{
         UnifiedRoleScheduleBase: *NewUnifiedRoleScheduleBase(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleEligibilitySchedule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

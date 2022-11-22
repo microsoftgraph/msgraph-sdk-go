@@ -27,8 +27,6 @@ func NewVisualInfo()(*VisualInfo) {
     m := &VisualInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.visualInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVisualInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

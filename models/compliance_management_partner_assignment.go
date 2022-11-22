@@ -19,8 +19,6 @@ func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssi
     m := &ComplianceManagementPartnerAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.complianceManagementPartnerAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

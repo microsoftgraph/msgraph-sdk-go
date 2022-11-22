@@ -27,8 +27,6 @@ func NewPhysicalAddress()(*PhysicalAddress) {
     m := &PhysicalAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.physicalAddress";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePhysicalAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

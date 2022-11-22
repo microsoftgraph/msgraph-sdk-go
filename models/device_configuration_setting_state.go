@@ -41,8 +41,6 @@ func NewDeviceConfigurationSettingState()(*DeviceConfigurationSettingState) {
     m := &DeviceConfigurationSettingState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceConfigurationSettingState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

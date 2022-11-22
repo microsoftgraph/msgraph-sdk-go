@@ -21,8 +21,6 @@ func NewItemBody()(*ItemBody) {
     m := &ItemBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.itemBody";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

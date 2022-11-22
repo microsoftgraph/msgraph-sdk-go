@@ -25,8 +25,6 @@ func NewPkcs12CertificateInformation()(*Pkcs12CertificateInformation) {
     m := &Pkcs12CertificateInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.pkcs12CertificateInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePkcs12CertificateInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

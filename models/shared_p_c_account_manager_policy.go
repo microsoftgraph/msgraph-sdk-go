@@ -25,8 +25,6 @@ func NewSharedPCAccountManagerPolicy()(*SharedPCAccountManagerPolicy) {
     m := &SharedPCAccountManagerPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sharedPCAccountManagerPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharedPCAccountManagerPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

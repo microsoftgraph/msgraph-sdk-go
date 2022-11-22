@@ -17,8 +17,6 @@ func NewJson()(*Json) {
     m := &Json{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.Json";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateJsonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

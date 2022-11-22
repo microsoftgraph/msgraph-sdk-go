@@ -19,8 +19,6 @@ func NewPackage_escaped()(*Package_escaped) {
     m := &Package_escaped{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.package";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePackage_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

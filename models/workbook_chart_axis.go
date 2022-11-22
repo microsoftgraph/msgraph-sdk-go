@@ -30,8 +30,6 @@ func NewWorkbookChartAxis()(*WorkbookChartAxis) {
     m := &WorkbookChartAxis{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookChartAxis";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartAxisFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

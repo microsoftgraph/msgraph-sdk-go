@@ -25,8 +25,6 @@ func NewIncomingContext()(*IncomingContext) {
     m := &IncomingContext{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.incomingContext";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIncomingContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

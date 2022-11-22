@@ -23,8 +23,6 @@ func NewAppConfigurationSettingItem()(*AppConfigurationSettingItem) {
     m := &AppConfigurationSettingItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appConfigurationSettingItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppConfigurationSettingItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

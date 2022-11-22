@@ -13,8 +13,6 @@ func NewResultTemplateDictionary()(*ResultTemplateDictionary) {
     m := &ResultTemplateDictionary{
         Dictionary: *NewDictionary(),
     }
-    odataTypeValue := "#microsoft.graph.resultTemplateDictionary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResultTemplateDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

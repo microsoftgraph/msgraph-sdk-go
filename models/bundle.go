@@ -21,8 +21,6 @@ func NewBundle()(*Bundle) {
     m := &Bundle{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.bundle";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBundleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

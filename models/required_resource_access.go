@@ -21,8 +21,6 @@ func NewRequiredResourceAccess()(*RequiredResourceAccess) {
     m := &RequiredResourceAccess{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.requiredResourceAccess";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRequiredResourceAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

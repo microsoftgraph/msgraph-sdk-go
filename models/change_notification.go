@@ -38,8 +38,6 @@ func NewChangeNotification()(*ChangeNotification) {
     m := &ChangeNotification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.changeNotification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChangeNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

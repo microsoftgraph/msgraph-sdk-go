@@ -23,8 +23,6 @@ func NewLicenseUnitsDetail()(*LicenseUnitsDetail) {
     m := &LicenseUnitsDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.licenseUnitsDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLicenseUnitsDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

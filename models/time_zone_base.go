@@ -19,8 +19,6 @@ func NewTimeZoneBase()(*TimeZoneBase) {
     m := &TimeZoneBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.timeZoneBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeZoneBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

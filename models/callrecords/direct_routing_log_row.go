@@ -60,8 +60,6 @@ func NewDirectRoutingLogRow()(*DirectRoutingLogRow) {
     m := &DirectRoutingLogRow{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.directRoutingLogRow";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectRoutingLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

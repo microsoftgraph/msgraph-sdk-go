@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookPivotTable provides operations to manage the collection of agreementAcceptance entities.
+// WorkbookPivotTable provides operations to manage the collection of agreement entities.
 type WorkbookPivotTable struct {
     Entity
     // Name of the PivotTable.
@@ -18,8 +18,6 @@ func NewWorkbookPivotTable()(*WorkbookPivotTable) {
     m := &WorkbookPivotTable{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookPivotTable";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookPivotTableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

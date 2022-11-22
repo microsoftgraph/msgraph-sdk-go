@@ -21,8 +21,6 @@ func NewPreAuthorizedApplication()(*PreAuthorizedApplication) {
     m := &PreAuthorizedApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.preAuthorizedApplication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePreAuthorizedApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

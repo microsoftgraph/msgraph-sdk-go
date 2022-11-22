@@ -23,8 +23,6 @@ func NewConditionalAccessPolicyDetail()(*ConditionalAccessPolicyDetail) {
     m := &ConditionalAccessPolicyDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessPolicyDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessPolicyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewTargetedManagedAppPolicyAssignment()(*TargetedManagedAppPolicyAssignment
     m := &TargetedManagedAppPolicyAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.targetedManagedAppPolicyAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

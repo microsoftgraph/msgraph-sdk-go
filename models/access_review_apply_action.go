@@ -17,8 +17,6 @@ func NewAccessReviewApplyAction()(*AccessReviewApplyAction) {
     m := &AccessReviewApplyAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessReviewApplyAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewApplyActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewDriveItemUploadableProperties()(*DriveItemUploadableProperties) {
     m := &DriveItemUploadableProperties{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.driveItemUploadableProperties";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveItemUploadablePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

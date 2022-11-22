@@ -17,8 +17,6 @@ func NewApiAuthenticationConfigurationBase()(*ApiAuthenticationConfigurationBase
     m := &ApiAuthenticationConfigurationBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.apiAuthenticationConfigurationBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApiAuthenticationConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

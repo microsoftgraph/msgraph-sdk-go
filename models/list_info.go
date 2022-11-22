@@ -23,8 +23,6 @@ func NewListInfo()(*ListInfo) {
     m := &ListInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.listInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateListInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

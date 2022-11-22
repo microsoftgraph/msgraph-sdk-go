@@ -25,8 +25,6 @@ func NewTeamFunSettings()(*TeamFunSettings) {
     m := &TeamFunSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamFunSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamFunSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

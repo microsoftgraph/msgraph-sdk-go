@@ -22,8 +22,6 @@ func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     m := &RichLongRunningOperation{
         LongRunningOperation: *NewLongRunningOperation(),
     }
-    odataTypeValue := "#microsoft.graph.richLongRunningOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRichLongRunningOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

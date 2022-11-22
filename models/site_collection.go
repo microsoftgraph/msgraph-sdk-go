@@ -23,8 +23,6 @@ func NewSiteCollection()(*SiteCollection) {
     m := &SiteCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.siteCollection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSiteCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

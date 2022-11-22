@@ -21,8 +21,6 @@ func NewMicrosoftAuthenticatorFeatureSettings()(*MicrosoftAuthenticatorFeatureSe
     m := &MicrosoftAuthenticatorFeatureSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.microsoftAuthenticatorFeatureSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftAuthenticatorFeatureSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

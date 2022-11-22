@@ -23,8 +23,6 @@ func NewOptionalClaims()(*OptionalClaims) {
     m := &OptionalClaims{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.optionalClaims";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOptionalClaimsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewAppListItem()(*AppListItem) {
     m := &AppListItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appListItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

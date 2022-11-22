@@ -23,8 +23,6 @@ func NewUserFeedback()(*UserFeedback) {
     m := &UserFeedback{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.userFeedback";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserFeedbackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

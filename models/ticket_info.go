@@ -21,8 +21,6 @@ func NewTicketInfo()(*TicketInfo) {
     m := &TicketInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.ticketInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTicketInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

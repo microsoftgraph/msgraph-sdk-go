@@ -21,8 +21,6 @@ func NewDateTimeTimeZone()(*DateTimeTimeZone) {
     m := &DateTimeTimeZone{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.dateTimeTimeZone";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDateTimeTimeZoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {
     m := &ApplicationServicePrincipal{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.applicationServicePrincipal";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplicationServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

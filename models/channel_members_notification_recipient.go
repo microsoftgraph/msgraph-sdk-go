@@ -8,9 +8,9 @@ import (
 // ChannelMembersNotificationRecipient 
 type ChannelMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The channelId property
+    // The unique identifier for the channel whose members should receive the notification.
     channelId *string
-    // The teamId property
+    // The unique identifier for the team under which the channel resides.
     teamId *string
 }
 // NewChannelMembersNotificationRecipient instantiates a new ChannelMembersNotificationRecipient and sets the default values.
@@ -26,7 +26,7 @@ func NewChannelMembersNotificationRecipient()(*ChannelMembersNotificationRecipie
 func CreateChannelMembersNotificationRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannelMembersNotificationRecipient(), nil
 }
-// GetChannelId gets the channelId property value. The channelId property
+// GetChannelId gets the channelId property value. The unique identifier for the channel whose members should receive the notification.
 func (m *ChannelMembersNotificationRecipient) GetChannelId()(*string) {
     return m.channelId
 }
@@ -37,7 +37,7 @@ func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string
     res["teamId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTeamId)
     return res
 }
-// GetTeamId gets the teamId property value. The teamId property
+// GetTeamId gets the teamId property value. The unique identifier for the team under which the channel resides.
 func (m *ChannelMembersNotificationRecipient) GetTeamId()(*string) {
     return m.teamId
 }
@@ -61,11 +61,11 @@ func (m *ChannelMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetChannelId sets the channelId property value. The channelId property
+// SetChannelId sets the channelId property value. The unique identifier for the channel whose members should receive the notification.
 func (m *ChannelMembersNotificationRecipient) SetChannelId(value *string)() {
     m.channelId = value
 }
-// SetTeamId sets the teamId property value. The teamId property
+// SetTeamId sets the teamId property value. The unique identifier for the team under which the channel resides.
 func (m *ChannelMembersNotificationRecipient) SetTeamId(value *string)() {
     m.teamId = value
 }

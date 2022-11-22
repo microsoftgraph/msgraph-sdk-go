@@ -55,8 +55,6 @@ func NewPrintJobConfiguration()(*PrintJobConfiguration) {
     m := &PrintJobConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printJobConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintJobConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

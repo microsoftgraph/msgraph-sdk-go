@@ -17,8 +17,6 @@ func NewPlannerAppliedCategories()(*PlannerAppliedCategories) {
     m := &PlannerAppliedCategories{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerAppliedCategories";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerAppliedCategoriesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

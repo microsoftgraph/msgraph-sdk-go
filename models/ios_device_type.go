@@ -21,8 +21,6 @@ func NewIosDeviceType()(*IosDeviceType) {
     m := &IosDeviceType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.iosDeviceType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

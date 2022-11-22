@@ -22,8 +22,6 @@ func NewChatViewpoint()(*ChatViewpoint) {
     m := &ChatViewpoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.chatViewpoint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

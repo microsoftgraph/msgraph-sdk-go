@@ -52,8 +52,6 @@ func NewSchedule()(*Schedule) {
     m := &Schedule{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.schedule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

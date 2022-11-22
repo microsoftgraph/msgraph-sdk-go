@@ -17,8 +17,6 @@ func NewDetailsInfo()(*DetailsInfo) {
     m := &DetailsInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.detailsInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDetailsInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

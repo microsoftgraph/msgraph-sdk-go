@@ -17,8 +17,6 @@ func NewPlannerOrderHintsByAssignee()(*PlannerOrderHintsByAssignee) {
     m := &PlannerOrderHintsByAssignee{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerOrderHintsByAssignee";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerOrderHintsByAssigneeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

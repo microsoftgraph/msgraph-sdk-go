@@ -36,8 +36,6 @@ func NewPhoto()(*Photo) {
     m := &Photo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.photo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

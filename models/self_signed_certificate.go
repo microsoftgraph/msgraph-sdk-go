@@ -36,8 +36,6 @@ func NewSelfSignedCertificate()(*SelfSignedCertificate) {
     m := &SelfSignedCertificate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.selfSignedCertificate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSelfSignedCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

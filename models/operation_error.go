@@ -21,8 +21,6 @@ func NewOperationError()(*OperationError) {
     m := &OperationError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.operationError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

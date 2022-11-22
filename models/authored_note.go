@@ -21,8 +21,6 @@ func NewAuthoredNote()(*AuthoredNote) {
     m := &AuthoredNote{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.authoredNote";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthoredNoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewServiceHealthIssuePost()(*ServiceHealthIssuePost) {
     m := &ServiceHealthIssuePost{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.serviceHealthIssuePost";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceHealthIssuePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewRecommendedAction()(*RecommendedAction) {
     m := &RecommendedAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.recommendedAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecommendedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

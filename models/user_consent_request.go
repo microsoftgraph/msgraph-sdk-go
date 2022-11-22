@@ -18,8 +18,6 @@ func NewUserConsentRequest()(*UserConsentRequest) {
     m := &UserConsentRequest{
         Request: *NewRequest(),
     }
-    odataTypeValue := "#microsoft.graph.userConsentRequest";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserConsentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

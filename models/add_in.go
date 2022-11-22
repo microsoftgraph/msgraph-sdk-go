@@ -23,8 +23,6 @@ func NewAddIn()(*AddIn) {
     m := &AddIn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.addIn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAddInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

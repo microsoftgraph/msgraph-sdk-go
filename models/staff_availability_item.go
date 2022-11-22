@@ -21,8 +21,6 @@ func NewStaffAvailabilityItem()(*StaffAvailabilityItem) {
     m := &StaffAvailabilityItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.staffAvailabilityItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStaffAvailabilityItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

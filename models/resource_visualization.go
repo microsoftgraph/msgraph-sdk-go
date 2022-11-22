@@ -33,8 +33,6 @@ func NewResourceVisualization()(*ResourceVisualization) {
     m := &ResourceVisualization{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.resourceVisualization";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResourceVisualizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalConnectors.externalItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

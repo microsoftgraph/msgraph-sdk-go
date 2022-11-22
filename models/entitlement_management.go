@@ -30,8 +30,6 @@ func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.entitlementManagement";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEntitlementManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

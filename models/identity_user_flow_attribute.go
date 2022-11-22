@@ -22,8 +22,6 @@ func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
     m := &IdentityUserFlowAttribute{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityUserFlowAttribute";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityUserFlowAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

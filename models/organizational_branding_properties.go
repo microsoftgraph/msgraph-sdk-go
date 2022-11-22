@@ -34,8 +34,6 @@ func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
     m := &OrganizationalBrandingProperties{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.organizationalBrandingProperties";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOrganizationalBrandingPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

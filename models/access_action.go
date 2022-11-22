@@ -17,8 +17,6 @@ func NewAccessAction()(*AccessAction) {
     m := &AccessAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

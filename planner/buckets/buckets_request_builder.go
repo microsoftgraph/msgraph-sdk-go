@@ -91,7 +91,7 @@ func (m *BucketsRequestBuilder) CreateGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation use this API to create a new **plannerBucket**.
+// CreatePostRequestInformation create a new plannerBucket object.
 func (m *BucketsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, requestConfiguration *BucketsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,7 +124,7 @@ func (m *BucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *B
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketCollectionResponseable), nil
 }
-// Post use this API to create a new **plannerBucket**.
+// Post create a new plannerBucket object.
 func (m *BucketsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, requestConfiguration *BucketsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

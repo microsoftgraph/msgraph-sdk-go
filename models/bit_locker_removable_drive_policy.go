@@ -23,8 +23,6 @@ func NewBitLockerRemovableDrivePolicy()(*BitLockerRemovableDrivePolicy) {
     m := &BitLockerRemovableDrivePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.bitLockerRemovableDrivePolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBitLockerRemovableDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,8 +13,6 @@ func NewTeamworkBot()(*TeamworkBot) {
     m := &TeamworkBot{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkBot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkBotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

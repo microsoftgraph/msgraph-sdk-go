@@ -34,8 +34,6 @@ func NewDeviceGeoLocation()(*DeviceGeoLocation) {
     m := &DeviceGeoLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceGeoLocation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceGeoLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

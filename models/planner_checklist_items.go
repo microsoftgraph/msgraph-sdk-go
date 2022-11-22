@@ -17,8 +17,6 @@ func NewPlannerChecklistItems()(*PlannerChecklistItems) {
     m := &PlannerChecklistItems{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerChecklistItems";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerChecklistItemsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

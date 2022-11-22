@@ -19,8 +19,6 @@ func NewRubricCriterion()(*RubricCriterion) {
     m := &RubricCriterion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.rubricCriterion";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRubricCriterionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

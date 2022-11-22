@@ -29,8 +29,6 @@ func NewWorkbookSortField()(*WorkbookSortField) {
     m := &WorkbookSortField{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.workbookSortField";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookSortFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

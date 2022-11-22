@@ -29,8 +29,6 @@ func NewSharingLink()(*SharingLink) {
     m := &SharingLink{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sharingLink";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharingLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

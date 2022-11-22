@@ -13,8 +13,6 @@ func NewFieldValueSet()(*FieldValueSet) {
     m := &FieldValueSet{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.fieldValueSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFieldValueSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

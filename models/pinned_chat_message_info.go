@@ -16,8 +16,6 @@ func NewPinnedChatMessageInfo()(*PinnedChatMessageInfo) {
     m := &PinnedChatMessageInfo{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.pinnedChatMessageInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePinnedChatMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

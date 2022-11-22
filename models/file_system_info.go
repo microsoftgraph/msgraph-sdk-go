@@ -24,8 +24,6 @@ func NewFileSystemInfo()(*FileSystemInfo) {
     m := &FileSystemInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.fileSystemInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileSystemInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

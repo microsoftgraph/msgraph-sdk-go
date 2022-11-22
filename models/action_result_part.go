@@ -19,8 +19,6 @@ func NewActionResultPart()(*ActionResultPart) {
     m := &ActionResultPart{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.actionResultPart";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateActionResultPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

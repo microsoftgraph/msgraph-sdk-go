@@ -41,8 +41,6 @@ func NewMacOSMinimumOperatingSystem()(*MacOSMinimumOperatingSystem) {
     m := &MacOSMinimumOperatingSystem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSMinimumOperatingSystem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

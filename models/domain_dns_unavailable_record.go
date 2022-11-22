@@ -16,8 +16,6 @@ func NewDomainDnsUnavailableRecord()(*DomainDnsUnavailableRecord) {
     m := &DomainDnsUnavailableRecord{
         DomainDnsRecord: *NewDomainDnsRecord(),
     }
-    odataTypeValue := "#microsoft.graph.domainDnsUnavailableRecord";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDomainDnsUnavailableRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

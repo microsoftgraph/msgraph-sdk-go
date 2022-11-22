@@ -27,8 +27,6 @@ func NewChatMessageInfo()(*ChatMessageInfo) {
     m := &ChatMessageInfo{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.chatMessageInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

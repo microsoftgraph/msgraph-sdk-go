@@ -23,8 +23,6 @@ func NewTraceRouteHop()(*TraceRouteHop) {
     m := &TraceRouteHop{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.traceRouteHop";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTraceRouteHopFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

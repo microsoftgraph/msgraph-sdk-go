@@ -29,8 +29,6 @@ func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {
     m := &BroadcastMeetingSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.broadcastMeetingSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBroadcastMeetingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

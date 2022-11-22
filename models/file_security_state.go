@@ -25,8 +25,6 @@ func NewFileSecurityState()(*FileSecurityState) {
     m := &FileSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.fileSecurityState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

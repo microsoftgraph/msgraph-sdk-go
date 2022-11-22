@@ -21,8 +21,6 @@ func NewSolutionsRoot()(*SolutionsRoot) {
     m := &SolutionsRoot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.solutionsRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSolutionsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewDeleted()(*Deleted) {
     m := &Deleted{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deleted";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeletedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

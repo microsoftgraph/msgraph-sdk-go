@@ -19,8 +19,6 @@ func NewSpecialFolder()(*SpecialFolder) {
     m := &SpecialFolder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.specialFolder";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSpecialFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

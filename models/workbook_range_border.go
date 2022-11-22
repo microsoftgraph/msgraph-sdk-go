@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeBorder provides operations to manage the collection of agreementAcceptance entities.
+// WorkbookRangeBorder provides operations to manage the collection of agreement entities.
 type WorkbookRangeBorder struct {
     Entity
     // HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
@@ -22,8 +22,6 @@ func NewWorkbookRangeBorder()(*WorkbookRangeBorder) {
     m := &WorkbookRangeBorder{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookRangeBorder";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeBorderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

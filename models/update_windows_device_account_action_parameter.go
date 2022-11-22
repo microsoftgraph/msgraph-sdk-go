@@ -29,8 +29,6 @@ func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountA
     m := &UpdateWindowsDeviceAccountActionParameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.updateWindowsDeviceAccountActionParameter";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

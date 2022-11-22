@@ -23,8 +23,6 @@ func NewSubjectRightsRequestStageDetail()(*SubjectRightsRequestStageDetail) {
     m := &SubjectRightsRequestStageDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.subjectRightsRequestStageDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestStageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

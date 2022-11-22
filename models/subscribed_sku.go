@@ -28,8 +28,6 @@ func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.subscribedSku";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubscribedSkuFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

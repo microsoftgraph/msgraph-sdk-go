@@ -21,8 +21,6 @@ func NewExtensionSchemaProperty()(*ExtensionSchemaProperty) {
     m := &ExtensionSchemaProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.extensionSchemaProperty";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExtensionSchemaPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

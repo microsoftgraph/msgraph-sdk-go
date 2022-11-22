@@ -23,8 +23,6 @@ func NewDriveRecipient()(*DriveRecipient) {
     m := &DriveRecipient{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.driveRecipient";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

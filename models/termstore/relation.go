@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Relation provides operations to manage the collection of agreementAcceptance entities.
+// Relation provides operations to manage the collection of agreement entities.
 type Relation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
@@ -23,8 +23,6 @@ func NewRelation()(*Relation) {
     m := &Relation{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termStore.relation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRelationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

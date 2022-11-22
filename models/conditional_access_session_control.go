@@ -19,8 +19,6 @@ func NewConditionalAccessSessionControl()(*ConditionalAccessSessionControl) {
     m := &ConditionalAccessSessionControl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessSessionControl";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -22,8 +22,6 @@ func NewIncompleteData()(*IncompleteData) {
     m := &IncompleteData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.incompleteData";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIncompleteDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

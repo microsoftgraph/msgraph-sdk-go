@@ -17,8 +17,6 @@ func NewEducationAssignmentGradeType()(*EducationAssignmentGradeType) {
     m := &EducationAssignmentGradeType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationAssignmentGradeType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationAssignmentGradeTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

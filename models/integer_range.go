@@ -21,8 +21,6 @@ func NewIntegerRange()(*IntegerRange) {
     m := &IntegerRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.integerRange";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIntegerRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

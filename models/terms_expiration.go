@@ -22,8 +22,6 @@ func NewTermsExpiration()(*TermsExpiration) {
     m := &TermsExpiration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.termsExpiration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermsExpirationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

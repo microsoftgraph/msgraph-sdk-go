@@ -21,8 +21,6 @@ func NewWin32LobAppReturnCode()(*Win32LobAppReturnCode) {
     m := &Win32LobAppReturnCode{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.win32LobAppReturnCode";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppReturnCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

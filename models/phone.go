@@ -25,8 +25,6 @@ func NewPhone()(*Phone) {
     m := &Phone{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.phone";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

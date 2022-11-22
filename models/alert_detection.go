@@ -23,8 +23,6 @@ func NewAlertDetection()(*AlertDetection) {
     m := &AlertDetection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.alertDetection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

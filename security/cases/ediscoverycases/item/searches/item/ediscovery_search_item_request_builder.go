@@ -10,6 +10,7 @@ import (
     i230698fd5f86ad1b935ee0c129ab3e4e19a8b52675e16ef480c1cb8ac1c8ef9b "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/lastestimatestatisticsoperation"
     i83739c129d620b1070fe64795ee0e2a738218f6c3ec0b7a008e1adf890343b07 "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/additionalsources"
     i93ba3bfd10e83ad08be0c2a6eb7231d725df6f0cde5f2f67d84601f198b47e97 "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/estimatestatistics"
+    ia5644c6e0fd2c736f8c83e14b34df3ff00a6361d19807e5ecc0a54794e3ca63d "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/purgedata"
     iecd6a3b6025ea7091d425fac6cf5d255595c827b86484d73aacf3742528b5cb7 "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/addtoreviewsetoperation"
     i8f302d797cc13f4a2ecbd36d19a3a180ea9fc8bb3596fb79074e6ecd02dc6bd4 "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/additionalsources/item"
     idec6a28edc7173c367f0bd14b204505e7b6645a0381c4ee75a61bb11c7fc79f0 "github.com/microsoftgraph/msgraph-sdk-go/security/cases/ediscoverycases/item/searches/item/noncustodialsources/item"
@@ -226,4 +227,8 @@ func (m *EdiscoverySearchItemRequestBuilder) Patch(ctx context.Context, body idd
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoverySearchable), nil
+}
+// PurgeData provides operations to call the purgeData method.
+func (m *EdiscoverySearchItemRequestBuilder) PurgeData()(*ia5644c6e0fd2c736f8c83e14b34df3ff00a6361d19807e5ecc0a54794e3ca63d.PurgeDataRequestBuilder) {
+    return ia5644c6e0fd2c736f8c83e14b34df3ff00a6361d19807e5ecc0a54794e3ca63d.NewPurgeDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

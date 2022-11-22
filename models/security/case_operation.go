@@ -30,8 +30,6 @@ func NewCaseOperation()(*CaseOperation) {
     m := &CaseOperation{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.security.caseOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCaseOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +54,8 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewEdiscoveryHoldOperation(), nil
                     case "#microsoft.graph.security.ediscoveryIndexOperation":
                         return NewEdiscoveryIndexOperation(), nil
+                    case "#microsoft.graph.security.ediscoveryPurgeDataOperation":
+                        return NewEdiscoveryPurgeDataOperation(), nil
                     case "#microsoft.graph.security.ediscoveryTagOperation":
                         return NewEdiscoveryTagOperation(), nil
                 }

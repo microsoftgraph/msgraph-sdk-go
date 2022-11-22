@@ -17,8 +17,6 @@ func NewAccessReviewNotificationRecipientScope()(*AccessReviewNotificationRecipi
     m := &AccessReviewNotificationRecipientScope{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessReviewNotificationRecipientScope";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewNotificationRecipientScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,8 +33,6 @@ func NewAuditActor()(*AuditActor) {
     m := &AuditActor{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.auditActor";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

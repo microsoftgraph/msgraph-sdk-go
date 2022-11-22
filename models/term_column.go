@@ -21,8 +21,6 @@ func NewTermColumn()(*TermColumn) {
     m := &TermColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.termColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

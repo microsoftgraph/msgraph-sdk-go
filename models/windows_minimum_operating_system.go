@@ -23,8 +23,6 @@ func NewWindowsMinimumOperatingSystem()(*WindowsMinimumOperatingSystem) {
     m := &WindowsMinimumOperatingSystem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsMinimumOperatingSystem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

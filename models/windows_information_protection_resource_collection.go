@@ -21,8 +21,6 @@ func NewWindowsInformationProtectionResourceCollection()(*WindowsInformationProt
     m := &WindowsInformationProtectionResourceCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsInformationProtectionResourceCollection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

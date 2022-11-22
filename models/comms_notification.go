@@ -21,8 +21,6 @@ func NewCommsNotification()(*CommsNotification) {
     m := &CommsNotification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.commsNotification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCommsNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

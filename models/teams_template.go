@@ -13,8 +13,6 @@ func NewTeamsTemplate()(*TeamsTemplate) {
     m := &TeamsTemplate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamsTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {
     m := &WorkbookChartPointFormat{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookChartPointFormat";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartPointFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

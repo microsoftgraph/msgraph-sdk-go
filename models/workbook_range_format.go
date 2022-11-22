@@ -32,8 +32,6 @@ func NewWorkbookRangeFormat()(*WorkbookRangeFormat) {
     m := &WorkbookRangeFormat{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookRangeFormat";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

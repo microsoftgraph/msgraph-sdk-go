@@ -16,8 +16,6 @@ func NewBitlocker()(*Bitlocker) {
     m := &Bitlocker{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.bitlocker";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBitlockerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

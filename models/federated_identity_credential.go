@@ -24,8 +24,6 @@ func NewFederatedIdentityCredential()(*FederatedIdentityCredential) {
     m := &FederatedIdentityCredential{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.federatedIdentityCredential";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFederatedIdentityCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

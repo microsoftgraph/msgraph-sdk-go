@@ -19,8 +19,6 @@ func NewEntity()(*Entity) {
     m := &Entity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.entity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +109,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAndroidWorkProfileCustomConfiguration(), nil
                     case "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration":
                         return NewAndroidWorkProfileGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.anonymousGuestConversationMember":
+                        return NewAnonymousGuestConversationMember(), nil
                     case "#microsoft.graph.appCatalogs":
                         return NewAppCatalogs(), nil
                     case "#microsoft.graph.appConsentApprovalRoute":
@@ -645,6 +645,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMessage(), nil
                     case "#microsoft.graph.messageRule":
                         return NewMessageRule(), nil
+                    case "#microsoft.graph.microsoftAccountUserConversationMember":
+                        return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod":
                         return NewMicrosoftAuthenticatorAuthenticationMethod(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration":
@@ -915,6 +917,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSingleValueLegacyExtendedProperty(), nil
                     case "#microsoft.graph.site":
                         return NewSite(), nil
+                    case "#microsoft.graph.skypeForBusinessUserConversationMember":
+                        return NewSkypeForBusinessUserConversationMember(), nil
+                    case "#microsoft.graph.skypeUserConversationMember":
+                        return NewSkypeUserConversationMember(), nil
                     case "#microsoft.graph.socialIdentityProvider":
                         return NewSocialIdentityProvider(), nil
                     case "#microsoft.graph.softwareOathAuthenticationMethod":

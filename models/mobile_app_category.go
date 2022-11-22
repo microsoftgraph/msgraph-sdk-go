@@ -19,8 +19,6 @@ func NewMobileAppCategory()(*MobileAppCategory) {
     m := &MobileAppCategory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.mobileAppCategory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

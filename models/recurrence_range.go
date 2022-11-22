@@ -27,8 +27,6 @@ func NewRecurrenceRange()(*RecurrenceRange) {
     m := &RecurrenceRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.recurrenceRange";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecurrenceRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

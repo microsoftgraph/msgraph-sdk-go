@@ -23,8 +23,6 @@ func NewPublicErrorDetail()(*PublicErrorDetail) {
     m := &PublicErrorDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.publicErrorDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublicErrorDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewTimeSlot()(*TimeSlot) {
     m := &TimeSlot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.timeSlot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeSlotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -35,8 +35,6 @@ func NewHostSecurityState()(*HostSecurityState) {
     m := &HostSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.hostSecurityState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHostSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

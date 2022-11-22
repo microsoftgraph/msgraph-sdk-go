@@ -30,8 +30,6 @@ func NewRbacApplication()(*RbacApplication) {
     m := &RbacApplication{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.rbacApplication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRbacApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

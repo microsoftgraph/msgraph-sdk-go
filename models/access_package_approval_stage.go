@@ -33,8 +33,6 @@ func NewAccessPackageApprovalStage()(*AccessPackageApprovalStage) {
     m := &AccessPackageApprovalStage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessPackageApprovalStage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

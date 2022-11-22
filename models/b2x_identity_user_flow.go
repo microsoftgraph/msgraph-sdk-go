@@ -24,8 +24,6 @@ func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
     m := &B2xIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),
     }
-    odataTypeValue := "#microsoft.graph.b2xIdentityUserFlow";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateB2xIdentityUserFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

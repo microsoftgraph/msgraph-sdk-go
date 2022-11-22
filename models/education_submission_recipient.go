@@ -17,8 +17,6 @@ func NewEducationSubmissionRecipient()(*EducationSubmissionRecipient) {
     m := &EducationSubmissionRecipient{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationSubmissionRecipient";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSubmissionRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewFile()(*File) {
     m := &File{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.file";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewPrinterStatus()(*PrinterStatus) {
     m := &PrinterStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printerStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

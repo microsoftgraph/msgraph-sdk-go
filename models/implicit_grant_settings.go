@@ -21,8 +21,6 @@ func NewImplicitGrantSettings()(*ImplicitGrantSettings) {
     m := &ImplicitGrantSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.implicitGrantSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImplicitGrantSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

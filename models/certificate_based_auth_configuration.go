@@ -16,8 +16,6 @@ func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) 
     m := &CertificateBasedAuthConfiguration{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.certificateBasedAuthConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificateBasedAuthConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.schemaExtension";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSchemaExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewVerifiedPublisher()(*VerifiedPublisher) {
     m := &VerifiedPublisher{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.verifiedPublisher";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVerifiedPublisherFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

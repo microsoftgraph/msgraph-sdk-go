@@ -41,8 +41,6 @@ func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     m := &WindowsFirewallNetworkProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsFirewallNetworkProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFirewallNetworkProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

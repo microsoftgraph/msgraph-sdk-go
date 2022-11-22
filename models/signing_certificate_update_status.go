@@ -22,8 +22,6 @@ func NewSigningCertificateUpdateStatus()(*SigningCertificateUpdateStatus) {
     m := &SigningCertificateUpdateStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.signingCertificateUpdateStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSigningCertificateUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

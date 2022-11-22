@@ -29,8 +29,6 @@ func NewChatMessageAttachment()(*ChatMessageAttachment) {
     m := &ChatMessageAttachment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.chatMessageAttachment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

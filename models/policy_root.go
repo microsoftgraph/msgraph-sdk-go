@@ -46,8 +46,6 @@ func NewPolicyRoot()(*PolicyRoot) {
     m := &PolicyRoot{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.policyRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePolicyRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

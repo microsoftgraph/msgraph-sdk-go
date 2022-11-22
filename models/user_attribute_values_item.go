@@ -23,8 +23,6 @@ func NewUserAttributeValuesItem()(*UserAttributeValuesItem) {
     m := &UserAttributeValuesItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userAttributeValuesItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAttributeValuesItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

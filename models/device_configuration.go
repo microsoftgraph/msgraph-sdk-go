@@ -37,8 +37,6 @@ func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

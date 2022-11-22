@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskTrigger provides operations to manage the collection of agreementAcceptance entities.
+// PrintTaskTrigger provides operations to manage the collection of agreement entities.
 type PrintTaskTrigger struct {
     Entity
     // The definition property
@@ -18,8 +18,6 @@ func NewPrintTaskTrigger()(*PrintTaskTrigger) {
     m := &PrintTaskTrigger{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.printTaskTrigger";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintTaskTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

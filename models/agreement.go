@@ -30,8 +30,6 @@ func NewAgreement()(*Agreement) {
     m := &Agreement{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.agreement";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgreementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -27,8 +27,6 @@ func NewScheduleInformation()(*ScheduleInformation) {
     m := &ScheduleInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.scheduleInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScheduleInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

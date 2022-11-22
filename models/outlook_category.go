@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookCategory provides operations to manage the collection of agreementAcceptance entities.
+// OutlookCategory provides operations to manage the collection of agreement entities.
 type OutlookCategory struct {
     Entity
     // A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
@@ -18,8 +18,6 @@ func NewOutlookCategory()(*OutlookCategory) {
     m := &OutlookCategory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.outlookCategory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutlookCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

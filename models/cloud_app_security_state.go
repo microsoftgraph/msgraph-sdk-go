@@ -23,8 +23,6 @@ func NewCloudAppSecurityState()(*CloudAppSecurityState) {
     m := &CloudAppSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudAppSecurityState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudAppSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

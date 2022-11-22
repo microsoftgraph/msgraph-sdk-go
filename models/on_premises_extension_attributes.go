@@ -47,8 +47,6 @@ func NewOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     m := &OnPremisesExtensionAttributes{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onPremisesExtensionAttributes";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesExtensionAttributesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

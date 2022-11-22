@@ -21,8 +21,6 @@ func NewOnenoteOperationError()(*OnenoteOperationError) {
     m := &OnenoteOperationError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onenoteOperationError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenoteOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

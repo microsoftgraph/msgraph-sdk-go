@@ -21,8 +21,6 @@ func NewAccessReviewHistoryScheduleSettings()(*AccessReviewHistoryScheduleSettin
     m := &AccessReviewHistoryScheduleSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessReviewHistoryScheduleSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

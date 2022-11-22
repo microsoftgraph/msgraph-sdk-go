@@ -77,8 +77,6 @@ func NewMessageRulePredicates()(*MessageRulePredicates) {
     m := &MessageRulePredicates{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.messageRulePredicates";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMessageRulePredicatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

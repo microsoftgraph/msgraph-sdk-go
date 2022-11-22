@@ -28,8 +28,6 @@ func NewAttackSimulationSimulationUserCoverage()(*AttackSimulationSimulationUser
     m := &AttackSimulationSimulationUserCoverage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.attackSimulationSimulationUserCoverage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttackSimulationSimulationUserCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

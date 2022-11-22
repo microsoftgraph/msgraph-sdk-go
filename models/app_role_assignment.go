@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppRoleAssignment provides operations to manage the collection of agreementAcceptance entities.
+// AppRoleAssignment provides operations to manage the collection of agreement entities.
 type AppRoleAssignment struct {
     DirectoryObject
     // The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -15,7 +15,7 @@ type AppRoleAssignment struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
     principalDisplayName *string
-    // The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.
+    // The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.
     principalId *string
     // The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
     principalType *string
@@ -61,7 +61,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *AppRoleAssignment) GetPrincipalDisplayName()(*string) {
     return m.principalDisplayName
 }
-// GetPrincipalId gets the principalId property value. The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.
+// GetPrincipalId gets the principalId property value. The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.
 func (m *AppRoleAssignment) GetPrincipalId()(*string) {
     return m.principalId
 }
@@ -139,7 +139,7 @@ func (m *AppRoleAssignment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe
 func (m *AppRoleAssignment) SetPrincipalDisplayName(value *string)() {
     m.principalDisplayName = value
 }
-// SetPrincipalId sets the principalId property value. The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.
+// SetPrincipalId sets the principalId property value. The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.
 func (m *AppRoleAssignment) SetPrincipalId(value *string)() {
     m.principalId = value
 }

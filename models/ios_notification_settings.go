@@ -35,8 +35,6 @@ func NewIosNotificationSettings()(*IosNotificationSettings) {
     m := &IosNotificationSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.iosNotificationSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosNotificationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

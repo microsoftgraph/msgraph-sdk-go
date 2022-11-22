@@ -25,8 +25,6 @@ func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     m := &NotificationMessageTemplate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.notificationMessageTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNotificationMessageTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

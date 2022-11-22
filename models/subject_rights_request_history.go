@@ -28,8 +28,6 @@ func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.subjectRightsRequestHistory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

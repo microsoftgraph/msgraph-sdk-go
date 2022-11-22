@@ -18,8 +18,6 @@ func NewSharedWithChannelTeamInfo()(*SharedWithChannelTeamInfo) {
     m := &SharedWithChannelTeamInfo{
         TeamInfo: *NewTeamInfo(),
     }
-    odataTypeValue := "#microsoft.graph.sharedWithChannelTeamInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharedWithChannelTeamInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

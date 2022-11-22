@@ -29,8 +29,6 @@ func NewDeviceConfigurationUserOverview()(*DeviceConfigurationUserOverview) {
     m := &DeviceConfigurationUserOverview{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceConfigurationUserOverview";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationUserOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

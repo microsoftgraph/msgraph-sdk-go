@@ -33,8 +33,6 @@ func NewProperty()(*Property) {
     m := &Property{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalConnectors.property";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

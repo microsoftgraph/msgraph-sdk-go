@@ -21,8 +21,6 @@ func NewFailureInfo()(*FailureInfo) {
     m := &FailureInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.failureInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFailureInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

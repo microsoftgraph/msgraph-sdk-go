@@ -32,8 +32,6 @@ func NewWorkbookChartDataLabels()(*WorkbookChartDataLabels) {
     m := &WorkbookChartDataLabels{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookChartDataLabels";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartDataLabelsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

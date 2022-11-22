@@ -25,8 +25,6 @@ func NewSharingInvitation()(*SharingInvitation) {
     m := &SharingInvitation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sharingInvitation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharingInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

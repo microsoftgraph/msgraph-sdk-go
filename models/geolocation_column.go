@@ -17,8 +17,6 @@ func NewGeolocationColumn()(*GeolocationColumn) {
     m := &GeolocationColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.geolocationColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGeolocationColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

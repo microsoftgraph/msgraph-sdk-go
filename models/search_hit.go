@@ -29,8 +29,6 @@ func NewSearchHit()(*SearchHit) {
     m := &SearchHit{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.searchHit";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchHitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

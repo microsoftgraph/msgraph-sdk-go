@@ -23,8 +23,6 @@ func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
     m := &TeamworkOnlineMeetingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkOnlineMeetingInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

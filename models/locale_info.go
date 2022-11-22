@@ -21,8 +21,6 @@ func NewLocaleInfo()(*LocaleInfo) {
     m := &LocaleInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.localeInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocaleInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -61,8 +61,6 @@ func NewChatMessage()(*ChatMessage) {
     m := &ChatMessage{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.chatMessage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

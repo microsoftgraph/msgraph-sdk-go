@@ -13,8 +13,6 @@ func NewIosVppEBookAssignment()(*IosVppEBookAssignment) {
     m := &IosVppEBookAssignment{
         ManagedEBookAssignment: *NewManagedEBookAssignment(),
     }
-    odataTypeValue := "#microsoft.graph.iosVppEBookAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVppEBookAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

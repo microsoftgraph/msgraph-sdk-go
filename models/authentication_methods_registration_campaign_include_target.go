@@ -23,8 +23,6 @@ func NewAuthenticationMethodsRegistrationCampaignIncludeTarget()(*Authentication
     m := &AuthenticationMethodsRegistrationCampaignIncludeTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationMethodsRegistrationCampaignIncludeTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,8 +33,6 @@ func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
     m := &WorkbookFilterCriteria{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.workbookFilterCriteria";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookFilterCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewAuthorizationInfo()(*AuthorizationInfo) {
     m := &AuthorizationInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authorizationInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthorizationInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

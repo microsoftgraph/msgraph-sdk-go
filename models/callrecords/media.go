@@ -29,8 +29,6 @@ func NewMedia()(*Media) {
     m := &Media{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.media";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

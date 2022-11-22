@@ -17,8 +17,6 @@ func NewPlannerUserIds()(*PlannerUserIds) {
     m := &PlannerUserIds{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerUserIds";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerUserIdsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

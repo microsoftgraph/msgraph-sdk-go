@@ -33,8 +33,6 @@ func NewReminder()(*Reminder) {
     m := &Reminder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.reminder";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

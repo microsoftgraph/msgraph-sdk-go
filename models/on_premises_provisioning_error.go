@@ -26,8 +26,6 @@ func NewOnPremisesProvisioningError()(*OnPremisesProvisioningError) {
     m := &OnPremisesProvisioningError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onPremisesProvisioningError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesProvisioningErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

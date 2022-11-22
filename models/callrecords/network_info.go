@@ -69,8 +69,6 @@ func NewNetworkInfo()(*NetworkInfo) {
     m := &NetworkInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.networkInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNetworkInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

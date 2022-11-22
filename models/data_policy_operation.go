@@ -27,8 +27,6 @@ func NewDataPolicyOperation()(*DataPolicyOperation) {
     m := &DataPolicyOperation{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.dataPolicyOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataPolicyOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

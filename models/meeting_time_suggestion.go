@@ -31,8 +31,6 @@ func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {
     m := &MeetingTimeSuggestion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.meetingTimeSuggestion";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMeetingTimeSuggestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewRedundancyDetectionSettings()(*RedundancyDetectionSettings) {
     m := &RedundancyDetectionSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.redundancyDetectionSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRedundancyDetectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

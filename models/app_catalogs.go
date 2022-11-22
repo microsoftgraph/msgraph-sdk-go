@@ -16,8 +16,6 @@ func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.appCatalogs";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppCatalogsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

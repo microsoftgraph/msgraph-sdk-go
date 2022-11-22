@@ -16,8 +16,6 @@ func NewIdentityProviderBase()(*IdentityProviderBase) {
     m := &IdentityProviderBase{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityProviderBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityProviderBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

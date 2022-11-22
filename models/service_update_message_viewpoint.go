@@ -23,8 +23,6 @@ func NewServiceUpdateMessageViewpoint()(*ServiceUpdateMessageViewpoint) {
     m := &ServiceUpdateMessageViewpoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.serviceUpdateMessageViewpoint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceUpdateMessageViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

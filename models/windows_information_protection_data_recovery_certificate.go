@@ -26,8 +26,6 @@ func NewWindowsInformationProtectionDataRecoveryCertificate()(*WindowsInformatio
     m := &WindowsInformationProtectionDataRecoveryCertificate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsInformationProtectionDataRecoveryCertificate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

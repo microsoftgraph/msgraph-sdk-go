@@ -17,8 +17,6 @@ func NewThumbnailColumn()(*ThumbnailColumn) {
     m := &ThumbnailColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.thumbnailColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateThumbnailColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

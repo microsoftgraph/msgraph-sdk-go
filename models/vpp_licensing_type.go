@@ -21,8 +21,6 @@ func NewVppLicensingType()(*VppLicensingType) {
     m := &VppLicensingType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.vppLicensingType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVppLicensingTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

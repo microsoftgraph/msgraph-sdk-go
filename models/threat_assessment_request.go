@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentRequest provides operations to manage the collection of agreementAcceptance entities.
+// ThreatAssessmentRequest provides operations to manage the collection of agreement entities.
 type ThreatAssessmentRequest struct {
     Entity
     // The category property
@@ -31,8 +31,6 @@ func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.threatAssessmentRequest";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateThreatAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -41,8 +41,6 @@ func NewDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {
     m := &DeviceOperatingSystemSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceOperatingSystemSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceOperatingSystemSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

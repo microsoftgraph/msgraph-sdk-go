@@ -21,8 +21,6 @@ func NewExcludeTarget()(*ExcludeTarget) {
     m := &ExcludeTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.excludeTarget";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExcludeTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

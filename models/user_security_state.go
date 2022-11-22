@@ -46,8 +46,6 @@ func NewUserSecurityState()(*UserSecurityState) {
     m := &UserSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userSecurityState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

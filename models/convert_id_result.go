@@ -23,8 +23,6 @@ func NewConvertIdResult()(*ConvertIdResult) {
     m := &ConvertIdResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.convertIdResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConvertIdResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

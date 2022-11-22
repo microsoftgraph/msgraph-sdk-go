@@ -21,8 +21,6 @@ func NewCrossTenantAccessPolicyB2BSetting()(*CrossTenantAccessPolicyB2BSetting) 
     m := &CrossTenantAccessPolicyB2BSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicyB2BSetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

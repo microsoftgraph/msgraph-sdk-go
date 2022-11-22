@@ -21,8 +21,6 @@ func NewConditionalAccessFilter()(*ConditionalAccessFilter) {
     m := &ConditionalAccessFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessFilter";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

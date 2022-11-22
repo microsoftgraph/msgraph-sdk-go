@@ -18,8 +18,6 @@ func NewAppScope()(*AppScope) {
     m := &AppScope{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.appScope";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

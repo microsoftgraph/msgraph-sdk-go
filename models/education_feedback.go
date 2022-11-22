@@ -24,8 +24,6 @@ func NewEducationFeedback()(*EducationFeedback) {
     m := &EducationFeedback{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationFeedback";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationFeedbackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

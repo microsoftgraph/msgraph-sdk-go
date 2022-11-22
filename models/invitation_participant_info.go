@@ -27,8 +27,6 @@ func NewInvitationParticipantInfo()(*InvitationParticipantInfo) {
     m := &InvitationParticipantInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.invitationParticipantInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInvitationParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

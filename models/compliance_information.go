@@ -21,8 +21,6 @@ func NewComplianceInformation()(*ComplianceInformation) {
     m := &ComplianceInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.complianceInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComplianceInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

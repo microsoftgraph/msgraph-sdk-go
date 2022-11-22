@@ -21,8 +21,6 @@ func NewWin32LobAppInstallExperience()(*Win32LobAppInstallExperience) {
     m := &Win32LobAppInstallExperience{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.win32LobAppInstallExperience";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppInstallExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewIosHomeScreenItem()(*IosHomeScreenItem) {
     m := &IosHomeScreenItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.iosHomeScreenItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosHomeScreenItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

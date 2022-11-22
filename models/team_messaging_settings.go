@@ -27,8 +27,6 @@ func NewTeamMessagingSettings()(*TeamMessagingSettings) {
     m := &TeamMessagingSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamMessagingSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamMessagingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

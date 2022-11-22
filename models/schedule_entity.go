@@ -24,8 +24,6 @@ func NewScheduleEntity()(*ScheduleEntity) {
     m := &ScheduleEntity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.scheduleEntity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScheduleEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

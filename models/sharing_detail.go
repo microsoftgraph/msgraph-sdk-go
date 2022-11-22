@@ -28,8 +28,6 @@ func NewSharingDetail()(*SharingDetail) {
     m := &SharingDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sharingDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharingDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

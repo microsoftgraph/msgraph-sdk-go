@@ -21,8 +21,6 @@ func NewChannelIdentity()(*ChannelIdentity) {
     m := &ChannelIdentity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.channelIdentity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
