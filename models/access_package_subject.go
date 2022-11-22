@@ -28,8 +28,6 @@ func NewAccessPackageSubject()(*AccessPackageSubject) {
     m := &AccessPackageSubject{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.accessPackageSubject";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

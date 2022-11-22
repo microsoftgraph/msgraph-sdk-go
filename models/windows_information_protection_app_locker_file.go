@@ -22,8 +22,6 @@ func NewWindowsInformationProtectionAppLockerFile()(*WindowsInformationProtectio
     m := &WindowsInformationProtectionAppLockerFile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsInformationProtectionAppLockerFile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewBucketAggregationRange()(*BucketAggregationRange) {
     m := &BucketAggregationRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.bucketAggregationRange";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBucketAggregationRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

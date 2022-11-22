@@ -7,7 +7,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Group provides operations to manage the collection of agreementAcceptance entities.
+// Group provides operations to manage the collection of agreement entities.
 type Group struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Date and time of the group creation. Read-only.
@@ -28,8 +28,6 @@ func NewGroup()(*Group) {
     m := &Group{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termStore.group";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

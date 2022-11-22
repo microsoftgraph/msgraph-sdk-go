@@ -59,8 +59,6 @@ func NewDeviceInfo()(*DeviceInfo) {
     m := &DeviceInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.deviceInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

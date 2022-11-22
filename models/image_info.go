@@ -25,8 +25,6 @@ func NewImageInfo()(*ImageInfo) {
     m := &ImageInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.imageInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

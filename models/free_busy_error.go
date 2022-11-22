@@ -21,8 +21,6 @@ func NewFreeBusyError()(*FreeBusyError) {
     m := &FreeBusyError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.freeBusyError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFreeBusyErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewEntitlementManagementSchedule()(*EntitlementManagementSchedule) {
     m := &EntitlementManagementSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.entitlementManagementSchedule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEntitlementManagementScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

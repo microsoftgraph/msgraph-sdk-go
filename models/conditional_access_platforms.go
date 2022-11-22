@@ -21,8 +21,6 @@ func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {
     m := &ConditionalAccessPlatforms{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessPlatforms";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessPlatformsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

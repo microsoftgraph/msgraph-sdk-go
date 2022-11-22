@@ -23,8 +23,6 @@ func NewOcrSettings()(*OcrSettings) {
     m := &OcrSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.ocrSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOcrSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

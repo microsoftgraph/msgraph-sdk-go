@@ -21,8 +21,6 @@ func NewAttendeeAvailability()(*AttendeeAvailability) {
     m := &AttendeeAvailability{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.attendeeAvailability";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttendeeAvailabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

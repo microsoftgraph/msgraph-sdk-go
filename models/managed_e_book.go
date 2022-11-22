@@ -41,8 +41,6 @@ func NewManagedEBook()(*ManagedEBook) {
     m := &ManagedEBook{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedEBook";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedEBookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

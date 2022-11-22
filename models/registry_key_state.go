@@ -37,8 +37,6 @@ func NewRegistryKeyState()(*RegistryKeyState) {
     m := &RegistryKeyState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.registryKeyState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRegistryKeyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

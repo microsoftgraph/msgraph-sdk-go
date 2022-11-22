@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesConditionalAccessSettings singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
+// OnPremisesConditionalAccessSettings 
 type OnPremisesConditionalAccessSettings struct {
     Entity
     // Indicates if on premises conditional access is enabled for this organization
@@ -22,8 +22,6 @@ func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettin
     m := &OnPremisesConditionalAccessSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.onPremisesConditionalAccessSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

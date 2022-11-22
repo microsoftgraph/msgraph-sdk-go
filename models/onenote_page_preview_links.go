@@ -19,8 +19,6 @@ func NewOnenotePagePreviewLinks()(*OnenotePagePreviewLinks) {
     m := &OnenotePagePreviewLinks{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onenotePagePreviewLinks";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnenotePagePreviewLinksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

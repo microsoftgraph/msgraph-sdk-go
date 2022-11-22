@@ -23,8 +23,6 @@ func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
     m := &InvitedUserMessageInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.invitedUserMessageInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInvitedUserMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewX509CertificateRule()(*X509CertificateRule) {
     m := &X509CertificateRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.x509CertificateRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateX509CertificateRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SingleValueLegacyExtendedProperty provides operations to manage the collection of agreementAcceptance entities.
+// SingleValueLegacyExtendedProperty provides operations to manage the collection of agreement entities.
 type SingleValueLegacyExtendedProperty struct {
     Entity
     // A property value.
@@ -16,8 +16,6 @@ func NewSingleValueLegacyExtendedProperty()(*SingleValueLegacyExtendedProperty) 
     m := &SingleValueLegacyExtendedProperty{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.singleValueLegacyExtendedProperty";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

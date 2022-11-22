@@ -13,8 +13,6 @@ func NewAssociatedTeamInfo()(*AssociatedTeamInfo) {
     m := &AssociatedTeamInfo{
         TeamInfo: *NewTeamInfo(),
     }
-    odataTypeValue := "#microsoft.graph.associatedTeamInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssociatedTeamInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

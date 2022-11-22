@@ -29,8 +29,6 @@ func NewQuota()(*Quota) {
     m := &Quota{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.quota";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateQuotaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

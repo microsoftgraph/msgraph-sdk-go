@@ -21,8 +21,6 @@ func NewSimulationReport()(*SimulationReport) {
     m := &SimulationReport{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.simulationReport";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSimulationReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewDomainState()(*DomainState) {
     m := &DomainState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.domainState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDomainStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

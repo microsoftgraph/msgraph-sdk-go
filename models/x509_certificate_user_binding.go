@@ -23,8 +23,6 @@ func NewX509CertificateUserBinding()(*X509CertificateUserBinding) {
     m := &X509CertificateUserBinding{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.x509CertificateUserBinding";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateX509CertificateUserBindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

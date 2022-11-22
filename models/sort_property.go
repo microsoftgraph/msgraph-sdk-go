@@ -21,8 +21,6 @@ func NewSortProperty()(*SortProperty) {
     m := &SortProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sortProperty";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSortPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

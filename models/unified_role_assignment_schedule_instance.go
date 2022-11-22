@@ -29,8 +29,6 @@ func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleIn
     m := &UnifiedRoleAssignmentScheduleInstance{
         UnifiedRoleScheduleInstanceBase: *NewUnifiedRoleScheduleInstanceBase(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleAssignmentScheduleInstance";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

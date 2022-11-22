@@ -20,8 +20,6 @@ func NewBookingCustomQuestion()(*BookingCustomQuestion) {
     m := &BookingCustomQuestion{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.bookingCustomQuestion";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingCustomQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

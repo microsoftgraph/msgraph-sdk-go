@@ -21,8 +21,6 @@ func NewAttackSimulationRepeatOffender()(*AttackSimulationRepeatOffender) {
     m := &AttackSimulationRepeatOffender{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.attackSimulationRepeatOffender";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttackSimulationRepeatOffenderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

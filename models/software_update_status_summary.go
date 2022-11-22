@@ -44,8 +44,6 @@ func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
     m := &SoftwareUpdateStatusSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.softwareUpdateStatusSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

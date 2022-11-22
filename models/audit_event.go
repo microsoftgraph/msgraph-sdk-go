@@ -37,8 +37,6 @@ func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.auditEvent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

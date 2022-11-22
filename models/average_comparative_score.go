@@ -21,8 +21,6 @@ func NewAverageComparativeScore()(*AverageComparativeScore) {
     m := &AverageComparativeScore{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.averageComparativeScore";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAverageComparativeScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

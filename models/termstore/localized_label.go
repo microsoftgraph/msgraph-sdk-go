@@ -23,8 +23,6 @@ func NewLocalizedLabel()(*LocalizedLabel) {
     m := &LocalizedLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.termStore.localizedLabel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocalizedLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

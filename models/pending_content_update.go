@@ -20,8 +20,6 @@ func NewPendingContentUpdate()(*PendingContentUpdate) {
     m := &PendingContentUpdate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.pendingContentUpdate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePendingContentUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

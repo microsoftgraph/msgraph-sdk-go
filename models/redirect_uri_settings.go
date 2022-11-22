@@ -21,8 +21,6 @@ func NewRedirectUriSettings()(*RedirectUriSettings) {
     m := &RedirectUriSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.redirectUriSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRedirectUriSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

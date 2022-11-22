@@ -41,8 +41,6 @@ func NewMailTips()(*MailTips) {
     m := &MailTips{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mailTips";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailTipsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

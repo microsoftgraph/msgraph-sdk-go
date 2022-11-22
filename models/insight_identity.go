@@ -23,8 +23,6 @@ func NewInsightIdentity()(*InsightIdentity) {
     m := &InsightIdentity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.insightIdentity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInsightIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

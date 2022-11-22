@@ -10,7 +10,7 @@ type PlannerPlanDetails struct {
     Entity
     // An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
     categoryDescriptions PlannerCategoryDescriptionsable
-    // Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.
+    // Set of user IDs that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required for them to access the plan owned by the group.
     sharedWith PlannerUserIdsable
 }
 // NewPlannerPlanDetails instantiates a new plannerPlanDetails and sets the default values.
@@ -18,8 +18,6 @@ func NewPlannerPlanDetails()(*PlannerPlanDetails) {
     m := &PlannerPlanDetails{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.plannerPlanDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerPlanDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +35,7 @@ func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     res["sharedWith"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerUserIdsFromDiscriminatorValue , m.SetSharedWith)
     return res
 }
-// GetSharedWith gets the sharedWith property value. Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.
+// GetSharedWith gets the sharedWith property value. Set of user IDs that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required for them to access the plan owned by the group.
 func (m *PlannerPlanDetails) GetSharedWith()(PlannerUserIdsable) {
     return m.sharedWith
 }
@@ -65,7 +63,7 @@ func (m *PlannerPlanDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *PlannerPlanDetails) SetCategoryDescriptions(value PlannerCategoryDescriptionsable)() {
     m.categoryDescriptions = value
 }
-// SetSharedWith sets the sharedWith property value. Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.
+// SetSharedWith sets the sharedWith property value. Set of user IDs that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required for them to access the plan owned by the group.
 func (m *PlannerPlanDetails) SetSharedWith(value PlannerUserIdsable)() {
     m.sharedWith = value
 }

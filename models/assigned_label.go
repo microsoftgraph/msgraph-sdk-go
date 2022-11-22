@@ -21,8 +21,6 @@ func NewAssignedLabel()(*AssignedLabel) {
     m := &AssignedLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.assignedLabel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignedLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,8 +33,6 @@ func NewItemReference()(*ItemReference) {
     m := &ItemReference{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.itemReference";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -62,8 +62,6 @@ func NewCall()(*Call) {
     m := &Call{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.call";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCallFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

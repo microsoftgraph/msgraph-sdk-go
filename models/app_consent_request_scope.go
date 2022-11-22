@@ -19,8 +19,6 @@ func NewAppConsentRequestScope()(*AppConsentRequestScope) {
     m := &AppConsentRequestScope{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appConsentRequestScope";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppConsentRequestScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

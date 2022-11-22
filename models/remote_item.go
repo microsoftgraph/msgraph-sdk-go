@@ -56,8 +56,6 @@ func NewRemoteItem()(*RemoteItem) {
     m := &RemoteItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.remoteItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRemoteItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

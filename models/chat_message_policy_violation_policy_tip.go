@@ -23,8 +23,6 @@ func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyT
     m := &ChatMessagePolicyViolationPolicyTip{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.chatMessagePolicyViolationPolicyTip";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

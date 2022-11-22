@@ -13,8 +13,6 @@ func NewSecurityReportsRoot()(*SecurityReportsRoot) {
     m := &SecurityReportsRoot{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.securityReportsRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityReportsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

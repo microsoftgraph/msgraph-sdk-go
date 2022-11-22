@@ -23,8 +23,6 @@ func NewCalculatedColumn()(*CalculatedColumn) {
     m := &CalculatedColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.calculatedColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCalculatedColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

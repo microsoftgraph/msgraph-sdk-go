@@ -34,8 +34,6 @@ func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.authentication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

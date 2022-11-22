@@ -25,8 +25,6 @@ func NewEducationTerm()(*EducationTerm) {
     m := &EducationTerm{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationTerm";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,6 @@ func NewFeedbackTokenSet()(*FeedbackTokenSet) {
     m := &FeedbackTokenSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.callRecords.feedbackTokenSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFeedbackTokenSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

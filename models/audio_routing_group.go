@@ -20,8 +20,6 @@ func NewAudioRoutingGroup()(*AudioRoutingGroup) {
     m := &AudioRoutingGroup{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.audioRoutingGroup";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAudioRoutingGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewAcl()(*Acl) {
     m := &Acl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalConnectors.acl";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewPersonOrGroupColumn()(*PersonOrGroupColumn) {
     m := &PersonOrGroupColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.personOrGroupColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonOrGroupColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

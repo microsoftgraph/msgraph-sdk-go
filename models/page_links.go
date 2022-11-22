@@ -21,8 +21,6 @@ func NewPageLinks()(*PageLinks) {
     m := &PageLinks{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.pageLinks";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePageLinksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

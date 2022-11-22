@@ -25,8 +25,6 @@ func NewAppIdentity()(*AppIdentity) {
     m := &AppIdentity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appIdentity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

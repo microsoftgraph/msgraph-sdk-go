@@ -27,8 +27,6 @@ func NewChangeNotificationEncryptedContent()(*ChangeNotificationEncryptedContent
     m := &ChangeNotificationEncryptedContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.changeNotificationEncryptedContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChangeNotificationEncryptedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

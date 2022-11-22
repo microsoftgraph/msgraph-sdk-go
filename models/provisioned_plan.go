@@ -23,8 +23,6 @@ func NewProvisionedPlan()(*ProvisionedPlan) {
     m := &ProvisionedPlan{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.provisionedPlan";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisionedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

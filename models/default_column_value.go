@@ -21,8 +21,6 @@ func NewDefaultColumnValue()(*DefaultColumnValue) {
     m := &DefaultColumnValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.defaultColumnValue";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDefaultColumnValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,8 +33,6 @@ func NewAccessPackageAssignmentReviewSettings()(*AccessPackageAssignmentReviewSe
     m := &AccessPackageAssignmentReviewSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessPackageAssignmentReviewSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

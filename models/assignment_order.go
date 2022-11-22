@@ -19,8 +19,6 @@ func NewAssignmentOrder()(*AssignmentOrder) {
     m := &AssignmentOrder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.assignmentOrder";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentOrderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

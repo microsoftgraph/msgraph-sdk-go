@@ -26,8 +26,6 @@ func NewRecentNotebook()(*RecentNotebook) {
     m := &RecentNotebook{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.recentNotebook";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecentNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

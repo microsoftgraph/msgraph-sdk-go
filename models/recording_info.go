@@ -21,8 +21,6 @@ func NewRecordingInfo()(*RecordingInfo) {
     m := &RecordingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.recordingInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecordingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

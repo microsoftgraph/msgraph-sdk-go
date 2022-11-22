@@ -25,8 +25,6 @@ func NewSearchResponse()(*SearchResponse) {
     m := &SearchResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.searchResponse";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

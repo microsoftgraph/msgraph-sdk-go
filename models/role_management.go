@@ -21,8 +21,6 @@ func NewRoleManagement()(*RoleManagement) {
     m := &RoleManagement{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.roleManagement";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

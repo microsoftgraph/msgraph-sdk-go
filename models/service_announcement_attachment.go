@@ -25,8 +25,6 @@ func NewServiceAnnouncementAttachment()(*ServiceAnnouncementAttachment) {
     m := &ServiceAnnouncementAttachment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.serviceAnnouncementAttachment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceAnnouncementAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

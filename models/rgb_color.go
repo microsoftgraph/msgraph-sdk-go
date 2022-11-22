@@ -23,8 +23,6 @@ func NewRgbColor()(*RgbColor) {
     m := &RgbColor{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.rgbColor";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRgbColorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

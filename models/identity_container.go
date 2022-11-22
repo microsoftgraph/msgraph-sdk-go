@@ -24,8 +24,6 @@ func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityContainer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

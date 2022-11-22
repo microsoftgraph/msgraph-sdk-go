@@ -13,8 +13,6 @@ func NewChatMessageHostedContent()(*ChatMessageHostedContent) {
     m := &ChatMessageHostedContent{
         TeamworkHostedContent: *NewTeamworkHostedContent(),
     }
-    odataTypeValue := "#microsoft.graph.chatMessageHostedContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageHostedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

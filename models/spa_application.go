@@ -19,8 +19,6 @@ func NewSpaApplication()(*SpaApplication) {
     m := &SpaApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.spaApplication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSpaApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

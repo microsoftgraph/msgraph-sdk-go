@@ -25,8 +25,6 @@ func NewNumberColumn()(*NumberColumn) {
     m := &NumberColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.numberColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNumberColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

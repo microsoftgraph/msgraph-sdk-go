@@ -13,8 +13,6 @@ func NewSearchEntity()(*SearchEntity) {
     m := &SearchEntity{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.searchEntity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

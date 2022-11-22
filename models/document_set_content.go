@@ -23,8 +23,6 @@ func NewDocumentSetContent()(*DocumentSetContent) {
     m := &DocumentSetContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.documentSetContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentSetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

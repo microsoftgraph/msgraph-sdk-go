@@ -21,8 +21,6 @@ func NewIdentityProtectionRoot()(*IdentityProtectionRoot) {
     m := &IdentityProtectionRoot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityProtectionRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityProtectionRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -28,8 +28,6 @@ func NewEdiscoveryEstimateOperation()(*EdiscoveryEstimateOperation) {
     m := &EdiscoveryEstimateOperation{
         CaseOperation: *NewCaseOperation(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryEstimateOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryEstimateOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

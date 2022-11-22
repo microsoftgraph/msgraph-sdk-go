@@ -30,8 +30,6 @@ func NewEnrollmentTroubleshootingEvent()(*EnrollmentTroubleshootingEvent) {
     m := &EnrollmentTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),
     }
-    odataTypeValue := "#microsoft.graph.enrollmentTroubleshootingEvent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEnrollmentTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -18,8 +18,6 @@ func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termsOfUseContainer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermsOfUseContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

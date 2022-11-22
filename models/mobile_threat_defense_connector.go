@@ -31,8 +31,6 @@ func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.mobileThreatDefenseConnector";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileThreatDefenseConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

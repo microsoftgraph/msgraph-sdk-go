@@ -23,8 +23,6 @@ func NewItemPreviewInfo()(*ItemPreviewInfo) {
     m := &ItemPreviewInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.itemPreviewInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemPreviewInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

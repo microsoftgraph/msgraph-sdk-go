@@ -30,8 +30,6 @@ func NewShiftActivity()(*ShiftActivity) {
     m := &ShiftActivity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.shiftActivity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateShiftActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

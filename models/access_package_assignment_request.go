@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentRequest provides operations to manage the collection of agreementAcceptance entities.
+// AccessPackageAssignmentRequest provides operations to manage the collection of agreement entities.
 type AccessPackageAssignmentRequest struct {
     Entity
     // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
@@ -33,8 +33,6 @@ func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
     m := &AccessPackageAssignmentRequest{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.accessPackageAssignmentRequest";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewAttachmentInfo()(*AttachmentInfo) {
     m := &AttachmentInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.attachmentInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttachmentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

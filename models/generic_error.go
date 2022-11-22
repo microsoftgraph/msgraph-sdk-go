@@ -21,8 +21,6 @@ func NewGenericError()(*GenericError) {
     m := &GenericError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.genericError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGenericErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

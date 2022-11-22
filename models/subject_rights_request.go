@@ -53,8 +53,6 @@ func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.subjectRightsRequest";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

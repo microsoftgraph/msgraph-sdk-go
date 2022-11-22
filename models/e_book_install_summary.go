@@ -26,8 +26,6 @@ func NewEBookInstallSummary()(*EBookInstallSummary) {
     m := &EBookInstallSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.eBookInstallSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEBookInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

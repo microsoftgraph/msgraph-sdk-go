@@ -19,8 +19,6 @@ func NewRolePermission()(*RolePermission) {
     m := &RolePermission{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.rolePermission";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRolePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

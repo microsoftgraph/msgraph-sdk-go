@@ -23,8 +23,6 @@ func NewMacOSLobChildApp()(*MacOSLobChildApp) {
     m := &MacOSLobChildApp{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSLobChildApp";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSLobChildAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

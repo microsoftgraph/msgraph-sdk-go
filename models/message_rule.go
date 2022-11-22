@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageRule provides operations to manage the collection of agreementAcceptance entities.
+// MessageRule provides operations to manage the collection of agreement entities.
 type MessageRule struct {
     Entity
     // Actions to be taken on a message when the corresponding conditions are fulfilled.
@@ -30,8 +30,6 @@ func NewMessageRule()(*MessageRule) {
     m := &MessageRule{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.messageRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMessageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

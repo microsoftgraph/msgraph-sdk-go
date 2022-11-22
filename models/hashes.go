@@ -25,8 +25,6 @@ func NewHashes()(*Hashes) {
     m := &Hashes{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.hashes";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHashesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

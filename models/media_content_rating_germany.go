@@ -21,8 +21,6 @@ func NewMediaContentRatingGermany()(*MediaContentRatingGermany) {
     m := &MediaContentRatingGermany{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mediaContentRatingGermany";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaContentRatingGermanyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

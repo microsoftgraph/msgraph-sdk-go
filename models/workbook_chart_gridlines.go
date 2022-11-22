@@ -18,8 +18,6 @@ func NewWorkbookChartGridlines()(*WorkbookChartGridlines) {
     m := &WorkbookChartGridlines{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookChartGridlines";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartGridlinesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

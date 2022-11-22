@@ -19,8 +19,6 @@ func NewPrivacy()(*Privacy) {
     m := &Privacy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.privacy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivacyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

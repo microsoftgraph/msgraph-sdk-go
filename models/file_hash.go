@@ -21,8 +21,6 @@ func NewFileHash()(*FileHash) {
     m := &FileHash{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.fileHash";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileHashFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

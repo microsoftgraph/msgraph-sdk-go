@@ -67,8 +67,6 @@ func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.educationAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

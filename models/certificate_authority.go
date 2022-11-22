@@ -29,8 +29,6 @@ func NewCertificateAuthority()(*CertificateAuthority) {
     m := &CertificateAuthority{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.certificateAuthority";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificateAuthorityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

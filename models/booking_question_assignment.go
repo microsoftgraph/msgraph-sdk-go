@@ -21,8 +21,6 @@ func NewBookingQuestionAssignment()(*BookingQuestionAssignment) {
     m := &BookingQuestionAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.bookingQuestionAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingQuestionAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

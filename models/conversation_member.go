@@ -21,8 +21,6 @@ func NewConversationMember()(*ConversationMember) {
     m := &ConversationMember{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.conversationMember";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +39,14 @@ func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
                 switch *mappingValue {
                     case "#microsoft.graph.aadUserConversationMember":
                         return NewAadUserConversationMember(), nil
+                    case "#microsoft.graph.anonymousGuestConversationMember":
+                        return NewAnonymousGuestConversationMember(), nil
+                    case "#microsoft.graph.microsoftAccountUserConversationMember":
+                        return NewMicrosoftAccountUserConversationMember(), nil
+                    case "#microsoft.graph.skypeForBusinessUserConversationMember":
+                        return NewSkypeForBusinessUserConversationMember(), nil
+                    case "#microsoft.graph.skypeUserConversationMember":
+                        return NewSkypeUserConversationMember(), nil
                 }
             }
         }

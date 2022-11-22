@@ -18,8 +18,6 @@ func NewAuthenticationMethodTarget()(*AuthenticationMethodTarget) {
     m := &AuthenticationMethodTarget{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.authenticationMethodTarget";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationMethodTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

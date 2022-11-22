@@ -23,8 +23,6 @@ func NewWindows10NetworkProxyServer()(*Windows10NetworkProxyServer) {
     m := &Windows10NetworkProxyServer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windows10NetworkProxyServer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10NetworkProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

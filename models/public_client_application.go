@@ -19,8 +19,6 @@ func NewPublicClientApplication()(*PublicClientApplication) {
     m := &PublicClientApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.publicClientApplication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublicClientApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewRequestSchedule()(*RequestSchedule) {
     m := &RequestSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.requestSchedule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRequestScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

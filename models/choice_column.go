@@ -23,8 +23,6 @@ func NewChoiceColumn()(*ChoiceColumn) {
     m := &ChoiceColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.choiceColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChoiceColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

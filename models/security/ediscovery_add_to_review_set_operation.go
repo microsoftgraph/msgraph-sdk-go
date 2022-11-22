@@ -18,8 +18,6 @@ func NewEdiscoveryAddToReviewSetOperation()(*EdiscoveryAddToReviewSetOperation) 
     m := &EdiscoveryAddToReviewSetOperation{
         CaseOperation: *NewCaseOperation(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryAddToReviewSetOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryAddToReviewSetOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -18,8 +18,6 @@ func NewAccessReviewSet()(*AccessReviewSet) {
     m := &AccessReviewSet{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.accessReviewSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

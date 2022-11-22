@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicy provides operations to manage the collection of agreementAcceptance entities.
+// UnifiedRoleManagementPolicy provides operations to manage the collection of agreement entities.
 type UnifiedRoleManagementPolicy struct {
     Entity
     // Description for the policy.
@@ -33,8 +33,6 @@ func NewUnifiedRoleManagementPolicy()(*UnifiedRoleManagementPolicy) {
     m := &UnifiedRoleManagementPolicy{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

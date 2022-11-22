@@ -24,8 +24,6 @@ func NewMobileAppInstallTimeSettings()(*MobileAppInstallTimeSettings) {
     m := &MobileAppInstallTimeSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mobileAppInstallTimeSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppInstallTimeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

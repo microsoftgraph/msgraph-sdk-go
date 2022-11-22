@@ -21,8 +21,6 @@ func NewWorkbookIcon()(*WorkbookIcon) {
     m := &WorkbookIcon{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.workbookIcon";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookIconFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -30,8 +30,6 @@ func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
     m := &PermissionGrantConditionSet{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.permissionGrantConditionSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePermissionGrantConditionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

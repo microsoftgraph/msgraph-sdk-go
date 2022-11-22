@@ -25,8 +25,6 @@ func NewPublicInnerError()(*PublicInnerError) {
     m := &PublicInnerError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.publicInnerError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublicInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

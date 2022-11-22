@@ -21,8 +21,6 @@ func NewAssignedLicense()(*AssignedLicense) {
     m := &AssignedLicense{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.assignedLicense";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignedLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

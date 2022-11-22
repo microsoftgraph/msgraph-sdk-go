@@ -16,8 +16,6 @@ func NewAgreementFileLocalization()(*AgreementFileLocalization) {
     m := &AgreementFileLocalization{
         AgreementFileProperties: *NewAgreementFileProperties(),
     }
-    odataTypeValue := "#microsoft.graph.agreementFileLocalization";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgreementFileLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

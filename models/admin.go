@@ -19,8 +19,6 @@ func NewAdmin()(*Admin) {
     m := &Admin{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.admin";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdminFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

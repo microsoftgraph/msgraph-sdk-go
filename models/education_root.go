@@ -25,8 +25,6 @@ func NewEducationRoot()(*EducationRoot) {
     m := &EducationRoot{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

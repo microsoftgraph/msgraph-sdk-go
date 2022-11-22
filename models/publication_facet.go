@@ -21,8 +21,6 @@ func NewPublicationFacet()(*PublicationFacet) {
     m := &PublicationFacet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.publicationFacet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublicationFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

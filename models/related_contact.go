@@ -27,8 +27,6 @@ func NewRelatedContact()(*RelatedContact) {
     m := &RelatedContact{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.relatedContact";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRelatedContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

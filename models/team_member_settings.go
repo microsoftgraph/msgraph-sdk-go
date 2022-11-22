@@ -29,8 +29,6 @@ func NewTeamMemberSettings()(*TeamMemberSettings) {
     m := &TeamMemberSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamMemberSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamMemberSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

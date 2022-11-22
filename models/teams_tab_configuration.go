@@ -25,8 +25,6 @@ func NewTeamsTabConfiguration()(*TeamsTabConfiguration) {
     m := &TeamsTabConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamsTabConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsTabConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

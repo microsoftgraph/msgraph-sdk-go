@@ -21,8 +21,6 @@ func NewEmployeeOrgData()(*EmployeeOrgData) {
     m := &EmployeeOrgData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.employeeOrgData";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmployeeOrgDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

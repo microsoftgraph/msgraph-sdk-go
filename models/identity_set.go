@@ -23,8 +23,6 @@ func NewIdentitySet()(*IdentitySet) {
     m := &IdentitySet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identitySet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

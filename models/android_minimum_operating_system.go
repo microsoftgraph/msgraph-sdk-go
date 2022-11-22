@@ -49,8 +49,6 @@ func NewAndroidMinimumOperatingSystem()(*AndroidMinimumOperatingSystem) {
     m := &AndroidMinimumOperatingSystem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidMinimumOperatingSystem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

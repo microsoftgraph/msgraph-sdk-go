@@ -18,8 +18,6 @@ func NewAttackSimulationRoot()(*AttackSimulationRoot) {
     m := &AttackSimulationRoot{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.attackSimulationRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttackSimulationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

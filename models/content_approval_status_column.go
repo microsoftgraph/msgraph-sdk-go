@@ -17,8 +17,6 @@ func NewContentApprovalStatusColumn()(*ContentApprovalStatusColumn) {
     m := &ContentApprovalStatusColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.contentApprovalStatusColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentApprovalStatusColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

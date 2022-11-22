@@ -16,8 +16,6 @@ func NewPlannerProgressTaskBoardTaskFormat()(*PlannerProgressTaskBoardTaskFormat
     m := &PlannerProgressTaskBoardTaskFormat{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.plannerProgressTaskBoardTaskFormat";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerProgressTaskBoardTaskFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

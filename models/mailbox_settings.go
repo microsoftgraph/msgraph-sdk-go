@@ -35,8 +35,6 @@ func NewMailboxSettings()(*MailboxSettings) {
     m := &MailboxSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mailboxSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailboxSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Channel provides operations to manage the collection of agreementAcceptance entities.
+// Channel provides operations to manage the collection of agreement entities.
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
@@ -41,8 +41,6 @@ func NewChannel()(*Channel) {
     m := &Channel{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.channel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

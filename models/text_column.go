@@ -27,8 +27,6 @@ func NewTextColumn()(*TextColumn) {
     m := &TextColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.textColumn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTextColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

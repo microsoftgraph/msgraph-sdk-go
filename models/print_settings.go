@@ -19,8 +19,6 @@ func NewPrintSettings()(*PrintSettings) {
     m := &PrintSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

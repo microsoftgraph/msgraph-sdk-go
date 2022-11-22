@@ -51,8 +51,6 @@ func NewPrinterLocation()(*PrinterLocation) {
     m := &PrinterLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printerLocation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

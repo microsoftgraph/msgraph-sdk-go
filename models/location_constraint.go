@@ -23,8 +23,6 @@ func NewLocationConstraint()(*LocationConstraint) {
     m := &LocationConstraint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.locationConstraint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocationConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

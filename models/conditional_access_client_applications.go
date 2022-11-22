@@ -21,8 +21,6 @@ func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplicatio
     m := &ConditionalAccessClientApplications{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessClientApplications";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessClientApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,8 +29,6 @@ func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientE
     m := &ConfigurationManagerClientEnabledFeatures{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.configurationManagerClientEnabledFeatures";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

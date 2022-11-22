@@ -50,8 +50,6 @@ func NewCalendar()(*Calendar) {
     m := &Calendar{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.calendar";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCalendarFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

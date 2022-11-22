@@ -21,8 +21,6 @@ func NewWorkforceIntegrationEncryption()(*WorkforceIntegrationEncryption) {
     m := &WorkforceIntegrationEncryption{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.workforceIntegrationEncryption";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkforceIntegrationEncryptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

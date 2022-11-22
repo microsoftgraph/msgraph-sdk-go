@@ -23,8 +23,6 @@ func NewWin32LobAppRestartSettings()(*Win32LobAppRestartSettings) {
     m := &Win32LobAppRestartSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.win32LobAppRestartSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppRestartSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -20,8 +20,6 @@ func NewWorkbookTableSort()(*WorkbookTableSort) {
     m := &WorkbookTableSort{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookTableSort";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookTableSortFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

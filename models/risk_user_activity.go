@@ -21,8 +21,6 @@ func NewRiskUserActivity()(*RiskUserActivity) {
     m := &RiskUserActivity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.riskUserActivity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRiskUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewProvisionChannelEmailResult()(*ProvisionChannelEmailResult) {
     m := &ProvisionChannelEmailResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.provisionChannelEmailResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisionChannelEmailResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewTeamwork()(*Teamwork) {
     m := &Teamwork{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamwork";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

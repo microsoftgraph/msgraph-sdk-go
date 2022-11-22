@@ -27,8 +27,6 @@ func NewApprovalSettings()(*ApprovalSettings) {
     m := &ApprovalSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.approvalSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

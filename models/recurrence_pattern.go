@@ -31,8 +31,6 @@ func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.recurrencePattern";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

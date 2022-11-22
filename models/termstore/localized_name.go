@@ -21,8 +21,6 @@ func NewLocalizedName()(*LocalizedName) {
     m := &LocalizedName{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.termStore.localizedName";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLocalizedNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

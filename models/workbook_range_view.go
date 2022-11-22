@@ -38,8 +38,6 @@ func NewWorkbookRangeView()(*WorkbookRangeView) {
     m := &WorkbookRangeView{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookRangeView";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeViewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

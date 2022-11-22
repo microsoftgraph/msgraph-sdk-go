@@ -27,8 +27,6 @@ func NewBookingSchedulingPolicy()(*BookingSchedulingPolicy) {
     m := &BookingSchedulingPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.bookingSchedulingPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingSchedulingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

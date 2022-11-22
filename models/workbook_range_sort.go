@@ -13,8 +13,6 @@ func NewWorkbookRangeSort()(*WorkbookRangeSort) {
     m := &WorkbookRangeSort{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookRangeSort";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeSortFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

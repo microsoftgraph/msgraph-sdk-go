@@ -24,8 +24,6 @@ func NewInnerError()(*InnerError) {
     m := &InnerError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.InnerError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

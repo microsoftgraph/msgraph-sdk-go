@@ -21,8 +21,6 @@ func NewSecurityResource()(*SecurityResource) {
     m := &SecurityResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.securityResource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

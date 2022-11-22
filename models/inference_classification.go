@@ -16,8 +16,6 @@ func NewInferenceClassification()(*InferenceClassification) {
     m := &InferenceClassification{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.inferenceClassification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInferenceClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

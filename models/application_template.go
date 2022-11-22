@@ -30,8 +30,6 @@ func NewApplicationTemplate()(*ApplicationTemplate) {
     m := &ApplicationTemplate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.applicationTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplicationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

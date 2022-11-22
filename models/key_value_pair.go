@@ -21,8 +21,6 @@ func NewKeyValuePair()(*KeyValuePair) {
     m := &KeyValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.keyValuePair";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateKeyValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

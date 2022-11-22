@@ -25,8 +25,6 @@ func NewIdentityGovernance()(*IdentityGovernance) {
     m := &IdentityGovernance{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityGovernanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

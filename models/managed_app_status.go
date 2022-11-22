@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppStatus 
+// ManagedAppStatus represents app protection and configuration status for the organization.
 type ManagedAppStatus struct {
     Entity
     // Friendly name of the status report.
@@ -13,13 +13,11 @@ type ManagedAppStatus struct {
     // Version of the entity.
     version *string
 }
-// NewManagedAppStatus instantiates a new ManagedAppStatus and sets the default values.
+// NewManagedAppStatus instantiates a new managedAppStatus and sets the default values.
 func NewManagedAppStatus()(*ManagedAppStatus) {
     m := &ManagedAppStatus{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedAppStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAppStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

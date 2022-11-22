@@ -20,8 +20,6 @@ func NewPlanner()(*Planner) {
     m := &Planner{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.planner";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

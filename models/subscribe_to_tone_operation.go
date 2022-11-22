@@ -13,8 +13,6 @@ func NewSubscribeToToneOperation()(*SubscribeToToneOperation) {
     m := &SubscribeToToneOperation{
         CommsOperation: *NewCommsOperation(),
     }
-    odataTypeValue := "#microsoft.graph.subscribeToToneOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubscribeToToneOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

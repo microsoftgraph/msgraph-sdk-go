@@ -18,8 +18,6 @@ func NewWorkbookChartAreaFormat()(*WorkbookChartAreaFormat) {
     m := &WorkbookChartAreaFormat{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookChartAreaFormat";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartAreaFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

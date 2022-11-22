@@ -18,8 +18,6 @@ func NewTeamworkHostedContent()(*TeamworkHostedContent) {
     m := &TeamworkHostedContent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkHostedContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkHostedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

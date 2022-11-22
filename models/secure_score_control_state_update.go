@@ -28,8 +28,6 @@ func NewSecureScoreControlStateUpdate()(*SecureScoreControlStateUpdate) {
     m := &SecureScoreControlStateUpdate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.secureScoreControlStateUpdate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecureScoreControlStateUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

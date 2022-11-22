@@ -21,8 +21,6 @@ func NewPrintTaskStatus()(*PrintTaskStatus) {
     m := &PrintTaskStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printTaskStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintTaskStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

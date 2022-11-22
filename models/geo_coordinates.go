@@ -23,8 +23,6 @@ func NewGeoCoordinates()(*GeoCoordinates) {
     m := &GeoCoordinates{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.geoCoordinates";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

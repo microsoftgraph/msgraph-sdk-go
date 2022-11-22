@@ -27,8 +27,6 @@ func NewResourceSpecificPermission()(*ResourceSpecificPermission) {
     m := &ResourceSpecificPermission{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.resourceSpecificPermission";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResourceSpecificPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

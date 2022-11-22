@@ -25,8 +25,6 @@ func NewAuditResource()(*AuditResource) {
     m := &AuditResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.auditResource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

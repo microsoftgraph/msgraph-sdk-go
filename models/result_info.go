@@ -23,8 +23,6 @@ func NewResultInfo()(*ResultInfo) {
     m := &ResultInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.resultInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResultInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

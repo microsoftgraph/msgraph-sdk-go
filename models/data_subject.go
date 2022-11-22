@@ -25,8 +25,6 @@ func NewDataSubject()(*DataSubject) {
     m := &DataSubject{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.dataSubject";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

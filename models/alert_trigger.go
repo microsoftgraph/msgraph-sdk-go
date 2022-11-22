@@ -23,8 +23,6 @@ func NewAlertTrigger()(*AlertTrigger) {
     m := &AlertTrigger{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.alertTrigger";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

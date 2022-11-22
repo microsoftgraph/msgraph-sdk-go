@@ -28,8 +28,6 @@ func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateS
     m := &DeviceConfigurationDeviceStateSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceConfigurationDeviceStateSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationDeviceStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

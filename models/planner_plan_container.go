@@ -13,7 +13,7 @@ type PlannerPlanContainer struct {
     containerId *string
     // The OdataType property
     odataType *string
-    // The type property
+    // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
     type_escaped *PlannerContainerType
     // The full canonical URL of the container.
     url *string
@@ -23,8 +23,6 @@ func NewPlannerPlanContainer()(*PlannerPlanContainer) {
     m := &PlannerPlanContainer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerPlanContainer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerPlanContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +50,7 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *PlannerPlanContainer) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
 func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
     return m.type_escaped
 }
@@ -107,7 +105,7 @@ func (m *PlannerPlanContainer) SetContainerId(value *string)() {
 func (m *PlannerPlanContainer) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
 func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
     m.type_escaped = value
 }

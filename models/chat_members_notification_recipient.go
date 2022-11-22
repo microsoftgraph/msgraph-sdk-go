@@ -8,7 +8,7 @@ import (
 // ChatMembersNotificationRecipient 
 type ChatMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The chatId property
+    // The unique identifier for the chat whose members should receive the notifications.
     chatId *string
 }
 // NewChatMembersNotificationRecipient instantiates a new ChatMembersNotificationRecipient and sets the default values.
@@ -24,7 +24,7 @@ func NewChatMembersNotificationRecipient()(*ChatMembersNotificationRecipient) {
 func CreateChatMembersNotificationRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMembersNotificationRecipient(), nil
 }
-// GetChatId gets the chatId property value. The chatId property
+// GetChatId gets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
 func (m *ChatMembersNotificationRecipient) GetChatId()(*string) {
     return m.chatId
 }
@@ -48,7 +48,7 @@ func (m *ChatMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetChatId sets the chatId property value. The chatId property
+// SetChatId sets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
 func (m *ChatMembersNotificationRecipient) SetChatId(value *string)() {
     m.chatId = value
 }

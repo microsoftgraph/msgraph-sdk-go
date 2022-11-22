@@ -25,8 +25,6 @@ func NewTopicModelingSettings()(*TopicModelingSettings) {
     m := &TopicModelingSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.topicModelingSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTopicModelingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

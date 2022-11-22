@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkTag provides operations to manage the collection of agreementAcceptance entities.
+// TeamworkTag provides operations to manage the collection of agreement entities.
 type TeamworkTag struct {
     Entity
     // The description of the tag as it will appear to the user in Microsoft Teams.
@@ -26,8 +26,6 @@ func NewTeamworkTag()(*TeamworkTag) {
     m := &TeamworkTag{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkTag";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -31,8 +31,6 @@ func NewConnectedOrganization()(*ConnectedOrganization) {
     m := &ConnectedOrganization{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.connectedOrganization";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConnectedOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

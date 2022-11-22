@@ -32,8 +32,6 @@ func NewAlertHistoryState()(*AlertHistoryState) {
     m := &AlertHistoryState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.alertHistoryState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertHistoryStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

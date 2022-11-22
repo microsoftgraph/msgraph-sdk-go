@@ -21,8 +21,6 @@ func NewAccessReviewNotificationRecipientItem()(*AccessReviewNotificationRecipie
     m := &AccessReviewNotificationRecipientItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessReviewNotificationRecipientItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewNotificationRecipientItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

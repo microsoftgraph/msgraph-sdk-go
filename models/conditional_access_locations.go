@@ -21,8 +21,6 @@ func NewConditionalAccessLocations()(*ConditionalAccessLocations) {
     m := &ConditionalAccessLocations{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessLocations";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessLocationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

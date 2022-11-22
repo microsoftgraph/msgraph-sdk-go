@@ -36,8 +36,6 @@ func NewCallRecord()(*CallRecord) {
     m := &CallRecord{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.callRecords.callRecord";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCallRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

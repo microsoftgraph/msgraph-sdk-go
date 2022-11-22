@@ -19,8 +19,6 @@ func NewExternalLink()(*ExternalLink) {
     m := &ExternalLink{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalLink";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,6 @@ func NewMobileAppAssignmentSettings()(*MobileAppAssignmentSettings) {
     m := &MobileAppAssignmentSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mobileAppAssignmentSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

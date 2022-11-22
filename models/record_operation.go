@@ -18,8 +18,6 @@ func NewRecordOperation()(*RecordOperation) {
     m := &RecordOperation{
         CommsOperation: *NewCommsOperation(),
     }
-    odataTypeValue := "#microsoft.graph.recordOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecordOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

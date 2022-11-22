@@ -31,8 +31,6 @@ func NewDocumentSet()(*DocumentSet) {
     m := &DocumentSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.documentSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

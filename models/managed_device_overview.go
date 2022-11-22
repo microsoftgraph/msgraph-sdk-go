@@ -24,8 +24,6 @@ func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
     m := &ManagedDeviceOverview{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedDeviceOverview";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

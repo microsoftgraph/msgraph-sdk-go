@@ -19,8 +19,6 @@ func NewPendingOperations()(*PendingOperations) {
     m := &PendingOperations{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.pendingOperations";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePendingOperationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

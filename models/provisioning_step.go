@@ -27,8 +27,6 @@ func NewProvisioningStep()(*ProvisioningStep) {
     m := &ProvisioningStep{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.provisioningStep";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisioningStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

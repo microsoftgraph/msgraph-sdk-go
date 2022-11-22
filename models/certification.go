@@ -28,8 +28,6 @@ func NewCertification()(*Certification) {
     m := &Certification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.certification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

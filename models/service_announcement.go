@@ -20,8 +20,6 @@ func NewServiceAnnouncement()(*ServiceAnnouncement) {
     m := &ServiceAnnouncement{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.serviceAnnouncement";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceAnnouncementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

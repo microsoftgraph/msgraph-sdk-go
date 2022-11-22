@@ -19,8 +19,6 @@ func NewRecipient()(*Recipient) {
     m := &Recipient{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.recipient";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

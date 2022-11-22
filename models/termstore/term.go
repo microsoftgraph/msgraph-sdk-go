@@ -32,8 +32,6 @@ func NewTerm()(*Term) {
     m := &Term{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termStore.term";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

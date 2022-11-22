@@ -25,8 +25,6 @@ func NewScoredEmailAddress()(*ScoredEmailAddress) {
     m := &ScoredEmailAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.scoredEmailAddress";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScoredEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

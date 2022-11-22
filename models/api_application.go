@@ -27,8 +27,6 @@ func NewApiApplication()(*ApiApplication) {
     m := &ApiApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.apiApplication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApiApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
