@@ -5,13 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenShiftChangeRequest 
+// OpenShiftChangeRequest provides operations to manage the collection of agreement entities.
 type OpenShiftChangeRequest struct {
     ScheduleChangeRequest
     // ID for the open shift.
     openShiftId *string
 }
-// NewOpenShiftChangeRequest instantiates a new OpenShiftChangeRequest and sets the default values.
+// NewOpenShiftChangeRequest instantiates a new openShiftChangeRequest and sets the default values.
 func NewOpenShiftChangeRequest()(*OpenShiftChangeRequest) {
     m := &OpenShiftChangeRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),

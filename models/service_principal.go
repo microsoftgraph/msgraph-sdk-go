@@ -46,7 +46,7 @@ type ServicePrincipal struct {
     displayName *string
     // The endpoints property
     endpoints []Endpointable
-    // Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+    // Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Home page or landing page of the application.
     homepage *string
@@ -70,9 +70,9 @@ type ServicePrincipal struct {
     oauth2PermissionGrants []OAuth2PermissionGrantable
     // The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
     oauth2PermissionScopes []PermissionScopeable
-    // Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+    // Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     ownedObjects []DirectoryObjectable
-    // Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+    // Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     owners []DirectoryObjectable
     // The collection of password credentials associated with the application. Not nullable.
     passwordCredentials []PasswordCredentialable
@@ -105,7 +105,7 @@ type ServicePrincipal struct {
     // Specifies the verified publisher of the application which this service principal represents.
     verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -194,7 +194,7 @@ func (m *ServicePrincipal) GetDisplayName()(*string) {
 func (m *ServicePrincipal) GetEndpoints()([]Endpointable) {
     return m.endpoints
 }
-// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *ServicePrincipal) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     return m.federatedIdentityCredentials
 }
@@ -295,11 +295,11 @@ func (m *ServicePrincipal) GetOauth2PermissionGrants()([]OAuth2PermissionGrantab
 func (m *ServicePrincipal) GetOauth2PermissionScopes()([]PermissionScopeable) {
     return m.oauth2PermissionScopes
 }
-// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) GetOwnedObjects()([]DirectoryObjectable) {
     return m.ownedObjects
 }
-// GetOwners gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+// GetOwners gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) GetOwners()([]DirectoryObjectable) {
     return m.owners
 }
@@ -756,7 +756,7 @@ func (m *ServicePrincipal) SetDisplayName(value *string)() {
 func (m *ServicePrincipal) SetEndpoints(value []Endpointable)() {
     m.endpoints = value
 }
-// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *ServicePrincipal) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     m.federatedIdentityCredentials = value
 }
@@ -804,11 +804,11 @@ func (m *ServicePrincipal) SetOauth2PermissionGrants(value []OAuth2PermissionGra
 func (m *ServicePrincipal) SetOauth2PermissionScopes(value []PermissionScopeable)() {
     m.oauth2PermissionScopes = value
 }
-// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) SetOwnedObjects(value []DirectoryObjectable)() {
     m.ownedObjects = value
 }
-// SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+// SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) SetOwners(value []DirectoryObjectable)() {
     m.owners = value
 }

@@ -11,7 +11,7 @@ type UnifiedRolePermission struct {
     additionalData map[string]interface{}
     // Set of tasks that can be performed on a resource. Required.
     allowedResourceActions []string
-    // Optional constraints that must be met for the permission to be effective.
+    // Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
     condition *string
     // Set of tasks that may not be performed on a resource. Not yet supported.
     excludedResourceActions []string
@@ -37,7 +37,7 @@ func (m *UnifiedRolePermission) GetAdditionalData()(map[string]interface{}) {
 func (m *UnifiedRolePermission) GetAllowedResourceActions()([]string) {
     return m.allowedResourceActions
 }
-// GetCondition gets the condition property value. Optional constraints that must be met for the permission to be effective.
+// GetCondition gets the condition property value. Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
 func (m *UnifiedRolePermission) GetCondition()(*string) {
     return m.condition
 }
@@ -100,7 +100,7 @@ func (m *UnifiedRolePermission) SetAdditionalData(value map[string]interface{})(
 func (m *UnifiedRolePermission) SetAllowedResourceActions(value []string)() {
     m.allowedResourceActions = value
 }
-// SetCondition sets the condition property value. Optional constraints that must be met for the permission to be effective.
+// SetCondition sets the condition property value. Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
 func (m *UnifiedRolePermission) SetCondition(value *string)() {
     m.condition = value
 }
