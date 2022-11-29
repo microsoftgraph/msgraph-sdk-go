@@ -16,7 +16,7 @@ type CreatedOnBehalfOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CreatedOnBehalfOfRequestBuilderGetQueryParameters supports $filter (eq when counting empty collections). Read-only.
+// CreatedOnBehalfOfRequestBuilderGetQueryParameters supports $filter (/$count eq 0, /$count ne 0). Read-only.
 type CreatedOnBehalfOfRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,7 +51,7 @@ func NewCreatedOnBehalfOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedOnBehalfOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation supports $filter (eq when counting empty collections). Read-only.
+// CreateGetRequestInformation supports $filter (/$count eq 0, /$count ne 0). Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,7 +67,7 @@ func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// Get supports $filter (eq when counting empty collections). Read-only.
+// Get supports $filter (/$count eq 0, /$count ne 0). Read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) Get(ctx context.Context, requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintOperation 
+// PrintOperation provides operations to manage the collection of agreement entities.
 type PrintOperation struct {
     Entity
     // The DateTimeOffset when the operation was created. Read-only.
@@ -14,7 +14,7 @@ type PrintOperation struct {
     // The status property
     status PrintOperationStatusable
 }
-// NewPrintOperation instantiates a new PrintOperation and sets the default values.
+// NewPrintOperation instantiates a new printOperation and sets the default values.
 func NewPrintOperation()(*PrintOperation) {
     m := &PrintOperation{
         Entity: *NewEntity(),

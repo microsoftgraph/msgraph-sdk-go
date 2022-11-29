@@ -23,7 +23,7 @@ type FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FederatedIdentityCredentialItemRequestBuilderGetQueryParameters federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+// FederatedIdentityCredentialItemRequestBuilderGetQueryParameters federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 type FederatedIdentityCredentialItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *FederatedIdentityCredentialItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+// CreateGetRequestInformation federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 func (m *FederatedIdentityCredentialItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *FederatedIdentityCredentialItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+// Get federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 func (m *FederatedIdentityCredentialItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

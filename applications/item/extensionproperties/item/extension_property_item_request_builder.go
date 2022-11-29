@@ -23,7 +23,7 @@ type ExtensionPropertyItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExtensionPropertyItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// ExtensionPropertyItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 type ExtensionPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *ExtensionPropertyItemRequestBuilder) CreateDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// CreateGetRequestInformation read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *ExtensionPropertyItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ExtensionPropertyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *ExtensionPropertyItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// Get read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *ExtensionPropertyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExtensionPropertyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

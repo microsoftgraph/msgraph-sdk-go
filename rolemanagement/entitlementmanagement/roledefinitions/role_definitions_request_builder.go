@@ -91,7 +91,7 @@ func (m *RoleDefinitionsRequestBuilder) CreateGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create a new custom unifiedRoleDefinition object.
+// CreatePostRequestInformation create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license.
 func (m *RoleDefinitionsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, requestConfiguration *RoleDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,7 +124,7 @@ func (m *RoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionCollectionResponseable), nil
 }
-// Post create a new custom unifiedRoleDefinition object.
+// Post create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license.
 func (m *RoleDefinitionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, requestConfiguration *RoleDefinitionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

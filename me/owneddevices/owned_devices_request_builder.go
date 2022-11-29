@@ -20,7 +20,7 @@ type OwnedDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OwnedDevicesRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// OwnedDevicesRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 type OwnedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OwnedDevicesRequestBuilder) Count()(*ibbf3bf8a68958b4caea8f9049039b0a3fea7c5502d8caf5b04faf3a68b819295.CountRequestBuilder) {
     return ibbf3bf8a68958b4caea8f9049039b0a3fea7c5502d8caf5b04faf3a68b819295.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,7 +99,7 @@ func (m *OwnedDevicesRequestBuilder) Device()(*i622bb27f3e3b795f5825bf562e76acd4
 func (m *OwnedDevicesRequestBuilder) Endpoint()(*i2fa5782fd1e7f38ba8a5740355fbfa7e8d920abcc35255b8e04927467d7094a8.EndpointRequestBuilder) {
     return i2fa5782fd1e7f38ba8a5740355fbfa7e8d920abcc35255b8e04927467d7094a8.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// Get devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

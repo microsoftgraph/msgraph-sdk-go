@@ -17,7 +17,7 @@ type FederatedIdentityCredentialsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FederatedIdentityCredentialsRequestBuilderGetQueryParameters federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// FederatedIdentityCredentialsRequestBuilderGetQueryParameters federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 type FederatedIdentityCredentialsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewFederatedIdentityCredentialsRequestBuilder(rawUrl string, requestAdapter
 func (m *FederatedIdentityCredentialsRequestBuilder) Count()(*i90d611ece3d9dfff12f6e9eaef6af25b180c2ebeeb3f45e87184e869447b2bdf.CountRequestBuilder) {
     return i90d611ece3d9dfff12f6e9eaef6af25b180c2ebeeb3f45e87184e869447b2bdf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// CreateGetRequestInformation federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *FederatedIdentityCredentialsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FederatedIdentityCredentialsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *FederatedIdentityCredentialsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Get federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// Get federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *FederatedIdentityCredentialsRequestBuilder) Get(ctx context.Context, requestConfiguration *FederatedIdentityCredentialsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

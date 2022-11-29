@@ -93,7 +93,7 @@ func (m *DetailsRequestBuilder) CreateGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the properties of **plannertaskdetails** object.
+// CreatePatchRequestInformation update the properties of **plannerTaskDetails** object.
 func (m *DetailsRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable, requestConfiguration *DetailsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,7 +142,7 @@ func (m *DetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *D
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable), nil
 }
-// Patch update the properties of **plannertaskdetails** object.
+// Patch update the properties of **plannerTaskDetails** object.
 func (m *DetailsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable, requestConfiguration *DetailsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable, error) {
     requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

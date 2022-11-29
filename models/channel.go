@@ -6,14 +6,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Channel provides operations to manage the collection of agreement entities.
+// Channel provides operations to manage the collection of agreementAcceptance entities.
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional textual description for the channel.
     description *string
-    // Channel name as it will appear to the user in Microsoft Teams.
+    // Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
     displayName *string
     // The email address for sending messages to the channel. Read-only.
     email *string
@@ -55,7 +55,7 @@ func (m *Channel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *Channel) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. Channel name as it will appear to the user in Microsoft Teams.
+// GetDisplayName gets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
 func (m *Channel) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -216,7 +216,7 @@ func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
 func (m *Channel) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. Channel name as it will appear to the user in Microsoft Teams.
+// SetDisplayName sets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
 func (m *Channel) SetDisplayName(value *string)() {
     m.displayName = value
 }

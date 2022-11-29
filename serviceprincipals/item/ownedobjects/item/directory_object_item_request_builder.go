@@ -21,7 +21,7 @@ type DirectoryObjectItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DirectoryObjectItemRequestBuilderGetQueryParameters directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// DirectoryObjectItemRequestBuilderGetQueryParameters directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,7 +64,7 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,7 +84,7 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx cont
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i2d6e108fca3b32c1284655e6e71d741fefb467ef5660ea628fdba3048dc8bc82.EndpointRequestBuilder) {
     return i2d6e108fca3b32c1284655e6e71d741fefb467ef5660ea628fdba3048dc8bc82.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// Get directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

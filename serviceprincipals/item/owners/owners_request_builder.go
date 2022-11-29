@@ -22,7 +22,7 @@ type OwnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OwnersRequestBuilderGetQueryParameters directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+// OwnersRequestBuilderGetQueryParameters directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 type OwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,7 +77,7 @@ func NewOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *OwnersRequestBuilder) Count()(*i93939644e4bd092f76ff55d542b68c4603adbb8079284fd4d4882297e8d691a1.CountRequestBuilder) {
     return i93939644e4bd092f76ff55d542b68c4603adbb8079284fd4d4882297e8d691a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *OwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,7 +97,7 @@ func (m *OwnersRequestBuilder) CreateGetRequestInformation(ctx context.Context, 
 func (m *OwnersRequestBuilder) Endpoint()(*i8f09a4ea8103ae1accba37f73966dca630c46ce795b2f32304bebbd74524215f.EndpointRequestBuilder) {
     return i8f09a4ea8103ae1accba37f73966dca630c46ce795b2f32304bebbd74524215f.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+// Get directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnersRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -21,7 +21,7 @@ type User struct {
     agreementAcceptances []AgreementAcceptanceable
     // Represents the app roles a user has been granted for an application. Supports $expand.
     appRoleAssignments []AppRoleAssignmentable
-    // The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, and counting empty collections).
+    // The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
     assignedLicenses []AssignedLicenseable
     // The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
     assignedPlans []AssignedPlanable
@@ -173,11 +173,11 @@ type User struct {
     onPremisesSyncEnabled *bool
     // Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     onPremisesUserPrincipalName *string
-    // A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
+    // A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     otherMails []string
     // The outlook property
     outlook OutlookUserable
-    // Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+    // Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     ownedDevices []DirectoryObjectable
     // Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
     ownedObjects []DirectoryObjectable
@@ -207,7 +207,7 @@ type User struct {
     presence Presenceable
     // The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
     provisionedPlans []ProvisionedPlanable
-    // For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
+    // For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
     proxyAddresses []string
     // Devices that are registered for the user. Read-only. Nullable. Supports $expand.
     registeredDevices []DirectoryObjectable
@@ -283,7 +283,7 @@ func (m *User) GetAgreementAcceptances()([]AgreementAcceptanceable) {
 func (m *User) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     return m.appRoleAssignments
 }
-// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, and counting empty collections).
+// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
 func (m *User) GetAssignedLicenses()([]AssignedLicenseable) {
     return m.assignedLicenses
 }
@@ -710,7 +710,7 @@ func (m *User) GetOnPremisesSyncEnabled()(*bool) {
 func (m *User) GetOnPremisesUserPrincipalName()(*string) {
     return m.onPremisesUserPrincipalName
 }
-// GetOtherMails gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
+// GetOtherMails gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) GetOtherMails()([]string) {
     return m.otherMails
 }
@@ -718,7 +718,7 @@ func (m *User) GetOtherMails()([]string) {
 func (m *User) GetOutlook()(OutlookUserable) {
     return m.outlook
 }
-// GetOwnedDevices gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// GetOwnedDevices gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
     return m.ownedDevices
 }
@@ -778,7 +778,7 @@ func (m *User) GetPresence()(Presenceable) {
 func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
     return m.provisionedPlans
 }
-// GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
+// GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) GetProxyAddresses()([]string) {
     return m.proxyAddresses
 }
@@ -1632,7 +1632,7 @@ func (m *User) SetAgreementAcceptances(value []AgreementAcceptanceable)() {
 func (m *User) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
     m.appRoleAssignments = value
 }
-// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, and counting empty collections).
+// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
 func (m *User) SetAssignedLicenses(value []AssignedLicenseable)() {
     m.assignedLicenses = value
 }
@@ -1936,7 +1936,7 @@ func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
 func (m *User) SetOnPremisesUserPrincipalName(value *string)() {
     m.onPremisesUserPrincipalName = value
 }
-// SetOtherMails sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
+// SetOtherMails sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) SetOtherMails(value []string)() {
     m.otherMails = value
 }
@@ -1944,7 +1944,7 @@ func (m *User) SetOtherMails(value []string)() {
 func (m *User) SetOutlook(value OutlookUserable)() {
     m.outlook = value
 }
-// SetOwnedDevices sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// SetOwnedDevices sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *User) SetOwnedDevices(value []DirectoryObjectable)() {
     m.ownedDevices = value
 }
@@ -2004,7 +2004,7 @@ func (m *User) SetPresence(value Presenceable)() {
 func (m *User) SetProvisionedPlans(value []ProvisionedPlanable)() {
     m.provisionedPlans = value
 }
-// SetProxyAddresses sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
+// SetProxyAddresses sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
 func (m *User) SetProxyAddresses(value []string)() {
     m.proxyAddresses = value
 }
