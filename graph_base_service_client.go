@@ -477,8 +477,13 @@ func (m *GraphBaseServiceClient) LocalizationsById(id string)(*ib12d3019d2395479
     return ib12d3019d2395479aa856f09c37532c7d6064c28a6bf48bee1e80bf96f14cb5e.NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Me provides operations to manage the user singleton.
-func (m *GraphBaseServiceClient) Me()(*ib12d3019d2395479aa856f09c37532c7d6064c28a6bf48bee1e80bf96f14cb5e.MeRequestBuilder) {
-    return ib12d3019d2395479aa856f09c37532c7d6064c28a6bf48bee1e80bf96f14cb5e.NewMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GraphBaseServiceClient) Me()(*ib12d3019d2395479aa856f09c37532c7d6064c28a6bf48bee1e80bf96f14cb5e.UsersUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    urlTplParams["user%2Did"] = "me"
+    return ib12d3019d2395479aa856f09c37532c7d6064c28a6bf48bee1e80bf96f14cb5e.NewUsersUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Oauth2PermissionGrants provides operations to manage the collection of oAuth2PermissionGrant entities.
 func (m *GraphBaseServiceClient) Oauth2PermissionGrants()(*ib12d3019d2395479aa856f09c37532c7d6064c28a6bf48bee1e80bf96f14cb5e.Oauth2PermissionGrantsRequestBuilder) {
