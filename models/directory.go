@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Directory 
+// Directory provides operations to manage the directory singleton.
 type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
@@ -15,7 +15,7 @@ type Directory struct {
     // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
     federationConfigurations []IdentityProviderBaseable
 }
-// NewDirectory instantiates a new Directory and sets the default values.
+// NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),

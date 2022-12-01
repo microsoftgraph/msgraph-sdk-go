@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubscribedSku 
+// SubscribedSku provides operations to manage the collection of application entities.
 type SubscribedSku struct {
     Entity
     // For example, 'User' or 'Company'.
@@ -23,7 +23,7 @@ type SubscribedSku struct {
     // The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
     skuPartNumber *string
 }
-// NewSubscribedSku instantiates a new SubscribedSku and sets the default values.
+// NewSubscribedSku instantiates a new subscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),

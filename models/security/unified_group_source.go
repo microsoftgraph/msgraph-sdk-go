@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// UnifiedGroupSource 
+// UnifiedGroupSource provides operations to manage the collection of application entities.
 type UnifiedGroupSource struct {
     DataSource
     // The group property
@@ -14,7 +14,7 @@ type UnifiedGroupSource struct {
     // Specifies which sources are included in this group. Possible values are: mailbox, site.
     includedSources *SourceType
 }
-// NewUnifiedGroupSource instantiates a new UnifiedGroupSource and sets the default values.
+// NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     m := &UnifiedGroupSource{
         DataSource: *NewDataSource(),

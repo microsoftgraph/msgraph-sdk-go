@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewScheduleDefinition 
+// AccessReviewScheduleDefinition provides operations to manage the collection of application entities.
 type AccessReviewScheduleDefinition struct {
     Entity
     // Defines the list of additional users or group members to be notified of the access review progress.
@@ -40,7 +40,7 @@ type AccessReviewScheduleDefinition struct {
     // This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
     status *string
 }
-// NewAccessReviewScheduleDefinition instantiates a new AccessReviewScheduleDefinition and sets the default values.
+// NewAccessReviewScheduleDefinition instantiates a new accessReviewScheduleDefinition and sets the default values.
 func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
     m := &AccessReviewScheduleDefinition{
         Entity: *NewEntity(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSubmissionResource provides operations to manage the collection of agreementAcceptance entities.
+// EducationSubmissionResource provides operations to manage the educationRoot singleton.
 type EducationSubmissionResource struct {
     Entity
     // Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.

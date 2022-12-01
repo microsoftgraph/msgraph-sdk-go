@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingBusiness 
+// BookingBusiness represents a Microsot Bookings Business.
 type BookingBusiness struct {
     Entity
     // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
@@ -45,7 +45,7 @@ type BookingBusiness struct {
     // The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
     webSiteUrl *string
 }
-// NewBookingBusiness instantiates a new BookingBusiness and sets the default values.
+// NewBookingBusiness instantiates a new bookingBusiness and sets the default values.
 func NewBookingBusiness()(*BookingBusiness) {
     m := &BookingBusiness{
         Entity: *NewEntity(),

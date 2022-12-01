@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10SecureAssessmentConfiguration 
+// Windows10SecureAssessmentConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
 type Windows10SecureAssessmentConfiguration struct {
     DeviceConfiguration
     // Indicates whether or not to allow the app from printing during the test.
@@ -19,7 +19,7 @@ type Windows10SecureAssessmentConfiguration struct {
     // Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
     launchUri *string
 }
-// NewWindows10SecureAssessmentConfiguration instantiates a new Windows10SecureAssessmentConfiguration and sets the default values.
+// NewWindows10SecureAssessmentConfiguration instantiates a new windows10SecureAssessmentConfiguration and sets the default values.
 func NewWindows10SecureAssessmentConfiguration()(*Windows10SecureAssessmentConfiguration) {
     m := &Windows10SecureAssessmentConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

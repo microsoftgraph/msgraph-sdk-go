@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignment 
+// EducationAssignment provides operations to manage the educationRoot singleton.
 type EducationAssignment struct {
     Entity
     // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
@@ -62,7 +62,7 @@ type EducationAssignment struct {
     // The deep link URL for the given assignment.
     webUrl *string
 }
-// NewEducationAssignment instantiates a new EducationAssignment and sets the default values.
+// NewEducationAssignment instantiates a new educationAssignment and sets the default values.
 func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),
