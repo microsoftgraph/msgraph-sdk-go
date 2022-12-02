@@ -4,9 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i96dc26d0aeeaa176ce5a9a2e4c3a41f16bf45597d0b76d3726430be9a966acb8 "github.com/microsoftgraph/msgraph-sdk-go/places/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    ied3560dba7640bac9d9d8075828556e424213b7810da04eab3db0272bbb513d6 "github.com/microsoftgraph/msgraph-sdk-go/places/room"
 )
 
 // PlacesRequestBuilder provides operations to manage the collection of place entities.
@@ -73,8 +71,8 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewPlacesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PlacesRequestBuilder) Count()(*i96dc26d0aeeaa176ce5a9a2e4c3a41f16bf45597d0b76d3726430be9a966acb8.CountRequestBuilder) {
-    return i96dc26d0aeeaa176ce5a9a2e4c3a41f16bf45597d0b76d3726430be9a966acb8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlacesRequestBuilder) Count()(*PlacesCountRequestBuilder) {
+    return NewPlacesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 func (m *PlacesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PlacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -145,6 +143,6 @@ func (m *PlacesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
 }
 // Room casts the previous resource to room.
-func (m *PlacesRequestBuilder) Room()(*ied3560dba7640bac9d9d8075828556e424213b7810da04eab3db0272bbb513d6.RoomRequestBuilder) {
-    return ied3560dba7640bac9d9d8075828556e424213b7810da04eab3db0272bbb513d6.NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlacesRequestBuilder) Room()(*PlacesRoomRequestBuilder) {
+    return NewPlacesRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

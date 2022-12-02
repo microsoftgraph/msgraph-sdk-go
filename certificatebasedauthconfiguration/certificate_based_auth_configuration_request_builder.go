@@ -4,7 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i54e63b43d5574b46c5b589d7475c701d90053c08976e7f3f032a74317afb35e0 "github.com/microsoftgraph/msgraph-sdk-go/certificatebasedauthconfiguration/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -72,8 +71,8 @@ func NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, requestAd
     return NewCertificateBasedAuthConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*i54e63b43d5574b46c5b589d7475c701d90053c08976e7f3f032a74317afb35e0.CountRequestBuilder) {
-    return i54e63b43d5574b46c5b589d7475c701d90053c08976e7f3f032a74317afb35e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*CertificateBasedAuthConfigurationCountRequestBuilder) {
+    return NewCertificateBasedAuthConfigurationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

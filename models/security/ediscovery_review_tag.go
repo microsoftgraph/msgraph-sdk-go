@@ -1,7 +1,6 @@
 package security
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -39,9 +38,40 @@ func (m *EdiscoveryReviewTag) GetChildTags()([]EdiscoveryReviewTagable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryReviewTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Tag.GetFieldDeserializers()
-    res["childSelectability"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseChildSelectability , m.SetChildSelectability)
-    res["childTags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryReviewTagFromDiscriminatorValue , m.SetChildTags)
-    res["parent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEdiscoveryReviewTagFromDiscriminatorValue , m.SetParent)
+    res["childSelectability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseChildSelectability)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetChildSelectability(val.(*ChildSelectability))
+        }
+        return nil
+    }
+    res["childTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryReviewTagFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoveryReviewTagable, len(val))
+            for i, v := range val {
+                res[i] = v.(EdiscoveryReviewTagable)
+            }
+            m.SetChildTags(res)
+        }
+        return nil
+    }
+    res["parent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEdiscoveryReviewTagFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetParent(val.(EdiscoveryReviewTagable))
+        }
+        return nil
+    }
     return res
 }
 // GetParent gets the parent property value. Returns the parent tag of the specified tag.
@@ -62,7 +92,10 @@ func (m *EdiscoveryReviewTag) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetChildTags() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetChildTags())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildTags()))
+        for i, v := range m.GetChildTags() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("childTags", cast)
         if err != nil {
             return err

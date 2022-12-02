@@ -4,11 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i734828c35d0209cc42d94bd3da5e79564f27866a2e7dd505cec26e26172ddd00 "github.com/microsoftgraph/msgraph-sdk-go/identityprotection/riskdetections"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81 "github.com/microsoftgraph/msgraph-sdk-go/identityprotection/riskyusers"
-    i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0 "github.com/microsoftgraph/msgraph-sdk-go/identityprotection/riskyusers/item"
-    i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40 "github.com/microsoftgraph/msgraph-sdk-go/identityprotection/riskdetections/item"
 )
 
 // IdentityProtectionRequestBuilder provides operations to manage the identityProtectionRoot singleton.
@@ -131,11 +127,11 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body iadcd
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProtectionRootable), nil
 }
 // RiskDetections provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskDetections()(*i734828c35d0209cc42d94bd3da5e79564f27866a2e7dd505cec26e26172ddd00.RiskDetectionsRequestBuilder) {
-    return i734828c35d0209cc42d94bd3da5e79564f27866a2e7dd505cec26e26172ddd00.NewRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityProtectionRequestBuilder) RiskDetections()(*IdentityProtectionRiskDetectionsRequestBuilder) {
+    return NewIdentityProtectionRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RiskDetectionsById provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.RiskDetectionItemRequestBuilder) {
+func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*IdentityProtectionRiskDetectionsRiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -143,14 +139,14 @@ func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d7
     if id != "" {
         urlTplParams["riskDetection%2Did"] = id
     }
-    return i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.NewRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProtectionRiskDetectionsRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RiskyUsers provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81.RiskyUsersRequestBuilder) {
-    return if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81.NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*IdentityProtectionRiskyUsersRequestBuilder) {
+    return NewIdentityProtectionRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RiskyUsersById provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.RiskyUserItemRequestBuilder) {
+func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*IdentityProtectionRiskyUsersRiskyUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,5 +154,5 @@ func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd606188
     if id != "" {
         urlTplParams["riskyUser%2Did"] = id
     }
-    return i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.NewRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProtectionRiskyUsersRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

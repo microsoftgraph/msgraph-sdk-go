@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    if99ba5311b742c0d154371ac68ef38c26f86e6c29f463a9f338e9dd99410ccee "github.com/microsoftgraph/msgraph-sdk-go/grouplifecyclepolicies/count"
 )
 
 // GroupLifecyclePoliciesRequestBuilder provides operations to manage the collection of groupLifecyclePolicy entities.
@@ -72,8 +71,8 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGroupLifecyclePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*if99ba5311b742c0d154371ac68ef38c26f86e6c29f463a9f338e9dd99410ccee.CountRequestBuilder) {
-    return if99ba5311b742c0d154371ac68ef38c26f86e6c29f463a9f338e9dd99410ccee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*GroupLifecyclePoliciesCountRequestBuilder) {
+    return NewGroupLifecyclePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list all the groupLifecyclePolicies.
 func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

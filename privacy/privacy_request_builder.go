@@ -5,8 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5 "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests"
-    ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3 "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests/item"
 )
 
 // PrivacyRequestBuilder provides operations to manage the privacy singleton.
@@ -129,11 +127,11 @@ func (m *PrivacyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Privacyable), nil
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.SubjectRightsRequestsRequestBuilder) {
-    return ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*PrivacySubjectRightsRequestsRequestBuilder) {
+    return NewPrivacySubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.SubjectRightsRequestItemRequestBuilder) {
+func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*PrivacySubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -141,5 +139,5 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5
     if id != "" {
         urlTplParams["subjectRightsRequest%2Did"] = id
     }
-    return ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.NewSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivacySubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

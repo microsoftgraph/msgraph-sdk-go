@@ -4,10 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i2785fdd96d626c2c7aadcdf922e497a349278881d1a1bce772d851ca3361fc2b "github.com/microsoftgraph/msgraph-sdk-go/permissiongrants/getbyids"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    ifcaa9d832f4ae331eb6283735454fc1d63fbb8fe8fc451decd5325a546ac8959 "github.com/microsoftgraph/msgraph-sdk-go/permissiongrants/getavailableextensionproperties"
-    iffadcbac55a44e33aa5cabcb042ed09d370ae5d82a912ade57cd794271f54f7e "github.com/microsoftgraph/msgraph-sdk-go/permissiongrants/validateproperties"
 )
 
 // PermissionGrantsRequestBuilder provides operations to manage the collection of resourceSpecificPermissionGrant entities.
@@ -117,12 +114,12 @@ func (m *PermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *PermissionGrantsRequestBuilder) GetAvailableExtensionProperties()(*ifcaa9d832f4ae331eb6283735454fc1d63fbb8fe8fc451decd5325a546ac8959.GetAvailableExtensionPropertiesRequestBuilder) {
-    return ifcaa9d832f4ae331eb6283735454fc1d63fbb8fe8fc451decd5325a546ac8959.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PermissionGrantsRequestBuilder) GetAvailableExtensionProperties()(*PermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewPermissionGrantsGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *PermissionGrantsRequestBuilder) GetByIds()(*i2785fdd96d626c2c7aadcdf922e497a349278881d1a1bce772d851ca3361fc2b.GetByIdsRequestBuilder) {
-    return i2785fdd96d626c2c7aadcdf922e497a349278881d1a1bce772d851ca3361fc2b.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PermissionGrantsRequestBuilder) GetByIds()(*PermissionGrantsGetByIdsRequestBuilder) {
+    return NewPermissionGrantsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to permissionGrants
 func (m *PermissionGrantsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable, requestConfiguration *PermissionGrantsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable, error) {
@@ -144,6 +141,6 @@ func (m *PermissionGrantsRequestBuilder) Post(ctx context.Context, body iadcd811
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*iffadcbac55a44e33aa5cabcb042ed09d370ae5d82a912ade57cd794271f54f7e.ValidatePropertiesRequestBuilder) {
-    return iffadcbac55a44e33aa5cabcb042ed09d370ae5d82a912ade57cd794271f54f7e.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*PermissionGrantsValidatePropertiesRequestBuilder) {
+    return NewPermissionGrantsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
