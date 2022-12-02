@@ -4,7 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i21c83a641a9ac172f89b5392b58b099fe453b7e98a6f6a39d8b8ca94a4adee1e "github.com/microsoftgraph/msgraph-sdk-go/applicationtemplates/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -72,8 +71,8 @@ func NewApplicationTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewApplicationTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ApplicationTemplatesRequestBuilder) Count()(*i21c83a641a9ac172f89b5392b58b099fe453b7e98a6f6a39d8b8ca94a4adee1e.CountRequestBuilder) {
-    return i21c83a641a9ac172f89b5392b58b099fe453b7e98a6f6a39d8b8ca94a4adee1e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationTemplatesRequestBuilder) Count()(*ApplicationTemplatesCountRequestBuilder) {
+    return NewApplicationTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of applicationTemplate objects from the Azure AD application gallery.
 func (m *ApplicationTemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

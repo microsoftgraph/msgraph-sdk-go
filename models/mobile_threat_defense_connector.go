@@ -2,7 +2,6 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -48,14 +47,86 @@ func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["androidDeviceBlockedOnMissingPartnerData"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAndroidDeviceBlockedOnMissingPartnerData)
-    res["androidEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAndroidEnabled)
-    res["iosDeviceBlockedOnMissingPartnerData"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIosDeviceBlockedOnMissingPartnerData)
-    res["iosEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIosEnabled)
-    res["lastHeartbeatDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastHeartbeatDateTime)
-    res["partnerState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMobileThreatPartnerTenantState , m.SetPartnerState)
-    res["partnerUnresponsivenessThresholdInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPartnerUnresponsivenessThresholdInDays)
-    res["partnerUnsupportedOsVersionBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPartnerUnsupportedOsVersionBlocked)
+    res["androidDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAndroidDeviceBlockedOnMissingPartnerData(val)
+        }
+        return nil
+    }
+    res["androidEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAndroidEnabled(val)
+        }
+        return nil
+    }
+    res["iosDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIosDeviceBlockedOnMissingPartnerData(val)
+        }
+        return nil
+    }
+    res["iosEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIosEnabled(val)
+        }
+        return nil
+    }
+    res["lastHeartbeatDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastHeartbeatDateTime(val)
+        }
+        return nil
+    }
+    res["partnerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMobileThreatPartnerTenantState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPartnerState(val.(*MobileThreatPartnerTenantState))
+        }
+        return nil
+    }
+    res["partnerUnresponsivenessThresholdInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPartnerUnresponsivenessThresholdInDays(val)
+        }
+        return nil
+    }
+    res["partnerUnsupportedOsVersionBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPartnerUnsupportedOsVersionBlocked(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant

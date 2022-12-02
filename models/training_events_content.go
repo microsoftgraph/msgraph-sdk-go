@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -38,9 +37,40 @@ func (m *TrainingEventsContent) GetAssignedTrainingsInfos()([]AssignedTrainingIn
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["assignedTrainingsInfos"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAssignedTrainingInfoFromDiscriminatorValue , m.SetAssignedTrainingsInfos)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["trainingsAssignedUserCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetTrainingsAssignedUserCount)
+    res["assignedTrainingsInfos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssignedTrainingInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AssignedTrainingInfoable, len(val))
+            for i, v := range val {
+                res[i] = v.(AssignedTrainingInfoable)
+            }
+            m.SetAssignedTrainingsInfos(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["trainingsAssignedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrainingsAssignedUserCount(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -54,7 +84,10 @@ func (m *TrainingEventsContent) GetTrainingsAssignedUserCount()(*int32) {
 // Serialize serializes information the current object
 func (m *TrainingEventsContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAssignedTrainingsInfos() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssignedTrainingsInfos())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedTrainingsInfos()))
+        for i, v := range m.GetAssignedTrainingsInfos() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("assignedTrainingsInfos", cast)
         if err != nil {
             return err

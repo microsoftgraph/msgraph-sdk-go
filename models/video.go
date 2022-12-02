@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -74,17 +73,116 @@ func (m *Video) GetDuration()(*int64) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Video) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["audioBitsPerSample"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAudioBitsPerSample)
-    res["audioChannels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAudioChannels)
-    res["audioFormat"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAudioFormat)
-    res["audioSamplesPerSecond"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAudioSamplesPerSecond)
-    res["bitrate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetBitrate)
-    res["duration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetDuration)
-    res["fourCC"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFourCC)
-    res["frameRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetFrameRate)
-    res["height"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetHeight)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["width"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWidth)
+    res["audioBitsPerSample"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAudioBitsPerSample(val)
+        }
+        return nil
+    }
+    res["audioChannels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAudioChannels(val)
+        }
+        return nil
+    }
+    res["audioFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAudioFormat(val)
+        }
+        return nil
+    }
+    res["audioSamplesPerSecond"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAudioSamplesPerSecond(val)
+        }
+        return nil
+    }
+    res["bitrate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBitrate(val)
+        }
+        return nil
+    }
+    res["duration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDuration(val)
+        }
+        return nil
+    }
+    res["fourCC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFourCC(val)
+        }
+        return nil
+    }
+    res["frameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrameRate(val)
+        }
+        return nil
+    }
+    res["height"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHeight(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["width"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWidth(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFourCC gets the fourCC property value. 'Four character code' name of the video format.

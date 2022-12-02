@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -63,13 +62,76 @@ func (m *AuthorizationPolicy) GetDefaultUserRolePermissions()(DefaultUserRolePer
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["allowedToSignUpEmailBasedSubscriptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowedToSignUpEmailBasedSubscriptions)
-    res["allowedToUseSSPR"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowedToUseSSPR)
-    res["allowEmailVerifiedUsersToJoinOrganization"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowEmailVerifiedUsersToJoinOrganization)
-    res["allowInvitesFrom"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAllowInvitesFrom , m.SetAllowInvitesFrom)
-    res["blockMsolPowerShell"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockMsolPowerShell)
-    res["defaultUserRolePermissions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDefaultUserRolePermissionsFromDiscriminatorValue , m.SetDefaultUserRolePermissions)
-    res["guestUserRoleId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetGuestUserRoleId)
+    res["allowedToSignUpEmailBasedSubscriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedToSignUpEmailBasedSubscriptions(val)
+        }
+        return nil
+    }
+    res["allowedToUseSSPR"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedToUseSSPR(val)
+        }
+        return nil
+    }
+    res["allowEmailVerifiedUsersToJoinOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowEmailVerifiedUsersToJoinOrganization(val)
+        }
+        return nil
+    }
+    res["allowInvitesFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAllowInvitesFrom)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowInvitesFrom(val.(*AllowInvitesFrom))
+        }
+        return nil
+    }
+    res["blockMsolPowerShell"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockMsolPowerShell(val)
+        }
+        return nil
+    }
+    res["defaultUserRolePermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDefaultUserRolePermissionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultUserRolePermissions(val.(DefaultUserRolePermissionsable))
+        }
+        return nil
+    }
+    res["guestUserRoleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGuestUserRoleId(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).

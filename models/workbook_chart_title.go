@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -31,10 +30,46 @@ func CreateWorkbookChartTitleFromDiscriminatorValue(parseNode i878a80d2330e89d26
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["format"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWorkbookChartTitleFormatFromDiscriminatorValue , m.SetFormat)
-    res["overlay"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOverlay)
-    res["text"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetText)
-    res["visible"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetVisible)
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkbookChartTitleFormatFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFormat(val.(WorkbookChartTitleFormatable))
+        }
+        return nil
+    }
+    res["overlay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOverlay(val)
+        }
+        return nil
+    }
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetText(val)
+        }
+        return nil
+    }
+    res["visible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVisible(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFormat gets the format property value. Represents the formatting of a chart title, which includes fill and font formatting. Read-only.

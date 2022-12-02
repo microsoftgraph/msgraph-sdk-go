@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -33,10 +32,46 @@ func CreateEditionUpgradeConfigurationFromDiscriminatorValue(parseNode i878a80d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EditionUpgradeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["license"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLicense)
-    res["licenseType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEditionUpgradeLicenseType , m.SetLicenseType)
-    res["productKey"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProductKey)
-    res["targetEdition"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindows10EditionType , m.SetTargetEdition)
+    res["license"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLicense(val)
+        }
+        return nil
+    }
+    res["licenseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEditionUpgradeLicenseType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLicenseType(val.(*EditionUpgradeLicenseType))
+        }
+        return nil
+    }
+    res["productKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProductKey(val)
+        }
+        return nil
+    }
+    res["targetEdition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindows10EditionType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetEdition(val.(*Windows10EditionType))
+        }
+        return nil
+    }
     return res
 }
 // GetLicense gets the license property value. Edition Upgrade License File Content.

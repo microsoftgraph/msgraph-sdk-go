@@ -4,8 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i0d9345e4ca9c556c18fc66eaf4aa5f4f1bfc4fb76a58f98a0bbf3a68f43ea9e4 "github.com/microsoftgraph/msgraph-sdk-go/identityproviders/availableprovidertypes"
-    i8549ffdbc75df75d44fb63e6d18b52a6b7c6d1166514eaf384b5e220dcedee3f "github.com/microsoftgraph/msgraph-sdk-go/identityproviders/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -54,8 +52,8 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AvailableProviderTypes provides operations to call the availableProviderTypes method.
-func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*i0d9345e4ca9c556c18fc66eaf4aa5f4f1bfc4fb76a58f98a0bbf3a68f43ea9e4.AvailableProviderTypesRequestBuilder) {
-    return i0d9345e4ca9c556c18fc66eaf4aa5f4f1bfc4fb76a58f98a0bbf3a68f43ea9e4.NewAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*IdentityProvidersAvailableProviderTypesRequestBuilder) {
+    return NewIdentityProvidersAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewIdentityProvidersRequestBuilderInternal instantiates a new IdentityProvidersRequestBuilder and sets the default values.
 func NewIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProvidersRequestBuilder) {
@@ -77,8 +75,8 @@ func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *IdentityProvidersRequestBuilder) Count()(*i8549ffdbc75df75d44fb63e6d18b52a6b7c6d1166514eaf384b5e220dcedee3f.CountRequestBuilder) {
-    return i8549ffdbc75df75d44fb63e6d18b52a6b7c6d1166514eaf384b5e220dcedee3f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityProvidersRequestBuilder) Count()(*IdentityProvidersCountRequestBuilder) {
+    return NewIdentityProvidersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve all identityProviders in the directory.
 func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

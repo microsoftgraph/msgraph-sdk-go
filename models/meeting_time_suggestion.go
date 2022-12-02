@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -52,14 +51,94 @@ func (m *MeetingTimeSuggestion) GetConfidence()(*float64) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attendeeAvailability"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAttendeeAvailabilityFromDiscriminatorValue , m.SetAttendeeAvailability)
-    res["confidence"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat64Value(m.SetConfidence)
-    res["locations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue , m.SetLocations)
-    res["meetingTimeSlot"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTimeSlotFromDiscriminatorValue , m.SetMeetingTimeSlot)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["order"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetOrder)
-    res["organizerAvailability"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseFreeBusyStatus , m.SetOrganizerAvailability)
-    res["suggestionReason"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSuggestionReason)
+    res["attendeeAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttendeeAvailabilityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttendeeAvailabilityable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttendeeAvailabilityable)
+            }
+            m.SetAttendeeAvailability(res)
+        }
+        return nil
+    }
+    res["confidence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfidence(val)
+        }
+        return nil
+    }
+    res["locations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Locationable, len(val))
+            for i, v := range val {
+                res[i] = v.(Locationable)
+            }
+            m.SetLocations(res)
+        }
+        return nil
+    }
+    res["meetingTimeSlot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTimeSlotFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingTimeSlot(val.(TimeSlotable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["order"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrder(val)
+        }
+        return nil
+    }
+    res["organizerAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseFreeBusyStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizerAvailability(val.(*FreeBusyStatus))
+        }
+        return nil
+    }
+    res["suggestionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSuggestionReason(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLocations gets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
@@ -89,7 +168,10 @@ func (m *MeetingTimeSuggestion) GetSuggestionReason()(*string) {
 // Serialize serializes information the current object
 func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAttendeeAvailability() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAttendeeAvailability())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendeeAvailability()))
+        for i, v := range m.GetAttendeeAvailability() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("attendeeAvailability", cast)
         if err != nil {
             return err
@@ -102,7 +184,10 @@ func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetLocations() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLocations())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocations()))
+        for i, v := range m.GetLocations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("locations", cast)
         if err != nil {
             return err

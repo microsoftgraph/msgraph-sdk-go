@@ -2,7 +2,6 @@ package security
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
@@ -63,16 +62,130 @@ func (m *EdiscoveryCase) GetExternalId()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Case_escaped.GetFieldDeserializers()
-    res["closedBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentitySetFromDiscriminatorValue , m.SetClosedBy)
-    res["closedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetClosedDateTime)
-    res["custodians"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryCustodianFromDiscriminatorValue , m.SetCustodians)
-    res["externalId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetExternalId)
-    res["noncustodialDataSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue , m.SetNoncustodialDataSources)
-    res["operations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCaseOperationFromDiscriminatorValue , m.SetOperations)
-    res["reviewSets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryReviewSetFromDiscriminatorValue , m.SetReviewSets)
-    res["searches"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoverySearchFromDiscriminatorValue , m.SetSearches)
-    res["settings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEdiscoveryCaseSettingsFromDiscriminatorValue , m.SetSettings)
-    res["tags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEdiscoveryReviewTagFromDiscriminatorValue , m.SetTags)
+    res["closedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClosedBy(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable))
+        }
+        return nil
+    }
+    res["closedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClosedDateTime(val)
+        }
+        return nil
+    }
+    res["custodians"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryCustodianFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoveryCustodianable, len(val))
+            for i, v := range val {
+                res[i] = v.(EdiscoveryCustodianable)
+            }
+            m.SetCustodians(res)
+        }
+        return nil
+    }
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalId(val)
+        }
+        return nil
+    }
+    res["noncustodialDataSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoveryNoncustodialDataSourceable, len(val))
+            for i, v := range val {
+                res[i] = v.(EdiscoveryNoncustodialDataSourceable)
+            }
+            m.SetNoncustodialDataSources(res)
+        }
+        return nil
+    }
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCaseOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CaseOperationable, len(val))
+            for i, v := range val {
+                res[i] = v.(CaseOperationable)
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
+    res["reviewSets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryReviewSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoveryReviewSetable, len(val))
+            for i, v := range val {
+                res[i] = v.(EdiscoveryReviewSetable)
+            }
+            m.SetReviewSets(res)
+        }
+        return nil
+    }
+    res["searches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoverySearchFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoverySearchable, len(val))
+            for i, v := range val {
+                res[i] = v.(EdiscoverySearchable)
+            }
+            m.SetSearches(res)
+        }
+        return nil
+    }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEdiscoveryCaseSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(EdiscoveryCaseSettingsable))
+        }
+        return nil
+    }
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEdiscoveryReviewTagFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EdiscoveryReviewTagable, len(val))
+            for i, v := range val {
+                res[i] = v.(EdiscoveryReviewTagable)
+            }
+            m.SetTags(res)
+        }
+        return nil
+    }
     return res
 }
 // GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
@@ -118,7 +231,10 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetCustodians() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustodians())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustodians()))
+        for i, v := range m.GetCustodians() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("custodians", cast)
         if err != nil {
             return err
@@ -131,28 +247,40 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetNoncustodialDataSources() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNoncustodialDataSources())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNoncustodialDataSources()))
+        for i, v := range m.GetNoncustodialDataSources() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("noncustodialDataSources", cast)
         if err != nil {
             return err
         }
     }
     if m.GetOperations() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOperations())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
             return err
         }
     }
     if m.GetReviewSets() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetReviewSets())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReviewSets()))
+        for i, v := range m.GetReviewSets() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("reviewSets", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSearches() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSearches())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSearches()))
+        for i, v := range m.GetSearches() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("searches", cast)
         if err != nil {
             return err
@@ -165,7 +293,10 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetTags() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTags())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTags()))
+        for i, v := range m.GetTags() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("tags", cast)
         if err != nil {
             return err

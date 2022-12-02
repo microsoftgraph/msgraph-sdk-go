@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -29,9 +28,48 @@ func CreateServiceAnnouncementFromDiscriminatorValue(parseNode i878a80d2330e89d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["healthOverviews"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServiceHealthFromDiscriminatorValue , m.SetHealthOverviews)
-    res["issues"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServiceHealthIssueFromDiscriminatorValue , m.SetIssues)
-    res["messages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServiceUpdateMessageFromDiscriminatorValue , m.SetMessages)
+    res["healthOverviews"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceHealthable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceHealthable)
+            }
+            m.SetHealthOverviews(res)
+        }
+        return nil
+    }
+    res["issues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceHealthIssueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceHealthIssueable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceHealthIssueable)
+            }
+            m.SetIssues(res)
+        }
+        return nil
+    }
+    res["messages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceUpdateMessageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceUpdateMessageable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceUpdateMessageable)
+            }
+            m.SetMessages(res)
+        }
+        return nil
+    }
     return res
 }
 // GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
@@ -53,21 +91,30 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     if m.GetHealthOverviews() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetHealthOverviews())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHealthOverviews()))
+        for i, v := range m.GetHealthOverviews() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("healthOverviews", cast)
         if err != nil {
             return err
         }
     }
     if m.GetIssues() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIssues())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIssues()))
+        for i, v := range m.GetIssues() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("issues", cast)
         if err != nil {
             return err
         }
     }
     if m.GetMessages() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMessages())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessages()))
+        for i, v := range m.GetMessages() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
         if err != nil {
             return err

@@ -4,9 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5 "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs/teamsapps"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs/teamsapps/item"
 )
 
 // AppCatalogsRequestBuilder provides operations to manage the appCatalogs singleton.
@@ -129,11 +127,11 @@ func (m *AppCatalogsRequestBuilder) Patch(ctx context.Context, body iadcd8112441
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppCatalogsable), nil
 }
 // TeamsApps provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *AppCatalogsRequestBuilder) TeamsApps()(*i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.TeamsAppsRequestBuilder) {
-    return i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AppCatalogsRequestBuilder) TeamsApps()(*AppCatalogsTeamsAppsRequestBuilder) {
+    return NewAppCatalogsTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TeamsAppsById provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.TeamsAppItemRequestBuilder) {
+func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*AppCatalogsTeamsAppsTeamsAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -141,5 +139,5 @@ func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f6
     if id != "" {
         urlTplParams["teamsApp%2Did"] = id
     }
-    return i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.NewTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppCatalogsTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

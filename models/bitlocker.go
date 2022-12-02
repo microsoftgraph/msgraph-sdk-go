@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -25,7 +24,20 @@ func CreateBitlockerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Bitlocker) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["recoveryKeys"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBitlockerRecoveryKeyFromDiscriminatorValue , m.SetRecoveryKeys)
+    res["recoveryKeys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBitlockerRecoveryKeyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BitlockerRecoveryKeyable, len(val))
+            for i, v := range val {
+                res[i] = v.(BitlockerRecoveryKeyable)
+            }
+            m.SetRecoveryKeys(res)
+        }
+        return nil
+    }
     return res
 }
 // GetRecoveryKeys gets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
@@ -39,7 +51,10 @@ func (m *Bitlocker) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         return err
     }
     if m.GetRecoveryKeys() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRecoveryKeys())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecoveryKeys()))
+        for i, v := range m.GetRecoveryKeys() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("recoveryKeys", cast)
         if err != nil {
             return err

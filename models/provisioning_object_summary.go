@@ -2,7 +2,6 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -72,22 +71,174 @@ func (m *ProvisioningObjectSummary) GetDurationInMilliseconds()(*int32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetActivityDateTime)
-    res["changeId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetChangeId)
-    res["cycleId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCycleId)
-    res["durationInMilliseconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDurationInMilliseconds)
-    res["initiatedBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateInitiatorFromDiscriminatorValue , m.SetInitiatedBy)
-    res["jobId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetJobId)
-    res["modifiedProperties"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateModifiedPropertyFromDiscriminatorValue , m.SetModifiedProperties)
-    res["provisioningAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseProvisioningAction , m.SetProvisioningAction)
-    res["provisioningStatusInfo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateProvisioningStatusInfoFromDiscriminatorValue , m.SetProvisioningStatusInfo)
-    res["provisioningSteps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateProvisioningStepFromDiscriminatorValue , m.SetProvisioningSteps)
-    res["servicePrincipal"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateProvisioningServicePrincipalFromDiscriminatorValue , m.SetServicePrincipal)
-    res["sourceIdentity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue , m.SetSourceIdentity)
-    res["sourceSystem"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateProvisioningSystemFromDiscriminatorValue , m.SetSourceSystem)
-    res["targetIdentity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue , m.SetTargetIdentity)
-    res["targetSystem"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateProvisioningSystemFromDiscriminatorValue , m.SetTargetSystem)
-    res["tenantId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTenantId)
+    res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivityDateTime(val)
+        }
+        return nil
+    }
+    res["changeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetChangeId(val)
+        }
+        return nil
+    }
+    res["cycleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCycleId(val)
+        }
+        return nil
+    }
+    res["durationInMilliseconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDurationInMilliseconds(val)
+        }
+        return nil
+    }
+    res["initiatedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInitiatorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInitiatedBy(val.(Initiatorable))
+        }
+        return nil
+    }
+    res["jobId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetJobId(val)
+        }
+        return nil
+    }
+    res["modifiedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateModifiedPropertyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ModifiedPropertyable, len(val))
+            for i, v := range val {
+                res[i] = v.(ModifiedPropertyable)
+            }
+            m.SetModifiedProperties(res)
+        }
+        return nil
+    }
+    res["provisioningAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseProvisioningAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisioningAction(val.(*ProvisioningAction))
+        }
+        return nil
+    }
+    res["provisioningStatusInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProvisioningStatusInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisioningStatusInfo(val.(ProvisioningStatusInfoable))
+        }
+        return nil
+    }
+    res["provisioningSteps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateProvisioningStepFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ProvisioningStepable, len(val))
+            for i, v := range val {
+                res[i] = v.(ProvisioningStepable)
+            }
+            m.SetProvisioningSteps(res)
+        }
+        return nil
+    }
+    res["servicePrincipal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProvisioningServicePrincipalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipal(val.(ProvisioningServicePrincipalable))
+        }
+        return nil
+    }
+    res["sourceIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceIdentity(val.(ProvisionedIdentityable))
+        }
+        return nil
+    }
+    res["sourceSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProvisioningSystemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceSystem(val.(ProvisioningSystemable))
+        }
+        return nil
+    }
+    res["targetIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetIdentity(val.(ProvisionedIdentityable))
+        }
+        return nil
+    }
+    res["targetSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateProvisioningSystemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetSystem(val.(ProvisioningSystemable))
+        }
+        return nil
+    }
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantId(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiatedBy gets the initiatedBy property value. Details of who initiated this provisioning.
@@ -181,7 +332,10 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetModifiedProperties() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetModifiedProperties())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetModifiedProperties()))
+        for i, v := range m.GetModifiedProperties() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {
             return err
@@ -201,7 +355,10 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetProvisioningSteps() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProvisioningSteps())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioningSteps()))
+        for i, v := range m.GetProvisioningSteps() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("provisioningSteps", cast)
         if err != nil {
             return err

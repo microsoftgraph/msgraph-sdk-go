@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,7 +26,16 @@ func CreateDeviceEnrollmentLimitConfigurationFromDiscriminatorValue(parseNode i8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentLimitConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
-    res["limit"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetLimit)
+    res["limit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLimit(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLimit gets the limit property value. The maximum number of devices that a user can enroll

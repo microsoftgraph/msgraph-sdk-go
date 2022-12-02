@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -55,13 +54,84 @@ func (m *ListItem) GetDriveItem()(DriveItemable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
-    res["analytics"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateItemAnalyticsFromDiscriminatorValue , m.SetAnalytics)
-    res["contentType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateContentTypeInfoFromDiscriminatorValue , m.SetContentType)
-    res["documentSetVersions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDocumentSetVersionFromDiscriminatorValue , m.SetDocumentSetVersions)
-    res["driveItem"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDriveItemFromDiscriminatorValue , m.SetDriveItem)
-    res["fields"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateFieldValueSetFromDiscriminatorValue , m.SetFields)
-    res["sharepointIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSharepointIdsFromDiscriminatorValue , m.SetSharepointIds)
-    res["versions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateListItemVersionFromDiscriminatorValue , m.SetVersions)
+    res["analytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemAnalyticsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAnalytics(val.(ItemAnalyticsable))
+        }
+        return nil
+    }
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentType(val.(ContentTypeInfoable))
+        }
+        return nil
+    }
+    res["documentSetVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDocumentSetVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DocumentSetVersionable, len(val))
+            for i, v := range val {
+                res[i] = v.(DocumentSetVersionable)
+            }
+            m.SetDocumentSetVersions(res)
+        }
+        return nil
+    }
+    res["driveItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDriveItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDriveItem(val.(DriveItemable))
+        }
+        return nil
+    }
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateFieldValueSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFields(val.(FieldValueSetable))
+        }
+        return nil
+    }
+    res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharepointIds(val.(SharepointIdsable))
+        }
+        return nil
+    }
+    res["versions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateListItemVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ListItemVersionable, len(val))
+            for i, v := range val {
+                res[i] = v.(ListItemVersionable)
+            }
+            m.SetVersions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetFields gets the fields property value. The values of the columns set on this list item.
@@ -95,7 +165,10 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetDocumentSetVersions() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDocumentSetVersions())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocumentSetVersions()))
+        for i, v := range m.GetDocumentSetVersions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("documentSetVersions", cast)
         if err != nil {
             return err
@@ -120,7 +193,10 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetVersions() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetVersions())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVersions()))
+        for i, v := range m.GetVersions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {
             return err

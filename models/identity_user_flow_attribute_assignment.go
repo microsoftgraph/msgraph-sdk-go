@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -39,12 +38,70 @@ func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
-    res["isOptional"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsOptional)
-    res["requiresVerification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequiresVerification)
-    res["userAttribute"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentityUserFlowAttributeFromDiscriminatorValue , m.SetUserAttribute)
-    res["userAttributeValues"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserAttributeValuesItemFromDiscriminatorValue , m.SetUserAttributeValues)
-    res["userInputType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseIdentityUserFlowAttributeInputType , m.SetUserInputType)
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["isOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsOptional(val)
+        }
+        return nil
+    }
+    res["requiresVerification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequiresVerification(val)
+        }
+        return nil
+    }
+    res["userAttribute"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserAttribute(val.(IdentityUserFlowAttributeable))
+        }
+        return nil
+    }
+    res["userAttributeValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserAttributeValuesItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserAttributeValuesItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(UserAttributeValuesItemable)
+            }
+            m.SetUserAttributeValues(res)
+        }
+        return nil
+    }
+    res["userInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseIdentityUserFlowAttributeInputType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserInputType(val.(*IdentityUserFlowAttributeInputType))
+        }
+        return nil
+    }
     return res
 }
 // GetIsOptional gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
@@ -98,7 +155,10 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d2
         }
     }
     if m.GetUserAttributeValues() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserAttributeValues())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAttributeValues()))
+        for i, v := range m.GetUserAttributeValues() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("userAttributeValues", cast)
         if err != nil {
             return err

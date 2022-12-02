@@ -4,9 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i0bcf9220e6936a6837e0b6c651cb627f833c3a377293d4b256f64402d4c61ea1 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants/delta"
 )
 
 // Oauth2PermissionGrantsRequestBuilder provides operations to manage the collection of oAuth2PermissionGrant entities.
@@ -73,8 +71,8 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewOauth2PermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*i0bcf9220e6936a6837e0b6c651cb627f833c3a377293d4b256f64402d4c61ea1.CountRequestBuilder) {
-    return i0bcf9220e6936a6837e0b6c651cb627f833c3a377293d4b256f64402d4c61ea1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*Oauth2PermissionGrantsCountRequestBuilder) {
+    return NewOauth2PermissionGrantsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -107,8 +105,8 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformation(ctx 
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500.DeltaRequestBuilder) {
-    return id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*Oauth2PermissionGrantsDeltaRequestBuilder) {
+    return NewOauth2PermissionGrantsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 func (m *Oauth2PermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OAuth2PermissionGrantCollectionResponseable, error) {

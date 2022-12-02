@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -53,18 +52,126 @@ func (m *WindowsInformationProtectionPolicy) GetDaysWithoutContactBeforeUnenroll
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsInformationProtection.GetFieldDeserializers()
-    res["daysWithoutContactBeforeUnenroll"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDaysWithoutContactBeforeUnenroll)
-    res["mdmEnrollmentUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMdmEnrollmentUrl)
-    res["minutesOfInactivityBeforeDeviceLock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinutesOfInactivityBeforeDeviceLock)
-    res["numberOfPastPinsRemembered"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetNumberOfPastPinsRemembered)
-    res["passwordMaximumAttemptCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMaximumAttemptCount)
-    res["pinExpirationDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPinExpirationDays)
-    res["pinLowercaseLetters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements , m.SetPinLowercaseLetters)
-    res["pinMinimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPinMinimumLength)
-    res["pinSpecialCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements , m.SetPinSpecialCharacters)
-    res["pinUppercaseLetters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements , m.SetPinUppercaseLetters)
-    res["revokeOnMdmHandoffDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRevokeOnMdmHandoffDisabled)
-    res["windowsHelloForBusinessBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWindowsHelloForBusinessBlocked)
+    res["daysWithoutContactBeforeUnenroll"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDaysWithoutContactBeforeUnenroll(val)
+        }
+        return nil
+    }
+    res["mdmEnrollmentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMdmEnrollmentUrl(val)
+        }
+        return nil
+    }
+    res["minutesOfInactivityBeforeDeviceLock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMinutesOfInactivityBeforeDeviceLock(val)
+        }
+        return nil
+    }
+    res["numberOfPastPinsRemembered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNumberOfPastPinsRemembered(val)
+        }
+        return nil
+    }
+    res["passwordMaximumAttemptCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasswordMaximumAttemptCount(val)
+        }
+        return nil
+    }
+    res["pinExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPinExpirationDays(val)
+        }
+        return nil
+    }
+    res["pinLowercaseLetters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPinLowercaseLetters(val.(*WindowsInformationProtectionPinCharacterRequirements))
+        }
+        return nil
+    }
+    res["pinMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPinMinimumLength(val)
+        }
+        return nil
+    }
+    res["pinSpecialCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPinSpecialCharacters(val.(*WindowsInformationProtectionPinCharacterRequirements))
+        }
+        return nil
+    }
+    res["pinUppercaseLetters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPinUppercaseLetters(val.(*WindowsInformationProtectionPinCharacterRequirements))
+        }
+        return nil
+    }
+    res["revokeOnMdmHandoffDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRevokeOnMdmHandoffDisabled(val)
+        }
+        return nil
+    }
+    res["windowsHelloForBusinessBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsHelloForBusinessBlocked(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMdmEnrollmentUrl gets the mdmEnrollmentUrl property value. Enrollment url for the MDM

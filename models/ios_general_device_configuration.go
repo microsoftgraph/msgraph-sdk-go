@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -451,137 +450,1344 @@ func (m *IosGeneralDeviceConfiguration) GetFaceTimeBlocked()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["accountBlockModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAccountBlockModification)
-    res["activationLockAllowWhenSupervised"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetActivationLockAllowWhenSupervised)
-    res["airDropBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAirDropBlocked)
-    res["airDropForceUnmanagedDropTarget"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAirDropForceUnmanagedDropTarget)
-    res["airPlayForcePairingPasswordForOutgoingRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAirPlayForcePairingPasswordForOutgoingRequests)
-    res["appleNewsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppleNewsBlocked)
-    res["appleWatchBlockPairing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppleWatchBlockPairing)
-    res["appleWatchForceWristDetection"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppleWatchForceWristDetection)
-    res["appsSingleAppModeList"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue , m.SetAppsSingleAppModeList)
-    res["appStoreBlockAutomaticDownloads"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppStoreBlockAutomaticDownloads)
-    res["appStoreBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppStoreBlocked)
-    res["appStoreBlockInAppPurchases"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppStoreBlockInAppPurchases)
-    res["appStoreBlockUIAppInstallation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppStoreBlockUIAppInstallation)
-    res["appStoreRequirePassword"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppStoreRequirePassword)
-    res["appsVisibilityList"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue , m.SetAppsVisibilityList)
-    res["appsVisibilityListType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAppListType , m.SetAppsVisibilityListType)
-    res["bluetoothBlockModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBluetoothBlockModification)
-    res["cameraBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCameraBlocked)
-    res["cellularBlockDataRoaming"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockDataRoaming)
-    res["cellularBlockGlobalBackgroundFetchWhileRoaming"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockGlobalBackgroundFetchWhileRoaming)
-    res["cellularBlockPerAppDataModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockPerAppDataModification)
-    res["cellularBlockPersonalHotspot"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockPersonalHotspot)
-    res["cellularBlockVoiceRoaming"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockVoiceRoaming)
-    res["certificatesBlockUntrustedTlsCertificates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCertificatesBlockUntrustedTlsCertificates)
-    res["classroomAppBlockRemoteScreenObservation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetClassroomAppBlockRemoteScreenObservation)
-    res["classroomAppForceUnpromptedScreenObservation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetClassroomAppForceUnpromptedScreenObservation)
-    res["compliantAppListType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAppListType , m.SetCompliantAppListType)
-    res["compliantAppsList"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue , m.SetCompliantAppsList)
-    res["configurationProfileBlockChanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetConfigurationProfileBlockChanges)
-    res["definitionLookupBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDefinitionLookupBlocked)
-    res["deviceBlockEnableRestrictions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDeviceBlockEnableRestrictions)
-    res["deviceBlockEraseContentAndSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDeviceBlockEraseContentAndSettings)
-    res["deviceBlockNameModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDeviceBlockNameModification)
-    res["diagnosticDataBlockSubmission"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDiagnosticDataBlockSubmission)
-    res["diagnosticDataBlockSubmissionModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDiagnosticDataBlockSubmissionModification)
-    res["documentsBlockManagedDocumentsInUnmanagedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDocumentsBlockManagedDocumentsInUnmanagedApps)
-    res["documentsBlockUnmanagedDocumentsInManagedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDocumentsBlockUnmanagedDocumentsInManagedApps)
-    res["emailInDomainSuffixes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetEmailInDomainSuffixes)
-    res["enterpriseAppBlockTrust"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnterpriseAppBlockTrust)
-    res["enterpriseAppBlockTrustModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnterpriseAppBlockTrustModification)
-    res["faceTimeBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFaceTimeBlocked)
-    res["findMyFriendsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFindMyFriendsBlocked)
-    res["gameCenterBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetGameCenterBlocked)
-    res["gamingBlockGameCenterFriends"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetGamingBlockGameCenterFriends)
-    res["gamingBlockMultiplayer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetGamingBlockMultiplayer)
-    res["hostPairingBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetHostPairingBlocked)
-    res["iBooksStoreBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIBooksStoreBlocked)
-    res["iBooksStoreBlockErotica"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIBooksStoreBlockErotica)
-    res["iCloudBlockActivityContinuation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockActivityContinuation)
-    res["iCloudBlockBackup"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockBackup)
-    res["iCloudBlockDocumentSync"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockDocumentSync)
-    res["iCloudBlockManagedAppsSync"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockManagedAppsSync)
-    res["iCloudBlockPhotoLibrary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockPhotoLibrary)
-    res["iCloudBlockPhotoStreamSync"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockPhotoStreamSync)
-    res["iCloudBlockSharedPhotoStream"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudBlockSharedPhotoStream)
-    res["iCloudRequireEncryptedBackup"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetICloudRequireEncryptedBackup)
-    res["iTunesBlockExplicitContent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetITunesBlockExplicitContent)
-    res["iTunesBlockMusicService"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetITunesBlockMusicService)
-    res["iTunesBlockRadio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetITunesBlockRadio)
-    res["keyboardBlockAutoCorrect"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKeyboardBlockAutoCorrect)
-    res["keyboardBlockDictation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKeyboardBlockDictation)
-    res["keyboardBlockPredictive"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKeyboardBlockPredictive)
-    res["keyboardBlockShortcuts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKeyboardBlockShortcuts)
-    res["keyboardBlockSpellCheck"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKeyboardBlockSpellCheck)
-    res["kioskModeAllowAssistiveSpeak"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowAssistiveSpeak)
-    res["kioskModeAllowAssistiveTouchSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowAssistiveTouchSettings)
-    res["kioskModeAllowAutoLock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowAutoLock)
-    res["kioskModeAllowColorInversionSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowColorInversionSettings)
-    res["kioskModeAllowRingerSwitch"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowRingerSwitch)
-    res["kioskModeAllowScreenRotation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowScreenRotation)
-    res["kioskModeAllowSleepButton"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowSleepButton)
-    res["kioskModeAllowTouchscreen"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowTouchscreen)
-    res["kioskModeAllowVoiceOverSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowVoiceOverSettings)
-    res["kioskModeAllowVolumeButtons"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowVolumeButtons)
-    res["kioskModeAllowZoomSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAllowZoomSettings)
-    res["kioskModeAppStoreUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeAppStoreUrl)
-    res["kioskModeBuiltInAppId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeBuiltInAppId)
-    res["kioskModeManagedAppId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeManagedAppId)
-    res["kioskModeRequireAssistiveTouch"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeRequireAssistiveTouch)
-    res["kioskModeRequireColorInversion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeRequireColorInversion)
-    res["kioskModeRequireMonoAudio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeRequireMonoAudio)
-    res["kioskModeRequireVoiceOver"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeRequireVoiceOver)
-    res["kioskModeRequireZoom"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeRequireZoom)
-    res["lockScreenBlockControlCenter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetLockScreenBlockControlCenter)
-    res["lockScreenBlockNotificationView"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetLockScreenBlockNotificationView)
-    res["lockScreenBlockPassbook"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetLockScreenBlockPassbook)
-    res["lockScreenBlockTodayView"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetLockScreenBlockTodayView)
-    res["mediaContentRatingApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseRatingAppsType , m.SetMediaContentRatingApps)
-    res["mediaContentRatingAustralia"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingAustraliaFromDiscriminatorValue , m.SetMediaContentRatingAustralia)
-    res["mediaContentRatingCanada"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingCanadaFromDiscriminatorValue , m.SetMediaContentRatingCanada)
-    res["mediaContentRatingFrance"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingFranceFromDiscriminatorValue , m.SetMediaContentRatingFrance)
-    res["mediaContentRatingGermany"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingGermanyFromDiscriminatorValue , m.SetMediaContentRatingGermany)
-    res["mediaContentRatingIreland"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingIrelandFromDiscriminatorValue , m.SetMediaContentRatingIreland)
-    res["mediaContentRatingJapan"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingJapanFromDiscriminatorValue , m.SetMediaContentRatingJapan)
-    res["mediaContentRatingNewZealand"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingNewZealandFromDiscriminatorValue , m.SetMediaContentRatingNewZealand)
-    res["mediaContentRatingUnitedKingdom"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingUnitedKingdomFromDiscriminatorValue , m.SetMediaContentRatingUnitedKingdom)
-    res["mediaContentRatingUnitedStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMediaContentRatingUnitedStatesFromDiscriminatorValue , m.SetMediaContentRatingUnitedStates)
-    res["messagesBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMessagesBlocked)
-    res["networkUsageRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIosNetworkUsageRuleFromDiscriminatorValue , m.SetNetworkUsageRules)
-    res["notificationsBlockSettingsModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetNotificationsBlockSettingsModification)
-    res["passcodeBlockFingerprintModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasscodeBlockFingerprintModification)
-    res["passcodeBlockFingerprintUnlock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasscodeBlockFingerprintUnlock)
-    res["passcodeBlockModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasscodeBlockModification)
-    res["passcodeBlockSimple"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasscodeBlockSimple)
-    res["passcodeExpirationDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodeExpirationDays)
-    res["passcodeMinimumCharacterSetCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodeMinimumCharacterSetCount)
-    res["passcodeMinimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodeMinimumLength)
-    res["passcodeMinutesOfInactivityBeforeLock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodeMinutesOfInactivityBeforeLock)
-    res["passcodeMinutesOfInactivityBeforeScreenTimeout"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodeMinutesOfInactivityBeforeScreenTimeout)
-    res["passcodePreviousPasscodeBlockCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodePreviousPasscodeBlockCount)
-    res["passcodeRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasscodeRequired)
-    res["passcodeRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseRequiredPasswordType , m.SetPasscodeRequiredType)
-    res["passcodeSignInFailureCountBeforeWipe"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasscodeSignInFailureCountBeforeWipe)
-    res["podcastsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPodcastsBlocked)
-    res["safariBlockAutofill"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSafariBlockAutofill)
-    res["safariBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSafariBlocked)
-    res["safariBlockJavaScript"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSafariBlockJavaScript)
-    res["safariBlockPopups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSafariBlockPopups)
-    res["safariCookieSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWebBrowserCookieSettings , m.SetSafariCookieSettings)
-    res["safariManagedDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSafariManagedDomains)
-    res["safariPasswordAutoFillDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSafariPasswordAutoFillDomains)
-    res["safariRequireFraudWarning"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSafariRequireFraudWarning)
-    res["screenCaptureBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetScreenCaptureBlocked)
-    res["siriBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSiriBlocked)
-    res["siriBlockedWhenLocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSiriBlockedWhenLocked)
-    res["siriBlockUserGeneratedContent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSiriBlockUserGeneratedContent)
-    res["siriRequireProfanityFilter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSiriRequireProfanityFilter)
-    res["spotlightBlockInternetResults"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSpotlightBlockInternetResults)
-    res["voiceDialingBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetVoiceDialingBlocked)
-    res["wallpaperBlockModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWallpaperBlockModification)
-    res["wiFiConnectOnlyToConfiguredNetworks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWiFiConnectOnlyToConfiguredNetworks)
+    res["accountBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccountBlockModification(val)
+        }
+        return nil
+    }
+    res["activationLockAllowWhenSupervised"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivationLockAllowWhenSupervised(val)
+        }
+        return nil
+    }
+    res["airDropBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAirDropBlocked(val)
+        }
+        return nil
+    }
+    res["airDropForceUnmanagedDropTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAirDropForceUnmanagedDropTarget(val)
+        }
+        return nil
+    }
+    res["airPlayForcePairingPasswordForOutgoingRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAirPlayForcePairingPasswordForOutgoingRequests(val)
+        }
+        return nil
+    }
+    res["appleNewsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleNewsBlocked(val)
+        }
+        return nil
+    }
+    res["appleWatchBlockPairing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleWatchBlockPairing(val)
+        }
+        return nil
+    }
+    res["appleWatchForceWristDetection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleWatchForceWristDetection(val)
+        }
+        return nil
+    }
+    res["appsSingleAppModeList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppListItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(AppListItemable)
+            }
+            m.SetAppsSingleAppModeList(res)
+        }
+        return nil
+    }
+    res["appStoreBlockAutomaticDownloads"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppStoreBlockAutomaticDownloads(val)
+        }
+        return nil
+    }
+    res["appStoreBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppStoreBlocked(val)
+        }
+        return nil
+    }
+    res["appStoreBlockInAppPurchases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppStoreBlockInAppPurchases(val)
+        }
+        return nil
+    }
+    res["appStoreBlockUIAppInstallation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppStoreBlockUIAppInstallation(val)
+        }
+        return nil
+    }
+    res["appStoreRequirePassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppStoreRequirePassword(val)
+        }
+        return nil
+    }
+    res["appsVisibilityList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppListItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(AppListItemable)
+            }
+            m.SetAppsVisibilityList(res)
+        }
+        return nil
+    }
+    res["appsVisibilityListType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppListType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppsVisibilityListType(val.(*AppListType))
+        }
+        return nil
+    }
+    res["bluetoothBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBluetoothBlockModification(val)
+        }
+        return nil
+    }
+    res["cameraBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCameraBlocked(val)
+        }
+        return nil
+    }
+    res["cellularBlockDataRoaming"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCellularBlockDataRoaming(val)
+        }
+        return nil
+    }
+    res["cellularBlockGlobalBackgroundFetchWhileRoaming"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCellularBlockGlobalBackgroundFetchWhileRoaming(val)
+        }
+        return nil
+    }
+    res["cellularBlockPerAppDataModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCellularBlockPerAppDataModification(val)
+        }
+        return nil
+    }
+    res["cellularBlockPersonalHotspot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCellularBlockPersonalHotspot(val)
+        }
+        return nil
+    }
+    res["cellularBlockVoiceRoaming"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCellularBlockVoiceRoaming(val)
+        }
+        return nil
+    }
+    res["certificatesBlockUntrustedTlsCertificates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertificatesBlockUntrustedTlsCertificates(val)
+        }
+        return nil
+    }
+    res["classroomAppBlockRemoteScreenObservation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClassroomAppBlockRemoteScreenObservation(val)
+        }
+        return nil
+    }
+    res["classroomAppForceUnpromptedScreenObservation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClassroomAppForceUnpromptedScreenObservation(val)
+        }
+        return nil
+    }
+    res["compliantAppListType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppListType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompliantAppListType(val.(*AppListType))
+        }
+        return nil
+    }
+    res["compliantAppsList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppListItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(AppListItemable)
+            }
+            m.SetCompliantAppsList(res)
+        }
+        return nil
+    }
+    res["configurationProfileBlockChanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfigurationProfileBlockChanges(val)
+        }
+        return nil
+    }
+    res["definitionLookupBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefinitionLookupBlocked(val)
+        }
+        return nil
+    }
+    res["deviceBlockEnableRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceBlockEnableRestrictions(val)
+        }
+        return nil
+    }
+    res["deviceBlockEraseContentAndSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceBlockEraseContentAndSettings(val)
+        }
+        return nil
+    }
+    res["deviceBlockNameModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceBlockNameModification(val)
+        }
+        return nil
+    }
+    res["diagnosticDataBlockSubmission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDiagnosticDataBlockSubmission(val)
+        }
+        return nil
+    }
+    res["diagnosticDataBlockSubmissionModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDiagnosticDataBlockSubmissionModification(val)
+        }
+        return nil
+    }
+    res["documentsBlockManagedDocumentsInUnmanagedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDocumentsBlockManagedDocumentsInUnmanagedApps(val)
+        }
+        return nil
+    }
+    res["documentsBlockUnmanagedDocumentsInManagedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDocumentsBlockUnmanagedDocumentsInManagedApps(val)
+        }
+        return nil
+    }
+    res["emailInDomainSuffixes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEmailInDomainSuffixes(res)
+        }
+        return nil
+    }
+    res["enterpriseAppBlockTrust"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnterpriseAppBlockTrust(val)
+        }
+        return nil
+    }
+    res["enterpriseAppBlockTrustModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnterpriseAppBlockTrustModification(val)
+        }
+        return nil
+    }
+    res["faceTimeBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFaceTimeBlocked(val)
+        }
+        return nil
+    }
+    res["findMyFriendsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFindMyFriendsBlocked(val)
+        }
+        return nil
+    }
+    res["gameCenterBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGameCenterBlocked(val)
+        }
+        return nil
+    }
+    res["gamingBlockGameCenterFriends"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGamingBlockGameCenterFriends(val)
+        }
+        return nil
+    }
+    res["gamingBlockMultiplayer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGamingBlockMultiplayer(val)
+        }
+        return nil
+    }
+    res["hostPairingBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHostPairingBlocked(val)
+        }
+        return nil
+    }
+    res["iBooksStoreBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIBooksStoreBlocked(val)
+        }
+        return nil
+    }
+    res["iBooksStoreBlockErotica"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIBooksStoreBlockErotica(val)
+        }
+        return nil
+    }
+    res["iCloudBlockActivityContinuation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockActivityContinuation(val)
+        }
+        return nil
+    }
+    res["iCloudBlockBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockBackup(val)
+        }
+        return nil
+    }
+    res["iCloudBlockDocumentSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockDocumentSync(val)
+        }
+        return nil
+    }
+    res["iCloudBlockManagedAppsSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockManagedAppsSync(val)
+        }
+        return nil
+    }
+    res["iCloudBlockPhotoLibrary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockPhotoLibrary(val)
+        }
+        return nil
+    }
+    res["iCloudBlockPhotoStreamSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockPhotoStreamSync(val)
+        }
+        return nil
+    }
+    res["iCloudBlockSharedPhotoStream"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudBlockSharedPhotoStream(val)
+        }
+        return nil
+    }
+    res["iCloudRequireEncryptedBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICloudRequireEncryptedBackup(val)
+        }
+        return nil
+    }
+    res["iTunesBlockExplicitContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetITunesBlockExplicitContent(val)
+        }
+        return nil
+    }
+    res["iTunesBlockMusicService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetITunesBlockMusicService(val)
+        }
+        return nil
+    }
+    res["iTunesBlockRadio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetITunesBlockRadio(val)
+        }
+        return nil
+    }
+    res["keyboardBlockAutoCorrect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyboardBlockAutoCorrect(val)
+        }
+        return nil
+    }
+    res["keyboardBlockDictation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyboardBlockDictation(val)
+        }
+        return nil
+    }
+    res["keyboardBlockPredictive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyboardBlockPredictive(val)
+        }
+        return nil
+    }
+    res["keyboardBlockShortcuts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyboardBlockShortcuts(val)
+        }
+        return nil
+    }
+    res["keyboardBlockSpellCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyboardBlockSpellCheck(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowAssistiveSpeak"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowAssistiveSpeak(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowAssistiveTouchSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowAssistiveTouchSettings(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowAutoLock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowAutoLock(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowColorInversionSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowColorInversionSettings(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowRingerSwitch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowRingerSwitch(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowScreenRotation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowScreenRotation(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowSleepButton"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowSleepButton(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowTouchscreen"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowTouchscreen(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowVoiceOverSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowVoiceOverSettings(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowVolumeButtons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowVolumeButtons(val)
+        }
+        return nil
+    }
+    res["kioskModeAllowZoomSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAllowZoomSettings(val)
+        }
+        return nil
+    }
+    res["kioskModeAppStoreUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeAppStoreUrl(val)
+        }
+        return nil
+    }
+    res["kioskModeBuiltInAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeBuiltInAppId(val)
+        }
+        return nil
+    }
+    res["kioskModeManagedAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeManagedAppId(val)
+        }
+        return nil
+    }
+    res["kioskModeRequireAssistiveTouch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeRequireAssistiveTouch(val)
+        }
+        return nil
+    }
+    res["kioskModeRequireColorInversion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeRequireColorInversion(val)
+        }
+        return nil
+    }
+    res["kioskModeRequireMonoAudio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeRequireMonoAudio(val)
+        }
+        return nil
+    }
+    res["kioskModeRequireVoiceOver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeRequireVoiceOver(val)
+        }
+        return nil
+    }
+    res["kioskModeRequireZoom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKioskModeRequireZoom(val)
+        }
+        return nil
+    }
+    res["lockScreenBlockControlCenter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockScreenBlockControlCenter(val)
+        }
+        return nil
+    }
+    res["lockScreenBlockNotificationView"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockScreenBlockNotificationView(val)
+        }
+        return nil
+    }
+    res["lockScreenBlockPassbook"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockScreenBlockPassbook(val)
+        }
+        return nil
+    }
+    res["lockScreenBlockTodayView"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockScreenBlockTodayView(val)
+        }
+        return nil
+    }
+    res["mediaContentRatingApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRatingAppsType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingApps(val.(*RatingAppsType))
+        }
+        return nil
+    }
+    res["mediaContentRatingAustralia"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingAustraliaFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingAustralia(val.(MediaContentRatingAustraliaable))
+        }
+        return nil
+    }
+    res["mediaContentRatingCanada"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingCanadaFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingCanada(val.(MediaContentRatingCanadaable))
+        }
+        return nil
+    }
+    res["mediaContentRatingFrance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingFranceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingFrance(val.(MediaContentRatingFranceable))
+        }
+        return nil
+    }
+    res["mediaContentRatingGermany"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingGermanyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingGermany(val.(MediaContentRatingGermanyable))
+        }
+        return nil
+    }
+    res["mediaContentRatingIreland"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingIrelandFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingIreland(val.(MediaContentRatingIrelandable))
+        }
+        return nil
+    }
+    res["mediaContentRatingJapan"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingJapanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingJapan(val.(MediaContentRatingJapanable))
+        }
+        return nil
+    }
+    res["mediaContentRatingNewZealand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingNewZealandFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingNewZealand(val.(MediaContentRatingNewZealandable))
+        }
+        return nil
+    }
+    res["mediaContentRatingUnitedKingdom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingUnitedKingdomFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingUnitedKingdom(val.(MediaContentRatingUnitedKingdomable))
+        }
+        return nil
+    }
+    res["mediaContentRatingUnitedStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaContentRatingUnitedStatesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaContentRatingUnitedStates(val.(MediaContentRatingUnitedStatesable))
+        }
+        return nil
+    }
+    res["messagesBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessagesBlocked(val)
+        }
+        return nil
+    }
+    res["networkUsageRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIosNetworkUsageRuleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IosNetworkUsageRuleable, len(val))
+            for i, v := range val {
+                res[i] = v.(IosNetworkUsageRuleable)
+            }
+            m.SetNetworkUsageRules(res)
+        }
+        return nil
+    }
+    res["notificationsBlockSettingsModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNotificationsBlockSettingsModification(val)
+        }
+        return nil
+    }
+    res["passcodeBlockFingerprintModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeBlockFingerprintModification(val)
+        }
+        return nil
+    }
+    res["passcodeBlockFingerprintUnlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeBlockFingerprintUnlock(val)
+        }
+        return nil
+    }
+    res["passcodeBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeBlockModification(val)
+        }
+        return nil
+    }
+    res["passcodeBlockSimple"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeBlockSimple(val)
+        }
+        return nil
+    }
+    res["passcodeExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeExpirationDays(val)
+        }
+        return nil
+    }
+    res["passcodeMinimumCharacterSetCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeMinimumCharacterSetCount(val)
+        }
+        return nil
+    }
+    res["passcodeMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeMinimumLength(val)
+        }
+        return nil
+    }
+    res["passcodeMinutesOfInactivityBeforeLock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeMinutesOfInactivityBeforeLock(val)
+        }
+        return nil
+    }
+    res["passcodeMinutesOfInactivityBeforeScreenTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeMinutesOfInactivityBeforeScreenTimeout(val)
+        }
+        return nil
+    }
+    res["passcodePreviousPasscodeBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodePreviousPasscodeBlockCount(val)
+        }
+        return nil
+    }
+    res["passcodeRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeRequired(val)
+        }
+        return nil
+    }
+    res["passcodeRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRequiredPasswordType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeRequiredType(val.(*RequiredPasswordType))
+        }
+        return nil
+    }
+    res["passcodeSignInFailureCountBeforeWipe"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasscodeSignInFailureCountBeforeWipe(val)
+        }
+        return nil
+    }
+    res["podcastsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPodcastsBlocked(val)
+        }
+        return nil
+    }
+    res["safariBlockAutofill"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSafariBlockAutofill(val)
+        }
+        return nil
+    }
+    res["safariBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSafariBlocked(val)
+        }
+        return nil
+    }
+    res["safariBlockJavaScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSafariBlockJavaScript(val)
+        }
+        return nil
+    }
+    res["safariBlockPopups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSafariBlockPopups(val)
+        }
+        return nil
+    }
+    res["safariCookieSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWebBrowserCookieSettings)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSafariCookieSettings(val.(*WebBrowserCookieSettings))
+        }
+        return nil
+    }
+    res["safariManagedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSafariManagedDomains(res)
+        }
+        return nil
+    }
+    res["safariPasswordAutoFillDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSafariPasswordAutoFillDomains(res)
+        }
+        return nil
+    }
+    res["safariRequireFraudWarning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSafariRequireFraudWarning(val)
+        }
+        return nil
+    }
+    res["screenCaptureBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScreenCaptureBlocked(val)
+        }
+        return nil
+    }
+    res["siriBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSiriBlocked(val)
+        }
+        return nil
+    }
+    res["siriBlockedWhenLocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSiriBlockedWhenLocked(val)
+        }
+        return nil
+    }
+    res["siriBlockUserGeneratedContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSiriBlockUserGeneratedContent(val)
+        }
+        return nil
+    }
+    res["siriRequireProfanityFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSiriRequireProfanityFilter(val)
+        }
+        return nil
+    }
+    res["spotlightBlockInternetResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSpotlightBlockInternetResults(val)
+        }
+        return nil
+    }
+    res["voiceDialingBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVoiceDialingBlocked(val)
+        }
+        return nil
+    }
+    res["wallpaperBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWallpaperBlockModification(val)
+        }
+        return nil
+    }
+    res["wiFiConnectOnlyToConfiguredNetworks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWiFiConnectOnlyToConfiguredNetworks(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFindMyFriendsBlocked gets the findMyFriendsBlocked property value. Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
@@ -999,7 +2205,10 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetAppsSingleAppModeList() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAppsSingleAppModeList())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsSingleAppModeList()))
+        for i, v := range m.GetAppsSingleAppModeList() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("appsSingleAppModeList", cast)
         if err != nil {
             return err
@@ -1036,7 +2245,10 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetAppsVisibilityList() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAppsVisibilityList())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsVisibilityList()))
+        for i, v := range m.GetAppsVisibilityList() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("appsVisibilityList", cast)
         if err != nil {
             return err
@@ -1117,7 +2329,10 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetCompliantAppsList() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCompliantAppsList())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCompliantAppsList()))
+        for i, v := range m.GetCompliantAppsList() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("compliantAppsList", cast)
         if err != nil {
             return err
@@ -1545,7 +2760,10 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetNetworkUsageRules() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNetworkUsageRules())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNetworkUsageRules()))
+        for i, v := range m.GetNetworkUsageRules() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("networkUsageRules", cast)
         if err != nil {
             return err

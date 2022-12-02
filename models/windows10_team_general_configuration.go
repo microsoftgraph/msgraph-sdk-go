@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -81,26 +80,206 @@ func (m *Windows10TeamGeneralConfiguration) GetConnectAppBlockAutoLaunch()(*bool
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10TeamGeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["azureOperationalInsightsBlockTelemetry"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAzureOperationalInsightsBlockTelemetry)
-    res["azureOperationalInsightsWorkspaceId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAzureOperationalInsightsWorkspaceId)
-    res["azureOperationalInsightsWorkspaceKey"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAzureOperationalInsightsWorkspaceKey)
-    res["connectAppBlockAutoLaunch"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetConnectAppBlockAutoLaunch)
-    res["maintenanceWindowBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMaintenanceWindowBlocked)
-    res["maintenanceWindowDurationInHours"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaintenanceWindowDurationInHours)
-    res["maintenanceWindowStartTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetMaintenanceWindowStartTime)
-    res["miracastBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMiracastBlocked)
-    res["miracastChannel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMiracastChannel , m.SetMiracastChannel)
-    res["miracastRequirePin"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMiracastRequirePin)
-    res["settingsBlockMyMeetingsAndFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSettingsBlockMyMeetingsAndFiles)
-    res["settingsBlockSessionResume"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSettingsBlockSessionResume)
-    res["settingsBlockSigninSuggestions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSettingsBlockSigninSuggestions)
-    res["settingsDefaultVolume"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSettingsDefaultVolume)
-    res["settingsScreenTimeoutInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSettingsScreenTimeoutInMinutes)
-    res["settingsSessionTimeoutInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSettingsSessionTimeoutInMinutes)
-    res["settingsSleepTimeoutInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSettingsSleepTimeoutInMinutes)
-    res["welcomeScreenBackgroundImageUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWelcomeScreenBackgroundImageUrl)
-    res["welcomeScreenBlockAutomaticWakeUp"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWelcomeScreenBlockAutomaticWakeUp)
-    res["welcomeScreenMeetingInformation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWelcomeScreenMeetingInformation , m.SetWelcomeScreenMeetingInformation)
+    res["azureOperationalInsightsBlockTelemetry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAzureOperationalInsightsBlockTelemetry(val)
+        }
+        return nil
+    }
+    res["azureOperationalInsightsWorkspaceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAzureOperationalInsightsWorkspaceId(val)
+        }
+        return nil
+    }
+    res["azureOperationalInsightsWorkspaceKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAzureOperationalInsightsWorkspaceKey(val)
+        }
+        return nil
+    }
+    res["connectAppBlockAutoLaunch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectAppBlockAutoLaunch(val)
+        }
+        return nil
+    }
+    res["maintenanceWindowBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaintenanceWindowBlocked(val)
+        }
+        return nil
+    }
+    res["maintenanceWindowDurationInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaintenanceWindowDurationInHours(val)
+        }
+        return nil
+    }
+    res["maintenanceWindowStartTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeOnlyValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaintenanceWindowStartTime(val)
+        }
+        return nil
+    }
+    res["miracastBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMiracastBlocked(val)
+        }
+        return nil
+    }
+    res["miracastChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMiracastChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMiracastChannel(val.(*MiracastChannel))
+        }
+        return nil
+    }
+    res["miracastRequirePin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMiracastRequirePin(val)
+        }
+        return nil
+    }
+    res["settingsBlockMyMeetingsAndFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsBlockMyMeetingsAndFiles(val)
+        }
+        return nil
+    }
+    res["settingsBlockSessionResume"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsBlockSessionResume(val)
+        }
+        return nil
+    }
+    res["settingsBlockSigninSuggestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsBlockSigninSuggestions(val)
+        }
+        return nil
+    }
+    res["settingsDefaultVolume"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsDefaultVolume(val)
+        }
+        return nil
+    }
+    res["settingsScreenTimeoutInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsScreenTimeoutInMinutes(val)
+        }
+        return nil
+    }
+    res["settingsSessionTimeoutInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsSessionTimeoutInMinutes(val)
+        }
+        return nil
+    }
+    res["settingsSleepTimeoutInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingsSleepTimeoutInMinutes(val)
+        }
+        return nil
+    }
+    res["welcomeScreenBackgroundImageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWelcomeScreenBackgroundImageUrl(val)
+        }
+        return nil
+    }
+    res["welcomeScreenBlockAutomaticWakeUp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWelcomeScreenBlockAutomaticWakeUp(val)
+        }
+        return nil
+    }
+    res["welcomeScreenMeetingInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWelcomeScreenMeetingInformation)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWelcomeScreenMeetingInformation(val.(*WelcomeScreenMeetingInformation))
+        }
+        return nil
+    }
     return res
 }
 // GetMaintenanceWindowBlocked gets the maintenanceWindowBlocked property value. Indicates whether or not to Block setting a maintenance window for device updates.

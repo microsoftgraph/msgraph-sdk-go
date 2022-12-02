@@ -2,7 +2,6 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -68,17 +67,128 @@ func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServiceAnnouncementBase.GetFieldDeserializers()
-    res["actionRequiredByDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetActionRequiredByDateTime)
-    res["attachments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServiceAnnouncementAttachmentFromDiscriminatorValue , m.SetAttachments)
-    res["attachmentsArchive"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetAttachmentsArchive)
-    res["body"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateItemBodyFromDiscriminatorValue , m.SetBody)
-    res["category"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseServiceUpdateCategory , m.SetCategory)
-    res["hasAttachments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetHasAttachments)
-    res["isMajorChange"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsMajorChange)
-    res["services"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetServices)
-    res["severity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseServiceUpdateSeverity , m.SetSeverity)
-    res["tags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetTags)
-    res["viewPoint"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateServiceUpdateMessageViewpointFromDiscriminatorValue , m.SetViewPoint)
+    res["actionRequiredByDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActionRequiredByDateTime(val)
+        }
+        return nil
+    }
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceAnnouncementAttachmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceAnnouncementAttachmentable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceAnnouncementAttachmentable)
+            }
+            m.SetAttachments(res)
+        }
+        return nil
+    }
+    res["attachmentsArchive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAttachmentsArchive(val)
+        }
+        return nil
+    }
+    res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBody(val.(ItemBodyable))
+        }
+        return nil
+    }
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseServiceUpdateCategory)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCategory(val.(*ServiceUpdateCategory))
+        }
+        return nil
+    }
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
+        return nil
+    }
+    res["isMajorChange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsMajorChange(val)
+        }
+        return nil
+    }
+    res["services"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetServices(res)
+        }
+        return nil
+    }
+    res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseServiceUpdateSeverity)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSeverity(val.(*ServiceUpdateSeverity))
+        }
+        return nil
+    }
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTags(res)
+        }
+        return nil
+    }
+    res["viewPoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServiceUpdateMessageViewpointFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetViewPoint(val.(ServiceUpdateMessageViewpointable))
+        }
+        return nil
+    }
     return res
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether the message has any attachment.
@@ -118,7 +228,10 @@ func (m *ServiceUpdateMessage) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     if m.GetAttachments() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAttachments())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachments()))
+        for i, v := range m.GetAttachments() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {
             return err

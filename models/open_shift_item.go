@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,7 +26,16 @@ func CreateOpenShiftItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OpenShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ShiftItem.GetFieldDeserializers()
-    res["openSlotCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetOpenSlotCount)
+    res["openSlotCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOpenSlotCount(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOpenSlotCount gets the openSlotCount property value. Count of the number of slots for the given open shift.

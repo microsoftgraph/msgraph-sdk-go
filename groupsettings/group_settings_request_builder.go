@@ -4,7 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i64f0e85419111e38a54859f1c560b5dd29ad6033dd95391cc7711c36bd9fd0fa "github.com/microsoftgraph/msgraph-sdk-go/groupsettings/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -72,8 +71,8 @@ func NewGroupSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewGroupSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GroupSettingsRequestBuilder) Count()(*i64f0e85419111e38a54859f1c560b5dd29ad6033dd95391cc7711c36bd9fd0fa.CountRequestBuilder) {
-    return i64f0e85419111e38a54859f1c560b5dd29ad6033dd95391cc7711c36bd9fd0fa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GroupSettingsRequestBuilder) Count()(*GroupSettingsCountRequestBuilder) {
+    return NewGroupSettingsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of tenant-level or group-specific group settings objects.
 func (m *GroupSettingsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GroupSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -1,7 +1,6 @@
 package termstore
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
@@ -36,10 +35,58 @@ func (m *Store) GetDefaultLanguageTag()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["defaultLanguageTag"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDefaultLanguageTag)
-    res["groups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue , m.SetGroups)
-    res["languageTags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetLanguageTags)
-    res["sets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSetFromDiscriminatorValue , m.SetSets)
+    res["defaultLanguageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultLanguageTag(val)
+        }
+        return nil
+    }
+    res["groups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Groupable, len(val))
+            for i, v := range val {
+                res[i] = v.(Groupable)
+            }
+            m.SetGroups(res)
+        }
+        return nil
+    }
+    res["languageTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLanguageTags(res)
+        }
+        return nil
+    }
+    res["sets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Setable, len(val))
+            for i, v := range val {
+                res[i] = v.(Setable)
+            }
+            m.SetSets(res)
+        }
+        return nil
+    }
     return res
 }
 // GetGroups gets the groups property value. Collection of all groups available in the term store.
@@ -67,7 +114,10 @@ func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     if m.GetGroups() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGroups())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroups()))
+        for i, v := range m.GetGroups() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("groups", cast)
         if err != nil {
             return err
@@ -80,7 +130,10 @@ func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     if m.GetSets() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSets())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSets()))
+        for i, v := range m.GetSets() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("sets", cast)
         if err != nil {
             return err

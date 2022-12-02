@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    iebdaa68b6b67fc866f2aa4ab793037f20ef0d4d0326ba80a46c74d64e5ed7d2c "github.com/microsoftgraph/msgraph-sdk-go/datapolicyoperations/count"
 )
 
 // DataPolicyOperationsRequestBuilder provides operations to manage the collection of dataPolicyOperation entities.
@@ -72,8 +71,8 @@ func NewDataPolicyOperationsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewDataPolicyOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DataPolicyOperationsRequestBuilder) Count()(*iebdaa68b6b67fc866f2aa4ab793037f20ef0d4d0326ba80a46c74d64e5ed7d2c.CountRequestBuilder) {
-    return iebdaa68b6b67fc866f2aa4ab793037f20ef0d4d0326ba80a46c74d64e5ed7d2c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DataPolicyOperationsRequestBuilder) Count()(*DataPolicyOperationsCountRequestBuilder) {
+    return NewDataPolicyOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the properties of a **dataPolicyOperation** object.
 func (m *DataPolicyOperationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

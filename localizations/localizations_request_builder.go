@@ -4,7 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i3ec7256fc8dffd0e12ecb7e8017e6cba132bbe888604299f85c7694b8bda6e9f "github.com/microsoftgraph/msgraph-sdk-go/localizations/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -72,8 +71,8 @@ func NewLocalizationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewLocalizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *LocalizationsRequestBuilder) Count()(*i3ec7256fc8dffd0e12ecb7e8017e6cba132bbe888604299f85c7694b8bda6e9f.CountRequestBuilder) {
-    return i3ec7256fc8dffd0e12ecb7e8017e6cba132bbe888604299f85c7694b8bda6e9f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *LocalizationsRequestBuilder) Count()(*LocalizationsCountRequestBuilder) {
+    return NewLocalizationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from localizations
 func (m *LocalizationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LocalizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
