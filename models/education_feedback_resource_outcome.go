@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -33,8 +32,26 @@ func (m *EducationFeedbackResourceOutcome) GetFeedbackResource()(EducationResour
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
-    res["feedbackResource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEducationResourceFromDiscriminatorValue , m.SetFeedbackResource)
-    res["resourceStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEducationFeedbackResourceOutcomeStatus , m.SetResourceStatus)
+    res["feedbackResource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEducationResourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFeedbackResource(val.(EducationResourceable))
+        }
+        return nil
+    }
+    res["resourceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEducationFeedbackResourceOutcomeStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceStatus(val.(*EducationFeedbackResourceOutcomeStatus))
+        }
+        return nil
+    }
     return res
 }
 // GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.

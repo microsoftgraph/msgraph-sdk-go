@@ -4,11 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingcurrencies"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses"
-    i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingcurrencies/item"
-    i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7 "github.com/microsoftgraph/msgraph-sdk-go/solutions/bookingbusinesses/item"
 )
 
 // SolutionsRequestBuilder provides operations to manage the solutionsRoot singleton.
@@ -44,11 +40,11 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BookingBusinesses provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BookingBusinesses()(*ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.BookingBusinessesRequestBuilder) {
-    return ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.NewBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SolutionsRequestBuilder) BookingBusinesses()(*SolutionsBookingBusinessesRequestBuilder) {
+    return NewSolutionsBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BookingBusinessesById provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.BookingBusinessItemRequestBuilder) {
+func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*SolutionsBookingBusinessesBookingBusinessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -56,14 +52,14 @@ func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d439
     if id != "" {
         urlTplParams["bookingBusiness%2Did"] = id
     }
-    return i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.NewBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSolutionsBookingBusinessesBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // BookingCurrencies provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BookingCurrencies()(*i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.BookingCurrenciesRequestBuilder) {
-    return i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.NewBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SolutionsRequestBuilder) BookingCurrencies()(*SolutionsBookingCurrenciesRequestBuilder) {
+    return NewSolutionsBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BookingCurrenciesById provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.BookingCurrencyItemRequestBuilder) {
+func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*SolutionsBookingCurrenciesBookingCurrencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -71,7 +67,7 @@ func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5
     if id != "" {
         urlTplParams["bookingCurrency%2Did"] = id
     }
-    return i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.NewBookingCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSolutionsBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {

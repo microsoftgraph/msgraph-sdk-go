@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,7 +26,16 @@ func CreatePersistentBrowserSessionControlFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
-    res["mode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePersistentBrowserSessionMode , m.SetMode)
+    res["mode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePersistentBrowserSessionMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMode(val.(*PersistentBrowserSessionMode))
+        }
+        return nil
+    }
     return res
 }
 // GetMode gets the mode property value. Possible values are: always, never.

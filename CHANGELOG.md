@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.48.0] - 2022-12-02
+
+### Changed
+
+- BREAKING: the package structure has been flattened, making most imports much shorter.
+- Significant improvements in build time.
+- Weekly generation.
+
 ## [0.47.0] - 2022-11-22
 
 ### Changed

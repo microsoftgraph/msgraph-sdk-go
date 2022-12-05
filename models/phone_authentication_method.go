@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -31,9 +30,36 @@ func CreatePhoneAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
-    res["phoneNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPhoneNumber)
-    res["phoneType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAuthenticationPhoneType , m.SetPhoneType)
-    res["smsSignInState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAuthenticationMethodSignInState , m.SetSmsSignInState)
+    res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPhoneNumber(val)
+        }
+        return nil
+    }
+    res["phoneType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAuthenticationPhoneType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPhoneType(val.(*AuthenticationPhoneType))
+        }
+        return nil
+    }
+    res["smsSignInState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAuthenticationMethodSignInState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmsSignInState(val.(*AuthenticationMethodSignInState))
+        }
+        return nil
+    }
     return res
 }
 // GetPhoneNumber gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.

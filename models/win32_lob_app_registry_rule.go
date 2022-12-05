@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -45,12 +44,66 @@ func (m *Win32LobAppRegistryRule) GetComparisonValue()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRule.GetFieldDeserializers()
-    res["check32BitOn64System"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCheck32BitOn64System)
-    res["comparisonValue"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetComparisonValue)
-    res["keyPath"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKeyPath)
-    res["operationType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWin32LobAppRegistryRuleOperationType , m.SetOperationType)
-    res["operator"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWin32LobAppRuleOperator , m.SetOperator)
-    res["valueName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetValueName)
+    res["check32BitOn64System"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCheck32BitOn64System(val)
+        }
+        return nil
+    }
+    res["comparisonValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetComparisonValue(val)
+        }
+        return nil
+    }
+    res["keyPath"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyPath(val)
+        }
+        return nil
+    }
+    res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWin32LobAppRegistryRuleOperationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOperationType(val.(*Win32LobAppRegistryRuleOperationType))
+        }
+        return nil
+    }
+    res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWin32LobAppRuleOperator)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOperator(val.(*Win32LobAppRuleOperator))
+        }
+        return nil
+    }
+    res["valueName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetValueName(val)
+        }
+        return nil
+    }
     return res
 }
 // GetKeyPath gets the keyPath property value. The full path of the registry entry containing the value to detect.

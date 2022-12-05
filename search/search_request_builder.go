@@ -4,7 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i4c731a9250f2a75a2d813b64555abb0e7dbb7e8aa84744cc38445c3385832596 "github.com/microsoftgraph/msgraph-sdk-go/search/query"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -128,6 +127,6 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchEntityable), nil
 }
 // Query provides operations to call the query method.
-func (m *SearchRequestBuilder) Query()(*i4c731a9250f2a75a2d813b64555abb0e7dbb7e8aa84744cc38445c3385832596.QueryRequestBuilder) {
-    return i4c731a9250f2a75a2d813b64555abb0e7dbb7e8aa84744cc38445c3385832596.NewQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SearchRequestBuilder) Query()(*SearchQueryRequestBuilder) {
+    return NewSearchQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

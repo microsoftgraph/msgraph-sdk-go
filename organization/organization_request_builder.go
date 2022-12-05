@@ -4,10 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i0abaee8a058d22e1d581799c8740be61e9b6d10d3cc9df8a86b2c94d7c5d3836 "github.com/microsoftgraph/msgraph-sdk-go/organization/getavailableextensionproperties"
-    i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4 "github.com/microsoftgraph/msgraph-sdk-go/organization/getbyids"
-    i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053 "github.com/microsoftgraph/msgraph-sdk-go/organization/count"
-    i9a82bd7e2eb74542be8be13d437c57a66f6f2c71a200bd1483ca2b221ae825f2 "github.com/microsoftgraph/msgraph-sdk-go/organization/validateproperties"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -75,8 +71,8 @@ func NewOrganizationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *OrganizationRequestBuilder) Count()(*i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053.CountRequestBuilder) {
-    return i394fe01fc6498533dec0dd5f0bdb875868a544a6bbcf9935b40656b4573d7053.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) Count()(*OrganizationCountRequestBuilder) {
+    return NewOrganizationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of organization objects.
 func (m *OrganizationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,12 +124,12 @@ func (m *OrganizationRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *OrganizationRequestBuilder) GetAvailableExtensionProperties()(*i0abaee8a058d22e1d581799c8740be61e9b6d10d3cc9df8a86b2c94d7c5d3836.GetAvailableExtensionPropertiesRequestBuilder) {
-    return i0abaee8a058d22e1d581799c8740be61e9b6d10d3cc9df8a86b2c94d7c5d3836.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) GetAvailableExtensionProperties()(*OrganizationGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewOrganizationGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *OrganizationRequestBuilder) GetByIds()(*i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4.GetByIdsRequestBuilder) {
-    return i18ef64004d4e7ee2e8b15bbed5d6f937fc44f7035c463548e93e34e31361ffa4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) GetByIds()(*OrganizationGetByIdsRequestBuilder) {
+    return NewOrganizationGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to organization
 func (m *OrganizationRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable, requestConfiguration *OrganizationRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable, error) {
@@ -155,6 +151,6 @@ func (m *OrganizationRequestBuilder) Post(ctx context.Context, body iadcd8112441
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *OrganizationRequestBuilder) ValidateProperties()(*i9a82bd7e2eb74542be8be13d437c57a66f6f2c71a200bd1483ca2b221ae825f2.ValidatePropertiesRequestBuilder) {
-    return i9a82bd7e2eb74542be8be13d437c57a66f6f2c71a200bd1483ca2b221ae825f2.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) ValidateProperties()(*OrganizationValidatePropertiesRequestBuilder) {
+    return NewOrganizationValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

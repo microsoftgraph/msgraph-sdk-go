@@ -4,8 +4,6 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i027ca8306320feafb49c520ae886963a07f45f5249ebedf0382070ff10454486 "github.com/microsoftgraph/msgraph-sdk-go/chats/count"
-    ia2e3aacb5f91a4416aa83a0229ae4a9c133c45941d8ecda717a533ae5554f96a "github.com/microsoftgraph/msgraph-sdk-go/chats/getallmessages"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -73,8 +71,8 @@ func NewChatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewChatsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ChatsRequestBuilder) Count()(*i027ca8306320feafb49c520ae886963a07f45f5249ebedf0382070ff10454486.CountRequestBuilder) {
-    return i027ca8306320feafb49c520ae886963a07f45f5249ebedf0382070ff10454486.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ChatsRequestBuilder) Count()(*ChatsCountRequestBuilder) {
+    return NewChatsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
 func (m *ChatsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ChatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -126,8 +124,8 @@ func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cha
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-func (m *ChatsRequestBuilder) GetAllMessages()(*ia2e3aacb5f91a4416aa83a0229ae4a9c133c45941d8ecda717a533ae5554f96a.GetAllMessagesRequestBuilder) {
-    return ia2e3aacb5f91a4416aa83a0229ae4a9c133c45941d8ecda717a533ae5554f96a.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ChatsRequestBuilder) GetAllMessages()(*ChatsGetAllMessagesRequestBuilder) {
+    return NewChatsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new chat object.
 func (m *ChatsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, requestConfiguration *ChatsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {

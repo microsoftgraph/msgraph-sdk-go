@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -51,11 +50,60 @@ func (m *CallEndedEventMessageDetail) GetCallParticipants()([]CallParticipantInf
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
-    res["callDuration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetCallDuration)
-    res["callEventType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseTeamworkCallEventType , m.SetCallEventType)
-    res["callId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCallId)
-    res["callParticipants"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCallParticipantInfoFromDiscriminatorValue , m.SetCallParticipants)
-    res["initiator"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentitySetFromDiscriminatorValue , m.SetInitiator)
+    res["callDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCallDuration(val)
+        }
+        return nil
+    }
+    res["callEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTeamworkCallEventType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCallEventType(val.(*TeamworkCallEventType))
+        }
+        return nil
+    }
+    res["callId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCallId(val)
+        }
+        return nil
+    }
+    res["callParticipants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCallParticipantInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CallParticipantInfoable, len(val))
+            for i, v := range val {
+                res[i] = v.(CallParticipantInfoable)
+            }
+            m.SetCallParticipants(res)
+        }
+        return nil
+    }
+    res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInitiator(val.(IdentitySetable))
+        }
+        return nil
+    }
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
@@ -88,7 +136,10 @@ func (m *CallEndedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     if m.GetCallParticipants() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCallParticipants())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCallParticipants()))
+        for i, v := range m.GetCallParticipants() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("callParticipants", cast)
         if err != nil {
             return err

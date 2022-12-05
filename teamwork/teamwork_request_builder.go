@@ -4,10 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
-    i5813ce8fd98713d4b3971e214b67aa24b82b140b032e3ab2bced58810082b8ba "github.com/microsoftgraph/msgraph-sdk-go/teamwork/sendactivitynotificationtorecipients"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
-    iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed "github.com/microsoftgraph/msgraph-sdk-go/teamwork/workforceintegrations"
-    i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8 "github.com/microsoftgraph/msgraph-sdk-go/teamwork/workforceintegrations/item"
 )
 
 // TeamworkRequestBuilder provides operations to manage the teamwork singleton.
@@ -130,15 +127,15 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable), nil
 }
 // SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
-func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*i5813ce8fd98713d4b3971e214b67aa24b82b140b032e3ab2bced58810082b8ba.SendActivityNotificationToRecipientsRequestBuilder) {
-    return i5813ce8fd98713d4b3971e214b67aa24b82b140b032e3ab2bced58810082b8ba.NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*TeamworkSendActivityNotificationToRecipientsRequestBuilder) {
+    return NewTeamworkSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
-func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.WorkforceIntegrationsRequestBuilder) {
-    return iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*TeamworkWorkforceIntegrationsRequestBuilder) {
+    return NewTeamworkWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
-func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.WorkforceIntegrationItemRequestBuilder) {
+func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*TeamworkWorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -146,5 +143,5 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e
     if id != "" {
         urlTplParams["workforceIntegration%2Did"] = id
     }
-    return i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.NewWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamworkWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

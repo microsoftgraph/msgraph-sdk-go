@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -37,10 +36,46 @@ func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequency
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
-    res["authenticationType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSignInFrequencyAuthenticationType , m.SetAuthenticationType)
-    res["frequencyInterval"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSignInFrequencyInterval , m.SetFrequencyInterval)
-    res["type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSigninFrequencyType , m.SetType)
-    res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetValue)
+    res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSignInFrequencyAuthenticationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationType(val.(*SignInFrequencyAuthenticationType))
+        }
+        return nil
+    }
+    res["frequencyInterval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSignInFrequencyInterval)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrequencyInterval(val.(*SignInFrequencyInterval))
+        }
+        return nil
+    }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSigninFrequencyType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val.(*SigninFrequencyType))
+        }
+        return nil
+    }
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetValue(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFrequencyInterval gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
