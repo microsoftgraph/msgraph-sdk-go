@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeetingCollectionResponse provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
+// OnlineMeetingCollectionResponse 
 type OnlineMeetingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
     // The value property
@@ -24,20 +25,7 @@ func CreateOnlineMeetingCollectionResponseFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnlineMeetingCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOnlineMeetingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OnlineMeetingable, len(val))
-            for i, v := range val {
-                res[i] = v.(OnlineMeetingable)
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
+    res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOnlineMeetingFromDiscriminatorValue , m.SetValue)
     return res
 }
 // GetValue gets the value property value. The value property
@@ -51,10 +39,7 @@ func (m *OnlineMeetingCollectionResponse) Serialize(writer i878a80d2330e89d26896
         return err
     }
     if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetValue())
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {
             return err

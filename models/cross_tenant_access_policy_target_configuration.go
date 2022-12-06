@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -37,40 +38,9 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetAdditionalData()(map[str
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCrossTenantAccessPolicyTargetConfigurationAccessType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccessType(val.(*CrossTenantAccessPolicyTargetConfigurationAccessType))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["targets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CrossTenantAccessPolicyTargetable, len(val))
-            for i, v := range val {
-                res[i] = v.(CrossTenantAccessPolicyTargetable)
-            }
-            m.SetTargets(res)
-        }
-        return nil
-    }
+    res["accessType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCrossTenantAccessPolicyTargetConfigurationAccessType , m.SetAccessType)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["targets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue , m.SetTargets)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -97,10 +67,7 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) Serialize(writer i878a80d23
         }
     }
     if m.GetTargets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargets()))
-        for i, v := range m.GetTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTargets())
         err := writer.WriteCollectionOfObjectValues("targets", cast)
         if err != nil {
             return err

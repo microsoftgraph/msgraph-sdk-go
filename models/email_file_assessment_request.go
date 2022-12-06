@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailFileAssessmentRequest 
+// EmailFileAssessmentRequest provides operations to manage the collection of agreementAcceptance entities.
 type EmailFileAssessmentRequest struct {
     ThreatAssessmentRequest
     // Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
@@ -14,7 +15,7 @@ type EmailFileAssessmentRequest struct {
     // The mail recipient whose policies are used to assess the mail.
     recipientEmail *string
 }
-// NewEmailFileAssessmentRequest instantiates a new EmailFileAssessmentRequest and sets the default values.
+// NewEmailFileAssessmentRequest instantiates a new emailFileAssessmentRequest and sets the default values.
 func NewEmailFileAssessmentRequest()(*EmailFileAssessmentRequest) {
     m := &EmailFileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
@@ -38,36 +39,9 @@ func (m *EmailFileAssessmentRequest) GetDestinationRoutingReason()(*MailDestinat
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailFileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatAssessmentRequest.GetFieldDeserializers()
-    res["contentData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentData(val)
-        }
-        return nil
-    }
-    res["destinationRoutingReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMailDestinationRoutingReason)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDestinationRoutingReason(val.(*MailDestinationRoutingReason))
-        }
-        return nil
-    }
-    res["recipientEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecipientEmail(val)
-        }
-        return nil
-    }
+    res["contentData"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetContentData)
+    res["destinationRoutingReason"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMailDestinationRoutingReason , m.SetDestinationRoutingReason)
+    res["recipientEmail"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRecipientEmail)
     return res
 }
 // GetRecipientEmail gets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -154,308 +155,31 @@ func (m *WindowsInformationProtection) GetExemptApps()([]WindowsInformationProte
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
-    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TargetedManagedAppPolicyAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(TargetedManagedAppPolicyAssignmentable)
-            }
-            m.SetAssignments(res)
-        }
-        return nil
-    }
-    res["azureRightsManagementServicesAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAzureRightsManagementServicesAllowed(val)
-        }
-        return nil
-    }
-    res["dataRecoveryCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDataRecoveryCertificate(val.(WindowsInformationProtectionDataRecoveryCertificateable))
-        }
-        return nil
-    }
-    res["enforcementLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsInformationProtectionEnforcementLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnforcementLevel(val.(*WindowsInformationProtectionEnforcementLevel))
-        }
-        return nil
-    }
-    res["enterpriseDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnterpriseDomain(val)
-        }
-        return nil
-    }
-    res["enterpriseInternalProxyServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionResourceCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionResourceCollectionable)
-            }
-            m.SetEnterpriseInternalProxyServers(res)
-        }
-        return nil
-    }
-    res["enterpriseIPRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionIPRangeCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionIPRangeCollectionable)
-            }
-            m.SetEnterpriseIPRanges(res)
-        }
-        return nil
-    }
-    res["enterpriseIPRangesAreAuthoritative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnterpriseIPRangesAreAuthoritative(val)
-        }
-        return nil
-    }
-    res["enterpriseNetworkDomainNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionResourceCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionResourceCollectionable)
-            }
-            m.SetEnterpriseNetworkDomainNames(res)
-        }
-        return nil
-    }
-    res["enterpriseProtectedDomainNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionResourceCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionResourceCollectionable)
-            }
-            m.SetEnterpriseProtectedDomainNames(res)
-        }
-        return nil
-    }
-    res["enterpriseProxiedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionProxiedDomainCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionProxiedDomainCollectionable)
-            }
-            m.SetEnterpriseProxiedDomains(res)
-        }
-        return nil
-    }
-    res["enterpriseProxyServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionResourceCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionResourceCollectionable)
-            }
-            m.SetEnterpriseProxyServers(res)
-        }
-        return nil
-    }
-    res["enterpriseProxyServersAreAuthoritative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnterpriseProxyServersAreAuthoritative(val)
-        }
-        return nil
-    }
-    res["exemptAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionAppLockerFileable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionAppLockerFileable)
-            }
-            m.SetExemptAppLockerFiles(res)
-        }
-        return nil
-    }
-    res["exemptApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionAppable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionAppable)
-            }
-            m.SetExemptApps(res)
-        }
-        return nil
-    }
-    res["iconsVisible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIconsVisible(val)
-        }
-        return nil
-    }
-    res["indexingEncryptedStoresOrItemsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIndexingEncryptedStoresOrItemsBlocked(val)
-        }
-        return nil
-    }
-    res["isAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsAssigned(val)
-        }
-        return nil
-    }
-    res["neutralDomainResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionResourceCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionResourceCollectionable)
-            }
-            m.SetNeutralDomainResources(res)
-        }
-        return nil
-    }
-    res["protectedAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionAppLockerFileable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionAppLockerFileable)
-            }
-            m.SetProtectedAppLockerFiles(res)
-        }
-        return nil
-    }
-    res["protectedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionAppable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionAppable)
-            }
-            m.SetProtectedApps(res)
-        }
-        return nil
-    }
-    res["protectionUnderLockConfigRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProtectionUnderLockConfigRequired(val)
-        }
-        return nil
-    }
-    res["revokeOnUnenrollDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRevokeOnUnenrollDisabled(val)
-        }
-        return nil
-    }
-    res["rightsManagementServicesTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRightsManagementServicesTemplateId(val)
-        }
-        return nil
-    }
-    res["smbAutoEncryptedFileExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsInformationProtectionResourceCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionResourceCollectionable)
-            }
-            m.SetSmbAutoEncryptedFileExtensions(res)
-        }
-        return nil
-    }
+    res["assignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue , m.SetAssignments)
+    res["azureRightsManagementServicesAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAzureRightsManagementServicesAllowed)
+    res["dataRecoveryCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue , m.SetDataRecoveryCertificate)
+    res["enforcementLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsInformationProtectionEnforcementLevel , m.SetEnforcementLevel)
+    res["enterpriseDomain"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEnterpriseDomain)
+    res["enterpriseInternalProxyServers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue , m.SetEnterpriseInternalProxyServers)
+    res["enterpriseIPRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue , m.SetEnterpriseIPRanges)
+    res["enterpriseIPRangesAreAuthoritative"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnterpriseIPRangesAreAuthoritative)
+    res["enterpriseNetworkDomainNames"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue , m.SetEnterpriseNetworkDomainNames)
+    res["enterpriseProtectedDomainNames"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue , m.SetEnterpriseProtectedDomainNames)
+    res["enterpriseProxiedDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue , m.SetEnterpriseProxiedDomains)
+    res["enterpriseProxyServers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue , m.SetEnterpriseProxyServers)
+    res["enterpriseProxyServersAreAuthoritative"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnterpriseProxyServersAreAuthoritative)
+    res["exemptAppLockerFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue , m.SetExemptAppLockerFiles)
+    res["exemptApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue , m.SetExemptApps)
+    res["iconsVisible"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIconsVisible)
+    res["indexingEncryptedStoresOrItemsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIndexingEncryptedStoresOrItemsBlocked)
+    res["isAssigned"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsAssigned)
+    res["neutralDomainResources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue , m.SetNeutralDomainResources)
+    res["protectedAppLockerFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue , m.SetProtectedAppLockerFiles)
+    res["protectedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue , m.SetProtectedApps)
+    res["protectionUnderLockConfigRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetProtectionUnderLockConfigRequired)
+    res["revokeOnUnenrollDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRevokeOnUnenrollDisabled)
+    res["rightsManagementServicesTemplateId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRightsManagementServicesTemplateId)
+    res["smbAutoEncryptedFileExtensions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue , m.SetSmbAutoEncryptedFileExtensions)
     return res
 }
 // GetIconsVisible gets the iconsVisible property value. Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
@@ -505,10 +229,7 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
         return err
     }
     if m.GetAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
-        for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssignments())
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
             return err
@@ -540,20 +261,14 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetEnterpriseInternalProxyServers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseInternalProxyServers()))
-        for i, v := range m.GetEnterpriseInternalProxyServers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnterpriseInternalProxyServers())
         err = writer.WriteCollectionOfObjectValues("enterpriseInternalProxyServers", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnterpriseIPRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseIPRanges()))
-        for i, v := range m.GetEnterpriseIPRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnterpriseIPRanges())
         err = writer.WriteCollectionOfObjectValues("enterpriseIPRanges", cast)
         if err != nil {
             return err
@@ -566,40 +281,28 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetEnterpriseNetworkDomainNames() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseNetworkDomainNames()))
-        for i, v := range m.GetEnterpriseNetworkDomainNames() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnterpriseNetworkDomainNames())
         err = writer.WriteCollectionOfObjectValues("enterpriseNetworkDomainNames", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnterpriseProtectedDomainNames() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseProtectedDomainNames()))
-        for i, v := range m.GetEnterpriseProtectedDomainNames() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnterpriseProtectedDomainNames())
         err = writer.WriteCollectionOfObjectValues("enterpriseProtectedDomainNames", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnterpriseProxiedDomains() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseProxiedDomains()))
-        for i, v := range m.GetEnterpriseProxiedDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnterpriseProxiedDomains())
         err = writer.WriteCollectionOfObjectValues("enterpriseProxiedDomains", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnterpriseProxyServers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseProxyServers()))
-        for i, v := range m.GetEnterpriseProxyServers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnterpriseProxyServers())
         err = writer.WriteCollectionOfObjectValues("enterpriseProxyServers", cast)
         if err != nil {
             return err
@@ -612,20 +315,14 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetExemptAppLockerFiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExemptAppLockerFiles()))
-        for i, v := range m.GetExemptAppLockerFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetExemptAppLockerFiles())
         err = writer.WriteCollectionOfObjectValues("exemptAppLockerFiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetExemptApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExemptApps()))
-        for i, v := range m.GetExemptApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetExemptApps())
         err = writer.WriteCollectionOfObjectValues("exemptApps", cast)
         if err != nil {
             return err
@@ -650,30 +347,21 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetNeutralDomainResources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNeutralDomainResources()))
-        for i, v := range m.GetNeutralDomainResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNeutralDomainResources())
         err = writer.WriteCollectionOfObjectValues("neutralDomainResources", cast)
         if err != nil {
             return err
         }
     }
     if m.GetProtectedAppLockerFiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProtectedAppLockerFiles()))
-        for i, v := range m.GetProtectedAppLockerFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProtectedAppLockerFiles())
         err = writer.WriteCollectionOfObjectValues("protectedAppLockerFiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetProtectedApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProtectedApps()))
-        for i, v := range m.GetProtectedApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProtectedApps())
         err = writer.WriteCollectionOfObjectValues("protectedApps", cast)
         if err != nil {
             return err
@@ -698,10 +386,7 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetSmbAutoEncryptedFileExtensions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSmbAutoEncryptedFileExtensions()))
-        for i, v := range m.GetSmbAutoEncryptedFileExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSmbAutoEncryptedFileExtensions())
         err = writer.WriteCollectionOfObjectValues("smbAutoEncryptedFileExtensions", cast)
         if err != nil {
             return err

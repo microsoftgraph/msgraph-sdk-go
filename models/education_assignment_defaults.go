@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -42,46 +43,10 @@ func (m *EducationAssignmentDefaults) GetDueTime()(*i878a80d2330e89d26896388a3f4
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["addedStudentAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAddedStudentAction)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAddedStudentAction(val.(*EducationAddedStudentAction))
-        }
-        return nil
-    }
-    res["addToCalendarAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAddToCalendarOptions)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAddToCalendarAction(val.(*EducationAddToCalendarOptions))
-        }
-        return nil
-    }
-    res["dueTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDueTime(val)
-        }
-        return nil
-    }
-    res["notificationChannelUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNotificationChannelUrl(val)
-        }
-        return nil
-    }
+    res["addedStudentAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEducationAddedStudentAction , m.SetAddedStudentAction)
+    res["addToCalendarAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEducationAddToCalendarOptions , m.SetAddToCalendarAction)
+    res["dueTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetDueTime)
+    res["notificationChannelUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetNotificationChannelUrl)
     return res
 }
 // GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.

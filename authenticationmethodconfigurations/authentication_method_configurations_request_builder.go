@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    ib8a76f9a6a4ddca449432a0f0870c19f194b84014af34fc67f8a29377183e947 "github.com/microsoftgraph/msgraph-sdk-go/authenticationmethodconfigurations/count"
 )
 
 // AuthenticationMethodConfigurationsRequestBuilder provides operations to manage the collection of authenticationMethodConfiguration entities.
@@ -71,8 +72,8 @@ func NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl string, requestA
     return NewAuthenticationMethodConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) Count()(*AuthenticationMethodConfigurationsCountRequestBuilder) {
-    return NewAuthenticationMethodConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AuthenticationMethodConfigurationsRequestBuilder) Count()(*ib8a76f9a6a4ddca449432a0f0870c19f194b84014af34fc67f8a29377183e947.CountRequestBuilder) {
+    return ib8a76f9a6a4ddca449432a0f0870c19f194b84014af34fc67f8a29377183e947.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

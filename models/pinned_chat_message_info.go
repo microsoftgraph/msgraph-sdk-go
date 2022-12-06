@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PinnedChatMessageInfo provides operations to manage the collection of agreement entities.
+// PinnedChatMessageInfo provides operations to manage the collection of agreementAcceptance entities.
 type PinnedChatMessageInfo struct {
     Entity
     // Represents details about the chat message that is pinned.
@@ -24,16 +25,7 @@ func CreatePinnedChatMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PinnedChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateChatMessageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMessage(val.(ChatMessageable))
-        }
-        return nil
-    }
+    res["message"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChatMessageFromDiscriminatorValue , m.SetMessage)
     return res
 }
 // GetMessage gets the message property value. Represents details about the chat message that is pinned.

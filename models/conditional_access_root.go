@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -34,62 +35,10 @@ func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]Auth
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authenticationContextClassReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationContextClassReferenceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationContextClassReferenceable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuthenticationContextClassReferenceable)
-            }
-            m.SetAuthenticationContextClassReferences(res)
-        }
-        return nil
-    }
-    res["namedLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]NamedLocationable, len(val))
-            for i, v := range val {
-                res[i] = v.(NamedLocationable)
-            }
-            m.SetNamedLocations(res)
-        }
-        return nil
-    }
-    res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyable)
-            }
-            m.SetPolicies(res)
-        }
-        return nil
-    }
-    res["templates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessTemplateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessTemplateable, len(val))
-            for i, v := range val {
-                res[i] = v.(ConditionalAccessTemplateable)
-            }
-            m.SetTemplates(res)
-        }
-        return nil
-    }
+    res["authenticationContextClassReferences"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationContextClassReferenceFromDiscriminatorValue , m.SetAuthenticationContextClassReferences)
+    res["namedLocations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue , m.SetNamedLocations)
+    res["policies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue , m.SetPolicies)
+    res["templates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConditionalAccessTemplateFromDiscriminatorValue , m.SetTemplates)
     return res
 }
 // GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
@@ -111,40 +60,28 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     if m.GetAuthenticationContextClassReferences() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationContextClassReferences()))
-        for i, v := range m.GetAuthenticationContextClassReferences() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuthenticationContextClassReferences())
         err = writer.WriteCollectionOfObjectValues("authenticationContextClassReferences", cast)
         if err != nil {
             return err
         }
     }
     if m.GetNamedLocations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNamedLocations()))
-        for i, v := range m.GetNamedLocations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNamedLocations())
         err = writer.WriteCollectionOfObjectValues("namedLocations", cast)
         if err != nil {
             return err
         }
     }
     if m.GetPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
-        for i, v := range m.GetPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPolicies())
         err = writer.WriteCollectionOfObjectValues("policies", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTemplates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemplates()))
-        for i, v := range m.GetTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTemplates())
         err = writer.WriteCollectionOfObjectValues("templates", cast)
         if err != nil {
             return err

@@ -4,7 +4,12 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i3bc7881f8d53ff46b80580bf2bbeca93ee226b9e556c80e1a29474dc201f2a62 "github.com/microsoftgraph/msgraph-sdk-go/applications/validateproperties"
+    i7e8a726e09ced7d4436bf674d1a81669775cb1463962eb805fe901152e21a7a1 "github.com/microsoftgraph/msgraph-sdk-go/applications/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    id0455efde9c006c43aa69fbd428002d35001851a48cc95647c179d7f5fe714d8 "github.com/microsoftgraph/msgraph-sdk-go/applications/getavailableextensionproperties"
+    id1a6f2211b8fade308e722e65256ccffe715e872816ec9b9e12b585d86dd4f21 "github.com/microsoftgraph/msgraph-sdk-go/applications/getbyids"
+    ie526c09037227f7fe6fca4d5c202671bc46cb0934b016d8249c0780baf039d18 "github.com/microsoftgraph/msgraph-sdk-go/applications/delta"
 )
 
 // ApplicationsRequestBuilder provides operations to manage the collection of application entities.
@@ -71,8 +76,8 @@ func NewApplicationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewApplicationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ApplicationsRequestBuilder) Count()(*ApplicationsCountRequestBuilder) {
-    return NewApplicationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) Count()(*i7e8a726e09ced7d4436bf674d1a81669775cb1463962eb805fe901152e21a7a1.CountRequestBuilder) {
+    return i7e8a726e09ced7d4436bf674d1a81669775cb1463962eb805fe901152e21a7a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of applications in this organization.
 func (m *ApplicationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -105,8 +110,8 @@ func (m *ApplicationsRequestBuilder) CreatePostRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *ApplicationsRequestBuilder) Delta()(*ApplicationsDeltaRequestBuilder) {
-    return NewApplicationsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) Delta()(*ie526c09037227f7fe6fca4d5c202671bc46cb0934b016d8249c0780baf039d18.DeltaRequestBuilder) {
+    return ie526c09037227f7fe6fca4d5c202671bc46cb0934b016d8249c0780baf039d18.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get the list of applications in this organization.
 func (m *ApplicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationCollectionResponseable, error) {
@@ -128,12 +133,12 @@ func (m *ApplicationsRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *ApplicationsRequestBuilder) GetAvailableExtensionProperties()(*ApplicationsGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewApplicationsGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) GetAvailableExtensionProperties()(*id0455efde9c006c43aa69fbd428002d35001851a48cc95647c179d7f5fe714d8.GetAvailableExtensionPropertiesRequestBuilder) {
+    return id0455efde9c006c43aa69fbd428002d35001851a48cc95647c179d7f5fe714d8.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *ApplicationsRequestBuilder) GetByIds()(*ApplicationsGetByIdsRequestBuilder) {
-    return NewApplicationsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) GetByIds()(*id1a6f2211b8fade308e722e65256ccffe715e872816ec9b9e12b585d86dd4f21.GetByIdsRequestBuilder) {
+    return id1a6f2211b8fade308e722e65256ccffe715e872816ec9b9e12b585d86dd4f21.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new application object.
 func (m *ApplicationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, error) {
@@ -155,6 +160,6 @@ func (m *ApplicationsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *ApplicationsRequestBuilder) ValidateProperties()(*ApplicationsValidatePropertiesRequestBuilder) {
-    return NewApplicationsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) ValidateProperties()(*i3bc7881f8d53ff46b80580bf2bbeca93ee226b9e556c80e1a29474dc201f2a62.ValidatePropertiesRequestBuilder) {
+    return i3bc7881f8d53ff46b80580bf2bbeca93ee226b9e556c80e1a29474dc201f2a62.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

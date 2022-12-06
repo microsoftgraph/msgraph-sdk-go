@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InferenceClassificationOverride provides operations to manage the collection of agreement entities.
+// InferenceClassificationOverride provides operations to manage the collection of agreementAcceptance entities.
 type InferenceClassificationOverride struct {
     Entity
     // Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
@@ -30,26 +31,8 @@ func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificati
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["classifyAs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseInferenceClassificationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClassifyAs(val.(*InferenceClassificationType))
-        }
-        return nil
-    }
-    res["senderEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSenderEmailAddress(val.(EmailAddressable))
-        }
-        return nil
-    }
+    res["classifyAs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseInferenceClassificationType , m.SetClassifyAs)
+    res["senderEmailAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEmailAddressFromDiscriminatorValue , m.SetSenderEmailAddress)
     return res
 }
 // GetSenderEmailAddress gets the senderEmailAddress property value. The email address information of the sender for whom the override is created.

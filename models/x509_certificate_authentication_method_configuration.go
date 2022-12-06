@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -38,44 +39,9 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateUserBin
 // GetFieldDeserializers the deserialization information for the current model
 func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
-    res["authenticationModeConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationModeConfiguration(val.(X509CertificateAuthenticationModeConfigurationable))
-        }
-        return nil
-    }
-    res["certificateUserBindings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateX509CertificateUserBindingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]X509CertificateUserBindingable, len(val))
-            for i, v := range val {
-                res[i] = v.(X509CertificateUserBindingable)
-            }
-            m.SetCertificateUserBindings(res)
-        }
-        return nil
-    }
-    res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationMethodTargetable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuthenticationMethodTargetable)
-            }
-            m.SetIncludeTargets(res)
-        }
-        return nil
-    }
+    res["authenticationModeConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue , m.SetAuthenticationModeConfiguration)
+    res["certificateUserBindings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateX509CertificateUserBindingFromDiscriminatorValue , m.SetCertificateUserBindings)
+    res["includeTargets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationMethodTargetFromDiscriminatorValue , m.SetIncludeTargets)
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
@@ -95,20 +61,14 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
         }
     }
     if m.GetCertificateUserBindings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCertificateUserBindings()))
-        for i, v := range m.GetCertificateUserBindings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCertificateUserBindings())
         err = writer.WriteCollectionOfObjectValues("certificateUserBindings", cast)
         if err != nil {
             return err
         }
     }
     if m.GetIncludeTargets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
-        for i, v := range m.GetIncludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIncludeTargets())
         err = writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {
             return err

@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -53,108 +54,15 @@ func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["androidEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(ComplianceManagementPartnerAssignmentable)
-            }
-            m.SetAndroidEnrollmentAssignments(res)
-        }
-        return nil
-    }
-    res["androidOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAndroidOnboarded(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["iosEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(ComplianceManagementPartnerAssignmentable)
-            }
-            m.SetIosEnrollmentAssignments(res)
-        }
-        return nil
-    }
-    res["iosOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIosOnboarded(val)
-        }
-        return nil
-    }
-    res["lastHeartbeatDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastHeartbeatDateTime(val)
-        }
-        return nil
-    }
-    res["macOsEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(ComplianceManagementPartnerAssignmentable)
-            }
-            m.SetMacOsEnrollmentAssignments(res)
-        }
-        return nil
-    }
-    res["macOsOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMacOsOnboarded(val)
-        }
-        return nil
-    }
-    res["partnerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementPartnerTenantState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerState(val.(*DeviceManagementPartnerTenantState))
-        }
-        return nil
-    }
+    res["androidEnrollmentAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue , m.SetAndroidEnrollmentAssignments)
+    res["androidOnboarded"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAndroidOnboarded)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["iosEnrollmentAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue , m.SetIosEnrollmentAssignments)
+    res["iosOnboarded"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIosOnboarded)
+    res["lastHeartbeatDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastHeartbeatDateTime)
+    res["macOsEnrollmentAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue , m.SetMacOsEnrollmentAssignments)
+    res["macOsOnboarded"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMacOsOnboarded)
+    res["partnerState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementPartnerTenantState , m.SetPartnerState)
     return res
 }
 // GetIosEnrollmentAssignments gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
@@ -188,10 +96,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
         return err
     }
     if m.GetAndroidEnrollmentAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAndroidEnrollmentAssignments()))
-        for i, v := range m.GetAndroidEnrollmentAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAndroidEnrollmentAssignments())
         err = writer.WriteCollectionOfObjectValues("androidEnrollmentAssignments", cast)
         if err != nil {
             return err
@@ -210,10 +115,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     if m.GetIosEnrollmentAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIosEnrollmentAssignments()))
-        for i, v := range m.GetIosEnrollmentAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIosEnrollmentAssignments())
         err = writer.WriteCollectionOfObjectValues("iosEnrollmentAssignments", cast)
         if err != nil {
             return err
@@ -232,10 +134,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     if m.GetMacOsEnrollmentAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMacOsEnrollmentAssignments()))
-        for i, v := range m.GetMacOsEnrollmentAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMacOsEnrollmentAssignments())
         err = writer.WriteCollectionOfObjectValues("macOsEnrollmentAssignments", cast)
         if err != nil {
             return err

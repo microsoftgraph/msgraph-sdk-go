@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    ibc0546f9f01b99e6eeb9c1bd55d0e3b98fc5a24e6f018821c390428072ff6d19 "github.com/microsoftgraph/msgraph-sdk-go/shares/count"
 )
 
 // SharesRequestBuilder provides operations to manage the collection of sharedDriveItem entities.
@@ -71,8 +72,8 @@ func NewSharesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewSharesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *SharesRequestBuilder) Count()(*SharesCountRequestBuilder) {
-    return NewSharesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SharesRequestBuilder) Count()(*ibc0546f9f01b99e6eeb9c1bd55d0e3b98fc5a24e6f018821c390428072ff6d19.CountRequestBuilder) {
+    return ibc0546f9f01b99e6eeb9c1bd55d0e3b98fc5a24e6f018821c390428072ff6d19.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 func (m *SharesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

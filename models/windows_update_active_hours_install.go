@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -36,26 +37,8 @@ func (m *WindowsUpdateActiveHoursInstall) GetActiveHoursStart()(*i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateActiveHoursInstall) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsUpdateInstallScheduleType.GetFieldDeserializers()
-    res["activeHoursEnd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetActiveHoursEnd(val)
-        }
-        return nil
-    }
-    res["activeHoursStart"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetActiveHoursStart(val)
-        }
-        return nil
-    }
+    res["activeHoursEnd"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetActiveHoursEnd)
+    res["activeHoursStart"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetActiveHoursStart)
     return res
 }
 // Serialize serializes information the current object

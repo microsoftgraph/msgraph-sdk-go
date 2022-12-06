@@ -1,6 +1,7 @@
 package callrecords
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -101,280 +102,33 @@ func (m *NetworkInfo) GetDnsSuffix()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["bandwidthLowEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBandwidthLowEventRatio(val)
-        }
-        return nil
-    }
-    res["basicServiceSetIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBasicServiceSetIdentifier(val)
-        }
-        return nil
-    }
-    res["connectionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkConnectionType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnectionType(val.(*NetworkConnectionType))
-        }
-        return nil
-    }
-    res["delayEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDelayEventRatio(val)
-        }
-        return nil
-    }
-    res["dnsSuffix"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDnsSuffix(val)
-        }
-        return nil
-    }
-    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIpAddress(val)
-        }
-        return nil
-    }
-    res["linkSpeed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLinkSpeed(val)
-        }
-        return nil
-    }
-    res["macAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMacAddress(val)
-        }
-        return nil
-    }
-    res["networkTransportProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkTransportProtocol)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkTransportProtocol(val.(*NetworkTransportProtocol))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["port"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPort(val)
-        }
-        return nil
-    }
-    res["receivedQualityEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReceivedQualityEventRatio(val)
-        }
-        return nil
-    }
-    res["reflexiveIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReflexiveIPAddress(val)
-        }
-        return nil
-    }
-    res["relayIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRelayIPAddress(val)
-        }
-        return nil
-    }
-    res["relayPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRelayPort(val)
-        }
-        return nil
-    }
-    res["sentQualityEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSentQualityEventRatio(val)
-        }
-        return nil
-    }
-    res["subnet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSubnet(val)
-        }
-        return nil
-    }
-    res["traceRouteHops"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTraceRouteHopFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TraceRouteHopable, len(val))
-            for i, v := range val {
-                res[i] = v.(TraceRouteHopable)
-            }
-            m.SetTraceRouteHops(res)
-        }
-        return nil
-    }
-    res["wifiBand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWifiBand)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiBand(val.(*WifiBand))
-        }
-        return nil
-    }
-    res["wifiBatteryCharge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiBatteryCharge(val)
-        }
-        return nil
-    }
-    res["wifiChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiChannel(val)
-        }
-        return nil
-    }
-    res["wifiMicrosoftDriver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiMicrosoftDriver(val)
-        }
-        return nil
-    }
-    res["wifiMicrosoftDriverVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiMicrosoftDriverVersion(val)
-        }
-        return nil
-    }
-    res["wifiRadioType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWifiRadioType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiRadioType(val.(*WifiRadioType))
-        }
-        return nil
-    }
-    res["wifiSignalStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiSignalStrength(val)
-        }
-        return nil
-    }
-    res["wifiVendorDriver"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiVendorDriver(val)
-        }
-        return nil
-    }
-    res["wifiVendorDriverVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiVendorDriverVersion(val)
-        }
-        return nil
-    }
+    res["bandwidthLowEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetBandwidthLowEventRatio)
+    res["basicServiceSetIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetBasicServiceSetIdentifier)
+    res["connectionType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseNetworkConnectionType , m.SetConnectionType)
+    res["delayEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetDelayEventRatio)
+    res["dnsSuffix"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDnsSuffix)
+    res["ipAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetIpAddress)
+    res["linkSpeed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetLinkSpeed)
+    res["macAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMacAddress)
+    res["networkTransportProtocol"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseNetworkTransportProtocol , m.SetNetworkTransportProtocol)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["port"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPort)
+    res["receivedQualityEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetReceivedQualityEventRatio)
+    res["reflexiveIPAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetReflexiveIPAddress)
+    res["relayIPAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRelayIPAddress)
+    res["relayPort"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetRelayPort)
+    res["sentQualityEventRatio"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetFloat32Value(m.SetSentQualityEventRatio)
+    res["subnet"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSubnet)
+    res["traceRouteHops"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTraceRouteHopFromDiscriminatorValue , m.SetTraceRouteHops)
+    res["wifiBand"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWifiBand , m.SetWifiBand)
+    res["wifiBatteryCharge"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWifiBatteryCharge)
+    res["wifiChannel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWifiChannel)
+    res["wifiMicrosoftDriver"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWifiMicrosoftDriver)
+    res["wifiMicrosoftDriverVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWifiMicrosoftDriverVersion)
+    res["wifiRadioType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWifiRadioType , m.SetWifiRadioType)
+    res["wifiSignalStrength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWifiSignalStrength)
+    res["wifiVendorDriver"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWifiVendorDriver)
+    res["wifiVendorDriverVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWifiVendorDriverVersion)
     return res
 }
 // GetIpAddress gets the ipAddress property value. IP address of the media endpoint.
@@ -572,10 +326,7 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     if m.GetTraceRouteHops() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTraceRouteHops()))
-        for i, v := range m.GetTraceRouteHops() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTraceRouteHops())
         err := writer.WriteCollectionOfObjectValues("traceRouteHops", cast)
         if err != nil {
             return err

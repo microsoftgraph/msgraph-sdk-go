@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttendanceRecord provides operations to manage the collection of agreement entities.
+// AttendanceRecord provides operations to manage the collection of agreementAcceptance entities.
 type AttendanceRecord struct {
     Entity
     // List of time periods between joining and leaving a meeting.
@@ -40,60 +41,11 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["attendanceIntervals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAttendanceIntervalFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AttendanceIntervalable, len(val))
-            for i, v := range val {
-                res[i] = v.(AttendanceIntervalable)
-            }
-            m.SetAttendanceIntervals(res)
-        }
-        return nil
-    }
-    res["emailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEmailAddress(val)
-        }
-        return nil
-    }
-    res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentity(val.(Identityable))
-        }
-        return nil
-    }
-    res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRole(val)
-        }
-        return nil
-    }
-    res["totalAttendanceInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalAttendanceInSeconds(val)
-        }
-        return nil
-    }
+    res["attendanceIntervals"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAttendanceIntervalFromDiscriminatorValue , m.SetAttendanceIntervals)
+    res["emailAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEmailAddress)
+    res["identity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentityFromDiscriminatorValue , m.SetIdentity)
+    res["role"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRole)
+    res["totalAttendanceInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetTotalAttendanceInSeconds)
     return res
 }
 // GetIdentity gets the identity property value. Identity of the user associated with this atttendance record.
@@ -115,10 +67,7 @@ func (m *AttendanceRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         return err
     }
     if m.GetAttendanceIntervals() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendanceIntervals()))
-        for i, v := range m.GetAttendanceIntervals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAttendanceIntervals())
         err = writer.WriteCollectionOfObjectValues("attendanceIntervals", cast)
         if err != nil {
             return err

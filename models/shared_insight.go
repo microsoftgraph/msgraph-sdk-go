@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedInsight provides operations to manage the collection of agreement entities.
+// SharedInsight provides operations to manage the collection of agreementAcceptance entities.
 type SharedInsight struct {
     Entity
     // Details about the shared item. Read only.
@@ -34,70 +35,12 @@ func CreateSharedInsightFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastShared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSharingDetailFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastShared(val.(SharingDetailable))
-        }
-        return nil
-    }
-    res["lastSharedMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastSharedMethod(val.(Entityable))
-        }
-        return nil
-    }
-    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResource(val.(Entityable))
-        }
-        return nil
-    }
-    res["resourceReference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateResourceReferenceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceReference(val.(ResourceReferenceable))
-        }
-        return nil
-    }
-    res["resourceVisualization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateResourceVisualizationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceVisualization(val.(ResourceVisualizationable))
-        }
-        return nil
-    }
-    res["sharingHistory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSharingDetailFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SharingDetailable, len(val))
-            for i, v := range val {
-                res[i] = v.(SharingDetailable)
-            }
-            m.SetSharingHistory(res)
-        }
-        return nil
-    }
+    res["lastShared"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSharingDetailFromDiscriminatorValue , m.SetLastShared)
+    res["lastSharedMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEntityFromDiscriminatorValue , m.SetLastSharedMethod)
+    res["resource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEntityFromDiscriminatorValue , m.SetResource)
+    res["resourceReference"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResourceReferenceFromDiscriminatorValue , m.SetResourceReference)
+    res["resourceVisualization"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResourceVisualizationFromDiscriminatorValue , m.SetResourceVisualization)
+    res["sharingHistory"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSharingDetailFromDiscriminatorValue , m.SetSharingHistory)
     return res
 }
 // GetLastShared gets the lastShared property value. Details about the shared item. Read only.
@@ -149,10 +92,7 @@ func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetSharingHistory() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharingHistory()))
-        for i, v := range m.GetSharingHistory() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSharingHistory())
         err = writer.WriteCollectionOfObjectValues("sharingHistory", cast)
         if err != nil {
             return err

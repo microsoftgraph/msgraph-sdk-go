@@ -4,6 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i4e2bdec74e6e4e01e80f5d92c6d06a994f93c7a0648463f12e17ad7fde2c96e7 "github.com/microsoftgraph/msgraph-sdk-go/teamstemplates/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -71,8 +72,8 @@ func NewTeamsTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewTeamsTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *TeamsTemplatesRequestBuilder) Count()(*TeamsTemplatesCountRequestBuilder) {
-    return NewTeamsTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TeamsTemplatesRequestBuilder) Count()(*i4e2bdec74e6e4e01e80f5d92c6d06a994f93c7a0648463f12e17ad7fde2c96e7.CountRequestBuilder) {
+    return i4e2bdec74e6e4e01e80f5d92c6d06a994f93c7a0648463f12e17ad7fde2c96e7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from teamsTemplates
 func (m *TeamsTemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeamsTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

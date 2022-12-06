@@ -4,7 +4,9 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory"
 )
 
 // RoleManagementRequestBuilder provides operations to manage the roleManagement singleton.
@@ -89,12 +91,12 @@ func (m *RoleManagementRequestBuilder) CreatePatchRequestInformation(ctx context
     return requestInfo, nil
 }
 // Directory provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
-func (m *RoleManagementRequestBuilder) Directory()(*RoleManagementDirectoryRequestBuilder) {
-    return NewRoleManagementDirectoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RoleManagementRequestBuilder) Directory()(*iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5.DirectoryRequestBuilder) {
+    return iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5.NewDirectoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
-func (m *RoleManagementRequestBuilder) EntitlementManagement()(*RoleManagementEntitlementManagementRequestBuilder) {
-    return NewRoleManagementEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RoleManagementRequestBuilder) EntitlementManagement()(*i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a.EntitlementManagementRequestBuilder) {
+    return i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a.NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get roleManagement
 func (m *RoleManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleManagementable, error) {

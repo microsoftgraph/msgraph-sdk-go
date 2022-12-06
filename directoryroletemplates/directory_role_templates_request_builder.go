@@ -4,7 +4,11 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i13f35543e7fd513b7896b53959450496b4b40a0d8ed709962f6871dc35b86ec4 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/getbyids"
+    i14aa4ead11e74baa62edc9a283a7340417496098b3a9b5697fdc955d20086255 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/validateproperties"
+    i1deef55c0cacc5fe1d33525ca2ca081a8626edb9cd782f2be58da2bdabec7837 "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/getavailableextensionproperties"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
+    ie9768601a46d4615c89194434b08253d4115813ca60fafddb482fa54036bb02d "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/count"
 )
 
 // DirectoryRoleTemplatesRequestBuilder provides operations to manage the collection of directoryRoleTemplate entities.
@@ -69,8 +73,8 @@ func NewDirectoryRoleTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewDirectoryRoleTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DirectoryRoleTemplatesRequestBuilder) Count()(*DirectoryRoleTemplatesCountRequestBuilder) {
-    return NewDirectoryRoleTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRoleTemplatesRequestBuilder) Count()(*ie9768601a46d4615c89194434b08253d4115813ca60fafddb482fa54036bb02d.CountRequestBuilder) {
+    return ie9768601a46d4615c89194434b08253d4115813ca60fafddb482fa54036bb02d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of directoryRoleTemplate objects.
 func (m *DirectoryRoleTemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -122,12 +126,12 @@ func (m *DirectoryRoleTemplatesRequestBuilder) Get(ctx context.Context, requestC
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *DirectoryRoleTemplatesRequestBuilder) GetAvailableExtensionProperties()(*DirectoryRoleTemplatesGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewDirectoryRoleTemplatesGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRoleTemplatesRequestBuilder) GetAvailableExtensionProperties()(*i1deef55c0cacc5fe1d33525ca2ca081a8626edb9cd782f2be58da2bdabec7837.GetAvailableExtensionPropertiesRequestBuilder) {
+    return i1deef55c0cacc5fe1d33525ca2ca081a8626edb9cd782f2be58da2bdabec7837.NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *DirectoryRoleTemplatesRequestBuilder) GetByIds()(*DirectoryRoleTemplatesGetByIdsRequestBuilder) {
-    return NewDirectoryRoleTemplatesGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRoleTemplatesRequestBuilder) GetByIds()(*i13f35543e7fd513b7896b53959450496b4b40a0d8ed709962f6871dc35b86ec4.GetByIdsRequestBuilder) {
+    return i13f35543e7fd513b7896b53959450496b4b40a0d8ed709962f6871dc35b86ec4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to directoryRoleTemplates
 func (m *DirectoryRoleTemplatesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, error) {
@@ -149,6 +153,6 @@ func (m *DirectoryRoleTemplatesRequestBuilder) Post(ctx context.Context, body ia
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *DirectoryRoleTemplatesRequestBuilder) ValidateProperties()(*DirectoryRoleTemplatesValidatePropertiesRequestBuilder) {
-    return NewDirectoryRoleTemplatesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRoleTemplatesRequestBuilder) ValidateProperties()(*i14aa4ead11e74baa62edc9a283a7340417496098b3a9b5697fdc955d20086255.ValidatePropertiesRequestBuilder) {
+    return i14aa4ead11e74baa62edc9a283a7340417496098b3a9b5697fdc955d20086255.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

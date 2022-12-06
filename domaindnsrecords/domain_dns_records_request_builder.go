@@ -4,6 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i8fa91ef07acbc66ca009b82eb287a91ff49245ddc03e0e0a5d4ff2d688459ff9 "github.com/microsoftgraph/msgraph-sdk-go/domaindnsrecords/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -71,8 +72,8 @@ func NewDomainDnsRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewDomainDnsRecordsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DomainDnsRecordsRequestBuilder) Count()(*DomainDnsRecordsCountRequestBuilder) {
-    return NewDomainDnsRecordsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DomainDnsRecordsRequestBuilder) Count()(*i8fa91ef07acbc66ca009b82eb287a91ff49245ddc03e0e0a5d4ff2d688459ff9.CountRequestBuilder) {
+    return i8fa91ef07acbc66ca009b82eb287a91ff49245ddc03e0e0a5d4ff2d688459ff9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from domainDnsRecords
 func (m *DomainDnsRecordsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DomainDnsRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

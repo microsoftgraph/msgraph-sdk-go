@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -64,236 +65,25 @@ func (m *Schedule) GetEnabled()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnabled(val)
-        }
-        return nil
-    }
-    res["offerShiftRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOfferShiftRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OfferShiftRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(OfferShiftRequestable)
-            }
-            m.SetOfferShiftRequests(res)
-        }
-        return nil
-    }
-    res["offerShiftRequestsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOfferShiftRequestsEnabled(val)
-        }
-        return nil
-    }
-    res["openShiftChangeRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOpenShiftChangeRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OpenShiftChangeRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(OpenShiftChangeRequestable)
-            }
-            m.SetOpenShiftChangeRequests(res)
-        }
-        return nil
-    }
-    res["openShifts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOpenShiftFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OpenShiftable, len(val))
-            for i, v := range val {
-                res[i] = v.(OpenShiftable)
-            }
-            m.SetOpenShifts(res)
-        }
-        return nil
-    }
-    res["openShiftsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOpenShiftsEnabled(val)
-        }
-        return nil
-    }
-    res["provisionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProvisionStatus(val.(*OperationStatus))
-        }
-        return nil
-    }
-    res["provisionStatusCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProvisionStatusCode(val)
-        }
-        return nil
-    }
-    res["schedulingGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSchedulingGroupFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SchedulingGroupable, len(val))
-            for i, v := range val {
-                res[i] = v.(SchedulingGroupable)
-            }
-            m.SetSchedulingGroups(res)
-        }
-        return nil
-    }
-    res["shifts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateShiftFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Shiftable, len(val))
-            for i, v := range val {
-                res[i] = v.(Shiftable)
-            }
-            m.SetShifts(res)
-        }
-        return nil
-    }
-    res["swapShiftsChangeRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSwapShiftsChangeRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SwapShiftsChangeRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(SwapShiftsChangeRequestable)
-            }
-            m.SetSwapShiftsChangeRequests(res)
-        }
-        return nil
-    }
-    res["swapShiftsRequestsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSwapShiftsRequestsEnabled(val)
-        }
-        return nil
-    }
-    res["timeClockEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTimeClockEnabled(val)
-        }
-        return nil
-    }
-    res["timeOffReasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTimeOffReasonFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TimeOffReasonable, len(val))
-            for i, v := range val {
-                res[i] = v.(TimeOffReasonable)
-            }
-            m.SetTimeOffReasons(res)
-        }
-        return nil
-    }
-    res["timeOffRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTimeOffRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TimeOffRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(TimeOffRequestable)
-            }
-            m.SetTimeOffRequests(res)
-        }
-        return nil
-    }
-    res["timeOffRequestsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTimeOffRequestsEnabled(val)
-        }
-        return nil
-    }
-    res["timesOff"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTimeOffFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TimeOffable, len(val))
-            for i, v := range val {
-                res[i] = v.(TimeOffable)
-            }
-            m.SetTimesOff(res)
-        }
-        return nil
-    }
-    res["timeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTimeZone(val)
-        }
-        return nil
-    }
-    res["workforceIntegrationIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetWorkforceIntegrationIds(res)
-        }
-        return nil
-    }
+    res["enabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnabled)
+    res["offerShiftRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOfferShiftRequestFromDiscriminatorValue , m.SetOfferShiftRequests)
+    res["offerShiftRequestsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOfferShiftRequestsEnabled)
+    res["openShiftChangeRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOpenShiftChangeRequestFromDiscriminatorValue , m.SetOpenShiftChangeRequests)
+    res["openShifts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOpenShiftFromDiscriminatorValue , m.SetOpenShifts)
+    res["openShiftsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOpenShiftsEnabled)
+    res["provisionStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOperationStatus , m.SetProvisionStatus)
+    res["provisionStatusCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProvisionStatusCode)
+    res["schedulingGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSchedulingGroupFromDiscriminatorValue , m.SetSchedulingGroups)
+    res["shifts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateShiftFromDiscriminatorValue , m.SetShifts)
+    res["swapShiftsChangeRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSwapShiftsChangeRequestFromDiscriminatorValue , m.SetSwapShiftsChangeRequests)
+    res["swapShiftsRequestsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSwapShiftsRequestsEnabled)
+    res["timeClockEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetTimeClockEnabled)
+    res["timeOffReasons"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTimeOffReasonFromDiscriminatorValue , m.SetTimeOffReasons)
+    res["timeOffRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTimeOffRequestFromDiscriminatorValue , m.SetTimeOffRequests)
+    res["timeOffRequestsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetTimeOffRequestsEnabled)
+    res["timesOff"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTimeOffFromDiscriminatorValue , m.SetTimesOff)
+    res["timeZone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTimeZone)
+    res["workforceIntegrationIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetWorkforceIntegrationIds)
     return res
 }
 // GetOfferShiftRequests gets the offerShiftRequests property value. The offerShiftRequests property
@@ -381,10 +171,7 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetOfferShiftRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOfferShiftRequests()))
-        for i, v := range m.GetOfferShiftRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOfferShiftRequests())
         err = writer.WriteCollectionOfObjectValues("offerShiftRequests", cast)
         if err != nil {
             return err
@@ -397,20 +184,14 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetOpenShiftChangeRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOpenShiftChangeRequests()))
-        for i, v := range m.GetOpenShiftChangeRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOpenShiftChangeRequests())
         err = writer.WriteCollectionOfObjectValues("openShiftChangeRequests", cast)
         if err != nil {
             return err
         }
     }
     if m.GetOpenShifts() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOpenShifts()))
-        for i, v := range m.GetOpenShifts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOpenShifts())
         err = writer.WriteCollectionOfObjectValues("openShifts", cast)
         if err != nil {
             return err
@@ -423,30 +204,21 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetSchedulingGroups() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchedulingGroups()))
-        for i, v := range m.GetSchedulingGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSchedulingGroups())
         err = writer.WriteCollectionOfObjectValues("schedulingGroups", cast)
         if err != nil {
             return err
         }
     }
     if m.GetShifts() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetShifts()))
-        for i, v := range m.GetShifts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetShifts())
         err = writer.WriteCollectionOfObjectValues("shifts", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSwapShiftsChangeRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSwapShiftsChangeRequests()))
-        for i, v := range m.GetSwapShiftsChangeRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSwapShiftsChangeRequests())
         err = writer.WriteCollectionOfObjectValues("swapShiftsChangeRequests", cast)
         if err != nil {
             return err
@@ -465,20 +237,14 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetTimeOffReasons() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTimeOffReasons()))
-        for i, v := range m.GetTimeOffReasons() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTimeOffReasons())
         err = writer.WriteCollectionOfObjectValues("timeOffReasons", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTimeOffRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTimeOffRequests()))
-        for i, v := range m.GetTimeOffRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTimeOffRequests())
         err = writer.WriteCollectionOfObjectValues("timeOffRequests", cast)
         if err != nil {
             return err
@@ -491,10 +257,7 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetTimesOff() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTimesOff()))
-        for i, v := range m.GetTimesOff() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTimesOff())
         err = writer.WriteCollectionOfObjectValues("timesOff", cast)
         if err != nil {
             return err

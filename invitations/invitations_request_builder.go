@@ -4,6 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    i9488cf0adde24be20a54d541a1380cc60be0fc8282e9c60e9a6347f3a30d7c44 "github.com/microsoftgraph/msgraph-sdk-go/invitations/count"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -71,8 +72,8 @@ func NewInvitationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewInvitationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *InvitationsRequestBuilder) Count()(*InvitationsCountRequestBuilder) {
-    return NewInvitationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *InvitationsRequestBuilder) Count()(*i9488cf0adde24be20a54d541a1380cc60be0fc8282e9c60e9a6347f3a30d7c44.CountRequestBuilder) {
+    return i9488cf0adde24be20a54d541a1380cc60be0fc8282e9c60e9a6347f3a30d7c44.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from invitations
 func (m *InvitationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *InvitationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

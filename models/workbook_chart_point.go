@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartPoint provides operations to manage the collection of agreement entities.
+// WorkbookChartPoint provides operations to manage the collection of agreementAcceptance entities.
 type WorkbookChartPoint struct {
     Entity
     // Encapsulates the format properties chart point. Read-only.
@@ -26,26 +27,8 @@ func CreateWorkbookChartPointFromDiscriminatorValue(parseNode i878a80d2330e89d26
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartPoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWorkbookChartPointFormatFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFormat(val.(WorkbookChartPointFormatable))
-        }
-        return nil
-    }
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetValue(val.(Jsonable))
-        }
-        return nil
-    }
+    res["format"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWorkbookChartPointFormatFromDiscriminatorValue , m.SetFormat)
+    res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateJsonFromDiscriminatorValue , m.SetValue)
     return res
 }
 // GetFormat gets the format property value. Encapsulates the format properties chart point. Read-only.
