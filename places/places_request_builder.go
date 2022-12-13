@@ -38,7 +38,7 @@ type PlacesRequestBuilderGetQueryParameters struct {
 // PlacesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PlacesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type PlacesRequestBuilderGetRequestConfiguration struct {
 // PlacesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PlacesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewPlacesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PlacesRequestBuilder) Count()(*PlacesCountRequestBuilder) {
-    return NewPlacesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 func (m *PlacesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PlacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *PlacesRequestBuilder) CreateGetRequestInformation(ctx context.Context, 
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,7 +99,7 @@ func (m *PlacesRequestBuilder) CreatePostRequestInformation(ctx context.Context,
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -143,6 +143,6 @@ func (m *PlacesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
 }
 // Room casts the previous resource to room.
-func (m *PlacesRequestBuilder) Room()(*PlacesRoomRequestBuilder) {
-    return NewPlacesRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlacesRequestBuilder) Room()(*RoomRequestBuilder) {
+    return NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

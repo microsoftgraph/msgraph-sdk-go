@@ -18,11 +18,13 @@ const (
     HIDDEN_RISKDETAIL
     ADMINCONFIRMEDUSERCOMPROMISED_RISKDETAIL
     UNKNOWNFUTUREVALUE_RISKDETAIL
+    ADMINCONFIRMEDSERVICEPRINCIPALCOMPROMISED_RISKDETAIL
+    ADMINDISMISSEDALLRISKFORSERVICEPRINCIPAL_RISKDETAIL
     M365DADMINDISMISSEDDETECTION_RISKDETAIL
 )
 
 func (i RiskDetail) String() string {
-    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "m365DAdminDismissedDetection"}[i]
+    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "m365DAdminDismissedDetection"}[i]
 }
 func ParseRiskDetail(v string) (interface{}, error) {
     result := NONE_RISKDETAIL
@@ -51,6 +53,10 @@ func ParseRiskDetail(v string) (interface{}, error) {
             result = ADMINCONFIRMEDUSERCOMPROMISED_RISKDETAIL
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RISKDETAIL
+        case "adminConfirmedServicePrincipalCompromised":
+            result = ADMINCONFIRMEDSERVICEPRINCIPALCOMPROMISED_RISKDETAIL
+        case "adminDismissedAllRiskForServicePrincipal":
+            result = ADMINDISMISSEDALLRISKFORSERVICEPRINCIPAL_RISKDETAIL
         case "m365DAdminDismissedDetection":
             result = M365DADMINDISMISSEDDETECTION_RISKDETAIL
         default:

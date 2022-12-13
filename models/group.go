@@ -14,7 +14,7 @@ type Group struct {
     allowExternalSenders *bool
     // Represents the app roles a group has been granted for an application. Supports $expand.
     appRoleAssignments []AppRoleAssignmentable
-    // The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+    // The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
     assignedLabels []AssignedLabelable
     // The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
     assignedLicenses []AssignedLicenseable
@@ -164,7 +164,7 @@ func (m *Group) GetAllowExternalSenders()(*bool) {
 func (m *Group) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     return m.appRoleAssignments
 }
-// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
 func (m *Group) GetAssignedLabels()([]AssignedLabelable) {
     return m.assignedLabels
 }
@@ -1669,7 +1669,7 @@ func (m *Group) SetAllowExternalSenders(value *bool)() {
 func (m *Group) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
     m.appRoleAssignments = value
 }
-// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
 func (m *Group) SetAssignedLabels(value []AssignedLabelable)() {
     m.assignedLabels = value
 }

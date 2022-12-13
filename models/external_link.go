@@ -8,7 +8,7 @@ import (
 type ExternalLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The url of the link.
+    // The URL of the link.
     href *string
     // The OdataType property
     odataType *string
@@ -53,7 +53,7 @@ func (m *ExternalLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetHref gets the href property value. The url of the link.
+// GetHref gets the href property value. The URL of the link.
 func (m *ExternalLink) GetHref()(*string) {
     return m.href
 }
@@ -87,7 +87,7 @@ func (m *ExternalLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 func (m *ExternalLink) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetHref sets the href property value. The url of the link.
+// SetHref sets the href property value. The URL of the link.
 func (m *ExternalLink) SetHref(value *string)() {
     m.href = value
 }

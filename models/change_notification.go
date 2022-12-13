@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -28,9 +29,9 @@ type ChangeNotification struct {
     // The expiration time for the subscription. Required.
     subscriptionExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The unique identifier of the subscription that generated the notification.Required.
-    subscriptionId *string
+    subscriptionId *UUID
     // The unique identifier of the tenant from which the change notification originated. Required.
-    tenantId *string
+    tenantId *UUID
 }
 // NewChangeNotification instantiates a new changeNotification and sets the default values.
 func NewChangeNotification()(*ChangeNotification) {
@@ -153,7 +154,7 @@ func (m *ChangeNotification) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["subscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -163,7 +164,7 @@ func (m *ChangeNotification) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -199,11 +200,11 @@ func (m *ChangeNotification) GetSubscriptionExpirationDateTime()(*i336074805fc85
     return m.subscriptionExpirationDateTime
 }
 // GetSubscriptionId gets the subscriptionId property value. The unique identifier of the subscription that generated the notification.Required.
-func (m *ChangeNotification) GetSubscriptionId()(*string) {
+func (m *ChangeNotification) GetSubscriptionId()(*UUID) {
     return m.subscriptionId
 }
 // GetTenantId gets the tenantId property value. The unique identifier of the tenant from which the change notification originated. Required.
-func (m *ChangeNotification) GetTenantId()(*string) {
+func (m *ChangeNotification) GetTenantId()(*UUID) {
     return m.tenantId
 }
 // Serialize serializes information the current object
@@ -265,13 +266,13 @@ func (m *ChangeNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteStringValue("subscriptionId", m.GetSubscriptionId())
+        err := writer.WriteUUIDValue("subscriptionId", m.GetSubscriptionId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("tenantId", m.GetTenantId())
+        err := writer.WriteUUIDValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
         }
@@ -325,10 +326,10 @@ func (m *ChangeNotification) SetSubscriptionExpirationDateTime(value *i336074805
     m.subscriptionExpirationDateTime = value
 }
 // SetSubscriptionId sets the subscriptionId property value. The unique identifier of the subscription that generated the notification.Required.
-func (m *ChangeNotification) SetSubscriptionId(value *string)() {
+func (m *ChangeNotification) SetSubscriptionId(value *UUID)() {
     m.subscriptionId = value
 }
 // SetTenantId sets the tenantId property value. The unique identifier of the tenant from which the change notification originated. Required.
-func (m *ChangeNotification) SetTenantId(value *string)() {
+func (m *ChangeNotification) SetTenantId(value *UUID)() {
     m.tenantId = value
 }

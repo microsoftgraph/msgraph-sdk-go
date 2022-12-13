@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -22,7 +23,7 @@ type IosVppEBook struct {
     // The Vpp token's organization name.
     vppOrganizationName *string
     // The Vpp token ID.
-    vppTokenId *string
+    vppTokenId *UUID
 }
 // NewIosVppEBook instantiates a new IosVppEBook and sets the default values.
 func NewIosVppEBook()(*IosVppEBook) {
@@ -119,7 +120,7 @@ func (m *IosVppEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["vppTokenId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -155,7 +156,7 @@ func (m *IosVppEBook) GetVppOrganizationName()(*string) {
     return m.vppOrganizationName
 }
 // GetVppTokenId gets the vppTokenId property value. The Vpp token ID.
-func (m *IosVppEBook) GetVppTokenId()(*string) {
+func (m *IosVppEBook) GetVppTokenId()(*UUID) {
     return m.vppTokenId
 }
 // Serialize serializes information the current object
@@ -207,7 +208,7 @@ func (m *IosVppEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err = writer.WriteStringValue("vppTokenId", m.GetVppTokenId())
+        err = writer.WriteUUIDValue("vppTokenId", m.GetVppTokenId())
         if err != nil {
             return err
         }
@@ -243,6 +244,6 @@ func (m *IosVppEBook) SetVppOrganizationName(value *string)() {
     m.vppOrganizationName = value
 }
 // SetVppTokenId sets the vppTokenId property value. The Vpp token ID.
-func (m *IosVppEBook) SetVppTokenId(value *string)() {
+func (m *IosVppEBook) SetVppTokenId(value *UUID)() {
     m.vppTokenId = value
 }

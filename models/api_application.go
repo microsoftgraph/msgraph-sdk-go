@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -11,7 +12,7 @@ type ApiApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
-    knownClientApplications []string
+    knownClientApplications []UUID
     // The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
     oauth2PermissionScopes []PermissionScopeable
     // The OdataType property
@@ -54,14 +55,14 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["knownClientApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfPrimitiveValues("uUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*UUID))
             }
             m.SetKnownClientApplications(res)
         }
@@ -118,7 +119,7 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetKnownClientApplications gets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
-func (m *ApiApplication) GetKnownClientApplications()([]string) {
+func (m *ApiApplication) GetKnownClientApplications()([]UUID) {
     return m.knownClientApplications
 }
 // GetOauth2PermissionScopes gets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
@@ -146,7 +147,7 @@ func (m *ApiApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetKnownClientApplications() != nil {
-        err := writer.WriteCollectionOfStringValues("knownClientApplications", m.GetKnownClientApplications())
+        err := writer.WriteCollectionOfUUIDValues("knownClientApplications", m.GetKnownClientApplications())
         if err != nil {
             return err
         }
@@ -200,7 +201,7 @@ func (m *ApiApplication) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
 // SetKnownClientApplications sets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
-func (m *ApiApplication) SetKnownClientApplications(value []string)() {
+func (m *ApiApplication) SetKnownClientApplications(value []UUID)() {
     m.knownClientApplications = value
 }
 // SetOauth2PermissionScopes sets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.

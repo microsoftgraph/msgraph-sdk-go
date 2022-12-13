@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -18,7 +19,7 @@ type KeyCredential struct {
     // The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
     key []byte
     // The unique identifier (GUID) for the key.
-    keyId *string
+    keyId *UUID
     // The OdataType property
     odataType *string
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -99,7 +100,7 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["keyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -155,7 +156,7 @@ func (m *KeyCredential) GetKey()([]byte) {
     return m.key
 }
 // GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
-func (m *KeyCredential) GetKeyId()(*string) {
+func (m *KeyCredential) GetKeyId()(*UUID) {
     return m.keyId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -201,7 +202,7 @@ func (m *KeyCredential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteStringValue("keyId", m.GetKeyId())
+        err := writer.WriteUUIDValue("keyId", m.GetKeyId())
         if err != nil {
             return err
         }
@@ -259,7 +260,7 @@ func (m *KeyCredential) SetKey(value []byte)() {
     m.key = value
 }
 // SetKeyId sets the keyId property value. The unique identifier (GUID) for the key.
-func (m *KeyCredential) SetKeyId(value *string)() {
+func (m *KeyCredential) SetKeyId(value *UUID)() {
     m.keyId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

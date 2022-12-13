@@ -38,15 +38,15 @@ type SitesRequestBuilderGetQueryParameters struct {
 // SitesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SitesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *SitesRequestBuilderGetQueryParameters
 }
 // Add provides operations to call the add method.
-func (m *SitesRequestBuilder) Add()(*SitesAddRequestBuilder) {
-    return NewSitesAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Add()(*AddRequestBuilder) {
+    return NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
@@ -68,8 +68,8 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *SitesRequestBuilder) Count()(*SitesCountRequestBuilder) {
-    return NewSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
 func (m *SitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -82,12 +82,15 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, r
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-search?view=graph-rest-1.0
 func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,6 +110,6 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
 // Remove provides operations to call the remove method.
-func (m *SitesRequestBuilder) Remove()(*SitesRemoveRequestBuilder) {
-    return NewSitesRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Remove()(*RemoveRequestBuilder) {
+    return NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

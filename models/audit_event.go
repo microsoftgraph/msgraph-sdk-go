@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -25,7 +26,7 @@ type AuditEvent struct {
     // Component name.
     componentName *string
     // The client request Id that is used to correlate activity within the system.
-    correlationId *string
+    correlationId *UUID
     // Event display name.
     displayName *string
     // Resources being modified.
@@ -75,7 +76,7 @@ func (m *AuditEvent) GetComponentName()(*string) {
     return m.componentName
 }
 // GetCorrelationId gets the correlationId property value. The client request Id that is used to correlate activity within the system.
-func (m *AuditEvent) GetCorrelationId()(*string) {
+func (m *AuditEvent) GetCorrelationId()(*UUID) {
     return m.correlationId
 }
 // GetDisplayName gets the displayName property value. Event display name.
@@ -166,7 +167,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["correlationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -260,7 +261,7 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err = writer.WriteStringValue("correlationId", m.GetCorrelationId())
+        err = writer.WriteUUIDValue("correlationId", m.GetCorrelationId())
         if err != nil {
             return err
         }
@@ -316,7 +317,7 @@ func (m *AuditEvent) SetComponentName(value *string)() {
     m.componentName = value
 }
 // SetCorrelationId sets the correlationId property value. The client request Id that is used to correlate activity within the system.
-func (m *AuditEvent) SetCorrelationId(value *string)() {
+func (m *AuditEvent) SetCorrelationId(value *UUID)() {
     m.correlationId = value
 }
 // SetDisplayName sets the displayName property value. Event display name.

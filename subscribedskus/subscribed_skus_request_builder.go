@@ -28,7 +28,7 @@ type SubscribedSkusRequestBuilderGetQueryParameters struct {
 // SubscribedSkusRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SubscribedSkusRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -37,7 +37,7 @@ type SubscribedSkusRequestBuilderGetRequestConfiguration struct {
 // SubscribedSkusRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SubscribedSkusRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,7 +71,7 @@ func (m *SubscribedSkusRequestBuilder) CreateGetRequestInformation(ctx context.C
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -85,12 +85,15 @@ func (m *SubscribedSkusRequestBuilder) CreatePostRequestInformation(ctx context.
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0
 func (m *SubscribedSkusRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscribedSkusRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

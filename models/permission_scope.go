@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -13,7 +14,7 @@ type PermissionScope struct {
     // The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
     adminConsentDisplayName *string
     // Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-    id *string
+    id *UUID
     // When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
     isEnabled *bool
     // The OdataType property
@@ -76,7 +77,7 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -158,7 +159,7 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetId gets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-func (m *PermissionScope) GetId()(*string) {
+func (m *PermissionScope) GetId()(*UUID) {
     return m.id
 }
 // GetIsEnabled gets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
@@ -204,7 +205,7 @@ func (m *PermissionScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err := writer.WriteStringValue("id", m.GetId())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
@@ -272,7 +273,7 @@ func (m *PermissionScope) SetAdminConsentDisplayName(value *string)() {
     m.adminConsentDisplayName = value
 }
 // SetId sets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-func (m *PermissionScope) SetId(value *string)() {
+func (m *PermissionScope) SetId(value *UUID)() {
     m.id = value
 }
 // SetIsEnabled sets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
