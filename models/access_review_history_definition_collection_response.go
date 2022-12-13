@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewHistoryDefinitionCollectionResponse provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
+// AccessReviewHistoryDefinitionCollectionResponse 
 type AccessReviewHistoryDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
     // The value property

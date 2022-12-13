@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SchedulingGroup provides operations to manage the collection of applicationTemplate entities.
+// SchedulingGroup 
 type SchedulingGroup struct {
     ChangeTrackedEntity
     // The display name for the schedulingGroup. Required.
@@ -14,7 +14,7 @@ type SchedulingGroup struct {
     // The list of user IDs that are a member of the schedulingGroup. Required.
     userIds []string
 }
-// NewSchedulingGroup instantiates a new schedulingGroup and sets the default values.
+// NewSchedulingGroup instantiates a new SchedulingGroup and sets the default values.
 func NewSchedulingGroup()(*SchedulingGroup) {
     m := &SchedulingGroup{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

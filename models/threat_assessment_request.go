@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentRequest provides operations to manage the collection of agreementAcceptance entities.
+// ThreatAssessmentRequest 
 type ThreatAssessmentRequest struct {
     Entity
     // The category property
@@ -25,7 +25,7 @@ type ThreatAssessmentRequest struct {
     // The assessment process status. Possible values are: pending, completed.
     status *ThreatAssessmentStatus
 }
-// NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
+// NewThreatAssessmentRequest instantiates a new ThreatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),

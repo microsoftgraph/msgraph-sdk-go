@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Post 
+// Post provides operations to manage the collection of authenticationMethodConfiguration entities.
 type Post struct {
     OutlookItem
     // Read-only. Nullable. Supports $expand.
@@ -35,7 +35,7 @@ type Post struct {
     // The collection of single-value extended properties defined for the post. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
 }
-// NewPost instantiates a new Post and sets the default values.
+// NewPost instantiates a new post and sets the default values.
 func NewPost()(*Post) {
     m := &Post{
         OutlookItem: *NewOutlookItem(),

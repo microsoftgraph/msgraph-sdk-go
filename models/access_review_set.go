@@ -12,7 +12,7 @@ type AccessReviewSet struct {
     // Represents a collection of access review history data and the scopes used to collect that data.
     historyDefinitions []AccessReviewHistoryDefinitionable
 }
-// NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
+// NewAccessReviewSet instantiates a new AccessReviewSet and sets the default values.
 func NewAccessReviewSet()(*AccessReviewSet) {
     m := &AccessReviewSet{
         Entity: *NewEntity(),

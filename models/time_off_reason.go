@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeOffReason provides operations to manage the collection of applicationTemplate entities.
+// TimeOffReason 
 type TimeOffReason struct {
     ChangeTrackedEntity
     // The name of the timeOffReason. Required.
@@ -14,7 +14,7 @@ type TimeOffReason struct {
     // Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
     isActive *bool
 }
-// NewTimeOffReason instantiates a new timeOffReason and sets the default values.
+// NewTimeOffReason instantiates a new TimeOffReason and sets the default values.
 func NewTimeOffReason()(*TimeOffReason) {
     m := &TimeOffReason{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

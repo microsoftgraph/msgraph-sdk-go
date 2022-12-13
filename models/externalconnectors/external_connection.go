@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalConnection provides operations to manage the collection of externalConnection entities.
+// ExternalConnection provides operations to manage the collection of applicationTemplate entities.
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.

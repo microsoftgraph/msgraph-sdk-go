@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the deviceAppManagement singleton.
+// Provides operations to manage the collection of application entities.
 type ManagedAppFlaggedReason int
 
 const (

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Contact provides operations to manage the collection of application entities.
+// Contact 
 type Contact struct {
     OutlookItem
     // The name of the contact's assistant.
@@ -83,7 +83,7 @@ type Contact struct {
     // The yomiSurname property
     yomiSurname *string
 }
-// NewContact instantiates a new contact and sets the default values.
+// NewContact instantiates a new Contact and sets the default values.
 func NewContact()(*Contact) {
     m := &Contact{
         OutlookItem: *NewOutlookItem(),

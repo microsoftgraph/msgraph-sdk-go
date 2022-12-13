@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Device casts the previous resource to device.
+// Device 
 type Device struct {
     DirectoryObject
     // true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
@@ -57,7 +57,7 @@ type Device struct {
     // Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
     trustType *string
 }
-// NewDevice instantiates a new device and sets the default values.
+// NewDevice instantiates a new Device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),
