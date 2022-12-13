@@ -14,10 +14,10 @@ type AssignedPlanable interface {
     GetCapabilityStatus()(*string)
     GetOdataType()(*string)
     GetService()(*string)
-    GetServicePlanId()(*UUID)
+    GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCapabilityStatus(value *string)()
     SetOdataType(value *string)()
     SetService(value *string)()
-    SetServicePlanId(value *UUID)()
+    SetServicePlanId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
 }

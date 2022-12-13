@@ -16,7 +16,7 @@ type EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidateProp
     // The mailNickname property
     mailNickname *string
     // The onBehalfOfUserId property
-    onBehalfOfUserId *UUID
+    onBehalfOfUserId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody instantiates a new EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody and sets the default values.
 func NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody) {
@@ -91,7 +91,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidate
     return m.mailNickname
 }
 // GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*UUID) {
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.onBehalfOfUserId
 }
 // Serialize serializes information the current object
@@ -145,6 +145,6 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidate
     m.mailNickname = value
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *UUID)() {
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.onBehalfOfUserId = value
 }

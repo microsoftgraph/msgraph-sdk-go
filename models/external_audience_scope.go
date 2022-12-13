@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the instantiate method.
+// Provides operations to manage the collection of application entities.
 type ExternalAudienceScope int
 
 const (

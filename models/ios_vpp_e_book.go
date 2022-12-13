@@ -23,7 +23,7 @@ type IosVppEBook struct {
     // The Vpp token's organization name.
     vppOrganizationName *string
     // The Vpp token ID.
-    vppTokenId *UUID
+    vppTokenId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewIosVppEBook instantiates a new IosVppEBook and sets the default values.
 func NewIosVppEBook()(*IosVppEBook) {
@@ -156,7 +156,7 @@ func (m *IosVppEBook) GetVppOrganizationName()(*string) {
     return m.vppOrganizationName
 }
 // GetVppTokenId gets the vppTokenId property value. The Vpp token ID.
-func (m *IosVppEBook) GetVppTokenId()(*UUID) {
+func (m *IosVppEBook) GetVppTokenId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.vppTokenId
 }
 // Serialize serializes information the current object
@@ -244,6 +244,6 @@ func (m *IosVppEBook) SetVppOrganizationName(value *string)() {
     m.vppOrganizationName = value
 }
 // SetVppTokenId sets the vppTokenId property value. The Vpp token ID.
-func (m *IosVppEBook) SetVppTokenId(value *UUID)() {
+func (m *IosVppEBook) SetVppTokenId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.vppTokenId = value
 }

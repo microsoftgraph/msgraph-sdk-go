@@ -13,7 +13,7 @@ type LicenseAssignmentState struct {
     // The assignedByGroup property
     assignedByGroup *string
     // The disabledPlans property
-    disabledPlans []UUID
+    disabledPlans []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The error property
     error *string
     // The lastUpdatedDateTime property
@@ -21,7 +21,7 @@ type LicenseAssignmentState struct {
     // The OdataType property
     odataType *string
     // The skuId property
-    skuId *UUID
+    skuId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The state property
     state *string
 }
@@ -45,7 +45,7 @@ func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
     return m.assignedByGroup
 }
 // GetDisabledPlans gets the disabledPlans property value. The disabledPlans property
-func (m *LicenseAssignmentState) GetDisabledPlans()([]UUID) {
+func (m *LicenseAssignmentState) GetDisabledPlans()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.disabledPlans
 }
 // GetError gets the error property value. The error property
@@ -66,14 +66,14 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["disabledPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("uUID")
+        val, err := n.GetCollectionOfPrimitiveValues("i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UUID, len(val))
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UUID))
+                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
             }
             m.SetDisabledPlans(res)
         }
@@ -140,7 +140,7 @@ func (m *LicenseAssignmentState) GetOdataType()(*string) {
     return m.odataType
 }
 // GetSkuId gets the skuId property value. The skuId property
-func (m *LicenseAssignmentState) GetSkuId()(*UUID) {
+func (m *LicenseAssignmentState) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.skuId
 }
 // GetState gets the state property value. The state property
@@ -208,7 +208,7 @@ func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
     m.assignedByGroup = value
 }
 // SetDisabledPlans sets the disabledPlans property value. The disabledPlans property
-func (m *LicenseAssignmentState) SetDisabledPlans(value []UUID)() {
+func (m *LicenseAssignmentState) SetDisabledPlans(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.disabledPlans = value
 }
 // SetError sets the error property value. The error property
@@ -224,7 +224,7 @@ func (m *LicenseAssignmentState) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetSkuId sets the skuId property value. The skuId property
-func (m *LicenseAssignmentState) SetSkuId(value *UUID)() {
+func (m *LicenseAssignmentState) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.skuId = value
 }
 // SetState sets the state property value. The state property

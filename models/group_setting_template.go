@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupSettingTemplate 
+// GroupSettingTemplate provides operations to manage the collection of agreementAcceptance entities.
 type GroupSettingTemplate struct {
     DirectoryObject
     // Description of the template.
@@ -14,7 +14,7 @@ type GroupSettingTemplate struct {
     // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
     values []SettingTemplateValueable
 }
-// NewGroupSettingTemplate instantiates a new GroupSettingTemplate and sets the default values.
+// NewGroupSettingTemplate instantiates a new groupSettingTemplate and sets the default values.
 func NewGroupSettingTemplate()(*GroupSettingTemplate) {
     m := &GroupSettingTemplate{
         DirectoryObject: *NewDirectoryObject(),

@@ -82,7 +82,7 @@ type Application struct {
     // Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     tags []string
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-    tokenEncryptionKeyId *UUID
+    tokenEncryptionKeyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The tokenIssuancePolicies property
     tokenIssuancePolicies []TokenIssuancePolicyable
     // The tokenLifetimePolicies property
@@ -717,7 +717,7 @@ func (m *Application) GetTags()([]string) {
     return m.tags
 }
 // GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-func (m *Application) GetTokenEncryptionKeyId()(*UUID) {
+func (m *Application) GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.tokenEncryptionKeyId
 }
 // GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
@@ -1179,7 +1179,7 @@ func (m *Application) SetTags(value []string)() {
     m.tags = value
 }
 // SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-func (m *Application) SetTokenEncryptionKeyId(value *UUID)() {
+func (m *Application) SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.tokenEncryptionKeyId = value
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The tokenIssuancePolicies property

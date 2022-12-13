@@ -14,7 +14,7 @@ type PermissionScope struct {
     // The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
     adminConsentDisplayName *string
     // Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-    id *UUID
+    id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
     isEnabled *bool
     // The OdataType property
@@ -159,7 +159,7 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetId gets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-func (m *PermissionScope) GetId()(*UUID) {
+func (m *PermissionScope) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
 // GetIsEnabled gets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
@@ -273,7 +273,7 @@ func (m *PermissionScope) SetAdminConsentDisplayName(value *string)() {
     m.adminConsentDisplayName = value
 }
 // SetId sets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
-func (m *PermissionScope) SetId(value *UUID)() {
+func (m *PermissionScope) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
 // SetIsEnabled sets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.

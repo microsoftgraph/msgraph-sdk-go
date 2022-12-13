@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the identityContainer singleton.
+// Provides operations to manage the collection of applicationTemplate entities.
 type IdentityUserFlowAttributeInputType int
 
 const (

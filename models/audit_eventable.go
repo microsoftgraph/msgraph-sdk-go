@@ -18,7 +18,7 @@ type AuditEventable interface {
     GetActor()(AuditActorable)
     GetCategory()(*string)
     GetComponentName()(*string)
-    GetCorrelationId()(*UUID)
+    GetCorrelationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetDisplayName()(*string)
     GetResources()([]AuditResourceable)
     SetActivity(value *string)()
@@ -29,7 +29,7 @@ type AuditEventable interface {
     SetActor(value AuditActorable)()
     SetCategory(value *string)()
     SetComponentName(value *string)()
-    SetCorrelationId(value *UUID)()
+    SetCorrelationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDisplayName(value *string)()
     SetResources(value []AuditResourceable)()
 }

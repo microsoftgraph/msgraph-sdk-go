@@ -19,7 +19,7 @@ type KeyCredential struct {
     // The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
     key []byte
     // The unique identifier (GUID) for the key.
-    keyId *UUID
+    keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
     odataType *string
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -156,7 +156,7 @@ func (m *KeyCredential) GetKey()([]byte) {
     return m.key
 }
 // GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
-func (m *KeyCredential) GetKeyId()(*UUID) {
+func (m *KeyCredential) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -260,7 +260,7 @@ func (m *KeyCredential) SetKey(value []byte)() {
     m.key = value
 }
 // SetKeyId sets the keyId property value. The unique identifier (GUID) for the key.
-func (m *KeyCredential) SetKeyId(value *UUID)() {
+func (m *KeyCredential) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -32,7 +32,7 @@ type WindowsInformationProtectionable interface {
     GetProtectedApps()([]WindowsInformationProtectionAppable)
     GetProtectionUnderLockConfigRequired()(*bool)
     GetRevokeOnUnenrollDisabled()(*bool)
-    GetRightsManagementServicesTemplateId()(*UUID)
+    GetRightsManagementServicesTemplateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSmbAutoEncryptedFileExtensions()([]WindowsInformationProtectionResourceCollectionable)
     SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
     SetAzureRightsManagementServicesAllowed(value *bool)()
@@ -57,6 +57,6 @@ type WindowsInformationProtectionable interface {
     SetProtectedApps(value []WindowsInformationProtectionAppable)()
     SetProtectionUnderLockConfigRequired(value *bool)()
     SetRevokeOnUnenrollDisabled(value *bool)()
-    SetRightsManagementServicesTemplateId(value *UUID)()
+    SetRightsManagementServicesTemplateId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSmbAutoEncryptedFileExtensions(value []WindowsInformationProtectionResourceCollectionable)()
 }

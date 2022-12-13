@@ -21,7 +21,7 @@ type AuthorizationPolicy struct {
     // The defaultUserRolePermissions property
     defaultUserRolePermissions DefaultUserRolePermissionsable
     // Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-    guestUserRoleId *UUID
+    guestUserRoleId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewAuthorizationPolicy instantiates a new AuthorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {
@@ -136,7 +136,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-func (m *AuthorizationPolicy) GetGuestUserRoleId()(*UUID) {
+func (m *AuthorizationPolicy) GetGuestUserRoleId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.guestUserRoleId
 }
 // Serialize serializes information the current object
@@ -215,6 +215,6 @@ func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value DefaultUserRol
     m.defaultUserRolePermissions = value
 }
 // SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-func (m *AuthorizationPolicy) SetGuestUserRoleId(value *UUID)() {
+func (m *AuthorizationPolicy) SetGuestUserRoleId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.guestUserRoleId = value
 }

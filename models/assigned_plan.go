@@ -19,7 +19,7 @@ type AssignedPlan struct {
     // The name of the service; for example, exchange.
     service *string
     // A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-    servicePlanId *UUID
+    servicePlanId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewAssignedPlan instantiates a new assignedPlan and sets the default values.
 func NewAssignedPlan()(*AssignedPlan) {
@@ -108,7 +108,7 @@ func (m *AssignedPlan) GetService()(*string) {
     return m.service
 }
 // GetServicePlanId gets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-func (m *AssignedPlan) GetServicePlanId()(*UUID) {
+func (m *AssignedPlan) GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.servicePlanId
 }
 // Serialize serializes information the current object
@@ -172,6 +172,6 @@ func (m *AssignedPlan) SetService(value *string)() {
     m.service = value
 }
 // SetServicePlanId sets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-func (m *AssignedPlan) SetServicePlanId(value *UUID)() {
+func (m *AssignedPlan) SetServicePlanId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.servicePlanId = value
 }

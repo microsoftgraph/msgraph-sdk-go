@@ -10,7 +10,7 @@ type TeleconferenceDeviceQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-    callChainId *UUID
+    callChainId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // A geo-region where the service is deployed, such as ProdNoam.
     cloudServiceDeploymentEnvironment *string
     // A unique deployment identifier assigned by Azure.
@@ -24,13 +24,13 @@ type TeleconferenceDeviceQuality struct {
     // The user media agent name, such as Cisco SX80.
     deviceName *string
     // A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
-    mediaLegId *UUID
+    mediaLegId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
     mediaQualityList []TeleconferenceDeviceMediaQualityable
     // The OdataType property
     odataType *string
     // A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
-    participantId *UUID
+    participantId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewTeleconferenceDeviceQuality instantiates a new teleconferenceDeviceQuality and sets the default values.
 func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
@@ -48,7 +48,7 @@ func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]interface{}
     return m.additionalData
 }
 // GetCallChainId gets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-func (m *TeleconferenceDeviceQuality) GetCallChainId()(*UUID) {
+func (m *TeleconferenceDeviceQuality) GetCallChainId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.callChainId
 }
 // GetCloudServiceDeploymentEnvironment gets the cloudServiceDeploymentEnvironment property value. A geo-region where the service is deployed, such as ProdNoam.
@@ -195,7 +195,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetMediaLegId gets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
-func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*UUID) {
+func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.mediaLegId
 }
 // GetMediaQualityList gets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
@@ -207,7 +207,7 @@ func (m *TeleconferenceDeviceQuality) GetOdataType()(*string) {
     return m.odataType
 }
 // GetParticipantId gets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
-func (m *TeleconferenceDeviceQuality) GetParticipantId()(*UUID) {
+func (m *TeleconferenceDeviceQuality) GetParticipantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.participantId
 }
 // Serialize serializes information the current object
@@ -295,7 +295,7 @@ func (m *TeleconferenceDeviceQuality) SetAdditionalData(value map[string]interfa
     m.additionalData = value
 }
 // SetCallChainId sets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-func (m *TeleconferenceDeviceQuality) SetCallChainId(value *UUID)() {
+func (m *TeleconferenceDeviceQuality) SetCallChainId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.callChainId = value
 }
 // SetCloudServiceDeploymentEnvironment sets the cloudServiceDeploymentEnvironment property value. A geo-region where the service is deployed, such as ProdNoam.
@@ -323,7 +323,7 @@ func (m *TeleconferenceDeviceQuality) SetDeviceName(value *string)() {
     m.deviceName = value
 }
 // SetMediaLegId sets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
-func (m *TeleconferenceDeviceQuality) SetMediaLegId(value *UUID)() {
+func (m *TeleconferenceDeviceQuality) SetMediaLegId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.mediaLegId = value
 }
 // SetMediaQualityList sets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
@@ -335,6 +335,6 @@ func (m *TeleconferenceDeviceQuality) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetParticipantId sets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
-func (m *TeleconferenceDeviceQuality) SetParticipantId(value *UUID)() {
+func (m *TeleconferenceDeviceQuality) SetParticipantId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.participantId = value
 }

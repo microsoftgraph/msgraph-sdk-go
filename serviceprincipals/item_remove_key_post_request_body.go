@@ -10,7 +10,7 @@ type ItemRemoveKeyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The keyId property
-    keyId *UUID
+    keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The proof property
     proof *string
 }
@@ -55,7 +55,7 @@ func (m *ItemRemoveKeyPostRequestBody) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetKeyId gets the keyId property value. The keyId property
-func (m *ItemRemoveKeyPostRequestBody) GetKeyId()(*UUID) {
+func (m *ItemRemoveKeyPostRequestBody) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
 // GetProof gets the proof property value. The proof property
@@ -89,7 +89,7 @@ func (m *ItemRemoveKeyPostRequestBody) SetAdditionalData(value map[string]interf
     m.additionalData = value
 }
 // SetKeyId sets the keyId property value. The keyId property
-func (m *ItemRemoveKeyPostRequestBody) SetKeyId(value *UUID)() {
+func (m *ItemRemoveKeyPostRequestBody) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }
 // SetProof sets the proof property value. The proof property

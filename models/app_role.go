@@ -16,7 +16,7 @@ type AppRole struct {
     // Display name for the permission that appears in the app role assignment and consent experiences.
     displayName *string
     // Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
-    id *UUID
+    id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
     isEnabled *bool
     // The OdataType property
@@ -143,7 +143,7 @@ func (m *AppRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetId gets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
-func (m *AppRole) GetId()(*UUID) {
+func (m *AppRole) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
 // GetIsEnabled gets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
@@ -237,7 +237,7 @@ func (m *AppRole) SetDisplayName(value *string)() {
     m.displayName = value
 }
 // SetId sets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
-func (m *AppRole) SetId(value *UUID)() {
+func (m *AppRole) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
 // SetIsEnabled sets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.

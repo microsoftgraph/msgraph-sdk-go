@@ -10,7 +10,7 @@ type ResourceAccess struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
-    id *UUID
+    id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
     odataType *string
     // Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
@@ -67,7 +67,7 @@ func (m *ResourceAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetId gets the id property value. The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
-func (m *ResourceAccess) GetId()(*UUID) {
+func (m *ResourceAccess) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -111,7 +111,7 @@ func (m *ResourceAccess) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
 // SetId sets the id property value. The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
-func (m *ResourceAccess) SetId(value *UUID)() {
+func (m *ResourceAccess) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

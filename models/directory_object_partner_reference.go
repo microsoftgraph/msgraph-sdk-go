@@ -13,7 +13,7 @@ type DirectoryObjectPartnerReference struct {
     // Name of directory object being returned, like group or application. Read-only.
     displayName *string
     // The tenant identifier for the partner tenant. Read-only.
-    externalPartnerTenantId *UUID
+    externalPartnerTenantId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The type of the referenced object in the partner tenant. Read-only.
     objectType *string
 }
@@ -39,7 +39,7 @@ func (m *DirectoryObjectPartnerReference) GetDisplayName()(*string) {
     return m.displayName
 }
 // GetExternalPartnerTenantId gets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
-func (m *DirectoryObjectPartnerReference) GetExternalPartnerTenantId()(*UUID) {
+func (m *DirectoryObjectPartnerReference) GetExternalPartnerTenantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.externalPartnerTenantId
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -132,7 +132,7 @@ func (m *DirectoryObjectPartnerReference) SetDisplayName(value *string)() {
     m.displayName = value
 }
 // SetExternalPartnerTenantId sets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
-func (m *DirectoryObjectPartnerReference) SetExternalPartnerTenantId(value *UUID)() {
+func (m *DirectoryObjectPartnerReference) SetExternalPartnerTenantId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.externalPartnerTenantId = value
 }
 // SetObjectType sets the objectType property value. The type of the referenced object in the partner tenant. Read-only.

@@ -29,9 +29,9 @@ type ChangeNotification struct {
     // The expiration time for the subscription. Required.
     subscriptionExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The unique identifier of the subscription that generated the notification.Required.
-    subscriptionId *UUID
+    subscriptionId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The unique identifier of the tenant from which the change notification originated. Required.
-    tenantId *UUID
+    tenantId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewChangeNotification instantiates a new changeNotification and sets the default values.
 func NewChangeNotification()(*ChangeNotification) {
@@ -200,11 +200,11 @@ func (m *ChangeNotification) GetSubscriptionExpirationDateTime()(*i336074805fc85
     return m.subscriptionExpirationDateTime
 }
 // GetSubscriptionId gets the subscriptionId property value. The unique identifier of the subscription that generated the notification.Required.
-func (m *ChangeNotification) GetSubscriptionId()(*UUID) {
+func (m *ChangeNotification) GetSubscriptionId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.subscriptionId
 }
 // GetTenantId gets the tenantId property value. The unique identifier of the tenant from which the change notification originated. Required.
-func (m *ChangeNotification) GetTenantId()(*UUID) {
+func (m *ChangeNotification) GetTenantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.tenantId
 }
 // Serialize serializes information the current object
@@ -326,10 +326,10 @@ func (m *ChangeNotification) SetSubscriptionExpirationDateTime(value *i336074805
     m.subscriptionExpirationDateTime = value
 }
 // SetSubscriptionId sets the subscriptionId property value. The unique identifier of the subscription that generated the notification.Required.
-func (m *ChangeNotification) SetSubscriptionId(value *UUID)() {
+func (m *ChangeNotification) SetSubscriptionId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.subscriptionId = value
 }
 // SetTenantId sets the tenantId property value. The unique identifier of the tenant from which the change notification originated. Required.
-func (m *ChangeNotification) SetTenantId(value *UUID)() {
+func (m *ChangeNotification) SetTenantId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.tenantId = value
 }

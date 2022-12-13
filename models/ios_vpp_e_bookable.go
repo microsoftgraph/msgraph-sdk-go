@@ -16,7 +16,7 @@ type IosVppEBookable interface {
     GetTotalLicenseCount()(*int32)
     GetUsedLicenseCount()(*int32)
     GetVppOrganizationName()(*string)
-    GetVppTokenId()(*UUID)
+    GetVppTokenId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     SetAppleId(value *string)()
     SetGenres(value []string)()
     SetLanguage(value *string)()
@@ -24,5 +24,5 @@ type IosVppEBookable interface {
     SetTotalLicenseCount(value *int32)()
     SetUsedLicenseCount(value *int32)()
     SetVppOrganizationName(value *string)()
-    SetVppTokenId(value *UUID)()
+    SetVppTokenId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
 }

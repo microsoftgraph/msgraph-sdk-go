@@ -10,7 +10,7 @@ type AddIn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The id property
-    id *UUID
+    id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
     odataType *string
     // The properties property
@@ -83,7 +83,7 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetId gets the id property value. The id property
-func (m *AddIn) GetId()(*UUID) {
+func (m *AddIn) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -141,7 +141,7 @@ func (m *AddIn) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
 // SetId sets the id property value. The id property
-func (m *AddIn) SetId(value *UUID)() {
+func (m *AddIn) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

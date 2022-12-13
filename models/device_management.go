@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagement singleton entity that acts as a container for all device management functionality.
+// DeviceManagement 
 type DeviceManagement struct {
     Entity
     // Apple push notification certificate.
@@ -39,7 +39,7 @@ type DeviceManagement struct {
     // Collection of imported Windows autopilot devices.
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
     // Intune Account Id for given tenant
-    intuneAccountId *UUID
+    intuneAccountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand IntuneBrandable
     // The IOS software update installation statuses for this account.
@@ -81,7 +81,7 @@ type DeviceManagement struct {
     // The windows information protection network learning summaries.
     windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummaryable
 }
-// NewDeviceManagement instantiates a new deviceManagement and sets the default values.
+// NewDeviceManagement instantiates a new DeviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
     m := &DeviceManagement{
         Entity: *NewEntity(),
@@ -618,7 +618,7 @@ func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]Impor
     return m.importedWindowsAutopilotDeviceIdentities
 }
 // GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
-func (m *DeviceManagement) GetIntuneAccountId()(*UUID) {
+func (m *DeviceManagement) GetIntuneAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.intuneAccountId
 }
 // GetIntuneBrand gets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
@@ -1087,7 +1087,7 @@ func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []I
     m.importedWindowsAutopilotDeviceIdentities = value
 }
 // SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
-func (m *DeviceManagement) SetIntuneAccountId(value *UUID)() {
+func (m *DeviceManagement) SetIntuneAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.intuneAccountId = value
 }
 // SetIntuneBrand sets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.

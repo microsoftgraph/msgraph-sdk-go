@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryRole provides operations to manage the collection of directoryRole entities.
+// DirectoryRole 
 type DirectoryRole struct {
     DirectoryObject
     // The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
@@ -18,7 +18,7 @@ type DirectoryRole struct {
     // Members of this directory role that are scoped to administrative units. Read-only. Nullable.
     scopedMembers []ScopedRoleMembershipable
 }
-// NewDirectoryRole instantiates a new directoryRole and sets the default values.
+// NewDirectoryRole instantiates a new DirectoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
     m := &DirectoryRole{
         DirectoryObject: *NewDirectoryObject(),

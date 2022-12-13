@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to call the instantiate method.
+// Provides operations to manage the collection of applicationTemplate entities.
 type TermGroupScope int
 
 const (

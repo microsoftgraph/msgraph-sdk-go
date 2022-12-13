@@ -10,7 +10,7 @@ type ItemRemovePasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The keyId property
-    keyId *UUID
+    keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewItemRemovePasswordPostRequestBody instantiates a new ItemRemovePasswordPostRequestBody and sets the default values.
 func NewItemRemovePasswordPostRequestBody()(*ItemRemovePasswordPostRequestBody) {
@@ -43,7 +43,7 @@ func (m *ItemRemovePasswordPostRequestBody) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetKeyId gets the keyId property value. The keyId property
-func (m *ItemRemovePasswordPostRequestBody) GetKeyId()(*UUID) {
+func (m *ItemRemovePasswordPostRequestBody) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
 // Serialize serializes information the current object
@@ -67,6 +67,6 @@ func (m *ItemRemovePasswordPostRequestBody) SetAdditionalData(value map[string]i
     m.additionalData = value
 }
 // SetKeyId sets the keyId property value. The keyId property
-func (m *ItemRemovePasswordPostRequestBody) SetKeyId(value *UUID)() {
+func (m *ItemRemovePasswordPostRequestBody) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }

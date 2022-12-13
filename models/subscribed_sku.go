@@ -19,7 +19,7 @@ type SubscribedSku struct {
     // Information about the service plans that are available with the SKU. Not nullable
     servicePlans []ServicePlanInfoable
     // The unique identifier (GUID) for the service SKU.
-    skuId *UUID
+    skuId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
     skuPartNumber *string
 }
@@ -134,7 +134,7 @@ func (m *SubscribedSku) GetServicePlans()([]ServicePlanInfoable) {
     return m.servicePlans
 }
 // GetSkuId gets the skuId property value. The unique identifier (GUID) for the service SKU.
-func (m *SubscribedSku) GetSkuId()(*UUID) {
+func (m *SubscribedSku) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.skuId
 }
 // GetSkuPartNumber gets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
@@ -216,7 +216,7 @@ func (m *SubscribedSku) SetServicePlans(value []ServicePlanInfoable)() {
     m.servicePlans = value
 }
 // SetSkuId sets the skuId property value. The unique identifier (GUID) for the service SKU.
-func (m *SubscribedSku) SetSkuId(value *UUID)() {
+func (m *SubscribedSku) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.skuId = value
 }
 // SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.

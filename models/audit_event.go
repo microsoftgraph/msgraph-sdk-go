@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuditEvent a class containing the properties for Audit Event.
+// AuditEvent 
 type AuditEvent struct {
     Entity
     // Friendly name of the activity.
@@ -26,13 +26,13 @@ type AuditEvent struct {
     // Component name.
     componentName *string
     // The client request Id that is used to correlate activity within the system.
-    correlationId *UUID
+    correlationId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // Event display name.
     displayName *string
     // Resources being modified.
     resources []AuditResourceable
 }
-// NewAuditEvent instantiates a new auditEvent and sets the default values.
+// NewAuditEvent instantiates a new AuditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *NewEntity(),
@@ -76,7 +76,7 @@ func (m *AuditEvent) GetComponentName()(*string) {
     return m.componentName
 }
 // GetCorrelationId gets the correlationId property value. The client request Id that is used to correlate activity within the system.
-func (m *AuditEvent) GetCorrelationId()(*UUID) {
+func (m *AuditEvent) GetCorrelationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.correlationId
 }
 // GetDisplayName gets the displayName property value. Event display name.
@@ -317,7 +317,7 @@ func (m *AuditEvent) SetComponentName(value *string)() {
     m.componentName = value
 }
 // SetCorrelationId sets the correlationId property value. The client request Id that is used to correlate activity within the system.
-func (m *AuditEvent) SetCorrelationId(value *UUID)() {
+func (m *AuditEvent) SetCorrelationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.correlationId = value
 }
 // SetDisplayName sets the displayName property value. Event display name.

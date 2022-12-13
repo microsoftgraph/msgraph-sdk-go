@@ -10,9 +10,9 @@ type LicenseDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetServicePlans()([]ServicePlanInfoable)
-    GetSkuId()(*UUID)
+    GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSkuPartNumber()(*string)
     SetServicePlans(value []ServicePlanInfoable)()
-    SetSkuId(value *UUID)()
+    SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSkuPartNumber(value *string)()
 }

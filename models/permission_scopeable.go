@@ -11,7 +11,7 @@ type PermissionScopeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdminConsentDescription()(*string)
     GetAdminConsentDisplayName()(*string)
-    GetId()(*UUID)
+    GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetIsEnabled()(*bool)
     GetOdataType()(*string)
     GetOrigin()(*string)
@@ -21,7 +21,7 @@ type PermissionScopeable interface {
     GetValue()(*string)
     SetAdminConsentDescription(value *string)()
     SetAdminConsentDisplayName(value *string)()
-    SetId(value *UUID)()
+    SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetIsEnabled(value *bool)()
     SetOdataType(value *string)()
     SetOrigin(value *string)()

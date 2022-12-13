@@ -19,7 +19,7 @@ type SelfSignedCertificate struct {
     // The key property
     key []byte
     // The keyId property
-    keyId *UUID
+    keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
     odataType *string
     // The startDateTime property
@@ -168,7 +168,7 @@ func (m *SelfSignedCertificate) GetKey()([]byte) {
     return m.key
 }
 // GetKeyId gets the keyId property value. The keyId property
-func (m *SelfSignedCertificate) GetKeyId()(*UUID) {
+func (m *SelfSignedCertificate) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -282,7 +282,7 @@ func (m *SelfSignedCertificate) SetKey(value []byte)() {
     m.key = value
 }
 // SetKeyId sets the keyId property value. The keyId property
-func (m *SelfSignedCertificate) SetKeyId(value *UUID)() {
+func (m *SelfSignedCertificate) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

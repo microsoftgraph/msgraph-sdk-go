@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the identityGovernance singleton.
+// Provides operations to manage the collection of applicationTemplate entities.
 type AccessPackageAssignmentState int
 
 const (

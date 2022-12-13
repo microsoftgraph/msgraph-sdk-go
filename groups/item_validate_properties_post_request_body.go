@@ -14,7 +14,7 @@ type ItemValidatePropertiesPostRequestBody struct {
     // The mailNickname property
     mailNickname *string
     // The onBehalfOfUserId property
-    onBehalfOfUserId *UUID
+    onBehalfOfUserId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewItemValidatePropertiesPostRequestBody instantiates a new ItemValidatePropertiesPostRequestBody and sets the default values.
 func NewItemValidatePropertiesPostRequestBody()(*ItemValidatePropertiesPostRequestBody) {
@@ -75,7 +75,7 @@ func (m *ItemValidatePropertiesPostRequestBody) GetMailNickname()(*string) {
     return m.mailNickname
 }
 // GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
-func (m *ItemValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*UUID) {
+func (m *ItemValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.onBehalfOfUserId
 }
 // Serialize serializes information the current object
@@ -119,6 +119,6 @@ func (m *ItemValidatePropertiesPostRequestBody) SetMailNickname(value *string)()
     m.mailNickname = value
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
-func (m *ItemValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *UUID)() {
+func (m *ItemValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.onBehalfOfUserId = value
 }

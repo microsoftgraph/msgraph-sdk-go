@@ -16,7 +16,7 @@ type ItemPermissionGrantsValidatePropertiesPostRequestBody struct {
     // The mailNickname property
     mailNickname *string
     // The onBehalfOfUserId property
-    onBehalfOfUserId *UUID
+    onBehalfOfUserId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewItemPermissionGrantsValidatePropertiesPostRequestBody instantiates a new ItemPermissionGrantsValidatePropertiesPostRequestBody and sets the default values.
 func NewItemPermissionGrantsValidatePropertiesPostRequestBody()(*ItemPermissionGrantsValidatePropertiesPostRequestBody) {
@@ -91,7 +91,7 @@ func (m *ItemPermissionGrantsValidatePropertiesPostRequestBody) GetMailNickname(
     return m.mailNickname
 }
 // GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
-func (m *ItemPermissionGrantsValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*UUID) {
+func (m *ItemPermissionGrantsValidatePropertiesPostRequestBody) GetOnBehalfOfUserId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.onBehalfOfUserId
 }
 // Serialize serializes information the current object
@@ -145,6 +145,6 @@ func (m *ItemPermissionGrantsValidatePropertiesPostRequestBody) SetMailNickname(
     m.mailNickname = value
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
-func (m *ItemPermissionGrantsValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *UUID)() {
+func (m *ItemPermissionGrantsValidatePropertiesPostRequestBody) SetOnBehalfOfUserId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.onBehalfOfUserId = value
 }
