@@ -24,7 +24,7 @@ type EntitlementManagement struct {
     // The settings that control the behavior of Azure AD entitlement management.
     settings EntitlementManagementSettingsable
 }
-// NewEntitlementManagement instantiates a new EntitlementManagement and sets the default values.
+// NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),

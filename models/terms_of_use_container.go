@@ -12,7 +12,7 @@ type TermsOfUseContainer struct {
     // Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
     agreements []Agreementable
 }
-// NewTermsOfUseContainer instantiates a new TermsOfUseContainer and sets the default values.
+// NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),

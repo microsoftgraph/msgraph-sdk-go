@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to call the instantiate method.
 type RelationType int
 
 const (

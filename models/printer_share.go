@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrinterShare provides operations to manage the collection of agreementAcceptance entities.
+// PrinterShare provides operations to manage the collection of application entities.
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.

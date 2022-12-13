@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EventCollectionResponse 
+// EventCollectionResponse provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
 type EventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
     // The value property

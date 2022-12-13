@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailAuthenticationMethodCollectionResponse 
+// EmailAuthenticationMethodCollectionResponse provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
 type EmailAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
     // The value property
