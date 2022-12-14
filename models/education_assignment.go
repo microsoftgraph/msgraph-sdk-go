@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignment 
+// EducationAssignment provides operations to manage the collection of agreement entities.
 type EducationAssignment struct {
     Entity
-    // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
+    // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
     addedStudentAction *EducationAddedStudentAction
     // Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
     addToCalendarAction *EducationAddToCalendarOptions
@@ -61,7 +61,7 @@ type EducationAssignment struct {
     // The deep link URL for the given assignment.
     webUrl *string
 }
-// NewEducationAssignment instantiates a new EducationAssignment and sets the default values.
+// NewEducationAssignment instantiates a new educationAssignment and sets the default values.
 func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),
@@ -72,7 +72,7 @@ func NewEducationAssignment()(*EducationAssignment) {
 func CreateEducationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignment(), nil
 }
-// GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
+// GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
 func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentAction) {
     return m.addedStudentAction
 }
@@ -571,7 +571,7 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAddedStudentAction sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
+// SetAddedStudentAction sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
 func (m *EducationAssignment) SetAddedStudentAction(value *EducationAddedStudentAction)() {
     m.addedStudentAction = value
 }

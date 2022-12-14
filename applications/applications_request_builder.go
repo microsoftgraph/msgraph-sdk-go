@@ -38,7 +38,7 @@ type ApplicationsRequestBuilderGetQueryParameters struct {
 // ApplicationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ApplicationsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type ApplicationsRequestBuilderGetRequestConfiguration struct {
 // ApplicationsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ApplicationsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewApplicationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewApplicationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ApplicationsRequestBuilder) Count()(*ApplicationsCountRequestBuilder) {
-    return NewApplicationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of applications in this organization.
 func (m *ApplicationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -80,12 +80,12 @@ func (m *ApplicationsRequestBuilder) CreateGetRequestInformation(ctx context.Con
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -96,19 +96,22 @@ func (m *ApplicationsRequestBuilder) CreatePostRequestInformation(ctx context.Co
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *ApplicationsRequestBuilder) Delta()(*ApplicationsDeltaRequestBuilder) {
-    return NewApplicationsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) Delta()(*DeltaRequestBuilder) {
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get the list of applications in this organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0
 func (m *ApplicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,14 +131,17 @@ func (m *ApplicationsRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *ApplicationsRequestBuilder) GetAvailableExtensionProperties()(*ApplicationsGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewApplicationsGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *ApplicationsRequestBuilder) GetByIds()(*ApplicationsGetByIdsRequestBuilder) {
-    return NewApplicationsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new application object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
 func (m *ApplicationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -155,6 +161,6 @@ func (m *ApplicationsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *ApplicationsRequestBuilder) ValidateProperties()(*ApplicationsValidatePropertiesRequestBuilder) {
-    return NewApplicationsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApplicationsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

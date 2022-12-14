@@ -26,7 +26,7 @@ type ExternalRequestBuilderGetQueryParameters struct {
 // ExternalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExternalRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type ExternalRequestBuilderGetRequestConfiguration struct {
 // ExternalRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExternalRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Connections provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
-func (m *ExternalRequestBuilder) Connections()(*ExternalConnectionsRequestBuilder) {
-    return NewExternalConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ExternalRequestBuilder) Connections()(*ConnectionsRequestBuilder) {
+    return NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectionsById provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
-func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ExternalConnectionsExternalConnectionItemRequestBuilder) {
+func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ConnectionsExternalConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ExternalConnections
     if id != "" {
         urlTplParams["externalConnection%2Did"] = id
     }
-    return NewExternalConnectionsExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConnectionsExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewExternalRequestBuilderInternal instantiates a new ExternalRequestBuilder and sets the default values.
 func NewExternalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalRequestBuilder) {
@@ -79,12 +79,12 @@ func (m *ExternalRequestBuilder) CreateGetRequestInformation(ctx context.Context
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -95,10 +95,10 @@ func (m *ExternalRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

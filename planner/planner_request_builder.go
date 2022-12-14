@@ -26,7 +26,7 @@ type PlannerRequestBuilderGetQueryParameters struct {
 // PlannerRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PlannerRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type PlannerRequestBuilderGetRequestConfiguration struct {
 // PlannerRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PlannerRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Buckets provides operations to manage the buckets property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) Buckets()(*PlannerBucketsRequestBuilder) {
-    return NewPlannerBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlannerRequestBuilder) Buckets()(*BucketsRequestBuilder) {
+    return NewBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BucketsById provides operations to manage the buckets property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) BucketsById(id string)(*PlannerBucketsPlannerBucketItemRequestBuilder) {
+func (m *PlannerRequestBuilder) BucketsById(id string)(*BucketsPlannerBucketItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *PlannerRequestBuilder) BucketsById(id string)(*PlannerBucketsPlannerBuc
     if id != "" {
         urlTplParams["plannerBucket%2Did"] = id
     }
-    return NewPlannerBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPlannerRequestBuilderInternal instantiates a new PlannerRequestBuilder and sets the default values.
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerRequestBuilder) {
@@ -79,12 +79,12 @@ func (m *PlannerRequestBuilder) CreateGetRequestInformation(ctx context.Context,
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -95,10 +95,10 @@ func (m *PlannerRequestBuilder) CreatePatchRequestInformation(ctx context.Contex
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -142,11 +142,11 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Plannerable), nil
 }
 // Plans provides operations to manage the plans property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) Plans()(*PlannerPlansRequestBuilder) {
-    return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlannerRequestBuilder) Plans()(*PlansRequestBuilder) {
+    return NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanItemRequestBuilder) {
+func (m *PlannerRequestBuilder) PlansById(id string)(*PlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,14 +154,14 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanIte
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) Tasks()(*PlannerTasksRequestBuilder) {
-    return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PlannerRequestBuilder) Tasks()(*TasksRequestBuilder) {
+    return NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskItemRequestBuilder) {
+func (m *PlannerRequestBuilder) TasksById(id string)(*TasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,5 +169,5 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskIte
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

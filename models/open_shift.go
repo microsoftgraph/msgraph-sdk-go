@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenShift 
+// OpenShift provides operations to manage the collection of authenticationMethodConfiguration entities.
 type OpenShift struct {
     ChangeTrackedEntity
     // An unpublished open shift.
@@ -14,7 +14,7 @@ type OpenShift struct {
     // A published open shift.
     sharedOpenShift OpenShiftItemable
 }
-// NewOpenShift instantiates a new OpenShift and sets the default values.
+// NewOpenShift instantiates a new openShift and sets the default values.
 func NewOpenShift()(*OpenShift) {
     m := &OpenShift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

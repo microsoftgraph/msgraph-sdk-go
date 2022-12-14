@@ -504,8 +504,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewInferenceClassification(), nil
                     case "#microsoft.graph.inferenceClassificationOverride":
                         return NewInferenceClassificationOverride(), nil
-                    case "#microsoft.graph.informationProtection":
-                        return NewInformationProtection(), nil
                     case "#microsoft.graph.internalDomainFederation":
                         return NewInternalDomainFederation(), nil
                     case "#microsoft.graph.invitation":
@@ -838,6 +836,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRichLongRunningOperation(), nil
                     case "#microsoft.graph.riskDetection":
                         return NewRiskDetection(), nil
+                    case "#microsoft.graph.riskyServicePrincipal":
+                        return NewRiskyServicePrincipal(), nil
+                    case "#microsoft.graph.riskyServicePrincipalHistoryItem":
+                        return NewRiskyServicePrincipalHistoryItem(), nil
                     case "#microsoft.graph.riskyUser":
                         return NewRiskyUser(), nil
                     case "#microsoft.graph.riskyUserHistoryItem":
@@ -888,6 +890,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServiceHealthIssue(), nil
                     case "#microsoft.graph.servicePrincipal":
                         return NewServicePrincipal(), nil
+                    case "#microsoft.graph.servicePrincipalRiskDetection":
+                        return NewServicePrincipalRiskDetection(), nil
                     case "#microsoft.graph.serviceUpdateMessage":
                         return NewServiceUpdateMessage(), nil
                     case "#microsoft.graph.settingStateDeviceSummary":

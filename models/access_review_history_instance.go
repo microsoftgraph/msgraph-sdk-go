@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewHistoryInstance provides operations to manage the collection of agreement entities.
+// AccessReviewHistoryInstance provides operations to manage the collection of applicationTemplate entities.
 type AccessReviewHistoryInstance struct {
     Entity
     // Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.

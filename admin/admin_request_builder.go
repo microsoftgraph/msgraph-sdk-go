@@ -26,7 +26,7 @@ type AdminRequestBuilderGetQueryParameters struct {
 // AdminRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdminRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type AdminRequestBuilderGetRequestConfiguration struct {
 // AdminRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdminRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *AdminRequestBuilder) CreateGetRequestInformation(ctx context.Context, r
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,10 +80,10 @@ func (m *AdminRequestBuilder) CreatePatchRequestInformation(ctx context.Context,
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -127,6 +127,6 @@ func (m *AdminRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Adminable), nil
 }
 // ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
-func (m *AdminRequestBuilder) ServiceAnnouncement()(*AdminServiceAnnouncementRequestBuilder) {
-    return NewAdminServiceAnnouncementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestBuilder) {
+    return NewServiceAnnouncementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

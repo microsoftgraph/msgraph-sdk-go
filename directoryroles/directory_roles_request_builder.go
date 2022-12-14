@@ -36,7 +36,7 @@ type DirectoryRolesRequestBuilderGetQueryParameters struct {
 // DirectoryRolesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRolesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -45,7 +45,7 @@ type DirectoryRolesRequestBuilderGetRequestConfiguration struct {
 // DirectoryRolesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRolesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -69,8 +69,8 @@ func NewDirectoryRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewDirectoryRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DirectoryRolesRequestBuilder) Count()(*DirectoryRolesCountRequestBuilder) {
-    return NewDirectoryRolesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRolesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
 func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -78,12 +78,12 @@ func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformation(ctx context.C
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -94,19 +94,22 @@ func (m *DirectoryRolesRequestBuilder) CreatePostRequestInformation(ctx context.
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *DirectoryRolesRequestBuilder) Delta()(*DirectoryRolesDeltaRequestBuilder) {
-    return NewDirectoryRolesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRolesRequestBuilder) Delta()(*DeltaRequestBuilder) {
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get list the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0
 func (m *DirectoryRolesRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRolesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,14 +129,17 @@ func (m *DirectoryRolesRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleCollectionResponseable), nil
 }
 // GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *DirectoryRolesRequestBuilder) GetAvailableExtensionProperties()(*DirectoryRolesGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewDirectoryRolesGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRolesRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *DirectoryRolesRequestBuilder) GetByIds()(*DirectoryRolesGetByIdsRequestBuilder) {
-    return NewDirectoryRolesGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRolesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0
 func (m *DirectoryRolesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRolesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -153,6 +159,6 @@ func (m *DirectoryRolesRequestBuilder) Post(ctx context.Context, body iadcd81124
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *DirectoryRolesRequestBuilder) ValidateProperties()(*DirectoryRolesValidatePropertiesRequestBuilder) {
-    return NewDirectoryRolesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryRolesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

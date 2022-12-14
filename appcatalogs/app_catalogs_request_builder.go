@@ -26,7 +26,7 @@ type AppCatalogsRequestBuilderGetQueryParameters struct {
 // AppCatalogsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppCatalogsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type AppCatalogsRequestBuilderGetRequestConfiguration struct {
 // AppCatalogsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppCatalogsRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *AppCatalogsRequestBuilder) CreateGetRequestInformation(ctx context.Cont
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,10 +80,10 @@ func (m *AppCatalogsRequestBuilder) CreatePatchRequestInformation(ctx context.Co
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -127,11 +127,11 @@ func (m *AppCatalogsRequestBuilder) Patch(ctx context.Context, body iadcd8112441
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppCatalogsable), nil
 }
 // TeamsApps provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *AppCatalogsRequestBuilder) TeamsApps()(*AppCatalogsTeamsAppsRequestBuilder) {
-    return NewAppCatalogsTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AppCatalogsRequestBuilder) TeamsApps()(*TeamsAppsRequestBuilder) {
+    return NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TeamsAppsById provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*AppCatalogsTeamsAppsTeamsAppItemRequestBuilder) {
+func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*AppCatalogsTeamsAp
     if id != "" {
         urlTplParams["teamsApp%2Did"] = id
     }
-    return NewAppCatalogsTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

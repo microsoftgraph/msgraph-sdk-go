@@ -34,6 +34,8 @@ func CreateIdentitySourceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                 switch *mappingValue {
                     case "#microsoft.graph.azureActiveDirectoryTenant":
                         return NewAzureActiveDirectoryTenant(), nil
+                    case "#microsoft.graph.crossCloudAzureActiveDirectoryTenant":
+                        return NewCrossCloudAzureActiveDirectoryTenant(), nil
                     case "#microsoft.graph.domainIdentitySource":
                         return NewDomainIdentitySource(), nil
                     case "#microsoft.graph.externalDomainFederation":

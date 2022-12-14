@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagement 
+// DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
 type DeviceAppManagement struct {
     Entity
     // Android managed app policies.
@@ -45,7 +45,7 @@ type DeviceAppManagement struct {
     // Windows information protection for apps running on devices which are not MDM enrolled.
     windowsInformationProtectionPolicies []WindowsInformationProtectionPolicyable
 }
-// NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
+// NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),

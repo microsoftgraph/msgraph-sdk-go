@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SchemaExtension 
+// SchemaExtension provides operations to manage the collection of agreement entities.
 type SchemaExtension struct {
     Entity
     // Description for the schema extension. Supports $filter (eq).
@@ -18,7 +18,7 @@ type SchemaExtension struct {
     // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
     targetTypes []string
 }
-// NewSchemaExtension instantiates a new SchemaExtension and sets the default values.
+// NewSchemaExtension instantiates a new schemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),

@@ -1,10 +1,11 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubscribedSku 
+// SubscribedSku provides operations to manage the collection of applicationTemplate entities.
 type SubscribedSku struct {
     Entity
     // For example, 'User' or 'Company'.
@@ -18,11 +19,11 @@ type SubscribedSku struct {
     // Information about the service plans that are available with the SKU. Not nullable
     servicePlans []ServicePlanInfoable
     // The unique identifier (GUID) for the service SKU.
-    skuId *string
+    skuId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
     skuPartNumber *string
 }
-// NewSubscribedSku instantiates a new SubscribedSku and sets the default values.
+// NewSubscribedSku instantiates a new subscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),
@@ -103,7 +104,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -133,7 +134,7 @@ func (m *SubscribedSku) GetServicePlans()([]ServicePlanInfoable) {
     return m.servicePlans
 }
 // GetSkuId gets the skuId property value. The unique identifier (GUID) for the service SKU.
-func (m *SubscribedSku) GetSkuId()(*string) {
+func (m *SubscribedSku) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.skuId
 }
 // GetSkuPartNumber gets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
@@ -181,7 +182,7 @@ func (m *SubscribedSku) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("skuId", m.GetSkuId())
+        err = writer.WriteUUIDValue("skuId", m.GetSkuId())
         if err != nil {
             return err
         }
@@ -215,7 +216,7 @@ func (m *SubscribedSku) SetServicePlans(value []ServicePlanInfoable)() {
     m.servicePlans = value
 }
 // SetSkuId sets the skuId property value. The unique identifier (GUID) for the service SKU.
-func (m *SubscribedSku) SetSkuId(value *string)() {
+func (m *SubscribedSku) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.skuId = value
 }
 // SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -10,9 +11,9 @@ type OnPremisesConditionalAccessSettings struct {
     // Indicates if on premises conditional access is enabled for this organization
     enabled *bool
     // User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
-    excludedGroups []string
+    excludedGroups []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-    includedGroups []string
+    includedGroups []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // Override the default access rule when allowing a device to ensure access is granted.
     overrideDefaultRule *bool
 }
@@ -32,7 +33,7 @@ func (m *OnPremisesConditionalAccessSettings) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetExcludedGroups gets the excludedGroups property value. User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
-func (m *OnPremisesConditionalAccessSettings) GetExcludedGroups()([]string) {
+func (m *OnPremisesConditionalAccessSettings) GetExcludedGroups()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.excludedGroups
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -49,28 +50,28 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         return nil
     }
     res["excludedGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfPrimitiveValues("i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
             }
             m.SetExcludedGroups(res)
         }
         return nil
     }
     res["includedGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfPrimitiveValues("i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
             }
             m.SetIncludedGroups(res)
         }
@@ -89,7 +90,7 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
     return res
 }
 // GetIncludedGroups gets the includedGroups property value. User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-func (m *OnPremisesConditionalAccessSettings) GetIncludedGroups()([]string) {
+func (m *OnPremisesConditionalAccessSettings) GetIncludedGroups()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.includedGroups
 }
 // GetOverrideDefaultRule gets the overrideDefaultRule property value. Override the default access rule when allowing a device to ensure access is granted.
@@ -109,13 +110,13 @@ func (m *OnPremisesConditionalAccessSettings) Serialize(writer i878a80d2330e89d2
         }
     }
     if m.GetExcludedGroups() != nil {
-        err = writer.WriteCollectionOfStringValues("excludedGroups", m.GetExcludedGroups())
+        err = writer.WriteCollectionOfUUIDValues("excludedGroups", m.GetExcludedGroups())
         if err != nil {
             return err
         }
     }
     if m.GetIncludedGroups() != nil {
-        err = writer.WriteCollectionOfStringValues("includedGroups", m.GetIncludedGroups())
+        err = writer.WriteCollectionOfUUIDValues("includedGroups", m.GetIncludedGroups())
         if err != nil {
             return err
         }
@@ -133,11 +134,11 @@ func (m *OnPremisesConditionalAccessSettings) SetEnabled(value *bool)() {
     m.enabled = value
 }
 // SetExcludedGroups sets the excludedGroups property value. User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
-func (m *OnPremisesConditionalAccessSettings) SetExcludedGroups(value []string)() {
+func (m *OnPremisesConditionalAccessSettings) SetExcludedGroups(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.excludedGroups = value
 }
 // SetIncludedGroups sets the includedGroups property value. User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-func (m *OnPremisesConditionalAccessSettings) SetIncludedGroups(value []string)() {
+func (m *OnPremisesConditionalAccessSettings) SetIncludedGroups(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.includedGroups = value
 }
 // SetOverrideDefaultRule sets the overrideDefaultRule property value. Override the default access rule when allowing a device to ensure access is granted.

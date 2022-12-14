@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewHistoryDefinition 
+// AccessReviewHistoryDefinition provides operations to manage the collection of applicationTemplate entities.
 type AccessReviewHistoryDefinition struct {
     Entity
     // The createdBy property
@@ -29,7 +29,7 @@ type AccessReviewHistoryDefinition struct {
     // Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
     status *AccessReviewHistoryStatus
 }
-// NewAccessReviewHistoryDefinition instantiates a new AccessReviewHistoryDefinition and sets the default values.
+// NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     m := &AccessReviewHistoryDefinition{
         Entity: *NewEntity(),

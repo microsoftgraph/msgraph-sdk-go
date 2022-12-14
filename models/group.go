@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Group 
+// Group provides operations to manage the collection of authenticationMethodConfiguration entities.
 type Group struct {
     DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -14,7 +14,7 @@ type Group struct {
     allowExternalSenders *bool
     // Represents the app roles a group has been granted for an application. Supports $expand.
     appRoleAssignments []AppRoleAssignmentable
-    // The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+    // The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
     assignedLabels []AssignedLabelable
     // The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
     assignedLicenses []AssignedLicenseable
@@ -164,7 +164,7 @@ func (m *Group) GetAllowExternalSenders()(*bool) {
 func (m *Group) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     return m.appRoleAssignments
 }
-// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
 func (m *Group) GetAssignedLabels()([]AssignedLabelable) {
     return m.assignedLabels
 }
@@ -1669,7 +1669,7 @@ func (m *Group) SetAllowExternalSenders(value *bool)() {
 func (m *Group) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
     m.appRoleAssignments = value
 }
-// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
 func (m *Group) SetAssignedLabels(value []AssignedLabelable)() {
     m.assignedLabels = value
 }

@@ -26,7 +26,7 @@ type PrintRequestBuilderGetQueryParameters struct {
 // PrintRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrintRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type PrintRequestBuilderGetRequestConfiguration struct {
 // PrintRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrintRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Connectors provides operations to manage the connectors property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) Connectors()(*PrintConnectorsRequestBuilder) {
-    return NewPrintConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrintRequestBuilder) Connectors()(*ConnectorsRequestBuilder) {
+    return NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectorsById provides operations to manage the connectors property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) ConnectorsById(id string)(*PrintConnectorsPrintConnectorItemRequestBuilder) {
+func (m *PrintRequestBuilder) ConnectorsById(id string)(*ConnectorsPrintConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *PrintRequestBuilder) ConnectorsById(id string)(*PrintConnectorsPrintCon
     if id != "" {
         urlTplParams["printConnector%2Did"] = id
     }
-    return NewPrintConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPrintRequestBuilderInternal instantiates a new PrintRequestBuilder and sets the default values.
 func NewPrintRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintRequestBuilder) {
@@ -79,12 +79,12 @@ func (m *PrintRequestBuilder) CreateGetRequestInformation(ctx context.Context, r
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -95,10 +95,10 @@ func (m *PrintRequestBuilder) CreatePatchRequestInformation(ctx context.Context,
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -123,11 +123,11 @@ func (m *PrintRequestBuilder) Get(ctx context.Context, requestConfiguration *Pri
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printable), nil
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) Operations()(*PrintOperationsRequestBuilder) {
-    return NewPrintOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrintRequestBuilder) Operations()(*OperationsRequestBuilder) {
+    return NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) OperationsById(id string)(*PrintOperationsPrintOperationItemRequestBuilder) {
+func (m *PrintRequestBuilder) OperationsById(id string)(*OperationsPrintOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -135,7 +135,7 @@ func (m *PrintRequestBuilder) OperationsById(id string)(*PrintOperationsPrintOpe
     if id != "" {
         urlTplParams["printOperation%2Did"] = id
     }
-    return NewPrintOperationsPrintOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOperationsPrintOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update print
 func (m *PrintRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printable, requestConfiguration *PrintRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printable, error) {
@@ -157,11 +157,11 @@ func (m *PrintRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e6
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printable), nil
 }
 // Printers provides operations to manage the printers property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) Printers()(*PrintPrintersRequestBuilder) {
-    return NewPrintPrintersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrintRequestBuilder) Printers()(*PrintersRequestBuilder) {
+    return NewPrintersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PrintersById provides operations to manage the printers property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) PrintersById(id string)(*PrintPrintersPrinterItemRequestBuilder) {
+func (m *PrintRequestBuilder) PrintersById(id string)(*PrintersPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,14 +169,14 @@ func (m *PrintRequestBuilder) PrintersById(id string)(*PrintPrintersPrinterItemR
     if id != "" {
         urlTplParams["printer%2Did"] = id
     }
-    return NewPrintPrintersPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintersPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Services provides operations to manage the services property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) Services()(*PrintServicesRequestBuilder) {
-    return NewPrintServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrintRequestBuilder) Services()(*ServicesRequestBuilder) {
+    return NewServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ServicesById provides operations to manage the services property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) ServicesById(id string)(*PrintServicesPrintServiceItemRequestBuilder) {
+func (m *PrintRequestBuilder) ServicesById(id string)(*ServicesPrintServiceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -184,14 +184,14 @@ func (m *PrintRequestBuilder) ServicesById(id string)(*PrintServicesPrintService
     if id != "" {
         urlTplParams["printService%2Did"] = id
     }
-    return NewPrintServicesPrintServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicesPrintServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Shares provides operations to manage the shares property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) Shares()(*PrintSharesRequestBuilder) {
-    return NewPrintSharesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrintRequestBuilder) Shares()(*SharesRequestBuilder) {
+    return NewSharesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharesById provides operations to manage the shares property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) SharesById(id string)(*PrintSharesPrinterShareItemRequestBuilder) {
+func (m *PrintRequestBuilder) SharesById(id string)(*SharesPrinterShareItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -199,14 +199,14 @@ func (m *PrintRequestBuilder) SharesById(id string)(*PrintSharesPrinterShareItem
     if id != "" {
         urlTplParams["printerShare%2Did"] = id
     }
-    return NewPrintSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TaskDefinitions provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) TaskDefinitions()(*PrintTaskDefinitionsRequestBuilder) {
-    return NewPrintTaskDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrintRequestBuilder) TaskDefinitions()(*TaskDefinitionsRequestBuilder) {
+    return NewTaskDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TaskDefinitionsById provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*PrintTaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
+func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -214,5 +214,5 @@ func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*PrintTaskDefinitio
     if id != "" {
         urlTplParams["printTaskDefinition%2Did"] = id
     }
-    return NewPrintTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

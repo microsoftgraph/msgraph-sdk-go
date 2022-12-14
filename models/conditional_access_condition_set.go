@@ -22,13 +22,13 @@ type ConditionalAccessConditionSet struct {
     odataType *string
     // Platforms included in and excluded from the policy.
     platforms ConditionalAccessPlatformsable
-    // The servicePrincipalRiskLevels property
+    // Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
     servicePrincipalRiskLevels []RiskLevel
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     signInRiskLevels []RiskLevel
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     userRiskLevels []RiskLevel
-    // Users, groups, and roles included in and excluded from the policy. Required.
+    // Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
     users ConditionalAccessUsersable
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
@@ -205,7 +205,7 @@ func (m *ConditionalAccessConditionSet) GetOdataType()(*string) {
 func (m *ConditionalAccessConditionSet) GetPlatforms()(ConditionalAccessPlatformsable) {
     return m.platforms
 }
-// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. The servicePrincipalRiskLevels property
+// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]RiskLevel) {
     return m.servicePrincipalRiskLevels
 }
@@ -217,7 +217,7 @@ func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]RiskLevel) {
 func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
     return m.userRiskLevels
 }
-// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
+// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) GetUsers()(ConditionalAccessUsersable) {
     return m.users
 }
@@ -329,7 +329,7 @@ func (m *ConditionalAccessConditionSet) SetOdataType(value *string)() {
 func (m *ConditionalAccessConditionSet) SetPlatforms(value ConditionalAccessPlatformsable)() {
     m.platforms = value
 }
-// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. The servicePrincipalRiskLevels property
+// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []RiskLevel)() {
     m.servicePrincipalRiskLevels = value
 }
@@ -341,7 +341,7 @@ func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []RiskLevel)()
 func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
     m.userRiskLevels = value
 }
-// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
+// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) SetUsers(value ConditionalAccessUsersable)() {
     m.users = value
 }

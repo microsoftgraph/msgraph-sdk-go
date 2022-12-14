@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -18,7 +19,7 @@ type SelfSignedCertificate struct {
     // The key property
     key []byte
     // The keyId property
-    keyId *string
+    keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
     odataType *string
     // The startDateTime property
@@ -101,7 +102,7 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["keyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -167,7 +168,7 @@ func (m *SelfSignedCertificate) GetKey()([]byte) {
     return m.key
 }
 // GetKeyId gets the keyId property value. The keyId property
-func (m *SelfSignedCertificate) GetKeyId()(*string) {
+func (m *SelfSignedCertificate) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -217,7 +218,7 @@ func (m *SelfSignedCertificate) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err := writer.WriteStringValue("keyId", m.GetKeyId())
+        err := writer.WriteUUIDValue("keyId", m.GetKeyId())
         if err != nil {
             return err
         }
@@ -281,7 +282,7 @@ func (m *SelfSignedCertificate) SetKey(value []byte)() {
     m.key = value
 }
 // SetKeyId sets the keyId property value. The keyId property
-func (m *SelfSignedCertificate) SetKeyId(value *string)() {
+func (m *SelfSignedCertificate) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

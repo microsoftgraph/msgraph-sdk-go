@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintConnector 
+// PrintConnector provides operations to manage the collection of authenticationMethodConfiguration entities.
 type PrintConnector struct {
     Entity
     // The connector's version.
@@ -21,7 +21,7 @@ type PrintConnector struct {
     // The DateTimeOffset when the connector was registered.
     registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewPrintConnector instantiates a new PrintConnector and sets the default values.
+// NewPrintConnector instantiates a new printConnector and sets the default values.
 func NewPrintConnector()(*PrintConnector) {
     m := &PrintConnector{
         Entity: *NewEntity(),

@@ -1,10 +1,11 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarGroup provides operations to manage the collection of agreement entities.
+// CalendarGroup provides operations to manage the collection of application entities.
 type CalendarGroup struct {
     Entity
     // The calendars in the calendar group. Navigation property. Read-only. Nullable.
@@ -12,7 +13,7 @@ type CalendarGroup struct {
     // Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     changeKey *string
     // The class identifier. Read-only.
-    classId *string
+    classId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The group name.
     name *string
 }
@@ -36,7 +37,7 @@ func (m *CalendarGroup) GetChangeKey()(*string) {
     return m.changeKey
 }
 // GetClassId gets the classId property value. The class identifier. Read-only.
-func (m *CalendarGroup) GetClassId()(*string) {
+func (m *CalendarGroup) GetClassId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.classId
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -67,7 +68,7 @@ func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["classId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -115,7 +116,7 @@ func (m *CalendarGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("classId", m.GetClassId())
+        err = writer.WriteUUIDValue("classId", m.GetClassId())
         if err != nil {
             return err
         }
@@ -137,7 +138,7 @@ func (m *CalendarGroup) SetChangeKey(value *string)() {
     m.changeKey = value
 }
 // SetClassId sets the classId property value. The class identifier. Read-only.
-func (m *CalendarGroup) SetClassId(value *string)() {
+func (m *CalendarGroup) SetClassId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.classId = value
 }
 // SetName sets the name property value. The group name.

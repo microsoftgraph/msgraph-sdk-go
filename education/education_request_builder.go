@@ -26,7 +26,7 @@ type EducationRequestBuilderGetQueryParameters struct {
 // EducationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EducationRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type EducationRequestBuilderGetRequestConfiguration struct {
 // EducationRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EducationRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Classes provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) Classes()(*EducationClassesRequestBuilder) {
-    return NewEducationClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *EducationRequestBuilder) Classes()(*ClassesRequestBuilder) {
+    return NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClassesById provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) ClassesById(id string)(*EducationClassesEducationClassItemRequestBuilder) {
+func (m *EducationRequestBuilder) ClassesById(id string)(*ClassesEducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*EducationClassesEducat
     if id != "" {
         urlTplParams["educationClass%2Did"] = id
     }
-    return NewEducationClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationRequestBuilder) {
@@ -79,12 +79,12 @@ func (m *EducationRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -95,10 +95,10 @@ func (m *EducationRequestBuilder) CreatePatchRequestInformation(ctx context.Cont
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -123,8 +123,8 @@ func (m *EducationRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable), nil
 }
 // Me provides operations to manage the me property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) Me()(*EducationMeRequestBuilder) {
-    return NewEducationMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *EducationRequestBuilder) Me()(*MeRequestBuilder) {
+    return NewMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update education
 func (m *EducationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable, requestConfiguration *EducationRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable, error) {
@@ -146,11 +146,11 @@ func (m *EducationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable), nil
 }
 // Schools provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) Schools()(*EducationSchoolsRequestBuilder) {
-    return NewEducationSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *EducationRequestBuilder) Schools()(*SchoolsRequestBuilder) {
+    return NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SchoolsById provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) SchoolsById(id string)(*EducationSchoolsEducationSchoolItemRequestBuilder) {
+func (m *EducationRequestBuilder) SchoolsById(id string)(*SchoolsEducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,14 +158,14 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*EducationSchoolsEducat
     if id != "" {
         urlTplParams["educationSchool%2Did"] = id
     }
-    return NewEducationSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Users provides operations to manage the users property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) Users()(*EducationUsersRequestBuilder) {
-    return NewEducationUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *EducationRequestBuilder) Users()(*UsersRequestBuilder) {
+    return NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsersById provides operations to manage the users property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) UsersById(id string)(*EducationUsersEducationUserItemRequestBuilder) {
+func (m *EducationRequestBuilder) UsersById(id string)(*UsersEducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -173,5 +173,5 @@ func (m *EducationRequestBuilder) UsersById(id string)(*EducationUsersEducationU
     if id != "" {
         urlTplParams["educationUser%2Did"] = id
     }
-    return NewEducationUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

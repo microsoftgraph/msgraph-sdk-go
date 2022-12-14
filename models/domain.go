@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Domain 
+// Domain provides operations to manage the collection of domain entities.
 type Domain struct {
     Entity
     // Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
@@ -42,7 +42,7 @@ type Domain struct {
     // DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
     verificationDnsRecords []DomainDnsRecordable
 }
-// NewDomain instantiates a new Domain and sets the default values.
+// NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),

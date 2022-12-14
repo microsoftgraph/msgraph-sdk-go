@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the collection of application entities.
 type OnlineMeetingRole int
 
 const (

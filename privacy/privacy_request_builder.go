@@ -26,7 +26,7 @@ type PrivacyRequestBuilderGetQueryParameters struct {
 // PrivacyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivacyRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type PrivacyRequestBuilderGetRequestConfiguration struct {
 // PrivacyRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivacyRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *PrivacyRequestBuilder) CreateGetRequestInformation(ctx context.Context,
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,10 +80,10 @@ func (m *PrivacyRequestBuilder) CreatePatchRequestInformation(ctx context.Contex
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -127,11 +127,11 @@ func (m *PrivacyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Privacyable), nil
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*PrivacySubjectRightsRequestsRequestBuilder) {
-    return NewPrivacySubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
+    return NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*PrivacySubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
+func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*PrivacySub
     if id != "" {
         urlTplParams["subjectRightsRequest%2Did"] = id
     }
-    return NewPrivacySubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

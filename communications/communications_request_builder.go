@@ -26,7 +26,7 @@ type CommunicationsRequestBuilderGetQueryParameters struct {
 // CommunicationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommunicationsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type CommunicationsRequestBuilderGetRequestConfiguration struct {
 // CommunicationsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommunicationsRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CallRecords provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallRecords()(*CommunicationsCallRecordsRequestBuilder) {
-    return NewCommunicationsCallRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommunicationsRequestBuilder) CallRecords()(*CallRecordsRequestBuilder) {
+    return NewCallRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallRecordsById provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*CommunicationsCallRecordsCallRecordItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*CallRecordsCallRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,14 +52,14 @@ func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*Communication
     if id != "" {
         urlTplParams["callRecord%2Did"] = id
     }
-    return NewCommunicationsCallRecordsCallRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallRecordsCallRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Calls provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) Calls()(*CommunicationsCallsRequestBuilder) {
-    return NewCommunicationsCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommunicationsRequestBuilder) Calls()(*CallsRequestBuilder) {
+    return NewCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallsById provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallsById(id string)(*CommunicationsCallsCallItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) CallsById(id string)(*CallsCallItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *CommunicationsRequestBuilder) CallsById(id string)(*CommunicationsCalls
     if id != "" {
         urlTplParams["call%2Did"] = id
     }
-    return NewCommunicationsCallsCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallsCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewCommunicationsRequestBuilderInternal instantiates a new CommunicationsRequestBuilder and sets the default values.
 func NewCommunicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunicationsRequestBuilder) {
@@ -94,12 +94,12 @@ func (m *CommunicationsRequestBuilder) CreateGetRequestInformation(ctx context.C
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -110,10 +110,10 @@ func (m *CommunicationsRequestBuilder) CreatePatchRequestInformation(ctx context
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -138,15 +138,15 @@ func (m *CommunicationsRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable), nil
 }
 // GetPresencesByUserId provides operations to call the getPresencesByUserId method.
-func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*CommunicationsGetPresencesByUserIdRequestBuilder) {
-    return NewCommunicationsGetPresencesByUserIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*GetPresencesByUserIdRequestBuilder) {
+    return NewGetPresencesByUserIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) OnlineMeetings()(*CommunicationsOnlineMeetingsRequestBuilder) {
-    return NewCommunicationsOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommunicationsRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
+    return NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OnlineMeetingsById provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*CommunicationsOnlineMeetingsOnlineMeetingItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeetingsOnlineMeetingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,7 +154,7 @@ func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*Communicat
     if id != "" {
         urlTplParams["onlineMeeting%2Did"] = id
     }
-    return NewCommunicationsOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update communications
 func (m *CommunicationsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable, requestConfiguration *CommunicationsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable, error) {
@@ -176,11 +176,11 @@ func (m *CommunicationsRequestBuilder) Patch(ctx context.Context, body iadcd8112
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable), nil
 }
 // Presences provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) Presences()(*CommunicationsPresencesRequestBuilder) {
-    return NewCommunicationsPresencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommunicationsRequestBuilder) Presences()(*PresencesRequestBuilder) {
+    return NewPresencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PresencesById provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) PresencesById(id string)(*CommunicationsPresencesPresenceItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) PresencesById(id string)(*PresencesPresenceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -188,5 +188,5 @@ func (m *CommunicationsRequestBuilder) PresencesById(id string)(*CommunicationsP
     if id != "" {
         urlTplParams["presence%2Did"] = id
     }
-    return NewCommunicationsPresencesPresenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPresencesPresenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Person provides operations to manage the collection of agreement entities.
+// Person 
 type Person struct {
     Entity
     // The person's birthday.
@@ -46,7 +46,7 @@ type Person struct {
     // The phonetic Japanese name of the person's company.
     yomiCompany *string
 }
-// NewPerson instantiates a new person and sets the default values.
+// NewPerson instantiates a new Person and sets the default values.
 func NewPerson()(*Person) {
     m := &Person{
         Entity: *NewEntity(),

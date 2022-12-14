@@ -26,7 +26,7 @@ type AuditLogsRequestBuilderGetQueryParameters struct {
 // AuditLogsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuditLogsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type AuditLogsRequestBuilderGetRequestConfiguration struct {
 // AuditLogsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuditLogsRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *AuditLogsRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,20 +80,20 @@ func (m *AuditLogsRequestBuilder) CreatePatchRequestInformation(ctx context.Cont
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // DirectoryAudits provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) DirectoryAudits()(*AuditLogsDirectoryAuditsRequestBuilder) {
-    return NewAuditLogsDirectoryAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AuditLogsRequestBuilder) DirectoryAudits()(*DirectoryAuditsRequestBuilder) {
+    return NewDirectoryAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoryAuditsById provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*AuditLogsDirectoryAuditsDirectoryAuditItemRequestBuilder) {
+func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -101,7 +101,7 @@ func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*AuditLogsDirec
     if id != "" {
         urlTplParams["directoryAudit%2Did"] = id
     }
-    return NewAuditLogsDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get auditLogs
 func (m *AuditLogsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable, error) {
@@ -142,11 +142,11 @@ func (m *AuditLogsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable), nil
 }
 // Provisioning provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) Provisioning()(*AuditLogsProvisioningRequestBuilder) {
-    return NewAuditLogsProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AuditLogsRequestBuilder) Provisioning()(*ProvisioningRequestBuilder) {
+    return NewProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ProvisioningById provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*AuditLogsProvisioningProvisioningObjectSummaryItemRequestBuilder) {
+func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,14 +154,14 @@ func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*AuditLogsProvisio
     if id != "" {
         urlTplParams["provisioningObjectSummary%2Did"] = id
     }
-    return NewAuditLogsProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SignIns provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) SignIns()(*AuditLogsSignInsRequestBuilder) {
-    return NewAuditLogsSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AuditLogsRequestBuilder) SignIns()(*SignInsRequestBuilder) {
+    return NewSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SignInsById provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) SignInsById(id string)(*AuditLogsSignInsSignInItemRequestBuilder) {
+func (m *AuditLogsRequestBuilder) SignInsById(id string)(*SignInsSignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,5 +169,5 @@ func (m *AuditLogsRequestBuilder) SignInsById(id string)(*AuditLogsSignInsSignIn
     if id != "" {
         urlTplParams["signIn%2Did"] = id
     }
-    return NewAuditLogsSignInsSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSignInsSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

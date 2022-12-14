@@ -26,7 +26,7 @@ type IdentityGovernanceRequestBuilderGetQueryParameters struct {
 // IdentityGovernanceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityGovernanceRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,17 +35,17 @@ type IdentityGovernanceRequestBuilderGetRequestConfiguration struct {
 // IdentityGovernanceRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityGovernanceRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AccessReviews provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
-func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*IdentityGovernanceAccessReviewsRequestBuilder) {
-    return NewIdentityGovernanceAccessReviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*AccessReviewsRequestBuilder) {
+    return NewAccessReviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AppConsent provides operations to manage the appConsent property of the microsoft.graph.identityGovernance entity.
-func (m *IdentityGovernanceRequestBuilder) AppConsent()(*IdentityGovernanceAppConsentRequestBuilder) {
-    return NewIdentityGovernanceAppConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityGovernanceRequestBuilder) AppConsent()(*AppConsentRequestBuilder) {
+    return NewAppConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewIdentityGovernanceRequestBuilderInternal instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
 func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityGovernanceRequestBuilder) {
@@ -72,12 +72,12 @@ func (m *IdentityGovernanceRequestBuilder) CreateGetRequestInformation(ctx conte
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -88,17 +88,17 @@ func (m *IdentityGovernanceRequestBuilder) CreatePatchRequestInformation(ctx con
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
-func (m *IdentityGovernanceRequestBuilder) EntitlementManagement()(*IdentityGovernanceEntitlementManagementRequestBuilder) {
-    return NewIdentityGovernanceEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityGovernanceRequestBuilder) EntitlementManagement()(*EntitlementManagementRequestBuilder) {
+    return NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get identityGovernance
 func (m *IdentityGovernanceRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityGovernanceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable, error) {
@@ -139,6 +139,6 @@ func (m *IdentityGovernanceRequestBuilder) Patch(ctx context.Context, body iadcd
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable), nil
 }
 // TermsOfUse provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
-func (m *IdentityGovernanceRequestBuilder) TermsOfUse()(*IdentityGovernanceTermsOfUseRequestBuilder) {
-    return NewIdentityGovernanceTermsOfUseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityGovernanceRequestBuilder) TermsOfUse()(*TermsOfUseRequestBuilder) {
+    return NewTermsOfUseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
