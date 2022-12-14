@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.49.0] - 2022-12-14
+
+### Added
+
+- BREAKING: added support for multi-valued request headers.
+
+### Changed
+
+- BREAKING: shortens the type names by removing the redudant first level path segment.
+
 ## [0.48.0] - 2022-12-02
 
 ### Changed
