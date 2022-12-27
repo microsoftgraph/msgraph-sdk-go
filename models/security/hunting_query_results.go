@@ -10,9 +10,9 @@ type HuntingQueryResults struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The results property
+    // The results of the hunting query.
     results []HuntingRowResultable
-    // The schema property
+    // The schema for the response.
     schema []SinglePropertySchemaable
 }
 // NewHuntingQueryResults instantiates a new huntingQueryResults and sets the default values.
@@ -77,11 +77,11 @@ func (m *HuntingQueryResults) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *HuntingQueryResults) GetOdataType()(*string) {
     return m.odataType
 }
-// GetResults gets the results property value. The results property
+// GetResults gets the results property value. The results of the hunting query.
 func (m *HuntingQueryResults) GetResults()([]HuntingRowResultable) {
     return m.results
 }
-// GetSchema gets the schema property value. The schema property
+// GetSchema gets the schema property value. The schema for the response.
 func (m *HuntingQueryResults) GetSchema()([]SinglePropertySchemaable) {
     return m.schema
 }
@@ -129,11 +129,11 @@ func (m *HuntingQueryResults) SetAdditionalData(value map[string]interface{})() 
 func (m *HuntingQueryResults) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetResults sets the results property value. The results property
+// SetResults sets the results property value. The results of the hunting query.
 func (m *HuntingQueryResults) SetResults(value []HuntingRowResultable)() {
     m.results = value
 }
-// SetSchema sets the schema property value. The schema property
+// SetSchema sets the schema property value. The schema for the response.
 func (m *HuntingQueryResults) SetSchema(value []SinglePropertySchemaable)() {
     m.schema = value
 }

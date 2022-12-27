@@ -8,11 +8,11 @@ import (
 type EmailSender struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The displayName property
+    // The name of the sender.
     displayName *string
-    // The domainName property
+    // Sender domain.
     domainName *string
-    // The emailAddress property
+    // Sender email address.
     emailAddress *string
     // The OdataType property
     odataType *string
@@ -32,15 +32,15 @@ func CreateEmailSenderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *EmailSender) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the sender.
 func (m *EmailSender) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. Sender domain.
 func (m *EmailSender) GetDomainName()(*string) {
     return m.domainName
 }
-// GetEmailAddress gets the emailAddress property value. The emailAddress property
+// GetEmailAddress gets the emailAddress property value. Sender email address.
 func (m *EmailSender) GetEmailAddress()(*string) {
     return m.emailAddress
 }
@@ -131,15 +131,15 @@ func (m *EmailSender) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *EmailSender) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the sender.
 func (m *EmailSender) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. Sender domain.
 func (m *EmailSender) SetDomainName(value *string)() {
     m.domainName = value
 }
-// SetEmailAddress sets the emailAddress property value. The emailAddress property
+// SetEmailAddress sets the emailAddress property value. Sender email address.
 func (m *EmailSender) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }

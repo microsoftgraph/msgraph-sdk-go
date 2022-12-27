@@ -13,7 +13,7 @@ type BookingStaffMember struct {
     displayName *string
     // The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
     emailAddress *string
-    // The isEmailNotificationEnabled property
+    // True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
     isEmailNotificationEnabled *bool
     // The role property
     role *BookingStaffRole
@@ -138,7 +138,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     return m.isEmailNotificationEnabled
 }
@@ -231,7 +231,7 @@ func (m *BookingStaffMember) SetDisplayName(value *string)() {
 func (m *BookingStaffMember) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }
-// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
     m.isEmailNotificationEnabled = value
 }

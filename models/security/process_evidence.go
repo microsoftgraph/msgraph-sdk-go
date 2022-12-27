@@ -8,25 +8,25 @@ import (
 // ProcessEvidence 
 type ProcessEvidence struct {
     AlertEvidence
-    // The detectionStatus property
+    // The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
     detectionStatus *DetectionStatus
-    // The imageFile property
+    // Image file details.
     imageFile FileDetailsable
-    // The mdeDeviceId property
+    // A unique identifier assigned to a device by Microsoft Defender for Endpoint.
     mdeDeviceId *string
-    // The parentProcessCreationDateTime property
+    // Date and time when the parent of the process was created.
     parentProcessCreationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The parentProcessId property
+    // Process ID (PID) of the parent process that spawned the process.
     parentProcessId *int64
-    // The parentProcessImageFile property
+    // Parent process image file details.
     parentProcessImageFile FileDetailsable
-    // The processCommandLine property
+    // Command line used to create the new process.
     processCommandLine *string
-    // The processCreationDateTime property
+    // Date and time the process was created.
     processCreationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The processId property
+    // Process ID (PID) of the newly created process.
     processId *int64
-    // The userAccount property
+    // User details of the user that ran the process.
     userAccount UserAccountable
 }
 // NewProcessEvidence instantiates a new ProcessEvidence and sets the default values.
@@ -40,7 +40,7 @@ func NewProcessEvidence()(*ProcessEvidence) {
 func CreateProcessEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProcessEvidence(), nil
 }
-// GetDetectionStatus gets the detectionStatus property value. The detectionStatus property
+// GetDetectionStatus gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
 func (m *ProcessEvidence) GetDetectionStatus()(*DetectionStatus) {
     return m.detectionStatus
 }
@@ -149,39 +149,39 @@ func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetImageFile gets the imageFile property value. The imageFile property
+// GetImageFile gets the imageFile property value. Image file details.
 func (m *ProcessEvidence) GetImageFile()(FileDetailsable) {
     return m.imageFile
 }
-// GetMdeDeviceId gets the mdeDeviceId property value. The mdeDeviceId property
+// GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *ProcessEvidence) GetMdeDeviceId()(*string) {
     return m.mdeDeviceId
 }
-// GetParentProcessCreationDateTime gets the parentProcessCreationDateTime property value. The parentProcessCreationDateTime property
+// GetParentProcessCreationDateTime gets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
 func (m *ProcessEvidence) GetParentProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.parentProcessCreationDateTime
 }
-// GetParentProcessId gets the parentProcessId property value. The parentProcessId property
+// GetParentProcessId gets the parentProcessId property value. Process ID (PID) of the parent process that spawned the process.
 func (m *ProcessEvidence) GetParentProcessId()(*int64) {
     return m.parentProcessId
 }
-// GetParentProcessImageFile gets the parentProcessImageFile property value. The parentProcessImageFile property
+// GetParentProcessImageFile gets the parentProcessImageFile property value. Parent process image file details.
 func (m *ProcessEvidence) GetParentProcessImageFile()(FileDetailsable) {
     return m.parentProcessImageFile
 }
-// GetProcessCommandLine gets the processCommandLine property value. The processCommandLine property
+// GetProcessCommandLine gets the processCommandLine property value. Command line used to create the new process.
 func (m *ProcessEvidence) GetProcessCommandLine()(*string) {
     return m.processCommandLine
 }
-// GetProcessCreationDateTime gets the processCreationDateTime property value. The processCreationDateTime property
+// GetProcessCreationDateTime gets the processCreationDateTime property value. Date and time the process was created.
 func (m *ProcessEvidence) GetProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.processCreationDateTime
 }
-// GetProcessId gets the processId property value. The processId property
+// GetProcessId gets the processId property value. Process ID (PID) of the newly created process.
 func (m *ProcessEvidence) GetProcessId()(*int64) {
     return m.processId
 }
-// GetUserAccount gets the userAccount property value. The userAccount property
+// GetUserAccount gets the userAccount property value. User details of the user that ran the process.
 func (m *ProcessEvidence) GetUserAccount()(UserAccountable) {
     return m.userAccount
 }
@@ -254,43 +254,43 @@ func (m *ProcessEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetDetectionStatus sets the detectionStatus property value. The detectionStatus property
+// SetDetectionStatus sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
 func (m *ProcessEvidence) SetDetectionStatus(value *DetectionStatus)() {
     m.detectionStatus = value
 }
-// SetImageFile sets the imageFile property value. The imageFile property
+// SetImageFile sets the imageFile property value. Image file details.
 func (m *ProcessEvidence) SetImageFile(value FileDetailsable)() {
     m.imageFile = value
 }
-// SetMdeDeviceId sets the mdeDeviceId property value. The mdeDeviceId property
+// SetMdeDeviceId sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *ProcessEvidence) SetMdeDeviceId(value *string)() {
     m.mdeDeviceId = value
 }
-// SetParentProcessCreationDateTime sets the parentProcessCreationDateTime property value. The parentProcessCreationDateTime property
+// SetParentProcessCreationDateTime sets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
 func (m *ProcessEvidence) SetParentProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.parentProcessCreationDateTime = value
 }
-// SetParentProcessId sets the parentProcessId property value. The parentProcessId property
+// SetParentProcessId sets the parentProcessId property value. Process ID (PID) of the parent process that spawned the process.
 func (m *ProcessEvidence) SetParentProcessId(value *int64)() {
     m.parentProcessId = value
 }
-// SetParentProcessImageFile sets the parentProcessImageFile property value. The parentProcessImageFile property
+// SetParentProcessImageFile sets the parentProcessImageFile property value. Parent process image file details.
 func (m *ProcessEvidence) SetParentProcessImageFile(value FileDetailsable)() {
     m.parentProcessImageFile = value
 }
-// SetProcessCommandLine sets the processCommandLine property value. The processCommandLine property
+// SetProcessCommandLine sets the processCommandLine property value. Command line used to create the new process.
 func (m *ProcessEvidence) SetProcessCommandLine(value *string)() {
     m.processCommandLine = value
 }
-// SetProcessCreationDateTime sets the processCreationDateTime property value. The processCreationDateTime property
+// SetProcessCreationDateTime sets the processCreationDateTime property value. Date and time the process was created.
 func (m *ProcessEvidence) SetProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.processCreationDateTime = value
 }
-// SetProcessId sets the processId property value. The processId property
+// SetProcessId sets the processId property value. Process ID (PID) of the newly created process.
 func (m *ProcessEvidence) SetProcessId(value *int64)() {
     m.processId = value
 }
-// SetUserAccount sets the userAccount property value. The userAccount property
+// SetUserAccount sets the userAccount property value. User details of the user that ran the process.
 func (m *ProcessEvidence) SetUserAccount(value UserAccountable)() {
     m.userAccount = value
 }

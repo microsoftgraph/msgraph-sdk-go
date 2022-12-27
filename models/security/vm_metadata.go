@@ -12,11 +12,11 @@ type VmMetadata struct {
     cloudProvider *VmCloudProvider
     // The OdataType property
     odataType *string
-    // The resourceId property
+    // Unique identifier of the Azure resource.
     resourceId *string
-    // The subscriptionId property
+    // Unique identifier of the Azure subscription the customer tenant belongs to.
     subscriptionId *string
-    // The vmId property
+    // Unique identifier of the virtual machine instance.
     vmId *string
 }
 // NewVmMetadata instantiates a new vmMetadata and sets the default values.
@@ -97,15 +97,15 @@ func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 func (m *VmMetadata) GetOdataType()(*string) {
     return m.odataType
 }
-// GetResourceId gets the resourceId property value. The resourceId property
+// GetResourceId gets the resourceId property value. Unique identifier of the Azure resource.
 func (m *VmMetadata) GetResourceId()(*string) {
     return m.resourceId
 }
-// GetSubscriptionId gets the subscriptionId property value. The subscriptionId property
+// GetSubscriptionId gets the subscriptionId property value. Unique identifier of the Azure subscription the customer tenant belongs to.
 func (m *VmMetadata) GetSubscriptionId()(*string) {
     return m.subscriptionId
 }
-// GetVmId gets the vmId property value. The vmId property
+// GetVmId gets the vmId property value. Unique identifier of the virtual machine instance.
 func (m *VmMetadata) GetVmId()(*string) {
     return m.vmId
 }
@@ -162,15 +162,15 @@ func (m *VmMetadata) SetCloudProvider(value *VmCloudProvider)() {
 func (m *VmMetadata) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetResourceId sets the resourceId property value. The resourceId property
+// SetResourceId sets the resourceId property value. Unique identifier of the Azure resource.
 func (m *VmMetadata) SetResourceId(value *string)() {
     m.resourceId = value
 }
-// SetSubscriptionId sets the subscriptionId property value. The subscriptionId property
+// SetSubscriptionId sets the subscriptionId property value. Unique identifier of the Azure subscription the customer tenant belongs to.
 func (m *VmMetadata) SetSubscriptionId(value *string)() {
     m.subscriptionId = value
 }
-// SetVmId sets the vmId property value. The vmId property
+// SetVmId sets the vmId property value. Unique identifier of the virtual machine instance.
 func (m *VmMetadata) SetVmId(value *string)() {
     m.vmId = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipal provides operations to manage the collection of authenticationMethodConfiguration entities.
+// RiskyServicePrincipal provides operations to manage the collection of agreement entities.
 type RiskyServicePrincipal struct {
     Entity
     // The globally unique identifier for the associated application (its appId property), if any.

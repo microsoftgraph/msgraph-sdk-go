@@ -7,7 +7,7 @@ import (
 // UserEvidence 
 type UserEvidence struct {
     AlertEvidence
-    // The userAccount property
+    // The user account details.
     userAccount UserAccountable
 }
 // NewUserEvidence instantiates a new UserEvidence and sets the default values.
@@ -36,7 +36,7 @@ func (m *UserEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetUserAccount gets the userAccount property value. The userAccount property
+// GetUserAccount gets the userAccount property value. The user account details.
 func (m *UserEvidence) GetUserAccount()(UserAccountable) {
     return m.userAccount
 }
@@ -54,7 +54,7 @@ func (m *UserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetUserAccount sets the userAccount property value. The userAccount property
+// SetUserAccount sets the userAccount property value. The user account details.
 func (m *UserEvidence) SetUserAccount(value UserAccountable)() {
     m.userAccount = value
 }

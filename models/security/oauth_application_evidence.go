@@ -7,13 +7,13 @@ import (
 // OauthApplicationEvidence 
 type OauthApplicationEvidence struct {
     AlertEvidence
-    // The appId property
+    // Unique identifier of the application.
     appId *string
-    // The displayName property
+    // Name of the application.
     displayName *string
-    // The objectId property
+    // The unique identifier of the application object in Azure AD.
     objectId *string
-    // The publisher property
+    // The name of the application publisher.
     publisher *string
 }
 // NewOauthApplicationEvidence instantiates a new OauthApplicationEvidence and sets the default values.
@@ -27,11 +27,11 @@ func NewOauthApplicationEvidence()(*OauthApplicationEvidence) {
 func CreateOauthApplicationEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOauthApplicationEvidence(), nil
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. Unique identifier of the application.
 func (m *OauthApplicationEvidence) GetAppId()(*string) {
     return m.appId
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the application.
 func (m *OauthApplicationEvidence) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -80,11 +80,11 @@ func (m *OauthApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetObjectId gets the objectId property value. The objectId property
+// GetObjectId gets the objectId property value. The unique identifier of the application object in Azure AD.
 func (m *OauthApplicationEvidence) GetObjectId()(*string) {
     return m.objectId
 }
-// GetPublisher gets the publisher property value. The publisher property
+// GetPublisher gets the publisher property value. The name of the application publisher.
 func (m *OauthApplicationEvidence) GetPublisher()(*string) {
     return m.publisher
 }
@@ -120,19 +120,19 @@ func (m *OauthApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. Unique identifier of the application.
 func (m *OauthApplicationEvidence) SetAppId(value *string)() {
     m.appId = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the application.
 func (m *OauthApplicationEvidence) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetObjectId sets the objectId property value. The objectId property
+// SetObjectId sets the objectId property value. The unique identifier of the application object in Azure AD.
 func (m *OauthApplicationEvidence) SetObjectId(value *string)() {
     m.objectId = value
 }
-// SetPublisher sets the publisher property value. The publisher property
+// SetPublisher sets the publisher property value. The name of the application publisher.
 func (m *OauthApplicationEvidence) SetPublisher(value *string)() {
     m.publisher = value
 }

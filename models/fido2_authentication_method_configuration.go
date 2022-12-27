@@ -7,7 +7,7 @@ import (
 // Fido2AuthenticationMethodConfiguration 
 type Fido2AuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // A collection of users or groups who are enabled to use the authentication method.
+    // A collection of groups that are enabled to use the authentication method.
     includeTargets []AuthenticationMethodTargetable
     // Determines whether attestation must be enforced for FIDO2 security key registration.
     isAttestationEnforced *bool
@@ -78,7 +78,7 @@ func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *Fido2AuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     return m.includeTargets
 }
@@ -130,7 +130,7 @@ func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *Fido2AuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
     m.includeTargets = value
 }

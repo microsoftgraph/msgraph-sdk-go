@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstance provides operations to manage the collection of authenticationMethodConfiguration entities.
+// AccessReviewInstance 
 type AccessReviewInstance struct {
     Entity
     // Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
@@ -27,7 +27,7 @@ type AccessReviewInstance struct {
     // Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
     status *string
 }
-// NewAccessReviewInstance instantiates a new accessReviewInstance and sets the default values.
+// NewAccessReviewInstance instantiates a new AccessReviewInstance and sets the default values.
 func NewAccessReviewInstance()(*AccessReviewInstance) {
     m := &AccessReviewInstance{
         Entity: *NewEntity(),

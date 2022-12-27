@@ -16,7 +16,7 @@ type IncidentsItemAlertsAlertItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncidentsItemAlertsAlertItemRequestBuilderGetQueryParameters get alerts from security
+// IncidentsItemAlertsAlertItemRequestBuilderGetQueryParameters the list of related alerts. Supports $expand.
 type IncidentsItemAlertsAlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,7 +51,7 @@ func NewIncidentsItemAlertsAlertItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get alerts from security
+// CreateGetRequestInformation the list of related alerts. Supports $expand.
 func (m *IncidentsItemAlertsAlertItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IncidentsItemAlertsAlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,7 +67,7 @@ func (m *IncidentsItemAlertsAlertItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Get get alerts from security
+// Get the list of related alerts. Supports $expand.
 func (m *IncidentsItemAlertsAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentsItemAlertsAlertItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

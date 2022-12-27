@@ -7,9 +7,9 @@ import (
 // IpEvidence 
 type IpEvidence struct {
     AlertEvidence
-    // The countryLetterCode property
+    // The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
     countryLetterCode *string
-    // The ipAddress property
+    // The value of the IP Address, can be either in V4 address or V6 address format.
     ipAddress *string
 }
 // NewIpEvidence instantiates a new IpEvidence and sets the default values.
@@ -23,7 +23,7 @@ func NewIpEvidence()(*IpEvidence) {
 func CreateIpEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpEvidence(), nil
 }
-// GetCountryLetterCode gets the countryLetterCode property value. The countryLetterCode property
+// GetCountryLetterCode gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
 func (m *IpEvidence) GetCountryLetterCode()(*string) {
     return m.countryLetterCode
 }
@@ -52,7 +52,7 @@ func (m *IpEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. The ipAddress property
+// GetIpAddress gets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
 func (m *IpEvidence) GetIpAddress()(*string) {
     return m.ipAddress
 }
@@ -76,11 +76,11 @@ func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetCountryLetterCode sets the countryLetterCode property value. The countryLetterCode property
+// SetCountryLetterCode sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
 func (m *IpEvidence) SetCountryLetterCode(value *string)() {
     m.countryLetterCode = value
 }
-// SetIpAddress sets the ipAddress property value. The ipAddress property
+// SetIpAddress sets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
 func (m *IpEvidence) SetIpAddress(value *string)() {
     m.ipAddress = value
 }

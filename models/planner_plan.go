@@ -5,12 +5,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlan provides operations to manage the collection of applicationTemplate entities.
+// PlannerPlan provides operations to manage the appCatalogs singleton.
 type PlannerPlan struct {
     Entity
     // Read-only. Nullable. Collection of buckets in the plan.
     buckets []PlannerBucketable
-    // Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+    // Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
     container PlannerPlanContainerable
     // Read-only. The user who created the plan.
     createdBy IdentitySetable
@@ -40,7 +40,7 @@ func CreatePlannerPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     return m.buckets
 }
-// GetContainer gets the container property value. Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+// GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
 func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     return m.container
 }
@@ -229,7 +229,7 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
     m.buckets = value
 }
-// SetContainer sets the container property value. Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+// SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
 func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
     m.container = value
 }

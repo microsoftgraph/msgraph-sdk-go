@@ -6,19 +6,19 @@ import (
 
 // UserAccount 
 type UserAccount struct {
-    // The accountName property
+    // The user account's displayed name.
     accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The azureAdUserId property
+    // The user object identifier in Azure AD.
     azureAdUserId *string
-    // The domainName property
+    // The name of the Active Directory domain of which the user is a member.
     domainName *string
     // The OdataType property
     odataType *string
-    // The userPrincipalName property
+    // The user principal name of the account in Azure AD.
     userPrincipalName *string
-    // The userSid property
+    // The local security identifier of the user account.
     userSid *string
 }
 // NewUserAccount instantiates a new userAccount and sets the default values.
@@ -32,7 +32,7 @@ func NewUserAccount()(*UserAccount) {
 func CreateUserAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserAccount(), nil
 }
-// GetAccountName gets the accountName property value. The accountName property
+// GetAccountName gets the accountName property value. The user account's displayed name.
 func (m *UserAccount) GetAccountName()(*string) {
     return m.accountName
 }
@@ -40,11 +40,11 @@ func (m *UserAccount) GetAccountName()(*string) {
 func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAzureAdUserId gets the azureAdUserId property value. The azureAdUserId property
+// GetAzureAdUserId gets the azureAdUserId property value. The user object identifier in Azure AD.
 func (m *UserAccount) GetAzureAdUserId()(*string) {
     return m.azureAdUserId
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. The name of the Active Directory domain of which the user is a member.
 func (m *UserAccount) GetDomainName()(*string) {
     return m.domainName
 }
@@ -117,11 +117,11 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *UserAccount) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name of the account in Azure AD.
 func (m *UserAccount) GetUserPrincipalName()(*string) {
     return m.userPrincipalName
 }
-// GetUserSid gets the userSid property value. The userSid property
+// GetUserSid gets the userSid property value. The local security identifier of the user account.
 func (m *UserAccount) GetUserSid()(*string) {
     return m.userSid
 }
@@ -171,7 +171,7 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAccountName sets the accountName property value. The accountName property
+// SetAccountName sets the accountName property value. The user account's displayed name.
 func (m *UserAccount) SetAccountName(value *string)() {
     m.accountName = value
 }
@@ -179,11 +179,11 @@ func (m *UserAccount) SetAccountName(value *string)() {
 func (m *UserAccount) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAzureAdUserId sets the azureAdUserId property value. The azureAdUserId property
+// SetAzureAdUserId sets the azureAdUserId property value. The user object identifier in Azure AD.
 func (m *UserAccount) SetAzureAdUserId(value *string)() {
     m.azureAdUserId = value
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. The name of the Active Directory domain of which the user is a member.
 func (m *UserAccount) SetDomainName(value *string)() {
     m.domainName = value
 }
@@ -191,11 +191,11 @@ func (m *UserAccount) SetDomainName(value *string)() {
 func (m *UserAccount) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the account in Azure AD.
 func (m *UserAccount) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }
-// SetUserSid sets the userSid property value. The userSid property
+// SetUserSid sets the userSid property value. The local security identifier of the user account.
 func (m *UserAccount) SetUserSid(value *string)() {
     m.userSid = value
 }

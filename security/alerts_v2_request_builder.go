@@ -16,7 +16,7 @@ type Alerts_v2RequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// Alerts_v2RequestBuilderGetQueryParameters get alerts_v2 from security
+// Alerts_v2RequestBuilderGetQueryParameters get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
 type Alerts_v2RequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAlerts_v2RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *Alerts_v2RequestBuilder) Count()(*Alerts_v2CountRequestBuilder) {
     return NewAlerts_v2CountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get alerts_v2 from security
+// CreateGetRequestInformation get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
 func (m *Alerts_v2RequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2RequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,7 +104,10 @@ func (m *Alerts_v2RequestBuilder) CreatePostRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Get get alerts_v2 from security
+// Get get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
 func (m *Alerts_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *Alerts_v2RequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

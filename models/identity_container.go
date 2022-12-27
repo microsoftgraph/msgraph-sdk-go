@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityContainer provides operations to manage the identityContainer singleton.
+// IdentityContainer 
 type IdentityContainer struct {
     Entity
     // Represents entry point for API connectors.
@@ -18,7 +18,7 @@ type IdentityContainer struct {
     // Represents entry point for identity userflow attributes.
     userFlowAttributes []IdentityUserFlowAttributeable
 }
-// NewIdentityContainer instantiates a new identityContainer and sets the default values.
+// NewIdentityContainer instantiates a new IdentityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
         Entity: *NewEntity(),

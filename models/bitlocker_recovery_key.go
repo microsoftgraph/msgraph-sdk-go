@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BitlockerRecoveryKey provides operations to manage the collection of agreementAcceptance entities.
+// BitlockerRecoveryKey provides operations to manage the appCatalogs singleton.
 type BitlockerRecoveryKey struct {
     Entity
     // The date and time when the key was originally backed up to Azure Active Directory. Not nullable.

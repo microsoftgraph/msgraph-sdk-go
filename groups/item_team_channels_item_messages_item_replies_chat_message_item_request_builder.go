@@ -176,3 +176,11 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
+// SoftDelete provides operations to call the softDelete method.
+func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) SoftDelete()(*ItemTeamChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemTeamChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
