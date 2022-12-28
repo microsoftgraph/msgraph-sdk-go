@@ -11,7 +11,7 @@ type TemporaryAccessPassAuthenticationMethodConfiguration struct {
     defaultLength *int32
     // Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
     defaultLifetimeInMinutes *int32
-    // A collection of users or groups who are enabled to use the authentication method.
+    // A collection of groups that are enabled to use the authentication method.
     includeTargets []AuthenticationMethodTargetable
     // If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
     isUsableOnce *bool
@@ -110,7 +110,7 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetFieldDeseriali
     }
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     return m.includeTargets
 }
@@ -182,7 +182,7 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLength(
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLifetimeInMinutes(value *int32)() {
     m.defaultLifetimeInMinutes = value
 }
-// SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
     m.includeTargets = value
 }

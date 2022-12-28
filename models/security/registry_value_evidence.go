@@ -7,15 +7,15 @@ import (
 // RegistryValueEvidence 
 type RegistryValueEvidence struct {
     AlertEvidence
-    // The registryHive property
+    // Registry hive of the key that the recorded action was applied to.
     registryHive *string
-    // The registryKey property
+    // Registry key that the recorded action was applied to.
     registryKey *string
-    // The registryValue property
+    // Data of the registry value that the recorded action was applied to.
     registryValue *string
-    // The registryValueName property
+    // Name of the registry value that the recorded action was applied to.
     registryValueName *string
-    // The registryValueType property
+    // Data type, such as binary or string, of the registry value that the recorded action was applied to.
     registryValueType *string
 }
 // NewRegistryValueEvidence instantiates a new RegistryValueEvidence and sets the default values.
@@ -84,23 +84,23 @@ func (m *RegistryValueEvidence) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetRegistryHive gets the registryHive property value. The registryHive property
+// GetRegistryHive gets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryHive()(*string) {
     return m.registryHive
 }
-// GetRegistryKey gets the registryKey property value. The registryKey property
+// GetRegistryKey gets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryKey()(*string) {
     return m.registryKey
 }
-// GetRegistryValue gets the registryValue property value. The registryValue property
+// GetRegistryValue gets the registryValue property value. Data of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryValue()(*string) {
     return m.registryValue
 }
-// GetRegistryValueName gets the registryValueName property value. The registryValueName property
+// GetRegistryValueName gets the registryValueName property value. Name of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryValueName()(*string) {
     return m.registryValueName
 }
-// GetRegistryValueType gets the registryValueType property value. The registryValueType property
+// GetRegistryValueType gets the registryValueType property value. Data type, such as binary or string, of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryValueType()(*string) {
     return m.registryValueType
 }
@@ -142,23 +142,23 @@ func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetRegistryHive sets the registryHive property value. The registryHive property
+// SetRegistryHive sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryHive(value *string)() {
     m.registryHive = value
 }
-// SetRegistryKey sets the registryKey property value. The registryKey property
+// SetRegistryKey sets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryKey(value *string)() {
     m.registryKey = value
 }
-// SetRegistryValue sets the registryValue property value. The registryValue property
+// SetRegistryValue sets the registryValue property value. Data of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryValue(value *string)() {
     m.registryValue = value
 }
-// SetRegistryValueName sets the registryValueName property value. The registryValueName property
+// SetRegistryValueName sets the registryValueName property value. Name of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryValueName(value *string)() {
     m.registryValueName = value
 }
-// SetRegistryValueType sets the registryValueType property value. The registryValueType property
+// SetRegistryValueType sets the registryValueType property value. Data type, such as binary or string, of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryValueType(value *string)() {
     m.registryValueType = value
 }

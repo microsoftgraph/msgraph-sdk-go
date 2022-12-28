@@ -9,17 +9,17 @@ import (
 type AlertEvidence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The createdDateTime property
+    // The time the evidence was created and added to the alert.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
     odataType *string
     // The remediationStatus property
     remediationStatus *EvidenceRemediationStatus
-    // The remediationStatusDetails property
+    // Details about the remediation status.
     remediationStatusDetails *string
-    // The roles property
+    // The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
     roles []EvidenceRole
-    // The tags property
+    // Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
     tags []string
     // The verdict property
     verdict *EvidenceVerdict
@@ -83,7 +83,7 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *AlertEvidence) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The time the evidence was created and added to the alert.
 func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
@@ -178,15 +178,15 @@ func (m *AlertEvidence) GetOdataType()(*string) {
 func (m *AlertEvidence) GetRemediationStatus()(*EvidenceRemediationStatus) {
     return m.remediationStatus
 }
-// GetRemediationStatusDetails gets the remediationStatusDetails property value. The remediationStatusDetails property
+// GetRemediationStatusDetails gets the remediationStatusDetails property value. Details about the remediation status.
 func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     return m.remediationStatusDetails
 }
-// GetRoles gets the roles property value. The roles property
+// GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
 func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     return m.roles
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
 func (m *AlertEvidence) GetTags()([]string) {
     return m.tags
 }
@@ -252,7 +252,7 @@ func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *AlertEvidence) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The time the evidence was created and added to the alert.
 func (m *AlertEvidence) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
@@ -264,15 +264,15 @@ func (m *AlertEvidence) SetOdataType(value *string)() {
 func (m *AlertEvidence) SetRemediationStatus(value *EvidenceRemediationStatus)() {
     m.remediationStatus = value
 }
-// SetRemediationStatusDetails sets the remediationStatusDetails property value. The remediationStatusDetails property
+// SetRemediationStatusDetails sets the remediationStatusDetails property value. Details about the remediation status.
 func (m *AlertEvidence) SetRemediationStatusDetails(value *string)() {
     m.remediationStatusDetails = value
 }
-// SetRoles sets the roles property value. The roles property
+// SetRoles sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
 func (m *AlertEvidence) SetRoles(value []EvidenceRole)() {
     m.roles = value
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
 func (m *AlertEvidence) SetTags(value []string)() {
     m.tags = value
 }

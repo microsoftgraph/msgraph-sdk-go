@@ -7,7 +7,7 @@ import (
 // UrlEvidence 
 type UrlEvidence struct {
     AlertEvidence
-    // The url property
+    // The Unique Resource Locator (URL).
     url *string
 }
 // NewUrlEvidence instantiates a new UrlEvidence and sets the default values.
@@ -36,7 +36,7 @@ func (m *UrlEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The Unique Resource Locator (URL).
 func (m *UrlEvidence) GetUrl()(*string) {
     return m.url
 }
@@ -54,7 +54,7 @@ func (m *UrlEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The Unique Resource Locator (URL).
 func (m *UrlEvidence) SetUrl(value *string)() {
     m.url = value
 }

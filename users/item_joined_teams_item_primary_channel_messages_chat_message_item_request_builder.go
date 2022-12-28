@@ -191,3 +191,11 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesChatMessageItemRequestBuilder)
     }
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SoftDelete provides operations to call the softDelete method.
+func (m *ItemJoinedTeamsItemPrimaryChannelMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemSoftDeleteRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *ItemJoinedTeamsItemPrimaryChannelMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}

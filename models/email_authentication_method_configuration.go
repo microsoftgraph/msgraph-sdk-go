@@ -9,7 +9,7 @@ type EmailAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
     // Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
     allowExternalIdToUseEmailOtp *ExternalEmailOtpState
-    // A collection of users or groups who are enabled to use the authentication method.
+    // A collection of groups that are enabled to use the authentication method.
     includeTargets []AuthenticationMethodTargetable
 }
 // NewEmailAuthenticationMethodConfiguration instantiates a new EmailAuthenticationMethodConfiguration and sets the default values.
@@ -58,7 +58,7 @@ func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *EmailAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     return m.includeTargets
 }
@@ -91,7 +91,7 @@ func (m *EmailAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
 func (m *EmailAuthenticationMethodConfiguration) SetAllowExternalIdToUseEmailOtp(value *ExternalEmailOtpState)() {
     m.allowExternalIdToUseEmailOtp = value
 }
-// SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *EmailAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
     m.includeTargets = value
 }

@@ -7,11 +7,11 @@ import (
 // MailboxEvidence 
 type MailboxEvidence struct {
     AlertEvidence
-    // The displayName property
+    // The name associated with the mailbox.
     displayName *string
-    // The primaryAddress property
+    // The primary email address of the mailbox.
     primaryAddress *string
-    // The userAccount property
+    // The user account of the mailbox.
     userAccount UserAccountable
 }
 // NewMailboxEvidence instantiates a new MailboxEvidence and sets the default values.
@@ -25,7 +25,7 @@ func NewMailboxEvidence()(*MailboxEvidence) {
 func CreateMailboxEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxEvidence(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name associated with the mailbox.
 func (m *MailboxEvidence) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -64,11 +64,11 @@ func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetPrimaryAddress gets the primaryAddress property value. The primaryAddress property
+// GetPrimaryAddress gets the primaryAddress property value. The primary email address of the mailbox.
 func (m *MailboxEvidence) GetPrimaryAddress()(*string) {
     return m.primaryAddress
 }
-// GetUserAccount gets the userAccount property value. The userAccount property
+// GetUserAccount gets the userAccount property value. The user account of the mailbox.
 func (m *MailboxEvidence) GetUserAccount()(UserAccountable) {
     return m.userAccount
 }
@@ -98,15 +98,15 @@ func (m *MailboxEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name associated with the mailbox.
 func (m *MailboxEvidence) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetPrimaryAddress sets the primaryAddress property value. The primaryAddress property
+// SetPrimaryAddress sets the primaryAddress property value. The primary email address of the mailbox.
 func (m *MailboxEvidence) SetPrimaryAddress(value *string)() {
     m.primaryAddress = value
 }
-// SetUserAccount sets the userAccount property value. The userAccount property
+// SetUserAccount sets the userAccount property value. The user account of the mailbox.
 func (m *MailboxEvidence) SetUserAccount(value UserAccountable)() {
     m.userAccount = value
 }

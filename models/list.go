@@ -28,7 +28,7 @@ type List struct {
     // If present, indicates that this is a system-managed list. Read-only.
     system SystemFacetable
 }
-// NewList instantiates a new List and sets the default values.
+// NewList instantiates a new list and sets the default values.
 func NewList()(*List) {
     m := &List{
         BaseItem: *NewBaseItem(),

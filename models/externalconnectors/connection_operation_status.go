@@ -2,7 +2,7 @@ package externalconnectors
 import (
     "errors"
 )
-// Provides operations to manage the collection of applicationTemplate entities.
+// Provides operations to manage the appCatalogs singleton.
 type ConnectionOperationStatus int
 
 const (

@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalGroup provides operations to manage the collection of applicationTemplate entities.
+// ExternalGroup provides operations to manage the collection of agreement entities.
 type ExternalGroup struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The description of the external group. Optional.

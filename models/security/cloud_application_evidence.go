@@ -7,15 +7,15 @@ import (
 // CloudApplicationEvidence 
 type CloudApplicationEvidence struct {
     AlertEvidence
-    // The appId property
+    // Unique identifier of the application.
     appId *int64
-    // The displayName property
+    // Name of the application.
     displayName *string
-    // The instanceId property
+    // Identifier of the instance of the Software as a Service (SaaS) application.
     instanceId *int64
-    // The instanceName property
+    // Name of the instance of the SaaS application.
     instanceName *string
-    // The saasAppId property
+    // The identifier of the SaaS application.
     saasAppId *int64
 }
 // NewCloudApplicationEvidence instantiates a new CloudApplicationEvidence and sets the default values.
@@ -29,11 +29,11 @@ func NewCloudApplicationEvidence()(*CloudApplicationEvidence) {
 func CreateCloudApplicationEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudApplicationEvidence(), nil
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. Unique identifier of the application.
 func (m *CloudApplicationEvidence) GetAppId()(*int64) {
     return m.appId
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the application.
 func (m *CloudApplicationEvidence) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -92,15 +92,15 @@ func (m *CloudApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetInstanceId gets the instanceId property value. The instanceId property
+// GetInstanceId gets the instanceId property value. Identifier of the instance of the Software as a Service (SaaS) application.
 func (m *CloudApplicationEvidence) GetInstanceId()(*int64) {
     return m.instanceId
 }
-// GetInstanceName gets the instanceName property value. The instanceName property
+// GetInstanceName gets the instanceName property value. Name of the instance of the SaaS application.
 func (m *CloudApplicationEvidence) GetInstanceName()(*string) {
     return m.instanceName
 }
-// GetSaasAppId gets the saasAppId property value. The saasAppId property
+// GetSaasAppId gets the saasAppId property value. The identifier of the SaaS application.
 func (m *CloudApplicationEvidence) GetSaasAppId()(*int64) {
     return m.saasAppId
 }
@@ -142,23 +142,23 @@ func (m *CloudApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. Unique identifier of the application.
 func (m *CloudApplicationEvidence) SetAppId(value *int64)() {
     m.appId = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the application.
 func (m *CloudApplicationEvidence) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetInstanceId sets the instanceId property value. The instanceId property
+// SetInstanceId sets the instanceId property value. Identifier of the instance of the Software as a Service (SaaS) application.
 func (m *CloudApplicationEvidence) SetInstanceId(value *int64)() {
     m.instanceId = value
 }
-// SetInstanceName sets the instanceName property value. The instanceName property
+// SetInstanceName sets the instanceName property value. Name of the instance of the SaaS application.
 func (m *CloudApplicationEvidence) SetInstanceName(value *string)() {
     m.instanceName = value
 }
-// SetSaasAppId sets the saasAppId property value. The saasAppId property
+// SetSaasAppId sets the saasAppId property value. The identifier of the SaaS application.
 func (m *CloudApplicationEvidence) SetSaasAppId(value *int64)() {
     m.saasAppId = value
 }

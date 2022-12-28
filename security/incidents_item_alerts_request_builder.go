@@ -16,7 +16,7 @@ type IncidentsItemAlertsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncidentsItemAlertsRequestBuilderGetQueryParameters get alerts from security
+// IncidentsItemAlertsRequestBuilderGetQueryParameters the list of related alerts. Supports $expand.
 type IncidentsItemAlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewIncidentsItemAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *IncidentsItemAlertsRequestBuilder) Count()(*IncidentsItemAlertsCountRequestBuilder) {
     return NewIncidentsItemAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get alerts from security
+// CreateGetRequestInformation the list of related alerts. Supports $expand.
 func (m *IncidentsItemAlertsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IncidentsItemAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -83,7 +83,7 @@ func (m *IncidentsItemAlertsRequestBuilder) CreateGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// Get get alerts from security
+// Get the list of related alerts. Supports $expand.
 func (m *IncidentsItemAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentsItemAlertsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -7,9 +7,9 @@ import (
 // RegistryKeyEvidence 
 type RegistryKeyEvidence struct {
     AlertEvidence
-    // The registryHive property
+    // Registry hive of the key that the recorded action was applied to.
     registryHive *string
-    // The registryKey property
+    // Registry key that the recorded action was applied to.
     registryKey *string
 }
 // NewRegistryKeyEvidence instantiates a new RegistryKeyEvidence and sets the default values.
@@ -48,11 +48,11 @@ func (m *RegistryKeyEvidence) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRegistryHive gets the registryHive property value. The registryHive property
+// GetRegistryHive gets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) GetRegistryHive()(*string) {
     return m.registryHive
 }
-// GetRegistryKey gets the registryKey property value. The registryKey property
+// GetRegistryKey gets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) GetRegistryKey()(*string) {
     return m.registryKey
 }
@@ -76,11 +76,11 @@ func (m *RegistryKeyEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetRegistryHive sets the registryHive property value. The registryHive property
+// SetRegistryHive sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) SetRegistryHive(value *string)() {
     m.registryHive = value
 }
-// SetRegistryKey sets the registryKey property value. The registryKey property
+// SetRegistryKey sets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) SetRegistryKey(value *string)() {
     m.registryKey = value
 }

@@ -7,13 +7,13 @@ import (
 // EducationTeamsAppResource 
 type EducationTeamsAppResource struct {
     EducationResource
-    // The appIconWebUrl property
+    // URL that points to the icon of the app.
     appIconWebUrl *string
-    // The appId property
+    // Teams app ID of the application.
     appId *string
-    // The teamsEmbeddedContentUrl property
+    // URL for the app resource that will be opened by Teams.
     teamsEmbeddedContentUrl *string
-    // The webUrl property
+    // URL for the app resource that can be opened in the browser.
     webUrl *string
 }
 // NewEducationTeamsAppResource instantiates a new EducationTeamsAppResource and sets the default values.
@@ -29,11 +29,11 @@ func NewEducationTeamsAppResource()(*EducationTeamsAppResource) {
 func CreateEducationTeamsAppResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationTeamsAppResource(), nil
 }
-// GetAppIconWebUrl gets the appIconWebUrl property value. The appIconWebUrl property
+// GetAppIconWebUrl gets the appIconWebUrl property value. URL that points to the icon of the app.
 func (m *EducationTeamsAppResource) GetAppIconWebUrl()(*string) {
     return m.appIconWebUrl
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. Teams app ID of the application.
 func (m *EducationTeamsAppResource) GetAppId()(*string) {
     return m.appId
 }
@@ -82,11 +82,11 @@ func (m *EducationTeamsAppResource) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetTeamsEmbeddedContentUrl gets the teamsEmbeddedContentUrl property value. The teamsEmbeddedContentUrl property
+// GetTeamsEmbeddedContentUrl gets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.
 func (m *EducationTeamsAppResource) GetTeamsEmbeddedContentUrl()(*string) {
     return m.teamsEmbeddedContentUrl
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. URL for the app resource that can be opened in the browser.
 func (m *EducationTeamsAppResource) GetWebUrl()(*string) {
     return m.webUrl
 }
@@ -122,19 +122,19 @@ func (m *EducationTeamsAppResource) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAppIconWebUrl sets the appIconWebUrl property value. The appIconWebUrl property
+// SetAppIconWebUrl sets the appIconWebUrl property value. URL that points to the icon of the app.
 func (m *EducationTeamsAppResource) SetAppIconWebUrl(value *string)() {
     m.appIconWebUrl = value
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. Teams app ID of the application.
 func (m *EducationTeamsAppResource) SetAppId(value *string)() {
     m.appId = value
 }
-// SetTeamsEmbeddedContentUrl sets the teamsEmbeddedContentUrl property value. The teamsEmbeddedContentUrl property
+// SetTeamsEmbeddedContentUrl sets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.
 func (m *EducationTeamsAppResource) SetTeamsEmbeddedContentUrl(value *string)() {
     m.teamsEmbeddedContentUrl = value
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. URL for the app resource that can be opened in the browser.
 func (m *EducationTeamsAppResource) SetWebUrl(value *string)() {
     m.webUrl = value
 }

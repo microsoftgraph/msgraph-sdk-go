@@ -23,7 +23,7 @@ type Alerts_v2AlertItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alerts_v2AlertItemRequestBuilderGetQueryParameters get alerts_v2 from security
+// Alerts_v2AlertItemRequestBuilderGetQueryParameters a collection of alerts in Microsoft 365 Defender.
 type Alerts_v2AlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) CreateDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get alerts_v2 from security
+// CreateGetRequestInformation a collection of alerts in Microsoft 365 Defender.
 func (m *Alerts_v2AlertItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get alerts_v2 from security
+// Get a collection of alerts in Microsoft 365 Defender.
 func (m *Alerts_v2AlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -8,13 +8,13 @@ import (
 type PlannerPlanContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The identifier of the resource that contains the plan.
+    // The identifier of the resource that contains the plan. Optional.
     containerId *string
     // The OdataType property
     odataType *string
-    // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
+    // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
     type_escaped *PlannerContainerType
-    // The full canonical URL of the container.
+    // The full canonical URL of the container. Optional.
     url *string
 }
 // NewPlannerPlanContainer instantiates a new plannerPlanContainer and sets the default values.
@@ -32,7 +32,7 @@ func CreatePlannerPlanContainerFromDiscriminatorValue(parseNode i878a80d2330e89d
 func (m *PlannerPlanContainer) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetContainerId gets the containerId property value. The identifier of the resource that contains the plan.
+// GetContainerId gets the containerId property value. The identifier of the resource that contains the plan. Optional.
 func (m *PlannerPlanContainer) GetContainerId()(*string) {
     return m.containerId
 }
@@ -85,11 +85,11 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *PlannerPlanContainer) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
+// GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
 func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
     return m.type_escaped
 }
-// GetUrl gets the url property value. The full canonical URL of the container.
+// GetUrl gets the url property value. The full canonical URL of the container. Optional.
 func (m *PlannerPlanContainer) GetUrl()(*string) {
     return m.url
 }
@@ -132,7 +132,7 @@ func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *PlannerPlanContainer) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetContainerId sets the containerId property value. The identifier of the resource that contains the plan.
+// SetContainerId sets the containerId property value. The identifier of the resource that contains the plan. Optional.
 func (m *PlannerPlanContainer) SetContainerId(value *string)() {
     m.containerId = value
 }
@@ -140,11 +140,11 @@ func (m *PlannerPlanContainer) SetContainerId(value *string)() {
 func (m *PlannerPlanContainer) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
+// SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
 func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
     m.type_escaped = value
 }
-// SetUrl sets the url property value. The full canonical URL of the container.
+// SetUrl sets the url property value. The full canonical URL of the container. Optional.
 func (m *PlannerPlanContainer) SetUrl(value *string)() {
     m.url = value
 }

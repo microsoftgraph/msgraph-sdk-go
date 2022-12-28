@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDevice 
+// ManagedDevice devices that are managed or pre-enrolled through Intune
 type ManagedDevice struct {
     Entity
     // Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
@@ -123,7 +123,7 @@ type ManagedDevice struct {
     // Wi-Fi MAC. This property is read-only.
     wiFiMacAddress *string
 }
-// NewManagedDevice instantiates a new ManagedDevice and sets the default values.
+// NewManagedDevice instantiates a new managedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {
     m := &ManagedDevice{
         Entity: *NewEntity(),

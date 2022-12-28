@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryNoncustodialDataSource 
+// EdiscoveryNoncustodialDataSource provides operations to manage the appCatalogs singleton.
 type EdiscoveryNoncustodialDataSource struct {
     DataSourceContainer
     // User source or SharePoint site data source as non-custodial data source.
@@ -12,7 +12,7 @@ type EdiscoveryNoncustodialDataSource struct {
     // Operation entity that represents the latest indexing for the non-custodial data source.
     lastIndexOperation EdiscoveryIndexOperationable
 }
-// NewEdiscoveryNoncustodialDataSource instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
+// NewEdiscoveryNoncustodialDataSource instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
 func NewEdiscoveryNoncustodialDataSource()(*EdiscoveryNoncustodialDataSource) {
     m := &EdiscoveryNoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the directory singleton.
+// Provides operations to manage the collection of agreement entities.
 type AuthenticationProtocol int
 
 const (

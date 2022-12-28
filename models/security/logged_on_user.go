@@ -6,11 +6,11 @@ import (
 
 // LoggedOnUser 
 type LoggedOnUser struct {
-    // The accountName property
+    // User account name of the logged-on user.
     accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The domainName property
+    // User account domain of the logged-on user.
     domainName *string
     // The OdataType property
     odataType *string
@@ -26,7 +26,7 @@ func NewLoggedOnUser()(*LoggedOnUser) {
 func CreateLoggedOnUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLoggedOnUser(), nil
 }
-// GetAccountName gets the accountName property value. The accountName property
+// GetAccountName gets the accountName property value. User account name of the logged-on user.
 func (m *LoggedOnUser) GetAccountName()(*string) {
     return m.accountName
 }
@@ -34,7 +34,7 @@ func (m *LoggedOnUser) GetAccountName()(*string) {
 func (m *LoggedOnUser) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. User account domain of the logged-on user.
 func (m *LoggedOnUser) GetDomainName()(*string) {
     return m.domainName
 }
@@ -105,7 +105,7 @@ func (m *LoggedOnUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetAccountName sets the accountName property value. The accountName property
+// SetAccountName sets the accountName property value. User account name of the logged-on user.
 func (m *LoggedOnUser) SetAccountName(value *string)() {
     m.accountName = value
 }
@@ -113,7 +113,7 @@ func (m *LoggedOnUser) SetAccountName(value *string)() {
 func (m *LoggedOnUser) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. User account domain of the logged-on user.
 func (m *LoggedOnUser) SetDomainName(value *string)() {
     m.domainName = value
 }

@@ -7,9 +7,9 @@ import (
 // SecurityGroupEvidence 
 type SecurityGroupEvidence struct {
     AlertEvidence
-    // The displayName property
+    // The name of the security group.
     displayName *string
-    // The securityGroupId property
+    // Unique identifier of the security group.
     securityGroupId *string
 }
 // NewSecurityGroupEvidence instantiates a new SecurityGroupEvidence and sets the default values.
@@ -23,7 +23,7 @@ func NewSecurityGroupEvidence()(*SecurityGroupEvidence) {
 func CreateSecurityGroupEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityGroupEvidence(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the security group.
 func (m *SecurityGroupEvidence) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -52,7 +52,7 @@ func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetSecurityGroupId gets the securityGroupId property value. The securityGroupId property
+// GetSecurityGroupId gets the securityGroupId property value. Unique identifier of the security group.
 func (m *SecurityGroupEvidence) GetSecurityGroupId()(*string) {
     return m.securityGroupId
 }
@@ -76,11 +76,11 @@ func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the security group.
 func (m *SecurityGroupEvidence) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetSecurityGroupId sets the securityGroupId property value. The securityGroupId property
+// SetSecurityGroupId sets the securityGroupId property value. Unique identifier of the security group.
 func (m *SecurityGroupEvidence) SetSecurityGroupId(value *string)() {
     m.securityGroupId = value
 }

@@ -11,7 +11,7 @@ type X509CertificateAuthenticationMethodConfiguration struct {
     authenticationModeConfiguration X509CertificateAuthenticationModeConfigurationable
     // Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
     certificateUserBindings []X509CertificateUserBindingable
-    // A collection of users or groups who are enabled to use the authentication method.
+    // A collection of groups that are enabled to use the authentication method.
     includeTargets []AuthenticationMethodTargetable
 }
 // NewX509CertificateAuthenticationMethodConfiguration instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
@@ -78,7 +78,7 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
     }
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *X509CertificateAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     return m.includeTargets
 }
@@ -124,7 +124,7 @@ func (m *X509CertificateAuthenticationMethodConfiguration) SetAuthenticationMode
 func (m *X509CertificateAuthenticationMethodConfiguration) SetCertificateUserBindings(value []X509CertificateUserBindingable)() {
     m.certificateUserBindings = value
 }
-// SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
     m.includeTargets = value
 }

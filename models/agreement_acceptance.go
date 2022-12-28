@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgreementAcceptance 
+// AgreementAcceptance provides operations to manage the collection of agreementAcceptance entities.
 type AgreementAcceptance struct {
     Entity
     // The identifier of the agreement file accepted by the user.
@@ -35,7 +35,7 @@ type AgreementAcceptance struct {
     // UPN of the user when the acceptance was recorded.
     userPrincipalName *string
 }
-// NewAgreementAcceptance instantiates a new AgreementAcceptance and sets the default values.
+// NewAgreementAcceptance instantiates a new agreementAcceptance and sets the default values.
 func NewAgreementAcceptance()(*AgreementAcceptance) {
     m := &AgreementAcceptance{
         Entity: *NewEntity(),

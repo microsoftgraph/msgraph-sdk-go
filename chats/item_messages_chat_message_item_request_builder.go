@@ -191,3 +191,11 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*Item
     }
     return NewItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SoftDelete provides operations to call the softDelete method.
+func (m *ItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemMessagesItemSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *ItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemMessagesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
