@@ -6,7 +6,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Segment provides operations to manage the appCatalogs singleton.
+// Segment provides operations to manage the cloudCommunications singleton.
 type Segment struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // Endpoint that answered this segment.

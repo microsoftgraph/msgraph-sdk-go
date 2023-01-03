@@ -42,7 +42,7 @@ func NewUsersItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation indicate that a student wants to work on the submission of the assignment after it was turned in.  This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
+// CreatePostRequestInformation indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
 func (m *UsersItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -55,7 +55,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilder) CreatePo
     }
     return requestInfo, nil
 }
-// Post indicate that a student wants to work on the submission of the assignment after it was turned in.  This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
+// Post indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0

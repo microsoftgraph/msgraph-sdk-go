@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ConnectionOperationCollectionResponse 
+// ConnectionOperationCollectionResponse provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 type ConnectionOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
     // The value property
