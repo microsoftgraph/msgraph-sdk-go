@@ -166,7 +166,7 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) Tasks()(*TaskDefi
     return NewTaskDefinitionsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
-func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) TasksById(id string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
+func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) TasksById(id string)(*PrintTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) TasksById(id stri
     if id != "" {
         urlTplParams["printTask%2Did"] = id
     }
-    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -166,7 +166,7 @@ func (m *DirectoryRoleItemRequestBuilder) Members()(*ItemMembersRequestBuilder) 
     return NewItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directoryRoles.item.members.item collection
-func (m *DirectoryRoleItemRequestBuilder) MembersById(id string)(*ItemMembersDirectoryObjectItemRequestBuilder) {
+func (m *DirectoryRoleItemRequestBuilder) MembersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,7 +174,7 @@ func (m *DirectoryRoleItemRequestBuilder) MembersById(id string)(*ItemMembersDir
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update entity in directoryRoles
 func (m *DirectoryRoleItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRoleItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, error) {
@@ -204,7 +204,7 @@ func (m *DirectoryRoleItemRequestBuilder) ScopedMembers()(*ItemScopedMembersRequ
     return NewItemScopedMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ScopedMembersById provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
-func (m *DirectoryRoleItemRequestBuilder) ScopedMembersById(id string)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
+func (m *DirectoryRoleItemRequestBuilder) ScopedMembersById(id string)(*ScopedRoleMembershipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -212,5 +212,5 @@ func (m *DirectoryRoleItemRequestBuilder) ScopedMembersById(id string)(*ItemScop
     if id != "" {
         urlTplParams["scopedRoleMembership%2Did"] = id
     }
-    return NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -131,7 +131,7 @@ func (m *AppCatalogsRequestBuilder) TeamsApps()(*TeamsAppsRequestBuilder) {
     return NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TeamsAppsById provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppItemRequestBuilder) {
+func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppI
     if id != "" {
         urlTplParams["teamsApp%2Did"] = id
     }
-    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

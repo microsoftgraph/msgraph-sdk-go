@@ -51,7 +51,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Buckets()(*PlansItemBucketsRequestB
     return NewPlansItemBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BucketsById provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
-func (m *PlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlansItemBucketsPlannerBucketItemRequestBuilder) {
+func (m *PlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlannerBucketItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlansItemBu
     if id != "" {
         urlTplParams["plannerBucket%2Did"] = id
     }
-    return NewPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansPlannerPlanItemRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Tasks()(*PlansItemTasksRequestBuild
     return NewPlansItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
-func (m *PlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlansItemTasksPlannerTaskItemRequestBuilder) {
+func (m *PlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *PlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlansItemTask
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -166,7 +166,7 @@ func (m *PlannerRequestBuilder) Plans()(*PlannerPlansRequestBuilder) {
     return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanItemRequestBuilder) {
+func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanIte
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*PlannerTasksRequestBuilder) {
     return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskItemRequestBuilder) {
+func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskIte
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

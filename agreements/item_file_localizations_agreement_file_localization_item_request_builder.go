@@ -166,7 +166,7 @@ func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Versi
     return NewItemFileLocalizationsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
-func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) VersionsById(id string)(*ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
+func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) VersionsById(id string)(*AgreementFileVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Versi
     if id != "" {
         urlTplParams["agreementFileVersion%2Did"] = id
     }
-    return NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

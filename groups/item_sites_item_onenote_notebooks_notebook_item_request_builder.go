@@ -170,7 +170,7 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroups(
     return NewItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
-func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroupsById(id string)(*ItemSitesItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) {
+func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroupsById(id string)(*SectionGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,14 +178,14 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroupsB
     if id != "" {
         urlTplParams["sectionGroup%2Did"] = id
     }
-    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.notebook entity.
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Sections()(*ItemSitesItemOnenoteNotebooksItemSectionsRequestBuilder) {
     return NewItemSitesItemOnenoteNotebooksItemSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SectionsById provides operations to manage the sections property of the microsoft.graph.notebook entity.
-func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionsById(id string)(*ItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilder) {
+func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionsById(id string)(*OnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionsById(i
     if id != "" {
         urlTplParams["onenoteSection%2Did"] = id
     }
-    return NewItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

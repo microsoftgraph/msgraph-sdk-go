@@ -51,7 +51,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Buckets()(*ItemPlannerPl
     return NewItemPlannerPlansItemBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BucketsById provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
-func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) {
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlannerBucketItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*
     if id != "" {
         urlTplParams["plannerBucket%2Did"] = id
     }
-    return NewItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Tasks()(*ItemPlannerPlan
     return NewItemPlannerPlansItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
-func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) TasksById(id string)(*ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) {
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) TasksById(id string)(*It
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

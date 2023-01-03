@@ -166,7 +166,7 @@ func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*AttackSimulati
     return NewAttackSimulationSimulationAutomationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SimulationAutomationsById provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
+func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*SimulationAutomationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*A
     if id != "" {
         urlTplParams["simulationAutomation%2Did"] = id
     }
-    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Simulations provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) Simulations()(*AttackSimulationSimulationsRequestBuilder) {
     return NewAttackSimulationSimulationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SimulationsById provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*AttackSimulationSimulationsSimulationItemRequestBuilder) {
+func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*SimulationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*AttackSimul
     if id != "" {
         urlTplParams["simulation%2Did"] = id
     }
-    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSimulationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

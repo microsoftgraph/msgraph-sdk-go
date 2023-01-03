@@ -166,7 +166,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestB
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // StagesById provides operations to manage the stages property of the microsoft.graph.approval entity.
-func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) StagesById(id string)(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesApprovalStageItemRequestBuilder) {
+func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) StagesById(id string)(*ApprovalStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestB
     if id != "" {
         urlTplParams["approvalStage%2Did"] = id
     }
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesApprovalStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApprovalStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

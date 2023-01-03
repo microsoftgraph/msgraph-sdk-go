@@ -7,7 +7,7 @@ import (
 
 // ODataError 
 type ODataError struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ApiError
+    ApiError
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The error property
@@ -16,7 +16,7 @@ type ODataError struct {
 // NewODataError instantiates a new ODataError and sets the default values.
 func NewODataError()(*ODataError) {
     m := &ODataError{
-        ApiError: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewApiError(),
+        ApiError: *NewApiError(),
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m

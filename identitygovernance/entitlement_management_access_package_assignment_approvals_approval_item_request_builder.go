@@ -166,7 +166,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
     return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // StagesById provides operations to manage the stages property of the microsoft.graph.approval entity.
-func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) StagesById(id string)(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) {
+func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) StagesById(id string)(*ApprovalStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
     if id != "" {
         urlTplParams["approvalStage%2Did"] = id
     }
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApprovalStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

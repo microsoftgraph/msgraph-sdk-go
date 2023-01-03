@@ -135,7 +135,7 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceIntegrationsR
     return NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
-func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
+func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*WorkforceIntegrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -143,5 +143,5 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*Workforce
     if id != "" {
         urlTplParams["workforceIntegration%2Did"] = id
     }
-    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

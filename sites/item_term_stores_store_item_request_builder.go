@@ -147,7 +147,7 @@ func (m *ItemTermStoresStoreItemRequestBuilder) Groups()(*ItemTermStoresItemGrou
     return NewItemTermStoresItemGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *ItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*ItemTermStoresItemGroupsGroupItemRequestBuilder) {
+func (m *ItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*ItemTermS
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewItemTermStoresItemGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property termStores in sites
 func (m *ItemTermStoresStoreItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, requestConfiguration *ItemTermStoresStoreItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, error) {
@@ -181,7 +181,7 @@ func (m *ItemTermStoresStoreItemRequestBuilder) Sets()(*ItemTermStoresItemSetsRe
     return NewItemTermStoresItemSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*ItemTermStoresItemSetsSetItemRequestBuilder) {
+func (m *ItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *ItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*ItemTermSto
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewItemTermStoresItemSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

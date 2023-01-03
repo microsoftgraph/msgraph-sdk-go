@@ -51,7 +51,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Columns()(*ItemSitesItemLists
     return NewItemSitesItemListsItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ColumnsById provides operations to manage the columns property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
+func (m *ItemSitesItemListsListItemRequestBuilder) ColumnsById(id string)(*ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemS
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemSitesItemListsListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewItemSitesItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsListItemRequestBuilder) {
@@ -85,7 +85,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypes()(*ItemSitesItem
     return NewItemSitesItemListsItemContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ContentTypesById provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypesById(id string)(*ItemSitesItemListsItemContentTypesContentTypeItemRequestBuilder) {
+func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypesById(id string)(*ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -93,7 +93,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypesById(id string)(*
     if id != "" {
         urlTplParams["contentType%2Did"] = id
     }
-    return NewItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property lists for groups
 func (m *ItemSitesItemListsListItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,7 +181,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Items()(*ItemSitesItemListsIt
     return NewItemSitesItemListsItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsListItemRequestBuilder) ItemsById(id string)(*ItemSitesItemListsItemItemsListItemItemRequestBuilder) {
+func (m *ItemSitesItemListsListItemRequestBuilder) ItemsById(id string)(*ListItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,14 +189,14 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ItemsById(id string)(*ItemSit
     if id != "" {
         urlTplParams["listItem%2Did"] = id
     }
-    return NewItemSitesItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemSitesItemListsListItemRequestBuilder) Operations()(*ItemSitesItemListsItemOperationsRequestBuilder) {
     return NewItemSitesItemListsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsListItemRequestBuilder) OperationsById(id string)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
+func (m *ItemSitesItemListsListItemRequestBuilder) OperationsById(id string)(*RichLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,7 +204,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) OperationsById(id string)(*It
     if id != "" {
         urlTplParams["richLongRunningOperation%2Did"] = id
     }
-    return NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property lists in groups
 func (m *ItemSitesItemListsListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemSitesItemListsListItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
@@ -230,7 +230,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Subscriptions()(*ItemSitesIte
     return NewItemSitesItemListsItemSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsListItemRequestBuilder) SubscriptionsById(id string)(*ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
+func (m *ItemSitesItemListsListItemRequestBuilder) SubscriptionsById(id string)(*SubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -238,5 +238,5 @@ func (m *ItemSitesItemListsListItemRequestBuilder) SubscriptionsById(id string)(
     if id != "" {
         urlTplParams["subscription%2Did"] = id
     }
-    return NewItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

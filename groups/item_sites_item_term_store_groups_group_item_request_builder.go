@@ -166,7 +166,7 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Sets()(*ItemSitesI
     return NewItemSitesItemTermStoreGroupsItemSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
-func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) SetsById(id string)(*ItemSitesItemTermStoreGroupsItemSetsSetItemRequestBuilder) {
+func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) SetsById(id string)(*SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) SetsById(id string
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewItemSitesItemTermStoreGroupsItemSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -51,7 +51,7 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Categories()(*MeAss
     return NewMeAssignmentsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.me.assignments.item.categories.item collection
-func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id string)(*MeAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
+func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id string)(*EducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id s
     if id != "" {
         urlTplParams["educationCategory%2Did"] = id
     }
-    return NewMeAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
 func NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsEducationAssignmentItemRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Resources()(*MeAssi
     return NewMeAssignmentsItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourcesById provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
-func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id string)(*MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) {
+func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id string)(*EducationAssignmentResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,7 +193,7 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id st
     if id != "" {
         urlTplParams["educationAssignmentResource%2Did"] = id
     }
-    return NewMeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*MeAssignmentsItemRubricRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Submissions()(*MeAs
     return NewMeAssignmentsItemSubmissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubmissionsById provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
+func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*EducationSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -220,5 +220,5 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id 
     if id != "" {
         urlTplParams["educationSubmission%2Did"] = id
     }
-    return NewMeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationSubmissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

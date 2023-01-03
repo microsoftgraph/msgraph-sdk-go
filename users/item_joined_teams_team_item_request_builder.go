@@ -51,7 +51,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) AllChannels()(*ItemJoinedTeamsIt
     return NewItemJoinedTeamsItemAllChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AllChannelsById provides operations to manage the allChannels property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) AllChannelsById(id string)(*ItemJoinedTeamsItemAllChannelsChannelItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) AllChannelsById(id string)(*ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) AllChannelsById(id string)(*Item
     if id != "" {
         urlTplParams["channel%2Did"] = id
     }
-    return NewItemJoinedTeamsItemAllChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Archive provides operations to call the archive method.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Archive()(*ItemJoinedTeamsItemArchiveRequestBuilder) {
@@ -70,7 +70,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) Channels()(*ItemJoinedTeamsItemC
     return NewItemJoinedTeamsItemChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ChannelsById provides operations to manage the channels property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) ChannelsById(id string)(*ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) ChannelsById(id string)(*ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) ChannelsById(id string)(*ItemJoi
     if id != "" {
         urlTplParams["channel%2Did"] = id
     }
-    return NewItemJoinedTeamsItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Clone provides operations to call the clone method.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Clone()(*ItemJoinedTeamsItemCloneRequestBuilder) {
@@ -193,7 +193,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) IncomingChannels()(*ItemJoinedTe
     return NewItemJoinedTeamsItemIncomingChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IncomingChannelsById provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) IncomingChannelsById(id string)(*ItemJoinedTeamsItemIncomingChannelsChannelItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) IncomingChannelsById(id string)(*ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -201,14 +201,14 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) IncomingChannelsById(id string)(
     if id != "" {
         urlTplParams["channel%2Did"] = id
     }
-    return NewItemJoinedTeamsItemIncomingChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) InstalledApps()(*ItemJoinedTeamsItemInstalledAppsRequestBuilder) {
     return NewItemJoinedTeamsItemInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) InstalledAppsById(id string)(*ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) InstalledAppsById(id string)(*TeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -216,14 +216,14 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) InstalledAppsById(id string)(*It
     if id != "" {
         urlTplParams["teamsAppInstallation%2Did"] = id
     }
-    return NewItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Members provides operations to manage the members property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Members()(*ItemJoinedTeamsItemMembersRequestBuilder) {
     return NewItemJoinedTeamsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) MembersById(id string)(*ItemJoinedTeamsItemMembersConversationMemberItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) MembersById(id string)(*ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -231,14 +231,14 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) MembersById(id string)(*ItemJoin
     if id != "" {
         urlTplParams["conversationMember%2Did"] = id
     }
-    return NewItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Operations()(*ItemJoinedTeamsItemOperationsRequestBuilder) {
     return NewItemJoinedTeamsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) OperationsById(id string)(*ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) OperationsById(id string)(*TeamsAsyncOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -246,7 +246,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) OperationsById(id string)(*ItemJ
     if id != "" {
         urlTplParams["teamsAsyncOperation%2Did"] = id
     }
-    return NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property joinedTeams in users
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *ItemJoinedTeamsTeamItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
@@ -288,7 +288,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) Tags()(*ItemJoinedTeamsItemTagsR
     return NewItemJoinedTeamsItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TagsById provides operations to manage the tags property of the microsoft.graph.team entity.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) TagsById(id string)(*ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) {
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) TagsById(id string)(*TeamworkTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -296,7 +296,7 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) TagsById(id string)(*ItemJoinedT
     if id != "" {
         urlTplParams["teamworkTag%2Did"] = id
     }
-    return NewItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamworkTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Template provides operations to manage the template property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Template()(*ItemJoinedTeamsItemTemplateRequestBuilder) {

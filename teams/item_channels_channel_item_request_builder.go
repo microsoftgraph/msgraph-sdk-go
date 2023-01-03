@@ -159,7 +159,7 @@ func (m *ItemChannelsChannelItemRequestBuilder) Members()(*ItemChannelsItemMembe
     return NewItemChannelsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *ItemChannelsChannelItemRequestBuilder) MembersById(id string)(*ItemChannelsItemMembersConversationMemberItemRequestBuilder) {
+func (m *ItemChannelsChannelItemRequestBuilder) MembersById(id string)(*ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -167,14 +167,14 @@ func (m *ItemChannelsChannelItemRequestBuilder) MembersById(id string)(*ItemChan
     if id != "" {
         urlTplParams["conversationMember%2Did"] = id
     }
-    return NewItemChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) Messages()(*ItemChannelsItemMessagesRequestBuilder) {
     return NewItemChannelsItemMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MessagesById provides operations to manage the messages property of the microsoft.graph.channel entity.
-func (m *ItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*ItemChannelsItemMessagesChatMessageItemRequestBuilder) {
+func (m *ItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -182,7 +182,7 @@ func (m *ItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*ItemCha
     if id != "" {
         urlTplParams["chatMessage%2Did"] = id
     }
-    return NewItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property channels in teams
 func (m *ItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *ItemChannelsChannelItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
@@ -216,7 +216,7 @@ func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemChannelsI
     return NewItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharedWithTeamsById provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
+func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*SharedWithChannelTeamInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -224,14 +224,14 @@ func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*
     if id != "" {
         urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
     }
-    return NewItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) Tabs()(*ItemChannelsItemTabsRequestBuilder) {
     return NewItemChannelsItemTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TabsById provides operations to manage the tabs property of the microsoft.graph.channel entity.
-func (m *ItemChannelsChannelItemRequestBuilder) TabsById(id string)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
+func (m *ItemChannelsChannelItemRequestBuilder) TabsById(id string)(*TeamsTabItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -239,5 +239,5 @@ func (m *ItemChannelsChannelItemRequestBuilder) TabsById(id string)(*ItemChannel
     if id != "" {
         urlTplParams["teamsTab%2Did"] = id
     }
-    return NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -91,7 +91,7 @@ func (m *BitlockerRequestBuilder) RecoveryKeys()(*BitlockerRecoveryKeysRequestBu
     return NewBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RecoveryKeysById provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
+func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecoveryKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -99,5 +99,5 @@ func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecovery
     if id != "" {
         urlTplParams["bitlockerRecoveryKey%2Did"] = id
     }
-    return NewBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

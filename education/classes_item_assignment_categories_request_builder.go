@@ -16,7 +16,7 @@ type ClassesItemAssignmentCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ClassesItemAssignmentCategoriesRequestBuilderGetQueryParameters retrieve a list of educationCategory objects.
+// ClassesItemAssignmentCategoriesRequestBuilderGetQueryParameters retrieve a list of educationCategory objects. Only teachers can perform this operation.
 type ClassesItemAssignmentCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewClassesItemAssignmentCategoriesRequestBuilder(rawUrl string, requestAdap
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Count()(*ClassesItemAssignmentCategoriesCountRequestBuilder) {
     return NewClassesItemAssignmentCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a list of educationCategory objects.
+// CreateGetRequestInformation retrieve a list of educationCategory objects. Only teachers can perform this operation.
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation creates a new educationCategory on an educationClass.
+// CreatePostRequestInformation creates a new educationCategory on an educationClass. Only teachers can perform this operation.
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,7 +108,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) CreatePostRequestInforma
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Delta()(*ClassesItemAssignmentCategoriesDeltaRequestBuilder) {
     return NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get retrieve a list of educationCategory objects.
+// Get retrieve a list of educationCategory objects. Only teachers can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable), nil
 }
-// Post creates a new educationCategory on an educationClass.
+// Post creates a new educationCategory on an educationClass. Only teachers can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0

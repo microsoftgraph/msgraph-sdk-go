@@ -42,7 +42,7 @@ func NewClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation create a SharePoint folder to upload files for a given educationAssignment.  The teacher determines the resources to upload in the assignment's folder. 
+// CreatePostRequestInformation create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder. 
 func (m *ClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -55,7 +55,7 @@ func (m *ClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilder) CreatePos
     }
     return requestInfo, nil
 }
-// Post create a SharePoint folder to upload files for a given educationAssignment.  The teacher determines the resources to upload in the assignment's folder. 
+// Post create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0

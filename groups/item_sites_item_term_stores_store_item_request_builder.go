@@ -147,7 +147,7 @@ func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Groups()(*ItemSitesItem
     return NewItemSitesItemTermStoresItemGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*ItemSitesItemTermStoresItemGroupsGroupItemRequestBuilder) {
+func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*
     if id != "" {
         urlTplParams["group%2Did1"] = id
     }
-    return NewItemSitesItemTermStoresItemGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property termStores in groups
 func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, requestConfiguration *ItemSitesItemTermStoresStoreItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, error) {
@@ -181,7 +181,7 @@ func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Sets()(*ItemSitesItemTe
     return NewItemSitesItemTermStoresItemSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*ItemSitesItemTermStoresItemSetsSetItemRequestBuilder) {
+func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*It
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewItemSitesItemTermStoresItemSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

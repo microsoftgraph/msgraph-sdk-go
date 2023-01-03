@@ -63,7 +63,7 @@ func (m *ItemRootRequestBuilder) Children()(*ItemRootChildrenRequestBuilder) {
     return NewItemRootChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ChildrenById provides operations to manage the children property of the microsoft.graph.driveItem entity.
-func (m *ItemRootRequestBuilder) ChildrenById(id string)(*ItemRootChildrenDriveItemItemRequestBuilder) {
+func (m *ItemRootRequestBuilder) ChildrenById(id string)(*DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -71,7 +71,7 @@ func (m *ItemRootRequestBuilder) ChildrenById(id string)(*ItemRootChildrenDriveI
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewItemRootChildrenDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemRootRequestBuilderInternal instantiates a new RootRequestBuilder and sets the default values.
 func NewItemRootRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRootRequestBuilder) {
@@ -240,7 +240,7 @@ func (m *ItemRootRequestBuilder) Permissions()(*ItemRootPermissionsRequestBuilde
     return NewItemRootPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PermissionsById provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
-func (m *ItemRootRequestBuilder) PermissionsById(id string)(*ItemRootPermissionsPermissionItemRequestBuilder) {
+func (m *ItemRootRequestBuilder) PermissionsById(id string)(*PermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -248,7 +248,7 @@ func (m *ItemRootRequestBuilder) PermissionsById(id string)(*ItemRootPermissions
     if id != "" {
         urlTplParams["permission%2Did"] = id
     }
-    return NewItemRootPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Preview provides operations to call the preview method.
 func (m *ItemRootRequestBuilder) Preview()(*ItemRootPreviewRequestBuilder) {
@@ -267,7 +267,7 @@ func (m *ItemRootRequestBuilder) Subscriptions()(*ItemRootSubscriptionsRequestBu
     return NewItemRootSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
-func (m *ItemRootRequestBuilder) SubscriptionsById(id string)(*ItemRootSubscriptionsSubscriptionItemRequestBuilder) {
+func (m *ItemRootRequestBuilder) SubscriptionsById(id string)(*SubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -275,14 +275,14 @@ func (m *ItemRootRequestBuilder) SubscriptionsById(id string)(*ItemRootSubscript
     if id != "" {
         urlTplParams["subscription%2Did"] = id
     }
-    return NewItemRootSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Thumbnails provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
 func (m *ItemRootRequestBuilder) Thumbnails()(*ItemRootThumbnailsRequestBuilder) {
     return NewItemRootThumbnailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ThumbnailsById provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
-func (m *ItemRootRequestBuilder) ThumbnailsById(id string)(*ItemRootThumbnailsThumbnailSetItemRequestBuilder) {
+func (m *ItemRootRequestBuilder) ThumbnailsById(id string)(*ThumbnailSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -290,7 +290,7 @@ func (m *ItemRootRequestBuilder) ThumbnailsById(id string)(*ItemRootThumbnailsTh
     if id != "" {
         urlTplParams["thumbnailSet%2Did"] = id
     }
-    return NewItemRootThumbnailsThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Unfollow provides operations to call the unfollow method.
 func (m *ItemRootRequestBuilder) Unfollow()(*ItemRootUnfollowRequestBuilder) {
@@ -305,7 +305,7 @@ func (m *ItemRootRequestBuilder) Versions()(*ItemRootVersionsRequestBuilder) {
     return NewItemRootVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.driveItem entity.
-func (m *ItemRootRequestBuilder) VersionsById(id string)(*ItemRootVersionsDriveItemVersionItemRequestBuilder) {
+func (m *ItemRootRequestBuilder) VersionsById(id string)(*DriveItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -313,5 +313,5 @@ func (m *ItemRootRequestBuilder) VersionsById(id string)(*ItemRootVersionsDriveI
     if id != "" {
         urlTplParams["driveItemVersion%2Did"] = id
     }
-    return NewItemRootVersionsDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

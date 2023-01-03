@@ -44,7 +44,7 @@ func (m *ExternalRequestBuilder) Connections()(*ConnectionsRequestBuilder) {
     return NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectionsById provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
-func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ConnectionsExternalConnectionItemRequestBuilder) {
+func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ExternalConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ConnectionsExternal
     if id != "" {
         urlTplParams["externalConnection%2Did"] = id
     }
-    return NewConnectionsExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewExternalRequestBuilderInternal instantiates a new ExternalRequestBuilder and sets the default values.
 func NewExternalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalRequestBuilder) {

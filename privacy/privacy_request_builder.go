@@ -131,7 +131,7 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRe
     return NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
+func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRig
     if id != "" {
         urlTplParams["subjectRightsRequest%2Did"] = id
     }
-    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

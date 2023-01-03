@@ -166,7 +166,7 @@ func (m *CallRecordsCallRecordItemRequestBuilder) Sessions()(*CallRecordsItemSes
     return NewCallRecordsItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SessionsById provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
-func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
+func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*SessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallR
     if id != "" {
         urlTplParams["session%2Did"] = id
     }
-    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

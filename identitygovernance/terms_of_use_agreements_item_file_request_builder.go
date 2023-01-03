@@ -150,7 +150,7 @@ func (m *TermsOfUseAgreementsItemFileRequestBuilder) Localizations()(*TermsOfUse
     return NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
-func (m *TermsOfUseAgreementsItemFileRequestBuilder) LocalizationsById(id string)(*TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
+func (m *TermsOfUseAgreementsItemFileRequestBuilder) LocalizationsById(id string)(*AgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,7 +158,7 @@ func (m *TermsOfUseAgreementsItemFileRequestBuilder) LocalizationsById(id string
     if id != "" {
         urlTplParams["agreementFileLocalization%2Did"] = id
     }
-    return NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property file in identityGovernance
 func (m *TermsOfUseAgreementsItemFileRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementFileable, requestConfiguration *TermsOfUseAgreementsItemFileRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementFileable, error) {

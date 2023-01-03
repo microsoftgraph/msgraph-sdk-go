@@ -48,7 +48,7 @@ func (m *SecurityRequestBuilder) Alerts_v2()(*Alerts_v2RequestBuilder) {
     return NewAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Alerts_v2ById provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*Alerts_v2AlertItemRequestBuilder) {
+func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -56,10 +56,10 @@ func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*Alerts_v2AlertItemReq
     if id != "" {
         urlTplParams["alert%2Did"] = id
     }
-    return NewAlerts_v2AlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertsById provides operations to manage the alerts property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) AlertsById(id string)(*AlertsAlertItemRequestBuilder) {
+func (m *SecurityRequestBuilder) AlertsById(id string)(*AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*AlertsAlertItemRequestBu
     if id != "" {
         urlTplParams["alert%2Did"] = id
     }
-    return NewAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttackSimulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuilder) {
@@ -150,7 +150,7 @@ func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
     return NewIncidentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IncidentsById provides operations to manage the incidents property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) IncidentsById(id string)(*IncidentsIncidentItemRequestBuilder) {
+func (m *SecurityRequestBuilder) IncidentsById(id string)(*IncidentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,7 +158,7 @@ func (m *SecurityRequestBuilder) IncidentsById(id string)(*IncidentsIncidentItem
     if id != "" {
         urlTplParams["incident%2Did"] = id
     }
-    return NewIncidentsIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update security
 func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, error) {
@@ -188,7 +188,7 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecureScoreContro
     return NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoreControlProfilesById provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*SecureScoreControlProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -196,14 +196,14 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*Secu
     if id != "" {
         urlTplParams["secureScoreControlProfile%2Did"] = id
     }
-    return NewSecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SecureScores provides operations to manage the secureScores property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
     return NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoresById provides operations to manage the secureScores property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecureScoresSecureScoreItemRequestBuilder) {
+func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecureScoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -211,5 +211,5 @@ func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecureScoresSecure
     if id != "" {
         urlTplParams["secureScore%2Did"] = id
     }
-    return NewSecureScoresSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

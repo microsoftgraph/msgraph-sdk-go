@@ -55,7 +55,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Assignments()(*MobileAppsItemAss
     return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*MobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilder) {
+func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*MobileAppAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,14 +63,14 @@ func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*Mobi
     if id != "" {
         urlTplParams["mobileAppAssignment%2Did"] = id
     }
-    return NewMobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Categories()(*MobileAppsItemCategoriesRequestBuilder) {
     return NewMobileAppsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
+func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*MobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*Mobil
     if id != "" {
         urlTplParams["mobileAppCategory%2Did"] = id
     }
-    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMobileAppsMobileAppItemRequestBuilderInternal instantiates a new MobileAppItemRequestBuilder and sets the default values.
 func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsMobileAppItemRequestBuilder) {

@@ -44,7 +44,7 @@ func (m *EducationRequestBuilder) Classes()(*ClassesRequestBuilder) {
     return NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClassesById provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) ClassesById(id string)(*ClassesEducationClassItemRequestBuilder) {
+func (m *EducationRequestBuilder) ClassesById(id string)(*EducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*ClassesEducationClassI
     if id != "" {
         urlTplParams["educationClass%2Did"] = id
     }
-    return NewClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationRequestBuilder) {
@@ -150,7 +150,7 @@ func (m *EducationRequestBuilder) Schools()(*SchoolsRequestBuilder) {
     return NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SchoolsById provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) SchoolsById(id string)(*SchoolsEducationSchoolItemRequestBuilder) {
+func (m *EducationRequestBuilder) SchoolsById(id string)(*EducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,14 +158,14 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*SchoolsEducationSchool
     if id != "" {
         urlTplParams["educationSchool%2Did"] = id
     }
-    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Users provides operations to manage the users property of the microsoft.graph.educationRoot entity.
 func (m *EducationRequestBuilder) Users()(*UsersRequestBuilder) {
     return NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsersById provides operations to manage the users property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) UsersById(id string)(*UsersEducationUserItemRequestBuilder) {
+func (m *EducationRequestBuilder) UsersById(id string)(*EducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -173,5 +173,5 @@ func (m *EducationRequestBuilder) UsersById(id string)(*UsersEducationUserItemRe
     if id != "" {
         urlTplParams["educationUser%2Did"] = id
     }
-    return NewUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -124,7 +124,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) Threads()(*ItemConvers
     return NewItemConversationsItemThreadsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ThreadsById provides operations to manage the threads property of the microsoft.graph.conversation entity.
-func (m *ItemConversationsConversationItemRequestBuilder) ThreadsById(id string)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
+func (m *ItemConversationsConversationItemRequestBuilder) ThreadsById(id string)(*ConversationThreadItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -132,5 +132,5 @@ func (m *ItemConversationsConversationItemRequestBuilder) ThreadsById(id string)
     if id != "" {
         urlTplParams["conversationThread%2Did"] = id
     }
-    return NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConversationThreadItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

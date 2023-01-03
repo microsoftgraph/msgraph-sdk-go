@@ -166,7 +166,7 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     return NewAttackSimulationSimulationAutomationsItemRunsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RunsById provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
-func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) RunsById(id string)(*AttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilder) {
+func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) RunsById(id string)(*SimulationAutomationRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     if id != "" {
         urlTplParams["simulationAutomationRun%2Did"] = id
     }
-    return NewAttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSimulationAutomationRunItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -147,7 +147,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevices()(*DetectedAp
     return NewDetectedAppsItemManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedDevicesById provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
-func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevicesById(id string)(*DetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilder) {
+func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevicesById(id string)(*ManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevicesById(id string
     if id != "" {
         urlTplParams["managedDevice%2Did"] = id
     }
-    return NewDetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property detectedApps in deviceManagement
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, error) {

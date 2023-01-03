@@ -166,7 +166,7 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignments()(*Rol
     return NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
-func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignmentsById(id string)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
+func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignmentsById(id string)(*RoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignmentsById(id
     if id != "" {
         urlTplParams["roleAssignment%2Did"] = id
     }
-    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -51,7 +51,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Acceptances()(*TermsOf
     return NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AcceptancesById provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) AcceptancesById(id string)(*TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
+func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) AcceptancesById(id string)(*AgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) AcceptancesById(id str
     if id != "" {
         urlTplParams["agreementAcceptance%2Did"] = id
     }
-    return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal instantiates a new AgreementItemRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Files()(*TermsOfUseAgr
     return NewTermsOfUseAgreementsItemFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesById provides operations to manage the files property of the microsoft.graph.agreement entity.
-func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) FilesById(id string)(*TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) {
+func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) FilesById(id string)(*AgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) FilesById(id string)(*
     if id != "" {
         urlTplParams["agreementFileLocalization%2Did"] = id
     }
-    return NewTermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {

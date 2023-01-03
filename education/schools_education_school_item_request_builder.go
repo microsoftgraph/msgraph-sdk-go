@@ -55,7 +55,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) Classes()(*SchoolsItemClasses
     return NewSchoolsItemClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClassesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.classes.item collection
-func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
+func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*EducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*Schoo
     if id != "" {
         urlTplParams["educationClass%2Did"] = id
     }
-    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
 func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) Users()(*SchoolsItemUsersRequ
     return NewSchoolsItemUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.users.item collection
-func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
+func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*EducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*Schools
     if id != "" {
         urlTplParams["educationUser%2Did"] = id
     }
-    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

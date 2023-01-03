@@ -51,7 +51,7 @@ func (m *SharesPrinterShareItemRequestBuilder) AllowedGroups()(*SharesItemAllowe
     return NewSharesItemAllowedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AllowedGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
-func (m *SharesPrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
+func (m *SharesPrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *SharesPrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*Sha
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewSharesItemAllowedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AllowedUsers provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
 func (m *SharesPrinterShareItemRequestBuilder) AllowedUsers()(*SharesItemAllowedUsersRequestBuilder) {
     return NewSharesItemAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AllowedUsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedUsers.item collection
-func (m *SharesPrinterShareItemRequestBuilder) AllowedUsersById(id string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
+func (m *SharesPrinterShareItemRequestBuilder) AllowedUsersById(id string)(*UserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *SharesPrinterShareItemRequestBuilder) AllowedUsersById(id string)(*Shar
     if id != "" {
         urlTplParams["user%2Did"] = id
     }
-    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSharesPrinterShareItemRequestBuilderInternal instantiates a new PrinterShareItemRequestBuilder and sets the default values.
 func NewSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesPrinterShareItemRequestBuilder) {

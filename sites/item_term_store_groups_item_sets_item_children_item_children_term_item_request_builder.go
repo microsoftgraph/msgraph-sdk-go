@@ -166,7 +166,7 @@ func (m *ItemTermStoreGroupsItemSetsItemChildrenItemChildrenTermItemRequestBuild
     return NewItemTermStoreGroupsItemSetsItemChildrenItemChildrenItemRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-func (m *ItemTermStoreGroupsItemSetsItemChildrenItemChildrenTermItemRequestBuilder) RelationsById(id string)(*ItemTermStoreGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder) {
+func (m *ItemTermStoreGroupsItemSetsItemChildrenItemChildrenTermItemRequestBuilder) RelationsById(id string)(*RelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,7 +174,7 @@ func (m *ItemTermStoreGroupsItemSetsItemChildrenItemChildrenTermItemRequestBuild
     if id != "" {
         urlTplParams["relation%2Did"] = id
     }
-    return NewItemTermStoreGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.term entity.
 func (m *ItemTermStoreGroupsItemSetsItemChildrenItemChildrenTermItemRequestBuilder) Set()(*ItemTermStoreGroupsItemSetsItemChildrenItemChildrenItemSetRequestBuilder) {

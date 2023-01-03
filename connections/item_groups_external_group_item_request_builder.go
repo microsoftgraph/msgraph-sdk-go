@@ -147,7 +147,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Members()(*ItemGroupsItemMem
     return NewItemGroupsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
-func (m *ItemGroupsExternalGroupItemRequestBuilder) MembersById(id string)(*ItemGroupsItemMembersIdentityItemRequestBuilder) {
+func (m *ItemGroupsExternalGroupItemRequestBuilder) MembersById(id string)(*IdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) MembersById(id string)(*Item
     if id != "" {
         urlTplParams["identity%2Did"] = id
     }
-    return NewItemGroupsItemMembersIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property groups in connections
 func (m *ItemGroupsExternalGroupItemRequestBuilder) Patch(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderPatchRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, error) {

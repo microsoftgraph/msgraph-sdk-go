@@ -49,7 +49,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Calendars()(*ItemCal
     return NewItemCalendarGroupsItemCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CalendarsById provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
-func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id string)(*ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) {
+func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id string)(*CalendarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -57,7 +57,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id str
     if id != "" {
         urlTplParams["calendar%2Did"] = id
     }
-    return NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
 func NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {

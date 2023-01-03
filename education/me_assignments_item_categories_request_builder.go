@@ -16,7 +16,7 @@ type MeAssignmentsItemCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MeAssignmentsItemCategoriesRequestBuilderGetQueryParameters list all the categories associated with an assignment.
+// MeAssignmentsItemCategoriesRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 type MeAssignmentsItemCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewMeAssignmentsItemCategoriesRequestBuilder(rawUrl string, requestAdapter 
 func (m *MeAssignmentsItemCategoriesRequestBuilder) Count()(*MeAssignmentsItemCategoriesCountRequestBuilder) {
     return NewMeAssignmentsItemCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list all the categories associated with an assignment.
+// CreateGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *MeAssignmentsItemCategoriesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,7 +108,7 @@ func (m *MeAssignmentsItemCategoriesRequestBuilder) CreatePostRequestInformation
 func (m *MeAssignmentsItemCategoriesRequestBuilder) Delta()(*MeAssignmentsItemCategoriesDeltaRequestBuilder) {
     return NewMeAssignmentsItemCategoriesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get list all the categories associated with an assignment.
+// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0

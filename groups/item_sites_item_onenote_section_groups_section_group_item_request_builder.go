@@ -174,7 +174,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Sectio
     return NewItemSitesItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
-func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionGroupsById(id string)(*ItemSitesItemOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
+func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionGroupsById(id string)(*SectionGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -182,14 +182,14 @@ func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Sectio
     if id != "" {
         urlTplParams["sectionGroup%2Did1"] = id
     }
-    return NewItemSitesItemOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Sections()(*ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) {
     return NewItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SectionsById provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
-func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionsById(id string)(*ItemSitesItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
+func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionsById(id string)(*OnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -197,5 +197,5 @@ func (m *ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Sectio
     if id != "" {
         urlTplParams["onenoteSection%2Did"] = id
     }
-    return NewItemSitesItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

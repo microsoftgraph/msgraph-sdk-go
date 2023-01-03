@@ -166,7 +166,7 @@ func (m *ItemPlannerRequestBuilder) Plans()(*ItemPlannerPlansRequestBuilder) {
     return NewItemPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
+func (m *ItemPlannerRequestBuilder) PlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlanne
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *ItemPlannerRequestBuilder) Tasks()(*ItemPlannerTasksRequestBuilder) {
     return NewItemPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) TasksById(id string)(*ItemPlannerTasksPlannerTaskItemRequestBuilder) {
+func (m *ItemPlannerRequestBuilder) TasksById(id string)(*PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *ItemPlannerRequestBuilder) TasksById(id string)(*ItemPlannerTasksPlanne
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewItemPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

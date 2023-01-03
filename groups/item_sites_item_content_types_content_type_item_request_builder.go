@@ -59,7 +59,7 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypes()(*It
     return NewItemSitesItemContentTypesItemBaseTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BaseTypesById provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypesById(id string)(*ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypesById(id string)(*ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,14 +67,14 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypesById(i
     if id != "" {
         urlTplParams["contentType%2Did1"] = id
     }
-    return NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ColumnLinks provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinks()(*ItemSitesItemContentTypesItemColumnLinksRequestBuilder) {
     return NewItemSitesItemContentTypesItemColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ColumnLinksById provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinksById(id string)(*ItemSitesItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinksById(id string)(*ColumnLinkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -82,14 +82,14 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinksById
     if id != "" {
         urlTplParams["columnLink%2Did"] = id
     }
-    return NewItemSitesItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewColumnLinkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ColumnPositions provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositions()(*ItemSitesItemContentTypesItemColumnPositionsRequestBuilder) {
     return NewItemSitesItemContentTypesItemColumnPositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ColumnPositionsById provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) {
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -97,14 +97,14 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositions
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Columns()(*ItemSitesItemContentTypesItemColumnsRequestBuilder) {
     return NewItemSitesItemContentTypesItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ColumnsById provides operations to manage the columns property of the microsoft.graph.contentType entity.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnsById(id string)(*ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) {
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnsById(id string)(*ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -112,7 +112,7 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnsById(id 
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal instantiates a new ContentTypeItemRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesContentTypeItemRequestBuilder) {

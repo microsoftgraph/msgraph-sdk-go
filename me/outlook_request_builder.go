@@ -89,7 +89,7 @@ func (m *OutlookRequestBuilder) MasterCategories()(*OutlookMasterCategoriesReque
     return NewOutlookMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MasterCategoriesById provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
-func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
+func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -97,7 +97,7 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookMasterCa
     if id != "" {
         urlTplParams["outlookCategory%2Did"] = id
     }
-    return NewOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SupportedLanguages provides operations to call the supportedLanguages method.
 func (m *OutlookRequestBuilder) SupportedLanguages()(*OutlookSupportedLanguagesRequestBuilder) {

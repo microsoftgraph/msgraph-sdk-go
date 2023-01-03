@@ -147,7 +147,7 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) History()(*RiskyUsersItemHistory
     return NewRiskyUsersItemHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HistoryById provides operations to manage the history property of the microsoft.graph.riskyUser entity.
-func (m *RiskyUsersRiskyUserItemRequestBuilder) HistoryById(id string)(*RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
+func (m *RiskyUsersRiskyUserItemRequestBuilder) HistoryById(id string)(*RiskyUserHistoryItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) HistoryById(id string)(*RiskyUse
     if id != "" {
         urlTplParams["riskyUserHistoryItem%2Did"] = id
     }
-    return NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property riskyUsers in identityProtection
 func (m *RiskyUsersRiskyUserItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, requestConfiguration *RiskyUsersRiskyUserItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, error) {

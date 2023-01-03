@@ -51,7 +51,7 @@ func (m *TeamworkRequestBuilder) AssociatedTeams()(*TeamworkAssociatedTeamsReque
     return NewTeamworkAssociatedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssociatedTeamsById provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
-func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*TeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
+func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*AssociatedTeamInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*TeamworkAssocia
     if id != "" {
         urlTplParams["associatedTeamInfo%2Did"] = id
     }
-    return NewTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTeamworkRequestBuilderInternal instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkRequestBuilder) {
@@ -162,7 +162,7 @@ func (m *TeamworkRequestBuilder) InstalledApps()(*TeamworkInstalledAppsRequestBu
     return NewTeamworkInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
-func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*TeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
+func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*UserScopeTeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,7 +170,7 @@ func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*TeamworkInstalled
     if id != "" {
         urlTplParams["userScopeTeamsAppInstallation%2Did"] = id
     }
-    return NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property teamwork in me
 func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable, requestConfiguration *TeamworkRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable, error) {

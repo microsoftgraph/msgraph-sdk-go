@@ -132,7 +132,7 @@ func (m *ItemDrivesItemItemsItemListItemRequestBuilder) DocumentSetVersions()(*I
     return NewItemDrivesItemItemsItemListItemDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-func (m *ItemDrivesItemItemsItemListItemRequestBuilder) DocumentSetVersionsById(id string)(*ItemDrivesItemItemsItemListItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
+func (m *ItemDrivesItemItemsItemListItemRequestBuilder) DocumentSetVersionsById(id string)(*DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -140,7 +140,7 @@ func (m *ItemDrivesItemItemsItemListItemRequestBuilder) DocumentSetVersionsById(
     if id != "" {
         urlTplParams["documentSetVersion%2Did"] = id
     }
-    return NewItemDrivesItemItemsItemListItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ItemDrivesItemItemsItemListItemRequestBuilder) DriveItem()(*ItemDrivesItemItemsItemListItemDriveItemRequestBuilder) {
@@ -201,7 +201,7 @@ func (m *ItemDrivesItemItemsItemListItemRequestBuilder) Versions()(*ItemDrivesIt
     return NewItemDrivesItemItemsItemListItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
-func (m *ItemDrivesItemItemsItemListItemRequestBuilder) VersionsById(id string)(*ItemDrivesItemItemsItemListItemVersionsListItemVersionItemRequestBuilder) {
+func (m *ItemDrivesItemItemsItemListItemRequestBuilder) VersionsById(id string)(*ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -209,5 +209,5 @@ func (m *ItemDrivesItemItemsItemListItemRequestBuilder) VersionsById(id string)(
     if id != "" {
         urlTplParams["listItemVersion%2Did"] = id
     }
-    return NewItemDrivesItemItemsItemListItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

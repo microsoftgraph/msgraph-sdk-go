@@ -51,7 +51,7 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategories()(*Classe
     return NewClassesItemAssignmentCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentCategoriesById provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) {
+func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*EducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategoriesById(id st
     if id != "" {
         urlTplParams["educationCategory%2Did"] = id
     }
-    return NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AssignmentDefaults provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentDefaults()(*ClassesItemAssignmentDefaultsRequestBuilder) {
@@ -70,7 +70,7 @@ func (m *ClassesEducationClassItemRequestBuilder) Assignments()(*ClassesItemAssi
     return NewClassesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentsById(id string)(*ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) {
+func (m *ClassesEducationClassItemRequestBuilder) AssignmentsById(id string)(*EducationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentsById(id string)(*Cl
     if id != "" {
         urlTplParams["educationAssignment%2Did"] = id
     }
-    return NewClassesItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AssignmentSettings provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentSettings()(*ClassesItemAssignmentSettingsRequestBuilder) {
@@ -189,7 +189,7 @@ func (m *ClassesEducationClassItemRequestBuilder) Members()(*ClassesItemMembersR
     return NewClassesItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.members.item collection
-func (m *ClassesEducationClassItemRequestBuilder) MembersById(id string)(*ClassesItemMembersEducationUserItemRequestBuilder) {
+func (m *ClassesEducationClassItemRequestBuilder) MembersById(id string)(*EducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -197,7 +197,7 @@ func (m *ClassesEducationClassItemRequestBuilder) MembersById(id string)(*Classe
     if id != "" {
         urlTplParams["educationUser%2Did"] = id
     }
-    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property classes in education
 func (m *ClassesEducationClassItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, requestConfiguration *ClassesEducationClassItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
@@ -223,7 +223,7 @@ func (m *ClassesEducationClassItemRequestBuilder) Schools()(*ClassesItemSchoolsR
     return NewClassesItemSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SchoolsById provides operations to manage the schools property of the microsoft.graph.educationClass entity.
-func (m *ClassesEducationClassItemRequestBuilder) SchoolsById(id string)(*ClassesItemSchoolsEducationSchoolItemRequestBuilder) {
+func (m *ClassesEducationClassItemRequestBuilder) SchoolsById(id string)(*EducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -231,14 +231,14 @@ func (m *ClassesEducationClassItemRequestBuilder) SchoolsById(id string)(*Classe
     if id != "" {
         urlTplParams["educationSchool%2Did"] = id
     }
-    return NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Teachers provides operations to manage the teachers property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Teachers()(*ClassesItemTeachersRequestBuilder) {
     return NewClassesItemTeachersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TeachersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.teachers.item collection
-func (m *ClassesEducationClassItemRequestBuilder) TeachersById(id string)(*ClassesItemTeachersEducationUserItemRequestBuilder) {
+func (m *ClassesEducationClassItemRequestBuilder) TeachersById(id string)(*EducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -246,5 +246,5 @@ func (m *ClassesEducationClassItemRequestBuilder) TeachersById(id string)(*Class
     if id != "" {
         urlTplParams["educationUser%2Did"] = id
     }
-    return NewClassesItemTeachersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

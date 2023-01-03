@@ -51,7 +51,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Categories()
     return NewUsersItemAssignmentsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item.assignments.item.categories.item collection
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id string)(*UsersItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id string)(*EducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) CategoriesBy
     if id != "" {
         urlTplParams["educationCategory%2Did"] = id
     }
-    return NewUsersItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsEducationAssignmentItemRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Resources()(
     return NewUsersItemAssignmentsItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourcesById provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id string)(*UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) {
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id string)(*EducationAssignmentResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,7 +193,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ResourcesByI
     if id != "" {
         urlTplParams["educationAssignmentResource%2Did"] = id
     }
-    return NewUsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*UsersItemAssignmentsItemRubricRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Submissions(
     return NewUsersItemAssignmentsItemSubmissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubmissionsById provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*UsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*EducationSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -220,5 +220,5 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsB
     if id != "" {
         urlTplParams["educationSubmission%2Did"] = id
     }
-    return NewUsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationSubmissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

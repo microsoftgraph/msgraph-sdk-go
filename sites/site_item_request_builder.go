@@ -48,7 +48,7 @@ func (m *SiteItemRequestBuilder) Columns()(*ItemColumnsRequestBuilder) {
     return NewItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ColumnsById provides operations to manage the columns property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) ColumnsById(id string)(*ItemColumnsColumnDefinitionItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) ColumnsById(id string)(*ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -56,7 +56,7 @@ func (m *SiteItemRequestBuilder) ColumnsById(id string)(*ItemColumnsColumnDefini
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSiteItemRequestBuilderInternal instantiates a new SiteItemRequestBuilder and sets the default values.
 func NewSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SiteItemRequestBuilder) {
@@ -82,7 +82,7 @@ func (m *SiteItemRequestBuilder) ContentTypes()(*ItemContentTypesRequestBuilder)
     return NewItemContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ContentTypesById provides operations to manage the contentTypes property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*ItemContentTypesContentTypeItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -90,7 +90,7 @@ func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*ItemContentTypesCo
     if id != "" {
         urlTplParams["contentType%2Did"] = id
     }
-    return NewItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 func (m *SiteItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -131,7 +131,7 @@ func (m *SiteItemRequestBuilder) Drives()(*ItemDrivesRequestBuilder) {
     return NewItemDrivesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DrivesById provides operations to manage the drives property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) DrivesById(id string)(*ItemDrivesDriveItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) DrivesById(id string)(*DriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,14 +139,14 @@ func (m *SiteItemRequestBuilder) DrivesById(id string)(*ItemDrivesDriveItemReque
     if id != "" {
         urlTplParams["drive%2Did"] = id
     }
-    return NewItemDrivesDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ExternalColumns provides operations to manage the externalColumns property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) ExternalColumns()(*ItemExternalColumnsRequestBuilder) {
     return NewItemExternalColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExternalColumnsById provides operations to manage the externalColumns property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,7 +154,7 @@ func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*ItemExternalCol
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
 // [Find more info here]
@@ -199,7 +199,7 @@ func (m *SiteItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) ItemsById(id string)(*ItemItemsBaseItemItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) ItemsById(id string)(*BaseItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -207,14 +207,14 @@ func (m *SiteItemRequestBuilder) ItemsById(id string)(*ItemItemsBaseItemItemRequ
     if id != "" {
         urlTplParams["baseItem%2Did"] = id
     }
-    return NewItemItemsBaseItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBaseItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Lists provides operations to manage the lists property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Lists()(*ItemListsRequestBuilder) {
     return NewItemListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ListsById provides operations to manage the lists property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) ListsById(id string)(*ItemListsListItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) ListsById(id string)(*ListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -222,7 +222,7 @@ func (m *SiteItemRequestBuilder) ListsById(id string)(*ItemListsListItemRequestB
     if id != "" {
         urlTplParams["list%2Did"] = id
     }
-    return NewItemListsListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Onenote provides operations to manage the onenote property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {
@@ -233,7 +233,7 @@ func (m *SiteItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
     return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) OperationsById(id string)(*ItemOperationsRichLongRunningOperationItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) OperationsById(id string)(*RichLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -241,7 +241,7 @@ func (m *SiteItemRequestBuilder) OperationsById(id string)(*ItemOperationsRichLo
     if id != "" {
         urlTplParams["richLongRunningOperation%2Did"] = id
     }
-    return NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update entity in sites
 func (m *SiteItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, requestConfiguration *SiteItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
@@ -267,7 +267,7 @@ func (m *SiteItemRequestBuilder) Permissions()(*ItemPermissionsRequestBuilder) {
     return NewItemPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PermissionsById provides operations to manage the permissions property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) PermissionsById(id string)(*ItemPermissionsPermissionItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) PermissionsById(id string)(*PermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -275,14 +275,14 @@ func (m *SiteItemRequestBuilder) PermissionsById(id string)(*ItemPermissionsPerm
     if id != "" {
         urlTplParams["permission%2Did"] = id
     }
-    return NewItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Sites provides operations to manage the sites property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Sites()(*ItemSitesRequestBuilder) {
     return NewItemSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SitesById provides operations to manage the sites property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) SitesById(id string)(*ItemSitesSiteItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) SitesById(id string)(*SiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -290,7 +290,7 @@ func (m *SiteItemRequestBuilder) SitesById(id string)(*ItemSitesSiteItemRequestB
     if id != "" {
         urlTplParams["site%2Did1"] = id
     }
-    return NewItemSitesSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TermStore provides operations to manage the termStore property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) TermStore()(*ItemTermStoreRequestBuilder) {
@@ -301,7 +301,7 @@ func (m *SiteItemRequestBuilder) TermStores()(*ItemTermStoresRequestBuilder) {
     return NewItemTermStoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TermStoresById provides operations to manage the termStores property of the microsoft.graph.site entity.
-func (m *SiteItemRequestBuilder) TermStoresById(id string)(*ItemTermStoresStoreItemRequestBuilder) {
+func (m *SiteItemRequestBuilder) TermStoresById(id string)(*StoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -309,5 +309,5 @@ func (m *SiteItemRequestBuilder) TermStoresById(id string)(*ItemTermStoresStoreI
     if id != "" {
         urlTplParams["store%2Did"] = id
     }
-    return NewItemTermStoresStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

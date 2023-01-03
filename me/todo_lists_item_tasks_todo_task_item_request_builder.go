@@ -51,7 +51,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Attachments()(*TodoListsI
     return NewTodoListsItemTasksItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
-func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentsById(id string)(*TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
+func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentsById(id string)(*AttachmentBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentsById(id string
     if id != "" {
         urlTplParams["attachmentBase%2Did"] = id
     }
-    return NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttachmentSessions provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessions()(*TodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
     return NewTodoListsItemTasksItemAttachmentSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttachmentSessionsById provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
+func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*AttachmentSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,14 +74,14 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessionsById(id
     if id != "" {
         urlTplParams["attachmentSession%2Did"] = id
     }
-    return NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItems()(*TodoListsItemTasksItemChecklistItemsRequestBuilder) {
     return NewTodoListsItemTasksItemChecklistItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ChecklistItemsById provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItemsById(id string)(*TodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
+func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItemsById(id string)(*ChecklistItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -89,7 +89,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItemsById(id str
     if id != "" {
         urlTplParams["checklistItem%2Did"] = id
     }
-    return NewTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChecklistItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal instantiates a new TodoTaskItemRequestBuilder and sets the default values.
 func NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksTodoTaskItemRequestBuilder) {
@@ -173,7 +173,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Extensions()(*TodoListsIt
     return NewTodoListsItemTasksItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
-func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ExtensionsById(id string)(*TodoListsItemTasksItemExtensionsExtensionItemRequestBuilder) {
+func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ExtensionsById(id string)
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewTodoListsItemTasksItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the tasks in this task list. Read-only. Nullable.
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsItemTasksTodoTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, error) {
@@ -207,7 +207,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResources()(*TodoLi
     return NewTodoListsItemTasksItemLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LinkedResourcesById provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
-func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResourcesById(id string)(*TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
+func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResourcesById(id string)(*LinkedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -215,7 +215,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResourcesById(id st
     if id != "" {
         urlTplParams["linkedResource%2Did"] = id
     }
-    return NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLinkedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property tasks in me
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, requestConfiguration *TodoListsItemTasksTodoTaskItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, error) {

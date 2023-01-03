@@ -136,7 +136,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Ex
     return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.device entity.
-func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) ExtensionsById(id string)(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceExtensionsExtensionItemRequestBuilder) {
+func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -144,7 +144,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Ex
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
@@ -178,7 +178,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Me
     return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MemberOfById provides operations to manage the memberOf property of the microsoft.graph.device entity.
-func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) MemberOfById(id string)(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) MemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -186,7 +186,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Me
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property device in me
 func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
@@ -212,7 +212,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Re
     return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RegisteredOwnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.authentication.microsoftAuthenticatorMethods.item.device.registeredOwners.item collection
-func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredOwnersById(id string)(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredOwnersDirectoryObjectItemRequestBuilder) {
+func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredOwnersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -220,14 +220,14 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Re
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredUsers()(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersRequestBuilder) {
     return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RegisteredUsersById provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
-func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredUsersById(id string)(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersDirectoryObjectItemRequestBuilder) {
+func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredUsersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -235,7 +235,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Re
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Restore provides operations to call the restore method.
 func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Restore()(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRestoreRequestBuilder) {
@@ -246,7 +246,7 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Tr
     return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) TransitiveMemberOfById(id string)(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) TransitiveMemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -254,5 +254,5 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Tr
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

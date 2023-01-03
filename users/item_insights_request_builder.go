@@ -166,7 +166,7 @@ func (m *ItemInsightsRequestBuilder) Shared()(*ItemInsightsSharedRequestBuilder)
     return NewItemInsightsSharedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharedById provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
-func (m *ItemInsightsRequestBuilder) SharedById(id string)(*ItemInsightsSharedSharedInsightItemRequestBuilder) {
+func (m *ItemInsightsRequestBuilder) SharedById(id string)(*SharedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *ItemInsightsRequestBuilder) SharedById(id string)(*ItemInsightsSharedSh
     if id != "" {
         urlTplParams["sharedInsight%2Did"] = id
     }
-    return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Trending provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
 func (m *ItemInsightsRequestBuilder) Trending()(*ItemInsightsTrendingRequestBuilder) {
     return NewItemInsightsTrendingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TrendingById provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
-func (m *ItemInsightsRequestBuilder) TrendingById(id string)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
+func (m *ItemInsightsRequestBuilder) TrendingById(id string)(*TrendingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,14 +189,14 @@ func (m *ItemInsightsRequestBuilder) TrendingById(id string)(*ItemInsightsTrendi
     if id != "" {
         urlTplParams["trending%2Did"] = id
     }
-    return NewItemInsightsTrendingTrendingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTrendingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Used provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
 func (m *ItemInsightsRequestBuilder) Used()(*ItemInsightsUsedRequestBuilder) {
     return NewItemInsightsUsedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsedById provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
-func (m *ItemInsightsRequestBuilder) UsedById(id string)(*ItemInsightsUsedUsedInsightItemRequestBuilder) {
+func (m *ItemInsightsRequestBuilder) UsedById(id string)(*UsedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,5 +204,5 @@ func (m *ItemInsightsRequestBuilder) UsedById(id string)(*ItemInsightsUsedUsedIn
     if id != "" {
         urlTplParams["usedInsight%2Did"] = id
     }
-    return NewItemInsightsUsedUsedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUsedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

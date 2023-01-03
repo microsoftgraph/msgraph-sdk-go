@@ -166,7 +166,7 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserCo
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserConsentRequestsById provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
-func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserConsentRequestsById(id string)(*AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
+func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserConsentRequestsById(id string)(*UserConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserCo
     if id != "" {
         urlTplParams["userConsentRequest%2Did"] = id
     }
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

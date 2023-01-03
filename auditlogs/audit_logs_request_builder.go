@@ -93,7 +93,7 @@ func (m *AuditLogsRequestBuilder) DirectoryAudits()(*DirectoryAuditsRequestBuild
     return NewDirectoryAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoryAuditsById provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
+func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*DirectoryAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -101,7 +101,7 @@ func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*DirectoryAudit
     if id != "" {
         urlTplParams["directoryAudit%2Did"] = id
     }
-    return NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get auditLogs
 func (m *AuditLogsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditLogRootable, error) {
@@ -146,7 +146,7 @@ func (m *AuditLogsRequestBuilder) Provisioning()(*ProvisioningRequestBuilder) {
     return NewProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ProvisioningById provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
+func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,14 +154,14 @@ func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ProvisioningProvi
     if id != "" {
         urlTplParams["provisioningObjectSummary%2Did"] = id
     }
-    return NewProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SignIns provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) SignIns()(*SignInsRequestBuilder) {
     return NewSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SignInsById provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) SignInsById(id string)(*SignInsSignInItemRequestBuilder) {
+func (m *AuditLogsRequestBuilder) SignInsById(id string)(*SignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,5 +169,5 @@ func (m *AuditLogsRequestBuilder) SignInsById(id string)(*SignInsSignInItemReque
     if id != "" {
         urlTplParams["signIn%2Did"] = id
     }
-    return NewSignInsSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

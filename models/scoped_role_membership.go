@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScopedRoleMembership provides operations to manage the appCatalogs singleton.
+// ScopedRoleMembership provides operations to manage the collection of agreement entities.
 type ScopedRoleMembership struct {
     Entity
     // Unique identifier for the administrative unit that the directory role is scoped to

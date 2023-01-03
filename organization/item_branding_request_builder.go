@@ -161,7 +161,7 @@ func (m *ItemBrandingRequestBuilder) Localizations()(*ItemBrandingLocalizationsR
     return NewItemBrandingLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *ItemBrandingRequestBuilder) LocalizationsById(id string)(*ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
+func (m *ItemBrandingRequestBuilder) LocalizationsById(id string)(*OrganizationalBrandingLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,7 +169,7 @@ func (m *ItemBrandingRequestBuilder) LocalizationsById(id string)(*ItemBrandingL
     if id != "" {
         urlTplParams["organizationalBrandingLocalization%2Did"] = id
     }
-    return NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of the default branding object specified by the organizationalBranding resource.
 // [Find more info here]

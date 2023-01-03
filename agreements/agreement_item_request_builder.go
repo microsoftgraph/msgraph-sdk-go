@@ -49,7 +49,7 @@ func (m *AgreementItemRequestBuilder) Acceptances()(*ItemAcceptancesRequestBuild
     return NewItemAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AcceptancesById provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-func (m *AgreementItemRequestBuilder) AcceptancesById(id string)(*ItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
+func (m *AgreementItemRequestBuilder) AcceptancesById(id string)(*AgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -57,7 +57,7 @@ func (m *AgreementItemRequestBuilder) AcceptancesById(id string)(*ItemAcceptance
     if id != "" {
         urlTplParams["agreementAcceptance%2Did"] = id
     }
-    return NewItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAgreementItemRequestBuilderInternal instantiates a new AgreementItemRequestBuilder and sets the default values.
 func NewAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementItemRequestBuilder) {
@@ -145,7 +145,7 @@ func (m *AgreementItemRequestBuilder) Files()(*ItemFilesRequestBuilder) {
     return NewItemFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesById provides operations to manage the files property of the microsoft.graph.agreement entity.
-func (m *AgreementItemRequestBuilder) FilesById(id string)(*ItemFilesAgreementFileLocalizationItemRequestBuilder) {
+func (m *AgreementItemRequestBuilder) FilesById(id string)(*AgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -153,7 +153,7 @@ func (m *AgreementItemRequestBuilder) FilesById(id string)(*ItemFilesAgreementFi
     if id != "" {
         urlTplParams["agreementFileLocalization%2Did"] = id
     }
-    return NewItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get entity from agreements by key
 func (m *AgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {

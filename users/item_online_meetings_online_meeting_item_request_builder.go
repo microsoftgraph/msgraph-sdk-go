@@ -51,7 +51,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReports()(
     return NewItemOnlineMeetingsItemAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*MeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsByI
     if id != "" {
         urlTplParams["meetingAttendanceReport%2Did"] = id
     }
-    return NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttendeeReport provides operations to manage the media for the user entity.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*ItemOnlineMeetingsItemAttendeeReportRequestBuilder) {

@@ -150,7 +150,7 @@ func (m *ItemSitesItemTermStoreRequestBuilder) Groups()(*ItemSitesItemTermStoreG
     return NewItemSitesItemTermStoreGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoreRequestBuilder) GroupsById(id string)(*ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) {
+func (m *ItemSitesItemTermStoreRequestBuilder) GroupsById(id string)(*GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,7 +158,7 @@ func (m *ItemSitesItemTermStoreRequestBuilder) GroupsById(id string)(*ItemSitesI
     if id != "" {
         urlTplParams["group%2Did1"] = id
     }
-    return NewItemSitesItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of a store object.
 // [Find more info here]
@@ -187,7 +187,7 @@ func (m *ItemSitesItemTermStoreRequestBuilder) Sets()(*ItemSitesItemTermStoreSet
     return NewItemSitesItemTermStoreSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoreRequestBuilder) SetsById(id string)(*ItemSitesItemTermStoreSetsSetItemRequestBuilder) {
+func (m *ItemSitesItemTermStoreRequestBuilder) SetsById(id string)(*SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -195,5 +195,5 @@ func (m *ItemSitesItemTermStoreRequestBuilder) SetsById(id string)(*ItemSitesIte
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

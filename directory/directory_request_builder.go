@@ -44,7 +44,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequ
     return NewAdministrativeUnitsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AdministrativeUnitsById provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*AdministrativeUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*Administra
     if id != "" {
         urlTplParams["administrativeUnit%2Did"] = id
     }
-    return NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
@@ -108,7 +108,7 @@ func (m *DirectoryRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
     return NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeletedItemsById provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -116,14 +116,14 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DeletedItemsDirec
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FederationConfigurations provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationConfigurationsRequestBuilder) {
     return NewFederationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FederationConfigurationsById provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*IdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -131,7 +131,7 @@ func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*Feder
     if id != "" {
         urlTplParams["identityProviderBase%2Did"] = id
     }
-    return NewFederationConfigurationsIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get directory
 func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, error) {

@@ -112,7 +112,7 @@ func (m *AccessReviewsRequestBuilder) Definitions()(*AccessReviewsDefinitionsReq
     return NewAccessReviewsDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) {
+func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*AccessReviewScheduleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*AccessReviewsD
     if id != "" {
         urlTplParams["accessReviewScheduleDefinition%2Did"] = id
     }
-    return NewAccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property accessReviews for identityGovernance
 func (m *AccessReviewsRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -162,7 +162,7 @@ func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*AccessReviewsHistory
     return NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HistoryDefinitionsById provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) {
+func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*AccessReviewHistoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,7 +170,7 @@ func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*AccessR
     if id != "" {
         urlTplParams["accessReviewHistoryDefinition%2Did"] = id
     }
-    return NewAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property accessReviews in identityGovernance
 func (m *AccessReviewsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewSetable, requestConfiguration *AccessReviewsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewSetable, error) {

@@ -147,7 +147,7 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()
     return NewItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsBy
     if id != "" {
         urlTplParams["chatMessageHostedContent%2Did"] = id
     }
-    return NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property messages in teams
 func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
@@ -181,7 +181,7 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemC
     return NewItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id s
     if id != "" {
         urlTplParams["chatMessage%2Did1"] = id
     }
-    return NewItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SoftDelete provides operations to call the softDelete method.
 func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {

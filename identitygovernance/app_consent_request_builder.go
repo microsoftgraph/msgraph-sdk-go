@@ -51,7 +51,7 @@ func (m *AppConsentRequestBuilder) AppConsentRequests()(*AppConsentAppConsentReq
     return NewAppConsentAppConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AppConsentRequestsById provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
-func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
+func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*AppConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*AppConsent
     if id != "" {
         urlTplParams["appConsentRequest%2Did"] = id
     }
-    return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAppConsentRequestBuilderInternal instantiates a new AppConsentRequestBuilder and sets the default values.
 func NewAppConsentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestBuilder) {

@@ -166,7 +166,7 @@ func (m *PlannerPlansItemBucketsPlannerBucketItemRequestBuilder) Tasks()(*Planne
     return NewPlannerPlansItemBucketsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
-func (m *PlannerPlansItemBucketsPlannerBucketItemRequestBuilder) TasksById(id string)(*PlannerPlansItemBucketsItemTasksPlannerTaskItemRequestBuilder) {
+func (m *PlannerPlansItemBucketsPlannerBucketItemRequestBuilder) TasksById(id string)(*PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *PlannerPlansItemBucketsPlannerBucketItemRequestBuilder) TasksById(id st
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlannerPlansItemBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

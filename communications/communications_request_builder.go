@@ -44,7 +44,7 @@ func (m *CommunicationsRequestBuilder) CallRecords()(*CallRecordsRequestBuilder)
     return NewCallRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallRecordsById provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*CallRecordsCallRecordItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*CallRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,14 +52,14 @@ func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*CallRecordsCa
     if id != "" {
         urlTplParams["callRecord%2Did"] = id
     }
-    return NewCallRecordsCallRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Calls provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
 func (m *CommunicationsRequestBuilder) Calls()(*CallsRequestBuilder) {
     return NewCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallsById provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallsById(id string)(*CallsCallItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) CallsById(id string)(*CallItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *CommunicationsRequestBuilder) CallsById(id string)(*CallsCallItemReques
     if id != "" {
         urlTplParams["call%2Did"] = id
     }
-    return NewCallsCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewCommunicationsRequestBuilderInternal instantiates a new CommunicationsRequestBuilder and sets the default values.
 func NewCommunicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunicationsRequestBuilder) {
@@ -146,7 +146,7 @@ func (m *CommunicationsRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBu
     return NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OnlineMeetingsById provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeetingsOnlineMeetingItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeetingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,7 +154,7 @@ func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeet
     if id != "" {
         urlTplParams["onlineMeeting%2Did"] = id
     }
-    return NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update communications
 func (m *CommunicationsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable, requestConfiguration *CommunicationsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable, error) {
@@ -180,7 +180,7 @@ func (m *CommunicationsRequestBuilder) Presences()(*PresencesRequestBuilder) {
     return NewPresencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PresencesById provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) PresencesById(id string)(*PresencesPresenceItemRequestBuilder) {
+func (m *CommunicationsRequestBuilder) PresencesById(id string)(*PresenceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -188,5 +188,5 @@ func (m *CommunicationsRequestBuilder) PresencesById(id string)(*PresencesPresen
     if id != "" {
         urlTplParams["presence%2Did"] = id
     }
-    return NewPresencesPresenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPresenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

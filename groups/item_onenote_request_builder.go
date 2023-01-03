@@ -147,7 +147,7 @@ func (m *ItemOnenoteRequestBuilder) Notebooks()(*ItemOnenoteNotebooksRequestBuil
     return NewItemOnenoteNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NotebooksById provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) NotebooksById(id string)(*ItemOnenoteNotebooksNotebookItemRequestBuilder) {
+func (m *ItemOnenoteRequestBuilder) NotebooksById(id string)(*NotebookItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,14 +155,14 @@ func (m *ItemOnenoteRequestBuilder) NotebooksById(id string)(*ItemOnenoteNoteboo
     if id != "" {
         urlTplParams["notebook%2Did"] = id
     }
-    return NewItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewNotebookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Operations()(*ItemOnenoteOperationsRequestBuilder) {
     return NewItemOnenoteOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) OperationsById(id string)(*ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
+func (m *ItemOnenoteRequestBuilder) OperationsById(id string)(*OnenoteOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,14 +170,14 @@ func (m *ItemOnenoteRequestBuilder) OperationsById(id string)(*ItemOnenoteOperat
     if id != "" {
         urlTplParams["onenoteOperation%2Did"] = id
     }
-    return NewItemOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Pages provides operations to manage the pages property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Pages()(*ItemOnenotePagesRequestBuilder) {
     return NewItemOnenotePagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PagesById provides operations to manage the pages property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) PagesById(id string)(*ItemOnenotePagesOnenotePageItemRequestBuilder) {
+func (m *ItemOnenoteRequestBuilder) PagesById(id string)(*OnenotePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -185,7 +185,7 @@ func (m *ItemOnenoteRequestBuilder) PagesById(id string)(*ItemOnenotePagesOnenot
     if id != "" {
         urlTplParams["onenotePage%2Did"] = id
     }
-    return NewItemOnenotePagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnenotePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property onenote in groups
 func (m *ItemOnenoteRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, requestConfiguration *ItemOnenoteRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, error) {
@@ -211,7 +211,7 @@ func (m *ItemOnenoteRequestBuilder) Resources()(*ItemOnenoteResourcesRequestBuil
     return NewItemOnenoteResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourcesById provides operations to manage the resources property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) ResourcesById(id string)(*ItemOnenoteResourcesOnenoteResourceItemRequestBuilder) {
+func (m *ItemOnenoteRequestBuilder) ResourcesById(id string)(*OnenoteResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -219,14 +219,14 @@ func (m *ItemOnenoteRequestBuilder) ResourcesById(id string)(*ItemOnenoteResourc
     if id != "" {
         urlTplParams["onenoteResource%2Did"] = id
     }
-    return NewItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) SectionGroups()(*ItemOnenoteSectionGroupsRequestBuilder) {
     return NewItemOnenoteSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) SectionGroupsById(id string)(*ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) {
+func (m *ItemOnenoteRequestBuilder) SectionGroupsById(id string)(*SectionGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -234,14 +234,14 @@ func (m *ItemOnenoteRequestBuilder) SectionGroupsById(id string)(*ItemOnenoteSec
     if id != "" {
         urlTplParams["sectionGroup%2Did"] = id
     }
-    return NewItemOnenoteSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Sections()(*ItemOnenoteSectionsRequestBuilder) {
     return NewItemOnenoteSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SectionsById provides operations to manage the sections property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) SectionsById(id string)(*ItemOnenoteSectionsOnenoteSectionItemRequestBuilder) {
+func (m *ItemOnenoteRequestBuilder) SectionsById(id string)(*OnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -249,5 +249,5 @@ func (m *ItemOnenoteRequestBuilder) SectionsById(id string)(*ItemOnenoteSections
     if id != "" {
         urlTplParams["onenoteSection%2Did"] = id
     }
-    return NewItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

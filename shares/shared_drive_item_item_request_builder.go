@@ -154,7 +154,7 @@ func (m *SharedDriveItemItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
-func (m *SharedDriveItemItemRequestBuilder) ItemsById(id string)(*ItemItemsDriveItemItemRequestBuilder) {
+func (m *SharedDriveItemItemRequestBuilder) ItemsById(id string)(*DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -162,7 +162,7 @@ func (m *SharedDriveItemItemRequestBuilder) ItemsById(id string)(*ItemItemsDrive
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // List provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) List()(*ItemListRequestBuilder) {

@@ -166,7 +166,7 @@ func (m *CallRecordsItemSessionsSessionItemRequestBuilder) Segments()(*CallRecor
     return NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SegmentsById provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
-func (m *CallRecordsItemSessionsSessionItemRequestBuilder) SegmentsById(id string)(*CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilder) {
+func (m *CallRecordsItemSessionsSessionItemRequestBuilder) SegmentsById(id string)(*SegmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *CallRecordsItemSessionsSessionItemRequestBuilder) SegmentsById(id strin
     if id != "" {
         urlTplParams["segment%2Did"] = id
     }
-    return NewCallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSegmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

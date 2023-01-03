@@ -147,7 +147,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Issu
     return NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IssuesById provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
-func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) IssuesById(id string)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
+func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) IssuesById(id string)(*ServiceHealthIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Issu
     if id != "" {
         urlTplParams["serviceHealthIssue%2Did"] = id
     }
-    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property healthOverviews in admin
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, error) {
