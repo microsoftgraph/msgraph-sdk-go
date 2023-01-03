@@ -42,7 +42,7 @@ func NewClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation create a SharePoint folder to upload feedback files for a given educationSubmission. The teacher determines the resources to upload in the feedback resources folder of a submission.
+// CreatePostRequestInformation create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
 func (m *ClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -55,7 +55,7 @@ func (m *ClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder) C
     }
     return requestInfo, nil
 }
-// Post create a SharePoint folder to upload feedback files for a given educationSubmission. The teacher determines the resources to upload in the feedback resources folder of a submission.
+// Post create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0

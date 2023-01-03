@@ -16,7 +16,7 @@ type UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder str
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetQueryParameters list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
+// UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetQueryParameters list the educationSubmissionResource objects that have officially been submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 type UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewUsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder(
 func (m *UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) Count()(*UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilder) {
     return NewUsersItemAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
+// CreateGetRequestInformation list the educationSubmissionResource objects that have officially been submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 func (m *UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,7 +104,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder
     }
     return requestInfo, nil
 }
-// Get list the educationSubmissionResource objects that have officially been submitted for grading.  The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
+// Get list the educationSubmissionResource objects that have officially been submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationsubmission-list-submittedresources?view=graph-rest-1.0

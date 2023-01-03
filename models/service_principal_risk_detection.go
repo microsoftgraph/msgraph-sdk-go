@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalRiskDetection 
+// ServicePrincipalRiskDetection provides operations to manage the collection of agreementAcceptance entities.
 type ServicePrincipalRiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
@@ -49,7 +49,7 @@ type ServicePrincipalRiskDetection struct {
     // Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
     tokenIssuerType *TokenIssuerType
 }
-// NewServicePrincipalRiskDetection instantiates a new ServicePrincipalRiskDetection and sets the default values.
+// NewServicePrincipalRiskDetection instantiates a new servicePrincipalRiskDetection and sets the default values.
 func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
     m := &ServicePrincipalRiskDetection{
         Entity: *NewEntity(),

@@ -16,7 +16,7 @@ type UsersItemAssignmentsItemResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UsersItemAssignmentsItemResourcesRequestBuilderGetQueryParameters get all the educationAssignmentResource objects associated with an assignment.
+// UsersItemAssignmentsItemResourcesRequestBuilderGetQueryParameters get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 type UsersItemAssignmentsItemResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewUsersItemAssignmentsItemResourcesRequestBuilder(rawUrl string, requestAd
 func (m *UsersItemAssignmentsItemResourcesRequestBuilder) Count()(*UsersItemAssignmentsItemResourcesCountRequestBuilder) {
     return NewUsersItemAssignmentsItemResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get all the educationAssignmentResource objects associated with an assignment.
+// CreateGetRequestInformation get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *UsersItemAssignmentsItemResourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *UsersItemAssignmentsItemResourcesRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create an assignment resource. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
+// CreatePostRequestInformation create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 func (m *UsersItemAssignmentsItemResourcesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentResourceable, requestConfiguration *UsersItemAssignmentsItemResourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,7 +104,7 @@ func (m *UsersItemAssignmentsItemResourcesRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Get get all the educationAssignmentResource objects associated with an assignment.
+// Get get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *UsersItemAssignmentsItemResourcesRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentResourceCollectionResponseable), nil
 }
-// Post create an assignment resource. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
+// Post create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-post-resource?view=graph-rest-1.0

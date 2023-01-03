@@ -20,7 +20,7 @@ type AdministrativeUnit struct {
     // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
     visibility *string
 }
-// NewAdministrativeUnit instantiates a new AdministrativeUnit and sets the default values.
+// NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
         DirectoryObject: *NewDirectoryObject(),

@@ -23,7 +23,7 @@ type ClassesItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists.
+// ClassesItemAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 type ClassesItemAssignmentsItemRubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *ClassesItemAssignmentsItemRubricRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists.
+// CreateGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *ClassesItemAssignmentsItemRubricRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *ClassesItemAssignmentsItemRubricRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get get the educationRubric object attached to an educationAssignment, if one exists.
+// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
