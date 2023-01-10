@@ -41,24 +41,12 @@ func NewPrintersItemRestoreFactoryDefaultsRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemRestoreFactoryDefaultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation restore a printer's default settings to the values specified by the manufacturer.
-func (m *PrintersItemRestoreFactoryDefaultsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *PrintersItemRestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post restore a printer's default settings to the values specified by the manufacturer.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
 func (m *PrintersItemRestoreFactoryDefaultsRequestBuilder) Post(ctx context.Context, requestConfiguration *PrintersItemRestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *PrintersItemRestoreFactoryDefaultsRequestBuilder) Post(ctx context.Cont
         return err
     }
     return nil
+}
+// ToPostRequestInformation restore a printer's default settings to the values specified by the manufacturer.
+func (m *PrintersItemRestoreFactoryDefaultsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrintersItemRestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

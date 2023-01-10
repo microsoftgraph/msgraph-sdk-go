@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// The type of Exchange Connector.
 type DeviceManagementExchangeConnectorType int
 
 const (

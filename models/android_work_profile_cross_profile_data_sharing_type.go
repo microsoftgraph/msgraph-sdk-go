@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Android Work Profile cross profile data sharing type.
 type AndroidWorkProfileCrossProfileDataSharingType int
 
 const (

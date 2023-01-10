@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Scheduled Action Type Enum
 type DeviceComplianceActionType int
 
 const (

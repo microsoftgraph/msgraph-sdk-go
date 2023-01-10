@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Possible values for a weekly schedule.
 type WeeklySchedule int
 
 const (

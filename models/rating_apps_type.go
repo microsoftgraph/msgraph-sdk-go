@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Apps rating as in media content
 type RatingAppsType int
 
 const (

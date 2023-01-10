@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// 
 type TermGroupScope int
 
 const (

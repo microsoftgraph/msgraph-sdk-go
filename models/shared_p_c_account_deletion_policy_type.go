@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Possible values for when accounts are deleted on a shared PC.
 type SharedPCAccountDeletionPolicyType int
 
 const (

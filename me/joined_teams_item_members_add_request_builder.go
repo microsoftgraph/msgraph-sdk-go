@@ -41,26 +41,12 @@ func NewJoinedTeamsItemMembersAddRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedTeamsItemMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-func (m *JoinedTeamsItemMembersAddRequestBuilder) CreatePostRequestInformation(ctx context.Context, body JoinedTeamsItemMembersAddPostRequestBodyable, requestConfiguration *JoinedTeamsItemMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
 func (m *JoinedTeamsItemMembersAddRequestBuilder) Post(ctx context.Context, body JoinedTeamsItemMembersAddPostRequestBodyable, requestConfiguration *JoinedTeamsItemMembersAddRequestBuilderPostRequestConfiguration)(JoinedTeamsItemMembersAddResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *JoinedTeamsItemMembersAddRequestBuilder) Post(ctx context.Context, body
         return nil, nil
     }
     return res.(JoinedTeamsItemMembersAddResponseable), nil
+}
+// ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+func (m *JoinedTeamsItemMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body JoinedTeamsItemMembersAddPostRequestBodyable, requestConfiguration *JoinedTeamsItemMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

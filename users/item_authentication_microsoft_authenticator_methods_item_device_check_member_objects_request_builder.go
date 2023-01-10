@@ -41,23 +41,9 @@ func NewItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObje
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action checkMemberObjects
-func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action checkMemberObjects
 func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -73,4 +59,18 @@ func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObj
         return nil, nil
     }
     return res.(ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsResponseable), nil
+}
+// ToPostRequestInformation invoke action checkMemberObjects
+func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemAuthenticationMicrosoftAuthenticatorMethodsItemDeviceCheckMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

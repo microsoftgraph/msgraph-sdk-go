@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Indicates the type of restart action.
 type Win32LobAppRestartBehavior int
 
 const (

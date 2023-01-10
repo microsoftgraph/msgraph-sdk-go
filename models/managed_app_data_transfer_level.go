@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Data can be transferred from/to these classes of apps
 type ManagedAppDataTransferLevel int
 
 const (

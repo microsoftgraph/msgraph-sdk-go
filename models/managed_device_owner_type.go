@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Owner type of device.
 type ManagedDeviceOwnerType int
 
 const (

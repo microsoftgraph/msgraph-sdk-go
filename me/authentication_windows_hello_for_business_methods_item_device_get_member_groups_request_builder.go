@@ -41,26 +41,12 @@ func NewAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsReq
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
-func (m *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsPostRequestBodyable, requestConfiguration *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
 func (m *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilder) Post(ctx context.Context, body AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsPostRequestBodyable, requestConfiguration *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilderPostRequestConfiguration)(AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRe
         return nil, nil
     }
     return res.(AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsResponseable), nil
+}
+// ToPostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+func (m *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsPostRequestBodyable, requestConfiguration *AuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

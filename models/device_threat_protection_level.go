@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Device threat protection levels for the Device Threat Protection API.
 type DeviceThreatProtectionLevel int
 
 const (

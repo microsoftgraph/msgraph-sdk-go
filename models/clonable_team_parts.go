@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the clone method.
+// 
 type ClonableTeamParts int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Configures how the requested export job is localized
 type DeviceManagementExportJobLocalizationType int
 
 const (

@@ -10,7 +10,7 @@ type AppCatalogs struct {
     // The teamsApps property
     teamsApps []TeamsAppable
 }
-// NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
+// NewAppCatalogs instantiates a new appCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
         Entity: *NewEntity(),

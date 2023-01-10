@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Device Exchange Access State Reason.
 type DeviceManagementExchangeAccessStateReason int
 
 const (

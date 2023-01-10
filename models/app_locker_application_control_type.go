@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Possible values of AppLocker Application Control Types
 type AppLockerApplicationControlType int
 
 const (

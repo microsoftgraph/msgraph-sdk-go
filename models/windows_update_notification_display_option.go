@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Windows Update Notification Display Options
 type WindowsUpdateNotificationDisplayOption int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// The reason for which a user has been flagged
 type ManagedAppFlaggedReason int
 
 const (

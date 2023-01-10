@@ -41,26 +41,12 @@ func NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjec
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObje
         return nil, nil
     }
     return res.(ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsResponseable), nil
+}
+// ToPostRequestInformation return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceGetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

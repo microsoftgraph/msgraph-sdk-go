@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Supported platform types for policies.
 type PolicyPlatformType int
 
 const (

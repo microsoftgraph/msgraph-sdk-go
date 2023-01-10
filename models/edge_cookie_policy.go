@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Possible values to specify which cookies are allowed in Microsoft Edge.
 type EdgeCookiePolicy int
 
 const (

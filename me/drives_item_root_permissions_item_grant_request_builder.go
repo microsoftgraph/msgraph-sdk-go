@@ -41,26 +41,12 @@ func NewDrivesItemRootPermissionsItemGrantRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewDrivesItemRootPermissionsItemGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation grant users access to a link represented by a [permission][].
-func (m *DrivesItemRootPermissionsItemGrantRequestBuilder) CreatePostRequestInformation(ctx context.Context, body DrivesItemRootPermissionsItemGrantPostRequestBodyable, requestConfiguration *DrivesItemRootPermissionsItemGrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post grant users access to a link represented by a [permission][].
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
 func (m *DrivesItemRootPermissionsItemGrantRequestBuilder) Post(ctx context.Context, body DrivesItemRootPermissionsItemGrantPostRequestBodyable, requestConfiguration *DrivesItemRootPermissionsItemGrantRequestBuilderPostRequestConfiguration)(DrivesItemRootPermissionsItemGrantResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *DrivesItemRootPermissionsItemGrantRequestBuilder) Post(ctx context.Cont
         return nil, nil
     }
     return res.(DrivesItemRootPermissionsItemGrantResponseable), nil
+}
+// ToPostRequestInformation grant users access to a link represented by a [permission][].
+func (m *DrivesItemRootPermissionsItemGrantRequestBuilder) ToPostRequestInformation(ctx context.Context, body DrivesItemRootPermissionsItemGrantPostRequestBodyable, requestConfiguration *DrivesItemRootPermissionsItemGrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

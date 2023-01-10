@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Contains rule types for Win32 LOB apps.
 type Win32LobAppRuleType int
 
 const (

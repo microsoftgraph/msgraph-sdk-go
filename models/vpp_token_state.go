@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Possible states associated with an Apple Volume Purchase Program token.
 type VppTokenState int
 
 const (

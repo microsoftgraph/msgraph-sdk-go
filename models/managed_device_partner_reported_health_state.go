@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Available health states for the Device Health API
 type ManagedDevicePartnerReportedHealthState int
 
 const (

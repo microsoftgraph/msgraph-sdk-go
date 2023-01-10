@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemOnenotePagesItemCopyToSectionPostRequestBody provides operations to call the copyToSection method.
+// ItemOnenotePagesItemCopyToSectionPostRequestBody 
 type ItemOnenotePagesItemCopyToSectionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}

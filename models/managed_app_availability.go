@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// A managed (MAM) application's availability.
 type ManagedAppAvailability int
 
 const (

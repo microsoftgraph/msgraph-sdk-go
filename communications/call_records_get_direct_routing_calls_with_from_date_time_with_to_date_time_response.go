@@ -6,7 +6,7 @@ import (
     iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19 "github.com/microsoftgraph/msgraph-sdk-go/models/callrecords"
 )
 
-// CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse provides operations to call the getDirectRoutingCalls method.
+// CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse 
 type CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
     // The value property

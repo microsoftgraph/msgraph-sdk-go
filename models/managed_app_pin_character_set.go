@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Character set which is to be used for a user's app PIN
 type ManagedAppPinCharacterSet int
 
 const (

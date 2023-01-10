@@ -2,7 +2,7 @@ package callrecords
 import (
     "errors"
 )
-// Provides operations to call the getPstnCalls method.
+// 
 type PstnCallDurationSource int
 
 const (

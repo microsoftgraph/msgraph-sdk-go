@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Type of start menu app list visibility.
 type WindowsStartMenuAppListVisibilityType int
 
 const (

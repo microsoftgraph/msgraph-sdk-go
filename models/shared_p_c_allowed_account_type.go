@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Type of accounts that are allowed to share the PC.
 type SharedPCAllowedAccountType int
 
 const (

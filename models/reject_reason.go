@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the reject method.
+// 
 type RejectReason int
 
 const (

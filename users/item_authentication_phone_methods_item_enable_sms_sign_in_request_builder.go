@@ -41,24 +41,12 @@ func NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation enable SMS sign-in for an existing `mobile` phone number registered to a user. To be successfully enabled:
-func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post enable SMS sign-in for an existing `mobile` phone number registered to a user. To be successfully enabled:
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
 func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) Post(c
         return err
     }
     return nil
+}
+// ToPostRequestInformation enable SMS sign-in for an existing `mobile` phone number registered to a user. To be successfully enabled:
+func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

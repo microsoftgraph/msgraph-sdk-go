@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Contains properties for upload request states.
 type MobileAppContentFileUploadState int
 
 const (

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Call provides operations to manage the collection of agreement entities.
+// Call 
 type Call struct {
     Entity
     // The audioRoutingGroups property
@@ -29,7 +29,7 @@ type Call struct {
     mediaConfig MediaConfigable
     // Read-only. The call media state.
     mediaState CallMediaStateable
-    // The meeting information that's required for joining a meeting.
+    // The meeting information. Required information for meeting scenarios.
     meetingInfo MeetingInfoable
     // The myParticipantId property
     myParticipantId *string
@@ -384,7 +384,7 @@ func (m *Call) GetMediaConfig()(MediaConfigable) {
 func (m *Call) GetMediaState()(CallMediaStateable) {
     return m.mediaState
 }
-// GetMeetingInfo gets the meetingInfo property value. The meeting information that's required for joining a meeting.
+// GetMeetingInfo gets the meetingInfo property value. The meeting information. Required information for meeting scenarios.
 func (m *Call) GetMeetingInfo()(MeetingInfoable) {
     return m.meetingInfo
 }
@@ -658,7 +658,7 @@ func (m *Call) SetMediaConfig(value MediaConfigable)() {
 func (m *Call) SetMediaState(value CallMediaStateable)() {
     m.mediaState = value
 }
-// SetMeetingInfo sets the meetingInfo property value. The meeting information that's required for joining a meeting.
+// SetMeetingInfo sets the meetingInfo property value. The meeting information. Required information for meeting scenarios.
 func (m *Call) SetMeetingInfo(value MeetingInfoable)() {
     m.meetingInfo = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriveItem provides operations to manage the appCatalogs singleton.
+// DriveItem 
 type DriveItem struct {
     BaseItem
     // Analytics about the view activities that took place on this item.
