@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Possible values of Cloud Block Level
 type DefenderCloudBlockLevelType int
 
 const (

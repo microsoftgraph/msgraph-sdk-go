@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Possible ways of adding a mobile device to management.
 type DeviceEnrollmentType int
 
 const (

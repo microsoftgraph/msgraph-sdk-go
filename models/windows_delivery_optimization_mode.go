@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Delivery optimization mode for peer distribution
 type WindowsDeliveryOptimizationMode int
 
 const (

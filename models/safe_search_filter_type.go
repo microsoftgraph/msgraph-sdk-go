@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Specifies what level of safe search (filtering adult content) is required
 type SafeSearchFilterType int
 
 const (

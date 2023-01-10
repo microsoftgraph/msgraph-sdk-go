@@ -41,24 +41,12 @@ func NewDrivesItemRootUnfollowRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewDrivesItemRootUnfollowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation unfollow a driveItem.
-func (m *DrivesItemRootUnfollowRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DrivesItemRootUnfollowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post unfollow a driveItem.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
 func (m *DrivesItemRootUnfollowRequestBuilder) Post(ctx context.Context, requestConfiguration *DrivesItemRootUnfollowRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *DrivesItemRootUnfollowRequestBuilder) Post(ctx context.Context, request
         return err
     }
     return nil
+}
+// ToPostRequestInformation unfollow a driveItem.
+func (m *DrivesItemRootUnfollowRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DrivesItemRootUnfollowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

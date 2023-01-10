@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Windows Hello for Business pin usage options
 type WindowsHelloForBusinessPinUsage int
 
 const (

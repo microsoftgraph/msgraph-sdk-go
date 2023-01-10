@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// App configuration key types.
 type MdmAppConfigKeyType int
 
 const (

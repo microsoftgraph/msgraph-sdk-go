@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// The enum to specify the channels for Microsoft Edge apps.
 type MicrosoftEdgeChannel int
 
 const (

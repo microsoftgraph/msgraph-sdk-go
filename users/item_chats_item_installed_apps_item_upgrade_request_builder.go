@@ -41,24 +41,12 @@ func NewItemChatsItemInstalledAppsItemUpgradeRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemInstalledAppsItemUpgradeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation upgrade an app installation within a chat.
-func (m *ItemChatsItemInstalledAppsItemUpgradeRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post upgrade an app installation within a chat.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
 func (m *ItemChatsItemInstalledAppsItemUpgradeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *ItemChatsItemInstalledAppsItemUpgradeRequestBuilder) Post(ctx context.C
         return err
     }
     return nil
+}
+// ToPostRequestInformation upgrade an app installation within a chat.
+func (m *ItemChatsItemInstalledAppsItemUpgradeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Compliance state.
 type ComplianceState int
 
 const (

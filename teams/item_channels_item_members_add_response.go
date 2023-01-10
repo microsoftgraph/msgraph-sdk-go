@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ItemChannelsItemMembersAddResponse provides operations to call the add method.
+// ItemChannelsItemMembersAddResponse 
 type ItemChannelsItemMembersAddResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
     // The value property

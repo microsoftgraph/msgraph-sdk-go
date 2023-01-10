@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the changeScreenSharingRole method.
+// 
 type ScreenSharingRole int
 
 const (

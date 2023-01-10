@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// TV content rating labels in Germany
 type RatingGermanyTelevisionType int
 
 const (

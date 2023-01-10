@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the sync method.
+// The type of Exchange Connector sync requested.
 type DeviceManagementExchangeConnectorSyncType int
 
 const (

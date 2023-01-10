@@ -42,26 +42,12 @@ func NewItemMailFoldersItemMessagesItemCopyRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemMessagesItemCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation copy a message to a folder within the user's mailbox.
-func (m *ItemMailFoldersItemMessagesItemCopyRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemMailFoldersItemMessagesItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post copy a message to a folder within the user's mailbox.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
 func (m *ItemMailFoldersItemMessagesItemCopyRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemMessagesItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemCopyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -77,4 +63,18 @@ func (m *ItemMailFoldersItemMessagesItemCopyRequestBuilder) Post(ctx context.Con
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
+}
+// ToPostRequestInformation copy a message to a folder within the user's mailbox.
+func (m *ItemMailFoldersItemMessagesItemCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemMessagesItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

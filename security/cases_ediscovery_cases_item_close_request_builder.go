@@ -41,24 +41,12 @@ func NewCasesEdiscoveryCasesItemCloseRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCloseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation close an eDiscovery case. For details, see Close a case.
-func (m *CasesEdiscoveryCasesItemCloseRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCloseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post close an eDiscovery case. For details, see Close a case.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemCloseRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCloseRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *CasesEdiscoveryCasesItemCloseRequestBuilder) Post(ctx context.Context, 
         return err
     }
     return nil
+}
+// ToPostRequestInformation close an eDiscovery case. For details, see Close a case.
+func (m *CasesEdiscoveryCasesItemCloseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCloseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

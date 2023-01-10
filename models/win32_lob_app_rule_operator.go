@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Contains properties for detection operator.
 type Win32LobAppRuleOperator int
 
 const (

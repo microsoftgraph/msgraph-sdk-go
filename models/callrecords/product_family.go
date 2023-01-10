@@ -2,7 +2,7 @@ package callrecords
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// 
 type ProductFamily int
 
 const (

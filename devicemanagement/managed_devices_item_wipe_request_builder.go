@@ -41,22 +41,9 @@ func NewManagedDevicesItemWipeRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemWipeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation wipe a device
-func (m *ManagedDevicesItemWipeRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ManagedDevicesItemWipePostRequestBodyable, requestConfiguration *ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post wipe a device
 func (m *ManagedDevicesItemWipeRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemWipePostRequestBodyable, requestConfiguration *ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -69,4 +56,17 @@ func (m *ManagedDevicesItemWipeRequestBuilder) Post(ctx context.Context, body Ma
         return err
     }
     return nil
+}
+// ToPostRequestInformation wipe a device
+func (m *ManagedDevicesItemWipeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemWipePostRequestBodyable, requestConfiguration *ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

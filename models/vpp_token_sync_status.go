@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Possible sync statuses associated with an Apple Volume Purchase Program token.
 type VppTokenSyncStatus int
 
 const (

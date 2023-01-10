@@ -41,25 +41,12 @@ func NewTeamworkSendActivityNotificationRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation send an activity feed notification to a user. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
-func (m *TeamworkSendActivityNotificationRequestBuilder) CreatePostRequestInformation(ctx context.Context, body TeamworkSendActivityNotificationPostRequestBodyable, requestConfiguration *TeamworkSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post send an activity feed notification to a user. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/userteamwork-sendactivitynotification?view=graph-rest-1.0
 func (m *TeamworkSendActivityNotificationRequestBuilder) Post(ctx context.Context, body TeamworkSendActivityNotificationPostRequestBodyable, requestConfiguration *TeamworkSendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *TeamworkSendActivityNotificationRequestBuilder) Post(ctx context.Contex
         return err
     }
     return nil
+}
+// ToPostRequestInformation send an activity feed notification to a user. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+func (m *TeamworkSendActivityNotificationRequestBuilder) ToPostRequestInformation(ctx context.Context, body TeamworkSendActivityNotificationPostRequestBodyable, requestConfiguration *TeamworkSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

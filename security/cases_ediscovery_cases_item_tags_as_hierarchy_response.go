@@ -6,7 +6,7 @@ import (
     idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae "github.com/microsoftgraph/msgraph-sdk-go/models/security"
 )
 
-// CasesEdiscoveryCasesItemTagsAsHierarchyResponse provides operations to call the asHierarchy method.
+// CasesEdiscoveryCasesItemTagsAsHierarchyResponse 
 type CasesEdiscoveryCasesItemTagsAsHierarchyResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
     // The value property

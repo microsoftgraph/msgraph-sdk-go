@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Storage locations where managed apps can potentially store their data
 type ManagedAppDataStorageLocation int
 
 const (

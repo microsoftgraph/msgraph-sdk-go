@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Pin Character Requirements
 type WindowsInformationProtectionPinCharacterRequirements int
 
 const (

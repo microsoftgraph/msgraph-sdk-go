@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Contains value for notification status.
 type Win32LobAppNotification int
 
 const (

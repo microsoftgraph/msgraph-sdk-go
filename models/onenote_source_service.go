@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the getRecentNotebooks method.
+// 
 type OnenoteSourceService int
 
 const (

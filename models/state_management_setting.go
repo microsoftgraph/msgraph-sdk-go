@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// State Management Setting.
 type StateManagementSetting int
 
 const (

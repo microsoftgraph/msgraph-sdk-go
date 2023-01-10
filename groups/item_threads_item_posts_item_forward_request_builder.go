@@ -41,25 +41,12 @@ func NewItemThreadsItemPostsItemForwardRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsItemPostsItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
-func (m *ItemThreadsItemPostsItemForwardRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
 func (m *ItemThreadsItemPostsItemForwardRequestBuilder) Post(ctx context.Context, body ItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *ItemThreadsItemPostsItemForwardRequestBuilder) Post(ctx context.Context
         return err
     }
     return nil
+}
+// ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+func (m *ItemThreadsItemPostsItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Represents the type of pricing of a booking service.
 type BookingPriceType int
 
 const (

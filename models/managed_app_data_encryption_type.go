@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Represents the level to which app data is encrypted for managed apps
 type ManagedAppDataEncryptionType int
 
 const (

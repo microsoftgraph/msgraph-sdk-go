@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Possible statuses associated with a generated report
 type DeviceManagementReportStatus int
 
 const (

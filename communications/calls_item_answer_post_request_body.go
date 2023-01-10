@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CallsItemAnswerPostRequestBody provides operations to call the answer method.
+// CallsItemAnswerPostRequestBody 
 type CallsItemAnswerPostRequestBody struct {
     // The acceptedModalities property
     acceptedModalities []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality

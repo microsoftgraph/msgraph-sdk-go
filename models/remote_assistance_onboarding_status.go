@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// The current TeamViewer connector status
 type RemoteAssistanceOnboardingStatus int
 
 const (

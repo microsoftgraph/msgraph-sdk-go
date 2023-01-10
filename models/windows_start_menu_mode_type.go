@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Type of display modes for the start menu.
 type WindowsStartMenuModeType int
 
 const (

@@ -249,6 +249,7 @@ func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df63981
     if m.requestAdapter.GetBaseUrl() == "" {
         m.requestAdapter.SetBaseUrl("https://graph.microsoft.com/v1.0")
     }
+    m.pathParameters["baseurl"] = m.requestAdapter.GetBaseUrl()
     return m
 }
 // Contacts provides operations to manage the collection of orgContact entities.

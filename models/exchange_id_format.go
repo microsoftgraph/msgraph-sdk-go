@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the translateExchangeIds method.
+// 
 type ExchangeIdFormat int
 
 const (

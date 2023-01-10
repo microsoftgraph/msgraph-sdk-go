@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Allow the device to send diagnostic and usage telemetry data, such as Watson.
 type DiagnosticDataSubmissionMode int
 
 const (

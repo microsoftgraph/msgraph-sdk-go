@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Defender’s default action to take on detected Malware threats.
 type DefenderThreatAction int
 
 const (

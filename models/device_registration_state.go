@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Device registration status.
 type DeviceRegistrationState int
 
 const (

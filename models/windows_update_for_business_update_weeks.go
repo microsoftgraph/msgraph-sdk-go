@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Scheduled the update installation on the weeks of the month
 type WindowsUpdateForBusinessUpdateWeeks int
 
 const (

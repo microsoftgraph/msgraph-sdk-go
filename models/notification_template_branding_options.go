@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 type NotificationTemplateBrandingOptions int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Android Work Profile default app permission policy type.
 type AndroidWorkProfileDefaultAppPermissionPolicyType int
 
 const (

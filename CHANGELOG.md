@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.51.0] - 2023-01-10
+
+### Changed
+
+- Weekly generation.
+- BREAKING: createXXXRequestInformation methods are now named toXXXRequestInformation.
+
 ## [0.50.0] - 2022-12-28
 
 ### Changed

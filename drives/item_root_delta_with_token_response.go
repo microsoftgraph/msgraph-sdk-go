@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ItemRootDeltaWithTokenResponse provides operations to call the delta method.
+// ItemRootDeltaWithTokenResponse 
 type ItemRootDeltaWithTokenResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponse
     // The value property

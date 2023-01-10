@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Mobile device management authority.
 type MdmAuthority int
 
 const (

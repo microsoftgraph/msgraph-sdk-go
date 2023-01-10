@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Top level failure categories for enrollment.
 type DeviceEnrollmentFailureReason int
 
 const (

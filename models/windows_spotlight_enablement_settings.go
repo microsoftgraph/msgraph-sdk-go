@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Allows IT admind to set a predefined default search engine for MDM-Controlled devices
 type WindowsSpotlightEnablementSettings int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Contains all supported Powershell Script output detection type.
 type Win32LobAppPowerShellScriptRuleOperationType int
 
 const (

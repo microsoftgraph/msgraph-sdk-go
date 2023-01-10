@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Partner state of this tenant.
 type MobileThreatPartnerTenantState int
 
 const (

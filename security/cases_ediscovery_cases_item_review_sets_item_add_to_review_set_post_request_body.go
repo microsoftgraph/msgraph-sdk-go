@@ -5,7 +5,7 @@ import (
     idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae "github.com/microsoftgraph/msgraph-sdk-go/models/security"
 )
 
-// CasesEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody provides operations to call the addToReviewSet method.
+// CasesEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody 
 type CasesEdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Indicates the type of return code.
 type Win32LobAppReturnCodeType int
 
 const (

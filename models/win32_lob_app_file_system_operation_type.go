@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Contains all supported file system detection type.
 type Win32LobAppFileSystemOperationType int
 
 const (

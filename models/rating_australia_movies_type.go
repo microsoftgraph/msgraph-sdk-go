@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Movies rating labels in Australia
 type RatingAustraliaMoviesType int
 
 const (

@@ -41,26 +41,12 @@ func NewServiceAnnouncementMessagesArchiveRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation archive a list of serviceUpdateMessages for the signed in user.
-func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post archive a list of serviceUpdateMessages for the signed in user.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesArchiveResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) Post(ctx context.Cont
         return nil, nil
     }
     return res.(ServiceAnnouncementMessagesArchiveResponseable), nil
+}
+// ToPostRequestInformation archive a list of serviceUpdateMessages for the signed in user.
+func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

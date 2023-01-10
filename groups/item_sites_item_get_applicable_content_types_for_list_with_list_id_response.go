@@ -5,7 +5,7 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ItemSitesItemGetApplicableContentTypesForListWithListIdResponse provides operations to call the getApplicableContentTypesForList method.
+// ItemSitesItemGetApplicableContentTypesForListWithListIdResponse 
 type ItemSitesItemGetApplicableContentTypesForListWithListIdResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
     // The value property

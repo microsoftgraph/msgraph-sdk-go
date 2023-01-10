@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to servicePrincipal.
+// 
 type PermissionClassificationType int
 
 const (

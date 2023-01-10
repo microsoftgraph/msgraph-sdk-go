@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Type of managed browser
 type ManagedBrowserType int
 
 const (

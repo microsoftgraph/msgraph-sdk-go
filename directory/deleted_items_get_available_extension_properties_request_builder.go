@@ -41,26 +41,12 @@ func NewDeletedItemsGetAvailableExtensionPropertiesRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsGetAvailableExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
-func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body DeletedItemsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *DeletedItemsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
 func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context, body DeletedItemsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *DeletedItemsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(DeletedItemsGetAvailableExtensionPropertiesResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) Post(ctx con
         return nil, nil
     }
     return res.(DeletedItemsGetAvailableExtensionPropertiesResponseable), nil
+}
+// ToPostRequestInformation return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
+func (m *DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedItemsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *DeletedItemsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

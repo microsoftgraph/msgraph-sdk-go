@@ -39,7 +39,7 @@ type AccessReviewScheduleDefinition struct {
     // This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
     status *string
 }
-// NewAccessReviewScheduleDefinition instantiates a new AccessReviewScheduleDefinition and sets the default values.
+// NewAccessReviewScheduleDefinition instantiates a new accessReviewScheduleDefinition and sets the default values.
 func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
     m := &AccessReviewScheduleDefinition{
         Entity: *NewEntity(),

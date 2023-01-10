@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Indicates the package type of an MSI Win32LobApp.
 type Win32LobAppMsiPackageType int
 
 const (

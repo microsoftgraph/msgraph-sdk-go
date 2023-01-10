@@ -41,22 +41,9 @@ func NewItemManagedDevicesItemCleanWindowsDeviceRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemCleanWindowsDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation clean Windows device
-func (m *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemManagedDevicesItemCleanWindowsDevicePostRequestBodyable, requestConfiguration *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post clean Windows device
 func (m *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemCleanWindowsDevicePostRequestBodyable, requestConfiguration *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -69,4 +56,17 @@ func (m *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) Post(ctx contex
         return err
     }
     return nil
+}
+// ToPostRequestInformation clean Windows device
+func (m *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemCleanWindowsDevicePostRequestBodyable, requestConfiguration *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

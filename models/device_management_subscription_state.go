@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Tenant mobile device management subscription state.
 type DeviceManagementSubscriptionState int
 
 const (

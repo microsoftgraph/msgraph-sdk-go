@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// 
 type AlertDetermination int
 
 const (

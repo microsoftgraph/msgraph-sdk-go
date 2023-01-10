@@ -21,7 +21,7 @@ type List struct {
     list ListInfoable
     // The collection of long-running operations on the list.
     operations []RichLongRunningOperationable
-    // Returns identifiers useful for SharePoint REST compatibility. Read-only.
+    // The sharepointIds property
     sharepointIds SharepointIdsable
     // The set of subscriptions on the list.
     subscriptions []Subscriptionable
@@ -194,7 +194,7 @@ func (m *List) GetList()(ListInfoable) {
 func (m *List) GetOperations()([]RichLongRunningOperationable) {
     return m.operations
 }
-// GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// GetSharepointIds gets the sharepointIds property value. The sharepointIds property
 func (m *List) GetSharepointIds()(SharepointIdsable) {
     return m.sharepointIds
 }
@@ -322,7 +322,7 @@ func (m *List) SetList(value ListInfoable)() {
 func (m *List) SetOperations(value []RichLongRunningOperationable)() {
     m.operations = value
 }
-// SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// SetSharepointIds sets the sharepointIds property value. The sharepointIds property
 func (m *List) SetSharepointIds(value SharepointIdsable)() {
     m.sharepointIds = value
 }

@@ -42,26 +42,12 @@ func NewItemMailFoldersItemChildFoldersItemCopyRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersItemCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation copy a mailfolder and its contents to another mailfolder.
-func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemMailFoldersItemChildFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post copy a mailfolder and its contents to another mailfolder.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemChildFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemCopyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -77,4 +63,18 @@ func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) Post(ctx context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable), nil
+}
+// ToPostRequestInformation copy a mailfolder and its contents to another mailfolder.
+func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemChildFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

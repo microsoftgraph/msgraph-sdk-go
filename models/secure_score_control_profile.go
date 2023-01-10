@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecureScoreControlProfile provides operations to manage the appCatalogs singleton.
+// SecureScoreControlProfile 
 type SecureScoreControlProfile struct {
     Entity
     // Control action type (Config, Review, Behavior).
@@ -14,11 +14,11 @@ type SecureScoreControlProfile struct {
     actionUrl *string
     // GUID string for tenant ID.
     azureTenantId *string
-    // The complianceInformation property
+    // The collection of compliance information associated with secure score control
     complianceInformation []ComplianceInformationable
     // Control action category (Identity, Data, Device, Apps, Infrastructure).
     controlCategory *string
-    // The controlStateUpdates property
+    // Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
     controlStateUpdates []SecureScoreControlStateUpdateable
     // Flag to indicate if a control is depreciated.
     deprecated *bool
@@ -40,7 +40,7 @@ type SecureScoreControlProfile struct {
     threats []string
     // The tier property
     tier *string
-    // Title of the control.
+    // The title property
     title *string
     // The userImpact property
     userImpact *string
@@ -70,7 +70,7 @@ func (m *SecureScoreControlProfile) GetActionUrl()(*string) {
 func (m *SecureScoreControlProfile) GetAzureTenantId()(*string) {
     return m.azureTenantId
 }
-// GetComplianceInformation gets the complianceInformation property value. The complianceInformation property
+// GetComplianceInformation gets the complianceInformation property value. The collection of compliance information associated with secure score control
 func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInformationable) {
     return m.complianceInformation
 }
@@ -78,7 +78,7 @@ func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInfor
 func (m *SecureScoreControlProfile) GetControlCategory()(*string) {
     return m.controlCategory
 }
-// GetControlStateUpdates gets the controlStateUpdates property value. The controlStateUpdates property
+// GetControlStateUpdates gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
 func (m *SecureScoreControlProfile) GetControlStateUpdates()([]SecureScoreControlStateUpdateable) {
     return m.controlStateUpdates
 }
@@ -329,7 +329,7 @@ func (m *SecureScoreControlProfile) GetThreats()([]string) {
 func (m *SecureScoreControlProfile) GetTier()(*string) {
     return m.tier
 }
-// GetTitle gets the title property value. Title of the control.
+// GetTitle gets the title property value. The title property
 func (m *SecureScoreControlProfile) GetTitle()(*string) {
     return m.title
 }
@@ -483,7 +483,7 @@ func (m *SecureScoreControlProfile) SetActionUrl(value *string)() {
 func (m *SecureScoreControlProfile) SetAzureTenantId(value *string)() {
     m.azureTenantId = value
 }
-// SetComplianceInformation sets the complianceInformation property value. The complianceInformation property
+// SetComplianceInformation sets the complianceInformation property value. The collection of compliance information associated with secure score control
 func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceInformationable)() {
     m.complianceInformation = value
 }
@@ -491,7 +491,7 @@ func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceI
 func (m *SecureScoreControlProfile) SetControlCategory(value *string)() {
     m.controlCategory = value
 }
-// SetControlStateUpdates sets the controlStateUpdates property value. The controlStateUpdates property
+// SetControlStateUpdates sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
 func (m *SecureScoreControlProfile) SetControlStateUpdates(value []SecureScoreControlStateUpdateable)() {
     m.controlStateUpdates = value
 }
@@ -535,7 +535,7 @@ func (m *SecureScoreControlProfile) SetThreats(value []string)() {
 func (m *SecureScoreControlProfile) SetTier(value *string)() {
     m.tier = value
 }
-// SetTitle sets the title property value. Title of the control.
+// SetTitle sets the title property value. The title property
 func (m *SecureScoreControlProfile) SetTitle(value *string)() {
     m.title = value
 }
