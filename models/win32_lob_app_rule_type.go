@@ -15,7 +15,7 @@ const (
 func (i Win32LobAppRuleType) String() string {
     return []string{"detection", "requirement"}[i]
 }
-func ParseWin32LobAppRuleType(v string) (interface{}, error) {
+func ParseWin32LobAppRuleType(v string) (any, error) {
     result := DETECTION_WIN32LOBAPPRULETYPE
     switch v {
         case "detection":

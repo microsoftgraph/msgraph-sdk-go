@@ -8,7 +8,7 @@ import (
 // ItemDrivesItemItemsItemInvitePostRequestBody 
 type ItemDrivesItemItemsItemInvitePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expirationDateTime property
     expirationDateTime *string
     // The message property
@@ -30,7 +30,7 @@ type ItemDrivesItemItemsItemInvitePostRequestBody struct {
 func NewItemDrivesItemItemsItemInvitePostRequestBody()(*ItemDrivesItemItemsItemInvitePostRequestBody) {
     m := &ItemDrivesItemItemsItemInvitePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDrivesItemItemsItemInvitePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateItemDrivesItemItemsItemInvitePostRequestBodyFromDiscriminatorValue(pa
     return NewItemDrivesItemItemsItemInvitePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDrivesItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
@@ -229,7 +229,7 @@ func (m *ItemDrivesItemItemsItemInvitePostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemItemsItemInvitePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDrivesItemItemsItemInvitePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property

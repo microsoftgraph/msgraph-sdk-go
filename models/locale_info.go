@@ -7,7 +7,7 @@ import (
 // LocaleInfo 
 type LocaleInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A name representing the user's locale in natural language, for example, 'English (United States)'.
     displayName *string
     // A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
@@ -19,7 +19,7 @@ type LocaleInfo struct {
 func NewLocaleInfo()(*LocaleInfo) {
     m := &LocaleInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLocaleInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateLocaleInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewLocaleInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LocaleInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *LocaleInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. A name representing the user's locale in natural language, for example, 'English (United States)'.
@@ -106,7 +106,7 @@ func (m *LocaleInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LocaleInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *LocaleInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. A name representing the user's locale in natural language, for example, 'English (United States)'.

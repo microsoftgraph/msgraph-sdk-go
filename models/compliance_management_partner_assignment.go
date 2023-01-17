@@ -7,7 +7,7 @@ import (
 // ComplianceManagementPartnerAssignment user group targeting for Compliance Management Partner
 type ComplianceManagementPartnerAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Group assignment target.
@@ -17,7 +17,7 @@ type ComplianceManagementPartnerAssignment struct {
 func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssignment) {
     m := &ComplianceManagementPartnerAssignment{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue(parseNode
     return NewComplianceManagementPartnerAssignment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComplianceManagementPartnerAssignment) GetAdditionalData()(map[string]interface{}) {
+func (m *ComplianceManagementPartnerAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ComplianceManagementPartnerAssignment) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComplianceManagementPartnerAssignment) SetAdditionalData(value map[string]interface{})() {
+func (m *ComplianceManagementPartnerAssignment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

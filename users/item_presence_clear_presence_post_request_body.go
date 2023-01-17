@@ -7,7 +7,7 @@ import (
 // ItemPresenceClearPresencePostRequestBody 
 type ItemPresenceClearPresencePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The sessionId property
     sessionId *string
 }
@@ -15,7 +15,7 @@ type ItemPresenceClearPresencePostRequestBody struct {
 func NewItemPresenceClearPresencePostRequestBody()(*ItemPresenceClearPresencePostRequestBody) {
     m := &ItemPresenceClearPresencePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemPresenceClearPresencePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemPresenceClearPresencePostRequestBodyFromDiscriminatorValue(parseN
     return NewItemPresenceClearPresencePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPresenceClearPresencePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemPresenceClearPresencePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemPresenceClearPresencePostRequestBody) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPresenceClearPresencePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemPresenceClearPresencePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSessionId sets the sessionId property value. The sessionId property

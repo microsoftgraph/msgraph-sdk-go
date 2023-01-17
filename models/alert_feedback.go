@@ -16,7 +16,7 @@ const (
 func (i AlertFeedback) String() string {
     return []string{"unknown", "truePositive", "falsePositive", "benignPositive", "unknownFutureValue"}[i]
 }
-func ParseAlertFeedback(v string) (interface{}, error) {
+func ParseAlertFeedback(v string) (any, error) {
     result := UNKNOWN_ALERTFEEDBACK
     switch v {
         case "unknown":

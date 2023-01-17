@@ -15,7 +15,7 @@ const (
 func (i ChannelMembershipType) String() string {
     return []string{"standard", "private", "unknownFutureValue", "shared"}[i]
 }
-func ParseChannelMembershipType(v string) (interface{}, error) {
+func ParseChannelMembershipType(v string) (any, error) {
     result := STANDARD_CHANNELMEMBERSHIPTYPE
     switch v {
         case "standard":

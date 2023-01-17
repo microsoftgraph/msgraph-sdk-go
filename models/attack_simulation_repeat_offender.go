@@ -7,7 +7,7 @@ import (
 // AttackSimulationRepeatOffender 
 type AttackSimulationRepeatOffender struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The user in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
     // The OdataType property
@@ -19,7 +19,7 @@ type AttackSimulationRepeatOffender struct {
 func NewAttackSimulationRepeatOffender()(*AttackSimulationRepeatOffender) {
     m := &AttackSimulationRepeatOffender{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttackSimulationRepeatOffenderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAttackSimulationRepeatOffenderFromDiscriminatorValue(parseNode i878a8
     return NewAttackSimulationRepeatOffender(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttackSimulationRepeatOffender) GetAdditionalData()(map[string]interface{}) {
+func (m *AttackSimulationRepeatOffender) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttackSimulationUser gets the attackSimulationUser property value. The user in an attack simulation and training campaign.
@@ -106,7 +106,7 @@ func (m *AttackSimulationRepeatOffender) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttackSimulationRepeatOffender) SetAdditionalData(value map[string]interface{})() {
+func (m *AttackSimulationRepeatOffender) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttackSimulationUser sets the attackSimulationUser property value. The user in an attack simulation and training campaign.

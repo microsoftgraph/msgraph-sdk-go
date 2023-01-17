@@ -16,7 +16,7 @@ const (
 func (i PlannerPreviewType) String() string {
     return []string{"automatic", "noPreview", "checklist", "description", "reference"}[i]
 }
-func ParsePlannerPreviewType(v string) (interface{}, error) {
+func ParsePlannerPreviewType(v string) (any, error) {
     result := AUTOMATIC_PLANNERPREVIEWTYPE
     switch v {
         case "automatic":

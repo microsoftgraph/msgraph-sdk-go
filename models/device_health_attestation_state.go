@@ -8,7 +8,7 @@ import (
 // DeviceHealthAttestationState 
 type DeviceHealthAttestationState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
     attestationIdentityKey *string
     // On or Off of BitLocker Drive Encryption
@@ -80,7 +80,7 @@ type DeviceHealthAttestationState struct {
 func NewDeviceHealthAttestationState()(*DeviceHealthAttestationState) {
     m := &DeviceHealthAttestationState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceHealthAttestationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,7 +88,7 @@ func CreateDeviceHealthAttestationStateFromDiscriminatorValue(parseNode i878a80d
     return NewDeviceHealthAttestationState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthAttestationState) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceHealthAttestationState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttestationIdentityKey gets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
@@ -767,7 +767,7 @@ func (m *DeviceHealthAttestationState) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthAttestationState) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceHealthAttestationState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttestationIdentityKey sets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.

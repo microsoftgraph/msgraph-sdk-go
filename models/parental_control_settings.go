@@ -7,7 +7,7 @@ import (
 // ParentalControlSettings 
 type ParentalControlSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
     countriesBlockedForMinors []string
     // Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
@@ -19,7 +19,7 @@ type ParentalControlSettings struct {
 func NewParentalControlSettings()(*ParentalControlSettings) {
     m := &ParentalControlSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateParentalControlSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateParentalControlSettingsFromDiscriminatorValue(parseNode i878a80d2330e
     return NewParentalControlSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParentalControlSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ParentalControlSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCountriesBlockedForMinors gets the countriesBlockedForMinors property value. Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
@@ -110,7 +110,7 @@ func (m *ParentalControlSettings) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParentalControlSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ParentalControlSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCountriesBlockedForMinors sets the countriesBlockedForMinors property value. Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.

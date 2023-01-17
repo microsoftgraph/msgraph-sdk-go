@@ -8,7 +8,7 @@ import (
 // MobileAppInstallTimeSettings contains properties used to determine when to offer an app to devices and when to install the app on devices.
 type MobileAppInstallTimeSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The time at which the app should be installed.
     deadlineDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
@@ -22,7 +22,7 @@ type MobileAppInstallTimeSettings struct {
 func NewMobileAppInstallTimeSettings()(*MobileAppInstallTimeSettings) {
     m := &MobileAppInstallTimeSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppInstallTimeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateMobileAppInstallTimeSettingsFromDiscriminatorValue(parseNode i878a80d
     return NewMobileAppInstallTimeSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppInstallTimeSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppInstallTimeSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeadlineDateTime gets the deadlineDateTime property value. The time at which the app should be installed.
@@ -129,7 +129,7 @@ func (m *MobileAppInstallTimeSettings) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppInstallTimeSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppInstallTimeSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeadlineDateTime sets the deadlineDateTime property value. The time at which the app should be installed.

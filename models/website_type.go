@@ -16,7 +16,7 @@ const (
 func (i WebsiteType) String() string {
     return []string{"other", "home", "work", "blog", "profile"}[i]
 }
-func ParseWebsiteType(v string) (interface{}, error) {
+func ParseWebsiteType(v string) (any, error) {
     result := OTHER_WEBSITETYPE
     switch v {
         case "other":

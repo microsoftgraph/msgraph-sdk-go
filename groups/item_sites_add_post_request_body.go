@@ -8,7 +8,7 @@ import (
 // ItemSitesAddPostRequestBody 
 type ItemSitesAddPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable
 }
@@ -16,7 +16,7 @@ type ItemSitesAddPostRequestBody struct {
 func NewItemSitesAddPostRequestBody()(*ItemSitesAddPostRequestBody) {
     m := &ItemSitesAddPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSitesAddPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemSitesAddPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
     return NewItemSitesAddPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesAddPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSitesAddPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -71,7 +71,7 @@ func (m *ItemSitesAddPostRequestBody) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesAddPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSitesAddPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

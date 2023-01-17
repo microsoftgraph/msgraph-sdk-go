@@ -14,7 +14,7 @@ const (
 func (i ThreatAssessmentRequestSource) String() string {
     return []string{"undefined", "user", "administrator"}[i]
 }
-func ParseThreatAssessmentRequestSource(v string) (interface{}, error) {
+func ParseThreatAssessmentRequestSource(v string) (any, error) {
     result := UNDEFINED_THREATASSESSMENTREQUESTSOURCE
     switch v {
         case "undefined":

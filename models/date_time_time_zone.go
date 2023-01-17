@@ -7,7 +7,7 @@ import (
 // DateTimeTimeZone 
 type DateTimeTimeZone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
     dateTime *string
     // The OdataType property
@@ -19,7 +19,7 @@ type DateTimeTimeZone struct {
 func NewDateTimeTimeZone()(*DateTimeTimeZone) {
     m := &DateTimeTimeZone{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDateTimeTimeZoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDateTimeTimeZoneFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewDateTimeTimeZone(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DateTimeTimeZone) GetAdditionalData()(map[string]interface{}) {
+func (m *DateTimeTimeZone) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDateTime gets the dateTime property value. A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
@@ -106,7 +106,7 @@ func (m *DateTimeTimeZone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DateTimeTimeZone) SetAdditionalData(value map[string]interface{})() {
+func (m *DateTimeTimeZone) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDateTime sets the dateTime property value. A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).

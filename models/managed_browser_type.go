@@ -15,7 +15,7 @@ const (
 func (i ManagedBrowserType) String() string {
     return []string{"notConfigured", "microsoftEdge"}[i]
 }
-func ParseManagedBrowserType(v string) (interface{}, error) {
+func ParseManagedBrowserType(v string) (any, error) {
     result := NOTCONFIGURED_MANAGEDBROWSERTYPE
     switch v {
         case "notConfigured":

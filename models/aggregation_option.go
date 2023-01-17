@@ -7,7 +7,7 @@ import (
 // AggregationOption 
 type AggregationOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The bucketDefinition property
     bucketDefinition BucketAggregationDefinitionable
     // Computes aggregation on the field while the field exists in current entity type. Required.
@@ -21,7 +21,7 @@ type AggregationOption struct {
 func NewAggregationOption()(*AggregationOption) {
     m := &AggregationOption{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAggregationOptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAggregationOptionFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewAggregationOption(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AggregationOption) GetAdditionalData()(map[string]interface{}) {
+func (m *AggregationOption) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBucketDefinition gets the bucketDefinition property value. The bucketDefinition property
@@ -128,7 +128,7 @@ func (m *AggregationOption) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AggregationOption) SetAdditionalData(value map[string]interface{})() {
+func (m *AggregationOption) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBucketDefinition sets the bucketDefinition property value. The bucketDefinition property

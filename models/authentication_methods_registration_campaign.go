@@ -7,7 +7,7 @@ import (
 // AuthenticationMethodsRegistrationCampaign 
 type AuthenticationMethodsRegistrationCampaign struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Users and groups of users that are excluded from being prompted to set up the authentication method.
     excludeTargets []ExcludeTargetable
     // Users and groups of users that are prompted to set up the authentication method.
@@ -23,7 +23,7 @@ type AuthenticationMethodsRegistrationCampaign struct {
 func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegistrationCampaign) {
     m := &AuthenticationMethodsRegistrationCampaign{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue(parse
     return NewAuthenticationMethodsRegistrationCampaign(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeTargets gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
@@ -167,7 +167,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeTargets sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.

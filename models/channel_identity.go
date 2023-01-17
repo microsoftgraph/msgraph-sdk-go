@@ -7,7 +7,7 @@ import (
 // ChannelIdentity 
 type ChannelIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identity of the channel in which the message was posted.
     channelId *string
     // The OdataType property
@@ -19,7 +19,7 @@ type ChannelIdentity struct {
 func NewChannelIdentity()(*ChannelIdentity) {
     m := &ChannelIdentity{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChannelIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateChannelIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewChannelIdentity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChannelIdentity) GetAdditionalData()(map[string]interface{}) {
+func (m *ChannelIdentity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChannelId gets the channelId property value. The identity of the channel in which the message was posted.
@@ -106,7 +106,7 @@ func (m *ChannelIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChannelIdentity) SetAdditionalData(value map[string]interface{})() {
+func (m *ChannelIdentity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChannelId sets the channelId property value. The identity of the channel in which the message was posted.

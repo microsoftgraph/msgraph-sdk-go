@@ -7,7 +7,7 @@ import (
 // MeetingTimeSuggestion 
 type MeetingTimeSuggestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // An array that shows the availability status of each attendee for this meeting suggestion.
     attendeeAvailability []AttendeeAvailabilityable
     // A percentage that represents the likelhood of all the attendees attending.
@@ -29,7 +29,7 @@ type MeetingTimeSuggestion struct {
 func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {
     m := &MeetingTimeSuggestion{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMeetingTimeSuggestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateMeetingTimeSuggestionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMeetingTimeSuggestion(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MeetingTimeSuggestion) GetAdditionalData()(map[string]interface{}) {
+func (m *MeetingTimeSuggestion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttendeeAvailability gets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
@@ -233,7 +233,7 @@ func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MeetingTimeSuggestion) SetAdditionalData(value map[string]interface{})() {
+func (m *MeetingTimeSuggestion) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttendeeAvailability sets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.

@@ -25,7 +25,7 @@ const (
 func (i WindowsUpdateForBusinessUpdateWeeks) String() string {
     return []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek", "unknownFutureValue"}[i]
 }
-func ParseWindowsUpdateForBusinessUpdateWeeks(v string) (interface{}, error) {
+func ParseWindowsUpdateForBusinessUpdateWeeks(v string) (any, error) {
     result := USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
     switch v {
         case "userDefined":

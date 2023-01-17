@@ -16,7 +16,7 @@ const (
 func (i RiskDetectionTimingType) String() string {
     return []string{"notDefined", "realtime", "nearRealtime", "offline", "unknownFutureValue"}[i]
 }
-func ParseRiskDetectionTimingType(v string) (interface{}, error) {
+func ParseRiskDetectionTimingType(v string) (any, error) {
     result := NOTDEFINED_RISKDETECTIONTIMINGTYPE
     switch v {
         case "notDefined":

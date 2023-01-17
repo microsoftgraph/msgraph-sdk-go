@@ -7,7 +7,7 @@ import (
 // ImplicitGrantSettings 
 type ImplicitGrantSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
     enableAccessTokenIssuance *bool
     // Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
@@ -19,7 +19,7 @@ type ImplicitGrantSettings struct {
 func NewImplicitGrantSettings()(*ImplicitGrantSettings) {
     m := &ImplicitGrantSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateImplicitGrantSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateImplicitGrantSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewImplicitGrantSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImplicitGrantSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ImplicitGrantSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnableAccessTokenIssuance gets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
@@ -106,7 +106,7 @@ func (m *ImplicitGrantSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImplicitGrantSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ImplicitGrantSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnableAccessTokenIssuance sets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.

@@ -15,7 +15,7 @@ const (
 func (i PrintDuplexMode) String() string {
     return []string{"flipOnLongEdge", "flipOnShortEdge", "oneSided", "unknownFutureValue"}[i]
 }
-func ParsePrintDuplexMode(v string) (interface{}, error) {
+func ParsePrintDuplexMode(v string) (any, error) {
     result := FLIPONLONGEDGE_PRINTDUPLEXMODE
     switch v {
         case "flipOnLongEdge":

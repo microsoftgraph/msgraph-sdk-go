@@ -9,7 +9,7 @@ import (
 // KeyCredential 
 type KeyCredential struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Custom key identifier
     customKeyIdentifier []byte
     // Friendly name for the key. Optional.
@@ -33,7 +33,7 @@ type KeyCredential struct {
 func NewKeyCredential()(*KeyCredential) {
     m := &KeyCredential{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateKeyCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateKeyCredentialFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewKeyCredential(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KeyCredential) GetAdditionalData()(map[string]interface{}) {
+func (m *KeyCredential) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCustomKeyIdentifier gets the customKeyIdentifier property value. Custom key identifier
@@ -240,7 +240,7 @@ func (m *KeyCredential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KeyCredential) SetAdditionalData(value map[string]interface{})() {
+func (m *KeyCredential) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCustomKeyIdentifier sets the customKeyIdentifier property value. Custom key identifier

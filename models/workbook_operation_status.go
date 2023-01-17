@@ -15,7 +15,7 @@ const (
 func (i WorkbookOperationStatus) String() string {
     return []string{"notStarted", "running", "succeeded", "failed"}[i]
 }
-func ParseWorkbookOperationStatus(v string) (interface{}, error) {
+func ParseWorkbookOperationStatus(v string) (any, error) {
     result := NOTSTARTED_WORKBOOKOPERATIONSTATUS
     switch v {
         case "notStarted":

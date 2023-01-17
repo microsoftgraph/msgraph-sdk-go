@@ -7,7 +7,7 @@ import (
 // DriveRecipient 
 type DriveRecipient struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
     alias *string
     // The email address for the recipient, if the recipient has an associated email address.
@@ -21,7 +21,7 @@ type DriveRecipient struct {
 func NewDriveRecipient()(*DriveRecipient) {
     m := &DriveRecipient{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDriveRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateDriveRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewDriveRecipient(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DriveRecipient) GetAdditionalData()(map[string]interface{}) {
+func (m *DriveRecipient) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlias gets the alias property value. The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
@@ -128,7 +128,7 @@ func (m *DriveRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DriveRecipient) SetAdditionalData(value map[string]interface{})() {
+func (m *DriveRecipient) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlias sets the alias property value. The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).

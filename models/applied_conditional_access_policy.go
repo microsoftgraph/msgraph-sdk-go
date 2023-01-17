@@ -7,7 +7,7 @@ import (
 // AppliedConditionalAccessPolicy 
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
     displayName *string
     // Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
@@ -25,7 +25,7 @@ type AppliedConditionalAccessPolicy struct {
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
     m := &AppliedConditionalAccessPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppliedConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateAppliedConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a8
     return NewAppliedConditionalAccessPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
@@ -181,7 +181,7 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').

@@ -7,7 +7,7 @@ import (
 // Report device Configuration profile History reports.
 type Report struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Not yet documented
     content []byte
     // The OdataType property
@@ -17,7 +17,7 @@ type Report struct {
 func NewReport()(*Report) {
     m := &Report{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
     return NewReport(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Report) GetAdditionalData()(map[string]interface{}) {
+func (m *Report) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. Not yet documented
@@ -84,7 +84,7 @@ func (m *Report) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Report) SetAdditionalData(value map[string]interface{})() {
+func (m *Report) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContent sets the content property value. Not yet documented

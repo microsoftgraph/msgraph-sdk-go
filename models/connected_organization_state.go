@@ -14,7 +14,7 @@ const (
 func (i ConnectedOrganizationState) String() string {
     return []string{"configured", "proposed", "unknownFutureValue"}[i]
 }
-func ParseConnectedOrganizationState(v string) (interface{}, error) {
+func ParseConnectedOrganizationState(v string) (any, error) {
     result := CONFIGURED_CONNECTEDORGANIZATIONSTATE
     switch v {
         case "configured":

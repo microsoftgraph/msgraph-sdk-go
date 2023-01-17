@@ -7,7 +7,7 @@ import (
 // BookingQuestionAnswer 
 type BookingQuestionAnswer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The answer given by the user in case the answerInputType is text.
     answer *string
     // The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
@@ -29,7 +29,7 @@ type BookingQuestionAnswer struct {
 func NewBookingQuestionAnswer()(*BookingQuestionAnswer) {
     m := &BookingQuestionAnswer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingQuestionAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateBookingQuestionAnswerFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewBookingQuestionAnswer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingQuestionAnswer) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingQuestionAnswer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAnswer gets the answer property value. The answer given by the user in case the answerInputType is text.
@@ -225,7 +225,7 @@ func (m *BookingQuestionAnswer) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingQuestionAnswer) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingQuestionAnswer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAnswer sets the answer property value. The answer given by the user in case the answerInputType is text.

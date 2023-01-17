@@ -7,7 +7,7 @@ import (
 // ItemChangePasswordPostRequestBody 
 type ItemChangePasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The currentPassword property
     currentPassword *string
     // The newPassword property
@@ -17,7 +17,7 @@ type ItemChangePasswordPostRequestBody struct {
 func NewItemChangePasswordPostRequestBody()(*ItemChangePasswordPostRequestBody) {
     m := &ItemChangePasswordPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemChangePasswordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemChangePasswordPostRequestBodyFromDiscriminatorValue(parseNode i87
     return NewItemChangePasswordPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemChangePasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemChangePasswordPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentPassword gets the currentPassword property value. The currentPassword property
@@ -84,7 +84,7 @@ func (m *ItemChangePasswordPostRequestBody) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemChangePasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemChangePasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCurrentPassword sets the currentPassword property value. The currentPassword property

@@ -19,7 +19,7 @@ const (
 func (i FirewallCertificateRevocationListCheckMethodType) String() string {
     return []string{"deviceDefault", "none", "attempt", "require"}[i]
 }
-func ParseFirewallCertificateRevocationListCheckMethodType(v string) (interface{}, error) {
+func ParseFirewallCertificateRevocationListCheckMethodType(v string) (any, error) {
     result := DEVICEDEFAULT_FIREWALLCERTIFICATEREVOCATIONLISTCHECKMETHODTYPE
     switch v {
         case "deviceDefault":

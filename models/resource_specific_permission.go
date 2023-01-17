@@ -8,7 +8,7 @@ import (
 // ResourceSpecificPermission 
 type ResourceSpecificPermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Describes the level of access that the resource-specific permission represents.
     description *string
     // The display name for the resource-specific permission.
@@ -26,7 +26,7 @@ type ResourceSpecificPermission struct {
 func NewResourceSpecificPermission()(*ResourceSpecificPermission) {
     m := &ResourceSpecificPermission{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateResourceSpecificPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateResourceSpecificPermissionFromDiscriminatorValue(parseNode i878a80d23
     return NewResourceSpecificPermission(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResourceSpecificPermission) GetAdditionalData()(map[string]interface{}) {
+func (m *ResourceSpecificPermission) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. Describes the level of access that the resource-specific permission represents.
@@ -173,7 +173,7 @@ func (m *ResourceSpecificPermission) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResourceSpecificPermission) SetAdditionalData(value map[string]interface{})() {
+func (m *ResourceSpecificPermission) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. Describes the level of access that the resource-specific permission represents.

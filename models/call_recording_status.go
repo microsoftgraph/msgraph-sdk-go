@@ -16,7 +16,7 @@ const (
 func (i CallRecordingStatus) String() string {
     return []string{"success", "failure", "initial", "chunkFinished", "unknownFutureValue"}[i]
 }
-func ParseCallRecordingStatus(v string) (interface{}, error) {
+func ParseCallRecordingStatus(v string) (any, error) {
     result := SUCCESS_CALLRECORDINGSTATUS
     switch v {
         case "success":

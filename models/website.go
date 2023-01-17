@@ -7,7 +7,7 @@ import (
 // Website 
 type Website struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The URL of the website.
     address *string
     // The display name of the web site.
@@ -21,7 +21,7 @@ type Website struct {
 func NewWebsite()(*Website) {
     m := &Website{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWebsiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateWebsiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewWebsite(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Website) GetAdditionalData()(map[string]interface{}) {
+func (m *Website) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. The URL of the website.
@@ -129,7 +129,7 @@ func (m *Website) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Website) SetAdditionalData(value map[string]interface{})() {
+func (m *Website) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. The URL of the website.

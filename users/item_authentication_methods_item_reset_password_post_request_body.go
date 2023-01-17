@@ -7,7 +7,7 @@ import (
 // ItemAuthenticationMethodsItemResetPasswordPostRequestBody 
 type ItemAuthenticationMethodsItemResetPasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The newPassword property
     newPassword *string
 }
@@ -15,7 +15,7 @@ type ItemAuthenticationMethodsItemResetPasswordPostRequestBody struct {
 func NewItemAuthenticationMethodsItemResetPasswordPostRequestBody()(*ItemAuthenticationMethodsItemResetPasswordPostRequestBody) {
     m := &ItemAuthenticationMethodsItemResetPasswordPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemAuthenticationMethodsItemResetPasswordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemAuthenticationMethodsItemResetPasswordPostRequestBodyFromDiscrimi
     return NewItemAuthenticationMethodsItemResetPasswordPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAuthenticationMethodsItemResetPasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemAuthenticationMethodsItemResetPasswordPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemAuthenticationMethodsItemResetPasswordPostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAuthenticationMethodsItemResetPasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemAuthenticationMethodsItemResetPasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNewPassword sets the newPassword property value. The newPassword property

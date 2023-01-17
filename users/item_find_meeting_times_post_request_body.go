@@ -8,7 +8,7 @@ import (
 // ItemFindMeetingTimesPostRequestBody 
 type ItemFindMeetingTimesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The attendees property
     attendees []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable
     // The isOrganizerOptional property
@@ -30,7 +30,7 @@ type ItemFindMeetingTimesPostRequestBody struct {
 func NewItemFindMeetingTimesPostRequestBody()(*ItemFindMeetingTimesPostRequestBody) {
     m := &ItemFindMeetingTimesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemFindMeetingTimesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateItemFindMeetingTimesPostRequestBodyFromDiscriminatorValue(parseNode i
     return NewItemFindMeetingTimesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemFindMeetingTimesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemFindMeetingTimesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttendees gets the attendees property value. The attendees property
@@ -225,7 +225,7 @@ func (m *ItemFindMeetingTimesPostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemFindMeetingTimesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemFindMeetingTimesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttendees sets the attendees property value. The attendees property

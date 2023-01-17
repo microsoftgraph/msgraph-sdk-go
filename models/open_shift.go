@@ -14,7 +14,7 @@ type OpenShift struct {
     // A published open shift.
     sharedOpenShift OpenShiftItemable
 }
-// NewOpenShift instantiates a new openShift and sets the default values.
+// NewOpenShift instantiates a new OpenShift and sets the default values.
 func NewOpenShift()(*OpenShift) {
     m := &OpenShift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

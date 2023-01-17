@@ -7,7 +7,7 @@ import (
 // UnifiedRolePermission 
 type UnifiedRolePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Set of tasks that can be performed on a resource. Required.
     allowedResourceActions []string
     // Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
@@ -21,7 +21,7 @@ type UnifiedRolePermission struct {
 func NewUnifiedRolePermission()(*UnifiedRolePermission) {
     m := &UnifiedRolePermission{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUnifiedRolePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateUnifiedRolePermissionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewUnifiedRolePermission(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UnifiedRolePermission) GetAdditionalData()(map[string]interface{}) {
+func (m *UnifiedRolePermission) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedResourceActions gets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
@@ -136,7 +136,7 @@ func (m *UnifiedRolePermission) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UnifiedRolePermission) SetAdditionalData(value map[string]interface{})() {
+func (m *UnifiedRolePermission) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedResourceActions sets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.

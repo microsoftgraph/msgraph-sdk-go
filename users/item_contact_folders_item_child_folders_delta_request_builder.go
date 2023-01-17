@@ -73,7 +73,7 @@ func (m *ItemContactFoldersItemChildFoldersDeltaRequestBuilder) Get(ctx context.
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateItemContactFoldersItemChildFoldersDeltaResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateItemContactFoldersItemChildFoldersDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }

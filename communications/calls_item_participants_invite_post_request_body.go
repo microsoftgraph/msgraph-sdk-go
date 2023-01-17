@@ -8,7 +8,7 @@ import (
 // CallsItemParticipantsInvitePostRequestBody 
 type CallsItemParticipantsInvitePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
     // The participants property
@@ -18,7 +18,7 @@ type CallsItemParticipantsInvitePostRequestBody struct {
 func NewCallsItemParticipantsInvitePostRequestBody()(*CallsItemParticipantsInvitePostRequestBody) {
     m := &CallsItemParticipantsInvitePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemParticipantsInvitePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateCallsItemParticipantsInvitePostRequestBodyFromDiscriminatorValue(pars
     return NewCallsItemParticipantsInvitePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsInvitePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemParticipantsInvitePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -93,7 +93,7 @@ func (m *CallsItemParticipantsInvitePostRequestBody) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsInvitePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemParticipantsInvitePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

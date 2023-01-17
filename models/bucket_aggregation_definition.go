@@ -7,7 +7,7 @@ import (
 // BucketAggregationDefinition 
 type BucketAggregationDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
     isDescending *bool
     // The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
@@ -25,7 +25,7 @@ type BucketAggregationDefinition struct {
 func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {
     m := &BucketAggregationDefinition{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBucketAggregationDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateBucketAggregationDefinitionFromDiscriminatorValue(parseNode i878a80d2
     return NewBucketAggregationDefinition(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BucketAggregationDefinition) GetAdditionalData()(map[string]interface{}) {
+func (m *BucketAggregationDefinition) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -181,7 +181,7 @@ func (m *BucketAggregationDefinition) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BucketAggregationDefinition) SetAdditionalData(value map[string]interface{})() {
+func (m *BucketAggregationDefinition) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsDescending sets the isDescending property value. True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.

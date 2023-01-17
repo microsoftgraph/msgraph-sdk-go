@@ -8,7 +8,7 @@ import (
 // SubjectRightsRequestHistory 
 type SubjectRightsRequestHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identity of the user who changed the  subject rights request.
     changedBy IdentitySetable
     // Data and time when the entity was changed.
@@ -26,7 +26,7 @@ type SubjectRightsRequestHistory struct {
 func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateSubjectRightsRequestHistoryFromDiscriminatorValue(parseNode i878a80d2
     return NewSubjectRightsRequestHistory(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]interface{}) {
+func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChangedBy gets the changedBy property value. Identity of the user who changed the  subject rights request.
@@ -175,7 +175,7 @@ func (m *SubjectRightsRequestHistory) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SubjectRightsRequestHistory) SetAdditionalData(value map[string]interface{})() {
+func (m *SubjectRightsRequestHistory) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChangedBy sets the changedBy property value. Identity of the user who changed the  subject rights request.

@@ -15,7 +15,7 @@ const (
 func (i SharedPCAllowedAccountType) String() string {
     return []string{"guest", "domain"}[i]
 }
-func ParseSharedPCAllowedAccountType(v string) (interface{}, error) {
+func ParseSharedPCAllowedAccountType(v string) (any, error) {
     result := GUEST_SHAREDPCALLOWEDACCOUNTTYPE
     switch v {
         case "guest":

@@ -7,7 +7,7 @@ import (
 // ItemRootCheckinPostRequestBody 
 type ItemRootCheckinPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The checkInAs property
     checkInAs *string
     // The comment property
@@ -17,7 +17,7 @@ type ItemRootCheckinPostRequestBody struct {
 func NewItemRootCheckinPostRequestBody()(*ItemRootCheckinPostRequestBody) {
     m := &ItemRootCheckinPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRootCheckinPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemRootCheckinPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewItemRootCheckinPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRootCheckinPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRootCheckinPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCheckInAs gets the checkInAs property value. The checkInAs property
@@ -84,7 +84,7 @@ func (m *ItemRootCheckinPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRootCheckinPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRootCheckinPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCheckInAs sets the checkInAs property value. The checkInAs property

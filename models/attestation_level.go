@@ -14,7 +14,7 @@ const (
 func (i AttestationLevel) String() string {
     return []string{"attested", "notAttested", "unknownFutureValue"}[i]
 }
-func ParseAttestationLevel(v string) (interface{}, error) {
+func ParseAttestationLevel(v string) (any, error) {
     result := ATTESTED_ATTESTATIONLEVEL
     switch v {
         case "attested":

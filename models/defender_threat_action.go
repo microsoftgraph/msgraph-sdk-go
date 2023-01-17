@@ -25,7 +25,7 @@ const (
 func (i DefenderThreatAction) String() string {
     return []string{"deviceDefault", "clean", "quarantine", "remove", "allow", "userDefined", "block"}[i]
 }
-func ParseDefenderThreatAction(v string) (interface{}, error) {
+func ParseDefenderThreatAction(v string) (any, error) {
     result := DEVICEDEFAULT_DEFENDERTHREATACTION
     switch v {
         case "deviceDefault":

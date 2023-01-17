@@ -8,7 +8,7 @@ import (
 // CopyNotebookModel 
 type CopyNotebookModel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The createdBy property
     createdBy *string
     // The createdByIdentity property
@@ -46,7 +46,7 @@ type CopyNotebookModel struct {
 func NewCopyNotebookModel()(*CopyNotebookModel) {
     m := &CopyNotebookModel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCopyNotebookModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +54,7 @@ func CreateCopyNotebookModelFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewCopyNotebookModel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CopyNotebookModel) GetAdditionalData()(map[string]interface{}) {
+func (m *CopyNotebookModel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
@@ -394,7 +394,7 @@ func (m *CopyNotebookModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CopyNotebookModel) SetAdditionalData(value map[string]interface{})() {
+func (m *CopyNotebookModel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property

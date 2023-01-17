@@ -7,7 +7,7 @@ import (
 // AuthenticationMethodFeatureConfiguration 
 type AuthenticationMethodFeatureConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A single entity that is excluded from this feature.
     excludeTarget FeatureTargetable
     // A single entity that is included in this feature.
@@ -21,7 +21,7 @@ type AuthenticationMethodFeatureConfiguration struct {
 func NewAuthenticationMethodFeatureConfiguration()(*AuthenticationMethodFeatureConfiguration) {
     m := &AuthenticationMethodFeatureConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationMethodFeatureConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAuthenticationMethodFeatureConfigurationFromDiscriminatorValue(parseN
     return NewAuthenticationMethodFeatureConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationMethodFeatureConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationMethodFeatureConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeTarget gets the excludeTarget property value. A single entity that is excluded from this feature.
@@ -129,7 +129,7 @@ func (m *AuthenticationMethodFeatureConfiguration) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationMethodFeatureConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationMethodFeatureConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeTarget sets the excludeTarget property value. A single entity that is excluded from this feature.

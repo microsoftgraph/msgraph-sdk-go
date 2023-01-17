@@ -9,7 +9,7 @@ type ImageInfo struct {
     // Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
     addImageQuery *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Optional; alt-text accessible content for the image
     alternateText *string
     // The alternativeText property
@@ -23,7 +23,7 @@ type ImageInfo struct {
 func NewImageInfo()(*ImageInfo) {
     m := &ImageInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateImageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func (m *ImageInfo) GetAddImageQuery()(*bool) {
     return m.addImageQuery
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImageInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *ImageInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlternateText gets the alternateText property value. Optional; alt-text accessible content for the image
@@ -154,7 +154,7 @@ func (m *ImageInfo) SetAddImageQuery(value *bool)() {
     m.addImageQuery = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImageInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *ImageInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlternateText sets the alternateText property value. Optional; alt-text accessible content for the image

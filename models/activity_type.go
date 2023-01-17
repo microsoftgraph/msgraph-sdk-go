@@ -15,7 +15,7 @@ const (
 func (i ActivityType) String() string {
     return []string{"signin", "user", "unknownFutureValue", "servicePrincipal"}[i]
 }
-func ParseActivityType(v string) (interface{}, error) {
+func ParseActivityType(v string) (any, error) {
     result := SIGNIN_ACTIVITYTYPE
     switch v {
         case "signin":

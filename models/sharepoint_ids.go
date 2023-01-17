@@ -7,7 +7,7 @@ import (
 // SharepointIds 
 type SharepointIds struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The unique identifier (guid) for the item's list in SharePoint.
     listId *string
     // An integer identifier for the item within the containing list.
@@ -29,7 +29,7 @@ type SharepointIds struct {
 func NewSharepointIds()(*SharepointIds) {
     m := &SharepointIds{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSharepointIdsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateSharepointIdsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewSharepointIds(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharepointIds) GetAdditionalData()(map[string]interface{}) {
+func (m *SharepointIds) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -216,7 +216,7 @@ func (m *SharepointIds) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharepointIds) SetAdditionalData(value map[string]interface{})() {
+func (m *SharepointIds) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetListId sets the listId property value. The unique identifier (guid) for the item's list in SharePoint.

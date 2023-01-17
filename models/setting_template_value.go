@@ -7,7 +7,7 @@ import (
 // SettingTemplateValue 
 type SettingTemplateValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Default value for the setting.
     defaultValue *string
     // Description of the setting.
@@ -23,7 +23,7 @@ type SettingTemplateValue struct {
 func NewSettingTemplateValue()(*SettingTemplateValue) {
     m := &SettingTemplateValue{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSettingTemplateValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateSettingTemplateValueFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewSettingTemplateValue(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SettingTemplateValue) GetAdditionalData()(map[string]interface{}) {
+func (m *SettingTemplateValue) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultValue gets the defaultValue property value. Default value for the setting.
@@ -150,7 +150,7 @@ func (m *SettingTemplateValue) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SettingTemplateValue) SetAdditionalData(value map[string]interface{})() {
+func (m *SettingTemplateValue) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultValue sets the defaultValue property value. Default value for the setting.

@@ -25,7 +25,7 @@ const (
 func (i ComplianceState) String() string {
     return []string{"unknown", "compliant", "noncompliant", "conflict", "error", "inGracePeriod", "configManager"}[i]
 }
-func ParseComplianceState(v string) (interface{}, error) {
+func ParseComplianceState(v string) (any, error) {
     result := UNKNOWN_COMPLIANCESTATE
     switch v {
         case "unknown":

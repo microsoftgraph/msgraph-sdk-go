@@ -16,7 +16,7 @@ const (
 func (i PrintTaskProcessingState) String() string {
     return []string{"pending", "processing", "completed", "aborted", "unknownFutureValue"}[i]
 }
-func ParsePrintTaskProcessingState(v string) (interface{}, error) {
+func ParsePrintTaskProcessingState(v string) (any, error) {
     result := PENDING_PRINTTASKPROCESSINGSTATE
     switch v {
         case "pending":

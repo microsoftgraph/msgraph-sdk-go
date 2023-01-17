@@ -15,7 +15,7 @@ const (
 func (i OnenoteUserRole) String() string {
     return []string{"None", "Owner", "Contributor", "Reader"}[i]
 }
-func ParseOnenoteUserRole(v string) (interface{}, error) {
+func ParseOnenoteUserRole(v string) (any, error) {
     result := NONE_ONENOTEUSERROLE
     switch v {
         case "None":

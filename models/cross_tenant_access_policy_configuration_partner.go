@@ -7,7 +7,7 @@ import (
 // CrossTenantAccessPolicyConfigurationPartner 
 type CrossTenantAccessPolicyConfigurationPartner struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
     b2bCollaborationInbound CrossTenantAccessPolicyB2BSettingable
     // Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
@@ -29,7 +29,7 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
 func NewCrossTenantAccessPolicyConfigurationPartner()(*CrossTenantAccessPolicyConfigurationPartner) {
     m := &CrossTenantAccessPolicyConfigurationPartner{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue(par
     return NewCrossTenantAccessPolicyConfigurationPartner(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[string]interface{}) {
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
@@ -216,7 +216,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyConfigurationPartner) SetAdditionalData(value map[string]interface{})() {
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.

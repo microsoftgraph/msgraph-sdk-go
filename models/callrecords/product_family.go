@@ -17,7 +17,7 @@ const (
 func (i ProductFamily) String() string {
     return []string{"unknown", "teams", "skypeForBusiness", "lync", "unknownFutureValue", "azureCommunicationServices"}[i]
 }
-func ParseProductFamily(v string) (interface{}, error) {
+func ParseProductFamily(v string) (any, error) {
     result := UNKNOWN_PRODUCTFAMILY
     switch v {
         case "unknown":

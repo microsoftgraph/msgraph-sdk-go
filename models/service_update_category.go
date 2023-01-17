@@ -15,7 +15,7 @@ const (
 func (i ServiceUpdateCategory) String() string {
     return []string{"preventOrFixIssue", "planForChange", "stayInformed", "unknownFutureValue"}[i]
 }
-func ParseServiceUpdateCategory(v string) (interface{}, error) {
+func ParseServiceUpdateCategory(v string) (any, error) {
     result := PREVENTORFIXISSUE_SERVICEUPDATECATEGORY
     switch v {
         case "preventOrFixIssue":

@@ -7,7 +7,7 @@ import (
 // SignInLocation 
 type SignInLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
     city *string
     // Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
@@ -23,7 +23,7 @@ type SignInLocation struct {
 func NewSignInLocation()(*SignInLocation) {
     m := &SignInLocation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSignInLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateSignInLocationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewSignInLocation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignInLocation) GetAdditionalData()(map[string]interface{}) {
+func (m *SignInLocation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCity gets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
@@ -150,7 +150,7 @@ func (m *SignInLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignInLocation) SetAdditionalData(value map[string]interface{})() {
+func (m *SignInLocation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCity sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.

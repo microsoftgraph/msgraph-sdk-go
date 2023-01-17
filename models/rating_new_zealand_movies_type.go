@@ -33,7 +33,7 @@ const (
 func (i RatingNewZealandMoviesType) String() string {
     return []string{"allAllowed", "allBlocked", "general", "parentalGuidance", "mature", "agesAbove13", "agesAbove15", "agesAbove16", "agesAbove18", "restricted", "agesAbove16Restricted"}[i]
 }
-func ParseRatingNewZealandMoviesType(v string) (interface{}, error) {
+func ParseRatingNewZealandMoviesType(v string) (any, error) {
     result := ALLALLOWED_RATINGNEWZEALANDMOVIESTYPE
     switch v {
         case "allAllowed":

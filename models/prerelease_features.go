@@ -19,7 +19,7 @@ const (
 func (i PrereleaseFeatures) String() string {
     return []string{"userDefined", "settingsOnly", "settingsAndExperimentations", "notAllowed"}[i]
 }
-func ParsePrereleaseFeatures(v string) (interface{}, error) {
+func ParsePrereleaseFeatures(v string) (any, error) {
     result := USERDEFINED_PRERELEASEFEATURES
     switch v {
         case "userDefined":

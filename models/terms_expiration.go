@@ -8,7 +8,7 @@ import (
 // TermsExpiration 
 type TermsExpiration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
     frequency *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The OdataType property
@@ -20,7 +20,7 @@ type TermsExpiration struct {
 func NewTermsExpiration()(*TermsExpiration) {
     m := &TermsExpiration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTermsExpirationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateTermsExpirationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewTermsExpiration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TermsExpiration) GetAdditionalData()(map[string]interface{}) {
+func (m *TermsExpiration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *TermsExpiration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TermsExpiration) SetAdditionalData(value map[string]interface{})() {
+func (m *TermsExpiration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFrequency sets the frequency property value. Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.

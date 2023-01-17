@@ -7,7 +7,7 @@ import (
 // EmployeeOrgData 
 type EmployeeOrgData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cost center associated with the user. Returned only on $select. Supports $filter.
     costCenter *string
     // The name of the division in which the user works. Returned only on $select. Supports $filter.
@@ -19,7 +19,7 @@ type EmployeeOrgData struct {
 func NewEmployeeOrgData()(*EmployeeOrgData) {
     m := &EmployeeOrgData{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEmployeeOrgDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateEmployeeOrgDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewEmployeeOrgData(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EmployeeOrgData) GetAdditionalData()(map[string]interface{}) {
+func (m *EmployeeOrgData) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCostCenter gets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -106,7 +106,7 @@ func (m *EmployeeOrgData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EmployeeOrgData) SetAdditionalData(value map[string]interface{})() {
+func (m *EmployeeOrgData) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCostCenter sets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.

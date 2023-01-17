@@ -7,7 +7,7 @@ import (
 // InvitedUserMessageInfo 
 type InvitedUserMessageInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
     ccRecipients []Recipientable
     // Customized message body you want to send if you don't want the default message.
@@ -21,7 +21,7 @@ type InvitedUserMessageInfo struct {
 func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
     m := &InvitedUserMessageInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInvitedUserMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateInvitedUserMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewInvitedUserMessageInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCcRecipients gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
@@ -136,7 +136,7 @@ func (m *InvitedUserMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InvitedUserMessageInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *InvitedUserMessageInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCcRecipients sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.

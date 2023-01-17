@@ -7,7 +7,7 @@ import (
 // ListContentTypesItemIsPublishedResponse 
 type ListContentTypesItemIsPublishedResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type ListContentTypesItemIsPublishedResponse struct {
 func NewListContentTypesItemIsPublishedResponse()(*ListContentTypesItemIsPublishedResponse) {
     m := &ListContentTypesItemIsPublishedResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateListContentTypesItemIsPublishedResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateListContentTypesItemIsPublishedResponseFromDiscriminatorValue(parseNo
     return NewListContentTypesItemIsPublishedResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ListContentTypesItemIsPublishedResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ListContentTypesItemIsPublishedResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ListContentTypesItemIsPublishedResponse) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ListContentTypesItemIsPublishedResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ListContentTypesItemIsPublishedResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

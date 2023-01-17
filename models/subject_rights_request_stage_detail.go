@@ -7,7 +7,7 @@ import (
 // SubjectRightsRequestStageDetail 
 type SubjectRightsRequestStageDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Describes the error, if any, for the current stage.
     error PublicErrorable
     // The OdataType property
@@ -21,7 +21,7 @@ type SubjectRightsRequestStageDetail struct {
 func NewSubjectRightsRequestStageDetail()(*SubjectRightsRequestStageDetail) {
     m := &SubjectRightsRequestStageDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSubjectRightsRequestStageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateSubjectRightsRequestStageDetailFromDiscriminatorValue(parseNode i878a
     return NewSubjectRightsRequestStageDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SubjectRightsRequestStageDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *SubjectRightsRequestStageDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetError gets the error property value. Describes the error, if any, for the current stage.
@@ -130,7 +130,7 @@ func (m *SubjectRightsRequestStageDetail) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetError sets the error property value. Describes the error, if any, for the current stage.

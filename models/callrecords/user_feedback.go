@@ -7,7 +7,7 @@ import (
 // UserFeedback 
 type UserFeedback struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The rating property
@@ -21,7 +21,7 @@ type UserFeedback struct {
 func NewUserFeedback()(*UserFeedback) {
     m := &UserFeedback{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserFeedbackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateUserFeedbackFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewUserFeedback(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserFeedback) GetAdditionalData()(map[string]interface{}) {
+func (m *UserFeedback) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *UserFeedback) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserFeedback) SetAdditionalData(value map[string]interface{})() {
+func (m *UserFeedback) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

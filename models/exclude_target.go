@@ -7,7 +7,7 @@ import (
 // ExcludeTarget 
 type ExcludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The object identifier of an Azure Active Directory user or group.
     id *string
     // The OdataType property
@@ -19,7 +19,7 @@ type ExcludeTarget struct {
 func NewExcludeTarget()(*ExcludeTarget) {
     m := &ExcludeTarget{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExcludeTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateExcludeTargetFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewExcludeTarget(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExcludeTarget) GetAdditionalData()(map[string]interface{}) {
+func (m *ExcludeTarget) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *ExcludeTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExcludeTarget) SetAdditionalData(value map[string]interface{})() {
+func (m *ExcludeTarget) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetId sets the id property value. The object identifier of an Azure Active Directory user or group.

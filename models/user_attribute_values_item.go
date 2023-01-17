@@ -7,7 +7,7 @@ import (
 // UserAttributeValuesItem 
 type UserAttributeValuesItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Determines whether the value is set as the default.
     isDefault *bool
     // The display name of the property displayed to the user in the user flow.
@@ -21,7 +21,7 @@ type UserAttributeValuesItem struct {
 func NewUserAttributeValuesItem()(*UserAttributeValuesItem) {
     m := &UserAttributeValuesItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserAttributeValuesItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateUserAttributeValuesItemFromDiscriminatorValue(parseNode i878a80d2330e
     return NewUserAttributeValuesItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserAttributeValuesItem) GetAdditionalData()(map[string]interface{}) {
+func (m *UserAttributeValuesItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *UserAttributeValuesItem) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserAttributeValuesItem) SetAdditionalData(value map[string]interface{})() {
+func (m *UserAttributeValuesItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsDefault sets the isDefault property value. Determines whether the value is set as the default.

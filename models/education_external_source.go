@@ -14,7 +14,7 @@ const (
 func (i EducationExternalSource) String() string {
     return []string{"sis", "manual", "unknownFutureValue"}[i]
 }
-func ParseEducationExternalSource(v string) (interface{}, error) {
+func ParseEducationExternalSource(v string) (any, error) {
     result := SIS_EDUCATIONEXTERNALSOURCE
     switch v {
         case "sis":

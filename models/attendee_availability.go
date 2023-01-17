@@ -7,7 +7,7 @@ import (
 // AttendeeAvailability 
 type AttendeeAvailability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
     attendee AttendeeBaseable
     // The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
@@ -19,7 +19,7 @@ type AttendeeAvailability struct {
 func NewAttendeeAvailability()(*AttendeeAvailability) {
     m := &AttendeeAvailability{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttendeeAvailabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAttendeeAvailabilityFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewAttendeeAvailability(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttendeeAvailability) GetAdditionalData()(map[string]interface{}) {
+func (m *AttendeeAvailability) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttendee gets the attendee property value. The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
@@ -107,7 +107,7 @@ func (m *AttendeeAvailability) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttendeeAvailability) SetAdditionalData(value map[string]interface{})() {
+func (m *AttendeeAvailability) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttendee sets the attendee property value. The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.

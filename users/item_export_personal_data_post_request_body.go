@@ -7,7 +7,7 @@ import (
 // ItemExportPersonalDataPostRequestBody 
 type ItemExportPersonalDataPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The storageLocation property
     storageLocation *string
 }
@@ -15,7 +15,7 @@ type ItemExportPersonalDataPostRequestBody struct {
 func NewItemExportPersonalDataPostRequestBody()(*ItemExportPersonalDataPostRequestBody) {
     m := &ItemExportPersonalDataPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemExportPersonalDataPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemExportPersonalDataPostRequestBodyFromDiscriminatorValue(parseNode
     return NewItemExportPersonalDataPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemExportPersonalDataPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemExportPersonalDataPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemExportPersonalDataPostRequestBody) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemExportPersonalDataPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemExportPersonalDataPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetStorageLocation sets the storageLocation property value. The storageLocation property

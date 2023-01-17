@@ -8,7 +8,7 @@ import (
 // AssignedLicense 
 type AssignedLicense struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A collection of the unique identifiers for plans that have been disabled.
     disabledPlans []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
@@ -20,7 +20,7 @@ type AssignedLicense struct {
 func NewAssignedLicense()(*AssignedLicense) {
     m := &AssignedLicense{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignedLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateAssignedLicenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewAssignedLicense(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignedLicense) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignedLicense) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisabledPlans gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
@@ -111,7 +111,7 @@ func (m *AssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignedLicense) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignedLicense) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisabledPlans sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.

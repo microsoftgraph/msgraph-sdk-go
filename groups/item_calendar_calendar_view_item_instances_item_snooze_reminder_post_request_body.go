@@ -8,7 +8,7 @@ import (
 // ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody 
 type ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The NewReminderTime property
     newReminderTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable
 }
@@ -16,7 +16,7 @@ type ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody stru
 func NewItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody()(*ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody) {
     m := &ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBod
     return NewItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody)
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemCalendarCalendarViewItemInstancesItemSnoozeReminderPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNewReminderTime sets the newReminderTime property value. The NewReminderTime property

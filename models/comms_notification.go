@@ -7,7 +7,7 @@ import (
 // CommsNotification 
 type CommsNotification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The changeType property
     changeType *ChangeType
     // The OdataType property
@@ -19,7 +19,7 @@ type CommsNotification struct {
 func NewCommsNotification()(*CommsNotification) {
     m := &CommsNotification{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCommsNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCommsNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewCommsNotification(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CommsNotification) GetAdditionalData()(map[string]interface{}) {
+func (m *CommsNotification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChangeType gets the changeType property value. The changeType property
@@ -107,7 +107,7 @@ func (m *CommsNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CommsNotification) SetAdditionalData(value map[string]interface{})() {
+func (m *CommsNotification) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChangeType sets the changeType property value. The changeType property

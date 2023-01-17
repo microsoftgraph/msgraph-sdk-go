@@ -10,7 +10,7 @@ type Process struct {
     // User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
     accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The full process invocation commandline including all parameters.
     commandLine *string
     // Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -40,7 +40,7 @@ type Process struct {
 func NewProcess()(*Process) {
     m := &Process{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +52,7 @@ func (m *Process) GetAccountName()(*string) {
     return m.accountName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Process) GetAdditionalData()(map[string]interface{}) {
+func (m *Process) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommandLine gets the commandLine property value. The full process invocation commandline including all parameters.
@@ -332,7 +332,7 @@ func (m *Process) SetAccountName(value *string)() {
     m.accountName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Process) SetAdditionalData(value map[string]interface{})() {
+func (m *Process) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCommandLine sets the commandLine property value. The full process invocation commandline including all parameters.

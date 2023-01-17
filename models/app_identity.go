@@ -7,7 +7,7 @@ import (
 // AppIdentity 
 type AppIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Refers to the Unique GUID representing Application Id in the Azure Active Directory.
     appId *string
     // Refers to the Application Name displayed in the Azure Portal.
@@ -23,7 +23,7 @@ type AppIdentity struct {
 func NewAppIdentity()(*AppIdentity) {
     m := &AppIdentity{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAppIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewAppIdentity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppIdentity) GetAdditionalData()(map[string]interface{}) {
+func (m *AppIdentity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppId gets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
@@ -150,7 +150,7 @@ func (m *AppIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppIdentity) SetAdditionalData(value map[string]interface{})() {
+func (m *AppIdentity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppId sets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.

@@ -8,7 +8,7 @@ import (
 // AlertComment 
 type AlertComment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The comment text.
     comment *string
     // The person or app name that submitted the comment.
@@ -22,7 +22,7 @@ type AlertComment struct {
 func NewAlertComment()(*AlertComment) {
     m := &AlertComment{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAlertCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateAlertCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewAlertComment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertComment) GetAdditionalData()(map[string]interface{}) {
+func (m *AlertComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The comment text.
@@ -129,7 +129,7 @@ func (m *AlertComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertComment) SetAdditionalData(value map[string]interface{})() {
+func (m *AlertComment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The comment text.

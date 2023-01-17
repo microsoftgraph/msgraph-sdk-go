@@ -13,7 +13,7 @@ const (
 func (i ThreatAssessmentStatus) String() string {
     return []string{"pending", "completed"}[i]
 }
-func ParseThreatAssessmentStatus(v string) (interface{}, error) {
+func ParseThreatAssessmentStatus(v string) (any, error) {
     result := PENDING_THREATASSESSMENTSTATUS
     switch v {
         case "pending":

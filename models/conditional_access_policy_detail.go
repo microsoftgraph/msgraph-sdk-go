@@ -7,7 +7,7 @@ import (
 // ConditionalAccessPolicyDetail 
 type ConditionalAccessPolicyDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The conditions property
     conditions ConditionalAccessConditionSetable
     // Represents grant controls that must be fulfilled for the policy.
@@ -21,7 +21,7 @@ type ConditionalAccessPolicyDetail struct {
 func NewConditionalAccessPolicyDetail()(*ConditionalAccessPolicyDetail) {
     m := &ConditionalAccessPolicyDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessPolicyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateConditionalAccessPolicyDetailFromDiscriminatorValue(parseNode i878a80
     return NewConditionalAccessPolicyDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessPolicyDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessPolicyDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConditions gets the conditions property value. The conditions property
@@ -128,7 +128,7 @@ func (m *ConditionalAccessPolicyDetail) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessPolicyDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessPolicyDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConditions sets the conditions property value. The conditions property

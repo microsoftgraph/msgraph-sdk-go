@@ -19,7 +19,7 @@ const (
 func (i InstallIntent) String() string {
     return []string{"available", "required", "uninstall", "availableWithoutEnrollment"}[i]
 }
-func ParseInstallIntent(v string) (interface{}, error) {
+func ParseInstallIntent(v string) (any, error) {
     result := AVAILABLE_INSTALLINTENT
     switch v {
         case "available":

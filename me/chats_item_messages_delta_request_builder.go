@@ -70,7 +70,7 @@ func (m *ChatsItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestC
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateChatsItemMessagesDeltaResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateChatsItemMessagesDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }

@@ -7,7 +7,7 @@ import (
 // Windows10NetworkProxyServer network Proxy Server Policy.
 type Windows10NetworkProxyServer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Address to the proxy server. Specify an address in the format [':']
     address *string
     // Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
@@ -21,7 +21,7 @@ type Windows10NetworkProxyServer struct {
 func NewWindows10NetworkProxyServer()(*Windows10NetworkProxyServer) {
     m := &Windows10NetworkProxyServer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindows10NetworkProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateWindows10NetworkProxyServerFromDiscriminatorValue(parseNode i878a80d2
     return NewWindows10NetworkProxyServer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10NetworkProxyServer) GetAdditionalData()(map[string]interface{}) {
+func (m *Windows10NetworkProxyServer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. Address to the proxy server. Specify an address in the format [':']
@@ -132,7 +132,7 @@ func (m *Windows10NetworkProxyServer) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10NetworkProxyServer) SetAdditionalData(value map[string]interface{})() {
+func (m *Windows10NetworkProxyServer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. Address to the proxy server. Specify an address in the format [':']

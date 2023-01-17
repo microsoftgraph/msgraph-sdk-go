@@ -21,7 +21,7 @@ const (
 func (i AppLockerApplicationControlType) String() string {
     return []string{"notConfigured", "enforceComponentsAndStoreApps", "auditComponentsAndStoreApps", "enforceComponentsStoreAppsAndSmartlocker", "auditComponentsStoreAppsAndSmartlocker"}[i]
 }
-func ParseAppLockerApplicationControlType(v string) (interface{}, error) {
+func ParseAppLockerApplicationControlType(v string) (any, error) {
     result := NOTCONFIGURED_APPLOCKERAPPLICATIONCONTROLTYPE
     switch v {
         case "notConfigured":

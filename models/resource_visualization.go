@@ -7,7 +7,7 @@ import (
 // ResourceVisualization 
 type ResourceVisualization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
     containerDisplayName *string
     // Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
@@ -31,7 +31,7 @@ type ResourceVisualization struct {
 func NewResourceVisualization()(*ResourceVisualization) {
     m := &ResourceVisualization{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateResourceVisualizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateResourceVisualizationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewResourceVisualization(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResourceVisualization) GetAdditionalData()(map[string]interface{}) {
+func (m *ResourceVisualization) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContainerDisplayName gets the containerDisplayName property value. A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
@@ -238,7 +238,7 @@ func (m *ResourceVisualization) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResourceVisualization) SetAdditionalData(value map[string]interface{})() {
+func (m *ResourceVisualization) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContainerDisplayName sets the containerDisplayName property value. A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.

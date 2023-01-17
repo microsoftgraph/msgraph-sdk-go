@@ -7,7 +7,7 @@ import (
 // OmaSetting oMA Settings definition.
 type OmaSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Description.
     description *string
     // Display Name.
@@ -21,7 +21,7 @@ type OmaSetting struct {
 func NewOmaSetting()(*OmaSetting) {
     m := &OmaSetting{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOmaSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +59,7 @@ func CreateOmaSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewOmaSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OmaSetting) GetAdditionalData()(map[string]interface{}) {
+func (m *OmaSetting) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. Description.
@@ -158,7 +158,7 @@ func (m *OmaSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OmaSetting) SetAdditionalData(value map[string]interface{})() {
+func (m *OmaSetting) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. Description.

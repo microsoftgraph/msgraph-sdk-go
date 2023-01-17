@@ -7,7 +7,7 @@ import (
 // AccessPackageAssignmentReviewSettings 
 type AccessPackageAssignmentReviewSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
     expirationBehavior *AccessReviewExpirationBehavior
     // This collection specifies the users who will be the fallback reviewers when the primary reviewers don't respond.
@@ -31,7 +31,7 @@ type AccessPackageAssignmentReviewSettings struct {
 func NewAccessPackageAssignmentReviewSettings()(*AccessPackageAssignmentReviewSettings) {
     m := &AccessPackageAssignmentReviewSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateAccessPackageAssignmentReviewSettingsFromDiscriminatorValue(parseNode
     return NewAccessPackageAssignmentReviewSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentReviewSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAssignmentReviewSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpirationBehavior gets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
@@ -255,7 +255,7 @@ func (m *AccessPackageAssignmentReviewSettings) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentReviewSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAssignmentReviewSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpirationBehavior sets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.

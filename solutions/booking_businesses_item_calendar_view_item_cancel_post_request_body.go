@@ -7,7 +7,7 @@ import (
 // BookingBusinessesItemCalendarViewItemCancelPostRequestBody 
 type BookingBusinessesItemCalendarViewItemCancelPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cancellationMessage property
     cancellationMessage *string
 }
@@ -15,7 +15,7 @@ type BookingBusinessesItemCalendarViewItemCancelPostRequestBody struct {
 func NewBookingBusinessesItemCalendarViewItemCancelPostRequestBody()(*BookingBusinessesItemCalendarViewItemCancelPostRequestBody) {
     m := &BookingBusinessesItemCalendarViewItemCancelPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingBusinessesItemCalendarViewItemCancelPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateBookingBusinessesItemCalendarViewItemCancelPostRequestBodyFromDiscrim
     return NewBookingBusinessesItemCalendarViewItemCancelPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingBusinessesItemCalendarViewItemCancelPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingBusinessesItemCalendarViewItemCancelPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCancellationMessage gets the cancellationMessage property value. The cancellationMessage property
@@ -62,7 +62,7 @@ func (m *BookingBusinessesItemCalendarViewItemCancelPostRequestBody) Serialize(w
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingBusinessesItemCalendarViewItemCancelPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingBusinessesItemCalendarViewItemCancelPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCancellationMessage sets the cancellationMessage property value. The cancellationMessage property

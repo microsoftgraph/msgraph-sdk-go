@@ -14,7 +14,7 @@ const (
 func (i X509CertificateAuthenticationMode) String() string {
     return []string{"x509CertificateSingleFactor", "x509CertificateMultiFactor", "unknownFutureValue"}[i]
 }
-func ParseX509CertificateAuthenticationMode(v string) (interface{}, error) {
+func ParseX509CertificateAuthenticationMode(v string) (any, error) {
     result := X509CERTIFICATESINGLEFACTOR_X509CERTIFICATEAUTHENTICATIONMODE
     switch v {
         case "x509CertificateSingleFactor":

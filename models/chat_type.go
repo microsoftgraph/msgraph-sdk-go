@@ -15,7 +15,7 @@ const (
 func (i ChatType) String() string {
     return []string{"oneOnOne", "group", "meeting", "unknownFutureValue"}[i]
 }
-func ParseChatType(v string) (interface{}, error) {
+func ParseChatType(v string) (any, error) {
     result := ONEONONE_CHATTYPE
     switch v {
         case "oneOnOne":

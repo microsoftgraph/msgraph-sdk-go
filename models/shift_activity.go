@@ -8,7 +8,7 @@ import (
 // ShiftActivity 
 type ShiftActivity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Customer defined code for the shiftActivity. Required.
     code *string
     // The name of the shiftActivity. Required.
@@ -28,7 +28,7 @@ type ShiftActivity struct {
 func NewShiftActivity()(*ShiftActivity) {
     m := &ShiftActivity{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateShiftActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func CreateShiftActivityFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewShiftActivity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ShiftActivity) GetAdditionalData()(map[string]interface{}) {
+func (m *ShiftActivity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. Customer defined code for the shiftActivity. Required.
@@ -196,7 +196,7 @@ func (m *ShiftActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ShiftActivity) SetAdditionalData(value map[string]interface{})() {
+func (m *ShiftActivity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. Customer defined code for the shiftActivity. Required.

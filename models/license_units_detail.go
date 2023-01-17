@@ -7,7 +7,7 @@ import (
 // LicenseUnitsDetail 
 type LicenseUnitsDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of units that are enabled for the active subscription of the service SKU.
     enabled *int32
     // The OdataType property
@@ -21,7 +21,7 @@ type LicenseUnitsDetail struct {
 func NewLicenseUnitsDetail()(*LicenseUnitsDetail) {
     m := &LicenseUnitsDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLicenseUnitsDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateLicenseUnitsDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewLicenseUnitsDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LicenseUnitsDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *LicenseUnitsDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabled gets the enabled property value. The number of units that are enabled for the active subscription of the service SKU.
@@ -128,7 +128,7 @@ func (m *LicenseUnitsDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LicenseUnitsDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *LicenseUnitsDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnabled sets the enabled property value. The number of units that are enabled for the active subscription of the service SKU.

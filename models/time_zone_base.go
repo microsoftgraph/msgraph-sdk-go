@@ -7,7 +7,7 @@ import (
 // TimeZoneBase 
 type TimeZoneBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
     name *string
     // The OdataType property
@@ -17,7 +17,7 @@ type TimeZoneBase struct {
 func NewTimeZoneBase()(*TimeZoneBase) {
     m := &TimeZoneBase{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTimeZoneBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateTimeZoneBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewTimeZoneBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeZoneBase) GetAdditionalData()(map[string]interface{}) {
+func (m *TimeZoneBase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -102,7 +102,7 @@ func (m *TimeZoneBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeZoneBase) SetAdditionalData(value map[string]interface{})() {
+func (m *TimeZoneBase) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.

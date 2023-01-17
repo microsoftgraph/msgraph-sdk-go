@@ -7,7 +7,7 @@ import (
 // BookingWorkHours this type represents the set of working hours in a single day of the week.
 type BookingWorkHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The day property
     day *DayOfWeek
     // The OdataType property
@@ -19,7 +19,7 @@ type BookingWorkHours struct {
 func NewBookingWorkHours()(*BookingWorkHours) {
     m := &BookingWorkHours{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingWorkHoursFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateBookingWorkHoursFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewBookingWorkHours(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingWorkHours) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingWorkHours) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDay gets the day property value. The day property
@@ -115,7 +115,7 @@ func (m *BookingWorkHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingWorkHours) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingWorkHours) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDay sets the day property value. The day property

@@ -7,7 +7,7 @@ import (
 // CertificateAuthority 
 type CertificateAuthority struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Required. The base64 encoded string representing the public certificate.
     certificate []byte
     // The URL of the certificate revocation list.
@@ -27,7 +27,7 @@ type CertificateAuthority struct {
 func NewCertificateAuthority()(*CertificateAuthority) {
     m := &CertificateAuthority{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCertificateAuthorityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateCertificateAuthorityFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewCertificateAuthority(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CertificateAuthority) GetAdditionalData()(map[string]interface{}) {
+func (m *CertificateAuthority) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCertificate gets the certificate property value. Required. The base64 encoded string representing the public certificate.
@@ -194,7 +194,7 @@ func (m *CertificateAuthority) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CertificateAuthority) SetAdditionalData(value map[string]interface{})() {
+func (m *CertificateAuthority) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCertificate sets the certificate property value. Required. The base64 encoded string representing the public certificate.

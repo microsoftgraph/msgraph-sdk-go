@@ -8,7 +8,7 @@ import (
 // UserTrainingStatusInfo 
 type UserTrainingStatusInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Date and time of assignment of the training to the user.
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time of completion of the training by the user.
@@ -24,7 +24,7 @@ type UserTrainingStatusInfo struct {
 func NewUserTrainingStatusInfo()(*UserTrainingStatusInfo) {
     m := &UserTrainingStatusInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserTrainingStatusInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateUserTrainingStatusInfoFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewUserTrainingStatusInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserTrainingStatusInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *UserTrainingStatusInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignedDateTime gets the assignedDateTime property value. Date and time of assignment of the training to the user.
@@ -152,7 +152,7 @@ func (m *UserTrainingStatusInfo) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserTrainingStatusInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *UserTrainingStatusInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignedDateTime sets the assignedDateTime property value. Date and time of assignment of the training to the user.

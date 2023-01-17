@@ -21,7 +21,7 @@ const (
 func (i AccessPackageRequestState) String() string {
     return []string{"submitted", "pendingApproval", "delivering", "delivered", "deliveryFailed", "denied", "scheduled", "canceled", "partiallyDelivered", "unknownFutureValue"}[i]
 }
-func ParseAccessPackageRequestState(v string) (interface{}, error) {
+func ParseAccessPackageRequestState(v string) (any, error) {
     result := SUBMITTED_ACCESSPACKAGEREQUESTSTATE
     switch v {
         case "submitted":

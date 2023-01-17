@@ -8,7 +8,7 @@ import (
 // CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody 
 type CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The AvailabilityViewInterval property
     availabilityViewInterval *int32
     // The EndTime property
@@ -22,7 +22,7 @@ type CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody struct {
 func NewCalendarGroupsItemCalendarsItemGetSchedulePostRequestBody()(*CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody) {
     m := &CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyFromDiscrimi
     return NewCalendarGroupsItemCalendarsItemGetSchedulePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailabilityViewInterval gets the availabilityViewInterval property value. The AvailabilityViewInterval property
@@ -133,7 +133,7 @@ func (m *CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CalendarGroupsItemCalendarsItemGetSchedulePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailabilityViewInterval sets the availabilityViewInterval property value. The AvailabilityViewInterval property

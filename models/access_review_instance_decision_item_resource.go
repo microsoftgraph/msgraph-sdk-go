@@ -7,7 +7,7 @@ import (
 // AccessReviewInstanceDecisionItemResource 
 type AccessReviewInstanceDecisionItemResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Display name of the resource
     displayName *string
     // Identifier of the resource
@@ -21,7 +21,7 @@ type AccessReviewInstanceDecisionItemResource struct {
 func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecisionItemResource) {
     m := &AccessReviewInstanceDecisionItemResource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue(parseN
     return NewAccessReviewInstanceDecisionItemResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewInstanceDecisionItemResource) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessReviewInstanceDecisionItemResource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name of the resource
@@ -150,7 +150,7 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewInstanceDecisionItemResource) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessReviewInstanceDecisionItemResource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name of the resource

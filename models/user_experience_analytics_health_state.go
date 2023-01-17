@@ -17,7 +17,7 @@ const (
 func (i UserExperienceAnalyticsHealthState) String() string {
     return []string{"unknown", "insufficientData", "needsAttention", "meetingGoals", "unknownFutureValue"}[i]
 }
-func ParseUserExperienceAnalyticsHealthState(v string) (interface{}, error) {
+func ParseUserExperienceAnalyticsHealthState(v string) (any, error) {
     result := UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE
     switch v {
         case "unknown":

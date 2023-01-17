@@ -7,7 +7,7 @@ import (
 // Win32LobAppReturnCode contains return code properties for a Win32 App
 type Win32LobAppReturnCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Return code.
@@ -19,7 +19,7 @@ type Win32LobAppReturnCode struct {
 func NewWin32LobAppReturnCode()(*Win32LobAppReturnCode) {
     m := &Win32LobAppReturnCode{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWin32LobAppReturnCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateWin32LobAppReturnCodeFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewWin32LobAppReturnCode(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppReturnCode) GetAdditionalData()(map[string]interface{}) {
+func (m *Win32LobAppReturnCode) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *Win32LobAppReturnCode) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppReturnCode) SetAdditionalData(value map[string]interface{})() {
+func (m *Win32LobAppReturnCode) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

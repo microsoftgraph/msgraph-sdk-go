@@ -20,7 +20,7 @@ const (
 func (i DataSubjectType) String() string {
     return []string{"customer", "currentEmployee", "formerEmployee", "prospectiveEmployee", "student", "teacher", "faculty", "other", "unknownFutureValue"}[i]
 }
-func ParseDataSubjectType(v string) (interface{}, error) {
+func ParseDataSubjectType(v string) (any, error) {
     result := CUSTOMER_DATASUBJECTTYPE
     switch v {
         case "customer":

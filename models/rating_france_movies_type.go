@@ -23,7 +23,7 @@ const (
 func (i RatingFranceMoviesType) String() string {
     return []string{"allAllowed", "allBlocked", "agesAbove10", "agesAbove12", "agesAbove16", "agesAbove18"}[i]
 }
-func ParseRatingFranceMoviesType(v string) (interface{}, error) {
+func ParseRatingFranceMoviesType(v string) (any, error) {
     result := ALLALLOWED_RATINGFRANCEMOVIESTYPE
     switch v {
         case "allAllowed":

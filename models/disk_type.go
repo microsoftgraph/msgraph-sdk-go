@@ -19,7 +19,7 @@ const (
 func (i DiskType) String() string {
     return []string{"unknown", "hdd", "ssd", "unknownFutureValue"}[i]
 }
-func ParseDiskType(v string) (interface{}, error) {
+func ParseDiskType(v string) (any, error) {
     result := UNKNOWN_DISKTYPE
     switch v {
         case "unknown":

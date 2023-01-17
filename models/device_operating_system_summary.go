@@ -7,7 +7,7 @@ import (
 // DeviceOperatingSystemSummary device operating system summary.
 type DeviceOperatingSystemSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
     androidCorporateWorkProfileCount *int32
     // Number of android device count.
@@ -39,7 +39,7 @@ type DeviceOperatingSystemSummary struct {
 func NewDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {
     m := &DeviceOperatingSystemSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceOperatingSystemSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateDeviceOperatingSystemSummaryFromDiscriminatorValue(parseNode i878a80d
     return NewDeviceOperatingSystemSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceOperatingSystemSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceOperatingSystemSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAndroidCorporateWorkProfileCount gets the androidCorporateWorkProfileCount property value. The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
@@ -326,7 +326,7 @@ func (m *DeviceOperatingSystemSummary) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceOperatingSystemSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceOperatingSystemSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAndroidCorporateWorkProfileCount sets the androidCorporateWorkProfileCount property value. The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647

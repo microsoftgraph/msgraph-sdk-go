@@ -8,7 +8,7 @@ import (
 // AppRole 
 type AppRole struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
     allowedMemberTypes []string
     // The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
@@ -30,7 +30,7 @@ type AppRole struct {
 func NewAppRole()(*AppRole) {
     m := &AppRole{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateAppRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewAppRole(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppRole) GetAdditionalData()(map[string]interface{}) {
+func (m *AppRole) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedMemberTypes gets the allowedMemberTypes property value. Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
@@ -221,7 +221,7 @@ func (m *AppRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppRole) SetAdditionalData(value map[string]interface{})() {
+func (m *AppRole) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedMemberTypes sets the allowedMemberTypes property value. Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.

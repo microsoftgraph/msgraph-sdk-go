@@ -7,7 +7,7 @@ import (
 // InvestigationSecurityState 
 type InvestigationSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name property
     name *string
     // The OdataType property
@@ -19,7 +19,7 @@ type InvestigationSecurityState struct {
 func NewInvestigationSecurityState()(*InvestigationSecurityState) {
     m := &InvestigationSecurityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInvestigationSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateInvestigationSecurityStateFromDiscriminatorValue(parseNode i878a80d23
     return NewInvestigationSecurityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InvestigationSecurityState) GetAdditionalData()(map[string]interface{}) {
+func (m *InvestigationSecurityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *InvestigationSecurityState) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InvestigationSecurityState) SetAdditionalData(value map[string]interface{})() {
+func (m *InvestigationSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name property

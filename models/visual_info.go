@@ -7,7 +7,7 @@ import (
 // VisualInfo 
 type VisualInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Optional. JSON object used to represent an icon which represents the application used to generate the activity
     attribution ImageInfoable
     // Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
@@ -25,7 +25,7 @@ type VisualInfo struct {
 func NewVisualInfo()(*VisualInfo) {
     m := &VisualInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVisualInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateVisualInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewVisualInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VisualInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *VisualInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttribution gets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
@@ -172,7 +172,7 @@ func (m *VisualInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VisualInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *VisualInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttribution sets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity

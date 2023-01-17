@@ -7,7 +7,7 @@ import (
 // OcrSettings 
 type OcrSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether or not OCR is enabled for the case.
     isEnabled *bool
     // Maximum image size that will be processed in KB).
@@ -21,7 +21,7 @@ type OcrSettings struct {
 func NewOcrSettings()(*OcrSettings) {
     m := &OcrSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOcrSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateOcrSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewOcrSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OcrSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *OcrSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *OcrSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OcrSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *OcrSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether or not OCR is enabled for the case.

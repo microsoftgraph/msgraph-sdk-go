@@ -7,7 +7,7 @@ import (
 // CheckMemberGroupsPostRequestBody 
 type CheckMemberGroupsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The groupIds property
     groupIds []string
 }
@@ -15,7 +15,7 @@ type CheckMemberGroupsPostRequestBody struct {
 func NewCheckMemberGroupsPostRequestBody()(*CheckMemberGroupsPostRequestBody) {
     m := &CheckMemberGroupsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCheckMemberGroupsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCheckMemberGroupsPostRequestBodyFromDiscriminatorValue(parseNode i878
     return NewCheckMemberGroupsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CheckMemberGroupsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CheckMemberGroupsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *CheckMemberGroupsPostRequestBody) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CheckMemberGroupsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CheckMemberGroupsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGroupIds sets the groupIds property value. The groupIds property

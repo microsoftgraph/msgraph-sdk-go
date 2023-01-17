@@ -16,7 +16,7 @@ const (
 func (i Status) String() string {
     return []string{"active", "updated", "deleted", "ignored", "unknownFutureValue"}[i]
 }
-func ParseStatus(v string) (interface{}, error) {
+func ParseStatus(v string) (any, error) {
     result := ACTIVE_STATUS
     switch v {
         case "active":

@@ -9,7 +9,7 @@ import (
 // LicenseAssignmentState 
 type LicenseAssignmentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignedByGroup property
     assignedByGroup *string
     // The disabledPlans property
@@ -29,7 +29,7 @@ type LicenseAssignmentState struct {
 func NewLicenseAssignmentState()(*LicenseAssignmentState) {
     m := &LicenseAssignmentState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLicenseAssignmentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateLicenseAssignmentStateFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewLicenseAssignmentState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LicenseAssignmentState) GetAdditionalData()(map[string]interface{}) {
+func (m *LicenseAssignmentState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignedByGroup gets the assignedByGroup property value. The assignedByGroup property
@@ -200,7 +200,7 @@ func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LicenseAssignmentState) SetAdditionalData(value map[string]interface{})() {
+func (m *LicenseAssignmentState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignedByGroup sets the assignedByGroup property value. The assignedByGroup property

@@ -8,7 +8,7 @@ import (
 // DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody 
 type DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceComplianceScheduledActionForRules property
     deviceComplianceScheduledActionForRules []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable
 }
@@ -16,7 +16,7 @@ type DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody struct {
 func NewDeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody()(*DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) {
     m := &DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBodyFro
     return NewDeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceComplianceScheduledActionForRules gets the deviceComplianceScheduledActionForRules property value. The deviceComplianceScheduledActionForRules property
@@ -71,7 +71,7 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) Ser
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceComplianceScheduledActionForRules sets the deviceComplianceScheduledActionForRules property value. The deviceComplianceScheduledActionForRules property

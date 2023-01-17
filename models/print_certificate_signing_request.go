@@ -7,7 +7,7 @@ import (
 // PrintCertificateSigningRequest 
 type PrintCertificateSigningRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A base64-encoded pkcs10 certificate request. Read-only.
     content *string
     // The OdataType property
@@ -19,7 +19,7 @@ type PrintCertificateSigningRequest struct {
 func NewPrintCertificateSigningRequest()(*PrintCertificateSigningRequest) {
     m := &PrintCertificateSigningRequest{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrintCertificateSigningRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreatePrintCertificateSigningRequestFromDiscriminatorValue(parseNode i878a8
     return NewPrintCertificateSigningRequest(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintCertificateSigningRequest) GetAdditionalData()(map[string]interface{}) {
+func (m *PrintCertificateSigningRequest) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. A base64-encoded pkcs10 certificate request. Read-only.
@@ -106,7 +106,7 @@ func (m *PrintCertificateSigningRequest) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintCertificateSigningRequest) SetAdditionalData(value map[string]interface{})() {
+func (m *PrintCertificateSigningRequest) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContent sets the content property value. A base64-encoded pkcs10 certificate request. Read-only.

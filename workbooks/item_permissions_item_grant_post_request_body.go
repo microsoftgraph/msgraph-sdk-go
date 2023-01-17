@@ -8,7 +8,7 @@ import (
 // ItemPermissionsItemGrantPostRequestBody 
 type ItemPermissionsItemGrantPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The recipients property
     recipients []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable
     // The roles property
@@ -18,7 +18,7 @@ type ItemPermissionsItemGrantPostRequestBody struct {
 func NewItemPermissionsItemGrantPostRequestBody()(*ItemPermissionsItemGrantPostRequestBody) {
     m := &ItemPermissionsItemGrantPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemPermissionsItemGrantPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemPermissionsItemGrantPostRequestBodyFromDiscriminatorValue(parseNo
     return NewItemPermissionsItemGrantPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPermissionsItemGrantPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemPermissionsItemGrantPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -97,7 +97,7 @@ func (m *ItemPermissionsItemGrantPostRequestBody) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPermissionsItemGrantPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemPermissionsItemGrantPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetRecipients sets the recipients property value. The recipients property

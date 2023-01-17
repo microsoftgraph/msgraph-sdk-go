@@ -14,7 +14,7 @@ const (
 func (i PurgeType) String() string {
     return []string{"recoverable", "permanentlyDeleted", "unknownFutureValue"}[i]
 }
-func ParsePurgeType(v string) (interface{}, error) {
+func ParsePurgeType(v string) (any, error) {
     result := RECOVERABLE_PURGETYPE
     switch v {
         case "recoverable":

@@ -7,7 +7,7 @@ import (
 // CallsItemCancelMediaProcessingPostRequestBody 
 type CallsItemCancelMediaProcessingPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
 }
@@ -15,7 +15,7 @@ type CallsItemCancelMediaProcessingPostRequestBody struct {
 func NewCallsItemCancelMediaProcessingPostRequestBody()(*CallsItemCancelMediaProcessingPostRequestBody) {
     m := &CallsItemCancelMediaProcessingPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemCancelMediaProcessingPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCallsItemCancelMediaProcessingPostRequestBodyFromDiscriminatorValue(p
     return NewCallsItemCancelMediaProcessingPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemCancelMediaProcessingPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemCancelMediaProcessingPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -62,7 +62,7 @@ func (m *CallsItemCancelMediaProcessingPostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemCancelMediaProcessingPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemCancelMediaProcessingPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

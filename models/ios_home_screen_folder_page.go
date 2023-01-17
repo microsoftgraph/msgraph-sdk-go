@@ -7,7 +7,7 @@ import (
 // IosHomeScreenFolderPage a page for a folder containing apps and web clips on the Home Screen.
 type IosHomeScreenFolderPage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A list of apps and web clips to appear on a page within a folder. This collection can contain a maximum of 500 elements.
     apps []IosHomeScreenAppable
     // Name of the folder page
@@ -19,7 +19,7 @@ type IosHomeScreenFolderPage struct {
 func NewIosHomeScreenFolderPage()(*IosHomeScreenFolderPage) {
     m := &IosHomeScreenFolderPage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosHomeScreenFolderPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateIosHomeScreenFolderPageFromDiscriminatorValue(parseNode i878a80d2330e
     return NewIosHomeScreenFolderPage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosHomeScreenFolderPage) GetAdditionalData()(map[string]interface{}) {
+func (m *IosHomeScreenFolderPage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApps gets the apps property value. A list of apps and web clips to appear on a page within a folder. This collection can contain a maximum of 500 elements.
@@ -114,7 +114,7 @@ func (m *IosHomeScreenFolderPage) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosHomeScreenFolderPage) SetAdditionalData(value map[string]interface{})() {
+func (m *IosHomeScreenFolderPage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApps sets the apps property value. A list of apps and web clips to appear on a page within a folder. This collection can contain a maximum of 500 elements.

@@ -14,7 +14,7 @@ const (
 func (i CrossTenantAccessPolicyTargetConfigurationAccessType) String() string {
     return []string{"allowed", "blocked", "unknownFutureValue"}[i]
 }
-func ParseCrossTenantAccessPolicyTargetConfigurationAccessType(v string) (interface{}, error) {
+func ParseCrossTenantAccessPolicyTargetConfigurationAccessType(v string) (any, error) {
     result := ALLOWED_CROSSTENANTACCESSPOLICYTARGETCONFIGURATIONACCESSTYPE
     switch v {
         case "allowed":

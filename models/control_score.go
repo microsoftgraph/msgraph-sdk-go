@@ -7,7 +7,7 @@ import (
 // ControlScore 
 type ControlScore struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Control action category (Identity, Data, Device, Apps, Infrastructure).
     controlCategory *string
     // Control unique name.
@@ -23,7 +23,7 @@ type ControlScore struct {
 func NewControlScore()(*ControlScore) {
     m := &ControlScore{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateControlScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateControlScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewControlScore(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ControlScore) GetAdditionalData()(map[string]interface{}) {
+func (m *ControlScore) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetControlCategory gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
@@ -150,7 +150,7 @@ func (m *ControlScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ControlScore) SetAdditionalData(value map[string]interface{})() {
+func (m *ControlScore) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetControlCategory sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).

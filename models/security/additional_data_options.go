@@ -14,7 +14,7 @@ const (
 func (i AdditionalDataOptions) String() string {
     return []string{"allVersions", "linkedFiles", "unknownFutureValue"}[i]
 }
-func ParseAdditionalDataOptions(v string) (interface{}, error) {
+func ParseAdditionalDataOptions(v string) (any, error) {
     result := ALLVERSIONS_ADDITIONALDATAOPTIONS
     switch v {
         case "allVersions":

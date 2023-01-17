@@ -7,7 +7,7 @@ import (
 // IosNotificationSettings an item describing notification setting.
 type IosNotificationSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Notification Settings Alert Type.
     alertType *IosNotificationAlertType
     // Application name to be associated with the bundleID.
@@ -33,7 +33,7 @@ type IosNotificationSettings struct {
 func NewIosNotificationSettings()(*IosNotificationSettings) {
     m := &IosNotificationSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosNotificationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateIosNotificationSettingsFromDiscriminatorValue(parseNode i878a80d2330e
     return NewIosNotificationSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosNotificationSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *IosNotificationSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlertType gets the alertType property value. Notification Settings Alert Type.
@@ -261,7 +261,7 @@ func (m *IosNotificationSettings) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosNotificationSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *IosNotificationSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlertType sets the alertType property value. Notification Settings Alert Type.

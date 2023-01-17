@@ -17,7 +17,7 @@ const (
 func (i WindowsSpotlightEnablementSettings) String() string {
     return []string{"notConfigured", "disabled", "enabled"}[i]
 }
-func ParseWindowsSpotlightEnablementSettings(v string) (interface{}, error) {
+func ParseWindowsSpotlightEnablementSettings(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSSPOTLIGHTENABLEMENTSETTINGS
     switch v {
         case "notConfigured":

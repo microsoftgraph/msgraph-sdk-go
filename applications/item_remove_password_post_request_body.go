@@ -8,7 +8,7 @@ import (
 // ItemRemovePasswordPostRequestBody 
 type ItemRemovePasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The keyId property
     keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
@@ -16,7 +16,7 @@ type ItemRemovePasswordPostRequestBody struct {
 func NewItemRemovePasswordPostRequestBody()(*ItemRemovePasswordPostRequestBody) {
     m := &ItemRemovePasswordPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRemovePasswordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemRemovePasswordPostRequestBodyFromDiscriminatorValue(parseNode i87
     return NewItemRemovePasswordPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemovePasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRemovePasswordPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemRemovePasswordPostRequestBody) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemovePasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRemovePasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKeyId sets the keyId property value. The keyId property

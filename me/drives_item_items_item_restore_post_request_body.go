@@ -8,7 +8,7 @@ import (
 // DrivesItemItemsItemRestorePostRequestBody 
 type DrivesItemItemsItemRestorePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name property
     name *string
     // The parentReference property
@@ -18,7 +18,7 @@ type DrivesItemItemsItemRestorePostRequestBody struct {
 func NewDrivesItemItemsItemRestorePostRequestBody()(*DrivesItemItemsItemRestorePostRequestBody) {
     m := &DrivesItemItemsItemRestorePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDrivesItemItemsItemRestorePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateDrivesItemItemsItemRestorePostRequestBodyFromDiscriminatorValue(parse
     return NewDrivesItemItemsItemRestorePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemItemsItemRestorePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DrivesItemItemsItemRestorePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *DrivesItemItemsItemRestorePostRequestBody) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemItemsItemRestorePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DrivesItemItemsItemRestorePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name property

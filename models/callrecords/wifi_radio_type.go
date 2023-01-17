@@ -19,7 +19,7 @@ const (
 func (i WifiRadioType) String() string {
     return []string{"unknown", "wifi80211a", "wifi80211b", "wifi80211g", "wifi80211n", "wifi80211ac", "wifi80211ax", "unknownFutureValue"}[i]
 }
-func ParseWifiRadioType(v string) (interface{}, error) {
+func ParseWifiRadioType(v string) (any, error) {
     result := UNKNOWN_WIFIRADIOTYPE
     switch v {
         case "unknown":

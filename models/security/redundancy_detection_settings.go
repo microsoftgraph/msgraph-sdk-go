@@ -7,7 +7,7 @@ import (
 // RedundancyDetectionSettings 
 type RedundancyDetectionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether email threading and near duplicate detection are enabled.
     isEnabled *bool
     // Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
@@ -23,7 +23,7 @@ type RedundancyDetectionSettings struct {
 func NewRedundancyDetectionSettings()(*RedundancyDetectionSettings) {
     m := &RedundancyDetectionSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRedundancyDetectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateRedundancyDetectionSettingsFromDiscriminatorValue(parseNode i878a80d2
     return NewRedundancyDetectionSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RedundancyDetectionSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *RedundancyDetectionSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *RedundancyDetectionSettings) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RedundancyDetectionSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *RedundancyDetectionSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.

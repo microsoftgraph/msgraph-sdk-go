@@ -10,7 +10,7 @@ type TeamworkSendActivityNotificationPostRequestBody struct {
     // The activityType property
     activityType *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The chainId property
     chainId *int64
     // The previewText property
@@ -24,7 +24,7 @@ type TeamworkSendActivityNotificationPostRequestBody struct {
 func NewTeamworkSendActivityNotificationPostRequestBody()(*TeamworkSendActivityNotificationPostRequestBody) {
     m := &TeamworkSendActivityNotificationPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkSendActivityNotificationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func (m *TeamworkSendActivityNotificationPostRequestBody) GetActivityType()(*str
     return m.activityType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSendActivityNotificationPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkSendActivityNotificationPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChainId gets the chainId property value. The chainId property
@@ -163,7 +163,7 @@ func (m *TeamworkSendActivityNotificationPostRequestBody) SetActivityType(value 
     m.activityType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSendActivityNotificationPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkSendActivityNotificationPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChainId sets the chainId property value. The chainId property

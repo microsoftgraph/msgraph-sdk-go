@@ -8,7 +8,7 @@ import (
 // AttackSimulationSimulationUserCoverage 
 type AttackSimulationSimulationUserCoverage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // User in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
     // Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
@@ -26,7 +26,7 @@ type AttackSimulationSimulationUserCoverage struct {
 func NewAttackSimulationSimulationUserCoverage()(*AttackSimulationSimulationUserCoverage) {
     m := &AttackSimulationSimulationUserCoverage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttackSimulationSimulationUserCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateAttackSimulationSimulationUserCoverageFromDiscriminatorValue(parseNod
     return NewAttackSimulationSimulationUserCoverage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttackSimulationSimulationUserCoverage) GetAdditionalData()(map[string]interface{}) {
+func (m *AttackSimulationSimulationUserCoverage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttackSimulationUser gets the attackSimulationUser property value. User in an attack simulation and training campaign.
@@ -173,7 +173,7 @@ func (m *AttackSimulationSimulationUserCoverage) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttackSimulationSimulationUserCoverage) SetAdditionalData(value map[string]interface{})() {
+func (m *AttackSimulationSimulationUserCoverage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttackSimulationUser sets the attackSimulationUser property value. User in an attack simulation and training campaign.

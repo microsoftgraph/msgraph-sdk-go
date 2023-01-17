@@ -18,7 +18,7 @@ const (
 func (i ProcessIntegrityLevel) String() string {
     return []string{"unknown", "untrusted", "low", "medium", "high", "system", "unknownFutureValue"}[i]
 }
-func ParseProcessIntegrityLevel(v string) (interface{}, error) {
+func ParseProcessIntegrityLevel(v string) (any, error) {
     result := UNKNOWN_PROCESSINTEGRITYLEVEL
     switch v {
         case "unknown":

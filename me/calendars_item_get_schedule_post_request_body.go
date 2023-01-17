@@ -8,7 +8,7 @@ import (
 // CalendarsItemGetSchedulePostRequestBody 
 type CalendarsItemGetSchedulePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The AvailabilityViewInterval property
     availabilityViewInterval *int32
     // The EndTime property
@@ -22,7 +22,7 @@ type CalendarsItemGetSchedulePostRequestBody struct {
 func NewCalendarsItemGetSchedulePostRequestBody()(*CalendarsItemGetSchedulePostRequestBody) {
     m := &CalendarsItemGetSchedulePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCalendarsItemGetSchedulePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateCalendarsItemGetSchedulePostRequestBodyFromDiscriminatorValue(parseNo
     return NewCalendarsItemGetSchedulePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarsItemGetSchedulePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CalendarsItemGetSchedulePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailabilityViewInterval gets the availabilityViewInterval property value. The AvailabilityViewInterval property
@@ -133,7 +133,7 @@ func (m *CalendarsItemGetSchedulePostRequestBody) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarsItemGetSchedulePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CalendarsItemGetSchedulePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailabilityViewInterval sets the availabilityViewInterval property value. The AvailabilityViewInterval property

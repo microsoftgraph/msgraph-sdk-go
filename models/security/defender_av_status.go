@@ -18,7 +18,7 @@ const (
 func (i DefenderAvStatus) String() string {
     return []string{"notReporting", "disabled", "notUpdated", "updated", "unknown", "notSupported", "unknownFutureValue"}[i]
 }
-func ParseDefenderAvStatus(v string) (interface{}, error) {
+func ParseDefenderAvStatus(v string) (any, error) {
     result := NOTREPORTING_DEFENDERAVSTATUS
     switch v {
         case "notReporting":

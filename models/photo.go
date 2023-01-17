@@ -8,7 +8,7 @@ import (
 // Photo 
 type Photo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Camera manufacturer. Read-only.
     cameraMake *string
     // Camera model. Read-only.
@@ -34,7 +34,7 @@ type Photo struct {
 func NewPhoto()(*Photo) {
     m := &Photo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreatePhotoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
     return NewPhoto(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Photo) GetAdditionalData()(map[string]interface{}) {
+func (m *Photo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCameraMake gets the cameraMake property value. Camera manufacturer. Read-only.
@@ -261,7 +261,7 @@ func (m *Photo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Photo) SetAdditionalData(value map[string]interface{})() {
+func (m *Photo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCameraMake sets the cameraMake property value. Camera manufacturer. Read-only.

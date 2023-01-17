@@ -7,7 +7,7 @@ import (
 // ItemJoinedTeamsItemArchivePostRequestBody 
 type ItemJoinedTeamsItemArchivePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The shouldSetSpoSiteReadOnlyForMembers property
     shouldSetSpoSiteReadOnlyForMembers *bool
 }
@@ -15,7 +15,7 @@ type ItemJoinedTeamsItemArchivePostRequestBody struct {
 func NewItemJoinedTeamsItemArchivePostRequestBody()(*ItemJoinedTeamsItemArchivePostRequestBody) {
     m := &ItemJoinedTeamsItemArchivePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemJoinedTeamsItemArchivePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemJoinedTeamsItemArchivePostRequestBodyFromDiscriminatorValue(parse
     return NewItemJoinedTeamsItemArchivePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemJoinedTeamsItemArchivePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemJoinedTeamsItemArchivePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemJoinedTeamsItemArchivePostRequestBody) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemJoinedTeamsItemArchivePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemJoinedTeamsItemArchivePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetShouldSetSpoSiteReadOnlyForMembers sets the shouldSetSpoSiteReadOnlyForMembers property value. The shouldSetSpoSiteReadOnlyForMembers property

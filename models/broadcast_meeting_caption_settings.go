@@ -7,7 +7,7 @@ import (
 // BroadcastMeetingCaptionSettings 
 type BroadcastMeetingCaptionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether captions are enabled for this Teams live event.
     isCaptionEnabled *bool
     // The OdataType property
@@ -21,7 +21,7 @@ type BroadcastMeetingCaptionSettings struct {
 func NewBroadcastMeetingCaptionSettings()(*BroadcastMeetingCaptionSettings) {
     m := &BroadcastMeetingCaptionSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue(parseNode i878a
     return NewBroadcastMeetingCaptionSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BroadcastMeetingCaptionSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *BroadcastMeetingCaptionSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -132,7 +132,7 @@ func (m *BroadcastMeetingCaptionSettings) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BroadcastMeetingCaptionSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *BroadcastMeetingCaptionSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsCaptionEnabled sets the isCaptionEnabled property value. Indicates whether captions are enabled for this Teams live event.

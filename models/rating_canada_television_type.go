@@ -27,7 +27,7 @@ const (
 func (i RatingCanadaTelevisionType) String() string {
     return []string{"allAllowed", "allBlocked", "children", "childrenAbove8", "general", "parentalGuidance", "agesAbove14", "agesAbove18"}[i]
 }
-func ParseRatingCanadaTelevisionType(v string) (interface{}, error) {
+func ParseRatingCanadaTelevisionType(v string) (any, error) {
     result := ALLALLOWED_RATINGCANADATELEVISIONTYPE
     switch v {
         case "allAllowed":

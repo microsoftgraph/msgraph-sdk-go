@@ -12,7 +12,7 @@ type UserSecurityState struct {
     // Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
     accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // NetBIOS/Active Directory domain of user account (that is, domain/account format).
     domainName *string
     // For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
@@ -44,7 +44,7 @@ type UserSecurityState struct {
 func NewUserSecurityState()(*UserSecurityState) {
     m := &UserSecurityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +60,7 @@ func (m *UserSecurityState) GetAccountName()(*string) {
     return m.accountName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSecurityState) GetAdditionalData()(map[string]interface{}) {
+func (m *UserSecurityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDomainName gets the domainName property value. NetBIOS/Active Directory domain of user account (that is, domain/account format).
@@ -382,7 +382,7 @@ func (m *UserSecurityState) SetAccountName(value *string)() {
     m.accountName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSecurityState) SetAdditionalData(value map[string]interface{})() {
+func (m *UserSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDomainName sets the domainName property value. NetBIOS/Active Directory domain of user account (that is, domain/account format).

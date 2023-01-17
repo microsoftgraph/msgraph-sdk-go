@@ -7,7 +7,7 @@ import (
 // RubricLevel 
 type RubricLevel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The description of this rubric level.
     description EducationItemBodyable
     // The name of this rubric level.
@@ -23,7 +23,7 @@ type RubricLevel struct {
 func NewRubricLevel()(*RubricLevel) {
     m := &RubricLevel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRubricLevelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateRubricLevelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewRubricLevel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RubricLevel) GetAdditionalData()(map[string]interface{}) {
+func (m *RubricLevel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description of this rubric level.
@@ -150,7 +150,7 @@ func (m *RubricLevel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RubricLevel) SetAdditionalData(value map[string]interface{})() {
+func (m *RubricLevel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. The description of this rubric level.

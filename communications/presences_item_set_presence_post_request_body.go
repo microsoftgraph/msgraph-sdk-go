@@ -9,7 +9,7 @@ type PresencesItemSetPresencePostRequestBody struct {
     // The activity property
     activity *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The availability property
     availability *string
     // The expirationDuration property
@@ -21,7 +21,7 @@ type PresencesItemSetPresencePostRequestBody struct {
 func NewPresencesItemSetPresencePostRequestBody()(*PresencesItemSetPresencePostRequestBody) {
     m := &PresencesItemSetPresencePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePresencesItemSetPresencePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *PresencesItemSetPresencePostRequestBody) GetActivity()(*string) {
     return m.activity
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresencesItemSetPresencePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *PresencesItemSetPresencePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailability gets the availability property value. The availability property
@@ -132,7 +132,7 @@ func (m *PresencesItemSetPresencePostRequestBody) SetActivity(value *string)() {
     m.activity = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresencesItemSetPresencePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *PresencesItemSetPresencePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailability sets the availability property value. The availability property

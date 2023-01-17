@@ -7,7 +7,7 @@ import (
 // ItemSitesItemContentTypesAddCopyPostRequestBody 
 type ItemSitesItemContentTypesAddCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contentType property
     contentType *string
 }
@@ -15,7 +15,7 @@ type ItemSitesItemContentTypesAddCopyPostRequestBody struct {
 func NewItemSitesItemContentTypesAddCopyPostRequestBody()(*ItemSitesItemContentTypesAddCopyPostRequestBody) {
     m := &ItemSitesItemContentTypesAddCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSitesItemContentTypesAddCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemSitesItemContentTypesAddCopyPostRequestBodyFromDiscriminatorValue
     return NewItemSitesItemContentTypesAddCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemContentTypesAddCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSitesItemContentTypesAddCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentType gets the contentType property value. The contentType property
@@ -62,7 +62,7 @@ func (m *ItemSitesItemContentTypesAddCopyPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemContentTypesAddCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSitesItemContentTypesAddCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentType sets the contentType property value. The contentType property

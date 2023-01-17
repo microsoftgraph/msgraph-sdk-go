@@ -7,7 +7,7 @@ import (
 // ConditionalAccessSessionControls 
 type ConditionalAccessSessionControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
     applicationEnforcedRestrictions ApplicationEnforcedRestrictionsSessionControlable
     // Session control to apply cloud app security.
@@ -25,7 +25,7 @@ type ConditionalAccessSessionControls struct {
 func NewConditionalAccessSessionControls()(*ConditionalAccessSessionControls) {
     m := &ConditionalAccessSessionControls{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessSessionControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateConditionalAccessSessionControlsFromDiscriminatorValue(parseNode i878
     return NewConditionalAccessSessionControls(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessSessionControls) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessSessionControls) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationEnforcedRestrictions gets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
@@ -172,7 +172,7 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessSessionControls) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessSessionControls) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationEnforcedRestrictions sets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.

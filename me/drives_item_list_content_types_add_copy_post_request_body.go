@@ -7,7 +7,7 @@ import (
 // DrivesItemListContentTypesAddCopyPostRequestBody 
 type DrivesItemListContentTypesAddCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contentType property
     contentType *string
 }
@@ -15,7 +15,7 @@ type DrivesItemListContentTypesAddCopyPostRequestBody struct {
 func NewDrivesItemListContentTypesAddCopyPostRequestBody()(*DrivesItemListContentTypesAddCopyPostRequestBody) {
     m := &DrivesItemListContentTypesAddCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDrivesItemListContentTypesAddCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDrivesItemListContentTypesAddCopyPostRequestBodyFromDiscriminatorValu
     return NewDrivesItemListContentTypesAddCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemListContentTypesAddCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DrivesItemListContentTypesAddCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentType gets the contentType property value. The contentType property
@@ -62,7 +62,7 @@ func (m *DrivesItemListContentTypesAddCopyPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemListContentTypesAddCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DrivesItemListContentTypesAddCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentType sets the contentType property value. The contentType property

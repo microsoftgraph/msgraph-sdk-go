@@ -7,7 +7,7 @@ import (
 // WindowsDeviceAccount 
 type WindowsDeviceAccount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Not yet documented
@@ -17,7 +17,7 @@ type WindowsDeviceAccount struct {
 func NewWindowsDeviceAccount()(*WindowsDeviceAccount) {
     m := &WindowsDeviceAccount{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsDeviceAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateWindowsDeviceAccountFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewWindowsDeviceAccount(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsDeviceAccount) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsDeviceAccount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -104,7 +104,7 @@ func (m *WindowsDeviceAccount) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsDeviceAccount) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsDeviceAccount) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

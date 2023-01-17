@@ -7,7 +7,7 @@ import (
 // RegistrationEnforcement 
 type RegistrationEnforcement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Run campaigns to remind users to set up targeted authentication methods.
     authenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaignable
     // The OdataType property
@@ -17,7 +17,7 @@ type RegistrationEnforcement struct {
 func NewRegistrationEnforcement()(*RegistrationEnforcement) {
     m := &RegistrationEnforcement{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRegistrationEnforcementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateRegistrationEnforcementFromDiscriminatorValue(parseNode i878a80d2330e
     return NewRegistrationEnforcement(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RegistrationEnforcement) GetAdditionalData()(map[string]interface{}) {
+func (m *RegistrationEnforcement) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthenticationMethodsRegistrationCampaign gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
@@ -84,7 +84,7 @@ func (m *RegistrationEnforcement) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RegistrationEnforcement) SetAdditionalData(value map[string]interface{})() {
+func (m *RegistrationEnforcement) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthenticationMethodsRegistrationCampaign sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.

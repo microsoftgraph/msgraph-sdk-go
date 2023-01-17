@@ -7,7 +7,7 @@ import (
 // ProvisionChannelEmailResult 
 type ProvisionChannelEmailResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the provisioned email address.
     email *string
     // The OdataType property
@@ -17,7 +17,7 @@ type ProvisionChannelEmailResult struct {
 func NewProvisionChannelEmailResult()(*ProvisionChannelEmailResult) {
     m := &ProvisionChannelEmailResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateProvisionChannelEmailResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateProvisionChannelEmailResultFromDiscriminatorValue(parseNode i878a80d2
     return NewProvisionChannelEmailResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProvisionChannelEmailResult) GetAdditionalData()(map[string]interface{}) {
+func (m *ProvisionChannelEmailResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. Represents the provisioned email address.
@@ -84,7 +84,7 @@ func (m *ProvisionChannelEmailResult) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProvisionChannelEmailResult) SetAdditionalData(value map[string]interface{})() {
+func (m *ProvisionChannelEmailResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEmail sets the email property value. Represents the provisioned email address.

@@ -7,7 +7,7 @@ import (
 // MediaContentRatingAustralia 
 type MediaContentRatingAustralia struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Movies rating labels in Australia
     movieRating *RatingAustraliaMoviesType
     // The OdataType property
@@ -19,7 +19,7 @@ type MediaContentRatingAustralia struct {
 func NewMediaContentRatingAustralia()(*MediaContentRatingAustralia) {
     m := &MediaContentRatingAustralia{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaContentRatingAustraliaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMediaContentRatingAustraliaFromDiscriminatorValue(parseNode i878a80d2
     return NewMediaContentRatingAustralia(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingAustralia) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaContentRatingAustralia) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *MediaContentRatingAustralia) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingAustralia) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaContentRatingAustralia) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMovieRating sets the movieRating property value. Movies rating labels in Australia

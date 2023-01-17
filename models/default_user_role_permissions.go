@@ -7,7 +7,7 @@ import (
 // DefaultUserRolePermissions 
 type DefaultUserRolePermissions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the default user role can create applications.
     allowedToCreateApps *bool
     // Indicates whether the default user role can create security groups.
@@ -23,7 +23,7 @@ type DefaultUserRolePermissions struct {
 func NewDefaultUserRolePermissions()(*DefaultUserRolePermissions) {
     m := &DefaultUserRolePermissions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDefaultUserRolePermissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateDefaultUserRolePermissionsFromDiscriminatorValue(parseNode i878a80d23
     return NewDefaultUserRolePermissions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DefaultUserRolePermissions) GetAdditionalData()(map[string]interface{}) {
+func (m *DefaultUserRolePermissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedToCreateApps gets the allowedToCreateApps property value. Indicates whether the default user role can create applications.
@@ -154,7 +154,7 @@ func (m *DefaultUserRolePermissions) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DefaultUserRolePermissions) SetAdditionalData(value map[string]interface{})() {
+func (m *DefaultUserRolePermissions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedToCreateApps sets the allowedToCreateApps property value. Indicates whether the default user role can create applications.

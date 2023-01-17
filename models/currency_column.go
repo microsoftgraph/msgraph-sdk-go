@@ -7,7 +7,7 @@ import (
 // CurrencyColumn 
 type CurrencyColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies the locale from which to infer the currency symbol.
     locale *string
     // The OdataType property
@@ -17,7 +17,7 @@ type CurrencyColumn struct {
 func NewCurrencyColumn()(*CurrencyColumn) {
     m := &CurrencyColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCurrencyColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateCurrencyColumnFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewCurrencyColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CurrencyColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *CurrencyColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *CurrencyColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CurrencyColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *CurrencyColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLocale sets the locale property value. Specifies the locale from which to infer the currency symbol.

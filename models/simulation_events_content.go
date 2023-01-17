@@ -7,7 +7,7 @@ import (
 // SimulationEventsContent 
 type SimulationEventsContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
     compromisedRate *float64
     // List of simulation events in an attack simulation and training campaign.
@@ -19,7 +19,7 @@ type SimulationEventsContent struct {
 func NewSimulationEventsContent()(*SimulationEventsContent) {
     m := &SimulationEventsContent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSimulationEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSimulationEventsContentFromDiscriminatorValue(parseNode i878a80d2330e
     return NewSimulationEventsContent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SimulationEventsContent) GetAdditionalData()(map[string]interface{}) {
+func (m *SimulationEventsContent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompromisedRate gets the compromisedRate property value. Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
@@ -114,7 +114,7 @@ func (m *SimulationEventsContent) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SimulationEventsContent) SetAdditionalData(value map[string]interface{})() {
+func (m *SimulationEventsContent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCompromisedRate sets the compromisedRate property value. Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.

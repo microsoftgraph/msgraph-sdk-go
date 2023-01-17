@@ -8,7 +8,7 @@ import (
 // ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody 
 type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The AttachmentItem property
     attachmentItem iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable
 }
@@ -16,7 +16,7 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessi
 func NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody()(*ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody) {
     m := &ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploa
     return NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttachmentItem gets the attachmentItem property value. The AttachmentItem property
@@ -63,7 +63,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadS
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttachmentItem sets the attachmentItem property value. The AttachmentItem property

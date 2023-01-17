@@ -8,7 +8,7 @@ import (
 // RemovePostRequestBody 
 type RemovePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable
 }
@@ -16,7 +16,7 @@ type RemovePostRequestBody struct {
 func NewRemovePostRequestBody()(*RemovePostRequestBody) {
     m := &RemovePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRemovePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateRemovePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewRemovePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RemovePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *RemovePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -71,7 +71,7 @@ func (m *RemovePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RemovePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *RemovePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

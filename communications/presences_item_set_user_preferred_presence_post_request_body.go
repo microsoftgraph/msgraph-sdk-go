@@ -9,7 +9,7 @@ type PresencesItemSetUserPreferredPresencePostRequestBody struct {
     // The activity property
     activity *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The availability property
     availability *string
     // The expirationDuration property
@@ -19,7 +19,7 @@ type PresencesItemSetUserPreferredPresencePostRequestBody struct {
 func NewPresencesItemSetUserPreferredPresencePostRequestBody()(*PresencesItemSetUserPreferredPresencePostRequestBody) {
     m := &PresencesItemSetUserPreferredPresencePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePresencesItemSetUserPreferredPresencePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *PresencesItemSetUserPreferredPresencePostRequestBody) GetActivity()(*st
     return m.activity
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresencesItemSetUserPreferredPresencePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *PresencesItemSetUserPreferredPresencePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailability gets the availability property value. The availability property
@@ -110,7 +110,7 @@ func (m *PresencesItemSetUserPreferredPresencePostRequestBody) SetActivity(value
     m.activity = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresencesItemSetUserPreferredPresencePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *PresencesItemSetUserPreferredPresencePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailability sets the availability property value. The availability property

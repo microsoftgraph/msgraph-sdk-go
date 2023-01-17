@@ -8,7 +8,7 @@ import (
 // UserTrainingContentEventInfo 
 type UserTrainingContentEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Browser of the user from where the training event was generated.
     browser *string
     // Date and time of the training content playback by the user.
@@ -26,7 +26,7 @@ type UserTrainingContentEventInfo struct {
 func NewUserTrainingContentEventInfo()(*UserTrainingContentEventInfo) {
     m := &UserTrainingContentEventInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserTrainingContentEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateUserTrainingContentEventInfoFromDiscriminatorValue(parseNode i878a80d
     return NewUserTrainingContentEventInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserTrainingContentEventInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *UserTrainingContentEventInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBrowser gets the browser property value. Browser of the user from where the training event was generated.
@@ -173,7 +173,7 @@ func (m *UserTrainingContentEventInfo) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserTrainingContentEventInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *UserTrainingContentEventInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBrowser sets the browser property value. Browser of the user from where the training event was generated.

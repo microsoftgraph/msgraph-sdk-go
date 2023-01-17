@@ -7,7 +7,7 @@ import (
 // BroadcastMeetingSettings 
 type BroadcastMeetingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Defines who can join the Teams live event. Possible values are listed in the following table.
     allowedAudience *BroadcastMeetingAudience
     // Caption settings of a Teams live event.
@@ -27,7 +27,7 @@ type BroadcastMeetingSettings struct {
 func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {
     m := &BroadcastMeetingSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBroadcastMeetingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateBroadcastMeetingSettingsFromDiscriminatorValue(parseNode i878a80d2330
     return NewBroadcastMeetingSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedAudience gets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
@@ -195,7 +195,7 @@ func (m *BroadcastMeetingSettings) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BroadcastMeetingSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *BroadcastMeetingSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedAudience sets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.

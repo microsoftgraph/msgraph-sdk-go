@@ -17,7 +17,7 @@ const (
 func (i EvidenceRemediationStatus) String() string {
     return []string{"none", "remediated", "prevented", "blocked", "notFound", "unknownFutureValue"}[i]
 }
-func ParseEvidenceRemediationStatus(v string) (interface{}, error) {
+func ParseEvidenceRemediationStatus(v string) (any, error) {
     result := NONE_EVIDENCEREMEDIATIONSTATUS
     switch v {
         case "none":

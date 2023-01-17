@@ -8,7 +8,7 @@ import (
 // NetworkConnection 
 type NetworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the application managing the network connection (for example, Facebook or SMTP).
     applicationName *string
     // Destination IP address (of the network connection).
@@ -56,7 +56,7 @@ type NetworkConnection struct {
 func NewNetworkConnection()(*NetworkConnection) {
     m := &NetworkConnection{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateNetworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,7 +64,7 @@ func CreateNetworkConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewNetworkConnection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NetworkConnection) GetAdditionalData()(map[string]interface{}) {
+func (m *NetworkConnection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
@@ -506,7 +506,7 @@ func (m *NetworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NetworkConnection) SetAdditionalData(value map[string]interface{})() {
+func (m *NetworkConnection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).

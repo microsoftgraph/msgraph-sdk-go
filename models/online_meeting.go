@@ -40,6 +40,8 @@ type OnlineMeeting struct {
     isEntryExitAnnounced *bool
     // The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
     joinInformation ItemBodyable
+    // Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+    joinMeetingIdSettings JoinMeetingIdSettingsable
     // The join URL of the online meeting. Read-only.
     joinWebUrl *string
     // Specifies which participants can bypass the meeting   lobby.
@@ -285,6 +287,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["joinMeetingIdSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateJoinMeetingIdSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetJoinMeetingIdSettings(val.(JoinMeetingIdSettingsable))
+        }
+        return nil
+    }
     res["joinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -368,6 +380,10 @@ func (m *OnlineMeeting) GetIsEntryExitAnnounced()(*bool) {
 // GetJoinInformation gets the joinInformation property value. The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
 func (m *OnlineMeeting) GetJoinInformation()(ItemBodyable) {
     return m.joinInformation
+}
+// GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+func (m *OnlineMeeting) GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable) {
+    return m.joinMeetingIdSettings
 }
 // GetJoinWebUrl gets the joinWebUrl property value. The join URL of the online meeting. Read-only.
 func (m *OnlineMeeting) GetJoinWebUrl()(*string) {
@@ -506,6 +522,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteObjectValue("joinMeetingIdSettings", m.GetJoinMeetingIdSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("joinWebUrl", m.GetJoinWebUrl())
         if err != nil {
             return err
@@ -612,6 +634,10 @@ func (m *OnlineMeeting) SetIsEntryExitAnnounced(value *bool)() {
 // SetJoinInformation sets the joinInformation property value. The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
 func (m *OnlineMeeting) SetJoinInformation(value ItemBodyable)() {
     m.joinInformation = value
+}
+// SetJoinMeetingIdSettings sets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+func (m *OnlineMeeting) SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)() {
+    m.joinMeetingIdSettings = value
 }
 // SetJoinWebUrl sets the joinWebUrl property value. The join URL of the online meeting. Read-only.
 func (m *OnlineMeeting) SetJoinWebUrl(value *string)() {

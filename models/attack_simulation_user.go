@@ -7,7 +7,7 @@ import (
 // AttackSimulationUser 
 type AttackSimulationUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Display name of the user.
     displayName *string
     // Email address of the user.
@@ -21,7 +21,7 @@ type AttackSimulationUser struct {
 func NewAttackSimulationUser()(*AttackSimulationUser) {
     m := &AttackSimulationUser{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttackSimulationUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAttackSimulationUserFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewAttackSimulationUser(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttackSimulationUser) GetAdditionalData()(map[string]interface{}) {
+func (m *AttackSimulationUser) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name of the user.
@@ -128,7 +128,7 @@ func (m *AttackSimulationUser) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttackSimulationUser) SetAdditionalData(value map[string]interface{})() {
+func (m *AttackSimulationUser) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name of the user.

@@ -8,7 +8,7 @@ import (
 type SecurityReportsRoot struct {
     Entity
 }
-// NewSecurityReportsRoot instantiates a new securityReportsRoot and sets the default values.
+// NewSecurityReportsRoot instantiates a new SecurityReportsRoot and sets the default values.
 func NewSecurityReportsRoot()(*SecurityReportsRoot) {
     m := &SecurityReportsRoot{
         Entity: *NewEntity(),

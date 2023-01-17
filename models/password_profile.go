@@ -7,8 +7,8 @@ import (
 // PasswordProfile 
 type PasswordProfile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
-    // true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
+    additionalData map[string]any
+    // true if the user must change her password on the next login; otherwise false.
     forceChangePasswordNextSignIn *bool
     // If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
     forceChangePasswordNextSignInWithMfa *bool
@@ -21,7 +21,7 @@ type PasswordProfile struct {
 func NewPasswordProfile()(*PasswordProfile) {
     m := &PasswordProfile{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePasswordProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreatePasswordProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewPasswordProfile(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PasswordProfile) GetAdditionalData()(map[string]interface{}) {
+func (m *PasswordProfile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -77,7 +77,7 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetForceChangePasswordNextSignIn gets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
+// GetForceChangePasswordNextSignIn gets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
 func (m *PasswordProfile) GetForceChangePasswordNextSignIn()(*bool) {
     return m.forceChangePasswordNextSignIn
 }
@@ -128,10 +128,10 @@ func (m *PasswordProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PasswordProfile) SetAdditionalData(value map[string]interface{})() {
+func (m *PasswordProfile) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetForceChangePasswordNextSignIn sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
+// SetForceChangePasswordNextSignIn sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
 func (m *PasswordProfile) SetForceChangePasswordNextSignIn(value *bool)() {
     m.forceChangePasswordNextSignIn = value
 }

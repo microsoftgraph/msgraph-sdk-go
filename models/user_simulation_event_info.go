@@ -8,7 +8,7 @@ import (
 // UserSimulationEventInfo 
 type UserSimulationEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
     browser *string
     // Date and time of the simulation event by a user in an attack simulation and training campaign.
@@ -26,7 +26,7 @@ type UserSimulationEventInfo struct {
 func NewUserSimulationEventInfo()(*UserSimulationEventInfo) {
     m := &UserSimulationEventInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserSimulationEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateUserSimulationEventInfoFromDiscriminatorValue(parseNode i878a80d2330e
     return NewUserSimulationEventInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSimulationEventInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *UserSimulationEventInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBrowser gets the browser property value. Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
@@ -173,7 +173,7 @@ func (m *UserSimulationEventInfo) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSimulationEventInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *UserSimulationEventInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBrowser sets the browser property value. Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.

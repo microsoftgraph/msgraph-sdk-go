@@ -7,7 +7,7 @@ import (
 // PlannerPlanContainer 
 type PlannerPlanContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifier of the resource that contains the plan. Optional.
     containerId *string
     // The OdataType property
@@ -21,7 +21,7 @@ type PlannerPlanContainer struct {
 func NewPlannerPlanContainer()(*PlannerPlanContainer) {
     m := &PlannerPlanContainer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerPlanContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreatePlannerPlanContainerFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewPlannerPlanContainer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerPlanContainer) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerPlanContainer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContainerId gets the containerId property value. The identifier of the resource that contains the plan. Optional.
@@ -129,7 +129,7 @@ func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerPlanContainer) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerPlanContainer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContainerId sets the containerId property value. The identifier of the resource that contains the plan. Optional.

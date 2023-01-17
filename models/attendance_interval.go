@@ -8,7 +8,7 @@ import (
 // AttendanceInterval 
 type AttendanceInterval struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
     durationInSeconds *int32
     // The time the attendee joined in UTC.
@@ -22,7 +22,7 @@ type AttendanceInterval struct {
 func NewAttendanceInterval()(*AttendanceInterval) {
     m := &AttendanceInterval{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttendanceIntervalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateAttendanceIntervalFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewAttendanceInterval(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttendanceInterval) GetAdditionalData()(map[string]interface{}) {
+func (m *AttendanceInterval) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDurationInSeconds gets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -129,7 +129,7 @@ func (m *AttendanceInterval) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttendanceInterval) SetAdditionalData(value map[string]interface{})() {
+func (m *AttendanceInterval) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDurationInSeconds sets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.

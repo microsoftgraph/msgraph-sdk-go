@@ -13,7 +13,7 @@ const (
 func (i SelectionLikelihoodInfo) String() string {
     return []string{"notSpecified", "high"}[i]
 }
-func ParseSelectionLikelihoodInfo(v string) (interface{}, error) {
+func ParseSelectionLikelihoodInfo(v string) (any, error) {
     result := NOTSPECIFIED_SELECTIONLIKELIHOODINFO
     switch v {
         case "notSpecified":

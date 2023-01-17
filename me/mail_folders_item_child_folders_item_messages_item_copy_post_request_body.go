@@ -7,7 +7,7 @@ import (
 // MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody 
 type MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The DestinationId property
     destinationId *string
 }
@@ -15,7 +15,7 @@ type MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody struct {
 func NewMailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody()(*MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody) {
     m := &MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateMailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBodyFromDis
     return NewMailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationId gets the destinationId property value. The DestinationId property
@@ -62,7 +62,7 @@ func (m *MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody) Seriali
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MailFoldersItemChildFoldersItemMessagesItemCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationId sets the destinationId property value. The DestinationId property

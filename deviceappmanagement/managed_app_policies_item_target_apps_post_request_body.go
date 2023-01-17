@@ -8,7 +8,7 @@ import (
 // ManagedAppPoliciesItemTargetAppsPostRequestBody 
 type ManagedAppPoliciesItemTargetAppsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The apps property
     apps []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable
 }
@@ -16,7 +16,7 @@ type ManagedAppPoliciesItemTargetAppsPostRequestBody struct {
 func NewManagedAppPoliciesItemTargetAppsPostRequestBody()(*ManagedAppPoliciesItemTargetAppsPostRequestBody) {
     m := &ManagedAppPoliciesItemTargetAppsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedAppPoliciesItemTargetAppsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateManagedAppPoliciesItemTargetAppsPostRequestBodyFromDiscriminatorValue
     return NewManagedAppPoliciesItemTargetAppsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedAppPoliciesItemTargetAppsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedAppPoliciesItemTargetAppsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApps gets the apps property value. The apps property
@@ -71,7 +71,7 @@ func (m *ManagedAppPoliciesItemTargetAppsPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedAppPoliciesItemTargetAppsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedAppPoliciesItemTargetAppsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApps sets the apps property value. The apps property

@@ -8,7 +8,7 @@ import (
 // ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody 
 type ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The Message property
@@ -20,7 +20,7 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody struc
 func NewItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody()(*ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody) {
     m := &ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody
     return NewItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -115,7 +115,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody) 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemForwardPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

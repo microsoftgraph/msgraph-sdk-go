@@ -9,7 +9,7 @@ type OutlookGeoCoordinates struct {
     // The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
     accuracy *float64
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The altitude of the location.
     altitude *float64
     // The accuracy of the altitude.
@@ -25,7 +25,7 @@ type OutlookGeoCoordinates struct {
 func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
     m := &OutlookGeoCoordinates{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOutlookGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func (m *OutlookGeoCoordinates) GetAccuracy()(*float64) {
     return m.accuracy
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OutlookGeoCoordinates) GetAdditionalData()(map[string]interface{}) {
+func (m *OutlookGeoCoordinates) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAltitude gets the altitude property value. The altitude of the location.
@@ -176,7 +176,7 @@ func (m *OutlookGeoCoordinates) SetAccuracy(value *float64)() {
     m.accuracy = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OutlookGeoCoordinates) SetAdditionalData(value map[string]interface{})() {
+func (m *OutlookGeoCoordinates) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAltitude sets the altitude property value. The altitude of the location.

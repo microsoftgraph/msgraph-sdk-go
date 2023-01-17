@@ -13,7 +13,7 @@ const (
 func (i FilterMode) String() string {
     return []string{"include", "exclude"}[i]
 }
-func ParseFilterMode(v string) (interface{}, error) {
+func ParseFilterMode(v string) (any, error) {
     result := INCLUDE_FILTERMODE
     switch v {
         case "include":

@@ -7,7 +7,7 @@ import (
 // EducationCourse 
 type EducationCourse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Unique identifier for the course.
     courseNumber *string
     // Description of the course.
@@ -25,7 +25,7 @@ type EducationCourse struct {
 func NewEducationCourse()(*EducationCourse) {
     m := &EducationCourse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationCourseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateEducationCourseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewEducationCourse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationCourse) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationCourse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCourseNumber gets the courseNumber property value. Unique identifier for the course.
@@ -172,7 +172,7 @@ func (m *EducationCourse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationCourse) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationCourse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCourseNumber sets the courseNumber property value. Unique identifier for the course.

@@ -4,9 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReportRoot 
+// ReportRoot the resource that represents an instance of Enrollment Failure Reports.
 type ReportRoot struct {
-    Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]any
     // The dailyPrintUsageByPrinter property
     dailyPrintUsageByPrinter []PrintUsageByPrinterable
     // The dailyPrintUsageByUser property
@@ -15,19 +16,25 @@ type ReportRoot struct {
     monthlyPrintUsageByPrinter []PrintUsageByPrinterable
     // The monthlyPrintUsageByUser property
     monthlyPrintUsageByUser []PrintUsageByUserable
+    // The OdataType property
+    odataType *string
     // The security property
     security SecurityReportsRootable
 }
 // NewReportRoot instantiates a new ReportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
-        Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReportRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateReportRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReportRoot(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ReportRoot) GetAdditionalData()(map[string]any) {
+    return m.additionalData
 }
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
@@ -39,7 +46,7 @@ func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dailyPrintUsageByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
         if err != nil {
@@ -96,6 +103,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["security"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityReportsRootFromDiscriminatorValue)
         if err != nil {
@@ -116,22 +133,22 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) 
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     return m.monthlyPrintUsageByUser
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ReportRoot) GetOdataType()(*string) {
+    return m.odataType
+}
 // GetSecurity gets the security property value. The security property
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     return m.security
 }
 // Serialize serializes information the current object
 func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     if m.GetDailyPrintUsageByPrinter() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDailyPrintUsageByPrinter()))
         for i, v := range m.GetDailyPrintUsageByPrinter() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("dailyPrintUsageByPrinter", cast)
+        err := writer.WriteCollectionOfObjectValues("dailyPrintUsageByPrinter", cast)
         if err != nil {
             return err
         }
@@ -141,7 +158,7 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         for i, v := range m.GetDailyPrintUsageByUser() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("dailyPrintUsageByUser", cast)
+        err := writer.WriteCollectionOfObjectValues("dailyPrintUsageByUser", cast)
         if err != nil {
             return err
         }
@@ -151,7 +168,7 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         for i, v := range m.GetMonthlyPrintUsageByPrinter() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageByPrinter", cast)
+        err := writer.WriteCollectionOfObjectValues("monthlyPrintUsageByPrinter", cast)
         if err != nil {
             return err
         }
@@ -161,18 +178,34 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         for i, v := range m.GetMonthlyPrintUsageByUser() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageByUser", cast)
+        err := writer.WriteCollectionOfObjectValues("monthlyPrintUsageByUser", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("security", m.GetSecurity())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("security", m.GetSecurity())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ReportRoot) SetAdditionalData(value map[string]any)() {
+    m.additionalData = value
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
@@ -189,6 +222,10 @@ func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterab
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
     m.monthlyPrintUsageByUser = value
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ReportRoot) SetOdataType(value *string)() {
+    m.odataType = value
 }
 // SetSecurity sets the security property value. The security property
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {

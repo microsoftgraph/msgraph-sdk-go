@@ -7,7 +7,7 @@ import (
 // NetworkInfo 
 type NetworkInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
     bandwidthLowEventRatio *float32
     // The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
@@ -67,7 +67,7 @@ type NetworkInfo struct {
 func NewNetworkInfo()(*NetworkInfo) {
     m := &NetworkInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateNetworkInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func CreateNetworkInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewNetworkInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NetworkInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *NetworkInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBandwidthLowEventRatio gets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
@@ -646,7 +646,7 @@ func (m *NetworkInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NetworkInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *NetworkInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBandwidthLowEventRatio sets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.

@@ -7,7 +7,7 @@ import (
 // Win32LobAppInstallExperience contains installation experience properties for a Win32 App
 type Win32LobAppInstallExperience struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates the type of restart action.
     deviceRestartBehavior *Win32LobAppRestartBehavior
     // The OdataType property
@@ -19,7 +19,7 @@ type Win32LobAppInstallExperience struct {
 func NewWin32LobAppInstallExperience()(*Win32LobAppInstallExperience) {
     m := &Win32LobAppInstallExperience{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWin32LobAppInstallExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateWin32LobAppInstallExperienceFromDiscriminatorValue(parseNode i878a80d
     return NewWin32LobAppInstallExperience(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppInstallExperience) GetAdditionalData()(map[string]interface{}) {
+func (m *Win32LobAppInstallExperience) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceRestartBehavior gets the deviceRestartBehavior property value. Indicates the type of restart action.
@@ -108,7 +108,7 @@ func (m *Win32LobAppInstallExperience) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppInstallExperience) SetAdditionalData(value map[string]interface{})() {
+func (m *Win32LobAppInstallExperience) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceRestartBehavior sets the deviceRestartBehavior property value. Indicates the type of restart action.

@@ -16,7 +16,7 @@ const (
 func (i Modality) String() string {
     return []string{"audio", "video", "videoBasedScreenSharing", "data", "unknownFutureValue"}[i]
 }
-func ParseModality(v string) (interface{}, error) {
+func ParseModality(v string) (any, error) {
     result := AUDIO_MODALITY
     switch v {
         case "audio":

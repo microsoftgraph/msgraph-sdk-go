@@ -9,7 +9,7 @@ type IdentityGovernance struct {
     // The accessReviews property
     accessReviews AccessReviewSetable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appConsent property
     appConsent AppConsentApprovalRouteable
     // The entitlementManagement property
@@ -23,7 +23,7 @@ type IdentityGovernance struct {
 func NewIdentityGovernance()(*IdentityGovernance) {
     m := &IdentityGovernance{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIdentityGovernanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func (m *IdentityGovernance) GetAccessReviews()(AccessReviewSetable) {
     return m.accessReviews
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityGovernance) GetAdditionalData()(map[string]interface{}) {
+func (m *IdentityGovernance) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppConsent gets the appConsent property value. The appConsent property
@@ -154,7 +154,7 @@ func (m *IdentityGovernance) SetAccessReviews(value AccessReviewSetable)() {
     m.accessReviews = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityGovernance) SetAdditionalData(value map[string]interface{})() {
+func (m *IdentityGovernance) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppConsent sets the appConsent property value. The appConsent property

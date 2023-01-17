@@ -7,7 +7,7 @@ import (
 // ConditionalAccessFilter 
 type ConditionalAccessFilter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The mode property
     mode *FilterMode
     // The OdataType property
@@ -19,7 +19,7 @@ type ConditionalAccessFilter struct {
 func NewConditionalAccessFilter()(*ConditionalAccessFilter) {
     m := &ConditionalAccessFilter{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessFilterFromDiscriminatorValue(parseNode i878a80d2330e
     return NewConditionalAccessFilter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessFilter) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessFilter) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *ConditionalAccessFilter) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMode sets the mode property value. The mode property

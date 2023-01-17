@@ -7,7 +7,7 @@ import (
 // TextColumn 
 type TextColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Whether to allow multiple lines of text.
     allowMultipleLines *bool
     // Whether updates to this column should replace existing text, or append to it.
@@ -25,7 +25,7 @@ type TextColumn struct {
 func NewTextColumn()(*TextColumn) {
     m := &TextColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTextColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTextColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewTextColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TextColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *TextColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowMultipleLines gets the allowMultipleLines property value. Whether to allow multiple lines of text.
@@ -172,7 +172,7 @@ func (m *TextColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TextColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *TextColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowMultipleLines sets the allowMultipleLines property value. Whether to allow multiple lines of text.

@@ -8,7 +8,7 @@ import (
 // ExpirationPattern 
 type ExpirationPattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -22,7 +22,7 @@ type ExpirationPattern struct {
 func NewExpirationPattern()(*ExpirationPattern) {
     m := &ExpirationPattern{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExpirationPatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateExpirationPatternFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewExpirationPattern(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExpirationPattern) GetAdditionalData()(map[string]interface{}) {
+func (m *ExpirationPattern) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDuration gets the duration property value. The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.
@@ -130,7 +130,7 @@ func (m *ExpirationPattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExpirationPattern) SetAdditionalData(value map[string]interface{})() {
+func (m *ExpirationPattern) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDuration sets the duration property value. The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.

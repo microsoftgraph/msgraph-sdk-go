@@ -14,7 +14,7 @@ const (
 func (i FollowupFlagStatus) String() string {
     return []string{"notFlagged", "complete", "flagged"}[i]
 }
-func ParseFollowupFlagStatus(v string) (interface{}, error) {
+func ParseFollowupFlagStatus(v string) (any, error) {
     result := NOTFLAGGED_FOLLOWUPFLAGSTATUS
     switch v {
         case "notFlagged":

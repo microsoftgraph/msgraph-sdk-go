@@ -19,7 +19,7 @@ const (
 func (i WorkforceIntegrationSupportedEntities) String() string {
     return []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue"}[i]
 }
-func ParseWorkforceIntegrationSupportedEntities(v string) (interface{}, error) {
+func ParseWorkforceIntegrationSupportedEntities(v string) (any, error) {
     result := NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
     switch v {
         case "none":

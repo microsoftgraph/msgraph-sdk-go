@@ -7,7 +7,7 @@ import (
 // UserAgent 
 type UserAgent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identifies the version of application software used by this endpoint.
     applicationVersion *string
     // User-agent header value reported by this endpoint.
@@ -19,7 +19,7 @@ type UserAgent struct {
 func NewUserAgent()(*UserAgent) {
     m := &UserAgent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateUserAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewUserAgent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserAgent) GetAdditionalData()(map[string]interface{}) {
+func (m *UserAgent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationVersion gets the applicationVersion property value. Identifies the version of application software used by this endpoint.
@@ -126,7 +126,7 @@ func (m *UserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserAgent) SetAdditionalData(value map[string]interface{})() {
+func (m *UserAgent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationVersion sets the applicationVersion property value. Identifies the version of application software used by this endpoint.

@@ -15,7 +15,7 @@ const (
 func (i FailureStage) String() string {
     return []string{"unknown", "callSetup", "midcall", "unknownFutureValue"}[i]
 }
-func ParseFailureStage(v string) (interface{}, error) {
+func ParseFailureStage(v string) (any, error) {
     result := UNKNOWN_FAILURESTAGE
     switch v {
         case "unknown":

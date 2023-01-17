@@ -7,7 +7,7 @@ import (
 // OperationError 
 type OperationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Operation error code.
     code *string
     // Operation error message.
@@ -19,7 +19,7 @@ type OperationError struct {
 func NewOperationError()(*OperationError) {
     m := &OperationError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateOperationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewOperationError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OperationError) GetAdditionalData()(map[string]interface{}) {
+func (m *OperationError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. Operation error code.
@@ -106,7 +106,7 @@ func (m *OperationError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OperationError) SetAdditionalData(value map[string]interface{})() {
+func (m *OperationError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. Operation error code.

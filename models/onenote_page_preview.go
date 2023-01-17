@@ -7,7 +7,7 @@ import (
 // OnenotePagePreview 
 type OnenotePagePreview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The links property
     links OnenotePagePreviewLinksable
     // The OdataType property
@@ -19,7 +19,7 @@ type OnenotePagePreview struct {
 func NewOnenotePagePreview()(*OnenotePagePreview) {
     m := &OnenotePagePreview{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnenotePagePreviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateOnenotePagePreviewFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewOnenotePagePreview(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnenotePagePreview) GetAdditionalData()(map[string]interface{}) {
+func (m *OnenotePagePreview) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *OnenotePagePreview) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnenotePagePreview) SetAdditionalData(value map[string]interface{})() {
+func (m *OnenotePagePreview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLinks sets the links property value. The links property

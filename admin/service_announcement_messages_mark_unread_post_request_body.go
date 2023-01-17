@@ -7,7 +7,7 @@ import (
 // ServiceAnnouncementMessagesMarkUnreadPostRequestBody 
 type ServiceAnnouncementMessagesMarkUnreadPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The messageIds property
     messageIds []string
 }
@@ -15,7 +15,7 @@ type ServiceAnnouncementMessagesMarkUnreadPostRequestBody struct {
 func NewServiceAnnouncementMessagesMarkUnreadPostRequestBody()(*ServiceAnnouncementMessagesMarkUnreadPostRequestBody) {
     m := &ServiceAnnouncementMessagesMarkUnreadPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServiceAnnouncementMessagesMarkUnreadPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateServiceAnnouncementMessagesMarkUnreadPostRequestBodyFromDiscriminator
     return NewServiceAnnouncementMessagesMarkUnreadPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceAnnouncementMessagesMarkUnreadPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ServiceAnnouncementMessagesMarkUnreadPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *ServiceAnnouncementMessagesMarkUnreadPostRequestBody) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceAnnouncementMessagesMarkUnreadPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ServiceAnnouncementMessagesMarkUnreadPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMessageIds sets the messageIds property value. The messageIds property

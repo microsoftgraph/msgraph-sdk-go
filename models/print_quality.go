@@ -15,7 +15,7 @@ const (
 func (i PrintQuality) String() string {
     return []string{"low", "medium", "high", "unknownFutureValue"}[i]
 }
-func ParsePrintQuality(v string) (interface{}, error) {
+func ParsePrintQuality(v string) (any, error) {
     result := LOW_PRINTQUALITY
     switch v {
         case "low":

@@ -8,7 +8,7 @@ import (
 // ItemDrivesItemRootCreateLinkPostRequestBody 
 type ItemDrivesItemRootCreateLinkPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expirationDateTime property
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The message property
@@ -26,7 +26,7 @@ type ItemDrivesItemRootCreateLinkPostRequestBody struct {
 func NewItemDrivesItemRootCreateLinkPostRequestBody()(*ItemDrivesItemRootCreateLinkPostRequestBody) {
     m := &ItemDrivesItemRootCreateLinkPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDrivesItemRootCreateLinkPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateItemDrivesItemRootCreateLinkPostRequestBodyFromDiscriminatorValue(par
     return NewItemDrivesItemRootCreateLinkPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemRootCreateLinkPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDrivesItemRootCreateLinkPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
@@ -173,7 +173,7 @@ func (m *ItemDrivesItemRootCreateLinkPostRequestBody) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemRootCreateLinkPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDrivesItemRootCreateLinkPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property

@@ -17,7 +17,7 @@ const (
 func (i RequiredPasswordType) String() string {
     return []string{"deviceDefault", "alphanumeric", "numeric"}[i]
 }
-func ParseRequiredPasswordType(v string) (interface{}, error) {
+func ParseRequiredPasswordType(v string) (any, error) {
     result := DEVICEDEFAULT_REQUIREDPASSWORDTYPE
     switch v {
         case "deviceDefault":

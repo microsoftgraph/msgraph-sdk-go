@@ -7,7 +7,7 @@ import (
 // SearchQuery 
 type SearchQuery struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The search query containing the search terms. Required.
@@ -17,7 +17,7 @@ type SearchQuery struct {
 func NewSearchQuery()(*SearchQuery) {
     m := &SearchQuery{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSearchQueryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewSearchQuery(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchQuery) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchQuery) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchQuery) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchQuery) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

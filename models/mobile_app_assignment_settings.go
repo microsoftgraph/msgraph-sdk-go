@@ -7,7 +7,7 @@ import (
 // MobileAppAssignmentSettings abstract class to contain properties used to assign a mobile app to a group.
 type MobileAppAssignmentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type MobileAppAssignmentSettings struct {
 func NewMobileAppAssignmentSettings()(*MobileAppAssignmentSettings) {
     m := &MobileAppAssignmentSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +44,8 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
                         return NewMicrosoftStoreForBusinessAppAssignmentSettings(), nil
                     case "#microsoft.graph.win32LobAppAssignmentSettings":
                         return NewWin32LobAppAssignmentSettings(), nil
+                    case "#microsoft.graph.windowsAppXAppAssignmentSettings":
+                        return NewWindowsAppXAppAssignmentSettings(), nil
                 }
             }
         }
@@ -51,7 +53,7 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
     return NewMobileAppAssignmentSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppAssignmentSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppAssignmentSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -90,7 +92,7 @@ func (m *MobileAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppAssignmentSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppAssignmentSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

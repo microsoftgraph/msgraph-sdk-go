@@ -8,7 +8,7 @@ import (
 // MessagesItemReplyAllPostRequestBody 
 type MessagesItemReplyAllPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The Message property
@@ -18,7 +18,7 @@ type MessagesItemReplyAllPostRequestBody struct {
 func NewMessagesItemReplyAllPostRequestBody()(*MessagesItemReplyAllPostRequestBody) {
     m := &MessagesItemReplyAllPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMessagesItemReplyAllPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateMessagesItemReplyAllPostRequestBodyFromDiscriminatorValue(parseNode i
     return NewMessagesItemReplyAllPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessagesItemReplyAllPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MessagesItemReplyAllPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -85,7 +85,7 @@ func (m *MessagesItemReplyAllPostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessagesItemReplyAllPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MessagesItemReplyAllPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

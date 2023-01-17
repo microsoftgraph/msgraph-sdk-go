@@ -19,7 +19,7 @@ const (
 func (i ManagedAppDataStorageLocation) String() string {
     return []string{"oneDriveForBusiness", "sharePoint", "box", "localStorage"}[i]
 }
-func ParseManagedAppDataStorageLocation(v string) (interface{}, error) {
+func ParseManagedAppDataStorageLocation(v string) (any, error) {
     result := ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION
     switch v {
         case "oneDriveForBusiness":

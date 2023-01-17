@@ -11,7 +11,7 @@ type ItemActionStat struct {
     // The number of distinct actors that performed the action. Read-only.
     actorCount *int32
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -19,7 +19,7 @@ type ItemActionStat struct {
 func NewItemActionStat()(*ItemActionStat) {
     m := &ItemActionStat{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemActionStatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func (m *ItemActionStat) GetActorCount()(*int32) {
     return m.actorCount
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActionStat) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemActionStat) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -114,7 +114,7 @@ func (m *ItemActionStat) SetActorCount(value *int32)() {
     m.actorCount = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActionStat) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemActionStat) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -7,7 +7,7 @@ import (
 // PrintJobConfiguration 
 type PrintJobConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
     collate *bool
     // The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
@@ -53,7 +53,7 @@ type PrintJobConfiguration struct {
 func NewPrintJobConfiguration()(*PrintJobConfiguration) {
     m := &PrintJobConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrintJobConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +61,7 @@ func CreatePrintJobConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewPrintJobConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintJobConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *PrintJobConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCollate gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
@@ -499,7 +499,7 @@ func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintJobConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *PrintJobConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCollate sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.

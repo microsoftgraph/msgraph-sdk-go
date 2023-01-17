@@ -15,7 +15,7 @@ const (
 func (i PostType) String() string {
     return []string{"regular", "quick", "strategic", "unknownFutureValue"}[i]
 }
-func ParsePostType(v string) (interface{}, error) {
+func ParsePostType(v string) (any, error) {
     result := REGULAR_POSTTYPE
     switch v {
         case "regular":

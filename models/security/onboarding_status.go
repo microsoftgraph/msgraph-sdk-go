@@ -16,7 +16,7 @@ const (
 func (i OnboardingStatus) String() string {
     return []string{"insufficientInfo", "onboarded", "canBeOnboarded", "unsupported", "unknownFutureValue"}[i]
 }
-func ParseOnboardingStatus(v string) (interface{}, error) {
+func ParseOnboardingStatus(v string) (any, error) {
     result := INSUFFICIENTINFO_ONBOARDINGSTATUS
     switch v {
         case "insufficientInfo":

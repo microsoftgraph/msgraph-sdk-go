@@ -14,7 +14,7 @@ const (
 func (i ThreatAssessmentContentType) String() string {
     return []string{"mail", "url", "file"}[i]
 }
-func ParseThreatAssessmentContentType(v string) (interface{}, error) {
+func ParseThreatAssessmentContentType(v string) (any, error) {
     result := MAIL_THREATASSESSMENTCONTENTTYPE
     switch v {
         case "mail":

@@ -7,7 +7,7 @@ import (
 // ItemMessagesItemCopyPostRequestBody 
 type ItemMessagesItemCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The DestinationId property
     destinationId *string
 }
@@ -15,7 +15,7 @@ type ItemMessagesItemCopyPostRequestBody struct {
 func NewItemMessagesItemCopyPostRequestBody()(*ItemMessagesItemCopyPostRequestBody) {
     m := &ItemMessagesItemCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemMessagesItemCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemMessagesItemCopyPostRequestBodyFromDiscriminatorValue(parseNode i
     return NewItemMessagesItemCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMessagesItemCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemMessagesItemCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationId gets the destinationId property value. The DestinationId property
@@ -62,7 +62,7 @@ func (m *ItemMessagesItemCopyPostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMessagesItemCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemMessagesItemCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationId sets the destinationId property value. The DestinationId property

@@ -23,7 +23,7 @@ const (
 func (i VideoCodec) String() string {
     return []string{"unknown", "invalid", "av1", "h263", "h264", "h264s", "h264uc", "h265", "rtvc1", "rtVideo", "xrtvc1", "unknownFutureValue"}[i]
 }
-func ParseVideoCodec(v string) (interface{}, error) {
+func ParseVideoCodec(v string) (any, error) {
     result := UNKNOWN_VIDEOCODEC
     switch v {
         case "unknown":

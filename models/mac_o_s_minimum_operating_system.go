@@ -7,7 +7,7 @@ import (
 // MacOSMinimumOperatingSystem the minimum operating system required for a macOS app.
 type MacOSMinimumOperatingSystem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
@@ -39,7 +39,7 @@ type MacOSMinimumOperatingSystem struct {
 func NewMacOSMinimumOperatingSystem()(*MacOSMinimumOperatingSystem) {
     m := &MacOSMinimumOperatingSystem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateMacOSMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2
     return NewMacOSMinimumOperatingSystem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -326,7 +326,7 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSMinimumOperatingSystem) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

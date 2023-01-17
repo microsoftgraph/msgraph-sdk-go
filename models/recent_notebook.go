@@ -8,7 +8,7 @@ import (
 // RecentNotebook 
 type RecentNotebook struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the notebook.
     displayName *string
     // The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -24,7 +24,7 @@ type RecentNotebook struct {
 func NewRecentNotebook()(*RecentNotebook) {
     m := &RecentNotebook{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRecentNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateRecentNotebookFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewRecentNotebook(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecentNotebook) GetAdditionalData()(map[string]interface{}) {
+func (m *RecentNotebook) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The name of the notebook.
@@ -152,7 +152,7 @@ func (m *RecentNotebook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecentNotebook) SetAdditionalData(value map[string]interface{})() {
+func (m *RecentNotebook) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The name of the notebook.

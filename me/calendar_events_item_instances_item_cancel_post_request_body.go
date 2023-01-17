@@ -7,7 +7,7 @@ import (
 // CalendarEventsItemInstancesItemCancelPostRequestBody 
 type CalendarEventsItemInstancesItemCancelPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
 }
@@ -15,7 +15,7 @@ type CalendarEventsItemInstancesItemCancelPostRequestBody struct {
 func NewCalendarEventsItemInstancesItemCancelPostRequestBody()(*CalendarEventsItemInstancesItemCancelPostRequestBody) {
     m := &CalendarEventsItemInstancesItemCancelPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCalendarEventsItemInstancesItemCancelPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCalendarEventsItemInstancesItemCancelPostRequestBodyFromDiscriminator
     return NewCalendarEventsItemInstancesItemCancelPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarEventsItemInstancesItemCancelPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CalendarEventsItemInstancesItemCancelPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -62,7 +62,7 @@ func (m *CalendarEventsItemInstancesItemCancelPostRequestBody) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarEventsItemInstancesItemCancelPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CalendarEventsItemInstancesItemCancelPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

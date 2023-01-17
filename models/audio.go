@@ -7,7 +7,7 @@ import (
 // Audio 
 type Audio struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The title of the album for this audio file.
     album *string
     // The artist named on the album for the audio file.
@@ -47,7 +47,7 @@ type Audio struct {
 func NewAudio()(*Audio) {
     m := &Audio{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAudioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +55,7 @@ func CreateAudioFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
     return NewAudio(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Audio) GetAdditionalData()(map[string]interface{}) {
+func (m *Audio) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlbum gets the album property value. The title of the album for this audio file.
@@ -414,7 +414,7 @@ func (m *Audio) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Audio) SetAdditionalData(value map[string]interface{})() {
+func (m *Audio) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlbum sets the album property value. The title of the album for this audio file.

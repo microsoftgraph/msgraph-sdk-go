@@ -16,7 +16,7 @@ const (
 func (i EndpointType) String() string {
     return []string{"default", "voicemail", "skypeForBusiness", "skypeForBusinessVoipPhone", "unknownFutureValue"}[i]
 }
-func ParseEndpointType(v string) (interface{}, error) {
+func ParseEndpointType(v string) (any, error) {
     result := DEFAULT_ESCAPED_ENDPOINTTYPE
     switch v {
         case "default":

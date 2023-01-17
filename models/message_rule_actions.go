@@ -7,7 +7,7 @@ import (
 // MessageRuleActions 
 type MessageRuleActions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A list of categories to be assigned to a message.
     assignCategories []string
     // The ID of a folder that a message is to be copied to.
@@ -37,7 +37,7 @@ type MessageRuleActions struct {
 func NewMessageRuleActions()(*MessageRuleActions) {
     m := &MessageRuleActions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMessageRuleActionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateMessageRuleActionsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewMessageRuleActions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessageRuleActions) GetAdditionalData()(map[string]interface{}) {
+func (m *MessageRuleActions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignCategories gets the assignCategories property value. A list of categories to be assigned to a message.
@@ -333,7 +333,7 @@ func (m *MessageRuleActions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessageRuleActions) SetAdditionalData(value map[string]interface{})() {
+func (m *MessageRuleActions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignCategories sets the assignCategories property value. A list of categories to be assigned to a message.

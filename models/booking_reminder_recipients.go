@@ -15,7 +15,7 @@ const (
 func (i BookingReminderRecipients) String() string {
     return []string{"allAttendees", "staff", "customer", "unknownFutureValue"}[i]
 }
-func ParseBookingReminderRecipients(v string) (interface{}, error) {
+func ParseBookingReminderRecipients(v string) (any, error) {
     result := ALLATTENDEES_BOOKINGREMINDERRECIPIENTS
     switch v {
         case "allAttendees":

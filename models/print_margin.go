@@ -7,7 +7,7 @@ import (
 // PrintMargin 
 type PrintMargin struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The margin in microns from the bottom edge.
     bottom *int32
     // The margin in microns from the left edge.
@@ -23,7 +23,7 @@ type PrintMargin struct {
 func NewPrintMargin()(*PrintMargin) {
     m := &PrintMargin{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrintMarginFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreatePrintMarginFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewPrintMargin(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintMargin) GetAdditionalData()(map[string]interface{}) {
+func (m *PrintMargin) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBottom gets the bottom property value. The margin in microns from the bottom edge.
@@ -150,7 +150,7 @@ func (m *PrintMargin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintMargin) SetAdditionalData(value map[string]interface{})() {
+func (m *PrintMargin) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBottom sets the bottom property value. The margin in microns from the bottom edge.

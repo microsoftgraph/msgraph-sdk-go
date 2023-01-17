@@ -17,7 +17,7 @@ const (
 func (i SharedPCAccountDeletionPolicyType) String() string {
     return []string{"immediate", "diskSpaceThreshold", "diskSpaceThresholdOrInactiveThreshold"}[i]
 }
-func ParseSharedPCAccountDeletionPolicyType(v string) (interface{}, error) {
+func ParseSharedPCAccountDeletionPolicyType(v string) (any, error) {
     result := IMMEDIATE_SHAREDPCACCOUNTDELETIONPOLICYTYPE
     switch v {
         case "immediate":

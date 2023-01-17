@@ -7,7 +7,7 @@ import (
 // ChatMessageAttachment 
 type ChatMessageAttachment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
     content *string
     // The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
@@ -27,7 +27,7 @@ type ChatMessageAttachment struct {
 func NewChatMessageAttachment()(*ChatMessageAttachment) {
     m := &ChatMessageAttachment{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatMessageAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateChatMessageAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewChatMessageAttachment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessageAttachment) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatMessageAttachment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -194,7 +194,7 @@ func (m *ChatMessageAttachment) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessageAttachment) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatMessageAttachment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContent sets the content property value. The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.

@@ -7,7 +7,7 @@ import (
 // ApprovalSettings 
 type ApprovalSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
     approvalMode *string
     // If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
@@ -25,7 +25,7 @@ type ApprovalSettings struct {
 func NewApprovalSettings()(*ApprovalSettings) {
     m := &ApprovalSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateApprovalSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateApprovalSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewApprovalSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApprovalSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ApprovalSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApprovalMode gets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
@@ -180,7 +180,7 @@ func (m *ApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApprovalSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ApprovalSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApprovalMode sets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.

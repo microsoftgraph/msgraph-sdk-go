@@ -7,7 +7,7 @@ import (
 // ItemDrivesItemListContentTypesItemIsPublishedResponse 
 type ItemDrivesItemListContentTypesItemIsPublishedResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type ItemDrivesItemListContentTypesItemIsPublishedResponse struct {
 func NewItemDrivesItemListContentTypesItemIsPublishedResponse()(*ItemDrivesItemListContentTypesItemIsPublishedResponse) {
     m := &ItemDrivesItemListContentTypesItemIsPublishedResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDrivesItemListContentTypesItemIsPublishedResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemDrivesItemListContentTypesItemIsPublishedResponseFromDiscriminato
     return NewItemDrivesItemListContentTypesItemIsPublishedResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemListContentTypesItemIsPublishedResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDrivesItemListContentTypesItemIsPublishedResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemDrivesItemListContentTypesItemIsPublishedResponse) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemListContentTypesItemIsPublishedResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDrivesItemListContentTypesItemIsPublishedResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

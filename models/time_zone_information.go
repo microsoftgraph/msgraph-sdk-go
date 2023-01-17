@@ -7,7 +7,7 @@ import (
 // TimeZoneInformation 
 type TimeZoneInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // An identifier for the time zone.
     alias *string
     // A display string that represents the time zone.
@@ -19,7 +19,7 @@ type TimeZoneInformation struct {
 func NewTimeZoneInformation()(*TimeZoneInformation) {
     m := &TimeZoneInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTimeZoneInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateTimeZoneInformationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewTimeZoneInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeZoneInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *TimeZoneInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlias gets the alias property value. An identifier for the time zone.
@@ -106,7 +106,7 @@ func (m *TimeZoneInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeZoneInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *TimeZoneInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlias sets the alias property value. An identifier for the time zone.

@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionApp app for Windows information protection
 type WindowsInformationProtectionApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If true, app is denied protection or exemption.
     denied *bool
     // The app's description.
@@ -25,7 +25,7 @@ type WindowsInformationProtectionApp struct {
 func NewWindowsInformationProtectionApp()(*WindowsInformationProtectionApp) {
     m := &WindowsInformationProtectionApp{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsInformationProtectionAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,7 @@ func CreateWindowsInformationProtectionAppFromDiscriminatorValue(parseNode i878a
     return NewWindowsInformationProtectionApp(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsInformationProtectionApp) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsInformationProtectionApp) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDenied gets the denied property value. If true, app is denied protection or exemption.
@@ -192,7 +192,7 @@ func (m *WindowsInformationProtectionApp) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsInformationProtectionApp) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsInformationProtectionApp) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDenied sets the denied property value. If true, app is denied protection or exemption.

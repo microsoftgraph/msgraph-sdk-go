@@ -7,7 +7,7 @@ import (
 // PrinterStatus 
 type PrinterStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A human-readable description of the printer's current processing state. Read-only.
     description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
@@ -21,7 +21,7 @@ type PrinterStatus struct {
 func NewPrinterStatus()(*PrinterStatus) {
     m := &PrinterStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrinterStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreatePrinterStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewPrinterStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *PrinterStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. A human-readable description of the printer's current processing state. Read-only.
@@ -133,7 +133,7 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *PrinterStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. A human-readable description of the printer's current processing state. Read-only.

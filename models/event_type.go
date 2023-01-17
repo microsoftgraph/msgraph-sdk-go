@@ -15,7 +15,7 @@ const (
 func (i EventType) String() string {
     return []string{"singleInstance", "occurrence", "exception", "seriesMaster"}[i]
 }
-func ParseEventType(v string) (interface{}, error) {
+func ParseEventType(v string) (any, error) {
     result := SINGLEINSTANCE_EVENTTYPE
     switch v {
         case "singleInstance":

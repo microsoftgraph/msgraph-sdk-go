@@ -7,7 +7,7 @@ import (
 // IdentitySet 
 type IdentitySet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Optional. The application associated with this action.
     application Identityable
     // Optional. The device associated with this action.
@@ -21,7 +21,7 @@ type IdentitySet struct {
 func NewIdentitySet()(*IdentitySet) {
     m := &IdentitySet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,7 @@ func CreateIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewIdentitySet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentitySet) GetAdditionalData()(map[string]interface{}) {
+func (m *IdentitySet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplication gets the application property value. Optional. The application associated with this action.
@@ -152,7 +152,7 @@ func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentitySet) SetAdditionalData(value map[string]interface{})() {
+func (m *IdentitySet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplication sets the application property value. Optional. The application associated with this action.

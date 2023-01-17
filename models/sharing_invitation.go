@@ -7,7 +7,7 @@ import (
 // SharingInvitation 
 type SharingInvitation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The email address provided for the recipient of the sharing invitation. Read-only.
     email *string
     // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
@@ -23,7 +23,7 @@ type SharingInvitation struct {
 func NewSharingInvitation()(*SharingInvitation) {
     m := &SharingInvitation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSharingInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateSharingInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewSharingInvitation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharingInvitation) GetAdditionalData()(map[string]interface{}) {
+func (m *SharingInvitation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.
@@ -150,7 +150,7 @@ func (m *SharingInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharingInvitation) SetAdditionalData(value map[string]interface{})() {
+func (m *SharingInvitation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEmail sets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.

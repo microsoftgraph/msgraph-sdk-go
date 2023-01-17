@@ -29,7 +29,7 @@ const (
 func (i DetectionSource) String() string {
     return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue"}[i]
 }
-func ParseDetectionSource(v string) (interface{}, error) {
+func ParseDetectionSource(v string) (any, error) {
     result := UNKNOWN_DETECTIONSOURCE
     switch v {
         case "unknown":

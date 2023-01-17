@@ -7,7 +7,7 @@ import (
 // MessageRulePredicates 
 type MessageRulePredicates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
     bodyContains []string
     // Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
@@ -75,7 +75,7 @@ type MessageRulePredicates struct {
 func NewMessageRulePredicates()(*MessageRulePredicates) {
     m := &MessageRulePredicates{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMessageRulePredicatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -83,7 +83,7 @@ func CreateMessageRulePredicatesFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMessageRulePredicates(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessageRulePredicates) GetAdditionalData()(map[string]interface{}) {
+func (m *MessageRulePredicates) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBodyContains gets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
@@ -769,7 +769,7 @@ func (m *MessageRulePredicates) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessageRulePredicates) SetAdditionalData(value map[string]interface{})() {
+func (m *MessageRulePredicates) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBodyContains sets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.

@@ -7,7 +7,7 @@ import (
 // WorkbookOperationError 
 type WorkbookOperationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The error code.
     code *string
     // The innerError property
@@ -21,7 +21,7 @@ type WorkbookOperationError struct {
 func NewWorkbookOperationError()(*WorkbookOperationError) {
     m := &WorkbookOperationError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkbookOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateWorkbookOperationErrorFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewWorkbookOperationError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookOperationError) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkbookOperationError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. The error code.
@@ -128,7 +128,7 @@ func (m *WorkbookOperationError) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookOperationError) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkbookOperationError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. The error code.

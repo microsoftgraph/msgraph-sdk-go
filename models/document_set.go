@@ -7,7 +7,7 @@ import (
 // DocumentSet 
 type DocumentSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Content types allowed in document set.
     allowedContentTypes []ContentTypeInfoable
     // Default contents of document set.
@@ -29,7 +29,7 @@ type DocumentSet struct {
 func NewDocumentSet()(*DocumentSet) {
     m := &DocumentSet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDocumentSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateDocumentSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewDocumentSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DocumentSet) GetAdditionalData()(map[string]interface{}) {
+func (m *DocumentSet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedContentTypes gets the allowedContentTypes property value. Content types allowed in document set.
@@ -248,7 +248,7 @@ func (m *DocumentSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DocumentSet) SetAdditionalData(value map[string]interface{})() {
+func (m *DocumentSet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedContentTypes sets the allowedContentTypes property value. Content types allowed in document set.

@@ -8,7 +8,7 @@ import (
 // ItemRemoveKeyPostRequestBody 
 type ItemRemoveKeyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The keyId property
     keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The proof property
@@ -18,7 +18,7 @@ type ItemRemoveKeyPostRequestBody struct {
 func NewItemRemoveKeyPostRequestBody()(*ItemRemoveKeyPostRequestBody) {
     m := &ItemRemoveKeyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRemoveKeyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemRemoveKeyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
     return NewItemRemoveKeyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemoveKeyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRemoveKeyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *ItemRemoveKeyPostRequestBody) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemoveKeyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRemoveKeyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKeyId sets the keyId property value. The keyId property

@@ -8,7 +8,7 @@ import (
 // RemoteItem 
 type RemoteItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identity of the user, device, and application which created the item. Read-only.
     createdBy IdentitySetable
     // Date and time of item creation. Read-only.
@@ -54,7 +54,7 @@ type RemoteItem struct {
 func NewRemoteItem()(*RemoteItem) {
     m := &RemoteItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRemoteItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +62,7 @@ func CreateRemoteItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewRemoteItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RemoteItem) GetAdditionalData()(map[string]interface{}) {
+func (m *RemoteItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
@@ -481,7 +481,7 @@ func (m *RemoteItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RemoteItem) SetAdditionalData(value map[string]interface{})() {
+func (m *RemoteItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.

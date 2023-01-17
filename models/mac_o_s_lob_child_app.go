@@ -7,7 +7,7 @@ import (
 // MacOSLobChildApp contains properties of a macOS .app in the package
 type MacOSLobChildApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The build number of the app.
     buildNumber *string
     // The bundleId of the app.
@@ -21,7 +21,7 @@ type MacOSLobChildApp struct {
 func NewMacOSLobChildApp()(*MacOSLobChildApp) {
     m := &MacOSLobChildApp{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSLobChildAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateMacOSLobChildAppFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewMacOSLobChildApp(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSLobChildApp) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSLobChildApp) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBuildNumber gets the buildNumber property value. The build number of the app.
@@ -128,7 +128,7 @@ func (m *MacOSLobChildApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSLobChildApp) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSLobChildApp) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBuildNumber sets the buildNumber property value. The build number of the app.

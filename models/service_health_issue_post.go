@@ -8,7 +8,7 @@ import (
 // ServiceHealthIssuePost 
 type ServiceHealthIssuePost struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The published time of the post.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The content of the service issue post. The supported value for the contentType property is html.
@@ -22,7 +22,7 @@ type ServiceHealthIssuePost struct {
 func NewServiceHealthIssuePost()(*ServiceHealthIssuePost) {
     m := &ServiceHealthIssuePost{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServiceHealthIssuePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateServiceHealthIssuePostFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewServiceHealthIssuePost(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceHealthIssuePost) GetAdditionalData()(map[string]interface{}) {
+func (m *ServiceHealthIssuePost) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedDateTime gets the createdDateTime property value. The published time of the post.
@@ -130,7 +130,7 @@ func (m *ServiceHealthIssuePost) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceHealthIssuePost) SetAdditionalData(value map[string]interface{})() {
+func (m *ServiceHealthIssuePost) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The published time of the post.

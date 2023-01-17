@@ -18,7 +18,7 @@ const (
 func (i RiskState) String() string {
     return []string{"none", "confirmedSafe", "remediated", "dismissed", "atRisk", "confirmedCompromised", "unknownFutureValue"}[i]
 }
-func ParseRiskState(v string) (interface{}, error) {
+func ParseRiskState(v string) (any, error) {
     result := NONE_RISKSTATE
     switch v {
         case "none":

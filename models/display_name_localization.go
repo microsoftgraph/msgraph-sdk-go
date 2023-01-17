@@ -7,7 +7,7 @@ import (
 // DisplayNameLocalization 
 type DisplayNameLocalization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
     displayName *string
     // Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
@@ -19,7 +19,7 @@ type DisplayNameLocalization struct {
 func NewDisplayNameLocalization()(*DisplayNameLocalization) {
     m := &DisplayNameLocalization{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDisplayNameLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDisplayNameLocalizationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewDisplayNameLocalization(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DisplayNameLocalization) GetAdditionalData()(map[string]interface{}) {
+func (m *DisplayNameLocalization) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
@@ -106,7 +106,7 @@ func (m *DisplayNameLocalization) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DisplayNameLocalization) SetAdditionalData(value map[string]interface{})() {
+func (m *DisplayNameLocalization) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.

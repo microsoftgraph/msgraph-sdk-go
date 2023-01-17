@@ -7,7 +7,7 @@ import (
 // GeoCoordinates 
 type GeoCoordinates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
     altitude *float64
     // Optional. The latitude, in decimal, for the item. Read-only.
@@ -21,7 +21,7 @@ type GeoCoordinates struct {
 func NewGeoCoordinates()(*GeoCoordinates) {
     m := &GeoCoordinates{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateGeoCoordinatesFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewGeoCoordinates(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GeoCoordinates) GetAdditionalData()(map[string]interface{}) {
+func (m *GeoCoordinates) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAltitude gets the altitude property value. Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
@@ -128,7 +128,7 @@ func (m *GeoCoordinates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GeoCoordinates) SetAdditionalData(value map[string]interface{})() {
+func (m *GeoCoordinates) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAltitude sets the altitude property value. Optional. The altitude (height), in feet,  above sea level for the item. Read-only.

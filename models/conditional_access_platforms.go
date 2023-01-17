@@ -7,7 +7,7 @@ import (
 // ConditionalAccessPlatforms 
 type ConditionalAccessPlatforms struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
     excludePlatforms []ConditionalAccessDevicePlatform
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
@@ -19,7 +19,7 @@ type ConditionalAccessPlatforms struct {
 func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {
     m := &ConditionalAccessPlatforms{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessPlatformsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessPlatformsFromDiscriminatorValue(parseNode i878a80d23
     return NewConditionalAccessPlatforms(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessPlatforms) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessPlatforms) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludePlatforms gets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
@@ -114,7 +114,7 @@ func (m *ConditionalAccessPlatforms) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessPlatforms) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessPlatforms) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludePlatforms sets the excludePlatforms property value. Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.

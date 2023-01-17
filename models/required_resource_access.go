@@ -7,7 +7,7 @@ import (
 // RequiredResourceAccess 
 type RequiredResourceAccess struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
@@ -19,7 +19,7 @@ type RequiredResourceAccess struct {
 func NewRequiredResourceAccess()(*RequiredResourceAccess) {
     m := &RequiredResourceAccess{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRequiredResourceAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateRequiredResourceAccessFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewRequiredResourceAccess(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequiredResourceAccess) GetAdditionalData()(map[string]interface{}) {
+func (m *RequiredResourceAccess) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -114,7 +114,7 @@ func (m *RequiredResourceAccess) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequiredResourceAccess) SetAdditionalData(value map[string]interface{})() {
+func (m *RequiredResourceAccess) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

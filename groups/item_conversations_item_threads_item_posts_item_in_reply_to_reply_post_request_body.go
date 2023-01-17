@@ -8,7 +8,7 @@ import (
 // ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody 
 type ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Post property
     post iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable
 }
@@ -16,7 +16,7 @@ type ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody stru
 func NewItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody()(*ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody) {
     m := &ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBod
     return NewItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody)
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPost sets the post property value. The Post property

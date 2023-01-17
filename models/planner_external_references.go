@@ -7,7 +7,7 @@ import (
 // PlannerExternalReferences 
 type PlannerExternalReferences struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type PlannerExternalReferences struct {
 func NewPlannerExternalReferences()(*PlannerExternalReferences) {
     m := &PlannerExternalReferences{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerExternalReferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreatePlannerExternalReferencesFromDiscriminatorValue(parseNode i878a80d233
     return NewPlannerExternalReferences(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerExternalReferences) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerExternalReferences) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *PlannerExternalReferences) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerExternalReferences) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerExternalReferences) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

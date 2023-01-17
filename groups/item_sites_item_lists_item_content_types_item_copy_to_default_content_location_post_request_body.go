@@ -8,7 +8,7 @@ import (
 // ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody 
 type ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The destinationFileName property
     destinationFileName *string
     // The sourceFile property
@@ -18,7 +18,7 @@ type ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostReque
 func NewItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody()(*ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody) {
     m := &ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPos
     return NewItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationFileName gets the destinationFileName property value. The destinationFileName property
@@ -85,7 +85,7 @@ func (m *ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostR
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSitesItemListsItemContentTypesItemCopyToDefaultContentLocationPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationFileName sets the destinationFileName property value. The destinationFileName property

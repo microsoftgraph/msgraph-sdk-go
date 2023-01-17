@@ -29,7 +29,7 @@ const (
 func (i RatingAustraliaTelevisionType) String() string {
     return []string{"allAllowed", "allBlocked", "preschoolers", "children", "general", "parentalGuidance", "mature", "agesAbove15", "agesAbove15AdultViolence"}[i]
 }
-func ParseRatingAustraliaTelevisionType(v string) (interface{}, error) {
+func ParseRatingAustraliaTelevisionType(v string) (any, error) {
     result := ALLALLOWED_RATINGAUSTRALIATELEVISIONTYPE
     switch v {
         case "allAllowed":

@@ -21,7 +21,7 @@ const (
 func (i DefenderPromptForSampleSubmission) String() string {
     return []string{"userDefined", "alwaysPrompt", "promptBeforeSendingPersonalData", "neverSendData", "sendAllDataWithoutPrompting"}[i]
 }
-func ParseDefenderPromptForSampleSubmission(v string) (interface{}, error) {
+func ParseDefenderPromptForSampleSubmission(v string) (any, error) {
     result := USERDEFINED_DEFENDERPROMPTFORSAMPLESUBMISSION
     switch v {
         case "userDefined":

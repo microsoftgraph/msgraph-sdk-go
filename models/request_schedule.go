@@ -8,7 +8,7 @@ import (
 // RequestSchedule 
 type RequestSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // When the eligible or active assignment expires.
     expiration ExpirationPatternable
     // The OdataType property
@@ -22,7 +22,7 @@ type RequestSchedule struct {
 func NewRequestSchedule()(*RequestSchedule) {
     m := &RequestSchedule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRequestScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateRequestScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewRequestSchedule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequestSchedule) GetAdditionalData()(map[string]interface{}) {
+func (m *RequestSchedule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiration gets the expiration property value. When the eligible or active assignment expires.
@@ -129,7 +129,7 @@ func (m *RequestSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequestSchedule) SetAdditionalData(value map[string]interface{})() {
+func (m *RequestSchedule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpiration sets the expiration property value. When the eligible or active assignment expires.

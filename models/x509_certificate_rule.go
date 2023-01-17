@@ -7,7 +7,7 @@ import (
 // X509CertificateRule 
 type X509CertificateRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifier of the X.509 certificate. Required.
     identifier *string
     // The OdataType property
@@ -21,7 +21,7 @@ type X509CertificateRule struct {
 func NewX509CertificateRule()(*X509CertificateRule) {
     m := &X509CertificateRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateX509CertificateRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateX509CertificateRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewX509CertificateRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *X509CertificateRule) GetAdditionalData()(map[string]interface{}) {
+func (m *X509CertificateRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,7 +130,7 @@ func (m *X509CertificateRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *X509CertificateRule) SetAdditionalData(value map[string]interface{})() {
+func (m *X509CertificateRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIdentifier sets the identifier property value. The identifier of the X.509 certificate. Required.

@@ -7,7 +7,7 @@ import (
 // FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody 
 type FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The isSyncedFromOnPremises property
     isSyncedFromOnPremises *bool
 }
@@ -15,7 +15,7 @@ type FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostReque
 func NewFeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody()(*FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody) {
     m := &FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateFeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPos
     return NewFeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostR
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. The isSyncedFromOnPremises property

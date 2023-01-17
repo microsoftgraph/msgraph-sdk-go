@@ -14,7 +14,7 @@ const (
 func (i MediaState) String() string {
     return []string{"active", "inactive", "unknownFutureValue"}[i]
 }
-func ParseMediaState(v string) (interface{}, error) {
+func ParseMediaState(v string) (any, error) {
     result := ACTIVE_MEDIASTATE
     switch v {
         case "active":

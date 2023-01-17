@@ -15,7 +15,7 @@ const (
 func (i ActivityDomain) String() string {
     return []string{"unknown", "work", "personal", "unrestricted"}[i]
 }
-func ParseActivityDomain(v string) (interface{}, error) {
+func ParseActivityDomain(v string) (any, error) {
     result := UNKNOWN_ACTIVITYDOMAIN
     switch v {
         case "unknown":

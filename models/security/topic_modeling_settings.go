@@ -7,7 +7,7 @@ import (
 // TopicModelingSettings 
 type TopicModelingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
     dynamicallyAdjustTopicCount *bool
     // Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
@@ -23,7 +23,7 @@ type TopicModelingSettings struct {
 func NewTopicModelingSettings()(*TopicModelingSettings) {
     m := &TopicModelingSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTopicModelingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateTopicModelingSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewTopicModelingSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TopicModelingSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *TopicModelingSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDynamicallyAdjustTopicCount gets the dynamicallyAdjustTopicCount property value. Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
@@ -150,7 +150,7 @@ func (m *TopicModelingSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TopicModelingSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *TopicModelingSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.

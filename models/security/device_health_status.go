@@ -18,7 +18,7 @@ const (
 func (i DeviceHealthStatus) String() string {
     return []string{"active", "inactive", "impairedCommunication", "noSensorData", "noSensorDataImpairedCommunication", "unknown", "unknownFutureValue"}[i]
 }
-func ParseDeviceHealthStatus(v string) (interface{}, error) {
+func ParseDeviceHealthStatus(v string) (any, error) {
     result := ACTIVE_DEVICEHEALTHSTATUS
     switch v {
         case "active":

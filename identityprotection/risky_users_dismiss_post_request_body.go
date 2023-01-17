@@ -7,7 +7,7 @@ import (
 // RiskyUsersDismissPostRequestBody 
 type RiskyUsersDismissPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The userIds property
     userIds []string
 }
@@ -15,7 +15,7 @@ type RiskyUsersDismissPostRequestBody struct {
 func NewRiskyUsersDismissPostRequestBody()(*RiskyUsersDismissPostRequestBody) {
     m := &RiskyUsersDismissPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRiskyUsersDismissPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateRiskyUsersDismissPostRequestBodyFromDiscriminatorValue(parseNode i878
     return NewRiskyUsersDismissPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskyUsersDismissPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *RiskyUsersDismissPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *RiskyUsersDismissPostRequestBody) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskyUsersDismissPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *RiskyUsersDismissPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUserIds sets the userIds property value. The userIds property

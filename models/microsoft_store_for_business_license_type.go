@@ -13,7 +13,7 @@ const (
 func (i MicrosoftStoreForBusinessLicenseType) String() string {
     return []string{"offline", "online"}[i]
 }
-func ParseMicrosoftStoreForBusinessLicenseType(v string) (interface{}, error) {
+func ParseMicrosoftStoreForBusinessLicenseType(v string) (any, error) {
     result := OFFLINE_MICROSOFTSTOREFORBUSINESSLICENSETYPE
     switch v {
         case "offline":

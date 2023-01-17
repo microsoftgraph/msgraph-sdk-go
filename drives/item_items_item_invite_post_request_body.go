@@ -8,7 +8,7 @@ import (
 // ItemItemsItemInvitePostRequestBody 
 type ItemItemsItemInvitePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expirationDateTime property
     expirationDateTime *string
     // The message property
@@ -30,7 +30,7 @@ type ItemItemsItemInvitePostRequestBody struct {
 func NewItemItemsItemInvitePostRequestBody()(*ItemItemsItemInvitePostRequestBody) {
     m := &ItemItemsItemInvitePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue(parseNode i8
     return NewItemItemsItemInvitePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
@@ -229,7 +229,7 @@ func (m *ItemItemsItemInvitePostRequestBody) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemInvitePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemItemsItemInvitePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property

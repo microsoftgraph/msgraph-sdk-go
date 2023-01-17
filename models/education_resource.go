@@ -8,7 +8,7 @@ import (
 // EducationResource 
 type EducationResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The individual who created the resource.
     createdBy IdentitySetable
     // Moment in time when the resource was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -26,7 +26,7 @@ type EducationResource struct {
 func NewEducationResource()(*EducationResource) {
     m := &EducationResource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +66,7 @@ func CreateEducationResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewEducationResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationResource) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationResource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedBy gets the createdBy property value. The individual who created the resource.
@@ -181,7 +181,7 @@ func (m *EducationResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationResource) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationResource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCreatedBy sets the createdBy property value. The individual who created the resource.

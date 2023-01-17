@@ -8,7 +8,7 @@ import (
 // ItemAddTokenSigningCertificatePostRequestBody 
 type ItemAddTokenSigningCertificatePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
     // The endDateTime property
@@ -18,7 +18,7 @@ type ItemAddTokenSigningCertificatePostRequestBody struct {
 func NewItemAddTokenSigningCertificatePostRequestBody()(*ItemAddTokenSigningCertificatePostRequestBody) {
     m := &ItemAddTokenSigningCertificatePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemAddTokenSigningCertificatePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemAddTokenSigningCertificatePostRequestBodyFromDiscriminatorValue(p
     return NewItemAddTokenSigningCertificatePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAddTokenSigningCertificatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemAddTokenSigningCertificatePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -85,7 +85,7 @@ func (m *ItemAddTokenSigningCertificatePostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAddTokenSigningCertificatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemAddTokenSigningCertificatePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

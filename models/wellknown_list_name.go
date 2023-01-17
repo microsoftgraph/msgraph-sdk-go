@@ -15,7 +15,7 @@ const (
 func (i WellknownListName) String() string {
     return []string{"none", "defaultList", "flaggedEmails", "unknownFutureValue"}[i]
 }
-func ParseWellknownListName(v string) (interface{}, error) {
+func ParseWellknownListName(v string) (any, error) {
     result := NONE_WELLKNOWNLISTNAME
     switch v {
         case "none":

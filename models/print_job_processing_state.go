@@ -20,7 +20,7 @@ const (
 func (i PrintJobProcessingState) String() string {
     return []string{"unknown", "pending", "processing", "paused", "stopped", "completed", "canceled", "aborted", "unknownFutureValue"}[i]
 }
-func ParsePrintJobProcessingState(v string) (interface{}, error) {
+func ParsePrintJobProcessingState(v string) (any, error) {
     result := UNKNOWN_PRINTJOBPROCESSINGSTATE
     switch v {
         case "unknown":

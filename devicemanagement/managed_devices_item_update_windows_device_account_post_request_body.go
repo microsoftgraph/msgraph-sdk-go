@@ -8,7 +8,7 @@ import (
 // ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody 
 type ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The updateWindowsDeviceAccountActionParameter property
     updateWindowsDeviceAccountActionParameter iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UpdateWindowsDeviceAccountActionParameterable
 }
@@ -16,7 +16,7 @@ type ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody struct {
 func NewManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody()(*ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody) {
     m := &ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBodyFromDiscri
     return NewManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody) Serialize(
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUpdateWindowsDeviceAccountActionParameter sets the updateWindowsDeviceAccountActionParameter property value. The updateWindowsDeviceAccountActionParameter property

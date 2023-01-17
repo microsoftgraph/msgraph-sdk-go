@@ -18,7 +18,7 @@ const (
 func (i BookingStaffRole) String() string {
     return []string{"guest", "administrator", "viewer", "externalGuest", "unknownFutureValue", "scheduler", "teamMember"}[i]
 }
-func ParseBookingStaffRole(v string) (interface{}, error) {
+func ParseBookingStaffRole(v string) (any, error) {
     result := GUEST_BOOKINGSTAFFROLE
     switch v {
         case "guest":

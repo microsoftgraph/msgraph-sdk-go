@@ -7,7 +7,7 @@ import (
 // TermColumn 
 type TermColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether the column will allow more than one value.
     allowMultipleValues *bool
     // The OdataType property
@@ -19,7 +19,7 @@ type TermColumn struct {
 func NewTermColumn()(*TermColumn) {
     m := &TermColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTermColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateTermColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewTermColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TermColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *TermColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
@@ -106,7 +106,7 @@ func (m *TermColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TermColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *TermColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.

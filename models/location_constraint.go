@@ -7,7 +7,7 @@ import (
 // LocationConstraint 
 type LocationConstraint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
     isRequired *bool
     // Constraint information for one or more locations that the client requests for the meeting.
@@ -21,7 +21,7 @@ type LocationConstraint struct {
 func NewLocationConstraint()(*LocationConstraint) {
     m := &LocationConstraint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLocationConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateLocationConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewLocationConstraint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LocationConstraint) GetAdditionalData()(map[string]interface{}) {
+func (m *LocationConstraint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -136,7 +136,7 @@ func (m *LocationConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LocationConstraint) SetAdditionalData(value map[string]interface{})() {
+func (m *LocationConstraint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsRequired sets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.

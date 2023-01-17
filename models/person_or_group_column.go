@@ -7,7 +7,7 @@ import (
 // PersonOrGroupColumn 
 type PersonOrGroupColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether multiple values can be selected from the source.
     allowMultipleSelection *bool
     // Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
@@ -21,7 +21,7 @@ type PersonOrGroupColumn struct {
 func NewPersonOrGroupColumn()(*PersonOrGroupColumn) {
     m := &PersonOrGroupColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePersonOrGroupColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreatePersonOrGroupColumnFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPersonOrGroupColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PersonOrGroupColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *PersonOrGroupColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowMultipleSelection gets the allowMultipleSelection property value. Indicates whether multiple values can be selected from the source.
@@ -128,7 +128,7 @@ func (m *PersonOrGroupColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PersonOrGroupColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *PersonOrGroupColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowMultipleSelection sets the allowMultipleSelection property value. Indicates whether multiple values can be selected from the source.

@@ -16,7 +16,7 @@ const (
 func (i ExchangeIdFormat) String() string {
     return []string{"entryId", "ewsId", "immutableEntryId", "restId", "restImmutableEntryId"}[i]
 }
-func ParseExchangeIdFormat(v string) (interface{}, error) {
+func ParseExchangeIdFormat(v string) (any, error) {
     result := ENTRYID_EXCHANGEIDFORMAT
     switch v {
         case "entryId":

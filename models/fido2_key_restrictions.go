@@ -9,7 +9,7 @@ type Fido2KeyRestrictions struct {
     // A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
     aaGuids []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Enforcement type. Possible values are: allow, block.
     enforcementType *Fido2RestrictionEnforcementType
     // Determines if the configured key enforcement is enabled.
@@ -21,7 +21,7 @@ type Fido2KeyRestrictions struct {
 func NewFido2KeyRestrictions()(*Fido2KeyRestrictions) {
     m := &Fido2KeyRestrictions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFido2KeyRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *Fido2KeyRestrictions) GetAaGuids()([]string) {
     return m.aaGuids
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Fido2KeyRestrictions) GetAdditionalData()(map[string]interface{}) {
+func (m *Fido2KeyRestrictions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnforcementType gets the enforcementType property value. Enforcement type. Possible values are: allow, block.
@@ -137,7 +137,7 @@ func (m *Fido2KeyRestrictions) SetAaGuids(value []string)() {
     m.aaGuids = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Fido2KeyRestrictions) SetAdditionalData(value map[string]interface{})() {
+func (m *Fido2KeyRestrictions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnforcementType sets the enforcementType property value. Enforcement type. Possible values are: allow, block.

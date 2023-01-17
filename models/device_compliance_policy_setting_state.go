@@ -7,7 +7,7 @@ import (
 // DeviceCompliancePolicySettingState device Compilance Policy Setting State for a given device.
 type DeviceCompliancePolicySettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Current value of setting on device
     currentValue *string
     // Error code for the setting
@@ -39,7 +39,7 @@ type DeviceCompliancePolicySettingState struct {
 func NewDeviceCompliancePolicySettingState()(*DeviceCompliancePolicySettingState) {
     m := &DeviceCompliancePolicySettingState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceCompliancePolicySettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateDeviceCompliancePolicySettingStateFromDiscriminatorValue(parseNode i8
     return NewDeviceCompliancePolicySettingState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCompliancePolicySettingState) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceCompliancePolicySettingState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentValue gets the currentValue property value. Current value of setting on device
@@ -335,7 +335,7 @@ func (m *DeviceCompliancePolicySettingState) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCompliancePolicySettingState) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceCompliancePolicySettingState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device

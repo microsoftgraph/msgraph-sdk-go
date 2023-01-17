@@ -7,7 +7,7 @@ import (
 // RootCheckinPostRequestBody 
 type RootCheckinPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The checkInAs property
     checkInAs *string
     // The comment property
@@ -17,7 +17,7 @@ type RootCheckinPostRequestBody struct {
 func NewRootCheckinPostRequestBody()(*RootCheckinPostRequestBody) {
     m := &RootCheckinPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRootCheckinPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateRootCheckinPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
     return NewRootCheckinPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RootCheckinPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *RootCheckinPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCheckInAs gets the checkInAs property value. The checkInAs property
@@ -84,7 +84,7 @@ func (m *RootCheckinPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RootCheckinPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *RootCheckinPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCheckInAs sets the checkInAs property value. The checkInAs property

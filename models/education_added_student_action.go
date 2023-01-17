@@ -14,7 +14,7 @@ const (
 func (i EducationAddedStudentAction) String() string {
     return []string{"none", "assignIfOpen", "unknownFutureValue"}[i]
 }
-func ParseEducationAddedStudentAction(v string) (interface{}, error) {
+func ParseEducationAddedStudentAction(v string) (any, error) {
     result := NONE_EDUCATIONADDEDSTUDENTACTION
     switch v {
         case "none":

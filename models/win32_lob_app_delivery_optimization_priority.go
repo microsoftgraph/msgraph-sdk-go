@@ -15,7 +15,7 @@ const (
 func (i Win32LobAppDeliveryOptimizationPriority) String() string {
     return []string{"notConfigured", "foreground"}[i]
 }
-func ParseWin32LobAppDeliveryOptimizationPriority(v string) (interface{}, error) {
+func ParseWin32LobAppDeliveryOptimizationPriority(v string) (any, error) {
     result := NOTCONFIGURED_WIN32LOBAPPDELIVERYOPTIMIZATIONPRIORITY
     switch v {
         case "notConfigured":

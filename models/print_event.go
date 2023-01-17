@@ -13,7 +13,7 @@ const (
 func (i PrintEvent) String() string {
     return []string{"jobStarted", "unknownFutureValue"}[i]
 }
-func ParsePrintEvent(v string) (interface{}, error) {
+func ParsePrintEvent(v string) (any, error) {
     result := JOBSTARTED_PRINTEVENT
     switch v {
         case "jobStarted":

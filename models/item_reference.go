@@ -7,7 +7,7 @@ import (
 // ItemReference 
 type ItemReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Unique identifier of the drive instance that contains the item. Read-only.
     driveId *string
     // Identifies the type of drive. See [drive][] resource for values.
@@ -31,7 +31,7 @@ type ItemReference struct {
 func NewItemReference()(*ItemReference) {
     m := &ItemReference{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateItemReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewItemReference(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemReference) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemReference) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDriveId gets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.
@@ -238,7 +238,7 @@ func (m *ItemReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemReference) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemReference) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDriveId sets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.

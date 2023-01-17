@@ -21,7 +21,7 @@ const (
 func (i DefenderMonitorFileActivity) String() string {
     return []string{"userDefined", "disable", "monitorAllFiles", "monitorIncomingFilesOnly", "monitorOutgoingFilesOnly"}[i]
 }
-func ParseDefenderMonitorFileActivity(v string) (interface{}, error) {
+func ParseDefenderMonitorFileActivity(v string) (any, error) {
     result := USERDEFINED_DEFENDERMONITORFILEACTIVITY
     switch v {
         case "userDefined":

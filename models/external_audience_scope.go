@@ -14,7 +14,7 @@ const (
 func (i ExternalAudienceScope) String() string {
     return []string{"none", "contactsOnly", "all"}[i]
 }
-func ParseExternalAudienceScope(v string) (interface{}, error) {
+func ParseExternalAudienceScope(v string) (any, error) {
     result := NONE_EXTERNALAUDIENCESCOPE
     switch v {
         case "none":

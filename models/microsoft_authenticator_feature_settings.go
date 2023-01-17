@@ -7,7 +7,7 @@ import (
 // MicrosoftAuthenticatorFeatureSettings 
 type MicrosoftAuthenticatorFeatureSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Determines whether the user's Authenticator app will show them the client app they are signing into.
     displayAppInformationRequiredState AuthenticationMethodFeatureConfigurationable
     // Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
@@ -19,7 +19,7 @@ type MicrosoftAuthenticatorFeatureSettings struct {
 func NewMicrosoftAuthenticatorFeatureSettings()(*MicrosoftAuthenticatorFeatureSettings) {
     m := &MicrosoftAuthenticatorFeatureSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMicrosoftAuthenticatorFeatureSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMicrosoftAuthenticatorFeatureSettingsFromDiscriminatorValue(parseNode
     return NewMicrosoftAuthenticatorFeatureSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MicrosoftAuthenticatorFeatureSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *MicrosoftAuthenticatorFeatureSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayAppInformationRequiredState gets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.
@@ -106,7 +106,7 @@ func (m *MicrosoftAuthenticatorFeatureSettings) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MicrosoftAuthenticatorFeatureSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *MicrosoftAuthenticatorFeatureSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayAppInformationRequiredState sets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.

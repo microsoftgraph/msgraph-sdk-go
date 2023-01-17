@@ -14,7 +14,7 @@ const (
 func (i AttachmentType) String() string {
     return []string{"file", "item", "reference"}[i]
 }
-func ParseAttachmentType(v string) (interface{}, error) {
+func ParseAttachmentType(v string) (any, error) {
     result := FILE_ATTACHMENTTYPE
     switch v {
         case "file":

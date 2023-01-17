@@ -7,7 +7,7 @@ import (
 // ApiAuthenticationConfigurationBase 
 type ApiAuthenticationConfigurationBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type ApiAuthenticationConfigurationBase struct {
 func NewApiAuthenticationConfigurationBase()(*ApiAuthenticationConfigurationBase) {
     m := &ApiAuthenticationConfigurationBase{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateApiAuthenticationConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateApiAuthenticationConfigurationBaseFromDiscriminatorValue(parseNode i8
     return NewApiAuthenticationConfigurationBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApiAuthenticationConfigurationBase) GetAdditionalData()(map[string]interface{}) {
+func (m *ApiAuthenticationConfigurationBase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ApiAuthenticationConfigurationBase) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApiAuthenticationConfigurationBase) SetAdditionalData(value map[string]interface{})() {
+func (m *ApiAuthenticationConfigurationBase) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

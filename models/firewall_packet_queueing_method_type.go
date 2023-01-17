@@ -21,7 +21,7 @@ const (
 func (i FirewallPacketQueueingMethodType) String() string {
     return []string{"deviceDefault", "disabled", "queueInbound", "queueOutbound", "queueBoth"}[i]
 }
-func ParseFirewallPacketQueueingMethodType(v string) (interface{}, error) {
+func ParseFirewallPacketQueueingMethodType(v string) (any, error) {
     result := DEVICEDEFAULT_FIREWALLPACKETQUEUEINGMETHODTYPE
     switch v {
         case "deviceDefault":

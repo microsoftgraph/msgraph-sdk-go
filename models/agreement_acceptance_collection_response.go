@@ -7,8 +7,6 @@ import (
 // AgreementAcceptanceCollectionResponse 
 type AgreementAcceptanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
     // The value property
     value []AgreementAcceptanceable
 }
@@ -17,16 +15,11 @@ func NewAgreementAcceptanceCollectionResponse()(*AgreementAcceptanceCollectionRe
     m := &AgreementAcceptanceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
     }
-    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAgreementAcceptanceCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAgreementAcceptanceCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgreementAcceptanceCollectionResponse(), nil
-}
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AgreementAcceptanceCollectionResponse) GetAdditionalData()(map[string]interface{}) {
-    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AgreementAcceptanceCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,17 +60,7 @@ func (m *AgreementAcceptanceCollectionResponse) Serialize(writer i878a80d2330e89
             return err
         }
     }
-    {
-        err = writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AgreementAcceptanceCollectionResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
 }
 // SetValue sets the value property value. The value property
 func (m *AgreementAcceptanceCollectionResponse) SetValue(value []AgreementAcceptanceable)() {

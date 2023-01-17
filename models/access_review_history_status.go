@@ -16,7 +16,7 @@ const (
 func (i AccessReviewHistoryStatus) String() string {
     return []string{"done", "inprogress", "error", "requested", "unknownFutureValue"}[i]
 }
-func ParseAccessReviewHistoryStatus(v string) (interface{}, error) {
+func ParseAccessReviewHistoryStatus(v string) (any, error) {
     result := DONE_ACCESSREVIEWHISTORYSTATUS
     switch v {
         case "done":

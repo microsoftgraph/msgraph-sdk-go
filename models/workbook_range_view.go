@@ -32,7 +32,7 @@ type WorkbookRangeView struct {
     // Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
     valueTypes Jsonable
 }
-// NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
+// NewWorkbookRangeView instantiates a new WorkbookRangeView and sets the default values.
 func NewWorkbookRangeView()(*WorkbookRangeView) {
     m := &WorkbookRangeView{
         Entity: *NewEntity(),

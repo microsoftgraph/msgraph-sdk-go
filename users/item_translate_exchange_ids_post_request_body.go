@@ -8,7 +8,7 @@ import (
 // ItemTranslateExchangeIdsPostRequestBody 
 type ItemTranslateExchangeIdsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The InputIds property
     inputIds []string
     // The SourceIdType property
@@ -20,7 +20,7 @@ type ItemTranslateExchangeIdsPostRequestBody struct {
 func NewItemTranslateExchangeIdsPostRequestBody()(*ItemTranslateExchangeIdsPostRequestBody) {
     m := &ItemTranslateExchangeIdsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemTranslateExchangeIdsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemTranslateExchangeIdsPostRequestBodyFromDiscriminatorValue(parseNo
     return NewItemTranslateExchangeIdsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTranslateExchangeIdsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemTranslateExchangeIdsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -113,7 +113,7 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTranslateExchangeIdsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemTranslateExchangeIdsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetInputIds sets the inputIds property value. The InputIds property

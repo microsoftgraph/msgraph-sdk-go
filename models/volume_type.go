@@ -15,7 +15,7 @@ const (
 func (i VolumeType) String() string {
     return []string{"operatingSystemVolume", "fixedDataVolume", "removableDataVolume", "unknownFutureValue"}[i]
 }
-func ParseVolumeType(v string) (interface{}, error) {
+func ParseVolumeType(v string) (any, error) {
     result := OPERATINGSYSTEMVOLUME_VOLUMETYPE
     switch v {
         case "operatingSystemVolume":

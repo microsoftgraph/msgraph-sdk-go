@@ -7,7 +7,7 @@ import (
 // Thumbnail 
 type Thumbnail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The content stream for the thumbnail.
     content []byte
     // The height of the thumbnail, in pixels.
@@ -25,7 +25,7 @@ type Thumbnail struct {
 func NewThumbnail()(*Thumbnail) {
     m := &Thumbnail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateThumbnailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateThumbnailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewThumbnail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Thumbnail) GetAdditionalData()(map[string]interface{}) {
+func (m *Thumbnail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content stream for the thumbnail.
@@ -172,7 +172,7 @@ func (m *Thumbnail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Thumbnail) SetAdditionalData(value map[string]interface{})() {
+func (m *Thumbnail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContent sets the content property value. The content stream for the thumbnail.

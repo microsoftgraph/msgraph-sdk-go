@@ -7,7 +7,7 @@ import (
 // CrossTenantAccessPolicyTarget 
 type CrossTenantAccessPolicyTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.
@@ -19,7 +19,7 @@ type CrossTenantAccessPolicyTarget struct {
 func NewCrossTenantAccessPolicyTarget()(*CrossTenantAccessPolicyTarget) {
     m := &CrossTenantAccessPolicyTarget{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue(parseNode i878a80
     return NewCrossTenantAccessPolicyTarget(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyTarget) GetAdditionalData()(map[string]interface{}) {
+func (m *CrossTenantAccessPolicyTarget) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *CrossTenantAccessPolicyTarget) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyTarget) SetAdditionalData(value map[string]interface{})() {
+func (m *CrossTenantAccessPolicyTarget) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

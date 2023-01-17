@@ -15,7 +15,7 @@ const (
 func (i RoutingType) String() string {
     return []string{"forwarded", "lookup", "selfFork", "unknownFutureValue"}[i]
 }
-func ParseRoutingType(v string) (interface{}, error) {
+func ParseRoutingType(v string) (any, error) {
     result := FORWARDED_ROUTINGTYPE
     switch v {
         case "forwarded":

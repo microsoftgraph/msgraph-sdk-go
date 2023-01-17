@@ -19,7 +19,7 @@ const (
 func (i EdgeCookiePolicy) String() string {
     return []string{"userDefined", "allow", "blockThirdParty", "blockAll"}[i]
 }
-func ParseEdgeCookiePolicy(v string) (interface{}, error) {
+func ParseEdgeCookiePolicy(v string) (any, error) {
     result := USERDEFINED_EDGECOOKIEPOLICY
     switch v {
         case "userDefined":

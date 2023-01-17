@@ -8,7 +8,7 @@ import (
 // ItemCalendarViewItemDeclinePostRequestBody 
 type ItemCalendarViewItemDeclinePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The ProposedNewTime property
@@ -20,7 +20,7 @@ type ItemCalendarViewItemDeclinePostRequestBody struct {
 func NewItemCalendarViewItemDeclinePostRequestBody()(*ItemCalendarViewItemDeclinePostRequestBody) {
     m := &ItemCalendarViewItemDeclinePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemCalendarViewItemDeclinePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemCalendarViewItemDeclinePostRequestBodyFromDiscriminatorValue(pars
     return NewItemCalendarViewItemDeclinePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarViewItemDeclinePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemCalendarViewItemDeclinePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -107,7 +107,7 @@ func (m *ItemCalendarViewItemDeclinePostRequestBody) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarViewItemDeclinePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemCalendarViewItemDeclinePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

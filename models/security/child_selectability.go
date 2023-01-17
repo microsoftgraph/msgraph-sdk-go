@@ -14,7 +14,7 @@ const (
 func (i ChildSelectability) String() string {
     return []string{"One", "Many", "unknownFutureValue"}[i]
 }
-func ParseChildSelectability(v string) (interface{}, error) {
+func ParseChildSelectability(v string) (any, error) {
     result := ONE_CHILDSELECTABILITY
     switch v {
         case "One":

@@ -7,7 +7,7 @@ import (
 // OnPremisesExtensionAttributes 
 type OnPremisesExtensionAttributes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // First customizable extension attribute.
     extensionAttribute1 *string
     // Tenth customizable extension attribute.
@@ -45,7 +45,7 @@ type OnPremisesExtensionAttributes struct {
 func NewOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     m := &OnPremisesExtensionAttributes{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesExtensionAttributesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,7 @@ func CreateOnPremisesExtensionAttributesFromDiscriminatorValue(parseNode i878a80
     return NewOnPremisesExtensionAttributes(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExtensionAttribute1 gets the extensionAttribute1 property value. First customizable extension attribute.
@@ -392,7 +392,7 @@ func (m *OnPremisesExtensionAttributes) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesExtensionAttributes) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesExtensionAttributes) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExtensionAttribute1 sets the extensionAttribute1 property value. First customizable extension attribute.

@@ -15,7 +15,7 @@ const (
 func (i AccessPackageExternalUserLifecycleAction) String() string {
     return []string{"none", "blockSignIn", "blockSignInAndDelete", "unknownFutureValue"}[i]
 }
-func ParseAccessPackageExternalUserLifecycleAction(v string) (interface{}, error) {
+func ParseAccessPackageExternalUserLifecycleAction(v string) (any, error) {
     result := NONE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
     switch v {
         case "none":

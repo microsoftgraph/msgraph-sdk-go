@@ -7,7 +7,7 @@ import (
 // SharingLink 
 type SharingLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The app the link is associated with.
     application Identityable
     // The OdataType property
@@ -27,7 +27,7 @@ type SharingLink struct {
 func NewSharingLink()(*SharingLink) {
     m := &SharingLink{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSharingLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateSharingLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewSharingLink(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharingLink) GetAdditionalData()(map[string]interface{}) {
+func (m *SharingLink) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplication gets the application property value. The app the link is associated with.
@@ -194,7 +194,7 @@ func (m *SharingLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SharingLink) SetAdditionalData(value map[string]interface{})() {
+func (m *SharingLink) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplication sets the application property value. The app the link is associated with.

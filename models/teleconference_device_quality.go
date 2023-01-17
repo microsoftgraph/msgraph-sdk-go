@@ -8,7 +8,7 @@ import (
 // TeleconferenceDeviceQuality 
 type TeleconferenceDeviceQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
     callChainId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // A geo-region where the service is deployed, such as ProdNoam.
@@ -36,7 +36,7 @@ type TeleconferenceDeviceQuality struct {
 func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
     m := &TeleconferenceDeviceQuality{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeleconferenceDeviceQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +44,7 @@ func CreateTeleconferenceDeviceQualityFromDiscriminatorValue(parseNode i878a80d2
     return NewTeleconferenceDeviceQuality(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]interface{}) {
+func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCallChainId gets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
@@ -291,7 +291,7 @@ func (m *TeleconferenceDeviceQuality) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeleconferenceDeviceQuality) SetAdditionalData(value map[string]interface{})() {
+func (m *TeleconferenceDeviceQuality) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCallChainId sets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.

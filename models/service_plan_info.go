@@ -8,7 +8,7 @@ import (
 // ServicePlanInfo 
 type ServicePlanInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
     appliesTo *string
     // The OdataType property
@@ -24,7 +24,7 @@ type ServicePlanInfo struct {
 func NewServicePlanInfo()(*ServicePlanInfo) {
     m := &ServicePlanInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServicePlanInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateServicePlanInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewServicePlanInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServicePlanInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *ServicePlanInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppliesTo gets the appliesTo property value. The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
@@ -151,7 +151,7 @@ func (m *ServicePlanInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServicePlanInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *ServicePlanInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppliesTo sets the appliesTo property value. The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.

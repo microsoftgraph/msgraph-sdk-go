@@ -18,7 +18,7 @@ const (
 func (i MeetingRequestType) String() string {
     return []string{"none", "newMeetingRequest", "fullUpdate", "informationalUpdate", "silentUpdate", "outdated", "principalWantsCopy"}[i]
 }
-func ParseMeetingRequestType(v string) (interface{}, error) {
+func ParseMeetingRequestType(v string) (any, error) {
     result := NONE_MEETINGREQUESTTYPE
     switch v {
         case "none":

@@ -9,7 +9,7 @@ type OnenotePatchContentCommand struct {
     // The action property
     action *OnenotePatchActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
     content *string
     // The OdataType property
@@ -23,7 +23,7 @@ type OnenotePatchContentCommand struct {
 func NewOnenotePatchContentCommand()(*OnenotePatchContentCommand) {
     m := &OnenotePatchContentCommand{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnenotePatchContentCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func (m *OnenotePatchContentCommand) GetAction()(*OnenotePatchActionType) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnenotePatchContentCommand) GetAdditionalData()(map[string]interface{}) {
+func (m *OnenotePatchContentCommand) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
@@ -156,7 +156,7 @@ func (m *OnenotePatchContentCommand) SetAction(value *OnenotePatchActionType)() 
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnenotePatchContentCommand) SetAdditionalData(value map[string]interface{})() {
+func (m *OnenotePatchContentCommand) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContent sets the content property value. A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.

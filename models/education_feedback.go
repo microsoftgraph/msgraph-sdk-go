@@ -8,7 +8,7 @@ import (
 // EducationFeedback 
 type EducationFeedback struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // User who created the feedback.
     feedbackBy IdentitySetable
     // Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -22,7 +22,7 @@ type EducationFeedback struct {
 func NewEducationFeedback()(*EducationFeedback) {
     m := &EducationFeedback{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationFeedbackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateEducationFeedbackFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewEducationFeedback(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationFeedback) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationFeedback) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFeedbackBy gets the feedbackBy property value. User who created the feedback.
@@ -129,7 +129,7 @@ func (m *EducationFeedback) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationFeedback) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationFeedback) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFeedbackBy sets the feedbackBy property value. User who created the feedback.

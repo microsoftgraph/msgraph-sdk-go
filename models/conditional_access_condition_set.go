@@ -7,7 +7,7 @@ import (
 // ConditionalAccessConditionSet 
 type ConditionalAccessConditionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Applications and user actions included in and excluded from the policy. Required.
     applications ConditionalAccessApplicationsable
     // Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
@@ -35,7 +35,7 @@ type ConditionalAccessConditionSet struct {
 func NewConditionalAccessConditionSet()(*ConditionalAccessConditionSet) {
     m := &ConditionalAccessConditionSet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessConditionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateConditionalAccessConditionSetFromDiscriminatorValue(parseNode i878a80
     return NewConditionalAccessConditionSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessConditionSet) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessConditionSet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplications gets the applications property value. Applications and user actions included in and excluded from the policy. Required.
@@ -298,7 +298,7 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplications sets the applications property value. Applications and user actions included in and excluded from the policy. Required.

@@ -17,7 +17,7 @@ const (
 func (i PrintScaling) String() string {
     return []string{"auto", "shrinkToFit", "fill", "fit", "none", "unknownFutureValue"}[i]
 }
-func ParsePrintScaling(v string) (interface{}, error) {
+func ParsePrintScaling(v string) (any, error) {
     result := AUTO_PRINTSCALING
     switch v {
         case "auto":

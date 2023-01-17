@@ -7,7 +7,7 @@ import (
 // UnifiedRoleManagementPolicyRuleTarget 
 type UnifiedRoleManagementPolicyRuleTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
     caller *string
     // The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
@@ -27,7 +27,7 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
 func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRuleTarget) {
     m := &UnifiedRoleManagementPolicyRuleTarget{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue(parseNode
     return NewUnifiedRoleManagementPolicyRuleTarget(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]interface{}) {
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCaller gets the caller property value. The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
@@ -214,7 +214,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UnifiedRoleManagementPolicyRuleTarget) SetAdditionalData(value map[string]interface{})() {
+func (m *UnifiedRoleManagementPolicyRuleTarget) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCaller sets the caller property value. The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.

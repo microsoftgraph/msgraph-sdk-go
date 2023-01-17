@@ -9,7 +9,7 @@ type OptionalClaims struct {
     // The optional claims returned in the JWT access token.
     accessToken []OptionalClaimable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The optional claims returned in the JWT ID token.
     idToken []OptionalClaimable
     // The OdataType property
@@ -21,7 +21,7 @@ type OptionalClaims struct {
 func NewOptionalClaims()(*OptionalClaims) {
     m := &OptionalClaims{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOptionalClaimsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *OptionalClaims) GetAccessToken()([]OptionalClaimable) {
     return m.accessToken
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OptionalClaims) GetAdditionalData()(map[string]interface{}) {
+func (m *OptionalClaims) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -156,7 +156,7 @@ func (m *OptionalClaims) SetAccessToken(value []OptionalClaimable)() {
     m.accessToken = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OptionalClaims) SetAdditionalData(value map[string]interface{})() {
+func (m *OptionalClaims) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIdToken sets the idToken property value. The optional claims returned in the JWT ID token.

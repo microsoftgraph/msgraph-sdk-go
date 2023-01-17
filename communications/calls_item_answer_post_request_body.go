@@ -10,7 +10,7 @@ type CallsItemAnswerPostRequestBody struct {
     // The acceptedModalities property
     acceptedModalities []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Modality
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The callbackUri property
     callbackUri *string
     // The callOptions property
@@ -24,7 +24,7 @@ type CallsItemAnswerPostRequestBody struct {
 func NewCallsItemAnswerPostRequestBody()(*CallsItemAnswerPostRequestBody) {
     m := &CallsItemAnswerPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemAnswerPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func (m *CallsItemAnswerPostRequestBody) GetAcceptedModalities()([]iadcd81124412
     return m.acceptedModalities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemAnswerPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemAnswerPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
@@ -159,7 +159,7 @@ func (m *CallsItemAnswerPostRequestBody) SetAcceptedModalities(value []iadcd8112
     m.acceptedModalities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemAnswerPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemAnswerPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property

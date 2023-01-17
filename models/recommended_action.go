@@ -9,7 +9,7 @@ type RecommendedAction struct {
     // Web URL to the recommended action.
     actionWebUrl *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Potential improvement in the tenant security score from the recommended action.
@@ -21,7 +21,7 @@ type RecommendedAction struct {
 func NewRecommendedAction()(*RecommendedAction) {
     m := &RecommendedAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRecommendedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *RecommendedAction) GetActionWebUrl()(*string) {
     return m.actionWebUrl
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecommendedAction) GetAdditionalData()(map[string]interface{}) {
+func (m *RecommendedAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -132,7 +132,7 @@ func (m *RecommendedAction) SetActionWebUrl(value *string)() {
     m.actionWebUrl = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
+func (m *RecommendedAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

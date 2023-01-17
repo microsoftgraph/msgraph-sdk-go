@@ -8,7 +8,7 @@ import (
 // ItemRootCopyPostRequestBody 
 type ItemRootCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name property
     name *string
     // The parentReference property
@@ -18,7 +18,7 @@ type ItemRootCopyPostRequestBody struct {
 func NewItemRootCopyPostRequestBody()(*ItemRootCopyPostRequestBody) {
     m := &ItemRootCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRootCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemRootCopyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
     return NewItemRootCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRootCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRootCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *ItemRootCopyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRootCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRootCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name property

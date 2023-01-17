@@ -7,7 +7,7 @@ import (
 // ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody 
 type ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The hubSiteUrls property
     hubSiteUrls []string
     // The propagateToExistingLists property
@@ -17,7 +17,7 @@ type ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody struct {
 func NewItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody()(*ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody) {
     m := &ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBodyFrom
     return NewItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody) Seri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHubSiteUrls sets the hubSiteUrls property value. The hubSiteUrls property

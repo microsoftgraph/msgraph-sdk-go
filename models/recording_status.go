@@ -16,7 +16,7 @@ const (
 func (i RecordingStatus) String() string {
     return []string{"unknown", "notRecording", "recording", "failed", "unknownFutureValue"}[i]
 }
-func ParseRecordingStatus(v string) (interface{}, error) {
+func ParseRecordingStatus(v string) (any, error) {
     result := UNKNOWN_RECORDINGSTATUS
     switch v {
         case "unknown":

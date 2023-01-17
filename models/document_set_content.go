@@ -7,7 +7,7 @@ import (
 // DocumentSetContent 
 type DocumentSetContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Content type information of the file.
     contentType ContentTypeInfoable
     // Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -21,7 +21,7 @@ type DocumentSetContent struct {
 func NewDocumentSetContent()(*DocumentSetContent) {
     m := &DocumentSetContent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDocumentSetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateDocumentSetContentFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewDocumentSetContent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DocumentSetContent) GetAdditionalData()(map[string]interface{}) {
+func (m *DocumentSetContent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentType gets the contentType property value. Content type information of the file.
@@ -128,7 +128,7 @@ func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DocumentSetContent) SetAdditionalData(value map[string]interface{})() {
+func (m *DocumentSetContent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentType sets the contentType property value. Content type information of the file.

@@ -8,7 +8,7 @@ import (
 // UserSimulationDetails 
 type UserSimulationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Number of trainings assigned to a user in an attack simulation and training campaign.
     assignedTrainingsCount *int32
     // Number of trainings completed by a user in an attack simulation and training campaign.
@@ -34,7 +34,7 @@ type UserSimulationDetails struct {
 func NewUserSimulationDetails()(*UserSimulationDetails) {
     m := &UserSimulationDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserSimulationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreateUserSimulationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewUserSimulationDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSimulationDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *UserSimulationDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignedTrainingsCount gets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
@@ -277,7 +277,7 @@ func (m *UserSimulationDetails) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSimulationDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *UserSimulationDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignedTrainingsCount sets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.

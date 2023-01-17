@@ -15,7 +15,7 @@ const (
 func (i ExpirationPatternType) String() string {
     return []string{"notSpecified", "noExpiration", "afterDateTime", "afterDuration"}[i]
 }
-func ParseExpirationPatternType(v string) (interface{}, error) {
+func ParseExpirationPatternType(v string) (any, error) {
     result := NOTSPECIFIED_EXPIRATIONPATTERNTYPE
     switch v {
         case "notSpecified":

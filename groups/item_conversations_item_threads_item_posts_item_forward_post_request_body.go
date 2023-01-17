@@ -8,7 +8,7 @@ import (
 // ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody 
 type ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The ToRecipients property
@@ -18,7 +18,7 @@ type ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody struct {
 func NewItemConversationsItemThreadsItemPostsItemForwardPostRequestBody()(*ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody) {
     m := &ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemConversationsItemThreadsItemPostsItemForwardPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemConversationsItemThreadsItemPostsItemForwardPostRequestBodyFromDi
     return NewItemConversationsItemThreadsItemPostsItemForwardPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -93,7 +93,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemConversationsItemThreadsItemPostsItemForwardPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

@@ -7,7 +7,7 @@ import (
 // AssignmentOrder 
 type AssignmentOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
@@ -17,7 +17,7 @@ type AssignmentOrder struct {
 func NewAssignmentOrder()(*AssignmentOrder) {
     m := &AssignmentOrder{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentOrderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAssignmentOrderFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewAssignmentOrder(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentOrder) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentOrder) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *AssignmentOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentOrder) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentOrder) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

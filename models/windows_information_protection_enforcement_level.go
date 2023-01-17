@@ -19,7 +19,7 @@ const (
 func (i WindowsInformationProtectionEnforcementLevel) String() string {
     return []string{"noProtection", "encryptAndAuditOnly", "encryptAuditAndPrompt", "encryptAuditAndBlock"}[i]
 }
-func ParseWindowsInformationProtectionEnforcementLevel(v string) (interface{}, error) {
+func ParseWindowsInformationProtectionEnforcementLevel(v string) (any, error) {
     result := NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
     switch v {
         case "noProtection":

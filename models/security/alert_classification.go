@@ -16,7 +16,7 @@ const (
 func (i AlertClassification) String() string {
     return []string{"unknown", "falsePositive", "truePositive", "informationalExpectedActivity", "unknownFutureValue"}[i]
 }
-func ParseAlertClassification(v string) (interface{}, error) {
+func ParseAlertClassification(v string) (any, error) {
     result := UNKNOWN_ALERTCLASSIFICATION
     switch v {
         case "unknown":

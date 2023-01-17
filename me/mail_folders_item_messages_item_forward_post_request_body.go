@@ -8,7 +8,7 @@ import (
 // MailFoldersItemMessagesItemForwardPostRequestBody 
 type MailFoldersItemMessagesItemForwardPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The Message property
@@ -20,7 +20,7 @@ type MailFoldersItemMessagesItemForwardPostRequestBody struct {
 func NewMailFoldersItemMessagesItemForwardPostRequestBody()(*MailFoldersItemMessagesItemForwardPostRequestBody) {
     m := &MailFoldersItemMessagesItemForwardPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMailFoldersItemMessagesItemForwardPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateMailFoldersItemMessagesItemForwardPostRequestBodyFromDiscriminatorVal
     return NewMailFoldersItemMessagesItemForwardPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemMessagesItemForwardPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MailFoldersItemMessagesItemForwardPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -115,7 +115,7 @@ func (m *MailFoldersItemMessagesItemForwardPostRequestBody) Serialize(writer i87
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemMessagesItemForwardPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MailFoldersItemMessagesItemForwardPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

@@ -7,7 +7,7 @@ import (
 // CloudAppSecurityState 
 type CloudAppSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Destination IP Address of the connection to the cloud application/service.
     destinationServiceIp *string
     // Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
@@ -21,7 +21,7 @@ type CloudAppSecurityState struct {
 func NewCloudAppSecurityState()(*CloudAppSecurityState) {
     m := &CloudAppSecurityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudAppSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateCloudAppSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewCloudAppSecurityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudAppSecurityState) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudAppSecurityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationServiceIp gets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
@@ -128,7 +128,7 @@ func (m *CloudAppSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudAppSecurityState) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudAppSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationServiceIp sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.

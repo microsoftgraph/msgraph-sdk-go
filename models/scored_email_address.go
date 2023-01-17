@@ -7,7 +7,7 @@ import (
 // ScoredEmailAddress 
 type ScoredEmailAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The email address.
     address *string
     // The itemId property
@@ -23,7 +23,7 @@ type ScoredEmailAddress struct {
 func NewScoredEmailAddress()(*ScoredEmailAddress) {
     m := &ScoredEmailAddress{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateScoredEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateScoredEmailAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewScoredEmailAddress(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ScoredEmailAddress) GetAdditionalData()(map[string]interface{}) {
+func (m *ScoredEmailAddress) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. The email address.
@@ -151,7 +151,7 @@ func (m *ScoredEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ScoredEmailAddress) SetAdditionalData(value map[string]interface{})() {
+func (m *ScoredEmailAddress) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. The email address.

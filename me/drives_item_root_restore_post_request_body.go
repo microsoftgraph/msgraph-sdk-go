@@ -8,7 +8,7 @@ import (
 // DrivesItemRootRestorePostRequestBody 
 type DrivesItemRootRestorePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name property
     name *string
     // The parentReference property
@@ -18,7 +18,7 @@ type DrivesItemRootRestorePostRequestBody struct {
 func NewDrivesItemRootRestorePostRequestBody()(*DrivesItemRootRestorePostRequestBody) {
     m := &DrivesItemRootRestorePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDrivesItemRootRestorePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateDrivesItemRootRestorePostRequestBodyFromDiscriminatorValue(parseNode 
     return NewDrivesItemRootRestorePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemRootRestorePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DrivesItemRootRestorePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *DrivesItemRootRestorePostRequestBody) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemRootRestorePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DrivesItemRootRestorePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name property

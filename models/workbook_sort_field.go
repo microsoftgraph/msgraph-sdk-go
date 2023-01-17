@@ -7,7 +7,7 @@ import (
 // WorkbookSortField 
 type WorkbookSortField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents whether the sorting is done in an ascending fashion.
     ascending *bool
     // Represents the color that is the target of the condition if the sorting is on font or cell color.
@@ -27,7 +27,7 @@ type WorkbookSortField struct {
 func NewWorkbookSortField()(*WorkbookSortField) {
     m := &WorkbookSortField{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkbookSortFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateWorkbookSortFieldFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewWorkbookSortField(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookSortField) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkbookSortField) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAscending gets the ascending property value. Represents whether the sorting is done in an ascending fashion.
@@ -194,7 +194,7 @@ func (m *WorkbookSortField) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookSortField) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkbookSortField) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAscending sets the ascending property value. Represents whether the sorting is done in an ascending fashion.

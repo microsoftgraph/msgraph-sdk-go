@@ -7,7 +7,7 @@ import (
 // UserTrainingEventInfo 
 type UserTrainingEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Display name of the training.
     displayName *string
     // Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
@@ -25,7 +25,7 @@ type UserTrainingEventInfo struct {
 func NewUserTrainingEventInfo()(*UserTrainingEventInfo) {
     m := &UserTrainingEventInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserTrainingEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateUserTrainingEventInfoFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewUserTrainingEventInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserTrainingEventInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *UserTrainingEventInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name of the training.
@@ -173,7 +173,7 @@ func (m *UserTrainingEventInfo) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserTrainingEventInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *UserTrainingEventInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name of the training.

@@ -9,7 +9,7 @@ type PresenceSetPresencePostRequestBody struct {
     // The activity property
     activity *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The availability property
     availability *string
     // The expirationDuration property
@@ -21,7 +21,7 @@ type PresenceSetPresencePostRequestBody struct {
 func NewPresenceSetPresencePostRequestBody()(*PresenceSetPresencePostRequestBody) {
     m := &PresenceSetPresencePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePresenceSetPresencePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *PresenceSetPresencePostRequestBody) GetActivity()(*string) {
     return m.activity
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresenceSetPresencePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *PresenceSetPresencePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailability gets the availability property value. The availability property
@@ -132,7 +132,7 @@ func (m *PresenceSetPresencePostRequestBody) SetActivity(value *string)() {
     m.activity = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresenceSetPresencePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *PresenceSetPresencePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailability sets the availability property value. The availability property

@@ -7,7 +7,7 @@ import (
 // ManagedDevicesItemWipePostRequestBody 
 type ManagedDevicesItemWipePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The keepEnrollmentData property
     keepEnrollmentData *bool
     // The keepUserData property
@@ -21,7 +21,7 @@ type ManagedDevicesItemWipePostRequestBody struct {
 func NewManagedDevicesItemWipePostRequestBody()(*ManagedDevicesItemWipePostRequestBody) {
     m := &ManagedDevicesItemWipePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemWipePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateManagedDevicesItemWipePostRequestBodyFromDiscriminatorValue(parseNode
     return NewManagedDevicesItemWipePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemWipePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemWipePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemWipePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemWipePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKeepEnrollmentData sets the keepEnrollmentData property value. The keepEnrollmentData property

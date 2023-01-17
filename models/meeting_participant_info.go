@@ -7,7 +7,7 @@ import (
 // MeetingParticipantInfo 
 type MeetingParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identity information of the participant.
     identity IdentitySetable
     // The OdataType property
@@ -21,7 +21,7 @@ type MeetingParticipantInfo struct {
 func NewMeetingParticipantInfo()(*MeetingParticipantInfo) {
     m := &MeetingParticipantInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMeetingParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateMeetingParticipantInfoFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewMeetingParticipantInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MeetingParticipantInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *MeetingParticipantInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *MeetingParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MeetingParticipantInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *MeetingParticipantInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIdentity sets the identity property value. Identity information of the participant.

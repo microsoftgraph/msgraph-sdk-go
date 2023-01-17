@@ -7,7 +7,7 @@ import (
 // ItemRemoveGroupPostRequestBody 
 type ItemRemoveGroupPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The groupId property
     groupId *string
 }
@@ -15,7 +15,7 @@ type ItemRemoveGroupPostRequestBody struct {
 func NewItemRemoveGroupPostRequestBody()(*ItemRemoveGroupPostRequestBody) {
     m := &ItemRemoveGroupPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRemoveGroupPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemRemoveGroupPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewItemRemoveGroupPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemoveGroupPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRemoveGroupPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemRemoveGroupPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemoveGroupPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRemoveGroupPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGroupId sets the groupId property value. The groupId property

@@ -15,7 +15,7 @@ const (
 func (i CallType) String() string {
     return []string{"unknown", "groupCall", "peerToPeer", "unknownFutureValue"}[i]
 }
-func ParseCallType(v string) (interface{}, error) {
+func ParseCallType(v string) (any, error) {
     result := UNKNOWN_CALLTYPE
     switch v {
         case "unknown":

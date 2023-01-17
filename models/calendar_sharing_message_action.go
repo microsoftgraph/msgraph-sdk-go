@@ -11,7 +11,7 @@ type CalendarSharingMessageAction struct {
     // The actionType property
     actionType *CalendarSharingActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The importance property
     importance *CalendarSharingActionImportance
     // The OdataType property
@@ -21,7 +21,7 @@ type CalendarSharingMessageAction struct {
 func NewCalendarSharingMessageAction()(*CalendarSharingMessageAction) {
     m := &CalendarSharingMessageAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCalendarSharingMessageActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func (m *CalendarSharingMessageAction) GetActionType()(*CalendarSharingActionTyp
     return m.actionType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarSharingMessageAction) GetAdditionalData()(map[string]interface{}) {
+func (m *CalendarSharingMessageAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,7 +139,7 @@ func (m *CalendarSharingMessageAction) SetActionType(value *CalendarSharingActio
     m.actionType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CalendarSharingMessageAction) SetAdditionalData(value map[string]interface{})() {
+func (m *CalendarSharingMessageAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetImportance sets the importance property value. The importance property

@@ -21,7 +21,7 @@ const (
 func (i WindowsUpdateNotificationDisplayOption) String() string {
     return []string{"notConfigured", "defaultNotifications", "restartWarningsOnly", "disableAllNotifications", "unknownFutureValue"}[i]
 }
-func ParseWindowsUpdateNotificationDisplayOption(v string) (interface{}, error) {
+func ParseWindowsUpdateNotificationDisplayOption(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
     switch v {
         case "notConfigured":

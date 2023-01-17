@@ -8,7 +8,7 @@ import (
 // JoinedTeamsItemClonePostRequestBody 
 type JoinedTeamsItemClonePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The classification property
     classification *string
     // The description property
@@ -26,7 +26,7 @@ type JoinedTeamsItemClonePostRequestBody struct {
 func NewJoinedTeamsItemClonePostRequestBody()(*JoinedTeamsItemClonePostRequestBody) {
     m := &JoinedTeamsItemClonePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateJoinedTeamsItemClonePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateJoinedTeamsItemClonePostRequestBodyFromDiscriminatorValue(parseNode i
     return NewJoinedTeamsItemClonePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinedTeamsItemClonePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *JoinedTeamsItemClonePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassification gets the classification property value. The classification property
@@ -175,7 +175,7 @@ func (m *JoinedTeamsItemClonePostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *JoinedTeamsItemClonePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *JoinedTeamsItemClonePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClassification sets the classification property value. The classification property

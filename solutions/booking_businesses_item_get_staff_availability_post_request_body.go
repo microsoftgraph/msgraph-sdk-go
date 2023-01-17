@@ -8,7 +8,7 @@ import (
 // BookingBusinessesItemGetStaffAvailabilityPostRequestBody 
 type BookingBusinessesItemGetStaffAvailabilityPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The endDateTime property
     endDateTime iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable
     // The staffIds property
@@ -20,7 +20,7 @@ type BookingBusinessesItemGetStaffAvailabilityPostRequestBody struct {
 func NewBookingBusinessesItemGetStaffAvailabilityPostRequestBody()(*BookingBusinessesItemGetStaffAvailabilityPostRequestBody) {
     m := &BookingBusinessesItemGetStaffAvailabilityPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingBusinessesItemGetStaffAvailabilityPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateBookingBusinessesItemGetStaffAvailabilityPostRequestBodyFromDiscrimin
     return NewBookingBusinessesItemGetStaffAvailabilityPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
@@ -111,7 +111,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) Serialize(wri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDateTime sets the endDateTime property value. The endDateTime property

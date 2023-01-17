@@ -7,7 +7,7 @@ import (
 // MediaContentRatingUnitedKingdom 
 type MediaContentRatingUnitedKingdom struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Movies rating labels in United Kingdom
     movieRating *RatingUnitedKingdomMoviesType
     // The OdataType property
@@ -19,7 +19,7 @@ type MediaContentRatingUnitedKingdom struct {
 func NewMediaContentRatingUnitedKingdom()(*MediaContentRatingUnitedKingdom) {
     m := &MediaContentRatingUnitedKingdom{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaContentRatingUnitedKingdomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMediaContentRatingUnitedKingdomFromDiscriminatorValue(parseNode i878a
     return NewMediaContentRatingUnitedKingdom(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingUnitedKingdom) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaContentRatingUnitedKingdom) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *MediaContentRatingUnitedKingdom) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingUnitedKingdom) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaContentRatingUnitedKingdom) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMovieRating sets the movieRating property value. Movies rating labels in United Kingdom

@@ -7,7 +7,7 @@ import (
 // InsightIdentity 
 type InsightIdentity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The email address of the user who shared the item.
     address *string
     // The display name of the user who shared the item.
@@ -21,7 +21,7 @@ type InsightIdentity struct {
 func NewInsightIdentity()(*InsightIdentity) {
     m := &InsightIdentity{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInsightIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateInsightIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewInsightIdentity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InsightIdentity) GetAdditionalData()(map[string]interface{}) {
+func (m *InsightIdentity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. The email address of the user who shared the item.
@@ -128,7 +128,7 @@ func (m *InsightIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InsightIdentity) SetAdditionalData(value map[string]interface{})() {
+func (m *InsightIdentity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. The email address of the user who shared the item.

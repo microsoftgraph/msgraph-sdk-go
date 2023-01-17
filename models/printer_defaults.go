@@ -7,7 +7,7 @@ import (
 // PrinterDefaults 
 type PrinterDefaults struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The default color mode to use when printing the document. Valid values are described in the following table.
     colorMode *PrintColorMode
     // The default content (MIME) type to use when processing documents.
@@ -49,7 +49,7 @@ type PrinterDefaults struct {
 func NewPrinterDefaults()(*PrinterDefaults) {
     m := &PrinterDefaults{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrinterDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +57,7 @@ func CreatePrinterDefaultsFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewPrinterDefaults(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterDefaults) GetAdditionalData()(map[string]interface{}) {
+func (m *PrinterDefaults) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColorMode gets the colorMode property value. The default color mode to use when printing the document. Valid values are described in the following table.
@@ -446,7 +446,7 @@ func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterDefaults) SetAdditionalData(value map[string]interface{})() {
+func (m *PrinterDefaults) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetColorMode sets the colorMode property value. The default color mode to use when printing the document. Valid values are described in the following table.

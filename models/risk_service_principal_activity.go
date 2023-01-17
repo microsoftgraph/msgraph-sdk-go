@@ -7,7 +7,7 @@ import (
 // RiskServicePrincipalActivity 
 type RiskServicePrincipalActivity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
     detail *RiskDetail
     // The OdataType property
@@ -19,7 +19,7 @@ type RiskServicePrincipalActivity struct {
 func NewRiskServicePrincipalActivity()(*RiskServicePrincipalActivity) {
     m := &RiskServicePrincipalActivity{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRiskServicePrincipalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateRiskServicePrincipalActivityFromDiscriminatorValue(parseNode i878a80d
     return NewRiskServicePrincipalActivity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskServicePrincipalActivity) GetAdditionalData()(map[string]interface{}) {
+func (m *RiskServicePrincipalActivity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDetail gets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
@@ -111,7 +111,7 @@ func (m *RiskServicePrincipalActivity) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskServicePrincipalActivity) SetAdditionalData(value map[string]interface{})() {
+func (m *RiskServicePrincipalActivity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDetail sets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.

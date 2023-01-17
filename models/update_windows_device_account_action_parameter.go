@@ -7,7 +7,7 @@ import (
 // UpdateWindowsDeviceAccountActionParameter 
 type UpdateWindowsDeviceAccountActionParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Not yet documented
     calendarSyncEnabled *bool
     // Not yet documented
@@ -27,7 +27,7 @@ type UpdateWindowsDeviceAccountActionParameter struct {
 func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountActionParameter) {
     m := &UpdateWindowsDeviceAccountActionParameter{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue(parse
     return NewUpdateWindowsDeviceAccountActionParameter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[string]interface{}) {
+func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCalendarSyncEnabled gets the calendarSyncEnabled property value. Not yet documented
@@ -194,7 +194,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdateWindowsDeviceAccountActionParameter) SetAdditionalData(value map[string]interface{})() {
+func (m *UpdateWindowsDeviceAccountActionParameter) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCalendarSyncEnabled sets the calendarSyncEnabled property value. Not yet documented
