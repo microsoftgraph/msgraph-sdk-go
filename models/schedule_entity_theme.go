@@ -24,7 +24,7 @@ const (
 func (i ScheduleEntityTheme) String() string {
     return []string{"white", "blue", "green", "purple", "pink", "yellow", "gray", "darkBlue", "darkGreen", "darkPurple", "darkPink", "darkYellow", "unknownFutureValue"}[i]
 }
-func ParseScheduleEntityTheme(v string) (interface{}, error) {
+func ParseScheduleEntityTheme(v string) (any, error) {
     result := WHITE_SCHEDULEENTITYTHEME
     switch v {
         case "white":

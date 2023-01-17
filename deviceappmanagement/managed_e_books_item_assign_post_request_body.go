@@ -8,7 +8,7 @@ import (
 // ManagedEBooksItemAssignPostRequestBody 
 type ManagedEBooksItemAssignPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The managedEBookAssignments property
     managedEBookAssignments []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable
 }
@@ -16,7 +16,7 @@ type ManagedEBooksItemAssignPostRequestBody struct {
 func NewManagedEBooksItemAssignPostRequestBody()(*ManagedEBooksItemAssignPostRequestBody) {
     m := &ManagedEBooksItemAssignPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedEBooksItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateManagedEBooksItemAssignPostRequestBodyFromDiscriminatorValue(parseNod
     return NewManagedEBooksItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedEBooksItemAssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedEBooksItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -71,7 +71,7 @@ func (m *ManagedEBooksItemAssignPostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedEBooksItemAssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedEBooksItemAssignPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetManagedEBookAssignments sets the managedEBookAssignments property value. The managedEBookAssignments property

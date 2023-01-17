@@ -15,7 +15,7 @@ const (
 func (i AuthenticationPhoneType) String() string {
     return []string{"mobile", "alternateMobile", "office", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationPhoneType(v string) (interface{}, error) {
+func ParseAuthenticationPhoneType(v string) (any, error) {
     result := MOBILE_AUTHENTICATIONPHONETYPE
     switch v {
         case "mobile":

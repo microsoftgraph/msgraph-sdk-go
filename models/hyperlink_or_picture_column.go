@@ -7,7 +7,7 @@ import (
 // HyperlinkOrPictureColumn 
 type HyperlinkOrPictureColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether the display format used for URL columns is an image or a hyperlink.
     isPicture *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type HyperlinkOrPictureColumn struct {
 func NewHyperlinkOrPictureColumn()(*HyperlinkOrPictureColumn) {
     m := &HyperlinkOrPictureColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateHyperlinkOrPictureColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateHyperlinkOrPictureColumnFromDiscriminatorValue(parseNode i878a80d2330
     return NewHyperlinkOrPictureColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HyperlinkOrPictureColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *HyperlinkOrPictureColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *HyperlinkOrPictureColumn) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HyperlinkOrPictureColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *HyperlinkOrPictureColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsPicture sets the isPicture property value. Specifies whether the display format used for URL columns is an image or a hyperlink.

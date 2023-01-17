@@ -8,7 +8,7 @@ import (
 // CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody 
 type CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The tagsToAdd property
     tagsToAdd []idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable
     // The tagsToRemove property
@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody s
 func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody()(*CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody) {
     m := &CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateCasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequest
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -101,7 +101,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBo
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemApplyTagsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetTagsToAdd sets the tagsToAdd property value. The tagsToAdd property

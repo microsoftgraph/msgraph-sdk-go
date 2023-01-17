@@ -7,7 +7,7 @@ import (
 // BookingWorkTimeSlot 
 type BookingWorkTimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The time of the day when work stops. For example, 17:00:00.0000000.
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The OdataType property
@@ -19,7 +19,7 @@ type BookingWorkTimeSlot struct {
 func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {
     m := &BookingWorkTimeSlot{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingWorkTimeSlotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateBookingWorkTimeSlotFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewBookingWorkTimeSlot(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingWorkTimeSlot) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingWorkTimeSlot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndTime gets the endTime property value. The time of the day when work stops. For example, 17:00:00.0000000.
@@ -106,7 +106,7 @@ func (m *BookingWorkTimeSlot) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingWorkTimeSlot) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingWorkTimeSlot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndTime sets the endTime property value. The time of the day when work stops. For example, 17:00:00.0000000.

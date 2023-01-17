@@ -19,7 +19,7 @@ const (
 func (i TargetedManagedAppGroupType) String() string {
     return []string{"selectedPublicApps", "allCoreMicrosoftApps", "allMicrosoftApps", "allApps"}[i]
 }
-func ParseTargetedManagedAppGroupType(v string) (interface{}, error) {
+func ParseTargetedManagedAppGroupType(v string) (any, error) {
     result := SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE
     switch v {
         case "selectedPublicApps":

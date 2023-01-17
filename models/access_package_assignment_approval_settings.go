@@ -7,7 +7,7 @@ import (
 // AccessPackageAssignmentApprovalSettings 
 type AccessPackageAssignmentApprovalSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If false, then approval is not required for new requests in this policy.
     isApprovalRequiredForAdd *bool
     // If false, then approval is not required for updates to requests in this policy.
@@ -21,7 +21,7 @@ type AccessPackageAssignmentApprovalSettings struct {
 func NewAccessPackageAssignmentApprovalSettings()(*AccessPackageAssignmentApprovalSettings) {
     m := &AccessPackageAssignmentApprovalSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAssignmentApprovalSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAccessPackageAssignmentApprovalSettingsFromDiscriminatorValue(parseNo
     return NewAccessPackageAssignmentApprovalSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentApprovalSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAssignmentApprovalSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -136,7 +136,7 @@ func (m *AccessPackageAssignmentApprovalSettings) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentApprovalSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAssignmentApprovalSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsApprovalRequiredForAdd sets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.

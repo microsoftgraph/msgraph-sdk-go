@@ -14,7 +14,7 @@ const (
 func (i SubjectRightsRequestStatus) String() string {
     return []string{"active", "closed", "unknownFutureValue"}[i]
 }
-func ParseSubjectRightsRequestStatus(v string) (interface{}, error) {
+func ParseSubjectRightsRequestStatus(v string) (any, error) {
     result := ACTIVE_SUBJECTRIGHTSREQUESTSTATUS
     switch v {
         case "active":

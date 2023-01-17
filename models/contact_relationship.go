@@ -19,7 +19,7 @@ const (
 func (i ContactRelationship) String() string {
     return []string{"parent", "relative", "aide", "doctor", "guardian", "child", "other", "unknownFutureValue"}[i]
 }
-func ParseContactRelationship(v string) (interface{}, error) {
+func ParseContactRelationship(v string) (any, error) {
     result := PARENT_CONTACTRELATIONSHIP
     switch v {
         case "parent":

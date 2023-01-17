@@ -7,7 +7,7 @@ import (
 // CallsItemParticipantsItemStopHoldMusicPostRequestBody 
 type CallsItemParticipantsItemStopHoldMusicPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
 }
@@ -15,7 +15,7 @@ type CallsItemParticipantsItemStopHoldMusicPostRequestBody struct {
 func NewCallsItemParticipantsItemStopHoldMusicPostRequestBody()(*CallsItemParticipantsItemStopHoldMusicPostRequestBody) {
     m := &CallsItemParticipantsItemStopHoldMusicPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemParticipantsItemStopHoldMusicPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCallsItemParticipantsItemStopHoldMusicPostRequestBodyFromDiscriminato
     return NewCallsItemParticipantsItemStopHoldMusicPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsItemStopHoldMusicPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemParticipantsItemStopHoldMusicPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -62,7 +62,7 @@ func (m *CallsItemParticipantsItemStopHoldMusicPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsItemStopHoldMusicPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemParticipantsItemStopHoldMusicPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

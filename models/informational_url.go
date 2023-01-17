@@ -7,7 +7,7 @@ import (
 // InformationalUrl 
 type InformationalUrl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // CDN URL to the application's logo, Read-only.
     logoUrl *string
     // Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
@@ -25,7 +25,7 @@ type InformationalUrl struct {
 func NewInformationalUrl()(*InformationalUrl) {
     m := &InformationalUrl{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInformationalUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateInformationalUrlFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewInformationalUrl(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationalUrl) GetAdditionalData()(map[string]interface{}) {
+func (m *InformationalUrl) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -172,7 +172,7 @@ func (m *InformationalUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationalUrl) SetAdditionalData(value map[string]interface{})() {
+func (m *InformationalUrl) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLogoUrl sets the logoUrl property value. CDN URL to the application's logo, Read-only.

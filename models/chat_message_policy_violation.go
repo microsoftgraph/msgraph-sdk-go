@@ -7,7 +7,7 @@ import (
 // ChatMessagePolicyViolation 
 type ChatMessagePolicyViolation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
     dlpAction *ChatMessagePolicyViolationDlpActionTypes
     // Justification text provided by the sender of the message when overriding a policy violation.
@@ -25,7 +25,7 @@ type ChatMessagePolicyViolation struct {
 func NewChatMessagePolicyViolation()(*ChatMessagePolicyViolation) {
     m := &ChatMessagePolicyViolation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatMessagePolicyViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateChatMessagePolicyViolationFromDiscriminatorValue(parseNode i878a80d23
     return NewChatMessagePolicyViolation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessagePolicyViolation) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatMessagePolicyViolation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDlpAction gets the dlpAction property value. The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
@@ -175,7 +175,7 @@ func (m *ChatMessagePolicyViolation) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessagePolicyViolation) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatMessagePolicyViolation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDlpAction sets the dlpAction property value. The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.

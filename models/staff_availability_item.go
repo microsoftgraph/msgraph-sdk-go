@@ -7,7 +7,7 @@ import (
 // StaffAvailabilityItem 
 type StaffAvailabilityItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Each item in this collection indicates a slot and the status of the staff member.
     availabilityItems []AvailabilityItemable
     // The OdataType property
@@ -19,7 +19,7 @@ type StaffAvailabilityItem struct {
 func NewStaffAvailabilityItem()(*StaffAvailabilityItem) {
     m := &StaffAvailabilityItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateStaffAvailabilityItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateStaffAvailabilityItemFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewStaffAvailabilityItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *StaffAvailabilityItem) GetAdditionalData()(map[string]interface{}) {
+func (m *StaffAvailabilityItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvailabilityItems gets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
@@ -114,7 +114,7 @@ func (m *StaffAvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *StaffAvailabilityItem) SetAdditionalData(value map[string]interface{})() {
+func (m *StaffAvailabilityItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAvailabilityItems sets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.

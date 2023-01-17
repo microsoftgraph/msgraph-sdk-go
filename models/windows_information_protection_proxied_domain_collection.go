@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionProxiedDomainCollection windows Information Protection Proxied Domain Collection
 type WindowsInformationProtectionProxiedDomainCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Display name
     displayName *string
     // The OdataType property
@@ -19,7 +19,7 @@ type WindowsInformationProtectionProxiedDomainCollection struct {
 func NewWindowsInformationProtectionProxiedDomainCollection()(*WindowsInformationProtectionProxiedDomainCollection) {
     m := &WindowsInformationProtectionProxiedDomainCollection{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorV
     return NewWindowsInformationProtectionProxiedDomainCollection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsInformationProtectionProxiedDomainCollection) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsInformationProtectionProxiedDomainCollection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name
@@ -114,7 +114,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsInformationProtectionProxiedDomainCollection) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsInformationProtectionProxiedDomainCollection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name

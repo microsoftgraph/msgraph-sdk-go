@@ -7,7 +7,7 @@ import (
 // SearchBucket 
 type SearchBucket struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
     aggregationFilterToken *string
     // The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
@@ -21,7 +21,7 @@ type SearchBucket struct {
 func NewSearchBucket()(*SearchBucket) {
     m := &SearchBucket{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchBucketFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateSearchBucketFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewSearchBucket(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchBucket) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchBucket) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAggregationFilterToken gets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
@@ -128,7 +128,7 @@ func (m *SearchBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchBucket) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchBucket) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAggregationFilterToken sets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.

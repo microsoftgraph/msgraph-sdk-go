@@ -7,7 +7,7 @@ import (
 // ApplicationServicePrincipal 
 type ApplicationServicePrincipal struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The application property
     application Applicationable
     // The OdataType property
@@ -19,7 +19,7 @@ type ApplicationServicePrincipal struct {
 func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {
     m := &ApplicationServicePrincipal{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateApplicationServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateApplicationServicePrincipalFromDiscriminatorValue(parseNode i878a80d2
     return NewApplicationServicePrincipal(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApplicationServicePrincipal) GetAdditionalData()(map[string]interface{}) {
+func (m *ApplicationServicePrincipal) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplication gets the application property value. The application property
@@ -106,7 +106,7 @@ func (m *ApplicationServicePrincipal) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApplicationServicePrincipal) SetAdditionalData(value map[string]interface{})() {
+func (m *ApplicationServicePrincipal) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplication sets the application property value. The application property

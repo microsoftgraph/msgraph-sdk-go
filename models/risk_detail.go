@@ -26,7 +26,7 @@ const (
 func (i RiskDetail) String() string {
     return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "m365DAdminDismissedDetection"}[i]
 }
-func ParseRiskDetail(v string) (interface{}, error) {
+func ParseRiskDetail(v string) (any, error) {
     result := NONE_RISKDETAIL
     switch v {
         case "none":

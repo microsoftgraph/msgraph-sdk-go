@@ -22,7 +22,7 @@ const (
 func (i MessageActionFlag) String() string {
     return []string{"any", "call", "doNotForward", "followUp", "fyi", "forward", "noResponseNecessary", "read", "reply", "replyToAll", "review"}[i]
 }
-func ParseMessageActionFlag(v string) (interface{}, error) {
+func ParseMessageActionFlag(v string) (any, error) {
     result := ANY_MESSAGEACTIONFLAG
     switch v {
         case "any":

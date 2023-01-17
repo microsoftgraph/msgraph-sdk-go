@@ -18,7 +18,7 @@ const (
 func (i LobbyBypassScope) String() string {
     return []string{"organizer", "organization", "organizationAndFederated", "everyone", "unknownFutureValue", "invited", "organizationExcludingGuests"}[i]
 }
-func ParseLobbyBypassScope(v string) (interface{}, error) {
+func ParseLobbyBypassScope(v string) (any, error) {
     result := ORGANIZER_LOBBYBYPASSSCOPE
     switch v {
         case "organizer":

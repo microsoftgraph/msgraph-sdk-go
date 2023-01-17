@@ -15,7 +15,7 @@ const (
 func (i MeetingChatMode) String() string {
     return []string{"enabled", "disabled", "limited", "unknownFutureValue"}[i]
 }
-func ParseMeetingChatMode(v string) (interface{}, error) {
+func ParseMeetingChatMode(v string) (any, error) {
     result := ENABLED_MEETINGCHATMODE
     switch v {
         case "enabled":

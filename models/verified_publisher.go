@@ -10,7 +10,7 @@ type VerifiedPublisher struct {
     // The timestamp when the verified publisher was first added or most recently updated.
     addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The verified publisher name from the app publisher's Partner Center account.
     displayName *string
     // The OdataType property
@@ -22,7 +22,7 @@ type VerifiedPublisher struct {
 func NewVerifiedPublisher()(*VerifiedPublisher) {
     m := &VerifiedPublisher{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVerifiedPublisherFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func (m *VerifiedPublisher) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return m.addedDateTime
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifiedPublisher) GetAdditionalData()(map[string]interface{}) {
+func (m *VerifiedPublisher) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The verified publisher name from the app publisher's Partner Center account.
@@ -133,7 +133,7 @@ func (m *VerifiedPublisher) SetAddedDateTime(value *i336074805fc853987abe6f7fe3a
     m.addedDateTime = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifiedPublisher) SetAdditionalData(value map[string]interface{})() {
+func (m *VerifiedPublisher) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The verified publisher name from the app publisher's Partner Center account.

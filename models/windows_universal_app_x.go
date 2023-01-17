@@ -11,6 +11,8 @@ type WindowsUniversalAppX struct {
     applicableArchitectures *WindowsArchitecture
     // Contains properties for Windows device type.
     applicableDeviceTypes *WindowsDeviceType
+    // The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+    committedContainedApps []MobileContainedAppable
     // The Identity Name.
     identityName *string
     // The Identity Publisher Hash.
@@ -45,6 +47,10 @@ func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture
 func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     return m.applicableDeviceTypes
 }
+// GetCommittedContainedApps gets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+func (m *WindowsUniversalAppX) GetCommittedContainedApps()([]MobileContainedAppable) {
+    return m.committedContainedApps
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUniversalAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
@@ -65,6 +71,20 @@ func (m *WindowsUniversalAppX) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetApplicableDeviceTypes(val.(*WindowsDeviceType))
+        }
+        return nil
+    }
+    res["committedContainedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMobileContainedAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MobileContainedAppable, len(val))
+            for i, v := range val {
+                res[i] = v.(MobileContainedAppable)
+            }
+            m.SetCommittedContainedApps(res)
         }
         return nil
     }
@@ -174,6 +194,16 @@ func (m *WindowsUniversalAppX) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetCommittedContainedApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCommittedContainedApps()))
+        for i, v := range m.GetCommittedContainedApps() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("committedContainedApps", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("identityName", m.GetIdentityName())
         if err != nil {
@@ -219,6 +249,10 @@ func (m *WindowsUniversalAppX) SetApplicableArchitectures(value *WindowsArchitec
 // SetApplicableDeviceTypes sets the applicableDeviceTypes property value. Contains properties for Windows device type.
 func (m *WindowsUniversalAppX) SetApplicableDeviceTypes(value *WindowsDeviceType)() {
     m.applicableDeviceTypes = value
+}
+// SetCommittedContainedApps sets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+func (m *WindowsUniversalAppX) SetCommittedContainedApps(value []MobileContainedAppable)() {
+    m.committedContainedApps = value
 }
 // SetIdentityName sets the identityName property value. The Identity Name.
 func (m *WindowsUniversalAppX) SetIdentityName(value *string)() {

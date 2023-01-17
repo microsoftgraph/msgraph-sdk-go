@@ -7,7 +7,7 @@ import (
 // FileHash 
 type FileHash struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
     hashType *FileHashType
     // Value of the file hash.
@@ -19,7 +19,7 @@ type FileHash struct {
 func NewFileHash()(*FileHash) {
     m := &FileHash{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFileHashFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateFileHashFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewFileHash(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FileHash) GetAdditionalData()(map[string]interface{}) {
+func (m *FileHash) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *FileHash) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FileHash) SetAdditionalData(value map[string]interface{})() {
+func (m *FileHash) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHashType sets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.

@@ -15,7 +15,7 @@ const (
 func (i AccessPackageCatalogType) String() string {
     return []string{"userManaged", "serviceDefault", "serviceManaged", "unknownFutureValue"}[i]
 }
-func ParseAccessPackageCatalogType(v string) (interface{}, error) {
+func ParseAccessPackageCatalogType(v string) (any, error) {
     result := USERMANAGED_ACCESSPACKAGECATALOGTYPE
     switch v {
         case "userManaged":

@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementPartnerAppType) String() string {
     return []string{"unknown", "singleTenantApp", "multiTenantApp"}[i]
 }
-func ParseDeviceManagementPartnerAppType(v string) (interface{}, error) {
+func ParseDeviceManagementPartnerAppType(v string) (any, error) {
     result := UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE
     switch v {
         case "unknown":

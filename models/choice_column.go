@@ -7,7 +7,7 @@ import (
 // ChoiceColumn 
 type ChoiceColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If true, allows custom values that aren't in the configured choices.
     allowTextEntry *bool
     // The list of values available for this column.
@@ -21,7 +21,7 @@ type ChoiceColumn struct {
 func NewChoiceColumn()(*ChoiceColumn) {
     m := &ChoiceColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChoiceColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateChoiceColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewChoiceColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChoiceColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *ChoiceColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowTextEntry gets the allowTextEntry property value. If true, allows custom values that aren't in the configured choices.
@@ -132,7 +132,7 @@ func (m *ChoiceColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChoiceColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *ChoiceColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowTextEntry sets the allowTextEntry property value. If true, allows custom values that aren't in the configured choices.

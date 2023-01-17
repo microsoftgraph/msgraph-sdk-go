@@ -7,7 +7,7 @@ import (
 // Pkcs12CertificateInformation 
 type Pkcs12CertificateInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
     isActive *bool
     // The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
@@ -23,7 +23,7 @@ type Pkcs12CertificateInformation struct {
 func NewPkcs12CertificateInformation()(*Pkcs12CertificateInformation) {
     m := &Pkcs12CertificateInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePkcs12CertificateInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreatePkcs12CertificateInformationFromDiscriminatorValue(parseNode i878a80d
     return NewPkcs12CertificateInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Pkcs12CertificateInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *Pkcs12CertificateInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *Pkcs12CertificateInformation) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Pkcs12CertificateInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *Pkcs12CertificateInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsActive sets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.

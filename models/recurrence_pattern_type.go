@@ -17,7 +17,7 @@ const (
 func (i RecurrencePatternType) String() string {
     return []string{"daily", "weekly", "absoluteMonthly", "relativeMonthly", "absoluteYearly", "relativeYearly"}[i]
 }
-func ParseRecurrencePatternType(v string) (interface{}, error) {
+func ParseRecurrencePatternType(v string) (any, error) {
     result := DAILY_RECURRENCEPATTERNTYPE
     switch v {
         case "daily":

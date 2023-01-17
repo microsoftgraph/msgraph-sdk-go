@@ -17,7 +17,7 @@ const (
 func (i ManagedAppDataTransferLevel) String() string {
     return []string{"allApps", "managedApps", "none"}[i]
 }
-func ParseManagedAppDataTransferLevel(v string) (interface{}, error) {
+func ParseManagedAppDataTransferLevel(v string) (any, error) {
     result := ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL
     switch v {
         case "allApps":

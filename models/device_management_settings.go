@@ -7,7 +7,7 @@ import (
 // DeviceManagementSettings 
 type DeviceManagementSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of days a device is allowed to go without checking in to remain compliant.
     deviceComplianceCheckinThresholdDays *int32
     // Is feature enabled or not for scheduled action for rule.
@@ -21,7 +21,7 @@ type DeviceManagementSettings struct {
 func NewDeviceManagementSettings()(*DeviceManagementSettings) {
     m := &DeviceManagementSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateDeviceManagementSettingsFromDiscriminatorValue(parseNode i878a80d2330
     return NewDeviceManagementSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceComplianceCheckinThresholdDays gets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
@@ -128,7 +128,7 @@ func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceComplianceCheckinThresholdDays sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.

@@ -21,7 +21,7 @@ const (
 func (i ApplicationGuardBlockClipboardSharingType) String() string {
     return []string{"notConfigured", "blockBoth", "blockHostToContainer", "blockContainerToHost", "blockNone"}[i]
 }
-func ParseApplicationGuardBlockClipboardSharingType(v string) (interface{}, error) {
+func ParseApplicationGuardBlockClipboardSharingType(v string) (any, error) {
     result := NOTCONFIGURED_APPLICATIONGUARDBLOCKCLIPBOARDSHARINGTYPE
     switch v {
         case "notConfigured":

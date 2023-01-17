@@ -8,7 +8,7 @@ import (
 // ItemsItemRestorePostRequestBody 
 type ItemsItemRestorePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name property
     name *string
     // The parentReference property
@@ -18,7 +18,7 @@ type ItemsItemRestorePostRequestBody struct {
 func NewItemsItemRestorePostRequestBody()(*ItemsItemRestorePostRequestBody) {
     m := &ItemsItemRestorePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemsItemRestorePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemsItemRestorePostRequestBodyFromDiscriminatorValue(parseNode i878a
     return NewItemsItemRestorePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemsItemRestorePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemsItemRestorePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *ItemsItemRestorePostRequestBody) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemsItemRestorePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemsItemRestorePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name property

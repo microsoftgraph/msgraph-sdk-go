@@ -7,7 +7,7 @@ import (
 // EducationStudent 
 type EducationStudent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Birth date of the student.
     birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // ID of the student in the source system.
@@ -27,7 +27,7 @@ type EducationStudent struct {
 func NewEducationStudent()(*EducationStudent) {
     m := &EducationStudent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationStudentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateEducationStudentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewEducationStudent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationStudent) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationStudent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBirthDate gets the birthDate property value. Birth date of the student.
@@ -195,7 +195,7 @@ func (m *EducationStudent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationStudent) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationStudent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBirthDate sets the birthDate property value. Birth date of the student.

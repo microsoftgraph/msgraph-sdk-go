@@ -7,7 +7,7 @@ import (
 // MediaContentRatingCanada 
 type MediaContentRatingCanada struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Movies rating labels in Canada
     movieRating *RatingCanadaMoviesType
     // The OdataType property
@@ -19,7 +19,7 @@ type MediaContentRatingCanada struct {
 func NewMediaContentRatingCanada()(*MediaContentRatingCanada) {
     m := &MediaContentRatingCanada{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaContentRatingCanadaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMediaContentRatingCanadaFromDiscriminatorValue(parseNode i878a80d2330
     return NewMediaContentRatingCanada(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingCanada) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaContentRatingCanada) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *MediaContentRatingCanada) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingCanada) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaContentRatingCanada) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMovieRating sets the movieRating property value. Movies rating labels in Canada

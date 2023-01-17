@@ -7,7 +7,7 @@ import (
 // AssignedTrainingInfo 
 type AssignedTrainingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Number of users who were assigned the training in an attack simulation and training campaign.
     assignedUserCount *int32
     // Number of users who completed the training in an attack simulation and training campaign.
@@ -21,7 +21,7 @@ type AssignedTrainingInfo struct {
 func NewAssignedTrainingInfo()(*AssignedTrainingInfo) {
     m := &AssignedTrainingInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignedTrainingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAssignedTrainingInfoFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewAssignedTrainingInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignedTrainingInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignedTrainingInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignedUserCount gets the assignedUserCount property value. Number of users who were assigned the training in an attack simulation and training campaign.
@@ -128,7 +128,7 @@ func (m *AssignedTrainingInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignedTrainingInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignedTrainingInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignedUserCount sets the assignedUserCount property value. Number of users who were assigned the training in an attack simulation and training campaign.

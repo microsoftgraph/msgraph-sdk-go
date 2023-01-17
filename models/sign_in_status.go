@@ -7,7 +7,7 @@ import (
 // SignInStatus 
 type SignInStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Provides additional details on the sign-in activity
     additionalDetails *string
     // Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
@@ -21,7 +21,7 @@ type SignInStatus struct {
 func NewSignInStatus()(*SignInStatus) {
     m := &SignInStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSignInStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateSignInStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewSignInStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignInStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *SignInStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalDetails gets the additionalDetails property value. Provides additional details on the sign-in activity
@@ -128,7 +128,7 @@ func (m *SignInStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignInStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *SignInStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalDetails sets the additionalDetails property value. Provides additional details on the sign-in activity

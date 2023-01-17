@@ -15,7 +15,7 @@ const (
 func (i ConditionalAccessStatus) String() string {
     return []string{"success", "failure", "notApplied", "unknownFutureValue"}[i]
 }
-func ParseConditionalAccessStatus(v string) (interface{}, error) {
+func ParseConditionalAccessStatus(v string) (any, error) {
     result := SUCCESS_CONDITIONALACCESSSTATUS
     switch v {
         case "success":

@@ -7,7 +7,7 @@ import (
 // ItemsItemValidatePermissionPostRequestBody 
 type ItemsItemValidatePermissionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The challengeToken property
     challengeToken *string
     // The password property
@@ -17,7 +17,7 @@ type ItemsItemValidatePermissionPostRequestBody struct {
 func NewItemsItemValidatePermissionPostRequestBody()(*ItemsItemValidatePermissionPostRequestBody) {
     m := &ItemsItemValidatePermissionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemsItemValidatePermissionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemsItemValidatePermissionPostRequestBodyFromDiscriminatorValue(pars
     return NewItemsItemValidatePermissionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemsItemValidatePermissionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemsItemValidatePermissionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChallengeToken gets the challengeToken property value. The challengeToken property
@@ -84,7 +84,7 @@ func (m *ItemsItemValidatePermissionPostRequestBody) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemsItemValidatePermissionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemsItemValidatePermissionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChallengeToken sets the challengeToken property value. The challengeToken property

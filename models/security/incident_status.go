@@ -15,7 +15,7 @@ const (
 func (i IncidentStatus) String() string {
     return []string{"active", "resolved", "redirected", "unknownFutureValue"}[i]
 }
-func ParseIncidentStatus(v string) (interface{}, error) {
+func ParseIncidentStatus(v string) (any, error) {
     result := ACTIVE_INCIDENTSTATUS
     switch v {
         case "active":

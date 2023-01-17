@@ -16,7 +16,7 @@ const (
 func (i LocationUniqueIdType) String() string {
     return []string{"unknown", "locationStore", "directory", "private", "bing"}[i]
 }
-func ParseLocationUniqueIdType(v string) (interface{}, error) {
+func ParseLocationUniqueIdType(v string) (any, error) {
     result := UNKNOWN_LOCATIONUNIQUEIDTYPE
     switch v {
         case "unknown":

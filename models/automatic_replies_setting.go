@@ -7,7 +7,7 @@ import (
 // AutomaticRepliesSetting 
 type AutomaticRepliesSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
     externalAudience *ExternalAudienceScope
     // The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
@@ -27,7 +27,7 @@ type AutomaticRepliesSetting struct {
 func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     m := &AutomaticRepliesSetting{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAutomaticRepliesSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateAutomaticRepliesSettingFromDiscriminatorValue(parseNode i878a80d2330e
     return NewAutomaticRepliesSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]interface{}) {
+func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
@@ -196,7 +196,7 @@ func (m *AutomaticRepliesSetting) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AutomaticRepliesSetting) SetAdditionalData(value map[string]interface{})() {
+func (m *AutomaticRepliesSetting) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.

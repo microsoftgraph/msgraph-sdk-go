@@ -16,7 +16,7 @@ const (
 func (i PrintOperationProcessingState) String() string {
     return []string{"notStarted", "running", "succeeded", "failed", "unknownFutureValue"}[i]
 }
-func ParsePrintOperationProcessingState(v string) (interface{}, error) {
+func ParsePrintOperationProcessingState(v string) (any, error) {
     result := NOTSTARTED_PRINTOPERATIONPROCESSINGSTATE
     switch v {
         case "notStarted":

@@ -19,7 +19,7 @@ const (
 func (i AndroidWorkProfileDefaultAppPermissionPolicyType) String() string {
     return []string{"deviceDefault", "prompt", "autoGrant", "autoDeny"}[i]
 }
-func ParseAndroidWorkProfileDefaultAppPermissionPolicyType(v string) (interface{}, error) {
+func ParseAndroidWorkProfileDefaultAppPermissionPolicyType(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDWORKPROFILEDEFAULTAPPPERMISSIONPOLICYTYPE
     switch v {
         case "deviceDefault":

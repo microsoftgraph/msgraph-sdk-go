@@ -7,7 +7,7 @@ import (
 // PrinterLocation 
 type PrinterLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The altitude, in meters, that the printer is located at.
     altitudeInMeters *int32
     // The building that the printer is located in.
@@ -49,7 +49,7 @@ type PrinterLocation struct {
 func NewPrinterLocation()(*PrinterLocation) {
     m := &PrinterLocation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrinterLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +57,7 @@ func CreatePrinterLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewPrinterLocation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterLocation) GetAdditionalData()(map[string]interface{}) {
+func (m *PrinterLocation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAltitudeInMeters gets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
@@ -448,7 +448,7 @@ func (m *PrinterLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterLocation) SetAdditionalData(value map[string]interface{})() {
+func (m *PrinterLocation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAltitudeInMeters sets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.

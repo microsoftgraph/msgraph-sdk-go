@@ -8,7 +8,7 @@ import (
 // DeletedItemsValidatePropertiesPostRequestBody 
 type DeletedItemsValidatePropertiesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
     // The entityType property
@@ -22,7 +22,7 @@ type DeletedItemsValidatePropertiesPostRequestBody struct {
 func NewDeletedItemsValidatePropertiesPostRequestBody()(*DeletedItemsValidatePropertiesPostRequestBody) {
     m := &DeletedItemsValidatePropertiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeletedItemsValidatePropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateDeletedItemsValidatePropertiesPostRequestBodyFromDiscriminatorValue(p
     return NewDeletedItemsValidatePropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeletedItemsValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeletedItemsValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -129,7 +129,7 @@ func (m *DeletedItemsValidatePropertiesPostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeletedItemsValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeletedItemsValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

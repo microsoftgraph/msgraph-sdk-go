@@ -7,7 +7,7 @@ import (
 // SortProperty 
 type SortProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
     isDescending *bool
     // The name of the property to sort on. Required.
@@ -19,7 +19,7 @@ type SortProperty struct {
 func NewSortProperty()(*SortProperty) {
     m := &SortProperty{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSortPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSortPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewSortProperty(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SortProperty) GetAdditionalData()(map[string]interface{}) {
+func (m *SortProperty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *SortProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SortProperty) SetAdditionalData(value map[string]interface{})() {
+func (m *SortProperty) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsDescending sets the isDescending property value. True if the sort order is descending. Default is false, with the sort order as ascending. Optional.

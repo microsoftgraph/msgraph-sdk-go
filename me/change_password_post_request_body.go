@@ -7,7 +7,7 @@ import (
 // ChangePasswordPostRequestBody 
 type ChangePasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The currentPassword property
     currentPassword *string
     // The newPassword property
@@ -17,7 +17,7 @@ type ChangePasswordPostRequestBody struct {
 func NewChangePasswordPostRequestBody()(*ChangePasswordPostRequestBody) {
     m := &ChangePasswordPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChangePasswordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateChangePasswordPostRequestBodyFromDiscriminatorValue(parseNode i878a80
     return NewChangePasswordPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChangePasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ChangePasswordPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentPassword gets the currentPassword property value. The currentPassword property
@@ -84,7 +84,7 @@ func (m *ChangePasswordPostRequestBody) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChangePasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ChangePasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCurrentPassword sets the currentPassword property value. The currentPassword property

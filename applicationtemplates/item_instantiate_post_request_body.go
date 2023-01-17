@@ -7,7 +7,7 @@ import (
 // ItemInstantiatePostRequestBody 
 type ItemInstantiatePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
 }
@@ -15,7 +15,7 @@ type ItemInstantiatePostRequestBody struct {
 func NewItemInstantiatePostRequestBody()(*ItemInstantiatePostRequestBody) {
     m := &ItemInstantiatePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemInstantiatePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemInstantiatePostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewItemInstantiatePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInstantiatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemInstantiatePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -62,7 +62,7 @@ func (m *ItemInstantiatePostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemInstantiatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemInstantiatePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

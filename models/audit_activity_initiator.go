@@ -7,7 +7,7 @@ import (
 // AuditActivityInitiator 
 type AuditActivityInitiator struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
     app AppIdentityable
     // The OdataType property
@@ -19,7 +19,7 @@ type AuditActivityInitiator struct {
 func NewAuditActivityInitiator()(*AuditActivityInitiator) {
     m := &AuditActivityInitiator{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuditActivityInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAuditActivityInitiatorFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewAuditActivityInitiator(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditActivityInitiator) GetAdditionalData()(map[string]interface{}) {
+func (m *AuditActivityInitiator) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApp gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
@@ -106,7 +106,7 @@ func (m *AuditActivityInitiator) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditActivityInitiator) SetAdditionalData(value map[string]interface{})() {
+func (m *AuditActivityInitiator) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApp sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.

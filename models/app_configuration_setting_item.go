@@ -7,7 +7,7 @@ import (
 // AppConfigurationSettingItem contains properties for App configuration setting item.
 type AppConfigurationSettingItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // app configuration key.
     appConfigKey *string
     // App configuration key types.
@@ -21,7 +21,7 @@ type AppConfigurationSettingItem struct {
 func NewAppConfigurationSettingItem()(*AppConfigurationSettingItem) {
     m := &AppConfigurationSettingItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppConfigurationSettingItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAppConfigurationSettingItemFromDiscriminatorValue(parseNode i878a80d2
     return NewAppConfigurationSettingItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppConfigurationSettingItem) GetAdditionalData()(map[string]interface{}) {
+func (m *AppConfigurationSettingItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppConfigKey gets the appConfigKey property value. app configuration key.
@@ -129,7 +129,7 @@ func (m *AppConfigurationSettingItem) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppConfigurationSettingItem) SetAdditionalData(value map[string]interface{})() {
+func (m *AppConfigurationSettingItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppConfigKey sets the appConfigKey property value. app configuration key.

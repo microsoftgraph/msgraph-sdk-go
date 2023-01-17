@@ -7,7 +7,7 @@ import (
 // Win32LobAppRule a base complex type to store the detection or requirement rule data for a Win32 LOB app.
 type Win32LobAppRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Contains rule types for Win32 LOB apps.
@@ -17,7 +17,7 @@ type Win32LobAppRule struct {
 func NewWin32LobAppRule()(*Win32LobAppRule) {
     m := &Win32LobAppRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWin32LobAppRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +49,7 @@ func CreateWin32LobAppRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewWin32LobAppRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppRule) GetAdditionalData()(map[string]interface{}) {
+func (m *Win32LobAppRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,7 +109,7 @@ func (m *Win32LobAppRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppRule) SetAdditionalData(value map[string]interface{})() {
+func (m *Win32LobAppRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

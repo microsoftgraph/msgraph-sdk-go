@@ -7,7 +7,7 @@ import (
 // ChatMessageMention 
 type ChatMessageMention struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
     id *int32
     // The entity (user, application, team, or channel) that was @mentioned.
@@ -21,7 +21,7 @@ type ChatMessageMention struct {
 func NewChatMessageMention()(*ChatMessageMention) {
     m := &ChatMessageMention{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatMessageMentionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateChatMessageMentionFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewChatMessageMention(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessageMention) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatMessageMention) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *ChatMessageMention) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessageMention) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatMessageMention) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetId sets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.

@@ -7,7 +7,7 @@ import (
 // BaseCollectionPaginationCountResponse 
 type BaseCollectionPaginationCountResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataCount property
     odataCount *int64
     // The OdataNextLink property
@@ -17,7 +17,7 @@ type BaseCollectionPaginationCountResponse struct {
 func NewBaseCollectionPaginationCountResponse()(*BaseCollectionPaginationCountResponse) {
     m := &BaseCollectionPaginationCountResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBaseCollectionPaginationCountResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateBaseCollectionPaginationCountResponseFromDiscriminatorValue(parseNode
     return NewBaseCollectionPaginationCountResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BaseCollectionPaginationCountResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *BaseCollectionPaginationCountResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *BaseCollectionPaginationCountResponse) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BaseCollectionPaginationCountResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *BaseCollectionPaginationCountResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataCount sets the @odata.count property value. The OdataCount property

@@ -7,7 +7,7 @@ import (
 // TargetResource 
 type TargetResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates the visible name defined for the resource. Typically specified when the resource is created.
     displayName *string
     // When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
@@ -27,7 +27,7 @@ type TargetResource struct {
 func NewTargetResource()(*TargetResource) {
     m := &TargetResource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTargetResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateTargetResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewTargetResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TargetResource) GetAdditionalData()(map[string]interface{}) {
+func (m *TargetResource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
@@ -203,7 +203,7 @@ func (m *TargetResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TargetResource) SetAdditionalData(value map[string]interface{})() {
+func (m *TargetResource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.

@@ -17,7 +17,7 @@ const (
 func (i DeviceRiskScore) String() string {
     return []string{"none", "informational", "low", "medium", "high", "unknownFutureValue"}[i]
 }
-func ParseDeviceRiskScore(v string) (interface{}, error) {
+func ParseDeviceRiskScore(v string) (any, error) {
     result := NONE_DEVICERISKSCORE
     switch v {
         case "none":

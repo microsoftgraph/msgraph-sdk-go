@@ -7,7 +7,7 @@ import (
 // WindowsFirewallNetworkProfile windows Firewall Profile Policies.
 type WindowsFirewallNetworkProfile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.
     authorizedApplicationRulesFromGroupPolicyMerged *bool
     // Configures the firewall to merge connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.
@@ -39,7 +39,7 @@ type WindowsFirewallNetworkProfile struct {
 func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     m := &WindowsFirewallNetworkProfile{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsFirewallNetworkProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateWindowsFirewallNetworkProfileFromDiscriminatorValue(parseNode i878a80
     return NewWindowsFirewallNetworkProfile(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsFirewallNetworkProfile) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsFirewallNetworkProfile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorizedApplicationRulesFromGroupPolicyMerged gets the authorizedApplicationRulesFromGroupPolicyMerged property value. Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.
@@ -327,7 +327,7 @@ func (m *WindowsFirewallNetworkProfile) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsFirewallNetworkProfile) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsFirewallNetworkProfile) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthorizedApplicationRulesFromGroupPolicyMerged sets the authorizedApplicationRulesFromGroupPolicyMerged property value. Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.

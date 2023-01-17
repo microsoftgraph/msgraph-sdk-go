@@ -7,7 +7,7 @@ import (
 // TeleconferenceDeviceMediaQuality 
 type TeleconferenceDeviceMediaQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The average inbound stream network jitter.
     averageInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
@@ -57,7 +57,7 @@ type TeleconferenceDeviceMediaQuality struct {
 func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {
     m := &TeleconferenceDeviceMediaQuality{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +87,7 @@ func CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue(parseNode i878
     return NewTeleconferenceDeviceMediaQuality(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeleconferenceDeviceMediaQuality) GetAdditionalData()(map[string]interface{}) {
+func (m *TeleconferenceDeviceMediaQuality) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAverageInboundJitter gets the averageInboundJitter property value. The average inbound stream network jitter.
@@ -546,7 +546,7 @@ func (m *TeleconferenceDeviceMediaQuality) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeleconferenceDeviceMediaQuality) SetAdditionalData(value map[string]interface{})() {
+func (m *TeleconferenceDeviceMediaQuality) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAverageInboundJitter sets the averageInboundJitter property value. The average inbound stream network jitter.

@@ -8,7 +8,7 @@ import (
 // ItemAddPasswordPostRequestBody 
 type ItemAddPasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The passwordCredential property
     passwordCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable
 }
@@ -16,7 +16,7 @@ type ItemAddPasswordPostRequestBody struct {
 func NewItemAddPasswordPostRequestBody()(*ItemAddPasswordPostRequestBody) {
     m := &ItemAddPasswordPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemAddPasswordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemAddPasswordPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewItemAddPasswordPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAddPasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemAddPasswordPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemAddPasswordPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAddPasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemAddPasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPasswordCredential sets the passwordCredential property value. The passwordCredential property

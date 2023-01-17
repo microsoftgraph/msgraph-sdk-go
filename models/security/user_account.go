@@ -9,7 +9,7 @@ type UserAccount struct {
     // The user account's displayed name.
     accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The user object identifier in Azure AD.
     azureAdUserId *string
     // The name of the Active Directory domain of which the user is a member.
@@ -25,7 +25,7 @@ type UserAccount struct {
 func NewUserAccount()(*UserAccount) {
     m := &UserAccount{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func (m *UserAccount) GetAccountName()(*string) {
     return m.accountName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
+func (m *UserAccount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAzureAdUserId gets the azureAdUserId property value. The user object identifier in Azure AD.
@@ -176,7 +176,7 @@ func (m *UserAccount) SetAccountName(value *string)() {
     m.accountName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserAccount) SetAdditionalData(value map[string]interface{})() {
+func (m *UserAccount) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAzureAdUserId sets the azureAdUserId property value. The user object identifier in Azure AD.

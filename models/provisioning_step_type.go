@@ -18,7 +18,7 @@ const (
 func (i ProvisioningStepType) String() string {
     return []string{"import", "scoping", "matching", "processing", "referenceResolution", "export", "unknownFutureValue"}[i]
 }
-func ParseProvisioningStepType(v string) (interface{}, error) {
+func ParseProvisioningStepType(v string) (any, error) {
     result := IMPORT_ESCAPED_PROVISIONINGSTEPTYPE
     switch v {
         case "import":

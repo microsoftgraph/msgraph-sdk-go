@@ -21,7 +21,7 @@ const (
 func (i LocationType) String() string {
     return []string{"default", "conferenceRoom", "homeAddress", "businessAddress", "geoCoordinates", "streetAddress", "hotel", "restaurant", "localBusiness", "postalAddress"}[i]
 }
-func ParseLocationType(v string) (interface{}, error) {
+func ParseLocationType(v string) (any, error) {
     result := DEFAULT_ESCAPED_LOCATIONTYPE
     switch v {
         case "default":

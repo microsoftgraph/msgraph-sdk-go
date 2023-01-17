@@ -36,6 +36,8 @@ type Organization struct {
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
     onPremisesSyncEnabled *bool
+    // The partnerTenantType property
+    partnerTenantType *PartnerTenantType
     // Postal code of the address for the organization.
     postalCode *string
     // The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
@@ -275,6 +277,16 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["partnerTenantType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePartnerTenantType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPartnerTenantType(val.(*PartnerTenantType))
+        }
+        return nil
+    }
     res["postalCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -423,6 +435,10 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     return m.onPremisesSyncEnabled
 }
+// GetPartnerTenantType gets the partnerTenantType property value. The partnerTenantType property
+func (m *Organization) GetPartnerTenantType()(*PartnerTenantType) {
+    return m.partnerTenantType
+}
 // GetPostalCode gets the postalCode property value. Postal code of the address for the organization.
 func (m *Organization) GetPostalCode()(*string) {
     return m.postalCode
@@ -570,6 +586,13 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetPartnerTenantType() != nil {
+        cast := (*m.GetPartnerTenantType()).String()
+        err = writer.WriteStringValue("partnerTenantType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("postalCode", m.GetPostalCode())
         if err != nil {
@@ -701,6 +724,10 @@ func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987ab
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     m.onPremisesSyncEnabled = value
+}
+// SetPartnerTenantType sets the partnerTenantType property value. The partnerTenantType property
+func (m *Organization) SetPartnerTenantType(value *PartnerTenantType)() {
+    m.partnerTenantType = value
 }
 // SetPostalCode sets the postalCode property value. Postal code of the address for the organization.
 func (m *Organization) SetPostalCode(value *string)() {

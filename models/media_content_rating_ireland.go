@@ -7,7 +7,7 @@ import (
 // MediaContentRatingIreland 
 type MediaContentRatingIreland struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Movies rating labels in Ireland
     movieRating *RatingIrelandMoviesType
     // The OdataType property
@@ -19,7 +19,7 @@ type MediaContentRatingIreland struct {
 func NewMediaContentRatingIreland()(*MediaContentRatingIreland) {
     m := &MediaContentRatingIreland{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaContentRatingIrelandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMediaContentRatingIrelandFromDiscriminatorValue(parseNode i878a80d233
     return NewMediaContentRatingIreland(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingIreland) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaContentRatingIreland) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *MediaContentRatingIreland) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingIreland) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaContentRatingIreland) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMovieRating sets the movieRating property value. Movies rating labels in Ireland

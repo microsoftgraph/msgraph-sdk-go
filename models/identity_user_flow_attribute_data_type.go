@@ -17,7 +17,7 @@ const (
 func (i IdentityUserFlowAttributeDataType) String() string {
     return []string{"string", "boolean", "int64", "stringCollection", "dateTime", "unknownFutureValue"}[i]
 }
-func ParseIdentityUserFlowAttributeDataType(v string) (interface{}, error) {
+func ParseIdentityUserFlowAttributeDataType(v string) (any, error) {
     result := STRING_IDENTITYUSERFLOWATTRIBUTEDATATYPE
     switch v {
         case "string":

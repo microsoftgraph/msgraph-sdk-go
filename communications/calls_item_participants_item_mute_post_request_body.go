@@ -7,7 +7,7 @@ import (
 // CallsItemParticipantsItemMutePostRequestBody 
 type CallsItemParticipantsItemMutePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
 }
@@ -15,7 +15,7 @@ type CallsItemParticipantsItemMutePostRequestBody struct {
 func NewCallsItemParticipantsItemMutePostRequestBody()(*CallsItemParticipantsItemMutePostRequestBody) {
     m := &CallsItemParticipantsItemMutePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemParticipantsItemMutePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCallsItemParticipantsItemMutePostRequestBodyFromDiscriminatorValue(pa
     return NewCallsItemParticipantsItemMutePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsItemMutePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemParticipantsItemMutePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -62,7 +62,7 @@ func (m *CallsItemParticipantsItemMutePostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsItemMutePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemParticipantsItemMutePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

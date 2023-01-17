@@ -7,7 +7,7 @@ import (
 // CrossTenantAccessPolicyB2BSetting 
 type CrossTenantAccessPolicyB2BSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The list of applications targeted with your cross-tenant access policy.
     applications CrossTenantAccessPolicyTargetConfigurationable
     // The OdataType property
@@ -19,7 +19,7 @@ type CrossTenantAccessPolicyB2BSetting struct {
 func NewCrossTenantAccessPolicyB2BSetting()(*CrossTenantAccessPolicyB2BSetting) {
     m := &CrossTenantAccessPolicyB2BSetting{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue(parseNode i87
     return NewCrossTenantAccessPolicyB2BSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyB2BSetting) GetAdditionalData()(map[string]interface{}) {
+func (m *CrossTenantAccessPolicyB2BSetting) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplications gets the applications property value. The list of applications targeted with your cross-tenant access policy.
@@ -106,7 +106,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyB2BSetting) SetAdditionalData(value map[string]interface{})() {
+func (m *CrossTenantAccessPolicyB2BSetting) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplications sets the applications property value. The list of applications targeted with your cross-tenant access policy.

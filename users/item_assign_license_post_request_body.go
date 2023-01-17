@@ -9,7 +9,7 @@ import (
 // ItemAssignLicensePostRequestBody 
 type ItemAssignLicensePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The addLicenses property
     addLicenses []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable
     // The removeLicenses property
@@ -19,7 +19,7 @@ type ItemAssignLicensePostRequestBody struct {
 func NewItemAssignLicensePostRequestBody()(*ItemAssignLicensePostRequestBody) {
     m := &ItemAssignLicensePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemAssignLicensePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateItemAssignLicensePostRequestBodyFromDiscriminatorValue(parseNode i878
     return NewItemAssignLicensePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAssignLicensePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemAssignLicensePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddLicenses gets the addLicenses property value. The addLicenses property
@@ -98,7 +98,7 @@ func (m *ItemAssignLicensePostRequestBody) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAssignLicensePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemAssignLicensePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddLicenses sets the addLicenses property value. The addLicenses property

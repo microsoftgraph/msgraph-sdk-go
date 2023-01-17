@@ -7,7 +7,7 @@ import (
 // AccessPackageAssignmentRequestorSettings 
 type AccessPackageAssignmentRequestorSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If false, the requestor is not permitted to include a schedule in their request.
     allowCustomAssignmentSchedule *bool
     // If true, allows on-behalf-of requestors to create a request to add access for another principal.
@@ -31,7 +31,7 @@ type AccessPackageAssignmentRequestorSettings struct {
 func NewAccessPackageAssignmentRequestorSettings()(*AccessPackageAssignmentRequestorSettings) {
     m := &AccessPackageAssignmentRequestorSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAssignmentRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateAccessPackageAssignmentRequestorSettingsFromDiscriminatorValue(parseN
     return NewAccessPackageAssignmentRequestorSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentRequestorSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAssignmentRequestorSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.
@@ -246,7 +246,7 @@ func (m *AccessPackageAssignmentRequestorSettings) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAssignmentRequestorSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAssignmentRequestorSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.

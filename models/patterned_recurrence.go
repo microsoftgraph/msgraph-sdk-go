@@ -7,7 +7,7 @@ import (
 // PatternedRecurrence 
 type PatternedRecurrence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
@@ -19,7 +19,7 @@ type PatternedRecurrence struct {
 func NewPatternedRecurrence()(*PatternedRecurrence) {
     m := &PatternedRecurrence{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePatternedRecurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreatePatternedRecurrenceFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPatternedRecurrence(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PatternedRecurrence) GetAdditionalData()(map[string]interface{}) {
+func (m *PatternedRecurrence) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *PatternedRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PatternedRecurrence) SetAdditionalData(value map[string]interface{})() {
+func (m *PatternedRecurrence) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

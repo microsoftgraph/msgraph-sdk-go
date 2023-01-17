@@ -8,7 +8,7 @@ import (
 // MessagesItemAttachmentsCreateUploadSessionPostRequestBody 
 type MessagesItemAttachmentsCreateUploadSessionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The AttachmentItem property
     attachmentItem iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable
 }
@@ -16,7 +16,7 @@ type MessagesItemAttachmentsCreateUploadSessionPostRequestBody struct {
 func NewMessagesItemAttachmentsCreateUploadSessionPostRequestBody()(*MessagesItemAttachmentsCreateUploadSessionPostRequestBody) {
     m := &MessagesItemAttachmentsCreateUploadSessionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMessagesItemAttachmentsCreateUploadSessionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateMessagesItemAttachmentsCreateUploadSessionPostRequestBodyFromDiscrimi
     return NewMessagesItemAttachmentsCreateUploadSessionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessagesItemAttachmentsCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MessagesItemAttachmentsCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttachmentItem gets the attachmentItem property value. The AttachmentItem property
@@ -63,7 +63,7 @@ func (m *MessagesItemAttachmentsCreateUploadSessionPostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessagesItemAttachmentsCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MessagesItemAttachmentsCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttachmentItem sets the attachmentItem property value. The AttachmentItem property

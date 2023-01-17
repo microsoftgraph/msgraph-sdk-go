@@ -15,7 +15,7 @@ const (
 func (i DetectionStatus) String() string {
     return []string{"detected", "blocked", "prevented", "unknownFutureValue"}[i]
 }
-func ParseDetectionStatus(v string) (interface{}, error) {
+func ParseDetectionStatus(v string) (any, error) {
     result := DETECTED_DETECTIONSTATUS
     switch v {
         case "detected":

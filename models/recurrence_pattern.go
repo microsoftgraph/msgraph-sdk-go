@@ -7,7 +7,7 @@ import (
 // RecurrencePattern 
 type RecurrencePattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
     dayOfMonth *int32
     // A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
@@ -29,7 +29,7 @@ type RecurrencePattern struct {
 func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateRecurrencePatternFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewRecurrencePattern(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecurrencePattern) GetAdditionalData()(map[string]interface{}) {
+func (m *RecurrencePattern) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDayOfMonth gets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
@@ -223,7 +223,7 @@ func (m *RecurrencePattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecurrencePattern) SetAdditionalData(value map[string]interface{})() {
+func (m *RecurrencePattern) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDayOfMonth sets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.

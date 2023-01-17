@@ -7,7 +7,7 @@ import (
 // ItemRemoveGroupResponse 
 type ItemRemoveGroupResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type ItemRemoveGroupResponse struct {
 func NewItemRemoveGroupResponse()(*ItemRemoveGroupResponse) {
     m := &ItemRemoveGroupResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRemoveGroupResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemRemoveGroupResponseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewItemRemoveGroupResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemoveGroupResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRemoveGroupResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemRemoveGroupResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRemoveGroupResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRemoveGroupResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

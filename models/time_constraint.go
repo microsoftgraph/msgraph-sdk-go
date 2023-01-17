@@ -9,7 +9,7 @@ type TimeConstraint struct {
     // The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
     activityDomain *ActivityDomain
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The timeSlots property
@@ -19,7 +19,7 @@ type TimeConstraint struct {
 func NewTimeConstraint()(*TimeConstraint) {
     m := &TimeConstraint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTimeConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *TimeConstraint) GetActivityDomain()(*ActivityDomain) {
     return m.activityDomain
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeConstraint) GetAdditionalData()(map[string]interface{}) {
+func (m *TimeConstraint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -119,7 +119,7 @@ func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
     m.activityDomain = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeConstraint) SetAdditionalData(value map[string]interface{})() {
+func (m *TimeConstraint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

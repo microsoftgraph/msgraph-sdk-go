@@ -17,7 +17,7 @@ const (
 func (i IdentityUserFlowAttributeInputType) String() string {
     return []string{"textBox", "dateTimeDropdown", "radioSingleSelect", "dropdownSingleSelect", "emailBox", "checkboxMultiSelect"}[i]
 }
-func ParseIdentityUserFlowAttributeInputType(v string) (interface{}, error) {
+func ParseIdentityUserFlowAttributeInputType(v string) (any, error) {
     result := TEXTBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
     switch v {
         case "textBox":

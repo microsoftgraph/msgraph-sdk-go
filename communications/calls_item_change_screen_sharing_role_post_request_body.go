@@ -8,7 +8,7 @@ import (
 // CallsItemChangeScreenSharingRolePostRequestBody 
 type CallsItemChangeScreenSharingRolePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The role property
     role *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScreenSharingRole
 }
@@ -16,7 +16,7 @@ type CallsItemChangeScreenSharingRolePostRequestBody struct {
 func NewCallsItemChangeScreenSharingRolePostRequestBody()(*CallsItemChangeScreenSharingRolePostRequestBody) {
     m := &CallsItemChangeScreenSharingRolePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemChangeScreenSharingRolePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateCallsItemChangeScreenSharingRolePostRequestBodyFromDiscriminatorValue
     return NewCallsItemChangeScreenSharingRolePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemChangeScreenSharingRolePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemChangeScreenSharingRolePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -64,7 +64,7 @@ func (m *CallsItemChangeScreenSharingRolePostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemChangeScreenSharingRolePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemChangeScreenSharingRolePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetRole sets the role property value. The role property

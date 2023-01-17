@@ -7,7 +7,7 @@ import (
 // SecurityVendorInformation 
 type SecurityVendorInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
@@ -23,7 +23,7 @@ type SecurityVendorInformation struct {
 func NewSecurityVendorInformation()(*SecurityVendorInformation) {
     m := &SecurityVendorInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSecurityVendorInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateSecurityVendorInformationFromDiscriminatorValue(parseNode i878a80d233
     return NewSecurityVendorInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecurityVendorInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *SecurityVendorInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *SecurityVendorInformation) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecurityVendorInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *SecurityVendorInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

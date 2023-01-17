@@ -7,7 +7,7 @@ import (
 // PrintJobStatus 
 type PrintJobStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A human-readable description of the print job's current processing state. Read-only.
     description *string
     // Additional details for print job state. Valid values are described in the following table. Read-only.
@@ -23,7 +23,7 @@ type PrintJobStatus struct {
 func NewPrintJobStatus()(*PrintJobStatus) {
     m := &PrintJobStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrintJobStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreatePrintJobStatusFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewPrintJobStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintJobStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *PrintJobStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. A human-readable description of the print job's current processing state. Read-only.
@@ -155,7 +155,7 @@ func (m *PrintJobStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintJobStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *PrintJobStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. A human-readable description of the print job's current processing state. Read-only.

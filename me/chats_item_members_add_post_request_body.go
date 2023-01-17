@@ -8,7 +8,7 @@ import (
 // ChatsItemMembersAddPostRequestBody 
 type ChatsItemMembersAddPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The values property
     values []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable
 }
@@ -16,7 +16,7 @@ type ChatsItemMembersAddPostRequestBody struct {
 func NewChatsItemMembersAddPostRequestBody()(*ChatsItemMembersAddPostRequestBody) {
     m := &ChatsItemMembersAddPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatsItemMembersAddPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateChatsItemMembersAddPostRequestBodyFromDiscriminatorValue(parseNode i8
     return NewChatsItemMembersAddPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatsItemMembersAddPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatsItemMembersAddPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -71,7 +71,7 @@ func (m *ChatsItemMembersAddPostRequestBody) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatsItemMembersAddPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatsItemMembersAddPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValues sets the values property value. The values property

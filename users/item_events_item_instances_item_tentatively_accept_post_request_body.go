@@ -8,7 +8,7 @@ import (
 // ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody 
 type ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The ProposedNewTime property
@@ -20,7 +20,7 @@ type ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody struct {
 func NewItemEventsItemInstancesItemTentativelyAcceptPostRequestBody()(*ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody) {
     m := &ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemEventsItemInstancesItemTentativelyAcceptPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemEventsItemInstancesItemTentativelyAcceptPostRequestBodyFromDiscri
     return NewItemEventsItemInstancesItemTentativelyAcceptPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -107,7 +107,7 @@ func (m *ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody) Serialize(
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemEventsItemInstancesItemTentativelyAcceptPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

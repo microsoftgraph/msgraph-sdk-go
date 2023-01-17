@@ -10,7 +10,7 @@ type ChatsItemSendActivityNotificationPostRequestBody struct {
     // The activityType property
     activityType *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The chainId property
     chainId *int64
     // The previewText property
@@ -26,7 +26,7 @@ type ChatsItemSendActivityNotificationPostRequestBody struct {
 func NewChatsItemSendActivityNotificationPostRequestBody()(*ChatsItemSendActivityNotificationPostRequestBody) {
     m := &ChatsItemSendActivityNotificationPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatsItemSendActivityNotificationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func (m *ChatsItemSendActivityNotificationPostRequestBody) GetActivityType()(*st
     return m.activityType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatsItemSendActivityNotificationPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatsItemSendActivityNotificationPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChainId gets the chainId property value. The chainId property
@@ -185,7 +185,7 @@ func (m *ChatsItemSendActivityNotificationPostRequestBody) SetActivityType(value
     m.activityType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatsItemSendActivityNotificationPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatsItemSendActivityNotificationPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChainId sets the chainId property value. The chainId property

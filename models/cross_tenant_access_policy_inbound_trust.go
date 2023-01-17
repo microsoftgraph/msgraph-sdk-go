@@ -7,7 +7,7 @@ import (
 // CrossTenantAccessPolicyInboundTrust 
 type CrossTenantAccessPolicyInboundTrust struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether compliant devices from external Azure AD organizations are trusted.
     isCompliantDeviceAccepted *bool
     // Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
@@ -21,7 +21,7 @@ type CrossTenantAccessPolicyInboundTrust struct {
 func NewCrossTenantAccessPolicyInboundTrust()(*CrossTenantAccessPolicyInboundTrust) {
     m := &CrossTenantAccessPolicyInboundTrust{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue(parseNode i
     return NewCrossTenantAccessPolicyInboundTrust(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyInboundTrust) GetAdditionalData()(map[string]interface{}) {
+func (m *CrossTenantAccessPolicyInboundTrust) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CrossTenantAccessPolicyInboundTrust) SetAdditionalData(value map[string]interface{})() {
+func (m *CrossTenantAccessPolicyInboundTrust) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsCompliantDeviceAccepted sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.

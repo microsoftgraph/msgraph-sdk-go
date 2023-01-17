@@ -7,7 +7,7 @@ import (
 // RgbColor color in RGB.
 type RgbColor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Blue value
     b *byte
     // Green value
@@ -21,7 +21,7 @@ type RgbColor struct {
 func NewRgbColor()(*RgbColor) {
     m := &RgbColor{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRgbColorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateRgbColorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewRgbColor(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RgbColor) GetAdditionalData()(map[string]interface{}) {
+func (m *RgbColor) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetB gets the b property value. Blue value
@@ -128,7 +128,7 @@ func (m *RgbColor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RgbColor) SetAdditionalData(value map[string]interface{})() {
+func (m *RgbColor) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetB sets the b property value. Blue value

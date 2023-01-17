@@ -7,7 +7,7 @@ import (
 // ChatMessagePolicyViolationPolicyTip 
 type ChatMessagePolicyViolationPolicyTip struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
     complianceUrl *string
     // Explanatory text shown to the sender of the message.
@@ -21,7 +21,7 @@ type ChatMessagePolicyViolationPolicyTip struct {
 func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyTip) {
     m := &ChatMessagePolicyViolationPolicyTip{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue(parseNode i
     return NewChatMessagePolicyViolationPolicyTip(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessagePolicyViolationPolicyTip) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatMessagePolicyViolationPolicyTip) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComplianceUrl gets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
@@ -132,7 +132,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatMessagePolicyViolationPolicyTip) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatMessagePolicyViolationPolicyTip) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComplianceUrl sets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)

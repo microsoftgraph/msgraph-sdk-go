@@ -8,7 +8,7 @@ import (
 // PstnCallLogRow 
 type PstnCallLogRow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
     callDurationSource *PstnCallDurationSource
     // Number dialed in E.164 format.
@@ -62,7 +62,7 @@ type PstnCallLogRow struct {
 func NewPstnCallLogRow()(*PstnCallLogRow) {
     m := &PstnCallLogRow{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePstnCallLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,7 +70,7 @@ func CreatePstnCallLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewPstnCallLogRow(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PstnCallLogRow) GetAdditionalData()(map[string]interface{}) {
+func (m *PstnCallLogRow) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCallDurationSource gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
@@ -570,7 +570,7 @@ func (m *PstnCallLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PstnCallLogRow) SetAdditionalData(value map[string]interface{})() {
+func (m *PstnCallLogRow) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCallDurationSource sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.

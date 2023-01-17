@@ -7,7 +7,7 @@ import (
 // ProvisioningStep 
 type ProvisioningStep struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Summary of what occurred during the step.
     description *string
     // Details of what occurred during the step.
@@ -25,7 +25,7 @@ type ProvisioningStep struct {
 func NewProvisioningStep()(*ProvisioningStep) {
     m := &ProvisioningStep{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateProvisioningStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateProvisioningStepFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewProvisioningStep(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProvisioningStep) GetAdditionalData()(map[string]interface{}) {
+func (m *ProvisioningStep) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. Summary of what occurred during the step.
@@ -174,7 +174,7 @@ func (m *ProvisioningStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProvisioningStep) SetAdditionalData(value map[string]interface{})() {
+func (m *ProvisioningStep) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. Summary of what occurred during the step.

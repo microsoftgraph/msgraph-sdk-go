@@ -28,7 +28,7 @@ const (
 func (i BookingPriceType) String() string {
     return []string{"undefined", "fixedPrice", "startingAt", "hourly", "free", "priceVaries", "callUs", "notSet", "unknownFutureValue"}[i]
 }
-func ParseBookingPriceType(v string) (interface{}, error) {
+func ParseBookingPriceType(v string) (any, error) {
     result := UNDEFINED_BOOKINGPRICETYPE
     switch v {
         case "undefined":

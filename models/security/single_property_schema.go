@@ -7,7 +7,7 @@ import (
 // SinglePropertySchema 
 type SinglePropertySchema struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the property.
     name *string
     // The OdataType property
@@ -19,7 +19,7 @@ type SinglePropertySchema struct {
 func NewSinglePropertySchema()(*SinglePropertySchema) {
     m := &SinglePropertySchema{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSinglePropertySchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSinglePropertySchemaFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewSinglePropertySchema(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SinglePropertySchema) GetAdditionalData()(map[string]interface{}) {
+func (m *SinglePropertySchema) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *SinglePropertySchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SinglePropertySchema) SetAdditionalData(value map[string]interface{})() {
+func (m *SinglePropertySchema) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name of the property.

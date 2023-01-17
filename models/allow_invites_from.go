@@ -16,7 +16,7 @@ const (
 func (i AllowInvitesFrom) String() string {
     return []string{"none", "adminsAndGuestInviters", "adminsGuestInvitersAndAllMembers", "everyone", "unknownFutureValue"}[i]
 }
-func ParseAllowInvitesFrom(v string) (interface{}, error) {
+func ParseAllowInvitesFrom(v string) (any, error) {
     result := NONE_ALLOWINVITESFROM
     switch v {
         case "none":

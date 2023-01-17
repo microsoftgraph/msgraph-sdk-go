@@ -15,7 +15,7 @@ const (
 func (i EducationGender) String() string {
     return []string{"female", "male", "other", "unknownFutureValue"}[i]
 }
-func ParseEducationGender(v string) (interface{}, error) {
+func ParseEducationGender(v string) (any, error) {
     result := FEMALE_EDUCATIONGENDER
     switch v {
         case "female":

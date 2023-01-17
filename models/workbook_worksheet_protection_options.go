@@ -7,7 +7,7 @@ import (
 // WorkbookWorksheetProtectionOptions 
 type WorkbookWorksheetProtectionOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the worksheet protection option of allowing using auto filter feature.
     allowAutoFilter *bool
     // Represents the worksheet protection option of allowing deleting columns.
@@ -37,7 +37,7 @@ type WorkbookWorksheetProtectionOptions struct {
 func NewWorkbookWorksheetProtectionOptions()(*WorkbookWorksheetProtectionOptions) {
     m := &WorkbookWorksheetProtectionOptions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue(parseNode i8
     return NewWorkbookWorksheetProtectionOptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookWorksheetProtectionOptions) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkbookWorksheetProtectionOptions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoFilter gets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
@@ -304,7 +304,7 @@ func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookWorksheetProtectionOptions) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkbookWorksheetProtectionOptions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowAutoFilter sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.

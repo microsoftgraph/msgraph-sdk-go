@@ -8,7 +8,7 @@ import (
 // GetMailTipsPostRequestBody 
 type GetMailTipsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The EmailAddresses property
     emailAddresses []string
     // The MailTipsOptions property
@@ -18,7 +18,7 @@ type GetMailTipsPostRequestBody struct {
 func NewGetMailTipsPostRequestBody()(*GetMailTipsPostRequestBody) {
     m := &GetMailTipsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGetMailTipsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateGetMailTipsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
     return NewGetMailTipsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetMailTipsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GetMailTipsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmailAddresses gets the emailAddresses property value. The EmailAddresses property
@@ -90,7 +90,7 @@ func (m *GetMailTipsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetMailTipsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GetMailTipsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEmailAddresses sets the emailAddresses property value. The EmailAddresses property

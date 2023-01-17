@@ -7,7 +7,7 @@ import (
 // SearchHit 
 type SearchHit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the content source that the externalItem is part of.
     contentSource *string
     // The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
@@ -27,7 +27,7 @@ type SearchHit struct {
 func NewSearchHit()(*SearchHit) {
     m := &SearchHit{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchHitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateSearchHitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewSearchHit(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchHit) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchHit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentSource gets the contentSource property value. The name of the content source that the externalItem is part of.
@@ -194,7 +194,7 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchHit) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchHit) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentSource sets the contentSource property value. The name of the content source that the externalItem is part of.

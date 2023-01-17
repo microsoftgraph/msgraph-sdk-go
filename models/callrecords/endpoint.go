@@ -7,7 +7,7 @@ import (
 // Endpoint 
 type Endpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // User-agent reported by this endpoint.
@@ -17,7 +17,7 @@ type Endpoint struct {
 func NewEndpoint()(*Endpoint) {
     m := &Endpoint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewEndpoint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Endpoint) GetAdditionalData()(map[string]interface{}) {
+func (m *Endpoint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -104,7 +104,7 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Endpoint) SetAdditionalData(value map[string]interface{})() {
+func (m *Endpoint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

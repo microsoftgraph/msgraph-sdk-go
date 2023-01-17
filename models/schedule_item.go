@@ -7,7 +7,7 @@ import (
 // ScheduleItem 
 type ScheduleItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The date, time, and time zone that the corresponding event ends.
     end DateTimeTimeZoneable
     // The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
@@ -27,7 +27,7 @@ type ScheduleItem struct {
 func NewScheduleItem()(*ScheduleItem) {
     m := &ScheduleItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateScheduleItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateScheduleItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewScheduleItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ScheduleItem) GetAdditionalData()(map[string]interface{}) {
+func (m *ScheduleItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnd gets the end property value. The date, time, and time zone that the corresponding event ends.
@@ -195,7 +195,7 @@ func (m *ScheduleItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ScheduleItem) SetAdditionalData(value map[string]interface{})() {
+func (m *ScheduleItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnd sets the end property value. The date, time, and time zone that the corresponding event ends.

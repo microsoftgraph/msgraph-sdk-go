@@ -23,7 +23,7 @@ const (
 func (i SiteSecurityLevel) String() string {
     return []string{"userDefined", "low", "mediumLow", "medium", "mediumHigh", "high"}[i]
 }
-func ParseSiteSecurityLevel(v string) (interface{}, error) {
+func ParseSiteSecurityLevel(v string) (any, error) {
     result := USERDEFINED_SITESECURITYLEVEL
     switch v {
         case "userDefined":

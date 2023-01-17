@@ -8,7 +8,7 @@ import (
 // ItemHideForUserPostRequestBody 
 type ItemHideForUserPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The user property
     user iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkUserIdentityable
 }
@@ -16,7 +16,7 @@ type ItemHideForUserPostRequestBody struct {
 func NewItemHideForUserPostRequestBody()(*ItemHideForUserPostRequestBody) {
     m := &ItemHideForUserPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemHideForUserPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemHideForUserPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewItemHideForUserPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemHideForUserPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemHideForUserPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemHideForUserPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemHideForUserPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemHideForUserPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUser sets the user property value. The user property

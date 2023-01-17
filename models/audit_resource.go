@@ -7,7 +7,7 @@ import (
 // AuditResource a class containing the properties for Audit Resource.
 type AuditResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Audit resource's type.
     auditResourceType *string
     // Display name.
@@ -23,7 +23,7 @@ type AuditResource struct {
 func NewAuditResource()(*AuditResource) {
     m := &AuditResource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAuditResourceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewAuditResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditResource) GetAdditionalData()(map[string]interface{}) {
+func (m *AuditResource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuditResourceType gets the auditResourceType property value. Audit resource's type.
@@ -158,7 +158,7 @@ func (m *AuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditResource) SetAdditionalData(value map[string]interface{})() {
+func (m *AuditResource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuditResourceType sets the auditResourceType property value. Audit resource's type.

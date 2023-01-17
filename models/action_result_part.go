@@ -7,7 +7,7 @@ import (
 // ActionResultPart 
 type ActionResultPart struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The error that occurred, if any, during the course of the bulk operation.
     error PublicErrorable
     // The OdataType property
@@ -17,7 +17,7 @@ type ActionResultPart struct {
 func NewActionResultPart()(*ActionResultPart) {
     m := &ActionResultPart{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateActionResultPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateActionResultPartFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewActionResultPart(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ActionResultPart) GetAdditionalData()(map[string]interface{}) {
+func (m *ActionResultPart) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetError gets the error property value. The error that occurred, if any, during the course of the bulk operation.
@@ -102,7 +102,7 @@ func (m *ActionResultPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ActionResultPart) SetAdditionalData(value map[string]interface{})() {
+func (m *ActionResultPart) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetError sets the error property value. The error that occurred, if any, during the course of the bulk operation.

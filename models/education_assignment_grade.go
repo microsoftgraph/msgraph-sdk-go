@@ -8,7 +8,7 @@ import (
 // EducationAssignmentGrade 
 type EducationAssignmentGrade struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // User who did the grading.
     gradedBy IdentitySetable
     // Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -20,7 +20,7 @@ type EducationAssignmentGrade struct {
 func NewEducationAssignmentGrade()(*EducationAssignmentGrade) {
     m := &EducationAssignmentGrade{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationAssignmentGradeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,7 +46,7 @@ func CreateEducationAssignmentGradeFromDiscriminatorValue(parseNode i878a80d2330
     return NewEducationAssignmentGrade(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationAssignmentGrade) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationAssignmentGrade) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -125,7 +125,7 @@ func (m *EducationAssignmentGrade) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationAssignmentGrade) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationAssignmentGrade) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGradedBy sets the gradedBy property value. User who did the grading.

@@ -7,7 +7,7 @@ import (
 // ProvisionedPlan 
 type ProvisionedPlan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // For example, 'Enabled'.
     capabilityStatus *string
     // The OdataType property
@@ -21,7 +21,7 @@ type ProvisionedPlan struct {
 func NewProvisionedPlan()(*ProvisionedPlan) {
     m := &ProvisionedPlan{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateProvisionedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateProvisionedPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewProvisionedPlan(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProvisionedPlan) GetAdditionalData()(map[string]interface{}) {
+func (m *ProvisionedPlan) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCapabilityStatus gets the capabilityStatus property value. For example, 'Enabled'.
@@ -128,7 +128,7 @@ func (m *ProvisionedPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProvisionedPlan) SetAdditionalData(value map[string]interface{})() {
+func (m *ProvisionedPlan) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCapabilityStatus sets the capabilityStatus property value. For example, 'Enabled'.

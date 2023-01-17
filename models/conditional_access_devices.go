@@ -7,7 +7,7 @@ import (
 // ConditionalAccessDevices 
 type ConditionalAccessDevices struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
     deviceFilter ConditionalAccessFilterable
     // The OdataType property
@@ -17,7 +17,7 @@ type ConditionalAccessDevices struct {
 func NewConditionalAccessDevices()(*ConditionalAccessDevices) {
     m := &ConditionalAccessDevices{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessDevicesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateConditionalAccessDevicesFromDiscriminatorValue(parseNode i878a80d2330
     return NewConditionalAccessDevices(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessDevices) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessDevices) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceFilter gets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
@@ -84,7 +84,7 @@ func (m *ConditionalAccessDevices) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceFilter sets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.

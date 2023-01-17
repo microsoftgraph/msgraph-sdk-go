@@ -27,7 +27,7 @@ const (
 func (i AlertDetermination) String() string {
     return []string{"unknown", "apt", "malware", "securityPersonnel", "securityTesting", "unwantedSoftware", "other", "multiStagedAttack", "compromisedAccount", "phishing", "maliciousUserActivity", "notMalicious", "notEnoughDataToValidate", "confirmedActivity", "lineOfBusinessApplication", "unknownFutureValue"}[i]
 }
-func ParseAlertDetermination(v string) (interface{}, error) {
+func ParseAlertDetermination(v string) (any, error) {
     result := UNKNOWN_ALERTDETERMINATION
     switch v {
         case "unknown":

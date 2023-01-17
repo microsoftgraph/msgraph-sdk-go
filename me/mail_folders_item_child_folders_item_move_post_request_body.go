@@ -7,7 +7,7 @@ import (
 // MailFoldersItemChildFoldersItemMovePostRequestBody 
 type MailFoldersItemChildFoldersItemMovePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The DestinationId property
     destinationId *string
 }
@@ -15,7 +15,7 @@ type MailFoldersItemChildFoldersItemMovePostRequestBody struct {
 func NewMailFoldersItemChildFoldersItemMovePostRequestBody()(*MailFoldersItemChildFoldersItemMovePostRequestBody) {
     m := &MailFoldersItemChildFoldersItemMovePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMailFoldersItemChildFoldersItemMovePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateMailFoldersItemChildFoldersItemMovePostRequestBodyFromDiscriminatorVa
     return NewMailFoldersItemChildFoldersItemMovePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemChildFoldersItemMovePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MailFoldersItemChildFoldersItemMovePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationId gets the destinationId property value. The DestinationId property
@@ -62,7 +62,7 @@ func (m *MailFoldersItemChildFoldersItemMovePostRequestBody) Serialize(writer i8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemChildFoldersItemMovePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MailFoldersItemChildFoldersItemMovePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationId sets the destinationId property value. The DestinationId property

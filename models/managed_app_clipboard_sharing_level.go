@@ -19,7 +19,7 @@ const (
 func (i ManagedAppClipboardSharingLevel) String() string {
     return []string{"allApps", "managedAppsWithPasteIn", "managedApps", "blocked"}[i]
 }
-func ParseManagedAppClipboardSharingLevel(v string) (interface{}, error) {
+func ParseManagedAppClipboardSharingLevel(v string) (any, error) {
     result := ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
     switch v {
         case "allApps":

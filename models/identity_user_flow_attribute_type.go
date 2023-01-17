@@ -15,7 +15,7 @@ const (
 func (i IdentityUserFlowAttributeType) String() string {
     return []string{"builtIn", "custom", "required", "unknownFutureValue"}[i]
 }
-func ParseIdentityUserFlowAttributeType(v string) (interface{}, error) {
+func ParseIdentityUserFlowAttributeType(v string) (any, error) {
     result := BUILTIN_IDENTITYUSERFLOWATTRIBUTETYPE
     switch v {
         case "builtIn":

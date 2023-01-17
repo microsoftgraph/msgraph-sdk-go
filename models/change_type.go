@@ -14,7 +14,7 @@ const (
 func (i ChangeType) String() string {
     return []string{"created", "updated", "deleted"}[i]
 }
-func ParseChangeType(v string) (interface{}, error) {
+func ParseChangeType(v string) (any, error) {
     result := CREATED_CHANGETYPE
     switch v {
         case "created":

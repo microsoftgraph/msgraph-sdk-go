@@ -7,7 +7,7 @@ import (
 // GetAvailableExtensionPropertiesPostRequestBody 
 type GetAvailableExtensionPropertiesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The isSyncedFromOnPremises property
     isSyncedFromOnPremises *bool
 }
@@ -15,7 +15,7 @@ type GetAvailableExtensionPropertiesPostRequestBody struct {
 func NewGetAvailableExtensionPropertiesPostRequestBody()(*GetAvailableExtensionPropertiesPostRequestBody) {
     m := &GetAvailableExtensionPropertiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGetAvailableExtensionPropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateGetAvailableExtensionPropertiesPostRequestBodyFromDiscriminatorValue(
     return NewGetAvailableExtensionPropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetAvailableExtensionPropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GetAvailableExtensionPropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *GetAvailableExtensionPropertiesPostRequestBody) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetAvailableExtensionPropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GetAvailableExtensionPropertiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. The isSyncedFromOnPremises property

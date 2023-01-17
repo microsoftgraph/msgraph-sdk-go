@@ -19,7 +19,7 @@ const (
 func (i FileHashType) String() string {
     return []string{"unknown", "sha1", "sha256", "md5", "authenticodeHash256", "lsHash", "ctph", "unknownFutureValue"}[i]
 }
-func ParseFileHashType(v string) (interface{}, error) {
+func ParseFileHashType(v string) (any, error) {
     result := UNKNOWN_FILEHASHTYPE
     switch v {
         case "unknown":

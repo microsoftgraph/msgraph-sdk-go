@@ -7,7 +7,7 @@ import (
 // ItemGroupLifecyclePoliciesItemRemoveGroupResponse 
 type ItemGroupLifecyclePoliciesItemRemoveGroupResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type ItemGroupLifecyclePoliciesItemRemoveGroupResponse struct {
 func NewItemGroupLifecyclePoliciesItemRemoveGroupResponse()(*ItemGroupLifecyclePoliciesItemRemoveGroupResponse) {
     m := &ItemGroupLifecyclePoliciesItemRemoveGroupResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemGroupLifecyclePoliciesItemRemoveGroupResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemGroupLifecyclePoliciesItemRemoveGroupResponseFromDiscriminatorVal
     return NewItemGroupLifecyclePoliciesItemRemoveGroupResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemGroupLifecyclePoliciesItemRemoveGroupResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemGroupLifecyclePoliciesItemRemoveGroupResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupResponse) Serialize(writer i87
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemGroupLifecyclePoliciesItemRemoveGroupResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemGroupLifecyclePoliciesItemRemoveGroupResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

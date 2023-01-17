@@ -8,7 +8,7 @@ import (
 // DeviceCompliancePoliciesItemAssignPostRequestBody 
 type DeviceCompliancePoliciesItemAssignPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignments property
     assignments []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyAssignmentable
 }
@@ -16,7 +16,7 @@ type DeviceCompliancePoliciesItemAssignPostRequestBody struct {
 func NewDeviceCompliancePoliciesItemAssignPostRequestBody()(*DeviceCompliancePoliciesItemAssignPostRequestBody) {
     m := &DeviceCompliancePoliciesItemAssignPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceCompliancePoliciesItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDeviceCompliancePoliciesItemAssignPostRequestBodyFromDiscriminatorVal
     return NewDeviceCompliancePoliciesItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCompliancePoliciesItemAssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceCompliancePoliciesItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignments gets the assignments property value. The assignments property
@@ -71,7 +71,7 @@ func (m *DeviceCompliancePoliciesItemAssignPostRequestBody) Serialize(writer i87
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceCompliancePoliciesItemAssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceCompliancePoliciesItemAssignPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignments sets the assignments property value. The assignments property

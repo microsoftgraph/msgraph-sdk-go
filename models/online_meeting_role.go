@@ -15,7 +15,7 @@ const (
 func (i OnlineMeetingRole) String() string {
     return []string{"attendee", "presenter", "unknownFutureValue", "producer"}[i]
 }
-func ParseOnlineMeetingRole(v string) (interface{}, error) {
+func ParseOnlineMeetingRole(v string) (any, error) {
     result := ATTENDEE_ONLINEMEETINGROLE
     switch v {
         case "attendee":

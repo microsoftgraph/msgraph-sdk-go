@@ -15,7 +15,7 @@ const (
 func (i MediaDirection) String() string {
     return []string{"inactive", "sendOnly", "receiveOnly", "sendReceive"}[i]
 }
-func ParseMediaDirection(v string) (interface{}, error) {
+func ParseMediaDirection(v string) (any, error) {
     result := INACTIVE_MEDIADIRECTION
     switch v {
         case "inactive":

@@ -21,7 +21,7 @@ const (
 func (i WindowsDeviceType) String() string {
     return []string{"none", "desktop", "mobile", "holographic", "team"}[i]
 }
-func ParseWindowsDeviceType(v string) (interface{}, error) {
+func ParseWindowsDeviceType(v string) (any, error) {
     result := NONE_WINDOWSDEVICETYPE
     switch v {
         case "none":

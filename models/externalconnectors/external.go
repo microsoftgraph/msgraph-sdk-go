@@ -7,7 +7,7 @@ import (
 // External 
 type External struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The connections property
     connections []ExternalConnectionable
     // The OdataType property
@@ -17,7 +17,7 @@ type External struct {
 func NewExternal()(*External) {
     m := &External{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExternalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateExternalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewExternal(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *External) GetAdditionalData()(map[string]interface{}) {
+func (m *External) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConnections gets the connections property value. The connections property
@@ -92,7 +92,7 @@ func (m *External) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *External) SetAdditionalData(value map[string]interface{})() {
+func (m *External) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConnections sets the connections property value. The connections property

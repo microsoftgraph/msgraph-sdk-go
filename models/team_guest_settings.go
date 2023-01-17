@@ -7,7 +7,7 @@ import (
 // TeamGuestSettings 
 type TeamGuestSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If set to true, guests can add and update channels.
     allowCreateUpdateChannels *bool
     // If set to true, guests can delete channels.
@@ -19,7 +19,7 @@ type TeamGuestSettings struct {
 func NewTeamGuestSettings()(*TeamGuestSettings) {
     m := &TeamGuestSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamGuestSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateTeamGuestSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewTeamGuestSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamGuestSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamGuestSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowCreateUpdateChannels gets the allowCreateUpdateChannels property value. If set to true, guests can add and update channels.
@@ -106,7 +106,7 @@ func (m *TeamGuestSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamGuestSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamGuestSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, guests can add and update channels.

@@ -17,7 +17,7 @@ const (
 func (i AclType) String() string {
     return []string{"user", "group", "everyone", "everyoneExceptGuests", "externalGroup", "unknownFutureValue"}[i]
 }
-func ParseAclType(v string) (interface{}, error) {
+func ParseAclType(v string) (any, error) {
     result := USER_ACLTYPE
     switch v {
         case "user":

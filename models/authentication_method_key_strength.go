@@ -14,7 +14,7 @@ const (
 func (i AuthenticationMethodKeyStrength) String() string {
     return []string{"normal", "weak", "unknown"}[i]
 }
-func ParseAuthenticationMethodKeyStrength(v string) (interface{}, error) {
+func ParseAuthenticationMethodKeyStrength(v string) (any, error) {
     result := NORMAL_AUTHENTICATIONMETHODKEYSTRENGTH
     switch v {
         case "normal":

@@ -7,7 +7,7 @@ import (
 // GetMemberObjectsPostRequestBody 
 type GetMemberObjectsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The securityEnabledOnly property
     securityEnabledOnly *bool
 }
@@ -15,7 +15,7 @@ type GetMemberObjectsPostRequestBody struct {
 func NewGetMemberObjectsPostRequestBody()(*GetMemberObjectsPostRequestBody) {
     m := &GetMemberObjectsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGetMemberObjectsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateGetMemberObjectsPostRequestBodyFromDiscriminatorValue(parseNode i878a
     return NewGetMemberObjectsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetMemberObjectsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GetMemberObjectsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *GetMemberObjectsPostRequestBody) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetMemberObjectsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GetMemberObjectsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSecurityEnabledOnly sets the securityEnabledOnly property value. The securityEnabledOnly property

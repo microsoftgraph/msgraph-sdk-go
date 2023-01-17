@@ -8,7 +8,7 @@ import (
 // WindowsInformationProtectionDataRecoveryCertificate windows Information Protection DataRecoveryCertificate
 type WindowsInformationProtectionDataRecoveryCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Data recovery Certificate
     certificate []byte
     // Data recovery Certificate description
@@ -24,7 +24,7 @@ type WindowsInformationProtectionDataRecoveryCertificate struct {
 func NewWindowsInformationProtectionDataRecoveryCertificate()(*WindowsInformationProtectionDataRecoveryCertificate) {
     m := &WindowsInformationProtectionDataRecoveryCertificate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorV
     return NewWindowsInformationProtectionDataRecoveryCertificate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsInformationProtectionDataRecoveryCertificate) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsInformationProtectionDataRecoveryCertificate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCertificate gets the certificate property value. Data recovery Certificate
@@ -151,7 +151,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsInformationProtectionDataRecoveryCertificate) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsInformationProtectionDataRecoveryCertificate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCertificate sets the certificate property value. Data recovery Certificate

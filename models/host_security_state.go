@@ -7,7 +7,7 @@ import (
 // HostSecurityState 
 type HostSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
     fqdn *string
     // The isAzureAdJoined property
@@ -33,7 +33,7 @@ type HostSecurityState struct {
 func NewHostSecurityState()(*HostSecurityState) {
     m := &HostSecurityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateHostSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateHostSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewHostSecurityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HostSecurityState) GetAdditionalData()(map[string]interface{}) {
+func (m *HostSecurityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -260,7 +260,7 @@ func (m *HostSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *HostSecurityState) SetAdditionalData(value map[string]interface{})() {
+func (m *HostSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFqdn sets the fqdn property value. Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).

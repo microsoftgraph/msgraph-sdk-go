@@ -7,7 +7,7 @@ import (
 // AlertDetection 
 type AlertDetection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The detectionType property
     detectionType *string
     // The method property
@@ -21,7 +21,7 @@ type AlertDetection struct {
 func NewAlertDetection()(*AlertDetection) {
     m := &AlertDetection{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAlertDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAlertDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewAlertDetection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertDetection) GetAdditionalData()(map[string]interface{}) {
+func (m *AlertDetection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDetectionType gets the detectionType property value. The detectionType property
@@ -128,7 +128,7 @@ func (m *AlertDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertDetection) SetAdditionalData(value map[string]interface{})() {
+func (m *AlertDetection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDetectionType sets the detectionType property value. The detectionType property

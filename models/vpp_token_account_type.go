@@ -15,7 +15,7 @@ const (
 func (i VppTokenAccountType) String() string {
     return []string{"business", "education"}[i]
 }
-func ParseVppTokenAccountType(v string) (interface{}, error) {
+func ParseVppTokenAccountType(v string) (any, error) {
     result := BUSINESS_VPPTOKENACCOUNTTYPE
     switch v {
         case "business":

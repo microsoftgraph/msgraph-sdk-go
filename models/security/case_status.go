@@ -18,7 +18,7 @@ const (
 func (i CaseStatus) String() string {
     return []string{"unknown", "active", "pendingDelete", "closing", "closed", "closedWithError", "unknownFutureValue"}[i]
 }
-func ParseCaseStatus(v string) (interface{}, error) {
+func ParseCaseStatus(v string) (any, error) {
     result := UNKNOWN_CASESTATUS
     switch v {
         case "unknown":

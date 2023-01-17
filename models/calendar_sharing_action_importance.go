@@ -13,7 +13,7 @@ const (
 func (i CalendarSharingActionImportance) String() string {
     return []string{"primary", "secondary"}[i]
 }
-func ParseCalendarSharingActionImportance(v string) (interface{}, error) {
+func ParseCalendarSharingActionImportance(v string) (any, error) {
     result := PRIMARY_CALENDARSHARINGACTIONIMPORTANCE
     switch v {
         case "primary":

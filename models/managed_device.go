@@ -8,7 +8,7 @@ import (
 // ManagedDevice devices that are managed or pre-enrolled through Intune
 type ManagedDevice struct {
     Entity
-    // Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+    // The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
     activationLockBypassCode *string
     // Android security patch level. This property is read-only.
     androidSecurityPatchLevel *string
@@ -50,7 +50,7 @@ type ManagedDevice struct {
     emailAddress *string
     // Enrollment time of the device. This property is read-only.
     enrolledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Ethernet MAC. This property is read-only.
+    // Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
     ethernetMacAddress *string
     // Device Exchange Access State.
     exchangeAccessState *DeviceManagementExchangeAccessState
@@ -134,7 +134,7 @@ func NewManagedDevice()(*ManagedDevice) {
 func CreateManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDevice(), nil
 }
-// GetActivationLockBypassCode gets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+// GetActivationLockBypassCode gets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetActivationLockBypassCode()(*string) {
     return m.activationLockBypassCode
 }
@@ -218,7 +218,7 @@ func (m *ManagedDevice) GetEmailAddress()(*string) {
 func (m *ManagedDevice) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.enrolledDateTime
 }
-// GetEthernetMacAddress gets the ethernetMacAddress property value. Ethernet MAC. This property is read-only.
+// GetEthernetMacAddress gets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetEthernetMacAddress()(*string) {
     return m.ethernetMacAddress
 }
@@ -1065,7 +1065,7 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetActivationLockBypassCode sets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+// SetActivationLockBypassCode sets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetActivationLockBypassCode(value *string)() {
     m.activationLockBypassCode = value
 }
@@ -1149,7 +1149,7 @@ func (m *ManagedDevice) SetEmailAddress(value *string)() {
 func (m *ManagedDevice) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.enrolledDateTime = value
 }
-// SetEthernetMacAddress sets the ethernetMacAddress property value. Ethernet MAC. This property is read-only.
+// SetEthernetMacAddress sets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetEthernetMacAddress(value *string)() {
     m.ethernetMacAddress = value
 }

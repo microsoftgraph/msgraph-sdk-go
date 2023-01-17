@@ -7,7 +7,7 @@ import (
 // SimulationEvent 
 type SimulationEvent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Count of the simulation event occurrence in an attack simulation and training campaign.
     count *int32
     // Name of the simulation event in an attack simulation and training campaign.
@@ -19,7 +19,7 @@ type SimulationEvent struct {
 func NewSimulationEvent()(*SimulationEvent) {
     m := &SimulationEvent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSimulationEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSimulationEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewSimulationEvent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SimulationEvent) GetAdditionalData()(map[string]interface{}) {
+func (m *SimulationEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCount gets the count property value. Count of the simulation event occurrence in an attack simulation and training campaign.
@@ -106,7 +106,7 @@ func (m *SimulationEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SimulationEvent) SetAdditionalData(value map[string]interface{})() {
+func (m *SimulationEvent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCount sets the count property value. Count of the simulation event occurrence in an attack simulation and training campaign.

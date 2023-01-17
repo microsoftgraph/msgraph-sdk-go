@@ -19,7 +19,7 @@ const (
 func (i DeviceManagementReportFileFormat) String() string {
     return []string{"csv", "pdf", "json", "unknownFutureValue"}[i]
 }
-func ParseDeviceManagementReportFileFormat(v string) (interface{}, error) {
+func ParseDeviceManagementReportFileFormat(v string) (any, error) {
     result := CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
     switch v {
         case "csv":

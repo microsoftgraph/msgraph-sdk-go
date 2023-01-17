@@ -7,7 +7,7 @@ import (
 // WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody 
 type WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The addressableUserName property
     addressableUserName *string
     // The displayName property
@@ -21,7 +21,7 @@ type WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody s
 func NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody()(*WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody) {
     m := &WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequest
     return NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
@@ -128,7 +128,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBo
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddressableUserName sets the addressableUserName property value. The addressableUserName property

@@ -7,7 +7,7 @@ import (
 // AlternativeSecurityId 
 type AlternativeSecurityId struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // For internal use only
     identityProvider *string
     // For internal use only
@@ -21,7 +21,7 @@ type AlternativeSecurityId struct {
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     m := &AlternativeSecurityId{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAlternativeSecurityIdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAlternativeSecurityIdFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAlternativeSecurityId(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlternativeSecurityId) GetAdditionalData()(map[string]interface{}) {
+func (m *AlternativeSecurityId) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *AlternativeSecurityId) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlternativeSecurityId) SetAdditionalData(value map[string]interface{})() {
+func (m *AlternativeSecurityId) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIdentityProvider sets the identityProvider property value. For internal use only

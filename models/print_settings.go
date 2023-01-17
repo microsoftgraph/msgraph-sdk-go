@@ -7,7 +7,7 @@ import (
 // PrintSettings 
 type PrintSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
     documentConversionEnabled *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type PrintSettings struct {
 func NewPrintSettings()(*PrintSettings) {
     m := &PrintSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrintSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreatePrintSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewPrintSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *PrintSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDocumentConversionEnabled gets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
@@ -84,7 +84,7 @@ func (m *PrintSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *PrintSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDocumentConversionEnabled sets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.

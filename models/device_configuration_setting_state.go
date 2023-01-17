@@ -7,7 +7,7 @@ import (
 // DeviceConfigurationSettingState device Configuration Setting State for a given device.
 type DeviceConfigurationSettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Current value of setting on device
     currentValue *string
     // Error code for the setting
@@ -39,7 +39,7 @@ type DeviceConfigurationSettingState struct {
 func NewDeviceConfigurationSettingState()(*DeviceConfigurationSettingState) {
     m := &DeviceConfigurationSettingState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateDeviceConfigurationSettingStateFromDiscriminatorValue(parseNode i878a
     return NewDeviceConfigurationSettingState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceConfigurationSettingState) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceConfigurationSettingState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentValue gets the currentValue property value. Current value of setting on device
@@ -335,7 +335,7 @@ func (m *DeviceConfigurationSettingState) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceConfigurationSettingState) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceConfigurationSettingState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device

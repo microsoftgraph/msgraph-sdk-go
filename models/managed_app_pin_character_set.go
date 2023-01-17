@@ -15,7 +15,7 @@ const (
 func (i ManagedAppPinCharacterSet) String() string {
     return []string{"numeric", "alphanumericAndSymbol"}[i]
 }
-func ParseManagedAppPinCharacterSet(v string) (interface{}, error) {
+func ParseManagedAppPinCharacterSet(v string) (any, error) {
     result := NUMERIC_MANAGEDAPPPINCHARACTERSET
     switch v {
         case "numeric":

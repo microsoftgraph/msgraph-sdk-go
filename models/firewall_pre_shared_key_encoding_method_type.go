@@ -17,7 +17,7 @@ const (
 func (i FirewallPreSharedKeyEncodingMethodType) String() string {
     return []string{"deviceDefault", "none", "utF8"}[i]
 }
-func ParseFirewallPreSharedKeyEncodingMethodType(v string) (interface{}, error) {
+func ParseFirewallPreSharedKeyEncodingMethodType(v string) (any, error) {
     result := DEVICEDEFAULT_FIREWALLPRESHAREDKEYENCODINGMETHODTYPE
     switch v {
         case "deviceDefault":

@@ -7,7 +7,7 @@ import (
 // RecurrenceRange 
 type RecurrenceRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
     endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of times to repeat the event. Required and must be positive if type is numbered.
@@ -25,7 +25,7 @@ type RecurrenceRange struct {
 func NewRecurrenceRange()(*RecurrenceRange) {
     m := &RecurrenceRange{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRecurrenceRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateRecurrenceRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewRecurrenceRange(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecurrenceRange) GetAdditionalData()(map[string]interface{}) {
+func (m *RecurrenceRange) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDate gets the endDate property value. The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
@@ -173,7 +173,7 @@ func (m *RecurrenceRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecurrenceRange) SetAdditionalData(value map[string]interface{})() {
+func (m *RecurrenceRange) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDate sets the endDate property value. The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.

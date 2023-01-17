@@ -17,7 +17,7 @@ const (
 func (i NetworkConnectionType) String() string {
     return []string{"unknown", "wired", "wifi", "mobile", "tunnel", "unknownFutureValue"}[i]
 }
-func ParseNetworkConnectionType(v string) (interface{}, error) {
+func ParseNetworkConnectionType(v string) (any, error) {
     result := UNKNOWN_NETWORKCONNECTIONTYPE
     switch v {
         case "unknown":

@@ -7,7 +7,7 @@ import (
 // CallRoute 
 type CallRoute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The final property
     final IdentitySetable
     // The OdataType property
@@ -21,7 +21,7 @@ type CallRoute struct {
 func NewCallRoute()(*CallRoute) {
     m := &CallRoute{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateCallRouteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewCallRoute(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallRoute) GetAdditionalData()(map[string]interface{}) {
+func (m *CallRoute) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *CallRoute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallRoute) SetAdditionalData(value map[string]interface{})() {
+func (m *CallRoute) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFinal sets the final property value. The final property

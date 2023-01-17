@@ -15,7 +15,7 @@ const (
 func (i EdgeSearchEngineType) String() string {
     return []string{"default", "bing"}[i]
 }
-func ParseEdgeSearchEngineType(v string) (interface{}, error) {
+func ParseEdgeSearchEngineType(v string) (any, error) {
     result := DEFAULT_ESCAPED_EDGESEARCHENGINETYPE
     switch v {
         case "default":

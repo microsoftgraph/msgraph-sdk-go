@@ -25,7 +25,7 @@ const (
 func (i DeviceComplianceActionType) String() string {
     return []string{"noAction", "notification", "block", "retire", "wipe", "removeResourceAccessProfiles", "pushNotification"}[i]
 }
-func ParseDeviceComplianceActionType(v string) (interface{}, error) {
+func ParseDeviceComplianceActionType(v string) (any, error) {
     result := NOACTION_DEVICECOMPLIANCEACTIONTYPE
     switch v {
         case "noAction":

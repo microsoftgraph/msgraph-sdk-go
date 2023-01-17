@@ -7,7 +7,7 @@ import (
 // WorkbookFilterCriteria 
 type WorkbookFilterCriteria struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The color property
     color *string
     // The criterion1 property
@@ -31,7 +31,7 @@ type WorkbookFilterCriteria struct {
 func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
     m := &WorkbookFilterCriteria{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkbookFilterCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateWorkbookFilterCriteriaFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewWorkbookFilterCriteria(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookFilterCriteria) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkbookFilterCriteria) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColor gets the color property value. The color property
@@ -238,7 +238,7 @@ func (m *WorkbookFilterCriteria) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkbookFilterCriteria) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkbookFilterCriteria) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetColor sets the color property value. The color property

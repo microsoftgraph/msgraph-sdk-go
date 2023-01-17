@@ -7,7 +7,7 @@ import (
 // ImportedWindowsAutopilotDeviceIdentityState 
 type ImportedWindowsAutopilotDeviceIdentityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Device error code reported by Device Directory Service(DDS).
     deviceErrorCode *int32
     // Device error name reported by Device Directory Service(DDS).
@@ -23,7 +23,7 @@ type ImportedWindowsAutopilotDeviceIdentityState struct {
 func NewImportedWindowsAutopilotDeviceIdentityState()(*ImportedWindowsAutopilotDeviceIdentityState) {
     m := &ImportedWindowsAutopilotDeviceIdentityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateImportedWindowsAutopilotDeviceIdentityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateImportedWindowsAutopilotDeviceIdentityStateFromDiscriminatorValue(par
     return NewImportedWindowsAutopilotDeviceIdentityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImportedWindowsAutopilotDeviceIdentityState) GetAdditionalData()(map[string]interface{}) {
+func (m *ImportedWindowsAutopilotDeviceIdentityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceErrorCode gets the deviceErrorCode property value. Device error code reported by Device Directory Service(DDS).
@@ -151,7 +151,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ImportedWindowsAutopilotDeviceIdentityState) SetAdditionalData(value map[string]interface{})() {
+func (m *ImportedWindowsAutopilotDeviceIdentityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceErrorCode sets the deviceErrorCode property value. Device error code reported by Device Directory Service(DDS).

@@ -10,7 +10,7 @@ type PrintService struct {
     // Endpoints that can be used to access the service. Read-only. Nullable.
     endpoints []PrintServiceEndpointable
 }
-// NewPrintService instantiates a new printService and sets the default values.
+// NewPrintService instantiates a new PrintService and sets the default values.
 func NewPrintService()(*PrintService) {
     m := &PrintService{
         Entity: *NewEntity(),

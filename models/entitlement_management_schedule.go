@@ -8,7 +8,7 @@ import (
 // EntitlementManagementSchedule 
 type EntitlementManagementSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // When the access should expire.
     expiration ExpirationPatternable
     // The OdataType property
@@ -22,7 +22,7 @@ type EntitlementManagementSchedule struct {
 func NewEntitlementManagementSchedule()(*EntitlementManagementSchedule) {
     m := &EntitlementManagementSchedule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEntitlementManagementScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateEntitlementManagementScheduleFromDiscriminatorValue(parseNode i878a80
     return NewEntitlementManagementSchedule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface{}) {
+func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiration gets the expiration property value. When the access should expire.
@@ -129,7 +129,7 @@ func (m *EntitlementManagementSchedule) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]interface{})() {
+func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpiration sets the expiration property value. When the access should expire.

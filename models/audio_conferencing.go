@@ -7,7 +7,7 @@ import (
 // AudioConferencing 
 type AudioConferencing struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The conference id of the online meeting.
     conferenceId *string
     // A URL to the externally-accessible web page that contains dial-in information.
@@ -27,7 +27,7 @@ type AudioConferencing struct {
 func NewAudioConferencing()(*AudioConferencing) {
     m := &AudioConferencing{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAudioConferencingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateAudioConferencingFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewAudioConferencing(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AudioConferencing) GetAdditionalData()(map[string]interface{}) {
+func (m *AudioConferencing) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConferenceId gets the conferenceId property value. The conference id of the online meeting.
@@ -202,7 +202,7 @@ func (m *AudioConferencing) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AudioConferencing) SetAdditionalData(value map[string]interface{})() {
+func (m *AudioConferencing) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConferenceId sets the conferenceId property value. The conference id of the online meeting.

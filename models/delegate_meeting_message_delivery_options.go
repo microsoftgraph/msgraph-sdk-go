@@ -14,7 +14,7 @@ const (
 func (i DelegateMeetingMessageDeliveryOptions) String() string {
     return []string{"sendToDelegateAndInformationToPrincipal", "sendToDelegateAndPrincipal", "sendToDelegateOnly"}[i]
 }
-func ParseDelegateMeetingMessageDeliveryOptions(v string) (interface{}, error) {
+func ParseDelegateMeetingMessageDeliveryOptions(v string) (any, error) {
     result := SENDTODELEGATEANDINFORMATIONTOPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
     switch v {
         case "sendToDelegateAndInformationToPrincipal":

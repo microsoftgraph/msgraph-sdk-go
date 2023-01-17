@@ -17,7 +17,7 @@ const (
 func (i EducationSubmissionStatus) String() string {
     return []string{"working", "submitted", "released", "returned", "unknownFutureValue", "reassigned"}[i]
 }
-func ParseEducationSubmissionStatus(v string) (interface{}, error) {
+func ParseEducationSubmissionStatus(v string) (any, error) {
     result := WORKING_EDUCATIONSUBMISSIONSTATUS
     switch v {
         case "working":

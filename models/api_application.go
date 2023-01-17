@@ -10,7 +10,7 @@ type ApiApplication struct {
     // When true, allows an application to use claims mapping without specifying a custom signing key.
     acceptMappedClaims *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
     knownClientApplications []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
@@ -26,7 +26,7 @@ type ApiApplication struct {
 func NewApiApplication()(*ApiApplication) {
     m := &ApiApplication{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateApiApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func (m *ApiApplication) GetAcceptMappedClaims()(*bool) {
     return m.acceptMappedClaims
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApiApplication) GetAdditionalData()(map[string]interface{}) {
+func (m *ApiApplication) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -197,7 +197,7 @@ func (m *ApiApplication) SetAcceptMappedClaims(value *bool)() {
     m.acceptMappedClaims = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApiApplication) SetAdditionalData(value map[string]interface{})() {
+func (m *ApiApplication) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKnownClientApplications sets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.

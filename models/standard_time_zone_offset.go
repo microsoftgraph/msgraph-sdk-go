@@ -7,7 +7,7 @@ import (
 // StandardTimeZoneOffset 
 type StandardTimeZoneOffset struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
     dayOccurrence *int32
     // Represents the day of the week when the transition from daylight saving time to standard time.
@@ -25,7 +25,7 @@ type StandardTimeZoneOffset struct {
 func NewStandardTimeZoneOffset()(*StandardTimeZoneOffset) {
     m := &StandardTimeZoneOffset{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateStandardTimeZoneOffsetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func CreateStandardTimeZoneOffsetFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewStandardTimeZoneOffset(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *StandardTimeZoneOffset) GetAdditionalData()(map[string]interface{}) {
+func (m *StandardTimeZoneOffset) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDayOccurrence gets the dayOccurrence property value. Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
@@ -191,7 +191,7 @@ func (m *StandardTimeZoneOffset) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *StandardTimeZoneOffset) SetAdditionalData(value map[string]interface{})() {
+func (m *StandardTimeZoneOffset) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDayOccurrence sets the dayOccurrence property value. Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.

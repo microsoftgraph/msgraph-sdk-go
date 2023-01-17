@@ -7,7 +7,7 @@ import (
 // ResultTemplateOption 
 type ResultTemplateOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
     enableResultTemplate *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type ResultTemplateOption struct {
 func NewResultTemplateOption()(*ResultTemplateOption) {
     m := &ResultTemplateOption{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateResultTemplateOptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateResultTemplateOptionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewResultTemplateOption(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResultTemplateOption) GetAdditionalData()(map[string]interface{}) {
+func (m *ResultTemplateOption) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnableResultTemplate gets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
@@ -84,7 +84,7 @@ func (m *ResultTemplateOption) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResultTemplateOption) SetAdditionalData(value map[string]interface{})() {
+func (m *ResultTemplateOption) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnableResultTemplate sets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.

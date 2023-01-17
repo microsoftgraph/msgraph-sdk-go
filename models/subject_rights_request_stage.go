@@ -18,7 +18,7 @@ const (
 func (i SubjectRightsRequestStage) String() string {
     return []string{"contentRetrieval", "contentReview", "generateReport", "contentDeletion", "caseResolved", "contentEstimate", "unknownFutureValue"}[i]
 }
-func ParseSubjectRightsRequestStage(v string) (interface{}, error) {
+func ParseSubjectRightsRequestStage(v string) (any, error) {
     result := CONTENTRETRIEVAL_SUBJECTRIGHTSREQUESTSTAGE
     switch v {
         case "contentRetrieval":

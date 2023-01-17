@@ -15,7 +15,7 @@ const (
 func (i DeviceManagementExchangeConnectorSyncType) String() string {
     return []string{"fullSync", "deltaSync"}[i]
 }
-func ParseDeviceManagementExchangeConnectorSyncType(v string) (interface{}, error) {
+func ParseDeviceManagementExchangeConnectorSyncType(v string) (any, error) {
     result := FULLSYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE
     switch v {
         case "fullSync":

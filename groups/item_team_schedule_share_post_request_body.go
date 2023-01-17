@@ -8,7 +8,7 @@ import (
 // ItemTeamScheduleSharePostRequestBody 
 type ItemTeamScheduleSharePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The endDateTime property
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The notifyTeam property
@@ -20,7 +20,7 @@ type ItemTeamScheduleSharePostRequestBody struct {
 func NewItemTeamScheduleSharePostRequestBody()(*ItemTeamScheduleSharePostRequestBody) {
     m := &ItemTeamScheduleSharePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemTeamScheduleSharePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemTeamScheduleSharePostRequestBodyFromDiscriminatorValue(parseNode 
     return NewItemTeamScheduleSharePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTeamScheduleSharePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemTeamScheduleSharePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
@@ -107,7 +107,7 @@ func (m *ItemTeamScheduleSharePostRequestBody) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTeamScheduleSharePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemTeamScheduleSharePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDateTime sets the endDateTime property value. The endDateTime property

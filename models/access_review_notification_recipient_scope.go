@@ -7,7 +7,7 @@ import (
 // AccessReviewNotificationRecipientScope 
 type AccessReviewNotificationRecipientScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type AccessReviewNotificationRecipientScope struct {
 func NewAccessReviewNotificationRecipientScope()(*AccessReviewNotificationRecipientScope) {
     m := &AccessReviewNotificationRecipientScope{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessReviewNotificationRecipientScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateAccessReviewNotificationRecipientScopeFromDiscriminatorValue(parseNod
     return NewAccessReviewNotificationRecipientScope(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewNotificationRecipientScope) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessReviewNotificationRecipientScope) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,7 +80,7 @@ func (m *AccessReviewNotificationRecipientScope) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewNotificationRecipientScope) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessReviewNotificationRecipientScope) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

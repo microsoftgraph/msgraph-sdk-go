@@ -15,7 +15,7 @@ const (
 func (i ProvisioningStatusErrorCategory) String() string {
     return []string{"failure", "nonServiceFailure", "success", "unknownFutureValue"}[i]
 }
-func ParseProvisioningStatusErrorCategory(v string) (interface{}, error) {
+func ParseProvisioningStatusErrorCategory(v string) (any, error) {
     result := FAILURE_PROVISIONINGSTATUSERRORCATEGORY
     switch v {
         case "failure":

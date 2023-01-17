@@ -7,7 +7,7 @@ import (
 // ManagedAppPolicyDeploymentSummaryPerApp represents policy deployment summary per app.
 type ManagedAppPolicyDeploymentSummaryPerApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Number of users the policy is applied.
     configurationAppliedUserCount *int32
     // Deployment of an app.
@@ -19,7 +19,7 @@ type ManagedAppPolicyDeploymentSummaryPerApp struct {
 func NewManagedAppPolicyDeploymentSummaryPerApp()(*ManagedAppPolicyDeploymentSummaryPerApp) {
     m := &ManagedAppPolicyDeploymentSummaryPerApp{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedAppPolicyDeploymentSummaryPerAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateManagedAppPolicyDeploymentSummaryPerAppFromDiscriminatorValue(parseNo
     return NewManagedAppPolicyDeploymentSummaryPerApp(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfigurationAppliedUserCount gets the configurationAppliedUserCount property value. Number of users the policy is applied.
@@ -106,7 +106,7 @@ func (m *ManagedAppPolicyDeploymentSummaryPerApp) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfigurationAppliedUserCount sets the configurationAppliedUserCount property value. Number of users the policy is applied.

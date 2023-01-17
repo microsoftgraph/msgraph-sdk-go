@@ -19,7 +19,7 @@ const (
 func (i IosNotificationAlertType) String() string {
     return []string{"deviceDefault", "banner", "modal", "none"}[i]
 }
-func ParseIosNotificationAlertType(v string) (interface{}, error) {
+func ParseIosNotificationAlertType(v string) (any, error) {
     result := DEVICEDEFAULT_IOSNOTIFICATIONALERTTYPE
     switch v {
         case "deviceDefault":

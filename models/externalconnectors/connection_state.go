@@ -16,7 +16,7 @@ const (
 func (i ConnectionState) String() string {
     return []string{"draft", "ready", "obsolete", "limitExceeded", "unknownFutureValue"}[i]
 }
-func ParseConnectionState(v string) (interface{}, error) {
+func ParseConnectionState(v string) (any, error) {
     result := DRAFT_CONNECTIONSTATE
     switch v {
         case "draft":

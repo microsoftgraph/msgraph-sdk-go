@@ -7,7 +7,7 @@ import (
 // RubricQualitySelectedColumnModel 
 type RubricQualitySelectedColumnModel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // ID of the selected level for this quality.
     columnId *string
     // The OdataType property
@@ -19,7 +19,7 @@ type RubricQualitySelectedColumnModel struct {
 func NewRubricQualitySelectedColumnModel()(*RubricQualitySelectedColumnModel) {
     m := &RubricQualitySelectedColumnModel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRubricQualitySelectedColumnModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateRubricQualitySelectedColumnModelFromDiscriminatorValue(parseNode i878
     return NewRubricQualitySelectedColumnModel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RubricQualitySelectedColumnModel) GetAdditionalData()(map[string]interface{}) {
+func (m *RubricQualitySelectedColumnModel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColumnId gets the columnId property value. ID of the selected level for this quality.
@@ -106,7 +106,7 @@ func (m *RubricQualitySelectedColumnModel) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RubricQualitySelectedColumnModel) SetAdditionalData(value map[string]interface{})() {
+func (m *RubricQualitySelectedColumnModel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetColumnId sets the columnId property value. ID of the selected level for this quality.

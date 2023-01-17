@@ -7,7 +7,7 @@ import (
 // LocalizedDescription 
 type LocalizedDescription struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The description in the localized language.
     description *string
     // The language tag for the label.
@@ -19,7 +19,7 @@ type LocalizedDescription struct {
 func NewLocalizedDescription()(*LocalizedDescription) {
     m := &LocalizedDescription{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLocalizedDescriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateLocalizedDescriptionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewLocalizedDescription(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LocalizedDescription) GetAdditionalData()(map[string]interface{}) {
+func (m *LocalizedDescription) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description in the localized language.
@@ -106,7 +106,7 @@ func (m *LocalizedDescription) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LocalizedDescription) SetAdditionalData(value map[string]interface{})() {
+func (m *LocalizedDescription) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. The description in the localized language.

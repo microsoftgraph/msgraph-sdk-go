@@ -7,7 +7,7 @@ import (
 // ItemItemsItemCheckinPostRequestBody 
 type ItemItemsItemCheckinPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The checkInAs property
     checkInAs *string
     // The comment property
@@ -17,7 +17,7 @@ type ItemItemsItemCheckinPostRequestBody struct {
 func NewItemItemsItemCheckinPostRequestBody()(*ItemItemsItemCheckinPostRequestBody) {
     m := &ItemItemsItemCheckinPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemItemsItemCheckinPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemItemsItemCheckinPostRequestBodyFromDiscriminatorValue(parseNode i
     return NewItemItemsItemCheckinPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemCheckinPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemItemsItemCheckinPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCheckInAs gets the checkInAs property value. The checkInAs property
@@ -84,7 +84,7 @@ func (m *ItemItemsItemCheckinPostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemCheckinPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemItemsItemCheckinPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCheckInAs sets the checkInAs property value. The checkInAs property

@@ -19,7 +19,7 @@ const (
 func (i DefenderScanType) String() string {
     return []string{"userDefined", "disabled", "quick", "full"}[i]
 }
-func ParseDefenderScanType(v string) (interface{}, error) {
+func ParseDefenderScanType(v string) (any, error) {
     result := USERDEFINED_DEFENDERSCANTYPE
     switch v {
         case "userDefined":

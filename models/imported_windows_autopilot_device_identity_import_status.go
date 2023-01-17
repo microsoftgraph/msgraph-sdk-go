@@ -21,7 +21,7 @@ const (
 func (i ImportedWindowsAutopilotDeviceIdentityImportStatus) String() string {
     return []string{"unknown", "pending", "partial", "complete", "error"}[i]
 }
-func ParseImportedWindowsAutopilotDeviceIdentityImportStatus(v string) (interface{}, error) {
+func ParseImportedWindowsAutopilotDeviceIdentityImportStatus(v string) (any, error) {
     result := UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
     switch v {
         case "unknown":

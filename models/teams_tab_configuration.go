@@ -7,7 +7,7 @@ import (
 // TeamsTabConfiguration 
 type TeamsTabConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Url used for rendering tab contents in Teams. Required.
     contentUrl *string
     // Identifier for the entity hosted by the tab provider.
@@ -23,7 +23,7 @@ type TeamsTabConfiguration struct {
 func NewTeamsTabConfiguration()(*TeamsTabConfiguration) {
     m := &TeamsTabConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamsTabConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateTeamsTabConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewTeamsTabConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamsTabConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamsTabConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentUrl gets the contentUrl property value. Url used for rendering tab contents in Teams. Required.
@@ -150,7 +150,7 @@ func (m *TeamsTabConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamsTabConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamsTabConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentUrl sets the contentUrl property value. Url used for rendering tab contents in Teams. Required.

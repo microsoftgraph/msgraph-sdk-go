@@ -7,7 +7,7 @@ import (
 // ItemDrivesItemItemsItemCheckinPostRequestBody 
 type ItemDrivesItemItemsItemCheckinPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The checkInAs property
     checkInAs *string
     // The comment property
@@ -17,7 +17,7 @@ type ItemDrivesItemItemsItemCheckinPostRequestBody struct {
 func NewItemDrivesItemItemsItemCheckinPostRequestBody()(*ItemDrivesItemItemsItemCheckinPostRequestBody) {
     m := &ItemDrivesItemItemsItemCheckinPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDrivesItemItemsItemCheckinPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemDrivesItemItemsItemCheckinPostRequestBodyFromDiscriminatorValue(p
     return NewItemDrivesItemItemsItemCheckinPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemItemsItemCheckinPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDrivesItemItemsItemCheckinPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCheckInAs gets the checkInAs property value. The checkInAs property
@@ -84,7 +84,7 @@ func (m *ItemDrivesItemItemsItemCheckinPostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemItemsItemCheckinPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDrivesItemItemsItemCheckinPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCheckInAs sets the checkInAs property value. The checkInAs property

@@ -7,7 +7,7 @@ import (
 // ExtensionSchemaProperty 
 type ExtensionSchemaProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the strongly-typed property defined as part of a schema extension.
     name *string
     // The OdataType property
@@ -19,7 +19,7 @@ type ExtensionSchemaProperty struct {
 func NewExtensionSchemaProperty()(*ExtensionSchemaProperty) {
     m := &ExtensionSchemaProperty{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExtensionSchemaPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateExtensionSchemaPropertyFromDiscriminatorValue(parseNode i878a80d2330e
     return NewExtensionSchemaProperty(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExtensionSchemaProperty) GetAdditionalData()(map[string]interface{}) {
+func (m *ExtensionSchemaProperty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *ExtensionSchemaProperty) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExtensionSchemaProperty) SetAdditionalData(value map[string]interface{})() {
+func (m *ExtensionSchemaProperty) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name of the strongly-typed property defined as part of a schema extension.

@@ -14,7 +14,7 @@ const (
 func (i AuthenticationMethodTargetType) String() string {
     return []string{"user", "group", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationMethodTargetType(v string) (interface{}, error) {
+func ParseAuthenticationMethodTargetType(v string) (any, error) {
     result := USER_AUTHENTICATIONMETHODTARGETTYPE
     switch v {
         case "user":

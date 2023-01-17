@@ -8,7 +8,7 @@ import (
 // CallsItemRecordResponsePostRequestBody 
 type CallsItemRecordResponsePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The bargeInAllowed property
     bargeInAllowed *bool
     // The clientContext property
@@ -30,7 +30,7 @@ type CallsItemRecordResponsePostRequestBody struct {
 func NewCallsItemRecordResponsePostRequestBody()(*CallsItemRecordResponsePostRequestBody) {
     m := &CallsItemRecordResponsePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemRecordResponsePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateCallsItemRecordResponsePostRequestBodyFromDiscriminatorValue(parseNod
     return NewCallsItemRecordResponsePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemRecordResponsePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemRecordResponsePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBargeInAllowed gets the bargeInAllowed property value. The bargeInAllowed property
@@ -229,7 +229,7 @@ func (m *CallsItemRecordResponsePostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemRecordResponsePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemRecordResponsePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBargeInAllowed sets the bargeInAllowed property value. The bargeInAllowed property

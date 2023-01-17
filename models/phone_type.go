@@ -21,7 +21,7 @@ const (
 func (i PhoneType) String() string {
     return []string{"home", "business", "mobile", "other", "assistant", "homeFax", "businessFax", "otherFax", "pager", "radio"}[i]
 }
-func ParsePhoneType(v string) (interface{}, error) {
+func ParsePhoneType(v string) (any, error) {
     result := HOME_PHONETYPE
     switch v {
         case "home":

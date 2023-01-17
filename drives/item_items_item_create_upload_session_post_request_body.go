@@ -8,7 +8,7 @@ import (
 // ItemItemsItemCreateUploadSessionPostRequestBody 
 type ItemItemsItemCreateUploadSessionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The item property
     item iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemUploadablePropertiesable
 }
@@ -16,7 +16,7 @@ type ItemItemsItemCreateUploadSessionPostRequestBody struct {
 func NewItemItemsItemCreateUploadSessionPostRequestBody()(*ItemItemsItemCreateUploadSessionPostRequestBody) {
     m := &ItemItemsItemCreateUploadSessionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemItemsItemCreateUploadSessionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemItemsItemCreateUploadSessionPostRequestBodyFromDiscriminatorValue
     return NewItemItemsItemCreateUploadSessionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemItemsItemCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemItemsItemCreateUploadSessionPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemItemsItemCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetItem sets the item property value. The item property

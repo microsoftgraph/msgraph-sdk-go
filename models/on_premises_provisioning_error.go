@@ -8,7 +8,7 @@ import (
 // OnPremisesProvisioningError 
 type OnPremisesProvisioningError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
     category *string
     // The date and time at which the error occurred.
@@ -24,7 +24,7 @@ type OnPremisesProvisioningError struct {
 func NewOnPremisesProvisioningError()(*OnPremisesProvisioningError) {
     m := &OnPremisesProvisioningError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesProvisioningErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateOnPremisesProvisioningErrorFromDiscriminatorValue(parseNode i878a80d2
     return NewOnPremisesProvisioningError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesProvisioningError) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesProvisioningError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCategory gets the category property value. Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
@@ -151,7 +151,7 @@ func (m *OnPremisesProvisioningError) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesProvisioningError) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesProvisioningError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCategory sets the category property value. Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.

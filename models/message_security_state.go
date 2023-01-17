@@ -8,7 +8,7 @@ import (
 // MessageSecurityState 
 type MessageSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The connectingIP property
     connectingIP *string
     // The deliveryAction property
@@ -34,7 +34,7 @@ type MessageSecurityState struct {
 func NewMessageSecurityState()(*MessageSecurityState) {
     m := &MessageSecurityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMessageSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreateMessageSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewMessageSecurityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessageSecurityState) GetAdditionalData()(map[string]interface{}) {
+func (m *MessageSecurityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConnectingIP gets the connectingIP property value. The connectingIP property
@@ -261,7 +261,7 @@ func (m *MessageSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessageSecurityState) SetAdditionalData(value map[string]interface{})() {
+func (m *MessageSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConnectingIP sets the connectingIP property value. The connectingIP property

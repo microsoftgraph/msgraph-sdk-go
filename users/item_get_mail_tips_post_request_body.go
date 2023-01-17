@@ -8,7 +8,7 @@ import (
 // ItemGetMailTipsPostRequestBody 
 type ItemGetMailTipsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The EmailAddresses property
     emailAddresses []string
     // The MailTipsOptions property
@@ -18,7 +18,7 @@ type ItemGetMailTipsPostRequestBody struct {
 func NewItemGetMailTipsPostRequestBody()(*ItemGetMailTipsPostRequestBody) {
     m := &ItemGetMailTipsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemGetMailTipsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemGetMailTipsPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewItemGetMailTipsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemGetMailTipsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemGetMailTipsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmailAddresses gets the emailAddresses property value. The EmailAddresses property
@@ -90,7 +90,7 @@ func (m *ItemGetMailTipsPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemGetMailTipsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemGetMailTipsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEmailAddresses sets the emailAddresses property value. The EmailAddresses property

@@ -8,7 +8,7 @@ import (
 // ChatViewpoint 
 type ChatViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the chat is hidden for the current user.
     isHidden *bool
     // Represents the dateTime up until which the current user has read chatMessages in a specific chat.
@@ -20,7 +20,7 @@ type ChatViewpoint struct {
 func NewChatViewpoint()(*ChatViewpoint) {
     m := &ChatViewpoint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateChatViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateChatViewpointFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewChatViewpoint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatViewpoint) GetAdditionalData()(map[string]interface{}) {
+func (m *ChatViewpoint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *ChatViewpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ChatViewpoint) SetAdditionalData(value map[string]interface{})() {
+func (m *ChatViewpoint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsHidden sets the isHidden property value. Indicates whether the chat is hidden for the current user.

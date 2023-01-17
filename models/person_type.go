@@ -7,7 +7,7 @@ import (
 // PersonType 
 type PersonType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type of data source, such as Person.
     class *string
     // The OdataType property
@@ -19,7 +19,7 @@ type PersonType struct {
 func NewPersonType()(*PersonType) {
     m := &PersonType{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePersonTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreatePersonTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewPersonType(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PersonType) GetAdditionalData()(map[string]interface{}) {
+func (m *PersonType) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClass gets the class property value. The type of data source, such as Person.
@@ -106,7 +106,7 @@ func (m *PersonType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PersonType) SetAdditionalData(value map[string]interface{})() {
+func (m *PersonType) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClass sets the class property value. The type of data source, such as Person.

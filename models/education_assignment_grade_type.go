@@ -7,7 +7,7 @@ import (
 // EducationAssignmentGradeType 
 type EducationAssignmentGradeType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type EducationAssignmentGradeType struct {
 func NewEducationAssignmentGradeType()(*EducationAssignmentGradeType) {
     m := &EducationAssignmentGradeType{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationAssignmentGradeTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateEducationAssignmentGradeTypeFromDiscriminatorValue(parseNode i878a80d
     return NewEducationAssignmentGradeType(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationAssignmentGradeType) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationAssignmentGradeType) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,7 +80,7 @@ func (m *EducationAssignmentGradeType) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationAssignmentGradeType) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationAssignmentGradeType) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

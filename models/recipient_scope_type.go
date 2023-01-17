@@ -16,7 +16,7 @@ const (
 func (i RecipientScopeType) String() string {
     return []string{"none", "internal", "external", "externalPartner", "externalNonPartner"}[i]
 }
-func ParseRecipientScopeType(v string) (interface{}, error) {
+func ParseRecipientScopeType(v string) (any, error) {
     result := NONE_RECIPIENTSCOPETYPE
     switch v {
         case "none":

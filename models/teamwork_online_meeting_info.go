@@ -7,7 +7,7 @@ import (
 // TeamworkOnlineMeetingInfo 
 type TeamworkOnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifier of the calendar event associated with the meeting.
     calendarEventId *string
     // The URL that users click to join or uniquely identify the meeting.
@@ -21,7 +21,7 @@ type TeamworkOnlineMeetingInfo struct {
 func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
     m := &TeamworkOnlineMeetingInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue(parseNode i878a80d233
     return NewTeamworkOnlineMeetingInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkOnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkOnlineMeetingInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCalendarEventId gets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
@@ -128,7 +128,7 @@ func (m *TeamworkOnlineMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkOnlineMeetingInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkOnlineMeetingInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCalendarEventId sets the calendarEventId property value. The identifier of the calendar event associated with the meeting.

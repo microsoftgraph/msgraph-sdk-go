@@ -7,7 +7,7 @@ import (
 // ItemContentTypesAddCopyPostRequestBody 
 type ItemContentTypesAddCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contentType property
     contentType *string
 }
@@ -15,7 +15,7 @@ type ItemContentTypesAddCopyPostRequestBody struct {
 func NewItemContentTypesAddCopyPostRequestBody()(*ItemContentTypesAddCopyPostRequestBody) {
     m := &ItemContentTypesAddCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemContentTypesAddCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemContentTypesAddCopyPostRequestBodyFromDiscriminatorValue(parseNod
     return NewItemContentTypesAddCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemContentTypesAddCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemContentTypesAddCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentType gets the contentType property value. The contentType property
@@ -62,7 +62,7 @@ func (m *ItemContentTypesAddCopyPostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemContentTypesAddCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemContentTypesAddCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentType sets the contentType property value. The contentType property

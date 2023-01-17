@@ -8,7 +8,7 @@ import (
 // CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody 
 type CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The purgeAreas property
     purgeAreas *idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.PurgeAreas
     // The purgeType property
@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody struct {
 func NewCasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody()(*CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody) {
     m := &CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateCasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBodyFromDiscr
     return NewCasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -87,7 +87,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody) Serialize
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CasesEdiscoveryCasesItemSearchesItemPurgeDataPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPurgeAreas sets the purgeAreas property value. The purgeAreas property

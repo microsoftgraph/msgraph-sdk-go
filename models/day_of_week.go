@@ -18,7 +18,7 @@ const (
 func (i DayOfWeek) String() string {
     return []string{"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"}[i]
 }
-func ParseDayOfWeek(v string) (interface{}, error) {
+func ParseDayOfWeek(v string) (any, error) {
     result := SUNDAY_DAYOFWEEK
     switch v {
         case "sunday":

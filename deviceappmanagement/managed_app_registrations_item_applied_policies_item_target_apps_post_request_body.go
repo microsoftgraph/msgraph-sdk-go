@@ -8,7 +8,7 @@ import (
 // ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody 
 type ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The apps property
     apps []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable
 }
@@ -16,7 +16,7 @@ type ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody str
 func NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody()(*ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody) {
     m := &ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBo
     return NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApps gets the apps property value. The apps property
@@ -71,7 +71,7 @@ func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApps sets the apps property value. The apps property

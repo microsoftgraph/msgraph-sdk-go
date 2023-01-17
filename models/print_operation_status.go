@@ -7,7 +7,7 @@ import (
 // PrintOperationStatus 
 type PrintOperationStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A human-readable description of the printOperation's current processing state. Read-only.
     description *string
     // The OdataType property
@@ -19,7 +19,7 @@ type PrintOperationStatus struct {
 func NewPrintOperationStatus()(*PrintOperationStatus) {
     m := &PrintOperationStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrintOperationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreatePrintOperationStatusFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewPrintOperationStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintOperationStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *PrintOperationStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. A human-readable description of the printOperation's current processing state. Read-only.
@@ -107,7 +107,7 @@ func (m *PrintOperationStatus) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrintOperationStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *PrintOperationStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. A human-readable description of the printOperation's current processing state. Read-only.

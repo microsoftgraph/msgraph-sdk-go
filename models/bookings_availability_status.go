@@ -16,7 +16,7 @@ const (
 func (i BookingsAvailabilityStatus) String() string {
     return []string{"available", "busy", "slotsAvailable", "outOfOffice", "unknownFutureValue"}[i]
 }
-func ParseBookingsAvailabilityStatus(v string) (interface{}, error) {
+func ParseBookingsAvailabilityStatus(v string) (any, error) {
     result := AVAILABLE_BOOKINGSAVAILABILITYSTATUS
     switch v {
         case "available":

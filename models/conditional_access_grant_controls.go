@@ -7,7 +7,7 @@ import (
 // ConditionalAccessGrantControls 
 type ConditionalAccessGrantControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
     builtInControls []ConditionalAccessGrantControl
     // List of custom controls IDs required by the policy. For more information, see Custom controls.
@@ -23,7 +23,7 @@ type ConditionalAccessGrantControls struct {
 func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     m := &ConditionalAccessGrantControls{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessGrantControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateConditionalAccessGrantControlsFromDiscriminatorValue(parseNode i878a8
     return NewConditionalAccessGrantControls(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
@@ -162,7 +162,7 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessGrantControls) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessGrantControls) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.

@@ -14,7 +14,7 @@ const (
 func (i ServiceHealthClassificationType) String() string {
     return []string{"advisory", "incident", "unknownFutureValue"}[i]
 }
-func ParseServiceHealthClassificationType(v string) (interface{}, error) {
+func ParseServiceHealthClassificationType(v string) (any, error) {
     result := ADVISORY_SERVICEHEALTHCLASSIFICATIONTYPE
     switch v {
         case "advisory":

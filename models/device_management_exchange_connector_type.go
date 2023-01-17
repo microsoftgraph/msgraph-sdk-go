@@ -19,7 +19,7 @@ const (
 func (i DeviceManagementExchangeConnectorType) String() string {
     return []string{"onPremises", "hosted", "serviceToService", "dedicated"}[i]
 }
-func ParseDeviceManagementExchangeConnectorType(v string) (interface{}, error) {
+func ParseDeviceManagementExchangeConnectorType(v string) (any, error) {
     result := ONPREMISES_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
     switch v {
         case "onPremises":

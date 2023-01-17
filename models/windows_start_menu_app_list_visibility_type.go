@@ -19,7 +19,7 @@ const (
 func (i WindowsStartMenuAppListVisibilityType) String() string {
     return []string{"userDefined", "collapse", "remove", "disableSettingsApp"}[i]
 }
-func ParseWindowsStartMenuAppListVisibilityType(v string) (interface{}, error) {
+func ParseWindowsStartMenuAppListVisibilityType(v string) (any, error) {
     result := USERDEFINED_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
     switch v {
         case "userDefined":

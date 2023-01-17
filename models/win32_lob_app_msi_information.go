@@ -7,7 +7,7 @@ import (
 // Win32LobAppMsiInformation contains MSI app properties for a Win32 App.
 type Win32LobAppMsiInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Indicates the package type of an MSI Win32LobApp.
@@ -29,7 +29,7 @@ type Win32LobAppMsiInformation struct {
 func NewWin32LobAppMsiInformation()(*Win32LobAppMsiInformation) {
     m := &Win32LobAppMsiInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWin32LobAppMsiInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateWin32LobAppMsiInformationFromDiscriminatorValue(parseNode i878a80d233
     return NewWin32LobAppMsiInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppMsiInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *Win32LobAppMsiInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -217,7 +217,7 @@ func (m *Win32LobAppMsiInformation) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppMsiInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *Win32LobAppMsiInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

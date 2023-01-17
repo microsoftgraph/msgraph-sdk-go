@@ -17,7 +17,7 @@ const (
 func (i AccessPackageAssignmentState) String() string {
     return []string{"delivering", "partiallyDelivered", "delivered", "expired", "deliveryFailed", "unknownFutureValue"}[i]
 }
-func ParseAccessPackageAssignmentState(v string) (interface{}, error) {
+func ParseAccessPackageAssignmentState(v string) (any, error) {
     result := DELIVERING_ACCESSPACKAGEASSIGNMENTSTATE
     switch v {
         case "delivering":

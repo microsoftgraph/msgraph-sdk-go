@@ -8,7 +8,7 @@ import (
 // MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody 
 type MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The Message property
@@ -18,7 +18,7 @@ type MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody st
 func NewMailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody()(*MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody) {
     m := &MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateMailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestB
     return NewMailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -85,7 +85,7 @@ func (m *MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBod
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MailFoldersItemChildFoldersItemMessagesItemCreateReplyAllPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

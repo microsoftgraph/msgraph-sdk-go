@@ -15,7 +15,7 @@ const (
 func (i CalendarSharingAction) String() string {
     return []string{"accept", "acceptAndViewCalendar", "viewCalendar", "addThisCalendar"}[i]
 }
-func ParseCalendarSharingAction(v string) (interface{}, error) {
+func ParseCalendarSharingAction(v string) (any, error) {
     result := ACCEPT_CALENDARSHARINGACTION
     switch v {
         case "accept":

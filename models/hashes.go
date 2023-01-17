@@ -7,7 +7,7 @@ import (
 // Hashes 
 type Hashes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The CRC32 value of the file in little endian (if available). Read-only.
     crc32Hash *string
     // The OdataType property
@@ -23,7 +23,7 @@ type Hashes struct {
 func NewHashes()(*Hashes) {
     m := &Hashes{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateHashesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateHashesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
     return NewHashes(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Hashes) GetAdditionalData()(map[string]interface{}) {
+func (m *Hashes) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCrc32Hash gets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
@@ -150,7 +150,7 @@ func (m *Hashes) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Hashes) SetAdditionalData(value map[string]interface{})() {
+func (m *Hashes) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCrc32Hash sets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.

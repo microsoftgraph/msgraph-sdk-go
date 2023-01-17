@@ -7,7 +7,7 @@ import (
 // SearchResponse 
 type SearchResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A collection of search results.
     hitsContainers []SearchHitsContainerable
     // The OdataType property
@@ -23,7 +23,7 @@ type SearchResponse struct {
 func NewSearchResponse()(*SearchResponse) {
     m := &SearchResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateSearchResponseFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewSearchResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -162,7 +162,7 @@ func (m *SearchResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHitsContainers sets the hitsContainers property value. A collection of search results.

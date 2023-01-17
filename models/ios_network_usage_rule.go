@@ -7,7 +7,7 @@ import (
 // IosNetworkUsageRule network Usage Rules allow enterprises to specify how managed apps use networks, such as cellular data networks.
 type IosNetworkUsageRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
     cellularDataBlocked *bool
     // If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
@@ -21,7 +21,7 @@ type IosNetworkUsageRule struct {
 func NewIosNetworkUsageRule()(*IosNetworkUsageRule) {
     m := &IosNetworkUsageRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosNetworkUsageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateIosNetworkUsageRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewIosNetworkUsageRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosNetworkUsageRule) GetAdditionalData()(map[string]interface{}) {
+func (m *IosNetworkUsageRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCellularDataBlocked gets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
@@ -136,7 +136,7 @@ func (m *IosNetworkUsageRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosNetworkUsageRule) SetAdditionalData(value map[string]interface{})() {
+func (m *IosNetworkUsageRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCellularDataBlocked sets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.

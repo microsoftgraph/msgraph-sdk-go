@@ -17,7 +17,7 @@ const (
 func (i MobileAppPublishingState) String() string {
     return []string{"notPublished", "processing", "published"}[i]
 }
-func ParseMobileAppPublishingState(v string) (interface{}, error) {
+func ParseMobileAppPublishingState(v string) (any, error) {
     result := NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE
     switch v {
         case "notPublished":

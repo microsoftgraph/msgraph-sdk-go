@@ -7,7 +7,7 @@ import (
 // LobbyBypassSettings 
 type LobbyBypassSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
     isDialInBypassEnabled *bool
     // The OdataType property
@@ -19,7 +19,7 @@ type LobbyBypassSettings struct {
 func NewLobbyBypassSettings()(*LobbyBypassSettings) {
     m := &LobbyBypassSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLobbyBypassSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateLobbyBypassSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewLobbyBypassSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LobbyBypassSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *LobbyBypassSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *LobbyBypassSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LobbyBypassSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *LobbyBypassSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsDialInBypassEnabled sets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.

@@ -7,7 +7,7 @@ import (
 // ItemMailFoldersItemMovePostRequestBody 
 type ItemMailFoldersItemMovePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The DestinationId property
     destinationId *string
 }
@@ -15,7 +15,7 @@ type ItemMailFoldersItemMovePostRequestBody struct {
 func NewItemMailFoldersItemMovePostRequestBody()(*ItemMailFoldersItemMovePostRequestBody) {
     m := &ItemMailFoldersItemMovePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemMailFoldersItemMovePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemMailFoldersItemMovePostRequestBodyFromDiscriminatorValue(parseNod
     return NewItemMailFoldersItemMovePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMailFoldersItemMovePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemMailFoldersItemMovePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationId gets the destinationId property value. The DestinationId property
@@ -62,7 +62,7 @@ func (m *ItemMailFoldersItemMovePostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMailFoldersItemMovePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemMailFoldersItemMovePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationId sets the destinationId property value. The DestinationId property

@@ -7,7 +7,7 @@ import (
 // NotebookLinks 
 type NotebookLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Opens the notebook in the OneNote native client if it's installed.
@@ -19,7 +19,7 @@ type NotebookLinks struct {
 func NewNotebookLinks()(*NotebookLinks) {
     m := &NotebookLinks{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateNotebookLinksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateNotebookLinksFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewNotebookLinks(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NotebookLinks) GetAdditionalData()(map[string]interface{}) {
+func (m *NotebookLinks) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *NotebookLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NotebookLinks) SetAdditionalData(value map[string]interface{})() {
+func (m *NotebookLinks) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

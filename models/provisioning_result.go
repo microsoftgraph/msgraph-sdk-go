@@ -16,7 +16,7 @@ const (
 func (i ProvisioningResult) String() string {
     return []string{"success", "failure", "skipped", "warning", "unknownFutureValue"}[i]
 }
-func ParseProvisioningResult(v string) (interface{}, error) {
+func ParseProvisioningResult(v string) (any, error) {
     result := SUCCESS_PROVISIONINGRESULT
     switch v {
         case "success":

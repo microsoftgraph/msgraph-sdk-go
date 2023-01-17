@@ -8,7 +8,7 @@ import (
 // MediaStream 
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.
     audioCodec *AudioCodec
     // Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
@@ -70,7 +70,7 @@ type MediaStream struct {
 func NewMediaStream()(*MediaStream) {
     m := &MediaStream{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaStreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,7 +78,7 @@ func CreateMediaStreamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewMediaStream(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaStream) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaStream) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAudioCodec gets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.
@@ -660,7 +660,7 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaStream) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaStream) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAudioCodec sets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.

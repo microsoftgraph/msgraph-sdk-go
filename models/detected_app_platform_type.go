@@ -33,7 +33,7 @@ const (
 func (i DetectedAppPlatformType) String() string {
     return []string{"unknown", "windows", "windowsMobile", "windowsHolographic", "ios", "macOS", "chromeOS", "androidOSP", "androidDeviceAdministrator", "androidWorkProfile", "androidDedicatedAndFullyManaged"}[i]
 }
-func ParseDetectedAppPlatformType(v string) (interface{}, error) {
+func ParseDetectedAppPlatformType(v string) (any, error) {
     result := UNKNOWN_DETECTEDAPPPLATFORMTYPE
     switch v {
         case "unknown":

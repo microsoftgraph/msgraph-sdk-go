@@ -7,7 +7,7 @@ import (
 // ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody 
 type ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The webUrl property
     webUrl *string
 }
@@ -15,7 +15,7 @@ type ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody struct {
 func NewItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody()(*ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody) {
     m := &ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBodyFromDiscrimin
     return NewItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody) Serialize(wri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetWebUrl sets the webUrl property value. The webUrl property

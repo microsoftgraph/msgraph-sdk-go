@@ -15,7 +15,7 @@ const (
 func (i FederatedIdpMfaBehavior) String() string {
     return []string{"acceptIfMfaDoneByFederatedIdp", "enforceMfaByFederatedIdp", "rejectMfaByFederatedIdp", "unknownFutureValue"}[i]
 }
-func ParseFederatedIdpMfaBehavior(v string) (interface{}, error) {
+func ParseFederatedIdpMfaBehavior(v string) (any, error) {
     result := ACCEPTIFMFADONEBYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
     switch v {
         case "acceptIfMfaDoneByFederatedIdp":

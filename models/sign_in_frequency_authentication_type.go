@@ -14,7 +14,7 @@ const (
 func (i SignInFrequencyAuthenticationType) String() string {
     return []string{"primaryAndSecondaryAuthentication", "secondaryAuthentication", "unknownFutureValue"}[i]
 }
-func ParseSignInFrequencyAuthenticationType(v string) (interface{}, error) {
+func ParseSignInFrequencyAuthenticationType(v string) (any, error) {
     result := PRIMARYANDSECONDARYAUTHENTICATION_SIGNINFREQUENCYAUTHENTICATIONTYPE
     switch v {
         case "primaryAndSecondaryAuthentication":

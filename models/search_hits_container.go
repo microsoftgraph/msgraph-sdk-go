@@ -7,7 +7,7 @@ import (
 // SearchHitsContainer 
 type SearchHitsContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The aggregations property
     aggregations []SearchAggregationable
     // A collection of the search results.
@@ -23,7 +23,7 @@ type SearchHitsContainer struct {
 func NewSearchHitsContainer()(*SearchHitsContainer) {
     m := &SearchHitsContainer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchHitsContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateSearchHitsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewSearchHitsContainer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchHitsContainer) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchHitsContainer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAggregations gets the aggregations property value. The aggregations property
@@ -166,7 +166,7 @@ func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchHitsContainer) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchHitsContainer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAggregations sets the aggregations property value. The aggregations property

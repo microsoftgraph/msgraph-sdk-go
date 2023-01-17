@@ -7,7 +7,7 @@ import (
 // Win32LobAppRestartSettings contains properties describing restart coordination following an app installation.
 type Win32LobAppRestartSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of minutes before the restart time to display the countdown dialog for pending restarts.
     countdownDisplayBeforeRestartInMinutes *int32
     // The number of minutes to wait before restarting the device after an app installation.
@@ -21,7 +21,7 @@ type Win32LobAppRestartSettings struct {
 func NewWin32LobAppRestartSettings()(*Win32LobAppRestartSettings) {
     m := &Win32LobAppRestartSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWin32LobAppRestartSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateWin32LobAppRestartSettingsFromDiscriminatorValue(parseNode i878a80d23
     return NewWin32LobAppRestartSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppRestartSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *Win32LobAppRestartSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCountdownDisplayBeforeRestartInMinutes gets the countdownDisplayBeforeRestartInMinutes property value. The number of minutes before the restart time to display the countdown dialog for pending restarts.
@@ -128,7 +128,7 @@ func (m *Win32LobAppRestartSettings) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppRestartSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *Win32LobAppRestartSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCountdownDisplayBeforeRestartInMinutes sets the countdownDisplayBeforeRestartInMinutes property value. The number of minutes before the restart time to display the countdown dialog for pending restarts.

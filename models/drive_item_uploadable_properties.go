@@ -7,7 +7,7 @@ import (
 // DriveItemUploadableProperties 
 type DriveItemUploadableProperties struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
     description *string
     // Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
@@ -23,7 +23,7 @@ type DriveItemUploadableProperties struct {
 func NewDriveItemUploadableProperties()(*DriveItemUploadableProperties) {
     m := &DriveItemUploadableProperties{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDriveItemUploadablePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateDriveItemUploadablePropertiesFromDiscriminatorValue(parseNode i878a80
     return NewDriveItemUploadableProperties(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DriveItemUploadableProperties) GetAdditionalData()(map[string]interface{}) {
+func (m *DriveItemUploadableProperties) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
@@ -150,7 +150,7 @@ func (m *DriveItemUploadableProperties) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DriveItemUploadableProperties) SetAdditionalData(value map[string]interface{})() {
+func (m *DriveItemUploadableProperties) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.

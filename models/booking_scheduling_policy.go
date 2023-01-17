@@ -7,7 +7,7 @@ import (
 // BookingSchedulingPolicy this type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
 type BookingSchedulingPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // True if to allow customers to choose a specific person for the booking.
     allowStaffSelection *bool
     // Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
@@ -25,7 +25,7 @@ type BookingSchedulingPolicy struct {
 func NewBookingSchedulingPolicy()(*BookingSchedulingPolicy) {
     m := &BookingSchedulingPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingSchedulingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateBookingSchedulingPolicyFromDiscriminatorValue(parseNode i878a80d2330e
     return NewBookingSchedulingPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingSchedulingPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingSchedulingPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowStaffSelection gets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
@@ -172,7 +172,7 @@ func (m *BookingSchedulingPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingSchedulingPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingSchedulingPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowStaffSelection sets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.

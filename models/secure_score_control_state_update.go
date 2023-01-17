@@ -8,7 +8,7 @@ import (
 // SecureScoreControlStateUpdate 
 type SecureScoreControlStateUpdate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Assigns the control to the user who will take the action.
     assignedTo *string
     // Provides optional comment about the control.
@@ -26,7 +26,7 @@ type SecureScoreControlStateUpdate struct {
 func NewSecureScoreControlStateUpdate()(*SecureScoreControlStateUpdate) {
     m := &SecureScoreControlStateUpdate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSecureScoreControlStateUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateSecureScoreControlStateUpdateFromDiscriminatorValue(parseNode i878a80
     return NewSecureScoreControlStateUpdate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecureScoreControlStateUpdate) GetAdditionalData()(map[string]interface{}) {
+func (m *SecureScoreControlStateUpdate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignedTo gets the assignedTo property value. Assigns the control to the user who will take the action.
@@ -173,7 +173,7 @@ func (m *SecureScoreControlStateUpdate) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SecureScoreControlStateUpdate) SetAdditionalData(value map[string]interface{})() {
+func (m *SecureScoreControlStateUpdate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignedTo sets the assignedTo property value. Assigns the control to the user who will take the action.

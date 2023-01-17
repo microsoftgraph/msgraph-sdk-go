@@ -7,7 +7,7 @@ import (
 // Reminder 
 type Reminder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
     changeKey *string
     // The date, time and time zone that the event ends.
@@ -31,7 +31,7 @@ type Reminder struct {
 func NewReminder()(*Reminder) {
     m := &Reminder{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateReminderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewReminder(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Reminder) GetAdditionalData()(map[string]interface{}) {
+func (m *Reminder) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
@@ -238,7 +238,7 @@ func (m *Reminder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Reminder) SetAdditionalData(value map[string]interface{})() {
+func (m *Reminder) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChangeKey sets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.

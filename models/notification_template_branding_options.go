@@ -14,14 +14,16 @@ const (
     INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
     // Include Contact Info.
     INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    // Include Company Portal Link.
+    INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
     // Include Device Details.
     INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
 )
 
 func (i NotificationTemplateBrandingOptions) String() string {
-    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeDeviceDetails"}[i]
+    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails"}[i]
 }
-func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
+func ParseNotificationTemplateBrandingOptions(v string) (any, error) {
     result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
     switch v {
         case "none":
@@ -32,6 +34,8 @@ func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
             result = INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "includeContactInformation":
             result = INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+        case "includeCompanyPortalLink":
+            result = INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "includeDeviceDetails":
             result = INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         default:

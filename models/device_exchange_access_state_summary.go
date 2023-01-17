@@ -7,7 +7,7 @@ import (
 // DeviceExchangeAccessStateSummary device Exchange Access State summary
 type DeviceExchangeAccessStateSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Total count of devices with Exchange Access State: Allowed.
     allowedDeviceCount *int32
     // Total count of devices with Exchange Access State: Blocked.
@@ -25,7 +25,7 @@ type DeviceExchangeAccessStateSummary struct {
 func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
     m := &DeviceExchangeAccessStateSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue(parseNode i878
     return NewDeviceExchangeAccessStateSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceExchangeAccessStateSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceExchangeAccessStateSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedDeviceCount gets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
@@ -172,7 +172,7 @@ func (m *DeviceExchangeAccessStateSummary) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceExchangeAccessStateSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceExchangeAccessStateSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedDeviceCount sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.

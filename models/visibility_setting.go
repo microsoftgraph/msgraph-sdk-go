@@ -17,7 +17,7 @@ const (
 func (i VisibilitySetting) String() string {
     return []string{"notConfigured", "hide", "show"}[i]
 }
-func ParseVisibilitySetting(v string) (interface{}, error) {
+func ParseVisibilitySetting(v string) (any, error) {
     result := NOTCONFIGURED_VISIBILITYSETTING
     switch v {
         case "notConfigured":

@@ -14,7 +14,7 @@ const (
 func (i RelationType) String() string {
     return []string{"pin", "reuse", "unknownFutureValue"}[i]
 }
-func ParseRelationType(v string) (interface{}, error) {
+func ParseRelationType(v string) (any, error) {
     result := PIN_RELATIONTYPE
     switch v {
         case "pin":

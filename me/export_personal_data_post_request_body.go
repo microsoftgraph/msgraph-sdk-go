@@ -7,7 +7,7 @@ import (
 // ExportPersonalDataPostRequestBody 
 type ExportPersonalDataPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The storageLocation property
     storageLocation *string
 }
@@ -15,7 +15,7 @@ type ExportPersonalDataPostRequestBody struct {
 func NewExportPersonalDataPostRequestBody()(*ExportPersonalDataPostRequestBody) {
     m := &ExportPersonalDataPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExportPersonalDataPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateExportPersonalDataPostRequestBodyFromDiscriminatorValue(parseNode i87
     return NewExportPersonalDataPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExportPersonalDataPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ExportPersonalDataPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ExportPersonalDataPostRequestBody) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExportPersonalDataPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ExportPersonalDataPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetStorageLocation sets the storageLocation property value. The storageLocation property

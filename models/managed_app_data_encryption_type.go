@@ -19,7 +19,7 @@ const (
 func (i ManagedAppDataEncryptionType) String() string {
     return []string{"useDeviceSettings", "afterDeviceRestart", "whenDeviceLockedExceptOpenFiles", "whenDeviceLocked"}[i]
 }
-func ParseManagedAppDataEncryptionType(v string) (interface{}, error) {
+func ParseManagedAppDataEncryptionType(v string) (any, error) {
     result := USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE
     switch v {
         case "useDeviceSettings":

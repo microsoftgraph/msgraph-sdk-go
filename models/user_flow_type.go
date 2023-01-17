@@ -18,7 +18,7 @@ const (
 func (i UserFlowType) String() string {
     return []string{"signUp", "signIn", "signUpOrSignIn", "passwordReset", "profileUpdate", "resourceOwner", "unknownFutureValue"}[i]
 }
-func ParseUserFlowType(v string) (interface{}, error) {
+func ParseUserFlowType(v string) (any, error) {
     result := SIGNUP_USERFLOWTYPE
     switch v {
         case "signUp":

@@ -14,7 +14,7 @@ const (
 func (i AnswerInputType) String() string {
     return []string{"text", "radioButton", "unknownFutureValue"}[i]
 }
-func ParseAnswerInputType(v string) (interface{}, error) {
+func ParseAnswerInputType(v string) (any, error) {
     result := TEXT_ANSWERINPUTTYPE
     switch v {
         case "text":

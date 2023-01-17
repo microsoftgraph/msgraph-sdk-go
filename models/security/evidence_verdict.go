@@ -16,7 +16,7 @@ const (
 func (i EvidenceVerdict) String() string {
     return []string{"unknown", "suspicious", "malicious", "noThreatsFound", "unknownFutureValue"}[i]
 }
-func ParseEvidenceVerdict(v string) (interface{}, error) {
+func ParseEvidenceVerdict(v string) (any, error) {
     result := UNKNOWN_EVIDENCEVERDICT
     switch v {
         case "unknown":

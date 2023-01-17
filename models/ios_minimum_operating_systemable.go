@@ -14,6 +14,7 @@ type IosMinimumOperatingSystemable interface {
     GetV12_0()(*bool)
     GetV13_0()(*bool)
     GetV14_0()(*bool)
+    GetV15_0()(*bool)
     GetV8_0()(*bool)
     GetV9_0()(*bool)
     SetOdataType(value *string)()
@@ -22,6 +23,7 @@ type IosMinimumOperatingSystemable interface {
     SetV12_0(value *bool)()
     SetV13_0(value *bool)()
     SetV14_0(value *bool)()
+    SetV15_0(value *bool)()
     SetV8_0(value *bool)()
     SetV9_0(value *bool)()
 }

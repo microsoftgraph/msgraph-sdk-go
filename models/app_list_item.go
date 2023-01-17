@@ -7,7 +7,7 @@ import (
 // AppListItem represents an app in the list of managed applications
 type AppListItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The application or bundle identifier of the application
     appId *string
     // The Store URL of the application
@@ -23,7 +23,7 @@ type AppListItem struct {
 func NewAppListItem()(*AppListItem) {
     m := &AppListItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAppListItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewAppListItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppListItem) GetAdditionalData()(map[string]interface{}) {
+func (m *AppListItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppId gets the appId property value. The application or bundle identifier of the application
@@ -150,7 +150,7 @@ func (m *AppListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppListItem) SetAdditionalData(value map[string]interface{})() {
+func (m *AppListItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppId sets the appId property value. The application or bundle identifier of the application

@@ -16,7 +16,7 @@ const (
 func (i SimulationAttackType) String() string {
     return []string{"unknown", "social", "cloud", "endpoint", "unknownFutureValue"}[i]
 }
-func ParseSimulationAttackType(v string) (interface{}, error) {
+func ParseSimulationAttackType(v string) (any, error) {
     result := UNKNOWN_SIMULATIONATTACKTYPE
     switch v {
         case "unknown":

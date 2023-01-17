@@ -7,7 +7,7 @@ import (
 // MailTips 
 type MailTips struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Mail tips for automatic reply if it has been set up by the recipient.
     automaticReplies AutomaticRepliesMailTipsable
     // A custom mail tip that can be set on the recipient's mailbox.
@@ -39,7 +39,7 @@ type MailTips struct {
 func NewMailTips()(*MailTips) {
     m := &MailTips{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMailTipsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateMailTipsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewMailTips(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailTips) GetAdditionalData()(map[string]interface{}) {
+func (m *MailTips) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutomaticReplies gets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
@@ -335,7 +335,7 @@ func (m *MailTips) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MailTips) SetAdditionalData(value map[string]interface{})() {
+func (m *MailTips) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAutomaticReplies sets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.

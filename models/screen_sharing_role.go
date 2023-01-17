@@ -13,7 +13,7 @@ const (
 func (i ScreenSharingRole) String() string {
     return []string{"viewer", "sharer"}[i]
 }
-func ParseScreenSharingRole(v string) (interface{}, error) {
+func ParseScreenSharingRole(v string) (any, error) {
     result := VIEWER_SCREENSHARINGROLE
     switch v {
         case "viewer":

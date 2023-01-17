@@ -7,7 +7,7 @@ import (
 // Configuration 
 type Configuration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
     authorizedAppIds []string
     // The OdataType property
@@ -17,7 +17,7 @@ type Configuration struct {
 func NewConfiguration()(*Configuration) {
     m := &Configuration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Configuration) GetAdditionalData()(map[string]interface{}) {
+func (m *Configuration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorizedAppIds gets the authorizedAppIds property value. A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
@@ -88,7 +88,7 @@ func (m *Configuration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Configuration) SetAdditionalData(value map[string]interface{})() {
+func (m *Configuration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthorizedAppIds sets the authorizedAppIds property value. A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.

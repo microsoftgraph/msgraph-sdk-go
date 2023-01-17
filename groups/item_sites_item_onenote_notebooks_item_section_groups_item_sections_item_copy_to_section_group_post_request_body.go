@@ -7,7 +7,7 @@ import (
 // ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody 
 type ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The groupId property
     groupId *string
     // The id property
@@ -23,7 +23,7 @@ type ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSection
 func NewItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody()(*ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody) {
     m := &ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToS
     return NewItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSec
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsItemCopyToSectionGroupPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGroupId sets the groupId property value. The groupId property

@@ -7,7 +7,7 @@ import (
 // DeviceInfo 
 type DeviceInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the capture device driver used by the media endpoint.
     captureDeviceDriver *string
     // Name of the capture device used by the media endpoint.
@@ -57,7 +57,7 @@ type DeviceInfo struct {
 func NewDeviceInfo()(*DeviceInfo) {
     m := &DeviceInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,7 +65,7 @@ func CreateDeviceInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewDeviceInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCaptureDeviceDriver gets the captureDeviceDriver property value. Name of the capture device driver used by the media endpoint.
@@ -524,7 +524,7 @@ func (m *DeviceInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCaptureDeviceDriver sets the captureDeviceDriver property value. Name of the capture device driver used by the media endpoint.

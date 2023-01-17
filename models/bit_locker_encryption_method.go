@@ -19,7 +19,7 @@ const (
 func (i BitLockerEncryptionMethod) String() string {
     return []string{"aesCbc128", "aesCbc256", "xtsAes128", "xtsAes256"}[i]
 }
-func ParseBitLockerEncryptionMethod(v string) (interface{}, error) {
+func ParseBitLockerEncryptionMethod(v string) (any, error) {
     result := AESCBC128_BITLOCKERENCRYPTIONMETHOD
     switch v {
         case "aesCbc128":

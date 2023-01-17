@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemCleanWindowsDevicePostRequestBody 
 type ItemManagedDevicesItemCleanWindowsDevicePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The keepUserData property
     keepUserData *bool
 }
@@ -15,7 +15,7 @@ type ItemManagedDevicesItemCleanWindowsDevicePostRequestBody struct {
 func NewItemManagedDevicesItemCleanWindowsDevicePostRequestBody()(*ItemManagedDevicesItemCleanWindowsDevicePostRequestBody) {
     m := &ItemManagedDevicesItemCleanWindowsDevicePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemCleanWindowsDevicePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemManagedDevicesItemCleanWindowsDevicePostRequestBodyFromDiscrimina
     return NewItemManagedDevicesItemCleanWindowsDevicePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemCleanWindowsDevicePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemCleanWindowsDevicePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemManagedDevicesItemCleanWindowsDevicePostRequestBody) Serialize(writ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemCleanWindowsDevicePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemCleanWindowsDevicePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKeepUserData sets the keepUserData property value. The keepUserData property

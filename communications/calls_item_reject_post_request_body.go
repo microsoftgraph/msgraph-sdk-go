@@ -8,7 +8,7 @@ import (
 // CallsItemRejectPostRequestBody 
 type CallsItemRejectPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The callbackUri property
     callbackUri *string
     // The reason property
@@ -18,7 +18,7 @@ type CallsItemRejectPostRequestBody struct {
 func NewCallsItemRejectPostRequestBody()(*CallsItemRejectPostRequestBody) {
     m := &CallsItemRejectPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemRejectPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateCallsItemRejectPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewCallsItemRejectPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemRejectPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemRejectPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
@@ -86,7 +86,7 @@ func (m *CallsItemRejectPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemRejectPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemRejectPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property

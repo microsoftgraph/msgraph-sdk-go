@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemWindowsDefenderScanPostRequestBody 
 type ItemManagedDevicesItemWindowsDefenderScanPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The quickScan property
     quickScan *bool
 }
@@ -15,7 +15,7 @@ type ItemManagedDevicesItemWindowsDefenderScanPostRequestBody struct {
 func NewItemManagedDevicesItemWindowsDefenderScanPostRequestBody()(*ItemManagedDevicesItemWindowsDefenderScanPostRequestBody) {
     m := &ItemManagedDevicesItemWindowsDefenderScanPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemWindowsDefenderScanPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemManagedDevicesItemWindowsDefenderScanPostRequestBodyFromDiscrimin
     return NewItemManagedDevicesItemWindowsDefenderScanPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemWindowsDefenderScanPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemWindowsDefenderScanPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemManagedDevicesItemWindowsDefenderScanPostRequestBody) Serialize(wri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemWindowsDefenderScanPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemWindowsDefenderScanPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetQuickScan sets the quickScan property value. The quickScan property

@@ -15,7 +15,7 @@ const (
 func (i ExternalEmailOtpState) String() string {
     return []string{"default", "enabled", "disabled", "unknownFutureValue"}[i]
 }
-func ParseExternalEmailOtpState(v string) (interface{}, error) {
+func ParseExternalEmailOtpState(v string) (any, error) {
     result := DEFAULT_ESCAPED_EXTERNALEMAILOTPSTATE
     switch v {
         case "default":

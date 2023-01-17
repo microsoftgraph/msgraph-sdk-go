@@ -17,7 +17,7 @@ const (
 func (i AlertSeverity) String() string {
     return []string{"unknown", "informational", "low", "medium", "high", "unknownFutureValue"}[i]
 }
-func ParseAlertSeverity(v string) (interface{}, error) {
+func ParseAlertSeverity(v string) (any, error) {
     result := UNKNOWN_ALERTSEVERITY
     switch v {
         case "unknown":

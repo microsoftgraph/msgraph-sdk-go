@@ -7,7 +7,7 @@ import (
 // BucketAggregationRange 
 type BucketAggregationRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
     from *string
     // The OdataType property
@@ -19,7 +19,7 @@ type BucketAggregationRange struct {
 func NewBucketAggregationRange()(*BucketAggregationRange) {
     m := &BucketAggregationRange{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBucketAggregationRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateBucketAggregationRangeFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewBucketAggregationRange(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BucketAggregationRange) GetAdditionalData()(map[string]interface{}) {
+func (m *BucketAggregationRange) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *BucketAggregationRange) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BucketAggregationRange) SetAdditionalData(value map[string]interface{})() {
+func (m *BucketAggregationRange) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFrom sets the from property value. Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.

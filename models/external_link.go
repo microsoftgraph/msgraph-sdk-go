@@ -7,7 +7,7 @@ import (
 // ExternalLink 
 type ExternalLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The URL of the link.
     href *string
     // The OdataType property
@@ -17,7 +17,7 @@ type ExternalLink struct {
 func NewExternalLink()(*ExternalLink) {
     m := &ExternalLink{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExternalLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateExternalLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewExternalLink(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExternalLink) GetAdditionalData()(map[string]interface{}) {
+func (m *ExternalLink) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ExternalLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExternalLink) SetAdditionalData(value map[string]interface{})() {
+func (m *ExternalLink) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHref sets the href property value. The URL of the link.

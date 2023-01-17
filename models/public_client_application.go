@@ -7,7 +7,7 @@ import (
 // PublicClientApplication 
 type PublicClientApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
@@ -17,7 +17,7 @@ type PublicClientApplication struct {
 func NewPublicClientApplication()(*PublicClientApplication) {
     m := &PublicClientApplication{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePublicClientApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreatePublicClientApplicationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewPublicClientApplication(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PublicClientApplication) GetAdditionalData()(map[string]interface{}) {
+func (m *PublicClientApplication) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *PublicClientApplication) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PublicClientApplication) SetAdditionalData(value map[string]interface{})() {
+func (m *PublicClientApplication) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -7,7 +7,7 @@ import (
 // RiskyUsersConfirmCompromisedPostRequestBody 
 type RiskyUsersConfirmCompromisedPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The userIds property
     userIds []string
 }
@@ -15,7 +15,7 @@ type RiskyUsersConfirmCompromisedPostRequestBody struct {
 func NewRiskyUsersConfirmCompromisedPostRequestBody()(*RiskyUsersConfirmCompromisedPostRequestBody) {
     m := &RiskyUsersConfirmCompromisedPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRiskyUsersConfirmCompromisedPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateRiskyUsersConfirmCompromisedPostRequestBodyFromDiscriminatorValue(par
     return NewRiskyUsersConfirmCompromisedPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskyUsersConfirmCompromisedPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *RiskyUsersConfirmCompromisedPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *RiskyUsersConfirmCompromisedPostRequestBody) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RiskyUsersConfirmCompromisedPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *RiskyUsersConfirmCompromisedPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUserIds sets the userIds property value. The userIds property

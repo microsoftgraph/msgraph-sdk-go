@@ -7,7 +7,7 @@ import (
 // MediaStream 
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The direction property
     direction *MediaDirection
     // The media stream label.
@@ -25,7 +25,7 @@ type MediaStream struct {
 func NewMediaStream()(*MediaStream) {
     m := &MediaStream{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaStreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateMediaStreamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewMediaStream(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaStream) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaStream) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDirection gets the direction property value. The direction property
@@ -174,7 +174,7 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaStream) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaStream) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDirection sets the direction property value. The direction property

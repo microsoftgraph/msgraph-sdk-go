@@ -7,7 +7,7 @@ import (
 // DrivesItemItemsItemPreviewPostRequestBody 
 type DrivesItemItemsItemPreviewPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The page property
     page *string
     // The zoom property
@@ -17,7 +17,7 @@ type DrivesItemItemsItemPreviewPostRequestBody struct {
 func NewDrivesItemItemsItemPreviewPostRequestBody()(*DrivesItemItemsItemPreviewPostRequestBody) {
     m := &DrivesItemItemsItemPreviewPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDrivesItemItemsItemPreviewPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDrivesItemItemsItemPreviewPostRequestBodyFromDiscriminatorValue(parse
     return NewDrivesItemItemsItemPreviewPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemItemsItemPreviewPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DrivesItemItemsItemPreviewPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *DrivesItemItemsItemPreviewPostRequestBody) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemItemsItemPreviewPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DrivesItemItemsItemPreviewPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPage sets the page property value. The page property

@@ -7,7 +7,7 @@ import (
 // BookingCustomerInformationBase 
 type BookingCustomerInformationBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type BookingCustomerInformationBase struct {
 func NewBookingCustomerInformationBase()(*BookingCustomerInformationBase) {
     m := &BookingCustomerInformationBase{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateBookingCustomerInformationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateBookingCustomerInformationBaseFromDiscriminatorValue(parseNode i878a8
     return NewBookingCustomerInformationBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingCustomerInformationBase) GetAdditionalData()(map[string]interface{}) {
+func (m *BookingCustomerInformationBase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,7 +80,7 @@ func (m *BookingCustomerInformationBase) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BookingCustomerInformationBase) SetAdditionalData(value map[string]interface{})() {
+func (m *BookingCustomerInformationBase) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

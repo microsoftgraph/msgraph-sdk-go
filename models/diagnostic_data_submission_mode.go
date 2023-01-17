@@ -21,7 +21,7 @@ const (
 func (i DiagnosticDataSubmissionMode) String() string {
     return []string{"userDefined", "none", "basic", "enhanced", "full"}[i]
 }
-func ParseDiagnosticDataSubmissionMode(v string) (interface{}, error) {
+func ParseDiagnosticDataSubmissionMode(v string) (any, error) {
     result := USERDEFINED_DIAGNOSTICDATASUBMISSIONMODE
     switch v {
         case "userDefined":

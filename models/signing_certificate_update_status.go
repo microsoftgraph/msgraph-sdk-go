@@ -8,7 +8,7 @@ import (
 // SigningCertificateUpdateStatus 
 type SigningCertificateUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
     certificateUpdateResult *string
     // Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
@@ -20,7 +20,7 @@ type SigningCertificateUpdateStatus struct {
 func NewSigningCertificateUpdateStatus()(*SigningCertificateUpdateStatus) {
     m := &SigningCertificateUpdateStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSigningCertificateUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateSigningCertificateUpdateStatusFromDiscriminatorValue(parseNode i878a8
     return NewSigningCertificateUpdateStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SigningCertificateUpdateStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *SigningCertificateUpdateStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCertificateUpdateResult gets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
@@ -107,7 +107,7 @@ func (m *SigningCertificateUpdateStatus) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SigningCertificateUpdateStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *SigningCertificateUpdateStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCertificateUpdateResult sets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.

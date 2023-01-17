@@ -7,7 +7,7 @@ import (
 // MediaContentRatingNewZealand 
 type MediaContentRatingNewZealand struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Movies rating labels in New Zealand
     movieRating *RatingNewZealandMoviesType
     // The OdataType property
@@ -19,7 +19,7 @@ type MediaContentRatingNewZealand struct {
 func NewMediaContentRatingNewZealand()(*MediaContentRatingNewZealand) {
     m := &MediaContentRatingNewZealand{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMediaContentRatingNewZealandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMediaContentRatingNewZealandFromDiscriminatorValue(parseNode i878a80d
     return NewMediaContentRatingNewZealand(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingNewZealand) GetAdditionalData()(map[string]interface{}) {
+func (m *MediaContentRatingNewZealand) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *MediaContentRatingNewZealand) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MediaContentRatingNewZealand) SetAdditionalData(value map[string]interface{})() {
+func (m *MediaContentRatingNewZealand) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMovieRating sets the movieRating property value. Movies rating labels in New Zealand

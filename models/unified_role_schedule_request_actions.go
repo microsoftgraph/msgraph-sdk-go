@@ -21,7 +21,7 @@ const (
 func (i UnifiedRoleScheduleRequestActions) String() string {
     return []string{"adminAssign", "adminUpdate", "adminRemove", "selfActivate", "selfDeactivate", "adminExtend", "adminRenew", "selfExtend", "selfRenew", "unknownFutureValue"}[i]
 }
-func ParseUnifiedRoleScheduleRequestActions(v string) (interface{}, error) {
+func ParseUnifiedRoleScheduleRequestActions(v string) (any, error) {
     result := ADMINASSIGN_UNIFIEDROLESCHEDULEREQUESTACTIONS
     switch v {
         case "adminAssign":

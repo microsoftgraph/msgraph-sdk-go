@@ -7,7 +7,7 @@ import (
 // VerifiedDomain 
 type VerifiedDomain struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // For example, Email, OfficeCommunicationsOnline.
     capabilities *string
     // true if this is the default domain associated with the tenant; otherwise, false.
@@ -25,7 +25,7 @@ type VerifiedDomain struct {
 func NewVerifiedDomain()(*VerifiedDomain) {
     m := &VerifiedDomain{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVerifiedDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateVerifiedDomainFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewVerifiedDomain(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifiedDomain) GetAdditionalData()(map[string]interface{}) {
+func (m *VerifiedDomain) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCapabilities gets the capabilities property value. For example, Email, OfficeCommunicationsOnline.
@@ -172,7 +172,7 @@ func (m *VerifiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifiedDomain) SetAdditionalData(value map[string]interface{})() {
+func (m *VerifiedDomain) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCapabilities sets the capabilities property value. For example, Email, OfficeCommunicationsOnline.

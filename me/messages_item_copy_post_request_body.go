@@ -7,7 +7,7 @@ import (
 // MessagesItemCopyPostRequestBody 
 type MessagesItemCopyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The DestinationId property
     destinationId *string
 }
@@ -15,7 +15,7 @@ type MessagesItemCopyPostRequestBody struct {
 func NewMessagesItemCopyPostRequestBody()(*MessagesItemCopyPostRequestBody) {
     m := &MessagesItemCopyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMessagesItemCopyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateMessagesItemCopyPostRequestBodyFromDiscriminatorValue(parseNode i878a
     return NewMessagesItemCopyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessagesItemCopyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *MessagesItemCopyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDestinationId gets the destinationId property value. The DestinationId property
@@ -62,7 +62,7 @@ func (m *MessagesItemCopyPostRequestBody) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MessagesItemCopyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *MessagesItemCopyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDestinationId sets the destinationId property value. The DestinationId property

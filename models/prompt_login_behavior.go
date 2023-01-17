@@ -15,7 +15,7 @@ const (
 func (i PromptLoginBehavior) String() string {
     return []string{"translateToFreshPasswordAuthentication", "nativeSupport", "disabled", "unknownFutureValue"}[i]
 }
-func ParsePromptLoginBehavior(v string) (interface{}, error) {
+func ParsePromptLoginBehavior(v string) (any, error) {
     result := TRANSLATETOFRESHPASSWORDAUTHENTICATION_PROMPTLOGINBEHAVIOR
     switch v {
         case "translateToFreshPasswordAuthentication":

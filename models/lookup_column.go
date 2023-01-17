@@ -7,7 +7,7 @@ import (
 // LookupColumn 
 type LookupColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether multiple values can be selected from the source.
     allowMultipleValues *bool
     // Indicates whether values in the column should be able to exceed the standard limit of 255 characters.
@@ -25,7 +25,7 @@ type LookupColumn struct {
 func NewLookupColumn()(*LookupColumn) {
     m := &LookupColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLookupColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateLookupColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewLookupColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LookupColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *LookupColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowMultipleValues gets the allowMultipleValues property value. Indicates whether multiple values can be selected from the source.
@@ -172,7 +172,7 @@ func (m *LookupColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LookupColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *LookupColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowMultipleValues sets the allowMultipleValues property value. Indicates whether multiple values can be selected from the source.

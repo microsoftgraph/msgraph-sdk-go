@@ -7,7 +7,7 @@ import (
 // Location 
 type Location struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The street address of the location.
     address PhysicalAddressable
     // The geographic coordinates and elevation of the location.
@@ -31,7 +31,7 @@ type Location struct {
 func NewLocation()(*Location) {
     m := &Location{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +57,7 @@ func CreateLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewLocation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Location) GetAdditionalData()(map[string]interface{}) {
+func (m *Location) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. The street address of the location.
@@ -258,7 +258,7 @@ func (m *Location) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Location) SetAdditionalData(value map[string]interface{})() {
+func (m *Location) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. The street address of the location.

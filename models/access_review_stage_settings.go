@@ -7,7 +7,7 @@ import (
 // AccessReviewStageSettings 
 type AccessReviewStageSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
     decisionsThatWillMoveToNextStage []string
     // Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.
@@ -29,7 +29,7 @@ type AccessReviewStageSettings struct {
 func NewAccessReviewStageSettings()(*AccessReviewStageSettings) {
     m := &AccessReviewStageSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessReviewStageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateAccessReviewStageSettingsFromDiscriminatorValue(parseNode i878a80d233
     return NewAccessReviewStageSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewStageSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessReviewStageSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDecisionsThatWillMoveToNextStage gets the decisionsThatWillMoveToNextStage property value. Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
@@ -240,7 +240,7 @@ func (m *AccessReviewStageSettings) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewStageSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessReviewStageSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDecisionsThatWillMoveToNextStage sets the decisionsThatWillMoveToNextStage property value. Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.

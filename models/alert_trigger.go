@@ -7,7 +7,7 @@ import (
 // AlertTrigger 
 type AlertTrigger struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the property serving as a detection trigger.
     name *string
     // The OdataType property
@@ -21,7 +21,7 @@ type AlertTrigger struct {
 func NewAlertTrigger()(*AlertTrigger) {
     m := &AlertTrigger{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAlertTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAlertTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewAlertTrigger(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertTrigger) GetAdditionalData()(map[string]interface{}) {
+func (m *AlertTrigger) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *AlertTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertTrigger) SetAdditionalData(value map[string]interface{})() {
+func (m *AlertTrigger) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. Name of the property serving as a detection trigger.

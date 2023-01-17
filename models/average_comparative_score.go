@@ -7,7 +7,7 @@ import (
 // AverageComparativeScore 
 type AverageComparativeScore struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Average score within specified basis.
     averageScore *float64
     // Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
@@ -19,7 +19,7 @@ type AverageComparativeScore struct {
 func NewAverageComparativeScore()(*AverageComparativeScore) {
     m := &AverageComparativeScore{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAverageComparativeScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAverageComparativeScoreFromDiscriminatorValue(parseNode i878a80d2330e
     return NewAverageComparativeScore(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AverageComparativeScore) GetAdditionalData()(map[string]interface{}) {
+func (m *AverageComparativeScore) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAverageScore gets the averageScore property value. Average score within specified basis.
@@ -106,7 +106,7 @@ func (m *AverageComparativeScore) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AverageComparativeScore) SetAdditionalData(value map[string]interface{})() {
+func (m *AverageComparativeScore) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAverageScore sets the averageScore property value. Average score within specified basis.

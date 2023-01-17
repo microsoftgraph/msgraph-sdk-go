@@ -8,7 +8,7 @@ import (
 // DirectRoutingLogRow 
 type DirectRoutingLogRow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Number of the user or bot who received the call. E.164 format, but may include additional data.
     calleeNumber *string
     // In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
@@ -58,7 +58,7 @@ type DirectRoutingLogRow struct {
 func NewDirectRoutingLogRow()(*DirectRoutingLogRow) {
     m := &DirectRoutingLogRow{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDirectRoutingLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +66,7 @@ func CreateDirectRoutingLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewDirectRoutingLogRow(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]interface{}) {
+func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
@@ -525,7 +525,7 @@ func (m *DirectRoutingLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DirectRoutingLogRow) SetAdditionalData(value map[string]interface{})() {
+func (m *DirectRoutingLogRow) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.

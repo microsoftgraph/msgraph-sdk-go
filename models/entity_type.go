@@ -20,7 +20,7 @@ const (
 func (i EntityType) String() string {
     return []string{"event", "message", "driveItem", "externalItem", "site", "list", "listItem", "drive", "unknownFutureValue"}[i]
 }
-func ParseEntityType(v string) (interface{}, error) {
+func ParseEntityType(v string) (any, error) {
     result := EVENT_ENTITYTYPE
     switch v {
         case "event":

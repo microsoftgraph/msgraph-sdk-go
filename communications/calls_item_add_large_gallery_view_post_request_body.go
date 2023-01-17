@@ -7,7 +7,7 @@ import (
 // CallsItemAddLargeGalleryViewPostRequestBody 
 type CallsItemAddLargeGalleryViewPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
 }
@@ -15,7 +15,7 @@ type CallsItemAddLargeGalleryViewPostRequestBody struct {
 func NewCallsItemAddLargeGalleryViewPostRequestBody()(*CallsItemAddLargeGalleryViewPostRequestBody) {
     m := &CallsItemAddLargeGalleryViewPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemAddLargeGalleryViewPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateCallsItemAddLargeGalleryViewPostRequestBodyFromDiscriminatorValue(par
     return NewCallsItemAddLargeGalleryViewPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemAddLargeGalleryViewPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemAddLargeGalleryViewPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -62,7 +62,7 @@ func (m *CallsItemAddLargeGalleryViewPostRequestBody) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemAddLargeGalleryViewPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemAddLargeGalleryViewPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

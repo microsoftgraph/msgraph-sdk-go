@@ -28,7 +28,7 @@ const (
 func (i Tone) String() string {
     return []string{"tone0", "tone1", "tone2", "tone3", "tone4", "tone5", "tone6", "tone7", "tone8", "tone9", "star", "pound", "a", "b", "c", "d", "flash"}[i]
 }
-func ParseTone(v string) (interface{}, error) {
+func ParseTone(v string) (any, error) {
     result := TONE0_TONE
     switch v {
         case "tone0":

@@ -7,7 +7,7 @@ import (
 // AccessPackageAutomaticRequestSettings 
 type AccessPackageAutomaticRequestSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The gracePeriodBeforeAccessRemoval property
     gracePeriodBeforeAccessRemoval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The OdataType property
@@ -21,7 +21,7 @@ type AccessPackageAutomaticRequestSettings struct {
 func NewAccessPackageAutomaticRequestSettings()(*AccessPackageAutomaticRequestSettings) {
     m := &AccessPackageAutomaticRequestSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAutomaticRequestSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAccessPackageAutomaticRequestSettingsFromDiscriminatorValue(parseNode
     return NewAccessPackageAutomaticRequestSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAutomaticRequestSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAutomaticRequestSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *AccessPackageAutomaticRequestSettings) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAutomaticRequestSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAutomaticRequestSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGracePeriodBeforeAccessRemoval sets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property

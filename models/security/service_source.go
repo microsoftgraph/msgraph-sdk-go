@@ -21,7 +21,7 @@ const (
 func (i ServiceSource) String() string {
     return []string{"unknown", "microsoftDefenderForEndpoint", "microsoftDefenderForIdentity", "microsoftDefenderForCloudApps", "microsoftDefenderForOffice365", "microsoft365Defender", "azureAdIdentityProtection", "microsoftAppGovernance", "dataLossPrevention", "unknownFutureValue"}[i]
 }
-func ParseServiceSource(v string) (interface{}, error) {
+func ParseServiceSource(v string) (any, error) {
     result := UNKNOWN_SERVICESOURCE
     switch v {
         case "unknown":

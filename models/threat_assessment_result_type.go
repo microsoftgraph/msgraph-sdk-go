@@ -14,7 +14,7 @@ const (
 func (i ThreatAssessmentResultType) String() string {
     return []string{"checkPolicy", "rescan", "unknownFutureValue"}[i]
 }
-func ParseThreatAssessmentResultType(v string) (interface{}, error) {
+func ParseThreatAssessmentResultType(v string) (any, error) {
     result := CHECKPOLICY_THREATASSESSMENTRESULTTYPE
     switch v {
         case "checkPolicy":

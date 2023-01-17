@@ -7,7 +7,7 @@ import (
 // DrivesItemRootValidatePermissionPostRequestBody 
 type DrivesItemRootValidatePermissionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The challengeToken property
     challengeToken *string
     // The password property
@@ -17,7 +17,7 @@ type DrivesItemRootValidatePermissionPostRequestBody struct {
 func NewDrivesItemRootValidatePermissionPostRequestBody()(*DrivesItemRootValidatePermissionPostRequestBody) {
     m := &DrivesItemRootValidatePermissionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDrivesItemRootValidatePermissionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDrivesItemRootValidatePermissionPostRequestBodyFromDiscriminatorValue
     return NewDrivesItemRootValidatePermissionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemRootValidatePermissionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DrivesItemRootValidatePermissionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChallengeToken gets the challengeToken property value. The challengeToken property
@@ -84,7 +84,7 @@ func (m *DrivesItemRootValidatePermissionPostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemRootValidatePermissionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DrivesItemRootValidatePermissionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetChallengeToken sets the challengeToken property value. The challengeToken property

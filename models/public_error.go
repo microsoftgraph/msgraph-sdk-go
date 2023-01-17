@@ -7,7 +7,7 @@ import (
 // PublicError 
 type PublicError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents the error code.
     code *string
     // Details of the error.
@@ -25,7 +25,7 @@ type PublicError struct {
 func NewPublicError()(*PublicError) {
     m := &PublicError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePublicErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreatePublicErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewPublicError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PublicError) GetAdditionalData()(map[string]interface{}) {
+func (m *PublicError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. Represents the error code.
@@ -180,7 +180,7 @@ func (m *PublicError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PublicError) SetAdditionalData(value map[string]interface{})() {
+func (m *PublicError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. Represents the error code.

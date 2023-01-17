@@ -8,7 +8,7 @@ import (
 // CallsItemPlayPromptPostRequestBody 
 type CallsItemPlayPromptPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
     // The prompts property
@@ -18,7 +18,7 @@ type CallsItemPlayPromptPostRequestBody struct {
 func NewCallsItemPlayPromptPostRequestBody()(*CallsItemPlayPromptPostRequestBody) {
     m := &CallsItemPlayPromptPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemPlayPromptPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateCallsItemPlayPromptPostRequestBodyFromDiscriminatorValue(parseNode i8
     return NewCallsItemPlayPromptPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemPlayPromptPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemPlayPromptPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -93,7 +93,7 @@ func (m *CallsItemPlayPromptPostRequestBody) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemPlayPromptPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemPlayPromptPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

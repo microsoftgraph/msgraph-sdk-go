@@ -7,7 +7,7 @@ import (
 // X509CertificateAuthenticationModeConfiguration 
 type X509CertificateAuthenticationModeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
@@ -19,7 +19,7 @@ type X509CertificateAuthenticationModeConfiguration struct {
 func NewX509CertificateAuthenticationModeConfiguration()(*X509CertificateAuthenticationModeConfiguration) {
     m := &X509CertificateAuthenticationModeConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue(
     return NewX509CertificateAuthenticationModeConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *X509CertificateAuthenticationModeConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *X509CertificateAuthenticationModeConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -115,7 +115,7 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *X509CertificateAuthenticationModeConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *X509CertificateAuthenticationModeConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

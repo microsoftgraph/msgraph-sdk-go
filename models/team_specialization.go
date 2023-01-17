@@ -19,7 +19,7 @@ const (
 func (i TeamSpecialization) String() string {
     return []string{"none", "educationStandard", "educationClass", "educationProfessionalLearningCommunity", "educationStaff", "healthcareStandard", "healthcareCareCoordination", "unknownFutureValue"}[i]
 }
-func ParseTeamSpecialization(v string) (interface{}, error) {
+func ParseTeamSpecialization(v string) (any, error) {
     result := NONE_TEAMSPECIALIZATION
     switch v {
         case "none":

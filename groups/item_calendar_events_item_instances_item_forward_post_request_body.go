@@ -8,7 +8,7 @@ import (
 // ItemCalendarEventsItemInstancesItemForwardPostRequestBody 
 type ItemCalendarEventsItemInstancesItemForwardPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Comment property
     comment *string
     // The ToRecipients property
@@ -18,7 +18,7 @@ type ItemCalendarEventsItemInstancesItemForwardPostRequestBody struct {
 func NewItemCalendarEventsItemInstancesItemForwardPostRequestBody()(*ItemCalendarEventsItemInstancesItemForwardPostRequestBody) {
     m := &ItemCalendarEventsItemInstancesItemForwardPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemCalendarEventsItemInstancesItemForwardPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemCalendarEventsItemInstancesItemForwardPostRequestBodyFromDiscrimi
     return NewItemCalendarEventsItemInstancesItemForwardPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarEventsItemInstancesItemForwardPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemCalendarEventsItemInstancesItemForwardPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The Comment property
@@ -93,7 +93,7 @@ func (m *ItemCalendarEventsItemInstancesItemForwardPostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemCalendarEventsItemInstancesItemForwardPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemCalendarEventsItemInstancesItemForwardPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComment sets the comment property value. The Comment property

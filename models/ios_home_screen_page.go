@@ -7,7 +7,7 @@ import (
 // IosHomeScreenPage a page containing apps, folders, and web clips on the Home Screen.
 type IosHomeScreenPage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of the page
     displayName *string
     // A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
@@ -19,7 +19,7 @@ type IosHomeScreenPage struct {
 func NewIosHomeScreenPage()(*IosHomeScreenPage) {
     m := &IosHomeScreenPage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosHomeScreenPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateIosHomeScreenPageFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewIosHomeScreenPage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosHomeScreenPage) GetAdditionalData()(map[string]interface{}) {
+func (m *IosHomeScreenPage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Name of the page
@@ -114,7 +114,7 @@ func (m *IosHomeScreenPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosHomeScreenPage) SetAdditionalData(value map[string]interface{})() {
+func (m *IosHomeScreenPage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Name of the page

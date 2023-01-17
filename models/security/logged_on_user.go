@@ -9,7 +9,7 @@ type LoggedOnUser struct {
     // User account name of the logged-on user.
     accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // User account domain of the logged-on user.
     domainName *string
     // The OdataType property
@@ -19,7 +19,7 @@ type LoggedOnUser struct {
 func NewLoggedOnUser()(*LoggedOnUser) {
     m := &LoggedOnUser{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLoggedOnUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *LoggedOnUser) GetAccountName()(*string) {
     return m.accountName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoggedOnUser) GetAdditionalData()(map[string]interface{}) {
+func (m *LoggedOnUser) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDomainName gets the domainName property value. User account domain of the logged-on user.
@@ -110,7 +110,7 @@ func (m *LoggedOnUser) SetAccountName(value *string)() {
     m.accountName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LoggedOnUser) SetAdditionalData(value map[string]interface{})() {
+func (m *LoggedOnUser) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDomainName sets the domainName property value. User account domain of the logged-on user.

@@ -7,7 +7,7 @@ import (
 // TeamMessagingSettings 
 type TeamMessagingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If set to true, @channel mentions are allowed.
     allowChannelMentions *bool
     // If set to true, owners can delete any message.
@@ -25,7 +25,7 @@ type TeamMessagingSettings struct {
 func NewTeamMessagingSettings()(*TeamMessagingSettings) {
     m := &TeamMessagingSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamMessagingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamMessagingSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewTeamMessagingSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamMessagingSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamMessagingSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowChannelMentions gets the allowChannelMentions property value. If set to true, @channel mentions are allowed.
@@ -172,7 +172,7 @@ func (m *TeamMessagingSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamMessagingSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamMessagingSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowChannelMentions sets the allowChannelMentions property value. If set to true, @channel mentions are allowed.

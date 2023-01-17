@@ -7,7 +7,7 @@ import (
 // TeamFunSettings 
 type TeamFunSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If set to true, enables users to include custom memes.
     allowCustomMemes *bool
     // If set to true, enables Giphy use.
@@ -23,7 +23,7 @@ type TeamFunSettings struct {
 func NewTeamFunSettings()(*TeamFunSettings) {
     m := &TeamFunSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamFunSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateTeamFunSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewTeamFunSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamFunSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamFunSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowCustomMemes gets the allowCustomMemes property value. If set to true, enables users to include custom memes.
@@ -151,7 +151,7 @@ func (m *TeamFunSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamFunSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamFunSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowCustomMemes sets the allowCustomMemes property value. If set to true, enables users to include custom memes.

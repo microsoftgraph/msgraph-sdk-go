@@ -19,7 +19,7 @@ const (
 func (i DeviceManagementExchangeConnectorStatus) String() string {
     return []string{"none", "connectionPending", "connected", "disconnected"}[i]
 }
-func ParseDeviceManagementExchangeConnectorStatus(v string) (interface{}, error) {
+func ParseDeviceManagementExchangeConnectorStatus(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
     switch v {
         case "none":

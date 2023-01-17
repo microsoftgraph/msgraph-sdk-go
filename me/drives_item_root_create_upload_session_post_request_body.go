@@ -8,7 +8,7 @@ import (
 // DrivesItemRootCreateUploadSessionPostRequestBody 
 type DrivesItemRootCreateUploadSessionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The item property
     item iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemUploadablePropertiesable
 }
@@ -16,7 +16,7 @@ type DrivesItemRootCreateUploadSessionPostRequestBody struct {
 func NewDrivesItemRootCreateUploadSessionPostRequestBody()(*DrivesItemRootCreateUploadSessionPostRequestBody) {
     m := &DrivesItemRootCreateUploadSessionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDrivesItemRootCreateUploadSessionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDrivesItemRootCreateUploadSessionPostRequestBodyFromDiscriminatorValu
     return NewDrivesItemRootCreateUploadSessionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemRootCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DrivesItemRootCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *DrivesItemRootCreateUploadSessionPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DrivesItemRootCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DrivesItemRootCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetItem sets the item property value. The item property

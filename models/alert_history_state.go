@@ -8,7 +8,7 @@ import (
 // AlertHistoryState 
 type AlertHistoryState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appId property
     appId *string
     // The assignedTo property
@@ -30,7 +30,7 @@ type AlertHistoryState struct {
 func NewAlertHistoryState()(*AlertHistoryState) {
     m := &AlertHistoryState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAlertHistoryStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateAlertHistoryStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewAlertHistoryState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertHistoryState) GetAdditionalData()(map[string]interface{}) {
+func (m *AlertHistoryState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppId gets the appId property value. The appId property
@@ -223,7 +223,7 @@ func (m *AlertHistoryState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertHistoryState) SetAdditionalData(value map[string]interface{})() {
+func (m *AlertHistoryState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppId sets the appId property value. The appId property

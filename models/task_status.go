@@ -16,7 +16,7 @@ const (
 func (i TaskStatus) String() string {
     return []string{"notStarted", "inProgress", "completed", "waitingOnOthers", "deferred"}[i]
 }
-func ParseTaskStatus(v string) (interface{}, error) {
+func ParseTaskStatus(v string) (any, error) {
     result := NOTSTARTED_TASKSTATUS
     switch v {
         case "notStarted":

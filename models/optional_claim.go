@@ -7,7 +7,7 @@ import (
 // OptionalClaim 
 type OptionalClaim struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
     additionalProperties []string
     // If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
@@ -23,7 +23,7 @@ type OptionalClaim struct {
 func NewOptionalClaim()(*OptionalClaim) {
     m := &OptionalClaim{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOptionalClaimFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateOptionalClaimFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewOptionalClaim(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OptionalClaim) GetAdditionalData()(map[string]interface{}) {
+func (m *OptionalClaim) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditionalProperties gets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
@@ -154,7 +154,7 @@ func (m *OptionalClaim) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OptionalClaim) SetAdditionalData(value map[string]interface{})() {
+func (m *OptionalClaim) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdditionalProperties sets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.

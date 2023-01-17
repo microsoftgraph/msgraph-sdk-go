@@ -15,7 +15,7 @@ const (
 func (i OperationStatus) String() string {
     return []string{"NotStarted", "Running", "Completed", "Failed"}[i]
 }
-func ParseOperationStatus(v string) (interface{}, error) {
+func ParseOperationStatus(v string) (any, error) {
     result := NOTSTARTED_OPERATIONSTATUS
     switch v {
         case "NotStarted":

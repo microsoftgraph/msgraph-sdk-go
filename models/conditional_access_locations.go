@@ -7,7 +7,7 @@ import (
 // ConditionalAccessLocations 
 type ConditionalAccessLocations struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Location IDs excluded from scope of policy.
     excludeLocations []string
     // Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
@@ -19,7 +19,7 @@ type ConditionalAccessLocations struct {
 func NewConditionalAccessLocations()(*ConditionalAccessLocations) {
     m := &ConditionalAccessLocations{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessLocationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessLocationsFromDiscriminatorValue(parseNode i878a80d23
     return NewConditionalAccessLocations(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessLocations) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessLocations) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeLocations gets the excludeLocations property value. Location IDs excluded from scope of policy.
@@ -114,7 +114,7 @@ func (m *ConditionalAccessLocations) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessLocations) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessLocations) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeLocations sets the excludeLocations property value. Location IDs excluded from scope of policy.

@@ -7,7 +7,7 @@ import (
 // FileSecurityState 
 type FileSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Complex type containing file hashes (cryptographic and location-sensitive).
     fileHash FileHashable
     // File name (without path).
@@ -23,7 +23,7 @@ type FileSecurityState struct {
 func NewFileSecurityState()(*FileSecurityState) {
     m := &FileSecurityState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFileSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateFileSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewFileSecurityState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FileSecurityState) GetAdditionalData()(map[string]interface{}) {
+func (m *FileSecurityState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *FileSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FileSecurityState) SetAdditionalData(value map[string]interface{})() {
+func (m *FileSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).

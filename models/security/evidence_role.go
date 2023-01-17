@@ -27,7 +27,7 @@ const (
 func (i EvidenceRole) String() string {
     return []string{"unknown", "contextual", "scanned", "source", "destination", "created", "added", "compromised", "edited", "attacked", "attacker", "commandAndControl", "loaded", "suspicious", "policyViolator", "unknownFutureValue"}[i]
 }
-func ParseEvidenceRole(v string) (interface{}, error) {
+func ParseEvidenceRole(v string) (any, error) {
     result := UNKNOWN_EVIDENCEROLE
     switch v {
         case "unknown":

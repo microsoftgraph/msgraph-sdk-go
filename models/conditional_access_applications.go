@@ -7,7 +7,7 @@ import (
 // ConditionalAccessApplications 
 type ConditionalAccessApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     excludeApplications []string
     // Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
@@ -23,7 +23,7 @@ type ConditionalAccessApplications struct {
 func NewConditionalAccessApplications()(*ConditionalAccessApplications) {
     m := &ConditionalAccessApplications{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateConditionalAccessApplicationsFromDiscriminatorValue(parseNode i878a80
     return NewConditionalAccessApplications(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeApplications gets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
@@ -166,7 +166,7 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeApplications sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365

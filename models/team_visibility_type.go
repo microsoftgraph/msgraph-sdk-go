@@ -15,7 +15,7 @@ const (
 func (i TeamVisibilityType) String() string {
     return []string{"private", "public", "hiddenMembership", "unknownFutureValue"}[i]
 }
-func ParseTeamVisibilityType(v string) (interface{}, error) {
+func ParseTeamVisibilityType(v string) (any, error) {
     result := PRIVATE_TEAMVISIBILITYTYPE
     switch v {
         case "private":

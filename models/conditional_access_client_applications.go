@@ -7,7 +7,7 @@ import (
 // ConditionalAccessClientApplications 
 type ConditionalAccessClientApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Service principal IDs excluded from the policy scope.
     excludeServicePrincipals []string
     // Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
@@ -19,7 +19,7 @@ type ConditionalAccessClientApplications struct {
 func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplications) {
     m := &ConditionalAccessClientApplications{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConditionalAccessClientApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateConditionalAccessClientApplicationsFromDiscriminatorValue(parseNode i
     return NewConditionalAccessClientApplications(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessClientApplications) GetAdditionalData()(map[string]interface{}) {
+func (m *ConditionalAccessClientApplications) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeServicePrincipals gets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.
@@ -114,7 +114,7 @@ func (m *ConditionalAccessClientApplications) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessClientApplications) SetAdditionalData(value map[string]interface{})() {
+func (m *ConditionalAccessClientApplications) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludeServicePrincipals sets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.

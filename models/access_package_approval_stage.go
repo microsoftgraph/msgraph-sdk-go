@@ -7,7 +7,7 @@ import (
 // AccessPackageApprovalStage 
 type AccessPackageApprovalStage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of days that a request can be pending a response before it is automatically denied.
     durationBeforeAutomaticDenial *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // If escalation is required, the time a request can be pending a response from a primary approver.
@@ -31,7 +31,7 @@ type AccessPackageApprovalStage struct {
 func NewAccessPackageApprovalStage()(*AccessPackageApprovalStage) {
     m := &AccessPackageApprovalStage{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateAccessPackageApprovalStageFromDiscriminatorValue(parseNode i878a80d23
     return NewAccessPackageApprovalStage(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageApprovalStage) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageApprovalStage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDurationBeforeAutomaticDenial gets the durationBeforeAutomaticDenial property value. The number of days that a request can be pending a response before it is automatically denied.
@@ -270,7 +270,7 @@ func (m *AccessPackageApprovalStage) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageApprovalStage) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageApprovalStage) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDurationBeforeAutomaticDenial sets the durationBeforeAutomaticDenial property value. The number of days that a request can be pending a response before it is automatically denied.

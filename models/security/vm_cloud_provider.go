@@ -14,7 +14,7 @@ const (
 func (i VmCloudProvider) String() string {
     return []string{"unknown", "azure", "unknownFutureValue"}[i]
 }
-func ParseVmCloudProvider(v string) (interface{}, error) {
+func ParseVmCloudProvider(v string) (any, error) {
     result := UNKNOWN_VMCLOUDPROVIDER
     switch v {
         case "unknown":

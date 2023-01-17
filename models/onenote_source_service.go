@@ -15,7 +15,7 @@ const (
 func (i OnenoteSourceService) String() string {
     return []string{"Unknown", "OneDrive", "OneDriveForBusiness", "OnPremOneDriveForBusiness"}[i]
 }
-func ParseOnenoteSourceService(v string) (interface{}, error) {
+func ParseOnenoteSourceService(v string) (any, error) {
     result := UNKNOWN_ONENOTESOURCESERVICE
     switch v {
         case "Unknown":

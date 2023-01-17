@@ -7,7 +7,7 @@ import (
 // X509CertificateUserBinding 
 type X509CertificateUserBinding struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
@@ -21,7 +21,7 @@ type X509CertificateUserBinding struct {
 func NewX509CertificateUserBinding()(*X509CertificateUserBinding) {
     m := &X509CertificateUserBinding{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateX509CertificateUserBindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateX509CertificateUserBindingFromDiscriminatorValue(parseNode i878a80d23
     return NewX509CertificateUserBinding(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *X509CertificateUserBinding) GetAdditionalData()(map[string]interface{}) {
+func (m *X509CertificateUserBinding) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *X509CertificateUserBinding) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *X509CertificateUserBinding) SetAdditionalData(value map[string]interface{})() {
+func (m *X509CertificateUserBinding) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

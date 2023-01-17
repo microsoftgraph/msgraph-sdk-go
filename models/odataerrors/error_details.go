@@ -7,7 +7,7 @@ import (
 // ErrorDetails 
 type ErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The code property
     code *string
     // The message property
@@ -19,7 +19,7 @@ type ErrorDetails struct {
 func NewErrorDetails()(*ErrorDetails) {
     m := &ErrorDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateErrorDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewErrorDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ErrorDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *ErrorDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. The code property
@@ -106,7 +106,7 @@ func (m *ErrorDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ErrorDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *ErrorDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. The code property

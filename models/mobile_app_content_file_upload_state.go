@@ -27,7 +27,7 @@ const (
 func (i MobileAppContentFileUploadState) String() string {
     return []string{"success", "transientError", "error", "unknown", "azureStorageUriRequestSuccess", "azureStorageUriRequestPending", "azureStorageUriRequestFailed", "azureStorageUriRequestTimedOut", "azureStorageUriRenewalSuccess", "azureStorageUriRenewalPending", "azureStorageUriRenewalFailed", "azureStorageUriRenewalTimedOut", "commitFileSuccess", "commitFilePending", "commitFileFailed", "commitFileTimedOut"}[i]
 }
-func ParseMobileAppContentFileUploadState(v string) (interface{}, error) {
+func ParseMobileAppContentFileUploadState(v string) (any, error) {
     result := SUCCESS_MOBILEAPPCONTENTFILEUPLOADSTATE
     switch v {
         case "success":

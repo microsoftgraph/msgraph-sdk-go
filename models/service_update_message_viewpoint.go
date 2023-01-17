@@ -7,7 +7,7 @@ import (
 // ServiceUpdateMessageViewpoint 
 type ServiceUpdateMessageViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the user archived the message.
     isArchived *bool
     // Indicates whether the user marked the message as favorite.
@@ -21,7 +21,7 @@ type ServiceUpdateMessageViewpoint struct {
 func NewServiceUpdateMessageViewpoint()(*ServiceUpdateMessageViewpoint) {
     m := &ServiceUpdateMessageViewpoint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServiceUpdateMessageViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateServiceUpdateMessageViewpointFromDiscriminatorValue(parseNode i878a80
     return NewServiceUpdateMessageViewpoint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceUpdateMessageViewpoint) GetAdditionalData()(map[string]interface{}) {
+func (m *ServiceUpdateMessageViewpoint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *ServiceUpdateMessageViewpoint) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceUpdateMessageViewpoint) SetAdditionalData(value map[string]interface{})() {
+func (m *ServiceUpdateMessageViewpoint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsArchived sets the isArchived property value. Indicates whether the user archived the message.

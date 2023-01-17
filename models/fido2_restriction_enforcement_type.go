@@ -14,7 +14,7 @@ const (
 func (i Fido2RestrictionEnforcementType) String() string {
     return []string{"allow", "block", "unknownFutureValue"}[i]
 }
-func ParseFido2RestrictionEnforcementType(v string) (interface{}, error) {
+func ParseFido2RestrictionEnforcementType(v string) (any, error) {
     result := ALLOW_FIDO2RESTRICTIONENFORCEMENTTYPE
     switch v {
         case "allow":

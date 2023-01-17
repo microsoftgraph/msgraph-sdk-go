@@ -7,7 +7,7 @@ import (
 // ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody 
 type ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The groupId property
     groupId *string
 }
@@ -15,7 +15,7 @@ type ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody struct {
 func NewItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody()(*ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody) {
     m := &ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBodyFromDiscrimin
     return NewItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody) Serialize(wri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetGroupId sets the groupId property value. The groupId property

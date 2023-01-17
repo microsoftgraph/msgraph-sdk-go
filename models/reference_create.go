@@ -7,7 +7,7 @@ import (
 // ReferenceCreate 
 type ReferenceCreate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataId property
     odataId *string
 }
@@ -15,7 +15,7 @@ type ReferenceCreate struct {
 func NewReferenceCreate()(*ReferenceCreate) {
     m := &ReferenceCreate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReferenceCreateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateReferenceCreateFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewReferenceCreate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReferenceCreate) GetAdditionalData()(map[string]interface{}) {
+func (m *ReferenceCreate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ReferenceCreate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReferenceCreate) SetAdditionalData(value map[string]interface{})() {
+func (m *ReferenceCreate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataId sets the @odata.id property value. The OdataId property

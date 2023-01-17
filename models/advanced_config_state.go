@@ -15,7 +15,7 @@ const (
 func (i AdvancedConfigState) String() string {
     return []string{"default", "enabled", "disabled", "unknownFutureValue"}[i]
 }
-func ParseAdvancedConfigState(v string) (interface{}, error) {
+func ParseAdvancedConfigState(v string) (any, error) {
     result := DEFAULT_ESCAPED_ADVANCEDCONFIGSTATE
     switch v {
         case "default":

@@ -7,7 +7,7 @@ import (
 // ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody 
 type ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contentTypeId property
     contentTypeId *string
 }
@@ -15,7 +15,7 @@ type ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody struct {
 func NewItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody()(*ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody) {
     m := &ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBodyFrom
     return NewItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentTypeId gets the contentTypeId property value. The contentTypeId property
@@ -62,7 +62,7 @@ func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody) Seri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentTypeId sets the contentTypeId property value. The contentTypeId property

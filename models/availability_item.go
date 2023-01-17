@@ -7,7 +7,7 @@ import (
 // AvailabilityItem 
 type AvailabilityItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The endDateTime property
     endDateTime DateTimeTimeZoneable
     // The OdataType property
@@ -23,7 +23,7 @@ type AvailabilityItem struct {
 func NewAvailabilityItem()(*AvailabilityItem) {
     m := &AvailabilityItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAvailabilityItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAvailabilityItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewAvailabilityItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AvailabilityItem) GetAdditionalData()(map[string]interface{}) {
+func (m *AvailabilityItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
@@ -151,7 +151,7 @@ func (m *AvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AvailabilityItem) SetAdditionalData(value map[string]interface{})() {
+func (m *AvailabilityItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDateTime sets the endDateTime property value. The endDateTime property

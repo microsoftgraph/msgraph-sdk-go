@@ -14,7 +14,7 @@ const (
 func (i SourceType) String() string {
     return []string{"mailbox", "site", "unknownFutureValue"}[i]
 }
-func ParseSourceType(v string) (interface{}, error) {
+func ParseSourceType(v string) (any, error) {
     result := MAILBOX_SOURCETYPE
     switch v {
         case "mailbox":

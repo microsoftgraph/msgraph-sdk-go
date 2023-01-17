@@ -7,7 +7,7 @@ import (
 // IncomingContext 
 type IncomingContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ID of the participant that is under observation. Read-only.
     observedParticipantId *string
     // The OdataType property
@@ -23,7 +23,7 @@ type IncomingContext struct {
 func NewIncomingContext()(*IncomingContext) {
     m := &IncomingContext{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIncomingContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateIncomingContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewIncomingContext(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IncomingContext) GetAdditionalData()(map[string]interface{}) {
+func (m *IncomingContext) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *IncomingContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IncomingContext) SetAdditionalData(value map[string]interface{})() {
+func (m *IncomingContext) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetObservedParticipantId sets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.

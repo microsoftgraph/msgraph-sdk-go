@@ -8,7 +8,7 @@ import (
 // PermissionScope 
 type PermissionScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
     adminConsentDescription *string
     // The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
@@ -34,7 +34,7 @@ type PermissionScope struct {
 func NewPermissionScope()(*PermissionScope) {
     m := &PermissionScope{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePermissionScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreatePermissionScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewPermissionScope(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PermissionScope) GetAdditionalData()(map[string]interface{}) {
+func (m *PermissionScope) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdminConsentDescription gets the adminConsentDescription property value. A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
@@ -261,7 +261,7 @@ func (m *PermissionScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PermissionScope) SetAdditionalData(value map[string]interface{})() {
+func (m *PermissionScope) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdminConsentDescription sets the adminConsentDescription property value. A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.

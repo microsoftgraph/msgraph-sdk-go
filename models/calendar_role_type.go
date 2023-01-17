@@ -19,7 +19,7 @@ const (
 func (i CalendarRoleType) String() string {
     return []string{"none", "freeBusyRead", "limitedRead", "read", "write", "delegateWithoutPrivateEventAccess", "delegateWithPrivateEventAccess", "custom"}[i]
 }
-func ParseCalendarRoleType(v string) (interface{}, error) {
+func ParseCalendarRoleType(v string) (any, error) {
     result := NONE_CALENDARROLETYPE
     switch v {
         case "none":

@@ -17,7 +17,7 @@ const (
 func (i WelcomeScreenMeetingInformation) String() string {
     return []string{"userDefined", "showOrganizerAndTimeOnly", "showOrganizerAndTimeAndSubject"}[i]
 }
-func ParseWelcomeScreenMeetingInformation(v string) (interface{}, error) {
+func ParseWelcomeScreenMeetingInformation(v string) (any, error) {
     result := USERDEFINED_WELCOMESCREENMEETINGINFORMATION
     switch v {
         case "userDefined":

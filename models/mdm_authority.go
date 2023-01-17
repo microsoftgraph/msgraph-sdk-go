@@ -19,7 +19,7 @@ const (
 func (i MdmAuthority) String() string {
     return []string{"unknown", "intune", "sccm", "office365"}[i]
 }
-func ParseMdmAuthority(v string) (interface{}, error) {
+func ParseMdmAuthority(v string) (any, error) {
     result := UNKNOWN_MDMAUTHORITY
     switch v {
         case "unknown":

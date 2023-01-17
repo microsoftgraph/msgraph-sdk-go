@@ -21,7 +21,7 @@ const (
 func (i Win32LobAppReturnCodeType) String() string {
     return []string{"failed", "success", "softReboot", "hardReboot", "retry"}[i]
 }
-func ParseWin32LobAppReturnCodeType(v string) (interface{}, error) {
+func ParseWin32LobAppReturnCodeType(v string) (any, error) {
     result := FAILED_WIN32LOBAPPRETURNCODETYPE
     switch v {
         case "failed":

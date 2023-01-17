@@ -7,7 +7,7 @@ import (
 // ItemSetVerifiedPublisherPostRequestBody 
 type ItemSetVerifiedPublisherPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The verifiedPublisherId property
     verifiedPublisherId *string
 }
@@ -15,7 +15,7 @@ type ItemSetVerifiedPublisherPostRequestBody struct {
 func NewItemSetVerifiedPublisherPostRequestBody()(*ItemSetVerifiedPublisherPostRequestBody) {
     m := &ItemSetVerifiedPublisherPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSetVerifiedPublisherPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemSetVerifiedPublisherPostRequestBodyFromDiscriminatorValue(parseNo
     return NewItemSetVerifiedPublisherPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSetVerifiedPublisherPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSetVerifiedPublisherPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemSetVerifiedPublisherPostRequestBody) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSetVerifiedPublisherPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSetVerifiedPublisherPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetVerifiedPublisherId sets the verifiedPublisherId property value. The verifiedPublisherId property

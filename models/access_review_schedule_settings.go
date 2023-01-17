@@ -7,7 +7,7 @@ import (
 // AccessReviewScheduleSettings 
 type AccessReviewScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
     applyActions []AccessReviewApplyActionable
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
@@ -37,7 +37,7 @@ type AccessReviewScheduleSettings struct {
 func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {
     m := &AccessReviewScheduleSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessReviewScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateAccessReviewScheduleSettingsFromDiscriminatorValue(parseNode i878a80d
     return NewAccessReviewScheduleSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewScheduleSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessReviewScheduleSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplyActions gets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
@@ -312,7 +312,7 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewScheduleSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessReviewScheduleSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplyActions sets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.

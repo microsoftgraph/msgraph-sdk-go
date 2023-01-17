@@ -13,7 +13,7 @@ const (
 func (i PersistentBrowserSessionMode) String() string {
     return []string{"always", "never"}[i]
 }
-func ParsePersistentBrowserSessionMode(v string) (interface{}, error) {
+func ParsePersistentBrowserSessionMode(v string) (any, error) {
     result := ALWAYS_PERSISTENTBROWSERSESSIONMODE
     switch v {
         case "always":

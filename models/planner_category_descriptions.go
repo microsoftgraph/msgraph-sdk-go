@@ -7,7 +7,7 @@ import (
 // PlannerCategoryDescriptions 
 type PlannerCategoryDescriptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The label associated with Category 1
     category1 *string
     // The label associated with Category 10
@@ -65,7 +65,7 @@ type PlannerCategoryDescriptions struct {
 func NewPlannerCategoryDescriptions()(*PlannerCategoryDescriptions) {
     m := &PlannerCategoryDescriptions{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerCategoryDescriptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,7 +73,7 @@ func CreatePlannerCategoryDescriptionsFromDiscriminatorValue(parseNode i878a80d2
     return NewPlannerCategoryDescriptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerCategoryDescriptions) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerCategoryDescriptions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCategory1 gets the category1 property value. The label associated with Category 1
@@ -612,7 +612,7 @@ func (m *PlannerCategoryDescriptions) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerCategoryDescriptions) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerCategoryDescriptions) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCategory1 sets the category1 property value. The label associated with Category 1

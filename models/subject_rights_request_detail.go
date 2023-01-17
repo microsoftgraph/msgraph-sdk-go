@@ -7,7 +7,7 @@ import (
 // SubjectRightsRequestDetail 
 type SubjectRightsRequestDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Count of items that are excluded from the request.
     excludedItemCount *int64
     // Count of items per insight.
@@ -29,7 +29,7 @@ type SubjectRightsRequestDetail struct {
 func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     m := &SubjectRightsRequestDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSubjectRightsRequestDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateSubjectRightsRequestDetailFromDiscriminatorValue(parseNode i878a80d23
     return NewSubjectRightsRequestDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludedItemCount gets the excludedItemCount property value. Count of items that are excluded from the request.
@@ -232,7 +232,7 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SubjectRightsRequestDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *SubjectRightsRequestDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExcludedItemCount sets the excludedItemCount property value. Count of items that are excluded from the request.
