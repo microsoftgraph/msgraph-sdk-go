@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	abstractions "github.com/microsoft/kiota-abstractions-go"
-	az "github.com/microsoft/kiota-authentication-azure-go"
+	az "github.com/microsoftgraph/msgraph-sdk-go-core/authentication"
 )
 
 type GraphServiceClient struct {

@@ -32,7 +32,6 @@ For an example of how to get an authentication provider, see [choose a Microsoft
 ```Golang
 import (
     azidentity "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-    a          "github.com/microsoft/kiota-authentication-azure-go"
     "context"
 )
 
