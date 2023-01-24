@@ -50,7 +50,7 @@ type Team struct {
     schedule Scheduleable
     // Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
     specialization *TeamSpecialization
-    // The summary property
+    // Contains summary information about the team, including number of owners, members, and guests.
     summary TeamSummaryable
     // The tags associated with the team.
     tags []TeamworkTagable
@@ -461,7 +461,7 @@ func (m *Team) GetSchedule()(Scheduleable) {
 func (m *Team) GetSpecialization()(*TeamSpecialization) {
     return m.specialization
 }
-// GetSummary gets the summary property value. The summary property
+// GetSummary gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
 func (m *Team) GetSummary()(TeamSummaryable) {
     return m.summary
 }
@@ -769,7 +769,7 @@ func (m *Team) SetSchedule(value Scheduleable)() {
 func (m *Team) SetSpecialization(value *TeamSpecialization)() {
     m.specialization = value
 }
-// SetSummary sets the summary property value. The summary property
+// SetSummary sets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
 func (m *Team) SetSummary(value TeamSummaryable)() {
     m.summary = value
 }

@@ -24,6 +24,8 @@ type Organization struct {
     countryLetterCode *string
     // Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+    defaultUsageLocation *string
     // The display name for the tenant.
     displayName *string
     // The collection of open extensions defined for the organization. Read-only. Nullable.
@@ -105,6 +107,10 @@ func (m *Organization) GetCountryLetterCode()(*string) {
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
+}
+// GetDefaultUsageLocation gets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+func (m *Organization) GetDefaultUsageLocation()(*string) {
+    return m.defaultUsageLocation
 }
 // GetDisplayName gets the displayName property value. The display name for the tenant.
 func (m *Organization) GetDisplayName()(*string) {
@@ -206,6 +212,16 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["defaultUsageLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultUsageLocation(val)
         }
         return nil
     }
@@ -546,6 +562,12 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("defaultUsageLocation", m.GetDefaultUsageLocation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -700,6 +722,10 @@ func (m *Organization) SetCountryLetterCode(value *string)() {
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
+}
+// SetDefaultUsageLocation sets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+func (m *Organization) SetDefaultUsageLocation(value *string)() {
+    m.defaultUsageLocation = value
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant.
 func (m *Organization) SetDisplayName(value *string)() {

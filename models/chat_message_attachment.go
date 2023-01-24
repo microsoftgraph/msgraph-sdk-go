@@ -20,6 +20,8 @@ type ChatMessageAttachment struct {
     name *string
     // The OdataType property
     odataType *string
+    // The teamsAppId property
+    teamsAppId *string
     // URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
     thumbnailUrl *string
 }
@@ -113,6 +115,16 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["teamsAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsAppId(val)
+        }
+        return nil
+    }
     res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -136,6 +148,10 @@ func (m *ChatMessageAttachment) GetName()(*string) {
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChatMessageAttachment) GetOdataType()(*string) {
     return m.odataType
+}
+// GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+func (m *ChatMessageAttachment) GetTeamsAppId()(*string) {
+    return m.teamsAppId
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
 func (m *ChatMessageAttachment) GetThumbnailUrl()(*string) {
@@ -175,6 +191,12 @@ func (m *ChatMessageAttachment) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("teamsAppId", m.GetTeamsAppId())
         if err != nil {
             return err
         }
@@ -220,6 +242,10 @@ func (m *ChatMessageAttachment) SetName(value *string)() {
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChatMessageAttachment) SetOdataType(value *string)() {
     m.odataType = value
+}
+// SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
+func (m *ChatMessageAttachment) SetTeamsAppId(value *string)() {
+    m.teamsAppId = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
 func (m *ChatMessageAttachment) SetThumbnailUrl(value *string)() {

@@ -13,7 +13,7 @@ type PrintOperation struct {
     // The status property
     status PrintOperationStatusable
 }
-// NewPrintOperation instantiates a new PrintOperation and sets the default values.
+// NewPrintOperation instantiates a new printOperation and sets the default values.
 func NewPrintOperation()(*PrintOperation) {
     m := &PrintOperation{
         Entity: *NewEntity(),

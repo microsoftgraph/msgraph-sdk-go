@@ -10,7 +10,7 @@ import (
 type KeyCredential struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Custom key identifier
+    // A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
     customKeyIdentifier []byte
     // Friendly name for the key. Optional.
     displayName *string
@@ -44,7 +44,7 @@ func CreateKeyCredentialFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *KeyCredential) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCustomKeyIdentifier gets the customKeyIdentifier property value. Custom key identifier
+// GetCustomKeyIdentifier gets the customKeyIdentifier property value. A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
 func (m *KeyCredential) GetCustomKeyIdentifier()([]byte) {
     return m.customKeyIdentifier
 }
@@ -243,7 +243,7 @@ func (m *KeyCredential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *KeyCredential) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCustomKeyIdentifier sets the customKeyIdentifier property value. Custom key identifier
+// SetCustomKeyIdentifier sets the customKeyIdentifier property value. A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
 func (m *KeyCredential) SetCustomKeyIdentifier(value []byte)() {
     m.customKeyIdentifier = value
 }

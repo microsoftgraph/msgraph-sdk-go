@@ -12,7 +12,7 @@ type Presence struct {
     // The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
     availability *string
 }
-// NewPresence instantiates a new presence and sets the default values.
+// NewPresence instantiates a new Presence and sets the default values.
 func NewPresence()(*Presence) {
     m := &Presence{
         Entity: *NewEntity(),

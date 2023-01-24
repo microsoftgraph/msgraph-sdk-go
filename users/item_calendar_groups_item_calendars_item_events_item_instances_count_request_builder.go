@@ -15,18 +15,25 @@ type ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilder s
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderGetQueryParameters
 }
 // NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances/$count";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuild
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

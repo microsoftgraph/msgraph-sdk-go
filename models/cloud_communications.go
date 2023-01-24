@@ -14,7 +14,7 @@ type CloudCommunications struct {
     // The presences property
     presences []Presenceable
 }
-// NewCloudCommunications instantiates a new cloudCommunications and sets the default values.
+// NewCloudCommunications instantiates a new CloudCommunications and sets the default values.
 func NewCloudCommunications()(*CloudCommunications) {
     m := &CloudCommunications{
         Entity: *NewEntity(),

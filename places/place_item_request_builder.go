@@ -65,7 +65,7 @@ func NewPlaceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewPlaceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from places
+// Delete delete entity from places by key (id)
 func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +129,7 @@ func (m *PlaceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
 func (m *PlaceItemRequestBuilder) Room()(*ItemRoomRequestBuilder) {
     return NewItemRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from places
+// ToDeleteRequestInformation delete entity from places by key (id)
 func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

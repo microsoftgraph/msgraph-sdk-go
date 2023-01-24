@@ -15,18 +15,27 @@ type JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountReques
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderGetQueryParameters get the number of the resource
+type JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderGetQueryParameters
 }
 // NewJoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewJoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilder) {
     m := &JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/hostedContents/$count";
+    m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/hostedContents/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *JoinedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsCountRe
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

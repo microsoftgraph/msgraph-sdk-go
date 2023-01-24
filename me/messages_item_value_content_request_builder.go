@@ -51,7 +51,7 @@ func NewMessagesItemValueContentRequestBuilder(rawUrl string, requestAdapter i2a
 // Get get media content for the navigation property messages from me
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
 func (m *MessagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

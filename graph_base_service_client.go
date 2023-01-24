@@ -7,7 +7,6 @@ import (
     i7294a22093d408fdca300f11b81a887d89c47b764af06c8b803e2323973fdb83 "github.com/microsoft/kiota-serialization-text-go"
     i009f47bbce65ccdb7303730eed71e6bab3ae2f8e4e918bc9e94341d28624af97 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals"
     i07d47a144340607d6d6dbd93575e531530e4f1cc6091c947ea0766f7951ffd34 "github.com/microsoftgraph/msgraph-sdk-go/shares"
-    i088cccaaaff488138f258ec600ca804c5dc9548772ebe52bf3cb7a3eaf4b9fdf "github.com/microsoftgraph/msgraph-sdk-go/workbooks"
     i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec "github.com/microsoftgraph/msgraph-sdk-go/solutions"
     i185698f71f6301975f0627ee999e6e91920d8fa9c00bdef3487b9f349e2df04e "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects"
     i1a1369b1521a8ac4885166fd68eae4247248a891006fea464d2eea2a271b2cdb "github.com/microsoftgraph/msgraph-sdk-go/permissiongrants"
@@ -800,19 +799,4 @@ func (m *GraphBaseServiceClient) UsersById(id string)(*if6ffd1464db2d9c22e351b03
         urlTplParams["user%2Did"] = id
     }
     return if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Workbooks provides operations to manage the collection of driveItem entities.
-func (m *GraphBaseServiceClient) Workbooks()(*i088cccaaaff488138f258ec600ca804c5dc9548772ebe52bf3cb7a3eaf4b9fdf.WorkbooksRequestBuilder) {
-    return i088cccaaaff488138f258ec600ca804c5dc9548772ebe52bf3cb7a3eaf4b9fdf.NewWorkbooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WorkbooksById provides operations to manage the collection of driveItem entities.
-func (m *GraphBaseServiceClient) WorkbooksById(id string)(*i088cccaaaff488138f258ec600ca804c5dc9548772ebe52bf3cb7a3eaf4b9fdf.DriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return i088cccaaaff488138f258ec600ca804c5dc9548772ebe52bf3cb7a3eaf4b9fdf.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
