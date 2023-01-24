@@ -15,18 +15,27 @@ type CallsItemContentSharingSessionsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// CallsItemContentSharingSessionsCountRequestBuilderGetQueryParameters get the number of the resource
+type CallsItemContentSharingSessionsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // CallsItemContentSharingSessionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallsItemContentSharingSessionsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *CallsItemContentSharingSessionsCountRequestBuilderGetQueryParameters
 }
 // NewCallsItemContentSharingSessionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCallsItemContentSharingSessionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemContentSharingSessionsCountRequestBuilder) {
     m := &CallsItemContentSharingSessionsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/contentSharingSessions/$count";
+    m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/contentSharingSessions/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *CallsItemContentSharingSessionsCountRequestBuilder) ToGetRequestInforma
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

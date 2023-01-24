@@ -21,7 +21,7 @@ type DataPolicyOperation struct {
     // The id for the user on whom the operation is performed.
     userId *string
 }
-// NewDataPolicyOperation instantiates a new dataPolicyOperation and sets the default values.
+// NewDataPolicyOperation instantiates a new DataPolicyOperation and sets the default values.
 func NewDataPolicyOperation()(*DataPolicyOperation) {
     m := &DataPolicyOperation{
         Entity: *NewEntity(),

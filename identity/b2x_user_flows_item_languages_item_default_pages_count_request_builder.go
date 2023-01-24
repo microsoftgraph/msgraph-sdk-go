@@ -15,18 +15,27 @@ type B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderGetQueryParameters get the number of the resource
+type B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderGetQueryParameters
 }
 // NewB2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilder) {
     m := &B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/defaultPages/$count";
+    m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/defaultPages/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilder) ToGetRequ
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

@@ -73,7 +73,7 @@ func NewGroupSettingTemplateItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewGroupSettingTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from groupSettingTemplates
+// Delete delete entity from groupSettingTemplates by key (id)
 func (m *GroupSettingTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupSettingTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *GroupSettingTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetMembe
 func (m *GroupSettingTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
     return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update entity in groupSettingTemplates
+// Patch update entity in groupSettingTemplates by key (id)
 func (m *GroupSettingTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, requestConfiguration *GroupSettingTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *GroupSettingTemplateItemRequestBuilder) Patch(ctx context.Context, body
 func (m *GroupSettingTemplateItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from groupSettingTemplates
+// ToDeleteRequestInformation delete entity from groupSettingTemplates by key (id)
 func (m *GroupSettingTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupSettingTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,7 +170,7 @@ func (m *GroupSettingTemplateItemRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in groupSettingTemplates
+// ToPatchRequestInformation update entity in groupSettingTemplates by key (id)
 func (m *GroupSettingTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, requestConfiguration *GroupSettingTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

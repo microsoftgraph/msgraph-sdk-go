@@ -15,18 +15,25 @@ type CalendarGroupsItemCalendarsItemEventsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// CalendarGroupsItemCalendarsItemEventsCountRequestBuilderGetQueryParameters get the number of the resource
+type CalendarGroupsItemCalendarsItemEventsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // CalendarGroupsItemCalendarsItemEventsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CalendarGroupsItemCalendarsItemEventsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *CalendarGroupsItemCalendarsItemEventsCountRequestBuilderGetQueryParameters
 }
 // NewCalendarGroupsItemCalendarsItemEventsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCalendarGroupsItemCalendarsItemEventsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarGroupsItemCalendarsItemEventsCountRequestBuilder) {
     m := &CalendarGroupsItemCalendarsItemEventsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/$count";
+    m.urlTemplate = "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *CalendarGroupsItemCalendarsItemEventsCountRequestBuilder) ToGetRequestI
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

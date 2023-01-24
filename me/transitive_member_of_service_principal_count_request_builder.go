@@ -15,18 +15,27 @@ type TransitiveMemberOfServicePrincipalCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// TransitiveMemberOfServicePrincipalCountRequestBuilderGetQueryParameters get the number of the resource
+type TransitiveMemberOfServicePrincipalCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // TransitiveMemberOfServicePrincipalCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TransitiveMemberOfServicePrincipalCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *TransitiveMemberOfServicePrincipalCountRequestBuilderGetQueryParameters
 }
 // NewTransitiveMemberOfServicePrincipalCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewTransitiveMemberOfServicePrincipalCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TransitiveMemberOfServicePrincipalCountRequestBuilder) {
     m := &TransitiveMemberOfServicePrincipalCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/transitiveMemberOf/microsoft.graph.servicePrincipal/$count";
+    m.urlTemplate = "{+baseurl}/me/transitiveMemberOf/microsoft.graph.servicePrincipal/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *TransitiveMemberOfServicePrincipalCountRequestBuilder) ToGetRequestInfo
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

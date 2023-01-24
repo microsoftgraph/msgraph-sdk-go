@@ -15,18 +15,25 @@ type ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilder str
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderGetQueryParameters
 }
 // NewItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments/$count";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *ItemConversationsItemThreadsItemPostsItemAttachmentsCountRequestBuilder
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

@@ -23,7 +23,7 @@ type DomainDnsRecordItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DomainDnsRecordItemRequestBuilderGetQueryParameters get entity from domainDnsRecords by key
+// DomainDnsRecordItemRequestBuilderGetQueryParameters get entity from domainDnsRecords by key (id)
 type DomainDnsRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewDomainDnsRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDomainDnsRecordItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from domainDnsRecords
+// Delete delete entity from domainDnsRecords by key (id)
 func (m *DomainDnsRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DomainDnsRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *DomainDnsRecordItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get entity from domainDnsRecords by key
+// Get get entity from domainDnsRecords by key (id)
 func (m *DomainDnsRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DomainDnsRecordItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DomainDnsRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *DomainDnsRecordItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DomainDnsRecordable), nil
 }
-// Patch update entity in domainDnsRecords
+// Patch update entity in domainDnsRecords by key (id)
 func (m *DomainDnsRecordItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DomainDnsRecordable, requestConfiguration *DomainDnsRecordItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DomainDnsRecordable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *DomainDnsRecordItemRequestBuilder) Patch(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DomainDnsRecordable), nil
 }
-// ToDeleteRequestInformation delete entity from domainDnsRecords
+// ToDeleteRequestInformation delete entity from domainDnsRecords by key (id)
 func (m *DomainDnsRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DomainDnsRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *DomainDnsRecordItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from domainDnsRecords by key
+// ToGetRequestInformation get entity from domainDnsRecords by key (id)
 func (m *DomainDnsRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DomainDnsRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *DomainDnsRecordItemRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in domainDnsRecords
+// ToPatchRequestInformation update entity in domainDnsRecords by key (id)
 func (m *DomainDnsRecordItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DomainDnsRecordable, requestConfiguration *DomainDnsRecordItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -15,18 +15,27 @@ type ItemRootThumbnailsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemRootThumbnailsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemRootThumbnailsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ItemRootThumbnailsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRootThumbnailsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemRootThumbnailsCountRequestBuilderGetQueryParameters
 }
 // NewItemRootThumbnailsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemRootThumbnailsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRootThumbnailsCountRequestBuilder) {
     m := &ItemRootThumbnailsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/root/thumbnails/$count";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/root/thumbnails/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ItemRootThumbnailsCountRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

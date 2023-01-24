@@ -15,18 +15,25 @@ type ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilde
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderGetQueryParameters
 }
 // NewItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilder) {
     m := &ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/attachments/$count";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/attachments/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBu
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

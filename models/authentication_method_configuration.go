@@ -10,7 +10,7 @@ type AuthenticationMethodConfiguration struct {
     // The state of the policy. Possible values are: enabled, disabled.
     state *AuthenticationMethodState
 }
-// NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
+// NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),

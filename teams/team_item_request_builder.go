@@ -107,7 +107,7 @@ func NewTeamItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewTeamItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from teams
+// Delete delete entity from teams by key (id)
 func (m *TeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -266,7 +266,7 @@ func (m *TeamItemRequestBuilder) TagsById(id string)(*ItemTagsTeamworkTagItemReq
 func (m *TeamItemRequestBuilder) Template()(*ItemTemplateRequestBuilder) {
     return NewItemTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from teams
+// ToDeleteRequestInformation delete entity from teams by key (id)
 func (m *TeamItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

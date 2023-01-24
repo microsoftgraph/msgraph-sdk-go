@@ -65,7 +65,7 @@ func NewDataPolicyOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewDataPolicyOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from dataPolicyOperations
+// Delete delete entity from dataPolicyOperations by key (id)
 func (m *DataPolicyOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *DataPolicyOperationItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable), nil
 }
-// Patch update entity in dataPolicyOperations
+// Patch update entity in dataPolicyOperations by key (id)
 func (m *DataPolicyOperationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, requestConfiguration *DataPolicyOperationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *DataPolicyOperationItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable), nil
 }
-// ToDeleteRequestInformation delete entity from dataPolicyOperations
+// ToDeleteRequestInformation delete entity from dataPolicyOperations by key (id)
 func (m *DataPolicyOperationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,7 +150,7 @@ func (m *DataPolicyOperationItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in dataPolicyOperations
+// ToPatchRequestInformation update entity in dataPolicyOperations by key (id)
 func (m *DataPolicyOperationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, requestConfiguration *DataPolicyOperationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

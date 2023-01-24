@@ -15,18 +15,27 @@ type OwnedDevicesAppRoleAssignmentCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// OwnedDevicesAppRoleAssignmentCountRequestBuilderGetQueryParameters get the number of the resource
+type OwnedDevicesAppRoleAssignmentCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // OwnedDevicesAppRoleAssignmentCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OwnedDevicesAppRoleAssignmentCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *OwnedDevicesAppRoleAssignmentCountRequestBuilderGetQueryParameters
 }
 // NewOwnedDevicesAppRoleAssignmentCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewOwnedDevicesAppRoleAssignmentCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedDevicesAppRoleAssignmentCountRequestBuilder) {
     m := &OwnedDevicesAppRoleAssignmentCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/ownedDevices/microsoft.graph.appRoleAssignment/$count";
+    m.urlTemplate = "{+baseurl}/me/ownedDevices/microsoft.graph.appRoleAssignment/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *OwnedDevicesAppRoleAssignmentCountRequestBuilder) ToGetRequestInformati
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

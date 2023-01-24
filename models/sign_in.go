@@ -12,7 +12,7 @@ type SignIn struct {
     appDisplayName *string
     // Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
     appId *string
-    // The appliedConditionalAccessPolicies property
+    // Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicyable
     // Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
     clientAppUsed *string
@@ -74,7 +74,7 @@ func (m *SignIn) GetAppDisplayName()(*string) {
 func (m *SignIn) GetAppId()(*string) {
     return m.appId
 }
-// GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. The appliedConditionalAccessPolicies property
+// GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
     return m.appliedConditionalAccessPolicies
 }
@@ -568,7 +568,7 @@ func (m *SignIn) SetAppDisplayName(value *string)() {
 func (m *SignIn) SetAppId(value *string)() {
     m.appId = value
 }
-// SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. The appliedConditionalAccessPolicies property
+// SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
     m.appliedConditionalAccessPolicies = value
 }

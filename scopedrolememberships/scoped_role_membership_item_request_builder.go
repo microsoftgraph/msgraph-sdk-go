@@ -23,7 +23,7 @@ type ScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ScopedRoleMembershipItemRequestBuilderGetQueryParameters get entity from scopedRoleMemberships by key
+// ScopedRoleMembershipItemRequestBuilderGetQueryParameters get entity from scopedRoleMemberships by key (id)
 type ScopedRoleMembershipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewScopedRoleMembershipItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from scopedRoleMemberships
+// Delete delete entity from scopedRoleMemberships by key (id)
 func (m *ScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get entity from scopedRoleMemberships by key
+// Get get entity from scopedRoleMemberships by key (id)
 func (m *ScopedRoleMembershipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable), nil
 }
-// Patch update entity in scopedRoleMemberships
+// Patch update entity in scopedRoleMemberships by key (id)
 func (m *ScopedRoleMembershipItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, requestConfiguration *ScopedRoleMembershipItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable), nil
 }
-// ToDeleteRequestInformation delete entity from scopedRoleMemberships
+// ToDeleteRequestInformation delete entity from scopedRoleMemberships by key (id)
 func (m *ScopedRoleMembershipItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from scopedRoleMemberships by key
+// ToGetRequestInformation get entity from scopedRoleMemberships by key (id)
 func (m *ScopedRoleMembershipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in scopedRoleMemberships
+// ToPatchRequestInformation update entity in scopedRoleMemberships by key (id)
 func (m *ScopedRoleMembershipItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, requestConfiguration *ScopedRoleMembershipItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

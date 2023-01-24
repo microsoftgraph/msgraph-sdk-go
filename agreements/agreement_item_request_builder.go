@@ -23,7 +23,7 @@ type AgreementItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AgreementItemRequestBuilderGetQueryParameters get entity from agreements by key
+// AgreementItemRequestBuilderGetQueryParameters get entity from agreements by key (id)
 type AgreementItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -78,7 +78,7 @@ func NewAgreementItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from agreements
+// Delete delete entity from agreements by key (id)
 func (m *AgreementItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +113,7 @@ func (m *AgreementItemRequestBuilder) FilesById(id string)(*ItemFilesAgreementFi
     }
     return NewItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get entity from agreements by key
+// Get get entity from agreements by key (id)
 func (m *AgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *AgreementItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable), nil
 }
-// Patch update entity in agreements
+// Patch update entity in agreements by key (id)
 func (m *AgreementItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, requestConfiguration *AgreementItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AgreementItemRequestBuilder) Patch(ctx context.Context, body iadcd81124
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable), nil
 }
-// ToDeleteRequestInformation delete entity from agreements
+// ToDeleteRequestInformation delete entity from agreements by key (id)
 func (m *AgreementItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -163,7 +163,7 @@ func (m *AgreementItemRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from agreements by key
+// ToGetRequestInformation get entity from agreements by key (id)
 func (m *AgreementItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -179,7 +179,7 @@ func (m *AgreementItemRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in agreements
+// ToPatchRequestInformation update entity in agreements by key (id)
 func (m *AgreementItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, requestConfiguration *AgreementItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

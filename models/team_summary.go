@@ -8,13 +8,13 @@ import (
 type TeamSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The guestsCount property
+    // Count of guests in a team.
     guestsCount *int32
-    // The membersCount property
+    // Count of members in a team.
     membersCount *int32
     // The OdataType property
     odataType *string
-    // The ownersCount property
+    // Count of owners in a team.
     ownersCount *int32
 }
 // NewTeamSummary instantiates a new teamSummary and sets the default values.
@@ -77,11 +77,11 @@ func (m *TeamSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetGuestsCount gets the guestsCount property value. The guestsCount property
+// GetGuestsCount gets the guestsCount property value. Count of guests in a team.
 func (m *TeamSummary) GetGuestsCount()(*int32) {
     return m.guestsCount
 }
-// GetMembersCount gets the membersCount property value. The membersCount property
+// GetMembersCount gets the membersCount property value. Count of members in a team.
 func (m *TeamSummary) GetMembersCount()(*int32) {
     return m.membersCount
 }
@@ -89,7 +89,7 @@ func (m *TeamSummary) GetMembersCount()(*int32) {
 func (m *TeamSummary) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOwnersCount gets the ownersCount property value. The ownersCount property
+// GetOwnersCount gets the ownersCount property value. Count of owners in a team.
 func (m *TeamSummary) GetOwnersCount()(*int32) {
     return m.ownersCount
 }
@@ -131,11 +131,11 @@ func (m *TeamSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *TeamSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetGuestsCount sets the guestsCount property value. The guestsCount property
+// SetGuestsCount sets the guestsCount property value. Count of guests in a team.
 func (m *TeamSummary) SetGuestsCount(value *int32)() {
     m.guestsCount = value
 }
-// SetMembersCount sets the membersCount property value. The membersCount property
+// SetMembersCount sets the membersCount property value. Count of members in a team.
 func (m *TeamSummary) SetMembersCount(value *int32)() {
     m.membersCount = value
 }
@@ -143,7 +143,7 @@ func (m *TeamSummary) SetMembersCount(value *int32)() {
 func (m *TeamSummary) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOwnersCount sets the ownersCount property value. The ownersCount property
+// SetOwnersCount sets the ownersCount property value. Count of owners in a team.
 func (m *TeamSummary) SetOwnersCount(value *int32)() {
     m.ownersCount = value
 }

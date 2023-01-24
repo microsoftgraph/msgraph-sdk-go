@@ -15,18 +15,27 @@ type ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderGetQueryParameters
 }
 // NewItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilder) {
     m := &ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/listItem/documentSetVersions/$count";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/listItem/documentSetVersions/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ItemDrivesItemRootListItemDocumentSetVersionsCountRequestBuilder) ToGet
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

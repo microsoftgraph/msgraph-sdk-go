@@ -15,18 +15,27 @@ type AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRe
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderGetQueryParameters get the number of the resource
+type AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderGetQueryParameters
 }
 // NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewAuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilder) {
     m := &AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod%2Did}/device/registeredUsers/$count";
+    m.urlTemplate = "{+baseurl}/me/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod%2Did}/device/registeredUsers/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *AuthenticationMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersCou
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

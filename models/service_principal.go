@@ -105,7 +105,7 @@ type ServicePrincipal struct {
     // Specifies the verified publisher of the application which this service principal represents.
     verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),

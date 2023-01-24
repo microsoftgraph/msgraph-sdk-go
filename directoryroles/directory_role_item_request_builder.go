@@ -73,7 +73,7 @@ func NewDirectoryRoleItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from directoryRoles
+// Delete delete entity from directoryRoles by key (id)
 func (m *DirectoryRoleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryRoleItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *DirectoryRoleItemRequestBuilder) MembersById(id string)(*ItemMembersDir
     }
     return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update entity in directoryRoles
+// Patch update entity in directoryRoles by key (id)
 func (m *DirectoryRoleItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRoleItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -172,7 +172,7 @@ func (m *DirectoryRoleItemRequestBuilder) ScopedMembersById(id string)(*ItemScop
     }
     return NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from directoryRoles
+// ToDeleteRequestInformation delete entity from directoryRoles by key (id)
 func (m *DirectoryRoleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -200,7 +200,7 @@ func (m *DirectoryRoleItemRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in directoryRoles
+// ToPatchRequestInformation update entity in directoryRoles by key (id)
 func (m *DirectoryRoleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRoleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -16,7 +16,7 @@ type ConnectedOrganization struct {
     displayName *string
     // The externalSponsors property
     externalSponsors []DirectoryObjectable
-    // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+    // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
     identitySources []IdentitySourceable
     // The internalSponsors property
     internalSponsors []DirectoryObjectable
@@ -149,7 +149,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
     return m.identitySources
 }
@@ -250,7 +250,7 @@ func (m *ConnectedOrganization) SetDisplayName(value *string)() {
 func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)() {
     m.externalSponsors = value
 }
-// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)() {
     m.identitySources = value
 }

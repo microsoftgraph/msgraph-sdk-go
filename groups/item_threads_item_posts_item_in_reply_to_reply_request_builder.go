@@ -41,10 +41,10 @@ func NewItemThreadsItemPostsItemInReplyToReplyRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsItemPostsItemInReplyToReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+// Post create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
 func (m *ItemThreadsItemPostsItemInReplyToReplyRequestBuilder) Post(ctx context.Context, body ItemThreadsItemPostsItemInReplyToReplyPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemInReplyToReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ItemThreadsItemPostsItemInReplyToReplyRequestBuilder) Post(ctx context.
     }
     return nil
 }
-// ToPostRequestInformation reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+// ToPostRequestInformation create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
 func (m *ItemThreadsItemPostsItemInReplyToReplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemThreadsItemPostsItemInReplyToReplyPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemInReplyToReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -23,7 +23,7 @@ type CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters get entity from certificateBasedAuthConfiguration by key
+// CertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters get entity from certificateBasedAuthConfiguration by key (id)
 type CertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,7 +65,7 @@ func NewCertificateBasedAuthConfigurationItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from certificateBasedAuthConfiguration
+// Delete delete entity from certificateBasedAuthConfiguration by key (id)
 func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get entity from certificateBasedAuthConfiguration by key
+// Get get entity from certificateBasedAuthConfiguration by key (id)
 func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable), nil
 }
-// Patch update entity in certificateBasedAuthConfiguration
+// Patch update entity in certificateBasedAuthConfiguration by key (id)
 func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Patch(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable), nil
 }
-// ToDeleteRequestInformation delete entity from certificateBasedAuthConfiguration
+// ToDeleteRequestInformation delete entity from certificateBasedAuthConfiguration by key (id)
 func (m *CertificateBasedAuthConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *CertificateBasedAuthConfigurationItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from certificateBasedAuthConfiguration by key
+// ToGetRequestInformation get entity from certificateBasedAuthConfiguration by key (id)
 func (m *CertificateBasedAuthConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *CertificateBasedAuthConfigurationItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in certificateBasedAuthConfiguration
+// ToPatchRequestInformation update entity in certificateBasedAuthConfiguration by key (id)
 func (m *CertificateBasedAuthConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

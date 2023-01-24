@@ -14,6 +14,7 @@ type ChatMessageAttachmentable interface {
     GetId()(*string)
     GetName()(*string)
     GetOdataType()(*string)
+    GetTeamsAppId()(*string)
     GetThumbnailUrl()(*string)
     SetContent(value *string)()
     SetContentType(value *string)()
@@ -21,5 +22,6 @@ type ChatMessageAttachmentable interface {
     SetId(value *string)()
     SetName(value *string)()
     SetOdataType(value *string)()
+    SetTeamsAppId(value *string)()
     SetThumbnailUrl(value *string)()
 }

@@ -15,18 +15,27 @@ type ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequ
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
 // ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderGetQueryParameters
 }
 // NewItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilder) {
     m := &ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/children/{term%2Did}/relations/$count";
+    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/children/{term%2Did}/relations/$count{?%24search,%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +77,9 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsCount
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

@@ -24,7 +24,7 @@ type ApplicationTemplate struct {
     // The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
     supportedSingleSignOnModes []string
 }
-// NewApplicationTemplate instantiates a new applicationTemplate and sets the default values.
+// NewApplicationTemplate instantiates a new ApplicationTemplate and sets the default values.
 func NewApplicationTemplate()(*ApplicationTemplate) {
     m := &ApplicationTemplate{
         Entity: *NewEntity(),

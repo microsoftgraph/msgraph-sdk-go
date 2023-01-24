@@ -15,18 +15,25 @@ type ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBui
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
+// ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderGetQueryParameters get the number of the resource
+type ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+}
 // ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderGetQueryParameters
 }
 // NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/extensions/$count";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/extensions/$count{?%24filter}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,6 +75,9 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsCountReques
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
