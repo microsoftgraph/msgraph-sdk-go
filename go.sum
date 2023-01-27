@@ -31,6 +31,8 @@ github.com/microsoft/kiota-serialization-json-go v0.8.0 h1:oCCN3Ij7whGDWNROVjmnV
 github.com/microsoft/kiota-serialization-json-go v0.8.0/go.mod h1:SerZlR2WDr+jygmkeZpo9U2TGX8Q84OfHrqLkQPkFZ0=
 github.com/microsoft/kiota-serialization-text-go v0.6.0 h1:3N2vftYZlwKdog69AN7ha+FZT0QxPG7xp/hLv0/W2OQ=
 github.com/microsoft/kiota-serialization-text-go v0.6.0/go.mod h1:OUA4dNH+f6afiJUs+rQAatJos7QVF5PJkyrqoD89lx4=
+github.com/microsoft/kiota-serialization-text-go v0.7.0 h1:uayeq8fpDcZgL0zDyLkYZsH6zNnEXKgp+bRWfR5LcxA=
+github.com/microsoft/kiota-serialization-text-go v0.7.0/go.mod h1:2su1PTllHCMNkHugmvpYad+AKBXUUGoiNP3xOAJUL7w=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.33.1 h1:BO6TdlnOQOHK5HKr3oYFmKGcs2uxgsAg9NGXF6k7Xf4=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.33.1/go.mod h1:VFtdk6iAvn9M8IW8fbRXcEfyzSvfH1CZgzV5DtJmlXE=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
