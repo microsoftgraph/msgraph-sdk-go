@@ -6,7 +6,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.3.0
 	github.com/google/uuid v1.3.0
 	github.com/microsoft/kiota-abstractions-go v0.17.0
-	github.com/microsoft/kiota-serialization-form-go v0.2.0
+	github.com/microsoft/kiota-serialization-form-go v0.3.0
 	github.com/microsoft/kiota-serialization-json-go v0.8.0
 	github.com/microsoft/kiota-serialization-text-go v0.6.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.33.1
