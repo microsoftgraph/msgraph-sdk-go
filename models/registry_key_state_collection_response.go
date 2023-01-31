@@ -7,7 +7,7 @@ import (
 // RegistryKeyStateCollectionResponse 
 type RegistryKeyStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RegistryKeyStateable
 }
 // NewRegistryKeyStateCollectionResponse instantiates a new RegistryKeyStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RegistryKeyStateCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RegistryKeyStateCollectionResponse) GetValue()([]RegistryKeyStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RegistryKeyStateCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RegistryKeyStateCollectionResponse) SetValue(value []RegistryKeyStateable)() {
     m.value = value
 }

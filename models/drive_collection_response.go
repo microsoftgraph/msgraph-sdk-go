@@ -7,7 +7,7 @@ import (
 // DriveCollectionResponse 
 type DriveCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Driveable
 }
 // NewDriveCollectionResponse instantiates a new DriveCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DriveCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DriveCollectionResponse) GetValue()([]Driveable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DriveCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DriveCollectionResponse) SetValue(value []Driveable)() {
     m.value = value
 }

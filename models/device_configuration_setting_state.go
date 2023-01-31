@@ -16,7 +16,7 @@ type DeviceConfigurationSettingState struct {
     errorDescription *string
     // Name of setting instance that is being reported.
     instanceDisplayName *string
-    // The OdataType property
+    // 
     odataType *string
     // The setting that is being reported
     setting *string
@@ -24,7 +24,7 @@ type DeviceConfigurationSettingState struct {
     settingName *string
     // Contributing policies
     sources []SettingSourceable
-    // The state property
+    // 
     state *ComplianceStatus
     // UserEmail
     userEmail *string
@@ -205,7 +205,7 @@ func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]fun
 func (m *DeviceConfigurationSettingState) GetInstanceDisplayName()(*string) {
     return m.instanceDisplayName
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceConfigurationSettingState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -221,7 +221,7 @@ func (m *DeviceConfigurationSettingState) GetSettingName()(*string) {
 func (m *DeviceConfigurationSettingState) GetSources()([]SettingSourceable) {
     return m.sources
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *DeviceConfigurationSettingState) GetState()(*ComplianceStatus) {
     return m.state
 }
@@ -354,7 +354,7 @@ func (m *DeviceConfigurationSettingState) SetErrorDescription(value *string)() {
 func (m *DeviceConfigurationSettingState) SetInstanceDisplayName(value *string)() {
     m.instanceDisplayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceConfigurationSettingState) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -370,7 +370,7 @@ func (m *DeviceConfigurationSettingState) SetSettingName(value *string)() {
 func (m *DeviceConfigurationSettingState) SetSources(value []SettingSourceable)() {
     m.sources = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *DeviceConfigurationSettingState) SetState(value *ComplianceStatus)() {
     m.state = value
 }

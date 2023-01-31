@@ -7,7 +7,7 @@ import (
 // DeviceCategoryCollectionResponse 
 type DeviceCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceCategoryable
 }
 // NewDeviceCategoryCollectionResponse instantiates a new DeviceCategoryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceCategoryCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceCategoryCollectionResponse) GetValue()([]DeviceCategoryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceCategoryCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceCategoryCollectionResponse) SetValue(value []DeviceCategoryable)() {
     m.value = value
 }

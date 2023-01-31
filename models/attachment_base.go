@@ -8,13 +8,13 @@ import (
 // AttachmentBase 
 type AttachmentBase struct {
     Entity
-    // The contentType property
+    // 
     contentType *string
-    // The lastModifiedDateTime property
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name property
+    // 
     name *string
-    // The size property
+    // 
     size *int32
 }
 // NewAttachmentBase instantiates a new attachmentBase and sets the default values.
@@ -46,7 +46,7 @@ func CreateAttachmentBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     }
     return NewAttachmentBase(), nil
 }
-// GetContentType gets the contentType property value. The contentType property
+// GetContentType gets the contentType property value. 
 func (m *AttachmentBase) GetContentType()(*string) {
     return m.contentType
 }
@@ -95,15 +95,15 @@ func (m *AttachmentBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *AttachmentBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. 
 func (m *AttachmentBase) GetName()(*string) {
     return m.name
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. 
 func (m *AttachmentBase) GetSize()(*int32) {
     return m.size
 }
@@ -139,19 +139,19 @@ func (m *AttachmentBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetContentType sets the contentType property value. The contentType property
+// SetContentType sets the contentType property value. 
 func (m *AttachmentBase) SetContentType(value *string)() {
     m.contentType = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *AttachmentBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. 
 func (m *AttachmentBase) SetName(value *string)() {
     m.name = value
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. 
 func (m *AttachmentBase) SetSize(value *int32)() {
     m.size = value
 }

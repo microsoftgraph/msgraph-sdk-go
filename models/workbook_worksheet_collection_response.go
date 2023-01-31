@@ -7,7 +7,7 @@ import (
 // WorkbookWorksheetCollectionResponse 
 type WorkbookWorksheetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookWorksheetable
 }
 // NewWorkbookWorksheetCollectionResponse instantiates a new WorkbookWorksheetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookWorksheetCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookWorksheetCollectionResponse) GetValue()([]WorkbookWorksheetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookWorksheetCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookWorksheetCollectionResponse) SetValue(value []WorkbookWorksheetable)() {
     m.value = value
 }

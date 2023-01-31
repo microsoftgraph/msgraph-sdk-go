@@ -11,9 +11,9 @@ type ClientUserAgent struct {
     azureADAppId *string
     // Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
     communicationServiceId *string
-    // The platform property
+    // 
     platform *ClientPlatform
-    // The productFamily property
+    // 
     productFamily *ProductFamily
 }
 // NewClientUserAgent instantiates a new ClientUserAgent and sets the default values.
@@ -82,11 +82,11 @@ func (m *ClientUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetPlatform gets the platform property value. The platform property
+// GetPlatform gets the platform property value. 
 func (m *ClientUserAgent) GetPlatform()(*ClientPlatform) {
     return m.platform
 }
-// GetProductFamily gets the productFamily property value. The productFamily property
+// GetProductFamily gets the productFamily property value. 
 func (m *ClientUserAgent) GetProductFamily()(*ProductFamily) {
     return m.productFamily
 }
@@ -132,11 +132,11 @@ func (m *ClientUserAgent) SetAzureADAppId(value *string)() {
 func (m *ClientUserAgent) SetCommunicationServiceId(value *string)() {
     m.communicationServiceId = value
 }
-// SetPlatform sets the platform property value. The platform property
+// SetPlatform sets the platform property value. 
 func (m *ClientUserAgent) SetPlatform(value *ClientPlatform)() {
     m.platform = value
 }
-// SetProductFamily sets the productFamily property value. The productFamily property
+// SetProductFamily sets the productFamily property value. 
 func (m *ClientUserAgent) SetProductFamily(value *ProductFamily)() {
     m.productFamily = value
 }

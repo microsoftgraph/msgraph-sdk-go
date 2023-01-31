@@ -7,7 +7,7 @@ import (
 // IdentitySetCollectionResponse 
 type IdentitySetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IdentitySetable
 }
 // NewIdentitySetCollectionResponse instantiates a new IdentitySetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IdentitySetCollectionResponse) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IdentitySetCollectionResponse) GetValue()([]IdentitySetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IdentitySetCollectionResponse) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IdentitySetCollectionResponse) SetValue(value []IdentitySetable)() {
     m.value = value
 }

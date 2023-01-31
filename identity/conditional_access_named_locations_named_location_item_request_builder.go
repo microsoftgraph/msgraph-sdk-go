@@ -47,13 +47,16 @@ type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal instantiates a new NamedLocationItemRequestBuilder and sets the default values.
-func NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
+func NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, namedLocationId *string)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
     m := &ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/conditionalAccess/namedLocations/{namedLocation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if namedLocationId != nil {
+        urlTplParams["namedLocation%2Did"] = *namedLocationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(p
 func NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property namedLocations for identity
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -12,7 +12,7 @@ type SimulationEventsContent struct {
     compromisedRate *float64
     // List of simulation events in an attack simulation and training campaign.
     events []SimulationEventable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSimulationEventsContent instantiates a new simulationEventsContent and sets the default values.
@@ -77,7 +77,7 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SimulationEventsContent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *SimulationEventsContent) SetCompromisedRate(value *float64)() {
 func (m *SimulationEventsContent) SetEvents(value []SimulationEventable)() {
     m.events = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SimulationEventsContent) SetOdataType(value *string)() {
     m.odataType = value
 }

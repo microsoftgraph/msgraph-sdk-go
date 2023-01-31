@@ -7,7 +7,7 @@ import (
 // OnenoteOperationCollectionResponse 
 type OnenoteOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OnenoteOperationable
 }
 // NewOnenoteOperationCollectionResponse instantiates a new OnenoteOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OnenoteOperationCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OnenoteOperationCollectionResponse) GetValue()([]OnenoteOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OnenoteOperationCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OnenoteOperationCollectionResponse) SetValue(value []OnenoteOperationable)() {
     m.value = value
 }

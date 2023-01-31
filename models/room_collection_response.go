@@ -7,7 +7,7 @@ import (
 // RoomCollectionResponse 
 type RoomCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Roomable
 }
 // NewRoomCollectionResponse instantiates a new RoomCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RoomCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RoomCollectionResponse) GetValue()([]Roomable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RoomCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RoomCollectionResponse) SetValue(value []Roomable)() {
     m.value = value
 }

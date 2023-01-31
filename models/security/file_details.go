@@ -18,7 +18,7 @@ type FileDetails struct {
     fileSize *int64
     // The certificate authority (CA) that issued the certificate.
     issuer *string
-    // The OdataType property
+    // 
     odataType *string
     // The Sha1 cryptographic hash of the file content.
     sha1 *string
@@ -157,7 +157,7 @@ func (m *FileDetails) GetFileSize()(*int64) {
 func (m *FileDetails) GetIssuer()(*string) {
     return m.issuer
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FileDetails) GetOdataType()(*string) {
     return m.odataType
 }
@@ -261,7 +261,7 @@ func (m *FileDetails) SetFileSize(value *int64)() {
 func (m *FileDetails) SetIssuer(value *string)() {
     m.issuer = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FileDetails) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -96,9 +96,9 @@ func (m *JoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable), nil
 }
-// GetAllMessages provides operations to call the getAllMessages method.
-func (m *JoinedTeamsRequestBuilder) GetAllMessages()(*JoinedTeamsGetAllMessagesRequestBuilder) {
-    return NewJoinedTeamsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
+func (m *JoinedTeamsRequestBuilder) MicrosoftGraphGetAllMessages()(*JoinedTeamsMicrosoftGraphGetAllMessagesGetAllMessagesRequestBuilder) {
+    return NewJoinedTeamsMicrosoftGraphGetAllMessagesGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create new navigation property to joinedTeams for me
 func (m *JoinedTeamsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *JoinedTeamsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
@@ -142,7 +142,10 @@ func (m *JoinedTeamsRequestBuilder) ToPostRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

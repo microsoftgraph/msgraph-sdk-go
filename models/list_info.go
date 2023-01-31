@@ -12,7 +12,7 @@ type ListInfo struct {
     contentTypesEnabled *bool
     // If true, indicates that the list is not normally visible in the SharePoint user experience.
     hidden *bool
-    // The OdataType property
+    // 
     odataType *string
     // An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
     template *string
@@ -85,7 +85,7 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 func (m *ListInfo) GetHidden()(*bool) {
     return m.hidden
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ListInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *ListInfo) SetContentTypesEnabled(value *bool)() {
 func (m *ListInfo) SetHidden(value *bool)() {
     m.hidden = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ListInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

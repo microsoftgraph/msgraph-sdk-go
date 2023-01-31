@@ -8,7 +8,7 @@ import (
 // EdiscoveryReviewSetQueryCollectionResponse 
 type EdiscoveryReviewSetQueryCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryReviewSetQueryable
 }
 // NewEdiscoveryReviewSetQueryCollectionResponse instantiates a new EdiscoveryReviewSetQueryCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryReviewSetQueryCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryReviewSetQueryCollectionResponse) GetValue()([]EdiscoveryReviewSetQueryable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryReviewSetQueryCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryReviewSetQueryCollectionResponse) SetValue(value []EdiscoveryReviewSetQueryable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // ServiceHealthIssueCollectionResponse 
 type ServiceHealthIssueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ServiceHealthIssueable
 }
 // NewServiceHealthIssueCollectionResponse instantiates a new ServiceHealthIssueCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ServiceHealthIssueCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ServiceHealthIssueCollectionResponse) GetValue()([]ServiceHealthIssueable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ServiceHealthIssueCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ServiceHealthIssueCollectionResponse) SetValue(value []ServiceHealthIssueable)() {
     m.value = value
 }

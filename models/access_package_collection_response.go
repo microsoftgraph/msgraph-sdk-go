@@ -7,7 +7,7 @@ import (
 // AccessPackageCollectionResponse 
 type AccessPackageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessPackageable
 }
 // NewAccessPackageCollectionResponse instantiates a new AccessPackageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessPackageCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessPackageCollectionResponse) GetValue()([]AccessPackageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessPackageCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessPackageCollectionResponse) SetValue(value []AccessPackageable)() {
     m.value = value
 }

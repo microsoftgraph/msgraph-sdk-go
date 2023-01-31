@@ -12,7 +12,7 @@ type AutomaticRepliesMailTips struct {
     message *string
     // The language that the automatic reply message is in.
     messageLanguage LocaleInfoable
-    // The OdataType property
+    // 
     odataType *string
     // The date and time that automatic replies are set to end.
     scheduledEndTime DateTimeTimeZoneable
@@ -97,7 +97,7 @@ func (m *AutomaticRepliesMailTips) GetMessage()(*string) {
 func (m *AutomaticRepliesMailTips) GetMessageLanguage()(LocaleInfoable) {
     return m.messageLanguage
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AutomaticRepliesMailTips) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *AutomaticRepliesMailTips) SetMessage(value *string)() {
 func (m *AutomaticRepliesMailTips) SetMessageLanguage(value LocaleInfoable)() {
     m.messageLanguage = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AutomaticRepliesMailTips) SetOdataType(value *string)() {
     m.odataType = value
 }

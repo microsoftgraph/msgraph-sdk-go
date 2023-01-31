@@ -12,7 +12,7 @@ type AverageComparativeScore struct {
     averageScore *float64
     // Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
     basis *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAverageComparativeScore instantiates a new averageComparativeScore and sets the default values.
@@ -73,7 +73,7 @@ func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AverageComparativeScore) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
 func (m *AverageComparativeScore) SetBasis(value *string)() {
     m.basis = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AverageComparativeScore) SetOdataType(value *string)() {
     m.odataType = value
 }

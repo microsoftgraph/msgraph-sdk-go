@@ -8,7 +8,7 @@ import (
 type Prompt struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPrompt instantiates a new prompt and sets the default values.
@@ -59,7 +59,7 @@ func (m *Prompt) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Prompt) GetOdataType()(*string) {
     return m.odataType
 }
@@ -83,7 +83,7 @@ func (m *Prompt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 func (m *Prompt) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Prompt) SetOdataType(value *string)() {
     m.odataType = value
 }

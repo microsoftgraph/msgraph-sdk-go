@@ -18,7 +18,7 @@ type ConditionalAccessConditionSet struct {
     devices ConditionalAccessDevicesable
     // Locations included in and excluded from the policy.
     locations ConditionalAccessLocationsable
-    // The OdataType property
+    // 
     odataType *string
     // Platforms included in and excluded from the policy.
     platforms ConditionalAccessPlatformsable
@@ -197,7 +197,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
 func (m *ConditionalAccessConditionSet) GetLocations()(ConditionalAccessLocationsable) {
     return m.locations
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessConditionSet) GetOdataType()(*string) {
     return m.odataType
 }
@@ -321,7 +321,7 @@ func (m *ConditionalAccessConditionSet) SetDevices(value ConditionalAccessDevice
 func (m *ConditionalAccessConditionSet) SetLocations(value ConditionalAccessLocationsable)() {
     m.locations = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessConditionSet) SetOdataType(value *string)() {
     m.odataType = value
 }

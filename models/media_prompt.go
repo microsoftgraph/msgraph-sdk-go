@@ -7,7 +7,7 @@ import (
 // MediaPrompt 
 type MediaPrompt struct {
     Prompt
-    // The mediaInfo property
+    // 
     mediaInfo MediaInfoable
 }
 // NewMediaPrompt instantiates a new MediaPrompt and sets the default values.
@@ -38,7 +38,7 @@ func (m *MediaPrompt) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetMediaInfo gets the mediaInfo property value. The mediaInfo property
+// GetMediaInfo gets the mediaInfo property value. 
 func (m *MediaPrompt) GetMediaInfo()(MediaInfoable) {
     return m.mediaInfo
 }
@@ -56,7 +56,7 @@ func (m *MediaPrompt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetMediaInfo sets the mediaInfo property value. The mediaInfo property
+// SetMediaInfo sets the mediaInfo property value. 
 func (m *MediaPrompt) SetMediaInfo(value MediaInfoable)() {
     m.mediaInfo = value
 }

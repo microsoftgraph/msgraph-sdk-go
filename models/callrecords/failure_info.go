@@ -8,11 +8,11 @@ import (
 type FailureInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Classification of why a call or portion of a call failed.
     reason *string
-    // The stage property
+    // 
     stage *FailureStage
 }
 // NewFailureInfo instantiates a new failureInfo and sets the default values.
@@ -65,7 +65,7 @@ func (m *FailureInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FailureInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -73,7 +73,7 @@ func (m *FailureInfo) GetOdataType()(*string) {
 func (m *FailureInfo) GetReason()(*string) {
     return m.reason
 }
-// GetStage gets the stage property value. The stage property
+// GetStage gets the stage property value. 
 func (m *FailureInfo) GetStage()(*FailureStage) {
     return m.stage
 }
@@ -110,7 +110,7 @@ func (m *FailureInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *FailureInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FailureInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -118,7 +118,7 @@ func (m *FailureInfo) SetOdataType(value *string)() {
 func (m *FailureInfo) SetReason(value *string)() {
     m.reason = value
 }
-// SetStage sets the stage property value. The stage property
+// SetStage sets the stage property value. 
 func (m *FailureInfo) SetStage(value *FailureStage)() {
     m.stage = value
 }

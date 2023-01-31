@@ -10,7 +10,7 @@ type EducationTeacher struct {
     additionalData map[string]any
     // ID of the teacher in the source system.
     externalId *string
-    // The OdataType property
+    // 
     odataType *string
     // Teacher number.
     teacherNumber *string
@@ -69,7 +69,7 @@ func (m *EducationTeacher) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationTeacher) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *EducationTeacher) SetAdditionalData(value map[string]any)() {
 func (m *EducationTeacher) SetExternalId(value *string)() {
     m.externalId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationTeacher) SetOdataType(value *string)() {
     m.odataType = value
 }

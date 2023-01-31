@@ -14,7 +14,7 @@ type EducationTerm struct {
     endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // ID of term in the syncing system.
     externalId *string
-    // The OdataType property
+    // 
     odataType *string
     // Start of the term.
     startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
@@ -101,7 +101,7 @@ func (m *EducationTerm) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationTerm) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *EducationTerm) SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a
 func (m *EducationTerm) SetExternalId(value *string)() {
     m.externalId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationTerm) SetOdataType(value *string)() {
     m.odataType = value
 }

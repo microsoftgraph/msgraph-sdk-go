@@ -24,7 +24,7 @@ type PrinterLocation struct {
     latitude *float64
     // The longitude that the printer is located at.
     longitude *float64
-    // The OdataType property
+    // 
     odataType *string
     // The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
     organization []string
@@ -42,7 +42,7 @@ type PrinterLocation struct {
     streetAddress *string
     // The subdivision that the printer is located in. The elements should be in hierarchical order.
     subdivision []string
-    // The subunit property
+    // 
     subunit []string
 }
 // NewPrinterLocation instantiates a new printerLocation and sets the default values.
@@ -289,7 +289,7 @@ func (m *PrinterLocation) GetLatitude()(*float64) {
 func (m *PrinterLocation) GetLongitude()(*float64) {
     return m.longitude
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrinterLocation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -325,7 +325,7 @@ func (m *PrinterLocation) GetStreetAddress()(*string) {
 func (m *PrinterLocation) GetSubdivision()([]string) {
     return m.subdivision
 }
-// GetSubunit gets the subunit property value. The subunit property
+// GetSubunit gets the subunit property value. 
 func (m *PrinterLocation) GetSubunit()([]string) {
     return m.subunit
 }
@@ -483,7 +483,7 @@ func (m *PrinterLocation) SetLatitude(value *float64)() {
 func (m *PrinterLocation) SetLongitude(value *float64)() {
     m.longitude = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrinterLocation) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -519,7 +519,7 @@ func (m *PrinterLocation) SetStreetAddress(value *string)() {
 func (m *PrinterLocation) SetSubdivision(value []string)() {
     m.subdivision = value
 }
-// SetSubunit sets the subunit property value. The subunit property
+// SetSubunit sets the subunit property value. 
 func (m *PrinterLocation) SetSubunit(value []string)() {
     m.subunit = value
 }

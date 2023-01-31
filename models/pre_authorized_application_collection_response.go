@@ -7,7 +7,7 @@ import (
 // PreAuthorizedApplicationCollectionResponse 
 type PreAuthorizedApplicationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PreAuthorizedApplicationable
 }
 // NewPreAuthorizedApplicationCollectionResponse instantiates a new PreAuthorizedApplicationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PreAuthorizedApplicationCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PreAuthorizedApplicationCollectionResponse) GetValue()([]PreAuthorizedApplicationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PreAuthorizedApplicationCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PreAuthorizedApplicationCollectionResponse) SetValue(value []PreAuthorizedApplicationable)() {
     m.value = value
 }

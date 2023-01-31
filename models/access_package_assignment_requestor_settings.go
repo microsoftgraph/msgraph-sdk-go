@@ -22,7 +22,7 @@ type AccessPackageAssignmentRequestorSettings struct {
     enableTargetsToSelfRemoveAccess *bool
     // If true, allows requestors to create a request to update their access.
     enableTargetsToSelfUpdateAccess *bool
-    // The OdataType property
+    // 
     odataType *string
     // The principals who can request on-behalf-of others.
     onBehalfRequestors []SubjectSetable
@@ -169,7 +169,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessPackageAssignmentRequestorSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -277,7 +277,7 @@ func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfRemoveA
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfUpdateAccess(value *bool)() {
     m.enableTargetsToSelfUpdateAccess = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessPackageAssignmentRequestorSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

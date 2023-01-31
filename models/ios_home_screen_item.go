@@ -10,7 +10,7 @@ type IosHomeScreenItem struct {
     additionalData map[string]any
     // Name of the app
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIosHomeScreenItem instantiates a new iosHomeScreenItem and sets the default values.
@@ -77,7 +77,7 @@ func (m *IosHomeScreenItem) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosHomeScreenItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -111,7 +111,7 @@ func (m *IosHomeScreenItem) SetAdditionalData(value map[string]any)() {
 func (m *IosHomeScreenItem) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosHomeScreenItem) SetOdataType(value *string)() {
     m.odataType = value
 }

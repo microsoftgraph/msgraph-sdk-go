@@ -7,7 +7,7 @@ import (
 // DeviceManagementExportJobCollectionResponse 
 type DeviceManagementExportJobCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceManagementExportJobable
 }
 // NewDeviceManagementExportJobCollectionResponse instantiates a new DeviceManagementExportJobCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceManagementExportJobCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceManagementExportJobCollectionResponse) GetValue()([]DeviceManagementExportJobable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceManagementExportJobCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceManagementExportJobCollectionResponse) SetValue(value []DeviceManagementExportJobable)() {
     m.value = value
 }

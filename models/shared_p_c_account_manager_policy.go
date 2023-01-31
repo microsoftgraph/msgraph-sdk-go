@@ -14,7 +14,7 @@ type SharedPCAccountManagerPolicy struct {
     cacheAccountsAboveDiskFreePercentage *int32
     // Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.
     inactiveThresholdDays *int32
-    // The OdataType property
+    // 
     odataType *string
     // Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
     removeAccountsBelowDiskFreePercentage *int32
@@ -101,7 +101,7 @@ func (m *SharedPCAccountManagerPolicy) GetFieldDeserializers()(map[string]func(i
 func (m *SharedPCAccountManagerPolicy) GetInactiveThresholdDays()(*int32) {
     return m.inactiveThresholdDays
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SharedPCAccountManagerPolicy) GetOdataType()(*string) {
     return m.odataType
 }
@@ -166,7 +166,7 @@ func (m *SharedPCAccountManagerPolicy) SetCacheAccountsAboveDiskFreePercentage(v
 func (m *SharedPCAccountManagerPolicy) SetInactiveThresholdDays(value *int32)() {
     m.inactiveThresholdDays = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SharedPCAccountManagerPolicy) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // AuthorizationPolicyCollectionResponse 
 type AuthorizationPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuthorizationPolicyable
 }
 // NewAuthorizationPolicyCollectionResponse instantiates a new AuthorizationPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuthorizationPolicyCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuthorizationPolicyCollectionResponse) GetValue()([]AuthorizationPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuthorizationPolicyCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuthorizationPolicyCollectionResponse) SetValue(value []AuthorizationPolicyable)() {
     m.value = value
 }

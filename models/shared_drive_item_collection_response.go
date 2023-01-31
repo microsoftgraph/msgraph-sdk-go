@@ -7,7 +7,7 @@ import (
 // SharedDriveItemCollectionResponse 
 type SharedDriveItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SharedDriveItemable
 }
 // NewSharedDriveItemCollectionResponse instantiates a new SharedDriveItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SharedDriveItemCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SharedDriveItemCollectionResponse) GetValue()([]SharedDriveItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SharedDriveItemCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SharedDriveItemCollectionResponse) SetValue(value []SharedDriveItemable)() {
     m.value = value
 }

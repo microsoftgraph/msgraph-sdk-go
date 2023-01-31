@@ -10,7 +10,7 @@ type CrossTenantAccessPolicyTargetConfiguration struct {
     accessType *CrossTenantAccessPolicyTargetConfigurationAccessType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Specifies whether to target users, groups, or applications with this rule.
     targets []CrossTenantAccessPolicyTargetable
@@ -73,7 +73,7 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyTargetConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -122,7 +122,7 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) SetAccessType(value *CrossT
 func (m *CrossTenantAccessPolicyTargetConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyTargetConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }

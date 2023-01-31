@@ -18,7 +18,7 @@ type DirectoryAudit struct {
     category *string
     // Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
     correlationId *string
-    // The initiatedBy property
+    // 
     initiatedBy AuditActivityInitiatorable
     // Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
     loggedByService *string
@@ -185,7 +185,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetInitiatedBy gets the initiatedBy property value. The initiatedBy property
+// GetInitiatedBy gets the initiatedBy property value. 
 func (m *DirectoryAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
     return m.initiatedBy
 }
@@ -312,7 +312,7 @@ func (m *DirectoryAudit) SetCategory(value *string)() {
 func (m *DirectoryAudit) SetCorrelationId(value *string)() {
     m.correlationId = value
 }
-// SetInitiatedBy sets the initiatedBy property value. The initiatedBy property
+// SetInitiatedBy sets the initiatedBy property value. 
 func (m *DirectoryAudit) SetInitiatedBy(value AuditActivityInitiatorable)() {
     m.initiatedBy = value
 }

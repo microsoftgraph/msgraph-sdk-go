@@ -8,7 +8,7 @@ import (
 type WorkforceIntegrationEncryption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Possible values are: sharedSecret, unknownFutureValue.
     protocol *WorkforceIntegrationEncryptionProtocol
@@ -65,7 +65,7 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WorkforceIntegrationEncryption) GetOdataType()(*string) {
     return m.odataType
 }
@@ -110,7 +110,7 @@ func (m *WorkforceIntegrationEncryption) Serialize(writer i878a80d2330e89d268963
 func (m *WorkforceIntegrationEncryption) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WorkforceIntegrationEncryption) SetOdataType(value *string)() {
     m.odataType = value
 }

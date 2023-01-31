@@ -7,7 +7,7 @@ import (
 // AndroidCustomConfigurationCollectionResponse 
 type AndroidCustomConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidCustomConfigurationable
 }
 // NewAndroidCustomConfigurationCollectionResponse instantiates a new AndroidCustomConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidCustomConfigurationCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidCustomConfigurationCollectionResponse) GetValue()([]AndroidCustomConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidCustomConfigurationCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidCustomConfigurationCollectionResponse) SetValue(value []AndroidCustomConfigurationable)() {
     m.value = value
 }

@@ -8,13 +8,13 @@ import (
 type SearchHitsContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The aggregations property
+    // 
     aggregations []SearchAggregationable
     // A collection of the search results.
     hits []SearchHitable
     // Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
     moreResultsAvailable *bool
-    // The OdataType property
+    // 
     odataType *string
     // The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
     total *int32
@@ -34,7 +34,7 @@ func CreateSearchHitsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
 func (m *SearchHitsContainer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAggregations gets the aggregations property value. The aggregations property
+// GetAggregations gets the aggregations property value. 
 func (m *SearchHitsContainer) GetAggregations()([]SearchAggregationable) {
     return m.aggregations
 }
@@ -109,7 +109,7 @@ func (m *SearchHitsContainer) GetHits()([]SearchHitable) {
 func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
     return m.moreResultsAvailable
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchHitsContainer) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *SearchHitsContainer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAggregations sets the aggregations property value. The aggregations property
+// SetAggregations sets the aggregations property value. 
 func (m *SearchHitsContainer) SetAggregations(value []SearchAggregationable)() {
     m.aggregations = value
 }
@@ -181,7 +181,7 @@ func (m *SearchHitsContainer) SetHits(value []SearchHitable)() {
 func (m *SearchHitsContainer) SetMoreResultsAvailable(value *bool)() {
     m.moreResultsAvailable = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchHitsContainer) SetOdataType(value *string)() {
     m.odataType = value
 }

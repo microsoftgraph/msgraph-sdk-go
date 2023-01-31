@@ -12,7 +12,7 @@ type MeetingTimeSuggestionsResult struct {
     emptySuggestionsReason *string
     // An array of meeting suggestions.
     meetingTimeSuggestions []MeetingTimeSuggestionable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewMeetingTimeSuggestionsResult instantiates a new meetingTimeSuggestionsResult and sets the default values.
@@ -77,7 +77,7 @@ func (m *MeetingTimeSuggestionsResult) GetFieldDeserializers()(map[string]func(i
 func (m *MeetingTimeSuggestionsResult) GetMeetingTimeSuggestions()([]MeetingTimeSuggestionable) {
     return m.meetingTimeSuggestions
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MeetingTimeSuggestionsResult) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *MeetingTimeSuggestionsResult) SetEmptySuggestionsReason(value *string)(
 func (m *MeetingTimeSuggestionsResult) SetMeetingTimeSuggestions(value []MeetingTimeSuggestionable)() {
     m.meetingTimeSuggestions = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MeetingTimeSuggestionsResult) SetOdataType(value *string)() {
     m.odataType = value
 }

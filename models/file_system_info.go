@@ -15,7 +15,7 @@ type FileSystemInfo struct {
     lastAccessedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The UTC date and time the file was last modified on a client.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewFileSystemInfo instantiates a new fileSystemInfo and sets the default values.
@@ -90,7 +90,7 @@ func (m *FileSystemInfo) GetLastAccessedDateTime()(*i336074805fc853987abe6f7fe3a
 func (m *FileSystemInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FileSystemInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -144,7 +144,7 @@ func (m *FileSystemInfo) SetLastAccessedDateTime(value *i336074805fc853987abe6f7
 func (m *FileSystemInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FileSystemInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

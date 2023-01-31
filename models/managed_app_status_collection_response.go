@@ -7,7 +7,7 @@ import (
 // ManagedAppStatusCollectionResponse 
 type ManagedAppStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedAppStatusable
 }
 // NewManagedAppStatusCollectionResponse instantiates a new ManagedAppStatusCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedAppStatusCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedAppStatusCollectionResponse) GetValue()([]ManagedAppStatusable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedAppStatusCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedAppStatusCollectionResponse) SetValue(value []ManagedAppStatusable)() {
     m.value = value
 }

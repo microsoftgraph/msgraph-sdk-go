@@ -10,7 +10,7 @@ type LobbyBypassSettings struct {
     additionalData map[string]any
     // Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
     isDialInBypassEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
     scope *LobbyBypassScope
@@ -69,7 +69,7 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
     return m.isDialInBypassEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LobbyBypassSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -114,7 +114,7 @@ func (m *LobbyBypassSettings) SetAdditionalData(value map[string]any)() {
 func (m *LobbyBypassSettings) SetIsDialInBypassEnabled(value *bool)() {
     m.isDialInBypassEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LobbyBypassSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

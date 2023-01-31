@@ -18,7 +18,7 @@ type WorkbookSortField struct {
     icon WorkbookIconable
     // Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
     key *int32
-    // The OdataType property
+    // 
     odataType *string
     // Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
     sortOn *string
@@ -133,7 +133,7 @@ func (m *WorkbookSortField) GetIcon()(WorkbookIconable) {
 func (m *WorkbookSortField) GetKey()(*int32) {
     return m.key
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WorkbookSortField) GetOdataType()(*string) {
     return m.odataType
 }
@@ -217,7 +217,7 @@ func (m *WorkbookSortField) SetIcon(value WorkbookIconable)() {
 func (m *WorkbookSortField) SetKey(value *int32)() {
     m.key = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WorkbookSortField) SetOdataType(value *string)() {
     m.odataType = value
 }

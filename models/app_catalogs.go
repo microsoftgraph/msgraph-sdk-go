@@ -7,7 +7,7 @@ import (
 // AppCatalogs 
 type AppCatalogs struct {
     Entity
-    // The teamsApps property
+    // 
     teamsApps []TeamsAppable
 }
 // NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
@@ -40,7 +40,7 @@ func (m *AppCatalogs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetTeamsApps gets the teamsApps property value. The teamsApps property
+// GetTeamsApps gets the teamsApps property value. 
 func (m *AppCatalogs) GetTeamsApps()([]TeamsAppable) {
     return m.teamsApps
 }
@@ -62,7 +62,7 @@ func (m *AppCatalogs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetTeamsApps sets the teamsApps property value. The teamsApps property
+// SetTeamsApps sets the teamsApps property value. 
 func (m *AppCatalogs) SetTeamsApps(value []TeamsAppable)() {
     m.teamsApps = value
 }

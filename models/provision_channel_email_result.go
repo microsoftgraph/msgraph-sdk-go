@@ -10,7 +10,7 @@ type ProvisionChannelEmailResult struct {
     additionalData map[string]any
     // Represents the provisioned email address.
     email *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewProvisionChannelEmailResult instantiates a new provisionChannelEmailResult and sets the default values.
@@ -57,7 +57,7 @@ func (m *ProvisionChannelEmailResult) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ProvisionChannelEmailResult) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *ProvisionChannelEmailResult) SetAdditionalData(value map[string]any)() 
 func (m *ProvisionChannelEmailResult) SetEmail(value *string)() {
     m.email = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ProvisionChannelEmailResult) SetOdataType(value *string)() {
     m.odataType = value
 }

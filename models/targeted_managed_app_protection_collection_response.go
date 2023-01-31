@@ -7,7 +7,7 @@ import (
 // TargetedManagedAppProtectionCollectionResponse 
 type TargetedManagedAppProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TargetedManagedAppProtectionable
 }
 // NewTargetedManagedAppProtectionCollectionResponse instantiates a new TargetedManagedAppProtectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TargetedManagedAppProtectionCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TargetedManagedAppProtectionCollectionResponse) GetValue()([]TargetedManagedAppProtectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TargetedManagedAppProtectionCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TargetedManagedAppProtectionCollectionResponse) SetValue(value []TargetedManagedAppProtectionable)() {
     m.value = value
 }

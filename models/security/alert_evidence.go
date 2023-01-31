@@ -11,9 +11,9 @@ type AlertEvidence struct {
     additionalData map[string]any
     // The time the evidence was created and added to the alert.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
-    // The remediationStatus property
+    // 
     remediationStatus *EvidenceRemediationStatus
     // Details about the remediation status.
     remediationStatusDetails *string
@@ -21,7 +21,7 @@ type AlertEvidence struct {
     roles []EvidenceRole
     // Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
     tags []string
-    // The verdict property
+    // 
     verdict *EvidenceVerdict
 }
 // NewAlertEvidence instantiates a new alertEvidence and sets the default values.
@@ -170,11 +170,11 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlertEvidence) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRemediationStatus gets the remediationStatus property value. The remediationStatus property
+// GetRemediationStatus gets the remediationStatus property value. 
 func (m *AlertEvidence) GetRemediationStatus()(*EvidenceRemediationStatus) {
     return m.remediationStatus
 }
@@ -190,7 +190,7 @@ func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
 func (m *AlertEvidence) GetTags()([]string) {
     return m.tags
 }
-// GetVerdict gets the verdict property value. The verdict property
+// GetVerdict gets the verdict property value. 
 func (m *AlertEvidence) GetVerdict()(*EvidenceVerdict) {
     return m.verdict
 }
@@ -256,11 +256,11 @@ func (m *AlertEvidence) SetAdditionalData(value map[string]any)() {
 func (m *AlertEvidence) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlertEvidence) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRemediationStatus sets the remediationStatus property value. The remediationStatus property
+// SetRemediationStatus sets the remediationStatus property value. 
 func (m *AlertEvidence) SetRemediationStatus(value *EvidenceRemediationStatus)() {
     m.remediationStatus = value
 }
@@ -276,7 +276,7 @@ func (m *AlertEvidence) SetRoles(value []EvidenceRole)() {
 func (m *AlertEvidence) SetTags(value []string)() {
     m.tags = value
 }
-// SetVerdict sets the verdict property value. The verdict property
+// SetVerdict sets the verdict property value. 
 func (m *AlertEvidence) SetVerdict(value *EvidenceVerdict)() {
     m.verdict = value
 }

@@ -7,13 +7,13 @@ import (
 // CalendarSharingMessage 
 type CalendarSharingMessage struct {
     Message
-    // The canAccept property
+    // 
     canAccept *bool
-    // The sharingMessageAction property
+    // 
     sharingMessageAction CalendarSharingMessageActionable
-    // The sharingMessageActions property
+    // 
     sharingMessageActions []CalendarSharingMessageActionable
-    // The suggestedCalendarName property
+    // 
     suggestedCalendarName *string
 }
 // NewCalendarSharingMessage instantiates a new CalendarSharingMessage and sets the default values.
@@ -29,7 +29,7 @@ func NewCalendarSharingMessage()(*CalendarSharingMessage) {
 func CreateCalendarSharingMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendarSharingMessage(), nil
 }
-// GetCanAccept gets the canAccept property value. The canAccept property
+// GetCanAccept gets the canAccept property value. 
 func (m *CalendarSharingMessage) GetCanAccept()(*bool) {
     return m.canAccept
 }
@@ -82,15 +82,15 @@ func (m *CalendarSharingMessage) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetSharingMessageAction gets the sharingMessageAction property value. The sharingMessageAction property
+// GetSharingMessageAction gets the sharingMessageAction property value. 
 func (m *CalendarSharingMessage) GetSharingMessageAction()(CalendarSharingMessageActionable) {
     return m.sharingMessageAction
 }
-// GetSharingMessageActions gets the sharingMessageActions property value. The sharingMessageActions property
+// GetSharingMessageActions gets the sharingMessageActions property value. 
 func (m *CalendarSharingMessage) GetSharingMessageActions()([]CalendarSharingMessageActionable) {
     return m.sharingMessageActions
 }
-// GetSuggestedCalendarName gets the suggestedCalendarName property value. The suggestedCalendarName property
+// GetSuggestedCalendarName gets the suggestedCalendarName property value. 
 func (m *CalendarSharingMessage) GetSuggestedCalendarName()(*string) {
     return m.suggestedCalendarName
 }
@@ -130,19 +130,19 @@ func (m *CalendarSharingMessage) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetCanAccept sets the canAccept property value. The canAccept property
+// SetCanAccept sets the canAccept property value. 
 func (m *CalendarSharingMessage) SetCanAccept(value *bool)() {
     m.canAccept = value
 }
-// SetSharingMessageAction sets the sharingMessageAction property value. The sharingMessageAction property
+// SetSharingMessageAction sets the sharingMessageAction property value. 
 func (m *CalendarSharingMessage) SetSharingMessageAction(value CalendarSharingMessageActionable)() {
     m.sharingMessageAction = value
 }
-// SetSharingMessageActions sets the sharingMessageActions property value. The sharingMessageActions property
+// SetSharingMessageActions sets the sharingMessageActions property value. 
 func (m *CalendarSharingMessage) SetSharingMessageActions(value []CalendarSharingMessageActionable)() {
     m.sharingMessageActions = value
 }
-// SetSuggestedCalendarName sets the suggestedCalendarName property value. The suggestedCalendarName property
+// SetSuggestedCalendarName sets the suggestedCalendarName property value. 
 func (m *CalendarSharingMessage) SetSuggestedCalendarName(value *string)() {
     m.suggestedCalendarName = value
 }

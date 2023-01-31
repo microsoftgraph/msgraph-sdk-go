@@ -11,7 +11,7 @@ type TermsExpiration struct {
     additionalData map[string]any
     // Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
     frequency *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The OdataType property
+    // 
     odataType *string
     // The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -70,7 +70,7 @@ func (m *TermsExpiration) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *TermsExpiration) GetFrequency()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.frequency
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TermsExpiration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -114,7 +114,7 @@ func (m *TermsExpiration) SetAdditionalData(value map[string]any)() {
 func (m *TermsExpiration) SetFrequency(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.frequency = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TermsExpiration) SetOdataType(value *string)() {
     m.odataType = value
 }

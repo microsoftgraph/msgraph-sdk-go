@@ -12,13 +12,13 @@ type BucketAggregationDefinition struct {
     isDescending *bool
     // The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
     minimumCount *int32
-    // The OdataType property
+    // 
     odataType *string
     // A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
     prefixFilter *string
     // Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
     ranges []BucketAggregationRangeable
-    // The sortBy property
+    // 
     sortBy *BucketAggregationSortProperty
 }
 // NewBucketAggregationDefinition instantiates a new bucketAggregationDefinition and sets the default values.
@@ -113,7 +113,7 @@ func (m *BucketAggregationDefinition) GetIsDescending()(*bool) {
 func (m *BucketAggregationDefinition) GetMinimumCount()(*int32) {
     return m.minimumCount
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BucketAggregationDefinition) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *BucketAggregationDefinition) GetPrefixFilter()(*string) {
 func (m *BucketAggregationDefinition) GetRanges()([]BucketAggregationRangeable) {
     return m.ranges
 }
-// GetSortBy gets the sortBy property value. The sortBy property
+// GetSortBy gets the sortBy property value. 
 func (m *BucketAggregationDefinition) GetSortBy()(*BucketAggregationSortProperty) {
     return m.sortBy
 }
@@ -192,7 +192,7 @@ func (m *BucketAggregationDefinition) SetIsDescending(value *bool)() {
 func (m *BucketAggregationDefinition) SetMinimumCount(value *int32)() {
     m.minimumCount = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BucketAggregationDefinition) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -204,7 +204,7 @@ func (m *BucketAggregationDefinition) SetPrefixFilter(value *string)() {
 func (m *BucketAggregationDefinition) SetRanges(value []BucketAggregationRangeable)() {
     m.ranges = value
 }
-// SetSortBy sets the sortBy property value. The sortBy property
+// SetSortBy sets the sortBy property value. 
 func (m *BucketAggregationDefinition) SetSortBy(value *BucketAggregationSortProperty)() {
     m.sortBy = value
 }

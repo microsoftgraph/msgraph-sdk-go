@@ -7,7 +7,7 @@ import (
 // CertificateBasedAuthConfigurationCollectionResponse 
 type CertificateBasedAuthConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CertificateBasedAuthConfigurationable
 }
 // NewCertificateBasedAuthConfigurationCollectionResponse instantiates a new CertificateBasedAuthConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CertificateBasedAuthConfigurationCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CertificateBasedAuthConfigurationCollectionResponse) GetValue()([]CertificateBasedAuthConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CertificateBasedAuthConfigurationCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CertificateBasedAuthConfigurationCollectionResponse) SetValue(value []CertificateBasedAuthConfigurationable)() {
     m.value = value
 }

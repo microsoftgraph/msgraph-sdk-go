@@ -7,7 +7,7 @@ import (
 // TeleconferenceDeviceMediaQualityCollectionResponse 
 type TeleconferenceDeviceMediaQualityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TeleconferenceDeviceMediaQualityable
 }
 // NewTeleconferenceDeviceMediaQualityCollectionResponse instantiates a new TeleconferenceDeviceMediaQualityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TeleconferenceDeviceMediaQualityCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TeleconferenceDeviceMediaQualityCollectionResponse) GetValue()([]TeleconferenceDeviceMediaQualityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TeleconferenceDeviceMediaQualityCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TeleconferenceDeviceMediaQualityCollectionResponse) SetValue(value []TeleconferenceDeviceMediaQualityable)() {
     m.value = value
 }

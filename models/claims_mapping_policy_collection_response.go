@@ -7,7 +7,7 @@ import (
 // ClaimsMappingPolicyCollectionResponse 
 type ClaimsMappingPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ClaimsMappingPolicyable
 }
 // NewClaimsMappingPolicyCollectionResponse instantiates a new ClaimsMappingPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ClaimsMappingPolicyCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ClaimsMappingPolicyCollectionResponse) GetValue()([]ClaimsMappingPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ClaimsMappingPolicyCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ClaimsMappingPolicyCollectionResponse) SetValue(value []ClaimsMappingPolicyable)() {
     m.value = value
 }

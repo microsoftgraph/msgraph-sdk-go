@@ -7,7 +7,7 @@ import (
 // TemporaryAccessPassAuthenticationMethodCollectionResponse 
 type TemporaryAccessPassAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TemporaryAccessPassAuthenticationMethodable
 }
 // NewTemporaryAccessPassAuthenticationMethodCollectionResponse instantiates a new TemporaryAccessPassAuthenticationMethodCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) GetFieldDese
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) GetValue()([]TemporaryAccessPassAuthenticationMethodable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) Serialize(wr
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) SetValue(value []TemporaryAccessPassAuthenticationMethodable)() {
     m.value = value
 }

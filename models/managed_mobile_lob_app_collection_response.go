@@ -7,7 +7,7 @@ import (
 // ManagedMobileLobAppCollectionResponse 
 type ManagedMobileLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedMobileLobAppable
 }
 // NewManagedMobileLobAppCollectionResponse instantiates a new ManagedMobileLobAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedMobileLobAppCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedMobileLobAppCollectionResponse) GetValue()([]ManagedMobileLobAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedMobileLobAppCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedMobileLobAppCollectionResponse) SetValue(value []ManagedMobileLobAppable)() {
     m.value = value
 }

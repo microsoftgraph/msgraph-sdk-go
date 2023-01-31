@@ -14,7 +14,7 @@ type BookingSchedulingPolicy struct {
     maximumAdvance *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
     minimumLeadTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The OdataType property
+    // 
     odataType *string
     // True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
     sendConfirmationsToOwner *bool
@@ -113,7 +113,7 @@ func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*i878a80d2330e89d26896388a
 func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.minimumLeadTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BookingSchedulingPolicy) GetOdataType()(*string) {
     return m.odataType
 }
@@ -187,7 +187,7 @@ func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *i878a80d2330e89d26896
 func (m *BookingSchedulingPolicy) SetMinimumLeadTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.minimumLeadTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BookingSchedulingPolicy) SetOdataType(value *string)() {
     m.odataType = value
 }

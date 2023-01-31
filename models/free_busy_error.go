@@ -10,7 +10,7 @@ type FreeBusyError struct {
     additionalData map[string]any
     // Describes the error.
     message *string
-    // The OdataType property
+    // 
     odataType *string
     // The response code from querying for the availability of the user, distribution list, or resource.
     responseCode *string
@@ -69,7 +69,7 @@ func (m *FreeBusyError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *FreeBusyError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FreeBusyError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *FreeBusyError) SetAdditionalData(value map[string]any)() {
 func (m *FreeBusyError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FreeBusyError) SetOdataType(value *string)() {
     m.odataType = value
 }

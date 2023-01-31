@@ -7,7 +7,7 @@ import (
 // MobileThreatDefenseConnectorCollectionResponse 
 type MobileThreatDefenseConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MobileThreatDefenseConnectorable
 }
 // NewMobileThreatDefenseConnectorCollectionResponse instantiates a new MobileThreatDefenseConnectorCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MobileThreatDefenseConnectorCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MobileThreatDefenseConnectorCollectionResponse) GetValue()([]MobileThreatDefenseConnectorable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MobileThreatDefenseConnectorCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MobileThreatDefenseConnectorCollectionResponse) SetValue(value []MobileThreatDefenseConnectorable)() {
     m.value = value
 }

@@ -11,7 +11,7 @@ type WorkbookComment struct {
     content *string
     // Indicates the type for the comment.
     contentType *string
-    // The replies property
+    // 
     replies []WorkbookCommentReplyable
 }
 // NewWorkbookComment instantiates a new workbookComment and sets the default values.
@@ -72,7 +72,7 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetReplies gets the replies property value. The replies property
+// GetReplies gets the replies property value. 
 func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
     return m.replies
 }
@@ -114,7 +114,7 @@ func (m *WorkbookComment) SetContent(value *string)() {
 func (m *WorkbookComment) SetContentType(value *string)() {
     m.contentType = value
 }
-// SetReplies sets the replies property value. The replies property
+// SetReplies sets the replies property value. 
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
     m.replies = value
 }

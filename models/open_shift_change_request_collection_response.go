@@ -7,7 +7,7 @@ import (
 // OpenShiftChangeRequestCollectionResponse 
 type OpenShiftChangeRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OpenShiftChangeRequestable
 }
 // NewOpenShiftChangeRequestCollectionResponse instantiates a new OpenShiftChangeRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OpenShiftChangeRequestCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OpenShiftChangeRequestCollectionResponse) GetValue()([]OpenShiftChangeRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OpenShiftChangeRequestCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OpenShiftChangeRequestCollectionResponse) SetValue(value []OpenShiftChangeRequestable)() {
     m.value = value
 }

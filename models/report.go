@@ -10,7 +10,7 @@ type Report struct {
     additionalData map[string]any
     // Not yet documented
     content []byte
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewReport instantiates a new report and sets the default values.
@@ -57,7 +57,7 @@ func (m *Report) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Report) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *Report) SetAdditionalData(value map[string]any)() {
 func (m *Report) SetContent(value []byte)() {
     m.content = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Report) SetOdataType(value *string)() {
     m.odataType = value
 }

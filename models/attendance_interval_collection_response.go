@@ -7,7 +7,7 @@ import (
 // AttendanceIntervalCollectionResponse 
 type AttendanceIntervalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AttendanceIntervalable
 }
 // NewAttendanceIntervalCollectionResponse instantiates a new AttendanceIntervalCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AttendanceIntervalCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AttendanceIntervalCollectionResponse) GetValue()([]AttendanceIntervalable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AttendanceIntervalCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AttendanceIntervalCollectionResponse) SetValue(value []AttendanceIntervalable)() {
     m.value = value
 }

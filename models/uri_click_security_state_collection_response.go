@@ -7,7 +7,7 @@ import (
 // UriClickSecurityStateCollectionResponse 
 type UriClickSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UriClickSecurityStateable
 }
 // NewUriClickSecurityStateCollectionResponse instantiates a new UriClickSecurityStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UriClickSecurityStateCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UriClickSecurityStateCollectionResponse) GetValue()([]UriClickSecurityStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UriClickSecurityStateCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UriClickSecurityStateCollectionResponse) SetValue(value []UriClickSecurityStateable)() {
     m.value = value
 }

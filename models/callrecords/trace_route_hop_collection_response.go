@@ -8,7 +8,7 @@ import (
 // TraceRouteHopCollectionResponse 
 type TraceRouteHopCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TraceRouteHopable
 }
 // NewTraceRouteHopCollectionResponse instantiates a new TraceRouteHopCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *TraceRouteHopCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TraceRouteHopCollectionResponse) GetValue()([]TraceRouteHopable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *TraceRouteHopCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TraceRouteHopCollectionResponse) SetValue(value []TraceRouteHopable)() {
     m.value = value
 }

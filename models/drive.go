@@ -23,7 +23,7 @@ type Drive struct {
     quota Quotaable
     // The root folder of the drive. Read-only.
     root DriveItemable
-    // The sharePointIds property
+    // 
     sharePointIds SharepointIdsable
     // Collection of common folders available in OneDrive. Read-only. Nullable.
     special []DriveItemable
@@ -206,7 +206,7 @@ func (m *Drive) GetQuota()(Quotaable) {
 func (m *Drive) GetRoot()(DriveItemable) {
     return m.root
 }
-// GetSharePointIds gets the sharePointIds property value. The sharePointIds property
+// GetSharePointIds gets the sharePointIds property value. 
 func (m *Drive) GetSharePointIds()(SharepointIdsable) {
     return m.sharePointIds
 }
@@ -340,7 +340,7 @@ func (m *Drive) SetQuota(value Quotaable)() {
 func (m *Drive) SetRoot(value DriveItemable)() {
     m.root = value
 }
-// SetSharePointIds sets the sharePointIds property value. The sharePointIds property
+// SetSharePointIds sets the sharePointIds property value. 
 func (m *Drive) SetSharePointIds(value SharepointIdsable)() {
     m.sharePointIds = value
 }

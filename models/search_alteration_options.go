@@ -12,7 +12,7 @@ type SearchAlterationOptions struct {
     enableModification *bool
     // Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
     enableSuggestion *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSearchAlterationOptions instantiates a new searchAlterationOptions and sets the default values.
@@ -73,7 +73,7 @@ func (m *SearchAlterationOptions) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchAlterationOptions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *SearchAlterationOptions) SetEnableModification(value *bool)() {
 func (m *SearchAlterationOptions) SetEnableSuggestion(value *bool)() {
     m.enableSuggestion = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchAlterationOptions) SetOdataType(value *string)() {
     m.odataType = value
 }

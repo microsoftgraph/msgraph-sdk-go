@@ -7,7 +7,7 @@ import (
 // SearchHitsContainerCollectionResponse 
 type SearchHitsContainerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SearchHitsContainerable
 }
 // NewSearchHitsContainerCollectionResponse instantiates a new SearchHitsContainerCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SearchHitsContainerCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SearchHitsContainerCollectionResponse) GetValue()([]SearchHitsContainerable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SearchHitsContainerCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SearchHitsContainerCollectionResponse) SetValue(value []SearchHitsContainerable)() {
     m.value = value
 }

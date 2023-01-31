@@ -10,7 +10,7 @@ type CallMediaState struct {
     additionalData map[string]any
     // The audio media state. Possible values are: active, inactive, unknownFutureValue.
     audio *MediaState
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCallMediaState instantiates a new callMediaState and sets the default values.
@@ -57,7 +57,7 @@ func (m *CallMediaState) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CallMediaState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -92,7 +92,7 @@ func (m *CallMediaState) SetAdditionalData(value map[string]any)() {
 func (m *CallMediaState) SetAudio(value *MediaState)() {
     m.audio = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CallMediaState) SetOdataType(value *string)() {
     m.odataType = value
 }

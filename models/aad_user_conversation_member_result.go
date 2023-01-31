@@ -7,7 +7,7 @@ import (
 // AadUserConversationMemberResult 
 type AadUserConversationMemberResult struct {
     ActionResultPart
-    // The userId property
+    // 
     userId *string
 }
 // NewAadUserConversationMemberResult instantiates a new AadUserConversationMemberResult and sets the default values.
@@ -38,7 +38,7 @@ func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. 
 func (m *AadUserConversationMemberResult) GetUserId()(*string) {
     return m.userId
 }
@@ -56,7 +56,7 @@ func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. 
 func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
     m.userId = value
 }

@@ -7,7 +7,7 @@ import (
 // DeviceAndAppManagementRoleAssignmentCollectionResponse 
 type DeviceAndAppManagementRoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceAndAppManagementRoleAssignmentable
 }
 // NewDeviceAndAppManagementRoleAssignmentCollectionResponse instantiates a new DeviceAndAppManagementRoleAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceAndAppManagementRoleAssignmentCollectionResponse) GetFieldDeseria
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceAndAppManagementRoleAssignmentCollectionResponse) GetValue()([]DeviceAndAppManagementRoleAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceAndAppManagementRoleAssignmentCollectionResponse) Serialize(write
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceAndAppManagementRoleAssignmentCollectionResponse) SetValue(value []DeviceAndAppManagementRoleAssignmentable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // SimulationCollectionResponse 
 type SimulationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Simulationable
 }
 // NewSimulationCollectionResponse instantiates a new SimulationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SimulationCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SimulationCollectionResponse) GetValue()([]Simulationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SimulationCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SimulationCollectionResponse) SetValue(value []Simulationable)() {
     m.value = value
 }

@@ -47,13 +47,16 @@ type TaskDefinitionsPrintTaskDefinitionItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal instantiates a new PrintTaskDefinitionItemRequestBuilder and sets the default values.
-func NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
+func NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printTaskDefinitionId *string)(*TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
     m := &TaskDefinitionsPrintTaskDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if printTaskDefinitionId != nil {
+        urlTplParams["printTaskDefinition%2Did"] = *printTaskDefinitionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(pathParamet
 func NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property taskDefinitions for print
 func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TaskDefinitionsPrintTaskDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +172,10 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,7 +7,7 @@ import (
 // AccessReviewStageSettingsCollectionResponse 
 type AccessReviewStageSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewStageSettingsable
 }
 // NewAccessReviewStageSettingsCollectionResponse instantiates a new AccessReviewStageSettingsCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewStageSettingsCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewStageSettingsCollectionResponse) GetValue()([]AccessReviewStageSettingsable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewStageSettingsCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewStageSettingsCollectionResponse) SetValue(value []AccessReviewStageSettingsable)() {
     m.value = value
 }

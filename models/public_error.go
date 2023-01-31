@@ -16,7 +16,7 @@ type PublicError struct {
     innerError PublicInnerErrorable
     // A non-localized message for the developer.
     message *string
-    // The OdataType property
+    // 
     odataType *string
     // The target of the error.
     target *string
@@ -121,7 +121,7 @@ func (m *PublicError) GetInnerError()(PublicInnerErrorable) {
 func (m *PublicError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PublicError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -199,7 +199,7 @@ func (m *PublicError) SetInnerError(value PublicInnerErrorable)() {
 func (m *PublicError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PublicError) SetOdataType(value *string)() {
     m.odataType = value
 }

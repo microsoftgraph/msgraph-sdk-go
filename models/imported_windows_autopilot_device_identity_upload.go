@@ -12,7 +12,7 @@ type ImportedWindowsAutopilotDeviceIdentityUpload struct {
     createdDateTimeUtc *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Collection of all Autopilot devices as a part of this upload.
     deviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
-    // The status property
+    // 
     status *ImportedWindowsAutopilotDeviceIdentityUploadStatus
 }
 // NewImportedWindowsAutopilotDeviceIdentityUpload instantiates a new ImportedWindowsAutopilotDeviceIdentityUpload and sets the default values.
@@ -73,7 +73,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetFieldDeserializers()(m
     }
     return res
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetStatus()(*ImportedWindowsAutopilotDeviceIdentityUploadStatus) {
     return m.status
 }
@@ -116,7 +116,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetCreatedDateTimeUtc(val
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)() {
     m.deviceIdentities = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetStatus(value *ImportedWindowsAutopilotDeviceIdentityUploadStatus)() {
     m.status = value
 }

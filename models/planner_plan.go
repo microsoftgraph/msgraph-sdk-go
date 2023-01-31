@@ -18,7 +18,7 @@ type PlannerPlan struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Nullable. Additional details about the plan.
     details PlannerPlanDetailsable
-    // The owner property
+    // 
     owner *string
     // Read-only. Nullable. Collection of tasks in the plan.
     tasks []PlannerTaskable
@@ -149,7 +149,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOwner gets the owner property value. The owner property
+// GetOwner gets the owner property value. 
 func (m *PlannerPlan) GetOwner()(*string) {
     return m.owner
 }
@@ -245,7 +245,7 @@ func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
 func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
     m.details = value
 }
-// SetOwner sets the owner property value. The owner property
+// SetOwner sets the owner property value. 
 func (m *PlannerPlan) SetOwner(value *string)() {
     m.owner = value
 }

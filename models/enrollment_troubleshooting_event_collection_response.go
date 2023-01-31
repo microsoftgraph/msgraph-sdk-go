@@ -7,7 +7,7 @@ import (
 // EnrollmentTroubleshootingEventCollectionResponse 
 type EnrollmentTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EnrollmentTroubleshootingEventable
 }
 // NewEnrollmentTroubleshootingEventCollectionResponse instantiates a new EnrollmentTroubleshootingEventCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EnrollmentTroubleshootingEventCollectionResponse) GetFieldDeserializers
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EnrollmentTroubleshootingEventCollectionResponse) GetValue()([]EnrollmentTroubleshootingEventable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EnrollmentTroubleshootingEventCollectionResponse) Serialize(writer i878
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EnrollmentTroubleshootingEventCollectionResponse) SetValue(value []EnrollmentTroubleshootingEventable)() {
     m.value = value
 }

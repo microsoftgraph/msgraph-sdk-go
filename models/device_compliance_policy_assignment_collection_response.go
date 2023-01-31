@@ -7,7 +7,7 @@ import (
 // DeviceCompliancePolicyAssignmentCollectionResponse 
 type DeviceCompliancePolicyAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceCompliancePolicyAssignmentable
 }
 // NewDeviceCompliancePolicyAssignmentCollectionResponse instantiates a new DeviceCompliancePolicyAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceCompliancePolicyAssignmentCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceCompliancePolicyAssignmentCollectionResponse) GetValue()([]DeviceCompliancePolicyAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceCompliancePolicyAssignmentCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceCompliancePolicyAssignmentCollectionResponse) SetValue(value []DeviceCompliancePolicyAssignmentable)() {
     m.value = value
 }

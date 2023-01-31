@@ -10,7 +10,7 @@ type SettingValue struct {
     additionalData map[string]any
     // Name of the setting (as defined by the groupSettingTemplate).
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Value of the setting.
     value *string
@@ -69,7 +69,7 @@ func (m *SettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *SettingValue) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SettingValue) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *SettingValue) SetAdditionalData(value map[string]any)() {
 func (m *SettingValue) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SettingValue) SetOdataType(value *string)() {
     m.odataType = value
 }

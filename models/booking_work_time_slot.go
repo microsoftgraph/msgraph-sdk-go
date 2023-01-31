@@ -10,7 +10,7 @@ type BookingWorkTimeSlot struct {
     additionalData map[string]any
     // The time of the day when work stops. For example, 17:00:00.0000000.
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // The OdataType property
+    // 
     odataType *string
     // The time of the day when work starts. For example, 08:00:00.0000000.
     startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
@@ -69,7 +69,7 @@ func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BookingWorkTimeSlot) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *BookingWorkTimeSlot) SetAdditionalData(value map[string]any)() {
 func (m *BookingWorkTimeSlot) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     m.endTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BookingWorkTimeSlot) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // CrossTenantAccessPolicyConfigurationPartnerCollectionResponse 
 type CrossTenantAccessPolicyConfigurationPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CrossTenantAccessPolicyConfigurationPartnerable
 }
 // NewCrossTenantAccessPolicyConfigurationPartnerCollectionResponse instantiates a new CrossTenantAccessPolicyConfigurationPartnerCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartnerCollectionResponse) GetField
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CrossTenantAccessPolicyConfigurationPartnerCollectionResponse) GetValue()([]CrossTenantAccessPolicyConfigurationPartnerable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartnerCollectionResponse) Serializ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CrossTenantAccessPolicyConfigurationPartnerCollectionResponse) SetValue(value []CrossTenantAccessPolicyConfigurationPartnerable)() {
     m.value = value
 }

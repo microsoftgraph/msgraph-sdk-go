@@ -7,7 +7,7 @@ import (
 // AndroidLobAppCollectionResponse 
 type AndroidLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidLobAppable
 }
 // NewAndroidLobAppCollectionResponse instantiates a new AndroidLobAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidLobAppCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidLobAppCollectionResponse) GetValue()([]AndroidLobAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidLobAppCollectionResponse) SetValue(value []AndroidLobAppable)() {
     m.value = value
 }

@@ -12,7 +12,7 @@ type TeamsTabConfiguration struct {
     contentUrl *string
     // Identifier for the entity hosted by the tab provider.
     entityId *string
-    // The OdataType property
+    // 
     odataType *string
     // Url called by Teams client when a Tab is removed using the Teams Client.
     removeUrl *string
@@ -97,7 +97,7 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamsTabConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *TeamsTabConfiguration) SetContentUrl(value *string)() {
 func (m *TeamsTabConfiguration) SetEntityId(value *string)() {
     m.entityId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamsTabConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }

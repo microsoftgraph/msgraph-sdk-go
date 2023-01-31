@@ -12,7 +12,7 @@ type OptionalClaims struct {
     additionalData map[string]any
     // The optional claims returned in the JWT ID token.
     idToken []OptionalClaimable
-    // The OdataType property
+    // 
     odataType *string
     // The optional claims returned in the SAML token.
     saml2Token []OptionalClaimable
@@ -97,7 +97,7 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *OptionalClaims) GetIdToken()([]OptionalClaimable) {
     return m.idToken
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OptionalClaims) GetOdataType()(*string) {
     return m.odataType
 }
@@ -163,7 +163,7 @@ func (m *OptionalClaims) SetAdditionalData(value map[string]any)() {
 func (m *OptionalClaims) SetIdToken(value []OptionalClaimable)() {
     m.idToken = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OptionalClaims) SetOdataType(value *string)() {
     m.odataType = value
 }

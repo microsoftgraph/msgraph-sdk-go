@@ -7,7 +7,7 @@ import (
 // RubricQualityCollectionResponse 
 type RubricQualityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RubricQualityable
 }
 // NewRubricQualityCollectionResponse instantiates a new RubricQualityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RubricQualityCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RubricQualityCollectionResponse) GetValue()([]RubricQualityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RubricQualityCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RubricQualityCollectionResponse) SetValue(value []RubricQualityable)() {
     m.value = value
 }

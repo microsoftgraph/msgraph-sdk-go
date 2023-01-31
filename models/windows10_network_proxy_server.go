@@ -12,7 +12,7 @@ type Windows10NetworkProxyServer struct {
     address *string
     // Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
     exceptions []string
-    // The OdataType property
+    // 
     odataType *string
     // Specifies whether the proxy server should be used for local (intranet) addresses.
     useForLocalAddresses *bool
@@ -89,7 +89,7 @@ func (m *Windows10NetworkProxyServer) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Windows10NetworkProxyServer) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *Windows10NetworkProxyServer) SetAddress(value *string)() {
 func (m *Windows10NetworkProxyServer) SetExceptions(value []string)() {
     m.exceptions = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Windows10NetworkProxyServer) SetOdataType(value *string)() {
     m.odataType = value
 }

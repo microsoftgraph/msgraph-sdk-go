@@ -7,7 +7,7 @@ import (
 // LongRunningOperationCollectionResponse 
 type LongRunningOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []LongRunningOperationable
 }
 // NewLongRunningOperationCollectionResponse instantiates a new LongRunningOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *LongRunningOperationCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LongRunningOperationCollectionResponse) GetValue()([]LongRunningOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *LongRunningOperationCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LongRunningOperationCollectionResponse) SetValue(value []LongRunningOperationable)() {
     m.value = value
 }

@@ -10,7 +10,7 @@ type Folder struct {
     additionalData map[string]any
     // Number of children contained immediately within this container.
     childCount *int32
-    // The OdataType property
+    // 
     odataType *string
     // A collection of properties defining the recommended view for the folder.
     view FolderViewable
@@ -69,7 +69,7 @@ func (m *Folder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Folder) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *Folder) SetAdditionalData(value map[string]any)() {
 func (m *Folder) SetChildCount(value *int32)() {
     m.childCount = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Folder) SetOdataType(value *string)() {
     m.odataType = value
 }

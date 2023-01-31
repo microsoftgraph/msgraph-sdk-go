@@ -18,7 +18,7 @@ type IosNotificationSettings struct {
     bundleID *string
     // Indicates whether notifications are allowed for this app.
     enabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // Publisher to be associated with the bundleID.
     publisher *string
@@ -169,7 +169,7 @@ func (m *IosNotificationSettings) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosNotificationSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -284,7 +284,7 @@ func (m *IosNotificationSettings) SetBundleID(value *string)() {
 func (m *IosNotificationSettings) SetEnabled(value *bool)() {
     m.enabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosNotificationSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

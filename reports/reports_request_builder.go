@@ -90,14 +90,6 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*DailyPrint
     }
     return NewDailyPrintUsageByUserPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceConfigurationDeviceActivity provides operations to call the deviceConfigurationDeviceActivity method.
-func (m *ReportsRequestBuilder) DeviceConfigurationDeviceActivity()(*DeviceConfigurationDeviceActivityRequestBuilder) {
-    return NewDeviceConfigurationDeviceActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DeviceConfigurationUserActivity provides operations to call the deviceConfigurationUserActivity method.
-func (m *ReportsRequestBuilder) DeviceConfigurationUserActivity()(*DeviceConfigurationUserActivityRequestBuilder) {
-    return NewDeviceConfigurationUserActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get reports
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -117,381 +109,389 @@ func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReportRootable), nil
 }
-// GetEmailActivityCountsWithPeriod provides operations to call the getEmailActivityCounts method.
-func (m *ReportsRequestBuilder) GetEmailActivityCountsWithPeriod(period *string)(*GetEmailActivityCountsWithPeriodRequestBuilder) {
-    return NewGetEmailActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetEmailActivityUserCountsWithPeriod provides operations to call the getEmailActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetEmailActivityUserCountsWithPeriod(period *string)(*GetEmailActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetEmailActivityUserDetailWithDate provides operations to call the getEmailActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetEmailActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetEmailActivityUserDetailWithDateRequestBuilder) {
-    return NewGetEmailActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetEmailActivityUserDetailWithPeriod provides operations to call the getEmailActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetEmailActivityUserDetailWithPeriod(period *string)(*GetEmailActivityUserDetailWithPeriodRequestBuilder) {
-    return NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetEmailAppUsageAppsUserCountsWithPeriod provides operations to call the getEmailAppUsageAppsUserCounts method.
-func (m *ReportsRequestBuilder) GetEmailAppUsageAppsUserCountsWithPeriod(period *string)(*GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) {
-    return NewGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetEmailAppUsageUserCountsWithPeriod provides operations to call the getEmailAppUsageUserCounts method.
-func (m *ReportsRequestBuilder) GetEmailAppUsageUserCountsWithPeriod(period *string)(*GetEmailAppUsageUserCountsWithPeriodRequestBuilder) {
-    return NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetEmailAppUsageUserDetailWithDate provides operations to call the getEmailAppUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetEmailAppUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetEmailAppUsageUserDetailWithDateRequestBuilder) {
-    return NewGetEmailAppUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetEmailAppUsageUserDetailWithPeriod provides operations to call the getEmailAppUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetEmailAppUsageUserDetailWithPeriod(period *string)(*GetEmailAppUsageUserDetailWithPeriodRequestBuilder) {
-    return NewGetEmailAppUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetEmailAppUsageVersionsUserCountsWithPeriod provides operations to call the getEmailAppUsageVersionsUserCounts method.
-func (m *ReportsRequestBuilder) GetEmailAppUsageVersionsUserCountsWithPeriod(period *string)(*GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder) {
-    return NewGetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime provides operations to call the getGroupArchivedPrintJobs method.
-func (m *ReportsRequestBuilder) GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, groupId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return NewGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, groupId, startDateTime);
-}
-// GetM365AppPlatformUserCountsWithPeriod provides operations to call the getM365AppPlatformUserCounts method.
-func (m *ReportsRequestBuilder) GetM365AppPlatformUserCountsWithPeriod(period *string)(*GetM365AppPlatformUserCountsWithPeriodRequestBuilder) {
-    return NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetM365AppUserCountsWithPeriod provides operations to call the getM365AppUserCounts method.
-func (m *ReportsRequestBuilder) GetM365AppUserCountsWithPeriod(period *string)(*GetM365AppUserCountsWithPeriodRequestBuilder) {
-    return NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetM365AppUserDetailWithDate provides operations to call the getM365AppUserDetail method.
-func (m *ReportsRequestBuilder) GetM365AppUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetM365AppUserDetailWithDateRequestBuilder) {
-    return NewGetM365AppUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetM365AppUserDetailWithPeriod provides operations to call the getM365AppUserDetail method.
-func (m *ReportsRequestBuilder) GetM365AppUserDetailWithPeriod(period *string)(*GetM365AppUserDetailWithPeriodRequestBuilder) {
-    return NewGetM365AppUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetMailboxUsageDetailWithPeriod provides operations to call the getMailboxUsageDetail method.
-func (m *ReportsRequestBuilder) GetMailboxUsageDetailWithPeriod(period *string)(*GetMailboxUsageDetailWithPeriodRequestBuilder) {
-    return NewGetMailboxUsageDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetMailboxUsageMailboxCountsWithPeriod provides operations to call the getMailboxUsageMailboxCounts method.
-func (m *ReportsRequestBuilder) GetMailboxUsageMailboxCountsWithPeriod(period *string)(*GetMailboxUsageMailboxCountsWithPeriodRequestBuilder) {
-    return NewGetMailboxUsageMailboxCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetMailboxUsageQuotaStatusMailboxCountsWithPeriod provides operations to call the getMailboxUsageQuotaStatusMailboxCounts method.
-func (m *ReportsRequestBuilder) GetMailboxUsageQuotaStatusMailboxCountsWithPeriod(period *string)(*GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) {
-    return NewGetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetMailboxUsageStorageWithPeriod provides operations to call the getMailboxUsageStorage method.
-func (m *ReportsRequestBuilder) GetMailboxUsageStorageWithPeriod(period *string)(*GetMailboxUsageStorageWithPeriodRequestBuilder) {
-    return NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365ActivationCounts provides operations to call the getOffice365ActivationCounts method.
-func (m *ReportsRequestBuilder) GetOffice365ActivationCounts()(*GetOffice365ActivationCountsRequestBuilder) {
-    return NewGetOffice365ActivationCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetOffice365ActivationsUserCounts provides operations to call the getOffice365ActivationsUserCounts method.
-func (m *ReportsRequestBuilder) GetOffice365ActivationsUserCounts()(*GetOffice365ActivationsUserCountsRequestBuilder) {
-    return NewGetOffice365ActivationsUserCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetOffice365ActivationsUserDetail provides operations to call the getOffice365ActivationsUserDetail method.
-func (m *ReportsRequestBuilder) GetOffice365ActivationsUserDetail()(*GetOffice365ActivationsUserDetailRequestBuilder) {
-    return NewGetOffice365ActivationsUserDetailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetOffice365ActiveUserCountsWithPeriod provides operations to call the getOffice365ActiveUserCounts method.
-func (m *ReportsRequestBuilder) GetOffice365ActiveUserCountsWithPeriod(period *string)(*GetOffice365ActiveUserCountsWithPeriodRequestBuilder) {
-    return NewGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365ActiveUserDetailWithDate provides operations to call the getOffice365ActiveUserDetail method.
-func (m *ReportsRequestBuilder) GetOffice365ActiveUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetOffice365ActiveUserDetailWithDateRequestBuilder) {
-    return NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetOffice365ActiveUserDetailWithPeriod provides operations to call the getOffice365ActiveUserDetail method.
-func (m *ReportsRequestBuilder) GetOffice365ActiveUserDetailWithPeriod(period *string)(*GetOffice365ActiveUserDetailWithPeriodRequestBuilder) {
-    return NewGetOffice365ActiveUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365GroupsActivityCountsWithPeriod provides operations to call the getOffice365GroupsActivityCounts method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityCountsWithPeriod(period *string)(*GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) {
-    return NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365GroupsActivityDetailWithDate provides operations to call the getOffice365GroupsActivityDetail method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
-    return NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetOffice365GroupsActivityDetailWithPeriod provides operations to call the getOffice365GroupsActivityDetail method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityDetailWithPeriod(period *string)(*GetOffice365GroupsActivityDetailWithPeriodRequestBuilder) {
-    return NewGetOffice365GroupsActivityDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365GroupsActivityFileCountsWithPeriod provides operations to call the getOffice365GroupsActivityFileCounts method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityFileCountsWithPeriod(period *string)(*GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) {
-    return NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365GroupsActivityGroupCountsWithPeriod provides operations to call the getOffice365GroupsActivityGroupCounts method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityGroupCountsWithPeriod(period *string)(*GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) {
-    return NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365GroupsActivityStorageWithPeriod provides operations to call the getOffice365GroupsActivityStorage method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityStorageWithPeriod(period *string)(*GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) {
-    return NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOffice365ServicesUserCountsWithPeriod provides operations to call the getOffice365ServicesUserCounts method.
-func (m *ReportsRequestBuilder) GetOffice365ServicesUserCountsWithPeriod(period *string)(*GetOffice365ServicesUserCountsWithPeriodRequestBuilder) {
-    return NewGetOffice365ServicesUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveActivityFileCountsWithPeriod provides operations to call the getOneDriveActivityFileCounts method.
-func (m *ReportsRequestBuilder) GetOneDriveActivityFileCountsWithPeriod(period *string)(*GetOneDriveActivityFileCountsWithPeriodRequestBuilder) {
-    return NewGetOneDriveActivityFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveActivityUserCountsWithPeriod provides operations to call the getOneDriveActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetOneDriveActivityUserCountsWithPeriod(period *string)(*GetOneDriveActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveActivityUserDetailWithDate provides operations to call the getOneDriveActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetOneDriveActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetOneDriveActivityUserDetailWithDateRequestBuilder) {
-    return NewGetOneDriveActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetOneDriveActivityUserDetailWithPeriod provides operations to call the getOneDriveActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetOneDriveActivityUserDetailWithPeriod(period *string)(*GetOneDriveActivityUserDetailWithPeriodRequestBuilder) {
-    return NewGetOneDriveActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveUsageAccountCountsWithPeriod provides operations to call the getOneDriveUsageAccountCounts method.
-func (m *ReportsRequestBuilder) GetOneDriveUsageAccountCountsWithPeriod(period *string)(*GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) {
-    return NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveUsageAccountDetailWithDate provides operations to call the getOneDriveUsageAccountDetail method.
-func (m *ReportsRequestBuilder) GetOneDriveUsageAccountDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetOneDriveUsageAccountDetailWithDateRequestBuilder) {
-    return NewGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetOneDriveUsageAccountDetailWithPeriod provides operations to call the getOneDriveUsageAccountDetail method.
-func (m *ReportsRequestBuilder) GetOneDriveUsageAccountDetailWithPeriod(period *string)(*GetOneDriveUsageAccountDetailWithPeriodRequestBuilder) {
-    return NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveUsageFileCountsWithPeriod provides operations to call the getOneDriveUsageFileCounts method.
-func (m *ReportsRequestBuilder) GetOneDriveUsageFileCountsWithPeriod(period *string)(*GetOneDriveUsageFileCountsWithPeriodRequestBuilder) {
-    return NewGetOneDriveUsageFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetOneDriveUsageStorageWithPeriod provides operations to call the getOneDriveUsageStorage method.
-func (m *ReportsRequestBuilder) GetOneDriveUsageStorageWithPeriod(period *string)(*GetOneDriveUsageStorageWithPeriodRequestBuilder) {
-    return NewGetOneDriveUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime provides operations to call the getPrinterArchivedPrintJobs method.
-func (m *ReportsRequestBuilder) GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, printerId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, printerId, startDateTime);
-}
-// GetSharePointActivityFileCountsWithPeriod provides operations to call the getSharePointActivityFileCounts method.
-func (m *ReportsRequestBuilder) GetSharePointActivityFileCountsWithPeriod(period *string)(*GetSharePointActivityFileCountsWithPeriodRequestBuilder) {
-    return NewGetSharePointActivityFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointActivityPagesWithPeriod provides operations to call the getSharePointActivityPages method.
-func (m *ReportsRequestBuilder) GetSharePointActivityPagesWithPeriod(period *string)(*GetSharePointActivityPagesWithPeriodRequestBuilder) {
-    return NewGetSharePointActivityPagesWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointActivityUserCountsWithPeriod provides operations to call the getSharePointActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetSharePointActivityUserCountsWithPeriod(period *string)(*GetSharePointActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointActivityUserDetailWithDate provides operations to call the getSharePointActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetSharePointActivityUserDetailWithDateRequestBuilder) {
-    return NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetSharePointActivityUserDetailWithPeriod provides operations to call the getSharePointActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithPeriod(period *string)(*GetSharePointActivityUserDetailWithPeriodRequestBuilder) {
-    return NewGetSharePointActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointSiteUsageDetailWithDate provides operations to call the getSharePointSiteUsageDetail method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetSharePointSiteUsageDetailWithDateRequestBuilder) {
-    return NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetSharePointSiteUsageDetailWithPeriod provides operations to call the getSharePointSiteUsageDetail method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageDetailWithPeriod(period *string)(*GetSharePointSiteUsageDetailWithPeriodRequestBuilder) {
-    return NewGetSharePointSiteUsageDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointSiteUsageFileCountsWithPeriod provides operations to call the getSharePointSiteUsageFileCounts method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageFileCountsWithPeriod(period *string)(*GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) {
-    return NewGetSharePointSiteUsageFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointSiteUsagePagesWithPeriod provides operations to call the getSharePointSiteUsagePages method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsagePagesWithPeriod(period *string)(*GetSharePointSiteUsagePagesWithPeriodRequestBuilder) {
-    return NewGetSharePointSiteUsagePagesWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointSiteUsageSiteCountsWithPeriod provides operations to call the getSharePointSiteUsageSiteCounts method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageSiteCountsWithPeriod(period *string)(*GetSharePointSiteUsageSiteCountsWithPeriodRequestBuilder) {
-    return NewGetSharePointSiteUsageSiteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSharePointSiteUsageStorageWithPeriod provides operations to call the getSharePointSiteUsageStorage method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageStorageWithPeriod(period *string)(*GetSharePointSiteUsageStorageWithPeriodRequestBuilder) {
-    return NewGetSharePointSiteUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessActivityCountsWithPeriod provides operations to call the getSkypeForBusinessActivityCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityCountsWithPeriod(period *string)(*GetSkypeForBusinessActivityCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserCountsWithPeriod(period *string)(*GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessActivityUserDetailWithDate provides operations to call the getSkypeForBusinessActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
-    return NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetSkypeForBusinessActivityUserDetailWithPeriod provides operations to call the getSkypeForBusinessActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserDetailWithPeriod(period *string)(*GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageDistributionUserCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod(period *string)(*GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessDeviceUsageUserCountsWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageUserCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserCountsWithPeriod(period *string)(*GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessDeviceUsageUserDetailWithDate provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder) {
-    return NewGetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetSkypeForBusinessDeviceUsageUserDetailWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserDetailWithPeriod(period *string)(*GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessOrganizerActivityCountsWithPeriod provides operations to call the getSkypeForBusinessOrganizerActivityCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessOrganizerActivityCountsWithPeriod(period *string)(*GetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod provides operations to call the getSkypeForBusinessOrganizerActivityMinuteCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod(period *string)(*GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessOrganizerActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod(period *string)(*GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessParticipantActivityCountsWithPeriod provides operations to call the getSkypeForBusinessParticipantActivityCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessParticipantActivityCountsWithPeriod(period *string)(*GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod provides operations to call the getSkypeForBusinessParticipantActivityMinuteCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod(period *string)(*GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessParticipantActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessParticipantActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessParticipantActivityUserCountsWithPeriod(period *string)(*GetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod provides operations to call the getSkypeForBusinessPeerToPeerActivityCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod(period *string)(*GetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod provides operations to call the getSkypeForBusinessPeerToPeerActivityMinuteCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod(period *string)(*GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessPeerToPeerActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod(period *string)(*GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTeamsDeviceUsageDistributionUserCountsWithPeriod provides operations to call the getTeamsDeviceUsageDistributionUserCounts method.
-func (m *ReportsRequestBuilder) GetTeamsDeviceUsageDistributionUserCountsWithPeriod(period *string)(*GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) {
-    return NewGetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTeamsDeviceUsageUserCountsWithPeriod provides operations to call the getTeamsDeviceUsageUserCounts method.
-func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserCountsWithPeriod(period *string)(*GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) {
-    return NewGetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTeamsDeviceUsageUserDetailWithDate provides operations to call the getTeamsDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetTeamsDeviceUsageUserDetailWithDateRequestBuilder) {
-    return NewGetTeamsDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetTeamsDeviceUsageUserDetailWithPeriod provides operations to call the getTeamsDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithPeriod(period *string)(*GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder) {
-    return NewGetTeamsDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTeamsUserActivityCountsWithPeriod provides operations to call the getTeamsUserActivityCounts method.
-func (m *ReportsRequestBuilder) GetTeamsUserActivityCountsWithPeriod(period *string)(*GetTeamsUserActivityCountsWithPeriodRequestBuilder) {
-    return NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTeamsUserActivityUserCountsWithPeriod provides operations to call the getTeamsUserActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetTeamsUserActivityUserCountsWithPeriod(period *string)(*GetTeamsUserActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTeamsUserActivityUserDetailWithDate provides operations to call the getTeamsUserActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
-    return NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetTeamsUserActivityUserDetailWithPeriod provides operations to call the getTeamsUserActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithPeriod(period *string)(*GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) {
-    return NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime provides operations to call the getUserArchivedPrintJobs method.
-func (m *ReportsRequestBuilder) GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime, userId);
-}
-// GetYammerActivityCountsWithPeriod provides operations to call the getYammerActivityCounts method.
-func (m *ReportsRequestBuilder) GetYammerActivityCountsWithPeriod(period *string)(*GetYammerActivityCountsWithPeriodRequestBuilder) {
-    return NewGetYammerActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerActivityUserCountsWithPeriod provides operations to call the getYammerActivityUserCounts method.
-func (m *ReportsRequestBuilder) GetYammerActivityUserCountsWithPeriod(period *string)(*GetYammerActivityUserCountsWithPeriodRequestBuilder) {
-    return NewGetYammerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerActivityUserDetailWithDate provides operations to call the getYammerActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetYammerActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetYammerActivityUserDetailWithDateRequestBuilder) {
-    return NewGetYammerActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetYammerActivityUserDetailWithPeriod provides operations to call the getYammerActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetYammerActivityUserDetailWithPeriod(period *string)(*GetYammerActivityUserDetailWithPeriodRequestBuilder) {
-    return NewGetYammerActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerDeviceUsageDistributionUserCountsWithPeriod provides operations to call the getYammerDeviceUsageDistributionUserCounts method.
-func (m *ReportsRequestBuilder) GetYammerDeviceUsageDistributionUserCountsWithPeriod(period *string)(*GetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) {
-    return NewGetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerDeviceUsageUserCountsWithPeriod provides operations to call the getYammerDeviceUsageUserCounts method.
-func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserCountsWithPeriod(period *string)(*GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) {
-    return NewGetYammerDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerDeviceUsageUserDetailWithDate provides operations to call the getYammerDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
-    return NewGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetYammerDeviceUsageUserDetailWithPeriod provides operations to call the getYammerDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserDetailWithPeriod(period *string)(*GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder) {
-    return NewGetYammerDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerGroupsActivityCountsWithPeriod provides operations to call the getYammerGroupsActivityCounts method.
-func (m *ReportsRequestBuilder) GetYammerGroupsActivityCountsWithPeriod(period *string)(*GetYammerGroupsActivityCountsWithPeriodRequestBuilder) {
-    return NewGetYammerGroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerGroupsActivityDetailWithDate provides operations to call the getYammerGroupsActivityDetail method.
-func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetYammerGroupsActivityDetailWithDateRequestBuilder) {
-    return NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
-}
-// GetYammerGroupsActivityDetailWithPeriod provides operations to call the getYammerGroupsActivityDetail method.
-func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithPeriod(period *string)(*GetYammerGroupsActivityDetailWithPeriodRequestBuilder) {
-    return NewGetYammerGroupsActivityDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetYammerGroupsActivityGroupCountsWithPeriod provides operations to call the getYammerGroupsActivityGroupCounts method.
-func (m *ReportsRequestBuilder) GetYammerGroupsActivityGroupCountsWithPeriod(period *string)(*GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) {
-    return NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// ManagedDeviceEnrollmentFailureDetails provides operations to call the managedDeviceEnrollmentFailureDetails method.
-func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentFailureDetails()(*ManagedDeviceEnrollmentFailureDetailsRequestBuilder) {
-    return NewManagedDeviceEnrollmentFailureDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken provides operations to call the managedDeviceEnrollmentFailureDetails method.
-func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(filter *string, skip *int32, skipToken *string, top *int32)(*ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder) {
-    return NewManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, filter, skip, skipToken, top);
-}
-// ManagedDeviceEnrollmentTopFailures provides operations to call the managedDeviceEnrollmentTopFailures method.
-func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailures()(*ManagedDeviceEnrollmentTopFailuresRequestBuilder) {
-    return NewManagedDeviceEnrollmentTopFailuresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ManagedDeviceEnrollmentTopFailuresWithPeriod provides operations to call the managedDeviceEnrollmentTopFailures method.
-func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(period *string)(*ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder) {
-    return NewManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+// MicrosoftGraphDeviceConfigurationDeviceActivity provides operations to call the deviceConfigurationDeviceActivity method.
+func (m *ReportsRequestBuilder) MicrosoftGraphDeviceConfigurationDeviceActivity()(*MicrosoftGraphDeviceConfigurationDeviceActivityDeviceConfigurationDeviceActivityRequestBuilder) {
+    return NewMicrosoftGraphDeviceConfigurationDeviceActivityDeviceConfigurationDeviceActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphDeviceConfigurationUserActivity provides operations to call the deviceConfigurationUserActivity method.
+func (m *ReportsRequestBuilder) MicrosoftGraphDeviceConfigurationUserActivity()(*MicrosoftGraphDeviceConfigurationUserActivityDeviceConfigurationUserActivityRequestBuilder) {
+    return NewMicrosoftGraphDeviceConfigurationUserActivityDeviceConfigurationUserActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetEmailActivityCountsWithPeriod provides operations to call the getEmailActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetEmailActivityCountsWithPeriodGetEmailActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailActivityCountsWithPeriodGetEmailActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetEmailActivityUserCountsWithPeriod provides operations to call the getEmailActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetEmailActivityUserCountsWithPeriodGetEmailActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailActivityUserCountsWithPeriodGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetEmailActivityUserDetailWithDate provides operations to call the getEmailActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetEmailActivityUserDetailWithDateGetEmailActivityUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetEmailActivityUserDetailWithDateGetEmailActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetEmailActivityUserDetailWithPeriod provides operations to call the getEmailActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailActivityUserDetailWithPeriod(period *string)(*MicrosoftGraphGetEmailActivityUserDetailWithPeriodGetEmailActivityUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailActivityUserDetailWithPeriodGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetEmailAppUsageAppsUserCountsWithPeriod provides operations to call the getEmailAppUsageAppsUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailAppUsageAppsUserCountsWithPeriod(period *string)(*MicrosoftGraphGetEmailAppUsageAppsUserCountsWithPeriodGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailAppUsageAppsUserCountsWithPeriodGetEmailAppUsageAppsUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetEmailAppUsageUserCountsWithPeriod provides operations to call the getEmailAppUsageUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailAppUsageUserCountsWithPeriod(period *string)(*MicrosoftGraphGetEmailAppUsageUserCountsWithPeriodGetEmailAppUsageUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailAppUsageUserCountsWithPeriodGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetEmailAppUsageUserDetailWithDate provides operations to call the getEmailAppUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailAppUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetEmailAppUsageUserDetailWithDateGetEmailAppUsageUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetEmailAppUsageUserDetailWithDateGetEmailAppUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetEmailAppUsageUserDetailWithPeriod provides operations to call the getEmailAppUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailAppUsageUserDetailWithPeriod(period *string)(*MicrosoftGraphGetEmailAppUsageUserDetailWithPeriodGetEmailAppUsageUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailAppUsageUserDetailWithPeriodGetEmailAppUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetEmailAppUsageVersionsUserCountsWithPeriod provides operations to call the getEmailAppUsageVersionsUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetEmailAppUsageVersionsUserCountsWithPeriod(period *string)(*MicrosoftGraphGetEmailAppUsageVersionsUserCountsWithPeriodGetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetEmailAppUsageVersionsUserCountsWithPeriodGetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime provides operations to call the getGroupArchivedPrintJobs method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, groupId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*MicrosoftGraphGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewMicrosoftGraphGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, groupId, startDateTime);
+}
+// MicrosoftGraphGetM365AppPlatformUserCountsWithPeriod provides operations to call the getM365AppPlatformUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetM365AppPlatformUserCountsWithPeriod(period *string)(*MicrosoftGraphGetM365AppPlatformUserCountsWithPeriodGetM365AppPlatformUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetM365AppPlatformUserCountsWithPeriodGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetM365AppUserCountsWithPeriod provides operations to call the getM365AppUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetM365AppUserCountsWithPeriod(period *string)(*MicrosoftGraphGetM365AppUserCountsWithPeriodGetM365AppUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetM365AppUserCountsWithPeriodGetM365AppUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetM365AppUserDetailWithDate provides operations to call the getM365AppUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetM365AppUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetM365AppUserDetailWithDateGetM365AppUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetM365AppUserDetailWithDateGetM365AppUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetM365AppUserDetailWithPeriod provides operations to call the getM365AppUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetM365AppUserDetailWithPeriod(period *string)(*MicrosoftGraphGetM365AppUserDetailWithPeriodGetM365AppUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetM365AppUserDetailWithPeriodGetM365AppUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetMailboxUsageDetailWithPeriod provides operations to call the getMailboxUsageDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMailboxUsageDetailWithPeriod(period *string)(*MicrosoftGraphGetMailboxUsageDetailWithPeriodGetMailboxUsageDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetMailboxUsageDetailWithPeriodGetMailboxUsageDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetMailboxUsageMailboxCountsWithPeriod provides operations to call the getMailboxUsageMailboxCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMailboxUsageMailboxCountsWithPeriod(period *string)(*MicrosoftGraphGetMailboxUsageMailboxCountsWithPeriodGetMailboxUsageMailboxCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetMailboxUsageMailboxCountsWithPeriodGetMailboxUsageMailboxCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetMailboxUsageQuotaStatusMailboxCountsWithPeriod provides operations to call the getMailboxUsageQuotaStatusMailboxCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMailboxUsageQuotaStatusMailboxCountsWithPeriod(period *string)(*MicrosoftGraphGetMailboxUsageQuotaStatusMailboxCountsWithPeriodGetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetMailboxUsageQuotaStatusMailboxCountsWithPeriodGetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetMailboxUsageStorageWithPeriod provides operations to call the getMailboxUsageStorage method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetMailboxUsageStorageWithPeriod(period *string)(*MicrosoftGraphGetMailboxUsageStorageWithPeriodGetMailboxUsageStorageWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetMailboxUsageStorageWithPeriodGetMailboxUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365ActivationCounts provides operations to call the getOffice365ActivationCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ActivationCounts()(*MicrosoftGraphGetOffice365ActivationCountsGetOffice365ActivationCountsRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ActivationCountsGetOffice365ActivationCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetOffice365ActivationsUserCounts provides operations to call the getOffice365ActivationsUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ActivationsUserCounts()(*MicrosoftGraphGetOffice365ActivationsUserCountsGetOffice365ActivationsUserCountsRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ActivationsUserCountsGetOffice365ActivationsUserCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetOffice365ActivationsUserDetail provides operations to call the getOffice365ActivationsUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ActivationsUserDetail()(*MicrosoftGraphGetOffice365ActivationsUserDetailGetOffice365ActivationsUserDetailRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ActivationsUserDetailGetOffice365ActivationsUserDetailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetOffice365ActiveUserCountsWithPeriod provides operations to call the getOffice365ActiveUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ActiveUserCountsWithPeriod(period *string)(*MicrosoftGraphGetOffice365ActiveUserCountsWithPeriodGetOffice365ActiveUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ActiveUserCountsWithPeriodGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365ActiveUserDetailWithDate provides operations to call the getOffice365ActiveUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ActiveUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetOffice365ActiveUserDetailWithDateGetOffice365ActiveUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ActiveUserDetailWithDateGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetOffice365ActiveUserDetailWithPeriod provides operations to call the getOffice365ActiveUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ActiveUserDetailWithPeriod(period *string)(*MicrosoftGraphGetOffice365ActiveUserDetailWithPeriodGetOffice365ActiveUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ActiveUserDetailWithPeriodGetOffice365ActiveUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365GroupsActivityCountsWithPeriod provides operations to call the getOffice365GroupsActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365GroupsActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetOffice365GroupsActivityCountsWithPeriodGetOffice365GroupsActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365GroupsActivityCountsWithPeriodGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365GroupsActivityDetailWithDate provides operations to call the getOffice365GroupsActivityDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365GroupsActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetOffice365GroupsActivityDetailWithDateGetOffice365GroupsActivityDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365GroupsActivityDetailWithDateGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetOffice365GroupsActivityDetailWithPeriod provides operations to call the getOffice365GroupsActivityDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365GroupsActivityDetailWithPeriod(period *string)(*MicrosoftGraphGetOffice365GroupsActivityDetailWithPeriodGetOffice365GroupsActivityDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365GroupsActivityDetailWithPeriodGetOffice365GroupsActivityDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365GroupsActivityFileCountsWithPeriod provides operations to call the getOffice365GroupsActivityFileCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365GroupsActivityFileCountsWithPeriod(period *string)(*MicrosoftGraphGetOffice365GroupsActivityFileCountsWithPeriodGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365GroupsActivityFileCountsWithPeriodGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365GroupsActivityGroupCountsWithPeriod provides operations to call the getOffice365GroupsActivityGroupCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365GroupsActivityGroupCountsWithPeriod(period *string)(*MicrosoftGraphGetOffice365GroupsActivityGroupCountsWithPeriodGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365GroupsActivityGroupCountsWithPeriodGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365GroupsActivityStorageWithPeriod provides operations to call the getOffice365GroupsActivityStorage method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365GroupsActivityStorageWithPeriod(period *string)(*MicrosoftGraphGetOffice365GroupsActivityStorageWithPeriodGetOffice365GroupsActivityStorageWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365GroupsActivityStorageWithPeriodGetOffice365GroupsActivityStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOffice365ServicesUserCountsWithPeriod provides operations to call the getOffice365ServicesUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOffice365ServicesUserCountsWithPeriod(period *string)(*MicrosoftGraphGetOffice365ServicesUserCountsWithPeriodGetOffice365ServicesUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOffice365ServicesUserCountsWithPeriodGetOffice365ServicesUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveActivityFileCountsWithPeriod provides operations to call the getOneDriveActivityFileCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveActivityFileCountsWithPeriod(period *string)(*MicrosoftGraphGetOneDriveActivityFileCountsWithPeriodGetOneDriveActivityFileCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveActivityFileCountsWithPeriodGetOneDriveActivityFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveActivityUserCountsWithPeriod provides operations to call the getOneDriveActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetOneDriveActivityUserCountsWithPeriodGetOneDriveActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveActivityUserCountsWithPeriodGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveActivityUserDetailWithDate provides operations to call the getOneDriveActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetOneDriveActivityUserDetailWithDateGetOneDriveActivityUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveActivityUserDetailWithDateGetOneDriveActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetOneDriveActivityUserDetailWithPeriod provides operations to call the getOneDriveActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveActivityUserDetailWithPeriod(period *string)(*MicrosoftGraphGetOneDriveActivityUserDetailWithPeriodGetOneDriveActivityUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveActivityUserDetailWithPeriodGetOneDriveActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveUsageAccountCountsWithPeriod provides operations to call the getOneDriveUsageAccountCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveUsageAccountCountsWithPeriod(period *string)(*MicrosoftGraphGetOneDriveUsageAccountCountsWithPeriodGetOneDriveUsageAccountCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveUsageAccountCountsWithPeriodGetOneDriveUsageAccountCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveUsageAccountDetailWithDate provides operations to call the getOneDriveUsageAccountDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveUsageAccountDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetOneDriveUsageAccountDetailWithDateGetOneDriveUsageAccountDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveUsageAccountDetailWithDateGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetOneDriveUsageAccountDetailWithPeriod provides operations to call the getOneDriveUsageAccountDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveUsageAccountDetailWithPeriod(period *string)(*MicrosoftGraphGetOneDriveUsageAccountDetailWithPeriodGetOneDriveUsageAccountDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveUsageAccountDetailWithPeriodGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveUsageFileCountsWithPeriod provides operations to call the getOneDriveUsageFileCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveUsageFileCountsWithPeriod(period *string)(*MicrosoftGraphGetOneDriveUsageFileCountsWithPeriodGetOneDriveUsageFileCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveUsageFileCountsWithPeriodGetOneDriveUsageFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetOneDriveUsageStorageWithPeriod provides operations to call the getOneDriveUsageStorage method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetOneDriveUsageStorageWithPeriod(period *string)(*MicrosoftGraphGetOneDriveUsageStorageWithPeriodGetOneDriveUsageStorageWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetOneDriveUsageStorageWithPeriodGetOneDriveUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime provides operations to call the getPrinterArchivedPrintJobs method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, printerId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*MicrosoftGraphGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewMicrosoftGraphGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, printerId, startDateTime);
+}
+// MicrosoftGraphGetSharePointActivityFileCountsWithPeriod provides operations to call the getSharePointActivityFileCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointActivityFileCountsWithPeriod(period *string)(*MicrosoftGraphGetSharePointActivityFileCountsWithPeriodGetSharePointActivityFileCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointActivityFileCountsWithPeriodGetSharePointActivityFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointActivityPagesWithPeriod provides operations to call the getSharePointActivityPages method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointActivityPagesWithPeriod(period *string)(*MicrosoftGraphGetSharePointActivityPagesWithPeriodGetSharePointActivityPagesWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointActivityPagesWithPeriodGetSharePointActivityPagesWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointActivityUserCountsWithPeriod provides operations to call the getSharePointActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSharePointActivityUserCountsWithPeriodGetSharePointActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointActivityUserCountsWithPeriodGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointActivityUserDetailWithDate provides operations to call the getSharePointActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetSharePointActivityUserDetailWithDateGetSharePointActivityUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointActivityUserDetailWithDateGetSharePointActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetSharePointActivityUserDetailWithPeriod provides operations to call the getSharePointActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointActivityUserDetailWithPeriod(period *string)(*MicrosoftGraphGetSharePointActivityUserDetailWithPeriodGetSharePointActivityUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointActivityUserDetailWithPeriodGetSharePointActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointSiteUsageDetailWithDate provides operations to call the getSharePointSiteUsageDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointSiteUsageDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetSharePointSiteUsageDetailWithDateGetSharePointSiteUsageDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointSiteUsageDetailWithDateGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetSharePointSiteUsageDetailWithPeriod provides operations to call the getSharePointSiteUsageDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointSiteUsageDetailWithPeriod(period *string)(*MicrosoftGraphGetSharePointSiteUsageDetailWithPeriodGetSharePointSiteUsageDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointSiteUsageDetailWithPeriodGetSharePointSiteUsageDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointSiteUsageFileCountsWithPeriod provides operations to call the getSharePointSiteUsageFileCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointSiteUsageFileCountsWithPeriod(period *string)(*MicrosoftGraphGetSharePointSiteUsageFileCountsWithPeriodGetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointSiteUsageFileCountsWithPeriodGetSharePointSiteUsageFileCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointSiteUsagePagesWithPeriod provides operations to call the getSharePointSiteUsagePages method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointSiteUsagePagesWithPeriod(period *string)(*MicrosoftGraphGetSharePointSiteUsagePagesWithPeriodGetSharePointSiteUsagePagesWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointSiteUsagePagesWithPeriodGetSharePointSiteUsagePagesWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointSiteUsageSiteCountsWithPeriod provides operations to call the getSharePointSiteUsageSiteCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointSiteUsageSiteCountsWithPeriod(period *string)(*MicrosoftGraphGetSharePointSiteUsageSiteCountsWithPeriodGetSharePointSiteUsageSiteCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointSiteUsageSiteCountsWithPeriodGetSharePointSiteUsageSiteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSharePointSiteUsageStorageWithPeriod provides operations to call the getSharePointSiteUsageStorage method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSharePointSiteUsageStorageWithPeriod(period *string)(*MicrosoftGraphGetSharePointSiteUsageStorageWithPeriodGetSharePointSiteUsageStorageWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSharePointSiteUsageStorageWithPeriodGetSharePointSiteUsageStorageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessActivityCountsWithPeriod provides operations to call the getSkypeForBusinessActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessActivityCountsWithPeriodGetSkypeForBusinessActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessActivityCountsWithPeriodGetSkypeForBusinessActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessActivityUserCountsWithPeriodGetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessActivityUserCountsWithPeriodGetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessActivityUserDetailWithDate provides operations to call the getSkypeForBusinessActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetSkypeForBusinessActivityUserDetailWithDateGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessActivityUserDetailWithDateGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetSkypeForBusinessActivityUserDetailWithPeriod provides operations to call the getSkypeForBusinessActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessActivityUserDetailWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessActivityUserDetailWithPeriodGetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessActivityUserDetailWithPeriodGetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageDistributionUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessDeviceUsageUserCountsWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessDeviceUsageUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessDeviceUsageUserCountsWithPeriodGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessDeviceUsageUserCountsWithPeriodGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithDate provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithDateGetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithDateGetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithPeriodGetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessDeviceUsageUserDetailWithPeriodGetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessOrganizerActivityCountsWithPeriod provides operations to call the getSkypeForBusinessOrganizerActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessOrganizerActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessOrganizerActivityCountsWithPeriodGetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessOrganizerActivityCountsWithPeriodGetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod provides operations to call the getSkypeForBusinessOrganizerActivityMinuteCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessOrganizerActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessOrganizerActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessOrganizerActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessParticipantActivityCountsWithPeriod provides operations to call the getSkypeForBusinessParticipantActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessParticipantActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessParticipantActivityCountsWithPeriodGetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessParticipantActivityCountsWithPeriodGetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod provides operations to call the getSkypeForBusinessParticipantActivityMinuteCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessParticipantActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessParticipantActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessParticipantActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessParticipantActivityUserCountsWithPeriodGetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessParticipantActivityUserCountsWithPeriodGetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityCountsWithPeriod provides operations to call the getSkypeForBusinessPeerToPeerActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityCountsWithPeriodGetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessPeerToPeerActivityCountsWithPeriodGetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod provides operations to call the getSkypeForBusinessPeerToPeerActivityMinuteCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod provides operations to call the getSkypeForBusinessPeerToPeerActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetTeamsDeviceUsageDistributionUserCountsWithPeriod provides operations to call the getTeamsDeviceUsageDistributionUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsDeviceUsageDistributionUserCountsWithPeriod(period *string)(*MicrosoftGraphGetTeamsDeviceUsageDistributionUserCountsWithPeriodGetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsDeviceUsageDistributionUserCountsWithPeriodGetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetTeamsDeviceUsageUserCountsWithPeriod provides operations to call the getTeamsDeviceUsageUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsDeviceUsageUserCountsWithPeriod(period *string)(*MicrosoftGraphGetTeamsDeviceUsageUserCountsWithPeriodGetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsDeviceUsageUserCountsWithPeriodGetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetTeamsDeviceUsageUserDetailWithDate provides operations to call the getTeamsDeviceUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetTeamsDeviceUsageUserDetailWithDateGetTeamsDeviceUsageUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsDeviceUsageUserDetailWithDateGetTeamsDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetTeamsDeviceUsageUserDetailWithPeriod provides operations to call the getTeamsDeviceUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsDeviceUsageUserDetailWithPeriod(period *string)(*MicrosoftGraphGetTeamsDeviceUsageUserDetailWithPeriodGetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsDeviceUsageUserDetailWithPeriodGetTeamsDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetTeamsUserActivityCountsWithPeriod provides operations to call the getTeamsUserActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsUserActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetTeamsUserActivityCountsWithPeriodGetTeamsUserActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsUserActivityCountsWithPeriodGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetTeamsUserActivityUserCountsWithPeriod provides operations to call the getTeamsUserActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsUserActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetTeamsUserActivityUserCountsWithPeriodGetTeamsUserActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsUserActivityUserCountsWithPeriodGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetTeamsUserActivityUserDetailWithDate provides operations to call the getTeamsUserActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsUserActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetTeamsUserActivityUserDetailWithDateGetTeamsUserActivityUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsUserActivityUserDetailWithDateGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetTeamsUserActivityUserDetailWithPeriod provides operations to call the getTeamsUserActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetTeamsUserActivityUserDetailWithPeriod(period *string)(*MicrosoftGraphGetTeamsUserActivityUserDetailWithPeriodGetTeamsUserActivityUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetTeamsUserActivityUserDetailWithPeriodGetTeamsUserActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime provides operations to call the getUserArchivedPrintJobs method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewMicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime, userId);
+}
+// MicrosoftGraphGetYammerActivityCountsWithPeriod provides operations to call the getYammerActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetYammerActivityCountsWithPeriodGetYammerActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerActivityCountsWithPeriodGetYammerActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerActivityUserCountsWithPeriod provides operations to call the getYammerActivityUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerActivityUserCountsWithPeriod(period *string)(*MicrosoftGraphGetYammerActivityUserCountsWithPeriodGetYammerActivityUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerActivityUserCountsWithPeriodGetYammerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerActivityUserDetailWithDate provides operations to call the getYammerActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetYammerActivityUserDetailWithDateGetYammerActivityUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetYammerActivityUserDetailWithDateGetYammerActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetYammerActivityUserDetailWithPeriod provides operations to call the getYammerActivityUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerActivityUserDetailWithPeriod(period *string)(*MicrosoftGraphGetYammerActivityUserDetailWithPeriodGetYammerActivityUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerActivityUserDetailWithPeriodGetYammerActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerDeviceUsageDistributionUserCountsWithPeriod provides operations to call the getYammerDeviceUsageDistributionUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerDeviceUsageDistributionUserCountsWithPeriod(period *string)(*MicrosoftGraphGetYammerDeviceUsageDistributionUserCountsWithPeriodGetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerDeviceUsageDistributionUserCountsWithPeriodGetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerDeviceUsageUserCountsWithPeriod provides operations to call the getYammerDeviceUsageUserCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerDeviceUsageUserCountsWithPeriod(period *string)(*MicrosoftGraphGetYammerDeviceUsageUserCountsWithPeriodGetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerDeviceUsageUserCountsWithPeriodGetYammerDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerDeviceUsageUserDetailWithDate provides operations to call the getYammerDeviceUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetYammerDeviceUsageUserDetailWithDateGetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetYammerDeviceUsageUserDetailWithDateGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetYammerDeviceUsageUserDetailWithPeriod provides operations to call the getYammerDeviceUsageUserDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerDeviceUsageUserDetailWithPeriod(period *string)(*MicrosoftGraphGetYammerDeviceUsageUserDetailWithPeriodGetYammerDeviceUsageUserDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerDeviceUsageUserDetailWithPeriodGetYammerDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerGroupsActivityCountsWithPeriod provides operations to call the getYammerGroupsActivityCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerGroupsActivityCountsWithPeriod(period *string)(*MicrosoftGraphGetYammerGroupsActivityCountsWithPeriodGetYammerGroupsActivityCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerGroupsActivityCountsWithPeriodGetYammerGroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerGroupsActivityDetailWithDate provides operations to call the getYammerGroupsActivityDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerGroupsActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*MicrosoftGraphGetYammerGroupsActivityDetailWithDateGetYammerGroupsActivityDetailWithDateRequestBuilder) {
+    return NewMicrosoftGraphGetYammerGroupsActivityDetailWithDateGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
+}
+// MicrosoftGraphGetYammerGroupsActivityDetailWithPeriod provides operations to call the getYammerGroupsActivityDetail method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerGroupsActivityDetailWithPeriod(period *string)(*MicrosoftGraphGetYammerGroupsActivityDetailWithPeriodGetYammerGroupsActivityDetailWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerGroupsActivityDetailWithPeriodGetYammerGroupsActivityDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphGetYammerGroupsActivityGroupCountsWithPeriod provides operations to call the getYammerGroupsActivityGroupCounts method.
+func (m *ReportsRequestBuilder) MicrosoftGraphGetYammerGroupsActivityGroupCountsWithPeriod(period *string)(*MicrosoftGraphGetYammerGroupsActivityGroupCountsWithPeriodGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphGetYammerGroupsActivityGroupCountsWithPeriodGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
+}
+// MicrosoftGraphManagedDeviceEnrollmentFailureDetails provides operations to call the managedDeviceEnrollmentFailureDetails method.
+func (m *ReportsRequestBuilder) MicrosoftGraphManagedDeviceEnrollmentFailureDetails()(*MicrosoftGraphManagedDeviceEnrollmentFailureDetailsManagedDeviceEnrollmentFailureDetailsRequestBuilder) {
+    return NewMicrosoftGraphManagedDeviceEnrollmentFailureDetailsManagedDeviceEnrollmentFailureDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken provides operations to call the managedDeviceEnrollmentFailureDetails method.
+func (m *ReportsRequestBuilder) MicrosoftGraphManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(filter *string, skip *int32, skipToken *string, top *int32)(*MicrosoftGraphManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder) {
+    return NewMicrosoftGraphManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, filter, skip, skipToken, top);
+}
+// MicrosoftGraphManagedDeviceEnrollmentTopFailures provides operations to call the managedDeviceEnrollmentTopFailures method.
+func (m *ReportsRequestBuilder) MicrosoftGraphManagedDeviceEnrollmentTopFailures()(*MicrosoftGraphManagedDeviceEnrollmentTopFailuresManagedDeviceEnrollmentTopFailuresRequestBuilder) {
+    return NewMicrosoftGraphManagedDeviceEnrollmentTopFailuresManagedDeviceEnrollmentTopFailuresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphManagedDeviceEnrollmentTopFailuresWithPeriod provides operations to call the managedDeviceEnrollmentTopFailures method.
+func (m *ReportsRequestBuilder) MicrosoftGraphManagedDeviceEnrollmentTopFailuresWithPeriod(period *string)(*MicrosoftGraphManagedDeviceEnrollmentTopFailuresWithPeriodManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder) {
+    return NewMicrosoftGraphManagedDeviceEnrollmentTopFailuresWithPeriodManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // MonthlyPrintUsageByPrinter provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*MonthlyPrintUsageByPrinterRequestBuilder) {
@@ -569,7 +569,10 @@ func (m *ReportsRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

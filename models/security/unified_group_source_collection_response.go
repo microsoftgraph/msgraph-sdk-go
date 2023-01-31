@@ -8,7 +8,7 @@ import (
 // UnifiedGroupSourceCollectionResponse 
 type UnifiedGroupSourceCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedGroupSourceable
 }
 // NewUnifiedGroupSourceCollectionResponse instantiates a new UnifiedGroupSourceCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *UnifiedGroupSourceCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedGroupSourceCollectionResponse) GetValue()([]UnifiedGroupSourceable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *UnifiedGroupSourceCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedGroupSourceCollectionResponse) SetValue(value []UnifiedGroupSourceable)() {
     m.value = value
 }

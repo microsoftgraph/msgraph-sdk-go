@@ -7,7 +7,7 @@ import (
 // ServicePlanInfoCollectionResponse 
 type ServicePlanInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ServicePlanInfoable
 }
 // NewServicePlanInfoCollectionResponse instantiates a new ServicePlanInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ServicePlanInfoCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ServicePlanInfoCollectionResponse) GetValue()([]ServicePlanInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ServicePlanInfoCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ServicePlanInfoCollectionResponse) SetValue(value []ServicePlanInfoable)() {
     m.value = value
 }

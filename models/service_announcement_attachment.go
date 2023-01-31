@@ -10,13 +10,13 @@ type ServiceAnnouncementAttachment struct {
     Entity
     // The attachment content.
     content []byte
-    // The contentType property
+    // 
     contentType *string
-    // The lastModifiedDateTime property
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name property
+    // 
     name *string
-    // The size property
+    // 
     size *int32
 }
 // NewServiceAnnouncementAttachment instantiates a new serviceAnnouncementAttachment and sets the default values.
@@ -34,7 +34,7 @@ func CreateServiceAnnouncementAttachmentFromDiscriminatorValue(parseNode i878a80
 func (m *ServiceAnnouncementAttachment) GetContent()([]byte) {
     return m.content
 }
-// GetContentType gets the contentType property value. The contentType property
+// GetContentType gets the contentType property value. 
 func (m *ServiceAnnouncementAttachment) GetContentType()(*string) {
     return m.contentType
 }
@@ -93,15 +93,15 @@ func (m *ServiceAnnouncementAttachment) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *ServiceAnnouncementAttachment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. 
 func (m *ServiceAnnouncementAttachment) GetName()(*string) {
     return m.name
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. 
 func (m *ServiceAnnouncementAttachment) GetSize()(*int32) {
     return m.size
 }
@@ -147,19 +147,19 @@ func (m *ServiceAnnouncementAttachment) Serialize(writer i878a80d2330e89d2689638
 func (m *ServiceAnnouncementAttachment) SetContent(value []byte)() {
     m.content = value
 }
-// SetContentType sets the contentType property value. The contentType property
+// SetContentType sets the contentType property value. 
 func (m *ServiceAnnouncementAttachment) SetContentType(value *string)() {
     m.contentType = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *ServiceAnnouncementAttachment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. 
 func (m *ServiceAnnouncementAttachment) SetName(value *string)() {
     m.name = value
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. 
 func (m *ServiceAnnouncementAttachment) SetSize(value *int32)() {
     m.size = value
 }

@@ -12,7 +12,7 @@ type LocationConstraint struct {
     isRequired *bool
     // Constraint information for one or more locations that the client requests for the meeting.
     locations []LocationConstraintItemable
-    // The OdataType property
+    // 
     odataType *string
     // The client requests the service to suggest one or more meeting locations.
     suggestLocation *bool
@@ -89,7 +89,7 @@ func (m *LocationConstraint) GetIsRequired()(*bool) {
 func (m *LocationConstraint) GetLocations()([]LocationConstraintItemable) {
     return m.locations
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LocationConstraint) GetOdataType()(*string) {
     return m.odataType
 }
@@ -147,7 +147,7 @@ func (m *LocationConstraint) SetIsRequired(value *bool)() {
 func (m *LocationConstraint) SetLocations(value []LocationConstraintItemable)() {
     m.locations = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LocationConstraint) SetOdataType(value *string)() {
     m.odataType = value
 }

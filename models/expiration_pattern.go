@@ -13,7 +13,7 @@ type ExpirationPattern struct {
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
     type_escaped *ExpirationPatternType
@@ -86,7 +86,7 @@ func (m *ExpirationPattern) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ExpirationPattern) GetOdataType()(*string) {
     return m.odataType
 }
@@ -141,7 +141,7 @@ func (m *ExpirationPattern) SetDuration(value *i878a80d2330e89d26896388a3f487eef
 func (m *ExpirationPattern) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ExpirationPattern) SetOdataType(value *string)() {
     m.odataType = value
 }

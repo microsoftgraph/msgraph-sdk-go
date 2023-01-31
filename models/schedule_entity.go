@@ -9,13 +9,13 @@ import (
 type ScheduleEntity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The endDateTime property
+    // 
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
-    // The startDateTime property
+    // 
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The theme property
+    // 
     theme *ScheduleEntityTheme
 }
 // NewScheduleEntity instantiates a new scheduleEntity and sets the default values.
@@ -55,7 +55,7 @@ func CreateScheduleEntityFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 func (m *ScheduleEntity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. 
 func (m *ScheduleEntity) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.endDateTime
 }
@@ -104,15 +104,15 @@ func (m *ScheduleEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ScheduleEntity) GetOdataType()(*string) {
     return m.odataType
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. 
 func (m *ScheduleEntity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetTheme gets the theme property value. The theme property
+// GetTheme gets the theme property value. 
 func (m *ScheduleEntity) GetTheme()(*ScheduleEntityTheme) {
     return m.theme
 }
@@ -155,19 +155,19 @@ func (m *ScheduleEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *ScheduleEntity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. 
 func (m *ScheduleEntity) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ScheduleEntity) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. 
 func (m *ScheduleEntity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetTheme sets the theme property value. The theme property
+// SetTheme sets the theme property value. 
 func (m *ScheduleEntity) SetTheme(value *ScheduleEntityTheme)() {
     m.theme = value
 }

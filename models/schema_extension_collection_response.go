@@ -7,7 +7,7 @@ import (
 // SchemaExtensionCollectionResponse 
 type SchemaExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SchemaExtensionable
 }
 // NewSchemaExtensionCollectionResponse instantiates a new SchemaExtensionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SchemaExtensionCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SchemaExtensionCollectionResponse) GetValue()([]SchemaExtensionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SchemaExtensionCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SchemaExtensionCollectionResponse) SetValue(value []SchemaExtensionable)() {
     m.value = value
 }

@@ -8,7 +8,7 @@ import (
 type SimulationReportOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
     recommendedActions []RecommendedActionable
@@ -93,7 +93,7 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SimulationReportOverview) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *SimulationReportOverview) Serialize(writer i878a80d2330e89d26896388a3f4
 func (m *SimulationReportOverview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SimulationReportOverview) SetOdataType(value *string)() {
     m.odataType = value
 }

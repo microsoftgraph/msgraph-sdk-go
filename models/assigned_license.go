@@ -11,7 +11,7 @@ type AssignedLicense struct {
     additionalData map[string]any
     // A collection of the unique identifiers for plans that have been disabled.
     disabledPlans []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The OdataType property
+    // 
     odataType *string
     // The unique identifier for the SKU.
     skuId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
@@ -74,7 +74,7 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AssignedLicense) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *AssignedLicense) SetAdditionalData(value map[string]any)() {
 func (m *AssignedLicense) SetDisabledPlans(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.disabledPlans = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AssignedLicense) SetOdataType(value *string)() {
     m.odataType = value
 }

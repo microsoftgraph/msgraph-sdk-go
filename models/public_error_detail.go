@@ -12,7 +12,7 @@ type PublicErrorDetail struct {
     code *string
     // The error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
     // The target of the error.
     target *string
@@ -85,7 +85,7 @@ func (m *PublicErrorDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *PublicErrorDetail) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PublicErrorDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *PublicErrorDetail) SetCode(value *string)() {
 func (m *PublicErrorDetail) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PublicErrorDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

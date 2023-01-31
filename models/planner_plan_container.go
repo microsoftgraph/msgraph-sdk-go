@@ -10,7 +10,7 @@ type PlannerPlanContainer struct {
     additionalData map[string]any
     // The identifier of the resource that contains the plan. Optional.
     containerId *string
-    // The OdataType property
+    // 
     odataType *string
     // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
     type_escaped *PlannerContainerType
@@ -81,7 +81,7 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PlannerPlanContainer) GetOdataType()(*string) {
     return m.odataType
 }
@@ -136,7 +136,7 @@ func (m *PlannerPlanContainer) SetAdditionalData(value map[string]any)() {
 func (m *PlannerPlanContainer) SetContainerId(value *string)() {
     m.containerId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PlannerPlanContainer) SetOdataType(value *string)() {
     m.odataType = value
 }

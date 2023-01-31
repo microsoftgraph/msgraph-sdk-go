@@ -16,7 +16,7 @@ type LookupColumn struct {
     columnName *string
     // The unique identifier of the lookup source list.
     listId *string
-    // The OdataType property
+    // 
     odataType *string
     // If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.
     primaryLookupColumnId *string
@@ -117,7 +117,7 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *LookupColumn) GetListId()(*string) {
     return m.listId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LookupColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -191,7 +191,7 @@ func (m *LookupColumn) SetColumnName(value *string)() {
 func (m *LookupColumn) SetListId(value *string)() {
     m.listId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LookupColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // UnifiedRoleManagementPolicyExpirationRuleCollectionResponse 
 type UnifiedRoleManagementPolicyExpirationRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleManagementPolicyExpirationRuleable
 }
 // NewUnifiedRoleManagementPolicyExpirationRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyExpirationRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) GetFieldDe
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyExpirationRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) Serialize(
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyExpirationRuleable)() {
     m.value = value
 }

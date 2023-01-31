@@ -7,7 +7,7 @@ import (
 // Call 
 type Call struct {
     Entity
-    // The audioRoutingGroups property
+    // 
     audioRoutingGroups []AudioRoutingGroupable
     // The callback URL on which callbacks will be delivered. Must be https.
     callbackUri *string
@@ -19,7 +19,7 @@ type Call struct {
     callRoutes []CallRouteable
     // The chat information. Required information for joining a meeting.
     chatInfo ChatInfoable
-    // The contentSharingSessions property
+    // 
     contentSharingSessions []ContentSharingSessionable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection
@@ -31,11 +31,11 @@ type Call struct {
     mediaState CallMediaStateable
     // The meeting information. Required information for meeting scenarios.
     meetingInfo MeetingInfoable
-    // The myParticipantId property
+    // 
     myParticipantId *string
-    // The operations property
+    // 
     operations []CommsOperationable
-    // The participants property
+    // 
     participants []Participantable
     // The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
     requestedModalities []Modality
@@ -49,9 +49,9 @@ type Call struct {
     subject *string
     // The targets of the call. Required information for creating peer to peer call.
     targets []InvitationParticipantInfoable
-    // The tenantId property
+    // 
     tenantId *string
-    // The toneInfo property
+    // 
     toneInfo ToneInfoable
     // The transcription information for the call. Read-only.
     transcription CallTranscriptionInfoable
@@ -67,7 +67,7 @@ func NewCall()(*Call) {
 func CreateCallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCall(), nil
 }
-// GetAudioRoutingGroups gets the audioRoutingGroups property value. The audioRoutingGroups property
+// GetAudioRoutingGroups gets the audioRoutingGroups property value. 
 func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroupable) {
     return m.audioRoutingGroups
 }
@@ -91,7 +91,7 @@ func (m *Call) GetCallRoutes()([]CallRouteable) {
 func (m *Call) GetChatInfo()(ChatInfoable) {
     return m.chatInfo
 }
-// GetContentSharingSessions gets the contentSharingSessions property value. The contentSharingSessions property
+// GetContentSharingSessions gets the contentSharingSessions property value. 
 func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     return m.contentSharingSessions
 }
@@ -388,15 +388,15 @@ func (m *Call) GetMediaState()(CallMediaStateable) {
 func (m *Call) GetMeetingInfo()(MeetingInfoable) {
     return m.meetingInfo
 }
-// GetMyParticipantId gets the myParticipantId property value. The myParticipantId property
+// GetMyParticipantId gets the myParticipantId property value. 
 func (m *Call) GetMyParticipantId()(*string) {
     return m.myParticipantId
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. 
 func (m *Call) GetOperations()([]CommsOperationable) {
     return m.operations
 }
-// GetParticipants gets the participants property value. The participants property
+// GetParticipants gets the participants property value. 
 func (m *Call) GetParticipants()([]Participantable) {
     return m.participants
 }
@@ -424,11 +424,11 @@ func (m *Call) GetSubject()(*string) {
 func (m *Call) GetTargets()([]InvitationParticipantInfoable) {
     return m.targets
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. 
 func (m *Call) GetTenantId()(*string) {
     return m.tenantId
 }
-// GetToneInfo gets the toneInfo property value. The toneInfo property
+// GetToneInfo gets the toneInfo property value. 
 func (m *Call) GetToneInfo()(ToneInfoable) {
     return m.toneInfo
 }
@@ -614,7 +614,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAudioRoutingGroups sets the audioRoutingGroups property value. The audioRoutingGroups property
+// SetAudioRoutingGroups sets the audioRoutingGroups property value. 
 func (m *Call) SetAudioRoutingGroups(value []AudioRoutingGroupable)() {
     m.audioRoutingGroups = value
 }
@@ -638,7 +638,7 @@ func (m *Call) SetCallRoutes(value []CallRouteable)() {
 func (m *Call) SetChatInfo(value ChatInfoable)() {
     m.chatInfo = value
 }
-// SetContentSharingSessions sets the contentSharingSessions property value. The contentSharingSessions property
+// SetContentSharingSessions sets the contentSharingSessions property value. 
 func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
     m.contentSharingSessions = value
 }
@@ -662,15 +662,15 @@ func (m *Call) SetMediaState(value CallMediaStateable)() {
 func (m *Call) SetMeetingInfo(value MeetingInfoable)() {
     m.meetingInfo = value
 }
-// SetMyParticipantId sets the myParticipantId property value. The myParticipantId property
+// SetMyParticipantId sets the myParticipantId property value. 
 func (m *Call) SetMyParticipantId(value *string)() {
     m.myParticipantId = value
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. 
 func (m *Call) SetOperations(value []CommsOperationable)() {
     m.operations = value
 }
-// SetParticipants sets the participants property value. The participants property
+// SetParticipants sets the participants property value. 
 func (m *Call) SetParticipants(value []Participantable)() {
     m.participants = value
 }
@@ -698,11 +698,11 @@ func (m *Call) SetSubject(value *string)() {
 func (m *Call) SetTargets(value []InvitationParticipantInfoable)() {
     m.targets = value
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. 
 func (m *Call) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// SetToneInfo sets the toneInfo property value. The toneInfo property
+// SetToneInfo sets the toneInfo property value. 
 func (m *Call) SetToneInfo(value ToneInfoable)() {
     m.toneInfo = value
 }

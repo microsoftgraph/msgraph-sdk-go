@@ -7,7 +7,7 @@ import (
 // ServiceUserAgent 
 type ServiceUserAgent struct {
     UserAgent
-    // The role property
+    // 
     role *ServiceRole
 }
 // NewServiceUserAgent instantiates a new ServiceUserAgent and sets the default values.
@@ -38,7 +38,7 @@ func (m *ServiceUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetRole gets the role property value. The role property
+// GetRole gets the role property value. 
 func (m *ServiceUserAgent) GetRole()(*ServiceRole) {
     return m.role
 }
@@ -57,7 +57,7 @@ func (m *ServiceUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetRole sets the role property value. The role property
+// SetRole sets the role property value. 
 func (m *ServiceUserAgent) SetRole(value *ServiceRole)() {
     m.role = value
 }

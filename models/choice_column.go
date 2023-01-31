@@ -14,7 +14,7 @@ type ChoiceColumn struct {
     choices []string
     // How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons
     displayAs *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewChoiceColumn instantiates a new choiceColumn and sets the default values.
@@ -93,7 +93,7 @@ func (m *ChoiceColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChoiceColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -147,7 +147,7 @@ func (m *ChoiceColumn) SetChoices(value []string)() {
 func (m *ChoiceColumn) SetDisplayAs(value *string)() {
     m.displayAs = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChoiceColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

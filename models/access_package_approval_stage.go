@@ -22,7 +22,7 @@ type AccessPackageApprovalStage struct {
     isApproverJustificationRequired *bool
     // If true, then one or more escalationApprovers are configured in this approval stage.
     isEscalationEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
     primaryApprovers []SubjectSetable
@@ -181,7 +181,7 @@ func (m *AccessPackageApprovalStage) GetIsApproverJustificationRequired()(*bool)
 func (m *AccessPackageApprovalStage) GetIsEscalationEnabled()(*bool) {
     return m.isEscalationEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessPackageApprovalStage) GetOdataType()(*string) {
     return m.odataType
 }
@@ -301,7 +301,7 @@ func (m *AccessPackageApprovalStage) SetIsApproverJustificationRequired(value *b
 func (m *AccessPackageApprovalStage) SetIsEscalationEnabled(value *bool)() {
     m.isEscalationEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessPackageApprovalStage) SetOdataType(value *string)() {
     m.odataType = value
 }

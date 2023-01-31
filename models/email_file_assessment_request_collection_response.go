@@ -7,7 +7,7 @@ import (
 // EmailFileAssessmentRequestCollectionResponse 
 type EmailFileAssessmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EmailFileAssessmentRequestable
 }
 // NewEmailFileAssessmentRequestCollectionResponse instantiates a new EmailFileAssessmentRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EmailFileAssessmentRequestCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EmailFileAssessmentRequestCollectionResponse) GetValue()([]EmailFileAssessmentRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EmailFileAssessmentRequestCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EmailFileAssessmentRequestCollectionResponse) SetValue(value []EmailFileAssessmentRequestable)() {
     m.value = value
 }

@@ -8,15 +8,15 @@ import (
 type MainError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The code property
+    // 
     code *string
-    // The details property
+    // 
     details []ErrorDetailsable
-    // The innererror property
+    // 
     innererror InnerErrorable
-    // The message property
+    // 
     message *string
-    // The target property
+    // 
     target *string
 }
 // NewMainError instantiates a new MainError and sets the default values.
@@ -34,11 +34,11 @@ func CreateMainErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 func (m *MainError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCode gets the code property value. The code property
+// GetCode gets the code property value. 
 func (m *MainError) GetCode()(*string) {
     return m.code
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. 
 func (m *MainError) GetDetails()([]ErrorDetailsable) {
     return m.details
 }
@@ -101,15 +101,15 @@ func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetInnererror gets the innererror property value. The innererror property
+// GetInnererror gets the innererror property value. 
 func (m *MainError) GetInnererror()(InnerErrorable) {
     return m.innererror
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. 
 func (m *MainError) GetMessage()(*string) {
     return m.message
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. 
 func (m *MainError) GetTarget()(*string) {
     return m.target
 }
@@ -161,23 +161,23 @@ func (m *MainError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *MainError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCode sets the code property value. The code property
+// SetCode sets the code property value. 
 func (m *MainError) SetCode(value *string)() {
     m.code = value
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. 
 func (m *MainError) SetDetails(value []ErrorDetailsable)() {
     m.details = value
 }
-// SetInnererror sets the innererror property value. The innererror property
+// SetInnererror sets the innererror property value. 
 func (m *MainError) SetInnererror(value InnerErrorable)() {
     m.innererror = value
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. 
 func (m *MainError) SetMessage(value *string)() {
     m.message = value
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. 
 func (m *MainError) SetTarget(value *string)() {
     m.target = value
 }

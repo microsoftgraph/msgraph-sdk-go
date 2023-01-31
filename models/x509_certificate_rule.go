@@ -10,7 +10,7 @@ type X509CertificateRule struct {
     additionalData map[string]any
     // The identifier of the X.509 certificate. Required.
     identifier *string
-    // The OdataType property
+    // 
     odataType *string
     // The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
     x509CertificateAuthenticationMode *X509CertificateAuthenticationMode
@@ -81,7 +81,7 @@ func (m *X509CertificateRule) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *X509CertificateRule) GetIdentifier()(*string) {
     return m.identifier
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *X509CertificateRule) GetOdataType()(*string) {
     return m.odataType
 }
@@ -137,7 +137,7 @@ func (m *X509CertificateRule) SetAdditionalData(value map[string]any)() {
 func (m *X509CertificateRule) SetIdentifier(value *string)() {
     m.identifier = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *X509CertificateRule) SetOdataType(value *string)() {
     m.odataType = value
 }

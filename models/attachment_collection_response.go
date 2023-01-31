@@ -7,7 +7,7 @@ import (
 // AttachmentCollectionResponse 
 type AttachmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Attachmentable
 }
 // NewAttachmentCollectionResponse instantiates a new AttachmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AttachmentCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AttachmentCollectionResponse) GetValue()([]Attachmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AttachmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AttachmentCollectionResponse) SetValue(value []Attachmentable)() {
     m.value = value
 }

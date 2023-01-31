@@ -7,7 +7,7 @@ import (
 // Windows10SecureAssessmentConfigurationCollectionResponse 
 type Windows10SecureAssessmentConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Windows10SecureAssessmentConfigurationable
 }
 // NewWindows10SecureAssessmentConfigurationCollectionResponse instantiates a new Windows10SecureAssessmentConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Windows10SecureAssessmentConfigurationCollectionResponse) GetFieldDeser
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Windows10SecureAssessmentConfigurationCollectionResponse) GetValue()([]Windows10SecureAssessmentConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Windows10SecureAssessmentConfigurationCollectionResponse) Serialize(wri
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Windows10SecureAssessmentConfigurationCollectionResponse) SetValue(value []Windows10SecureAssessmentConfigurationable)() {
     m.value = value
 }

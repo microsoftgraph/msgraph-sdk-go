@@ -7,7 +7,7 @@ import (
 // SharePointIdentitySetCollectionResponse 
 type SharePointIdentitySetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SharePointIdentitySetable
 }
 // NewSharePointIdentitySetCollectionResponse instantiates a new SharePointIdentitySetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SharePointIdentitySetCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SharePointIdentitySetCollectionResponse) GetValue()([]SharePointIdentitySetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SharePointIdentitySetCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SharePointIdentitySetCollectionResponse) SetValue(value []SharePointIdentitySetable)() {
     m.value = value
 }

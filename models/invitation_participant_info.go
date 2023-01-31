@@ -10,9 +10,9 @@ type InvitationParticipantInfo struct {
     additionalData map[string]any
     // Optional. Whether to hide the participant from the roster.
     hidden *bool
-    // The identity property
+    // 
     identity IdentitySetable
-    // The OdataType property
+    // 
     odataType *string
     // Optional. The ID of the target participant.
     participantId *string
@@ -105,11 +105,11 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878
 func (m *InvitationParticipantInfo) GetHidden()(*bool) {
     return m.hidden
 }
-// GetIdentity gets the identity property value. The identity property
+// GetIdentity gets the identity property value. 
 func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
     return m.identity
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InvitationParticipantInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -179,11 +179,11 @@ func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]any)() {
 func (m *InvitationParticipantInfo) SetHidden(value *bool)() {
     m.hidden = value
 }
-// SetIdentity sets the identity property value. The identity property
+// SetIdentity sets the identity property value. 
 func (m *InvitationParticipantInfo) SetIdentity(value IdentitySetable)() {
     m.identity = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InvitationParticipantInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -12,11 +12,11 @@ type SearchHit struct {
     contentSource *string
     // The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
     hitId *string
-    // The OdataType property
+    // 
     odataType *string
     // The rank or the order of the result.
     rank *int32
-    // The resource property
+    // 
     resource Entityable
     // ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
     resultTemplateId *string
@@ -121,7 +121,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *SearchHit) GetHitId()(*string) {
     return m.hitId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchHit) GetOdataType()(*string) {
     return m.odataType
 }
@@ -129,7 +129,7 @@ func (m *SearchHit) GetOdataType()(*string) {
 func (m *SearchHit) GetRank()(*int32) {
     return m.rank
 }
-// GetResource gets the resource property value. The resource property
+// GetResource gets the resource property value. 
 func (m *SearchHit) GetResource()(Entityable) {
     return m.resource
 }
@@ -205,7 +205,7 @@ func (m *SearchHit) SetContentSource(value *string)() {
 func (m *SearchHit) SetHitId(value *string)() {
     m.hitId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchHit) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -213,7 +213,7 @@ func (m *SearchHit) SetOdataType(value *string)() {
 func (m *SearchHit) SetRank(value *int32)() {
     m.rank = value
 }
-// SetResource sets the resource property value. The resource property
+// SetResource sets the resource property value. 
 func (m *SearchHit) SetResource(value Entityable)() {
     m.resource = value
 }

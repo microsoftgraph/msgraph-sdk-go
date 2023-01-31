@@ -16,13 +16,13 @@ type IosUpdateDeviceStatus struct {
     deviceId *string
     // The device model that is being reported
     deviceModel *string
-    // The installStatus property
+    // 
     installStatus *IosUpdatesInstallStatus
     // Last modified date time of the policy report.
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The device version that is being reported.
     osVersion *string
-    // The status property
+    // 
     status *ComplianceStatus
     // The User id that is being reported.
     userId *string
@@ -173,7 +173,7 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInstallStatus gets the installStatus property value. The installStatus property
+// GetInstallStatus gets the installStatus property value. 
 func (m *IosUpdateDeviceStatus) GetInstallStatus()(*IosUpdatesInstallStatus) {
     return m.installStatus
 }
@@ -185,7 +185,7 @@ func (m *IosUpdateDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe
 func (m *IosUpdateDeviceStatus) GetOsVersion()(*string) {
     return m.osVersion
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *IosUpdateDeviceStatus) GetStatus()(*ComplianceStatus) {
     return m.status
 }
@@ -293,7 +293,7 @@ func (m *IosUpdateDeviceStatus) SetDeviceId(value *string)() {
 func (m *IosUpdateDeviceStatus) SetDeviceModel(value *string)() {
     m.deviceModel = value
 }
-// SetInstallStatus sets the installStatus property value. The installStatus property
+// SetInstallStatus sets the installStatus property value. 
 func (m *IosUpdateDeviceStatus) SetInstallStatus(value *IosUpdatesInstallStatus)() {
     m.installStatus = value
 }
@@ -305,7 +305,7 @@ func (m *IosUpdateDeviceStatus) SetLastReportedDateTime(value *i336074805fc85398
 func (m *IosUpdateDeviceStatus) SetOsVersion(value *string)() {
     m.osVersion = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *IosUpdateDeviceStatus) SetStatus(value *ComplianceStatus)() {
     m.status = value
 }

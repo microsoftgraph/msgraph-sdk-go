@@ -10,11 +10,11 @@ type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     additionalData map[string]any
     // The object identifier of an Azure Active Directory user or group.
     id *string
-    // The OdataType property
+    // 
     odataType *string
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     targetedAuthenticationMethod *string
-    // The targetType property
+    // 
     targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodsRegistrationCampaignIncludeTarget instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
@@ -81,7 +81,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetOdataType()(*string) {
     return m.odataType
 }
@@ -89,7 +89,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetOdataType()(
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuthenticationMethod()(*string) {
     return m.targetedAuthenticationMethod
 }
-// GetTargetType gets the targetType property value. The targetType property
+// GetTargetType gets the targetType property value. 
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     return m.targetType
 }
@@ -136,7 +136,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetAdditionalDa
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -144,7 +144,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetOdataType(va
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetedAuthenticationMethod(value *string)() {
     m.targetedAuthenticationMethod = value
 }
-// SetTargetType sets the targetType property value. The targetType property
+// SetTargetType sets the targetType property value. 
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     m.targetType = value
 }

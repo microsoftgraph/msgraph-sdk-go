@@ -7,7 +7,7 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
-    // The workforceIntegrations property
+    // 
     workforceIntegrations []WorkforceIntegrationable
 }
 // NewTeamwork instantiates a new Teamwork and sets the default values.
@@ -40,7 +40,7 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetWorkforceIntegrations gets the workforceIntegrations property value. The workforceIntegrations property
+// GetWorkforceIntegrations gets the workforceIntegrations property value. 
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
     return m.workforceIntegrations
 }
@@ -62,7 +62,7 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetWorkforceIntegrations sets the workforceIntegrations property value. The workforceIntegrations property
+// SetWorkforceIntegrations sets the workforceIntegrations property value. 
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
     m.workforceIntegrations = value
 }

@@ -16,7 +16,7 @@ type TextColumn struct {
     linesForEditing *int32
     // The maximum number of characters for the value.
     maxLength *int32
-    // The OdataType property
+    // 
     odataType *string
     // The type of text being stored. Must be one of plain or richText
     textType *string
@@ -117,7 +117,7 @@ func (m *TextColumn) GetLinesForEditing()(*int32) {
 func (m *TextColumn) GetMaxLength()(*int32) {
     return m.maxLength
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TextColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -191,7 +191,7 @@ func (m *TextColumn) SetLinesForEditing(value *int32)() {
 func (m *TextColumn) SetMaxLength(value *int32)() {
     m.maxLength = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TextColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -14,7 +14,7 @@ type StandardTimeZoneOffset struct {
     dayOfWeek *DayOfWeek
     // Represents the month of the year when the transition from daylight saving time to standard time occurs.
     month *int32
-    // The OdataType property
+    // 
     odataType *string
     // Represents the time of day when the transition from daylight saving time to standard time occurs.
     time *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
@@ -131,7 +131,7 @@ func (m *StandardTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80
 func (m *StandardTimeZoneOffset) GetMonth()(*int32) {
     return m.month
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *StandardTimeZoneOffset) GetOdataType()(*string) {
     return m.odataType
 }
@@ -206,7 +206,7 @@ func (m *StandardTimeZoneOffset) SetDayOfWeek(value *DayOfWeek)() {
 func (m *StandardTimeZoneOffset) SetMonth(value *int32)() {
     m.month = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *StandardTimeZoneOffset) SetOdataType(value *string)() {
     m.odataType = value
 }

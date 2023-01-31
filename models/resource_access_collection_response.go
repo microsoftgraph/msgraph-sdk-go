@@ -7,7 +7,7 @@ import (
 // ResourceAccessCollectionResponse 
 type ResourceAccessCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ResourceAccessable
 }
 // NewResourceAccessCollectionResponse instantiates a new ResourceAccessCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ResourceAccessCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ResourceAccessCollectionResponse) GetValue()([]ResourceAccessable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ResourceAccessCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ResourceAccessCollectionResponse) SetValue(value []ResourceAccessable)() {
     m.value = value
 }

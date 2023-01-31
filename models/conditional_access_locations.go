@@ -12,7 +12,7 @@ type ConditionalAccessLocations struct {
     excludeLocations []string
     // Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
     includeLocations []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessLocations instantiates a new conditionalAccessLocations and sets the default values.
@@ -81,7 +81,7 @@ func (m *ConditionalAccessLocations) GetFieldDeserializers()(map[string]func(i87
 func (m *ConditionalAccessLocations) GetIncludeLocations()([]string) {
     return m.includeLocations
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessLocations) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *ConditionalAccessLocations) SetExcludeLocations(value []string)() {
 func (m *ConditionalAccessLocations) SetIncludeLocations(value []string)() {
     m.includeLocations = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessLocations) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -20,7 +20,7 @@ type CertificateAuthority struct {
     issuer *string
     // The subject key identifier of the certificate, calculated from the certificate value. Read-only.
     issuerSki *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCertificateAuthority instantiates a new certificateAuthority and sets the default values.
@@ -137,7 +137,7 @@ func (m *CertificateAuthority) GetIssuer()(*string) {
 func (m *CertificateAuthority) GetIssuerSki()(*string) {
     return m.issuerSki
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CertificateAuthority) GetOdataType()(*string) {
     return m.odataType
 }
@@ -221,7 +221,7 @@ func (m *CertificateAuthority) SetIssuer(value *string)() {
 func (m *CertificateAuthority) SetIssuerSki(value *string)() {
     m.issuerSki = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CertificateAuthority) SetOdataType(value *string)() {
     m.odataType = value
 }

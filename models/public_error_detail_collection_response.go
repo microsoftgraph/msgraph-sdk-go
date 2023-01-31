@@ -7,7 +7,7 @@ import (
 // PublicErrorDetailCollectionResponse 
 type PublicErrorDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PublicErrorDetailable
 }
 // NewPublicErrorDetailCollectionResponse instantiates a new PublicErrorDetailCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PublicErrorDetailCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PublicErrorDetailCollectionResponse) GetValue()([]PublicErrorDetailable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PublicErrorDetailCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PublicErrorDetailCollectionResponse) SetValue(value []PublicErrorDetailable)() {
     m.value = value
 }

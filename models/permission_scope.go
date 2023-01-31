@@ -17,9 +17,9 @@ type PermissionScope struct {
     id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
     isEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
-    // The origin property
+    // 
     origin *string
     // The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
     type_escaped *string
@@ -166,11 +166,11 @@ func (m *PermissionScope) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf677
 func (m *PermissionScope) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PermissionScope) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOrigin gets the origin property value. The origin property
+// GetOrigin gets the origin property value. 
 func (m *PermissionScope) GetOrigin()(*string) {
     return m.origin
 }
@@ -280,11 +280,11 @@ func (m *PermissionScope) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0c
 func (m *PermissionScope) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PermissionScope) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOrigin sets the origin property value. The origin property
+// SetOrigin sets the origin property value. 
 func (m *PermissionScope) SetOrigin(value *string)() {
     m.origin = value
 }

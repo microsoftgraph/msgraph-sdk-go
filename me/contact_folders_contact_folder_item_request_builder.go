@@ -60,13 +60,16 @@ func (m *ContactFoldersContactFolderItemRequestBuilder) ChildFoldersById(id stri
     return NewContactFoldersItemChildFoldersContactFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewContactFoldersContactFolderItemRequestBuilderInternal instantiates a new ContactFolderItemRequestBuilder and sets the default values.
-func NewContactFoldersContactFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactFoldersContactFolderItemRequestBuilder) {
+func NewContactFoldersContactFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, contactFolderId *string)(*ContactFoldersContactFolderItemRequestBuilder) {
     m := &ContactFoldersContactFolderItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/contactFolders/{contactFolder%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if contactFolderId != nil {
+        urlTplParams["contactFolder%2Did"] = *contactFolderId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -76,7 +79,7 @@ func NewContactFoldersContactFolderItemRequestBuilderInternal(pathParameters map
 func NewContactFoldersContactFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactFoldersContactFolderItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewContactFoldersContactFolderItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewContactFoldersContactFolderItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Contacts provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFoldersContactFolderItemRequestBuilder) Contacts()(*ContactFoldersItemContactsRequestBuilder) {
@@ -212,7 +215,10 @@ func (m *ContactFoldersContactFolderItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -12,7 +12,7 @@ type Thumbnail struct {
     content []byte
     // The height of the thumbnail, in pixels.
     height *int32
-    // The OdataType property
+    // 
     odataType *string
     // The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
     sourceItemId *string
@@ -109,7 +109,7 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *Thumbnail) GetHeight()(*int32) {
     return m.height
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Thumbnail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -183,7 +183,7 @@ func (m *Thumbnail) SetContent(value []byte)() {
 func (m *Thumbnail) SetHeight(value *int32)() {
     m.height = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Thumbnail) SetOdataType(value *string)() {
     m.odataType = value
 }

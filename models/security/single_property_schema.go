@@ -10,7 +10,7 @@ type SinglePropertySchema struct {
     additionalData map[string]any
     // The name of the property.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The type of the property.
     type_escaped *string
@@ -69,7 +69,7 @@ func (m *SinglePropertySchema) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *SinglePropertySchema) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SinglePropertySchema) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *SinglePropertySchema) SetAdditionalData(value map[string]any)() {
 func (m *SinglePropertySchema) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SinglePropertySchema) SetOdataType(value *string)() {
     m.odataType = value
 }

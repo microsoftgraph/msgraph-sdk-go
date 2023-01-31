@@ -47,13 +47,16 @@ type AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal instantiates a new PhoneAuthenticationMethodItemRequestBuilder and sets the default values.
-func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
+func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, phoneAuthenticationMethodId *string)(*AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     m := &AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if phoneAuthenticationMethodId != nil {
+        urlTplParams["phoneAuthenticationMethod%2Did"] = *phoneAuthenticationMethodId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInt
 func NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property phoneMethods for me
 func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -80,14 +83,6 @@ func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) 
         return err
     }
     return nil
-}
-// DisableSmsSignIn provides operations to call the disableSmsSignIn method.
-func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*AuthenticationPhoneMethodsItemDisableSmsSignInRequestBuilder) {
-    return NewAuthenticationPhoneMethodsItemDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnableSmsSignIn provides operations to call the enableSmsSignIn method.
-func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*AuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) {
-    return NewAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the phone numbers registered to a user for authentication.
 func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
@@ -107,6 +102,14 @@ func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable), nil
+}
+// MicrosoftGraphDisableSmsSignIn provides operations to call the disableSmsSignIn method.
+func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) MicrosoftGraphDisableSmsSignIn()(*AuthenticationPhoneMethodsItemMicrosoftGraphDisableSmsSignInDisableSmsSignInRequestBuilder) {
+    return NewAuthenticationPhoneMethodsItemMicrosoftGraphDisableSmsSignInDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphEnableSmsSignIn provides operations to call the enableSmsSignIn method.
+func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) MicrosoftGraphEnableSmsSignIn()(*AuthenticationPhoneMethodsItemMicrosoftGraphEnableSmsSignInEnableSmsSignInRequestBuilder) {
+    return NewAuthenticationPhoneMethodsItemMicrosoftGraphEnableSmsSignInEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property phoneMethods in me
 func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, requestConfiguration *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
@@ -162,7 +165,10 @@ func (m *AuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

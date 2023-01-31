@@ -7,7 +7,7 @@ import (
 // IosManagedAppRegistrationCollectionResponse 
 type IosManagedAppRegistrationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosManagedAppRegistrationable
 }
 // NewIosManagedAppRegistrationCollectionResponse instantiates a new IosManagedAppRegistrationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosManagedAppRegistrationCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosManagedAppRegistrationCollectionResponse) GetValue()([]IosManagedAppRegistrationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosManagedAppRegistrationCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosManagedAppRegistrationCollectionResponse) SetValue(value []IosManagedAppRegistrationable)() {
     m.value = value
 }

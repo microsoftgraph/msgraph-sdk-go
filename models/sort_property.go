@@ -12,7 +12,7 @@ type SortProperty struct {
     isDescending *bool
     // The name of the property to sort on. Required.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSortProperty instantiates a new sortProperty and sets the default values.
@@ -73,7 +73,7 @@ func (m *SortProperty) GetIsDescending()(*bool) {
 func (m *SortProperty) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SortProperty) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *SortProperty) SetIsDescending(value *bool)() {
 func (m *SortProperty) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SortProperty) SetOdataType(value *string)() {
     m.odataType = value
 }

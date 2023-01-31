@@ -10,7 +10,7 @@ type BroadcastMeetingCaptionSettings struct {
     additionalData map[string]any
     // Indicates whether captions are enabled for this Teams live event.
     isCaptionEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // The spoken language.
     spokenLanguage *string
@@ -85,7 +85,7 @@ func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]fun
 func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
     return m.isCaptionEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BroadcastMeetingCaptionSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *BroadcastMeetingCaptionSettings) SetAdditionalData(value map[string]any
 func (m *BroadcastMeetingCaptionSettings) SetIsCaptionEnabled(value *bool)() {
     m.isCaptionEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BroadcastMeetingCaptionSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

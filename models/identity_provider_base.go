@@ -10,7 +10,7 @@ type IdentityProviderBase struct {
     // The display name of the identity provider.
     displayName *string
 }
-// NewIdentityProviderBase instantiates a new IdentityProviderBase and sets the default values.
+// NewIdentityProviderBase instantiates a new identityProviderBase and sets the default values.
 func NewIdentityProviderBase()(*IdentityProviderBase) {
     m := &IdentityProviderBase{
         Entity: *NewEntity(),

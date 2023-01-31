@@ -12,7 +12,7 @@ type OnlineMeetingInfo struct {
     conferenceId *string
     // The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
     joinUrl *string
-    // The OdataType property
+    // 
     odataType *string
     // All of the phone numbers associated with this conference.
     phones []Phoneable
@@ -129,7 +129,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
     return m.joinUrl
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnlineMeetingInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -217,7 +217,7 @@ func (m *OnlineMeetingInfo) SetConferenceId(value *string)() {
 func (m *OnlineMeetingInfo) SetJoinUrl(value *string)() {
     m.joinUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnlineMeetingInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

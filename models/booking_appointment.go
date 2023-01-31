@@ -17,7 +17,7 @@ type BookingAppointment struct {
     customerTimeZone *string
     // The length of the appointment, denoted in ISO8601 format.
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The endDateTime property
+    // 
     endDateTime DateTimeTimeZoneable
     // The current number of customers in the appointment
     filledAttendeesCount *int32
@@ -53,7 +53,7 @@ type BookingAppointment struct {
     smsNotificationsEnabled *bool
     // The ID of each bookingStaffMember who is scheduled in this appointment.
     staffMemberIds []string
-    // The startDateTime property
+    // 
     startDateTime DateTimeTimeZoneable
 }
 // NewBookingAppointment instantiates a new BookingAppointment and sets the default values.
@@ -87,7 +87,7 @@ func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
 func (m *BookingAppointment) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.duration
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. 
 func (m *BookingAppointment) GetEndDateTime()(DateTimeTimeZoneable) {
     return m.endDateTime
 }
@@ -416,7 +416,7 @@ func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
 func (m *BookingAppointment) GetStaffMemberIds()([]string) {
     return m.staffMemberIds
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. 
 func (m *BookingAppointment) GetStartDateTime()(DateTimeTimeZoneable) {
     return m.startDateTime
 }
@@ -589,7 +589,7 @@ func (m *BookingAppointment) SetCustomerTimeZone(value *string)() {
 func (m *BookingAppointment) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.duration = value
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. 
 func (m *BookingAppointment) SetEndDateTime(value DateTimeTimeZoneable)() {
     m.endDateTime = value
 }
@@ -661,7 +661,7 @@ func (m *BookingAppointment) SetSmsNotificationsEnabled(value *bool)() {
 func (m *BookingAppointment) SetStaffMemberIds(value []string)() {
     m.staffMemberIds = value
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. 
 func (m *BookingAppointment) SetStartDateTime(value DateTimeTimeZoneable)() {
     m.startDateTime = value
 }

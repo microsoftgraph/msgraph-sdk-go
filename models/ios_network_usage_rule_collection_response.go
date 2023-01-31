@@ -7,7 +7,7 @@ import (
 // IosNetworkUsageRuleCollectionResponse 
 type IosNetworkUsageRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosNetworkUsageRuleable
 }
 // NewIosNetworkUsageRuleCollectionResponse instantiates a new IosNetworkUsageRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosNetworkUsageRuleCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosNetworkUsageRuleCollectionResponse) GetValue()([]IosNetworkUsageRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosNetworkUsageRuleCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosNetworkUsageRuleCollectionResponse) SetValue(value []IosNetworkUsageRuleable)() {
     m.value = value
 }

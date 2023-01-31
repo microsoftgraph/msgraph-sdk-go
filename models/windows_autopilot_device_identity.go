@@ -14,7 +14,7 @@ type WindowsAutopilotDeviceIdentity struct {
     azureActiveDirectoryDeviceId *string
     // Display Name
     displayName *string
-    // The enrollmentState property
+    // 
     enrollmentState *EnrollmentState
     // Group Tag of the Windows autopilot device.
     groupTag *string
@@ -64,7 +64,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetAzureActiveDirectoryDeviceId()(*stri
 func (m *WindowsAutopilotDeviceIdentity) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
+// GetEnrollmentState gets the enrollmentState property value. 
 func (m *WindowsAutopilotDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     return m.enrollmentState
 }
@@ -398,7 +398,7 @@ func (m *WindowsAutopilotDeviceIdentity) SetAzureActiveDirectoryDeviceId(value *
 func (m *WindowsAutopilotDeviceIdentity) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
+// SetEnrollmentState sets the enrollmentState property value. 
 func (m *WindowsAutopilotDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
     m.enrollmentState = value
 }

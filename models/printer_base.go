@@ -23,7 +23,7 @@ type PrinterBase struct {
     manufacturer *string
     // The model name of the printer/printerShare.
     model *string
-    // The status property
+    // 
     status PrinterStatusable
 }
 // NewPrinterBase instantiates a new printerBase and sets the default values.
@@ -188,7 +188,7 @@ func (m *PrinterBase) GetManufacturer()(*string) {
 func (m *PrinterBase) GetModel()(*string) {
     return m.model
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *PrinterBase) GetStatus()(PrinterStatusable) {
     return m.status
 }
@@ -290,7 +290,7 @@ func (m *PrinterBase) SetManufacturer(value *string)() {
 func (m *PrinterBase) SetModel(value *string)() {
     m.model = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *PrinterBase) SetStatus(value PrinterStatusable)() {
     m.status = value
 }

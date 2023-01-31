@@ -12,7 +12,7 @@ type SizeRange struct {
     maximumSize *int32
     // The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
     minimumSize *int32
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSizeRange instantiates a new sizeRange and sets the default values.
@@ -73,7 +73,7 @@ func (m *SizeRange) GetMaximumSize()(*int32) {
 func (m *SizeRange) GetMinimumSize()(*int32) {
     return m.minimumSize
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SizeRange) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *SizeRange) SetMaximumSize(value *int32)() {
 func (m *SizeRange) SetMinimumSize(value *int32)() {
     m.minimumSize = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SizeRange) SetOdataType(value *string)() {
     m.odataType = value
 }

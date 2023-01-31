@@ -7,7 +7,7 @@ import (
 // ShiftCollectionResponse 
 type ShiftCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Shiftable
 }
 // NewShiftCollectionResponse instantiates a new ShiftCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ShiftCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ShiftCollectionResponse) GetValue()([]Shiftable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ShiftCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ShiftCollectionResponse) SetValue(value []Shiftable)() {
     m.value = value
 }

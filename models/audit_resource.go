@@ -14,7 +14,7 @@ type AuditResource struct {
     displayName *string
     // List of modified properties.
     modifiedProperties []AuditPropertyable
-    // The OdataType property
+    // 
     odataType *string
     // Audit resource's Id.
     resourceId *string
@@ -105,7 +105,7 @@ func (m *AuditResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *AuditResource) GetModifiedProperties()([]AuditPropertyable) {
     return m.modifiedProperties
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuditResource) GetOdataType()(*string) {
     return m.odataType
 }
@@ -173,7 +173,7 @@ func (m *AuditResource) SetDisplayName(value *string)() {
 func (m *AuditResource) SetModifiedProperties(value []AuditPropertyable)() {
     m.modifiedProperties = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuditResource) SetOdataType(value *string)() {
     m.odataType = value
 }

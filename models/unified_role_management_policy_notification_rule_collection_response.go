@@ -7,7 +7,7 @@ import (
 // UnifiedRoleManagementPolicyNotificationRuleCollectionResponse 
 type UnifiedRoleManagementPolicyNotificationRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleManagementPolicyNotificationRuleable
 }
 // NewUnifiedRoleManagementPolicyNotificationRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyNotificationRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) GetField
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyNotificationRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) Serializ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyNotificationRuleable)() {
     m.value = value
 }

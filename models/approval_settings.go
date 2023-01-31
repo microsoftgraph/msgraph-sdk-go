@@ -18,7 +18,7 @@ type ApprovalSettings struct {
     isApprovalRequiredForExtension *bool
     // Indicates whether the requestor is required to supply a justification in their request.
     isRequestorJustificationRequired *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewApprovalSettings instantiates a new approvalSettings and sets the default values.
@@ -125,7 +125,7 @@ func (m *ApprovalSettings) GetIsApprovalRequiredForExtension()(*bool) {
 func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
     return m.isRequestorJustificationRequired
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ApprovalSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -203,7 +203,7 @@ func (m *ApprovalSettings) SetIsApprovalRequiredForExtension(value *bool)() {
 func (m *ApprovalSettings) SetIsRequestorJustificationRequired(value *bool)() {
     m.isRequestorJustificationRequired = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ApprovalSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

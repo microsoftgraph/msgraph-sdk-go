@@ -10,7 +10,7 @@ type SubjectRightsRequestStageDetail struct {
     additionalData map[string]any
     // Describes the error, if any, for the current stage.
     error PublicErrorable
-    // The OdataType property
+    // 
     odataType *string
     // The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
     stage *SubjectRightsRequestStage
@@ -81,7 +81,7 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SubjectRightsRequestStageDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -137,7 +137,7 @@ func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]any
 func (m *SubjectRightsRequestStageDetail) SetError(value PublicErrorable)() {
     m.error = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SubjectRightsRequestStageDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

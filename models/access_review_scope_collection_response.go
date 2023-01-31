@@ -7,7 +7,7 @@ import (
 // AccessReviewScopeCollectionResponse 
 type AccessReviewScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewScopeable
 }
 // NewAccessReviewScopeCollectionResponse instantiates a new AccessReviewScopeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewScopeCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewScopeCollectionResponse) GetValue()([]AccessReviewScopeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewScopeCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewScopeCollectionResponse) SetValue(value []AccessReviewScopeable)() {
     m.value = value
 }

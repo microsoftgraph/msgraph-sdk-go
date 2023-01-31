@@ -7,7 +7,7 @@ import (
 // SwapShiftsChangeRequestCollectionResponse 
 type SwapShiftsChangeRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SwapShiftsChangeRequestable
 }
 // NewSwapShiftsChangeRequestCollectionResponse instantiates a new SwapShiftsChangeRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SwapShiftsChangeRequestCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SwapShiftsChangeRequestCollectionResponse) GetValue()([]SwapShiftsChangeRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SwapShiftsChangeRequestCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SwapShiftsChangeRequestCollectionResponse) SetValue(value []SwapShiftsChangeRequestable)() {
     m.value = value
 }

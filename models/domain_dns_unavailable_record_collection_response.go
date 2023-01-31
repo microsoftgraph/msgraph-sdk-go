@@ -7,7 +7,7 @@ import (
 // DomainDnsUnavailableRecordCollectionResponse 
 type DomainDnsUnavailableRecordCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DomainDnsUnavailableRecordable
 }
 // NewDomainDnsUnavailableRecordCollectionResponse instantiates a new DomainDnsUnavailableRecordCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DomainDnsUnavailableRecordCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DomainDnsUnavailableRecordCollectionResponse) GetValue()([]DomainDnsUnavailableRecordable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DomainDnsUnavailableRecordCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DomainDnsUnavailableRecordCollectionResponse) SetValue(value []DomainDnsUnavailableRecordable)() {
     m.value = value
 }

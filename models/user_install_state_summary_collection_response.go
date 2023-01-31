@@ -7,7 +7,7 @@ import (
 // UserInstallStateSummaryCollectionResponse 
 type UserInstallStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserInstallStateSummaryable
 }
 // NewUserInstallStateSummaryCollectionResponse instantiates a new UserInstallStateSummaryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserInstallStateSummaryCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserInstallStateSummaryCollectionResponse) GetValue()([]UserInstallStateSummaryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserInstallStateSummaryCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserInstallStateSummaryCollectionResponse) SetValue(value []UserInstallStateSummaryable)() {
     m.value = value
 }

@@ -14,7 +14,7 @@ type ControlScore struct {
     controlName *string
     // Description of the control.
     description *string
-    // The OdataType property
+    // 
     odataType *string
     // Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
     score *float64
@@ -101,7 +101,7 @@ func (m *ControlScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ControlScore) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *ControlScore) SetControlName(value *string)() {
 func (m *ControlScore) SetDescription(value *string)() {
     m.description = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ControlScore) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type ConditionalAccessDevices struct {
     additionalData map[string]any
     // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
     deviceFilter ConditionalAccessFilterable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessDevices instantiates a new conditionalAccessDevices and sets the default values.
@@ -57,7 +57,7 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessDevices) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]any)() {
 func (m *ConditionalAccessDevices) SetDeviceFilter(value ConditionalAccessFilterable)() {
     m.deviceFilter = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessDevices) SetOdataType(value *string)() {
     m.odataType = value
 }

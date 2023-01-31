@@ -7,7 +7,7 @@ import (
 // AndroidWorkProfileCustomConfigurationCollectionResponse 
 type AndroidWorkProfileCustomConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidWorkProfileCustomConfigurationable
 }
 // NewAndroidWorkProfileCustomConfigurationCollectionResponse instantiates a new AndroidWorkProfileCustomConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidWorkProfileCustomConfigurationCollectionResponse) GetFieldDeseri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidWorkProfileCustomConfigurationCollectionResponse) GetValue()([]AndroidWorkProfileCustomConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidWorkProfileCustomConfigurationCollectionResponse) Serialize(writ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidWorkProfileCustomConfigurationCollectionResponse) SetValue(value []AndroidWorkProfileCustomConfigurationable)() {
     m.value = value
 }

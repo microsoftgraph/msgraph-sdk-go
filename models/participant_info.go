@@ -12,11 +12,11 @@ type ParticipantInfo struct {
     countryCode *string
     // The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
     endpointType *EndpointType
-    // The identity property
+    // 
     identity IdentitySetable
     // The language culture string. Read-only.
     languageId *string
-    // The OdataType property
+    // 
     odataType *string
     // The participant ID of the participant. Read-only.
     participantId *string
@@ -121,7 +121,7 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetIdentity gets the identity property value. The identity property
+// GetIdentity gets the identity property value. 
 func (m *ParticipantInfo) GetIdentity()(IdentitySetable) {
     return m.identity
 }
@@ -129,7 +129,7 @@ func (m *ParticipantInfo) GetIdentity()(IdentitySetable) {
 func (m *ParticipantInfo) GetLanguageId()(*string) {
     return m.languageId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ParticipantInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -206,7 +206,7 @@ func (m *ParticipantInfo) SetCountryCode(value *string)() {
 func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
     m.endpointType = value
 }
-// SetIdentity sets the identity property value. The identity property
+// SetIdentity sets the identity property value. 
 func (m *ParticipantInfo) SetIdentity(value IdentitySetable)() {
     m.identity = value
 }
@@ -214,7 +214,7 @@ func (m *ParticipantInfo) SetIdentity(value IdentitySetable)() {
 func (m *ParticipantInfo) SetLanguageId(value *string)() {
     m.languageId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ParticipantInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

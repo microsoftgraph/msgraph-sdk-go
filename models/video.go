@@ -26,7 +26,7 @@ type Video struct {
     frameRate *float64
     // Height of the video, in pixels.
     height *int32
-    // The OdataType property
+    // 
     odataType *string
     // Width of the video, in pixels.
     width *int32
@@ -197,7 +197,7 @@ func (m *Video) GetFrameRate()(*float64) {
 func (m *Video) GetHeight()(*int32) {
     return m.height
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Video) GetOdataType()(*string) {
     return m.odataType
 }
@@ -321,7 +321,7 @@ func (m *Video) SetFrameRate(value *float64)() {
 func (m *Video) SetHeight(value *int32)() {
     m.height = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Video) SetOdataType(value *string)() {
     m.odataType = value
 }

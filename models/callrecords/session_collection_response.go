@@ -8,7 +8,7 @@ import (
 // SessionCollectionResponse 
 type SessionCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Sessionable
 }
 // NewSessionCollectionResponse instantiates a new SessionCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *SessionCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SessionCollectionResponse) GetValue()([]Sessionable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *SessionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SessionCollectionResponse) SetValue(value []Sessionable)() {
     m.value = value
 }

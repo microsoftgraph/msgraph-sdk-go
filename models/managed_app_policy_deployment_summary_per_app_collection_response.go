@@ -7,7 +7,7 @@ import (
 // ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse 
 type ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedAppPolicyDeploymentSummaryPerAppable
 }
 // NewManagedAppPolicyDeploymentSummaryPerAppCollectionResponse instantiates a new ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse) GetFieldDese
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse) GetValue()([]ManagedAppPolicyDeploymentSummaryPerAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse) Serialize(wr
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse) SetValue(value []ManagedAppPolicyDeploymentSummaryPerAppable)() {
     m.value = value
 }

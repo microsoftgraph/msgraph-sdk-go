@@ -7,7 +7,7 @@ import (
 // BaseItemCollectionResponse 
 type BaseItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BaseItemable
 }
 // NewBaseItemCollectionResponse instantiates a new BaseItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BaseItemCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BaseItemCollectionResponse) GetValue()([]BaseItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BaseItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BaseItemCollectionResponse) SetValue(value []BaseItemable)() {
     m.value = value
 }

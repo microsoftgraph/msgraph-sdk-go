@@ -10,9 +10,9 @@ type RecordingInfo struct {
     additionalData map[string]any
     // The identities of the recording initiator.
     initiator IdentitySetable
-    // The OdataType property
+    // 
     odataType *string
-    // The recordingStatus property
+    // 
     recordingStatus *RecordingStatus
 }
 // NewRecordingInfo instantiates a new recordingInfo and sets the default values.
@@ -69,11 +69,11 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *RecordingInfo) GetInitiator()(IdentitySetable) {
     return m.initiator
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RecordingInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRecordingStatus gets the recordingStatus property value. The recordingStatus property
+// GetRecordingStatus gets the recordingStatus property value. 
 func (m *RecordingInfo) GetRecordingStatus()(*RecordingStatus) {
     return m.recordingStatus
 }
@@ -114,11 +114,11 @@ func (m *RecordingInfo) SetAdditionalData(value map[string]any)() {
 func (m *RecordingInfo) SetInitiator(value IdentitySetable)() {
     m.initiator = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RecordingInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRecordingStatus sets the recordingStatus property value. The recordingStatus property
+// SetRecordingStatus sets the recordingStatus property value. 
 func (m *RecordingInfo) SetRecordingStatus(value *RecordingStatus)() {
     m.recordingStatus = value
 }

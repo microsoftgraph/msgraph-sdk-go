@@ -60,13 +60,16 @@ func (m *MailFoldersMailFolderItemRequestBuilder) ChildFoldersById(id string)(*M
     return NewMailFoldersItemChildFoldersMailFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMailFoldersMailFolderItemRequestBuilderInternal instantiates a new MailFolderItemRequestBuilder and sets the default values.
-func NewMailFoldersMailFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersMailFolderItemRequestBuilder) {
+func NewMailFoldersMailFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mailFolderId *string)(*MailFoldersMailFolderItemRequestBuilder) {
     m := &MailFoldersMailFolderItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if mailFolderId != nil {
+        urlTplParams["mailFolder%2Did"] = *mailFolderId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -76,11 +79,7 @@ func NewMailFoldersMailFolderItemRequestBuilderInternal(pathParameters map[strin
 func NewMailFoldersMailFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersMailFolderItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMailFoldersMailFolderItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Copy provides operations to call the copy method.
-func (m *MailFoldersMailFolderItemRequestBuilder) Copy()(*MailFoldersItemCopyRequestBuilder) {
-    return NewMailFoldersItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersMailFolderItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mailFolders for me
 func (m *MailFoldersMailFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MailFoldersMailFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -147,9 +146,13 @@ func (m *MailFoldersMailFolderItemRequestBuilder) MessagesById(id string)(*MailF
     }
     return NewMailFoldersItemMessagesMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Move provides operations to call the move method.
-func (m *MailFoldersMailFolderItemRequestBuilder) Move()(*MailFoldersItemMoveRequestBuilder) {
-    return NewMailFoldersItemMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCopy provides operations to call the copy method.
+func (m *MailFoldersMailFolderItemRequestBuilder) MicrosoftGraphCopy()(*MailFoldersItemMicrosoftGraphCopyCopyRequestBuilder) {
+    return NewMailFoldersItemMicrosoftGraphCopyCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphMove provides operations to call the move method.
+func (m *MailFoldersMailFolderItemRequestBuilder) MicrosoftGraphMove()(*MailFoldersItemMicrosoftGraphMoveMoveRequestBuilder) {
+    return NewMailFoldersItemMicrosoftGraphMoveMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *MailFoldersMailFolderItemRequestBuilder) MultiValueExtendedProperties()(*MailFoldersItemMultiValueExtendedPropertiesRequestBuilder) {
@@ -235,7 +238,10 @@ func (m *MailFoldersMailFolderItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

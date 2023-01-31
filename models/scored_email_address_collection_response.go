@@ -7,7 +7,7 @@ import (
 // ScoredEmailAddressCollectionResponse 
 type ScoredEmailAddressCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ScoredEmailAddressable
 }
 // NewScoredEmailAddressCollectionResponse instantiates a new ScoredEmailAddressCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ScoredEmailAddressCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ScoredEmailAddressCollectionResponse) GetValue()([]ScoredEmailAddressable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ScoredEmailAddressCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ScoredEmailAddressCollectionResponse) SetValue(value []ScoredEmailAddressable)() {
     m.value = value
 }

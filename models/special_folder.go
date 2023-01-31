@@ -10,7 +10,7 @@ type SpecialFolder struct {
     additionalData map[string]any
     // The unique identifier for this item in the /drive/special collection
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSpecialFolder instantiates a new specialFolder and sets the default values.
@@ -57,7 +57,7 @@ func (m *SpecialFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *SpecialFolder) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SpecialFolder) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *SpecialFolder) SetAdditionalData(value map[string]any)() {
 func (m *SpecialFolder) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SpecialFolder) SetOdataType(value *string)() {
     m.odataType = value
 }

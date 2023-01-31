@@ -7,7 +7,7 @@ import (
 // DisplayNameLocalizationCollectionResponse 
 type DisplayNameLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DisplayNameLocalizationable
 }
 // NewDisplayNameLocalizationCollectionResponse instantiates a new DisplayNameLocalizationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DisplayNameLocalizationCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DisplayNameLocalizationCollectionResponse) GetValue()([]DisplayNameLocalizationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DisplayNameLocalizationCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DisplayNameLocalizationCollectionResponse) SetValue(value []DisplayNameLocalizationable)() {
     m.value = value
 }

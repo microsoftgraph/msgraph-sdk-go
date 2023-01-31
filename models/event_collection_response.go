@@ -7,7 +7,7 @@ import (
 // EventCollectionResponse 
 type EventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Eventable
 }
 // NewEventCollectionResponse instantiates a new EventCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EventCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EventCollectionResponse) GetValue()([]Eventable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EventCollectionResponse) SetValue(value []Eventable)() {
     m.value = value
 }

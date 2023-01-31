@@ -7,7 +7,7 @@ import (
 // UserTrainingStatusInfoCollectionResponse 
 type UserTrainingStatusInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserTrainingStatusInfoable
 }
 // NewUserTrainingStatusInfoCollectionResponse instantiates a new UserTrainingStatusInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserTrainingStatusInfoCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserTrainingStatusInfoCollectionResponse) GetValue()([]UserTrainingStatusInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserTrainingStatusInfoCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserTrainingStatusInfoCollectionResponse) SetValue(value []UserTrainingStatusInfoable)() {
     m.value = value
 }

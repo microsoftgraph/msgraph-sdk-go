@@ -7,7 +7,7 @@ import (
 // ChatCollectionResponse 
 type ChatCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Chatable
 }
 // NewChatCollectionResponse instantiates a new ChatCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChatCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChatCollectionResponse) GetValue()([]Chatable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChatCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChatCollectionResponse) SetValue(value []Chatable)() {
     m.value = value
 }

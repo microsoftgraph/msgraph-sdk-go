@@ -15,7 +15,7 @@ type ApiApplication struct {
     knownClientApplications []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
     oauth2PermissionScopes []PermissionScopeable
-    // The OdataType property
+    // 
     odataType *string
     // Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
     preAuthorizedApplications []PreAuthorizedApplicationable
@@ -126,7 +126,7 @@ func (m *ApiApplication) GetKnownClientApplications()([]i561e97a8befe7661a44c8f5
 func (m *ApiApplication) GetOauth2PermissionScopes()([]PermissionScopeable) {
     return m.oauth2PermissionScopes
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ApiApplication) GetOdataType()(*string) {
     return m.odataType
 }
@@ -208,7 +208,7 @@ func (m *ApiApplication) SetKnownClientApplications(value []i561e97a8befe7661a44
 func (m *ApiApplication) SetOauth2PermissionScopes(value []PermissionScopeable)() {
     m.oauth2PermissionScopes = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ApiApplication) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -12,7 +12,7 @@ type SimulationEvent struct {
     count *int32
     // Name of the simulation event in an attack simulation and training campaign.
     eventName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSimulationEvent instantiates a new simulationEvent and sets the default values.
@@ -73,7 +73,7 @@ func (m *SimulationEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SimulationEvent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *SimulationEvent) SetCount(value *int32)() {
 func (m *SimulationEvent) SetEventName(value *string)() {
     m.eventName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SimulationEvent) SetOdataType(value *string)() {
     m.odataType = value
 }

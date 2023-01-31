@@ -16,7 +16,7 @@ type RubricLevel struct {
     grading EducationAssignmentGradeTypeable
     // The ID of this resource.
     levelId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewRubricLevel instantiates a new rubricLevel and sets the default values.
@@ -105,7 +105,7 @@ func (m *RubricLevel) GetGrading()(EducationAssignmentGradeTypeable) {
 func (m *RubricLevel) GetLevelId()(*string) {
     return m.levelId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RubricLevel) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *RubricLevel) SetGrading(value EducationAssignmentGradeTypeable)() {
 func (m *RubricLevel) SetLevelId(value *string)() {
     m.levelId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RubricLevel) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -16,7 +16,7 @@ type SubjectRightsRequestDetail struct {
     itemCount *int64
     // Count of item that need review.
     itemNeedReview *int64
-    // The OdataType property
+    // 
     odataType *string
     // Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
     productItemCounts []KeyValuePairable
@@ -149,7 +149,7 @@ func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
 func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
     return m.itemNeedReview
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SubjectRightsRequestDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -251,7 +251,7 @@ func (m *SubjectRightsRequestDetail) SetItemCount(value *int64)() {
 func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int64)() {
     m.itemNeedReview = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SubjectRightsRequestDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

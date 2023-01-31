@@ -12,11 +12,11 @@ type ImportedWindowsAutopilotDeviceIdentityState struct {
     deviceErrorCode *int32
     // Device error name reported by Device Directory Service(DDS).
     deviceErrorName *string
-    // The deviceImportStatus property
+    // 
     deviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus
     // Device Registration ID for successfully added device reported by Device Directory Service(DDS).
     deviceRegistrationId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewImportedWindowsAutopilotDeviceIdentityState instantiates a new importedWindowsAutopilotDeviceIdentityState and sets the default values.
@@ -42,7 +42,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorCode()(*int3
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorName()(*string) {
     return m.deviceErrorName
 }
-// GetDeviceImportStatus gets the deviceImportStatus property value. The deviceImportStatus property
+// GetDeviceImportStatus gets the deviceImportStatus property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceImportStatus()(*ImportedWindowsAutopilotDeviceIdentityImportStatus) {
     return m.deviceImportStatus
 }
@@ -105,7 +105,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -162,7 +162,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceErrorCode(value *
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceErrorName(value *string)() {
     m.deviceErrorName = value
 }
-// SetDeviceImportStatus sets the deviceImportStatus property value. The deviceImportStatus property
+// SetDeviceImportStatus sets the deviceImportStatus property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceImportStatus(value *ImportedWindowsAutopilotDeviceIdentityImportStatus)() {
     m.deviceImportStatus = value
 }
@@ -170,7 +170,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceImportStatus(valu
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceRegistrationId(value *string)() {
     m.deviceRegistrationId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetOdataType(value *string)() {
     m.odataType = value
 }

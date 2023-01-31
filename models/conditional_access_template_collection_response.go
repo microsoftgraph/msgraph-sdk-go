@@ -7,7 +7,7 @@ import (
 // ConditionalAccessTemplateCollectionResponse 
 type ConditionalAccessTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ConditionalAccessTemplateable
 }
 // NewConditionalAccessTemplateCollectionResponse instantiates a new ConditionalAccessTemplateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ConditionalAccessTemplateCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ConditionalAccessTemplateCollectionResponse) GetValue()([]ConditionalAccessTemplateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ConditionalAccessTemplateCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ConditionalAccessTemplateCollectionResponse) SetValue(value []ConditionalAccessTemplateable)() {
     m.value = value
 }

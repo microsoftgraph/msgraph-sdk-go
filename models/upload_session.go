@@ -13,7 +13,7 @@ type UploadSession struct {
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
     nextExpectedRanges []string
-    // The OdataType property
+    // 
     odataType *string
     // The URL endpoint that accepts PUT requests for byte ranges of the file.
     uploadUrl *string
@@ -90,7 +90,7 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *UploadSession) GetNextExpectedRanges()([]string) {
     return m.nextExpectedRanges
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UploadSession) GetOdataType()(*string) {
     return m.odataType
 }
@@ -144,7 +144,7 @@ func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
     m.nextExpectedRanges = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UploadSession) SetOdataType(value *string)() {
     m.odataType = value
 }

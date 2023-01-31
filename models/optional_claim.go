@@ -14,7 +14,7 @@ type OptionalClaim struct {
     essential *bool
     // The name of the optional claim.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
     source *string
@@ -105,7 +105,7 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *OptionalClaim) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OptionalClaim) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *OptionalClaim) SetEssential(value *bool)() {
 func (m *OptionalClaim) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OptionalClaim) SetOdataType(value *string)() {
     m.odataType = value
 }

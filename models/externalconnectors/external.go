@@ -8,9 +8,9 @@ import (
 type External struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The connections property
+    // 
     connections []ExternalConnectionable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewExternal instantiates a new External and sets the default values.
@@ -28,7 +28,7 @@ func CreateExternalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 func (m *External) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetConnections gets the connections property value. The connections property
+// GetConnections gets the connections property value. 
 func (m *External) GetConnections()([]ExternalConnectionable) {
     return m.connections
 }
@@ -61,7 +61,7 @@ func (m *External) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *External) GetOdataType()(*string) {
     return m.odataType
 }
@@ -95,11 +95,11 @@ func (m *External) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *External) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetConnections sets the connections property value. The connections property
+// SetConnections sets the connections property value. 
 func (m *External) SetConnections(value []ExternalConnectionable)() {
     m.connections = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *External) SetOdataType(value *string)() {
     m.odataType = value
 }

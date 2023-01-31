@@ -14,7 +14,7 @@ type SearchAlteration struct {
     alteredQueryString *string
     // Represents changed segments related to an original user query.
     alteredQueryTokens []AlteredQueryTokenable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSearchAlteration instantiates a new searchAlteration and sets the default values.
@@ -93,7 +93,7 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchAlteration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -151,7 +151,7 @@ func (m *SearchAlteration) SetAlteredQueryString(value *string)() {
 func (m *SearchAlteration) SetAlteredQueryTokens(value []AlteredQueryTokenable)() {
     m.alteredQueryTokens = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchAlteration) SetOdataType(value *string)() {
     m.odataType = value
 }

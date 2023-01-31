@@ -16,7 +16,7 @@ type ManagedDeviceMobileAppConfigurationDeviceStatus struct {
     deviceModel *string
     // Last modified date time of the policy report.
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status property
+    // 
     status *ComplianceStatus
     // The User Name that is being reported
     userName *string
@@ -125,7 +125,7 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetFieldDeserializers(
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastReportedDateTime
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
     return m.status
 }
@@ -204,7 +204,7 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetDeviceModel(value *
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastReportedDateTime = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetStatus(value *ComplianceStatus)() {
     m.status = value
 }

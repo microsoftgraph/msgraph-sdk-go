@@ -7,7 +7,7 @@ import (
 // Windows81GeneralConfigurationCollectionResponse 
 type Windows81GeneralConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Windows81GeneralConfigurationable
 }
 // NewWindows81GeneralConfigurationCollectionResponse instantiates a new Windows81GeneralConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Windows81GeneralConfigurationCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Windows81GeneralConfigurationCollectionResponse) GetValue()([]Windows81GeneralConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Windows81GeneralConfigurationCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Windows81GeneralConfigurationCollectionResponse) SetValue(value []Windows81GeneralConfigurationable)() {
     m.value = value
 }

@@ -12,7 +12,7 @@ type ModifiedProperty struct {
     displayName *string
     // Indicates the updated value for the propery.
     newValue *string
-    // The OdataType property
+    // 
     odataType *string
     // Indicates the previous value (before the update) for the property.
     oldValue *string
@@ -85,7 +85,7 @@ func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *ModifiedProperty) GetNewValue()(*string) {
     return m.newValue
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ModifiedProperty) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *ModifiedProperty) SetDisplayName(value *string)() {
 func (m *ModifiedProperty) SetNewValue(value *string)() {
     m.newValue = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ModifiedProperty) SetOdataType(value *string)() {
     m.odataType = value
 }

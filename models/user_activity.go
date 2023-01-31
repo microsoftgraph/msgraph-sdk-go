@@ -34,10 +34,10 @@ type UserActivity struct {
     status *Status
     // Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
     userTimezone *string
-    // The visualElements property
+    // 
     visualElements VisualInfoable
 }
-// NewUserActivity instantiates a new userActivity and sets the default values.
+// NewUserActivity instantiates a new UserActivity and sets the default values.
 func NewUserActivity()(*UserActivity) {
     m := &UserActivity{
         Entity: *NewEntity(),
@@ -249,7 +249,7 @@ func (m *UserActivity) GetStatus()(*Status) {
 func (m *UserActivity) GetUserTimezone()(*string) {
     return m.userTimezone
 }
-// GetVisualElements gets the visualElements property value. The visualElements property
+// GetVisualElements gets the visualElements property value. 
 func (m *UserActivity) GetVisualElements()(VisualInfoable) {
     return m.visualElements
 }
@@ -402,7 +402,7 @@ func (m *UserActivity) SetStatus(value *Status)() {
 func (m *UserActivity) SetUserTimezone(value *string)() {
     m.userTimezone = value
 }
-// SetVisualElements sets the visualElements property value. The visualElements property
+// SetVisualElements sets the visualElements property value. 
 func (m *UserActivity) SetVisualElements(value VisualInfoable)() {
     m.visualElements = value
 }

@@ -7,7 +7,7 @@ import (
 // PlayPromptOperationCollectionResponse 
 type PlayPromptOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PlayPromptOperationable
 }
 // NewPlayPromptOperationCollectionResponse instantiates a new PlayPromptOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PlayPromptOperationCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PlayPromptOperationCollectionResponse) GetValue()([]PlayPromptOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PlayPromptOperationCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PlayPromptOperationCollectionResponse) SetValue(value []PlayPromptOperationable)() {
     m.value = value
 }

@@ -12,7 +12,7 @@ type RecurrenceRange struct {
     endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of times to repeat the event. Required and must be positive if type is numbered.
     numberOfOccurrences *int32
-    // The OdataType property
+    // 
     odataType *string
     // Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
     recurrenceTimeZone *string
@@ -109,7 +109,7 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *RecurrenceRange) GetNumberOfOccurrences()(*int32) {
     return m.numberOfOccurrences
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RecurrenceRange) GetOdataType()(*string) {
     return m.odataType
 }
@@ -184,7 +184,7 @@ func (m *RecurrenceRange) SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b
 func (m *RecurrenceRange) SetNumberOfOccurrences(value *int32)() {
     m.numberOfOccurrences = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RecurrenceRange) SetOdataType(value *string)() {
     m.odataType = value
 }

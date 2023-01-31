@@ -10,7 +10,7 @@ type ActionResultPart struct {
     additionalData map[string]any
     // The error that occurred, if any, during the course of the bulk operation.
     error PublicErrorable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewActionResultPart instantiates a new actionResultPart and sets the default values.
@@ -75,7 +75,7 @@ func (m *ActionResultPart) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ActionResultPart) GetOdataType()(*string) {
     return m.odataType
 }
@@ -109,7 +109,7 @@ func (m *ActionResultPart) SetAdditionalData(value map[string]any)() {
 func (m *ActionResultPart) SetError(value PublicErrorable)() {
     m.error = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ActionResultPart) SetOdataType(value *string)() {
     m.odataType = value
 }

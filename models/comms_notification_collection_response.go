@@ -7,7 +7,7 @@ import (
 // CommsNotificationCollectionResponse 
 type CommsNotificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CommsNotificationable
 }
 // NewCommsNotificationCollectionResponse instantiates a new CommsNotificationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CommsNotificationCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CommsNotificationCollectionResponse) GetValue()([]CommsNotificationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CommsNotificationCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CommsNotificationCollectionResponse) SetValue(value []CommsNotificationable)() {
     m.value = value
 }

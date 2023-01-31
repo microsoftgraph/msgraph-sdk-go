@@ -7,7 +7,7 @@ import (
 // SharedPCConfigurationCollectionResponse 
 type SharedPCConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SharedPCConfigurationable
 }
 // NewSharedPCConfigurationCollectionResponse instantiates a new SharedPCConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SharedPCConfigurationCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SharedPCConfigurationCollectionResponse) GetValue()([]SharedPCConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SharedPCConfigurationCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SharedPCConfigurationCollectionResponse) SetValue(value []SharedPCConfigurationable)() {
     m.value = value
 }

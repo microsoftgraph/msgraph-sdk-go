@@ -9,11 +9,11 @@ type ConditionalAccessTemplate struct {
     Entity
     // The user-friendly name of the template.
     description *string
-    // The details property
+    // 
     details ConditionalAccessPolicyDetailable
     // The user-friendly name of the template.
     name *string
-    // The scenarios property
+    // 
     scenarios *TemplateScenarios
 }
 // NewConditionalAccessTemplate instantiates a new conditionalAccessTemplate and sets the default values.
@@ -31,7 +31,7 @@ func CreateConditionalAccessTemplateFromDiscriminatorValue(parseNode i878a80d233
 func (m *ConditionalAccessTemplate) GetDescription()(*string) {
     return m.description
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. 
 func (m *ConditionalAccessTemplate) GetDetails()(ConditionalAccessPolicyDetailable) {
     return m.details
 }
@@ -84,7 +84,7 @@ func (m *ConditionalAccessTemplate) GetFieldDeserializers()(map[string]func(i878
 func (m *ConditionalAccessTemplate) GetName()(*string) {
     return m.name
 }
-// GetScenarios gets the scenarios property value. The scenarios property
+// GetScenarios gets the scenarios property value. 
 func (m *ConditionalAccessTemplate) GetScenarios()(*TemplateScenarios) {
     return m.scenarios
 }
@@ -125,7 +125,7 @@ func (m *ConditionalAccessTemplate) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *ConditionalAccessTemplate) SetDescription(value *string)() {
     m.description = value
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. 
 func (m *ConditionalAccessTemplate) SetDetails(value ConditionalAccessPolicyDetailable)() {
     m.details = value
 }
@@ -133,7 +133,7 @@ func (m *ConditionalAccessTemplate) SetDetails(value ConditionalAccessPolicyDeta
 func (m *ConditionalAccessTemplate) SetName(value *string)() {
     m.name = value
 }
-// SetScenarios sets the scenarios property value. The scenarios property
+// SetScenarios sets the scenarios property value. 
 func (m *ConditionalAccessTemplate) SetScenarios(value *TemplateScenarios)() {
     m.scenarios = value
 }

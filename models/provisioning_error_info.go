@@ -14,7 +14,7 @@ type ProvisioningErrorInfo struct {
     errorCategory *ProvisioningStatusErrorCategory
     // Unique error code if any occurred. Learn more
     errorCode *string
-    // The OdataType property
+    // 
     odataType *string
     // Summarizes the status and describes why the status happened.
     reason *string
@@ -113,7 +113,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ProvisioningErrorInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -188,7 +188,7 @@ func (m *ProvisioningErrorInfo) SetErrorCategory(value *ProvisioningStatusErrorC
 func (m *ProvisioningErrorInfo) SetErrorCode(value *string)() {
     m.errorCode = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ProvisioningErrorInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

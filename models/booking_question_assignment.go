@@ -10,7 +10,7 @@ type BookingQuestionAssignment struct {
     additionalData map[string]any
     // The ID of the custom question.
     isRequired *bool
-    // The OdataType property
+    // 
     odataType *string
     // Indicates whether it is mandatory to answer the custom question.
     questionId *string
@@ -69,7 +69,7 @@ func (m *BookingQuestionAssignment) GetFieldDeserializers()(map[string]func(i878
 func (m *BookingQuestionAssignment) GetIsRequired()(*bool) {
     return m.isRequired
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BookingQuestionAssignment) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *BookingQuestionAssignment) SetAdditionalData(value map[string]any)() {
 func (m *BookingQuestionAssignment) SetIsRequired(value *bool)() {
     m.isRequired = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BookingQuestionAssignment) SetOdataType(value *string)() {
     m.odataType = value
 }

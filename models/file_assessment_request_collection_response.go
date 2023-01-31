@@ -7,7 +7,7 @@ import (
 // FileAssessmentRequestCollectionResponse 
 type FileAssessmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []FileAssessmentRequestable
 }
 // NewFileAssessmentRequestCollectionResponse instantiates a new FileAssessmentRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *FileAssessmentRequestCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *FileAssessmentRequestCollectionResponse) GetValue()([]FileAssessmentRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *FileAssessmentRequestCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *FileAssessmentRequestCollectionResponse) SetValue(value []FileAssessmentRequestable)() {
     m.value = value
 }

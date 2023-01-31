@@ -7,7 +7,7 @@ import (
 // OutlookCategoryCollectionResponse 
 type OutlookCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OutlookCategoryable
 }
 // NewOutlookCategoryCollectionResponse instantiates a new OutlookCategoryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OutlookCategoryCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OutlookCategoryCollectionResponse) GetValue()([]OutlookCategoryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OutlookCategoryCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OutlookCategoryCollectionResponse) SetValue(value []OutlookCategoryable)() {
     m.value = value
 }

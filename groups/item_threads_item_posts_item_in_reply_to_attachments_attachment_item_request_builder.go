@@ -40,13 +40,16 @@ type ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderGet
     QueryParameters *ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderGetQueryParameters
 }
 // NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal instantiates a new AttachmentItemRequestBuilder and sets the default values.
-func NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder) {
+func NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attachmentId *string)(*ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder) {
     m := &ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/attachments/{attachment%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if attachmentId != nil {
+        urlTplParams["attachment%2Did"] = *attachmentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -56,7 +59,7 @@ func NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder
 func NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property attachments for groups
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {

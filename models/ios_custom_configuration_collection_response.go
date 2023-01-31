@@ -7,7 +7,7 @@ import (
 // IosCustomConfigurationCollectionResponse 
 type IosCustomConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosCustomConfigurationable
 }
 // NewIosCustomConfigurationCollectionResponse instantiates a new IosCustomConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosCustomConfigurationCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosCustomConfigurationCollectionResponse) GetValue()([]IosCustomConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosCustomConfigurationCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosCustomConfigurationCollectionResponse) SetValue(value []IosCustomConfigurationable)() {
     m.value = value
 }

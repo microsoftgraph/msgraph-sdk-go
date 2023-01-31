@@ -7,7 +7,7 @@ import (
 // ContractCollectionResponse 
 type ContractCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Contractable
 }
 // NewContractCollectionResponse instantiates a new ContractCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ContractCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ContractCollectionResponse) GetValue()([]Contractable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ContractCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ContractCollectionResponse) SetValue(value []Contractable)() {
     m.value = value
 }

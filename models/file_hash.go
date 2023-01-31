@@ -12,7 +12,7 @@ type FileHash struct {
     hashType *FileHashType
     // Value of the file hash.
     hashValue *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewFileHash instantiates a new fileHash and sets the default values.
@@ -73,7 +73,7 @@ func (m *FileHash) GetHashType()(*FileHashType) {
 func (m *FileHash) GetHashValue()(*string) {
     return m.hashValue
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FileHash) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *FileHash) SetHashType(value *FileHashType)() {
 func (m *FileHash) SetHashValue(value *string)() {
     m.hashValue = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FileHash) SetOdataType(value *string)() {
     m.odataType = value
 }

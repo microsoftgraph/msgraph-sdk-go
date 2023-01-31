@@ -8,9 +8,9 @@ import (
 type ReferenceUpdate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataId property
+    // 
     odataId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewReferenceUpdate instantiates a new ReferenceUpdate and sets the default values.
@@ -53,11 +53,11 @@ func (m *ReferenceUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataId gets the @odata.id property value. The OdataId property
+// GetOdataId gets the @odata.id property value. 
 func (m *ReferenceUpdate) GetOdataId()(*string) {
     return m.odataId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ReferenceUpdate) GetOdataType()(*string) {
     return m.odataType
 }
@@ -87,11 +87,11 @@ func (m *ReferenceUpdate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 func (m *ReferenceUpdate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataId sets the @odata.id property value. The OdataId property
+// SetOdataId sets the @odata.id property value. 
 func (m *ReferenceUpdate) SetOdataId(value *string)() {
     m.odataId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ReferenceUpdate) SetOdataType(value *string)() {
     m.odataType = value
 }

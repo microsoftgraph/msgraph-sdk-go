@@ -7,7 +7,7 @@ import (
 // ComplianceManagementPartnerCollectionResponse 
 type ComplianceManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ComplianceManagementPartnerable
 }
 // NewComplianceManagementPartnerCollectionResponse instantiates a new ComplianceManagementPartnerCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ComplianceManagementPartnerCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ComplianceManagementPartnerCollectionResponse) GetValue()([]ComplianceManagementPartnerable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ComplianceManagementPartnerCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ComplianceManagementPartnerCollectionResponse) SetValue(value []ComplianceManagementPartnerable)() {
     m.value = value
 }

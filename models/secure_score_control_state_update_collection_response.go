@@ -7,7 +7,7 @@ import (
 // SecureScoreControlStateUpdateCollectionResponse 
 type SecureScoreControlStateUpdateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SecureScoreControlStateUpdateable
 }
 // NewSecureScoreControlStateUpdateCollectionResponse instantiates a new SecureScoreControlStateUpdateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SecureScoreControlStateUpdateCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SecureScoreControlStateUpdateCollectionResponse) GetValue()([]SecureScoreControlStateUpdateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SecureScoreControlStateUpdateCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SecureScoreControlStateUpdateCollectionResponse) SetValue(value []SecureScoreControlStateUpdateable)() {
     m.value = value
 }

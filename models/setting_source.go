@@ -12,9 +12,9 @@ type SettingSource struct {
     displayName *string
     // Not yet documented
     id *string
-    // The OdataType property
+    // 
     odataType *string
-    // The sourceType property
+    // 
     sourceType *SettingSourceType
 }
 // NewSettingSource instantiates a new settingSource and sets the default values.
@@ -85,11 +85,11 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *SettingSource) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SettingSource) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSourceType gets the sourceType property value. The sourceType property
+// GetSourceType gets the sourceType property value. 
 func (m *SettingSource) GetSourceType()(*SettingSourceType) {
     return m.sourceType
 }
@@ -140,11 +140,11 @@ func (m *SettingSource) SetDisplayName(value *string)() {
 func (m *SettingSource) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SettingSource) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSourceType sets the sourceType property value. The sourceType property
+// SetSourceType sets the sourceType property value. 
 func (m *SettingSource) SetSourceType(value *SettingSourceType)() {
     m.sourceType = value
 }

@@ -7,7 +7,7 @@ import (
 // ExternalDomainNameCollectionResponse 
 type ExternalDomainNameCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ExternalDomainNameable
 }
 // NewExternalDomainNameCollectionResponse instantiates a new ExternalDomainNameCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ExternalDomainNameCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ExternalDomainNameCollectionResponse) GetValue()([]ExternalDomainNameable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ExternalDomainNameCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ExternalDomainNameCollectionResponse) SetValue(value []ExternalDomainNameable)() {
     m.value = value
 }

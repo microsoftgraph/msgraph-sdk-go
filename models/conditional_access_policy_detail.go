@@ -8,11 +8,11 @@ import (
 type ConditionalAccessPolicyDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The conditions property
+    // 
     conditions ConditionalAccessConditionSetable
     // Represents grant controls that must be fulfilled for the policy.
     grantControls ConditionalAccessGrantControlsable
-    // The OdataType property
+    // 
     odataType *string
     // Represents a complex type of session controls that is enforced after sign-in.
     sessionControls ConditionalAccessSessionControlsable
@@ -32,7 +32,7 @@ func CreateConditionalAccessPolicyDetailFromDiscriminatorValue(parseNode i878a80
 func (m *ConditionalAccessPolicyDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetConditions gets the conditions property value. The conditions property
+// GetConditions gets the conditions property value. 
 func (m *ConditionalAccessPolicyDetail) GetConditions()(ConditionalAccessConditionSetable) {
     return m.conditions
 }
@@ -85,7 +85,7 @@ func (m *ConditionalAccessPolicyDetail) GetFieldDeserializers()(map[string]func(
 func (m *ConditionalAccessPolicyDetail) GetGrantControls()(ConditionalAccessGrantControlsable) {
     return m.grantControls
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessPolicyDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -131,7 +131,7 @@ func (m *ConditionalAccessPolicyDetail) Serialize(writer i878a80d2330e89d2689638
 func (m *ConditionalAccessPolicyDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetConditions sets the conditions property value. The conditions property
+// SetConditions sets the conditions property value. 
 func (m *ConditionalAccessPolicyDetail) SetConditions(value ConditionalAccessConditionSetable)() {
     m.conditions = value
 }
@@ -139,7 +139,7 @@ func (m *ConditionalAccessPolicyDetail) SetConditions(value ConditionalAccessCon
 func (m *ConditionalAccessPolicyDetail) SetGrantControls(value ConditionalAccessGrantControlsable)() {
     m.grantControls = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessPolicyDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

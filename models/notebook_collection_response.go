@@ -7,7 +7,7 @@ import (
 // NotebookCollectionResponse 
 type NotebookCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Notebookable
 }
 // NewNotebookCollectionResponse instantiates a new NotebookCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *NotebookCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *NotebookCollectionResponse) GetValue()([]Notebookable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *NotebookCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *NotebookCollectionResponse) SetValue(value []Notebookable)() {
     m.value = value
 }

@@ -14,7 +14,7 @@ type PersonOrGroupColumn struct {
     chooseFromType *string
     // How to display the information about the person or group chosen. See below.
     displayAs *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPersonOrGroupColumn instantiates a new personOrGroupColumn and sets the default values.
@@ -89,7 +89,7 @@ func (m *PersonOrGroupColumn) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PersonOrGroupColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *PersonOrGroupColumn) SetChooseFromType(value *string)() {
 func (m *PersonOrGroupColumn) SetDisplayAs(value *string)() {
     m.displayAs = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PersonOrGroupColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type ResourceReference struct {
     additionalData map[string]any
     // The item's unique identifier.
     id *string
-    // The OdataType property
+    // 
     odataType *string
     // A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
     type_escaped *string
@@ -81,7 +81,7 @@ func (m *ResourceReference) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *ResourceReference) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResourceReference) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *ResourceReference) SetAdditionalData(value map[string]any)() {
 func (m *ResourceReference) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResourceReference) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // Windows10EndpointProtectionConfigurationCollectionResponse 
 type Windows10EndpointProtectionConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Windows10EndpointProtectionConfigurationable
 }
 // NewWindows10EndpointProtectionConfigurationCollectionResponse instantiates a new Windows10EndpointProtectionConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Windows10EndpointProtectionConfigurationCollectionResponse) GetFieldDes
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Windows10EndpointProtectionConfigurationCollectionResponse) GetValue()([]Windows10EndpointProtectionConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Windows10EndpointProtectionConfigurationCollectionResponse) Serialize(w
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Windows10EndpointProtectionConfigurationCollectionResponse) SetValue(value []Windows10EndpointProtectionConfigurationable)() {
     m.value = value
 }

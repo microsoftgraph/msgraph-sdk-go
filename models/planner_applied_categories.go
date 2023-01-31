@@ -8,7 +8,7 @@ import (
 type PlannerAppliedCategories struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPlannerAppliedCategories instantiates a new plannerAppliedCategories and sets the default values.
@@ -41,7 +41,7 @@ func (m *PlannerAppliedCategories) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PlannerAppliedCategories) GetOdataType()(*string) {
     return m.odataType
 }
@@ -65,7 +65,7 @@ func (m *PlannerAppliedCategories) Serialize(writer i878a80d2330e89d26896388a3f4
 func (m *PlannerAppliedCategories) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PlannerAppliedCategories) SetOdataType(value *string)() {
     m.odataType = value
 }

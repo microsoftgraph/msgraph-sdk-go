@@ -67,10 +67,6 @@ func NewCalendarsItemCalendarViewRequestBuilder(rawUrl string, requestAdapter i2
 func (m *CalendarsItemCalendarViewRequestBuilder) Count()(*CalendarsItemCalendarViewCountRequestBuilder) {
     return NewCalendarsItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *CalendarsItemCalendarViewRequestBuilder) Delta()(*CalendarsItemCalendarViewDeltaRequestBuilder) {
-    return NewCalendarsItemCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get the calendar view for the calendar. Navigation property. Read-only.
 // [Find more info here]
 // 
@@ -92,6 +88,10 @@ func (m *CalendarsItemCalendarViewRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *CalendarsItemCalendarViewRequestBuilder) MicrosoftGraphDelta()(*CalendarsItemCalendarViewMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewCalendarsItemCalendarViewMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
 func (m *CalendarsItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

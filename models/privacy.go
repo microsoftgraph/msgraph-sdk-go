@@ -8,9 +8,9 @@ import (
 type Privacy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The subjectRightsRequests property
+    // 
     subjectRightsRequests []SubjectRightsRequestable
 }
 // NewPrivacy instantiates a new Privacy and sets the default values.
@@ -57,11 +57,11 @@ func (m *Privacy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Privacy) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSubjectRightsRequests gets the subjectRightsRequests property value. The subjectRightsRequests property
+// GetSubjectRightsRequests gets the subjectRightsRequests property value. 
 func (m *Privacy) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
     return m.subjectRightsRequests
 }
@@ -95,11 +95,11 @@ func (m *Privacy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 func (m *Privacy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Privacy) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSubjectRightsRequests sets the subjectRightsRequests property value. The subjectRightsRequests property
+// SetSubjectRightsRequests sets the subjectRightsRequests property value. 
 func (m *Privacy) SetSubjectRightsRequests(value []SubjectRightsRequestable)() {
     m.subjectRightsRequests = value
 }

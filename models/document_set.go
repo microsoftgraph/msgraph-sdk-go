@@ -12,15 +12,15 @@ type DocumentSet struct {
     allowedContentTypes []ContentTypeInfoable
     // Default contents of document set.
     defaultContents []DocumentSetContentable
-    // The OdataType property
+    // 
     odataType *string
     // Specifies whether to push welcome page changes to inherited content types.
     propagateWelcomePageChanges *bool
-    // The sharedColumns property
+    // 
     sharedColumns []ColumnDefinitionable
     // Indicates whether to add the name of the document set to each file name.
     shouldPrefixNameToFile *bool
-    // The welcomePageColumns property
+    // 
     welcomePageColumns []ColumnDefinitionable
     // Welcome page absolute URL.
     welcomePageUrl *string
@@ -149,7 +149,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DocumentSet) GetOdataType()(*string) {
     return m.odataType
 }
@@ -157,7 +157,7 @@ func (m *DocumentSet) GetOdataType()(*string) {
 func (m *DocumentSet) GetPropagateWelcomePageChanges()(*bool) {
     return m.propagateWelcomePageChanges
 }
-// GetSharedColumns gets the sharedColumns property value. The sharedColumns property
+// GetSharedColumns gets the sharedColumns property value. 
 func (m *DocumentSet) GetSharedColumns()([]ColumnDefinitionable) {
     return m.sharedColumns
 }
@@ -165,7 +165,7 @@ func (m *DocumentSet) GetSharedColumns()([]ColumnDefinitionable) {
 func (m *DocumentSet) GetShouldPrefixNameToFile()(*bool) {
     return m.shouldPrefixNameToFile
 }
-// GetWelcomePageColumns gets the welcomePageColumns property value. The welcomePageColumns property
+// GetWelcomePageColumns gets the welcomePageColumns property value. 
 func (m *DocumentSet) GetWelcomePageColumns()([]ColumnDefinitionable) {
     return m.welcomePageColumns
 }
@@ -259,7 +259,7 @@ func (m *DocumentSet) SetAllowedContentTypes(value []ContentTypeInfoable)() {
 func (m *DocumentSet) SetDefaultContents(value []DocumentSetContentable)() {
     m.defaultContents = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DocumentSet) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -267,7 +267,7 @@ func (m *DocumentSet) SetOdataType(value *string)() {
 func (m *DocumentSet) SetPropagateWelcomePageChanges(value *bool)() {
     m.propagateWelcomePageChanges = value
 }
-// SetSharedColumns sets the sharedColumns property value. The sharedColumns property
+// SetSharedColumns sets the sharedColumns property value. 
 func (m *DocumentSet) SetSharedColumns(value []ColumnDefinitionable)() {
     m.sharedColumns = value
 }
@@ -275,7 +275,7 @@ func (m *DocumentSet) SetSharedColumns(value []ColumnDefinitionable)() {
 func (m *DocumentSet) SetShouldPrefixNameToFile(value *bool)() {
     m.shouldPrefixNameToFile = value
 }
-// SetWelcomePageColumns sets the welcomePageColumns property value. The welcomePageColumns property
+// SetWelcomePageColumns sets the welcomePageColumns property value. 
 func (m *DocumentSet) SetWelcomePageColumns(value []ColumnDefinitionable)() {
     m.welcomePageColumns = value
 }

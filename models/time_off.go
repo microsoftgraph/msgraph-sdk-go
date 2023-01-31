@@ -14,7 +14,7 @@ type TimeOff struct {
     // ID of the user assigned to the timeOff. Required.
     userId *string
 }
-// NewTimeOff instantiates a new TimeOff and sets the default values.
+// NewTimeOff instantiates a new timeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {
     m := &TimeOff{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

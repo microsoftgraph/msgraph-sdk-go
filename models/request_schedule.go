@@ -11,7 +11,7 @@ type RequestSchedule struct {
     additionalData map[string]any
     // When the eligible or active assignment expires.
     expiration ExpirationPatternable
-    // The OdataType property
+    // 
     odataType *string
     // The frequency of the  eligible or active assignment. This property is currently unsupported in PIM.
     recurrence PatternedRecurrenceable
@@ -82,7 +82,7 @@ func (m *RequestSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RequestSchedule) GetOdataType()(*string) {
     return m.odataType
 }
@@ -136,7 +136,7 @@ func (m *RequestSchedule) SetAdditionalData(value map[string]any)() {
 func (m *RequestSchedule) SetExpiration(value ExpirationPatternable)() {
     m.expiration = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RequestSchedule) SetOdataType(value *string)() {
     m.odataType = value
 }

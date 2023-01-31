@@ -12,7 +12,7 @@ type ConditionalAccessGrantControls struct {
     builtInControls []ConditionalAccessGrantControl
     // List of custom controls IDs required by the policy. For more information, see Custom controls.
     customAuthenticationFactors []string
-    // The OdataType property
+    // 
     odataType *string
     // Defines the relationship of the grant controls. Possible values: AND, OR.
     operator *string
@@ -109,7 +109,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessGrantControls) GetOdataType()(*string) {
     return m.odataType
 }
@@ -173,7 +173,7 @@ func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []ConditionalA
 func (m *ConditionalAccessGrantControls) SetCustomAuthenticationFactors(value []string)() {
     m.customAuthenticationFactors = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessGrantControls) SetOdataType(value *string)() {
     m.odataType = value
 }

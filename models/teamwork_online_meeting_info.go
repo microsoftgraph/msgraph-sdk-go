@@ -12,7 +12,7 @@ type TeamworkOnlineMeetingInfo struct {
     calendarEventId *string
     // The URL that users click to join or uniquely identify the meeting.
     joinWebUrl *string
-    // The OdataType property
+    // 
     odataType *string
     // The organizer of the meeting.
     organizer TeamworkUserIdentityable
@@ -85,7 +85,7 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878
 func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
     return m.joinWebUrl
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamworkOnlineMeetingInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *TeamworkOnlineMeetingInfo) SetCalendarEventId(value *string)() {
 func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
     m.joinWebUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamworkOnlineMeetingInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

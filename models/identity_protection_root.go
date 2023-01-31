@@ -8,7 +8,7 @@ import (
 type IdentityProtectionRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Risk detection in Azure AD Identity Protection and the associated information about the detection.
     riskDetections []RiskDetectionable
@@ -105,7 +105,7 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IdentityProtectionRoot) GetOdataType()(*string) {
     return m.odataType
 }
@@ -185,7 +185,7 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *IdentityProtectionRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IdentityProtectionRoot) SetOdataType(value *string)() {
     m.odataType = value
 }

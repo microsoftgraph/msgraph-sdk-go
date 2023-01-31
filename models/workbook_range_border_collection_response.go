@@ -7,7 +7,7 @@ import (
 // WorkbookRangeBorderCollectionResponse 
 type WorkbookRangeBorderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookRangeBorderable
 }
 // NewWorkbookRangeBorderCollectionResponse instantiates a new WorkbookRangeBorderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookRangeBorderCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookRangeBorderCollectionResponse) GetValue()([]WorkbookRangeBorderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookRangeBorderCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookRangeBorderCollectionResponse) SetValue(value []WorkbookRangeBorderable)() {
     m.value = value
 }

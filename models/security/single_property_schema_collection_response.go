@@ -8,7 +8,7 @@ import (
 // SinglePropertySchemaCollectionResponse 
 type SinglePropertySchemaCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SinglePropertySchemaable
 }
 // NewSinglePropertySchemaCollectionResponse instantiates a new SinglePropertySchemaCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *SinglePropertySchemaCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SinglePropertySchemaCollectionResponse) GetValue()([]SinglePropertySchemaable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *SinglePropertySchemaCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SinglePropertySchemaCollectionResponse) SetValue(value []SinglePropertySchemaable)() {
     m.value = value
 }

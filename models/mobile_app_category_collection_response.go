@@ -7,7 +7,7 @@ import (
 // MobileAppCategoryCollectionResponse 
 type MobileAppCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MobileAppCategoryable
 }
 // NewMobileAppCategoryCollectionResponse instantiates a new MobileAppCategoryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MobileAppCategoryCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MobileAppCategoryCollectionResponse) GetValue()([]MobileAppCategoryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MobileAppCategoryCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MobileAppCategoryCollectionResponse) SetValue(value []MobileAppCategoryable)() {
     m.value = value
 }

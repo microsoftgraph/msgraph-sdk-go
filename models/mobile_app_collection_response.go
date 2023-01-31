@@ -7,7 +7,7 @@ import (
 // MobileAppCollectionResponse 
 type MobileAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MobileAppable
 }
 // NewMobileAppCollectionResponse instantiates a new MobileAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MobileAppCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MobileAppCollectionResponse) GetValue()([]MobileAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MobileAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MobileAppCollectionResponse) SetValue(value []MobileAppable)() {
     m.value = value
 }

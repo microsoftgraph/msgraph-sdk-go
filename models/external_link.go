@@ -10,7 +10,7 @@ type ExternalLink struct {
     additionalData map[string]any
     // The URL of the link.
     href *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewExternalLink instantiates a new externalLink and sets the default values.
@@ -57,7 +57,7 @@ func (m *ExternalLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *ExternalLink) GetHref()(*string) {
     return m.href
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ExternalLink) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *ExternalLink) SetAdditionalData(value map[string]any)() {
 func (m *ExternalLink) SetHref(value *string)() {
     m.href = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ExternalLink) SetOdataType(value *string)() {
     m.odataType = value
 }

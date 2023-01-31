@@ -38,9 +38,9 @@ import (
     i79ca23a9ac0659e1330dd29e049fe157787d5af6695ead2ff8263396db68d027 "github.com/microsoftgraph/msgraph-sdk-go/identity"
     i7c9d1b36ac198368c1d8bed014b43e2a518b170ee45bf02c8bbe64544a50539a "github.com/microsoftgraph/msgraph-sdk-go/admin"
     i7d140130aac6882792a019b5ebe51fe8d69dfd63ec213c2e3cd98282ce2d0428 "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs"
+    i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b "github.com/microsoftgraph/msgraph-sdk-go/tenantrelationships"
     i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    i926bd489c52af20f44aacc8a450bb0a062290f1d1e44c2fe78d6cc1595c12524 "github.com/microsoftgraph/msgraph-sdk-go/drive"
     i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02 "github.com/microsoftgraph/msgraph-sdk-go/applications"
     i9429d7aae2f5c1dabbecc9411e8ad2b733d29338bc0c0436eeccc94605c461b7 "github.com/microsoftgraph/msgraph-sdk-go/print"
     i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12 "github.com/microsoftgraph/msgraph-sdk-go/domains"
@@ -397,10 +397,6 @@ func (m *GraphBaseServiceClient) DomainsById(id string)(*i957076b10ba162b23efec7
         urlTplParams["domain%2Did"] = id
     }
     return i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12.NewDomainItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Drive provides operations to manage the drive singleton.
-func (m *GraphBaseServiceClient) Drive()(*i926bd489c52af20f44aacc8a450bb0a062290f1d1e44c2fe78d6cc1595c12524.DriveRequestBuilder) {
-    return i926bd489c52af20f44aacc8a450bb0a062290f1d1e44c2fe78d6cc1595c12524.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Drives provides operations to manage the collection of drive entities.
 func (m *GraphBaseServiceClient) Drives()(*iefc72d8a17962d4db125c50866617eaa15d662c6e3fb13735d477380dcc0dbe3.DrivesRequestBuilder) {
@@ -784,6 +780,10 @@ func (m *GraphBaseServiceClient) TeamsTemplatesById(id string)(*i1b75be7b5675627
 // Teamwork provides operations to manage the teamwork singleton.
 func (m *GraphBaseServiceClient) Teamwork()(*ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9.TeamworkRequestBuilder) {
     return ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9.NewTeamworkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TenantRelationships provides operations to manage the tenantRelationship singleton.
+func (m *GraphBaseServiceClient) TenantRelationships()(*i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b.TenantRelationshipsRequestBuilder) {
+    return i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b.NewTenantRelationshipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Users provides operations to manage the collection of user entities.
 func (m *GraphBaseServiceClient) Users()(*if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.UsersRequestBuilder) {

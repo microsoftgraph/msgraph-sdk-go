@@ -96,9 +96,13 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeAssignmentCollectionResponseable), nil
 }
-// GetOrder provides operations to call the getOrder method.
-func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) GetOrder()(*B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
-    return NewB2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetOrder provides operations to call the getOrder method.
+func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) MicrosoftGraphGetOrder()(*B2xUserFlowsItemUserAttributeAssignmentsMicrosoftGraphGetOrderGetOrderRequestBuilder) {
+    return NewB2xUserFlowsItemUserAttributeAssignmentsMicrosoftGraphGetOrderGetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSetOrder provides operations to call the setOrder method.
+func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) MicrosoftGraphSetOrder()(*B2xUserFlowsItemUserAttributeAssignmentsMicrosoftGraphSetOrderSetOrderRequestBuilder) {
+    return NewB2xUserFlowsItemUserAttributeAssignmentsMicrosoftGraphSetOrderSetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
 // [Find more info here]
@@ -121,10 +125,6 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) Post(ctx contex
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeAssignmentable), nil
-}
-// SetOrder provides operations to call the setOrder method.
-func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) SetOrder()(*B2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) {
-    return NewB2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
 func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +149,10 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

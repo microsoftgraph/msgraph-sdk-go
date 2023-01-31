@@ -7,7 +7,7 @@ import (
 // AndroidCompliancePolicyCollectionResponse 
 type AndroidCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidCompliancePolicyable
 }
 // NewAndroidCompliancePolicyCollectionResponse instantiates a new AndroidCompliancePolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidCompliancePolicyCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidCompliancePolicyCollectionResponse) GetValue()([]AndroidCompliancePolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidCompliancePolicyCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidCompliancePolicyCollectionResponse) SetValue(value []AndroidCompliancePolicyable)() {
     m.value = value
 }

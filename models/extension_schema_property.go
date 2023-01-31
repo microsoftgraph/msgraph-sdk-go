@@ -10,7 +10,7 @@ type ExtensionSchemaProperty struct {
     additionalData map[string]any
     // The name of the strongly-typed property defined as part of a schema extension.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
     type_escaped *string
@@ -69,7 +69,7 @@ func (m *ExtensionSchemaProperty) GetFieldDeserializers()(map[string]func(i878a8
 func (m *ExtensionSchemaProperty) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ExtensionSchemaProperty) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *ExtensionSchemaProperty) SetAdditionalData(value map[string]any)() {
 func (m *ExtensionSchemaProperty) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ExtensionSchemaProperty) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type WindowsInformationProtectionProxiedDomainCollection struct {
     additionalData map[string]any
     // Display name
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // Collection of proxied domains
     proxiedDomains []ProxiedDomainable
@@ -73,7 +73,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializ
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetOdataType()(*string) {
     return m.odataType
 }
@@ -121,7 +121,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) SetAdditionalData(
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetOdataType(value *string)() {
     m.odataType = value
 }

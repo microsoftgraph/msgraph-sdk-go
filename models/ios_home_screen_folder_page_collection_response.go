@@ -7,7 +7,7 @@ import (
 // IosHomeScreenFolderPageCollectionResponse 
 type IosHomeScreenFolderPageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosHomeScreenFolderPageable
 }
 // NewIosHomeScreenFolderPageCollectionResponse instantiates a new IosHomeScreenFolderPageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosHomeScreenFolderPageCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosHomeScreenFolderPageCollectionResponse) GetValue()([]IosHomeScreenFolderPageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosHomeScreenFolderPageCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosHomeScreenFolderPageCollectionResponse) SetValue(value []IosHomeScreenFolderPageable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // X509CertificateAuthenticationMethodConfigurationCollectionResponse 
 type X509CertificateAuthenticationMethodConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []X509CertificateAuthenticationMethodConfigurationable
 }
 // NewX509CertificateAuthenticationMethodConfigurationCollectionResponse instantiates a new X509CertificateAuthenticationMethodConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) Get
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) GetValue()([]X509CertificateAuthenticationMethodConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) Ser
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) SetValue(value []X509CertificateAuthenticationMethodConfigurationable)() {
     m.value = value
 }

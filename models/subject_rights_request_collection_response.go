@@ -7,7 +7,7 @@ import (
 // SubjectRightsRequestCollectionResponse 
 type SubjectRightsRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SubjectRightsRequestable
 }
 // NewSubjectRightsRequestCollectionResponse instantiates a new SubjectRightsRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SubjectRightsRequestCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SubjectRightsRequestCollectionResponse) GetValue()([]SubjectRightsRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SubjectRightsRequestCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SubjectRightsRequestCollectionResponse) SetValue(value []SubjectRightsRequestable)() {
     m.value = value
 }

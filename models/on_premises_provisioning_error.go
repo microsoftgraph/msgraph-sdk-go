@@ -13,7 +13,7 @@ type OnPremisesProvisioningError struct {
     category *string
     // The date and time at which the error occurred.
     occurredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
     propertyCausingError *string
@@ -98,7 +98,7 @@ func (m *OnPremisesProvisioningError) GetFieldDeserializers()(map[string]func(i8
 func (m *OnPremisesProvisioningError) GetOccurredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.occurredDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnPremisesProvisioningError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -162,7 +162,7 @@ func (m *OnPremisesProvisioningError) SetCategory(value *string)() {
 func (m *OnPremisesProvisioningError) SetOccurredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.occurredDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnPremisesProvisioningError) SetOdataType(value *string)() {
     m.odataType = value
 }

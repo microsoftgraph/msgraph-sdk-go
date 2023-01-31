@@ -10,7 +10,7 @@ type FeatureTarget struct {
     additionalData map[string]any
     // The ID of the entity that's targeted in the include or exclude rule, or all_users to target all users.
     id *string
-    // The OdataType property
+    // 
     odataType *string
     // The kind of entity that's targeted. The possible values are: group, administrativeUnit, role, unknownFutureValue.
     targetType *FeatureTargetType
@@ -69,7 +69,7 @@ func (m *FeatureTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *FeatureTarget) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FeatureTarget) GetOdataType()(*string) {
     return m.odataType
 }
@@ -114,7 +114,7 @@ func (m *FeatureTarget) SetAdditionalData(value map[string]any)() {
 func (m *FeatureTarget) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FeatureTarget) SetOdataType(value *string)() {
     m.odataType = value
 }

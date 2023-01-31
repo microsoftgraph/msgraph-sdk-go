@@ -7,7 +7,7 @@ import (
 // ShiftAvailabilityCollectionResponse 
 type ShiftAvailabilityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ShiftAvailabilityable
 }
 // NewShiftAvailabilityCollectionResponse instantiates a new ShiftAvailabilityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ShiftAvailabilityCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ShiftAvailabilityCollectionResponse) GetValue()([]ShiftAvailabilityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ShiftAvailabilityCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ShiftAvailabilityCollectionResponse) SetValue(value []ShiftAvailabilityable)() {
     m.value = value
 }

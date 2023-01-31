@@ -14,7 +14,7 @@ type IosNetworkUsageRule struct {
     cellularDataBlockWhenRoaming *bool
     // Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
     managedApps []AppListItemable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIosNetworkUsageRule instantiates a new iosNetworkUsageRule and sets the default values.
@@ -93,7 +93,7 @@ func (m *IosNetworkUsageRule) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *IosNetworkUsageRule) GetManagedApps()([]AppListItemable) {
     return m.managedApps
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosNetworkUsageRule) GetOdataType()(*string) {
     return m.odataType
 }
@@ -151,7 +151,7 @@ func (m *IosNetworkUsageRule) SetCellularDataBlockWhenRoaming(value *bool)() {
 func (m *IosNetworkUsageRule) SetManagedApps(value []AppListItemable)() {
     m.managedApps = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosNetworkUsageRule) SetOdataType(value *string)() {
     m.odataType = value
 }

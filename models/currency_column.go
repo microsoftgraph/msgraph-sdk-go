@@ -10,7 +10,7 @@ type CurrencyColumn struct {
     additionalData map[string]any
     // Specifies the locale from which to infer the currency symbol.
     locale *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCurrencyColumn instantiates a new currencyColumn and sets the default values.
@@ -57,7 +57,7 @@ func (m *CurrencyColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *CurrencyColumn) GetLocale()(*string) {
     return m.locale
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CurrencyColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *CurrencyColumn) SetAdditionalData(value map[string]any)() {
 func (m *CurrencyColumn) SetLocale(value *string)() {
     m.locale = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CurrencyColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

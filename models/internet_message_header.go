@@ -10,7 +10,7 @@ type InternetMessageHeader struct {
     additionalData map[string]any
     // Represents the key in a key-value pair.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The value in a key-value pair.
     value *string
@@ -69,7 +69,7 @@ func (m *InternetMessageHeader) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *InternetMessageHeader) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InternetMessageHeader) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *InternetMessageHeader) SetAdditionalData(value map[string]any)() {
 func (m *InternetMessageHeader) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InternetMessageHeader) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // EducationRubricOutcomeCollectionResponse 
 type EducationRubricOutcomeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EducationRubricOutcomeable
 }
 // NewEducationRubricOutcomeCollectionResponse instantiates a new EducationRubricOutcomeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EducationRubricOutcomeCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EducationRubricOutcomeCollectionResponse) GetValue()([]EducationRubricOutcomeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EducationRubricOutcomeCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EducationRubricOutcomeCollectionResponse) SetValue(value []EducationRubricOutcomeable)() {
     m.value = value
 }

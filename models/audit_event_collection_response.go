@@ -7,7 +7,7 @@ import (
 // AuditEventCollectionResponse 
 type AuditEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuditEventable
 }
 // NewAuditEventCollectionResponse instantiates a new AuditEventCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuditEventCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuditEventCollectionResponse) GetValue()([]AuditEventable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuditEventCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuditEventCollectionResponse) SetValue(value []AuditEventable)() {
     m.value = value
 }

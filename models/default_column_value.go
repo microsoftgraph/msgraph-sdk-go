@@ -10,7 +10,7 @@ type DefaultColumnValue struct {
     additionalData map[string]any
     // The formula used to compute the default value for this column.
     formula *string
-    // The OdataType property
+    // 
     odataType *string
     // The direct value to use as the default value for this column.
     value *string
@@ -69,7 +69,7 @@ func (m *DefaultColumnValue) GetFieldDeserializers()(map[string]func(i878a80d233
 func (m *DefaultColumnValue) GetFormula()(*string) {
     return m.formula
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DefaultColumnValue) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *DefaultColumnValue) SetAdditionalData(value map[string]any)() {
 func (m *DefaultColumnValue) SetFormula(value *string)() {
     m.formula = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DefaultColumnValue) SetOdataType(value *string)() {
     m.odataType = value
 }

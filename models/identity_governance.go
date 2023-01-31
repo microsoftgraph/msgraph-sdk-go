@@ -6,17 +6,17 @@ import (
 
 // IdentityGovernance 
 type IdentityGovernance struct {
-    // The accessReviews property
+    // 
     accessReviews AccessReviewSetable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The appConsent property
+    // 
     appConsent AppConsentApprovalRouteable
-    // The entitlementManagement property
+    // 
     entitlementManagement EntitlementManagementable
-    // The OdataType property
+    // 
     odataType *string
-    // The termsOfUse property
+    // 
     termsOfUse TermsOfUseContainerable
 }
 // NewIdentityGovernance instantiates a new IdentityGovernance and sets the default values.
@@ -30,7 +30,7 @@ func NewIdentityGovernance()(*IdentityGovernance) {
 func CreateIdentityGovernanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityGovernance(), nil
 }
-// GetAccessReviews gets the accessReviews property value. The accessReviews property
+// GetAccessReviews gets the accessReviews property value. 
 func (m *IdentityGovernance) GetAccessReviews()(AccessReviewSetable) {
     return m.accessReviews
 }
@@ -38,11 +38,11 @@ func (m *IdentityGovernance) GetAccessReviews()(AccessReviewSetable) {
 func (m *IdentityGovernance) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAppConsent gets the appConsent property value. The appConsent property
+// GetAppConsent gets the appConsent property value. 
 func (m *IdentityGovernance) GetAppConsent()(AppConsentApprovalRouteable) {
     return m.appConsent
 }
-// GetEntitlementManagement gets the entitlementManagement property value. The entitlementManagement property
+// GetEntitlementManagement gets the entitlementManagement property value. 
 func (m *IdentityGovernance) GetEntitlementManagement()(EntitlementManagementable) {
     return m.entitlementManagement
 }
@@ -101,11 +101,11 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IdentityGovernance) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTermsOfUse gets the termsOfUse property value. The termsOfUse property
+// GetTermsOfUse gets the termsOfUse property value. 
 func (m *IdentityGovernance) GetTermsOfUse()(TermsOfUseContainerable) {
     return m.termsOfUse
 }
@@ -149,7 +149,7 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAccessReviews sets the accessReviews property value. The accessReviews property
+// SetAccessReviews sets the accessReviews property value. 
 func (m *IdentityGovernance) SetAccessReviews(value AccessReviewSetable)() {
     m.accessReviews = value
 }
@@ -157,19 +157,19 @@ func (m *IdentityGovernance) SetAccessReviews(value AccessReviewSetable)() {
 func (m *IdentityGovernance) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAppConsent sets the appConsent property value. The appConsent property
+// SetAppConsent sets the appConsent property value. 
 func (m *IdentityGovernance) SetAppConsent(value AppConsentApprovalRouteable)() {
     m.appConsent = value
 }
-// SetEntitlementManagement sets the entitlementManagement property value. The entitlementManagement property
+// SetEntitlementManagement sets the entitlementManagement property value. 
 func (m *IdentityGovernance) SetEntitlementManagement(value EntitlementManagementable)() {
     m.entitlementManagement = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IdentityGovernance) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTermsOfUse sets the termsOfUse property value. The termsOfUse property
+// SetTermsOfUse sets the termsOfUse property value. 
 func (m *IdentityGovernance) SetTermsOfUse(value TermsOfUseContainerable)() {
     m.termsOfUse = value
 }

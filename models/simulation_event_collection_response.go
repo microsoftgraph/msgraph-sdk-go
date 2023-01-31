@@ -7,7 +7,7 @@ import (
 // SimulationEventCollectionResponse 
 type SimulationEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SimulationEventable
 }
 // NewSimulationEventCollectionResponse instantiates a new SimulationEventCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SimulationEventCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SimulationEventCollectionResponse) GetValue()([]SimulationEventable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SimulationEventCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SimulationEventCollectionResponse) SetValue(value []SimulationEventable)() {
     m.value = value
 }

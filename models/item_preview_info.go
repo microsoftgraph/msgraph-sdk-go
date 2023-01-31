@@ -8,13 +8,13 @@ import (
 type ItemPreviewInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The getUrl property
+    // 
     getUrl *string
-    // The OdataType property
+    // 
     odataType *string
-    // The postParameters property
+    // 
     postParameters *string
-    // The postUrl property
+    // 
     postUrl *string
 }
 // NewItemPreviewInfo instantiates a new itemPreviewInfo and sets the default values.
@@ -77,19 +77,19 @@ func (m *ItemPreviewInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetGetUrl gets the getUrl property value. The getUrl property
+// GetGetUrl gets the getUrl property value. 
 func (m *ItemPreviewInfo) GetGetUrl()(*string) {
     return m.getUrl
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ItemPreviewInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPostParameters gets the postParameters property value. The postParameters property
+// GetPostParameters gets the postParameters property value. 
 func (m *ItemPreviewInfo) GetPostParameters()(*string) {
     return m.postParameters
 }
-// GetPostUrl gets the postUrl property value. The postUrl property
+// GetPostUrl gets the postUrl property value. 
 func (m *ItemPreviewInfo) GetPostUrl()(*string) {
     return m.postUrl
 }
@@ -131,19 +131,19 @@ func (m *ItemPreviewInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 func (m *ItemPreviewInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetGetUrl sets the getUrl property value. The getUrl property
+// SetGetUrl sets the getUrl property value. 
 func (m *ItemPreviewInfo) SetGetUrl(value *string)() {
     m.getUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ItemPreviewInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPostParameters sets the postParameters property value. The postParameters property
+// SetPostParameters sets the postParameters property value. 
 func (m *ItemPreviewInfo) SetPostParameters(value *string)() {
     m.postParameters = value
 }
-// SetPostUrl sets the postUrl property value. The postUrl property
+// SetPostUrl sets the postUrl property value. 
 func (m *ItemPreviewInfo) SetPostUrl(value *string)() {
     m.postUrl = value
 }

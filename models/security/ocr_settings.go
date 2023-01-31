@@ -12,7 +12,7 @@ type OcrSettings struct {
     isEnabled *bool
     // Maximum image size that will be processed in KB).
     maxImageSize *int32
-    // The OdataType property
+    // 
     odataType *string
     // The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.
     timeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -85,7 +85,7 @@ func (m *OcrSettings) GetIsEnabled()(*bool) {
 func (m *OcrSettings) GetMaxImageSize()(*int32) {
     return m.maxImageSize
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OcrSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *OcrSettings) SetIsEnabled(value *bool)() {
 func (m *OcrSettings) SetMaxImageSize(value *int32)() {
     m.maxImageSize = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OcrSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

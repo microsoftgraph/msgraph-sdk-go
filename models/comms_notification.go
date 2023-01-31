@@ -8,9 +8,9 @@ import (
 type CommsNotification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The changeType property
+    // 
     changeType *ChangeType
-    // The OdataType property
+    // 
     odataType *string
     // URI of the resource that was changed.
     resourceUrl *string
@@ -30,7 +30,7 @@ func CreateCommsNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *CommsNotification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetChangeType gets the changeType property value. The changeType property
+// GetChangeType gets the changeType property value. 
 func (m *CommsNotification) GetChangeType()(*ChangeType) {
     return m.changeType
 }
@@ -69,7 +69,7 @@ func (m *CommsNotification) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CommsNotification) GetOdataType()(*string) {
     return m.odataType
 }
@@ -110,11 +110,11 @@ func (m *CommsNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *CommsNotification) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetChangeType sets the changeType property value. The changeType property
+// SetChangeType sets the changeType property value. 
 func (m *CommsNotification) SetChangeType(value *ChangeType)() {
     m.changeType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CommsNotification) SetOdataType(value *string)() {
     m.odataType = value
 }

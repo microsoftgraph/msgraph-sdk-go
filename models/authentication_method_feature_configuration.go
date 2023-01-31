@@ -12,7 +12,7 @@ type AuthenticationMethodFeatureConfiguration struct {
     excludeTarget FeatureTargetable
     // A single entity that is included in this feature.
     includeTarget FeatureTargetable
-    // The OdataType property
+    // 
     odataType *string
     // Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
     state *AdvancedConfigState
@@ -85,7 +85,7 @@ func (m *AuthenticationMethodFeatureConfiguration) GetFieldDeserializers()(map[s
 func (m *AuthenticationMethodFeatureConfiguration) GetIncludeTarget()(FeatureTargetable) {
     return m.includeTarget
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuthenticationMethodFeatureConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -140,7 +140,7 @@ func (m *AuthenticationMethodFeatureConfiguration) SetExcludeTarget(value Featur
 func (m *AuthenticationMethodFeatureConfiguration) SetIncludeTarget(value FeatureTargetable)() {
     m.includeTarget = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuthenticationMethodFeatureConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }

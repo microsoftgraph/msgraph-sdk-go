@@ -7,7 +7,7 @@ import (
 // AnonymousGuestConversationMemberCollectionResponse 
 type AnonymousGuestConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AnonymousGuestConversationMemberable
 }
 // NewAnonymousGuestConversationMemberCollectionResponse instantiates a new AnonymousGuestConversationMemberCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AnonymousGuestConversationMemberCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AnonymousGuestConversationMemberCollectionResponse) GetValue()([]AnonymousGuestConversationMemberable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AnonymousGuestConversationMemberCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AnonymousGuestConversationMemberCollectionResponse) SetValue(value []AnonymousGuestConversationMemberable)() {
     m.value = value
 }

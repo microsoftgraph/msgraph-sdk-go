@@ -22,7 +22,7 @@ type Team struct {
     displayName *string
     // Settings to configure use of Giphy, memes, and stickers in the team.
     funSettings TeamFunSettingsable
-    // The group property
+    // 
     group Groupable
     // Settings to configure whether guests can create, update, or delete channels in the team.
     guestSettings TeamGuestSettingsable
@@ -405,7 +405,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 func (m *Team) GetFunSettings()(TeamFunSettingsable) {
     return m.funSettings
 }
-// GetGroup gets the group property value. The group property
+// GetGroup gets the group property value. 
 func (m *Team) GetGroup()(Groupable) {
     return m.group
 }
@@ -713,7 +713,7 @@ func (m *Team) SetDisplayName(value *string)() {
 func (m *Team) SetFunSettings(value TeamFunSettingsable)() {
     m.funSettings = value
 }
-// SetGroup sets the group property value. The group property
+// SetGroup sets the group property value. 
 func (m *Team) SetGroup(value Groupable)() {
     m.group = value
 }

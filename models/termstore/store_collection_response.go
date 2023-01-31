@@ -8,7 +8,7 @@ import (
 // StoreCollectionResponse 
 type StoreCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Storeable
 }
 // NewStoreCollectionResponse instantiates a new StoreCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *StoreCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *StoreCollectionResponse) GetValue()([]Storeable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *StoreCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *StoreCollectionResponse) SetValue(value []Storeable)() {
     m.value = value
 }

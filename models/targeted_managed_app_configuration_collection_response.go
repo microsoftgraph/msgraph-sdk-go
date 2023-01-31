@@ -7,7 +7,7 @@ import (
 // TargetedManagedAppConfigurationCollectionResponse 
 type TargetedManagedAppConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TargetedManagedAppConfigurationable
 }
 // NewTargetedManagedAppConfigurationCollectionResponse instantiates a new TargetedManagedAppConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TargetedManagedAppConfigurationCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TargetedManagedAppConfigurationCollectionResponse) GetValue()([]TargetedManagedAppConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TargetedManagedAppConfigurationCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TargetedManagedAppConfigurationCollectionResponse) SetValue(value []TargetedManagedAppConfigurationable)() {
     m.value = value
 }

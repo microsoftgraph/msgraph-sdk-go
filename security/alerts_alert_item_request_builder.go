@@ -40,13 +40,16 @@ type AlertsAlertItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAlertsAlertItemRequestBuilderInternal instantiates a new AlertItemRequestBuilder and sets the default values.
-func NewAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertsAlertItemRequestBuilder) {
+func NewAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, alertId *string)(*AlertsAlertItemRequestBuilder) {
     m := &AlertsAlertItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/alerts/{alert%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if alertId != nil {
+        urlTplParams["alert%2Did"] = *alertId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -56,7 +59,7 @@ func NewAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, 
 func NewAlertsAlertItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertsAlertItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get alerts from security
 func (m *AlertsAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertsAlertItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable, error) {
@@ -119,7 +122,10 @@ func (m *AlertsAlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

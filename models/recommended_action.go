@@ -10,7 +10,7 @@ type RecommendedAction struct {
     actionWebUrl *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Potential improvement in the tenant security score from the recommended action.
     potentialScoreImpact *float64
@@ -81,7 +81,7 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RecommendedAction) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *RecommendedAction) SetActionWebUrl(value *string)() {
 func (m *RecommendedAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RecommendedAction) SetOdataType(value *string)() {
     m.odataType = value
 }

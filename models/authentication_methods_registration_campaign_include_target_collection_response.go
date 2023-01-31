@@ -7,7 +7,7 @@ import (
 // AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse 
 type AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuthenticationMethodsRegistrationCampaignIncludeTargetable
 }
 // NewAuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse instantiates a new AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionRespons
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse) GetValue()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionRespons
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse) SetValue(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)() {
     m.value = value
 }

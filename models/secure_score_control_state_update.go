@@ -13,7 +13,7 @@ type SecureScoreControlStateUpdate struct {
     assignedTo *string
     // Provides optional comment about the control.
     comment *string
-    // The OdataType property
+    // 
     odataType *string
     // State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
     state *string
@@ -110,7 +110,7 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SecureScoreControlStateUpdate) GetOdataType()(*string) {
     return m.odataType
 }
@@ -184,7 +184,7 @@ func (m *SecureScoreControlStateUpdate) SetAssignedTo(value *string)() {
 func (m *SecureScoreControlStateUpdate) SetComment(value *string)() {
     m.comment = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SecureScoreControlStateUpdate) SetOdataType(value *string)() {
     m.odataType = value
 }

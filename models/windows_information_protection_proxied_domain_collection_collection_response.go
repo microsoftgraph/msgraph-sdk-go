@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionProxiedDomainCollectionCollectionResponse 
 type WindowsInformationProtectionProxiedDomainCollectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsInformationProtectionProxiedDomainCollectionable
 }
 // NewWindowsInformationProtectionProxiedDomainCollectionCollectionResponse instantiates a new WindowsInformationProtectionProxiedDomainCollectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollectionCollectionResponse) 
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsInformationProtectionProxiedDomainCollectionCollectionResponse) GetValue()([]WindowsInformationProtectionProxiedDomainCollectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollectionCollectionResponse) 
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsInformationProtectionProxiedDomainCollectionCollectionResponse) SetValue(value []WindowsInformationProtectionProxiedDomainCollectionable)() {
     m.value = value
 }

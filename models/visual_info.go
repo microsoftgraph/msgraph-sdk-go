@@ -18,7 +18,7 @@ type VisualInfo struct {
     description *string
     // Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
     displayText *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewVisualInfo instantiates a new visualInfo and sets the default values.
@@ -121,7 +121,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *VisualInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -195,7 +195,7 @@ func (m *VisualInfo) SetDescription(value *string)() {
 func (m *VisualInfo) SetDisplayText(value *string)() {
     m.displayText = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *VisualInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

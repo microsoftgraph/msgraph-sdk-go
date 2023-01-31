@@ -7,7 +7,7 @@ import (
 // RelatedContactCollectionResponse 
 type RelatedContactCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RelatedContactable
 }
 // NewRelatedContactCollectionResponse instantiates a new RelatedContactCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RelatedContactCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RelatedContactCollectionResponse) GetValue()([]RelatedContactable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RelatedContactCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RelatedContactCollectionResponse) SetValue(value []RelatedContactable)() {
     m.value = value
 }

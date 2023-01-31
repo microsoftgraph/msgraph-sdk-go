@@ -8,7 +8,7 @@ import (
 type TeamworkActivityTopic struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
     source *TeamworkActivityTopicSource
@@ -77,7 +77,7 @@ func (m *TeamworkActivityTopic) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamworkActivityTopic) GetOdataType()(*string) {
     return m.odataType
 }
@@ -132,7 +132,7 @@ func (m *TeamworkActivityTopic) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *TeamworkActivityTopic) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamworkActivityTopic) SetOdataType(value *string)() {
     m.odataType = value
 }

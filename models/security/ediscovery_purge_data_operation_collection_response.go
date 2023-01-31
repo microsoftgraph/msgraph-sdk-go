@@ -8,7 +8,7 @@ import (
 // EdiscoveryPurgeDataOperationCollectionResponse 
 type EdiscoveryPurgeDataOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryPurgeDataOperationable
 }
 // NewEdiscoveryPurgeDataOperationCollectionResponse instantiates a new EdiscoveryPurgeDataOperationCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryPurgeDataOperationCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryPurgeDataOperationCollectionResponse) GetValue()([]EdiscoveryPurgeDataOperationable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryPurgeDataOperationCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryPurgeDataOperationCollectionResponse) SetValue(value []EdiscoveryPurgeDataOperationable)() {
     m.value = value
 }

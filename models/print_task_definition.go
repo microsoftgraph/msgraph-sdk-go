@@ -7,7 +7,7 @@ import (
 // PrintTaskDefinition 
 type PrintTaskDefinition struct {
     Entity
-    // The createdBy property
+    // 
     createdBy AppIdentityable
     // The name of the printTaskDefinition.
     displayName *string
@@ -25,7 +25,7 @@ func NewPrintTaskDefinition()(*PrintTaskDefinition) {
 func CreatePrintTaskDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintTaskDefinition(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. 
 func (m *PrintTaskDefinition) GetCreatedBy()(AppIdentityable) {
     return m.createdBy
 }
@@ -106,7 +106,7 @@ func (m *PrintTaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. 
 func (m *PrintTaskDefinition) SetCreatedBy(value AppIdentityable)() {
     m.createdBy = value
 }

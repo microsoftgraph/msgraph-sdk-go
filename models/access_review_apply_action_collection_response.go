@@ -7,7 +7,7 @@ import (
 // AccessReviewApplyActionCollectionResponse 
 type AccessReviewApplyActionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewApplyActionable
 }
 // NewAccessReviewApplyActionCollectionResponse instantiates a new AccessReviewApplyActionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewApplyActionCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewApplyActionCollectionResponse) GetValue()([]AccessReviewApplyActionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewApplyActionCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewApplyActionCollectionResponse) SetValue(value []AccessReviewApplyActionable)() {
     m.value = value
 }

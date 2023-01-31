@@ -7,9 +7,9 @@ import (
 // PrintTaskTrigger 
 type PrintTaskTrigger struct {
     Entity
-    // The definition property
+    // 
     definition PrintTaskDefinitionable
-    // The event property
+    // 
     event *PrintEvent
 }
 // NewPrintTaskTrigger instantiates a new printTaskTrigger and sets the default values.
@@ -23,11 +23,11 @@ func NewPrintTaskTrigger()(*PrintTaskTrigger) {
 func CreatePrintTaskTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintTaskTrigger(), nil
 }
-// GetDefinition gets the definition property value. The definition property
+// GetDefinition gets the definition property value. 
 func (m *PrintTaskTrigger) GetDefinition()(PrintTaskDefinitionable) {
     return m.definition
 }
-// GetEvent gets the event property value. The event property
+// GetEvent gets the event property value. 
 func (m *PrintTaskTrigger) GetEvent()(*PrintEvent) {
     return m.event
 }
@@ -77,11 +77,11 @@ func (m *PrintTaskTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetDefinition sets the definition property value. The definition property
+// SetDefinition sets the definition property value. 
 func (m *PrintTaskTrigger) SetDefinition(value PrintTaskDefinitionable)() {
     m.definition = value
 }
-// SetEvent sets the event property value. The event property
+// SetEvent sets the event property value. 
 func (m *PrintTaskTrigger) SetEvent(value *PrintEvent)() {
     m.event = value
 }

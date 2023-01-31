@@ -7,7 +7,7 @@ import (
 // StsPolicyCollectionResponse 
 type StsPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []StsPolicyable
 }
 // NewStsPolicyCollectionResponse instantiates a new StsPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *StsPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *StsPolicyCollectionResponse) GetValue()([]StsPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *StsPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *StsPolicyCollectionResponse) SetValue(value []StsPolicyable)() {
     m.value = value
 }

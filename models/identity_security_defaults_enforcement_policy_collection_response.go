@@ -7,7 +7,7 @@ import (
 // IdentitySecurityDefaultsEnforcementPolicyCollectionResponse 
 type IdentitySecurityDefaultsEnforcementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IdentitySecurityDefaultsEnforcementPolicyable
 }
 // NewIdentitySecurityDefaultsEnforcementPolicyCollectionResponse instantiates a new IdentitySecurityDefaultsEnforcementPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) GetFieldDe
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) GetValue()([]IdentitySecurityDefaultsEnforcementPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) Serialize(
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) SetValue(value []IdentitySecurityDefaultsEnforcementPolicyable)() {
     m.value = value
 }

@@ -10,7 +10,7 @@ type CrossTenantAccessPolicyB2BSetting struct {
     additionalData map[string]any
     // The list of applications targeted with your cross-tenant access policy.
     applications CrossTenantAccessPolicyTargetConfigurationable
-    // The OdataType property
+    // 
     odataType *string
     // The list of users and groups targeted with your cross-tenant access policy.
     usersAndGroups CrossTenantAccessPolicyTargetConfigurationable
@@ -69,7 +69,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyB2BSetting) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) SetAdditionalData(value map[string]a
 func (m *CrossTenantAccessPolicyB2BSetting) SetApplications(value CrossTenantAccessPolicyTargetConfigurationable)() {
     m.applications = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyB2BSetting) SetOdataType(value *string)() {
     m.odataType = value
 }

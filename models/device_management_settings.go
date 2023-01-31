@@ -12,7 +12,7 @@ type DeviceManagementSettings struct {
     deviceComplianceCheckinThresholdDays *int32
     // Is feature enabled or not for scheduled action for rule.
     isScheduledActionEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // Device should be noncompliant when there is no compliance policy targeted when this is true
     secureByDefault *bool
@@ -85,7 +85,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a
 func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
     return m.isScheduledActionEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceManagementSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value
 func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
     m.isScheduledActionEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceManagementSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

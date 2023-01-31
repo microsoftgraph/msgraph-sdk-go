@@ -10,7 +10,7 @@ type ContentTypeOrder struct {
     additionalData map[string]any
     // Whether this is the default Content Type
     default_escaped *bool
-    // The OdataType property
+    // 
     odataType *string
     // Specifies the position in which the Content Type appears in the selection UI.
     position *int32
@@ -69,7 +69,7 @@ func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ContentTypeOrder) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *ContentTypeOrder) SetAdditionalData(value map[string]any)() {
 func (m *ContentTypeOrder) SetDefault(value *bool)() {
     m.default_escaped = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ContentTypeOrder) SetOdataType(value *string)() {
     m.odataType = value
 }

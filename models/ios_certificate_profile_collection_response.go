@@ -7,7 +7,7 @@ import (
 // IosCertificateProfileCollectionResponse 
 type IosCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosCertificateProfileable
 }
 // NewIosCertificateProfileCollectionResponse instantiates a new IosCertificateProfileCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosCertificateProfileCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosCertificateProfileCollectionResponse) GetValue()([]IosCertificateProfileable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosCertificateProfileCollectionResponse) SetValue(value []IosCertificateProfileable)() {
     m.value = value
 }

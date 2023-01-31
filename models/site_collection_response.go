@@ -7,7 +7,7 @@ import (
 // SiteCollectionResponse 
 type SiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Siteable
 }
 // NewSiteCollectionResponse instantiates a new SiteCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SiteCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SiteCollectionResponse) GetValue()([]Siteable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SiteCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SiteCollectionResponse) SetValue(value []Siteable)() {
     m.value = value
 }

@@ -14,7 +14,7 @@ type AppConfigurationSettingItem struct {
     appConfigKeyType *MdmAppConfigKeyType
     // app configuration key value.
     appConfigKeyValue *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAppConfigurationSettingItem instantiates a new appConfigurationSettingItem and sets the default values.
@@ -89,7 +89,7 @@ func (m *AppConfigurationSettingItem) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AppConfigurationSettingItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -144,7 +144,7 @@ func (m *AppConfigurationSettingItem) SetAppConfigKeyType(value *MdmAppConfigKey
 func (m *AppConfigurationSettingItem) SetAppConfigKeyValue(value *string)() {
     m.appConfigKeyValue = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AppConfigurationSettingItem) SetOdataType(value *string)() {
     m.odataType = value
 }

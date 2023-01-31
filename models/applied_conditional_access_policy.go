@@ -16,7 +16,7 @@ type AppliedConditionalAccessPolicy struct {
     enforcedSessionControls []string
     // An identifier of the conditional access policy.
     id *string
-    // The OdataType property
+    // 
     odataType *string
     // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
     result *AppliedConditionalAccessPolicyResult
@@ -125,7 +125,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
 func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
     return m.odataType
 }
@@ -200,7 +200,7 @@ func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []stri
 func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AppliedConditionalAccessPolicy) SetOdataType(value *string)() {
     m.odataType = value
 }

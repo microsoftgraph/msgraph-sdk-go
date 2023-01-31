@@ -7,7 +7,7 @@ import (
 // ParticipantLeftNotification 
 type ParticipantLeftNotification struct {
     Entity
-    // The call property
+    // 
     call Callable
     // ID of the participant under the policy who has left the meeting.
     participantId *string
@@ -23,7 +23,7 @@ func NewParticipantLeftNotification()(*ParticipantLeftNotification) {
 func CreateParticipantLeftNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewParticipantLeftNotification(), nil
 }
-// GetCall gets the call property value. The call property
+// GetCall gets the call property value. 
 func (m *ParticipantLeftNotification) GetCall()(Callable) {
     return m.call
 }
@@ -76,7 +76,7 @@ func (m *ParticipantLeftNotification) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCall sets the call property value. The call property
+// SetCall sets the call property value. 
 func (m *ParticipantLeftNotification) SetCall(value Callable)() {
     m.call = value
 }

@@ -7,7 +7,7 @@ import (
 // NetworkConnectionCollectionResponse 
 type NetworkConnectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []NetworkConnectionable
 }
 // NewNetworkConnectionCollectionResponse instantiates a new NetworkConnectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *NetworkConnectionCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *NetworkConnectionCollectionResponse) GetValue()([]NetworkConnectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *NetworkConnectionCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *NetworkConnectionCollectionResponse) SetValue(value []NetworkConnectionable)() {
     m.value = value
 }

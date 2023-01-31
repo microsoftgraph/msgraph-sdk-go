@@ -16,7 +16,7 @@ type ConfigurationManagerClientEnabledFeatures struct {
     inventory *bool
     // Whether modern application is managed by Intune
     modernApps *bool
-    // The OdataType property
+    // 
     odataType *string
     // Whether resource access is managed by Intune
     resourceAccess *bool
@@ -129,7 +129,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
 func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
     return m.modernApps
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConfigurationManagerClientEnabledFeatures) GetOdataType()(*string) {
     return m.odataType
 }
@@ -213,7 +213,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) SetInventory(value *bool)() 
 func (m *ConfigurationManagerClientEnabledFeatures) SetModernApps(value *bool)() {
     m.modernApps = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConfigurationManagerClientEnabledFeatures) SetOdataType(value *string)() {
     m.odataType = value
 }

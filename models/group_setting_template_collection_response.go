@@ -7,7 +7,7 @@ import (
 // GroupSettingTemplateCollectionResponse 
 type GroupSettingTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []GroupSettingTemplateable
 }
 // NewGroupSettingTemplateCollectionResponse instantiates a new GroupSettingTemplateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *GroupSettingTemplateCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *GroupSettingTemplateCollectionResponse) GetValue()([]GroupSettingTemplateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *GroupSettingTemplateCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *GroupSettingTemplateCollectionResponse) SetValue(value []GroupSettingTemplateable)() {
     m.value = value
 }

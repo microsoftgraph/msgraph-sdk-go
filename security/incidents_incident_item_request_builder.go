@@ -62,13 +62,16 @@ func (m *IncidentsIncidentItemRequestBuilder) AlertsById(id string)(*IncidentsIt
     return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewIncidentsIncidentItemRequestBuilderInternal instantiates a new IncidentItemRequestBuilder and sets the default values.
-func NewIncidentsIncidentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsIncidentItemRequestBuilder) {
+func NewIncidentsIncidentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, incidentId *string)(*IncidentsIncidentItemRequestBuilder) {
     m := &IncidentsIncidentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/incidents/{incident%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if incidentId != nil {
+        urlTplParams["incident%2Did"] = *incidentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +81,7 @@ func NewIncidentsIncidentItemRequestBuilderInternal(pathParameters map[string]st
 func NewIncidentsIncidentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsIncidentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIncidentsIncidentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIncidentsIncidentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property incidents for security
 func (m *IncidentsIncidentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IncidentsIncidentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +172,10 @@ func (m *IncidentsIncidentItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

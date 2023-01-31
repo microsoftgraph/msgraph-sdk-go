@@ -8,11 +8,11 @@ import (
 type SearchAggregation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The buckets property
+    // 
     buckets []SearchBucketable
-    // The field property
+    // 
     field *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSearchAggregation instantiates a new searchAggregation and sets the default values.
@@ -30,11 +30,11 @@ func CreateSearchAggregationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *SearchAggregation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetBuckets gets the buckets property value. The buckets property
+// GetBuckets gets the buckets property value. 
 func (m *SearchAggregation) GetBuckets()([]SearchBucketable) {
     return m.buckets
 }
-// GetField gets the field property value. The field property
+// GetField gets the field property value. 
 func (m *SearchAggregation) GetField()(*string) {
     return m.field
 }
@@ -77,7 +77,7 @@ func (m *SearchAggregation) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchAggregation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,15 +117,15 @@ func (m *SearchAggregation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *SearchAggregation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetBuckets sets the buckets property value. The buckets property
+// SetBuckets sets the buckets property value. 
 func (m *SearchAggregation) SetBuckets(value []SearchBucketable)() {
     m.buckets = value
 }
-// SetField sets the field property value. The field property
+// SetField sets the field property value. 
 func (m *SearchAggregation) SetField(value *string)() {
     m.field = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchAggregation) SetOdataType(value *string)() {
     m.odataType = value
 }

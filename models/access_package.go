@@ -10,9 +10,9 @@ type AccessPackage struct {
     Entity
     // The access packages that are incompatible with this package. Read-only.
     accessPackagesIncompatibleWith []AccessPackageable
-    // The assignmentPolicies property
+    // 
     assignmentPolicies []AccessPackageAssignmentPolicyable
-    // The catalog property
+    // 
     catalog AccessPackageCatalogable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -44,11 +44,11 @@ func CreateAccessPackageFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable) {
     return m.accessPackagesIncompatibleWith
 }
-// GetAssignmentPolicies gets the assignmentPolicies property value. The assignmentPolicies property
+// GetAssignmentPolicies gets the assignmentPolicies property value. 
 func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
     return m.assignmentPolicies
 }
-// GetCatalog gets the catalog property value. The catalog property
+// GetCatalog gets the catalog property value. 
 func (m *AccessPackage) GetCatalog()(AccessPackageCatalogable) {
     return m.catalog
 }
@@ -289,11 +289,11 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackageable)() {
     m.accessPackagesIncompatibleWith = value
 }
-// SetAssignmentPolicies sets the assignmentPolicies property value. The assignmentPolicies property
+// SetAssignmentPolicies sets the assignmentPolicies property value. 
 func (m *AccessPackage) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
     m.assignmentPolicies = value
 }
-// SetCatalog sets the catalog property value. The catalog property
+// SetCatalog sets the catalog property value. 
 func (m *AccessPackage) SetCatalog(value AccessPackageCatalogable)() {
     m.catalog = value
 }

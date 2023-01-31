@@ -14,7 +14,7 @@ type DefaultUserRolePermissions struct {
     allowedToCreateSecurityGroups *bool
     // Indicates whether the default user role can read other users.
     allowedToReadOtherUsers *bool
-    // The OdataType property
+    // 
     odataType *string
     // Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
     permissionGrantPoliciesAssigned []string
@@ -105,7 +105,7 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DefaultUserRolePermissions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *boo
 func (m *DefaultUserRolePermissions) SetAllowedToReadOtherUsers(value *bool)() {
     m.allowedToReadOtherUsers = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DefaultUserRolePermissions) SetOdataType(value *string)() {
     m.odataType = value
 }

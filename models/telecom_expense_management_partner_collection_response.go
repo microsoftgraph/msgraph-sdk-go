@@ -7,7 +7,7 @@ import (
 // TelecomExpenseManagementPartnerCollectionResponse 
 type TelecomExpenseManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TelecomExpenseManagementPartnerable
 }
 // NewTelecomExpenseManagementPartnerCollectionResponse instantiates a new TelecomExpenseManagementPartnerCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TelecomExpenseManagementPartnerCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TelecomExpenseManagementPartnerCollectionResponse) GetValue()([]TelecomExpenseManagementPartnerable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TelecomExpenseManagementPartnerCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TelecomExpenseManagementPartnerCollectionResponse) SetValue(value []TelecomExpenseManagementPartnerable)() {
     m.value = value
 }

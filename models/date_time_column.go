@@ -12,7 +12,7 @@ type DateTimeColumn struct {
     displayAs *string
     // Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
     format *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewDateTimeColumn instantiates a new dateTimeColumn and sets the default values.
@@ -73,7 +73,7 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *DateTimeColumn) GetFormat()(*string) {
     return m.format
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DateTimeColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *DateTimeColumn) SetDisplayAs(value *string)() {
 func (m *DateTimeColumn) SetFormat(value *string)() {
     m.format = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DateTimeColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

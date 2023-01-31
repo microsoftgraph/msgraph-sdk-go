@@ -7,7 +7,7 @@ import (
 // ManagedAppOperationCollectionResponse 
 type ManagedAppOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedAppOperationable
 }
 // NewManagedAppOperationCollectionResponse instantiates a new ManagedAppOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedAppOperationCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedAppOperationCollectionResponse) GetValue()([]ManagedAppOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedAppOperationCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedAppOperationCollectionResponse) SetValue(value []ManagedAppOperationable)() {
     m.value = value
 }

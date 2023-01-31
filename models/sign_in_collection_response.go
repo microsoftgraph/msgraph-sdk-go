@@ -7,7 +7,7 @@ import (
 // SignInCollectionResponse 
 type SignInCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SignInable
 }
 // NewSignInCollectionResponse instantiates a new SignInCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SignInCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SignInCollectionResponse) GetValue()([]SignInable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SignInCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SignInCollectionResponse) SetValue(value []SignInable)() {
     m.value = value
 }

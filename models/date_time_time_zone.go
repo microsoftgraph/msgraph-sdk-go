@@ -10,7 +10,7 @@ type DateTimeTimeZone struct {
     additionalData map[string]any
     // A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
     dateTime *string
-    // The OdataType property
+    // 
     odataType *string
     // Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     timeZone *string
@@ -69,7 +69,7 @@ func (m *DateTimeTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DateTimeTimeZone) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *DateTimeTimeZone) SetAdditionalData(value map[string]any)() {
 func (m *DateTimeTimeZone) SetDateTime(value *string)() {
     m.dateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DateTimeTimeZone) SetOdataType(value *string)() {
     m.odataType = value
 }

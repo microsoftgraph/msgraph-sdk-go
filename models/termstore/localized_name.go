@@ -12,7 +12,7 @@ type LocalizedName struct {
     languageTag *string
     // The name in the localized language.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewLocalizedName instantiates a new localizedName and sets the default values.
@@ -73,7 +73,7 @@ func (m *LocalizedName) GetLanguageTag()(*string) {
 func (m *LocalizedName) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LocalizedName) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *LocalizedName) SetLanguageTag(value *string)() {
 func (m *LocalizedName) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LocalizedName) SetOdataType(value *string)() {
     m.odataType = value
 }

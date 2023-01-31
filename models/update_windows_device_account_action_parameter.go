@@ -16,7 +16,7 @@ type UpdateWindowsDeviceAccountActionParameter struct {
     deviceAccountEmail *string
     // Not yet documented
     exchangeServer *string
-    // The OdataType property
+    // 
     odataType *string
     // Not yet documented
     passwordRotationEnabled *bool
@@ -129,7 +129,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UpdateWindowsDeviceAccountActionParameter) GetOdataType()(*string) {
     return m.odataType
 }
@@ -213,7 +213,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccountEmail(value 
 func (m *UpdateWindowsDeviceAccountActionParameter) SetExchangeServer(value *string)() {
     m.exchangeServer = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UpdateWindowsDeviceAccountActionParameter) SetOdataType(value *string)() {
     m.odataType = value
 }

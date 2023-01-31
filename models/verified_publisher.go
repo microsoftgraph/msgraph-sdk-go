@@ -13,7 +13,7 @@ type VerifiedPublisher struct {
     additionalData map[string]any
     // The verified publisher name from the app publisher's Partner Center account.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // The ID of the verified publisher from the app publisher's Partner Center account.
     verifiedPublisherId *string
@@ -86,7 +86,7 @@ func (m *VerifiedPublisher) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *VerifiedPublisher) GetOdataType()(*string) {
     return m.odataType
 }
@@ -140,7 +140,7 @@ func (m *VerifiedPublisher) SetAdditionalData(value map[string]any)() {
 func (m *VerifiedPublisher) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *VerifiedPublisher) SetOdataType(value *string)() {
     m.odataType = value
 }

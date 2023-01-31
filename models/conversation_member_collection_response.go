@@ -7,7 +7,7 @@ import (
 // ConversationMemberCollectionResponse 
 type ConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ConversationMemberable
 }
 // NewConversationMemberCollectionResponse instantiates a new ConversationMemberCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ConversationMemberCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ConversationMemberCollectionResponse) GetValue()([]ConversationMemberable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ConversationMemberCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ConversationMemberCollectionResponse) SetValue(value []ConversationMemberable)() {
     m.value = value
 }

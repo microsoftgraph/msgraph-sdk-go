@@ -16,7 +16,7 @@ type ItemReference struct {
     id *string
     // The name of the item being referenced. Read-only.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Path that can be used to navigate to the item. Read-only.
     path *string
@@ -153,7 +153,7 @@ func (m *ItemReference) GetId()(*string) {
 func (m *ItemReference) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ItemReference) GetOdataType()(*string) {
     return m.odataType
 }
@@ -257,7 +257,7 @@ func (m *ItemReference) SetId(value *string)() {
 func (m *ItemReference) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ItemReference) SetOdataType(value *string)() {
     m.odataType = value
 }

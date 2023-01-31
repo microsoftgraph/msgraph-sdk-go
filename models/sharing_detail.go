@@ -9,13 +9,13 @@ import (
 type SharingDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // The user who shared the document.
     sharedBy InsightIdentityable
     // The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     sharedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The sharingReference property
+    // 
     sharingReference ResourceReferenceable
     // The subject with which the document was shared.
     sharingSubject *string
@@ -102,7 +102,7 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SharingDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -114,7 +114,7 @@ func (m *SharingDetail) GetSharedBy()(InsightIdentityable) {
 func (m *SharingDetail) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.sharedDateTime
 }
-// GetSharingReference gets the sharingReference property value. The sharingReference property
+// GetSharingReference gets the sharingReference property value. 
 func (m *SharingDetail) GetSharingReference()(ResourceReferenceable) {
     return m.sharingReference
 }
@@ -170,7 +170,7 @@ func (m *SharingDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *SharingDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SharingDetail) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -182,7 +182,7 @@ func (m *SharingDetail) SetSharedBy(value InsightIdentityable)() {
 func (m *SharingDetail) SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.sharedDateTime = value
 }
-// SetSharingReference sets the sharingReference property value. The sharingReference property
+// SetSharingReference sets the sharingReference property value. 
 func (m *SharingDetail) SetSharingReference(value ResourceReferenceable)() {
     m.sharingReference = value
 }

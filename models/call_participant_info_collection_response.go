@@ -7,7 +7,7 @@ import (
 // CallParticipantInfoCollectionResponse 
 type CallParticipantInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CallParticipantInfoable
 }
 // NewCallParticipantInfoCollectionResponse instantiates a new CallParticipantInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CallParticipantInfoCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CallParticipantInfoCollectionResponse) GetValue()([]CallParticipantInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CallParticipantInfoCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CallParticipantInfoCollectionResponse) SetValue(value []CallParticipantInfoable)() {
     m.value = value
 }

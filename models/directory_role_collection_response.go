@@ -7,7 +7,7 @@ import (
 // DirectoryRoleCollectionResponse 
 type DirectoryRoleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DirectoryRoleable
 }
 // NewDirectoryRoleCollectionResponse instantiates a new DirectoryRoleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DirectoryRoleCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DirectoryRoleCollectionResponse) GetValue()([]DirectoryRoleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DirectoryRoleCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DirectoryRoleCollectionResponse) SetValue(value []DirectoryRoleable)() {
     m.value = value
 }

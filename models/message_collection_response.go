@@ -7,7 +7,7 @@ import (
 // MessageCollectionResponse 
 type MessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Messageable
 }
 // NewMessageCollectionResponse instantiates a new MessageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MessageCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MessageCollectionResponse) GetValue()([]Messageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MessageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MessageCollectionResponse) SetValue(value []Messageable)() {
     m.value = value
 }

@@ -14,7 +14,7 @@ type ProvisioningStep struct {
     details DetailsInfoable
     // Name of the step.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
     provisioningStepType *ProvisioningStepType
@@ -113,7 +113,7 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *ProvisioningStep) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ProvisioningStep) GetOdataType()(*string) {
     return m.odataType
 }
@@ -189,7 +189,7 @@ func (m *ProvisioningStep) SetDetails(value DetailsInfoable)() {
 func (m *ProvisioningStep) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ProvisioningStep) SetOdataType(value *string)() {
     m.odataType = value
 }

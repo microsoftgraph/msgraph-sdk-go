@@ -12,7 +12,7 @@ type GenericError struct {
     code *string
     // The error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewGenericError instantiates a new genericError and sets the default values.
@@ -73,7 +73,7 @@ func (m *GenericError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *GenericError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *GenericError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *GenericError) SetCode(value *string)() {
 func (m *GenericError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *GenericError) SetOdataType(value *string)() {
     m.odataType = value
 }

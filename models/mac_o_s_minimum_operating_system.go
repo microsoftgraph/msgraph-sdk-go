@@ -8,7 +8,7 @@ import (
 type MacOSMinimumOperatingSystem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_10 *bool
@@ -185,7 +185,7 @@ func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MacOSMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -329,7 +329,7 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
 func (m *MacOSMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MacOSMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }

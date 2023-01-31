@@ -8,7 +8,7 @@ import (
 // DataSourceCollectionResponse 
 type DataSourceCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DataSourceable
 }
 // NewDataSourceCollectionResponse instantiates a new DataSourceCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *DataSourceCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DataSourceCollectionResponse) GetValue()([]DataSourceable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *DataSourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DataSourceCollectionResponse) SetValue(value []DataSourceable)() {
     m.value = value
 }

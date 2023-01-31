@@ -12,7 +12,7 @@ type ItemActionStat struct {
     actorCount *int32
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewItemActionStat instantiates a new itemActionStat and sets the default values.
@@ -73,7 +73,7 @@ func (m *ItemActionStat) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ItemActionStat) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *ItemActionStat) SetActorCount(value *int32)() {
 func (m *ItemActionStat) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ItemActionStat) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -12,11 +12,11 @@ type ConditionalAccessApplications struct {
     excludeApplications []string
     // Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     includeApplications []string
-    // The includeAuthenticationContextClassReferences property
+    // 
     includeAuthenticationContextClassReferences []string
     // User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
     includeUserActions []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessApplications instantiates a new conditionalAccessApplications and sets the default values.
@@ -113,7 +113,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
 func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
     return m.includeApplications
 }
-// GetIncludeAuthenticationContextClassReferences gets the includeAuthenticationContextClassReferences property value. The includeAuthenticationContextClassReferences property
+// GetIncludeAuthenticationContextClassReferences gets the includeAuthenticationContextClassReferences property value. 
 func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassReferences()([]string) {
     return m.includeAuthenticationContextClassReferences
 }
@@ -121,7 +121,7 @@ func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassRefe
 func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
     return m.includeUserActions
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessApplications) GetOdataType()(*string) {
     return m.odataType
 }
@@ -177,7 +177,7 @@ func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)()
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
     m.includeApplications = value
 }
-// SetIncludeAuthenticationContextClassReferences sets the includeAuthenticationContextClassReferences property value. The includeAuthenticationContextClassReferences property
+// SetIncludeAuthenticationContextClassReferences sets the includeAuthenticationContextClassReferences property value. 
 func (m *ConditionalAccessApplications) SetIncludeAuthenticationContextClassReferences(value []string)() {
     m.includeAuthenticationContextClassReferences = value
 }
@@ -185,7 +185,7 @@ func (m *ConditionalAccessApplications) SetIncludeAuthenticationContextClassRefe
 func (m *ConditionalAccessApplications) SetIncludeUserActions(value []string)() {
     m.includeUserActions = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessApplications) SetOdataType(value *string)() {
     m.odataType = value
 }

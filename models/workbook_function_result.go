@@ -7,9 +7,9 @@ import (
 // WorkbookFunctionResult 
 type WorkbookFunctionResult struct {
     Entity
-    // The error property
+    // 
     error *string
-    // The value property
+    // 
     value Jsonable
 }
 // NewWorkbookFunctionResult instantiates a new WorkbookFunctionResult and sets the default values.
@@ -23,7 +23,7 @@ func NewWorkbookFunctionResult()(*WorkbookFunctionResult) {
 func CreateWorkbookFunctionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookFunctionResult(), nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. 
 func (m *WorkbookFunctionResult) GetError()(*string) {
     return m.error
 }
@@ -52,7 +52,7 @@ func (m *WorkbookFunctionResult) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookFunctionResult) GetValue()(Jsonable) {
     return m.value
 }
@@ -76,11 +76,11 @@ func (m *WorkbookFunctionResult) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. 
 func (m *WorkbookFunctionResult) SetError(value *string)() {
     m.error = value
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookFunctionResult) SetValue(value Jsonable)() {
     m.value = value
 }

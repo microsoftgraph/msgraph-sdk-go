@@ -32,7 +32,7 @@ type OnlineMeeting struct {
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The meeting end time in UTC.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The externalId property
+    // 
     externalId *string
     // Indicates if this is a Teams live event.
     isBroadcast *bool
@@ -57,7 +57,7 @@ type OnlineMeeting struct {
     // The video teleconferencing ID. Read-only.
     videoTeleconferenceId *string
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -116,7 +116,7 @@ func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
 func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.endDateTime
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. 
 func (m *OnlineMeeting) GetExternalId()(*string) {
     return m.externalId
 }
@@ -619,7 +619,7 @@ func (m *OnlineMeeting) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad
 func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. 
 func (m *OnlineMeeting) SetExternalId(value *string)() {
     m.externalId = value
 }

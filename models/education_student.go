@@ -18,7 +18,7 @@ type EducationStudent struct {
     grade *string
     // Year the student is graduating from the school.
     graduationYear *string
-    // The OdataType property
+    // 
     odataType *string
     // Student Number.
     studentNumber *string
@@ -133,7 +133,7 @@ func (m *EducationStudent) GetGrade()(*string) {
 func (m *EducationStudent) GetGraduationYear()(*string) {
     return m.graduationYear
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationStudent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -218,7 +218,7 @@ func (m *EducationStudent) SetGrade(value *string)() {
 func (m *EducationStudent) SetGraduationYear(value *string)() {
     m.graduationYear = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationStudent) SetOdataType(value *string)() {
     m.odataType = value
 }

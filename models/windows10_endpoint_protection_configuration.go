@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10EndpointProtectionConfiguration 
+// Windows10EndpointProtectionConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
 type Windows10EndpointProtectionConfiguration struct {
     DeviceConfiguration
     // Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
@@ -80,7 +80,7 @@ type Windows10EndpointProtectionConfiguration struct {
     // Allows IT Admins to configure SmartScreen for Windows.
     smartScreenEnableInShell *bool
 }
-// NewWindows10EndpointProtectionConfiguration instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
+// NewWindows10EndpointProtectionConfiguration instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
 func NewWindows10EndpointProtectionConfiguration()(*Windows10EndpointProtectionConfiguration) {
     m := &Windows10EndpointProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

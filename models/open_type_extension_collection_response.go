@@ -7,7 +7,7 @@ import (
 // OpenTypeExtensionCollectionResponse 
 type OpenTypeExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OpenTypeExtensionable
 }
 // NewOpenTypeExtensionCollectionResponse instantiates a new OpenTypeExtensionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OpenTypeExtensionCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OpenTypeExtensionCollectionResponse) GetValue()([]OpenTypeExtensionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OpenTypeExtensionCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OpenTypeExtensionCollectionResponse) SetValue(value []OpenTypeExtensionable)() {
     m.value = value
 }

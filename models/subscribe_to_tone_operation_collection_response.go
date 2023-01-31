@@ -7,7 +7,7 @@ import (
 // SubscribeToToneOperationCollectionResponse 
 type SubscribeToToneOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SubscribeToToneOperationable
 }
 // NewSubscribeToToneOperationCollectionResponse instantiates a new SubscribeToToneOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SubscribeToToneOperationCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SubscribeToToneOperationCollectionResponse) GetValue()([]SubscribeToToneOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SubscribeToToneOperationCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SubscribeToToneOperationCollectionResponse) SetValue(value []SubscribeToToneOperationable)() {
     m.value = value
 }

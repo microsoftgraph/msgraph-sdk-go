@@ -12,7 +12,7 @@ type FileSecurityState struct {
     fileHash FileHashable
     // File name (without path).
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Full file path of the file/imageFile.
     path *string
@@ -97,7 +97,7 @@ func (m *FileSecurityState) GetFileHash()(FileHashable) {
 func (m *FileSecurityState) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FileSecurityState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *FileSecurityState) SetFileHash(value FileHashable)() {
 func (m *FileSecurityState) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FileSecurityState) SetOdataType(value *string)() {
     m.odataType = value
 }

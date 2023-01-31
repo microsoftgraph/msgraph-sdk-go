@@ -7,7 +7,7 @@ import (
 // OrganizationalBrandingLocalizationCollectionResponse 
 type OrganizationalBrandingLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OrganizationalBrandingLocalizationable
 }
 // NewOrganizationalBrandingLocalizationCollectionResponse instantiates a new OrganizationalBrandingLocalizationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OrganizationalBrandingLocalizationCollectionResponse) GetFieldDeseriali
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OrganizationalBrandingLocalizationCollectionResponse) GetValue()([]OrganizationalBrandingLocalizationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OrganizationalBrandingLocalizationCollectionResponse) Serialize(writer 
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OrganizationalBrandingLocalizationCollectionResponse) SetValue(value []OrganizationalBrandingLocalizationable)() {
     m.value = value
 }

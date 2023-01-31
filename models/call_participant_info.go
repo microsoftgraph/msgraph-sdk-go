@@ -8,7 +8,7 @@ import (
 type CallParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Identity of the call participant.
     participant IdentitySetable
@@ -53,7 +53,7 @@ func (m *CallParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CallParticipantInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -87,7 +87,7 @@ func (m *CallParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *CallParticipantInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CallParticipantInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

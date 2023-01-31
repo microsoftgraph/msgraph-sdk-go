@@ -8,9 +8,9 @@ import (
 type AuthorizationInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The certificateUserIds property
+    // 
     certificateUserIds []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAuthorizationInfo instantiates a new authorizationInfo and sets the default values.
@@ -28,7 +28,7 @@ func CreateAuthorizationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *AuthorizationInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCertificateUserIds gets the certificateUserIds property value. The certificateUserIds property
+// GetCertificateUserIds gets the certificateUserIds property value. 
 func (m *AuthorizationInfo) GetCertificateUserIds()([]string) {
     return m.certificateUserIds
 }
@@ -61,7 +61,7 @@ func (m *AuthorizationInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuthorizationInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,11 +91,11 @@ func (m *AuthorizationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *AuthorizationInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCertificateUserIds sets the certificateUserIds property value. The certificateUserIds property
+// SetCertificateUserIds sets the certificateUserIds property value. 
 func (m *AuthorizationInfo) SetCertificateUserIds(value []string)() {
     m.certificateUserIds = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuthorizationInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

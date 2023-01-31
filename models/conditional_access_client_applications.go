@@ -12,7 +12,7 @@ type ConditionalAccessClientApplications struct {
     excludeServicePrincipals []string
     // Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
     includeServicePrincipals []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessClientApplications instantiates a new conditionalAccessClientApplications and sets the default values.
@@ -81,7 +81,7 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
 func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]string) {
     return m.includeServicePrincipals
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *ConditionalAccessClientApplications) SetExcludeServicePrincipals(value 
 func (m *ConditionalAccessClientApplications) SetIncludeServicePrincipals(value []string)() {
     m.includeServicePrincipals = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessClientApplications) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // ColumnLinkCollectionResponse 
 type ColumnLinkCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ColumnLinkable
 }
 // NewColumnLinkCollectionResponse instantiates a new ColumnLinkCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ColumnLinkCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ColumnLinkCollectionResponse) GetValue()([]ColumnLinkable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ColumnLinkCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ColumnLinkCollectionResponse) SetValue(value []ColumnLinkable)() {
     m.value = value
 }

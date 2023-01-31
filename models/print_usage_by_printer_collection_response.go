@@ -7,7 +7,7 @@ import (
 // PrintUsageByPrinterCollectionResponse 
 type PrintUsageByPrinterCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PrintUsageByPrinterable
 }
 // NewPrintUsageByPrinterCollectionResponse instantiates a new PrintUsageByPrinterCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PrintUsageByPrinterCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PrintUsageByPrinterCollectionResponse) GetValue()([]PrintUsageByPrinterable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PrintUsageByPrinterCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PrintUsageByPrinterCollectionResponse) SetValue(value []PrintUsageByPrinterable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // CommsOperationCollectionResponse 
 type CommsOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CommsOperationable
 }
 // NewCommsOperationCollectionResponse instantiates a new CommsOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CommsOperationCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CommsOperationCollectionResponse) GetValue()([]CommsOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CommsOperationCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CommsOperationCollectionResponse) SetValue(value []CommsOperationable)() {
     m.value = value
 }

@@ -22,7 +22,7 @@ type Reminder struct {
     eventSubject *string
     // The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
     eventWebLink *string
-    // The OdataType property
+    // 
     odataType *string
     // The date, time, and time zone that the reminder is set to occur.
     reminderFireTime DateTimeTimeZoneable
@@ -165,7 +165,7 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Reminder) GetOdataType()(*string) {
     return m.odataType
 }
@@ -269,7 +269,7 @@ func (m *Reminder) SetEventSubject(value *string)() {
 func (m *Reminder) SetEventWebLink(value *string)() {
     m.eventWebLink = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Reminder) SetOdataType(value *string)() {
     m.odataType = value
 }

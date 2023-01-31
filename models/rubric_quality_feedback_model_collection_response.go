@@ -7,7 +7,7 @@ import (
 // RubricQualityFeedbackModelCollectionResponse 
 type RubricQualityFeedbackModelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RubricQualityFeedbackModelable
 }
 // NewRubricQualityFeedbackModelCollectionResponse instantiates a new RubricQualityFeedbackModelCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RubricQualityFeedbackModelCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RubricQualityFeedbackModelCollectionResponse) GetValue()([]RubricQualityFeedbackModelable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RubricQualityFeedbackModelCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RubricQualityFeedbackModelCollectionResponse) SetValue(value []RubricQualityFeedbackModelable)() {
     m.value = value
 }

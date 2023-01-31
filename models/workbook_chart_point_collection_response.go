@@ -7,7 +7,7 @@ import (
 // WorkbookChartPointCollectionResponse 
 type WorkbookChartPointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookChartPointable
 }
 // NewWorkbookChartPointCollectionResponse instantiates a new WorkbookChartPointCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookChartPointCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookChartPointCollectionResponse) GetValue()([]WorkbookChartPointable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookChartPointCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookChartPointCollectionResponse) SetValue(value []WorkbookChartPointable)() {
     m.value = value
 }

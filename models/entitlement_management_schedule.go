@@ -11,7 +11,7 @@ type EntitlementManagementSchedule struct {
     additionalData map[string]any
     // When the access should expire.
     expiration ExpirationPatternable
-    // The OdataType property
+    // 
     odataType *string
     // For recurring access reviews.  Not used in access requests.
     recurrence PatternedRecurrenceable
@@ -82,7 +82,7 @@ func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EntitlementManagementSchedule) GetOdataType()(*string) {
     return m.odataType
 }
@@ -136,7 +136,7 @@ func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]any)(
 func (m *EntitlementManagementSchedule) SetExpiration(value ExpirationPatternable)() {
     m.expiration = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EntitlementManagementSchedule) SetOdataType(value *string)() {
     m.odataType = value
 }

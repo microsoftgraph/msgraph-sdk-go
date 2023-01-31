@@ -7,7 +7,7 @@ import (
 // Windows10GeneralConfigurationCollectionResponse 
 type Windows10GeneralConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Windows10GeneralConfigurationable
 }
 // NewWindows10GeneralConfigurationCollectionResponse instantiates a new Windows10GeneralConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Windows10GeneralConfigurationCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Windows10GeneralConfigurationCollectionResponse) GetValue()([]Windows10GeneralConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Windows10GeneralConfigurationCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Windows10GeneralConfigurationCollectionResponse) SetValue(value []Windows10GeneralConfigurationable)() {
     m.value = value
 }

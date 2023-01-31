@@ -7,7 +7,7 @@ import (
 // UnifiedRoleManagementPolicyEnablementRuleCollectionResponse 
 type UnifiedRoleManagementPolicyEnablementRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleManagementPolicyEnablementRuleable
 }
 // NewUnifiedRoleManagementPolicyEnablementRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyEnablementRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleManagementPolicyEnablementRuleCollectionResponse) GetFieldDe
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleManagementPolicyEnablementRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyEnablementRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleManagementPolicyEnablementRuleCollectionResponse) Serialize(
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleManagementPolicyEnablementRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyEnablementRuleable)() {
     m.value = value
 }

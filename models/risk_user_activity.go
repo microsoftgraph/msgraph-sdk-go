@@ -10,7 +10,7 @@ type RiskUserActivity struct {
     additionalData map[string]any
     // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
     detail *RiskDetail
-    // The OdataType property
+    // 
     odataType *string
     // The type of risk event detected.
     riskEventTypes []string
@@ -73,7 +73,7 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RiskUserActivity) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *RiskUserActivity) SetAdditionalData(value map[string]any)() {
 func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
     m.detail = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RiskUserActivity) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // TargetedManagedAppPolicyAssignmentCollectionResponse 
 type TargetedManagedAppPolicyAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TargetedManagedAppPolicyAssignmentable
 }
 // NewTargetedManagedAppPolicyAssignmentCollectionResponse instantiates a new TargetedManagedAppPolicyAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TargetedManagedAppPolicyAssignmentCollectionResponse) GetFieldDeseriali
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TargetedManagedAppPolicyAssignmentCollectionResponse) GetValue()([]TargetedManagedAppPolicyAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TargetedManagedAppPolicyAssignmentCollectionResponse) Serialize(writer 
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TargetedManagedAppPolicyAssignmentCollectionResponse) SetValue(value []TargetedManagedAppPolicyAssignmentable)() {
     m.value = value
 }

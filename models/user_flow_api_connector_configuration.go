@@ -8,11 +8,11 @@ import (
 type UserFlowApiConnectorConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The postAttributeCollection property
+    // 
     postAttributeCollection IdentityApiConnectorable
-    // The postFederationSignup property
+    // 
     postFederationSignup IdentityApiConnectorable
 }
 // NewUserFlowApiConnectorConfiguration instantiates a new userFlowApiConnectorConfiguration and sets the default values.
@@ -65,15 +65,15 @@ func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserFlowApiConnectorConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPostAttributeCollection gets the postAttributeCollection property value. The postAttributeCollection property
+// GetPostAttributeCollection gets the postAttributeCollection property value. 
 func (m *UserFlowApiConnectorConfiguration) GetPostAttributeCollection()(IdentityApiConnectorable) {
     return m.postAttributeCollection
 }
-// GetPostFederationSignup gets the postFederationSignup property value. The postFederationSignup property
+// GetPostFederationSignup gets the postFederationSignup property value. 
 func (m *UserFlowApiConnectorConfiguration) GetPostFederationSignup()(IdentityApiConnectorable) {
     return m.postFederationSignup
 }
@@ -109,15 +109,15 @@ func (m *UserFlowApiConnectorConfiguration) Serialize(writer i878a80d2330e89d268
 func (m *UserFlowApiConnectorConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserFlowApiConnectorConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPostAttributeCollection sets the postAttributeCollection property value. The postAttributeCollection property
+// SetPostAttributeCollection sets the postAttributeCollection property value. 
 func (m *UserFlowApiConnectorConfiguration) SetPostAttributeCollection(value IdentityApiConnectorable)() {
     m.postAttributeCollection = value
 }
-// SetPostFederationSignup sets the postFederationSignup property value. The postFederationSignup property
+// SetPostFederationSignup sets the postFederationSignup property value. 
 func (m *UserFlowApiConnectorConfiguration) SetPostFederationSignup(value IdentityApiConnectorable)() {
     m.postFederationSignup = value
 }

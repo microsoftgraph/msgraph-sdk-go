@@ -12,7 +12,7 @@ type NetworkInfo struct {
     bandwidthLowEventRatio *float32
     // The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
     basicServiceSetIdentifier *string
-    // The connectionType property
+    // 
     connectionType *NetworkConnectionType
     // Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
     delayEventRatio *float32
@@ -24,9 +24,9 @@ type NetworkInfo struct {
     linkSpeed *int64
     // The media access control (MAC) address of the media endpoint's network device.
     macAddress *string
-    // The networkTransportProtocol property
+    // 
     networkTransportProtocol *NetworkTransportProtocol
-    // The OdataType property
+    // 
     odataType *string
     // Network port number used by media endpoint.
     port *int32
@@ -44,7 +44,7 @@ type NetworkInfo struct {
     subnet *string
     // List of network trace route hops collected for this media stream.*
     traceRouteHops []TraceRouteHopable
-    // The wifiBand property
+    // 
     wifiBand *WifiBand
     // Estimated remaining battery charge in percentage reported by the media endpoint.
     wifiBatteryCharge *int32
@@ -54,7 +54,7 @@ type NetworkInfo struct {
     wifiMicrosoftDriver *string
     // Version of the Microsoft WiFi driver used by the media endpoint.
     wifiMicrosoftDriverVersion *string
-    // The wifiRadioType property
+    // 
     wifiRadioType *WifiRadioType
     // WiFi signal strength in percentage reported by the media endpoint.
     wifiSignalStrength *int32
@@ -86,7 +86,7 @@ func (m *NetworkInfo) GetBandwidthLowEventRatio()(*float32) {
 func (m *NetworkInfo) GetBasicServiceSetIdentifier()(*string) {
     return m.basicServiceSetIdentifier
 }
-// GetConnectionType gets the connectionType property value. The connectionType property
+// GetConnectionType gets the connectionType property value. 
 func (m *NetworkInfo) GetConnectionType()(*NetworkConnectionType) {
     return m.connectionType
 }
@@ -389,11 +389,11 @@ func (m *NetworkInfo) GetLinkSpeed()(*int64) {
 func (m *NetworkInfo) GetMacAddress()(*string) {
     return m.macAddress
 }
-// GetNetworkTransportProtocol gets the networkTransportProtocol property value. The networkTransportProtocol property
+// GetNetworkTransportProtocol gets the networkTransportProtocol property value. 
 func (m *NetworkInfo) GetNetworkTransportProtocol()(*NetworkTransportProtocol) {
     return m.networkTransportProtocol
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *NetworkInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -429,7 +429,7 @@ func (m *NetworkInfo) GetSubnet()(*string) {
 func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
     return m.traceRouteHops
 }
-// GetWifiBand gets the wifiBand property value. The wifiBand property
+// GetWifiBand gets the wifiBand property value. 
 func (m *NetworkInfo) GetWifiBand()(*WifiBand) {
     return m.wifiBand
 }
@@ -449,7 +449,7 @@ func (m *NetworkInfo) GetWifiMicrosoftDriver()(*string) {
 func (m *NetworkInfo) GetWifiMicrosoftDriverVersion()(*string) {
     return m.wifiMicrosoftDriverVersion
 }
-// GetWifiRadioType gets the wifiRadioType property value. The wifiRadioType property
+// GetWifiRadioType gets the wifiRadioType property value. 
 func (m *NetworkInfo) GetWifiRadioType()(*WifiRadioType) {
     return m.wifiRadioType
 }
@@ -657,7 +657,7 @@ func (m *NetworkInfo) SetBandwidthLowEventRatio(value *float32)() {
 func (m *NetworkInfo) SetBasicServiceSetIdentifier(value *string)() {
     m.basicServiceSetIdentifier = value
 }
-// SetConnectionType sets the connectionType property value. The connectionType property
+// SetConnectionType sets the connectionType property value. 
 func (m *NetworkInfo) SetConnectionType(value *NetworkConnectionType)() {
     m.connectionType = value
 }
@@ -681,11 +681,11 @@ func (m *NetworkInfo) SetLinkSpeed(value *int64)() {
 func (m *NetworkInfo) SetMacAddress(value *string)() {
     m.macAddress = value
 }
-// SetNetworkTransportProtocol sets the networkTransportProtocol property value. The networkTransportProtocol property
+// SetNetworkTransportProtocol sets the networkTransportProtocol property value. 
 func (m *NetworkInfo) SetNetworkTransportProtocol(value *NetworkTransportProtocol)() {
     m.networkTransportProtocol = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *NetworkInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -721,7 +721,7 @@ func (m *NetworkInfo) SetSubnet(value *string)() {
 func (m *NetworkInfo) SetTraceRouteHops(value []TraceRouteHopable)() {
     m.traceRouteHops = value
 }
-// SetWifiBand sets the wifiBand property value. The wifiBand property
+// SetWifiBand sets the wifiBand property value. 
 func (m *NetworkInfo) SetWifiBand(value *WifiBand)() {
     m.wifiBand = value
 }
@@ -741,7 +741,7 @@ func (m *NetworkInfo) SetWifiMicrosoftDriver(value *string)() {
 func (m *NetworkInfo) SetWifiMicrosoftDriverVersion(value *string)() {
     m.wifiMicrosoftDriverVersion = value
 }
-// SetWifiRadioType sets the wifiRadioType property value. The wifiRadioType property
+// SetWifiRadioType sets the wifiRadioType property value. 
 func (m *NetworkInfo) SetWifiRadioType(value *WifiRadioType)() {
     m.wifiRadioType = value
 }

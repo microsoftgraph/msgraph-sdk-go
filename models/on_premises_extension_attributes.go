@@ -38,7 +38,7 @@ type OnPremisesExtensionAttributes struct {
     extensionAttribute8 *string
     // Ninth customizable extension attribute.
     extensionAttribute9 *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewOnPremisesExtensionAttributes instantiates a new onPremisesExtensionAttributes and sets the default values.
@@ -281,7 +281,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnPremisesExtensionAttributes) GetOdataType()(*string) {
     return m.odataType
 }
@@ -455,7 +455,7 @@ func (m *OnPremisesExtensionAttributes) SetExtensionAttribute8(value *string)() 
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute9(value *string)() {
     m.extensionAttribute9 = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnPremisesExtensionAttributes) SetOdataType(value *string)() {
     m.odataType = value
 }

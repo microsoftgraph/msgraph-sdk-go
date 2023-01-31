@@ -14,7 +14,7 @@ type DriveRecipient struct {
     email *string
     // The unique identifier for the recipient in the directory.
     objectId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewDriveRecipient instantiates a new driveRecipient and sets the default values.
@@ -89,7 +89,7 @@ func (m *DriveRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *DriveRecipient) GetObjectId()(*string) {
     return m.objectId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DriveRecipient) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *DriveRecipient) SetEmail(value *string)() {
 func (m *DriveRecipient) SetObjectId(value *string)() {
     m.objectId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DriveRecipient) SetOdataType(value *string)() {
     m.odataType = value
 }

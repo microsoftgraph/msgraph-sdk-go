@@ -8,7 +8,7 @@ import (
 // ExternalItemCollectionResponse 
 type ExternalItemCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ExternalItemable
 }
 // NewExternalItemCollectionResponse instantiates a new ExternalItemCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *ExternalItemCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ExternalItemCollectionResponse) GetValue()([]ExternalItemable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *ExternalItemCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ExternalItemCollectionResponse) SetValue(value []ExternalItemable)() {
     m.value = value
 }

@@ -10,9 +10,9 @@ type ExcludeTarget struct {
     additionalData map[string]any
     // The object identifier of an Azure Active Directory user or group.
     id *string
-    // The OdataType property
+    // 
     odataType *string
-    // The targetType property
+    // 
     targetType *AuthenticationMethodTargetType
 }
 // NewExcludeTarget instantiates a new excludeTarget and sets the default values.
@@ -69,11 +69,11 @@ func (m *ExcludeTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *ExcludeTarget) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ExcludeTarget) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTargetType gets the targetType property value. The targetType property
+// GetTargetType gets the targetType property value. 
 func (m *ExcludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     return m.targetType
 }
@@ -114,11 +114,11 @@ func (m *ExcludeTarget) SetAdditionalData(value map[string]any)() {
 func (m *ExcludeTarget) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ExcludeTarget) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTargetType sets the targetType property value. The targetType property
+// SetTargetType sets the targetType property value. 
 func (m *ExcludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     m.targetType = value
 }

@@ -8,11 +8,11 @@ import (
 // AttachmentSession 
 type AttachmentSession struct {
     Entity
-    // The content property
+    // 
     content []byte
-    // The expirationDateTime property
+    // 
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The nextExpectedRanges property
+    // 
     nextExpectedRanges []string
 }
 // NewAttachmentSession instantiates a new attachmentSession and sets the default values.
@@ -26,11 +26,11 @@ func NewAttachmentSession()(*AttachmentSession) {
 func CreateAttachmentSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttachmentSession(), nil
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. 
 func (m *AttachmentSession) GetContent()([]byte) {
     return m.content
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. 
 func (m *AttachmentSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expirationDateTime
 }
@@ -73,7 +73,7 @@ func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetNextExpectedRanges gets the nextExpectedRanges property value. The nextExpectedRanges property
+// GetNextExpectedRanges gets the nextExpectedRanges property value. 
 func (m *AttachmentSession) GetNextExpectedRanges()([]string) {
     return m.nextExpectedRanges
 }
@@ -103,15 +103,15 @@ func (m *AttachmentSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. 
 func (m *AttachmentSession) SetContent(value []byte)() {
     m.content = value
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. 
 func (m *AttachmentSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// SetNextExpectedRanges sets the nextExpectedRanges property value. The nextExpectedRanges property
+// SetNextExpectedRanges sets the nextExpectedRanges property value. 
 func (m *AttachmentSession) SetNextExpectedRanges(value []string)() {
     m.nextExpectedRanges = value
 }

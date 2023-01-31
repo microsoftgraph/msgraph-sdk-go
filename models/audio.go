@@ -32,7 +32,7 @@ type Audio struct {
     hasDrm *bool
     // Indicates if the file is encoded with a variable bitrate.
     isVariableBitrate *bool
-    // The OdataType property
+    // 
     odataType *string
     // The title of the audio file.
     title *string
@@ -281,7 +281,7 @@ func (m *Audio) GetHasDrm()(*bool) {
 func (m *Audio) GetIsVariableBitrate()(*bool) {
     return m.isVariableBitrate
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Audio) GetOdataType()(*string) {
     return m.odataType
 }
@@ -465,7 +465,7 @@ func (m *Audio) SetHasDrm(value *bool)() {
 func (m *Audio) SetIsVariableBitrate(value *bool)() {
     m.isVariableBitrate = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Audio) SetOdataType(value *string)() {
     m.odataType = value
 }

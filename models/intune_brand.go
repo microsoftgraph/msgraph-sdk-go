@@ -22,7 +22,7 @@ type IntuneBrand struct {
     displayName *string
     // Logo image displayed in Company Portal apps which have a light background behind the logo.
     lightBackgroundLogo MimeContentable
-    // The OdataType property
+    // 
     odataType *string
     // Display name of the company/organization’s IT helpdesk site.
     onlineSupportSiteName *string
@@ -237,7 +237,7 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *IntuneBrand) GetLightBackgroundLogo()(MimeContentable) {
     return m.lightBackgroundLogo
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IntuneBrand) GetOdataType()(*string) {
     return m.odataType
 }
@@ -401,7 +401,7 @@ func (m *IntuneBrand) SetDisplayName(value *string)() {
 func (m *IntuneBrand) SetLightBackgroundLogo(value MimeContentable)() {
     m.lightBackgroundLogo = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IntuneBrand) SetOdataType(value *string)() {
     m.odataType = value
 }

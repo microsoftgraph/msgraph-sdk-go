@@ -7,7 +7,7 @@ import (
 // IosManagedAppProtectionCollectionResponse 
 type IosManagedAppProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosManagedAppProtectionable
 }
 // NewIosManagedAppProtectionCollectionResponse instantiates a new IosManagedAppProtectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosManagedAppProtectionCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosManagedAppProtectionCollectionResponse) GetValue()([]IosManagedAppProtectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosManagedAppProtectionCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosManagedAppProtectionCollectionResponse) SetValue(value []IosManagedAppProtectionable)() {
     m.value = value
 }

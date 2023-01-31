@@ -13,7 +13,7 @@ type FeatureRolloutPolicy struct {
     description *string
     // The display name for this  feature rollout policy.
     displayName *string
-    // The feature property
+    // 
     feature *StagedFeatureName
     // Indicates whether this feature rollout policy should be applied to the entire organization.
     isAppliedToOrganization *bool
@@ -43,7 +43,7 @@ func (m *FeatureRolloutPolicy) GetDescription()(*string) {
 func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetFeature gets the feature property value. The feature property
+// GetFeature gets the feature property value. 
 func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
     return m.feature
 }
@@ -185,7 +185,7 @@ func (m *FeatureRolloutPolicy) SetDescription(value *string)() {
 func (m *FeatureRolloutPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetFeature sets the feature property value. The feature property
+// SetFeature sets the feature property value. 
 func (m *FeatureRolloutPolicy) SetFeature(value *StagedFeatureName)() {
     m.feature = value
 }

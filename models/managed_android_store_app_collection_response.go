@@ -7,7 +7,7 @@ import (
 // ManagedAndroidStoreAppCollectionResponse 
 type ManagedAndroidStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedAndroidStoreAppable
 }
 // NewManagedAndroidStoreAppCollectionResponse instantiates a new ManagedAndroidStoreAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedAndroidStoreAppCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedAndroidStoreAppCollectionResponse) GetValue()([]ManagedAndroidStoreAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedAndroidStoreAppCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedAndroidStoreAppCollectionResponse) SetValue(value []ManagedAndroidStoreAppable)() {
     m.value = value
 }

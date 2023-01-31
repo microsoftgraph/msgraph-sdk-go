@@ -10,7 +10,7 @@ type RubricQualitySelectedColumnModel struct {
     additionalData map[string]any
     // ID of the selected level for this quality.
     columnId *string
-    // The OdataType property
+    // 
     odataType *string
     // ID of the associated quality.
     qualityId *string
@@ -69,7 +69,7 @@ func (m *RubricQualitySelectedColumnModel) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RubricQualitySelectedColumnModel) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *RubricQualitySelectedColumnModel) SetAdditionalData(value map[string]an
 func (m *RubricQualitySelectedColumnModel) SetColumnId(value *string)() {
     m.columnId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RubricQualitySelectedColumnModel) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // TimeSlotCollectionResponse 
 type TimeSlotCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TimeSlotable
 }
 // NewTimeSlotCollectionResponse instantiates a new TimeSlotCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TimeSlotCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TimeSlotCollectionResponse) GetValue()([]TimeSlotable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TimeSlotCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TimeSlotCollectionResponse) SetValue(value []TimeSlotable)() {
     m.value = value
 }

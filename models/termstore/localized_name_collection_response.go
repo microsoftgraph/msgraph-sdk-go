@@ -8,7 +8,7 @@ import (
 // LocalizedNameCollectionResponse 
 type LocalizedNameCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []LocalizedNameable
 }
 // NewLocalizedNameCollectionResponse instantiates a new LocalizedNameCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *LocalizedNameCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LocalizedNameCollectionResponse) GetValue()([]LocalizedNameable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *LocalizedNameCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LocalizedNameCollectionResponse) SetValue(value []LocalizedNameable)() {
     m.value = value
 }

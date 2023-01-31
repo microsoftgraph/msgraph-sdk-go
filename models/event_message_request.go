@@ -9,7 +9,7 @@ type EventMessageRequest struct {
     EventMessage
     // True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
     allowNewTimeProposals *bool
-    // The meetingRequestType property
+    // 
     meetingRequestType *MeetingRequestType
     // If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
     previousEndDateTime DateTimeTimeZoneable
@@ -102,7 +102,7 @@ func (m *EventMessageRequest) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetMeetingRequestType gets the meetingRequestType property value. The meetingRequestType property
+// GetMeetingRequestType gets the meetingRequestType property value. 
 func (m *EventMessageRequest) GetMeetingRequestType()(*MeetingRequestType) {
     return m.meetingRequestType
 }
@@ -171,7 +171,7 @@ func (m *EventMessageRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *EventMessageRequest) SetAllowNewTimeProposals(value *bool)() {
     m.allowNewTimeProposals = value
 }
-// SetMeetingRequestType sets the meetingRequestType property value. The meetingRequestType property
+// SetMeetingRequestType sets the meetingRequestType property value. 
 func (m *EventMessageRequest) SetMeetingRequestType(value *MeetingRequestType)() {
     m.meetingRequestType = value
 }

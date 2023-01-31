@@ -91,10 +91,6 @@ func (m *UserItemRequestBuilder) AppRoleAssignmentsById(id string)(*ItemAppRoleA
     }
     return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AssignLicense provides operations to call the assignLicense method.
-func (m *UserItemRequestBuilder) AssignLicense()(*ItemAssignLicenseRequestBuilder) {
-    return NewItemAssignLicenseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Authentication provides operations to manage the authentication property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Authentication()(*ItemAuthenticationRequestBuilder) {
     return NewItemAuthenticationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -148,10 +144,6 @@ func (m *UserItemRequestBuilder) CalendarViewById(id string)(*ItemCalendarViewEv
     }
     return NewItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ChangePassword provides operations to call the changePassword method.
-func (m *UserItemRequestBuilder) ChangePassword()(*ItemChangePasswordRequestBuilder) {
-    return NewItemChangePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Chats provides operations to manage the chats property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Chats()(*ItemChatsRequestBuilder) {
     return NewItemChatsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -167,22 +159,17 @@ func (m *UserItemRequestBuilder) ChatsById(id string)(*ItemChatsChatItemRequestB
     }
     return NewItemChatsChatItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *UserItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *UserItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewUserItemRequestBuilderInternal instantiates a new UserItemRequestBuilder and sets the default values.
-func NewUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserItemRequestBuilder) {
+func NewUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userId *string)(*UserItemRequestBuilder) {
     m := &UserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if userId != nil {
+        urlTplParams["user%2Did"] = *userId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -192,7 +179,7 @@ func NewUserItemRequestBuilderInternal(pathParameters map[string]string, request
 func NewUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // ContactFolders provides operations to manage the contactFolders property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) ContactFolders()(*ItemContactFoldersRequestBuilder) {
@@ -322,10 +309,6 @@ func (m *UserItemRequestBuilder) EventsById(id string)(*ItemEventsEventItemReque
     }
     return NewItemEventsEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ExportPersonalData provides operations to call the exportPersonalData method.
-func (m *UserItemRequestBuilder) ExportPersonalData()(*ItemExportPersonalDataRequestBuilder) {
-    return NewItemExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -340,10 +323,6 @@ func (m *UserItemRequestBuilder) ExtensionsById(id string)(*ItemExtensionsExtens
         urlTplParams["extension%2Did"] = id
     }
     return NewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// FindMeetingTimes provides operations to call the findMeetingTimes method.
-func (m *UserItemRequestBuilder) FindMeetingTimes()(*ItemFindMeetingTimesRequestBuilder) {
-    return NewItemFindMeetingTimesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FollowedSites provides operations to manage the followedSites property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) FollowedSites()(*ItemFollowedSitesRequestBuilder) {
@@ -381,26 +360,6 @@ func (m *UserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
-}
-// GetMailTips provides operations to call the getMailTips method.
-func (m *UserItemRequestBuilder) GetMailTips()(*ItemGetMailTipsRequestBuilder) {
-    return NewItemGetMailTipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetManagedAppDiagnosticStatuses provides operations to call the getManagedAppDiagnosticStatuses method.
-func (m *UserItemRequestBuilder) GetManagedAppDiagnosticStatuses()(*ItemGetManagedAppDiagnosticStatusesRequestBuilder) {
-    return NewItemGetManagedAppDiagnosticStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetManagedAppPolicies provides operations to call the getManagedAppPolicies method.
-func (m *UserItemRequestBuilder) GetManagedAppPolicies()(*ItemGetManagedAppPoliciesRequestBuilder) {
-    return NewItemGetManagedAppPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *UserItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
-    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *UserItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
-    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InferenceClassification provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) InferenceClassification()(*ItemInferenceClassificationRequestBuilder) {
@@ -518,6 +477,94 @@ func (m *UserItemRequestBuilder) MessagesById(id string)(*ItemMessagesMessageIte
         urlTplParams["message%2Did"] = id
     }
     return NewItemMessagesMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// MicrosoftGraphAssignLicense provides operations to call the assignLicense method.
+func (m *UserItemRequestBuilder) MicrosoftGraphAssignLicense()(*ItemMicrosoftGraphAssignLicenseAssignLicenseRequestBuilder) {
+    return NewItemMicrosoftGraphAssignLicenseAssignLicenseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphChangePassword provides operations to call the changePassword method.
+func (m *UserItemRequestBuilder) MicrosoftGraphChangePassword()(*ItemMicrosoftGraphChangePasswordChangePasswordRequestBuilder) {
+    return NewItemMicrosoftGraphChangePasswordChangePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *UserItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *UserItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphExportDeviceAndAppManagementData provides operations to call the exportDeviceAndAppManagementData method.
+func (m *UserItemRequestBuilder) MicrosoftGraphExportDeviceAndAppManagementData()(*ItemMicrosoftGraphExportDeviceAndAppManagementDataExportDeviceAndAppManagementDataRequestBuilder) {
+    return NewItemMicrosoftGraphExportDeviceAndAppManagementDataExportDeviceAndAppManagementDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphExportDeviceAndAppManagementDataWithSkipWithTop provides operations to call the exportDeviceAndAppManagementData method.
+func (m *UserItemRequestBuilder) MicrosoftGraphExportDeviceAndAppManagementDataWithSkipWithTop(skip *int32, top *int32)(*ItemMicrosoftGraphExportDeviceAndAppManagementDataWithSkipWithTopExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
+    return NewItemMicrosoftGraphExportDeviceAndAppManagementDataWithSkipWithTopExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, skip, top);
+}
+// MicrosoftGraphExportPersonalData provides operations to call the exportPersonalData method.
+func (m *UserItemRequestBuilder) MicrosoftGraphExportPersonalData()(*ItemMicrosoftGraphExportPersonalDataExportPersonalDataRequestBuilder) {
+    return NewItemMicrosoftGraphExportPersonalDataExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphFindMeetingTimes provides operations to call the findMeetingTimes method.
+func (m *UserItemRequestBuilder) MicrosoftGraphFindMeetingTimes()(*ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesRequestBuilder) {
+    return NewItemMicrosoftGraphFindMeetingTimesFindMeetingTimesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetMailTips provides operations to call the getMailTips method.
+func (m *UserItemRequestBuilder) MicrosoftGraphGetMailTips()(*ItemMicrosoftGraphGetMailTipsGetMailTipsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMailTipsGetMailTipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetManagedAppDiagnosticStatuses provides operations to call the getManagedAppDiagnosticStatuses method.
+func (m *UserItemRequestBuilder) MicrosoftGraphGetManagedAppDiagnosticStatuses()(*ItemMicrosoftGraphGetManagedAppDiagnosticStatusesGetManagedAppDiagnosticStatusesRequestBuilder) {
+    return NewItemMicrosoftGraphGetManagedAppDiagnosticStatusesGetManagedAppDiagnosticStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetManagedAppPolicies provides operations to call the getManagedAppPolicies method.
+func (m *UserItemRequestBuilder) MicrosoftGraphGetManagedAppPolicies()(*ItemMicrosoftGraphGetManagedAppPoliciesGetManagedAppPoliciesRequestBuilder) {
+    return NewItemMicrosoftGraphGetManagedAppPoliciesGetManagedAppPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetManagedDevicesWithAppFailures provides operations to call the getManagedDevicesWithAppFailures method.
+func (m *UserItemRequestBuilder) MicrosoftGraphGetManagedDevicesWithAppFailures()(*ItemMicrosoftGraphGetManagedDevicesWithAppFailuresGetManagedDevicesWithAppFailuresRequestBuilder) {
+    return NewItemMicrosoftGraphGetManagedDevicesWithAppFailuresGetManagedDevicesWithAppFailuresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
+func (m *UserItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
+func (m *UserItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphReminderViewWithStartDateTimeWithEndDateTime provides operations to call the reminderView method.
+func (m *UserItemRequestBuilder) MicrosoftGraphReminderViewWithStartDateTimeWithEndDateTime(endDateTime *string, startDateTime *string)(*ItemMicrosoftGraphReminderViewWithStartDateTimeWithEndDateTimeReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewItemMicrosoftGraphReminderViewWithStartDateTimeWithEndDateTimeReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime);
+}
+// MicrosoftGraphRemoveAllDevicesFromManagement provides operations to call the removeAllDevicesFromManagement method.
+func (m *UserItemRequestBuilder) MicrosoftGraphRemoveAllDevicesFromManagement()(*ItemMicrosoftGraphRemoveAllDevicesFromManagementRemoveAllDevicesFromManagementRequestBuilder) {
+    return NewItemMicrosoftGraphRemoveAllDevicesFromManagementRemoveAllDevicesFromManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphReprocessLicenseAssignment provides operations to call the reprocessLicenseAssignment method.
+func (m *UserItemRequestBuilder) MicrosoftGraphReprocessLicenseAssignment()(*ItemMicrosoftGraphReprocessLicenseAssignmentReprocessLicenseAssignmentRequestBuilder) {
+    return NewItemMicrosoftGraphReprocessLicenseAssignmentReprocessLicenseAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *UserItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRestoreRequestBuilder) {
+    return NewItemMicrosoftGraphRestoreRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphRevokeSignInSessions provides operations to call the revokeSignInSessions method.
+func (m *UserItemRequestBuilder) MicrosoftGraphRevokeSignInSessions()(*ItemMicrosoftGraphRevokeSignInSessionsRevokeSignInSessionsRequestBuilder) {
+    return NewItemMicrosoftGraphRevokeSignInSessionsRevokeSignInSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSendMail provides operations to call the sendMail method.
+func (m *UserItemRequestBuilder) MicrosoftGraphSendMail()(*ItemMicrosoftGraphSendMailSendMailRequestBuilder) {
+    return NewItemMicrosoftGraphSendMailSendMailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphTranslateExchangeIds provides operations to call the translateExchangeIds method.
+func (m *UserItemRequestBuilder) MicrosoftGraphTranslateExchangeIds()(*ItemMicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsRequestBuilder) {
+    return NewItemMicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphWipeManagedAppRegistrationsByDeviceTag provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
+func (m *UserItemRequestBuilder) MicrosoftGraphWipeManagedAppRegistrationsByDeviceTag()(*ItemMicrosoftGraphWipeManagedAppRegistrationsByDeviceTagWipeManagedAppRegistrationsByDeviceTagRequestBuilder) {
+    return NewItemMicrosoftGraphWipeManagedAppRegistrationsByDeviceTagWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Oauth2PermissionGrants provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Oauth2PermissionGrants()(*ItemOauth2PermissionGrantsRequestBuilder) {
@@ -666,26 +713,6 @@ func (m *UserItemRequestBuilder) RegisteredDevicesById(id string)(*ItemRegistere
     }
     return NewItemRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ReminderViewWithStartDateTimeWithEndDateTime provides operations to call the reminderView method.
-func (m *UserItemRequestBuilder) ReminderViewWithStartDateTimeWithEndDateTime(endDateTime *string, startDateTime *string)(*ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return NewItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime);
-}
-// RemoveAllDevicesFromManagement provides operations to call the removeAllDevicesFromManagement method.
-func (m *UserItemRequestBuilder) RemoveAllDevicesFromManagement()(*ItemRemoveAllDevicesFromManagementRequestBuilder) {
-    return NewItemRemoveAllDevicesFromManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ReprocessLicenseAssignment provides operations to call the reprocessLicenseAssignment method.
-func (m *UserItemRequestBuilder) ReprocessLicenseAssignment()(*ItemReprocessLicenseAssignmentRequestBuilder) {
-    return NewItemReprocessLicenseAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restore provides operations to call the restore method.
-func (m *UserItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
-    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RevokeSignInSessions provides operations to call the revokeSignInSessions method.
-func (m *UserItemRequestBuilder) RevokeSignInSessions()(*ItemRevokeSignInSessionsRequestBuilder) {
-    return NewItemRevokeSignInSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ScopedRoleMemberOf provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) ScopedRoleMemberOf()(*ItemScopedRoleMemberOfRequestBuilder) {
     return NewItemScopedRoleMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -700,10 +727,6 @@ func (m *UserItemRequestBuilder) ScopedRoleMemberOfById(id string)(*ItemScopedRo
         urlTplParams["scopedRoleMembership%2Did"] = id
     }
     return NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SendMail provides operations to call the sendMail method.
-func (m *UserItemRequestBuilder) SendMail()(*ItemSendMailRequestBuilder) {
-    return NewItemSendMailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
@@ -752,7 +775,10 @@ func (m *UserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -773,12 +799,4 @@ func (m *UserItemRequestBuilder) TransitiveMemberOfById(id string)(*ItemTransiti
         urlTplParams["directoryObject%2Did"] = id
     }
     return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// TranslateExchangeIds provides operations to call the translateExchangeIds method.
-func (m *UserItemRequestBuilder) TranslateExchangeIds()(*ItemTranslateExchangeIdsRequestBuilder) {
-    return NewItemTranslateExchangeIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WipeManagedAppRegistrationsByDeviceTag provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
-func (m *UserItemRequestBuilder) WipeManagedAppRegistrationsByDeviceTag()(*ItemWipeManagedAppRegistrationsByDeviceTagRequestBuilder) {
-    return NewItemWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

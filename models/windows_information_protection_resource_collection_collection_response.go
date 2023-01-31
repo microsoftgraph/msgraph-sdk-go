@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionResourceCollectionCollectionResponse 
 type WindowsInformationProtectionResourceCollectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsInformationProtectionResourceCollectionable
 }
 // NewWindowsInformationProtectionResourceCollectionCollectionResponse instantiates a new WindowsInformationProtectionResourceCollectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsInformationProtectionResourceCollectionCollectionResponse) GetFi
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsInformationProtectionResourceCollectionCollectionResponse) GetValue()([]WindowsInformationProtectionResourceCollectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsInformationProtectionResourceCollectionCollectionResponse) Seria
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsInformationProtectionResourceCollectionCollectionResponse) SetValue(value []WindowsInformationProtectionResourceCollectionable)() {
     m.value = value
 }

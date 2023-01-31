@@ -13,7 +13,7 @@ type ChatViewpoint struct {
     isHidden *bool
     // Represents the dateTime up until which the current user has read chatMessages in a specific chat.
     lastMessageReadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewChatViewpoint instantiates a new chatViewpoint and sets the default values.
@@ -74,7 +74,7 @@ func (m *ChatViewpoint) GetIsHidden()(*bool) {
 func (m *ChatViewpoint) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastMessageReadDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChatViewpoint) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *ChatViewpoint) SetIsHidden(value *bool)() {
 func (m *ChatViewpoint) SetLastMessageReadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastMessageReadDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChatViewpoint) SetOdataType(value *string)() {
     m.odataType = value
 }

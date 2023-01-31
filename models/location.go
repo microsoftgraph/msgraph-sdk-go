@@ -20,7 +20,7 @@ type Location struct {
     locationType *LocationType
     // Optional URI representing the location.
     locationUri *string
-    // The OdataType property
+    // 
     odataType *string
     // For internal use only.
     uniqueId *string
@@ -179,7 +179,7 @@ func (m *Location) GetLocationType()(*LocationType) {
 func (m *Location) GetLocationUri()(*string) {
     return m.locationUri
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Location) GetOdataType()(*string) {
     return m.odataType
 }
@@ -285,7 +285,7 @@ func (m *Location) SetLocationType(value *LocationType)() {
 func (m *Location) SetLocationUri(value *string)() {
     m.locationUri = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Location) SetOdataType(value *string)() {
     m.odataType = value
 }

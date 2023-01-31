@@ -7,7 +7,7 @@ import (
 // ApprovalCollectionResponse 
 type ApprovalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Approvalable
 }
 // NewApprovalCollectionResponse instantiates a new ApprovalCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ApprovalCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ApprovalCollectionResponse) GetValue()([]Approvalable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ApprovalCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ApprovalCollectionResponse) SetValue(value []Approvalable)() {
     m.value = value
 }

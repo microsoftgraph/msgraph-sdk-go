@@ -7,9 +7,9 @@ import (
 // IdentityUserFlow 
 type IdentityUserFlow struct {
     Entity
-    // The userFlowType property
+    // 
     userFlowType *UserFlowType
-    // The userFlowTypeVersion property
+    // 
     userFlowTypeVersion *float32
 }
 // NewIdentityUserFlow instantiates a new IdentityUserFlow and sets the default values.
@@ -66,11 +66,11 @@ func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetUserFlowType gets the userFlowType property value. The userFlowType property
+// GetUserFlowType gets the userFlowType property value. 
 func (m *IdentityUserFlow) GetUserFlowType()(*UserFlowType) {
     return m.userFlowType
 }
-// GetUserFlowTypeVersion gets the userFlowTypeVersion property value. The userFlowTypeVersion property
+// GetUserFlowTypeVersion gets the userFlowTypeVersion property value. 
 func (m *IdentityUserFlow) GetUserFlowTypeVersion()(*float32) {
     return m.userFlowTypeVersion
 }
@@ -95,11 +95,11 @@ func (m *IdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetUserFlowType sets the userFlowType property value. The userFlowType property
+// SetUserFlowType sets the userFlowType property value. 
 func (m *IdentityUserFlow) SetUserFlowType(value *UserFlowType)() {
     m.userFlowType = value
 }
-// SetUserFlowTypeVersion sets the userFlowTypeVersion property value. The userFlowTypeVersion property
+// SetUserFlowTypeVersion sets the userFlowTypeVersion property value. 
 func (m *IdentityUserFlow) SetUserFlowTypeVersion(value *float32)() {
     m.userFlowTypeVersion = value
 }

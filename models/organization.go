@@ -38,7 +38,7 @@ type Organization struct {
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
     onPremisesSyncEnabled *bool
-    // The partnerTenantType property
+    // The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
     partnerTenantType *PartnerTenantType
     // Postal code of the address for the organization.
     postalCode *string
@@ -48,9 +48,9 @@ type Organization struct {
     privacyProfile PrivacyProfileable
     // Not nullable.
     provisionedPlans []ProvisionedPlanable
-    // The securityComplianceNotificationMails property
+    // 
     securityComplianceNotificationMails []string
-    // The securityComplianceNotificationPhones property
+    // 
     securityComplianceNotificationPhones []string
     // State name of the address for the organization.
     state *string
@@ -58,7 +58,7 @@ type Organization struct {
     street *string
     // Not nullable.
     technicalNotificationMails []string
-    // The tenantType property
+    // Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
     tenantType *string
     // The collection of domains associated with this tenant. Not nullable.
     verifiedDomains []VerifiedDomainable
@@ -451,7 +451,7 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     return m.onPremisesSyncEnabled
 }
-// GetPartnerTenantType gets the partnerTenantType property value. The partnerTenantType property
+// GetPartnerTenantType gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
 func (m *Organization) GetPartnerTenantType()(*PartnerTenantType) {
     return m.partnerTenantType
 }
@@ -471,11 +471,11 @@ func (m *Organization) GetPrivacyProfile()(PrivacyProfileable) {
 func (m *Organization) GetProvisionedPlans()([]ProvisionedPlanable) {
     return m.provisionedPlans
 }
-// GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+// GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. 
 func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
     return m.securityComplianceNotificationMails
 }
-// GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+// GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. 
 func (m *Organization) GetSecurityComplianceNotificationPhones()([]string) {
     return m.securityComplianceNotificationPhones
 }
@@ -491,7 +491,7 @@ func (m *Organization) GetStreet()(*string) {
 func (m *Organization) GetTechnicalNotificationMails()([]string) {
     return m.technicalNotificationMails
 }
-// GetTenantType gets the tenantType property value. The tenantType property
+// GetTenantType gets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
 func (m *Organization) GetTenantType()(*string) {
     return m.tenantType
 }
@@ -751,7 +751,7 @@ func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987ab
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     m.onPremisesSyncEnabled = value
 }
-// SetPartnerTenantType sets the partnerTenantType property value. The partnerTenantType property
+// SetPartnerTenantType sets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
 func (m *Organization) SetPartnerTenantType(value *PartnerTenantType)() {
     m.partnerTenantType = value
 }
@@ -771,11 +771,11 @@ func (m *Organization) SetPrivacyProfile(value PrivacyProfileable)() {
 func (m *Organization) SetProvisionedPlans(value []ProvisionedPlanable)() {
     m.provisionedPlans = value
 }
-// SetSecurityComplianceNotificationMails sets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+// SetSecurityComplianceNotificationMails sets the securityComplianceNotificationMails property value. 
 func (m *Organization) SetSecurityComplianceNotificationMails(value []string)() {
     m.securityComplianceNotificationMails = value
 }
-// SetSecurityComplianceNotificationPhones sets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+// SetSecurityComplianceNotificationPhones sets the securityComplianceNotificationPhones property value. 
 func (m *Organization) SetSecurityComplianceNotificationPhones(value []string)() {
     m.securityComplianceNotificationPhones = value
 }
@@ -791,7 +791,7 @@ func (m *Organization) SetStreet(value *string)() {
 func (m *Organization) SetTechnicalNotificationMails(value []string)() {
     m.technicalNotificationMails = value
 }
-// SetTenantType sets the tenantType property value. The tenantType property
+// SetTenantType sets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
 func (m *Organization) SetTenantType(value *string)() {
     m.tenantType = value
 }

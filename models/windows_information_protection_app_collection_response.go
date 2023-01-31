@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionAppCollectionResponse 
 type WindowsInformationProtectionAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsInformationProtectionAppable
 }
 // NewWindowsInformationProtectionAppCollectionResponse instantiates a new WindowsInformationProtectionAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsInformationProtectionAppCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsInformationProtectionAppCollectionResponse) GetValue()([]WindowsInformationProtectionAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsInformationProtectionAppCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsInformationProtectionAppCollectionResponse) SetValue(value []WindowsInformationProtectionAppable)() {
     m.value = value
 }

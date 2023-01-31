@@ -19,7 +19,7 @@ type EducationSchool struct {
     externalId *string
     // ID of principal in syncing system.
     externalPrincipalId *string
-    // The fax property
+    // 
     fax *string
     // Highest grade taught.
     highestGrade *string
@@ -73,7 +73,7 @@ func (m *EducationSchool) GetExternalId()(*string) {
 func (m *EducationSchool) GetExternalPrincipalId()(*string) {
     return m.externalPrincipalId
 }
-// GetFax gets the fax property value. The fax property
+// GetFax gets the fax property value. 
 func (m *EducationSchool) GetFax()(*string) {
     return m.fax
 }
@@ -382,7 +382,7 @@ func (m *EducationSchool) SetExternalId(value *string)() {
 func (m *EducationSchool) SetExternalPrincipalId(value *string)() {
     m.externalPrincipalId = value
 }
-// SetFax sets the fax property value. The fax property
+// SetFax sets the fax property value. 
 func (m *EducationSchool) SetFax(value *string)() {
     m.fax = value
 }

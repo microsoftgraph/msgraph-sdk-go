@@ -7,7 +7,7 @@ import (
 // UserAttributeValuesItemCollectionResponse 
 type UserAttributeValuesItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserAttributeValuesItemable
 }
 // NewUserAttributeValuesItemCollectionResponse instantiates a new UserAttributeValuesItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserAttributeValuesItemCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserAttributeValuesItemCollectionResponse) GetValue()([]UserAttributeValuesItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserAttributeValuesItemCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserAttributeValuesItemCollectionResponse) SetValue(value []UserAttributeValuesItemable)() {
     m.value = value
 }

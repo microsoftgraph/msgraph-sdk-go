@@ -7,7 +7,7 @@ import (
 // AppleDeviceFeaturesConfigurationBaseCollectionResponse 
 type AppleDeviceFeaturesConfigurationBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AppleDeviceFeaturesConfigurationBaseable
 }
 // NewAppleDeviceFeaturesConfigurationBaseCollectionResponse instantiates a new AppleDeviceFeaturesConfigurationBaseCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) GetFieldDeseria
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) GetValue()([]AppleDeviceFeaturesConfigurationBaseable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) Serialize(write
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) SetValue(value []AppleDeviceFeaturesConfigurationBaseable)() {
     m.value = value
 }

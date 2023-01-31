@@ -38,13 +38,16 @@ type ItemConversationsConversationItemRequestBuilderGetRequestConfiguration stru
     QueryParameters *ItemConversationsConversationItemRequestBuilderGetQueryParameters
 }
 // NewItemConversationsConversationItemRequestBuilderInternal instantiates a new ConversationItemRequestBuilder and sets the default values.
-func NewItemConversationsConversationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsConversationItemRequestBuilder) {
+func NewItemConversationsConversationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conversationId *string)(*ItemConversationsConversationItemRequestBuilder) {
     m := &ItemConversationsConversationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if conversationId != nil {
+        urlTplParams["conversation%2Did"] = *conversationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -54,7 +57,7 @@ func NewItemConversationsConversationItemRequestBuilderInternal(pathParameters m
 func NewItemConversationsConversationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsConversationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property conversations for groups
 func (m *ItemConversationsConversationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(error) {

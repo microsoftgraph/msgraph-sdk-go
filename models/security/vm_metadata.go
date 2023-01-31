@@ -8,9 +8,9 @@ import (
 type VmMetadata struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The cloudProvider property
+    // 
     cloudProvider *VmCloudProvider
-    // The OdataType property
+    // 
     odataType *string
     // Unique identifier of the Azure resource.
     resourceId *string
@@ -34,7 +34,7 @@ func CreateVmMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 func (m *VmMetadata) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCloudProvider gets the cloudProvider property value. The cloudProvider property
+// GetCloudProvider gets the cloudProvider property value. 
 func (m *VmMetadata) GetCloudProvider()(*VmCloudProvider) {
     return m.cloudProvider
 }
@@ -93,7 +93,7 @@ func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *VmMetadata) GetOdataType()(*string) {
     return m.odataType
 }
@@ -154,11 +154,11 @@ func (m *VmMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 func (m *VmMetadata) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCloudProvider sets the cloudProvider property value. The cloudProvider property
+// SetCloudProvider sets the cloudProvider property value. 
 func (m *VmMetadata) SetCloudProvider(value *VmCloudProvider)() {
     m.cloudProvider = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *VmMetadata) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -16,7 +16,7 @@ type MeetingTimeSuggestion struct {
     locations []Locationable
     // A time period suggested for the meeting.
     meetingTimeSlot TimeSlotable
-    // The OdataType property
+    // 
     odataType *string
     // Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
     order *int32
@@ -149,7 +149,7 @@ func (m *MeetingTimeSuggestion) GetLocations()([]Locationable) {
 func (m *MeetingTimeSuggestion) GetMeetingTimeSlot()(TimeSlotable) {
     return m.meetingTimeSlot
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MeetingTimeSuggestion) GetOdataType()(*string) {
     return m.odataType
 }
@@ -252,7 +252,7 @@ func (m *MeetingTimeSuggestion) SetLocations(value []Locationable)() {
 func (m *MeetingTimeSuggestion) SetMeetingTimeSlot(value TimeSlotable)() {
     m.meetingTimeSlot = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MeetingTimeSuggestion) SetOdataType(value *string)() {
     m.odataType = value
 }

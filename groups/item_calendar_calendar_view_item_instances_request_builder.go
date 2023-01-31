@@ -63,10 +63,6 @@ func NewItemCalendarCalendarViewItemInstancesRequestBuilder(rawUrl string, reque
 func (m *ItemCalendarCalendarViewItemInstancesRequestBuilder) Count()(*ItemCalendarCalendarViewItemInstancesCountRequestBuilder) {
     return NewItemCalendarCalendarViewItemInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *ItemCalendarCalendarViewItemInstancesRequestBuilder) Delta()(*ItemCalendarCalendarViewItemInstancesDeltaRequestBuilder) {
-    return NewItemCalendarCalendarViewItemInstancesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
 // [Find more info here]
 // 
@@ -88,6 +84,10 @@ func (m *ItemCalendarCalendarViewItemInstancesRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemCalendarCalendarViewItemInstancesRequestBuilder) MicrosoftGraphDelta()(*ItemCalendarCalendarViewItemInstancesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemCalendarCalendarViewItemInstancesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
 func (m *ItemCalendarCalendarViewItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

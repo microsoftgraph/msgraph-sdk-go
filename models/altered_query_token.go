@@ -10,7 +10,7 @@ type AlteredQueryToken struct {
     additionalData map[string]any
     // Defines the length of a changed segment.
     length *int32
-    // The OdataType property
+    // 
     odataType *string
     // Defines the offset of a changed segment.
     offset *int32
@@ -81,7 +81,7 @@ func (m *AlteredQueryToken) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *AlteredQueryToken) GetLength()(*int32) {
     return m.length
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlteredQueryToken) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *AlteredQueryToken) SetAdditionalData(value map[string]any)() {
 func (m *AlteredQueryToken) SetLength(value *int32)() {
     m.length = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlteredQueryToken) SetOdataType(value *string)() {
     m.odataType = value
 }

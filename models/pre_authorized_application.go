@@ -12,7 +12,7 @@ type PreAuthorizedApplication struct {
     appId *string
     // The unique identifier for the oauth2PermissionScopes the application requires.
     delegatedPermissionIds []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPreAuthorizedApplication instantiates a new preAuthorizedApplication and sets the default values.
@@ -77,7 +77,7 @@ func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PreAuthorizedApplication) GetOdataType()(*string) {
     return m.odataType
 }
@@ -121,7 +121,7 @@ func (m *PreAuthorizedApplication) SetAppId(value *string)() {
 func (m *PreAuthorizedApplication) SetDelegatedPermissionIds(value []string)() {
     m.delegatedPermissionIds = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PreAuthorizedApplication) SetOdataType(value *string)() {
     m.odataType = value
 }

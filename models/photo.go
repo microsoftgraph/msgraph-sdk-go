@@ -23,7 +23,7 @@ type Photo struct {
     focalLength *float64
     // The ISO value from the camera. Read-only.
     iso *int32
-    // The OdataType property
+    // 
     odataType *string
     // The orientation value from the camera. Writable on OneDrive Personal.
     orientation *int32
@@ -178,7 +178,7 @@ func (m *Photo) GetFocalLength()(*float64) {
 func (m *Photo) GetIso()(*int32) {
     return m.iso
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Photo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -292,7 +292,7 @@ func (m *Photo) SetFocalLength(value *float64)() {
 func (m *Photo) SetIso(value *int32)() {
     m.iso = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Photo) SetOdataType(value *string)() {
     m.odataType = value
 }

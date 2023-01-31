@@ -17,7 +17,7 @@ type AttackSimulationSimulationUserCoverage struct {
     compromisedCount *int32
     // Date and time of the latest attack simulation and training campaign that the user was included in.
     latestSimulationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Number of attack simulation and training campaigns that the user was included in.
     simulationCount *int32
@@ -118,7 +118,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
 func (m *AttackSimulationSimulationUserCoverage) GetLatestSimulationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.latestSimulationDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AttackSimulationSimulationUserCoverage) GetOdataType()(*string) {
     return m.odataType
 }
@@ -192,7 +192,7 @@ func (m *AttackSimulationSimulationUserCoverage) SetCompromisedCount(value *int3
 func (m *AttackSimulationSimulationUserCoverage) SetLatestSimulationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.latestSimulationDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AttackSimulationSimulationUserCoverage) SetOdataType(value *string)() {
     m.odataType = value
 }

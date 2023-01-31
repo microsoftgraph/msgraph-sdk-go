@@ -7,7 +7,7 @@ import (
 // WebsiteCollectionResponse 
 type WebsiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Websiteable
 }
 // NewWebsiteCollectionResponse instantiates a new WebsiteCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WebsiteCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WebsiteCollectionResponse) GetValue()([]Websiteable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WebsiteCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WebsiteCollectionResponse) SetValue(value []Websiteable)() {
     m.value = value
 }

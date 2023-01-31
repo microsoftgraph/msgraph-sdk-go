@@ -7,7 +7,7 @@ import (
 // AccessReviewHistoryDefinitionCollectionResponse 
 type AccessReviewHistoryDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewHistoryDefinitionable
 }
 // NewAccessReviewHistoryDefinitionCollectionResponse instantiates a new AccessReviewHistoryDefinitionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewHistoryDefinitionCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewHistoryDefinitionCollectionResponse) GetValue()([]AccessReviewHistoryDefinitionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewHistoryDefinitionCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewHistoryDefinitionCollectionResponse) SetValue(value []AccessReviewHistoryDefinitionable)() {
     m.value = value
 }

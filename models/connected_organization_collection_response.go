@@ -7,7 +7,7 @@ import (
 // ConnectedOrganizationCollectionResponse 
 type ConnectedOrganizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ConnectedOrganizationable
 }
 // NewConnectedOrganizationCollectionResponse instantiates a new ConnectedOrganizationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ConnectedOrganizationCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ConnectedOrganizationCollectionResponse) GetValue()([]ConnectedOrganizationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ConnectedOrganizationCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ConnectedOrganizationCollectionResponse) SetValue(value []ConnectedOrganizationable)() {
     m.value = value
 }

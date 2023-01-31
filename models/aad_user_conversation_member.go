@@ -11,7 +11,7 @@ type AadUserConversationMember struct {
     email *string
     // TenantId which the Azure AD user belongs to.
     tenantId *string
-    // The user property
+    // 
     user Userable
     // The guid of the user.
     userId *string
@@ -82,7 +82,7 @@ func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878
 func (m *AadUserConversationMember) GetTenantId()(*string) {
     return m.tenantId
 }
-// GetUser gets the user property value. The user property
+// GetUser gets the user property value. 
 func (m *AadUserConversationMember) GetUser()(Userable) {
     return m.user
 }
@@ -130,7 +130,7 @@ func (m *AadUserConversationMember) SetEmail(value *string)() {
 func (m *AadUserConversationMember) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// SetUser sets the user property value. The user property
+// SetUser sets the user property value. 
 func (m *AadUserConversationMember) SetUser(value Userable)() {
     m.user = value
 }

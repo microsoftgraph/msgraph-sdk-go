@@ -7,7 +7,7 @@ import (
 // RedirectUriSettingsCollectionResponse 
 type RedirectUriSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RedirectUriSettingsable
 }
 // NewRedirectUriSettingsCollectionResponse instantiates a new RedirectUriSettingsCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RedirectUriSettingsCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RedirectUriSettingsCollectionResponse) GetValue()([]RedirectUriSettingsable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RedirectUriSettingsCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RedirectUriSettingsCollectionResponse) SetValue(value []RedirectUriSettingsable)() {
     m.value = value
 }

@@ -10,7 +10,7 @@ type Quota struct {
     additionalData map[string]any
     // Total space consumed by files in the recycle bin, in bytes. Read-only.
     deleted *int64
-    // The OdataType property
+    // 
     odataType *string
     // Total space remaining before reaching the quota limit, in bytes. Read-only.
     remaining *int64
@@ -117,7 +117,7 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Quota) GetOdataType()(*string) {
     return m.odataType
 }
@@ -201,7 +201,7 @@ func (m *Quota) SetAdditionalData(value map[string]any)() {
 func (m *Quota) SetDeleted(value *int64)() {
     m.deleted = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Quota) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -8,9 +8,9 @@ import (
 type LicenseProcessingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The state property
+    // 
     state *string
 }
 // NewLicenseProcessingState instantiates a new licenseProcessingState and sets the default values.
@@ -53,11 +53,11 @@ func (m *LicenseProcessingState) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LicenseProcessingState) GetOdataType()(*string) {
     return m.odataType
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *LicenseProcessingState) GetState()(*string) {
     return m.state
 }
@@ -87,11 +87,11 @@ func (m *LicenseProcessingState) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *LicenseProcessingState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LicenseProcessingState) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *LicenseProcessingState) SetState(value *string)() {
     m.state = value
 }

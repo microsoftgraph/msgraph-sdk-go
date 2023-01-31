@@ -7,7 +7,7 @@ import (
 // AgreementCollectionResponse 
 type AgreementCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Agreementable
 }
 // NewAgreementCollectionResponse instantiates a new AgreementCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AgreementCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AgreementCollectionResponse) GetValue()([]Agreementable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AgreementCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AgreementCollectionResponse) SetValue(value []Agreementable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // ConversationThreadCollectionResponse 
 type ConversationThreadCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ConversationThreadable
 }
 // NewConversationThreadCollectionResponse instantiates a new ConversationThreadCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ConversationThreadCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ConversationThreadCollectionResponse) GetValue()([]ConversationThreadable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ConversationThreadCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ConversationThreadCollectionResponse) SetValue(value []ConversationThreadable)() {
     m.value = value
 }

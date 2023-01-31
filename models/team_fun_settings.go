@@ -16,7 +16,7 @@ type TeamFunSettings struct {
     allowStickersAndMemes *bool
     // Giphy content rating. Possible values are: moderate, strict.
     giphyContentRating *GiphyRatingType
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewTeamFunSettings instantiates a new teamFunSettings and sets the default values.
@@ -105,7 +105,7 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *TeamFunSettings) GetGiphyContentRating()(*GiphyRatingType) {
     return m.giphyContentRating
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamFunSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -170,7 +170,7 @@ func (m *TeamFunSettings) SetAllowStickersAndMemes(value *bool)() {
 func (m *TeamFunSettings) SetGiphyContentRating(value *GiphyRatingType)() {
     m.giphyContentRating = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamFunSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

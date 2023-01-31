@@ -31,13 +31,16 @@ type ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPhotosProfilePhotoItemRequestBuilderGetQueryParameters
 }
 // NewItemPhotosProfilePhotoItemRequestBuilderInternal instantiates a new ProfilePhotoItemRequestBuilder and sets the default values.
-func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosProfilePhotoItemRequestBuilder) {
+func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, profilePhotoId *string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     m := &ItemPhotosProfilePhotoItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/photos/{profilePhoto%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if profilePhotoId != nil {
+        urlTplParams["profilePhoto%2Did"] = *profilePhotoId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -47,7 +50,7 @@ func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[stri
 func NewItemPhotosProfilePhotoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPhotosProfilePhotoItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPhotosProfilePhotoItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) Content()(*ItemPhotosItemValueContentRequestBuilder) {

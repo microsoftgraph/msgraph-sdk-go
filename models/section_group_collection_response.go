@@ -7,7 +7,7 @@ import (
 // SectionGroupCollectionResponse 
 type SectionGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SectionGroupable
 }
 // NewSectionGroupCollectionResponse instantiates a new SectionGroupCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SectionGroupCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SectionGroupCollectionResponse) GetValue()([]SectionGroupable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SectionGroupCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SectionGroupCollectionResponse) SetValue(value []SectionGroupable)() {
     m.value = value
 }

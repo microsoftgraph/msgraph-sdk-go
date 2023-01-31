@@ -17,7 +17,7 @@ type EducationClass struct {
     assignmentSettings EducationAssignmentSettingsable
     // Class code used by the school to identify the class.
     classCode *string
-    // The course property
+    // 
     course EducationCourseable
     // Entity who created the class
     createdBy IdentitySetable
@@ -79,7 +79,7 @@ func (m *EducationClass) GetAssignmentSettings()(EducationAssignmentSettingsable
 func (m *EducationClass) GetClassCode()(*string) {
     return m.classCode
 }
-// GetCourse gets the course property value. The course property
+// GetCourse gets the course property value. 
 func (m *EducationClass) GetCourse()(EducationCourseable) {
     return m.course
 }
@@ -533,7 +533,7 @@ func (m *EducationClass) SetAssignmentSettings(value EducationAssignmentSettings
 func (m *EducationClass) SetClassCode(value *string)() {
     m.classCode = value
 }
-// SetCourse sets the course property value. The course property
+// SetCourse sets the course property value. 
 func (m *EducationClass) SetCourse(value EducationCourseable)() {
     m.course = value
 }

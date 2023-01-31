@@ -7,7 +7,7 @@ import (
 // OfferShiftRequestCollectionResponse 
 type OfferShiftRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OfferShiftRequestable
 }
 // NewOfferShiftRequestCollectionResponse instantiates a new OfferShiftRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OfferShiftRequestCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OfferShiftRequestCollectionResponse) GetValue()([]OfferShiftRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OfferShiftRequestCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OfferShiftRequestCollectionResponse) SetValue(value []OfferShiftRequestable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // ContactFolderCollectionResponse 
 type ContactFolderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ContactFolderable
 }
 // NewContactFolderCollectionResponse instantiates a new ContactFolderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ContactFolderCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ContactFolderCollectionResponse) GetValue()([]ContactFolderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ContactFolderCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ContactFolderCollectionResponse) SetValue(value []ContactFolderable)() {
     m.value = value
 }

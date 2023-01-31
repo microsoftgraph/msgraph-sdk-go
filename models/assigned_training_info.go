@@ -14,7 +14,7 @@ type AssignedTrainingInfo struct {
     completedUserCount *int32
     // Display name of the training in an attack simulation and training campaign.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAssignedTrainingInfo instantiates a new assignedTrainingInfo and sets the default values.
@@ -89,7 +89,7 @@ func (m *AssignedTrainingInfo) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AssignedTrainingInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *AssignedTrainingInfo) SetCompletedUserCount(value *int32)() {
 func (m *AssignedTrainingInfo) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AssignedTrainingInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -14,7 +14,7 @@ type ChatMessagePolicyViolationPolicyTip struct {
     generalText *string
     // The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
     matchedConditionDescriptions []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewChatMessagePolicyViolationPolicyTip instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.
@@ -93,7 +93,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetGeneralText()(*string) {
 func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()([]string) {
     return m.matchedConditionDescriptions
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChatMessagePolicyViolationPolicyTip) GetOdataType()(*string) {
     return m.odataType
 }
@@ -147,7 +147,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) SetGeneralText(value *string)() {
 func (m *ChatMessagePolicyViolationPolicyTip) SetMatchedConditionDescriptions(value []string)() {
     m.matchedConditionDescriptions = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChatMessagePolicyViolationPolicyTip) SetOdataType(value *string)() {
     m.odataType = value
 }

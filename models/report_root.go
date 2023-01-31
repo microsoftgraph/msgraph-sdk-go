@@ -4,21 +4,21 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReportRoot the resource that represents an instance of Enrollment Failure Reports.
+// ReportRoot 
 type ReportRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The dailyPrintUsageByPrinter property
+    // 
     dailyPrintUsageByPrinter []PrintUsageByPrinterable
-    // The dailyPrintUsageByUser property
+    // 
     dailyPrintUsageByUser []PrintUsageByUserable
-    // The monthlyPrintUsageByPrinter property
+    // 
     monthlyPrintUsageByPrinter []PrintUsageByPrinterable
-    // The monthlyPrintUsageByUser property
+    // 
     monthlyPrintUsageByUser []PrintUsageByUserable
-    // The OdataType property
+    // 
     odataType *string
-    // The security property
+    // 
     security SecurityReportsRootable
 }
 // NewReportRoot instantiates a new ReportRoot and sets the default values.
@@ -36,11 +36,11 @@ func CreateReportRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 func (m *ReportRoot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. 
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     return m.dailyPrintUsageByPrinter
 }
-// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. 
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     return m.dailyPrintUsageByUser
 }
@@ -125,19 +125,19 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. 
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     return m.monthlyPrintUsageByPrinter
 }
-// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. 
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     return m.monthlyPrintUsageByUser
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ReportRoot) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSecurity gets the security property value. The security property
+// GetSecurity gets the security property value. 
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     return m.security
 }
@@ -207,27 +207,27 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 func (m *ReportRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     m.dailyPrintUsageByPrinter = value
 }
-// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. 
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
     m.dailyPrintUsageByUser = value
 }
-// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     m.monthlyPrintUsageByPrinter = value
 }
-// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
     m.monthlyPrintUsageByUser = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ReportRoot) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSecurity sets the security property value. The security property
+// SetSecurity sets the security property value. 
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     m.security = value
 }

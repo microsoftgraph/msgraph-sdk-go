@@ -7,7 +7,7 @@ import (
 // StringCollectionResponse 
 type StringCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []string
 }
 // NewStringCollectionResponse instantiates a new StringCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *StringCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *StringCollectionResponse) GetValue()([]string) {
     return m.value
 }
@@ -58,7 +58,7 @@ func (m *StringCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *StringCollectionResponse) SetValue(value []string)() {
     m.value = value
 }

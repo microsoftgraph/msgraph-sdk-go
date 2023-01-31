@@ -7,7 +7,7 @@ import (
 // PrintTaskDefinitionCollectionResponse 
 type PrintTaskDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PrintTaskDefinitionable
 }
 // NewPrintTaskDefinitionCollectionResponse instantiates a new PrintTaskDefinitionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PrintTaskDefinitionCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PrintTaskDefinitionCollectionResponse) GetValue()([]PrintTaskDefinitionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PrintTaskDefinitionCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PrintTaskDefinitionCollectionResponse) SetValue(value []PrintTaskDefinitionable)() {
     m.value = value
 }

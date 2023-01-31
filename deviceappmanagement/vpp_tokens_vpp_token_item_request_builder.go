@@ -47,13 +47,16 @@ type VppTokensVppTokenItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewVppTokensVppTokenItemRequestBuilderInternal instantiates a new VppTokenItemRequestBuilder and sets the default values.
-func NewVppTokensVppTokenItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VppTokensVppTokenItemRequestBuilder) {
+func NewVppTokensVppTokenItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, vppTokenId *string)(*VppTokensVppTokenItemRequestBuilder) {
     m := &VppTokensVppTokenItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if vppTokenId != nil {
+        urlTplParams["vppToken%2Did"] = *vppTokenId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewVppTokensVppTokenItemRequestBuilderInternal(pathParameters map[string]st
 func NewVppTokensVppTokenItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VppTokensVppTokenItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewVppTokensVppTokenItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVppTokensVppTokenItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property vppTokens for deviceAppManagement
 func (m *VppTokensVppTokenItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *VppTokensVppTokenItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable), nil
 }
+// MicrosoftGraphSyncLicenses provides operations to call the syncLicenses method.
+func (m *VppTokensVppTokenItemRequestBuilder) MicrosoftGraphSyncLicenses()(*VppTokensItemMicrosoftGraphSyncLicensesSyncLicensesRequestBuilder) {
+    return NewVppTokensItemMicrosoftGraphSyncLicensesSyncLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property vppTokens in deviceAppManagement
 func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, requestConfiguration *VppTokensVppTokenItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body ia
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable), nil
-}
-// SyncLicenses provides operations to call the syncLicenses method.
-func (m *VppTokensVppTokenItemRequestBuilder) SyncLicenses()(*VppTokensItemSyncLicensesRequestBuilder) {
-    return NewVppTokensItemSyncLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property vppTokens for deviceAppManagement
 func (m *VppTokensVppTokenItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *VppTokensVppTokenItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

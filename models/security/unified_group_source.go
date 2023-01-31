@@ -8,7 +8,7 @@ import (
 // UnifiedGroupSource 
 type UnifiedGroupSource struct {
     DataSource
-    // The group property
+    // 
     group iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable
     // Specifies which sources are included in this group. Possible values are: mailbox, site.
     includedSources *SourceType
@@ -51,7 +51,7 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetGroup gets the group property value. The group property
+// GetGroup gets the group property value. 
 func (m *UnifiedGroupSource) GetGroup()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable) {
     return m.group
 }
@@ -80,7 +80,7 @@ func (m *UnifiedGroupSource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetGroup sets the group property value. The group property
+// SetGroup sets the group property value. 
 func (m *UnifiedGroupSource) SetGroup(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)() {
     m.group = value
 }

@@ -7,7 +7,7 @@ import (
 // ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse 
 type ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedDeviceMobileAppConfigurationUserStatusable
 }
 // NewManagedDeviceMobileAppConfigurationUserStatusCollectionResponse instantiates a new ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) GetFie
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) GetValue()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) Serial
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) SetValue(value []ManagedDeviceMobileAppConfigurationUserStatusable)() {
     m.value = value
 }

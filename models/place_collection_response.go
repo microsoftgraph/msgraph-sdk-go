@@ -7,7 +7,7 @@ import (
 // PlaceCollectionResponse 
 type PlaceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Placeable
 }
 // NewPlaceCollectionResponse instantiates a new PlaceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PlaceCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PlaceCollectionResponse) GetValue()([]Placeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PlaceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PlaceCollectionResponse) SetValue(value []Placeable)() {
     m.value = value
 }

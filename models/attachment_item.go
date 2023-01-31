@@ -18,7 +18,7 @@ type AttachmentItem struct {
     isInline *bool
     // The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The length of the attachment in bytes. Required.
     size *int64
@@ -133,7 +133,7 @@ func (m *AttachmentItem) GetIsInline()(*bool) {
 func (m *AttachmentItem) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AttachmentItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -218,7 +218,7 @@ func (m *AttachmentItem) SetIsInline(value *bool)() {
 func (m *AttachmentItem) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AttachmentItem) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type WorkbookIcon struct {
     additionalData map[string]any
     // Represents the index of the icon in the given set.
     index *int32
-    // The OdataType property
+    // 
     odataType *string
     // Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
     set *string
@@ -69,7 +69,7 @@ func (m *WorkbookIcon) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *WorkbookIcon) GetIndex()(*int32) {
     return m.index
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WorkbookIcon) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *WorkbookIcon) SetAdditionalData(value map[string]any)() {
 func (m *WorkbookIcon) SetIndex(value *int32)() {
     m.index = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WorkbookIcon) SetOdataType(value *string)() {
     m.odataType = value
 }

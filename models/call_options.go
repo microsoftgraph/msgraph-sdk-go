@@ -12,7 +12,7 @@ type CallOptions struct {
     hideBotAfterEscalation *bool
     // Indicates whether content sharing notifications should be enabled for the call.
     isContentSharingNotificationEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCallOptions instantiates a new callOptions and sets the default values.
@@ -93,7 +93,7 @@ func (m *CallOptions) GetHideBotAfterEscalation()(*bool) {
 func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
     return m.isContentSharingNotificationEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CallOptions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -137,7 +137,7 @@ func (m *CallOptions) SetHideBotAfterEscalation(value *bool)() {
 func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
     m.isContentSharingNotificationEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CallOptions) SetOdataType(value *string)() {
     m.odataType = value
 }

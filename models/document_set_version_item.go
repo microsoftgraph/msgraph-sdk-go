@@ -10,7 +10,7 @@ type DocumentSetVersionItem struct {
     additionalData map[string]any
     // The unique identifier for the item.
     itemId *string
-    // The OdataType property
+    // 
     odataType *string
     // The title of the item.
     title *string
@@ -81,7 +81,7 @@ func (m *DocumentSetVersionItem) GetFieldDeserializers()(map[string]func(i878a80
 func (m *DocumentSetVersionItem) GetItemId()(*string) {
     return m.itemId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DocumentSetVersionItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *DocumentSetVersionItem) SetAdditionalData(value map[string]any)() {
 func (m *DocumentSetVersionItem) SetItemId(value *string)() {
     m.itemId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DocumentSetVersionItem) SetOdataType(value *string)() {
     m.odataType = value
 }

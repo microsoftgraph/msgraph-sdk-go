@@ -8,13 +8,13 @@ import (
 type Phone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The language property
+    // 
     language *string
     // The phone number.
     number *string
-    // The OdataType property
+    // 
     odataType *string
-    // The region property
+    // 
     region *string
     // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
     type_escaped *PhoneType
@@ -89,7 +89,7 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetLanguage gets the language property value. The language property
+// GetLanguage gets the language property value. 
 func (m *Phone) GetLanguage()(*string) {
     return m.language
 }
@@ -97,11 +97,11 @@ func (m *Phone) GetLanguage()(*string) {
 func (m *Phone) GetNumber()(*string) {
     return m.number
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Phone) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRegion gets the region property value. The region property
+// GetRegion gets the region property value. 
 func (m *Phone) GetRegion()(*string) {
     return m.region
 }
@@ -154,7 +154,7 @@ func (m *Phone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 func (m *Phone) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetLanguage sets the language property value. The language property
+// SetLanguage sets the language property value. 
 func (m *Phone) SetLanguage(value *string)() {
     m.language = value
 }
@@ -162,11 +162,11 @@ func (m *Phone) SetLanguage(value *string)() {
 func (m *Phone) SetNumber(value *string)() {
     m.number = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Phone) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRegion sets the region property value. The region property
+// SetRegion sets the region property value. 
 func (m *Phone) SetRegion(value *string)() {
     m.region = value
 }

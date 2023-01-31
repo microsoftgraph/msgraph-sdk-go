@@ -8,7 +8,7 @@ import (
 type SectionLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Opens the section in the OneNote native client if it's installed.
     oneNoteClientUrl ExternalLinkable
@@ -65,7 +65,7 @@ func (m *SectionLinks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SectionLinks) GetOdataType()(*string) {
     return m.odataType
 }
@@ -109,7 +109,7 @@ func (m *SectionLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 func (m *SectionLinks) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SectionLinks) SetOdataType(value *string)() {
     m.odataType = value
 }

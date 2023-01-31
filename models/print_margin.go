@@ -12,7 +12,7 @@ type PrintMargin struct {
     bottom *int32
     // The margin in microns from the left edge.
     left *int32
-    // The OdataType property
+    // 
     odataType *string
     // The margin in microns from the right edge.
     right *int32
@@ -97,7 +97,7 @@ func (m *PrintMargin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *PrintMargin) GetLeft()(*int32) {
     return m.left
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrintMargin) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *PrintMargin) SetBottom(value *int32)() {
 func (m *PrintMargin) SetLeft(value *int32)() {
     m.left = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrintMargin) SetOdataType(value *string)() {
     m.odataType = value
 }

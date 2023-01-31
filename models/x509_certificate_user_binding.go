@@ -8,7 +8,7 @@ import (
 type X509CertificateUserBinding struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
     priority *int32
@@ -77,7 +77,7 @@ func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *X509CertificateUserBinding) GetOdataType()(*string) {
     return m.odataType
 }
@@ -131,7 +131,7 @@ func (m *X509CertificateUserBinding) Serialize(writer i878a80d2330e89d26896388a3
 func (m *X509CertificateUserBinding) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *X509CertificateUserBinding) SetOdataType(value *string)() {
     m.odataType = value
 }

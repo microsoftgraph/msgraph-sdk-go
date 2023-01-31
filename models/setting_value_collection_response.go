@@ -7,7 +7,7 @@ import (
 // SettingValueCollectionResponse 
 type SettingValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SettingValueable
 }
 // NewSettingValueCollectionResponse instantiates a new SettingValueCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SettingValueCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SettingValueCollectionResponse) GetValue()([]SettingValueable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SettingValueCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SettingValueCollectionResponse) SetValue(value []SettingValueable)() {
     m.value = value
 }

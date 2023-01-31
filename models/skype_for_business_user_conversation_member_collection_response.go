@@ -7,7 +7,7 @@ import (
 // SkypeForBusinessUserConversationMemberCollectionResponse 
 type SkypeForBusinessUserConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SkypeForBusinessUserConversationMemberable
 }
 // NewSkypeForBusinessUserConversationMemberCollectionResponse instantiates a new SkypeForBusinessUserConversationMemberCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SkypeForBusinessUserConversationMemberCollectionResponse) GetFieldDeser
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SkypeForBusinessUserConversationMemberCollectionResponse) GetValue()([]SkypeForBusinessUserConversationMemberable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SkypeForBusinessUserConversationMemberCollectionResponse) Serialize(wri
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SkypeForBusinessUserConversationMemberCollectionResponse) SetValue(value []SkypeForBusinessUserConversationMemberable)() {
     m.value = value
 }

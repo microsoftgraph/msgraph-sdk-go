@@ -62,13 +62,16 @@ func (m *DriveItemRequestBuilder) BundlesById(id string)(*ItemBundlesDriveItemIt
     return NewItemBundlesDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
-func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemRequestBuilder) {
+func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveId *string)(*DriveItemRequestBuilder) {
     m := &DriveItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if driveId != nil {
+        urlTplParams["drive%2Did"] = *driveId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,9 +81,9 @@ func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, reques
 func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from drives by key (id)
+// Delete delete entity from drives
 func (m *DriveItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -152,7 +155,19 @@ func (m *DriveItemRequestBuilder) ItemsById(id string)(*ItemItemsDriveItemItemRe
 func (m *DriveItemRequestBuilder) List()(*ItemListRequestBuilder) {
     return NewItemListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update entity in drives by key (id)
+// MicrosoftGraphRecent provides operations to call the recent method.
+func (m *DriveItemRequestBuilder) MicrosoftGraphRecent()(*ItemMicrosoftGraphRecentRecentRequestBuilder) {
+    return NewItemMicrosoftGraphRecentRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSearchWithQ provides operations to call the search method.
+func (m *DriveItemRequestBuilder) MicrosoftGraphSearchWithQ(q *string)(*ItemMicrosoftGraphSearchWithQSearchWithQRequestBuilder) {
+    return NewItemMicrosoftGraphSearchWithQSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
+}
+// MicrosoftGraphSharedWithMe provides operations to call the sharedWithMe method.
+func (m *DriveItemRequestBuilder) MicrosoftGraphSharedWithMe()(*ItemMicrosoftGraphSharedWithMeSharedWithMeRequestBuilder) {
+    return NewItemMicrosoftGraphSharedWithMeSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Patch update entity in drives
 func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -171,21 +186,9 @@ func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable), nil
 }
-// Recent provides operations to call the recent method.
-func (m *DriveItemRequestBuilder) Recent()(*ItemRecentRequestBuilder) {
-    return NewItemRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Root provides operations to manage the root property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Root()(*ItemRootRequestBuilder) {
     return NewItemRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SearchWithQ provides operations to call the search method.
-func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*ItemSearchWithQRequestBuilder) {
-    return NewItemSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
-}
-// SharedWithMe provides operations to call the sharedWithMe method.
-func (m *DriveItemRequestBuilder) SharedWithMe()(*ItemSharedWithMeRequestBuilder) {
-    return NewItemSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Special provides operations to manage the special property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Special()(*ItemSpecialRequestBuilder) {
@@ -202,7 +205,7 @@ func (m *DriveItemRequestBuilder) SpecialById(id string)(*ItemSpecialDriveItemIt
     }
     return NewItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from drives by key (id)
+// ToDeleteRequestInformation delete entity from drives
 func (m *DriveItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -230,14 +233,17 @@ func (m *DriveItemRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in drives by key (id)
+// ToPatchRequestInformation update entity in drives
 func (m *DriveItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

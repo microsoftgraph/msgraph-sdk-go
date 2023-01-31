@@ -7,7 +7,7 @@ import (
 // X509CertificateRuleCollectionResponse 
 type X509CertificateRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []X509CertificateRuleable
 }
 // NewX509CertificateRuleCollectionResponse instantiates a new X509CertificateRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *X509CertificateRuleCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *X509CertificateRuleCollectionResponse) GetValue()([]X509CertificateRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *X509CertificateRuleCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *X509CertificateRuleCollectionResponse) SetValue(value []X509CertificateRuleable)() {
     m.value = value
 }

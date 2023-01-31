@@ -20,7 +20,7 @@ type ConditionalAccessUsers struct {
     includeRoles []string
     // User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
     includeUsers []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessUsers instantiates a new conditionalAccessUsers and sets the default values.
@@ -161,7 +161,7 @@ func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
 func (m *ConditionalAccessUsers) GetIncludeUsers()([]string) {
     return m.includeUsers
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessUsers) GetOdataType()(*string) {
     return m.odataType
 }
@@ -245,7 +245,7 @@ func (m *ConditionalAccessUsers) SetIncludeRoles(value []string)() {
 func (m *ConditionalAccessUsers) SetIncludeUsers(value []string)() {
     m.includeUsers = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessUsers) SetOdataType(value *string)() {
     m.odataType = value
 }

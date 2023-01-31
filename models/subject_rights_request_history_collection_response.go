@@ -7,7 +7,7 @@ import (
 // SubjectRightsRequestHistoryCollectionResponse 
 type SubjectRightsRequestHistoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SubjectRightsRequestHistoryable
 }
 // NewSubjectRightsRequestHistoryCollectionResponse instantiates a new SubjectRightsRequestHistoryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SubjectRightsRequestHistoryCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SubjectRightsRequestHistoryCollectionResponse) GetValue()([]SubjectRightsRequestHistoryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SubjectRightsRequestHistoryCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SubjectRightsRequestHistoryCollectionResponse) SetValue(value []SubjectRightsRequestHistoryable)() {
     m.value = value
 }

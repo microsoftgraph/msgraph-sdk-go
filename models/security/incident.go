@@ -31,9 +31,9 @@ type Incident struct {
     lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
     redirectIncidentId *string
-    // The severity property
+    // 
     severity *AlertSeverity
-    // The status property
+    // 
     status *IncidentStatus
     // The Azure Active Directory tenant in which the alert was created.
     tenantId *string
@@ -250,11 +250,11 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 func (m *Incident) GetRedirectIncidentId()(*string) {
     return m.redirectIncidentId
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. 
 func (m *Incident) GetSeverity()(*AlertSeverity) {
     return m.severity
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *Incident) GetStatus()(*IncidentStatus) {
     return m.status
 }
@@ -410,11 +410,11 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
 func (m *Incident) SetRedirectIncidentId(value *string)() {
     m.redirectIncidentId = value
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. 
 func (m *Incident) SetSeverity(value *AlertSeverity)() {
     m.severity = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *Incident) SetStatus(value *IncidentStatus)() {
     m.status = value
 }

@@ -7,7 +7,7 @@ import (
 // WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse 
 type WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsDefenderAdvancedThreatProtectionConfigurationable
 }
 // NewWindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse instantiates a new WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse)
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse) GetValue()([]WindowsDefenderAdvancedThreatProtectionConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse)
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsDefenderAdvancedThreatProtectionConfigurationCollectionResponse) SetValue(value []WindowsDefenderAdvancedThreatProtectionConfigurationable)() {
     m.value = value
 }

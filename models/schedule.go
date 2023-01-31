@@ -9,13 +9,13 @@ type Schedule struct {
     Entity
     // Indicates whether the schedule is enabled for the team. Required.
     enabled *bool
-    // The offerShiftRequests property
+    // 
     offerShiftRequests []OfferShiftRequestable
     // Indicates whether offer shift requests are enabled for the schedule.
     offerShiftRequestsEnabled *bool
-    // The openShiftChangeRequests property
+    // 
     openShiftChangeRequests []OpenShiftChangeRequestable
-    // The openShifts property
+    // 
     openShifts []OpenShiftable
     // Indicates whether open shifts are enabled for the schedule.
     openShiftsEnabled *bool
@@ -27,7 +27,7 @@ type Schedule struct {
     schedulingGroups []SchedulingGroupable
     // The shifts in the schedule.
     shifts []Shiftable
-    // The swapShiftsChangeRequests property
+    // 
     swapShiftsChangeRequests []SwapShiftsChangeRequestable
     // Indicates whether swap shifts requests are enabled for the schedule.
     swapShiftsRequestsEnabled *bool
@@ -35,7 +35,7 @@ type Schedule struct {
     timeClockEnabled *bool
     // The set of reasons for a time off in the schedule.
     timeOffReasons []TimeOffReasonable
-    // The timeOffRequests property
+    // 
     timeOffRequests []TimeOffRequestable
     // Indicates whether time off requests are enabled for the schedule.
     timeOffRequestsEnabled *bool
@@ -43,7 +43,7 @@ type Schedule struct {
     timesOff []TimeOffable
     // Indicates the time zone of the schedule team using tz database format. Required.
     timeZone *string
-    // The workforceIntegrationIds property
+    // 
     workforceIntegrationIds []string
 }
 // NewSchedule instantiates a new schedule and sets the default values.
@@ -296,7 +296,7 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOfferShiftRequests gets the offerShiftRequests property value. The offerShiftRequests property
+// GetOfferShiftRequests gets the offerShiftRequests property value. 
 func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
     return m.offerShiftRequests
 }
@@ -304,11 +304,11 @@ func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
 func (m *Schedule) GetOfferShiftRequestsEnabled()(*bool) {
     return m.offerShiftRequestsEnabled
 }
-// GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. The openShiftChangeRequests property
+// GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. 
 func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable) {
     return m.openShiftChangeRequests
 }
-// GetOpenShifts gets the openShifts property value. The openShifts property
+// GetOpenShifts gets the openShifts property value. 
 func (m *Schedule) GetOpenShifts()([]OpenShiftable) {
     return m.openShifts
 }
@@ -332,7 +332,7 @@ func (m *Schedule) GetSchedulingGroups()([]SchedulingGroupable) {
 func (m *Schedule) GetShifts()([]Shiftable) {
     return m.shifts
 }
-// GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+// GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. 
 func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable) {
     return m.swapShiftsChangeRequests
 }
@@ -348,7 +348,7 @@ func (m *Schedule) GetTimeClockEnabled()(*bool) {
 func (m *Schedule) GetTimeOffReasons()([]TimeOffReasonable) {
     return m.timeOffReasons
 }
-// GetTimeOffRequests gets the timeOffRequests property value. The timeOffRequests property
+// GetTimeOffRequests gets the timeOffRequests property value. 
 func (m *Schedule) GetTimeOffRequests()([]TimeOffRequestable) {
     return m.timeOffRequests
 }
@@ -364,7 +364,7 @@ func (m *Schedule) GetTimesOff()([]TimeOffable) {
 func (m *Schedule) GetTimeZone()(*string) {
     return m.timeZone
 }
-// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. 
 func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
     return m.workforceIntegrationIds
 }
@@ -518,7 +518,7 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *Schedule) SetEnabled(value *bool)() {
     m.enabled = value
 }
-// SetOfferShiftRequests sets the offerShiftRequests property value. The offerShiftRequests property
+// SetOfferShiftRequests sets the offerShiftRequests property value. 
 func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
     m.offerShiftRequests = value
 }
@@ -526,11 +526,11 @@ func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
 func (m *Schedule) SetOfferShiftRequestsEnabled(value *bool)() {
     m.offerShiftRequestsEnabled = value
 }
-// SetOpenShiftChangeRequests sets the openShiftChangeRequests property value. The openShiftChangeRequests property
+// SetOpenShiftChangeRequests sets the openShiftChangeRequests property value. 
 func (m *Schedule) SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)() {
     m.openShiftChangeRequests = value
 }
-// SetOpenShifts sets the openShifts property value. The openShifts property
+// SetOpenShifts sets the openShifts property value. 
 func (m *Schedule) SetOpenShifts(value []OpenShiftable)() {
     m.openShifts = value
 }
@@ -554,7 +554,7 @@ func (m *Schedule) SetSchedulingGroups(value []SchedulingGroupable)() {
 func (m *Schedule) SetShifts(value []Shiftable)() {
     m.shifts = value
 }
-// SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+// SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. 
 func (m *Schedule) SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequestable)() {
     m.swapShiftsChangeRequests = value
 }
@@ -570,7 +570,7 @@ func (m *Schedule) SetTimeClockEnabled(value *bool)() {
 func (m *Schedule) SetTimeOffReasons(value []TimeOffReasonable)() {
     m.timeOffReasons = value
 }
-// SetTimeOffRequests sets the timeOffRequests property value. The timeOffRequests property
+// SetTimeOffRequests sets the timeOffRequests property value. 
 func (m *Schedule) SetTimeOffRequests(value []TimeOffRequestable)() {
     m.timeOffRequests = value
 }
@@ -586,7 +586,7 @@ func (m *Schedule) SetTimesOff(value []TimeOffable)() {
 func (m *Schedule) SetTimeZone(value *string)() {
     m.timeZone = value
 }
-// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. 
 func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
     m.workforceIntegrationIds = value
 }

@@ -14,9 +14,9 @@ type ServiceUpdateMessage struct {
     attachments []ServiceAnnouncementAttachmentable
     // The zip file that contains all attachments for a message.
     attachmentsArchive []byte
-    // The body property
+    // 
     body ItemBodyable
-    // The category property
+    // 
     category *ServiceUpdateCategory
     // Indicates whether the message has any attachment.
     hasAttachments *bool
@@ -24,7 +24,7 @@ type ServiceUpdateMessage struct {
     isMajorChange *bool
     // The affected services by the service message.
     services []string
-    // The severity property
+    // 
     severity *ServiceUpdateSeverity
     // A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
     tags []string
@@ -56,11 +56,11 @@ func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachmenta
 func (m *ServiceUpdateMessage) GetAttachmentsArchive()([]byte) {
     return m.attachmentsArchive
 }
-// GetBody gets the body property value. The body property
+// GetBody gets the body property value. 
 func (m *ServiceUpdateMessage) GetBody()(ItemBodyable) {
     return m.body
 }
-// GetCategory gets the category property value. The category property
+// GetCategory gets the category property value. 
 func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
     return m.category
 }
@@ -203,7 +203,7 @@ func (m *ServiceUpdateMessage) GetIsMajorChange()(*bool) {
 func (m *ServiceUpdateMessage) GetServices()([]string) {
     return m.services
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. 
 func (m *ServiceUpdateMessage) GetSeverity()(*ServiceUpdateSeverity) {
     return m.severity
 }
@@ -307,11 +307,11 @@ func (m *ServiceUpdateMessage) SetAttachments(value []ServiceAnnouncementAttachm
 func (m *ServiceUpdateMessage) SetAttachmentsArchive(value []byte)() {
     m.attachmentsArchive = value
 }
-// SetBody sets the body property value. The body property
+// SetBody sets the body property value. 
 func (m *ServiceUpdateMessage) SetBody(value ItemBodyable)() {
     m.body = value
 }
-// SetCategory sets the category property value. The category property
+// SetCategory sets the category property value. 
 func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
     m.category = value
 }
@@ -327,7 +327,7 @@ func (m *ServiceUpdateMessage) SetIsMajorChange(value *bool)() {
 func (m *ServiceUpdateMessage) SetServices(value []string)() {
     m.services = value
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. 
 func (m *ServiceUpdateMessage) SetSeverity(value *ServiceUpdateSeverity)() {
     m.severity = value
 }

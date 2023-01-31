@@ -10,7 +10,7 @@ type Configuration struct {
     additionalData map[string]any
     // A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
     authorizedAppIds []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConfiguration instantiates a new configuration and sets the default values.
@@ -61,7 +61,7 @@ func (m *Configuration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Configuration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -95,7 +95,7 @@ func (m *Configuration) SetAdditionalData(value map[string]any)() {
 func (m *Configuration) SetAuthorizedAppIds(value []string)() {
     m.authorizedAppIds = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Configuration) SetOdataType(value *string)() {
     m.odataType = value
 }

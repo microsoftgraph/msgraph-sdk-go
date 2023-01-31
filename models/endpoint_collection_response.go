@@ -7,7 +7,7 @@ import (
 // EndpointCollectionResponse 
 type EndpointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Endpointable
 }
 // NewEndpointCollectionResponse instantiates a new EndpointCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EndpointCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EndpointCollectionResponse) GetValue()([]Endpointable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EndpointCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EndpointCollectionResponse) SetValue(value []Endpointable)() {
     m.value = value
 }

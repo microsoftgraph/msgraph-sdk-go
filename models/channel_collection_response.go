@@ -7,7 +7,7 @@ import (
 // ChannelCollectionResponse 
 type ChannelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Channelable
 }
 // NewChannelCollectionResponse instantiates a new ChannelCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChannelCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChannelCollectionResponse) GetValue()([]Channelable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChannelCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChannelCollectionResponse) SetValue(value []Channelable)() {
     m.value = value
 }

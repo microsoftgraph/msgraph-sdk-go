@@ -8,13 +8,13 @@ import (
 type AlertDetection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The detectionType property
+    // 
     detectionType *string
-    // The method property
+    // 
     method *string
-    // The name property
+    // 
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAlertDetection instantiates a new alertDetection and sets the default values.
@@ -32,7 +32,7 @@ func CreateAlertDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 func (m *AlertDetection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDetectionType gets the detectionType property value. The detectionType property
+// GetDetectionType gets the detectionType property value. 
 func (m *AlertDetection) GetDetectionType()(*string) {
     return m.detectionType
 }
@@ -81,15 +81,15 @@ func (m *AlertDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetMethod gets the method property value. The method property
+// GetMethod gets the method property value. 
 func (m *AlertDetection) GetMethod()(*string) {
     return m.method
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. 
 func (m *AlertDetection) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlertDetection) GetOdataType()(*string) {
     return m.odataType
 }
@@ -131,19 +131,19 @@ func (m *AlertDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *AlertDetection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDetectionType sets the detectionType property value. The detectionType property
+// SetDetectionType sets the detectionType property value. 
 func (m *AlertDetection) SetDetectionType(value *string)() {
     m.detectionType = value
 }
-// SetMethod sets the method property value. The method property
+// SetMethod sets the method property value. 
 func (m *AlertDetection) SetMethod(value *string)() {
     m.method = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. 
 func (m *AlertDetection) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlertDetection) SetOdataType(value *string)() {
     m.odataType = value
 }

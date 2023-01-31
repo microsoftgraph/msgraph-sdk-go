@@ -24,7 +24,7 @@ type MessageRuleActions struct {
     markImportance *Importance
     // The ID of the folder that a message will be moved to.
     moveToFolder *string
-    // The OdataType property
+    // 
     odataType *string
     // Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
     permanentDelete *bool
@@ -221,7 +221,7 @@ func (m *MessageRuleActions) GetMarkImportance()(*Importance) {
 func (m *MessageRuleActions) GetMoveToFolder()(*string) {
     return m.moveToFolder
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MessageRuleActions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -368,7 +368,7 @@ func (m *MessageRuleActions) SetMarkImportance(value *Importance)() {
 func (m *MessageRuleActions) SetMoveToFolder(value *string)() {
     m.moveToFolder = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MessageRuleActions) SetOdataType(value *string)() {
     m.odataType = value
 }

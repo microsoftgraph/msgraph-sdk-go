@@ -7,7 +7,7 @@ import (
 // UserFlowLanguageConfigurationCollectionResponse 
 type UserFlowLanguageConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserFlowLanguageConfigurationable
 }
 // NewUserFlowLanguageConfigurationCollectionResponse instantiates a new UserFlowLanguageConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserFlowLanguageConfigurationCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserFlowLanguageConfigurationCollectionResponse) GetValue()([]UserFlowLanguageConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserFlowLanguageConfigurationCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserFlowLanguageConfigurationCollectionResponse) SetValue(value []UserFlowLanguageConfigurationable)() {
     m.value = value
 }

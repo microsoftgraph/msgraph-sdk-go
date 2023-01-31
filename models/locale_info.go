@@ -12,7 +12,7 @@ type LocaleInfo struct {
     displayName *string
     // A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
     locale *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewLocaleInfo instantiates a new localeInfo and sets the default values.
@@ -73,7 +73,7 @@ func (m *LocaleInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 func (m *LocaleInfo) GetLocale()(*string) {
     return m.locale
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LocaleInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *LocaleInfo) SetDisplayName(value *string)() {
 func (m *LocaleInfo) SetLocale(value *string)() {
     m.locale = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LocaleInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

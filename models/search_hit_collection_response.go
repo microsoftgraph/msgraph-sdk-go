@@ -7,7 +7,7 @@ import (
 // SearchHitCollectionResponse 
 type SearchHitCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SearchHitable
 }
 // NewSearchHitCollectionResponse instantiates a new SearchHitCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SearchHitCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SearchHitCollectionResponse) GetValue()([]SearchHitable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SearchHitCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SearchHitCollectionResponse) SetValue(value []SearchHitable)() {
     m.value = value
 }

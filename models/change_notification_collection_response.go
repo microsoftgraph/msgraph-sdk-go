@@ -7,7 +7,7 @@ import (
 // ChangeNotificationCollectionResponse 
 type ChangeNotificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ChangeNotificationable
 }
 // NewChangeNotificationCollectionResponse instantiates a new ChangeNotificationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChangeNotificationCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChangeNotificationCollectionResponse) GetValue()([]ChangeNotificationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChangeNotificationCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChangeNotificationCollectionResponse) SetValue(value []ChangeNotificationable)() {
     m.value = value
 }

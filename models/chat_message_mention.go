@@ -14,7 +14,7 @@ type ChatMessageMention struct {
     mentioned ChatMessageMentionedIdentitySetable
     // String used to represent the mention. For example, a user's display name, a team name.
     mentionText *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewChatMessageMention instantiates a new chatMessageMention and sets the default values.
@@ -89,7 +89,7 @@ func (m *ChatMessageMention) GetMentioned()(ChatMessageMentionedIdentitySetable)
 func (m *ChatMessageMention) GetMentionText()(*string) {
     return m.mentionText
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChatMessageMention) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *ChatMessageMention) SetMentioned(value ChatMessageMentionedIdentitySeta
 func (m *ChatMessageMention) SetMentionText(value *string)() {
     m.mentionText = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChatMessageMention) SetOdataType(value *string)() {
     m.odataType = value
 }

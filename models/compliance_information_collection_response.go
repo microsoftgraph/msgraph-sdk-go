@@ -7,7 +7,7 @@ import (
 // ComplianceInformationCollectionResponse 
 type ComplianceInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ComplianceInformationable
 }
 // NewComplianceInformationCollectionResponse instantiates a new ComplianceInformationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ComplianceInformationCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ComplianceInformationCollectionResponse) GetValue()([]ComplianceInformationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ComplianceInformationCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ComplianceInformationCollectionResponse) SetValue(value []ComplianceInformationable)() {
     m.value = value
 }

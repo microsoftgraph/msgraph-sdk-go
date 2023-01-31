@@ -10,7 +10,7 @@ type ChatMessage struct {
     Entity
     // References to attached objects like files, tabs, meetings etc.
     attachments []ChatMessageAttachmentable
-    // The body property
+    // 
     body ItemBodyable
     // If the message was sent in a channel, represents identity of the channel.
     channelIdentity ChannelIdentityable
@@ -28,7 +28,7 @@ type ChatMessage struct {
     from ChatMessageFromIdentitySetable
     // Content in a message hosted by Microsoft Teams - for example, images or code snippets.
     hostedContents []ChatMessageHostedContentable
-    // The importance property
+    // 
     importance *ChatMessageImportance
     // Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
     lastEditedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -38,7 +38,7 @@ type ChatMessage struct {
     locale *string
     // List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
     mentions []ChatMessageMentionable
-    // The messageType property
+    // 
     messageType *ChatMessageType
     // Defines the properties of a policy violation set by a data loss prevention (DLP) application.
     policyViolation ChatMessagePolicyViolationable
@@ -70,7 +70,7 @@ func CreateChatMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *ChatMessage) GetAttachments()([]ChatMessageAttachmentable) {
     return m.attachments
 }
-// GetBody gets the body property value. The body property
+// GetBody gets the body property value. 
 func (m *ChatMessage) GetBody()(ItemBodyable) {
     return m.body
 }
@@ -361,7 +361,7 @@ func (m *ChatMessage) GetFrom()(ChatMessageFromIdentitySetable) {
 func (m *ChatMessage) GetHostedContents()([]ChatMessageHostedContentable) {
     return m.hostedContents
 }
-// GetImportance gets the importance property value. The importance property
+// GetImportance gets the importance property value. 
 func (m *ChatMessage) GetImportance()(*ChatMessageImportance) {
     return m.importance
 }
@@ -381,7 +381,7 @@ func (m *ChatMessage) GetLocale()(*string) {
 func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     return m.mentions
 }
-// GetMessageType gets the messageType property value. The messageType property
+// GetMessageType gets the messageType property value. 
 func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
     return m.messageType
 }
@@ -585,7 +585,7 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *ChatMessage) SetAttachments(value []ChatMessageAttachmentable)() {
     m.attachments = value
 }
-// SetBody sets the body property value. The body property
+// SetBody sets the body property value. 
 func (m *ChatMessage) SetBody(value ItemBodyable)() {
     m.body = value
 }
@@ -621,7 +621,7 @@ func (m *ChatMessage) SetFrom(value ChatMessageFromIdentitySetable)() {
 func (m *ChatMessage) SetHostedContents(value []ChatMessageHostedContentable)() {
     m.hostedContents = value
 }
-// SetImportance sets the importance property value. The importance property
+// SetImportance sets the importance property value. 
 func (m *ChatMessage) SetImportance(value *ChatMessageImportance)() {
     m.importance = value
 }
@@ -641,7 +641,7 @@ func (m *ChatMessage) SetLocale(value *string)() {
 func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
     m.mentions = value
 }
-// SetMessageType sets the messageType property value. The messageType property
+// SetMessageType sets the messageType property value. 
 func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {
     m.messageType = value
 }

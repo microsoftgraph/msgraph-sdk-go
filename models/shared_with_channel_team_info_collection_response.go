@@ -7,7 +7,7 @@ import (
 // SharedWithChannelTeamInfoCollectionResponse 
 type SharedWithChannelTeamInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SharedWithChannelTeamInfoable
 }
 // NewSharedWithChannelTeamInfoCollectionResponse instantiates a new SharedWithChannelTeamInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SharedWithChannelTeamInfoCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SharedWithChannelTeamInfoCollectionResponse) GetValue()([]SharedWithChannelTeamInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SharedWithChannelTeamInfoCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SharedWithChannelTeamInfoCollectionResponse) SetValue(value []SharedWithChannelTeamInfoable)() {
     m.value = value
 }

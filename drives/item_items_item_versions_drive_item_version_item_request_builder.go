@@ -47,13 +47,16 @@ type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal instantiates a new DriveItemVersionItemRequestBuilder and sets the default values.
-func NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
+func NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveItemVersionId *string)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
     m := &ItemItemsItemVersionsDriveItemVersionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/versions/{driveItemVersion%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if driveItemVersionId != nil {
+        urlTplParams["driveItemVersion%2Did"] = *driveItemVersionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(pathPara
 func NewItemItemsItemVersionsDriveItemVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Content()(*ItemItemsItemVersionsItemContentRequestBuilder) {
@@ -104,6 +107,10 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemVersionable), nil
 }
+// MicrosoftGraphRestoreVersion provides operations to call the restoreVersion method.
+func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) MicrosoftGraphRestoreVersion()(*ItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRestoreVersionRequestBuilder) {
+    return NewItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property versions in drives
 func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemVersionable, requestConfiguration *ItemItemsItemVersionsDriveItemVersionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,10 +129,6 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Patch(ctx cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemVersionable), nil
-}
-// RestoreVersion provides operations to call the restoreVersion method.
-func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) RestoreVersion()(*ItemItemsItemVersionsItemRestoreVersionRequestBuilder) {
-    return NewItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property versions for drives
 func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemVersionsDriveItemVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

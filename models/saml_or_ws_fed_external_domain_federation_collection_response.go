@@ -7,7 +7,7 @@ import (
 // SamlOrWsFedExternalDomainFederationCollectionResponse 
 type SamlOrWsFedExternalDomainFederationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SamlOrWsFedExternalDomainFederationable
 }
 // NewSamlOrWsFedExternalDomainFederationCollectionResponse instantiates a new SamlOrWsFedExternalDomainFederationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) GetFieldDeserial
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) GetValue()([]SamlOrWsFedExternalDomainFederationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) Serialize(writer
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) SetValue(value []SamlOrWsFedExternalDomainFederationable)() {
     m.value = value
 }

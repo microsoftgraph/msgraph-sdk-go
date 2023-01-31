@@ -7,7 +7,7 @@ import (
 // TeamsTemplateCollectionResponse 
 type TeamsTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TeamsTemplateable
 }
 // NewTeamsTemplateCollectionResponse instantiates a new TeamsTemplateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TeamsTemplateCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TeamsTemplateCollectionResponse) GetValue()([]TeamsTemplateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TeamsTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TeamsTemplateCollectionResponse) SetValue(value []TeamsTemplateable)() {
     m.value = value
 }

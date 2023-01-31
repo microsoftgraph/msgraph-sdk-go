@@ -8,7 +8,7 @@ import (
 type IosMinimumOperatingSystem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
     v10_0 *bool
@@ -137,7 +137,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -241,7 +241,7 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *IosMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }

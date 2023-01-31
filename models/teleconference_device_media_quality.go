@@ -44,7 +44,7 @@ type TeleconferenceDeviceMediaQuality struct {
     mediaDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The network link speed in bytes
     networkLinkSpeedInBytes *int64
-    // The OdataType property
+    // 
     odataType *string
     // The total number of the outbound packets.
     outboundPackets *int64
@@ -387,7 +387,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetMediaDuration()(*i878a80d2330e89d2
 func (m *TeleconferenceDeviceMediaQuality) GetNetworkLinkSpeedInBytes()(*int64) {
     return m.networkLinkSpeedInBytes
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeleconferenceDeviceMediaQuality) GetOdataType()(*string) {
     return m.odataType
 }
@@ -621,7 +621,7 @@ func (m *TeleconferenceDeviceMediaQuality) SetMediaDuration(value *i878a80d2330e
 func (m *TeleconferenceDeviceMediaQuality) SetNetworkLinkSpeedInBytes(value *int64)() {
     m.networkLinkSpeedInBytes = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeleconferenceDeviceMediaQuality) SetOdataType(value *string)() {
     m.odataType = value
 }

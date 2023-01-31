@@ -22,9 +22,9 @@ type Property struct {
     labels []Label
     // The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
     name *string
-    // The OdataType property
+    // 
     odataType *string
-    // The type property
+    // 
     type_escaped *PropertyType
 }
 // NewProperty instantiates a new property and sets the default values.
@@ -173,11 +173,11 @@ func (m *Property) GetLabels()([]Label) {
 func (m *Property) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Property) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *Property) GetType()(*PropertyType) {
     return m.type_escaped
 }
@@ -278,11 +278,11 @@ func (m *Property) SetLabels(value []Label)() {
 func (m *Property) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Property) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *Property) SetType(value *PropertyType)() {
     m.type_escaped = value
 }

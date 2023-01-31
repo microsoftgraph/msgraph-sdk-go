@@ -22,7 +22,7 @@ type PrinterDefaults struct {
     finishings []PrintFinishing
     // The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
     fitPdfToPage *bool
-    // The inputBin property
+    // 
     inputBin *string
     // The default media (such as paper) color to print the document on.
     mediaColor *string
@@ -32,7 +32,7 @@ type PrinterDefaults struct {
     mediaType *string
     // The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
     multipageLayout *PrintMultipageLayout
-    // The OdataType property
+    // 
     odataType *string
     // The default orientation to use when printing the document. Valid values are described in the following table.
     orientation *PrintOrientation
@@ -277,7 +277,7 @@ func (m *PrinterDefaults) GetFinishings()([]PrintFinishing) {
 func (m *PrinterDefaults) GetFitPdfToPage()(*bool) {
     return m.fitPdfToPage
 }
-// GetInputBin gets the inputBin property value. The inputBin property
+// GetInputBin gets the inputBin property value. 
 func (m *PrinterDefaults) GetInputBin()(*string) {
     return m.inputBin
 }
@@ -297,7 +297,7 @@ func (m *PrinterDefaults) GetMediaType()(*string) {
 func (m *PrinterDefaults) GetMultipageLayout()(*PrintMultipageLayout) {
     return m.multipageLayout
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrinterDefaults) GetOdataType()(*string) {
     return m.odataType
 }
@@ -477,7 +477,7 @@ func (m *PrinterDefaults) SetFinishings(value []PrintFinishing)() {
 func (m *PrinterDefaults) SetFitPdfToPage(value *bool)() {
     m.fitPdfToPage = value
 }
-// SetInputBin sets the inputBin property value. The inputBin property
+// SetInputBin sets the inputBin property value. 
 func (m *PrinterDefaults) SetInputBin(value *string)() {
     m.inputBin = value
 }
@@ -497,7 +497,7 @@ func (m *PrinterDefaults) SetMediaType(value *string)() {
 func (m *PrinterDefaults) SetMultipageLayout(value *PrintMultipageLayout)() {
     m.multipageLayout = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrinterDefaults) SetOdataType(value *string)() {
     m.odataType = value
 }

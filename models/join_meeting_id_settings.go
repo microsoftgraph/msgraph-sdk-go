@@ -12,7 +12,7 @@ type JoinMeetingIdSettings struct {
     isPasscodeRequired *bool
     // The meeting ID to be used to join a meeting. Optional. Read-only.
     joinMeetingId *string
-    // The OdataType property
+    // 
     odataType *string
     // The passcode to join a meeting.  Optional. Read-only.
     passcode *string
@@ -85,7 +85,7 @@ func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
 func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
     return m.joinMeetingId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *JoinMeetingIdSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *JoinMeetingIdSettings) SetIsPasscodeRequired(value *bool)() {
 func (m *JoinMeetingIdSettings) SetJoinMeetingId(value *string)() {
     m.joinMeetingId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *JoinMeetingIdSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

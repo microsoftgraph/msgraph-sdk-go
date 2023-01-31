@@ -12,7 +12,7 @@ type RgbColor struct {
     b *byte
     // Green value
     g *byte
-    // The OdataType property
+    // 
     odataType *string
     // Red value
     r *byte
@@ -85,7 +85,7 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 func (m *RgbColor) GetG()(*byte) {
     return m.g
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RgbColor) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *RgbColor) SetB(value *byte)() {
 func (m *RgbColor) SetG(value *byte)() {
     m.g = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RgbColor) SetOdataType(value *string)() {
     m.odataType = value
 }

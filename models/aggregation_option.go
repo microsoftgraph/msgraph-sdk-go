@@ -8,11 +8,11 @@ import (
 type AggregationOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The bucketDefinition property
+    // 
     bucketDefinition BucketAggregationDefinitionable
     // Computes aggregation on the field while the field exists in current entity type. Required.
     field *string
-    // The OdataType property
+    // 
     odataType *string
     // The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
     size *int32
@@ -32,7 +32,7 @@ func CreateAggregationOptionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *AggregationOption) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetBucketDefinition gets the bucketDefinition property value. The bucketDefinition property
+// GetBucketDefinition gets the bucketDefinition property value. 
 func (m *AggregationOption) GetBucketDefinition()(BucketAggregationDefinitionable) {
     return m.bucketDefinition
 }
@@ -85,7 +85,7 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AggregationOption) GetOdataType()(*string) {
     return m.odataType
 }
@@ -131,7 +131,7 @@ func (m *AggregationOption) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *AggregationOption) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetBucketDefinition sets the bucketDefinition property value. The bucketDefinition property
+// SetBucketDefinition sets the bucketDefinition property value. 
 func (m *AggregationOption) SetBucketDefinition(value BucketAggregationDefinitionable)() {
     m.bucketDefinition = value
 }
@@ -139,7 +139,7 @@ func (m *AggregationOption) SetBucketDefinition(value BucketAggregationDefinitio
 func (m *AggregationOption) SetField(value *string)() {
     m.field = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AggregationOption) SetOdataType(value *string)() {
     m.odataType = value
 }

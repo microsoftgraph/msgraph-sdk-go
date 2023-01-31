@@ -8,7 +8,7 @@ import (
 type Properties struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewProperties instantiates a new properties and sets the default values.
@@ -41,7 +41,7 @@ func (m *Properties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Properties) GetOdataType()(*string) {
     return m.odataType
 }
@@ -65,7 +65,7 @@ func (m *Properties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 func (m *Properties) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Properties) SetOdataType(value *string)() {
     m.odataType = value
 }

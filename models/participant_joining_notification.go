@@ -7,7 +7,7 @@ import (
 // ParticipantJoiningNotification 
 type ParticipantJoiningNotification struct {
     Entity
-    // The call property
+    // 
     call Callable
 }
 // NewParticipantJoiningNotification instantiates a new ParticipantJoiningNotification and sets the default values.
@@ -21,7 +21,7 @@ func NewParticipantJoiningNotification()(*ParticipantJoiningNotification) {
 func CreateParticipantJoiningNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewParticipantJoiningNotification(), nil
 }
-// GetCall gets the call property value. The call property
+// GetCall gets the call property value. 
 func (m *ParticipantJoiningNotification) GetCall()(Callable) {
     return m.call
 }
@@ -54,7 +54,7 @@ func (m *ParticipantJoiningNotification) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetCall sets the call property value. The call property
+// SetCall sets the call property value. 
 func (m *ParticipantJoiningNotification) SetCall(value Callable)() {
     m.call = value
 }

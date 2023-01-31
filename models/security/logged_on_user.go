@@ -12,7 +12,7 @@ type LoggedOnUser struct {
     additionalData map[string]any
     // User account domain of the logged-on user.
     domainName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewLoggedOnUser instantiates a new loggedOnUser and sets the default values.
@@ -73,7 +73,7 @@ func (m *LoggedOnUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LoggedOnUser) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *LoggedOnUser) SetAdditionalData(value map[string]any)() {
 func (m *LoggedOnUser) SetDomainName(value *string)() {
     m.domainName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LoggedOnUser) SetOdataType(value *string)() {
     m.odataType = value
 }

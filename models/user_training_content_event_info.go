@@ -15,7 +15,7 @@ type UserTrainingContentEventInfo struct {
     contentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // IP address of the user for the training event.
     ipAddress *string
-    // The OdataType property
+    // 
     odataType *string
     // The operating system, platform, and device details of the user for the training event.
     osPlatformDeviceDetails *string
@@ -114,7 +114,7 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
 func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
     return m.ipAddress
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserTrainingContentEventInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -188,7 +188,7 @@ func (m *UserTrainingContentEventInfo) SetContentDateTime(value *i336074805fc853
 func (m *UserTrainingContentEventInfo) SetIpAddress(value *string)() {
     m.ipAddress = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserTrainingContentEventInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

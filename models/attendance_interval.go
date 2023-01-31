@@ -15,7 +15,7 @@ type AttendanceInterval struct {
     joinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time the attendee left in UTC.
     leaveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAttendanceInterval instantiates a new attendanceInterval and sets the default values.
@@ -90,7 +90,7 @@ func (m *AttendanceInterval) GetJoinDateTime()(*i336074805fc853987abe6f7fe3ad97a
 func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.leaveDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AttendanceInterval) GetOdataType()(*string) {
     return m.odataType
 }
@@ -144,7 +144,7 @@ func (m *AttendanceInterval) SetJoinDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *AttendanceInterval) SetLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.leaveDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AttendanceInterval) SetOdataType(value *string)() {
     m.odataType = value
 }

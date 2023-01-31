@@ -7,7 +7,7 @@ import (
 // ActivityBasedTimeoutPolicyCollectionResponse 
 type ActivityBasedTimeoutPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ActivityBasedTimeoutPolicyable
 }
 // NewActivityBasedTimeoutPolicyCollectionResponse instantiates a new ActivityBasedTimeoutPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ActivityBasedTimeoutPolicyCollectionResponse) GetValue()([]ActivityBasedTimeoutPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ActivityBasedTimeoutPolicyCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ActivityBasedTimeoutPolicyCollectionResponse) SetValue(value []ActivityBasedTimeoutPolicyable)() {
     m.value = value
 }

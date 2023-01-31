@@ -7,7 +7,7 @@ import (
 // MeetingAttendanceReportCollectionResponse 
 type MeetingAttendanceReportCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MeetingAttendanceReportable
 }
 // NewMeetingAttendanceReportCollectionResponse instantiates a new MeetingAttendanceReportCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MeetingAttendanceReportCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MeetingAttendanceReportCollectionResponse) GetValue()([]MeetingAttendanceReportable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MeetingAttendanceReportCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MeetingAttendanceReportCollectionResponse) SetValue(value []MeetingAttendanceReportable)() {
     m.value = value
 }

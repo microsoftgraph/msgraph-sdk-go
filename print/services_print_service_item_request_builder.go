@@ -47,13 +47,16 @@ type ServicesPrintServiceItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewServicesPrintServiceItemRequestBuilderInternal instantiates a new PrintServiceItemRequestBuilder and sets the default values.
-func NewServicesPrintServiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicesPrintServiceItemRequestBuilder) {
+func NewServicesPrintServiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printServiceId *string)(*ServicesPrintServiceItemRequestBuilder) {
     m := &ServicesPrintServiceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/services/{printService%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if printServiceId != nil {
+        urlTplParams["printService%2Did"] = *printServiceId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewServicesPrintServiceItemRequestBuilderInternal(pathParameters map[string
 func NewServicesPrintServiceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicesPrintServiceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewServicesPrintServiceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewServicesPrintServiceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property services for print
 func (m *ServicesPrintServiceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServicesPrintServiceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +172,10 @@ func (m *ServicesPrintServiceItemRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

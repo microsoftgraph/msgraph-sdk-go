@@ -7,7 +7,7 @@ import (
 // AppRoleCollectionResponse 
 type AppRoleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AppRoleable
 }
 // NewAppRoleCollectionResponse instantiates a new AppRoleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AppRoleCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AppRoleCollectionResponse) GetValue()([]AppRoleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AppRoleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AppRoleCollectionResponse) SetValue(value []AppRoleable)() {
     m.value = value
 }

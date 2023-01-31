@@ -8,11 +8,11 @@ import (
 type ResourcePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The type property
+    // 
     type_escaped *string
-    // The value property
+    // 
     value *string
 }
 // NewResourcePermission instantiates a new resourcePermission and sets the default values.
@@ -65,15 +65,15 @@ func (m *ResourcePermission) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResourcePermission) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *ResourcePermission) GetType()(*string) {
     return m.type_escaped
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ResourcePermission) GetValue()(*string) {
     return m.value
 }
@@ -109,15 +109,15 @@ func (m *ResourcePermission) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *ResourcePermission) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResourcePermission) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *ResourcePermission) SetType(value *string)() {
     m.type_escaped = value
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ResourcePermission) SetValue(value *string)() {
     m.value = value
 }

@@ -12,7 +12,7 @@ type OperationError struct {
     code *string
     // Operation error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewOperationError instantiates a new operationError and sets the default values.
@@ -73,7 +73,7 @@ func (m *OperationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *OperationError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OperationError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *OperationError) SetCode(value *string)() {
 func (m *OperationError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OperationError) SetOdataType(value *string)() {
     m.odataType = value
 }

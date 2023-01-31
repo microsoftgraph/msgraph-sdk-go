@@ -12,7 +12,7 @@ type TeamSummary struct {
     guestsCount *int32
     // Count of members in a team.
     membersCount *int32
-    // The OdataType property
+    // 
     odataType *string
     // Count of owners in a team.
     ownersCount *int32
@@ -85,7 +85,7 @@ func (m *TeamSummary) GetGuestsCount()(*int32) {
 func (m *TeamSummary) GetMembersCount()(*int32) {
     return m.membersCount
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamSummary) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *TeamSummary) SetGuestsCount(value *int32)() {
 func (m *TeamSummary) SetMembersCount(value *int32)() {
     m.membersCount = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamSummary) SetOdataType(value *string)() {
     m.odataType = value
 }

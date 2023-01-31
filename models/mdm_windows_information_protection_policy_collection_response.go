@@ -7,7 +7,7 @@ import (
 // MdmWindowsInformationProtectionPolicyCollectionResponse 
 type MdmWindowsInformationProtectionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MdmWindowsInformationProtectionPolicyable
 }
 // NewMdmWindowsInformationProtectionPolicyCollectionResponse instantiates a new MdmWindowsInformationProtectionPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetFieldDeseri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetValue()([]MdmWindowsInformationProtectionPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) Serialize(writ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) SetValue(value []MdmWindowsInformationProtectionPolicyable)() {
     m.value = value
 }

@@ -19,9 +19,9 @@ type Site struct {
     drive Driveable
     // The collection of drives (document libraries) under this site.
     drives []Driveable
-    // The error property
+    // 
     error PublicErrorable
-    // The externalColumns property
+    // 
     externalColumns []ColumnDefinitionable
     // Used to address any item contained in this site. This collection can't be enumerated.
     items []BaseItemable
@@ -42,7 +42,7 @@ type Site struct {
     // The collection of the sub-sites under this site.
     sites []Siteable
 }
-// NewSite instantiates a new Site and sets the default values.
+// NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
@@ -79,11 +79,11 @@ func (m *Site) GetDrive()(Driveable) {
 func (m *Site) GetDrives()([]Driveable) {
     return m.drives
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. 
 func (m *Site) GetError()(PublicErrorable) {
     return m.error
 }
-// GetExternalColumns gets the externalColumns property value. The externalColumns property
+// GetExternalColumns gets the externalColumns property value. 
 func (m *Site) GetExternalColumns()([]ColumnDefinitionable) {
     return m.externalColumns
 }
@@ -504,11 +504,11 @@ func (m *Site) SetDrive(value Driveable)() {
 func (m *Site) SetDrives(value []Driveable)() {
     m.drives = value
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. 
 func (m *Site) SetError(value PublicErrorable)() {
     m.error = value
 }
-// SetExternalColumns sets the externalColumns property value. The externalColumns property
+// SetExternalColumns sets the externalColumns property value. 
 func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
     m.externalColumns = value
 }

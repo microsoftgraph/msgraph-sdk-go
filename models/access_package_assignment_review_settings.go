@@ -20,7 +20,7 @@ type AccessPackageAssignmentReviewSettings struct {
     isReviewerJustificationRequired *bool
     // Specifies whether the principals can review their own assignments.
     isSelfReview *bool
-    // The OdataType property
+    // 
     odataType *string
     // This collection specifies the users or group of users who will review the access package assignments.
     primaryReviewers []SubjectSetable
@@ -169,7 +169,7 @@ func (m *AccessPackageAssignmentReviewSettings) GetIsReviewerJustificationRequir
 func (m *AccessPackageAssignmentReviewSettings) GetIsSelfReview()(*bool) {
     return m.isSelfReview
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessPackageAssignmentReviewSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -282,7 +282,7 @@ func (m *AccessPackageAssignmentReviewSettings) SetIsReviewerJustificationRequir
 func (m *AccessPackageAssignmentReviewSettings) SetIsSelfReview(value *bool)() {
     m.isSelfReview = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessPackageAssignmentReviewSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

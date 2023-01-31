@@ -7,7 +7,7 @@ import (
 // IpRangeCollectionResponse 
 type IpRangeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IpRangeable
 }
 // NewIpRangeCollectionResponse instantiates a new IpRangeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IpRangeCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IpRangeCollectionResponse) GetValue()([]IpRangeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IpRangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IpRangeCollectionResponse) SetValue(value []IpRangeable)() {
     m.value = value
 }

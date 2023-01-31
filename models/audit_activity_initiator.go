@@ -10,7 +10,7 @@ type AuditActivityInitiator struct {
     additionalData map[string]any
     // If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
     app AppIdentityable
-    // The OdataType property
+    // 
     odataType *string
     // If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
     user UserIdentityable
@@ -69,7 +69,7 @@ func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuditActivityInitiator) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *AuditActivityInitiator) SetAdditionalData(value map[string]any)() {
 func (m *AuditActivityInitiator) SetApp(value AppIdentityable)() {
     m.app = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuditActivityInitiator) SetOdataType(value *string)() {
     m.odataType = value
 }

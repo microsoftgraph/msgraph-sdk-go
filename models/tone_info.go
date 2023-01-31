@@ -8,11 +8,11 @@ import (
 type ToneInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // An incremental identifier used for ordering DTMF events.
     sequenceId *int64
-    // The tone property
+    // 
     tone *Tone
 }
 // NewToneInfo instantiates a new toneInfo and sets the default values.
@@ -65,7 +65,7 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ToneInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -73,7 +73,7 @@ func (m *ToneInfo) GetOdataType()(*string) {
 func (m *ToneInfo) GetSequenceId()(*int64) {
     return m.sequenceId
 }
-// GetTone gets the tone property value. The tone property
+// GetTone gets the tone property value. 
 func (m *ToneInfo) GetTone()(*Tone) {
     return m.tone
 }
@@ -110,7 +110,7 @@ func (m *ToneInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *ToneInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ToneInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -118,7 +118,7 @@ func (m *ToneInfo) SetOdataType(value *string)() {
 func (m *ToneInfo) SetSequenceId(value *int64)() {
     m.sequenceId = value
 }
-// SetTone sets the tone property value. The tone property
+// SetTone sets the tone property value. 
 func (m *ToneInfo) SetTone(value *Tone)() {
     m.tone = value
 }

@@ -10,9 +10,9 @@ type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The grantedTo property
+    // 
     grantedTo IdentitySetable
-    // The grantedToIdentities property
+    // 
     grantedToIdentities []IdentitySetable
     // For link type permissions, the details of the users to whom permission was granted. Read-only.
     grantedToIdentitiesV2 []SharePointIdentitySetable
@@ -173,11 +173,11 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetGrantedTo gets the grantedTo property value. The grantedTo property
+// GetGrantedTo gets the grantedTo property value. 
 func (m *Permission) GetGrantedTo()(IdentitySetable) {
     return m.grantedTo
 }
-// GetGrantedToIdentities gets the grantedToIdentities property value. The grantedToIdentities property
+// GetGrantedToIdentities gets the grantedToIdentities property value. 
 func (m *Permission) GetGrantedToIdentities()([]IdentitySetable) {
     return m.grantedToIdentities
 }
@@ -299,11 +299,11 @@ func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 func (m *Permission) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// SetGrantedTo sets the grantedTo property value. The grantedTo property
+// SetGrantedTo sets the grantedTo property value. 
 func (m *Permission) SetGrantedTo(value IdentitySetable)() {
     m.grantedTo = value
 }
-// SetGrantedToIdentities sets the grantedToIdentities property value. The grantedToIdentities property
+// SetGrantedToIdentities sets the grantedToIdentities property value. 
 func (m *Permission) SetGrantedToIdentities(value []IdentitySetable)() {
     m.grantedToIdentities = value
 }

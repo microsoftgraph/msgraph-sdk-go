@@ -74,10 +74,6 @@ func NewClassesItemAssignmentCategoriesRequestBuilder(rawUrl string, requestAdap
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Count()(*ClassesItemAssignmentCategoriesCountRequestBuilder) {
     return NewClassesItemAssignmentCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *ClassesItemAssignmentCategoriesRequestBuilder) Delta()(*ClassesItemAssignmentCategoriesDeltaRequestBuilder) {
-    return NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get retrieve a list of educationCategory objects. Only teachers can perform this operation.
 // [Find more info here]
 // 
@@ -99,6 +95,10 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ClassesItemAssignmentCategoriesRequestBuilder) MicrosoftGraphDelta()(*ClassesItemAssignmentCategoriesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewClassesItemAssignmentCategoriesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post creates a new educationCategory on an educationClass. Only teachers can perform this operation.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) ToPostRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

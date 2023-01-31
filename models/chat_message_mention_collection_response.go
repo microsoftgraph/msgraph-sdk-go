@@ -7,7 +7,7 @@ import (
 // ChatMessageMentionCollectionResponse 
 type ChatMessageMentionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ChatMessageMentionable
 }
 // NewChatMessageMentionCollectionResponse instantiates a new ChatMessageMentionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChatMessageMentionCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChatMessageMentionCollectionResponse) GetValue()([]ChatMessageMentionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChatMessageMentionCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChatMessageMentionCollectionResponse) SetValue(value []ChatMessageMentionable)() {
     m.value = value
 }

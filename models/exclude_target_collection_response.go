@@ -7,7 +7,7 @@ import (
 // ExcludeTargetCollectionResponse 
 type ExcludeTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ExcludeTargetable
 }
 // NewExcludeTargetCollectionResponse instantiates a new ExcludeTargetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ExcludeTargetCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ExcludeTargetCollectionResponse) GetValue()([]ExcludeTargetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ExcludeTargetCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ExcludeTargetCollectionResponse) SetValue(value []ExcludeTargetable)() {
     m.value = value
 }

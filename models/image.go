@@ -10,7 +10,7 @@ type Image struct {
     additionalData map[string]any
     // Optional. Height of the image, in pixels. Read-only.
     height *int32
-    // The OdataType property
+    // 
     odataType *string
     // Optional. Width of the image, in pixels. Read-only.
     width *int32
@@ -69,7 +69,7 @@ func (m *Image) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 func (m *Image) GetHeight()(*int32) {
     return m.height
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Image) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *Image) SetAdditionalData(value map[string]any)() {
 func (m *Image) SetHeight(value *int32)() {
     m.height = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Image) SetOdataType(value *string)() {
     m.odataType = value
 }

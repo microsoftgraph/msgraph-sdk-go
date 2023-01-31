@@ -12,7 +12,7 @@ type EmployeeOrgData struct {
     costCenter *string
     // The name of the division in which the user works. Returned only on $select. Supports $filter.
     division *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEmployeeOrgData instantiates a new employeeOrgData and sets the default values.
@@ -73,7 +73,7 @@ func (m *EmployeeOrgData) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EmployeeOrgData) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *EmployeeOrgData) SetCostCenter(value *string)() {
 func (m *EmployeeOrgData) SetDivision(value *string)() {
     m.division = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EmployeeOrgData) SetOdataType(value *string)() {
     m.odataType = value
 }

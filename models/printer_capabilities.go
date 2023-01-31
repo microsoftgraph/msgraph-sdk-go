@@ -42,7 +42,7 @@ type PrinterCapabilities struct {
     mediaTypes []string
     // The presentation directions supported by the printer. Supported values are described in the following table.
     multipageLayouts []PrintMultipageLayout
-    // The OdataType property
+    // 
     odataType *string
     // The print orientations supported by the printer. Valid values are described in the following table.
     orientations []PrintOrientation
@@ -489,7 +489,7 @@ func (m *PrinterCapabilities) GetMediaTypes()([]string) {
 func (m *PrinterCapabilities) GetMultipageLayouts()([]PrintMultipageLayout) {
     return m.multipageLayouts
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrinterCapabilities) GetOdataType()(*string) {
     return m.odataType
 }
@@ -763,7 +763,7 @@ func (m *PrinterCapabilities) SetMediaTypes(value []string)() {
 func (m *PrinterCapabilities) SetMultipageLayouts(value []PrintMultipageLayout)() {
     m.multipageLayouts = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrinterCapabilities) SetOdataType(value *string)() {
     m.odataType = value
 }

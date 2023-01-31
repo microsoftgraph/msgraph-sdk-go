@@ -7,7 +7,7 @@ import (
 // WorkbookRangeViewCollectionResponse 
 type WorkbookRangeViewCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookRangeViewable
 }
 // NewWorkbookRangeViewCollectionResponse instantiates a new WorkbookRangeViewCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookRangeViewCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookRangeViewCollectionResponse) GetValue()([]WorkbookRangeViewable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookRangeViewCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookRangeViewCollectionResponse) SetValue(value []WorkbookRangeViewable)() {
     m.value = value
 }

@@ -14,7 +14,7 @@ type DataSubject struct {
     firstName *string
     // Last Name of the data subject.
     lastName *string
-    // The OdataType property
+    // 
     odataType *string
     // The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
     residency *string
@@ -101,7 +101,7 @@ func (m *DataSubject) GetFirstName()(*string) {
 func (m *DataSubject) GetLastName()(*string) {
     return m.lastName
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DataSubject) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *DataSubject) SetFirstName(value *string)() {
 func (m *DataSubject) SetLastName(value *string)() {
     m.lastName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DataSubject) SetOdataType(value *string)() {
     m.odataType = value
 }

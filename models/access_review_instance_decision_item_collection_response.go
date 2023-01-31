@@ -7,7 +7,7 @@ import (
 // AccessReviewInstanceDecisionItemCollectionResponse 
 type AccessReviewInstanceDecisionItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewInstanceDecisionItemable
 }
 // NewAccessReviewInstanceDecisionItemCollectionResponse instantiates a new AccessReviewInstanceDecisionItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewInstanceDecisionItemCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewInstanceDecisionItemCollectionResponse) GetValue()([]AccessReviewInstanceDecisionItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewInstanceDecisionItemCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewInstanceDecisionItemCollectionResponse) SetValue(value []AccessReviewInstanceDecisionItemable)() {
     m.value = value
 }

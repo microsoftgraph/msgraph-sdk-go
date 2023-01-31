@@ -12,11 +12,11 @@ type AuthenticationMethodsRegistrationCampaign struct {
     excludeTargets []ExcludeTargetable
     // Users and groups of users that are prompted to set up the authentication method.
     includeTargets []AuthenticationMethodsRegistrationCampaignIncludeTargetable
-    // The OdataType property
+    // 
     odataType *string
     // Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
     snoozeDurationInDays *int32
-    // The state property
+    // 
     state *AdvancedConfigState
 }
 // NewAuthenticationMethodsRegistrationCampaign instantiates a new authenticationMethodsRegistrationCampaign and sets the default values.
@@ -105,7 +105,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
 func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable) {
     return m.includeTargets
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
 func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
     return m.snoozeDurationInDays
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigState) {
     return m.state
 }
@@ -178,7 +178,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []Ex
 func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)() {
     m.includeTargets = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuthenticationMethodsRegistrationCampaign) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -186,7 +186,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetOdataType(value *string)(
 func (m *AuthenticationMethodsRegistrationCampaign) SetSnoozeDurationInDays(value *int32)() {
     m.snoozeDurationInDays = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *AuthenticationMethodsRegistrationCampaign) SetState(value *AdvancedConfigState)() {
     m.state = value
 }

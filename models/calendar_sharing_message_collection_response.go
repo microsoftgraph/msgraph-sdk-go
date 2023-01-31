@@ -7,7 +7,7 @@ import (
 // CalendarSharingMessageCollectionResponse 
 type CalendarSharingMessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CalendarSharingMessageable
 }
 // NewCalendarSharingMessageCollectionResponse instantiates a new CalendarSharingMessageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CalendarSharingMessageCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CalendarSharingMessageCollectionResponse) GetValue()([]CalendarSharingMessageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CalendarSharingMessageCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CalendarSharingMessageCollectionResponse) SetValue(value []CalendarSharingMessageable)() {
     m.value = value
 }

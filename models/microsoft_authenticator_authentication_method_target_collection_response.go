@@ -7,7 +7,7 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse 
 type MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MicrosoftAuthenticatorAuthenticationMethodTargetable
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse instantiates a new MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) Get
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) GetValue()([]MicrosoftAuthenticatorAuthenticationMethodTargetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) Ser
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) SetValue(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)() {
     m.value = value
 }

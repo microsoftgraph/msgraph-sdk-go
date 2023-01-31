@@ -7,7 +7,7 @@ import (
 // UserConsentRequestCollectionResponse 
 type UserConsentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserConsentRequestable
 }
 // NewUserConsentRequestCollectionResponse instantiates a new UserConsentRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserConsentRequestCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserConsentRequestCollectionResponse) GetValue()([]UserConsentRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserConsentRequestCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserConsentRequestCollectionResponse) SetValue(value []UserConsentRequestable)() {
     m.value = value
 }

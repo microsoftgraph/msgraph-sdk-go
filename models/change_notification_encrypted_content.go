@@ -18,7 +18,7 @@ type ChangeNotificationEncryptedContent struct {
     encryptionCertificateId *string
     // Hexadecimal representation of the thumbprint of the certificate used to encrypt the dataKey.
     encryptionCertificateThumbprint *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewChangeNotificationEncryptedContent instantiates a new changeNotificationEncryptedContent and sets the default values.
@@ -121,7 +121,7 @@ func (m *ChangeNotificationEncryptedContent) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChangeNotificationEncryptedContent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -195,7 +195,7 @@ func (m *ChangeNotificationEncryptedContent) SetEncryptionCertificateId(value *s
 func (m *ChangeNotificationEncryptedContent) SetEncryptionCertificateThumbprint(value *string)() {
     m.encryptionCertificateThumbprint = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChangeNotificationEncryptedContent) SetOdataType(value *string)() {
     m.odataType = value
 }

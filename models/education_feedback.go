@@ -13,7 +13,7 @@ type EducationFeedback struct {
     feedbackBy IdentitySetable
     // Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     feedbackDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Feedback.
     text EducationItemBodyable
@@ -86,7 +86,7 @@ func (m *EducationFeedback) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationFeedback) GetOdataType()(*string) {
     return m.odataType
 }
@@ -140,7 +140,7 @@ func (m *EducationFeedback) SetFeedbackBy(value IdentitySetable)() {
 func (m *EducationFeedback) SetFeedbackDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.feedbackDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationFeedback) SetOdataType(value *string)() {
     m.odataType = value
 }

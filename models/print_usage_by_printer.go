@@ -7,7 +7,7 @@ import (
 // PrintUsageByPrinter 
 type PrintUsageByPrinter struct {
     PrintUsage
-    // The printerId property
+    // 
     printerId *string
 }
 // NewPrintUsageByPrinter instantiates a new PrintUsageByPrinter and sets the default values.
@@ -38,7 +38,7 @@ func (m *PrintUsageByPrinter) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetPrinterId gets the printerId property value. The printerId property
+// GetPrinterId gets the printerId property value. 
 func (m *PrintUsageByPrinter) GetPrinterId()(*string) {
     return m.printerId
 }
@@ -56,7 +56,7 @@ func (m *PrintUsageByPrinter) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetPrinterId sets the printerId property value. The printerId property
+// SetPrinterId sets the printerId property value. 
 func (m *PrintUsageByPrinter) SetPrinterId(value *string)() {
     m.printerId = value
 }

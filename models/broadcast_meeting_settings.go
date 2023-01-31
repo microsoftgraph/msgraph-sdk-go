@@ -20,7 +20,7 @@ type BroadcastMeetingSettings struct {
     isRecordingEnabled *bool
     // Indicates whether video on demand is enabled for this Teams live event. Default value is false.
     isVideoOnDemandEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewBroadcastMeetingSettings instantiates a new broadcastMeetingSettings and sets the default values.
@@ -137,7 +137,7 @@ func (m *BroadcastMeetingSettings) GetIsRecordingEnabled()(*bool) {
 func (m *BroadcastMeetingSettings) GetIsVideoOnDemandEnabled()(*bool) {
     return m.isVideoOnDemandEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BroadcastMeetingSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -222,7 +222,7 @@ func (m *BroadcastMeetingSettings) SetIsRecordingEnabled(value *bool)() {
 func (m *BroadcastMeetingSettings) SetIsVideoOnDemandEnabled(value *bool)() {
     m.isVideoOnDemandEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BroadcastMeetingSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

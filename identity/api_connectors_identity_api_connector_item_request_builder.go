@@ -47,13 +47,16 @@ type ApiConnectorsIdentityApiConnectorItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal instantiates a new IdentityApiConnectorItemRequestBuilder and sets the default values.
-func NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
+func NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, identityApiConnectorId *string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     m := &ApiConnectorsIdentityApiConnectorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if identityApiConnectorId != nil {
+        urlTplParams["identityApiConnector%2Did"] = *identityApiConnectorId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(pathParamete
 func NewApiConnectorsIdentityApiConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property apiConnectors for identity
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -99,6 +102,10 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
+}
+// MicrosoftGraphUploadClientCertificate provides operations to call the uploadClientCertificate method.
+func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) MicrosoftGraphUploadClientCertificate()(*ApiConnectorsItemMicrosoftGraphUploadClientCertificateUploadClientCertificateRequestBuilder) {
+    return NewApiConnectorsItemMicrosoftGraphUploadClientCertificateUploadClientCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property apiConnectors in identity
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
@@ -154,14 +161,13 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UploadClientCertificate provides operations to call the uploadClientCertificate method.
-func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) UploadClientCertificate()(*ApiConnectorsItemUploadClientCertificateRequestBuilder) {
-    return NewApiConnectorsItemUploadClientCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

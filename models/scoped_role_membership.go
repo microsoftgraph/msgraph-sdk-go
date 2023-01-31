@@ -11,7 +11,7 @@ type ScopedRoleMembership struct {
     administrativeUnitId *string
     // Unique identifier for the directory role that the member is in.
     roleId *string
-    // The roleMemberInfo property
+    // 
     roleMemberInfo Identityable
 }
 // NewScopedRoleMembership instantiates a new scopedRoleMembership and sets the default values.
@@ -68,7 +68,7 @@ func (m *ScopedRoleMembership) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *ScopedRoleMembership) GetRoleId()(*string) {
     return m.roleId
 }
-// GetRoleMemberInfo gets the roleMemberInfo property value. The roleMemberInfo property
+// GetRoleMemberInfo gets the roleMemberInfo property value. 
 func (m *ScopedRoleMembership) GetRoleMemberInfo()(Identityable) {
     return m.roleMemberInfo
 }
@@ -106,7 +106,7 @@ func (m *ScopedRoleMembership) SetAdministrativeUnitId(value *string)() {
 func (m *ScopedRoleMembership) SetRoleId(value *string)() {
     m.roleId = value
 }
-// SetRoleMemberInfo sets the roleMemberInfo property value. The roleMemberInfo property
+// SetRoleMemberInfo sets the roleMemberInfo property value. 
 func (m *ScopedRoleMembership) SetRoleMemberInfo(value Identityable)() {
     m.roleMemberInfo = value
 }

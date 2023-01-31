@@ -7,7 +7,7 @@ import (
 // StsPolicy 
 type StsPolicy struct {
     PolicyBase
-    // The appliesTo property
+    // 
     appliesTo []DirectoryObjectable
     // A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
     definition []string
@@ -53,7 +53,7 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     }
     return NewStsPolicy(), nil
 }
-// GetAppliesTo gets the appliesTo property value. The appliesTo property
+// GetAppliesTo gets the appliesTo property value. 
 func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
     return m.appliesTo
 }
@@ -138,7 +138,7 @@ func (m *StsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetAppliesTo sets the appliesTo property value. The appliesTo property
+// SetAppliesTo sets the appliesTo property value. 
 func (m *StsPolicy) SetAppliesTo(value []DirectoryObjectable)() {
     m.appliesTo = value
 }

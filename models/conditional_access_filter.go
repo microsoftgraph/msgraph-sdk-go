@@ -8,9 +8,9 @@ import (
 type ConditionalAccessFilter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The mode property
+    // 
     mode *FilterMode
-    // The OdataType property
+    // 
     odataType *string
     // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
     rule *string
@@ -65,11 +65,11 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetMode gets the mode property value. The mode property
+// GetMode gets the mode property value. 
 func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
     return m.mode
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessFilter) GetOdataType()(*string) {
     return m.odataType
 }
@@ -110,11 +110,11 @@ func (m *ConditionalAccessFilter) Serialize(writer i878a80d2330e89d26896388a3f48
 func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetMode sets the mode property value. The mode property
+// SetMode sets the mode property value. 
 func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
     m.mode = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessFilter) SetOdataType(value *string)() {
     m.odataType = value
 }

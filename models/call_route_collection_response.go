@@ -7,7 +7,7 @@ import (
 // CallRouteCollectionResponse 
 type CallRouteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CallRouteable
 }
 // NewCallRouteCollectionResponse instantiates a new CallRouteCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CallRouteCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CallRouteCollectionResponse) GetValue()([]CallRouteable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CallRouteCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CallRouteCollectionResponse) SetValue(value []CallRouteable)() {
     m.value = value
 }

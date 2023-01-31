@@ -7,15 +7,15 @@ import (
 // Endpoint 
 type Endpoint struct {
     DirectoryObject
-    // The capability property
+    // 
     capability *string
-    // The providerId property
+    // 
     providerId *string
-    // The providerName property
+    // 
     providerName *string
-    // The providerResourceId property
+    // 
     providerResourceId *string
-    // The uri property
+    // 
     uri *string
 }
 // NewEndpoint instantiates a new endpoint and sets the default values.
@@ -31,7 +31,7 @@ func NewEndpoint()(*Endpoint) {
 func CreateEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndpoint(), nil
 }
-// GetCapability gets the capability property value. The capability property
+// GetCapability gets the capability property value. 
 func (m *Endpoint) GetCapability()(*string) {
     return m.capability
 }
@@ -90,19 +90,19 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetProviderId gets the providerId property value. The providerId property
+// GetProviderId gets the providerId property value. 
 func (m *Endpoint) GetProviderId()(*string) {
     return m.providerId
 }
-// GetProviderName gets the providerName property value. The providerName property
+// GetProviderName gets the providerName property value. 
 func (m *Endpoint) GetProviderName()(*string) {
     return m.providerName
 }
-// GetProviderResourceId gets the providerResourceId property value. The providerResourceId property
+// GetProviderResourceId gets the providerResourceId property value. 
 func (m *Endpoint) GetProviderResourceId()(*string) {
     return m.providerResourceId
 }
-// GetUri gets the uri property value. The uri property
+// GetUri gets the uri property value. 
 func (m *Endpoint) GetUri()(*string) {
     return m.uri
 }
@@ -144,23 +144,23 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCapability sets the capability property value. The capability property
+// SetCapability sets the capability property value. 
 func (m *Endpoint) SetCapability(value *string)() {
     m.capability = value
 }
-// SetProviderId sets the providerId property value. The providerId property
+// SetProviderId sets the providerId property value. 
 func (m *Endpoint) SetProviderId(value *string)() {
     m.providerId = value
 }
-// SetProviderName sets the providerName property value. The providerName property
+// SetProviderName sets the providerName property value. 
 func (m *Endpoint) SetProviderName(value *string)() {
     m.providerName = value
 }
-// SetProviderResourceId sets the providerResourceId property value. The providerResourceId property
+// SetProviderResourceId sets the providerResourceId property value. 
 func (m *Endpoint) SetProviderResourceId(value *string)() {
     m.providerResourceId = value
 }
-// SetUri sets the uri property value. The uri property
+// SetUri sets the uri property value. 
 func (m *Endpoint) SetUri(value *string)() {
     m.uri = value
 }

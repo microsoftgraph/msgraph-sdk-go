@@ -7,7 +7,7 @@ import (
 // CallCollectionResponse 
 type CallCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Callable
 }
 // NewCallCollectionResponse instantiates a new CallCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CallCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CallCollectionResponse) GetValue()([]Callable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CallCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CallCollectionResponse) SetValue(value []Callable)() {
     m.value = value
 }

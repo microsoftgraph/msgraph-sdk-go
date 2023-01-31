@@ -12,7 +12,7 @@ type TraceRouteHop struct {
     hopCount *int32
     // IP address used for this hop in the network trace.
     ipAddress *string
-    // The OdataType property
+    // 
     odataType *string
     // The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
     roundTripTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -85,7 +85,7 @@ func (m *TraceRouteHop) GetHopCount()(*int32) {
 func (m *TraceRouteHop) GetIpAddress()(*string) {
     return m.ipAddress
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TraceRouteHop) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *TraceRouteHop) SetHopCount(value *int32)() {
 func (m *TraceRouteHop) SetIpAddress(value *string)() {
     m.ipAddress = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TraceRouteHop) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // CrossTenantAccessPolicy 
 type CrossTenantAccessPolicy struct {
     PolicyBase
-    // The allowedCloudEndpoints property
+    // 
     allowedCloudEndpoints []string
     // Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
     default_escaped CrossTenantAccessPolicyConfigurationDefaultable
@@ -27,7 +27,7 @@ func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
 func CreateCrossTenantAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicy(), nil
 }
-// GetAllowedCloudEndpoints gets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
+// GetAllowedCloudEndpoints gets the allowedCloudEndpoints property value. 
 func (m *CrossTenantAccessPolicy) GetAllowedCloudEndpoints()([]string) {
     return m.allowedCloudEndpoints
 }
@@ -112,7 +112,7 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetAllowedCloudEndpoints sets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
+// SetAllowedCloudEndpoints sets the allowedCloudEndpoints property value. 
 func (m *CrossTenantAccessPolicy) SetAllowedCloudEndpoints(value []string)() {
     m.allowedCloudEndpoints = value
 }

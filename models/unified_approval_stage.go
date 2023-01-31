@@ -18,7 +18,7 @@ type UnifiedApprovalStage struct {
     isApproverJustificationRequired *bool
     // Indicates whether escalation if enabled.
     isEscalationEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // The primary approvers of this stage.
     primaryApprovers []SubjectSetable
@@ -141,7 +141,7 @@ func (m *UnifiedApprovalStage) GetIsApproverJustificationRequired()(*bool) {
 func (m *UnifiedApprovalStage) GetIsEscalationEnabled()(*bool) {
     return m.isEscalationEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UnifiedApprovalStage) GetOdataType()(*string) {
     return m.odataType
 }
@@ -233,7 +233,7 @@ func (m *UnifiedApprovalStage) SetIsApproverJustificationRequired(value *bool)()
 func (m *UnifiedApprovalStage) SetIsEscalationEnabled(value *bool)() {
     m.isEscalationEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UnifiedApprovalStage) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -14,7 +14,7 @@ type WindowsInformationProtectionApp struct {
     description *string
     // App display name.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // The product name.
     productName *string
@@ -133,7 +133,7 @@ func (m *WindowsInformationProtectionApp) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WindowsInformationProtectionApp) GetOdataType()(*string) {
     return m.odataType
 }
@@ -207,7 +207,7 @@ func (m *WindowsInformationProtectionApp) SetDescription(value *string)() {
 func (m *WindowsInformationProtectionApp) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WindowsInformationProtectionApp) SetOdataType(value *string)() {
     m.odataType = value
 }

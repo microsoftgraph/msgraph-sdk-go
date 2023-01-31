@@ -7,7 +7,7 @@ import (
 // SecurityResourceCollectionResponse 
 type SecurityResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SecurityResourceable
 }
 // NewSecurityResourceCollectionResponse instantiates a new SecurityResourceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SecurityResourceCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SecurityResourceCollectionResponse) GetValue()([]SecurityResourceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SecurityResourceCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SecurityResourceCollectionResponse) SetValue(value []SecurityResourceable)() {
     m.value = value
 }

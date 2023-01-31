@@ -8,13 +8,13 @@ import (
 type CallRoute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The final property
+    // 
     final IdentitySetable
-    // The OdataType property
+    // 
     odataType *string
-    // The original property
+    // 
     original IdentitySetable
-    // The routingType property
+    // 
     routingType *RoutingType
 }
 // NewCallRoute instantiates a new callRoute and sets the default values.
@@ -77,19 +77,19 @@ func (m *CallRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetFinal gets the final property value. The final property
+// GetFinal gets the final property value. 
 func (m *CallRoute) GetFinal()(IdentitySetable) {
     return m.final
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CallRoute) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOriginal gets the original property value. The original property
+// GetOriginal gets the original property value. 
 func (m *CallRoute) GetOriginal()(IdentitySetable) {
     return m.original
 }
-// GetRoutingType gets the routingType property value. The routingType property
+// GetRoutingType gets the routingType property value. 
 func (m *CallRoute) GetRoutingType()(*RoutingType) {
     return m.routingType
 }
@@ -132,19 +132,19 @@ func (m *CallRoute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *CallRoute) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetFinal sets the final property value. The final property
+// SetFinal sets the final property value. 
 func (m *CallRoute) SetFinal(value IdentitySetable)() {
     m.final = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CallRoute) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOriginal sets the original property value. The original property
+// SetOriginal sets the original property value. 
 func (m *CallRoute) SetOriginal(value IdentitySetable)() {
     m.original = value
 }
-// SetRoutingType sets the routingType property value. The routingType property
+// SetRoutingType sets the routingType property value. 
 func (m *CallRoute) SetRoutingType(value *RoutingType)() {
     m.routingType = value
 }

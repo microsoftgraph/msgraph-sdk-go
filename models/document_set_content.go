@@ -14,7 +14,7 @@ type DocumentSetContent struct {
     fileName *string
     // Folder name in which the file will be placed when a new document set is created in the library.
     folderName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewDocumentSetContent instantiates a new documentSetContent and sets the default values.
@@ -89,7 +89,7 @@ func (m *DocumentSetContent) GetFileName()(*string) {
 func (m *DocumentSetContent) GetFolderName()(*string) {
     return m.folderName
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DocumentSetContent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *DocumentSetContent) SetFileName(value *string)() {
 func (m *DocumentSetContent) SetFolderName(value *string)() {
     m.folderName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DocumentSetContent) SetOdataType(value *string)() {
     m.odataType = value
 }

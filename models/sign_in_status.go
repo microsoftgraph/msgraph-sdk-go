@@ -14,7 +14,7 @@ type SignInStatus struct {
     errorCode *int32
     // Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
     failureReason *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSignInStatus instantiates a new signInStatus and sets the default values.
@@ -89,7 +89,7 @@ func (m *SignInStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SignInStatus) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *SignInStatus) SetErrorCode(value *int32)() {
 func (m *SignInStatus) SetFailureReason(value *string)() {
     m.failureReason = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SignInStatus) SetOdataType(value *string)() {
     m.odataType = value
 }

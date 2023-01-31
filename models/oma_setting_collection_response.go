@@ -7,7 +7,7 @@ import (
 // OmaSettingCollectionResponse 
 type OmaSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OmaSettingable
 }
 // NewOmaSettingCollectionResponse instantiates a new OmaSettingCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OmaSettingCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OmaSettingCollectionResponse) GetValue()([]OmaSettingable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OmaSettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OmaSettingCollectionResponse) SetValue(value []OmaSettingable)() {
     m.value = value
 }

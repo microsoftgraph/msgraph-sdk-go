@@ -7,7 +7,7 @@ import (
 // Windows10CompliancePolicyCollectionResponse 
 type Windows10CompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Windows10CompliancePolicyable
 }
 // NewWindows10CompliancePolicyCollectionResponse instantiates a new Windows10CompliancePolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Windows10CompliancePolicyCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Windows10CompliancePolicyCollectionResponse) GetValue()([]Windows10CompliancePolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Windows10CompliancePolicyCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Windows10CompliancePolicyCollectionResponse) SetValue(value []Windows10CompliancePolicyable)() {
     m.value = value
 }

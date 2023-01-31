@@ -7,7 +7,7 @@ import (
 // AuthenticationMethodTargetCollectionResponse 
 type AuthenticationMethodTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuthenticationMethodTargetable
 }
 // NewAuthenticationMethodTargetCollectionResponse instantiates a new AuthenticationMethodTargetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuthenticationMethodTargetCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuthenticationMethodTargetCollectionResponse) GetValue()([]AuthenticationMethodTargetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuthenticationMethodTargetCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuthenticationMethodTargetCollectionResponse) SetValue(value []AuthenticationMethodTargetable)() {
     m.value = value
 }

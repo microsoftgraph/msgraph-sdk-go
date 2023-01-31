@@ -8,7 +8,7 @@ import (
 // AclCollectionResponse 
 type AclCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Aclable
 }
 // NewAclCollectionResponse instantiates a new AclCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *AclCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AclCollectionResponse) GetValue()([]Aclable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *AclCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AclCollectionResponse) SetValue(value []Aclable)() {
     m.value = value
 }

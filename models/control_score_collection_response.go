@@ -7,7 +7,7 @@ import (
 // ControlScoreCollectionResponse 
 type ControlScoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ControlScoreable
 }
 // NewControlScoreCollectionResponse instantiates a new ControlScoreCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ControlScoreCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ControlScoreCollectionResponse) GetValue()([]ControlScoreable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ControlScoreCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ControlScoreCollectionResponse) SetValue(value []ControlScoreable)() {
     m.value = value
 }

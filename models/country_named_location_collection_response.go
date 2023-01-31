@@ -7,7 +7,7 @@ import (
 // CountryNamedLocationCollectionResponse 
 type CountryNamedLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CountryNamedLocationable
 }
 // NewCountryNamedLocationCollectionResponse instantiates a new CountryNamedLocationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CountryNamedLocationCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CountryNamedLocationCollectionResponse) GetValue()([]CountryNamedLocationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CountryNamedLocationCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CountryNamedLocationCollectionResponse) SetValue(value []CountryNamedLocationable)() {
     m.value = value
 }

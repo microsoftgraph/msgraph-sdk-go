@@ -8,7 +8,7 @@ import (
 // AccessReviewHistoryDefinition 
 type AccessReviewHistoryDefinition struct {
     Entity
-    // The createdBy property
+    // 
     createdBy UserIdentityable
     // Timestamp when the access review definition was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -40,7 +40,7 @@ func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
 func CreateAccessReviewHistoryDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewHistoryDefinition(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. 
 func (m *AccessReviewHistoryDefinition) GetCreatedBy()(UserIdentityable) {
     return m.createdBy
 }
@@ -274,7 +274,7 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. 
 func (m *AccessReviewHistoryDefinition) SetCreatedBy(value UserIdentityable)() {
     m.createdBy = value
 }

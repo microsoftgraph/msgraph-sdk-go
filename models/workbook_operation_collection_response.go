@@ -7,7 +7,7 @@ import (
 // WorkbookOperationCollectionResponse 
 type WorkbookOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookOperationable
 }
 // NewWorkbookOperationCollectionResponse instantiates a new WorkbookOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookOperationCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookOperationCollectionResponse) GetValue()([]WorkbookOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookOperationCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookOperationCollectionResponse) SetValue(value []WorkbookOperationable)() {
     m.value = value
 }

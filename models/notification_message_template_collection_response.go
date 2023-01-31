@@ -7,7 +7,7 @@ import (
 // NotificationMessageTemplateCollectionResponse 
 type NotificationMessageTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []NotificationMessageTemplateable
 }
 // NewNotificationMessageTemplateCollectionResponse instantiates a new NotificationMessageTemplateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *NotificationMessageTemplateCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *NotificationMessageTemplateCollectionResponse) GetValue()([]NotificationMessageTemplateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *NotificationMessageTemplateCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *NotificationMessageTemplateCollectionResponse) SetValue(value []NotificationMessageTemplateable)() {
     m.value = value
 }

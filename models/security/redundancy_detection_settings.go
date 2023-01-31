@@ -14,7 +14,7 @@ type RedundancyDetectionSettings struct {
     maxWords *int32
     // Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
     minWords *int32
-    // The OdataType property
+    // 
     odataType *string
     // Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
     similarityThreshold *int32
@@ -101,7 +101,7 @@ func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
 func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
     return m.minWords
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RedundancyDetectionSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
     m.minWords = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RedundancyDetectionSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

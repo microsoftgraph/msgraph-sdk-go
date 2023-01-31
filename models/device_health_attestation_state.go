@@ -47,7 +47,7 @@ type DeviceHealthAttestationState struct {
     issuedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Timestamp of the last update.
     lastUpdateDateTime *string
-    // The OdataType property
+    // 
     odataType *string
     // When operatingSystemKernelDebugging is enabled, the device is used in development and testing
     operatingSystemKernelDebugging *string
@@ -502,7 +502,7 @@ func (m *DeviceHealthAttestationState) GetIssuedDateTime()(*i336074805fc853987ab
 func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
     return m.lastUpdateDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceHealthAttestationState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -846,7 +846,7 @@ func (m *DeviceHealthAttestationState) SetIssuedDateTime(value *i336074805fc8539
 func (m *DeviceHealthAttestationState) SetLastUpdateDateTime(value *string)() {
     m.lastUpdateDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceHealthAttestationState) SetOdataType(value *string)() {
     m.odataType = value
 }

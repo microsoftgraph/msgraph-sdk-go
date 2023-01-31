@@ -8,9 +8,9 @@ import (
 type BaseCollectionPaginationCountResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataCount property
+    // 
     odataCount *int64
-    // The OdataNextLink property
+    // 
     odataNextLink *string
 }
 // NewBaseCollectionPaginationCountResponse instantiates a new BaseCollectionPaginationCountResponse and sets the default values.
@@ -53,11 +53,11 @@ func (m *BaseCollectionPaginationCountResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetOdataCount gets the @odata.count property value. The OdataCount property
+// GetOdataCount gets the @odata.count property value. 
 func (m *BaseCollectionPaginationCountResponse) GetOdataCount()(*int64) {
     return m.odataCount
 }
-// GetOdataNextLink gets the @odata.nextLink property value. The OdataNextLink property
+// GetOdataNextLink gets the @odata.nextLink property value. 
 func (m *BaseCollectionPaginationCountResponse) GetOdataNextLink()(*string) {
     return m.odataNextLink
 }
@@ -87,11 +87,11 @@ func (m *BaseCollectionPaginationCountResponse) Serialize(writer i878a80d2330e89
 func (m *BaseCollectionPaginationCountResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataCount sets the @odata.count property value. The OdataCount property
+// SetOdataCount sets the @odata.count property value. 
 func (m *BaseCollectionPaginationCountResponse) SetOdataCount(value *int64)() {
     m.odataCount = value
 }
-// SetOdataNextLink sets the @odata.nextLink property value. The OdataNextLink property
+// SetOdataNextLink sets the @odata.nextLink property value. 
 func (m *BaseCollectionPaginationCountResponse) SetOdataNextLink(value *string)() {
     m.odataNextLink = value
 }

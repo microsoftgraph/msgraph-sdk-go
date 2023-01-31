@@ -7,7 +7,7 @@ import (
 // FileSecurityStateCollectionResponse 
 type FileSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []FileSecurityStateable
 }
 // NewFileSecurityStateCollectionResponse instantiates a new FileSecurityStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *FileSecurityStateCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *FileSecurityStateCollectionResponse) GetValue()([]FileSecurityStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *FileSecurityStateCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *FileSecurityStateCollectionResponse) SetValue(value []FileSecurityStateable)() {
     m.value = value
 }

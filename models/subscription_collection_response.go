@@ -7,7 +7,7 @@ import (
 // SubscriptionCollectionResponse 
 type SubscriptionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Subscriptionable
 }
 // NewSubscriptionCollectionResponse instantiates a new SubscriptionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SubscriptionCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SubscriptionCollectionResponse) GetValue()([]Subscriptionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SubscriptionCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SubscriptionCollectionResponse) SetValue(value []Subscriptionable)() {
     m.value = value
 }

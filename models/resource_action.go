@@ -12,7 +12,7 @@ type ResourceAction struct {
     allowedResourceActions []string
     // Not Allowed Actions.
     notAllowedResourceActions []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewResourceAction instantiates a new resourceAction and sets the default values.
@@ -81,7 +81,7 @@ func (m *ResourceAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *ResourceAction) GetNotAllowedResourceActions()([]string) {
     return m.notAllowedResourceActions
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResourceAction) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *ResourceAction) SetAllowedResourceActions(value []string)() {
 func (m *ResourceAction) SetNotAllowedResourceActions(value []string)() {
     m.notAllowedResourceActions = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResourceAction) SetOdataType(value *string)() {
     m.odataType = value
 }

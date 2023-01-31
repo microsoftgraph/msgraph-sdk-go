@@ -16,7 +16,7 @@ type TargetResource struct {
     id *string
     // Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
     modifiedProperties []ModifiedPropertyable
-    // The OdataType property
+    // 
     odataType *string
     // Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
     type_escaped *string
@@ -133,7 +133,7 @@ func (m *TargetResource) GetId()(*string) {
 func (m *TargetResource) GetModifiedProperties()([]ModifiedPropertyable) {
     return m.modifiedProperties
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TargetResource) GetOdataType()(*string) {
     return m.odataType
 }
@@ -222,7 +222,7 @@ func (m *TargetResource) SetId(value *string)() {
 func (m *TargetResource) SetModifiedProperties(value []ModifiedPropertyable)() {
     m.modifiedProperties = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TargetResource) SetOdataType(value *string)() {
     m.odataType = value
 }

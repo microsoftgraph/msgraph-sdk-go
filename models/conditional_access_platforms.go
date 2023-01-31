@@ -12,7 +12,7 @@ type ConditionalAccessPlatforms struct {
     excludePlatforms []ConditionalAccessDevicePlatform
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
     includePlatforms []ConditionalAccessDevicePlatform
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessPlatforms instantiates a new conditionalAccessPlatforms and sets the default values.
@@ -81,7 +81,7 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i87
 func (m *ConditionalAccessPlatforms) GetIncludePlatforms()([]ConditionalAccessDevicePlatform) {
     return m.includePlatforms
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessPlatforms) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *ConditionalAccessPlatforms) SetExcludePlatforms(value []ConditionalAcce
 func (m *ConditionalAccessPlatforms) SetIncludePlatforms(value []ConditionalAccessDevicePlatform)() {
     m.includePlatforms = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessPlatforms) SetOdataType(value *string)() {
     m.odataType = value
 }

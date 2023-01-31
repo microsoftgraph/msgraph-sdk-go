@@ -7,7 +7,7 @@ import (
 // ResourceSpecificPermissionGrantCollectionResponse 
 type ResourceSpecificPermissionGrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ResourceSpecificPermissionGrantable
 }
 // NewResourceSpecificPermissionGrantCollectionResponse instantiates a new ResourceSpecificPermissionGrantCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ResourceSpecificPermissionGrantCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ResourceSpecificPermissionGrantCollectionResponse) GetValue()([]ResourceSpecificPermissionGrantable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ResourceSpecificPermissionGrantCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ResourceSpecificPermissionGrantCollectionResponse) SetValue(value []ResourceSpecificPermissionGrantable)() {
     m.value = value
 }

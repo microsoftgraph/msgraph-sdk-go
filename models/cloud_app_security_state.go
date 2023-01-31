@@ -12,7 +12,7 @@ type CloudAppSecurityState struct {
     destinationServiceIp *string
     // Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
     destinationServiceName *string
-    // The OdataType property
+    // 
     odataType *string
     // Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
     riskScore *string
@@ -85,7 +85,7 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CloudAppSecurityState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *CloudAppSecurityState) SetDestinationServiceIp(value *string)() {
 func (m *CloudAppSecurityState) SetDestinationServiceName(value *string)() {
     m.destinationServiceName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CloudAppSecurityState) SetOdataType(value *string)() {
     m.odataType = value
 }

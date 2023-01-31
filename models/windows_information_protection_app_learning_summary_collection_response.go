@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionAppLearningSummaryCollectionResponse 
 type WindowsInformationProtectionAppLearningSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsInformationProtectionAppLearningSummaryable
 }
 // NewWindowsInformationProtectionAppLearningSummaryCollectionResponse instantiates a new WindowsInformationProtectionAppLearningSummaryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) GetFi
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) GetValue()([]WindowsInformationProtectionAppLearningSummaryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) Seria
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) SetValue(value []WindowsInformationProtectionAppLearningSummaryable)() {
     m.value = value
 }

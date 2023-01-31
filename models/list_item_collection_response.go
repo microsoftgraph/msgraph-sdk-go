@@ -7,7 +7,7 @@ import (
 // ListItemCollectionResponse 
 type ListItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ListItemable
 }
 // NewListItemCollectionResponse instantiates a new ListItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ListItemCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ListItemCollectionResponse) GetValue()([]ListItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ListItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ListItemCollectionResponse) SetValue(value []ListItemable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // AuthenticationContextClassReferenceCollectionResponse 
 type AuthenticationContextClassReferenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuthenticationContextClassReferenceable
 }
 // NewAuthenticationContextClassReferenceCollectionResponse instantiates a new AuthenticationContextClassReferenceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuthenticationContextClassReferenceCollectionResponse) GetFieldDeserial
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuthenticationContextClassReferenceCollectionResponse) GetValue()([]AuthenticationContextClassReferenceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuthenticationContextClassReferenceCollectionResponse) Serialize(writer
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuthenticationContextClassReferenceCollectionResponse) SetValue(value []AuthenticationContextClassReferenceable)() {
     m.value = value
 }

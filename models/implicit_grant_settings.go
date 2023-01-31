@@ -12,7 +12,7 @@ type ImplicitGrantSettings struct {
     enableAccessTokenIssuance *bool
     // Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
     enableIdTokenIssuance *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewImplicitGrantSettings instantiates a new implicitGrantSettings and sets the default values.
@@ -73,7 +73,7 @@ func (m *ImplicitGrantSettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ImplicitGrantSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *ImplicitGrantSettings) SetEnableAccessTokenIssuance(value *bool)() {
 func (m *ImplicitGrantSettings) SetEnableIdTokenIssuance(value *bool)() {
     m.enableIdTokenIssuance = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ImplicitGrantSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

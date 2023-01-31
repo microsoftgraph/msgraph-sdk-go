@@ -7,7 +7,7 @@ import (
 // MeetingTimeSuggestionCollectionResponse 
 type MeetingTimeSuggestionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MeetingTimeSuggestionable
 }
 // NewMeetingTimeSuggestionCollectionResponse instantiates a new MeetingTimeSuggestionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MeetingTimeSuggestionCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MeetingTimeSuggestionCollectionResponse) GetValue()([]MeetingTimeSuggestionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MeetingTimeSuggestionCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MeetingTimeSuggestionCollectionResponse) SetValue(value []MeetingTimeSuggestionable)() {
     m.value = value
 }

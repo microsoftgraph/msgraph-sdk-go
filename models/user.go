@@ -26,7 +26,7 @@ type User struct {
     assignedPlans []AssignedPlanable
     // The authentication methods that are supported for the user.
     authentication Authenticationable
-    // The authorizationInfo property
+    // 
     authorizationInfo AuthorizationInfoable
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -40,7 +40,7 @@ type User struct {
     calendars []Calendarable
     // The calendar view for the calendar. Read-only. Nullable.
     calendarView []Eventable
-    // The chats property
+    // 
     chats []Chatable
     // The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     city *string
@@ -92,7 +92,7 @@ type User struct {
     externalUserStateChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     faxNumber *string
-    // The followedSites property
+    // 
     followedSites []Siteable
     // The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     givenName *string
@@ -104,7 +104,7 @@ type User struct {
     imAddresses []string
     // Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
     inferenceClassification InferenceClassificationable
-    // The insights property
+    // 
     insights OfficeGraphInsightsable
     // A list for the user to describe their interests. Returned only on $select.
     interests []string
@@ -112,7 +112,7 @@ type User struct {
     isResourceAccount *bool
     // The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     jobTitle *string
-    // The joinedTeams property
+    // 
     joinedTeams []Teamable
     // The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     lastPasswordChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -144,13 +144,13 @@ type User struct {
     mobilePhone *string
     // The URL for the user's personal site. Returned only on $select.
     mySite *string
-    // The oauth2PermissionGrants property
+    // 
     oauth2PermissionGrants []OAuth2PermissionGrantable
     // The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     officeLocation *string
-    // The onenote property
+    // 
     onenote Onenoteable
-    // The onlineMeetings property
+    // 
     onlineMeetings []OnlineMeetingable
     // Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     onPremisesDistinguishedName *string
@@ -174,7 +174,7 @@ type User struct {
     onPremisesUserPrincipalName *string
     // A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     otherMails []string
-    // The outlook property
+    // 
     outlook OutlookUserable
     // Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     ownedDevices []DirectoryObjectable
@@ -190,7 +190,7 @@ type User struct {
     people []Personable
     // The user's profile photo. Read-only.
     photo ProfilePhotoable
-    // The photos property
+    // 
     photos []ProfilePhotoable
     // Entry-point to the Planner resource that might exist for a user. Read-only.
     planner PlannerUserable
@@ -202,7 +202,7 @@ type User struct {
     preferredLanguage *string
     // The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
     preferredName *string
-    // The presence property
+    // 
     presence Presenceable
     // The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
     provisionedPlans []ProvisionedPlanable
@@ -214,11 +214,11 @@ type User struct {
     responsibilities []string
     // A list for the user to enumerate the schools they have attended. Returned only on $select.
     schools []string
-    // The scopedRoleMemberOf property
+    // 
     scopedRoleMemberOf []ScopedRoleMembershipable
     // Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
     securityIdentifier *string
-    // The settings property
+    // 
     settings UserSettingsable
     // Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
     showInAddressList *bool
@@ -232,7 +232,7 @@ type User struct {
     streetAddress *string
     // The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     surname *string
-    // The teamwork property
+    // 
     teamwork UserTeamworkable
     // Represents the To Do services available to a user.
     todo Todoable
@@ -294,7 +294,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
 func (m *User) GetAuthentication()(Authenticationable) {
     return m.authentication
 }
-// GetAuthorizationInfo gets the authorizationInfo property value. The authorizationInfo property
+// GetAuthorizationInfo gets the authorizationInfo property value. 
 func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     return m.authorizationInfo
 }
@@ -322,7 +322,7 @@ func (m *User) GetCalendars()([]Calendarable) {
 func (m *User) GetCalendarView()([]Eventable) {
     return m.calendarView
 }
-// GetChats gets the chats property value. The chats property
+// GetChats gets the chats property value. 
 func (m *User) GetChats()([]Chatable) {
     return m.chats
 }
@@ -1799,7 +1799,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetFollowedSites gets the followedSites property value. The followedSites property
+// GetFollowedSites gets the followedSites property value. 
 func (m *User) GetFollowedSites()([]Siteable) {
     return m.followedSites
 }
@@ -1823,7 +1823,7 @@ func (m *User) GetImAddresses()([]string) {
 func (m *User) GetInferenceClassification()(InferenceClassificationable) {
     return m.inferenceClassification
 }
-// GetInsights gets the insights property value. The insights property
+// GetInsights gets the insights property value. 
 func (m *User) GetInsights()(OfficeGraphInsightsable) {
     return m.insights
 }
@@ -1839,7 +1839,7 @@ func (m *User) GetIsResourceAccount()(*bool) {
 func (m *User) GetJobTitle()(*string) {
     return m.jobTitle
 }
-// GetJoinedTeams gets the joinedTeams property value. The joinedTeams property
+// GetJoinedTeams gets the joinedTeams property value. 
 func (m *User) GetJoinedTeams()([]Teamable) {
     return m.joinedTeams
 }
@@ -1903,7 +1903,7 @@ func (m *User) GetMobilePhone()(*string) {
 func (m *User) GetMySite()(*string) {
     return m.mySite
 }
-// GetOauth2PermissionGrants gets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
+// GetOauth2PermissionGrants gets the oauth2PermissionGrants property value. 
 func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
     return m.oauth2PermissionGrants
 }
@@ -1911,11 +1911,11 @@ func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
 func (m *User) GetOfficeLocation()(*string) {
     return m.officeLocation
 }
-// GetOnenote gets the onenote property value. The onenote property
+// GetOnenote gets the onenote property value. 
 func (m *User) GetOnenote()(Onenoteable) {
     return m.onenote
 }
-// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
+// GetOnlineMeetings gets the onlineMeetings property value. 
 func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     return m.onlineMeetings
 }
@@ -1963,7 +1963,7 @@ func (m *User) GetOnPremisesUserPrincipalName()(*string) {
 func (m *User) GetOtherMails()([]string) {
     return m.otherMails
 }
-// GetOutlook gets the outlook property value. The outlook property
+// GetOutlook gets the outlook property value. 
 func (m *User) GetOutlook()(OutlookUserable) {
     return m.outlook
 }
@@ -1995,7 +1995,7 @@ func (m *User) GetPeople()([]Personable) {
 func (m *User) GetPhoto()(ProfilePhotoable) {
     return m.photo
 }
-// GetPhotos gets the photos property value. The photos property
+// GetPhotos gets the photos property value. 
 func (m *User) GetPhotos()([]ProfilePhotoable) {
     return m.photos
 }
@@ -2019,7 +2019,7 @@ func (m *User) GetPreferredLanguage()(*string) {
 func (m *User) GetPreferredName()(*string) {
     return m.preferredName
 }
-// GetPresence gets the presence property value. The presence property
+// GetPresence gets the presence property value. 
 func (m *User) GetPresence()(Presenceable) {
     return m.presence
 }
@@ -2043,7 +2043,7 @@ func (m *User) GetResponsibilities()([]string) {
 func (m *User) GetSchools()([]string) {
     return m.schools
 }
-// GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
+// GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. 
 func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
     return m.scopedRoleMemberOf
 }
@@ -2051,7 +2051,7 @@ func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
 func (m *User) GetSecurityIdentifier()(*string) {
     return m.securityIdentifier
 }
-// GetSettings gets the settings property value. The settings property
+// GetSettings gets the settings property value. 
 func (m *User) GetSettings()(UserSettingsable) {
     return m.settings
 }
@@ -2079,7 +2079,7 @@ func (m *User) GetStreetAddress()(*string) {
 func (m *User) GetSurname()(*string) {
     return m.surname
 }
-// GetTeamwork gets the teamwork property value. The teamwork property
+// GetTeamwork gets the teamwork property value. 
 func (m *User) GetTeamwork()(UserTeamworkable) {
     return m.teamwork
 }
@@ -3007,7 +3007,7 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
 func (m *User) SetAuthentication(value Authenticationable)() {
     m.authentication = value
 }
-// SetAuthorizationInfo sets the authorizationInfo property value. The authorizationInfo property
+// SetAuthorizationInfo sets the authorizationInfo property value. 
 func (m *User) SetAuthorizationInfo(value AuthorizationInfoable)() {
     m.authorizationInfo = value
 }
@@ -3035,7 +3035,7 @@ func (m *User) SetCalendars(value []Calendarable)() {
 func (m *User) SetCalendarView(value []Eventable)() {
     m.calendarView = value
 }
-// SetChats sets the chats property value. The chats property
+// SetChats sets the chats property value. 
 func (m *User) SetChats(value []Chatable)() {
     m.chats = value
 }
@@ -3139,7 +3139,7 @@ func (m *User) SetExternalUserStateChangeDateTime(value *i336074805fc853987abe6f
 func (m *User) SetFaxNumber(value *string)() {
     m.faxNumber = value
 }
-// SetFollowedSites sets the followedSites property value. The followedSites property
+// SetFollowedSites sets the followedSites property value. 
 func (m *User) SetFollowedSites(value []Siteable)() {
     m.followedSites = value
 }
@@ -3163,7 +3163,7 @@ func (m *User) SetImAddresses(value []string)() {
 func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
     m.inferenceClassification = value
 }
-// SetInsights sets the insights property value. The insights property
+// SetInsights sets the insights property value. 
 func (m *User) SetInsights(value OfficeGraphInsightsable)() {
     m.insights = value
 }
@@ -3179,7 +3179,7 @@ func (m *User) SetIsResourceAccount(value *bool)() {
 func (m *User) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// SetJoinedTeams sets the joinedTeams property value. The joinedTeams property
+// SetJoinedTeams sets the joinedTeams property value. 
 func (m *User) SetJoinedTeams(value []Teamable)() {
     m.joinedTeams = value
 }
@@ -3243,7 +3243,7 @@ func (m *User) SetMobilePhone(value *string)() {
 func (m *User) SetMySite(value *string)() {
     m.mySite = value
 }
-// SetOauth2PermissionGrants sets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
+// SetOauth2PermissionGrants sets the oauth2PermissionGrants property value. 
 func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)() {
     m.oauth2PermissionGrants = value
 }
@@ -3251,11 +3251,11 @@ func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)() {
 func (m *User) SetOfficeLocation(value *string)() {
     m.officeLocation = value
 }
-// SetOnenote sets the onenote property value. The onenote property
+// SetOnenote sets the onenote property value. 
 func (m *User) SetOnenote(value Onenoteable)() {
     m.onenote = value
 }
-// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
+// SetOnlineMeetings sets the onlineMeetings property value. 
 func (m *User) SetOnlineMeetings(value []OnlineMeetingable)() {
     m.onlineMeetings = value
 }
@@ -3303,7 +3303,7 @@ func (m *User) SetOnPremisesUserPrincipalName(value *string)() {
 func (m *User) SetOtherMails(value []string)() {
     m.otherMails = value
 }
-// SetOutlook sets the outlook property value. The outlook property
+// SetOutlook sets the outlook property value. 
 func (m *User) SetOutlook(value OutlookUserable)() {
     m.outlook = value
 }
@@ -3335,7 +3335,7 @@ func (m *User) SetPeople(value []Personable)() {
 func (m *User) SetPhoto(value ProfilePhotoable)() {
     m.photo = value
 }
-// SetPhotos sets the photos property value. The photos property
+// SetPhotos sets the photos property value. 
 func (m *User) SetPhotos(value []ProfilePhotoable)() {
     m.photos = value
 }
@@ -3359,7 +3359,7 @@ func (m *User) SetPreferredLanguage(value *string)() {
 func (m *User) SetPreferredName(value *string)() {
     m.preferredName = value
 }
-// SetPresence sets the presence property value. The presence property
+// SetPresence sets the presence property value. 
 func (m *User) SetPresence(value Presenceable)() {
     m.presence = value
 }
@@ -3383,7 +3383,7 @@ func (m *User) SetResponsibilities(value []string)() {
 func (m *User) SetSchools(value []string)() {
     m.schools = value
 }
-// SetScopedRoleMemberOf sets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
+// SetScopedRoleMemberOf sets the scopedRoleMemberOf property value. 
 func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
     m.scopedRoleMemberOf = value
 }
@@ -3391,7 +3391,7 @@ func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
 func (m *User) SetSecurityIdentifier(value *string)() {
     m.securityIdentifier = value
 }
-// SetSettings sets the settings property value. The settings property
+// SetSettings sets the settings property value. 
 func (m *User) SetSettings(value UserSettingsable)() {
     m.settings = value
 }
@@ -3419,7 +3419,7 @@ func (m *User) SetStreetAddress(value *string)() {
 func (m *User) SetSurname(value *string)() {
     m.surname = value
 }
-// SetTeamwork sets the teamwork property value. The teamwork property
+// SetTeamwork sets the teamwork property value. 
 func (m *User) SetTeamwork(value UserTeamworkable)() {
     m.teamwork = value
 }

@@ -41,7 +41,7 @@ type PstnCallLogRow struct {
     inventoryType *string
     // The license used for the call.
     licenseCapability *string
-    // The OdataType property
+    // 
     odataType *string
     // The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
     operator *string
@@ -382,7 +382,7 @@ func (m *PstnCallLogRow) GetInventoryType()(*string) {
 func (m *PstnCallLogRow) GetLicenseCapability()(*string) {
     return m.licenseCapability
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PstnCallLogRow) GetOdataType()(*string) {
     return m.odataType
 }
@@ -637,7 +637,7 @@ func (m *PstnCallLogRow) SetInventoryType(value *string)() {
 func (m *PstnCallLogRow) SetLicenseCapability(value *string)() {
     m.licenseCapability = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PstnCallLogRow) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -47,13 +47,16 @@ type ItemInsightsTrendingTrendingItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemInsightsTrendingTrendingItemRequestBuilderInternal instantiates a new TrendingItemRequestBuilder and sets the default values.
-func NewItemInsightsTrendingTrendingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
+func NewItemInsightsTrendingTrendingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, trendingId *string)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
     m := &ItemInsightsTrendingTrendingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/insights/trending/{trending%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if trendingId != nil {
+        urlTplParams["trending%2Did"] = *trendingId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemInsightsTrendingTrendingItemRequestBuilderInternal(pathParameters ma
 func NewItemInsightsTrendingTrendingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemInsightsTrendingTrendingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemInsightsTrendingTrendingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property trending for users
 func (m *ItemInsightsTrendingTrendingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInsightsTrendingTrendingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemInsightsTrendingTrendingItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

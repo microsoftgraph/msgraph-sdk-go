@@ -7,7 +7,7 @@ import (
 // UnifiedRoleEligibilityScheduleRequestCollectionResponse 
 type UnifiedRoleEligibilityScheduleRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleEligibilityScheduleRequestable
 }
 // NewUnifiedRoleEligibilityScheduleRequestCollectionResponse instantiates a new UnifiedRoleEligibilityScheduleRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) GetFieldDeseri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) GetValue()([]UnifiedRoleEligibilityScheduleRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) Serialize(writ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) SetValue(value []UnifiedRoleEligibilityScheduleRequestable)() {
     m.value = value
 }

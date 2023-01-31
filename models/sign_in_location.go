@@ -14,7 +14,7 @@ type SignInLocation struct {
     countryOrRegion *string
     // Provides the latitude, longitude and altitude where the sign-in originated.
     geoCoordinates GeoCoordinatesable
-    // The OdataType property
+    // 
     odataType *string
     // Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
     state *string
@@ -101,7 +101,7 @@ func (m *SignInLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *SignInLocation) GetGeoCoordinates()(GeoCoordinatesable) {
     return m.geoCoordinates
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SignInLocation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *SignInLocation) SetCountryOrRegion(value *string)() {
 func (m *SignInLocation) SetGeoCoordinates(value GeoCoordinatesable)() {
     m.geoCoordinates = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SignInLocation) SetOdataType(value *string)() {
     m.odataType = value
 }

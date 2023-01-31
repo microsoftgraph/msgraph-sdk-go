@@ -7,7 +7,7 @@ import (
 // UnifiedRolePermissionCollectionResponse 
 type UnifiedRolePermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRolePermissionable
 }
 // NewUnifiedRolePermissionCollectionResponse instantiates a new UnifiedRolePermissionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRolePermissionCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRolePermissionCollectionResponse) GetValue()([]UnifiedRolePermissionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRolePermissionCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRolePermissionCollectionResponse) SetValue(value []UnifiedRolePermissionable)() {
     m.value = value
 }

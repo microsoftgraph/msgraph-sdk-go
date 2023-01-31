@@ -8,7 +8,7 @@ import (
 // EdiscoveryTagOperationCollectionResponse 
 type EdiscoveryTagOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryTagOperationable
 }
 // NewEdiscoveryTagOperationCollectionResponse instantiates a new EdiscoveryTagOperationCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryTagOperationCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryTagOperationCollectionResponse) GetValue()([]EdiscoveryTagOperationable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryTagOperationCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryTagOperationCollectionResponse) SetValue(value []EdiscoveryTagOperationable)() {
     m.value = value
 }

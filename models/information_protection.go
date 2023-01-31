@@ -8,11 +8,11 @@ import (
 type InformationProtection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The bitlocker property
+    // 
     bitlocker Bitlockerable
-    // The OdataType property
+    // 
     odataType *string
-    // The threatAssessmentRequests property
+    // 
     threatAssessmentRequests []ThreatAssessmentRequestable
 }
 // NewInformationProtection instantiates a new InformationProtection and sets the default values.
@@ -30,7 +30,7 @@ func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *InformationProtection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetBitlocker gets the bitlocker property value. The bitlocker property
+// GetBitlocker gets the bitlocker property value. 
 func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
     return m.bitlocker
 }
@@ -73,11 +73,11 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InformationProtection) GetOdataType()(*string) {
     return m.odataType
 }
-// GetThreatAssessmentRequests gets the threatAssessmentRequests property value. The threatAssessmentRequests property
+// GetThreatAssessmentRequests gets the threatAssessmentRequests property value. 
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequestable) {
     return m.threatAssessmentRequests
 }
@@ -117,15 +117,15 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *InformationProtection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetBitlocker sets the bitlocker property value. The bitlocker property
+// SetBitlocker sets the bitlocker property value. 
 func (m *InformationProtection) SetBitlocker(value Bitlockerable)() {
     m.bitlocker = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InformationProtection) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetThreatAssessmentRequests sets the threatAssessmentRequests property value. The threatAssessmentRequests property
+// SetThreatAssessmentRequests sets the threatAssessmentRequests property value. 
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequestable)() {
     m.threatAssessmentRequests = value
 }

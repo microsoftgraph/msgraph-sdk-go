@@ -72,10 +72,6 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ContactsRequestBuilder) Count()(*ContactsCountRequestBuilder) {
     return NewContactsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *ContactsRequestBuilder) Delta()(*ContactsDeltaRequestBuilder) {
-    return NewContactsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user's contact folder:
 // [Find more info here]
 // 
@@ -97,6 +93,10 @@ func (m *ContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ContactsRequestBuilder) MicrosoftGraphDelta()(*ContactsMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewContactsMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *ContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

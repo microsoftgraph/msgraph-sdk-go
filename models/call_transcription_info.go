@@ -11,9 +11,9 @@ type CallTranscriptionInfo struct {
     additionalData map[string]any
     // The state modified time in UTC.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
-    // The state property
+    // 
     state *CallTranscriptionState
 }
 // NewCallTranscriptionInfo instantiates a new callTranscriptionInfo and sets the default values.
@@ -70,11 +70,11 @@ func (m *CallTranscriptionInfo) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *CallTranscriptionInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CallTranscriptionInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *CallTranscriptionInfo) GetState()(*CallTranscriptionState) {
     return m.state
 }
@@ -115,11 +115,11 @@ func (m *CallTranscriptionInfo) SetAdditionalData(value map[string]any)() {
 func (m *CallTranscriptionInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CallTranscriptionInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *CallTranscriptionInfo) SetState(value *CallTranscriptionState)() {
     m.state = value
 }

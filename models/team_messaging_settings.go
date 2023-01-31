@@ -18,7 +18,7 @@ type TeamMessagingSettings struct {
     allowUserDeleteMessages *bool
     // If set to true, users can edit their messages.
     allowUserEditMessages *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewTeamMessagingSettings instantiates a new teamMessagingSettings and sets the default values.
@@ -121,7 +121,7 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamMessagingSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -195,7 +195,7 @@ func (m *TeamMessagingSettings) SetAllowUserDeleteMessages(value *bool)() {
 func (m *TeamMessagingSettings) SetAllowUserEditMessages(value *bool)() {
     m.allowUserEditMessages = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamMessagingSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

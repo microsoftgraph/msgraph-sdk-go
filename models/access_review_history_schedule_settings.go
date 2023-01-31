@@ -8,9 +8,9 @@ import (
 type AccessReviewHistoryScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The recurrence property
+    // 
     recurrence PatternedRecurrenceable
     // A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
     reportRange *string
@@ -65,11 +65,11 @@ func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewHistoryScheduleSettings) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. 
 func (m *AccessReviewHistoryScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
     return m.recurrence
 }
@@ -109,11 +109,11 @@ func (m *AccessReviewHistoryScheduleSettings) Serialize(writer i878a80d2330e89d2
 func (m *AccessReviewHistoryScheduleSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewHistoryScheduleSettings) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. 
 func (m *AccessReviewHistoryScheduleSettings) SetRecurrence(value PatternedRecurrenceable)() {
     m.recurrence = value
 }

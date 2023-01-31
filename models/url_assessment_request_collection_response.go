@@ -7,7 +7,7 @@ import (
 // UrlAssessmentRequestCollectionResponse 
 type UrlAssessmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UrlAssessmentRequestable
 }
 // NewUrlAssessmentRequestCollectionResponse instantiates a new UrlAssessmentRequestCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UrlAssessmentRequestCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UrlAssessmentRequestCollectionResponse) GetValue()([]UrlAssessmentRequestable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UrlAssessmentRequestCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UrlAssessmentRequestCollectionResponse) SetValue(value []UrlAssessmentRequestable)() {
     m.value = value
 }

@@ -12,7 +12,7 @@ type SiteCollection struct {
     dataLocationCode *string
     // The hostname for the site collection. Read-only.
     hostname *string
-    // The OdataType property
+    // 
     odataType *string
     // If present, indicates that this is a root site collection in SharePoint. Read-only.
     root Rootable
@@ -85,7 +85,7 @@ func (m *SiteCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *SiteCollection) GetHostname()(*string) {
     return m.hostname
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SiteCollection) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *SiteCollection) SetDataLocationCode(value *string)() {
 func (m *SiteCollection) SetHostname(value *string)() {
     m.hostname = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SiteCollection) SetOdataType(value *string)() {
     m.odataType = value
 }

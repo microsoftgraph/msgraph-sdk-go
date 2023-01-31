@@ -7,7 +7,7 @@ import (
 // RecommendedActionCollectionResponse 
 type RecommendedActionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RecommendedActionable
 }
 // NewRecommendedActionCollectionResponse instantiates a new RecommendedActionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RecommendedActionCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RecommendedActionCollectionResponse) GetValue()([]RecommendedActionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RecommendedActionCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RecommendedActionCollectionResponse) SetValue(value []RecommendedActionable)() {
     m.value = value
 }

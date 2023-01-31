@@ -12,7 +12,7 @@ type ScheduleInformation struct {
     availabilityView *string
     // Error information from attempting to get the availability of the user, distribution list, or resource.
     error FreeBusyErrorable
-    // The OdataType property
+    // 
     odataType *string
     // An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
     scheduleId *string
@@ -113,7 +113,7 @@ func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ScheduleInformation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -191,7 +191,7 @@ func (m *ScheduleInformation) SetAvailabilityView(value *string)() {
 func (m *ScheduleInformation) SetError(value FreeBusyErrorable)() {
     m.error = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ScheduleInformation) SetOdataType(value *string)() {
     m.odataType = value
 }

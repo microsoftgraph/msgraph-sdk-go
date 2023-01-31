@@ -72,10 +72,6 @@ func NewContactFoldersItemChildFoldersRequestBuilder(rawUrl string, requestAdapt
 func (m *ContactFoldersItemChildFoldersRequestBuilder) Count()(*ContactFoldersItemChildFoldersCountRequestBuilder) {
     return NewContactFoldersItemChildFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *ContactFoldersItemChildFoldersRequestBuilder) Delta()(*ContactFoldersItemChildFoldersDeltaRequestBuilder) {
-    return NewContactFoldersItemChildFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get a collection of child folders under the specified contact folder.
 // [Find more info here]
 // 
@@ -97,6 +93,10 @@ func (m *ContactFoldersItemChildFoldersRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ContactFoldersItemChildFoldersRequestBuilder) MicrosoftGraphDelta()(*ContactFoldersItemChildFoldersMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewContactFoldersItemChildFoldersMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *ContactFoldersItemChildFoldersRequestBuilder) ToPostRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

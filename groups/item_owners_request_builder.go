@@ -44,10 +44,6 @@ type ItemOwnersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnersRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemOwnersRequestBuilder) Application()(*ItemOwnersApplicationRequestBuilder) {
-    return NewItemOwnersApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
 func NewItemOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersRequestBuilder) {
     m := &ItemOwnersRequestBuilder{
@@ -71,10 +67,6 @@ func NewItemOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemOwnersRequestBuilder) Count()(*ItemOwnersCountRequestBuilder) {
     return NewItemOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Device casts the previous resource to device.
-func (m *ItemOwnersRequestBuilder) Device()(*ItemOwnersDeviceRequestBuilder) {
-    return NewItemOwnersDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get the owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 // [Find more info here]
 // 
@@ -97,21 +89,33 @@ func (m *ItemOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemOwnersRequestBuilder) Group()(*ItemOwnersGroupRequestBuilder) {
-    return NewItemOwnersGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphApplication()(*ItemOwnersMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemOwnersRequestBuilder) OrgContact()(*ItemOwnersOrgContactRequestBuilder) {
-    return NewItemOwnersOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphDevice()(*ItemOwnersMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphGroup()(*ItemOwnersMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphOrgContact()(*ItemOwnersMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemOwnersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphUser()(*ItemOwnersMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemOwnersRequestBuilder) Ref()(*ItemOwnersRefRequestBuilder) {
     return NewItemOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnersRequestBuilder) ServicePrincipal()(*ItemOwnersServicePrincipalRequestBuilder) {
-    return NewItemOwnersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation the owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 func (m *ItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,8 +132,4 @@ func (m *ItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemOwnersRequestBuilder) User()(*ItemOwnersUserRequestBuilder) {
-    return NewItemOwnersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

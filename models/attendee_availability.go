@@ -12,7 +12,7 @@ type AttendeeAvailability struct {
     attendee AttendeeBaseable
     // The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
     availability *FreeBusyStatus
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAttendeeAvailability instantiates a new attendeeAvailability and sets the default values.
@@ -73,7 +73,7 @@ func (m *AttendeeAvailability) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AttendeeAvailability) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *AttendeeAvailability) SetAttendee(value AttendeeBaseable)() {
 func (m *AttendeeAvailability) SetAvailability(value *FreeBusyStatus)() {
     m.availability = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AttendeeAvailability) SetOdataType(value *string)() {
     m.odataType = value
 }

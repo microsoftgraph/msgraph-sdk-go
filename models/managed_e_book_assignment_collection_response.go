@@ -7,7 +7,7 @@ import (
 // ManagedEBookAssignmentCollectionResponse 
 type ManagedEBookAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedEBookAssignmentable
 }
 // NewManagedEBookAssignmentCollectionResponse instantiates a new ManagedEBookAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedEBookAssignmentCollectionResponse) GetValue()([]ManagedEBookAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedEBookAssignmentCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedEBookAssignmentCollectionResponse) SetValue(value []ManagedEBookAssignmentable)() {
     m.value = value
 }

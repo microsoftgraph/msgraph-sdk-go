@@ -7,7 +7,7 @@ import (
 // MuteParticipantOperationCollectionResponse 
 type MuteParticipantOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MuteParticipantOperationable
 }
 // NewMuteParticipantOperationCollectionResponse instantiates a new MuteParticipantOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MuteParticipantOperationCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MuteParticipantOperationCollectionResponse) GetValue()([]MuteParticipantOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MuteParticipantOperationCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MuteParticipantOperationCollectionResponse) SetValue(value []MuteParticipantOperationable)() {
     m.value = value
 }

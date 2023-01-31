@@ -7,13 +7,13 @@ import (
 // IdentityUserFlowAttribute 
 type IdentityUserFlowAttribute struct {
     Entity
-    // The dataType property
+    // 
     dataType *IdentityUserFlowAttributeDataType
     // The description of the user flow attribute that's shown to the user at the time of sign-up.
     description *string
     // The display name of the user flow attribute.
     displayName *string
-    // The userFlowAttributeType property
+    // 
     userFlowAttributeType *IdentityUserFlowAttributeType
 }
 // NewIdentityUserFlowAttribute instantiates a new identityUserFlowAttribute and sets the default values.
@@ -47,7 +47,7 @@ func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d233
     }
     return NewIdentityUserFlowAttribute(), nil
 }
-// GetDataType gets the dataType property value. The dataType property
+// GetDataType gets the dataType property value. 
 func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeDataType) {
     return m.dataType
 }
@@ -104,7 +104,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetUserFlowAttributeType gets the userFlowAttributeType property value. The userFlowAttributeType property
+// GetUserFlowAttributeType gets the userFlowAttributeType property value. 
 func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
     return m.userFlowAttributeType
 }
@@ -142,7 +142,7 @@ func (m *IdentityUserFlowAttribute) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetDataType sets the dataType property value. The dataType property
+// SetDataType sets the dataType property value. 
 func (m *IdentityUserFlowAttribute) SetDataType(value *IdentityUserFlowAttributeDataType)() {
     m.dataType = value
 }
@@ -154,7 +154,7 @@ func (m *IdentityUserFlowAttribute) SetDescription(value *string)() {
 func (m *IdentityUserFlowAttribute) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetUserFlowAttributeType sets the userFlowAttributeType property value. The userFlowAttributeType property
+// SetUserFlowAttributeType sets the userFlowAttributeType property value. 
 func (m *IdentityUserFlowAttribute) SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)() {
     m.userFlowAttributeType = value
 }

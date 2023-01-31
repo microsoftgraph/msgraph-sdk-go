@@ -10,9 +10,9 @@ type RiskServicePrincipalActivity struct {
     additionalData map[string]any
     // Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
     detail *RiskDetail
-    // The OdataType property
+    // 
     odataType *string
-    // The riskEventTypes property
+    // 
     riskEventTypes []string
 }
 // NewRiskServicePrincipalActivity instantiates a new riskServicePrincipalActivity and sets the default values.
@@ -73,11 +73,11 @@ func (m *RiskServicePrincipalActivity) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RiskServicePrincipalActivity) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
+// GetRiskEventTypes gets the riskEventTypes property value. 
 func (m *RiskServicePrincipalActivity) GetRiskEventTypes()([]string) {
     return m.riskEventTypes
 }
@@ -118,11 +118,11 @@ func (m *RiskServicePrincipalActivity) SetAdditionalData(value map[string]any)()
 func (m *RiskServicePrincipalActivity) SetDetail(value *RiskDetail)() {
     m.detail = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RiskServicePrincipalActivity) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRiskEventTypes sets the riskEventTypes property value. The riskEventTypes property
+// SetRiskEventTypes sets the riskEventTypes property value. 
 func (m *RiskServicePrincipalActivity) SetRiskEventTypes(value []string)() {
     m.riskEventTypes = value
 }

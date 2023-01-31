@@ -16,9 +16,9 @@ type RelatedContact struct {
     emailAddress *string
     // Mobile phone number of the contact.
     mobilePhone *string
-    // The OdataType property
+    // 
     odataType *string
-    // The relationship property
+    // 
     relationship *ContactRelationship
 }
 // NewRelatedContact instantiates a new relatedContact and sets the default values.
@@ -117,11 +117,11 @@ func (m *RelatedContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *RelatedContact) GetMobilePhone()(*string) {
     return m.mobilePhone
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RelatedContact) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRelationship gets the relationship property value. The relationship property
+// GetRelationship gets the relationship property value. 
 func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
     return m.relationship
 }
@@ -192,11 +192,11 @@ func (m *RelatedContact) SetEmailAddress(value *string)() {
 func (m *RelatedContact) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RelatedContact) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRelationship sets the relationship property value. The relationship property
+// SetRelationship sets the relationship property value. 
 func (m *RelatedContact) SetRelationship(value *ContactRelationship)() {
     m.relationship = value
 }

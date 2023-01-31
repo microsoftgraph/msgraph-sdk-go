@@ -12,7 +12,7 @@ type IosDeviceType struct {
     iPad *bool
     // Whether the app should run on iPhones and iPods.
     iPhoneAndIPod *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIosDeviceType instantiates a new iosDeviceType and sets the default values.
@@ -73,7 +73,7 @@ func (m *IosDeviceType) GetIPad()(*bool) {
 func (m *IosDeviceType) GetIPhoneAndIPod()(*bool) {
     return m.iPhoneAndIPod
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosDeviceType) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *IosDeviceType) SetIPad(value *bool)() {
 func (m *IosDeviceType) SetIPhoneAndIPod(value *bool)() {
     m.iPhoneAndIPod = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosDeviceType) SetOdataType(value *string)() {
     m.odataType = value
 }

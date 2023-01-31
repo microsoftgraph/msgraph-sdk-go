@@ -58,7 +58,7 @@ type PlannerCategoryDescriptions struct {
     category8 *string
     // The label associated with Category 9
     category9 *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPlannerCategoryDescriptions instantiates a new plannerCategoryDescriptions and sets the default values.
@@ -441,7 +441,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PlannerCategoryDescriptions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -715,7 +715,7 @@ func (m *PlannerCategoryDescriptions) SetCategory8(value *string)() {
 func (m *PlannerCategoryDescriptions) SetCategory9(value *string)() {
     m.category9 = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PlannerCategoryDescriptions) SetOdataType(value *string)() {
     m.odataType = value
 }

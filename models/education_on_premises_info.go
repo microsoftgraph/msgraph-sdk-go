@@ -10,7 +10,7 @@ type EducationOnPremisesInfo struct {
     additionalData map[string]any
     // Unique identifier for the user object in Active Directory.
     immutableId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEducationOnPremisesInfo instantiates a new educationOnPremisesInfo and sets the default values.
@@ -57,7 +57,7 @@ func (m *EducationOnPremisesInfo) GetFieldDeserializers()(map[string]func(i878a8
 func (m *EducationOnPremisesInfo) GetImmutableId()(*string) {
     return m.immutableId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationOnPremisesInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *EducationOnPremisesInfo) SetAdditionalData(value map[string]any)() {
 func (m *EducationOnPremisesInfo) SetImmutableId(value *string)() {
     m.immutableId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationOnPremisesInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

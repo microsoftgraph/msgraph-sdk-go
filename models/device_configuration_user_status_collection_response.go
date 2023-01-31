@@ -7,7 +7,7 @@ import (
 // DeviceConfigurationUserStatusCollectionResponse 
 type DeviceConfigurationUserStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceConfigurationUserStatusable
 }
 // NewDeviceConfigurationUserStatusCollectionResponse instantiates a new DeviceConfigurationUserStatusCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceConfigurationUserStatusCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceConfigurationUserStatusCollectionResponse) GetValue()([]DeviceConfigurationUserStatusable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceConfigurationUserStatusCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceConfigurationUserStatusCollectionResponse) SetValue(value []DeviceConfigurationUserStatusable)() {
     m.value = value
 }

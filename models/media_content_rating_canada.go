@@ -10,7 +10,7 @@ type MediaContentRatingCanada struct {
     additionalData map[string]any
     // Movies rating labels in Canada
     movieRating *RatingCanadaMoviesType
-    // The OdataType property
+    // 
     odataType *string
     // TV content rating labels in Canada
     tvRating *RatingCanadaTelevisionType
@@ -69,7 +69,7 @@ func (m *MediaContentRatingCanada) GetFieldDeserializers()(map[string]func(i878a
 func (m *MediaContentRatingCanada) GetMovieRating()(*RatingCanadaMoviesType) {
     return m.movieRating
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MediaContentRatingCanada) GetOdataType()(*string) {
     return m.odataType
 }
@@ -115,7 +115,7 @@ func (m *MediaContentRatingCanada) SetAdditionalData(value map[string]any)() {
 func (m *MediaContentRatingCanada) SetMovieRating(value *RatingCanadaMoviesType)() {
     m.movieRating = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MediaContentRatingCanada) SetOdataType(value *string)() {
     m.odataType = value
 }

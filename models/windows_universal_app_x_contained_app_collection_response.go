@@ -7,7 +7,7 @@ import (
 // WindowsUniversalAppXContainedAppCollectionResponse 
 type WindowsUniversalAppXContainedAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsUniversalAppXContainedAppable
 }
 // NewWindowsUniversalAppXContainedAppCollectionResponse instantiates a new WindowsUniversalAppXContainedAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsUniversalAppXContainedAppCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsUniversalAppXContainedAppCollectionResponse) GetValue()([]WindowsUniversalAppXContainedAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsUniversalAppXContainedAppCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsUniversalAppXContainedAppCollectionResponse) SetValue(value []WindowsUniversalAppXContainedAppable)() {
     m.value = value
 }

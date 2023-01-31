@@ -42,7 +42,7 @@ type EducationUser struct {
     middleName *string
     // The primary cellular telephone number for the user.
     mobilePhone *string
-    // The officeLocation property
+    // 
     officeLocation *string
     // Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
     onPremisesInfo EducationOnPremisesInfoable
@@ -52,11 +52,11 @@ type EducationUser struct {
     passwordProfile PasswordProfileable
     // The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
     preferredLanguage *string
-    // The primaryRole property
+    // 
     primaryRole *EducationUserRole
     // The plans that are provisioned for the user. Read-only. Not nullable.
     provisionedPlans []ProvisionedPlanable
-    // The refreshTokensValidFromDateTime property
+    // 
     refreshTokensValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Related records associated with the user. Read-only.
     relatedContacts []RelatedContactable
@@ -589,7 +589,7 @@ func (m *EducationUser) GetMiddleName()(*string) {
 func (m *EducationUser) GetMobilePhone()(*string) {
     return m.mobilePhone
 }
-// GetOfficeLocation gets the officeLocation property value. The officeLocation property
+// GetOfficeLocation gets the officeLocation property value. 
 func (m *EducationUser) GetOfficeLocation()(*string) {
     return m.officeLocation
 }
@@ -609,7 +609,7 @@ func (m *EducationUser) GetPasswordProfile()(PasswordProfileable) {
 func (m *EducationUser) GetPreferredLanguage()(*string) {
     return m.preferredLanguage
 }
-// GetPrimaryRole gets the primaryRole property value. The primaryRole property
+// GetPrimaryRole gets the primaryRole property value. 
 func (m *EducationUser) GetPrimaryRole()(*EducationUserRole) {
     return m.primaryRole
 }
@@ -617,7 +617,7 @@ func (m *EducationUser) GetPrimaryRole()(*EducationUserRole) {
 func (m *EducationUser) GetProvisionedPlans()([]ProvisionedPlanable) {
     return m.provisionedPlans
 }
-// GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+// GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. 
 func (m *EducationUser) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.refreshTokensValidFromDateTime
 }
@@ -1015,7 +1015,7 @@ func (m *EducationUser) SetMiddleName(value *string)() {
 func (m *EducationUser) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
-// SetOfficeLocation sets the officeLocation property value. The officeLocation property
+// SetOfficeLocation sets the officeLocation property value. 
 func (m *EducationUser) SetOfficeLocation(value *string)() {
     m.officeLocation = value
 }
@@ -1035,7 +1035,7 @@ func (m *EducationUser) SetPasswordProfile(value PasswordProfileable)() {
 func (m *EducationUser) SetPreferredLanguage(value *string)() {
     m.preferredLanguage = value
 }
-// SetPrimaryRole sets the primaryRole property value. The primaryRole property
+// SetPrimaryRole sets the primaryRole property value. 
 func (m *EducationUser) SetPrimaryRole(value *EducationUserRole)() {
     m.primaryRole = value
 }
@@ -1043,7 +1043,7 @@ func (m *EducationUser) SetPrimaryRole(value *EducationUserRole)() {
 func (m *EducationUser) SetProvisionedPlans(value []ProvisionedPlanable)() {
     m.provisionedPlans = value
 }
-// SetRefreshTokensValidFromDateTime sets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+// SetRefreshTokensValidFromDateTime sets the refreshTokensValidFromDateTime property value. 
 func (m *EducationUser) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.refreshTokensValidFromDateTime = value
 }

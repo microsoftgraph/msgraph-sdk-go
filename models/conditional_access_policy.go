@@ -8,11 +8,11 @@ import (
 // ConditionalAccessPolicy 
 type ConditionalAccessPolicy struct {
     Entity
-    // The conditions property
+    // 
     conditions ConditionalAccessConditionSetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // 
     description *string
     // Specifies a display name for the conditionalAccessPolicy object.
     displayName *string
@@ -22,7 +22,7 @@ type ConditionalAccessPolicy struct {
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the session controls that are enforced after sign-in.
     sessionControls ConditionalAccessSessionControlsable
-    // The state property
+    // 
     state *ConditionalAccessPolicyState
 }
 // NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
@@ -36,7 +36,7 @@ func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
 func CreateConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessPolicy(), nil
 }
-// GetConditions gets the conditions property value. The conditions property
+// GetConditions gets the conditions property value. 
 func (m *ConditionalAccessPolicy) GetConditions()(ConditionalAccessConditionSetable) {
     return m.conditions
 }
@@ -44,7 +44,7 @@ func (m *ConditionalAccessPolicy) GetConditions()(ConditionalAccessConditionSeta
 func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. 
 func (m *ConditionalAccessPolicy) GetDescription()(*string) {
     return m.description
 }
@@ -149,7 +149,7 @@ func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f
 func (m *ConditionalAccessPolicy) GetSessionControls()(ConditionalAccessSessionControlsable) {
     return m.sessionControls
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
     return m.state
 }
@@ -210,7 +210,7 @@ func (m *ConditionalAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetConditions sets the conditions property value. The conditions property
+// SetConditions sets the conditions property value. 
 func (m *ConditionalAccessPolicy) SetConditions(value ConditionalAccessConditionSetable)() {
     m.conditions = value
 }
@@ -218,7 +218,7 @@ func (m *ConditionalAccessPolicy) SetConditions(value ConditionalAccessCondition
 func (m *ConditionalAccessPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. 
 func (m *ConditionalAccessPolicy) SetDescription(value *string)() {
     m.description = value
 }
@@ -238,7 +238,7 @@ func (m *ConditionalAccessPolicy) SetModifiedDateTime(value *i336074805fc853987a
 func (m *ConditionalAccessPolicy) SetSessionControls(value ConditionalAccessSessionControlsable)() {
     m.sessionControls = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *ConditionalAccessPolicy) SetState(value *ConditionalAccessPolicyState)() {
     m.state = value
 }

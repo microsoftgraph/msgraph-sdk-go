@@ -10,13 +10,13 @@ type TeamsAppDefinition struct {
     Entity
     // The details of the bot specified in the Teams app manifest.
     bot TeamworkBotable
-    // The createdBy property
+    // 
     createdBy IdentitySetable
     // Verbose description of the application.
     description *string
     // The name of the app provided by the app developer.
     displayName *string
-    // The lastModifiedDateTime property
+    // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
     publishingState *TeamsAppPublishingState
@@ -42,7 +42,7 @@ func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *TeamsAppDefinition) GetBot()(TeamworkBotable) {
     return m.bot
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. 
 func (m *TeamsAppDefinition) GetCreatedBy()(IdentitySetable) {
     return m.createdBy
 }
@@ -149,7 +149,7 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
@@ -236,7 +236,7 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *TeamsAppDefinition) SetBot(value TeamworkBotable)() {
     m.bot = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. 
 func (m *TeamsAppDefinition) SetCreatedBy(value IdentitySetable)() {
     m.createdBy = value
 }
@@ -248,7 +248,7 @@ func (m *TeamsAppDefinition) SetDescription(value *string)() {
 func (m *TeamsAppDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *TeamsAppDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

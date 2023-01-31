@@ -10,7 +10,7 @@ type TimeZoneBase struct {
     additionalData map[string]any
     // The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewTimeZoneBase instantiates a new timeZoneBase and sets the default values.
@@ -75,7 +75,7 @@ func (m *TimeZoneBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *TimeZoneBase) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TimeZoneBase) GetOdataType()(*string) {
     return m.odataType
 }
@@ -109,7 +109,7 @@ func (m *TimeZoneBase) SetAdditionalData(value map[string]any)() {
 func (m *TimeZoneBase) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TimeZoneBase) SetOdataType(value *string)() {
     m.odataType = value
 }

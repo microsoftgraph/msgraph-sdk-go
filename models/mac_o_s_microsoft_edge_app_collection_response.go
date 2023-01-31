@@ -7,7 +7,7 @@ import (
 // MacOSMicrosoftEdgeAppCollectionResponse 
 type MacOSMicrosoftEdgeAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MacOSMicrosoftEdgeAppable
 }
 // NewMacOSMicrosoftEdgeAppCollectionResponse instantiates a new MacOSMicrosoftEdgeAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MacOSMicrosoftEdgeAppCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MacOSMicrosoftEdgeAppCollectionResponse) GetValue()([]MacOSMicrosoftEdgeAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MacOSMicrosoftEdgeAppCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MacOSMicrosoftEdgeAppCollectionResponse) SetValue(value []MacOSMicrosoftEdgeAppable)() {
     m.value = value
 }

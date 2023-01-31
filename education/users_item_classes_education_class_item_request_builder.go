@@ -33,13 +33,16 @@ type UsersItemClassesEducationClassItemRequestBuilderGetRequestConfiguration str
     QueryParameters *UsersItemClassesEducationClassItemRequestBuilderGetQueryParameters
 }
 // NewUsersItemClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
-func NewUsersItemClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemClassesEducationClassItemRequestBuilder) {
+func NewUsersItemClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationClassId *string)(*UsersItemClassesEducationClassItemRequestBuilder) {
     m := &UsersItemClassesEducationClassItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/users/{educationUser%2Did}/classes/{educationClass%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationClassId != nil {
+        urlTplParams["educationClass%2Did"] = *educationClassId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewUsersItemClassesEducationClassItemRequestBuilderInternal(pathParameters 
 func NewUsersItemClassesEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemClassesEducationClassItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUsersItemClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUsersItemClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get classes to which the user belongs. Nullable.
 func (m *UsersItemClassesEducationClassItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemClassesEducationClassItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {

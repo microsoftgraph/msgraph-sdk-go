@@ -62,13 +62,16 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) CategoriesBy
     return NewUsersItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
-func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsEducationAssignmentItemRequestBuilder) {
+func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationAssignmentId *string)(*UsersItemAssignmentsEducationAssignmentItemRequestBuilder) {
     m := &UsersItemAssignmentsEducationAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationAssignmentId != nil {
+        urlTplParams["educationAssignment%2Did"] = *educationAssignmentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +81,7 @@ func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(pathPa
 func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsEducationAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for education
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -115,6 +118,18 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable), nil
 }
+// MicrosoftGraphPublish provides operations to call the publish method.
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) MicrosoftGraphPublish()(*UsersItemAssignmentsItemMicrosoftGraphPublishPublishRequestBuilder) {
+    return NewUsersItemAssignmentsItemMicrosoftGraphPublishPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) MicrosoftGraphSetUpFeedbackResourcesFolder()(*UsersItemAssignmentsItemMicrosoftGraphSetUpFeedbackResourcesFolderSetUpFeedbackResourcesFolderRequestBuilder) {
+    return NewUsersItemAssignmentsItemMicrosoftGraphSetUpFeedbackResourcesFolderSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) MicrosoftGraphSetUpResourcesFolder()(*UsersItemAssignmentsItemMicrosoftGraphSetUpResourcesFolderSetUpResourcesFolderRequestBuilder) {
+    return NewUsersItemAssignmentsItemMicrosoftGraphSetUpResourcesFolderSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property assignments in education
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -134,10 +149,6 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Patch(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable), nil
 }
-// Publish provides operations to call the publish method.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Publish()(*UsersItemAssignmentsItemPublishRequestBuilder) {
-    return NewUsersItemAssignmentsItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Resources provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Resources()(*UsersItemAssignmentsItemResourcesRequestBuilder) {
     return NewUsersItemAssignmentsItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -156,14 +167,6 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ResourcesByI
 // Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*UsersItemAssignmentsItemRubricRequestBuilder) {
     return NewUsersItemAssignmentsItemRubricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*UsersItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder) {
-    return NewUsersItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*UsersItemAssignmentsItemSetUpResourcesFolderRequestBuilder) {
-    return NewUsersItemAssignmentsItemSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Submissions()(*UsersItemAssignmentsItemSubmissionsRequestBuilder) {
@@ -215,7 +218,10 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

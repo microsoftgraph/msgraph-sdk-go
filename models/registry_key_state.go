@@ -12,7 +12,7 @@ type RegistryKeyState struct {
     hive *RegistryHive
     // Current (i.e. changed) registry key (excludes HIVE).
     key *string
-    // The OdataType property
+    // 
     odataType *string
     // Previous (i.e. before changed) registry key (excludes HIVE).
     oldKey *string
@@ -169,7 +169,7 @@ func (m *RegistryKeyState) GetHive()(*RegistryHive) {
 func (m *RegistryKeyState) GetKey()(*string) {
     return m.key
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RegistryKeyState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -296,7 +296,7 @@ func (m *RegistryKeyState) SetHive(value *RegistryHive)() {
 func (m *RegistryKeyState) SetKey(value *string)() {
     m.key = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RegistryKeyState) SetOdataType(value *string)() {
     m.odataType = value
 }

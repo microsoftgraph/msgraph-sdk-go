@@ -8,9 +8,9 @@ import (
 type OnenotePagePreviewLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The previewImageUrl property
+    // 
     previewImageUrl ExternalLinkable
 }
 // NewOnenotePagePreviewLinks instantiates a new onenotePagePreviewLinks and sets the default values.
@@ -53,11 +53,11 @@ func (m *OnenotePagePreviewLinks) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnenotePagePreviewLinks) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPreviewImageUrl gets the previewImageUrl property value. The previewImageUrl property
+// GetPreviewImageUrl gets the previewImageUrl property value. 
 func (m *OnenotePagePreviewLinks) GetPreviewImageUrl()(ExternalLinkable) {
     return m.previewImageUrl
 }
@@ -87,11 +87,11 @@ func (m *OnenotePagePreviewLinks) Serialize(writer i878a80d2330e89d26896388a3f48
 func (m *OnenotePagePreviewLinks) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnenotePagePreviewLinks) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPreviewImageUrl sets the previewImageUrl property value. The previewImageUrl property
+// SetPreviewImageUrl sets the previewImageUrl property value. 
 func (m *OnenotePagePreviewLinks) SetPreviewImageUrl(value ExternalLinkable)() {
     m.previewImageUrl = value
 }

@@ -12,7 +12,7 @@ type BitLockerRemovableDrivePolicy struct {
     blockCrossOrganizationWriteAccess *bool
     // Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
     encryptionMethod *BitLockerEncryptionMethod
-    // The OdataType property
+    // 
     odataType *string
     // Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
     requireEncryptionForWriteAccess *bool
@@ -85,7 +85,7 @@ func (m *BitLockerRemovableDrivePolicy) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BitLockerRemovableDrivePolicy) GetOdataType()(*string) {
     return m.odataType
 }
@@ -140,7 +140,7 @@ func (m *BitLockerRemovableDrivePolicy) SetBlockCrossOrganizationWriteAccess(val
 func (m *BitLockerRemovableDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
     m.encryptionMethod = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BitLockerRemovableDrivePolicy) SetOdataType(value *string)() {
     m.odataType = value
 }

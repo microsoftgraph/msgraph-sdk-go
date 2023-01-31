@@ -7,7 +7,7 @@ import (
 // IosVppAppCollectionResponse 
 type IosVppAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosVppAppable
 }
 // NewIosVppAppCollectionResponse instantiates a new IosVppAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosVppAppCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosVppAppCollectionResponse) GetValue()([]IosVppAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosVppAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosVppAppCollectionResponse) SetValue(value []IosVppAppable)() {
     m.value = value
 }

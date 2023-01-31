@@ -11,7 +11,7 @@ type IncompleteData struct {
     additionalData map[string]any
     // The service does not have source data before the specified time.
     missingDataBeforeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Some data was not recorded due to excessive activity.
     wasThrottled *bool
@@ -70,7 +70,7 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.missingDataBeforeDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IncompleteData) GetOdataType()(*string) {
     return m.odataType
 }
@@ -114,7 +114,7 @@ func (m *IncompleteData) SetAdditionalData(value map[string]any)() {
 func (m *IncompleteData) SetMissingDataBeforeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.missingDataBeforeDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IncompleteData) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -16,7 +16,7 @@ type NumberColumn struct {
     maximum *float64
     // The minimum permitted value.
     minimum *float64
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewNumberColumn instantiates a new numberColumn and sets the default values.
@@ -105,7 +105,7 @@ func (m *NumberColumn) GetMaximum()(*float64) {
 func (m *NumberColumn) GetMinimum()(*float64) {
     return m.minimum
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *NumberColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *NumberColumn) SetMaximum(value *float64)() {
 func (m *NumberColumn) SetMinimum(value *float64)() {
     m.minimum = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *NumberColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

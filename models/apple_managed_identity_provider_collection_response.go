@@ -7,7 +7,7 @@ import (
 // AppleManagedIdentityProviderCollectionResponse 
 type AppleManagedIdentityProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AppleManagedIdentityProviderable
 }
 // NewAppleManagedIdentityProviderCollectionResponse instantiates a new AppleManagedIdentityProviderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AppleManagedIdentityProviderCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AppleManagedIdentityProviderCollectionResponse) GetValue()([]AppleManagedIdentityProviderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AppleManagedIdentityProviderCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AppleManagedIdentityProviderCollectionResponse) SetValue(value []AppleManagedIdentityProviderable)() {
     m.value = value
 }

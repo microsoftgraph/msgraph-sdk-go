@@ -48,7 +48,7 @@ type MessageRulePredicates struct {
     messageActionFlag *MessageActionFlag
     // Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
     notSentToMe *bool
-    // The OdataType property
+    // 
     odataType *string
     // Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
     recipientContains []string
@@ -517,7 +517,7 @@ func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
 func (m *MessageRulePredicates) GetNotSentToMe()(*bool) {
     return m.notSentToMe
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MessageRulePredicates) GetOdataType()(*string) {
     return m.odataType
 }
@@ -852,7 +852,7 @@ func (m *MessageRulePredicates) SetMessageActionFlag(value *MessageActionFlag)()
 func (m *MessageRulePredicates) SetNotSentToMe(value *bool)() {
     m.notSentToMe = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MessageRulePredicates) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -8,7 +8,7 @@ import (
 // SiteSource 
 type SiteSource struct {
     DataSource
-    // The site property
+    // 
     site iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable
 }
 // NewSiteSource instantiates a new SiteSource and sets the default values.
@@ -39,7 +39,7 @@ func (m *SiteSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetSite gets the site property value. The site property
+// GetSite gets the site property value. 
 func (m *SiteSource) GetSite()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable) {
     return m.site
 }
@@ -57,7 +57,7 @@ func (m *SiteSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetSite sets the site property value. The site property
+// SetSite sets the site property value. 
 func (m *SiteSource) SetSite(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable)() {
     m.site = value
 }

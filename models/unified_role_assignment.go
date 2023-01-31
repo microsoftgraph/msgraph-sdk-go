@@ -11,7 +11,7 @@ type UnifiedRoleAssignment struct {
     appScope AppScopeable
     // Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
     appScopeId *string
-    // The condition property
+    // 
     condition *string
     // The directory object that is the scope of the assignment. Read-only. Supports $expand.
     directoryScope DirectoryObjectable
@@ -45,7 +45,7 @@ func (m *UnifiedRoleAssignment) GetAppScope()(AppScopeable) {
 func (m *UnifiedRoleAssignment) GetAppScopeId()(*string) {
     return m.appScopeId
 }
-// GetCondition gets the condition property value. The condition property
+// GetCondition gets the condition property value. 
 func (m *UnifiedRoleAssignment) GetCondition()(*string) {
     return m.condition
 }
@@ -238,7 +238,7 @@ func (m *UnifiedRoleAssignment) SetAppScope(value AppScopeable)() {
 func (m *UnifiedRoleAssignment) SetAppScopeId(value *string)() {
     m.appScopeId = value
 }
-// SetCondition sets the condition property value. The condition property
+// SetCondition sets the condition property value. 
 func (m *UnifiedRoleAssignment) SetCondition(value *string)() {
     m.condition = value
 }

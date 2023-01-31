@@ -11,7 +11,7 @@ type CommsOperation struct {
     clientContext *string
     // The result information. Read-only.
     resultInfo ResultInfoable
-    // The status property
+    // 
     status *OperationStatus
 }
 // NewCommsOperation instantiates a new commsOperation and sets the default values.
@@ -106,7 +106,7 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
     return m.resultInfo
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *CommsOperation) GetStatus()(*OperationStatus) {
     return m.status
 }
@@ -145,7 +145,7 @@ func (m *CommsOperation) SetClientContext(value *string)() {
 func (m *CommsOperation) SetResultInfo(value ResultInfoable)() {
     m.resultInfo = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *CommsOperation) SetStatus(value *OperationStatus)() {
     m.status = value
 }

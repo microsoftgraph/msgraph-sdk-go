@@ -7,7 +7,7 @@ import (
 // SearchBucketCollectionResponse 
 type SearchBucketCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SearchBucketable
 }
 // NewSearchBucketCollectionResponse instantiates a new SearchBucketCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SearchBucketCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SearchBucketCollectionResponse) GetValue()([]SearchBucketable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SearchBucketCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SearchBucketCollectionResponse) SetValue(value []SearchBucketable)() {
     m.value = value
 }

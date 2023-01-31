@@ -7,7 +7,7 @@ import (
 // MediaInfoCollectionResponse 
 type MediaInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MediaInfoable
 }
 // NewMediaInfoCollectionResponse instantiates a new MediaInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MediaInfoCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MediaInfoCollectionResponse) GetValue()([]MediaInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MediaInfoCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MediaInfoCollectionResponse) SetValue(value []MediaInfoable)() {
     m.value = value
 }

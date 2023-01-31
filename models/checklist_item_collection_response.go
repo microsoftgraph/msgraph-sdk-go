@@ -7,7 +7,7 @@ import (
 // ChecklistItemCollectionResponse 
 type ChecklistItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ChecklistItemable
 }
 // NewChecklistItemCollectionResponse instantiates a new ChecklistItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChecklistItemCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChecklistItemCollectionResponse) GetValue()([]ChecklistItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChecklistItemCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChecklistItemCollectionResponse) SetValue(value []ChecklistItemable)() {
     m.value = value
 }

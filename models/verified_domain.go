@@ -16,7 +16,7 @@ type VerifiedDomain struct {
     isInitial *bool
     // The domain name; for example, contoso.onmicrosoft.com.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // For example, Managed.
     type_escaped *string
@@ -117,7 +117,7 @@ func (m *VerifiedDomain) GetIsInitial()(*bool) {
 func (m *VerifiedDomain) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *VerifiedDomain) GetOdataType()(*string) {
     return m.odataType
 }
@@ -191,7 +191,7 @@ func (m *VerifiedDomain) SetIsInitial(value *bool)() {
 func (m *VerifiedDomain) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *VerifiedDomain) SetOdataType(value *string)() {
     m.odataType = value
 }

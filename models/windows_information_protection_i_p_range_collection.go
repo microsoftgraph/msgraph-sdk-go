@@ -10,7 +10,7 @@ type WindowsInformationProtectionIPRangeCollection struct {
     additionalData map[string]any
     // Display name
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // Collection of ip ranges
     ranges []IpRangeable
@@ -73,7 +73,7 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WindowsInformationProtectionIPRangeCollection) GetOdataType()(*string) {
     return m.odataType
 }
@@ -121,7 +121,7 @@ func (m *WindowsInformationProtectionIPRangeCollection) SetAdditionalData(value 
 func (m *WindowsInformationProtectionIPRangeCollection) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WindowsInformationProtectionIPRangeCollection) SetOdataType(value *string)() {
     m.odataType = value
 }

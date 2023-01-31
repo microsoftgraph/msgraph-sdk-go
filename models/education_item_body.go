@@ -8,11 +8,11 @@ import (
 type EducationItemBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The content property
+    // 
     content *string
-    // The contentType property
+    // 
     contentType *BodyType
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEducationItemBody instantiates a new educationItemBody and sets the default values.
@@ -30,11 +30,11 @@ func CreateEducationItemBodyFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *EducationItemBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. 
 func (m *EducationItemBody) GetContent()(*string) {
     return m.content
 }
-// GetContentType gets the contentType property value. The contentType property
+// GetContentType gets the contentType property value. 
 func (m *EducationItemBody) GetContentType()(*BodyType) {
     return m.contentType
 }
@@ -73,7 +73,7 @@ func (m *EducationItemBody) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationItemBody) GetOdataType()(*string) {
     return m.odataType
 }
@@ -110,15 +110,15 @@ func (m *EducationItemBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *EducationItemBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. 
 func (m *EducationItemBody) SetContent(value *string)() {
     m.content = value
 }
-// SetContentType sets the contentType property value. The contentType property
+// SetContentType sets the contentType property value. 
 func (m *EducationItemBody) SetContentType(value *BodyType)() {
     m.contentType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationItemBody) SetOdataType(value *string)() {
     m.odataType = value
 }

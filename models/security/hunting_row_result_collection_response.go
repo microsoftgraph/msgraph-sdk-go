@@ -8,7 +8,7 @@ import (
 // HuntingRowResultCollectionResponse 
 type HuntingRowResultCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []HuntingRowResultable
 }
 // NewHuntingRowResultCollectionResponse instantiates a new HuntingRowResultCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *HuntingRowResultCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *HuntingRowResultCollectionResponse) GetValue()([]HuntingRowResultable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *HuntingRowResultCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *HuntingRowResultCollectionResponse) SetValue(value []HuntingRowResultable)() {
     m.value = value
 }

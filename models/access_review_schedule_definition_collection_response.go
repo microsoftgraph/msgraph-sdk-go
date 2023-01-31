@@ -7,7 +7,7 @@ import (
 // AccessReviewScheduleDefinitionCollectionResponse 
 type AccessReviewScheduleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewScheduleDefinitionable
 }
 // NewAccessReviewScheduleDefinitionCollectionResponse instantiates a new AccessReviewScheduleDefinitionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewScheduleDefinitionCollectionResponse) GetFieldDeserializers
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewScheduleDefinitionCollectionResponse) GetValue()([]AccessReviewScheduleDefinitionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewScheduleDefinitionCollectionResponse) Serialize(writer i878
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewScheduleDefinitionCollectionResponse) SetValue(value []AccessReviewScheduleDefinitionable)() {
     m.value = value
 }

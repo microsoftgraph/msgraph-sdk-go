@@ -7,7 +7,7 @@ import (
 // GroupLifecyclePolicyCollectionResponse 
 type GroupLifecyclePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []GroupLifecyclePolicyable
 }
 // NewGroupLifecyclePolicyCollectionResponse instantiates a new GroupLifecyclePolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *GroupLifecyclePolicyCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *GroupLifecyclePolicyCollectionResponse) GetValue()([]GroupLifecyclePolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *GroupLifecyclePolicyCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *GroupLifecyclePolicyCollectionResponse) SetValue(value []GroupLifecyclePolicyable)() {
     m.value = value
 }

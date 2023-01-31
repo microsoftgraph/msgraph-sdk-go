@@ -12,7 +12,7 @@ type WorkingHours struct {
     daysOfWeek []DayOfWeek
     // The time of the day that the user stops working.
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // The OdataType property
+    // 
     odataType *string
     // The time of the day that the user starts working.
     startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
@@ -101,7 +101,7 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WorkingHours) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *WorkingHours) SetDaysOfWeek(value []DayOfWeek)() {
 func (m *WorkingHours) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     m.endTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WorkingHours) SetOdataType(value *string)() {
     m.odataType = value
 }

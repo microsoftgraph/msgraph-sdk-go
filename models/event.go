@@ -30,67 +30,67 @@ type Event struct {
     hideAttendees *bool
     // A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
     iCalUId *string
-    // The importance property
+    // 
     importance *Importance
     // The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
     instances []Eventable
-    // The isAllDay property
+    // 
     isAllDay *bool
-    // The isCancelled property
+    // 
     isCancelled *bool
-    // The isDraft property
+    // 
     isDraft *bool
-    // The isOnlineMeeting property
+    // 
     isOnlineMeeting *bool
-    // The isOrganizer property
+    // 
     isOrganizer *bool
-    // The isReminderOn property
+    // 
     isReminderOn *bool
-    // The location property
+    // 
     location Locationable
-    // The locations property
+    // 
     locations []Locationable
     // The collection of multi-value extended properties defined for the event. Read-only. Nullable.
     multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
-    // The onlineMeeting property
+    // 
     onlineMeeting OnlineMeetingInfoable
-    // The onlineMeetingProvider property
+    // 
     onlineMeetingProvider *OnlineMeetingProviderType
-    // The onlineMeetingUrl property
+    // 
     onlineMeetingUrl *string
-    // The organizer property
+    // 
     organizer Recipientable
-    // The originalEndTimeZone property
+    // 
     originalEndTimeZone *string
-    // The originalStart property
+    // 
     originalStart *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The originalStartTimeZone property
+    // 
     originalStartTimeZone *string
-    // The recurrence property
+    // 
     recurrence PatternedRecurrenceable
-    // The reminderMinutesBeforeStart property
+    // 
     reminderMinutesBeforeStart *int32
-    // The responseRequested property
+    // 
     responseRequested *bool
-    // The responseStatus property
+    // 
     responseStatus ResponseStatusable
-    // The sensitivity property
+    // 
     sensitivity *Sensitivity
-    // The seriesMasterId property
+    // 
     seriesMasterId *string
-    // The showAs property
+    // 
     showAs *FreeBusyStatus
     // The collection of single-value extended properties defined for the event. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
-    // The start property
+    // 
     start DateTimeTimeZoneable
-    // The subject property
+    // 
     subject *string
-    // The transactionId property
+    // 
     transactionId *string
-    // The type property
+    // 
     type_escaped *EventType
-    // The webLink property
+    // 
     webLink *string
 }
 // NewEvent instantiates a new Event and sets the default values.
@@ -603,7 +603,7 @@ func (m *Event) GetHideAttendees()(*bool) {
 func (m *Event) GetICalUId()(*string) {
     return m.iCalUId
 }
-// GetImportance gets the importance property value. The importance property
+// GetImportance gets the importance property value. 
 func (m *Event) GetImportance()(*Importance) {
     return m.importance
 }
@@ -611,35 +611,35 @@ func (m *Event) GetImportance()(*Importance) {
 func (m *Event) GetInstances()([]Eventable) {
     return m.instances
 }
-// GetIsAllDay gets the isAllDay property value. The isAllDay property
+// GetIsAllDay gets the isAllDay property value. 
 func (m *Event) GetIsAllDay()(*bool) {
     return m.isAllDay
 }
-// GetIsCancelled gets the isCancelled property value. The isCancelled property
+// GetIsCancelled gets the isCancelled property value. 
 func (m *Event) GetIsCancelled()(*bool) {
     return m.isCancelled
 }
-// GetIsDraft gets the isDraft property value. The isDraft property
+// GetIsDraft gets the isDraft property value. 
 func (m *Event) GetIsDraft()(*bool) {
     return m.isDraft
 }
-// GetIsOnlineMeeting gets the isOnlineMeeting property value. The isOnlineMeeting property
+// GetIsOnlineMeeting gets the isOnlineMeeting property value. 
 func (m *Event) GetIsOnlineMeeting()(*bool) {
     return m.isOnlineMeeting
 }
-// GetIsOrganizer gets the isOrganizer property value. The isOrganizer property
+// GetIsOrganizer gets the isOrganizer property value. 
 func (m *Event) GetIsOrganizer()(*bool) {
     return m.isOrganizer
 }
-// GetIsReminderOn gets the isReminderOn property value. The isReminderOn property
+// GetIsReminderOn gets the isReminderOn property value. 
 func (m *Event) GetIsReminderOn()(*bool) {
     return m.isReminderOn
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. 
 func (m *Event) GetLocation()(Locationable) {
     return m.location
 }
-// GetLocations gets the locations property value. The locations property
+// GetLocations gets the locations property value. 
 func (m *Event) GetLocations()([]Locationable) {
     return m.locations
 }
@@ -647,59 +647,59 @@ func (m *Event) GetLocations()([]Locationable) {
 func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     return m.multiValueExtendedProperties
 }
-// GetOnlineMeeting gets the onlineMeeting property value. The onlineMeeting property
+// GetOnlineMeeting gets the onlineMeeting property value. 
 func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
     return m.onlineMeeting
 }
-// GetOnlineMeetingProvider gets the onlineMeetingProvider property value. The onlineMeetingProvider property
+// GetOnlineMeetingProvider gets the onlineMeetingProvider property value. 
 func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
     return m.onlineMeetingProvider
 }
-// GetOnlineMeetingUrl gets the onlineMeetingUrl property value. The onlineMeetingUrl property
+// GetOnlineMeetingUrl gets the onlineMeetingUrl property value. 
 func (m *Event) GetOnlineMeetingUrl()(*string) {
     return m.onlineMeetingUrl
 }
-// GetOrganizer gets the organizer property value. The organizer property
+// GetOrganizer gets the organizer property value. 
 func (m *Event) GetOrganizer()(Recipientable) {
     return m.organizer
 }
-// GetOriginalEndTimeZone gets the originalEndTimeZone property value. The originalEndTimeZone property
+// GetOriginalEndTimeZone gets the originalEndTimeZone property value. 
 func (m *Event) GetOriginalEndTimeZone()(*string) {
     return m.originalEndTimeZone
 }
-// GetOriginalStart gets the originalStart property value. The originalStart property
+// GetOriginalStart gets the originalStart property value. 
 func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.originalStart
 }
-// GetOriginalStartTimeZone gets the originalStartTimeZone property value. The originalStartTimeZone property
+// GetOriginalStartTimeZone gets the originalStartTimeZone property value. 
 func (m *Event) GetOriginalStartTimeZone()(*string) {
     return m.originalStartTimeZone
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. 
 func (m *Event) GetRecurrence()(PatternedRecurrenceable) {
     return m.recurrence
 }
-// GetReminderMinutesBeforeStart gets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+// GetReminderMinutesBeforeStart gets the reminderMinutesBeforeStart property value. 
 func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
     return m.reminderMinutesBeforeStart
 }
-// GetResponseRequested gets the responseRequested property value. The responseRequested property
+// GetResponseRequested gets the responseRequested property value. 
 func (m *Event) GetResponseRequested()(*bool) {
     return m.responseRequested
 }
-// GetResponseStatus gets the responseStatus property value. The responseStatus property
+// GetResponseStatus gets the responseStatus property value. 
 func (m *Event) GetResponseStatus()(ResponseStatusable) {
     return m.responseStatus
 }
-// GetSensitivity gets the sensitivity property value. The sensitivity property
+// GetSensitivity gets the sensitivity property value. 
 func (m *Event) GetSensitivity()(*Sensitivity) {
     return m.sensitivity
 }
-// GetSeriesMasterId gets the seriesMasterId property value. The seriesMasterId property
+// GetSeriesMasterId gets the seriesMasterId property value. 
 func (m *Event) GetSeriesMasterId()(*string) {
     return m.seriesMasterId
 }
-// GetShowAs gets the showAs property value. The showAs property
+// GetShowAs gets the showAs property value. 
 func (m *Event) GetShowAs()(*FreeBusyStatus) {
     return m.showAs
 }
@@ -707,23 +707,23 @@ func (m *Event) GetShowAs()(*FreeBusyStatus) {
 func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     return m.singleValueExtendedProperties
 }
-// GetStart gets the start property value. The start property
+// GetStart gets the start property value. 
 func (m *Event) GetStart()(DateTimeTimeZoneable) {
     return m.start
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. 
 func (m *Event) GetSubject()(*string) {
     return m.subject
 }
-// GetTransactionId gets the transactionId property value. The transactionId property
+// GetTransactionId gets the transactionId property value. 
 func (m *Event) GetTransactionId()(*string) {
     return m.transactionId
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *Event) GetType()(*EventType) {
     return m.type_escaped
 }
-// GetWebLink gets the webLink property value. The webLink property
+// GetWebLink gets the webLink property value. 
 func (m *Event) GetWebLink()(*string) {
     return m.webLink
 }
@@ -1064,7 +1064,7 @@ func (m *Event) SetHideAttendees(value *bool)() {
 func (m *Event) SetICalUId(value *string)() {
     m.iCalUId = value
 }
-// SetImportance sets the importance property value. The importance property
+// SetImportance sets the importance property value. 
 func (m *Event) SetImportance(value *Importance)() {
     m.importance = value
 }
@@ -1072,35 +1072,35 @@ func (m *Event) SetImportance(value *Importance)() {
 func (m *Event) SetInstances(value []Eventable)() {
     m.instances = value
 }
-// SetIsAllDay sets the isAllDay property value. The isAllDay property
+// SetIsAllDay sets the isAllDay property value. 
 func (m *Event) SetIsAllDay(value *bool)() {
     m.isAllDay = value
 }
-// SetIsCancelled sets the isCancelled property value. The isCancelled property
+// SetIsCancelled sets the isCancelled property value. 
 func (m *Event) SetIsCancelled(value *bool)() {
     m.isCancelled = value
 }
-// SetIsDraft sets the isDraft property value. The isDraft property
+// SetIsDraft sets the isDraft property value. 
 func (m *Event) SetIsDraft(value *bool)() {
     m.isDraft = value
 }
-// SetIsOnlineMeeting sets the isOnlineMeeting property value. The isOnlineMeeting property
+// SetIsOnlineMeeting sets the isOnlineMeeting property value. 
 func (m *Event) SetIsOnlineMeeting(value *bool)() {
     m.isOnlineMeeting = value
 }
-// SetIsOrganizer sets the isOrganizer property value. The isOrganizer property
+// SetIsOrganizer sets the isOrganizer property value. 
 func (m *Event) SetIsOrganizer(value *bool)() {
     m.isOrganizer = value
 }
-// SetIsReminderOn sets the isReminderOn property value. The isReminderOn property
+// SetIsReminderOn sets the isReminderOn property value. 
 func (m *Event) SetIsReminderOn(value *bool)() {
     m.isReminderOn = value
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. 
 func (m *Event) SetLocation(value Locationable)() {
     m.location = value
 }
-// SetLocations sets the locations property value. The locations property
+// SetLocations sets the locations property value. 
 func (m *Event) SetLocations(value []Locationable)() {
     m.locations = value
 }
@@ -1108,59 +1108,59 @@ func (m *Event) SetLocations(value []Locationable)() {
 func (m *Event) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     m.multiValueExtendedProperties = value
 }
-// SetOnlineMeeting sets the onlineMeeting property value. The onlineMeeting property
+// SetOnlineMeeting sets the onlineMeeting property value. 
 func (m *Event) SetOnlineMeeting(value OnlineMeetingInfoable)() {
     m.onlineMeeting = value
 }
-// SetOnlineMeetingProvider sets the onlineMeetingProvider property value. The onlineMeetingProvider property
+// SetOnlineMeetingProvider sets the onlineMeetingProvider property value. 
 func (m *Event) SetOnlineMeetingProvider(value *OnlineMeetingProviderType)() {
     m.onlineMeetingProvider = value
 }
-// SetOnlineMeetingUrl sets the onlineMeetingUrl property value. The onlineMeetingUrl property
+// SetOnlineMeetingUrl sets the onlineMeetingUrl property value. 
 func (m *Event) SetOnlineMeetingUrl(value *string)() {
     m.onlineMeetingUrl = value
 }
-// SetOrganizer sets the organizer property value. The organizer property
+// SetOrganizer sets the organizer property value. 
 func (m *Event) SetOrganizer(value Recipientable)() {
     m.organizer = value
 }
-// SetOriginalEndTimeZone sets the originalEndTimeZone property value. The originalEndTimeZone property
+// SetOriginalEndTimeZone sets the originalEndTimeZone property value. 
 func (m *Event) SetOriginalEndTimeZone(value *string)() {
     m.originalEndTimeZone = value
 }
-// SetOriginalStart sets the originalStart property value. The originalStart property
+// SetOriginalStart sets the originalStart property value. 
 func (m *Event) SetOriginalStart(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.originalStart = value
 }
-// SetOriginalStartTimeZone sets the originalStartTimeZone property value. The originalStartTimeZone property
+// SetOriginalStartTimeZone sets the originalStartTimeZone property value. 
 func (m *Event) SetOriginalStartTimeZone(value *string)() {
     m.originalStartTimeZone = value
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. 
 func (m *Event) SetRecurrence(value PatternedRecurrenceable)() {
     m.recurrence = value
 }
-// SetReminderMinutesBeforeStart sets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+// SetReminderMinutesBeforeStart sets the reminderMinutesBeforeStart property value. 
 func (m *Event) SetReminderMinutesBeforeStart(value *int32)() {
     m.reminderMinutesBeforeStart = value
 }
-// SetResponseRequested sets the responseRequested property value. The responseRequested property
+// SetResponseRequested sets the responseRequested property value. 
 func (m *Event) SetResponseRequested(value *bool)() {
     m.responseRequested = value
 }
-// SetResponseStatus sets the responseStatus property value. The responseStatus property
+// SetResponseStatus sets the responseStatus property value. 
 func (m *Event) SetResponseStatus(value ResponseStatusable)() {
     m.responseStatus = value
 }
-// SetSensitivity sets the sensitivity property value. The sensitivity property
+// SetSensitivity sets the sensitivity property value. 
 func (m *Event) SetSensitivity(value *Sensitivity)() {
     m.sensitivity = value
 }
-// SetSeriesMasterId sets the seriesMasterId property value. The seriesMasterId property
+// SetSeriesMasterId sets the seriesMasterId property value. 
 func (m *Event) SetSeriesMasterId(value *string)() {
     m.seriesMasterId = value
 }
-// SetShowAs sets the showAs property value. The showAs property
+// SetShowAs sets the showAs property value. 
 func (m *Event) SetShowAs(value *FreeBusyStatus)() {
     m.showAs = value
 }
@@ -1168,23 +1168,23 @@ func (m *Event) SetShowAs(value *FreeBusyStatus)() {
 func (m *Event) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     m.singleValueExtendedProperties = value
 }
-// SetStart sets the start property value. The start property
+// SetStart sets the start property value. 
 func (m *Event) SetStart(value DateTimeTimeZoneable)() {
     m.start = value
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. 
 func (m *Event) SetSubject(value *string)() {
     m.subject = value
 }
-// SetTransactionId sets the transactionId property value. The transactionId property
+// SetTransactionId sets the transactionId property value. 
 func (m *Event) SetTransactionId(value *string)() {
     m.transactionId = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *Event) SetType(value *EventType)() {
     m.type_escaped = value
 }
-// SetWebLink sets the webLink property value. The webLink property
+// SetWebLink sets the webLink property value. 
 func (m *Event) SetWebLink(value *string)() {
     m.webLink = value
 }

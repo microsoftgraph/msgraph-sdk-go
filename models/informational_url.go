@@ -12,7 +12,7 @@ type InformationalUrl struct {
     logoUrl *string
     // Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
     marketingUrl *string
-    // The OdataType property
+    // 
     odataType *string
     // Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
     privacyStatementUrl *string
@@ -109,7 +109,7 @@ func (m *InformationalUrl) GetLogoUrl()(*string) {
 func (m *InformationalUrl) GetMarketingUrl()(*string) {
     return m.marketingUrl
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InformationalUrl) GetOdataType()(*string) {
     return m.odataType
 }
@@ -183,7 +183,7 @@ func (m *InformationalUrl) SetLogoUrl(value *string)() {
 func (m *InformationalUrl) SetMarketingUrl(value *string)() {
     m.marketingUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InformationalUrl) SetOdataType(value *string)() {
     m.odataType = value
 }

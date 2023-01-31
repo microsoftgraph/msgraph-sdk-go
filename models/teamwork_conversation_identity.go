@@ -10,7 +10,7 @@ type TeamworkConversationIdentity struct {
     // Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
     conversationIdentityType *TeamworkConversationIdentityType
 }
-// NewTeamworkConversationIdentity instantiates a new teamworkConversationIdentity and sets the default values.
+// NewTeamworkConversationIdentity instantiates a new TeamworkConversationIdentity and sets the default values.
 func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {
     m := &TeamworkConversationIdentity{
         Identity: *NewIdentity(),

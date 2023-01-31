@@ -12,7 +12,7 @@ type LocalizedDescription struct {
     description *string
     // The language tag for the label.
     languageTag *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewLocalizedDescription instantiates a new localizedDescription and sets the default values.
@@ -73,7 +73,7 @@ func (m *LocalizedDescription) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *LocalizedDescription) GetLanguageTag()(*string) {
     return m.languageTag
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LocalizedDescription) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *LocalizedDescription) SetDescription(value *string)() {
 func (m *LocalizedDescription) SetLanguageTag(value *string)() {
     m.languageTag = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LocalizedDescription) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -8,7 +8,7 @@ import (
 type AccessReviewReviewerScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // The query specifying who will be the reviewer.
     query *string
@@ -77,7 +77,7 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewReviewerScope) GetOdataType()(*string) {
     return m.odataType
 }
@@ -131,7 +131,7 @@ func (m *AccessReviewReviewerScope) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *AccessReviewReviewerScope) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewReviewerScope) SetOdataType(value *string)() {
     m.odataType = value
 }

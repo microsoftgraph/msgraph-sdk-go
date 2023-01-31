@@ -10,7 +10,7 @@ type HyperlinkOrPictureColumn struct {
     additionalData map[string]any
     // Specifies whether the display format used for URL columns is an image or a hyperlink.
     isPicture *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewHyperlinkOrPictureColumn instantiates a new hyperlinkOrPictureColumn and sets the default values.
@@ -57,7 +57,7 @@ func (m *HyperlinkOrPictureColumn) GetFieldDeserializers()(map[string]func(i878a
 func (m *HyperlinkOrPictureColumn) GetIsPicture()(*bool) {
     return m.isPicture
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *HyperlinkOrPictureColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *HyperlinkOrPictureColumn) SetAdditionalData(value map[string]any)() {
 func (m *HyperlinkOrPictureColumn) SetIsPicture(value *bool)() {
     m.isPicture = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *HyperlinkOrPictureColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

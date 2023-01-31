@@ -7,7 +7,7 @@ import (
 // HostSecurityStateCollectionResponse 
 type HostSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []HostSecurityStateable
 }
 // NewHostSecurityStateCollectionResponse instantiates a new HostSecurityStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *HostSecurityStateCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *HostSecurityStateCollectionResponse) GetValue()([]HostSecurityStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *HostSecurityStateCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *HostSecurityStateCollectionResponse) SetValue(value []HostSecurityStateable)() {
     m.value = value
 }

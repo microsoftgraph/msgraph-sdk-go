@@ -28,7 +28,7 @@ type OnenotePage struct {
     parentSection OnenoteSectionable
     // The title of the page.
     title *string
-    // The userTags property
+    // 
     userTags []string
 }
 // NewOnenotePage instantiates a new onenotePage and sets the default values.
@@ -203,7 +203,7 @@ func (m *OnenotePage) GetParentSection()(OnenoteSectionable) {
 func (m *OnenotePage) GetTitle()(*string) {
     return m.title
 }
-// GetUserTags gets the userTags property value. The userTags property
+// GetUserTags gets the userTags property value. 
 func (m *OnenotePage) GetUserTags()([]string) {
     return m.userTags
 }
@@ -321,7 +321,7 @@ func (m *OnenotePage) SetParentSection(value OnenoteSectionable)() {
 func (m *OnenotePage) SetTitle(value *string)() {
     m.title = value
 }
-// SetUserTags sets the userTags property value. The userTags property
+// SetUserTags sets the userTags property value. 
 func (m *OnenotePage) SetUserTags(value []string)() {
     m.userTags = value
 }

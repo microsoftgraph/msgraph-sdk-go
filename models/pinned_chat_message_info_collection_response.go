@@ -7,7 +7,7 @@ import (
 // PinnedChatMessageInfoCollectionResponse 
 type PinnedChatMessageInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PinnedChatMessageInfoable
 }
 // NewPinnedChatMessageInfoCollectionResponse instantiates a new PinnedChatMessageInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PinnedChatMessageInfoCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PinnedChatMessageInfoCollectionResponse) GetValue()([]PinnedChatMessageInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PinnedChatMessageInfoCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PinnedChatMessageInfoCollectionResponse) SetValue(value []PinnedChatMessageInfoable)() {
     m.value = value
 }

@@ -12,9 +12,9 @@ type SharingInvitation struct {
     email *string
     // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
     invitedBy IdentitySetable
-    // The OdataType property
+    // 
     odataType *string
-    // The redeemedBy property
+    // 
     redeemedBy *string
     // If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
     signInRequired *bool
@@ -97,11 +97,11 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *SharingInvitation) GetInvitedBy()(IdentitySetable) {
     return m.invitedBy
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SharingInvitation) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRedeemedBy gets the redeemedBy property value. The redeemedBy property
+// GetRedeemedBy gets the redeemedBy property value. 
 func (m *SharingInvitation) GetRedeemedBy()(*string) {
     return m.redeemedBy
 }
@@ -161,11 +161,11 @@ func (m *SharingInvitation) SetEmail(value *string)() {
 func (m *SharingInvitation) SetInvitedBy(value IdentitySetable)() {
     m.invitedBy = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SharingInvitation) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRedeemedBy sets the redeemedBy property value. The redeemedBy property
+// SetRedeemedBy sets the redeemedBy property value. 
 func (m *SharingInvitation) SetRedeemedBy(value *string)() {
     m.redeemedBy = value
 }

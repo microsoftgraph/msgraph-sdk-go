@@ -7,7 +7,7 @@ import (
 // EducationUserCollectionResponse 
 type EducationUserCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EducationUserable
 }
 // NewEducationUserCollectionResponse instantiates a new EducationUserCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EducationUserCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EducationUserCollectionResponse) GetValue()([]EducationUserable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EducationUserCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EducationUserCollectionResponse) SetValue(value []EducationUserable)() {
     m.value = value
 }

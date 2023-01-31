@@ -11,11 +11,11 @@ type ChatMessageReaction struct {
     additionalData map[string]any
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Supported values are like, angry, sad, laugh, heart, surprised.
     reactionType *string
-    // The user property
+    // 
     user ChatMessageReactionIdentitySetable
 }
 // NewChatMessageReaction instantiates a new chatMessageReaction and sets the default values.
@@ -82,7 +82,7 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChatMessageReaction) GetOdataType()(*string) {
     return m.odataType
 }
@@ -90,7 +90,7 @@ func (m *ChatMessageReaction) GetOdataType()(*string) {
 func (m *ChatMessageReaction) GetReactionType()(*string) {
     return m.reactionType
 }
-// GetUser gets the user property value. The user property
+// GetUser gets the user property value. 
 func (m *ChatMessageReaction) GetUser()(ChatMessageReactionIdentitySetable) {
     return m.user
 }
@@ -136,7 +136,7 @@ func (m *ChatMessageReaction) SetAdditionalData(value map[string]any)() {
 func (m *ChatMessageReaction) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChatMessageReaction) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -144,7 +144,7 @@ func (m *ChatMessageReaction) SetOdataType(value *string)() {
 func (m *ChatMessageReaction) SetReactionType(value *string)() {
     m.reactionType = value
 }
-// SetUser sets the user property value. The user property
+// SetUser sets the user property value. 
 func (m *ChatMessageReaction) SetUser(value ChatMessageReactionIdentitySetable)() {
     m.user = value
 }

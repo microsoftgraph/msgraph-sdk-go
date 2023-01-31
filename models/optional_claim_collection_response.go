@@ -7,7 +7,7 @@ import (
 // OptionalClaimCollectionResponse 
 type OptionalClaimCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OptionalClaimable
 }
 // NewOptionalClaimCollectionResponse instantiates a new OptionalClaimCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OptionalClaimCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OptionalClaimCollectionResponse) GetValue()([]OptionalClaimable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OptionalClaimCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OptionalClaimCollectionResponse) SetValue(value []OptionalClaimable)() {
     m.value = value
 }

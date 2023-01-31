@@ -14,7 +14,7 @@ type AppListItem struct {
     appStoreUrl *string
     // The application name
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The publisher of the application
     publisher *string
@@ -101,7 +101,7 @@ func (m *AppListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *AppListItem) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AppListItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *AppListItem) SetAppStoreUrl(value *string)() {
 func (m *AppListItem) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AppListItem) SetOdataType(value *string)() {
     m.odataType = value
 }

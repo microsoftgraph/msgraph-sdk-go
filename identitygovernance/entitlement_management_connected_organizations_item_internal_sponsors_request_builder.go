@@ -96,13 +96,17 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) GetAvailableExtensionProperties()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsMicrosoftGraphGetAvailableExtensionPropertiesGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsMicrosoftGraphGetAvailableExtensionPropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) GetByIds()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsGetByIdsRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) MicrosoftGraphGetByIds()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsMicrosoftGraphGetByIdsGetByIdsRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsMicrosoftGraphGetByIdsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) MicrosoftGraphValidateProperties()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create new navigation property to internalSponsors for identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, requestConfiguration *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -150,14 +154,13 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) ValidateProperties()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsValidatePropertiesRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

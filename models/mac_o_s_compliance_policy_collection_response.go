@@ -7,7 +7,7 @@ import (
 // MacOSCompliancePolicyCollectionResponse 
 type MacOSCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MacOSCompliancePolicyable
 }
 // NewMacOSCompliancePolicyCollectionResponse instantiates a new MacOSCompliancePolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MacOSCompliancePolicyCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MacOSCompliancePolicyCollectionResponse) GetValue()([]MacOSCompliancePolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MacOSCompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MacOSCompliancePolicyCollectionResponse) SetValue(value []MacOSCompliancePolicyable)() {
     m.value = value
 }

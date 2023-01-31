@@ -7,7 +7,7 @@ import (
 // ChatMessageAttachmentCollectionResponse 
 type ChatMessageAttachmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ChatMessageAttachmentable
 }
 // NewChatMessageAttachmentCollectionResponse instantiates a new ChatMessageAttachmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChatMessageAttachmentCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChatMessageAttachmentCollectionResponse) GetValue()([]ChatMessageAttachmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChatMessageAttachmentCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChatMessageAttachmentCollectionResponse) SetValue(value []ChatMessageAttachmentable)() {
     m.value = value
 }

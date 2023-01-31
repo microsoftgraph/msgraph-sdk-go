@@ -51,11 +51,11 @@ type Alert struct {
     recommendedActions *string
     // Time when the alert was resolved.
     resolvedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The serviceSource property
+    // 
     serviceSource *ServiceSource
-    // The severity property
+    // 
     severity *AlertSeverity
-    // The status property
+    // 
     status *AlertStatus
     // The Azure Active Directory tenant the alert was created in.
     tenantId *string
@@ -458,15 +458,15 @@ func (m *Alert) GetRecommendedActions()(*string) {
 func (m *Alert) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.resolvedDateTime
 }
-// GetServiceSource gets the serviceSource property value. The serviceSource property
+// GetServiceSource gets the serviceSource property value. 
 func (m *Alert) GetServiceSource()(*ServiceSource) {
     return m.serviceSource
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. 
 func (m *Alert) GetSeverity()(*AlertSeverity) {
     return m.severity
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *Alert) GetStatus()(*AlertStatus) {
     return m.status
 }
@@ -760,15 +760,15 @@ func (m *Alert) SetRecommendedActions(value *string)() {
 func (m *Alert) SetResolvedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.resolvedDateTime = value
 }
-// SetServiceSource sets the serviceSource property value. The serviceSource property
+// SetServiceSource sets the serviceSource property value. 
 func (m *Alert) SetServiceSource(value *ServiceSource)() {
     m.serviceSource = value
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. 
 func (m *Alert) SetSeverity(value *AlertSeverity)() {
     m.severity = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *Alert) SetStatus(value *AlertStatus)() {
     m.status = value
 }

@@ -10,7 +10,7 @@ type IncomingContext struct {
     additionalData map[string]any
     // The ID of the participant that is under observation. Read-only.
     observedParticipantId *string
-    // The OdataType property
+    // 
     odataType *string
     // The identity that the call is happening on behalf of.
     onBehalfOf IdentitySetable
@@ -93,7 +93,7 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *IncomingContext) GetObservedParticipantId()(*string) {
     return m.observedParticipantId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IncomingContext) GetOdataType()(*string) {
     return m.odataType
 }
@@ -157,7 +157,7 @@ func (m *IncomingContext) SetAdditionalData(value map[string]any)() {
 func (m *IncomingContext) SetObservedParticipantId(value *string)() {
     m.observedParticipantId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IncomingContext) SetOdataType(value *string)() {
     m.odataType = value
 }

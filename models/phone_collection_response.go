@@ -7,7 +7,7 @@ import (
 // PhoneCollectionResponse 
 type PhoneCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Phoneable
 }
 // NewPhoneCollectionResponse instantiates a new PhoneCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PhoneCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PhoneCollectionResponse) GetValue()([]Phoneable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PhoneCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PhoneCollectionResponse) SetValue(value []Phoneable)() {
     m.value = value
 }

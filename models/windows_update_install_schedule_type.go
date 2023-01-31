@@ -8,7 +8,7 @@ import (
 type WindowsUpdateInstallScheduleType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewWindowsUpdateInstallScheduleType instantiates a new windowsUpdateInstallScheduleType and sets the default values.
@@ -61,7 +61,7 @@ func (m *WindowsUpdateInstallScheduleType) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WindowsUpdateInstallScheduleType) GetOdataType()(*string) {
     return m.odataType
 }
@@ -85,7 +85,7 @@ func (m *WindowsUpdateInstallScheduleType) Serialize(writer i878a80d2330e89d2689
 func (m *WindowsUpdateInstallScheduleType) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WindowsUpdateInstallScheduleType) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -14,7 +14,7 @@ type InvitedUserMessageInfo struct {
     customizedMessageBody *string
     // The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
     messageLanguage *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewInvitedUserMessageInfo instantiates a new invitedUserMessageInfo and sets the default values.
@@ -93,7 +93,7 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(i878a80
 func (m *InvitedUserMessageInfo) GetMessageLanguage()(*string) {
     return m.messageLanguage
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InvitedUserMessageInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -151,7 +151,7 @@ func (m *InvitedUserMessageInfo) SetCustomizedMessageBody(value *string)() {
 func (m *InvitedUserMessageInfo) SetMessageLanguage(value *string)() {
     m.messageLanguage = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InvitedUserMessageInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

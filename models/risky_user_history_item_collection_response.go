@@ -7,7 +7,7 @@ import (
 // RiskyUserHistoryItemCollectionResponse 
 type RiskyUserHistoryItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RiskyUserHistoryItemable
 }
 // NewRiskyUserHistoryItemCollectionResponse instantiates a new RiskyUserHistoryItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RiskyUserHistoryItemCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RiskyUserHistoryItemCollectionResponse) GetValue()([]RiskyUserHistoryItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RiskyUserHistoryItemCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RiskyUserHistoryItemCollectionResponse) SetValue(value []RiskyUserHistoryItemable)() {
     m.value = value
 }

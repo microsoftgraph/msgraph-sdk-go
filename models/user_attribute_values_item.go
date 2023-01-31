@@ -12,7 +12,7 @@ type UserAttributeValuesItem struct {
     isDefault *bool
     // The display name of the property displayed to the user in the user flow.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // The value that is set when this item is selected.
     value *string
@@ -85,7 +85,7 @@ func (m *UserAttributeValuesItem) GetIsDefault()(*bool) {
 func (m *UserAttributeValuesItem) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserAttributeValuesItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *UserAttributeValuesItem) SetIsDefault(value *bool)() {
 func (m *UserAttributeValuesItem) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserAttributeValuesItem) SetOdataType(value *string)() {
     m.odataType = value
 }

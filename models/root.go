@@ -8,7 +8,7 @@ import (
 type Root struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewRoot instantiates a new root and sets the default values.
@@ -41,7 +41,7 @@ func (m *Root) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Root) GetOdataType()(*string) {
     return m.odataType
 }
@@ -65,7 +65,7 @@ func (m *Root) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 func (m *Root) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Root) SetOdataType(value *string)() {
     m.odataType = value
 }

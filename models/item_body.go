@@ -12,7 +12,7 @@ type ItemBody struct {
     content *string
     // The type of the content. Possible values are text and html.
     contentType *BodyType
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewItemBody instantiates a new itemBody and sets the default values.
@@ -73,7 +73,7 @@ func (m *ItemBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ItemBody) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *ItemBody) SetContent(value *string)() {
 func (m *ItemBody) SetContentType(value *BodyType)() {
     m.contentType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ItemBody) SetOdataType(value *string)() {
     m.odataType = value
 }

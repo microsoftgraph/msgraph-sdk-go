@@ -10,7 +10,7 @@ type AttackSimulationRepeatOffender struct {
     additionalData map[string]any
     // The user in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
-    // The OdataType property
+    // 
     odataType *string
     // Number of repeat offences of the user in attack simulation and training campaigns.
     repeatOffenceCount *int32
@@ -69,7 +69,7 @@ func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AttackSimulationRepeatOffender) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *AttackSimulationRepeatOffender) SetAdditionalData(value map[string]any)
 func (m *AttackSimulationRepeatOffender) SetAttackSimulationUser(value AttackSimulationUserable)() {
     m.attackSimulationUser = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AttackSimulationRepeatOffender) SetOdataType(value *string)() {
     m.odataType = value
 }

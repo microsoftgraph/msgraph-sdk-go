@@ -8,11 +8,11 @@ import (
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The directory property
+    // 
     directory RbacApplicationable
     // Container for roles and assignments for entitlement management resources.
     entitlementManagement RbacApplicationable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewRoleManagement instantiates a new RoleManagement and sets the default values.
@@ -30,7 +30,7 @@ func CreateRoleManagementFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 func (m *RoleManagement) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDirectory gets the directory property value. The directory property
+// GetDirectory gets the directory property value. 
 func (m *RoleManagement) GetDirectory()(RbacApplicationable) {
     return m.directory
 }
@@ -73,7 +73,7 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RoleManagement) GetOdataType()(*string) {
     return m.odataType
 }
@@ -109,7 +109,7 @@ func (m *RoleManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *RoleManagement) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDirectory sets the directory property value. The directory property
+// SetDirectory sets the directory property value. 
 func (m *RoleManagement) SetDirectory(value RbacApplicationable)() {
     m.directory = value
 }
@@ -117,7 +117,7 @@ func (m *RoleManagement) SetDirectory(value RbacApplicationable)() {
 func (m *RoleManagement) SetEntitlementManagement(value RbacApplicationable)() {
     m.entitlementManagement = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RoleManagement) SetOdataType(value *string)() {
     m.odataType = value
 }

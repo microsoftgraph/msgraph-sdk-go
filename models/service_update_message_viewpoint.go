@@ -14,7 +14,7 @@ type ServiceUpdateMessageViewpoint struct {
     isFavorited *bool
     // Indicates whether the user read the message.
     isRead *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewServiceUpdateMessageViewpoint instantiates a new serviceUpdateMessageViewpoint and sets the default values.
@@ -89,7 +89,7 @@ func (m *ServiceUpdateMessageViewpoint) GetIsFavorited()(*bool) {
 func (m *ServiceUpdateMessageViewpoint) GetIsRead()(*bool) {
     return m.isRead
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ServiceUpdateMessageViewpoint) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *ServiceUpdateMessageViewpoint) SetIsFavorited(value *bool)() {
 func (m *ServiceUpdateMessageViewpoint) SetIsRead(value *bool)() {
     m.isRead = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ServiceUpdateMessageViewpoint) SetOdataType(value *string)() {
     m.odataType = value
 }

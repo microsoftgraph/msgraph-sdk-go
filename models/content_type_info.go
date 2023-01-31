@@ -12,7 +12,7 @@ type ContentTypeInfo struct {
     id *string
     // The name of the content type.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewContentTypeInfo instantiates a new contentTypeInfo and sets the default values.
@@ -73,7 +73,7 @@ func (m *ContentTypeInfo) GetId()(*string) {
 func (m *ContentTypeInfo) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ContentTypeInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *ContentTypeInfo) SetId(value *string)() {
 func (m *ContentTypeInfo) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ContentTypeInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

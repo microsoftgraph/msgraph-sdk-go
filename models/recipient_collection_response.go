@@ -7,7 +7,7 @@ import (
 // RecipientCollectionResponse 
 type RecipientCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Recipientable
 }
 // NewRecipientCollectionResponse instantiates a new RecipientCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RecipientCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RecipientCollectionResponse) GetValue()([]Recipientable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RecipientCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RecipientCollectionResponse) SetValue(value []Recipientable)() {
     m.value = value
 }

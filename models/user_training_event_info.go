@@ -12,7 +12,7 @@ type UserTrainingEventInfo struct {
     displayName *string
     // Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     latestTrainingStatus *TrainingStatus
-    // The OdataType property
+    // 
     odataType *string
     // Event details of the training when it was assigned to the user.
     trainingAssignedProperties UserTrainingContentEventInfoable
@@ -109,7 +109,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
     return m.latestTrainingStatus
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserTrainingEventInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -184,7 +184,7 @@ func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
     m.latestTrainingStatus = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserTrainingEventInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

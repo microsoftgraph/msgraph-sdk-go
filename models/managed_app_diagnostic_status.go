@@ -10,7 +10,7 @@ type ManagedAppDiagnosticStatus struct {
     additionalData map[string]any
     // Instruction on how to mitigate a failed validation
     mitigationInstruction *string
-    // The OdataType property
+    // 
     odataType *string
     // The state of the operation
     state *string
@@ -81,7 +81,7 @@ func (m *ManagedAppDiagnosticStatus) GetFieldDeserializers()(map[string]func(i87
 func (m *ManagedAppDiagnosticStatus) GetMitigationInstruction()(*string) {
     return m.mitigationInstruction
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ManagedAppDiagnosticStatus) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *ManagedAppDiagnosticStatus) SetAdditionalData(value map[string]any)() {
 func (m *ManagedAppDiagnosticStatus) SetMitigationInstruction(value *string)() {
     m.mitigationInstruction = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ManagedAppDiagnosticStatus) SetOdataType(value *string)() {
     m.odataType = value
 }

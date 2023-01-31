@@ -7,7 +7,7 @@ import (
 // AccessReviewInstanceDecisionItemServicePrincipalResource 
 type AccessReviewInstanceDecisionItemServicePrincipalResource struct {
     AccessReviewInstanceDecisionItemResource
-    // The appId property
+    // 
     appId *string
 }
 // NewAccessReviewInstanceDecisionItemServicePrincipalResource instantiates a new AccessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
@@ -23,7 +23,7 @@ func NewAccessReviewInstanceDecisionItemServicePrincipalResource()(*AccessReview
 func CreateAccessReviewInstanceDecisionItemServicePrincipalResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemServicePrincipalResource(), nil
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. 
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) GetAppId()(*string) {
     return m.appId
 }
@@ -56,7 +56,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) Serialize(wri
     }
     return nil
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. 
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) SetAppId(value *string)() {
     m.appId = value
 }

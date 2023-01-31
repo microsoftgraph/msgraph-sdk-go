@@ -14,7 +14,7 @@ type PublicInnerError struct {
     details []PublicErrorDetailable
     // The error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
     // The target of the error.
     target *string
@@ -105,7 +105,7 @@ func (m *PublicInnerError) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *PublicInnerError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PublicInnerError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -173,7 +173,7 @@ func (m *PublicInnerError) SetDetails(value []PublicErrorDetailable)() {
 func (m *PublicInnerError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PublicInnerError) SetOdataType(value *string)() {
     m.odataType = value
 }

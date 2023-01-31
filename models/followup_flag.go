@@ -14,7 +14,7 @@ type FollowupFlag struct {
     dueDateTime DateTimeTimeZoneable
     // The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
     flagStatus *FollowupFlagStatus
-    // The OdataType property
+    // 
     odataType *string
     // The date and time that the follow-up is to begin.
     startDateTime DateTimeTimeZoneable
@@ -101,7 +101,7 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *FollowupFlag) GetFlagStatus()(*FollowupFlagStatus) {
     return m.flagStatus
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FollowupFlag) GetOdataType()(*string) {
     return m.odataType
 }
@@ -166,7 +166,7 @@ func (m *FollowupFlag) SetDueDateTime(value DateTimeTimeZoneable)() {
 func (m *FollowupFlag) SetFlagStatus(value *FollowupFlagStatus)() {
     m.flagStatus = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FollowupFlag) SetOdataType(value *string)() {
     m.odataType = value
 }

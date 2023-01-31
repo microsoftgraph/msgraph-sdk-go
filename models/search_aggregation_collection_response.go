@@ -7,7 +7,7 @@ import (
 // SearchAggregationCollectionResponse 
 type SearchAggregationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SearchAggregationable
 }
 // NewSearchAggregationCollectionResponse instantiates a new SearchAggregationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SearchAggregationCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SearchAggregationCollectionResponse) GetValue()([]SearchAggregationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SearchAggregationCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SearchAggregationCollectionResponse) SetValue(value []SearchAggregationable)() {
     m.value = value
 }

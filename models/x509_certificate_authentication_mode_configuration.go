@@ -8,7 +8,7 @@ import (
 type X509CertificateAuthenticationModeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
     rules []X509CertificateRuleable
@@ -69,7 +69,7 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *X509CertificateAuthenticationModeConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
 func (m *X509CertificateAuthenticationModeConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *X509CertificateAuthenticationModeConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }

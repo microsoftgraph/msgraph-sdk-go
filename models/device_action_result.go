@@ -15,7 +15,7 @@ type DeviceActionResult struct {
     additionalData map[string]any
     // Time the action state was last updated
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Time the action was initiated
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -128,7 +128,7 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d233
 func (m *DeviceActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastUpdatedDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceActionResult) GetOdataType()(*string) {
     return m.odataType
 }
@@ -193,7 +193,7 @@ func (m *DeviceActionResult) SetAdditionalData(value map[string]any)() {
 func (m *DeviceActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUpdatedDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceActionResult) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -12,7 +12,7 @@ type TimeZoneInformation struct {
     alias *string
     // A display string that represents the time zone.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewTimeZoneInformation instantiates a new timeZoneInformation and sets the default values.
@@ -73,7 +73,7 @@ func (m *TimeZoneInformation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TimeZoneInformation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *TimeZoneInformation) SetAlias(value *string)() {
 func (m *TimeZoneInformation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TimeZoneInformation) SetOdataType(value *string)() {
     m.odataType = value
 }

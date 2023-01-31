@@ -10,7 +10,7 @@ type ProxiedDomain struct {
     additionalData map[string]any
     // The IP address or FQDN
     ipAddressOrFQDN *string
-    // The OdataType property
+    // 
     odataType *string
     // Proxy IP or FQDN
     proxy *string
@@ -69,7 +69,7 @@ func (m *ProxiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *ProxiedDomain) GetIpAddressOrFQDN()(*string) {
     return m.ipAddressOrFQDN
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ProxiedDomain) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *ProxiedDomain) SetAdditionalData(value map[string]any)() {
 func (m *ProxiedDomain) SetIpAddressOrFQDN(value *string)() {
     m.ipAddressOrFQDN = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ProxiedDomain) SetOdataType(value *string)() {
     m.odataType = value
 }

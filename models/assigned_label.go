@@ -12,7 +12,7 @@ type AssignedLabel struct {
     displayName *string
     // The unique identifier of the label.
     labelId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAssignedLabel instantiates a new assignedLabel and sets the default values.
@@ -73,7 +73,7 @@ func (m *AssignedLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *AssignedLabel) GetLabelId()(*string) {
     return m.labelId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AssignedLabel) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *AssignedLabel) SetDisplayName(value *string)() {
 func (m *AssignedLabel) SetLabelId(value *string)() {
     m.labelId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AssignedLabel) SetOdataType(value *string)() {
     m.odataType = value
 }

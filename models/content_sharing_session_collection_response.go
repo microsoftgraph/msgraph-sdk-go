@@ -7,7 +7,7 @@ import (
 // ContentSharingSessionCollectionResponse 
 type ContentSharingSessionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ContentSharingSessionable
 }
 // NewContentSharingSessionCollectionResponse instantiates a new ContentSharingSessionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ContentSharingSessionCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ContentSharingSessionCollectionResponse) GetValue()([]ContentSharingSessionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ContentSharingSessionCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ContentSharingSessionCollectionResponse) SetValue(value []ContentSharingSessionable)() {
     m.value = value
 }

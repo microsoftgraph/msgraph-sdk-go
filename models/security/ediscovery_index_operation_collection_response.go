@@ -8,7 +8,7 @@ import (
 // EdiscoveryIndexOperationCollectionResponse 
 type EdiscoveryIndexOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryIndexOperationable
 }
 // NewEdiscoveryIndexOperationCollectionResponse instantiates a new EdiscoveryIndexOperationCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryIndexOperationCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryIndexOperationCollectionResponse) GetValue()([]EdiscoveryIndexOperationable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryIndexOperationCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryIndexOperationCollectionResponse) SetValue(value []EdiscoveryIndexOperationable)() {
     m.value = value
 }

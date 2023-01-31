@@ -7,7 +7,7 @@ import (
 // AndroidManagedAppRegistrationCollectionResponse 
 type AndroidManagedAppRegistrationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidManagedAppRegistrationable
 }
 // NewAndroidManagedAppRegistrationCollectionResponse instantiates a new AndroidManagedAppRegistrationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidManagedAppRegistrationCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidManagedAppRegistrationCollectionResponse) GetValue()([]AndroidManagedAppRegistrationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidManagedAppRegistrationCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidManagedAppRegistrationCollectionResponse) SetValue(value []AndroidManagedAppRegistrationable)() {
     m.value = value
 }

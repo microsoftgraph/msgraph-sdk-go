@@ -7,7 +7,7 @@ import (
 // RolePermissionCollectionResponse 
 type RolePermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RolePermissionable
 }
 // NewRolePermissionCollectionResponse instantiates a new RolePermissionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RolePermissionCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RolePermissionCollectionResponse) GetValue()([]RolePermissionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RolePermissionCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RolePermissionCollectionResponse) SetValue(value []RolePermissionable)() {
     m.value = value
 }

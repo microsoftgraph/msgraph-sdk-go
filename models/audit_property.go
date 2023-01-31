@@ -12,7 +12,7 @@ type AuditProperty struct {
     displayName *string
     // New value.
     newValue *string
-    // The OdataType property
+    // 
     odataType *string
     // Old value.
     oldValue *string
@@ -85,7 +85,7 @@ func (m *AuditProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *AuditProperty) GetNewValue()(*string) {
     return m.newValue
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuditProperty) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *AuditProperty) SetDisplayName(value *string)() {
 func (m *AuditProperty) SetNewValue(value *string)() {
     m.newValue = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuditProperty) SetOdataType(value *string)() {
     m.odataType = value
 }

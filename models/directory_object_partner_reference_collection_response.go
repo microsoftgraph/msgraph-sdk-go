@@ -7,7 +7,7 @@ import (
 // DirectoryObjectPartnerReferenceCollectionResponse 
 type DirectoryObjectPartnerReferenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DirectoryObjectPartnerReferenceable
 }
 // NewDirectoryObjectPartnerReferenceCollectionResponse instantiates a new DirectoryObjectPartnerReferenceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DirectoryObjectPartnerReferenceCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DirectoryObjectPartnerReferenceCollectionResponse) GetValue()([]DirectoryObjectPartnerReferenceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DirectoryObjectPartnerReferenceCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DirectoryObjectPartnerReferenceCollectionResponse) SetValue(value []DirectoryObjectPartnerReferenceable)() {
     m.value = value
 }

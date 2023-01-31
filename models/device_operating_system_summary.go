@@ -26,7 +26,7 @@ type DeviceOperatingSystemSummary struct {
     iosCount *int32
     // Number of Mac OS X device count.
     macOSCount *int32
-    // The OdataType property
+    // 
     odataType *string
     // Number of unknown device count.
     unknownCount *int32
@@ -221,7 +221,7 @@ func (m *DeviceOperatingSystemSummary) GetIosCount()(*int32) {
 func (m *DeviceOperatingSystemSummary) GetMacOSCount()(*int32) {
     return m.macOSCount
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceOperatingSystemSummary) GetOdataType()(*string) {
     return m.odataType
 }
@@ -365,7 +365,7 @@ func (m *DeviceOperatingSystemSummary) SetIosCount(value *int32)() {
 func (m *DeviceOperatingSystemSummary) SetMacOSCount(value *int32)() {
     m.macOSCount = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceOperatingSystemSummary) SetOdataType(value *string)() {
     m.odataType = value
 }

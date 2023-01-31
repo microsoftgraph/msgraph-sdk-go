@@ -8,7 +8,7 @@ import (
 type RolePermission struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Resource Actions each containing a set of allowed and not allowed permissions.
     resourceActions []ResourceActionable
@@ -57,7 +57,7 @@ func (m *RolePermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RolePermission) GetOdataType()(*string) {
     return m.odataType
 }
@@ -95,7 +95,7 @@ func (m *RolePermission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *RolePermission) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RolePermission) SetOdataType(value *string)() {
     m.odataType = value
 }

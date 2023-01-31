@@ -7,7 +7,7 @@ import (
 // KeyCredentialCollectionResponse 
 type KeyCredentialCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []KeyCredentialable
 }
 // NewKeyCredentialCollectionResponse instantiates a new KeyCredentialCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *KeyCredentialCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *KeyCredentialCollectionResponse) GetValue()([]KeyCredentialable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *KeyCredentialCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *KeyCredentialCollectionResponse) SetValue(value []KeyCredentialable)() {
     m.value = value
 }

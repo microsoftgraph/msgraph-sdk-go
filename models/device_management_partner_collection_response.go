@@ -7,7 +7,7 @@ import (
 // DeviceManagementPartnerCollectionResponse 
 type DeviceManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceManagementPartnerable
 }
 // NewDeviceManagementPartnerCollectionResponse instantiates a new DeviceManagementPartnerCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceManagementPartnerCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceManagementPartnerCollectionResponse) GetValue()([]DeviceManagementPartnerable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceManagementPartnerCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceManagementPartnerCollectionResponse) SetValue(value []DeviceManagementPartnerable)() {
     m.value = value
 }

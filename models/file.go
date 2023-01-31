@@ -12,9 +12,9 @@ type File struct {
     hashes Hashesable
     // The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
     mimeType *string
-    // The OdataType property
+    // 
     odataType *string
-    // The processingMetadata property
+    // 
     processingMetadata *bool
 }
 // NewFile instantiates a new file and sets the default values.
@@ -85,11 +85,11 @@ func (m *File) GetHashes()(Hashesable) {
 func (m *File) GetMimeType()(*string) {
     return m.mimeType
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *File) GetOdataType()(*string) {
     return m.odataType
 }
-// GetProcessingMetadata gets the processingMetadata property value. The processingMetadata property
+// GetProcessingMetadata gets the processingMetadata property value. 
 func (m *File) GetProcessingMetadata()(*bool) {
     return m.processingMetadata
 }
@@ -139,11 +139,11 @@ func (m *File) SetHashes(value Hashesable)() {
 func (m *File) SetMimeType(value *string)() {
     m.mimeType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *File) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetProcessingMetadata sets the processingMetadata property value. The processingMetadata property
+// SetProcessingMetadata sets the processingMetadata property value. 
 func (m *File) SetProcessingMetadata(value *bool)() {
     m.processingMetadata = value
 }

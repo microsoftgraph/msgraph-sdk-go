@@ -40,47 +40,47 @@ type Contact struct {
     homeAddress PhysicalAddressable
     // The contact's home phone numbers.
     homePhones []string
-    // The imAddresses property
+    // 
     imAddresses []string
-    // The initials property
+    // 
     initials *string
-    // The jobTitle property
+    // 
     jobTitle *string
-    // The manager property
+    // 
     manager *string
-    // The middleName property
+    // 
     middleName *string
-    // The mobilePhone property
+    // 
     mobilePhone *string
     // The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
     multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
-    // The nickName property
+    // 
     nickName *string
-    // The officeLocation property
+    // 
     officeLocation *string
-    // The otherAddress property
+    // 
     otherAddress PhysicalAddressable
-    // The parentFolderId property
+    // 
     parentFolderId *string
-    // The personalNotes property
+    // 
     personalNotes *string
     // Optional contact picture. You can get or set a photo for a contact.
     photo ProfilePhotoable
-    // The profession property
+    // 
     profession *string
     // The collection of single-value extended properties defined for the contact. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
-    // The spouseName property
+    // 
     spouseName *string
-    // The surname property
+    // 
     surname *string
-    // The title property
+    // 
     title *string
-    // The yomiCompanyName property
+    // 
     yomiCompanyName *string
-    // The yomiGivenName property
+    // 
     yomiGivenName *string
-    // The yomiSurname property
+    // 
     yomiSurname *string
 }
 // NewContact instantiates a new Contact and sets the default values.
@@ -567,27 +567,27 @@ func (m *Contact) GetHomeAddress()(PhysicalAddressable) {
 func (m *Contact) GetHomePhones()([]string) {
     return m.homePhones
 }
-// GetImAddresses gets the imAddresses property value. The imAddresses property
+// GetImAddresses gets the imAddresses property value. 
 func (m *Contact) GetImAddresses()([]string) {
     return m.imAddresses
 }
-// GetInitials gets the initials property value. The initials property
+// GetInitials gets the initials property value. 
 func (m *Contact) GetInitials()(*string) {
     return m.initials
 }
-// GetJobTitle gets the jobTitle property value. The jobTitle property
+// GetJobTitle gets the jobTitle property value. 
 func (m *Contact) GetJobTitle()(*string) {
     return m.jobTitle
 }
-// GetManager gets the manager property value. The manager property
+// GetManager gets the manager property value. 
 func (m *Contact) GetManager()(*string) {
     return m.manager
 }
-// GetMiddleName gets the middleName property value. The middleName property
+// GetMiddleName gets the middleName property value. 
 func (m *Contact) GetMiddleName()(*string) {
     return m.middleName
 }
-// GetMobilePhone gets the mobilePhone property value. The mobilePhone property
+// GetMobilePhone gets the mobilePhone property value. 
 func (m *Contact) GetMobilePhone()(*string) {
     return m.mobilePhone
 }
@@ -595,23 +595,23 @@ func (m *Contact) GetMobilePhone()(*string) {
 func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     return m.multiValueExtendedProperties
 }
-// GetNickName gets the nickName property value. The nickName property
+// GetNickName gets the nickName property value. 
 func (m *Contact) GetNickName()(*string) {
     return m.nickName
 }
-// GetOfficeLocation gets the officeLocation property value. The officeLocation property
+// GetOfficeLocation gets the officeLocation property value. 
 func (m *Contact) GetOfficeLocation()(*string) {
     return m.officeLocation
 }
-// GetOtherAddress gets the otherAddress property value. The otherAddress property
+// GetOtherAddress gets the otherAddress property value. 
 func (m *Contact) GetOtherAddress()(PhysicalAddressable) {
     return m.otherAddress
 }
-// GetParentFolderId gets the parentFolderId property value. The parentFolderId property
+// GetParentFolderId gets the parentFolderId property value. 
 func (m *Contact) GetParentFolderId()(*string) {
     return m.parentFolderId
 }
-// GetPersonalNotes gets the personalNotes property value. The personalNotes property
+// GetPersonalNotes gets the personalNotes property value. 
 func (m *Contact) GetPersonalNotes()(*string) {
     return m.personalNotes
 }
@@ -619,7 +619,7 @@ func (m *Contact) GetPersonalNotes()(*string) {
 func (m *Contact) GetPhoto()(ProfilePhotoable) {
     return m.photo
 }
-// GetProfession gets the profession property value. The profession property
+// GetProfession gets the profession property value. 
 func (m *Contact) GetProfession()(*string) {
     return m.profession
 }
@@ -627,27 +627,27 @@ func (m *Contact) GetProfession()(*string) {
 func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     return m.singleValueExtendedProperties
 }
-// GetSpouseName gets the spouseName property value. The spouseName property
+// GetSpouseName gets the spouseName property value. 
 func (m *Contact) GetSpouseName()(*string) {
     return m.spouseName
 }
-// GetSurname gets the surname property value. The surname property
+// GetSurname gets the surname property value. 
 func (m *Contact) GetSurname()(*string) {
     return m.surname
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. 
 func (m *Contact) GetTitle()(*string) {
     return m.title
 }
-// GetYomiCompanyName gets the yomiCompanyName property value. The yomiCompanyName property
+// GetYomiCompanyName gets the yomiCompanyName property value. 
 func (m *Contact) GetYomiCompanyName()(*string) {
     return m.yomiCompanyName
 }
-// GetYomiGivenName gets the yomiGivenName property value. The yomiGivenName property
+// GetYomiGivenName gets the yomiGivenName property value. 
 func (m *Contact) GetYomiGivenName()(*string) {
     return m.yomiGivenName
 }
-// GetYomiSurname gets the yomiSurname property value. The yomiSurname property
+// GetYomiSurname gets the yomiSurname property value. 
 func (m *Contact) GetYomiSurname()(*string) {
     return m.yomiSurname
 }
@@ -961,27 +961,27 @@ func (m *Contact) SetHomeAddress(value PhysicalAddressable)() {
 func (m *Contact) SetHomePhones(value []string)() {
     m.homePhones = value
 }
-// SetImAddresses sets the imAddresses property value. The imAddresses property
+// SetImAddresses sets the imAddresses property value. 
 func (m *Contact) SetImAddresses(value []string)() {
     m.imAddresses = value
 }
-// SetInitials sets the initials property value. The initials property
+// SetInitials sets the initials property value. 
 func (m *Contact) SetInitials(value *string)() {
     m.initials = value
 }
-// SetJobTitle sets the jobTitle property value. The jobTitle property
+// SetJobTitle sets the jobTitle property value. 
 func (m *Contact) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// SetManager sets the manager property value. The manager property
+// SetManager sets the manager property value. 
 func (m *Contact) SetManager(value *string)() {
     m.manager = value
 }
-// SetMiddleName sets the middleName property value. The middleName property
+// SetMiddleName sets the middleName property value. 
 func (m *Contact) SetMiddleName(value *string)() {
     m.middleName = value
 }
-// SetMobilePhone sets the mobilePhone property value. The mobilePhone property
+// SetMobilePhone sets the mobilePhone property value. 
 func (m *Contact) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
@@ -989,23 +989,23 @@ func (m *Contact) SetMobilePhone(value *string)() {
 func (m *Contact) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     m.multiValueExtendedProperties = value
 }
-// SetNickName sets the nickName property value. The nickName property
+// SetNickName sets the nickName property value. 
 func (m *Contact) SetNickName(value *string)() {
     m.nickName = value
 }
-// SetOfficeLocation sets the officeLocation property value. The officeLocation property
+// SetOfficeLocation sets the officeLocation property value. 
 func (m *Contact) SetOfficeLocation(value *string)() {
     m.officeLocation = value
 }
-// SetOtherAddress sets the otherAddress property value. The otherAddress property
+// SetOtherAddress sets the otherAddress property value. 
 func (m *Contact) SetOtherAddress(value PhysicalAddressable)() {
     m.otherAddress = value
 }
-// SetParentFolderId sets the parentFolderId property value. The parentFolderId property
+// SetParentFolderId sets the parentFolderId property value. 
 func (m *Contact) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
-// SetPersonalNotes sets the personalNotes property value. The personalNotes property
+// SetPersonalNotes sets the personalNotes property value. 
 func (m *Contact) SetPersonalNotes(value *string)() {
     m.personalNotes = value
 }
@@ -1013,7 +1013,7 @@ func (m *Contact) SetPersonalNotes(value *string)() {
 func (m *Contact) SetPhoto(value ProfilePhotoable)() {
     m.photo = value
 }
-// SetProfession sets the profession property value. The profession property
+// SetProfession sets the profession property value. 
 func (m *Contact) SetProfession(value *string)() {
     m.profession = value
 }
@@ -1021,27 +1021,27 @@ func (m *Contact) SetProfession(value *string)() {
 func (m *Contact) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     m.singleValueExtendedProperties = value
 }
-// SetSpouseName sets the spouseName property value. The spouseName property
+// SetSpouseName sets the spouseName property value. 
 func (m *Contact) SetSpouseName(value *string)() {
     m.spouseName = value
 }
-// SetSurname sets the surname property value. The surname property
+// SetSurname sets the surname property value. 
 func (m *Contact) SetSurname(value *string)() {
     m.surname = value
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. 
 func (m *Contact) SetTitle(value *string)() {
     m.title = value
 }
-// SetYomiCompanyName sets the yomiCompanyName property value. The yomiCompanyName property
+// SetYomiCompanyName sets the yomiCompanyName property value. 
 func (m *Contact) SetYomiCompanyName(value *string)() {
     m.yomiCompanyName = value
 }
-// SetYomiGivenName sets the yomiGivenName property value. The yomiGivenName property
+// SetYomiGivenName sets the yomiGivenName property value. 
 func (m *Contact) SetYomiGivenName(value *string)() {
     m.yomiGivenName = value
 }
-// SetYomiSurname sets the yomiSurname property value. The yomiSurname property
+// SetYomiSurname sets the yomiSurname property value. 
 func (m *Contact) SetYomiSurname(value *string)() {
     m.yomiSurname = value
 }

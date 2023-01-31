@@ -7,7 +7,7 @@ import (
 // AppConsentRequestScopeCollectionResponse 
 type AppConsentRequestScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AppConsentRequestScopeable
 }
 // NewAppConsentRequestScopeCollectionResponse instantiates a new AppConsentRequestScopeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AppConsentRequestScopeCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AppConsentRequestScopeCollectionResponse) GetValue()([]AppConsentRequestScopeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AppConsentRequestScopeCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AppConsentRequestScopeCollectionResponse) SetValue(value []AppConsentRequestScopeable)() {
     m.value = value
 }

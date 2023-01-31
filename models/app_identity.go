@@ -12,7 +12,7 @@ type AppIdentity struct {
     appId *string
     // Refers to the Application Name displayed in the Azure Portal.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
     servicePrincipalId *string
@@ -97,7 +97,7 @@ func (m *AppIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AppIdentity) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *AppIdentity) SetAppId(value *string)() {
 func (m *AppIdentity) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AppIdentity) SetOdataType(value *string)() {
     m.odataType = value
 }

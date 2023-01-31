@@ -16,11 +16,11 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
     inheritableSettings []string
     // The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
     level *string
-    // The OdataType property
+    // 
     odataType *string
     // The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
     operations []UnifiedRoleManagementPolicyRuleTargetOperations
-    // The targetObjects property
+    // 
     targetObjects []DirectoryObjectable
 }
 // NewUnifiedRoleManagementPolicyRuleTarget instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
@@ -145,7 +145,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]strin
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
     return m.level
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
     return m.odataType
 }
@@ -153,7 +153,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]UnifiedRoleManagementPolicyRuleTargetOperations) {
     return m.operations
 }
-// GetTargetObjects gets the targetObjects property value. The targetObjects property
+// GetTargetObjects gets the targetObjects property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryObjectable) {
     return m.targetObjects
 }
@@ -233,7 +233,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetInheritableSettings(value []s
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetLevel(value *string)() {
     m.level = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -241,7 +241,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetOdataType(value *string)() {
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []UnifiedRoleManagementPolicyRuleTargetOperations)() {
     m.operations = value
 }
-// SetTargetObjects sets the targetObjects property value. The targetObjects property
+// SetTargetObjects sets the targetObjects property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []DirectoryObjectable)() {
     m.targetObjects = value
 }

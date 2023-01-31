@@ -7,7 +7,7 @@ import (
 // SettingStateDeviceSummaryCollectionResponse 
 type SettingStateDeviceSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SettingStateDeviceSummaryable
 }
 // NewSettingStateDeviceSummaryCollectionResponse instantiates a new SettingStateDeviceSummaryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SettingStateDeviceSummaryCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SettingStateDeviceSummaryCollectionResponse) GetValue()([]SettingStateDeviceSummaryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SettingStateDeviceSummaryCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SettingStateDeviceSummaryCollectionResponse) SetValue(value []SettingStateDeviceSummaryable)() {
     m.value = value
 }

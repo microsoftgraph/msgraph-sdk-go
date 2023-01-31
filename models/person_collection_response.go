@@ -7,7 +7,7 @@ import (
 // PersonCollectionResponse 
 type PersonCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Personable
 }
 // NewPersonCollectionResponse instantiates a new PersonCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PersonCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PersonCollectionResponse) GetValue()([]Personable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PersonCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PersonCollectionResponse) SetValue(value []Personable)() {
     m.value = value
 }

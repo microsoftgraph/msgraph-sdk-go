@@ -8,41 +8,41 @@ import (
 // OrgContact 
 type OrgContact struct {
     DirectoryObject
-    // The addresses property
+    // 
     addresses []PhysicalOfficeAddressable
-    // The companyName property
+    // 
     companyName *string
-    // The department property
+    // 
     department *string
-    // The directReports property
+    // 
     directReports []DirectoryObjectable
-    // The displayName property
+    // 
     displayName *string
-    // The givenName property
+    // 
     givenName *string
-    // The jobTitle property
+    // 
     jobTitle *string
-    // The mail property
+    // 
     mail *string
-    // The mailNickname property
+    // 
     mailNickname *string
-    // The manager property
+    // 
     manager DirectoryObjectable
-    // The memberOf property
+    // 
     memberOf []DirectoryObjectable
-    // The onPremisesLastSyncDateTime property
+    // 
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The onPremisesProvisioningErrors property
+    // 
     onPremisesProvisioningErrors []OnPremisesProvisioningErrorable
-    // The onPremisesSyncEnabled property
+    // 
     onPremisesSyncEnabled *bool
-    // The phones property
+    // 
     phones []Phoneable
-    // The proxyAddresses property
+    // 
     proxyAddresses []string
-    // The surname property
+    // 
     surname *string
-    // The transitiveMemberOf property
+    // 
     transitiveMemberOf []DirectoryObjectable
 }
 // NewOrgContact instantiates a new OrgContact and sets the default values.
@@ -58,23 +58,23 @@ func NewOrgContact()(*OrgContact) {
 func CreateOrgContactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrgContact(), nil
 }
-// GetAddresses gets the addresses property value. The addresses property
+// GetAddresses gets the addresses property value. 
 func (m *OrgContact) GetAddresses()([]PhysicalOfficeAddressable) {
     return m.addresses
 }
-// GetCompanyName gets the companyName property value. The companyName property
+// GetCompanyName gets the companyName property value. 
 func (m *OrgContact) GetCompanyName()(*string) {
     return m.companyName
 }
-// GetDepartment gets the department property value. The department property
+// GetDepartment gets the department property value. 
 func (m *OrgContact) GetDepartment()(*string) {
     return m.department
 }
-// GetDirectReports gets the directReports property value. The directReports property
+// GetDirectReports gets the directReports property value. 
 func (m *OrgContact) GetDirectReports()([]DirectoryObjectable) {
     return m.directReports
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. 
 func (m *OrgContact) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -291,55 +291,55 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetGivenName gets the givenName property value. The givenName property
+// GetGivenName gets the givenName property value. 
 func (m *OrgContact) GetGivenName()(*string) {
     return m.givenName
 }
-// GetJobTitle gets the jobTitle property value. The jobTitle property
+// GetJobTitle gets the jobTitle property value. 
 func (m *OrgContact) GetJobTitle()(*string) {
     return m.jobTitle
 }
-// GetMail gets the mail property value. The mail property
+// GetMail gets the mail property value. 
 func (m *OrgContact) GetMail()(*string) {
     return m.mail
 }
-// GetMailNickname gets the mailNickname property value. The mailNickname property
+// GetMailNickname gets the mailNickname property value. 
 func (m *OrgContact) GetMailNickname()(*string) {
     return m.mailNickname
 }
-// GetManager gets the manager property value. The manager property
+// GetManager gets the manager property value. 
 func (m *OrgContact) GetManager()(DirectoryObjectable) {
     return m.manager
 }
-// GetMemberOf gets the memberOf property value. The memberOf property
+// GetMemberOf gets the memberOf property value. 
 func (m *OrgContact) GetMemberOf()([]DirectoryObjectable) {
     return m.memberOf
 }
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. 
 func (m *OrgContact) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.onPremisesLastSyncDateTime
 }
-// GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
+// GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. 
 func (m *OrgContact) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable) {
     return m.onPremisesProvisioningErrors
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. 
 func (m *OrgContact) GetOnPremisesSyncEnabled()(*bool) {
     return m.onPremisesSyncEnabled
 }
-// GetPhones gets the phones property value. The phones property
+// GetPhones gets the phones property value. 
 func (m *OrgContact) GetPhones()([]Phoneable) {
     return m.phones
 }
-// GetProxyAddresses gets the proxyAddresses property value. The proxyAddresses property
+// GetProxyAddresses gets the proxyAddresses property value. 
 func (m *OrgContact) GetProxyAddresses()([]string) {
     return m.proxyAddresses
 }
-// GetSurname gets the surname property value. The surname property
+// GetSurname gets the surname property value. 
 func (m *OrgContact) GetSurname()(*string) {
     return m.surname
 }
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. 
 func (m *OrgContact) GetTransitiveMemberOf()([]DirectoryObjectable) {
     return m.transitiveMemberOf
 }
@@ -483,75 +483,75 @@ func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAddresses sets the addresses property value. The addresses property
+// SetAddresses sets the addresses property value. 
 func (m *OrgContact) SetAddresses(value []PhysicalOfficeAddressable)() {
     m.addresses = value
 }
-// SetCompanyName sets the companyName property value. The companyName property
+// SetCompanyName sets the companyName property value. 
 func (m *OrgContact) SetCompanyName(value *string)() {
     m.companyName = value
 }
-// SetDepartment sets the department property value. The department property
+// SetDepartment sets the department property value. 
 func (m *OrgContact) SetDepartment(value *string)() {
     m.department = value
 }
-// SetDirectReports sets the directReports property value. The directReports property
+// SetDirectReports sets the directReports property value. 
 func (m *OrgContact) SetDirectReports(value []DirectoryObjectable)() {
     m.directReports = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. 
 func (m *OrgContact) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetGivenName sets the givenName property value. The givenName property
+// SetGivenName sets the givenName property value. 
 func (m *OrgContact) SetGivenName(value *string)() {
     m.givenName = value
 }
-// SetJobTitle sets the jobTitle property value. The jobTitle property
+// SetJobTitle sets the jobTitle property value. 
 func (m *OrgContact) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// SetMail sets the mail property value. The mail property
+// SetMail sets the mail property value. 
 func (m *OrgContact) SetMail(value *string)() {
     m.mail = value
 }
-// SetMailNickname sets the mailNickname property value. The mailNickname property
+// SetMailNickname sets the mailNickname property value. 
 func (m *OrgContact) SetMailNickname(value *string)() {
     m.mailNickname = value
 }
-// SetManager sets the manager property value. The manager property
+// SetManager sets the manager property value. 
 func (m *OrgContact) SetManager(value DirectoryObjectable)() {
     m.manager = value
 }
-// SetMemberOf sets the memberOf property value. The memberOf property
+// SetMemberOf sets the memberOf property value. 
 func (m *OrgContact) SetMemberOf(value []DirectoryObjectable)() {
     m.memberOf = value
 }
-// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
+// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. 
 func (m *OrgContact) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.onPremisesLastSyncDateTime = value
 }
-// SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
+// SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. 
 func (m *OrgContact) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)() {
     m.onPremisesProvisioningErrors = value
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. 
 func (m *OrgContact) SetOnPremisesSyncEnabled(value *bool)() {
     m.onPremisesSyncEnabled = value
 }
-// SetPhones sets the phones property value. The phones property
+// SetPhones sets the phones property value. 
 func (m *OrgContact) SetPhones(value []Phoneable)() {
     m.phones = value
 }
-// SetProxyAddresses sets the proxyAddresses property value. The proxyAddresses property
+// SetProxyAddresses sets the proxyAddresses property value. 
 func (m *OrgContact) SetProxyAddresses(value []string)() {
     m.proxyAddresses = value
 }
-// SetSurname sets the surname property value. The surname property
+// SetSurname sets the surname property value. 
 func (m *OrgContact) SetSurname(value *string)() {
     m.surname = value
 }
-// SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
+// SetTransitiveMemberOf sets the transitiveMemberOf property value. 
 func (m *OrgContact) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     m.transitiveMemberOf = value
 }

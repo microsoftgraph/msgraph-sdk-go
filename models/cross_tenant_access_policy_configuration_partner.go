@@ -20,7 +20,7 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
     inboundTrust CrossTenantAccessPolicyInboundTrustable
     // Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
     isServiceProvider *bool
-    // The OdataType property
+    // 
     odataType *string
     // The tenant identifier for the partner Azure AD organization. Read-only. Key.
     tenantId *string
@@ -149,7 +149,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetInboundTrust()(CrossTen
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bool) {
     return m.isServiceProvider
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetOdataType()(*string) {
     return m.odataType
 }
@@ -243,7 +243,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value Cros
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value *bool)() {
     m.isServiceProvider = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetOdataType(value *string)() {
     m.odataType = value
 }

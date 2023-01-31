@@ -7,7 +7,7 @@ import (
 // EditionUpgradeConfigurationCollectionResponse 
 type EditionUpgradeConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EditionUpgradeConfigurationable
 }
 // NewEditionUpgradeConfigurationCollectionResponse instantiates a new EditionUpgradeConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EditionUpgradeConfigurationCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EditionUpgradeConfigurationCollectionResponse) GetValue()([]EditionUpgradeConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EditionUpgradeConfigurationCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EditionUpgradeConfigurationCollectionResponse) SetValue(value []EditionUpgradeConfigurationable)() {
     m.value = value
 }

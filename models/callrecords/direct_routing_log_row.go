@@ -37,7 +37,7 @@ type DirectRoutingLogRow struct {
     mediaBypassEnabled *bool
     // The datacenter used for media path in non-bypass call.
     mediaPathLocation *string
-    // The OdataType property
+    // 
     odataType *string
     // The datacenter used for signaling for both bypass and non-bypass calls.
     signalingLocation *string
@@ -350,7 +350,7 @@ func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
 func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
     return m.mediaPathLocation
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DirectRoutingLogRow) GetOdataType()(*string) {
     return m.odataType
 }
@@ -584,7 +584,7 @@ func (m *DirectRoutingLogRow) SetMediaBypassEnabled(value *bool)() {
 func (m *DirectRoutingLogRow) SetMediaPathLocation(value *string)() {
     m.mediaPathLocation = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DirectRoutingLogRow) SetOdataType(value *string)() {
     m.odataType = value
 }

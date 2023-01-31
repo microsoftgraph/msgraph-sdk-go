@@ -7,7 +7,7 @@ import (
 // FederatedIdentityCredentialCollectionResponse 
 type FederatedIdentityCredentialCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []FederatedIdentityCredentialable
 }
 // NewFederatedIdentityCredentialCollectionResponse instantiates a new FederatedIdentityCredentialCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *FederatedIdentityCredentialCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *FederatedIdentityCredentialCollectionResponse) GetValue()([]FederatedIdentityCredentialable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *FederatedIdentityCredentialCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *FederatedIdentityCredentialCollectionResponse) SetValue(value []FederatedIdentityCredentialable)() {
     m.value = value
 }

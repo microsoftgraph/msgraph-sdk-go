@@ -10,7 +10,7 @@ type Print struct {
     additionalData map[string]any
     // The list of available print connectors.
     connectors []PrintConnectorable
-    // The OdataType property
+    // 
     odataType *string
     // The list of print long running operations.
     operations []PrintOperationable
@@ -153,7 +153,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Print) GetOdataType()(*string) {
     return m.odataType
 }
@@ -271,7 +271,7 @@ func (m *Print) SetAdditionalData(value map[string]any)() {
 func (m *Print) SetConnectors(value []PrintConnectorable)() {
     m.connectors = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Print) SetOdataType(value *string)() {
     m.odataType = value
 }

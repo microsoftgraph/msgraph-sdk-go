@@ -10,13 +10,13 @@ type ScoredEmailAddress struct {
     additionalData map[string]any
     // The email address.
     address *string
-    // The itemId property
+    // 
     itemId *string
-    // The OdataType property
+    // 
     odataType *string
     // The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
     relevanceScore *float64
-    // The selectionLikelihood property
+    // 
     selectionLikelihood *SelectionLikelihoodInfo
 }
 // NewScoredEmailAddress instantiates a new scoredEmailAddress and sets the default values.
@@ -93,11 +93,11 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetItemId gets the itemId property value. The itemId property
+// GetItemId gets the itemId property value. 
 func (m *ScoredEmailAddress) GetItemId()(*string) {
     return m.itemId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ScoredEmailAddress) GetOdataType()(*string) {
     return m.odataType
 }
@@ -105,7 +105,7 @@ func (m *ScoredEmailAddress) GetOdataType()(*string) {
 func (m *ScoredEmailAddress) GetRelevanceScore()(*float64) {
     return m.relevanceScore
 }
-// GetSelectionLikelihood gets the selectionLikelihood property value. The selectionLikelihood property
+// GetSelectionLikelihood gets the selectionLikelihood property value. 
 func (m *ScoredEmailAddress) GetSelectionLikelihood()(*SelectionLikelihoodInfo) {
     return m.selectionLikelihood
 }
@@ -158,11 +158,11 @@ func (m *ScoredEmailAddress) SetAdditionalData(value map[string]any)() {
 func (m *ScoredEmailAddress) SetAddress(value *string)() {
     m.address = value
 }
-// SetItemId sets the itemId property value. The itemId property
+// SetItemId sets the itemId property value. 
 func (m *ScoredEmailAddress) SetItemId(value *string)() {
     m.itemId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ScoredEmailAddress) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -170,7 +170,7 @@ func (m *ScoredEmailAddress) SetOdataType(value *string)() {
 func (m *ScoredEmailAddress) SetRelevanceScore(value *float64)() {
     m.relevanceScore = value
 }
-// SetSelectionLikelihood sets the selectionLikelihood property value. The selectionLikelihood property
+// SetSelectionLikelihood sets the selectionLikelihood property value. 
 func (m *ScoredEmailAddress) SetSelectionLikelihood(value *SelectionLikelihoodInfo)() {
     m.selectionLikelihood = value
 }

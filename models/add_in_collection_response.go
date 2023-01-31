@@ -7,7 +7,7 @@ import (
 // AddInCollectionResponse 
 type AddInCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AddInable
 }
 // NewAddInCollectionResponse instantiates a new AddInCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AddInCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AddInCollectionResponse) GetValue()([]AddInable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AddInCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AddInCollectionResponse) SetValue(value []AddInable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // ItemActivityCollectionResponse 
 type ItemActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ItemActivityable
 }
 // NewItemActivityCollectionResponse instantiates a new ItemActivityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ItemActivityCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ItemActivityCollectionResponse) GetValue()([]ItemActivityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ItemActivityCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ItemActivityCollectionResponse) SetValue(value []ItemActivityable)() {
     m.value = value
 }

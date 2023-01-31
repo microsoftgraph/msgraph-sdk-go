@@ -8,7 +8,7 @@ import (
 type PlannerOrderHintsByAssignee struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPlannerOrderHintsByAssignee instantiates a new plannerOrderHintsByAssignee and sets the default values.
@@ -41,7 +41,7 @@ func (m *PlannerOrderHintsByAssignee) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PlannerOrderHintsByAssignee) GetOdataType()(*string) {
     return m.odataType
 }
@@ -65,7 +65,7 @@ func (m *PlannerOrderHintsByAssignee) Serialize(writer i878a80d2330e89d26896388a
 func (m *PlannerOrderHintsByAssignee) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PlannerOrderHintsByAssignee) SetOdataType(value *string)() {
     m.odataType = value
 }

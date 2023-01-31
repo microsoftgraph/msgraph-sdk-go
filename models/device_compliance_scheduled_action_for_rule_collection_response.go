@@ -7,7 +7,7 @@ import (
 // DeviceComplianceScheduledActionForRuleCollectionResponse 
 type DeviceComplianceScheduledActionForRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceComplianceScheduledActionForRuleable
 }
 // NewDeviceComplianceScheduledActionForRuleCollectionResponse instantiates a new DeviceComplianceScheduledActionForRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceComplianceScheduledActionForRuleCollectionResponse) GetFieldDeser
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceComplianceScheduledActionForRuleCollectionResponse) GetValue()([]DeviceComplianceScheduledActionForRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceComplianceScheduledActionForRuleCollectionResponse) Serialize(wri
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceComplianceScheduledActionForRuleCollectionResponse) SetValue(value []DeviceComplianceScheduledActionForRuleable)() {
     m.value = value
 }

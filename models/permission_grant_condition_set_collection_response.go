@@ -7,7 +7,7 @@ import (
 // PermissionGrantConditionSetCollectionResponse 
 type PermissionGrantConditionSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PermissionGrantConditionSetable
 }
 // NewPermissionGrantConditionSetCollectionResponse instantiates a new PermissionGrantConditionSetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PermissionGrantConditionSetCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PermissionGrantConditionSetCollectionResponse) GetValue()([]PermissionGrantConditionSetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PermissionGrantConditionSetCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PermissionGrantConditionSetCollectionResponse) SetValue(value []PermissionGrantConditionSetable)() {
     m.value = value
 }

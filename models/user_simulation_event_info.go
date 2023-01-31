@@ -17,7 +17,7 @@ type UserSimulationEventInfo struct {
     eventName *string
     // IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
     ipAddress *string
-    // The OdataType property
+    // 
     odataType *string
     // The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
     osPlatformDeviceDetails *string
@@ -118,7 +118,7 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(i878a8
 func (m *UserSimulationEventInfo) GetIpAddress()(*string) {
     return m.ipAddress
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserSimulationEventInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -192,7 +192,7 @@ func (m *UserSimulationEventInfo) SetEventName(value *string)() {
 func (m *UserSimulationEventInfo) SetIpAddress(value *string)() {
     m.ipAddress = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserSimulationEventInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

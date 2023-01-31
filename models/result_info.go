@@ -12,7 +12,7 @@ type ResultInfo struct {
     code *int32
     // The message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
     // The result sub-code.
     subcode *int32
@@ -85,7 +85,7 @@ func (m *ResultInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 func (m *ResultInfo) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResultInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *ResultInfo) SetCode(value *int32)() {
 func (m *ResultInfo) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResultInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

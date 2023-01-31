@@ -25,9 +25,9 @@ type Domain struct {
     isRoot *bool
     // true if the domain has completed domain ownership verification. Not nullable
     isVerified *bool
-    // The manufacturer property
+    // 
     manufacturer *string
-    // The model property
+    // 
     model *string
     // Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
     passwordNotificationWindowInDays *int32
@@ -42,7 +42,7 @@ type Domain struct {
     // DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
     verificationDnsRecords []DomainDnsRecordable
 }
-// NewDomain instantiates a new Domain and sets the default values.
+// NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),
@@ -284,11 +284,11 @@ func (m *Domain) GetIsRoot()(*bool) {
 func (m *Domain) GetIsVerified()(*bool) {
     return m.isVerified
 }
-// GetManufacturer gets the manufacturer property value. The manufacturer property
+// GetManufacturer gets the manufacturer property value. 
 func (m *Domain) GetManufacturer()(*string) {
     return m.manufacturer
 }
-// GetModel gets the model property value. The model property
+// GetModel gets the model property value. 
 func (m *Domain) GetModel()(*string) {
     return m.model
 }
@@ -478,11 +478,11 @@ func (m *Domain) SetIsRoot(value *bool)() {
 func (m *Domain) SetIsVerified(value *bool)() {
     m.isVerified = value
 }
-// SetManufacturer sets the manufacturer property value. The manufacturer property
+// SetManufacturer sets the manufacturer property value. 
 func (m *Domain) SetManufacturer(value *string)() {
     m.manufacturer = value
 }
-// SetModel sets the model property value. The model property
+// SetModel sets the model property value. 
 func (m *Domain) SetModel(value *string)() {
     m.model = value
 }

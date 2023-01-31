@@ -26,7 +26,7 @@ type MailTips struct {
     mailboxFull *bool
     // The maximum message size that has been configured for the recipient's organization or mailbox.
     maxMessageSize *int32
-    // The OdataType property
+    // 
     odataType *string
     // The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
     recipientScope *RecipientScopeType
@@ -225,7 +225,7 @@ func (m *MailTips) GetMailboxFull()(*bool) {
 func (m *MailTips) GetMaxMessageSize()(*int32) {
     return m.maxMessageSize
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MailTips) GetOdataType()(*string) {
     return m.odataType
 }
@@ -374,7 +374,7 @@ func (m *MailTips) SetMailboxFull(value *bool)() {
 func (m *MailTips) SetMaxMessageSize(value *int32)() {
     m.maxMessageSize = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MailTips) SetOdataType(value *string)() {
     m.odataType = value
 }

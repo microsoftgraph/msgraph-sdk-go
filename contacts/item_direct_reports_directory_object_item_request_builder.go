@@ -33,13 +33,16 @@ type ItemDirectReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration s
     QueryParameters *ItemDirectReportsDirectoryObjectItemRequestBuilderGetQueryParameters
 }
 // NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
+func NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
     m := &ItemDirectReportsDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/contacts/{orgContact%2Did}/directReports/{directoryObject%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(pathParameter
 func NewItemDirectReportsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get directReports from contacts
 func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDirectReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -70,9 +73,13 @@ func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) OrgContact()(*ItemDirectReportsItemOrgContactRequestBuilder) {
-    return NewItemDirectReportsItemOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemDirectReportsItemMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewItemDirectReportsItemMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemDirectReportsItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemDirectReportsItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get directReports from contacts
 func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDirectReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -89,8 +96,4 @@ func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) ToGetRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) User()(*ItemDirectReportsItemUserRequestBuilder) {
-    return NewItemDirectReportsItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

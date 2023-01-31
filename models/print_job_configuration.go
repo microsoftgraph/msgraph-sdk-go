@@ -22,7 +22,7 @@ type PrintJobConfiguration struct {
     feedOrientation *PrinterFeedOrientation
     // Finishing processes to use when printing.
     finishings []PrintFinishing
-    // The fitPdfToPage property
+    // 
     fitPdfToPage *bool
     // The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
     inputBin *string
@@ -30,23 +30,23 @@ type PrintJobConfiguration struct {
     margin PrintMarginable
     // The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
     mediaSize *string
-    // The mediaType property
+    // 
     mediaType *string
-    // The multipageLayout property
+    // 
     multipageLayout *PrintMultipageLayout
-    // The OdataType property
+    // 
     odataType *string
-    // The orientation property
+    // 
     orientation *PrintOrientation
-    // The outputBin property
+    // 
     outputBin *string
-    // The pageRanges property
+    // 
     pageRanges []IntegerRangeable
-    // The pagesPerSheet property
+    // 
     pagesPerSheet *int32
-    // The quality property
+    // 
     quality *PrintQuality
-    // The scaling property
+    // 
     scaling *PrintScaling
 }
 // NewPrintJobConfiguration instantiates a new printJobConfiguration and sets the default values.
@@ -305,7 +305,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
     return m.finishings
 }
-// GetFitPdfToPage gets the fitPdfToPage property value. The fitPdfToPage property
+// GetFitPdfToPage gets the fitPdfToPage property value. 
 func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
     return m.fitPdfToPage
 }
@@ -321,39 +321,39 @@ func (m *PrintJobConfiguration) GetMargin()(PrintMarginable) {
 func (m *PrintJobConfiguration) GetMediaSize()(*string) {
     return m.mediaSize
 }
-// GetMediaType gets the mediaType property value. The mediaType property
+// GetMediaType gets the mediaType property value. 
 func (m *PrintJobConfiguration) GetMediaType()(*string) {
     return m.mediaType
 }
-// GetMultipageLayout gets the multipageLayout property value. The multipageLayout property
+// GetMultipageLayout gets the multipageLayout property value. 
 func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
     return m.multipageLayout
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrintJobConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOrientation gets the orientation property value. The orientation property
+// GetOrientation gets the orientation property value. 
 func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
     return m.orientation
 }
-// GetOutputBin gets the outputBin property value. The outputBin property
+// GetOutputBin gets the outputBin property value. 
 func (m *PrintJobConfiguration) GetOutputBin()(*string) {
     return m.outputBin
 }
-// GetPageRanges gets the pageRanges property value. The pageRanges property
+// GetPageRanges gets the pageRanges property value. 
 func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRangeable) {
     return m.pageRanges
 }
-// GetPagesPerSheet gets the pagesPerSheet property value. The pagesPerSheet property
+// GetPagesPerSheet gets the pagesPerSheet property value. 
 func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
     return m.pagesPerSheet
 }
-// GetQuality gets the quality property value. The quality property
+// GetQuality gets the quality property value. 
 func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
     return m.quality
 }
-// GetScaling gets the scaling property value. The scaling property
+// GetScaling gets the scaling property value. 
 func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
     return m.scaling
 }
@@ -530,7 +530,7 @@ func (m *PrintJobConfiguration) SetFeedOrientation(value *PrinterFeedOrientation
 func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
     m.finishings = value
 }
-// SetFitPdfToPage sets the fitPdfToPage property value. The fitPdfToPage property
+// SetFitPdfToPage sets the fitPdfToPage property value. 
 func (m *PrintJobConfiguration) SetFitPdfToPage(value *bool)() {
     m.fitPdfToPage = value
 }
@@ -546,39 +546,39 @@ func (m *PrintJobConfiguration) SetMargin(value PrintMarginable)() {
 func (m *PrintJobConfiguration) SetMediaSize(value *string)() {
     m.mediaSize = value
 }
-// SetMediaType sets the mediaType property value. The mediaType property
+// SetMediaType sets the mediaType property value. 
 func (m *PrintJobConfiguration) SetMediaType(value *string)() {
     m.mediaType = value
 }
-// SetMultipageLayout sets the multipageLayout property value. The multipageLayout property
+// SetMultipageLayout sets the multipageLayout property value. 
 func (m *PrintJobConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
     m.multipageLayout = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrintJobConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOrientation sets the orientation property value. The orientation property
+// SetOrientation sets the orientation property value. 
 func (m *PrintJobConfiguration) SetOrientation(value *PrintOrientation)() {
     m.orientation = value
 }
-// SetOutputBin sets the outputBin property value. The outputBin property
+// SetOutputBin sets the outputBin property value. 
 func (m *PrintJobConfiguration) SetOutputBin(value *string)() {
     m.outputBin = value
 }
-// SetPageRanges sets the pageRanges property value. The pageRanges property
+// SetPageRanges sets the pageRanges property value. 
 func (m *PrintJobConfiguration) SetPageRanges(value []IntegerRangeable)() {
     m.pageRanges = value
 }
-// SetPagesPerSheet sets the pagesPerSheet property value. The pagesPerSheet property
+// SetPagesPerSheet sets the pagesPerSheet property value. 
 func (m *PrintJobConfiguration) SetPagesPerSheet(value *int32)() {
     m.pagesPerSheet = value
 }
-// SetQuality sets the quality property value. The quality property
+// SetQuality sets the quality property value. 
 func (m *PrintJobConfiguration) SetQuality(value *PrintQuality)() {
     m.quality = value
 }
-// SetScaling sets the scaling property value. The scaling property
+// SetScaling sets the scaling property value. 
 func (m *PrintJobConfiguration) SetScaling(value *PrintScaling)() {
     m.scaling = value
 }

@@ -7,7 +7,7 @@ import (
 // ManagedDeviceCollectionResponse 
 type ManagedDeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedDeviceable
 }
 // NewManagedDeviceCollectionResponse instantiates a new ManagedDeviceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedDeviceCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedDeviceCollectionResponse) GetValue()([]ManagedDeviceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedDeviceCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedDeviceCollectionResponse) SetValue(value []ManagedDeviceable)() {
     m.value = value
 }

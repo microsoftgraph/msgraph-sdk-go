@@ -7,7 +7,7 @@ import (
 // Participant 
 type Participant struct {
     Entity
-    // The info property
+    // 
     info ParticipantInfoable
     // true if the participant is in lobby.
     isInLobby *bool
@@ -100,7 +100,7 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetInfo gets the info property value. The info property
+// GetInfo gets the info property value. 
 func (m *Participant) GetInfo()(ParticipantInfoable) {
     return m.info
 }
@@ -172,7 +172,7 @@ func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetInfo sets the info property value. The info property
+// SetInfo sets the info property value. 
 func (m *Participant) SetInfo(value ParticipantInfoable)() {
     m.info = value
 }

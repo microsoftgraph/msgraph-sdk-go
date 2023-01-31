@@ -7,7 +7,7 @@ import (
 // AverageComparativeScoreCollectionResponse 
 type AverageComparativeScoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AverageComparativeScoreable
 }
 // NewAverageComparativeScoreCollectionResponse instantiates a new AverageComparativeScoreCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AverageComparativeScoreCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AverageComparativeScoreCollectionResponse) GetValue()([]AverageComparativeScoreable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AverageComparativeScoreCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AverageComparativeScoreCollectionResponse) SetValue(value []AverageComparativeScoreable)() {
     m.value = value
 }

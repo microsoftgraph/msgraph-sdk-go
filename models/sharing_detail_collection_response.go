@@ -7,7 +7,7 @@ import (
 // SharingDetailCollectionResponse 
 type SharingDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SharingDetailable
 }
 // NewSharingDetailCollectionResponse instantiates a new SharingDetailCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SharingDetailCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SharingDetailCollectionResponse) GetValue()([]SharingDetailable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SharingDetailCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SharingDetailCollectionResponse) SetValue(value []SharingDetailable)() {
     m.value = value
 }

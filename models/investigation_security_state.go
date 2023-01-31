@@ -8,11 +8,11 @@ import (
 type InvestigationSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The name property
+    // 
     name *string
-    // The OdataType property
+    // 
     odataType *string
-    // The status property
+    // 
     status *string
 }
 // NewInvestigationSecurityState instantiates a new investigationSecurityState and sets the default values.
@@ -65,15 +65,15 @@ func (m *InvestigationSecurityState) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. 
 func (m *InvestigationSecurityState) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InvestigationSecurityState) GetOdataType()(*string) {
     return m.odataType
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *InvestigationSecurityState) GetStatus()(*string) {
     return m.status
 }
@@ -109,15 +109,15 @@ func (m *InvestigationSecurityState) Serialize(writer i878a80d2330e89d26896388a3
 func (m *InvestigationSecurityState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. 
 func (m *InvestigationSecurityState) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InvestigationSecurityState) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *InvestigationSecurityState) SetStatus(value *string)() {
     m.status = value
 }

@@ -14,11 +14,11 @@ type ConnectedOrganization struct {
     description *string
     // The display name of the connected organization. Supports $filter (eq).
     displayName *string
-    // The externalSponsors property
+    // 
     externalSponsors []DirectoryObjectable
     // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
     identitySources []IdentitySourceable
-    // The internalSponsors property
+    // 
     internalSponsors []DirectoryObjectable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -48,7 +48,7 @@ func (m *ConnectedOrganization) GetDescription()(*string) {
 func (m *ConnectedOrganization) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetExternalSponsors gets the externalSponsors property value. The externalSponsors property
+// GetExternalSponsors gets the externalSponsors property value. 
 func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObjectable) {
     return m.externalSponsors
 }
@@ -153,7 +153,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
     return m.identitySources
 }
-// GetInternalSponsors gets the internalSponsors property value. The internalSponsors property
+// GetInternalSponsors gets the internalSponsors property value. 
 func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObjectable) {
     return m.internalSponsors
 }
@@ -246,7 +246,7 @@ func (m *ConnectedOrganization) SetDescription(value *string)() {
 func (m *ConnectedOrganization) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetExternalSponsors sets the externalSponsors property value. The externalSponsors property
+// SetExternalSponsors sets the externalSponsors property value. 
 func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)() {
     m.externalSponsors = value
 }
@@ -254,7 +254,7 @@ func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)() {
     m.identitySources = value
 }
-// SetInternalSponsors sets the internalSponsors property value. The internalSponsors property
+// SetInternalSponsors sets the internalSponsors property value. 
 func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObjectable)() {
     m.internalSponsors = value
 }

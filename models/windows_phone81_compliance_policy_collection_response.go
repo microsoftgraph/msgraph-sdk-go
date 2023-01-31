@@ -7,7 +7,7 @@ import (
 // WindowsPhone81CompliancePolicyCollectionResponse 
 type WindowsPhone81CompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsPhone81CompliancePolicyable
 }
 // NewWindowsPhone81CompliancePolicyCollectionResponse instantiates a new WindowsPhone81CompliancePolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsPhone81CompliancePolicyCollectionResponse) GetFieldDeserializers
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsPhone81CompliancePolicyCollectionResponse) GetValue()([]WindowsPhone81CompliancePolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsPhone81CompliancePolicyCollectionResponse) Serialize(writer i878
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsPhone81CompliancePolicyCollectionResponse) SetValue(value []WindowsPhone81CompliancePolicyable)() {
     m.value = value
 }

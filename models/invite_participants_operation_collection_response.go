@@ -7,7 +7,7 @@ import (
 // InviteParticipantsOperationCollectionResponse 
 type InviteParticipantsOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []InviteParticipantsOperationable
 }
 // NewInviteParticipantsOperationCollectionResponse instantiates a new InviteParticipantsOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *InviteParticipantsOperationCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *InviteParticipantsOperationCollectionResponse) GetValue()([]InviteParticipantsOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *InviteParticipantsOperationCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *InviteParticipantsOperationCollectionResponse) SetValue(value []InviteParticipantsOperationable)() {
     m.value = value
 }

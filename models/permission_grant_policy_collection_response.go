@@ -7,7 +7,7 @@ import (
 // PermissionGrantPolicyCollectionResponse 
 type PermissionGrantPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PermissionGrantPolicyable
 }
 // NewPermissionGrantPolicyCollectionResponse instantiates a new PermissionGrantPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PermissionGrantPolicyCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PermissionGrantPolicyCollectionResponse) GetValue()([]PermissionGrantPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PermissionGrantPolicyCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PermissionGrantPolicyCollectionResponse) SetValue(value []PermissionGrantPolicyable)() {
     m.value = value
 }

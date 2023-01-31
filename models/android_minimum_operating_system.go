@@ -8,7 +8,7 @@ import (
 type AndroidMinimumOperatingSystem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
     v10_0 *bool
@@ -233,7 +233,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AndroidMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -417,7 +417,7 @@ func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
 func (m *AndroidMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AndroidMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }

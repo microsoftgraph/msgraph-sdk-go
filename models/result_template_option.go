@@ -10,7 +10,7 @@ type ResultTemplateOption struct {
     additionalData map[string]any
     // Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.
     enableResultTemplate *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewResultTemplateOption instantiates a new resultTemplateOption and sets the default values.
@@ -57,7 +57,7 @@ func (m *ResultTemplateOption) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResultTemplateOption) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *ResultTemplateOption) SetAdditionalData(value map[string]any)() {
 func (m *ResultTemplateOption) SetEnableResultTemplate(value *bool)() {
     m.enableResultTemplate = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResultTemplateOption) SetOdataType(value *string)() {
     m.odataType = value
 }

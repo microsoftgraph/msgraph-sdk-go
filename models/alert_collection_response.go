@@ -7,7 +7,7 @@ import (
 // AlertCollectionResponse 
 type AlertCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Alertable
 }
 // NewAlertCollectionResponse instantiates a new AlertCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AlertCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AlertCollectionResponse) GetValue()([]Alertable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AlertCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AlertCollectionResponse) SetValue(value []Alertable)() {
     m.value = value
 }

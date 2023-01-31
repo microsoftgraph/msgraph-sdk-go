@@ -7,7 +7,7 @@ import (
 // AccessReviewNotificationRecipientItemCollectionResponse 
 type AccessReviewNotificationRecipientItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewNotificationRecipientItemable
 }
 // NewAccessReviewNotificationRecipientItemCollectionResponse instantiates a new AccessReviewNotificationRecipientItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewNotificationRecipientItemCollectionResponse) GetFieldDeseri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewNotificationRecipientItemCollectionResponse) GetValue()([]AccessReviewNotificationRecipientItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewNotificationRecipientItemCollectionResponse) Serialize(writ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewNotificationRecipientItemCollectionResponse) SetValue(value []AccessReviewNotificationRecipientItemable)() {
     m.value = value
 }

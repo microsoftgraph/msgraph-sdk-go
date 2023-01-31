@@ -12,7 +12,7 @@ type OnenoteOperationError struct {
     code *string
     // The error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewOnenoteOperationError instantiates a new onenoteOperationError and sets the default values.
@@ -73,7 +73,7 @@ func (m *OnenoteOperationError) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *OnenoteOperationError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnenoteOperationError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *OnenoteOperationError) SetCode(value *string)() {
 func (m *OnenoteOperationError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnenoteOperationError) SetOdataType(value *string)() {
     m.odataType = value
 }

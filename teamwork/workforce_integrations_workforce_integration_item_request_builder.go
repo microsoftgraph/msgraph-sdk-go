@@ -47,13 +47,16 @@ type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal instantiates a new WorkforceIntegrationItemRequestBuilder and sets the default values.
-func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
+func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, workforceIntegrationId *string)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
     m := &WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teamwork/workforceIntegrations/{workforceIntegration%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if workforceIntegrationId != nil {
+        urlTplParams["workforceIntegration%2Did"] = *workforceIntegrationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(path
 func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property workforceIntegrations for teamwork
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

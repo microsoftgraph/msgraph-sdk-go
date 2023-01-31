@@ -13,7 +13,7 @@ type InnerError struct {
     clientRequestId *string
     // Date when the error occured.
     date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Request Id as tracked internally by the service
     requestId *string
@@ -86,7 +86,7 @@ func (m *InnerError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *InnerError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -140,7 +140,7 @@ func (m *InnerError) SetClientRequestId(value *string)() {
 func (m *InnerError) SetDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.date = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *InnerError) SetOdataType(value *string)() {
     m.odataType = value
 }

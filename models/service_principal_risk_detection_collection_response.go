@@ -7,7 +7,7 @@ import (
 // ServicePrincipalRiskDetectionCollectionResponse 
 type ServicePrincipalRiskDetectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ServicePrincipalRiskDetectionable
 }
 // NewServicePrincipalRiskDetectionCollectionResponse instantiates a new ServicePrincipalRiskDetectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ServicePrincipalRiskDetectionCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ServicePrincipalRiskDetectionCollectionResponse) GetValue()([]ServicePrincipalRiskDetectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ServicePrincipalRiskDetectionCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ServicePrincipalRiskDetectionCollectionResponse) SetValue(value []ServicePrincipalRiskDetectionable)() {
     m.value = value
 }

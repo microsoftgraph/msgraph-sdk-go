@@ -15,7 +15,7 @@ type B2xIdentityUserFlow struct {
     languages []UserFlowLanguageConfigurationable
     // The user attribute assignments included in the user flow.
     userAttributeAssignments []IdentityUserFlowAttributeAssignmentable
-    // The userFlowIdentityProviders property
+    // 
     userFlowIdentityProviders []IdentityProviderBaseable
 }
 // NewB2xIdentityUserFlow instantiates a new B2xIdentityUserFlow and sets the default values.
@@ -116,7 +116,7 @@ func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfigurationable
 func (m *B2xIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAttributeAssignmentable) {
     return m.userAttributeAssignments
 }
-// GetUserFlowIdentityProviders gets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+// GetUserFlowIdentityProviders gets the userFlowIdentityProviders property value. 
 func (m *B2xIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderBaseable) {
     return m.userFlowIdentityProviders
 }
@@ -190,7 +190,7 @@ func (m *B2xIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfiguration
 func (m *B2xIdentityUserFlow) SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignmentable)() {
     m.userAttributeAssignments = value
 }
-// SetUserFlowIdentityProviders sets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+// SetUserFlowIdentityProviders sets the userFlowIdentityProviders property value. 
 func (m *B2xIdentityUserFlow) SetUserFlowIdentityProviders(value []IdentityProviderBaseable)() {
     m.userFlowIdentityProviders = value
 }

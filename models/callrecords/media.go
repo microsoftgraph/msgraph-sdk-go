@@ -18,7 +18,7 @@ type Media struct {
     callerNetwork NetworkInfoable
     // How the media was identified during media negotiation stage.
     label *string
-    // The OdataType property
+    // 
     odataType *string
     // Network streams associated with this media.
     streams []MediaStreamable
@@ -137,7 +137,7 @@ func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 func (m *Media) GetLabel()(*string) {
     return m.label
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Media) GetOdataType()(*string) {
     return m.odataType
 }
@@ -225,7 +225,7 @@ func (m *Media) SetCallerNetwork(value NetworkInfoable)() {
 func (m *Media) SetLabel(value *string)() {
     m.label = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Media) SetOdataType(value *string)() {
     m.odataType = value
 }

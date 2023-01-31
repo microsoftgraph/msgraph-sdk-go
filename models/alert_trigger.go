@@ -10,7 +10,7 @@ type AlertTrigger struct {
     additionalData map[string]any
     // Name of the property serving as a detection trigger.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
     type_escaped *string
@@ -81,7 +81,7 @@ func (m *AlertTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *AlertTrigger) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlertTrigger) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *AlertTrigger) SetAdditionalData(value map[string]any)() {
 func (m *AlertTrigger) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlertTrigger) SetOdataType(value *string)() {
     m.odataType = value
 }

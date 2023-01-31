@@ -7,7 +7,7 @@ import (
 // DelegatedPermissionClassificationCollectionResponse 
 type DelegatedPermissionClassificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DelegatedPermissionClassificationable
 }
 // NewDelegatedPermissionClassificationCollectionResponse instantiates a new DelegatedPermissionClassificationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DelegatedPermissionClassificationCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DelegatedPermissionClassificationCollectionResponse) GetValue()([]DelegatedPermissionClassificationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DelegatedPermissionClassificationCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DelegatedPermissionClassificationCollectionResponse) SetValue(value []DelegatedPermissionClassificationable)() {
     m.value = value
 }

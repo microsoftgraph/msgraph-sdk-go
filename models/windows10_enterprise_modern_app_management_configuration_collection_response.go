@@ -7,7 +7,7 @@ import (
 // Windows10EnterpriseModernAppManagementConfigurationCollectionResponse 
 type Windows10EnterpriseModernAppManagementConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Windows10EnterpriseModernAppManagementConfigurationable
 }
 // NewWindows10EnterpriseModernAppManagementConfigurationCollectionResponse instantiates a new Windows10EnterpriseModernAppManagementConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) 
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) GetValue()([]Windows10EnterpriseModernAppManagementConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) 
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) SetValue(value []Windows10EnterpriseModernAppManagementConfigurationable)() {
     m.value = value
 }

@@ -19,7 +19,7 @@ type AppRole struct {
     id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
     isEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
     origin *string
@@ -150,7 +150,7 @@ func (m *AppRole) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e555994
 func (m *AppRole) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AppRole) GetOdataType()(*string) {
     return m.odataType
 }
@@ -244,7 +244,7 @@ func (m *AppRole) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e55
 func (m *AppRole) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AppRole) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type TermColumn struct {
     additionalData map[string]any
     // Specifies whether the column will allow more than one value.
     allowMultipleValues *bool
-    // The OdataType property
+    // 
     odataType *string
     // Specifies whether to display the entire term path or only the term label.
     showFullyQualifiedName *bool
@@ -69,7 +69,7 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TermColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *TermColumn) SetAdditionalData(value map[string]any)() {
 func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
     m.allowMultipleValues = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TermColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

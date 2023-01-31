@@ -12,7 +12,7 @@ type UserAgent struct {
     applicationVersion *string
     // User-agent header value reported by this endpoint.
     headerValue *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewUserAgent instantiates a new userAgent and sets the default values.
@@ -93,7 +93,7 @@ func (m *UserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *UserAgent) GetHeaderValue()(*string) {
     return m.headerValue
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserAgent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -137,7 +137,7 @@ func (m *UserAgent) SetApplicationVersion(value *string)() {
 func (m *UserAgent) SetHeaderValue(value *string)() {
     m.headerValue = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserAgent) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type ActivityHistoryItem struct {
     Entity
     // Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
     activeDurationSeconds *int32
-    // The activity property
+    // 
     activity UserActivityable
     // Set by the server. DateTime in UTC when the object was created on the server.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -42,7 +42,7 @@ func CreateActivityHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d2
 func (m *ActivityHistoryItem) GetActiveDurationSeconds()(*int32) {
     return m.activeDurationSeconds
 }
-// GetActivity gets the activity property value. The activity property
+// GetActivity gets the activity property value. 
 func (m *ActivityHistoryItem) GetActivity()(UserActivityable) {
     return m.activity
 }
@@ -236,7 +236,7 @@ func (m *ActivityHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *ActivityHistoryItem) SetActiveDurationSeconds(value *int32)() {
     m.activeDurationSeconds = value
 }
-// SetActivity sets the activity property value. The activity property
+// SetActivity sets the activity property value. 
 func (m *ActivityHistoryItem) SetActivity(value UserActivityable)() {
     m.activity = value
 }

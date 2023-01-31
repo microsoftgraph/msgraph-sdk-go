@@ -12,7 +12,7 @@ type CalculatedColumn struct {
     format *string
     // The formula used to compute the value for this column.
     formula *string
-    // The OdataType property
+    // 
     odataType *string
     // The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
     outputType *string
@@ -85,7 +85,7 @@ func (m *CalculatedColumn) GetFormat()(*string) {
 func (m *CalculatedColumn) GetFormula()(*string) {
     return m.formula
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CalculatedColumn) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *CalculatedColumn) SetFormat(value *string)() {
 func (m *CalculatedColumn) SetFormula(value *string)() {
     m.formula = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CalculatedColumn) SetOdataType(value *string)() {
     m.odataType = value
 }

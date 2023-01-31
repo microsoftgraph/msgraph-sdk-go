@@ -7,7 +7,7 @@ import (
 // OnPremisesProvisioningErrorCollectionResponse 
 type OnPremisesProvisioningErrorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OnPremisesProvisioningErrorable
 }
 // NewOnPremisesProvisioningErrorCollectionResponse instantiates a new OnPremisesProvisioningErrorCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OnPremisesProvisioningErrorCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OnPremisesProvisioningErrorCollectionResponse) GetValue()([]OnPremisesProvisioningErrorable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OnPremisesProvisioningErrorCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OnPremisesProvisioningErrorCollectionResponse) SetValue(value []OnPremisesProvisioningErrorable)() {
     m.value = value
 }

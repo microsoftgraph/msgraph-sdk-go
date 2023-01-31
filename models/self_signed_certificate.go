@@ -10,25 +10,25 @@ import (
 type SelfSignedCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The customKeyIdentifier property
+    // 
     customKeyIdentifier []byte
-    // The displayName property
+    // 
     displayName *string
-    // The endDateTime property
+    // 
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The key property
+    // 
     key []byte
-    // The keyId property
+    // 
     keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The OdataType property
+    // 
     odataType *string
-    // The startDateTime property
+    // 
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The thumbprint property
+    // 
     thumbprint *string
-    // The type property
+    // 
     type_escaped *string
-    // The usage property
+    // 
     usage *string
 }
 // NewSelfSignedCertificate instantiates a new SelfSignedCertificate and sets the default values.
@@ -46,15 +46,15 @@ func CreateSelfSignedCertificateFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *SelfSignedCertificate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCustomKeyIdentifier gets the customKeyIdentifier property value. The customKeyIdentifier property
+// GetCustomKeyIdentifier gets the customKeyIdentifier property value. 
 func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
     return m.customKeyIdentifier
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. 
 func (m *SelfSignedCertificate) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. 
 func (m *SelfSignedCertificate) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.endDateTime
 }
@@ -163,31 +163,31 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. 
 func (m *SelfSignedCertificate) GetKey()([]byte) {
     return m.key
 }
-// GetKeyId gets the keyId property value. The keyId property
+// GetKeyId gets the keyId property value. 
 func (m *SelfSignedCertificate) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SelfSignedCertificate) GetOdataType()(*string) {
     return m.odataType
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. 
 func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetThumbprint gets the thumbprint property value. The thumbprint property
+// GetThumbprint gets the thumbprint property value. 
 func (m *SelfSignedCertificate) GetThumbprint()(*string) {
     return m.thumbprint
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *SelfSignedCertificate) GetType()(*string) {
     return m.type_escaped
 }
-// GetUsage gets the usage property value. The usage property
+// GetUsage gets the usage property value. 
 func (m *SelfSignedCertificate) GetUsage()(*string) {
     return m.usage
 }
@@ -265,43 +265,43 @@ func (m *SelfSignedCertificate) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *SelfSignedCertificate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCustomKeyIdentifier sets the customKeyIdentifier property value. The customKeyIdentifier property
+// SetCustomKeyIdentifier sets the customKeyIdentifier property value. 
 func (m *SelfSignedCertificate) SetCustomKeyIdentifier(value []byte)() {
     m.customKeyIdentifier = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. 
 func (m *SelfSignedCertificate) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. 
 func (m *SelfSignedCertificate) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. 
 func (m *SelfSignedCertificate) SetKey(value []byte)() {
     m.key = value
 }
-// SetKeyId sets the keyId property value. The keyId property
+// SetKeyId sets the keyId property value. 
 func (m *SelfSignedCertificate) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SelfSignedCertificate) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. 
 func (m *SelfSignedCertificate) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetThumbprint sets the thumbprint property value. The thumbprint property
+// SetThumbprint sets the thumbprint property value. 
 func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
     m.thumbprint = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *SelfSignedCertificate) SetType(value *string)() {
     m.type_escaped = value
 }
-// SetUsage sets the usage property value. The usage property
+// SetUsage sets the usage property value. 
 func (m *SelfSignedCertificate) SetUsage(value *string)() {
     m.usage = value
 }

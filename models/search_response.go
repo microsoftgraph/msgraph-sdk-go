@@ -10,7 +10,7 @@ type SearchResponse struct {
     additionalData map[string]any
     // A collection of search results.
     hitsContainers []SearchHitsContainerable
-    // The OdataType property
+    // 
     odataType *string
     // Provides information related to spelling corrections in the alteration response.
     queryAlterationResponse AlterationResponseable
@@ -101,7 +101,7 @@ func (m *SearchResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *SearchResponse) GetHitsContainers()([]SearchHitsContainerable) {
     return m.hitsContainers
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchResponse) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *SearchResponse) SetAdditionalData(value map[string]any)() {
 func (m *SearchResponse) SetHitsContainers(value []SearchHitsContainerable)() {
     m.hitsContainers = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchResponse) SetOdataType(value *string)() {
     m.odataType = value
 }

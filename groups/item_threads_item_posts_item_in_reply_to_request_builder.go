@@ -81,10 +81,6 @@ func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) ExtensionsById(id stri
     }
     return NewItemThreadsItemPostsItemInReplyToExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Forward provides operations to call the forward method.
-func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Forward()(*ItemThreadsItemPostsItemInReplyToForwardRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get read-only. Supports $expand.
 func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -104,6 +100,14 @@ func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable), nil
 }
+// MicrosoftGraphForward provides operations to call the forward method.
+func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) MicrosoftGraphForward()(*ItemThreadsItemPostsItemInReplyToMicrosoftGraphForwardForwardRequestBuilder) {
+    return NewItemThreadsItemPostsItemInReplyToMicrosoftGraphForwardForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphReply provides operations to call the reply method.
+func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) MicrosoftGraphReply()(*ItemThreadsItemPostsItemInReplyToMicrosoftGraphReplyReplyRequestBuilder) {
+    return NewItemThreadsItemPostsItemInReplyToMicrosoftGraphReplyReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) MultiValueExtendedProperties()(*ItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesRequestBuilder) {
     return NewItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -118,10 +122,6 @@ func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) MultiValueExtendedProp
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return NewItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Reply provides operations to call the reply method.
-func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Reply()(*ItemThreadsItemPostsItemInReplyToReplyRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) SingleValueExtendedProperties()(*ItemThreadsItemPostsItemInReplyToSingleValueExtendedPropertiesRequestBuilder) {

@@ -7,7 +7,7 @@ import (
 // ThreatAssessmentResultCollectionResponse 
 type ThreatAssessmentResultCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ThreatAssessmentResultable
 }
 // NewThreatAssessmentResultCollectionResponse instantiates a new ThreatAssessmentResultCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ThreatAssessmentResultCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ThreatAssessmentResultCollectionResponse) GetValue()([]ThreatAssessmentResultable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ThreatAssessmentResultCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ThreatAssessmentResultCollectionResponse) SetValue(value []ThreatAssessmentResultable)() {
     m.value = value
 }

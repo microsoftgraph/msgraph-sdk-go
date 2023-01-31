@@ -23,13 +23,13 @@ type UserExperienceAnalyticsDevicePerformance struct {
     deviceCount *int64
     // The user experience analytics device name.
     deviceName *string
-    // The diskType property
+    // 
     diskType *DiskType
     // The user experience analytics device group policy boot time in milliseconds.
     groupPolicyBootTimeInMs *int32
     // The user experience analytics device group policy login time in milliseconds.
     groupPolicyLoginTimeInMs *int32
-    // The healthStatus property
+    // 
     healthStatus *UserExperienceAnalyticsHealthState
     // The user experience analytics device login score.
     loginScore *int32
@@ -91,7 +91,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceCount()(*int64) {
 func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceName()(*string) {
     return m.deviceName
 }
-// GetDiskType gets the diskType property value. The diskType property
+// GetDiskType gets the diskType property value. 
 func (m *UserExperienceAnalyticsDevicePerformance) GetDiskType()(*DiskType) {
     return m.diskType
 }
@@ -308,7 +308,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetGroupPolicyBootTimeInMs()(
 func (m *UserExperienceAnalyticsDevicePerformance) GetGroupPolicyLoginTimeInMs()(*int32) {
     return m.groupPolicyLoginTimeInMs
 }
-// GetHealthStatus gets the healthStatus property value. The healthStatus property
+// GetHealthStatus gets the healthStatus property value. 
 func (m *UserExperienceAnalyticsDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     return m.healthStatus
 }
@@ -506,7 +506,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceCount(value *int64)(
 func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceName(value *string)() {
     m.deviceName = value
 }
-// SetDiskType sets the diskType property value. The diskType property
+// SetDiskType sets the diskType property value. 
 func (m *UserExperienceAnalyticsDevicePerformance) SetDiskType(value *DiskType)() {
     m.diskType = value
 }
@@ -518,7 +518,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetGroupPolicyBootTimeInMs(va
 func (m *UserExperienceAnalyticsDevicePerformance) SetGroupPolicyLoginTimeInMs(value *int32)() {
     m.groupPolicyLoginTimeInMs = value
 }
-// SetHealthStatus sets the healthStatus property value. The healthStatus property
+// SetHealthStatus sets the healthStatus property value. 
 func (m *UserExperienceAnalyticsDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     m.healthStatus = value
 }

@@ -7,7 +7,7 @@ import (
 // IdentityProviderBaseCollectionResponse 
 type IdentityProviderBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IdentityProviderBaseable
 }
 // NewIdentityProviderBaseCollectionResponse instantiates a new IdentityProviderBaseCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IdentityProviderBaseCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IdentityProviderBaseCollectionResponse) GetValue()([]IdentityProviderBaseable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IdentityProviderBaseCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IdentityProviderBaseCollectionResponse) SetValue(value []IdentityProviderBaseable)() {
     m.value = value
 }

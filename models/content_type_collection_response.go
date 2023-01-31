@@ -7,7 +7,7 @@ import (
 // ContentTypeCollectionResponse 
 type ContentTypeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ContentTypeable
 }
 // NewContentTypeCollectionResponse instantiates a new ContentTypeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ContentTypeCollectionResponse) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ContentTypeCollectionResponse) GetValue()([]ContentTypeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ContentTypeCollectionResponse) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ContentTypeCollectionResponse) SetValue(value []ContentTypeable)() {
     m.value = value
 }

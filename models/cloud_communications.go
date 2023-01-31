@@ -7,11 +7,11 @@ import (
 // CloudCommunications 
 type CloudCommunications struct {
     Entity
-    // The calls property
+    // 
     calls []Callable
-    // The onlineMeetings property
+    // 
     onlineMeetings []OnlineMeetingable
-    // The presences property
+    // 
     presences []Presenceable
 }
 // NewCloudCommunications instantiates a new CloudCommunications and sets the default values.
@@ -25,7 +25,7 @@ func NewCloudCommunications()(*CloudCommunications) {
 func CreateCloudCommunicationsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudCommunications(), nil
 }
-// GetCalls gets the calls property value. The calls property
+// GetCalls gets the calls property value. 
 func (m *CloudCommunications) GetCalls()([]Callable) {
     return m.calls
 }
@@ -76,11 +76,11 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
+// GetOnlineMeetings gets the onlineMeetings property value. 
 func (m *CloudCommunications) GetOnlineMeetings()([]OnlineMeetingable) {
     return m.onlineMeetings
 }
-// GetPresences gets the presences property value. The presences property
+// GetPresences gets the presences property value. 
 func (m *CloudCommunications) GetPresences()([]Presenceable) {
     return m.presences
 }
@@ -122,15 +122,15 @@ func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCalls sets the calls property value. The calls property
+// SetCalls sets the calls property value. 
 func (m *CloudCommunications) SetCalls(value []Callable)() {
     m.calls = value
 }
-// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
+// SetOnlineMeetings sets the onlineMeetings property value. 
 func (m *CloudCommunications) SetOnlineMeetings(value []OnlineMeetingable)() {
     m.onlineMeetings = value
 }
-// SetPresences sets the presences property value. The presences property
+// SetPresences sets the presences property value. 
 func (m *CloudCommunications) SetPresences(value []Presenceable)() {
     m.presences = value
 }

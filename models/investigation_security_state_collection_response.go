@@ -7,7 +7,7 @@ import (
 // InvestigationSecurityStateCollectionResponse 
 type InvestigationSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []InvestigationSecurityStateable
 }
 // NewInvestigationSecurityStateCollectionResponse instantiates a new InvestigationSecurityStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *InvestigationSecurityStateCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *InvestigationSecurityStateCollectionResponse) GetValue()([]InvestigationSecurityStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *InvestigationSecurityStateCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *InvestigationSecurityStateCollectionResponse) SetValue(value []InvestigationSecurityStateable)() {
     m.value = value
 }

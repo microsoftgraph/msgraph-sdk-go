@@ -17,7 +17,7 @@ type IdentityUserFlowAttributeAssignment struct {
     userAttribute IdentityUserFlowAttributeable
     // The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
     userAttributeValues []UserAttributeValuesItemable
-    // The userInputType property
+    // 
     userInputType *IdentityUserFlowAttributeInputType
 }
 // NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
@@ -120,7 +120,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetUserAttribute()(IdentityUserFlo
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttributeValues()([]UserAttributeValuesItemable) {
     return m.userAttributeValues
 }
-// GetUserInputType gets the userInputType property value. The userInputType property
+// GetUserInputType gets the userInputType property value. 
 func (m *IdentityUserFlowAttributeAssignment) GetUserInputType()(*IdentityUserFlowAttributeInputType) {
     return m.userInputType
 }
@@ -193,7 +193,7 @@ func (m *IdentityUserFlowAttributeAssignment) SetUserAttribute(value IdentityUse
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttributeValues(value []UserAttributeValuesItemable)() {
     m.userAttributeValues = value
 }
-// SetUserInputType sets the userInputType property value. The userInputType property
+// SetUserInputType sets the userInputType property value. 
 func (m *IdentityUserFlowAttributeAssignment) SetUserInputType(value *IdentityUserFlowAttributeInputType)() {
     m.userInputType = value
 }

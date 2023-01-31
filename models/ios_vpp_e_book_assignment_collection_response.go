@@ -7,7 +7,7 @@ import (
 // IosVppEBookAssignmentCollectionResponse 
 type IosVppEBookAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosVppEBookAssignmentable
 }
 // NewIosVppEBookAssignmentCollectionResponse instantiates a new IosVppEBookAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosVppEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosVppEBookAssignmentCollectionResponse) GetValue()([]IosVppEBookAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosVppEBookAssignmentCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosVppEBookAssignmentCollectionResponse) SetValue(value []IosVppEBookAssignmentable)() {
     m.value = value
 }

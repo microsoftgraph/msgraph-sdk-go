@@ -7,7 +7,7 @@ import (
 // AssignedLicenseCollectionResponse 
 type AssignedLicenseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AssignedLicenseable
 }
 // NewAssignedLicenseCollectionResponse instantiates a new AssignedLicenseCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AssignedLicenseCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AssignedLicenseCollectionResponse) GetValue()([]AssignedLicenseable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AssignedLicenseCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AssignedLicenseCollectionResponse) SetValue(value []AssignedLicenseable)() {
     m.value = value
 }

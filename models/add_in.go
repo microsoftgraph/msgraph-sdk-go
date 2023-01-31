@@ -9,13 +9,13 @@ import (
 type AddIn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The id property
+    // 
     id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The OdataType property
+    // 
     odataType *string
-    // The properties property
+    // 
     properties []KeyValueable
-    // The type property
+    // 
     type_escaped *string
 }
 // NewAddIn instantiates a new addIn and sets the default values.
@@ -82,19 +82,19 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. 
 func (m *AddIn) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AddIn) GetOdataType()(*string) {
     return m.odataType
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. 
 func (m *AddIn) GetProperties()([]KeyValueable) {
     return m.properties
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *AddIn) GetType()(*string) {
     return m.type_escaped
 }
@@ -140,19 +140,19 @@ func (m *AddIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 func (m *AddIn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. 
 func (m *AddIn) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AddIn) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. 
 func (m *AddIn) SetProperties(value []KeyValueable)() {
     m.properties = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *AddIn) SetType(value *string)() {
     m.type_escaped = value
 }

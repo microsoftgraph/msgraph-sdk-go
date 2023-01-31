@@ -49,7 +49,7 @@ type MediaStream struct {
     maxRatioOfConcealedSamples *float32
     // Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
     maxRoundTripTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The OdataType property
+    // 
     odataType *string
     // Packet count for the stream.
     packetUtilization *int64
@@ -57,7 +57,7 @@ type MediaStream struct {
     postForwardErrorCorrectionPacketLossRate *float32
     // UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The streamDirection property
+    // 
     streamDirection *MediaStreamDirection
     // Unique identifier for the stream.
     streamId *string
@@ -446,7 +446,7 @@ func (m *MediaStream) GetMaxRatioOfConcealedSamples()(*float32) {
 func (m *MediaStream) GetMaxRoundTripTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.maxRoundTripTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MediaStream) GetOdataType()(*string) {
     return m.odataType
 }
@@ -462,7 +462,7 @@ func (m *MediaStream) GetPostForwardErrorCorrectionPacketLossRate()(*float32) {
 func (m *MediaStream) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetStreamDirection gets the streamDirection property value. The streamDirection property
+// GetStreamDirection gets the streamDirection property value. 
 func (m *MediaStream) GetStreamDirection()(*MediaStreamDirection) {
     return m.streamDirection
 }
@@ -743,7 +743,7 @@ func (m *MediaStream) SetMaxRatioOfConcealedSamples(value *float32)() {
 func (m *MediaStream) SetMaxRoundTripTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.maxRoundTripTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MediaStream) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -759,7 +759,7 @@ func (m *MediaStream) SetPostForwardErrorCorrectionPacketLossRate(value *float32
 func (m *MediaStream) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetStreamDirection sets the streamDirection property value. The streamDirection property
+// SetStreamDirection sets the streamDirection property value. 
 func (m *MediaStream) SetStreamDirection(value *MediaStreamDirection)() {
     m.streamDirection = value
 }

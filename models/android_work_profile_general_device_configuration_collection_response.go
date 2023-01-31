@@ -7,7 +7,7 @@ import (
 // AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse 
 type AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidWorkProfileGeneralDeviceConfigurationable
 }
 // NewAndroidWorkProfileGeneralDeviceConfigurationCollectionResponse instantiates a new AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) GetFiel
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) GetValue()([]AndroidWorkProfileGeneralDeviceConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) Seriali
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) SetValue(value []AndroidWorkProfileGeneralDeviceConfigurationable)() {
     m.value = value
 }

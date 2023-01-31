@@ -8,7 +8,7 @@ import (
 type DeviceEnrollmentPlatformRestriction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Max OS version supported
     osMaximumVersion *string
@@ -89,7 +89,7 @@ func (m *DeviceEnrollmentPlatformRestriction) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceEnrollmentPlatformRestriction) GetOdataType()(*string) {
     return m.odataType
 }
@@ -153,7 +153,7 @@ func (m *DeviceEnrollmentPlatformRestriction) Serialize(writer i878a80d2330e89d2
 func (m *DeviceEnrollmentPlatformRestriction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceEnrollmentPlatformRestriction) SetOdataType(value *string)() {
     m.odataType = value
 }

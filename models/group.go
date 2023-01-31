@@ -80,13 +80,13 @@ type Group struct {
     membershipRuleProcessingState *string
     // A list of group members with license errors from this group-based license assignment. Read-only.
     membersWithLicenseErrors []DirectoryObjectable
-    // The onenote property
+    // 
     onenote Onenoteable
-    // The onPremisesDomainName property
+    // 
     onPremisesDomainName *string
     // Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The onPremisesNetBiosName property
+    // 
     onPremisesNetBiosName *string
     // Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
     onPremisesProvisioningErrors []OnPremisesProvisioningErrorable
@@ -139,7 +139,7 @@ type Group struct {
     // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
     visibility *string
 }
-// NewGroup instantiates a new group and sets the default values.
+// NewGroup instantiates a new Group and sets the default values.
 func NewGroup()(*Group) {
     m := &Group{
         DirectoryObject: *NewDirectoryObject(),
@@ -1051,11 +1051,11 @@ func (m *Group) GetMembershipRuleProcessingState()(*string) {
 func (m *Group) GetMembersWithLicenseErrors()([]DirectoryObjectable) {
     return m.membersWithLicenseErrors
 }
-// GetOnenote gets the onenote property value. The onenote property
+// GetOnenote gets the onenote property value. 
 func (m *Group) GetOnenote()(Onenoteable) {
     return m.onenote
 }
-// GetOnPremisesDomainName gets the onPremisesDomainName property value. The onPremisesDomainName property
+// GetOnPremisesDomainName gets the onPremisesDomainName property value. 
 func (m *Group) GetOnPremisesDomainName()(*string) {
     return m.onPremisesDomainName
 }
@@ -1063,7 +1063,7 @@ func (m *Group) GetOnPremisesDomainName()(*string) {
 func (m *Group) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.onPremisesLastSyncDateTime
 }
-// GetOnPremisesNetBiosName gets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+// GetOnPremisesNetBiosName gets the onPremisesNetBiosName property value. 
 func (m *Group) GetOnPremisesNetBiosName()(*string) {
     return m.onPremisesNetBiosName
 }
@@ -1801,11 +1801,11 @@ func (m *Group) SetMembershipRuleProcessingState(value *string)() {
 func (m *Group) SetMembersWithLicenseErrors(value []DirectoryObjectable)() {
     m.membersWithLicenseErrors = value
 }
-// SetOnenote sets the onenote property value. The onenote property
+// SetOnenote sets the onenote property value. 
 func (m *Group) SetOnenote(value Onenoteable)() {
     m.onenote = value
 }
-// SetOnPremisesDomainName sets the onPremisesDomainName property value. The onPremisesDomainName property
+// SetOnPremisesDomainName sets the onPremisesDomainName property value. 
 func (m *Group) SetOnPremisesDomainName(value *string)() {
     m.onPremisesDomainName = value
 }
@@ -1813,7 +1813,7 @@ func (m *Group) SetOnPremisesDomainName(value *string)() {
 func (m *Group) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.onPremisesLastSyncDateTime = value
 }
-// SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+// SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. 
 func (m *Group) SetOnPremisesNetBiosName(value *string)() {
     m.onPremisesNetBiosName = value
 }

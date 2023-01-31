@@ -7,7 +7,7 @@ import (
 // TimeRangeCollectionResponse 
 type TimeRangeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TimeRangeable
 }
 // NewTimeRangeCollectionResponse instantiates a new TimeRangeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TimeRangeCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TimeRangeCollectionResponse) GetValue()([]TimeRangeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TimeRangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TimeRangeCollectionResponse) SetValue(value []TimeRangeable)() {
     m.value = value
 }

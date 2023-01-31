@@ -12,7 +12,7 @@ type DeviceExchangeAccessStateSummary struct {
     allowedDeviceCount *int32
     // Total count of devices with Exchange Access State: Blocked.
     blockedDeviceCount *int32
-    // The OdataType property
+    // 
     odataType *string
     // Total count of devices with Exchange Access State: Quarantined.
     quarantinedDeviceCount *int32
@@ -109,7 +109,7 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceExchangeAccessStateSummary) GetOdataType()(*string) {
     return m.odataType
 }
@@ -183,7 +183,7 @@ func (m *DeviceExchangeAccessStateSummary) SetAllowedDeviceCount(value *int32)()
 func (m *DeviceExchangeAccessStateSummary) SetBlockedDeviceCount(value *int32)() {
     m.blockedDeviceCount = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceExchangeAccessStateSummary) SetOdataType(value *string)() {
     m.odataType = value
 }

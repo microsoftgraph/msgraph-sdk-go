@@ -14,7 +14,7 @@ type SharepointIds struct {
     listItemId *string
     // The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
     listItemUniqueId *string
-    // The OdataType property
+    // 
     odataType *string
     // The unique identifier (guid) for the item's site collection (SPSite).
     siteId *string
@@ -137,7 +137,7 @@ func (m *SharepointIds) GetListItemId()(*string) {
 func (m *SharepointIds) GetListItemUniqueId()(*string) {
     return m.listItemUniqueId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SharepointIds) GetOdataType()(*string) {
     return m.odataType
 }
@@ -231,7 +231,7 @@ func (m *SharepointIds) SetListItemId(value *string)() {
 func (m *SharepointIds) SetListItemUniqueId(value *string)() {
     m.listItemUniqueId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SharepointIds) SetOdataType(value *string)() {
     m.odataType = value
 }

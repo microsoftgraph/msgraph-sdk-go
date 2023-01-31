@@ -16,7 +16,7 @@ type DeviceCompliancePolicySettingState struct {
     errorDescription *string
     // Name of setting instance that is being reported.
     instanceDisplayName *string
-    // The OdataType property
+    // 
     odataType *string
     // The setting that is being reported
     setting *string
@@ -24,7 +24,7 @@ type DeviceCompliancePolicySettingState struct {
     settingName *string
     // Contributing policies
     sources []SettingSourceable
-    // The state property
+    // 
     state *ComplianceStatus
     // UserEmail
     userEmail *string
@@ -205,7 +205,7 @@ func (m *DeviceCompliancePolicySettingState) GetFieldDeserializers()(map[string]
 func (m *DeviceCompliancePolicySettingState) GetInstanceDisplayName()(*string) {
     return m.instanceDisplayName
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceCompliancePolicySettingState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -221,7 +221,7 @@ func (m *DeviceCompliancePolicySettingState) GetSettingName()(*string) {
 func (m *DeviceCompliancePolicySettingState) GetSources()([]SettingSourceable) {
     return m.sources
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *DeviceCompliancePolicySettingState) GetState()(*ComplianceStatus) {
     return m.state
 }
@@ -354,7 +354,7 @@ func (m *DeviceCompliancePolicySettingState) SetErrorDescription(value *string)(
 func (m *DeviceCompliancePolicySettingState) SetInstanceDisplayName(value *string)() {
     m.instanceDisplayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceCompliancePolicySettingState) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -370,7 +370,7 @@ func (m *DeviceCompliancePolicySettingState) SetSettingName(value *string)() {
 func (m *DeviceCompliancePolicySettingState) SetSources(value []SettingSourceable)() {
     m.sources = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *DeviceCompliancePolicySettingState) SetState(value *ComplianceStatus)() {
     m.state = value
 }

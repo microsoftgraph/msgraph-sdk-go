@@ -10,7 +10,7 @@ type SelfServiceSignUpAuthenticationFlowConfiguration struct {
     additionalData map[string]any
     // Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
     isEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSelfServiceSignUpAuthenticationFlowConfiguration instantiates a new selfServiceSignUpAuthenticationFlowConfiguration and sets the default values.
@@ -57,7 +57,7 @@ func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetFieldDeserializers
 func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SelfServiceSignUpAuthenticationFlowConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *SelfServiceSignUpAuthenticationFlowConfiguration) SetAdditionalData(val
 func (m *SelfServiceSignUpAuthenticationFlowConfiguration) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SelfServiceSignUpAuthenticationFlowConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type PersonType struct {
     additionalData map[string]any
     // The type of data source, such as Person.
     class *string
-    // The OdataType property
+    // 
     odataType *string
     // The secondary type of data source, such as OrganizationUser.
     subclass *string
@@ -69,7 +69,7 @@ func (m *PersonType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PersonType) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *PersonType) SetAdditionalData(value map[string]any)() {
 func (m *PersonType) SetClass(value *string)() {
     m.class = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PersonType) SetOdataType(value *string)() {
     m.odataType = value
 }

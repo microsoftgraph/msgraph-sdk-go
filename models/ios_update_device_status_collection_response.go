@@ -7,7 +7,7 @@ import (
 // IosUpdateDeviceStatusCollectionResponse 
 type IosUpdateDeviceStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosUpdateDeviceStatusable
 }
 // NewIosUpdateDeviceStatusCollectionResponse instantiates a new IosUpdateDeviceStatusCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosUpdateDeviceStatusCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosUpdateDeviceStatusCollectionResponse) GetValue()([]IosUpdateDeviceStatusable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosUpdateDeviceStatusCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosUpdateDeviceStatusCollectionResponse) SetValue(value []IosUpdateDeviceStatusable)() {
     m.value = value
 }

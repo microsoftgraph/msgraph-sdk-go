@@ -16,7 +16,7 @@ type ResourceVisualization struct {
     containerWebUrl *string
     // The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
     mediaType *string
-    // The OdataType property
+    // 
     odataType *string
     // A URL leading to the preview image for the item.
     previewImageUrl *string
@@ -153,7 +153,7 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *ResourceVisualization) GetMediaType()(*string) {
     return m.mediaType
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResourceVisualization) GetOdataType()(*string) {
     return m.odataType
 }
@@ -257,7 +257,7 @@ func (m *ResourceVisualization) SetContainerWebUrl(value *string)() {
 func (m *ResourceVisualization) SetMediaType(value *string)() {
     m.mediaType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResourceVisualization) SetOdataType(value *string)() {
     m.odataType = value
 }

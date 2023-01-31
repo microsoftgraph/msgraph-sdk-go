@@ -7,7 +7,7 @@ import (
 // ServicePrincipalCollectionResponse 
 type ServicePrincipalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ServicePrincipalable
 }
 // NewServicePrincipalCollectionResponse instantiates a new ServicePrincipalCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ServicePrincipalCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ServicePrincipalCollectionResponse) GetValue()([]ServicePrincipalable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ServicePrincipalCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ServicePrincipalCollectionResponse) SetValue(value []ServicePrincipalable)() {
     m.value = value
 }

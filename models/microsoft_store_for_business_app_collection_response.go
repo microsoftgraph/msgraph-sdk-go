@@ -7,7 +7,7 @@ import (
 // MicrosoftStoreForBusinessAppCollectionResponse 
 type MicrosoftStoreForBusinessAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MicrosoftStoreForBusinessAppable
 }
 // NewMicrosoftStoreForBusinessAppCollectionResponse instantiates a new MicrosoftStoreForBusinessAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MicrosoftStoreForBusinessAppCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MicrosoftStoreForBusinessAppCollectionResponse) GetValue()([]MicrosoftStoreForBusinessAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MicrosoftStoreForBusinessAppCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MicrosoftStoreForBusinessAppCollectionResponse) SetValue(value []MicrosoftStoreForBusinessAppable)() {
     m.value = value
 }

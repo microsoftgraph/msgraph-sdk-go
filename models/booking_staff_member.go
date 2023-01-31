@@ -15,7 +15,7 @@ type BookingStaffMember struct {
     emailAddress *string
     // True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
     isEmailNotificationEnabled *bool
-    // The role property
+    // 
     role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
     timeZone *string
@@ -142,7 +142,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
 func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     return m.isEmailNotificationEnabled
 }
-// GetRole gets the role property value. The role property
+// GetRole gets the role property value. 
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     return m.role
 }
@@ -235,7 +235,7 @@ func (m *BookingStaffMember) SetEmailAddress(value *string)() {
 func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
     m.isEmailNotificationEnabled = value
 }
-// SetRole sets the role property value. The role property
+// SetRole sets the role property value. 
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     m.role = value
 }

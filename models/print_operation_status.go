@@ -10,9 +10,9 @@ type PrintOperationStatus struct {
     additionalData map[string]any
     // A human-readable description of the printOperation's current processing state. Read-only.
     description *string
-    // The OdataType property
+    // 
     odataType *string
-    // The state property
+    // 
     state *PrintOperationProcessingState
 }
 // NewPrintOperationStatus instantiates a new printOperationStatus and sets the default values.
@@ -69,11 +69,11 @@ func (m *PrintOperationStatus) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrintOperationStatus) GetOdataType()(*string) {
     return m.odataType
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *PrintOperationStatus) GetState()(*PrintOperationProcessingState) {
     return m.state
 }
@@ -114,11 +114,11 @@ func (m *PrintOperationStatus) SetAdditionalData(value map[string]any)() {
 func (m *PrintOperationStatus) SetDescription(value *string)() {
     m.description = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrintOperationStatus) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *PrintOperationStatus) SetState(value *PrintOperationProcessingState)() {
     m.state = value
 }

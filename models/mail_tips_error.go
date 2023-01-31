@@ -12,7 +12,7 @@ type MailTipsError struct {
     code *string
     // The error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewMailTipsError instantiates a new mailTipsError and sets the default values.
@@ -73,7 +73,7 @@ func (m *MailTipsError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *MailTipsError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MailTipsError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *MailTipsError) SetCode(value *string)() {
 func (m *MailTipsError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MailTipsError) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type ConvertIdResult struct {
     additionalData map[string]any
     // An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
     errorDetails GenericErrorable
-    // The OdataType property
+    // 
     odataType *string
     // The identifier that was converted. This value is the original, un-converted identifier.
     sourceId *string
@@ -81,7 +81,7 @@ func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConvertIdResult) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *ConvertIdResult) SetAdditionalData(value map[string]any)() {
 func (m *ConvertIdResult) SetErrorDetails(value GenericErrorable)() {
     m.errorDetails = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConvertIdResult) SetOdataType(value *string)() {
     m.odataType = value
 }

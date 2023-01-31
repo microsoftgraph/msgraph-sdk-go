@@ -8,13 +8,13 @@ import (
 type MediaStream struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The direction property
+    // 
     direction *MediaDirection
     // The media stream label.
     label *string
-    // The mediaType property
+    // 
     mediaType *Modality
-    // The OdataType property
+    // 
     odataType *string
     // If the media is muted by the server.
     serverMuted *bool
@@ -36,7 +36,7 @@ func CreateMediaStreamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *MediaStream) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDirection gets the direction property value. The direction property
+// GetDirection gets the direction property value. 
 func (m *MediaStream) GetDirection()(*MediaDirection) {
     return m.direction
 }
@@ -109,11 +109,11 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *MediaStream) GetLabel()(*string) {
     return m.label
 }
-// GetMediaType gets the mediaType property value. The mediaType property
+// GetMediaType gets the mediaType property value. 
 func (m *MediaStream) GetMediaType()(*Modality) {
     return m.mediaType
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MediaStream) GetOdataType()(*string) {
     return m.odataType
 }
@@ -177,7 +177,7 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *MediaStream) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDirection sets the direction property value. The direction property
+// SetDirection sets the direction property value. 
 func (m *MediaStream) SetDirection(value *MediaDirection)() {
     m.direction = value
 }
@@ -185,11 +185,11 @@ func (m *MediaStream) SetDirection(value *MediaDirection)() {
 func (m *MediaStream) SetLabel(value *string)() {
     m.label = value
 }
-// SetMediaType sets the mediaType property value. The mediaType property
+// SetMediaType sets the mediaType property value. 
 func (m *MediaStream) SetMediaType(value *Modality)() {
     m.mediaType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MediaStream) SetOdataType(value *string)() {
     m.odataType = value
 }

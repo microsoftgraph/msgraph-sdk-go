@@ -8,11 +8,11 @@ import (
 type ErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The code property
+    // 
     code *string
-    // The message property
+    // 
     message *string
-    // The target property
+    // 
     target *string
 }
 // NewErrorDetails instantiates a new ErrorDetails and sets the default values.
@@ -30,7 +30,7 @@ func CreateErrorDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 func (m *ErrorDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCode gets the code property value. The code property
+// GetCode gets the code property value. 
 func (m *ErrorDetails) GetCode()(*string) {
     return m.code
 }
@@ -69,11 +69,11 @@ func (m *ErrorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. 
 func (m *ErrorDetails) GetMessage()(*string) {
     return m.message
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. 
 func (m *ErrorDetails) GetTarget()(*string) {
     return m.target
 }
@@ -109,15 +109,15 @@ func (m *ErrorDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 func (m *ErrorDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCode sets the code property value. The code property
+// SetCode sets the code property value. 
 func (m *ErrorDetails) SetCode(value *string)() {
     m.code = value
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. 
 func (m *ErrorDetails) SetMessage(value *string)() {
     m.message = value
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. 
 func (m *ErrorDetails) SetTarget(value *string)() {
     m.target = value
 }

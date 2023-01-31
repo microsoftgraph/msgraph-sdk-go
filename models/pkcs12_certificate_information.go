@@ -14,7 +14,7 @@ type Pkcs12CertificateInformation struct {
     notAfter *int64
     // The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
     notBefore *int64
-    // The OdataType property
+    // 
     odataType *string
     // The certificate thumbprint.
     thumbprint *string
@@ -101,7 +101,7 @@ func (m *Pkcs12CertificateInformation) GetNotAfter()(*int64) {
 func (m *Pkcs12CertificateInformation) GetNotBefore()(*int64) {
     return m.notBefore
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Pkcs12CertificateInformation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *Pkcs12CertificateInformation) SetNotAfter(value *int64)() {
 func (m *Pkcs12CertificateInformation) SetNotBefore(value *int64)() {
     m.notBefore = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Pkcs12CertificateInformation) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // ColumnDefinitionCollectionResponse 
 type ColumnDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ColumnDefinitionable
 }
 // NewColumnDefinitionCollectionResponse instantiates a new ColumnDefinitionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ColumnDefinitionCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ColumnDefinitionCollectionResponse) GetValue()([]ColumnDefinitionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ColumnDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ColumnDefinitionCollectionResponse) SetValue(value []ColumnDefinitionable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // BucketAggregationRangeCollectionResponse 
 type BucketAggregationRangeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BucketAggregationRangeable
 }
 // NewBucketAggregationRangeCollectionResponse instantiates a new BucketAggregationRangeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BucketAggregationRangeCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BucketAggregationRangeCollectionResponse) GetValue()([]BucketAggregationRangeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BucketAggregationRangeCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BucketAggregationRangeCollectionResponse) SetValue(value []BucketAggregationRangeable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // X509CertificateUserBindingCollectionResponse 
 type X509CertificateUserBindingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []X509CertificateUserBindingable
 }
 // NewX509CertificateUserBindingCollectionResponse instantiates a new X509CertificateUserBindingCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *X509CertificateUserBindingCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *X509CertificateUserBindingCollectionResponse) GetValue()([]X509CertificateUserBindingable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *X509CertificateUserBindingCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *X509CertificateUserBindingCollectionResponse) SetValue(value []X509CertificateUserBindingable)() {
     m.value = value
 }

@@ -8,7 +8,7 @@ import (
 type StoragePlanInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Indicates whether there are higher storage quota plans available. Read-only.
     upgradeAvailable *bool
@@ -53,7 +53,7 @@ func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *StoragePlanInformation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -87,7 +87,7 @@ func (m *StoragePlanInformation) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *StoragePlanInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *StoragePlanInformation) SetOdataType(value *string)() {
     m.odataType = value
 }

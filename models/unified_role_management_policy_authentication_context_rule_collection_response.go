@@ -7,7 +7,7 @@ import (
 // UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse 
 type UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleManagementPolicyAuthenticationContextRuleable
 }
 // NewUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse)
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyAuthenticationContextRuleable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse)
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyAuthenticationContextRuleable)() {
     m.value = value
 }

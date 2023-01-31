@@ -33,13 +33,16 @@ type UsersItemSchoolsEducationSchoolItemRequestBuilderGetRequestConfiguration st
     QueryParameters *UsersItemSchoolsEducationSchoolItemRequestBuilderGetQueryParameters
 }
 // NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
-func NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemSchoolsEducationSchoolItemRequestBuilder) {
+func NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationSchoolId *string)(*UsersItemSchoolsEducationSchoolItemRequestBuilder) {
     m := &UsersItemSchoolsEducationSchoolItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/users/{educationUser%2Did}/schools/{educationSchool%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationSchoolId != nil {
+        urlTplParams["educationSchool%2Did"] = *educationSchoolId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters
 func NewUsersItemSchoolsEducationSchoolItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemSchoolsEducationSchoolItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get schools to which the user belongs. Nullable.
 func (m *UsersItemSchoolsEducationSchoolItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemSchoolsEducationSchoolItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolable, error) {

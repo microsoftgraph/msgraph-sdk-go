@@ -7,7 +7,7 @@ import (
 // IdentityUserFlowAttributeCollectionResponse 
 type IdentityUserFlowAttributeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IdentityUserFlowAttributeable
 }
 // NewIdentityUserFlowAttributeCollectionResponse instantiates a new IdentityUserFlowAttributeCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IdentityUserFlowAttributeCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IdentityUserFlowAttributeCollectionResponse) GetValue()([]IdentityUserFlowAttributeable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IdentityUserFlowAttributeCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IdentityUserFlowAttributeCollectionResponse) SetValue(value []IdentityUserFlowAttributeable)() {
     m.value = value
 }

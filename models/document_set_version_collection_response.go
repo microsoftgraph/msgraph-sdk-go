@@ -7,7 +7,7 @@ import (
 // DocumentSetVersionCollectionResponse 
 type DocumentSetVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DocumentSetVersionable
 }
 // NewDocumentSetVersionCollectionResponse instantiates a new DocumentSetVersionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DocumentSetVersionCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DocumentSetVersionCollectionResponse) GetValue()([]DocumentSetVersionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DocumentSetVersionCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DocumentSetVersionCollectionResponse) SetValue(value []DocumentSetVersionable)() {
     m.value = value
 }

@@ -8,7 +8,7 @@ import (
 type FeedbackTokenSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewFeedbackTokenSet instantiates a new feedbackTokenSet and sets the default values.
@@ -41,7 +41,7 @@ func (m *FeedbackTokenSet) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *FeedbackTokenSet) GetOdataType()(*string) {
     return m.odataType
 }
@@ -65,7 +65,7 @@ func (m *FeedbackTokenSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *FeedbackTokenSet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *FeedbackTokenSet) SetOdataType(value *string)() {
     m.odataType = value
 }

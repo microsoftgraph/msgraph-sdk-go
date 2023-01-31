@@ -18,7 +18,7 @@ type OutlookGeoCoordinates struct {
     latitude *float64
     // The longitude of the location.
     longitude *float64
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewOutlookGeoCoordinates instantiates a new outlookGeoCoordinates and sets the default values.
@@ -121,7 +121,7 @@ func (m *OutlookGeoCoordinates) GetLatitude()(*float64) {
 func (m *OutlookGeoCoordinates) GetLongitude()(*float64) {
     return m.longitude
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OutlookGeoCoordinates) GetOdataType()(*string) {
     return m.odataType
 }
@@ -195,7 +195,7 @@ func (m *OutlookGeoCoordinates) SetLatitude(value *float64)() {
 func (m *OutlookGeoCoordinates) SetLongitude(value *float64)() {
     m.longitude = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OutlookGeoCoordinates) SetOdataType(value *string)() {
     m.odataType = value
 }

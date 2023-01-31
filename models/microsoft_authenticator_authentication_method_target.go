@@ -7,7 +7,7 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodTarget 
 type MicrosoftAuthenticatorAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
-    // The authenticationMode property
+    // 
     authenticationMode *MicrosoftAuthenticatorAuthenticationMode
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodTarget instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
@@ -21,7 +21,7 @@ func NewMicrosoftAuthenticatorAuthenticationMethodTarget()(*MicrosoftAuthenticat
 func CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftAuthenticatorAuthenticationMethodTarget(), nil
 }
-// GetAuthenticationMode gets the authenticationMode property value. The authenticationMode property
+// GetAuthenticationMode gets the authenticationMode property value. 
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode) {
     return m.authenticationMode
 }
@@ -55,7 +55,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) Serialize(writer i878
     }
     return nil
 }
-// SetAuthenticationMode sets the authenticationMode property value. The authenticationMode property
+// SetAuthenticationMode sets the authenticationMode property value. 
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetAuthenticationMode(value *MicrosoftAuthenticatorAuthenticationMode)() {
     m.authenticationMode = value
 }

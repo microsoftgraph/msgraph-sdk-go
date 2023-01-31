@@ -7,7 +7,7 @@ import (
 // AvailabilityItemCollectionResponse 
 type AvailabilityItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AvailabilityItemable
 }
 // NewAvailabilityItemCollectionResponse instantiates a new AvailabilityItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AvailabilityItemCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AvailabilityItemCollectionResponse) GetValue()([]AvailabilityItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AvailabilityItemCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AvailabilityItemCollectionResponse) SetValue(value []AvailabilityItemable)() {
     m.value = value
 }

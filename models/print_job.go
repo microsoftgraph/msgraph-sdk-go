@@ -8,13 +8,13 @@ import (
 // PrintJob 
 type PrintJob struct {
     Entity
-    // The configuration property
+    // 
     configuration PrintJobConfigurationable
-    // The createdBy property
+    // 
     createdBy UserIdentityable
     // The DateTimeOffset when the job was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The documents property
+    // 
     documents []PrintDocumentable
     // If true, document can be fetched by printer.
     isFetchable *bool
@@ -22,7 +22,7 @@ type PrintJob struct {
     redirectedFrom *string
     // Contains the destination job URL, if the job has been redirected to another printer.
     redirectedTo *string
-    // The status property
+    // 
     status PrintJobStatusable
     // A list of printTasks that were triggered by this print job.
     tasks []PrintTaskable
@@ -38,11 +38,11 @@ func NewPrintJob()(*PrintJob) {
 func CreatePrintJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintJob(), nil
 }
-// GetConfiguration gets the configuration property value. The configuration property
+// GetConfiguration gets the configuration property value. 
 func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
     return m.configuration
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. 
 func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
     return m.createdBy
 }
@@ -50,7 +50,7 @@ func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
 func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDocuments gets the documents property value. The documents property
+// GetDocuments gets the documents property value. 
 func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     return m.documents
 }
@@ -169,7 +169,7 @@ func (m *PrintJob) GetRedirectedFrom()(*string) {
 func (m *PrintJob) GetRedirectedTo()(*string) {
     return m.redirectedTo
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *PrintJob) GetStatus()(PrintJobStatusable) {
     return m.status
 }
@@ -247,11 +247,11 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetConfiguration sets the configuration property value. The configuration property
+// SetConfiguration sets the configuration property value. 
 func (m *PrintJob) SetConfiguration(value PrintJobConfigurationable)() {
     m.configuration = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. 
 func (m *PrintJob) SetCreatedBy(value UserIdentityable)() {
     m.createdBy = value
 }
@@ -259,7 +259,7 @@ func (m *PrintJob) SetCreatedBy(value UserIdentityable)() {
 func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDocuments sets the documents property value. The documents property
+// SetDocuments sets the documents property value. 
 func (m *PrintJob) SetDocuments(value []PrintDocumentable)() {
     m.documents = value
 }
@@ -275,7 +275,7 @@ func (m *PrintJob) SetRedirectedFrom(value *string)() {
 func (m *PrintJob) SetRedirectedTo(value *string)() {
     m.redirectedTo = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *PrintJob) SetStatus(value PrintJobStatusable)() {
     m.status = value
 }

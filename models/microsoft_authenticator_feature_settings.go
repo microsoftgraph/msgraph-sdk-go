@@ -12,7 +12,7 @@ type MicrosoftAuthenticatorFeatureSettings struct {
     displayAppInformationRequiredState AuthenticationMethodFeatureConfigurationable
     // Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
     displayLocationInformationRequiredState AuthenticationMethodFeatureConfigurationable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewMicrosoftAuthenticatorFeatureSettings instantiates a new microsoftAuthenticatorFeatureSettings and sets the default values.
@@ -73,7 +73,7 @@ func (m *MicrosoftAuthenticatorFeatureSettings) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MicrosoftAuthenticatorFeatureSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *MicrosoftAuthenticatorFeatureSettings) SetDisplayAppInformationRequired
 func (m *MicrosoftAuthenticatorFeatureSettings) SetDisplayLocationInformationRequiredState(value AuthenticationMethodFeatureConfigurationable)() {
     m.displayLocationInformationRequiredState = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MicrosoftAuthenticatorFeatureSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

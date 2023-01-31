@@ -13,7 +13,7 @@ type ServiceHealthIssuePost struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The content of the service issue post. The supported value for the contentType property is html.
     description ItemBodyable
-    // The OdataType property
+    // 
     odataType *string
     // The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
     postType *PostType
@@ -86,7 +86,7 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
     return m.odataType
 }
@@ -141,7 +141,7 @@ func (m *ServiceHealthIssuePost) SetCreatedDateTime(value *i336074805fc853987abe
 func (m *ServiceHealthIssuePost) SetDescription(value ItemBodyable)() {
     m.description = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ServiceHealthIssuePost) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -25,7 +25,7 @@ type Application struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Supports $filter (/$count eq 0, /$count ne 0). Read-only.
     createdOnBehalfOf DirectoryObjectable
-    // The defaultRedirectUri property
+    // 
     defaultRedirectUri *string
     // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string
@@ -39,7 +39,7 @@ type Application struct {
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
-    // The homeRealmDiscoveryPolicies property
+    // 
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable
     // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
     identifierUris []string
@@ -55,7 +55,7 @@ type Application struct {
     logo []byte
     // Notes relevant for the management of the application.
     notes *string
-    // The oauth2RequirePostResponse property
+    // 
     oauth2RequirePostResponse *bool
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
     optionalClaims OptionalClaimsable
@@ -69,6 +69,8 @@ type Application struct {
     publicClient PublicClientApplicationable
     // The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string
+    // 
+    requestSignatureVerification RequestSignatureVerificationable
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
     // The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
@@ -83,9 +85,9 @@ type Application struct {
     tags []string
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     tokenEncryptionKeyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The tokenIssuancePolicies property
+    // 
     tokenIssuancePolicies []TokenIssuancePolicyable
-    // The tokenLifetimePolicies property
+    // 
     tokenLifetimePolicies []TokenLifetimePolicyable
     // Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
     verifiedPublisher VerifiedPublisherable
@@ -137,7 +139,7 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     return m.createdOnBehalfOf
 }
-// GetDefaultRedirectUri gets the defaultRedirectUri property value. The defaultRedirectUri property
+// GetDefaultRedirectUri gets the defaultRedirectUri property value. 
 func (m *Application) GetDefaultRedirectUri()(*string) {
     return m.defaultRedirectUri
 }
@@ -500,6 +502,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["requestSignatureVerification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRequestSignatureVerificationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequestSignatureVerification(val.(RequestSignatureVerificationable))
+        }
+        return nil
+    }
     res["requiredResourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRequiredResourceAccessFromDiscriminatorValue)
         if err != nil {
@@ -632,7 +644,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *Application) GetGroupMembershipClaims()(*string) {
     return m.groupMembershipClaims
 }
-// GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies property
+// GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. 
 func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable) {
     return m.homeRealmDiscoveryPolicies
 }
@@ -664,7 +676,7 @@ func (m *Application) GetLogo()([]byte) {
 func (m *Application) GetNotes()(*string) {
     return m.notes
 }
-// GetOauth2RequirePostResponse gets the oauth2RequirePostResponse property value. The oauth2RequirePostResponse property
+// GetOauth2RequirePostResponse gets the oauth2RequirePostResponse property value. 
 func (m *Application) GetOauth2RequirePostResponse()(*bool) {
     return m.oauth2RequirePostResponse
 }
@@ -691,6 +703,10 @@ func (m *Application) GetPublicClient()(PublicClientApplicationable) {
 // GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) GetPublisherDomain()(*string) {
     return m.publisherDomain
+}
+// GetRequestSignatureVerification gets the requestSignatureVerification property value. 
+func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerificationable) {
+    return m.requestSignatureVerification
 }
 // GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) {
@@ -720,11 +736,11 @@ func (m *Application) GetTags()([]string) {
 func (m *Application) GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.tokenEncryptionKeyId
 }
-// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
+// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. 
 func (m *Application) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
     return m.tokenIssuancePolicies
 }
-// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The tokenLifetimePolicies property
+// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. 
 func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     return m.tokenLifetimePolicies
 }
@@ -954,6 +970,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("requestSignatureVerification", m.GetRequestSignatureVerification())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRequiredResourceAccess() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequiredResourceAccess()))
         for i, v := range m.GetRequiredResourceAccess() {
@@ -1066,7 +1088,7 @@ func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
 func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     m.createdOnBehalfOf = value
 }
-// SetDefaultRedirectUri sets the defaultRedirectUri property value. The defaultRedirectUri property
+// SetDefaultRedirectUri sets the defaultRedirectUri property value. 
 func (m *Application) SetDefaultRedirectUri(value *string)() {
     m.defaultRedirectUri = value
 }
@@ -1094,7 +1116,7 @@ func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityC
 func (m *Application) SetGroupMembershipClaims(value *string)() {
     m.groupMembershipClaims = value
 }
-// SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies property
+// SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. 
 func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)() {
     m.homeRealmDiscoveryPolicies = value
 }
@@ -1126,7 +1148,7 @@ func (m *Application) SetLogo(value []byte)() {
 func (m *Application) SetNotes(value *string)() {
     m.notes = value
 }
-// SetOauth2RequirePostResponse sets the oauth2RequirePostResponse property value. The oauth2RequirePostResponse property
+// SetOauth2RequirePostResponse sets the oauth2RequirePostResponse property value. 
 func (m *Application) SetOauth2RequirePostResponse(value *bool)() {
     m.oauth2RequirePostResponse = value
 }
@@ -1153,6 +1175,10 @@ func (m *Application) SetPublicClient(value PublicClientApplicationable)() {
 // SetPublisherDomain sets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetPublisherDomain(value *string)() {
     m.publisherDomain = value
+}
+// SetRequestSignatureVerification sets the requestSignatureVerification property value. 
+func (m *Application) SetRequestSignatureVerification(value RequestSignatureVerificationable)() {
+    m.requestSignatureVerification = value
 }
 // SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccessable)() {
@@ -1182,11 +1208,11 @@ func (m *Application) SetTags(value []string)() {
 func (m *Application) SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.tokenEncryptionKeyId = value
 }
-// SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
+// SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. 
 func (m *Application) SetTokenIssuancePolicies(value []TokenIssuancePolicyable)() {
     m.tokenIssuancePolicies = value
 }
-// SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The tokenLifetimePolicies property
+// SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. 
 func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)() {
     m.tokenLifetimePolicies = value
 }

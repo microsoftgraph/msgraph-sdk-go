@@ -8,9 +8,9 @@ import (
 type ProvisioningStatusInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The errorInformation property
+    // 
     errorInformation ProvisioningErrorInfoable
-    // The OdataType property
+    // 
     odataType *string
     // Possible values are: success, warning, failure, skipped, unknownFutureValue.
     status *ProvisioningResult
@@ -30,7 +30,7 @@ func CreateProvisioningStatusInfoFromDiscriminatorValue(parseNode i878a80d2330e8
 func (m *ProvisioningStatusInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetErrorInformation gets the errorInformation property value. The errorInformation property
+// GetErrorInformation gets the errorInformation property value. 
 func (m *ProvisioningStatusInfo) GetErrorInformation()(ProvisioningErrorInfoable) {
     return m.errorInformation
 }
@@ -69,7 +69,7 @@ func (m *ProvisioningStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ProvisioningStatusInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -110,11 +110,11 @@ func (m *ProvisioningStatusInfo) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *ProvisioningStatusInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetErrorInformation sets the errorInformation property value. The errorInformation property
+// SetErrorInformation sets the errorInformation property value. 
 func (m *ProvisioningStatusInfo) SetErrorInformation(value ProvisioningErrorInfoable)() {
     m.errorInformation = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ProvisioningStatusInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

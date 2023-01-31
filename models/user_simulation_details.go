@@ -19,7 +19,7 @@ type UserSimulationDetails struct {
     inProgressTrainingsCount *int32
     // Indicates whether a user was compromised in an attack simulation and training campaign.
     isCompromised *bool
-    // The OdataType property
+    // 
     odataType *string
     // Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
     reportedPhishDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -178,7 +178,7 @@ func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
 func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
     return m.isCompromised
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserSimulationDetails) GetOdataType()(*string) {
     return m.odataType
 }
@@ -300,7 +300,7 @@ func (m *UserSimulationDetails) SetInProgressTrainingsCount(value *int32)() {
 func (m *UserSimulationDetails) SetIsCompromised(value *bool)() {
     m.isCompromised = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserSimulationDetails) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // MultiValueLegacyExtendedPropertyCollectionResponse 
 type MultiValueLegacyExtendedPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MultiValueLegacyExtendedPropertyable
 }
 // NewMultiValueLegacyExtendedPropertyCollectionResponse instantiates a new MultiValueLegacyExtendedPropertyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MultiValueLegacyExtendedPropertyCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MultiValueLegacyExtendedPropertyCollectionResponse) GetValue()([]MultiValueLegacyExtendedPropertyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MultiValueLegacyExtendedPropertyCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MultiValueLegacyExtendedPropertyCollectionResponse) SetValue(value []MultiValueLegacyExtendedPropertyable)() {
     m.value = value
 }

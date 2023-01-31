@@ -10,7 +10,7 @@ type RubricQualityFeedbackModel struct {
     additionalData map[string]any
     // Specific feedback for one quality of this rubric.
     feedback EducationItemBodyable
-    // The OdataType property
+    // 
     odataType *string
     // The ID of the rubricQuality that this feedback is related to.
     qualityId *string
@@ -69,7 +69,7 @@ func (m *RubricQualityFeedbackModel) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RubricQualityFeedbackModel) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *RubricQualityFeedbackModel) SetAdditionalData(value map[string]any)() {
 func (m *RubricQualityFeedbackModel) SetFeedback(value EducationItemBodyable)() {
     m.feedback = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RubricQualityFeedbackModel) SetOdataType(value *string)() {
     m.odataType = value
 }

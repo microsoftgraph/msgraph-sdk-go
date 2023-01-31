@@ -7,7 +7,7 @@ import (
 // SamlOrWsFedProviderCollectionResponse 
 type SamlOrWsFedProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SamlOrWsFedProviderable
 }
 // NewSamlOrWsFedProviderCollectionResponse instantiates a new SamlOrWsFedProviderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SamlOrWsFedProviderCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SamlOrWsFedProviderCollectionResponse) GetValue()([]SamlOrWsFedProviderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SamlOrWsFedProviderCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SamlOrWsFedProviderCollectionResponse) SetValue(value []SamlOrWsFedProviderable)() {
     m.value = value
 }

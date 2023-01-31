@@ -30,7 +30,7 @@ type WorkbookWorksheetProtectionOptions struct {
     allowPivotTables *bool
     // Represents the worksheet protection option of allowing using sort feature.
     allowSort *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewWorkbookWorksheetProtectionOptions instantiates a new workbookWorksheetProtectionOptions and sets the default values.
@@ -217,7 +217,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WorkbookWorksheetProtectionOptions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -351,7 +351,7 @@ func (m *WorkbookWorksheetProtectionOptions) SetAllowPivotTables(value *bool)() 
 func (m *WorkbookWorksheetProtectionOptions) SetAllowSort(value *bool)() {
     m.allowSort = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WorkbookWorksheetProtectionOptions) SetOdataType(value *string)() {
     m.odataType = value
 }

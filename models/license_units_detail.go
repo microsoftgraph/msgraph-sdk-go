@@ -10,7 +10,7 @@ type LicenseUnitsDetail struct {
     additionalData map[string]any
     // The number of units that are enabled for the active subscription of the service SKU.
     enabled *int32
-    // The OdataType property
+    // 
     odataType *string
     // The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
     suspended *int32
@@ -81,7 +81,7 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LicenseUnitsDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *LicenseUnitsDetail) SetAdditionalData(value map[string]any)() {
 func (m *LicenseUnitsDetail) SetEnabled(value *int32)() {
     m.enabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LicenseUnitsDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

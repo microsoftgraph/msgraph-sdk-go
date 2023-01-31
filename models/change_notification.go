@@ -10,7 +10,7 @@ import (
 type ChangeNotification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The changeType property
+    // 
     changeType *ChangeType
     // Value of the clientState property sent in the subscription request (if any). The maximum length is 255 characters. The client can check whether the change notification came from the service by comparing the values of the clientState property. The value of the clientState property sent with the subscription is compared with the value of the clientState property received with each change notification. Optional.
     clientState *string
@@ -20,7 +20,7 @@ type ChangeNotification struct {
     id *string
     // The type of lifecycle notification if the current notification is a lifecycle notification. Optional. Supported values are missed, subscriptionRemoved, reauthorizationRequired. Optional.
     lifecycleEvent *LifecycleEventType
-    // The OdataType property
+    // 
     odataType *string
     // The URI of the resource that emitted the change notification relative to https://graph.microsoft.com. Required.
     resource *string
@@ -48,7 +48,7 @@ func CreateChangeNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *ChangeNotification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetChangeType gets the changeType property value. The changeType property
+// GetChangeType gets the changeType property value. 
 func (m *ChangeNotification) GetChangeType()(*ChangeType) {
     return m.changeType
 }
@@ -183,7 +183,7 @@ func (m *ChangeNotification) GetId()(*string) {
 func (m *ChangeNotification) GetLifecycleEvent()(*LifecycleEventType) {
     return m.lifecycleEvent
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChangeNotification) GetOdataType()(*string) {
     return m.odataType
 }
@@ -289,7 +289,7 @@ func (m *ChangeNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *ChangeNotification) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetChangeType sets the changeType property value. The changeType property
+// SetChangeType sets the changeType property value. 
 func (m *ChangeNotification) SetChangeType(value *ChangeType)() {
     m.changeType = value
 }
@@ -309,7 +309,7 @@ func (m *ChangeNotification) SetId(value *string)() {
 func (m *ChangeNotification) SetLifecycleEvent(value *LifecycleEventType)() {
     m.lifecycleEvent = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChangeNotification) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -22,7 +22,7 @@ type WindowsFirewallNetworkProfile struct {
     inboundNotificationsBlocked *bool
     // Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
     incomingTrafficBlocked *bool
-    // The OdataType property
+    // 
     odataType *string
     // Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
     outboundConnectionsBlocked *bool
@@ -213,7 +213,7 @@ func (m *WindowsFirewallNetworkProfile) GetInboundNotificationsBlocked()(*bool) 
 func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficBlocked()(*bool) {
     return m.incomingTrafficBlocked
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WindowsFirewallNetworkProfile) GetOdataType()(*string) {
     return m.odataType
 }
@@ -358,7 +358,7 @@ func (m *WindowsFirewallNetworkProfile) SetInboundNotificationsBlocked(value *bo
 func (m *WindowsFirewallNetworkProfile) SetIncomingTrafficBlocked(value *bool)() {
     m.incomingTrafficBlocked = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WindowsFirewallNetworkProfile) SetOdataType(value *string)() {
     m.odataType = value
 }

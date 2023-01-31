@@ -12,9 +12,9 @@ type PrinterStatus struct {
     description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
     details []PrinterProcessingStateDetail
-    // The OdataType property
+    // 
     odataType *string
-    // The state property
+    // 
     state *PrinterProcessingState
 }
 // NewPrinterStatus instantiates a new printerStatus and sets the default values.
@@ -89,11 +89,11 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrinterStatus) GetOdataType()(*string) {
     return m.odataType
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *PrinterStatus) GetState()(*PrinterProcessingState) {
     return m.state
 }
@@ -144,11 +144,11 @@ func (m *PrinterStatus) SetDescription(value *string)() {
 func (m *PrinterStatus) SetDetails(value []PrinterProcessingStateDetail)() {
     m.details = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrinterStatus) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *PrinterStatus) SetState(value *PrinterProcessingState)() {
     m.state = value
 }

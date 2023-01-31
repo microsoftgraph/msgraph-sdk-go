@@ -63,10 +63,6 @@ func NewCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder(rawUrl string,
 func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Count()(*CalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilder) {
     return NewCalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Delta()(*CalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilder) {
-    return NewCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar `(../me/calendarview)` or some other calendar of the user's.
 // [Find more info here]
 // 
@@ -88,6 +84,10 @@ func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Get(ctx cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) MicrosoftGraphDelta()(*CalendarGroupsItemCalendarsItemCalendarViewMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewCalendarGroupsItemCalendarsItemCalendarViewMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar `(../me/calendarview)` or some other calendar of the user's.
 func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

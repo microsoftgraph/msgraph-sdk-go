@@ -7,7 +7,7 @@ import (
 // SkypeUserConversationMember 
 type SkypeUserConversationMember struct {
     ConversationMember
-    // The skypeId property
+    // 
     skypeId *string
 }
 // NewSkypeUserConversationMember instantiates a new SkypeUserConversationMember and sets the default values.
@@ -38,7 +38,7 @@ func (m *SkypeUserConversationMember) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetSkypeId gets the skypeId property value. The skypeId property
+// GetSkypeId gets the skypeId property value. 
 func (m *SkypeUserConversationMember) GetSkypeId()(*string) {
     return m.skypeId
 }
@@ -56,7 +56,7 @@ func (m *SkypeUserConversationMember) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetSkypeId sets the skypeId property value. The skypeId property
+// SetSkypeId sets the skypeId property value. 
 func (m *SkypeUserConversationMember) SetSkypeId(value *string)() {
     m.skypeId = value
 }

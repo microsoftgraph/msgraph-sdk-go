@@ -24,7 +24,7 @@ type AccessReviewScheduleSettings struct {
     justificationRequiredOnApproval *bool
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
     recommendationsEnabled *bool
@@ -209,7 +209,7 @@ func (m *AccessReviewScheduleSettings) GetJustificationRequiredOnApproval()(*boo
 func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
     return m.mailNotificationsEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewScheduleSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -347,7 +347,7 @@ func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value 
 func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)() {
     m.mailNotificationsEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewScheduleSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

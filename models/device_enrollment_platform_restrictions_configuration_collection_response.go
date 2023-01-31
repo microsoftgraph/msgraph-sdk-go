@@ -7,7 +7,7 @@ import (
 // DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse 
 type DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceEnrollmentPlatformRestrictionsConfigurationable
 }
 // NewDeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse instantiates a new DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse) Ge
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse) GetValue()([]DeviceEnrollmentPlatformRestrictionsConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse) Se
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceEnrollmentPlatformRestrictionsConfigurationCollectionResponse) SetValue(value []DeviceEnrollmentPlatformRestrictionsConfigurationable)() {
     m.value = value
 }

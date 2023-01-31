@@ -10,11 +10,11 @@ type WorkbookOperationError struct {
     additionalData map[string]any
     // The error code.
     code *string
-    // The innerError property
+    // 
     innerError WorkbookOperationErrorable
     // The error message.
     message *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewWorkbookOperationError instantiates a new workbookOperationError and sets the default values.
@@ -81,7 +81,7 @@ func (m *WorkbookOperationError) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetInnerError gets the innerError property value. The innerError property
+// GetInnerError gets the innerError property value. 
 func (m *WorkbookOperationError) GetInnerError()(WorkbookOperationErrorable) {
     return m.innerError
 }
@@ -89,7 +89,7 @@ func (m *WorkbookOperationError) GetInnerError()(WorkbookOperationErrorable) {
 func (m *WorkbookOperationError) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WorkbookOperationError) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *WorkbookOperationError) SetAdditionalData(value map[string]any)() {
 func (m *WorkbookOperationError) SetCode(value *string)() {
     m.code = value
 }
-// SetInnerError sets the innerError property value. The innerError property
+// SetInnerError sets the innerError property value. 
 func (m *WorkbookOperationError) SetInnerError(value WorkbookOperationErrorable)() {
     m.innerError = value
 }
@@ -143,7 +143,7 @@ func (m *WorkbookOperationError) SetInnerError(value WorkbookOperationErrorable)
 func (m *WorkbookOperationError) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WorkbookOperationError) SetOdataType(value *string)() {
     m.odataType = value
 }

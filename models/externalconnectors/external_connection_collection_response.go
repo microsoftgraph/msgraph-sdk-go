@@ -8,7 +8,7 @@ import (
 // ExternalConnectionCollectionResponse 
 type ExternalConnectionCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ExternalConnectionable
 }
 // NewExternalConnectionCollectionResponse instantiates a new ExternalConnectionCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *ExternalConnectionCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ExternalConnectionCollectionResponse) GetValue()([]ExternalConnectionable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *ExternalConnectionCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ExternalConnectionCollectionResponse) SetValue(value []ExternalConnectionable)() {
     m.value = value
 }

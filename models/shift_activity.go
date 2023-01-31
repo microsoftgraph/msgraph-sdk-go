@@ -17,11 +17,11 @@ type ShiftActivity struct {
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
     isPaid *bool
-    // The OdataType property
+    // 
     odataType *string
     // The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The theme property
+    // 
     theme *ScheduleEntityTheme
 }
 // NewShiftActivity instantiates a new shiftActivity and sets the default values.
@@ -130,7 +130,7 @@ func (m *ShiftActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *ShiftActivity) GetIsPaid()(*bool) {
     return m.isPaid
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ShiftActivity) GetOdataType()(*string) {
     return m.odataType
 }
@@ -138,7 +138,7 @@ func (m *ShiftActivity) GetOdataType()(*string) {
 func (m *ShiftActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetTheme gets the theme property value. The theme property
+// GetTheme gets the theme property value. 
 func (m *ShiftActivity) GetTheme()(*ScheduleEntityTheme) {
     return m.theme
 }
@@ -215,7 +215,7 @@ func (m *ShiftActivity) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
 func (m *ShiftActivity) SetIsPaid(value *bool)() {
     m.isPaid = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ShiftActivity) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -223,7 +223,7 @@ func (m *ShiftActivity) SetOdataType(value *string)() {
 func (m *ShiftActivity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetTheme sets the theme property value. The theme property
+// SetTheme sets the theme property value. 
 func (m *ShiftActivity) SetTheme(value *ScheduleEntityTheme)() {
     m.theme = value
 }

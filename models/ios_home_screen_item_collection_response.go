@@ -7,7 +7,7 @@ import (
 // IosHomeScreenItemCollectionResponse 
 type IosHomeScreenItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosHomeScreenItemable
 }
 // NewIosHomeScreenItemCollectionResponse instantiates a new IosHomeScreenItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosHomeScreenItemCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosHomeScreenItemCollectionResponse) GetValue()([]IosHomeScreenItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosHomeScreenItemCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosHomeScreenItemCollectionResponse) SetValue(value []IosHomeScreenItemable)() {
     m.value = value
 }

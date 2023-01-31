@@ -18,7 +18,7 @@ type ChatMessageInfo struct {
     from ChatMessageFromIdentitySetable
     // If set to true, the original message has been deleted.
     isDeleted *bool
-    // The messageType property
+    // 
     messageType *ChatMessageType
 }
 // NewChatMessageInfo instantiates a new chatMessageInfo and sets the default values.
@@ -117,7 +117,7 @@ func (m *ChatMessageInfo) GetFrom()(ChatMessageFromIdentitySetable) {
 func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
     return m.isDeleted
 }
-// GetMessageType gets the messageType property value. The messageType property
+// GetMessageType gets the messageType property value. 
 func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
     return m.messageType
 }
@@ -186,7 +186,7 @@ func (m *ChatMessageInfo) SetFrom(value ChatMessageFromIdentitySetable)() {
 func (m *ChatMessageInfo) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
-// SetMessageType sets the messageType property value. The messageType property
+// SetMessageType sets the messageType property value. 
 func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
     m.messageType = value
 }

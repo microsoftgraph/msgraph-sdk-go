@@ -10,7 +10,7 @@ type ProvisionedPlan struct {
     additionalData map[string]any
     // For example, 'Enabled'.
     capabilityStatus *string
-    // The OdataType property
+    // 
     odataType *string
     // For example, 'Success'.
     provisioningStatus *string
@@ -81,7 +81,7 @@ func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ProvisionedPlan) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *ProvisionedPlan) SetAdditionalData(value map[string]any)() {
 func (m *ProvisionedPlan) SetCapabilityStatus(value *string)() {
     m.capabilityStatus = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ProvisionedPlan) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -13,7 +13,7 @@ type IdentityContainer struct {
     b2xUserFlows []B2xIdentityUserFlowable
     // the entry point for the Conditional Access (CA) object model.
     conditionalAccess ConditionalAccessRootable
-    // The identityProviders property
+    // 
     identityProviders []IdentityProviderBaseable
     // Represents entry point for identity userflow attributes.
     userFlowAttributes []IdentityUserFlowAttributeable
@@ -112,7 +112,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIdentityProviders gets the identityProviders property value. The identityProviders property
+// GetIdentityProviders gets the identityProviders property value. 
 func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     return m.identityProviders
 }
@@ -186,7 +186,7 @@ func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlowable)() {
 func (m *IdentityContainer) SetConditionalAccess(value ConditionalAccessRootable)() {
     m.conditionalAccess = value
 }
-// SetIdentityProviders sets the identityProviders property value. The identityProviders property
+// SetIdentityProviders sets the identityProviders property value. 
 func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseable)() {
     m.identityProviders = value
 }

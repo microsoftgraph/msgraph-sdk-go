@@ -10,7 +10,7 @@ type BucketAggregationRange struct {
     additionalData map[string]any
     // Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
     from *string
-    // The OdataType property
+    // 
     odataType *string
     // Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
     to *string
@@ -69,7 +69,7 @@ func (m *BucketAggregationRange) GetFieldDeserializers()(map[string]func(i878a80
 func (m *BucketAggregationRange) GetFrom()(*string) {
     return m.from
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BucketAggregationRange) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *BucketAggregationRange) SetAdditionalData(value map[string]any)() {
 func (m *BucketAggregationRange) SetFrom(value *string)() {
     m.from = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BucketAggregationRange) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -12,7 +12,7 @@ type EmailAddress struct {
     address *string
     // The display name of the person or entity.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEmailAddress instantiates a new emailAddress and sets the default values.
@@ -73,7 +73,7 @@ func (m *EmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *EmailAddress) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EmailAddress) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *EmailAddress) SetAddress(value *string)() {
 func (m *EmailAddress) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EmailAddress) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -12,7 +12,7 @@ type AccessReviewNotificationRecipientItem struct {
     notificationRecipientScope AccessReviewNotificationRecipientScopeable
     // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
     notificationTemplateType *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAccessReviewNotificationRecipientItem instantiates a new accessReviewNotificationRecipientItem and sets the default values.
@@ -73,7 +73,7 @@ func (m *AccessReviewNotificationRecipientItem) GetNotificationRecipientScope()(
 func (m *AccessReviewNotificationRecipientItem) GetNotificationTemplateType()(*string) {
     return m.notificationTemplateType
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewNotificationRecipientItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *AccessReviewNotificationRecipientItem) SetNotificationRecipientScope(va
 func (m *AccessReviewNotificationRecipientItem) SetNotificationTemplateType(value *string)() {
     m.notificationTemplateType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewNotificationRecipientItem) SetOdataType(value *string)() {
     m.odataType = value
 }

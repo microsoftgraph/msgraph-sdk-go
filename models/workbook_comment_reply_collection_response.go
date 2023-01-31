@@ -7,7 +7,7 @@ import (
 // WorkbookCommentReplyCollectionResponse 
 type WorkbookCommentReplyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookCommentReplyable
 }
 // NewWorkbookCommentReplyCollectionResponse instantiates a new WorkbookCommentReplyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookCommentReplyCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookCommentReplyCollectionResponse) GetValue()([]WorkbookCommentReplyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookCommentReplyCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookCommentReplyCollectionResponse) SetValue(value []WorkbookCommentReplyable)() {
     m.value = value
 }

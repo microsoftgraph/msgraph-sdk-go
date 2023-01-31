@@ -9,7 +9,7 @@ type SharedInsight struct {
     Entity
     // Details about the shared item. Read only.
     lastShared SharingDetailable
-    // The lastSharedMethod property
+    // 
     lastSharedMethod Entityable
     // Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
     resource Entityable
@@ -17,7 +17,7 @@ type SharedInsight struct {
     resourceReference ResourceReferenceable
     // Properties that you can use to visualize the document in your experience. Read-only
     resourceVisualization ResourceVisualizationable
-    // The sharingHistory property
+    // 
     sharingHistory []SharingDetailable
 }
 // NewSharedInsight instantiates a new sharedInsight and sets the default values.
@@ -104,7 +104,7 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *SharedInsight) GetLastShared()(SharingDetailable) {
     return m.lastShared
 }
-// GetLastSharedMethod gets the lastSharedMethod property value. The lastSharedMethod property
+// GetLastSharedMethod gets the lastSharedMethod property value. 
 func (m *SharedInsight) GetLastSharedMethod()(Entityable) {
     return m.lastSharedMethod
 }
@@ -120,7 +120,7 @@ func (m *SharedInsight) GetResourceReference()(ResourceReferenceable) {
 func (m *SharedInsight) GetResourceVisualization()(ResourceVisualizationable) {
     return m.resourceVisualization
 }
-// GetSharingHistory gets the sharingHistory property value. The sharingHistory property
+// GetSharingHistory gets the sharingHistory property value. 
 func (m *SharedInsight) GetSharingHistory()([]SharingDetailable) {
     return m.sharingHistory
 }
@@ -164,7 +164,7 @@ func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *SharedInsight) SetLastShared(value SharingDetailable)() {
     m.lastShared = value
 }
-// SetLastSharedMethod sets the lastSharedMethod property value. The lastSharedMethod property
+// SetLastSharedMethod sets the lastSharedMethod property value. 
 func (m *SharedInsight) SetLastSharedMethod(value Entityable)() {
     m.lastSharedMethod = value
 }
@@ -180,7 +180,7 @@ func (m *SharedInsight) SetResourceReference(value ResourceReferenceable)() {
 func (m *SharedInsight) SetResourceVisualization(value ResourceVisualizationable)() {
     m.resourceVisualization = value
 }
-// SetSharingHistory sets the sharingHistory property value. The sharingHistory property
+// SetSharingHistory sets the sharingHistory property value. 
 func (m *SharedInsight) SetSharingHistory(value []SharingDetailable)() {
     m.sharingHistory = value
 }

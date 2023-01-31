@@ -12,7 +12,7 @@ type IdentitySet struct {
     application Identityable
     // Optional. The device associated with this action.
     device Identityable
-    // The OdataType property
+    // 
     odataType *string
     // Optional. The user associated with this action.
     user Identityable
@@ -109,7 +109,7 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IdentitySet) GetOdataType()(*string) {
     return m.odataType
 }
@@ -163,7 +163,7 @@ func (m *IdentitySet) SetApplication(value Identityable)() {
 func (m *IdentitySet) SetDevice(value Identityable)() {
     m.device = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IdentitySet) SetOdataType(value *string)() {
     m.odataType = value
 }

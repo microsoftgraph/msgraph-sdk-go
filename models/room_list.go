@@ -9,7 +9,7 @@ type RoomList struct {
     Place
     // The email address of the room list.
     emailAddress *string
-    // The rooms property
+    // 
     rooms []Roomable
 }
 // NewRoomList instantiates a new RoomList and sets the default values.
@@ -58,7 +58,7 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetRooms gets the rooms property value. The rooms property
+// GetRooms gets the rooms property value. 
 func (m *RoomList) GetRooms()([]Roomable) {
     return m.rooms
 }
@@ -90,7 +90,7 @@ func (m *RoomList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *RoomList) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }
-// SetRooms sets the rooms property value. The rooms property
+// SetRooms sets the rooms property value. 
 func (m *RoomList) SetRooms(value []Roomable)() {
     m.rooms = value
 }

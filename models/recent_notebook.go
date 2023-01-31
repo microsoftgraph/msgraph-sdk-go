@@ -15,7 +15,7 @@ type RecentNotebook struct {
     lastAccessedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
     links RecentNotebookLinksable
-    // The OdataType property
+    // 
     odataType *string
     // The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
     sourceService *OnenoteSourceService
@@ -102,7 +102,7 @@ func (m *RecentNotebook) GetLastAccessedTime()(*i336074805fc853987abe6f7fe3ad97a
 func (m *RecentNotebook) GetLinks()(RecentNotebookLinksable) {
     return m.links
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RecentNotebook) GetOdataType()(*string) {
     return m.odataType
 }
@@ -167,7 +167,7 @@ func (m *RecentNotebook) SetLastAccessedTime(value *i336074805fc853987abe6f7fe3a
 func (m *RecentNotebook) SetLinks(value RecentNotebookLinksable)() {
     m.links = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RecentNotebook) SetOdataType(value *string)() {
     m.odataType = value
 }

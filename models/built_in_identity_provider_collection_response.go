@@ -7,7 +7,7 @@ import (
 // BuiltInIdentityProviderCollectionResponse 
 type BuiltInIdentityProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BuiltInIdentityProviderable
 }
 // NewBuiltInIdentityProviderCollectionResponse instantiates a new BuiltInIdentityProviderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BuiltInIdentityProviderCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BuiltInIdentityProviderCollectionResponse) GetValue()([]BuiltInIdentityProviderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BuiltInIdentityProviderCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BuiltInIdentityProviderCollectionResponse) SetValue(value []BuiltInIdentityProviderable)() {
     m.value = value
 }

@@ -8,7 +8,7 @@ import (
 // ThreatAssessmentRequest 
 type ThreatAssessmentRequest struct {
     Entity
-    // The category property
+    // 
     category *ThreatCategory
     // The content type of threat assessment. Possible values are: mail, url, file.
     contentType *ThreatAssessmentContentType
@@ -16,7 +16,7 @@ type ThreatAssessmentRequest struct {
     createdBy IdentitySetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The expectedAssessment property
+    // 
     expectedAssessment *ThreatExpectedAssessment
     // The source of the threat assessment request. Possible values are: administrator.
     requestSource *ThreatAssessmentRequestSource
@@ -25,7 +25,7 @@ type ThreatAssessmentRequest struct {
     // The assessment process status. Possible values are: pending, completed.
     status *ThreatAssessmentStatus
 }
-// NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
+// NewThreatAssessmentRequest instantiates a new ThreatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),
@@ -60,7 +60,7 @@ func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e
     }
     return NewThreatAssessmentRequest(), nil
 }
-// GetCategory gets the category property value. The category property
+// GetCategory gets the category property value. 
 func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
     return m.category
 }
@@ -76,7 +76,7 @@ func (m *ThreatAssessmentRequest) GetCreatedBy()(IdentitySetable) {
 func (m *ThreatAssessmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetExpectedAssessment gets the expectedAssessment property value. The expectedAssessment property
+// GetExpectedAssessment gets the expectedAssessment property value. 
 func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessment) {
     return m.expectedAssessment
 }
@@ -246,7 +246,7 @@ func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCategory sets the category property value. The category property
+// SetCategory sets the category property value. 
 func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
     m.category = value
 }
@@ -262,7 +262,7 @@ func (m *ThreatAssessmentRequest) SetCreatedBy(value IdentitySetable)() {
 func (m *ThreatAssessmentRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetExpectedAssessment sets the expectedAssessment property value. The expectedAssessment property
+// SetExpectedAssessment sets the expectedAssessment property value. 
 func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAssessment)() {
     m.expectedAssessment = value
 }

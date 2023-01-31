@@ -61,10 +61,6 @@ func (m *TeamItemRequestBuilder) AllChannelsById(id string)(*ItemAllChannelsChan
     }
     return NewItemAllChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Archive provides operations to call the archive method.
-func (m *TeamItemRequestBuilder) Archive()(*ItemArchiveRequestBuilder) {
-    return NewItemArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Channels provides operations to manage the channels property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Channels()(*ItemChannelsRequestBuilder) {
     return NewItemChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -80,22 +76,17 @@ func (m *TeamItemRequestBuilder) ChannelsById(id string)(*ItemChannelsChannelIte
     }
     return NewItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Clone provides operations to call the clone method.
-func (m *TeamItemRequestBuilder) Clone()(*ItemCloneRequestBuilder) {
-    return NewItemCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CompleteMigration provides operations to call the completeMigration method.
-func (m *TeamItemRequestBuilder) CompleteMigration()(*ItemCompleteMigrationRequestBuilder) {
-    return NewItemCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewTeamItemRequestBuilderInternal instantiates a new TeamItemRequestBuilder and sets the default values.
-func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamItemRequestBuilder) {
+func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamId *string)(*TeamItemRequestBuilder) {
     m := &TeamItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teams/{team%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if teamId != nil {
+        urlTplParams["team%2Did"] = *teamId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -105,9 +96,9 @@ func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, request
 func NewTeamItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from teams by key (id)
+// Delete delete entity from teams
 func (m *TeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -194,6 +185,26 @@ func (m *TeamItemRequestBuilder) MembersById(id string)(*ItemMembersConversation
     }
     return NewItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftGraphArchive provides operations to call the archive method.
+func (m *TeamItemRequestBuilder) MicrosoftGraphArchive()(*ItemMicrosoftGraphArchiveArchiveRequestBuilder) {
+    return NewItemMicrosoftGraphArchiveArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphClone provides operations to call the clone method.
+func (m *TeamItemRequestBuilder) MicrosoftGraphClone()(*ItemMicrosoftGraphCloneCloneRequestBuilder) {
+    return NewItemMicrosoftGraphCloneCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
+func (m *TeamItemRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilder) {
+    return NewItemMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSendActivityNotification provides operations to call the sendActivityNotification method.
+func (m *TeamItemRequestBuilder) MicrosoftGraphSendActivityNotification()(*ItemMicrosoftGraphSendActivityNotificationSendActivityNotificationRequestBuilder) {
+    return NewItemMicrosoftGraphSendActivityNotificationSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUnarchive provides operations to call the unarchive method.
+func (m *TeamItemRequestBuilder) MicrosoftGraphUnarchive()(*ItemMicrosoftGraphUnarchiveUnarchiveRequestBuilder) {
+    return NewItemMicrosoftGraphUnarchiveUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Operations provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
     return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -243,10 +254,6 @@ func (m *TeamItemRequestBuilder) PrimaryChannel()(*ItemPrimaryChannelRequestBuil
 func (m *TeamItemRequestBuilder) Schedule()(*ItemScheduleRequestBuilder) {
     return NewItemScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SendActivityNotification provides operations to call the sendActivityNotification method.
-func (m *TeamItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
-    return NewItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Tags()(*ItemTagsRequestBuilder) {
     return NewItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -266,7 +273,7 @@ func (m *TeamItemRequestBuilder) TagsById(id string)(*ItemTagsTeamworkTagItemReq
 func (m *TeamItemRequestBuilder) Template()(*ItemTemplateRequestBuilder) {
     return NewItemTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ToDeleteRequestInformation delete entity from teams by key (id)
+// ToDeleteRequestInformation delete entity from teams
 func (m *TeamItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -301,14 +308,13 @@ func (m *TeamItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Unarchive provides operations to call the unarchive method.
-func (m *TeamItemRequestBuilder) Unarchive()(*ItemUnarchiveRequestBuilder) {
-    return NewItemUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

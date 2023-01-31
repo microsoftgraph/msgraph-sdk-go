@@ -35,7 +35,7 @@ type NetworkConnection struct {
     natSourceAddress *string
     // Network Address Translation source port.
     natSourcePort *string
-    // The OdataType property
+    // 
     odataType *string
     // Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
     protocol *SecurityNetworkProtocol
@@ -334,7 +334,7 @@ func (m *NetworkConnection) GetNatSourceAddress()(*string) {
 func (m *NetworkConnection) GetNatSourcePort()(*string) {
     return m.natSourcePort
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *NetworkConnection) GetOdataType()(*string) {
     return m.odataType
 }
@@ -561,7 +561,7 @@ func (m *NetworkConnection) SetNatSourceAddress(value *string)() {
 func (m *NetworkConnection) SetNatSourcePort(value *string)() {
     m.natSourcePort = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *NetworkConnection) SetOdataType(value *string)() {
     m.odataType = value
 }

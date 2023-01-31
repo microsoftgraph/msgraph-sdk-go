@@ -10,7 +10,7 @@ type KeyValuePair struct {
     additionalData map[string]any
     // Name for this key-value pair
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Value for this key-value pair
     value *string
@@ -69,7 +69,7 @@ func (m *KeyValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *KeyValuePair) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *KeyValuePair) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *KeyValuePair) SetAdditionalData(value map[string]any)() {
 func (m *KeyValuePair) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *KeyValuePair) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -19,7 +19,7 @@ type Certification struct {
     isPublisherAttested *bool
     // The timestamp when the certification for the application was most recently added or updated.
     lastCertificationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCertification instantiates a new certification and sets the default values.
@@ -122,7 +122,7 @@ func (m *Certification) GetIsPublisherAttested()(*bool) {
 func (m *Certification) GetLastCertificationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastCertificationDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Certification) GetOdataType()(*string) {
     return m.odataType
 }
@@ -184,7 +184,7 @@ func (m *Certification) SetIsPublisherAttested(value *bool)() {
 func (m *Certification) SetLastCertificationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastCertificationDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Certification) SetOdataType(value *string)() {
     m.odataType = value
 }

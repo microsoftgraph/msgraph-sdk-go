@@ -7,7 +7,7 @@ import (
 // AddLargeGalleryViewOperationCollectionResponse 
 type AddLargeGalleryViewOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AddLargeGalleryViewOperationable
 }
 // NewAddLargeGalleryViewOperationCollectionResponse instantiates a new AddLargeGalleryViewOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AddLargeGalleryViewOperationCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AddLargeGalleryViewOperationCollectionResponse) GetValue()([]AddLargeGalleryViewOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AddLargeGalleryViewOperationCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AddLargeGalleryViewOperationCollectionResponse) SetValue(value []AddLargeGalleryViewOperationable)() {
     m.value = value
 }

@@ -10,15 +10,15 @@ type HostSecurityState struct {
     additionalData map[string]any
     // Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
     fqdn *string
-    // The isAzureAdJoined property
+    // 
     isAzureAdJoined *bool
-    // The isAzureAdRegistered property
+    // 
     isAzureAdRegistered *bool
     // True if the host is domain joined to an on-premises Active Directory domain.
     isHybridAzureDomainJoined *bool
     // The local host name, without the DNS domain name.
     netBiosName *string
-    // The OdataType property
+    // 
     odataType *string
     // Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
     os *string
@@ -153,11 +153,11 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *HostSecurityState) GetFqdn()(*string) {
     return m.fqdn
 }
-// GetIsAzureAdJoined gets the isAzureAdJoined property value. The isAzureAdJoined property
+// GetIsAzureAdJoined gets the isAzureAdJoined property value. 
 func (m *HostSecurityState) GetIsAzureAdJoined()(*bool) {
     return m.isAzureAdJoined
 }
-// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. The isAzureAdRegistered property
+// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. 
 func (m *HostSecurityState) GetIsAzureAdRegistered()(*bool) {
     return m.isAzureAdRegistered
 }
@@ -169,7 +169,7 @@ func (m *HostSecurityState) GetIsHybridAzureDomainJoined()(*bool) {
 func (m *HostSecurityState) GetNetBiosName()(*string) {
     return m.netBiosName
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *HostSecurityState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -267,11 +267,11 @@ func (m *HostSecurityState) SetAdditionalData(value map[string]any)() {
 func (m *HostSecurityState) SetFqdn(value *string)() {
     m.fqdn = value
 }
-// SetIsAzureAdJoined sets the isAzureAdJoined property value. The isAzureAdJoined property
+// SetIsAzureAdJoined sets the isAzureAdJoined property value. 
 func (m *HostSecurityState) SetIsAzureAdJoined(value *bool)() {
     m.isAzureAdJoined = value
 }
-// SetIsAzureAdRegistered sets the isAzureAdRegistered property value. The isAzureAdRegistered property
+// SetIsAzureAdRegistered sets the isAzureAdRegistered property value. 
 func (m *HostSecurityState) SetIsAzureAdRegistered(value *bool)() {
     m.isAzureAdRegistered = value
 }
@@ -283,7 +283,7 @@ func (m *HostSecurityState) SetIsHybridAzureDomainJoined(value *bool)() {
 func (m *HostSecurityState) SetNetBiosName(value *string)() {
     m.netBiosName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *HostSecurityState) SetOdataType(value *string)() {
     m.odataType = value
 }

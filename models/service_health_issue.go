@@ -7,7 +7,7 @@ import (
 // ServiceHealthIssue 
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
-    // The classification property
+    // 
     classification *ServiceHealthClassificationType
     // The feature name of the service issue.
     feature *string
@@ -17,13 +17,13 @@ type ServiceHealthIssue struct {
     impactDescription *string
     // Indicates whether the issue is resolved.
     isResolved *bool
-    // The origin property
+    // 
     origin *ServiceHealthOrigin
     // Collection of historical posts for the service issue.
     posts []ServiceHealthIssuePostable
     // Indicates the service affected by the issue.
     service *string
-    // The status property
+    // 
     status *ServiceHealthStatus
 }
 // NewServiceHealthIssue instantiates a new ServiceHealthIssue and sets the default values.
@@ -39,7 +39,7 @@ func NewServiceHealthIssue()(*ServiceHealthIssue) {
 func CreateServiceHealthIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceHealthIssue(), nil
 }
-// GetClassification gets the classification property value. The classification property
+// GetClassification gets the classification property value. 
 func (m *ServiceHealthIssue) GetClassification()(*ServiceHealthClassificationType) {
     return m.classification
 }
@@ -158,7 +158,7 @@ func (m *ServiceHealthIssue) GetImpactDescription()(*string) {
 func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
     return m.isResolved
 }
-// GetOrigin gets the origin property value. The origin property
+// GetOrigin gets the origin property value. 
 func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
     return m.origin
 }
@@ -170,7 +170,7 @@ func (m *ServiceHealthIssue) GetPosts()([]ServiceHealthIssuePostable) {
 func (m *ServiceHealthIssue) GetService()(*string) {
     return m.service
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
     return m.status
 }
@@ -243,7 +243,7 @@ func (m *ServiceHealthIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetClassification sets the classification property value. The classification property
+// SetClassification sets the classification property value. 
 func (m *ServiceHealthIssue) SetClassification(value *ServiceHealthClassificationType)() {
     m.classification = value
 }
@@ -263,7 +263,7 @@ func (m *ServiceHealthIssue) SetImpactDescription(value *string)() {
 func (m *ServiceHealthIssue) SetIsResolved(value *bool)() {
     m.isResolved = value
 }
-// SetOrigin sets the origin property value. The origin property
+// SetOrigin sets the origin property value. 
 func (m *ServiceHealthIssue) SetOrigin(value *ServiceHealthOrigin)() {
     m.origin = value
 }
@@ -275,7 +275,7 @@ func (m *ServiceHealthIssue) SetPosts(value []ServiceHealthIssuePostable)() {
 func (m *ServiceHealthIssue) SetService(value *string)() {
     m.service = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *ServiceHealthIssue) SetStatus(value *ServiceHealthStatus)() {
     m.status = value
 }

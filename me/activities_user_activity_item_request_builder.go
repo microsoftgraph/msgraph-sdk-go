@@ -47,13 +47,16 @@ type ActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewActivitiesUserActivityItemRequestBuilderInternal instantiates a new UserActivityItemRequestBuilder and sets the default values.
-func NewActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesUserActivityItemRequestBuilder) {
+func NewActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userActivityId *string)(*ActivitiesUserActivityItemRequestBuilder) {
     m := &ActivitiesUserActivityItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/activities/{userActivity%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if userActivityId != nil {
+        urlTplParams["userActivity%2Did"] = *userActivityId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[stri
 func NewActivitiesUserActivityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesUserActivityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewActivitiesUserActivityItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewActivitiesUserActivityItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property activities for me
 func (m *ActivitiesUserActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +172,10 @@ func (m *ActivitiesUserActivityItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

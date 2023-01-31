@@ -47,13 +47,16 @@ type ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal instantiates a new RichLongRunningOperationItemRequestBuilder and sets the default values.
-func NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
+func NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, richLongRunningOperationId *string)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
     m := &ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/operations/{richLongRunningOperation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if richLongRunningOperationId != nil {
+        urlTplParams["richLongRunningOperation%2Did"] = *richLongRunningOperationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuild
 func NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for groups
 func (m *ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

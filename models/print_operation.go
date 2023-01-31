@@ -10,7 +10,7 @@ type PrintOperation struct {
     Entity
     // The DateTimeOffset when the operation was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status property
+    // 
     status PrintOperationStatusable
 }
 // NewPrintOperation instantiates a new printOperation and sets the default values.
@@ -71,7 +71,7 @@ func (m *PrintOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *PrintOperation) GetStatus()(PrintOperationStatusable) {
     return m.status
 }
@@ -99,7 +99,7 @@ func (m *PrintOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *PrintOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *PrintOperation) SetStatus(value PrintOperationStatusable)() {
     m.status = value
 }

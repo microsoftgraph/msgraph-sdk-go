@@ -30,7 +30,7 @@ type DeviceInfo struct {
     lowSpeechToNoiseEventRatio *float32
     // Glitches per 5 minute interval for the media endpoint's microphone.
     micGlitchRate *float32
-    // The OdataType property
+    // 
     odataType *string
     // Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
     receivedNoiseLevel *int32
@@ -337,7 +337,7 @@ func (m *DeviceInfo) GetLowSpeechToNoiseEventRatio()(*float32) {
 func (m *DeviceInfo) GetMicGlitchRate()(*float32) {
     return m.micGlitchRate
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -571,7 +571,7 @@ func (m *DeviceInfo) SetLowSpeechToNoiseEventRatio(value *float32)() {
 func (m *DeviceInfo) SetMicGlitchRate(value *float32)() {
     m.micGlitchRate = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

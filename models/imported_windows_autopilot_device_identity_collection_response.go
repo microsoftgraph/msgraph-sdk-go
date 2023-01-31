@@ -7,7 +7,7 @@ import (
 // ImportedWindowsAutopilotDeviceIdentityCollectionResponse 
 type ImportedWindowsAutopilotDeviceIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ImportedWindowsAutopilotDeviceIdentityable
 }
 // NewImportedWindowsAutopilotDeviceIdentityCollectionResponse instantiates a new ImportedWindowsAutopilotDeviceIdentityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) GetFieldDeser
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) GetValue()([]ImportedWindowsAutopilotDeviceIdentityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) Serialize(wri
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) SetValue(value []ImportedWindowsAutopilotDeviceIdentityable)() {
     m.value = value
 }

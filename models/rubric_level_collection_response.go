@@ -7,7 +7,7 @@ import (
 // RubricLevelCollectionResponse 
 type RubricLevelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RubricLevelable
 }
 // NewRubricLevelCollectionResponse instantiates a new RubricLevelCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RubricLevelCollectionResponse) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RubricLevelCollectionResponse) GetValue()([]RubricLevelable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RubricLevelCollectionResponse) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RubricLevelCollectionResponse) SetValue(value []RubricLevelable)() {
     m.value = value
 }

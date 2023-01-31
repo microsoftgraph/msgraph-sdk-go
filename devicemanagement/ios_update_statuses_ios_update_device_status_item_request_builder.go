@@ -47,13 +47,16 @@ type IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal instantiates a new IosUpdateDeviceStatusItemRequestBuilder and sets the default values.
-func NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) {
+func NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, iosUpdateDeviceStatusId *string)(*IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) {
     m := &IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/iosUpdateStatuses/{iosUpdateDeviceStatus%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if iosUpdateDeviceStatusId != nil {
+        urlTplParams["iosUpdateDeviceStatus%2Did"] = *iosUpdateDeviceStatusId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(pathPar
 func NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property iosUpdateStatuses for deviceManagement
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

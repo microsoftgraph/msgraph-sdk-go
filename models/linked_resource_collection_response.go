@@ -7,7 +7,7 @@ import (
 // LinkedResourceCollectionResponse 
 type LinkedResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []LinkedResourceable
 }
 // NewLinkedResourceCollectionResponse instantiates a new LinkedResourceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *LinkedResourceCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LinkedResourceCollectionResponse) GetValue()([]LinkedResourceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *LinkedResourceCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LinkedResourceCollectionResponse) SetValue(value []LinkedResourceable)() {
     m.value = value
 }

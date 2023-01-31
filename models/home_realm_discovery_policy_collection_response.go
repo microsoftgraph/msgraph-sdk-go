@@ -7,7 +7,7 @@ import (
 // HomeRealmDiscoveryPolicyCollectionResponse 
 type HomeRealmDiscoveryPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []HomeRealmDiscoveryPolicyable
 }
 // NewHomeRealmDiscoveryPolicyCollectionResponse instantiates a new HomeRealmDiscoveryPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *HomeRealmDiscoveryPolicyCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *HomeRealmDiscoveryPolicyCollectionResponse) GetValue()([]HomeRealmDiscoveryPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *HomeRealmDiscoveryPolicyCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *HomeRealmDiscoveryPolicyCollectionResponse) SetValue(value []HomeRealmDiscoveryPolicyable)() {
     m.value = value
 }

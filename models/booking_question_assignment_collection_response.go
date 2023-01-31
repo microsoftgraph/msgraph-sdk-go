@@ -7,7 +7,7 @@ import (
 // BookingQuestionAssignmentCollectionResponse 
 type BookingQuestionAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BookingQuestionAssignmentable
 }
 // NewBookingQuestionAssignmentCollectionResponse instantiates a new BookingQuestionAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BookingQuestionAssignmentCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BookingQuestionAssignmentCollectionResponse) GetValue()([]BookingQuestionAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BookingQuestionAssignmentCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BookingQuestionAssignmentCollectionResponse) SetValue(value []BookingQuestionAssignmentable)() {
     m.value = value
 }

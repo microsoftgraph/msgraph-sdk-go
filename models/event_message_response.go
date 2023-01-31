@@ -7,9 +7,9 @@ import (
 // EventMessageResponse 
 type EventMessageResponse struct {
     EventMessage
-    // The proposedNewTime property
+    // 
     proposedNewTime TimeSlotable
-    // The responseType property
+    // 
     responseType *ResponseType
 }
 // NewEventMessageResponse instantiates a new EventMessageResponse and sets the default values.
@@ -50,11 +50,11 @@ func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetProposedNewTime gets the proposedNewTime property value. The proposedNewTime property
+// GetProposedNewTime gets the proposedNewTime property value. 
 func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     return m.proposedNewTime
 }
-// GetResponseType gets the responseType property value. The responseType property
+// GetResponseType gets the responseType property value. 
 func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
     return m.responseType
 }
@@ -79,11 +79,11 @@ func (m *EventMessageResponse) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetProposedNewTime sets the proposedNewTime property value. The proposedNewTime property
+// SetProposedNewTime sets the proposedNewTime property value. 
 func (m *EventMessageResponse) SetProposedNewTime(value TimeSlotable)() {
     m.proposedNewTime = value
 }
-// SetResponseType sets the responseType property value. The responseType property
+// SetResponseType sets the responseType property value. 
 func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
     m.responseType = value
 }

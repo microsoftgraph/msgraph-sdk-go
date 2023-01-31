@@ -33,13 +33,16 @@ type ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConf
     QueryParameters *ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetQueryParameters
 }
 // NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
-func NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
+func NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementAcceptanceId *string)(*ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     m := &ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/agreementAcceptances/{agreementAcceptance%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if agreementAcceptanceId != nil {
+        urlTplParams["agreementAcceptance%2Did"] = *agreementAcceptanceId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pa
 func NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceable, error) {

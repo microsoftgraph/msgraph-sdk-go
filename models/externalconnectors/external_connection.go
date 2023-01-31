@@ -12,20 +12,20 @@ type ExternalConnection struct {
     configuration Configurationable
     // Description of the connection displayed in the Microsoft 365 admin center. Optional.
     description *string
-    // The groups property
+    // 
     groups []ExternalGroupable
-    // The items property
+    // 
     items []ExternalItemable
     // The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
     name *string
-    // The operations property
+    // 
     operations []ConnectionOperationable
-    // The schema property
+    // 
     schema Schemaable
     // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     state *ConnectionState
 }
-// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
+// NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -141,11 +141,11 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetGroups gets the groups property value. The groups property
+// GetGroups gets the groups property value. 
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
     return m.groups
 }
-// GetItems gets the items property value. The items property
+// GetItems gets the items property value. 
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
     return m.items
 }
@@ -153,11 +153,11 @@ func (m *ExternalConnection) GetItems()([]ExternalItemable) {
 func (m *ExternalConnection) GetName()(*string) {
     return m.name
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. 
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
     return m.operations
 }
-// GetSchema gets the schema property value. The schema property
+// GetSchema gets the schema property value. 
 func (m *ExternalConnection) GetSchema()(Schemaable) {
     return m.schema
 }
@@ -235,11 +235,11 @@ func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
 func (m *ExternalConnection) SetDescription(value *string)() {
     m.description = value
 }
-// SetGroups sets the groups property value. The groups property
+// SetGroups sets the groups property value. 
 func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
     m.groups = value
 }
-// SetItems sets the items property value. The items property
+// SetItems sets the items property value. 
 func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
     m.items = value
 }
@@ -247,11 +247,11 @@ func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
 func (m *ExternalConnection) SetName(value *string)() {
     m.name = value
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. 
 func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
     m.operations = value
 }
-// SetSchema sets the schema property value. The schema property
+// SetSchema sets the schema property value. 
 func (m *ExternalConnection) SetSchema(value Schemaable)() {
     m.schema = value
 }

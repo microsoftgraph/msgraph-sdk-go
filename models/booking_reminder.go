@@ -10,11 +10,11 @@ type BookingReminder struct {
     additionalData map[string]any
     // The message in the reminder.
     message *string
-    // The OdataType property
+    // 
     odataType *string
     // The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     offset *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The recipients property
+    // 
     recipients *BookingReminderRecipients
 }
 // NewBookingReminder instantiates a new bookingReminder and sets the default values.
@@ -81,7 +81,7 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *BookingReminder) GetMessage()(*string) {
     return m.message
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BookingReminder) GetOdataType()(*string) {
     return m.odataType
 }
@@ -89,7 +89,7 @@ func (m *BookingReminder) GetOdataType()(*string) {
 func (m *BookingReminder) GetOffset()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.offset
 }
-// GetRecipients gets the recipients property value. The recipients property
+// GetRecipients gets the recipients property value. 
 func (m *BookingReminder) GetRecipients()(*BookingReminderRecipients) {
     return m.recipients
 }
@@ -136,7 +136,7 @@ func (m *BookingReminder) SetAdditionalData(value map[string]any)() {
 func (m *BookingReminder) SetMessage(value *string)() {
     m.message = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BookingReminder) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -144,7 +144,7 @@ func (m *BookingReminder) SetOdataType(value *string)() {
 func (m *BookingReminder) SetOffset(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.offset = value
 }
-// SetRecipients sets the recipients property value. The recipients property
+// SetRecipients sets the recipients property value. 
 func (m *BookingReminder) SetRecipients(value *BookingReminderRecipients)() {
     m.recipients = value
 }

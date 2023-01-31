@@ -44,10 +44,6 @@ type ItemOwnedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnedObjectsRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemOwnedObjectsRequestBuilder) Application()(*ItemOwnedObjectsApplicationRequestBuilder) {
-    return NewItemOwnedObjectsApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemOwnedObjectsRequestBuilderInternal instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewItemOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedObjectsRequestBuilder) {
     m := &ItemOwnedObjectsRequestBuilder{
@@ -93,13 +89,17 @@ func (m *ItemOwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemOwnedObjectsRequestBuilder) Group()(*ItemOwnedObjectsGroupRequestBuilder) {
-    return NewItemOwnedObjectsGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphApplication()(*ItemOwnedObjectsMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnedObjectsRequestBuilder) ServicePrincipal()(*ItemOwnedObjectsServicePrincipalRequestBuilder) {
-    return NewItemOwnedObjectsServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphGroup()(*ItemOwnedObjectsMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemOwnedObjectsMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

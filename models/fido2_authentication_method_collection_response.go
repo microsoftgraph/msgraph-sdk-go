@@ -7,7 +7,7 @@ import (
 // Fido2AuthenticationMethodCollectionResponse 
 type Fido2AuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Fido2AuthenticationMethodable
 }
 // NewFido2AuthenticationMethodCollectionResponse instantiates a new Fido2AuthenticationMethodCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Fido2AuthenticationMethodCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Fido2AuthenticationMethodCollectionResponse) GetValue()([]Fido2AuthenticationMethodable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Fido2AuthenticationMethodCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Fido2AuthenticationMethodCollectionResponse) SetValue(value []Fido2AuthenticationMethodable)() {
     m.value = value
 }

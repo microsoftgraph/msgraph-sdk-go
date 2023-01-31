@@ -38,13 +38,16 @@ type TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequest
     QueryParameters *TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters
 }
 // NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal instantiates a new AttachmentBaseItemRequestBuilder and sets the default values.
-func NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
+func NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attachmentBaseId *string)(*TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     m := &TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments/{attachmentBase%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if attachmentBaseId != nil {
+        urlTplParams["attachmentBase%2Did"] = *attachmentBaseId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -54,7 +57,7 @@ func NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInterna
 func NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the user entity.
 func (m *TodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Content()(*TodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) {

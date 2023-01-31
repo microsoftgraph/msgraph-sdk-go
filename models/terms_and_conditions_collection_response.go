@@ -7,7 +7,7 @@ import (
 // TermsAndConditionsCollectionResponse 
 type TermsAndConditionsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TermsAndConditionsable
 }
 // NewTermsAndConditionsCollectionResponse instantiates a new TermsAndConditionsCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TermsAndConditionsCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TermsAndConditionsCollectionResponse) GetValue()([]TermsAndConditionsable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TermsAndConditionsCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TermsAndConditionsCollectionResponse) SetValue(value []TermsAndConditionsable)() {
     m.value = value
 }

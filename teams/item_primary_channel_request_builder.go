@@ -46,10 +46,6 @@ type ItemPrimaryChannelRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CompleteMigration provides operations to call the completeMigration method.
-func (m *ItemPrimaryChannelRequestBuilder) CompleteMigration()(*ItemPrimaryChannelCompleteMigrationRequestBuilder) {
-    return NewItemPrimaryChannelCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemPrimaryChannelRequestBuilderInternal instantiates a new PrimaryChannelRequestBuilder and sets the default values.
 func NewItemPrimaryChannelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelRequestBuilder) {
     m := &ItemPrimaryChannelRequestBuilder{
@@ -84,10 +80,6 @@ func (m *ItemPrimaryChannelRequestBuilder) Delete(ctx context.Context, requestCo
         return err
     }
     return nil
-}
-// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *ItemPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
-    return NewItemPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 func (m *ItemPrimaryChannelRequestBuilder) FilesFolder()(*ItemPrimaryChannelFilesFolderRequestBuilder) {
@@ -145,6 +137,22 @@ func (m *ItemPrimaryChannelRequestBuilder) MessagesById(id string)(*ItemPrimaryC
     }
     return NewItemPrimaryChannelMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
+func (m *ItemPrimaryChannelRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemPrimaryChannelMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilder) {
+    return NewItemPrimaryChannelMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *ItemPrimaryChannelRequestBuilder) MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemPrimaryChannelMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewItemPrimaryChannelMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphProvisionEmail provides operations to call the provisionEmail method.
+func (m *ItemPrimaryChannelRequestBuilder) MicrosoftGraphProvisionEmail()(*ItemPrimaryChannelMicrosoftGraphProvisionEmailProvisionEmailRequestBuilder) {
+    return NewItemPrimaryChannelMicrosoftGraphProvisionEmailProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphRemoveEmail provides operations to call the removeEmail method.
+func (m *ItemPrimaryChannelRequestBuilder) MicrosoftGraphRemoveEmail()(*ItemPrimaryChannelMicrosoftGraphRemoveEmailRemoveEmailRequestBuilder) {
+    return NewItemPrimaryChannelMicrosoftGraphRemoveEmailRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property primaryChannel in teams
 func (m *ItemPrimaryChannelRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *ItemPrimaryChannelRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -163,14 +171,6 @@ func (m *ItemPrimaryChannelRequestBuilder) Patch(ctx context.Context, body iadcd
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
-}
-// ProvisionEmail provides operations to call the provisionEmail method.
-func (m *ItemPrimaryChannelRequestBuilder) ProvisionEmail()(*ItemPrimaryChannelProvisionEmailRequestBuilder) {
-    return NewItemPrimaryChannelProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveEmail provides operations to call the removeEmail method.
-func (m *ItemPrimaryChannelRequestBuilder) RemoveEmail()(*ItemPrimaryChannelRemoveEmailRequestBuilder) {
-    return NewItemPrimaryChannelRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *ItemPrimaryChannelRequestBuilder) SharedWithTeams()(*ItemPrimaryChannelSharedWithTeamsRequestBuilder) {
@@ -237,7 +237,10 @@ func (m *ItemPrimaryChannelRequestBuilder) ToPatchRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

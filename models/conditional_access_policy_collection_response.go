@@ -7,7 +7,7 @@ import (
 // ConditionalAccessPolicyCollectionResponse 
 type ConditionalAccessPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ConditionalAccessPolicyable
 }
 // NewConditionalAccessPolicyCollectionResponse instantiates a new ConditionalAccessPolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ConditionalAccessPolicyCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ConditionalAccessPolicyCollectionResponse) GetValue()([]ConditionalAccessPolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ConditionalAccessPolicyCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ConditionalAccessPolicyCollectionResponse) SetValue(value []ConditionalAccessPolicyable)() {
     m.value = value
 }

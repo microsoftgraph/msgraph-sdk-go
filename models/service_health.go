@@ -11,7 +11,7 @@ type ServiceHealth struct {
     issues []ServiceHealthIssueable
     // The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
     service *string
-    // The status property
+    // 
     status *ServiceHealthStatus
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
@@ -72,7 +72,7 @@ func (m *ServiceHealth) GetIssues()([]ServiceHealthIssueable) {
 func (m *ServiceHealth) GetService()(*string) {
     return m.service
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
     return m.status
 }
@@ -115,7 +115,7 @@ func (m *ServiceHealth) SetIssues(value []ServiceHealthIssueable)() {
 func (m *ServiceHealth) SetService(value *string)() {
     m.service = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
     m.status = value
 }

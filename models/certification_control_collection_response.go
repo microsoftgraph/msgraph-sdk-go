@@ -7,7 +7,7 @@ import (
 // CertificationControlCollectionResponse 
 type CertificationControlCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CertificationControlable
 }
 // NewCertificationControlCollectionResponse instantiates a new CertificationControlCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CertificationControlCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CertificationControlCollectionResponse) GetValue()([]CertificationControlable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CertificationControlCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CertificationControlCollectionResponse) SetValue(value []CertificationControlable)() {
     m.value = value
 }

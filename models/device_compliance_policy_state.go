@@ -13,9 +13,9 @@ type DeviceCompliancePolicyState struct {
     platformType *PolicyPlatformType
     // Count of how many setting a policy holds
     settingCount *int32
-    // The settingStates property
+    // 
     settingStates []DeviceCompliancePolicySettingStateable
-    // The state property
+    // 
     state *ComplianceStatus
     // The version of the policy
     version *int32
@@ -112,11 +112,11 @@ func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
 func (m *DeviceCompliancePolicyState) GetSettingCount()(*int32) {
     return m.settingCount
 }
-// GetSettingStates gets the settingStates property value. The settingStates property
+// GetSettingStates gets the settingStates property value. 
 func (m *DeviceCompliancePolicyState) GetSettingStates()([]DeviceCompliancePolicySettingStateable) {
     return m.settingStates
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *DeviceCompliancePolicyState) GetState()(*ComplianceStatus) {
     return m.state
 }
@@ -186,11 +186,11 @@ func (m *DeviceCompliancePolicyState) SetPlatformType(value *PolicyPlatformType)
 func (m *DeviceCompliancePolicyState) SetSettingCount(value *int32)() {
     m.settingCount = value
 }
-// SetSettingStates sets the settingStates property value. The settingStates property
+// SetSettingStates sets the settingStates property value. 
 func (m *DeviceCompliancePolicyState) SetSettingStates(value []DeviceCompliancePolicySettingStateable)() {
     m.settingStates = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *DeviceCompliancePolicyState) SetState(value *ComplianceStatus)() {
     m.state = value
 }

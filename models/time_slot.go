@@ -8,11 +8,11 @@ import (
 type TimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The end property
+    // 
     end DateTimeTimeZoneable
-    // The OdataType property
+    // 
     odataType *string
-    // The start property
+    // 
     start DateTimeTimeZoneable
 }
 // NewTimeSlot instantiates a new timeSlot and sets the default values.
@@ -30,7 +30,7 @@ func CreateTimeSlotFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 func (m *TimeSlot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetEnd gets the end property value. The end property
+// GetEnd gets the end property value. 
 func (m *TimeSlot) GetEnd()(DateTimeTimeZoneable) {
     return m.end
 }
@@ -69,11 +69,11 @@ func (m *TimeSlot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TimeSlot) GetOdataType()(*string) {
     return m.odataType
 }
-// GetStart gets the start property value. The start property
+// GetStart gets the start property value. 
 func (m *TimeSlot) GetStart()(DateTimeTimeZoneable) {
     return m.start
 }
@@ -109,15 +109,15 @@ func (m *TimeSlot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *TimeSlot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetEnd sets the end property value. The end property
+// SetEnd sets the end property value. 
 func (m *TimeSlot) SetEnd(value DateTimeTimeZoneable)() {
     m.end = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TimeSlot) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetStart sets the start property value. The start property
+// SetStart sets the start property value. 
 func (m *TimeSlot) SetStart(value DateTimeTimeZoneable)() {
     m.start = value
 }

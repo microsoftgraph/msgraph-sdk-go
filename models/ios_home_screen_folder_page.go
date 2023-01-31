@@ -12,7 +12,7 @@ type IosHomeScreenFolderPage struct {
     apps []IosHomeScreenAppable
     // Name of the folder page
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIosHomeScreenFolderPage instantiates a new iosHomeScreenFolderPage and sets the default values.
@@ -77,7 +77,7 @@ func (m *IosHomeScreenFolderPage) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosHomeScreenFolderPage) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *IosHomeScreenFolderPage) SetApps(value []IosHomeScreenAppable)() {
 func (m *IosHomeScreenFolderPage) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosHomeScreenFolderPage) SetOdataType(value *string)() {
     m.odataType = value
 }

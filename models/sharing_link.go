@@ -10,7 +10,7 @@ type SharingLink struct {
     additionalData map[string]any
     // The app the link is associated with.
     application Identityable
-    // The OdataType property
+    // 
     odataType *string
     // If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
     preventsDownload *bool
@@ -117,7 +117,7 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SharingLink) GetOdataType()(*string) {
     return m.odataType
 }
@@ -201,7 +201,7 @@ func (m *SharingLink) SetAdditionalData(value map[string]any)() {
 func (m *SharingLink) SetApplication(value Identityable)() {
     m.application = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SharingLink) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // ManagedAppConfigurationCollectionResponse 
 type ManagedAppConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ManagedAppConfigurationable
 }
 // NewManagedAppConfigurationCollectionResponse instantiates a new ManagedAppConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ManagedAppConfigurationCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ManagedAppConfigurationCollectionResponse) GetValue()([]ManagedAppConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ManagedAppConfigurationCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ManagedAppConfigurationCollectionResponse) SetValue(value []ManagedAppConfigurationable)() {
     m.value = value
 }

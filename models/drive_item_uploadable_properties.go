@@ -16,7 +16,7 @@ type DriveItemUploadableProperties struct {
     fileSystemInfo FileSystemInfoable
     // The name of the item (filename and extension). Read-write.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewDriveItemUploadableProperties instantiates a new driveItemUploadableProperties and sets the default values.
@@ -105,7 +105,7 @@ func (m *DriveItemUploadableProperties) GetFileSystemInfo()(FileSystemInfoable) 
 func (m *DriveItemUploadableProperties) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DriveItemUploadableProperties) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *DriveItemUploadableProperties) SetFileSystemInfo(value FileSystemInfoab
 func (m *DriveItemUploadableProperties) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DriveItemUploadableProperties) SetOdataType(value *string)() {
     m.odataType = value
 }

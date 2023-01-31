@@ -8,11 +8,11 @@ import (
 type OnenotePagePreview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The links property
+    // 
     links OnenotePagePreviewLinksable
-    // The OdataType property
+    // 
     odataType *string
-    // The previewText property
+    // 
     previewText *string
 }
 // NewOnenotePagePreview instantiates a new onenotePagePreview and sets the default values.
@@ -65,15 +65,15 @@ func (m *OnenotePagePreview) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. 
 func (m *OnenotePagePreview) GetLinks()(OnenotePagePreviewLinksable) {
     return m.links
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnenotePagePreview) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPreviewText gets the previewText property value. The previewText property
+// GetPreviewText gets the previewText property value. 
 func (m *OnenotePagePreview) GetPreviewText()(*string) {
     return m.previewText
 }
@@ -109,15 +109,15 @@ func (m *OnenotePagePreview) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *OnenotePagePreview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. 
 func (m *OnenotePagePreview) SetLinks(value OnenotePagePreviewLinksable)() {
     m.links = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnenotePagePreview) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPreviewText sets the previewText property value. The previewText property
+// SetPreviewText sets the previewText property value. 
 func (m *OnenotePagePreview) SetPreviewText(value *string)() {
     m.previewText = value
 }

@@ -14,7 +14,7 @@ type ScheduleItem struct {
     isPrivate *bool
     // The location where the corresponding event is held or attended from. Optional.
     location *string
-    // The OdataType property
+    // 
     odataType *string
     // The date, time, and time zone that the corresponding event starts.
     start DateTimeTimeZoneable
@@ -125,7 +125,7 @@ func (m *ScheduleItem) GetIsPrivate()(*bool) {
 func (m *ScheduleItem) GetLocation()(*string) {
     return m.location
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ScheduleItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -210,7 +210,7 @@ func (m *ScheduleItem) SetIsPrivate(value *bool)() {
 func (m *ScheduleItem) SetLocation(value *string)() {
     m.location = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ScheduleItem) SetOdataType(value *string)() {
     m.odataType = value
 }

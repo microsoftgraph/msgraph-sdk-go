@@ -20,7 +20,7 @@ type KeyCredential struct {
     key []byte
     // The unique identifier (GUID) for the key.
     keyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The OdataType property
+    // 
     odataType *string
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -159,7 +159,7 @@ func (m *KeyCredential) GetKey()([]byte) {
 func (m *KeyCredential) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.keyId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *KeyCredential) GetOdataType()(*string) {
     return m.odataType
 }
@@ -263,7 +263,7 @@ func (m *KeyCredential) SetKey(value []byte)() {
 func (m *KeyCredential) SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.keyId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *KeyCredential) SetOdataType(value *string)() {
     m.odataType = value
 }

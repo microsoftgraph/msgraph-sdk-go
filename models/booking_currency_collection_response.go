@@ -7,7 +7,7 @@ import (
 // BookingCurrencyCollectionResponse 
 type BookingCurrencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BookingCurrencyable
 }
 // NewBookingCurrencyCollectionResponse instantiates a new BookingCurrencyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BookingCurrencyCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BookingCurrencyCollectionResponse) GetValue()([]BookingCurrencyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BookingCurrencyCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BookingCurrencyCollectionResponse) SetValue(value []BookingCurrencyable)() {
     m.value = value
 }

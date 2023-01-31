@@ -8,7 +8,7 @@ import (
 // EdiscoveryReviewTagCollectionResponse 
 type EdiscoveryReviewTagCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryReviewTagable
 }
 // NewEdiscoveryReviewTagCollectionResponse instantiates a new EdiscoveryReviewTagCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryReviewTagCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryReviewTagCollectionResponse) GetValue()([]EdiscoveryReviewTagable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryReviewTagCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryReviewTagCollectionResponse) SetValue(value []EdiscoveryReviewTagable)() {
     m.value = value
 }

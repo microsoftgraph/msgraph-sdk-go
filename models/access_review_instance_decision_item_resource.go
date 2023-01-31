@@ -12,7 +12,7 @@ type AccessReviewInstanceDecisionItemResource struct {
     displayName *string
     // Identifier of the resource
     id *string
-    // The OdataType property
+    // 
     odataType *string
     // Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
     type_escaped *string
@@ -107,7 +107,7 @@ func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[s
 func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewInstanceDecisionItemResource) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *AccessReviewInstanceDecisionItemResource) SetDisplayName(value *string)
 func (m *AccessReviewInstanceDecisionItemResource) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewInstanceDecisionItemResource) SetOdataType(value *string)() {
     m.odataType = value
 }

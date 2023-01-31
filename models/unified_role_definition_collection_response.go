@@ -7,7 +7,7 @@ import (
 // UnifiedRoleDefinitionCollectionResponse 
 type UnifiedRoleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleDefinitionable
 }
 // NewUnifiedRoleDefinitionCollectionResponse instantiates a new UnifiedRoleDefinitionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleDefinitionCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleDefinitionCollectionResponse) GetValue()([]UnifiedRoleDefinitionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleDefinitionCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleDefinitionCollectionResponse) SetValue(value []UnifiedRoleDefinitionable)() {
     m.value = value
 }

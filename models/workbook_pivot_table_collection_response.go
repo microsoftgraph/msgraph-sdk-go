@@ -7,7 +7,7 @@ import (
 // WorkbookPivotTableCollectionResponse 
 type WorkbookPivotTableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookPivotTableable
 }
 // NewWorkbookPivotTableCollectionResponse instantiates a new WorkbookPivotTableCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookPivotTableCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookPivotTableCollectionResponse) GetValue()([]WorkbookPivotTableable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookPivotTableCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookPivotTableCollectionResponse) SetValue(value []WorkbookPivotTableable)() {
     m.value = value
 }

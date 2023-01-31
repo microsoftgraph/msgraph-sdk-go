@@ -7,13 +7,13 @@ import (
 // Security 
 type Security struct {
     Entity
-    // The alerts property
+    // 
     alerts []Alertable
-    // The attackSimulation property
+    // 
     attackSimulation AttackSimulationRootable
-    // The secureScoreControlProfiles property
+    // 
     secureScoreControlProfiles []SecureScoreControlProfileable
-    // The secureScores property
+    // 
     secureScores []SecureScoreable
 }
 // NewSecurity instantiates a new Security and sets the default values.
@@ -27,11 +27,11 @@ func NewSecurity()(*Security) {
 func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurity(), nil
 }
-// GetAlerts gets the alerts property value. The alerts property
+// GetAlerts gets the alerts property value. 
 func (m *Security) GetAlerts()([]Alertable) {
     return m.alerts
 }
-// GetAttackSimulation gets the attackSimulation property value. The attackSimulation property
+// GetAttackSimulation gets the attackSimulation property value. 
 func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
     return m.attackSimulation
 }
@@ -92,11 +92,11 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
+// GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. 
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
     return m.secureScoreControlProfiles
 }
-// GetSecureScores gets the secureScores property value. The secureScores property
+// GetSecureScores gets the secureScores property value. 
 func (m *Security) GetSecureScores()([]SecureScoreable) {
     return m.secureScores
 }
@@ -144,19 +144,19 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAlerts sets the alerts property value. The alerts property
+// SetAlerts sets the alerts property value. 
 func (m *Security) SetAlerts(value []Alertable)() {
     m.alerts = value
 }
-// SetAttackSimulation sets the attackSimulation property value. The attackSimulation property
+// SetAttackSimulation sets the attackSimulation property value. 
 func (m *Security) SetAttackSimulation(value AttackSimulationRootable)() {
     m.attackSimulation = value
 }
-// SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
+// SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. 
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
     m.secureScoreControlProfiles = value
 }
-// SetSecureScores sets the secureScores property value. The secureScores property
+// SetSecureScores sets the secureScores property value. 
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
     m.secureScores = value
 }

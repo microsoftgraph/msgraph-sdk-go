@@ -76,7 +76,7 @@ type ManagedDevice struct {
     managedDeviceName *string
     // Owner type of device.
     managedDeviceOwnerType *ManagedDeviceOwnerType
-    // The managementAgent property
+    // 
     managementAgent *ManagementAgentType
     // Reports device management certificate expiration date. This property is read-only.
     managementCertificateExpirationDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -861,7 +861,7 @@ func (m *ManagedDevice) GetManagedDeviceName()(*string) {
 func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
     return m.managedDeviceOwnerType
 }
-// GetManagementAgent gets the managementAgent property value. The managementAgent property
+// GetManagementAgent gets the managementAgent property value. 
 func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     return m.managementAgent
 }
@@ -1201,7 +1201,7 @@ func (m *ManagedDevice) SetManagedDeviceName(value *string)() {
 func (m *ManagedDevice) SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)() {
     m.managedDeviceOwnerType = value
 }
-// SetManagementAgent sets the managementAgent property value. The managementAgent property
+// SetManagementAgent sets the managementAgent property value. 
 func (m *ManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     m.managementAgent = value
 }

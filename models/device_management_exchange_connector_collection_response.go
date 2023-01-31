@@ -7,7 +7,7 @@ import (
 // DeviceManagementExchangeConnectorCollectionResponse 
 type DeviceManagementExchangeConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceManagementExchangeConnectorable
 }
 // NewDeviceManagementExchangeConnectorCollectionResponse instantiates a new DeviceManagementExchangeConnectorCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceManagementExchangeConnectorCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceManagementExchangeConnectorCollectionResponse) GetValue()([]DeviceManagementExchangeConnectorable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceManagementExchangeConnectorCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceManagementExchangeConnectorCollectionResponse) SetValue(value []DeviceManagementExchangeConnectorable)() {
     m.value = value
 }

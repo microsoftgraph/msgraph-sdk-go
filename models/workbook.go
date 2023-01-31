@@ -7,11 +7,11 @@ import (
 // Workbook 
 type Workbook struct {
     Entity
-    // The application property
+    // 
     application WorkbookApplicationable
-    // The comments property
+    // 
     comments []WorkbookCommentable
-    // The functions property
+    // 
     functions WorkbookFunctionsable
     // Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
     names []WorkbookNamedItemable
@@ -33,11 +33,11 @@ func NewWorkbook()(*Workbook) {
 func CreateWorkbookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbook(), nil
 }
-// GetApplication gets the application property value. The application property
+// GetApplication gets the application property value. 
 func (m *Workbook) GetApplication()(WorkbookApplicationable) {
     return m.application
 }
-// GetComments gets the comments property value. The comments property
+// GetComments gets the comments property value. 
 func (m *Workbook) GetComments()([]WorkbookCommentable) {
     return m.comments
 }
@@ -136,7 +136,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetFunctions gets the functions property value. The functions property
+// GetFunctions gets the functions property value. 
 func (m *Workbook) GetFunctions()(WorkbookFunctionsable) {
     return m.functions
 }
@@ -226,15 +226,15 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetApplication sets the application property value. The application property
+// SetApplication sets the application property value. 
 func (m *Workbook) SetApplication(value WorkbookApplicationable)() {
     m.application = value
 }
-// SetComments sets the comments property value. The comments property
+// SetComments sets the comments property value. 
 func (m *Workbook) SetComments(value []WorkbookCommentable)() {
     m.comments = value
 }
-// SetFunctions sets the functions property value. The functions property
+// SetFunctions sets the functions property value. 
 func (m *Workbook) SetFunctions(value WorkbookFunctionsable)() {
     m.functions = value
 }

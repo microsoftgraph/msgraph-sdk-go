@@ -7,7 +7,7 @@ import (
 // MicrosoftStoreForBusinessApp 
 type MicrosoftStoreForBusinessApp struct {
     MobileApp
-    // The licenseType property
+    // 
     licenseType *MicrosoftStoreForBusinessLicenseType
     // The app package identifier
     packageIdentityName *string
@@ -86,7 +86,7 @@ func (m *MicrosoftStoreForBusinessApp) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetLicenseType gets the licenseType property value. The licenseType property
+// GetLicenseType gets the licenseType property value. 
 func (m *MicrosoftStoreForBusinessApp) GetLicenseType()(*MicrosoftStoreForBusinessLicenseType) {
     return m.licenseType
 }
@@ -145,7 +145,7 @@ func (m *MicrosoftStoreForBusinessApp) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetLicenseType sets the licenseType property value. The licenseType property
+// SetLicenseType sets the licenseType property value. 
 func (m *MicrosoftStoreForBusinessApp) SetLicenseType(value *MicrosoftStoreForBusinessLicenseType)() {
     m.licenseType = value
 }

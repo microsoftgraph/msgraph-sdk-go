@@ -7,7 +7,7 @@ import (
 // InferenceClassificationOverrideCollectionResponse 
 type InferenceClassificationOverrideCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []InferenceClassificationOverrideable
 }
 // NewInferenceClassificationOverrideCollectionResponse instantiates a new InferenceClassificationOverrideCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *InferenceClassificationOverrideCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *InferenceClassificationOverrideCollectionResponse) GetValue()([]InferenceClassificationOverrideable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *InferenceClassificationOverrideCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *InferenceClassificationOverrideCollectionResponse) SetValue(value []InferenceClassificationOverrideable)() {
     m.value = value
 }

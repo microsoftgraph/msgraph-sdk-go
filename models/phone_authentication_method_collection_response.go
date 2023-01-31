@@ -7,7 +7,7 @@ import (
 // PhoneAuthenticationMethodCollectionResponse 
 type PhoneAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PhoneAuthenticationMethodable
 }
 // NewPhoneAuthenticationMethodCollectionResponse instantiates a new PhoneAuthenticationMethodCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PhoneAuthenticationMethodCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PhoneAuthenticationMethodCollectionResponse) GetValue()([]PhoneAuthenticationMethodable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PhoneAuthenticationMethodCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PhoneAuthenticationMethodCollectionResponse) SetValue(value []PhoneAuthenticationMethodable)() {
     m.value = value
 }

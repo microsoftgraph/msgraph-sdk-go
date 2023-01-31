@@ -7,7 +7,7 @@ import (
 // BookingReminderCollectionResponse 
 type BookingReminderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BookingReminderable
 }
 // NewBookingReminderCollectionResponse instantiates a new BookingReminderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BookingReminderCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BookingReminderCollectionResponse) GetValue()([]BookingReminderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BookingReminderCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BookingReminderCollectionResponse) SetValue(value []BookingReminderable)() {
     m.value = value
 }

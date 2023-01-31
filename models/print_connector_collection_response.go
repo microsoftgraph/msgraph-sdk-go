@@ -7,7 +7,7 @@ import (
 // PrintConnectorCollectionResponse 
 type PrintConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PrintConnectorable
 }
 // NewPrintConnectorCollectionResponse instantiates a new PrintConnectorCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PrintConnectorCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PrintConnectorCollectionResponse) GetValue()([]PrintConnectorable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PrintConnectorCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PrintConnectorCollectionResponse) SetValue(value []PrintConnectorable)() {
     m.value = value
 }

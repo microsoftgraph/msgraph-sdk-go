@@ -23,11 +23,11 @@ type ArchivedPrintJob struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The archived print job's GUID. Read-only.
     id *string
-    // The OdataType property
+    // 
     odataType *string
     // The printer ID that the job was queued for. Read-only.
     printerId *string
-    // The processingState property
+    // 
     processingState *PrintJobProcessingState
 }
 // NewArchivedPrintJob instantiates a new archivedPrintJob and sets the default values.
@@ -178,7 +178,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *ArchivedPrintJob) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ArchivedPrintJob) GetOdataType()(*string) {
     return m.odataType
 }
@@ -186,7 +186,7 @@ func (m *ArchivedPrintJob) GetOdataType()(*string) {
 func (m *ArchivedPrintJob) GetPrinterId()(*string) {
     return m.printerId
 }
-// GetProcessingState gets the processingState property value. The processingState property
+// GetProcessingState gets the processingState property value. 
 func (m *ArchivedPrintJob) GetProcessingState()(*PrintJobProcessingState) {
     return m.processingState
 }
@@ -293,7 +293,7 @@ func (m *ArchivedPrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3
 func (m *ArchivedPrintJob) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ArchivedPrintJob) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -301,7 +301,7 @@ func (m *ArchivedPrintJob) SetOdataType(value *string)() {
 func (m *ArchivedPrintJob) SetPrinterId(value *string)() {
     m.printerId = value
 }
-// SetProcessingState sets the processingState property value. The processingState property
+// SetProcessingState sets the processingState property value. 
 func (m *ArchivedPrintJob) SetProcessingState(value *PrintJobProcessingState)() {
     m.processingState = value
 }

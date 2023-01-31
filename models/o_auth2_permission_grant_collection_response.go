@@ -7,7 +7,7 @@ import (
 // OAuth2PermissionGrantCollectionResponse 
 type OAuth2PermissionGrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []OAuth2PermissionGrantable
 }
 // NewOAuth2PermissionGrantCollectionResponse instantiates a new OAuth2PermissionGrantCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OAuth2PermissionGrantCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OAuth2PermissionGrantCollectionResponse) GetValue()([]OAuth2PermissionGrantable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OAuth2PermissionGrantCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OAuth2PermissionGrantCollectionResponse) SetValue(value []OAuth2PermissionGrantable)() {
     m.value = value
 }

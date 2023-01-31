@@ -10,7 +10,7 @@ type ChannelIdentity struct {
     additionalData map[string]any
     // The identity of the channel in which the message was posted.
     channelId *string
-    // The OdataType property
+    // 
     odataType *string
     // The identity of the team in which the message was posted.
     teamId *string
@@ -69,7 +69,7 @@ func (m *ChannelIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChannelIdentity) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *ChannelIdentity) SetAdditionalData(value map[string]any)() {
 func (m *ChannelIdentity) SetChannelId(value *string)() {
     m.channelId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChannelIdentity) SetOdataType(value *string)() {
     m.odataType = value
 }

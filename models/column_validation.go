@@ -14,7 +14,7 @@ type ColumnValidation struct {
     descriptions []DisplayNameLocalizationable
     // The formula to validate column value. For examples, see Examples of common formulas in lists.
     formula *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewColumnValidation instantiates a new columnValidation and sets the default values.
@@ -93,7 +93,7 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *ColumnValidation) GetFormula()(*string) {
     return m.formula
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ColumnValidation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -151,7 +151,7 @@ func (m *ColumnValidation) SetDescriptions(value []DisplayNameLocalizationable)(
 func (m *ColumnValidation) SetFormula(value *string)() {
     m.formula = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ColumnValidation) SetOdataType(value *string)() {
     m.odataType = value
 }

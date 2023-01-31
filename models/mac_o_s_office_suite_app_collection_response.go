@@ -7,7 +7,7 @@ import (
 // MacOSOfficeSuiteAppCollectionResponse 
 type MacOSOfficeSuiteAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MacOSOfficeSuiteAppable
 }
 // NewMacOSOfficeSuiteAppCollectionResponse instantiates a new MacOSOfficeSuiteAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MacOSOfficeSuiteAppCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MacOSOfficeSuiteAppCollectionResponse) GetValue()([]MacOSOfficeSuiteAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MacOSOfficeSuiteAppCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MacOSOfficeSuiteAppCollectionResponse) SetValue(value []MacOSOfficeSuiteAppable)() {
     m.value = value
 }

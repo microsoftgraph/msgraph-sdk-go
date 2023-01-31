@@ -7,11 +7,11 @@ import (
 // AudioRoutingGroup 
 type AudioRoutingGroup struct {
     Entity
-    // The receivers property
+    // 
     receivers []string
-    // The routingMode property
+    // 
     routingMode *RoutingMode
-    // The sources property
+    // 
     sources []string
 }
 // NewAudioRoutingGroup instantiates a new audioRoutingGroup and sets the default values.
@@ -68,15 +68,15 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetReceivers gets the receivers property value. The receivers property
+// GetReceivers gets the receivers property value. 
 func (m *AudioRoutingGroup) GetReceivers()([]string) {
     return m.receivers
 }
-// GetRoutingMode gets the routingMode property value. The routingMode property
+// GetRoutingMode gets the routingMode property value. 
 func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
     return m.routingMode
 }
-// GetSources gets the sources property value. The sources property
+// GetSources gets the sources property value. 
 func (m *AudioRoutingGroup) GetSources()([]string) {
     return m.sources
 }
@@ -107,15 +107,15 @@ func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetReceivers sets the receivers property value. The receivers property
+// SetReceivers sets the receivers property value. 
 func (m *AudioRoutingGroup) SetReceivers(value []string)() {
     m.receivers = value
 }
-// SetRoutingMode sets the routingMode property value. The routingMode property
+// SetRoutingMode sets the routingMode property value. 
 func (m *AudioRoutingGroup) SetRoutingMode(value *RoutingMode)() {
     m.routingMode = value
 }
-// SetSources sets the sources property value. The sources property
+// SetSources sets the sources property value. 
 func (m *AudioRoutingGroup) SetSources(value []string)() {
     m.sources = value
 }

@@ -7,7 +7,7 @@ import (
 // OpenTypeExtension 
 type OpenTypeExtension struct {
     Extension
-    // A unique text identifier for an open type data extension. Required.
+    // A unique text identifier for an open type data extension. Optional.
     extensionName *string
 }
 // NewOpenTypeExtension instantiates a new OpenTypeExtension and sets the default values.
@@ -23,7 +23,7 @@ func NewOpenTypeExtension()(*OpenTypeExtension) {
 func CreateOpenTypeExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenTypeExtension(), nil
 }
-// GetExtensionName gets the extensionName property value. A unique text identifier for an open type data extension. Required.
+// GetExtensionName gets the extensionName property value. A unique text identifier for an open type data extension. Optional.
 func (m *OpenTypeExtension) GetExtensionName()(*string) {
     return m.extensionName
 }
@@ -56,7 +56,7 @@ func (m *OpenTypeExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetExtensionName sets the extensionName property value. A unique text identifier for an open type data extension. Required.
+// SetExtensionName sets the extensionName property value. A unique text identifier for an open type data extension. Optional.
 func (m *OpenTypeExtension) SetExtensionName(value *string)() {
     m.extensionName = value
 }

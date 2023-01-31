@@ -7,7 +7,7 @@ import (
 // AccessReviewHistoryInstanceCollectionResponse 
 type AccessReviewHistoryInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessReviewHistoryInstanceable
 }
 // NewAccessReviewHistoryInstanceCollectionResponse instantiates a new AccessReviewHistoryInstanceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessReviewHistoryInstanceCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessReviewHistoryInstanceCollectionResponse) GetValue()([]AccessReviewHistoryInstanceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessReviewHistoryInstanceCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessReviewHistoryInstanceCollectionResponse) SetValue(value []AccessReviewHistoryInstanceable)() {
     m.value = value
 }

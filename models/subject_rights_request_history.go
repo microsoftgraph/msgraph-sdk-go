@@ -13,7 +13,7 @@ type SubjectRightsRequestHistory struct {
     changedBy IdentitySetable
     // Data and time when the entity was changed.
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
     stage *SubjectRightsRequestStage
@@ -110,7 +110,7 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
     return m.odataType
 }
@@ -186,7 +186,7 @@ func (m *SubjectRightsRequestHistory) SetChangedBy(value IdentitySetable)() {
 func (m *SubjectRightsRequestHistory) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.eventDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SubjectRightsRequestHistory) SetOdataType(value *string)() {
     m.odataType = value
 }

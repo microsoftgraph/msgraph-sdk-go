@@ -16,9 +16,9 @@ type TeamsAsyncOperation struct {
     error OperationErrorable
     // Time when the async operation was last updated.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The operationType property
+    // 
     operationType *TeamsAsyncOperationType
-    // The status property
+    // 
     status *TeamsAsyncOperationStatus
     // The ID of the object that's created or modified as result of this async operation, typically a team.
     targetResourceId *string
@@ -137,11 +137,11 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *TeamsAsyncOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastActionDateTime
 }
-// GetOperationType gets the operationType property value. The operationType property
+// GetOperationType gets the operationType property value. 
 func (m *TeamsAsyncOperation) GetOperationType()(*TeamsAsyncOperationType) {
     return m.operationType
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *TeamsAsyncOperation) GetStatus()(*TeamsAsyncOperationStatus) {
     return m.status
 }
@@ -227,11 +227,11 @@ func (m *TeamsAsyncOperation) SetError(value OperationErrorable)() {
 func (m *TeamsAsyncOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastActionDateTime = value
 }
-// SetOperationType sets the operationType property value. The operationType property
+// SetOperationType sets the operationType property value. 
 func (m *TeamsAsyncOperation) SetOperationType(value *TeamsAsyncOperationType)() {
     m.operationType = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *TeamsAsyncOperation) SetStatus(value *TeamsAsyncOperationStatus)() {
     m.status = value
 }

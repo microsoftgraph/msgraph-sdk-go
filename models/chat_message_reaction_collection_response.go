@@ -7,7 +7,7 @@ import (
 // ChatMessageReactionCollectionResponse 
 type ChatMessageReactionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ChatMessageReactionable
 }
 // NewChatMessageReactionCollectionResponse instantiates a new ChatMessageReactionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ChatMessageReactionCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ChatMessageReactionCollectionResponse) GetValue()([]ChatMessageReactionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ChatMessageReactionCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ChatMessageReactionCollectionResponse) SetValue(value []ChatMessageReactionable)() {
     m.value = value
 }

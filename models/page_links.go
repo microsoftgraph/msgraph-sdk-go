@@ -8,7 +8,7 @@ import (
 type PageLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Opens the page in the OneNote native client if it's installed.
     oneNoteClientUrl ExternalLinkable
@@ -65,7 +65,7 @@ func (m *PageLinks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PageLinks) GetOdataType()(*string) {
     return m.odataType
 }
@@ -109,7 +109,7 @@ func (m *PageLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *PageLinks) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PageLinks) SetOdataType(value *string)() {
     m.odataType = value
 }

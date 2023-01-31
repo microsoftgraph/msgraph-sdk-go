@@ -10,7 +10,7 @@ type IntegerRange struct {
     additionalData map[string]any
     // The inclusive upper bound of the integer range.
     end *int64
-    // The OdataType property
+    // 
     odataType *string
     // The inclusive lower bound of the integer range.
     start *int64
@@ -69,7 +69,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IntegerRange) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *IntegerRange) SetAdditionalData(value map[string]any)() {
 func (m *IntegerRange) SetEnd(value *int64)() {
     m.end = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IntegerRange) SetOdataType(value *string)() {
     m.odataType = value
 }

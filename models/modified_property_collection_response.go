@@ -7,7 +7,7 @@ import (
 // ModifiedPropertyCollectionResponse 
 type ModifiedPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ModifiedPropertyable
 }
 // NewModifiedPropertyCollectionResponse instantiates a new ModifiedPropertyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ModifiedPropertyCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ModifiedPropertyCollectionResponse) GetValue()([]ModifiedPropertyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ModifiedPropertyCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ModifiedPropertyCollectionResponse) SetValue(value []ModifiedPropertyable)() {
     m.value = value
 }

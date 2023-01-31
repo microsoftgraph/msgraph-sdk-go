@@ -7,7 +7,7 @@ import (
 // StartHoldMusicOperationCollectionResponse 
 type StartHoldMusicOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []StartHoldMusicOperationable
 }
 // NewStartHoldMusicOperationCollectionResponse instantiates a new StartHoldMusicOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *StartHoldMusicOperationCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *StartHoldMusicOperationCollectionResponse) GetValue()([]StartHoldMusicOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *StartHoldMusicOperationCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *StartHoldMusicOperationCollectionResponse) SetValue(value []StartHoldMusicOperationable)() {
     m.value = value
 }

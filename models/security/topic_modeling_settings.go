@@ -14,7 +14,7 @@ type TopicModelingSettings struct {
     ignoreNumbers *bool
     // Indicates whether themes model is enabled for the case.
     isEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
     topicCount *int32
@@ -101,7 +101,7 @@ func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
 func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TopicModelingSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TopicModelingSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

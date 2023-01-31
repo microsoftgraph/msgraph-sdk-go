@@ -9,7 +9,7 @@ type AuthenticationMethodTarget struct {
     Entity
     // Determines if the user is enforced to register the authentication method.
     isRegistrationRequired *bool
-    // The targetType property
+    // 
     targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodTarget instantiates a new authenticationMethodTarget and sets the default values.
@@ -70,7 +70,7 @@ func (m *AuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i87
 func (m *AuthenticationMethodTarget) GetIsRegistrationRequired()(*bool) {
     return m.isRegistrationRequired
 }
-// GetTargetType gets the targetType property value. The targetType property
+// GetTargetType gets the targetType property value. 
 func (m *AuthenticationMethodTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     return m.targetType
 }
@@ -99,7 +99,7 @@ func (m *AuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896388a3
 func (m *AuthenticationMethodTarget) SetIsRegistrationRequired(value *bool)() {
     m.isRegistrationRequired = value
 }
-// SetTargetType sets the targetType property value. The targetType property
+// SetTargetType sets the targetType property value. 
 func (m *AuthenticationMethodTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     m.targetType = value
 }

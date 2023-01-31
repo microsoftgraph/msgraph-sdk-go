@@ -9,21 +9,21 @@ import (
 type AlertHistoryState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The appId property
+    // 
     appId *string
-    // The assignedTo property
+    // 
     assignedTo *string
-    // The comments property
+    // 
     comments []string
-    // The feedback property
+    // 
     feedback *AlertFeedback
-    // The OdataType property
+    // 
     odataType *string
-    // The status property
+    // 
     status *AlertStatus
-    // The updatedDateTime property
+    // 
     updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The user property
+    // 
     user *string
 }
 // NewAlertHistoryState instantiates a new alertHistoryState and sets the default values.
@@ -41,19 +41,19 @@ func CreateAlertHistoryStateFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *AlertHistoryState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. 
 func (m *AlertHistoryState) GetAppId()(*string) {
     return m.appId
 }
-// GetAssignedTo gets the assignedTo property value. The assignedTo property
+// GetAssignedTo gets the assignedTo property value. 
 func (m *AlertHistoryState) GetAssignedTo()(*string) {
     return m.assignedTo
 }
-// GetComments gets the comments property value. The comments property
+// GetComments gets the comments property value. 
 func (m *AlertHistoryState) GetComments()([]string) {
     return m.comments
 }
-// GetFeedback gets the feedback property value. The feedback property
+// GetFeedback gets the feedback property value. 
 func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
     return m.feedback
 }
@@ -146,19 +146,19 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlertHistoryState) GetOdataType()(*string) {
     return m.odataType
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
     return m.status
 }
-// GetUpdatedDateTime gets the updatedDateTime property value. The updatedDateTime property
+// GetUpdatedDateTime gets the updatedDateTime property value. 
 func (m *AlertHistoryState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updatedDateTime
 }
-// GetUser gets the user property value. The user property
+// GetUser gets the user property value. 
 func (m *AlertHistoryState) GetUser()(*string) {
     return m.user
 }
@@ -226,35 +226,35 @@ func (m *AlertHistoryState) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *AlertHistoryState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. 
 func (m *AlertHistoryState) SetAppId(value *string)() {
     m.appId = value
 }
-// SetAssignedTo sets the assignedTo property value. The assignedTo property
+// SetAssignedTo sets the assignedTo property value. 
 func (m *AlertHistoryState) SetAssignedTo(value *string)() {
     m.assignedTo = value
 }
-// SetComments sets the comments property value. The comments property
+// SetComments sets the comments property value. 
 func (m *AlertHistoryState) SetComments(value []string)() {
     m.comments = value
 }
-// SetFeedback sets the feedback property value. The feedback property
+// SetFeedback sets the feedback property value. 
 func (m *AlertHistoryState) SetFeedback(value *AlertFeedback)() {
     m.feedback = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlertHistoryState) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *AlertHistoryState) SetStatus(value *AlertStatus)() {
     m.status = value
 }
-// SetUpdatedDateTime sets the updatedDateTime property value. The updatedDateTime property
+// SetUpdatedDateTime sets the updatedDateTime property value. 
 func (m *AlertHistoryState) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updatedDateTime = value
 }
-// SetUser sets the user property value. The user property
+// SetUser sets the user property value. 
 func (m *AlertHistoryState) SetUser(value *string)() {
     m.user = value
 }

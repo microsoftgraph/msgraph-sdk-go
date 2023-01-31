@@ -7,7 +7,7 @@ import (
 // Win32LobAppCollectionResponse 
 type Win32LobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Win32LobAppable
 }
 // NewWin32LobAppCollectionResponse instantiates a new Win32LobAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Win32LobAppCollectionResponse) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Win32LobAppCollectionResponse) GetValue()([]Win32LobAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Win32LobAppCollectionResponse) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Win32LobAppCollectionResponse) SetValue(value []Win32LobAppable)() {
     m.value = value
 }

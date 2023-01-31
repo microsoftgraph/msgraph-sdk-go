@@ -7,7 +7,7 @@ import (
 // UpdateRecordingStatusOperationCollectionResponse 
 type UpdateRecordingStatusOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UpdateRecordingStatusOperationable
 }
 // NewUpdateRecordingStatusOperationCollectionResponse instantiates a new UpdateRecordingStatusOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UpdateRecordingStatusOperationCollectionResponse) GetFieldDeserializers
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UpdateRecordingStatusOperationCollectionResponse) GetValue()([]UpdateRecordingStatusOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UpdateRecordingStatusOperationCollectionResponse) Serialize(writer i878
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UpdateRecordingStatusOperationCollectionResponse) SetValue(value []UpdateRecordingStatusOperationable)() {
     m.value = value
 }

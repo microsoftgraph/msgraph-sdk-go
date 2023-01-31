@@ -7,7 +7,7 @@ import (
 // AgreementFileVersionCollectionResponse 
 type AgreementFileVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AgreementFileVersionable
 }
 // NewAgreementFileVersionCollectionResponse instantiates a new AgreementFileVersionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AgreementFileVersionCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AgreementFileVersionCollectionResponse) GetValue()([]AgreementFileVersionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AgreementFileVersionCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AgreementFileVersionCollectionResponse) SetValue(value []AgreementFileVersionable)() {
     m.value = value
 }

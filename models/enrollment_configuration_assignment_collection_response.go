@@ -7,7 +7,7 @@ import (
 // EnrollmentConfigurationAssignmentCollectionResponse 
 type EnrollmentConfigurationAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EnrollmentConfigurationAssignmentable
 }
 // NewEnrollmentConfigurationAssignmentCollectionResponse instantiates a new EnrollmentConfigurationAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EnrollmentConfigurationAssignmentCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EnrollmentConfigurationAssignmentCollectionResponse) GetValue()([]EnrollmentConfigurationAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EnrollmentConfigurationAssignmentCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EnrollmentConfigurationAssignmentCollectionResponse) SetValue(value []EnrollmentConfigurationAssignmentable)() {
     m.value = value
 }

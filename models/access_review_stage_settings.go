@@ -16,7 +16,7 @@ type AccessReviewStageSettings struct {
     durationInDays *int32
     // If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
     fallbackReviewers []AccessReviewReviewerScopeable
-    // The OdataType property
+    // 
     odataType *string
     // Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
     recommendationsEnabled *bool
@@ -157,7 +157,7 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewStageSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -259,7 +259,7 @@ func (m *AccessReviewStageSettings) SetDurationInDays(value *int32)() {
 func (m *AccessReviewStageSettings) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     m.fallbackReviewers = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewStageSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -8,13 +8,13 @@ import (
 type AvailabilityItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The endDateTime property
+    // 
     endDateTime DateTimeTimeZoneable
-    // The OdataType property
+    // 
     odataType *string
     // Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
     serviceId *string
-    // The startDateTime property
+    // 
     startDateTime DateTimeTimeZoneable
     // The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
     status *BookingsAvailabilityStatus
@@ -34,7 +34,7 @@ func CreateAvailabilityItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *AvailabilityItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. 
 func (m *AvailabilityItem) GetEndDateTime()(DateTimeTimeZoneable) {
     return m.endDateTime
 }
@@ -93,7 +93,7 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AvailabilityItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -101,7 +101,7 @@ func (m *AvailabilityItem) GetOdataType()(*string) {
 func (m *AvailabilityItem) GetServiceId()(*string) {
     return m.serviceId
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. 
 func (m *AvailabilityItem) GetStartDateTime()(DateTimeTimeZoneable) {
     return m.startDateTime
 }
@@ -154,11 +154,11 @@ func (m *AvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *AvailabilityItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. 
 func (m *AvailabilityItem) SetEndDateTime(value DateTimeTimeZoneable)() {
     m.endDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AvailabilityItem) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -166,7 +166,7 @@ func (m *AvailabilityItem) SetOdataType(value *string)() {
 func (m *AvailabilityItem) SetServiceId(value *string)() {
     m.serviceId = value
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. 
 func (m *AvailabilityItem) SetStartDateTime(value DateTimeTimeZoneable)() {
     m.startDateTime = value
 }

@@ -7,7 +7,7 @@ import (
 // ProvisioningObjectSummaryCollectionResponse 
 type ProvisioningObjectSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ProvisioningObjectSummaryable
 }
 // NewProvisioningObjectSummaryCollectionResponse instantiates a new ProvisioningObjectSummaryCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ProvisioningObjectSummaryCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ProvisioningObjectSummaryCollectionResponse) GetValue()([]ProvisioningObjectSummaryable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ProvisioningObjectSummaryCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ProvisioningObjectSummaryCollectionResponse) SetValue(value []ProvisioningObjectSummaryable)() {
     m.value = value
 }

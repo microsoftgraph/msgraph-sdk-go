@@ -14,7 +14,7 @@ type ConditionalAccessSessionControls struct {
     cloudAppSecurity CloudAppSecuritySessionControlable
     // Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
     disableResilienceDefaults *bool
-    // The OdataType property
+    // 
     odataType *string
     // Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
     persistentBrowser PersistentBrowserSessionControlable
@@ -113,7 +113,7 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessSessionControls) GetOdataType()(*string) {
     return m.odataType
 }
@@ -187,7 +187,7 @@ func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value CloudAppSec
 func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *bool)() {
     m.disableResilienceDefaults = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessSessionControls) SetOdataType(value *string)() {
     m.odataType = value
 }

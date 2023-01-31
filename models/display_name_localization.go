@@ -12,7 +12,7 @@ type DisplayNameLocalization struct {
     displayName *string
     // Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
     languageTag *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewDisplayNameLocalization instantiates a new displayNameLocalization and sets the default values.
@@ -73,7 +73,7 @@ func (m *DisplayNameLocalization) GetFieldDeserializers()(map[string]func(i878a8
 func (m *DisplayNameLocalization) GetLanguageTag()(*string) {
     return m.languageTag
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DisplayNameLocalization) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *DisplayNameLocalization) SetDisplayName(value *string)() {
 func (m *DisplayNameLocalization) SetLanguageTag(value *string)() {
     m.languageTag = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DisplayNameLocalization) SetOdataType(value *string)() {
     m.odataType = value
 }

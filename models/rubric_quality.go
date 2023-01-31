@@ -14,7 +14,7 @@ type RubricQuality struct {
     description EducationItemBodyable
     // The name of this rubric quality.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // The ID of this resource.
     qualityId *string
@@ -117,7 +117,7 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RubricQuality) GetOdataType()(*string) {
     return m.odataType
 }
@@ -195,7 +195,7 @@ func (m *RubricQuality) SetDescription(value EducationItemBodyable)() {
 func (m *RubricQuality) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RubricQuality) SetOdataType(value *string)() {
     m.odataType = value
 }

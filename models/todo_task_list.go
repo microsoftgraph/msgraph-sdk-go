@@ -17,7 +17,7 @@ type TodoTaskList struct {
     isShared *bool
     // The tasks in this task list. Read-only. Nullable.
     tasks []TodoTaskable
-    // The wellknownListName property
+    // 
     wellknownListName *WellknownListName
 }
 // NewTodoTaskList instantiates a new todoTaskList and sets the default values.
@@ -124,7 +124,7 @@ func (m *TodoTaskList) GetIsShared()(*bool) {
 func (m *TodoTaskList) GetTasks()([]TodoTaskable) {
     return m.tasks
 }
-// GetWellknownListName gets the wellknownListName property value. The wellknownListName property
+// GetWellknownListName gets the wellknownListName property value. 
 func (m *TodoTaskList) GetWellknownListName()(*WellknownListName) {
     return m.wellknownListName
 }
@@ -201,7 +201,7 @@ func (m *TodoTaskList) SetIsShared(value *bool)() {
 func (m *TodoTaskList) SetTasks(value []TodoTaskable)() {
     m.tasks = value
 }
-// SetWellknownListName sets the wellknownListName property value. The wellknownListName property
+// SetWellknownListName sets the wellknownListName property value. 
 func (m *TodoTaskList) SetWellknownListName(value *WellknownListName)() {
     m.wellknownListName = value
 }

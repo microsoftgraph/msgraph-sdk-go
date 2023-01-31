@@ -12,7 +12,7 @@ type Website struct {
     address *string
     // The display name of the web site.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // The possible values are: other, home, work, blog, profile.
     type_escaped *WebsiteType
@@ -85,7 +85,7 @@ func (m *Website) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Website) GetOdataType()(*string) {
     return m.odataType
 }
@@ -140,7 +140,7 @@ func (m *Website) SetAddress(value *string)() {
 func (m *Website) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Website) SetOdataType(value *string)() {
     m.odataType = value
 }

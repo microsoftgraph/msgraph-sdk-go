@@ -12,7 +12,7 @@ type ComplianceInformation struct {
     certificationControls []CertificationControlable
     // Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
     certificationName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewComplianceInformation instantiates a new complianceInformation and sets the default values.
@@ -77,7 +77,7 @@ func (m *ComplianceInformation) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ComplianceInformation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *ComplianceInformation) SetCertificationControls(value []CertificationCo
 func (m *ComplianceInformation) SetCertificationName(value *string)() {
     m.certificationName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ComplianceInformation) SetOdataType(value *string)() {
     m.odataType = value
 }

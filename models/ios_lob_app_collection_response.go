@@ -7,7 +7,7 @@ import (
 // IosLobAppCollectionResponse 
 type IosLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IosLobAppable
 }
 // NewIosLobAppCollectionResponse instantiates a new IosLobAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IosLobAppCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IosLobAppCollectionResponse) GetValue()([]IosLobAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IosLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IosLobAppCollectionResponse) SetValue(value []IosLobAppable)() {
     m.value = value
 }

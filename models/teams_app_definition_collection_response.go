@@ -7,7 +7,7 @@ import (
 // TeamsAppDefinitionCollectionResponse 
 type TeamsAppDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TeamsAppDefinitionable
 }
 // NewTeamsAppDefinitionCollectionResponse instantiates a new TeamsAppDefinitionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TeamsAppDefinitionCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TeamsAppDefinitionCollectionResponse) GetValue()([]TeamsAppDefinitionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TeamsAppDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TeamsAppDefinitionCollectionResponse) SetValue(value []TeamsAppDefinitionable)() {
     m.value = value
 }

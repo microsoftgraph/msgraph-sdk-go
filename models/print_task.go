@@ -7,13 +7,13 @@ import (
 // PrintTask 
 type PrintTask struct {
     Entity
-    // The definition property
+    // 
     definition PrintTaskDefinitionable
     // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
     parentUrl *string
-    // The status property
+    // 
     status PrintTaskStatusable
-    // The trigger property
+    // 
     trigger PrintTaskTriggerable
 }
 // NewPrintTask instantiates a new printTask and sets the default values.
@@ -27,7 +27,7 @@ func NewPrintTask()(*PrintTask) {
 func CreatePrintTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintTask(), nil
 }
-// GetDefinition gets the definition property value. The definition property
+// GetDefinition gets the definition property value. 
 func (m *PrintTask) GetDefinition()(PrintTaskDefinitionable) {
     return m.definition
 }
@@ -80,11 +80,11 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *PrintTask) GetParentUrl()(*string) {
     return m.parentUrl
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *PrintTask) GetStatus()(PrintTaskStatusable) {
     return m.status
 }
-// GetTrigger gets the trigger property value. The trigger property
+// GetTrigger gets the trigger property value. 
 func (m *PrintTask) GetTrigger()(PrintTaskTriggerable) {
     return m.trigger
 }
@@ -120,7 +120,7 @@ func (m *PrintTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetDefinition sets the definition property value. The definition property
+// SetDefinition sets the definition property value. 
 func (m *PrintTask) SetDefinition(value PrintTaskDefinitionable)() {
     m.definition = value
 }
@@ -128,11 +128,11 @@ func (m *PrintTask) SetDefinition(value PrintTaskDefinitionable)() {
 func (m *PrintTask) SetParentUrl(value *string)() {
     m.parentUrl = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *PrintTask) SetStatus(value PrintTaskStatusable)() {
     m.status = value
 }
-// SetTrigger sets the trigger property value. The trigger property
+// SetTrigger sets the trigger property value. 
 func (m *PrintTask) SetTrigger(value PrintTaskTriggerable)() {
     m.trigger = value
 }

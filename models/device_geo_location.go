@@ -21,7 +21,7 @@ type DeviceGeoLocation struct {
     latitude *float64
     // Longitude coordinate of the device's location
     longitude *float64
-    // The OdataType property
+    // 
     odataType *string
     // Speed the device is traveling in meters per second
     speed *float64
@@ -162,7 +162,7 @@ func (m *DeviceGeoLocation) GetLatitude()(*float64) {
 func (m *DeviceGeoLocation) GetLongitude()(*float64) {
     return m.longitude
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceGeoLocation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -266,7 +266,7 @@ func (m *DeviceGeoLocation) SetLatitude(value *float64)() {
 func (m *DeviceGeoLocation) SetLongitude(value *float64)() {
     m.longitude = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceGeoLocation) SetOdataType(value *string)() {
     m.odataType = value
 }

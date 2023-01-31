@@ -47,13 +47,16 @@ type ItemTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTagsTeamworkTagItemRequestBuilderInternal instantiates a new TeamworkTagItemRequestBuilder and sets the default values.
-func NewItemTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTagsTeamworkTagItemRequestBuilder) {
+func NewItemTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamworkTagId *string)(*ItemTagsTeamworkTagItemRequestBuilder) {
     m := &ItemTagsTeamworkTagItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teams/{team%2Did}/tags/{teamworkTag%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if teamworkTagId != nil {
+        urlTplParams["teamworkTag%2Did"] = *teamworkTagId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]
 func NewItemTagsTeamworkTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTagsTeamworkTagItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tags for teams
 func (m *ItemTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +172,10 @@ func (m *ItemTagsTeamworkTagItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

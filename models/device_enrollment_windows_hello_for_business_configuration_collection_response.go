@@ -7,7 +7,7 @@ import (
 // DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse 
 type DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceEnrollmentWindowsHelloForBusinessConfigurationable
 }
 // NewDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse)
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse) GetValue()([]DeviceEnrollmentWindowsHelloForBusinessConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse)
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse) SetValue(value []DeviceEnrollmentWindowsHelloForBusinessConfigurationable)() {
     m.value = value
 }

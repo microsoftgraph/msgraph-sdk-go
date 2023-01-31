@@ -8,9 +8,9 @@ import (
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The type property
+    // 
     type_escaped *ExternalItemContentType
     // The content for the externalItem. Required.
     value *string
@@ -65,11 +65,11 @@ func (m *ExternalItemContent) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ExternalItemContent) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *ExternalItemContent) GetType()(*ExternalItemContentType) {
     return m.type_escaped
 }
@@ -110,11 +110,11 @@ func (m *ExternalItemContent) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *ExternalItemContent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ExternalItemContent) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *ExternalItemContent) SetType(value *ExternalItemContentType)() {
     m.type_escaped = value
 }

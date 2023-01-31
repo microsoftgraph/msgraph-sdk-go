@@ -27,7 +27,7 @@ type TeleconferenceDeviceQuality struct {
     mediaLegId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
     mediaQualityList []TeleconferenceDeviceMediaQualityable
-    // The OdataType property
+    // 
     odataType *string
     // A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
     participantId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
@@ -202,7 +202,7 @@ func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*i561e97a8befe7661a44c8f54
 func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDeviceMediaQualityable) {
     return m.mediaQualityList
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeleconferenceDeviceQuality) GetOdataType()(*string) {
     return m.odataType
 }
@@ -330,7 +330,7 @@ func (m *TeleconferenceDeviceQuality) SetMediaLegId(value *i561e97a8befe7661a44c
 func (m *TeleconferenceDeviceQuality) SetMediaQualityList(value []TeleconferenceDeviceMediaQualityable)() {
     m.mediaQualityList = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeleconferenceDeviceQuality) SetOdataType(value *string)() {
     m.odataType = value
 }

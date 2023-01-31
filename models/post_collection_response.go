@@ -7,7 +7,7 @@ import (
 // PostCollectionResponse 
 type PostCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Postable
 }
 // NewPostCollectionResponse instantiates a new PostCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PostCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PostCollectionResponse) GetValue()([]Postable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PostCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PostCollectionResponse) SetValue(value []Postable)() {
     m.value = value
 }

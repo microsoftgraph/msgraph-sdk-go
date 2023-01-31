@@ -20,7 +20,7 @@ type DeviceComplianceSettingState struct {
     setting *string
     // The Setting Name that is being reported
     settingName *string
-    // The state property
+    // 
     state *ComplianceStatus
     // The User email address that is being reported
     userEmail *string
@@ -181,7 +181,7 @@ func (m *DeviceComplianceSettingState) GetSetting()(*string) {
 func (m *DeviceComplianceSettingState) GetSettingName()(*string) {
     return m.settingName
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *DeviceComplianceSettingState) GetState()(*ComplianceStatus) {
     return m.state
 }
@@ -300,7 +300,7 @@ func (m *DeviceComplianceSettingState) SetSetting(value *string)() {
 func (m *DeviceComplianceSettingState) SetSettingName(value *string)() {
     m.settingName = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *DeviceComplianceSettingState) SetState(value *ComplianceStatus)() {
     m.state = value
 }

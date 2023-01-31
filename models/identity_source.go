@@ -8,7 +8,7 @@ import (
 type IdentitySource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIdentitySource instantiates a new identitySource and sets the default values.
@@ -65,7 +65,7 @@ func (m *IdentitySource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IdentitySource) GetOdataType()(*string) {
     return m.odataType
 }
@@ -89,7 +89,7 @@ func (m *IdentitySource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *IdentitySource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IdentitySource) SetOdataType(value *string)() {
     m.odataType = value
 }

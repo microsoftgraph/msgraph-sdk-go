@@ -10,7 +10,7 @@ type StaffAvailabilityItem struct {
     additionalData map[string]any
     // Each item in this collection indicates a slot and the status of the staff member.
     availabilityItems []AvailabilityItemable
-    // The OdataType property
+    // 
     odataType *string
     // The ID of the staff member.
     staffId *string
@@ -73,7 +73,7 @@ func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *StaffAvailabilityItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -121,7 +121,7 @@ func (m *StaffAvailabilityItem) SetAdditionalData(value map[string]any)() {
 func (m *StaffAvailabilityItem) SetAvailabilityItems(value []AvailabilityItemable)() {
     m.availabilityItems = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *StaffAvailabilityItem) SetOdataType(value *string)() {
     m.odataType = value
 }

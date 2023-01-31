@@ -14,7 +14,7 @@ type CrossTenantAccessPolicyInboundTrust struct {
     isHybridAzureADJoinedDeviceAccepted *bool
     // Specifies whether MFA from external Azure AD organizations is trusted.
     isMfaAccepted *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCrossTenantAccessPolicyInboundTrust instantiates a new crossTenantAccessPolicyInboundTrust and sets the default values.
@@ -89,7 +89,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetIsHybridAzureADJoinedDeviceAcce
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsMfaAccepted()(*bool) {
     return m.isMfaAccepted
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyInboundTrust) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) SetIsHybridAzureADJoinedDeviceAcce
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsMfaAccepted(value *bool)() {
     m.isMfaAccepted = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CrossTenantAccessPolicyInboundTrust) SetOdataType(value *string)() {
     m.odataType = value
 }

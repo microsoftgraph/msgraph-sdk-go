@@ -8,7 +8,7 @@ import (
 type AlterationResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Defines the original user query string.
     originalQueryString *string
@@ -77,7 +77,7 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlterationResponse) GetOdataType()(*string) {
     return m.odataType
 }
@@ -132,7 +132,7 @@ func (m *AlterationResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *AlterationResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlterationResponse) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type PrintSettings struct {
     additionalData map[string]any
     // Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
     documentConversionEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPrintSettings instantiates a new printSettings and sets the default values.
@@ -57,7 +57,7 @@ func (m *PrintSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrintSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *PrintSettings) SetAdditionalData(value map[string]any)() {
 func (m *PrintSettings) SetDocumentConversionEnabled(value *bool)() {
     m.documentConversionEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrintSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

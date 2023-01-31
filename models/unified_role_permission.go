@@ -14,7 +14,7 @@ type UnifiedRolePermission struct {
     condition *string
     // Set of tasks that may not be performed on a resource. Not yet supported.
     excludedResourceActions []string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewUnifiedRolePermission instantiates a new unifiedRolePermission and sets the default values.
@@ -97,7 +97,7 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UnifiedRolePermission) GetOdataType()(*string) {
     return m.odataType
 }
@@ -151,7 +151,7 @@ func (m *UnifiedRolePermission) SetCondition(value *string)() {
 func (m *UnifiedRolePermission) SetExcludedResourceActions(value []string)() {
     m.excludedResourceActions = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UnifiedRolePermission) SetOdataType(value *string)() {
     m.odataType = value
 }

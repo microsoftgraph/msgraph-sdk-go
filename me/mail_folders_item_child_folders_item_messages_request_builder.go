@@ -74,10 +74,6 @@ func NewMailFoldersItemChildFoldersItemMessagesRequestBuilder(rawUrl string, req
 func (m *MailFoldersItemChildFoldersItemMessagesRequestBuilder) Count()(*MailFoldersItemChildFoldersItemMessagesCountRequestBuilder) {
     return NewMailFoldersItemChildFoldersItemMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *MailFoldersItemChildFoldersItemMessagesRequestBuilder) Delta()(*MailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder) {
-    return NewMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
 // [Find more info here]
 // 
@@ -99,6 +95,10 @@ func (m *MailFoldersItemChildFoldersItemMessagesRequestBuilder) Get(ctx context.
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *MailFoldersItemChildFoldersItemMessagesRequestBuilder) MicrosoftGraphDelta()(*MailFoldersItemChildFoldersItemMessagesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewMailFoldersItemChildFoldersItemMessagesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post use this API to create a new Message in a mailfolder.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *MailFoldersItemChildFoldersItemMessagesRequestBuilder) ToPostRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

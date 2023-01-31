@@ -7,7 +7,7 @@ import (
 // B2xIdentityUserFlowCollectionResponse 
 type B2xIdentityUserFlowCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []B2xIdentityUserFlowable
 }
 // NewB2xIdentityUserFlowCollectionResponse instantiates a new B2xIdentityUserFlowCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *B2xIdentityUserFlowCollectionResponse) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *B2xIdentityUserFlowCollectionResponse) GetValue()([]B2xIdentityUserFlowable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *B2xIdentityUserFlowCollectionResponse) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *B2xIdentityUserFlowCollectionResponse) SetValue(value []B2xIdentityUserFlowable)() {
     m.value = value
 }

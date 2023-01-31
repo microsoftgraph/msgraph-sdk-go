@@ -7,7 +7,7 @@ import (
 // WindowsPhone81CustomConfigurationCollectionResponse 
 type WindowsPhone81CustomConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsPhone81CustomConfigurationable
 }
 // NewWindowsPhone81CustomConfigurationCollectionResponse instantiates a new WindowsPhone81CustomConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsPhone81CustomConfigurationCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsPhone81CustomConfigurationCollectionResponse) GetValue()([]WindowsPhone81CustomConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsPhone81CustomConfigurationCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsPhone81CustomConfigurationCollectionResponse) SetValue(value []WindowsPhone81CustomConfigurationable)() {
     m.value = value
 }

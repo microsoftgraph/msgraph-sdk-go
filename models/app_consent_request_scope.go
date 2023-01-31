@@ -10,7 +10,7 @@ type AppConsentRequestScope struct {
     additionalData map[string]any
     // The name of the scope.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAppConsentRequestScope instantiates a new appConsentRequestScope and sets the default values.
@@ -57,7 +57,7 @@ func (m *AppConsentRequestScope) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AppConsentRequestScope) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *AppConsentRequestScope) SetAdditionalData(value map[string]any)() {
 func (m *AppConsentRequestScope) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AppConsentRequestScope) SetOdataType(value *string)() {
     m.odataType = value
 }

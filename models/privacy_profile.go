@@ -10,7 +10,7 @@ type PrivacyProfile struct {
     additionalData map[string]any
     // A valid smtp email address for the privacy statement contact. Not required.
     contactEmail *string
-    // The OdataType property
+    // 
     odataType *string
     // A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
     statementUrl *string
@@ -69,7 +69,7 @@ func (m *PrivacyProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrivacyProfile) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *PrivacyProfile) SetAdditionalData(value map[string]any)() {
 func (m *PrivacyProfile) SetContactEmail(value *string)() {
     m.contactEmail = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrivacyProfile) SetOdataType(value *string)() {
     m.odataType = value
 }

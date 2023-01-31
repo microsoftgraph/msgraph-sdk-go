@@ -7,7 +7,7 @@ import (
 // OrganizerMeetingInfo 
 type OrganizerMeetingInfo struct {
     MeetingInfo
-    // The organizer property
+    // 
     organizer IdentitySetable
 }
 // NewOrganizerMeetingInfo instantiates a new OrganizerMeetingInfo and sets the default values.
@@ -38,7 +38,7 @@ func (m *OrganizerMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOrganizer gets the organizer property value. The organizer property
+// GetOrganizer gets the organizer property value. 
 func (m *OrganizerMeetingInfo) GetOrganizer()(IdentitySetable) {
     return m.organizer
 }
@@ -56,7 +56,7 @@ func (m *OrganizerMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetOrganizer sets the organizer property value. The organizer property
+// SetOrganizer sets the organizer property value. 
 func (m *OrganizerMeetingInfo) SetOrganizer(value IdentitySetable)() {
     m.organizer = value
 }

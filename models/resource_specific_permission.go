@@ -17,7 +17,7 @@ type ResourceSpecificPermission struct {
     id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // Indicates whether the permission is enabled.
     isEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
     // The value of the permission.
     value *string
@@ -118,7 +118,7 @@ func (m *ResourceSpecificPermission) GetId()(*i561e97a8befe7661a44c8f54600992b42
 func (m *ResourceSpecificPermission) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ResourceSpecificPermission) GetOdataType()(*string) {
     return m.odataType
 }
@@ -192,7 +192,7 @@ func (m *ResourceSpecificPermission) SetId(value *i561e97a8befe7661a44c8f5460099
 func (m *ResourceSpecificPermission) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ResourceSpecificPermission) SetOdataType(value *string)() {
     m.odataType = value
 }

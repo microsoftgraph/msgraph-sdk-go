@@ -7,7 +7,7 @@ import (
 // LocationConstraintItemCollectionResponse 
 type LocationConstraintItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []LocationConstraintItemable
 }
 // NewLocationConstraintItemCollectionResponse instantiates a new LocationConstraintItemCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *LocationConstraintItemCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LocationConstraintItemCollectionResponse) GetValue()([]LocationConstraintItemable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *LocationConstraintItemCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LocationConstraintItemCollectionResponse) SetValue(value []LocationConstraintItemable)() {
     m.value = value
 }

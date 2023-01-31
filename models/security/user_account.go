@@ -14,7 +14,7 @@ type UserAccount struct {
     azureAdUserId *string
     // The name of the Active Directory domain of which the user is a member.
     domainName *string
-    // The OdataType property
+    // 
     odataType *string
     // The user principal name of the account in Azure AD.
     userPrincipalName *string
@@ -113,7 +113,7 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserAccount) GetOdataType()(*string) {
     return m.odataType
 }
@@ -187,7 +187,7 @@ func (m *UserAccount) SetAzureAdUserId(value *string)() {
 func (m *UserAccount) SetDomainName(value *string)() {
     m.domainName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserAccount) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -8,7 +8,7 @@ import (
 type AccessReviewNotificationRecipientScope struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAccessReviewNotificationRecipientScope instantiates a new accessReviewNotificationRecipientScope and sets the default values.
@@ -59,7 +59,7 @@ func (m *AccessReviewNotificationRecipientScope) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessReviewNotificationRecipientScope) GetOdataType()(*string) {
     return m.odataType
 }
@@ -83,7 +83,7 @@ func (m *AccessReviewNotificationRecipientScope) Serialize(writer i878a80d2330e8
 func (m *AccessReviewNotificationRecipientScope) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessReviewNotificationRecipientScope) SetOdataType(value *string)() {
     m.odataType = value
 }

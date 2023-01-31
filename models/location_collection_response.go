@@ -7,7 +7,7 @@ import (
 // LocationCollectionResponse 
 type LocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Locationable
 }
 // NewLocationCollectionResponse instantiates a new LocationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *LocationCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LocationCollectionResponse) GetValue()([]Locationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *LocationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LocationCollectionResponse) SetValue(value []Locationable)() {
     m.value = value
 }

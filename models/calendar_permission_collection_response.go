@@ -7,7 +7,7 @@ import (
 // CalendarPermissionCollectionResponse 
 type CalendarPermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CalendarPermissionable
 }
 // NewCalendarPermissionCollectionResponse instantiates a new CalendarPermissionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CalendarPermissionCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CalendarPermissionCollectionResponse) GetValue()([]CalendarPermissionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CalendarPermissionCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CalendarPermissionCollectionResponse) SetValue(value []CalendarPermissionable)() {
     m.value = value
 }

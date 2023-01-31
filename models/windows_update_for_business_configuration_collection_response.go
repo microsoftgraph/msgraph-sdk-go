@@ -7,7 +7,7 @@ import (
 // WindowsUpdateForBusinessConfigurationCollectionResponse 
 type WindowsUpdateForBusinessConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsUpdateForBusinessConfigurationable
 }
 // NewWindowsUpdateForBusinessConfigurationCollectionResponse instantiates a new WindowsUpdateForBusinessConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) GetFieldDeseri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) GetValue()([]WindowsUpdateForBusinessConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) Serialize(writ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) SetValue(value []WindowsUpdateForBusinessConfigurationable)() {
     m.value = value
 }

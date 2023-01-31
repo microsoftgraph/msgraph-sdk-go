@@ -44,10 +44,6 @@ type RegisteredDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *RegisteredDevicesRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *RegisteredDevicesRequestBuilder) AppRoleAssignment()(*RegisteredDevicesAppRoleAssignmentRequestBuilder) {
-    return NewRegisteredDevicesAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewRegisteredDevicesRequestBuilderInternal instantiates a new RegisteredDevicesRequestBuilder and sets the default values.
 func NewRegisteredDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredDevicesRequestBuilder) {
     m := &RegisteredDevicesRequestBuilder{
@@ -71,14 +67,6 @@ func NewRegisteredDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *RegisteredDevicesRequestBuilder) Count()(*RegisteredDevicesCountRequestBuilder) {
     return NewRegisteredDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Device casts the previous resource to device.
-func (m *RegisteredDevicesRequestBuilder) Device()(*RegisteredDevicesDeviceRequestBuilder) {
-    return NewRegisteredDevicesDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *RegisteredDevicesRequestBuilder) Endpoint()(*RegisteredDevicesEndpointRequestBuilder) {
-    return NewRegisteredDevicesEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 // [Find more info here]
 // 
@@ -100,6 +88,18 @@ func (m *RegisteredDevicesRequestBuilder) Get(ctx context.Context, requestConfig
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *RegisteredDevicesRequestBuilder) MicrosoftGraphAppRoleAssignment()(*RegisteredDevicesMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilder) {
+    return NewRegisteredDevicesMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *RegisteredDevicesRequestBuilder) MicrosoftGraphDevice()(*RegisteredDevicesMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewRegisteredDevicesMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *RegisteredDevicesRequestBuilder) MicrosoftGraphEndpoint()(*RegisteredDevicesMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewRegisteredDevicesMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

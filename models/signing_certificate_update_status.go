@@ -13,7 +13,7 @@ type SigningCertificateUpdateStatus struct {
     certificateUpdateResult *string
     // Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
     lastRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSigningCertificateUpdateStatus instantiates a new signingCertificateUpdateStatus and sets the default values.
@@ -74,7 +74,7 @@ func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func
 func (m *SigningCertificateUpdateStatus) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastRunDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SigningCertificateUpdateStatus) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,7 +118,7 @@ func (m *SigningCertificateUpdateStatus) SetCertificateUpdateResult(value *strin
 func (m *SigningCertificateUpdateStatus) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastRunDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SigningCertificateUpdateStatus) SetOdataType(value *string)() {
     m.odataType = value
 }

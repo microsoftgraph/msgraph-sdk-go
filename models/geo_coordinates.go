@@ -14,7 +14,7 @@ type GeoCoordinates struct {
     latitude *float64
     // Optional. The longitude, in decimal, for the item. Read-only.
     longitude *float64
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewGeoCoordinates instantiates a new geoCoordinates and sets the default values.
@@ -89,7 +89,7 @@ func (m *GeoCoordinates) GetLatitude()(*float64) {
 func (m *GeoCoordinates) GetLongitude()(*float64) {
     return m.longitude
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *GeoCoordinates) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *GeoCoordinates) SetLatitude(value *float64)() {
 func (m *GeoCoordinates) SetLongitude(value *float64)() {
     m.longitude = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *GeoCoordinates) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // DirectoryAuditCollectionResponse 
 type DirectoryAuditCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DirectoryAuditable
 }
 // NewDirectoryAuditCollectionResponse instantiates a new DirectoryAuditCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DirectoryAuditCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DirectoryAuditCollectionResponse) GetValue()([]DirectoryAuditable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DirectoryAuditCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DirectoryAuditCollectionResponse) SetValue(value []DirectoryAuditable)() {
     m.value = value
 }

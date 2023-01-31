@@ -7,7 +7,7 @@ import (
 // UserSecurityStateCollectionResponse 
 type UserSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserSecurityStateable
 }
 // NewUserSecurityStateCollectionResponse instantiates a new UserSecurityStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserSecurityStateCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserSecurityStateCollectionResponse) GetValue()([]UserSecurityStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserSecurityStateCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserSecurityStateCollectionResponse) SetValue(value []UserSecurityStateable)() {
     m.value = value
 }

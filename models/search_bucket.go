@@ -14,7 +14,7 @@ type SearchBucket struct {
     count *int32
     // The discrete value of the field that an aggregation was computed on.
     key *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSearchBucket instantiates a new searchBucket and sets the default values.
@@ -89,7 +89,7 @@ func (m *SearchBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *SearchBucket) GetKey()(*string) {
     return m.key
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchBucket) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *SearchBucket) SetCount(value *int32)() {
 func (m *SearchBucket) SetKey(value *string)() {
     m.key = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchBucket) SetOdataType(value *string)() {
     m.odataType = value
 }

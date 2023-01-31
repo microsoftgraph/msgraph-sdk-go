@@ -7,7 +7,7 @@ import (
 // AuthenticationMethodConfigurationCollectionResponse 
 type AuthenticationMethodConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuthenticationMethodConfigurationable
 }
 // NewAuthenticationMethodConfigurationCollectionResponse instantiates a new AuthenticationMethodConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuthenticationMethodConfigurationCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuthenticationMethodConfigurationCollectionResponse) GetValue()([]AuthenticationMethodConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuthenticationMethodConfigurationCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuthenticationMethodConfigurationCollectionResponse) SetValue(value []AuthenticationMethodConfigurationable)() {
     m.value = value
 }

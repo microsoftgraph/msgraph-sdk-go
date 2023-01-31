@@ -7,7 +7,7 @@ import (
 // SecureScoreControlProfileCollectionResponse 
 type SecureScoreControlProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SecureScoreControlProfileable
 }
 // NewSecureScoreControlProfileCollectionResponse instantiates a new SecureScoreControlProfileCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SecureScoreControlProfileCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SecureScoreControlProfileCollectionResponse) GetValue()([]SecureScoreControlProfileable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SecureScoreControlProfileCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SecureScoreControlProfileCollectionResponse) SetValue(value []SecureScoreControlProfileable)() {
     m.value = value
 }

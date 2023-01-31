@@ -8,31 +8,31 @@ import (
 type SearchRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The aggregationFilters property
+    // 
     aggregationFilters []string
-    // The aggregations property
+    // 
     aggregations []AggregationOptionable
-    // The contentSources property
+    // 
     contentSources []string
-    // The enableTopResults property
+    // 
     enableTopResults *bool
-    // The entityTypes property
+    // 
     entityTypes []EntityType
-    // The fields property
+    // 
     fields []string
-    // The from property
+    // 
     from *int32
-    // The OdataType property
+    // 
     odataType *string
-    // The query property
+    // 
     query SearchQueryable
-    // The queryAlterationOptions property
+    // 
     queryAlterationOptions SearchAlterationOptionsable
-    // The resultTemplateOptions property
+    // 
     resultTemplateOptions ResultTemplateOptionable
-    // The size property
+    // 
     size *int32
-    // The sortProperties property
+    // 
     sortProperties []SortPropertyable
 }
 // NewSearchRequest instantiates a new searchRequest and sets the default values.
@@ -50,23 +50,23 @@ func CreateSearchRequestFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *SearchRequest) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAggregationFilters gets the aggregationFilters property value. The aggregationFilters property
+// GetAggregationFilters gets the aggregationFilters property value. 
 func (m *SearchRequest) GetAggregationFilters()([]string) {
     return m.aggregationFilters
 }
-// GetAggregations gets the aggregations property value. The aggregations property
+// GetAggregations gets the aggregations property value. 
 func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
     return m.aggregations
 }
-// GetContentSources gets the contentSources property value. The contentSources property
+// GetContentSources gets the contentSources property value. 
 func (m *SearchRequest) GetContentSources()([]string) {
     return m.contentSources
 }
-// GetEnableTopResults gets the enableTopResults property value. The enableTopResults property
+// GetEnableTopResults gets the enableTopResults property value. 
 func (m *SearchRequest) GetEnableTopResults()(*bool) {
     return m.enableTopResults
 }
-// GetEntityTypes gets the entityTypes property value. The entityTypes property
+// GetEntityTypes gets the entityTypes property value. 
 func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     return m.entityTypes
 }
@@ -229,35 +229,35 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFields gets the fields property value. The fields property
+// GetFields gets the fields property value. 
 func (m *SearchRequest) GetFields()([]string) {
     return m.fields
 }
-// GetFrom gets the from property value. The from property
+// GetFrom gets the from property value. 
 func (m *SearchRequest) GetFrom()(*int32) {
     return m.from
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SearchRequest) GetOdataType()(*string) {
     return m.odataType
 }
-// GetQuery gets the query property value. The query property
+// GetQuery gets the query property value. 
 func (m *SearchRequest) GetQuery()(SearchQueryable) {
     return m.query
 }
-// GetQueryAlterationOptions gets the queryAlterationOptions property value. The queryAlterationOptions property
+// GetQueryAlterationOptions gets the queryAlterationOptions property value. 
 func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable) {
     return m.queryAlterationOptions
 }
-// GetResultTemplateOptions gets the resultTemplateOptions property value. The resultTemplateOptions property
+// GetResultTemplateOptions gets the resultTemplateOptions property value. 
 func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     return m.resultTemplateOptions
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. 
 func (m *SearchRequest) GetSize()(*int32) {
     return m.size
 }
-// GetSortProperties gets the sortProperties property value. The sortProperties property
+// GetSortProperties gets the sortProperties property value. 
 func (m *SearchRequest) GetSortProperties()([]SortPropertyable) {
     return m.sortProperties
 }
@@ -361,55 +361,55 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *SearchRequest) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAggregationFilters sets the aggregationFilters property value. The aggregationFilters property
+// SetAggregationFilters sets the aggregationFilters property value. 
 func (m *SearchRequest) SetAggregationFilters(value []string)() {
     m.aggregationFilters = value
 }
-// SetAggregations sets the aggregations property value. The aggregations property
+// SetAggregations sets the aggregations property value. 
 func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
     m.aggregations = value
 }
-// SetContentSources sets the contentSources property value. The contentSources property
+// SetContentSources sets the contentSources property value. 
 func (m *SearchRequest) SetContentSources(value []string)() {
     m.contentSources = value
 }
-// SetEnableTopResults sets the enableTopResults property value. The enableTopResults property
+// SetEnableTopResults sets the enableTopResults property value. 
 func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     m.enableTopResults = value
 }
-// SetEntityTypes sets the entityTypes property value. The entityTypes property
+// SetEntityTypes sets the entityTypes property value. 
 func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     m.entityTypes = value
 }
-// SetFields sets the fields property value. The fields property
+// SetFields sets the fields property value. 
 func (m *SearchRequest) SetFields(value []string)() {
     m.fields = value
 }
-// SetFrom sets the from property value. The from property
+// SetFrom sets the from property value. 
 func (m *SearchRequest) SetFrom(value *int32)() {
     m.from = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SearchRequest) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetQuery sets the query property value. The query property
+// SetQuery sets the query property value. 
 func (m *SearchRequest) SetQuery(value SearchQueryable)() {
     m.query = value
 }
-// SetQueryAlterationOptions sets the queryAlterationOptions property value. The queryAlterationOptions property
+// SetQueryAlterationOptions sets the queryAlterationOptions property value. 
 func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
     m.queryAlterationOptions = value
 }
-// SetResultTemplateOptions sets the resultTemplateOptions property value. The resultTemplateOptions property
+// SetResultTemplateOptions sets the resultTemplateOptions property value. 
 func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
     m.resultTemplateOptions = value
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. 
 func (m *SearchRequest) SetSize(value *int32)() {
     m.size = value
 }
-// SetSortProperties sets the sortProperties property value. The sortProperties property
+// SetSortProperties sets the sortProperties property value. 
 func (m *SearchRequest) SetSortProperties(value []SortPropertyable)() {
     m.sortProperties = value
 }

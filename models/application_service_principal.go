@@ -8,11 +8,11 @@ import (
 type ApplicationServicePrincipal struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The application property
+    // 
     application Applicationable
-    // The OdataType property
+    // 
     odataType *string
-    // The servicePrincipal property
+    // 
     servicePrincipal ServicePrincipalable
 }
 // NewApplicationServicePrincipal instantiates a new applicationServicePrincipal and sets the default values.
@@ -30,7 +30,7 @@ func CreateApplicationServicePrincipalFromDiscriminatorValue(parseNode i878a80d2
 func (m *ApplicationServicePrincipal) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetApplication gets the application property value. The application property
+// GetApplication gets the application property value. 
 func (m *ApplicationServicePrincipal) GetApplication()(Applicationable) {
     return m.application
 }
@@ -69,11 +69,11 @@ func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ApplicationServicePrincipal) GetOdataType()(*string) {
     return m.odataType
 }
-// GetServicePrincipal gets the servicePrincipal property value. The servicePrincipal property
+// GetServicePrincipal gets the servicePrincipal property value. 
 func (m *ApplicationServicePrincipal) GetServicePrincipal()(ServicePrincipalable) {
     return m.servicePrincipal
 }
@@ -109,15 +109,15 @@ func (m *ApplicationServicePrincipal) Serialize(writer i878a80d2330e89d26896388a
 func (m *ApplicationServicePrincipal) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetApplication sets the application property value. The application property
+// SetApplication sets the application property value. 
 func (m *ApplicationServicePrincipal) SetApplication(value Applicationable)() {
     m.application = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ApplicationServicePrincipal) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetServicePrincipal sets the servicePrincipal property value. The servicePrincipal property
+// SetServicePrincipal sets the servicePrincipal property value. 
 func (m *ApplicationServicePrincipal) SetServicePrincipal(value ServicePrincipalable)() {
     m.servicePrincipal = value
 }

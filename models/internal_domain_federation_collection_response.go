@@ -7,7 +7,7 @@ import (
 // InternalDomainFederationCollectionResponse 
 type InternalDomainFederationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []InternalDomainFederationable
 }
 // NewInternalDomainFederationCollectionResponse instantiates a new InternalDomainFederationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *InternalDomainFederationCollectionResponse) GetFieldDeserializers()(map
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *InternalDomainFederationCollectionResponse) GetValue()([]InternalDomainFederationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *InternalDomainFederationCollectionResponse) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *InternalDomainFederationCollectionResponse) SetValue(value []InternalDomainFederationable)() {
     m.value = value
 }

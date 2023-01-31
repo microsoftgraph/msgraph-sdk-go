@@ -10,7 +10,7 @@ type ChatInfo struct {
     additionalData map[string]any
     // The unique identifier of a message in a Microsoft Teams channel.
     messageId *string
-    // The OdataType property
+    // 
     odataType *string
     // The ID of the reply message.
     replyChainMessageId *string
@@ -81,7 +81,7 @@ func (m *ChatInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 func (m *ChatInfo) GetMessageId()(*string) {
     return m.messageId
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChatInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -135,7 +135,7 @@ func (m *ChatInfo) SetAdditionalData(value map[string]any)() {
 func (m *ChatInfo) SetMessageId(value *string)() {
     m.messageId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChatInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

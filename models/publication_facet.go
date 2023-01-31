@@ -10,7 +10,7 @@ type PublicationFacet struct {
     additionalData map[string]any
     // The state of publication for this document. Either published or checkout. Read-only.
     level *string
-    // The OdataType property
+    // 
     odataType *string
     // The unique identifier for the version that is visible to the current caller. Read-only.
     versionId *string
@@ -69,7 +69,7 @@ func (m *PublicationFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *PublicationFacet) GetLevel()(*string) {
     return m.level
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PublicationFacet) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *PublicationFacet) SetAdditionalData(value map[string]any)() {
 func (m *PublicationFacet) SetLevel(value *string)() {
     m.level = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PublicationFacet) SetOdataType(value *string)() {
     m.odataType = value
 }

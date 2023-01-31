@@ -7,25 +7,25 @@ import (
 // EventMessage 
 type EventMessage struct {
     Message
-    // The endDateTime property
+    // 
     endDateTime DateTimeTimeZoneable
     // The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
     event Eventable
-    // The isAllDay property
+    // 
     isAllDay *bool
-    // The isDelegated property
+    // 
     isDelegated *bool
-    // The isOutOfDate property
+    // 
     isOutOfDate *bool
-    // The location property
+    // 
     location Locationable
-    // The meetingMessageType property
+    // 
     meetingMessageType *MeetingMessageType
-    // The recurrence property
+    // 
     recurrence PatternedRecurrenceable
-    // The startDateTime property
+    // 
     startDateTime DateTimeTimeZoneable
-    // The type property
+    // 
     type_escaped *EventType
 }
 // NewEventMessage instantiates a new EventMessage and sets the default values.
@@ -61,7 +61,7 @@ func CreateEventMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     }
     return NewEventMessage(), nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. 
 func (m *EventMessage) GetEndDateTime()(DateTimeTimeZoneable) {
     return m.endDateTime
 }
@@ -174,35 +174,35 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsAllDay gets the isAllDay property value. The isAllDay property
+// GetIsAllDay gets the isAllDay property value. 
 func (m *EventMessage) GetIsAllDay()(*bool) {
     return m.isAllDay
 }
-// GetIsDelegated gets the isDelegated property value. The isDelegated property
+// GetIsDelegated gets the isDelegated property value. 
 func (m *EventMessage) GetIsDelegated()(*bool) {
     return m.isDelegated
 }
-// GetIsOutOfDate gets the isOutOfDate property value. The isOutOfDate property
+// GetIsOutOfDate gets the isOutOfDate property value. 
 func (m *EventMessage) GetIsOutOfDate()(*bool) {
     return m.isOutOfDate
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. 
 func (m *EventMessage) GetLocation()(Locationable) {
     return m.location
 }
-// GetMeetingMessageType gets the meetingMessageType property value. The meetingMessageType property
+// GetMeetingMessageType gets the meetingMessageType property value. 
 func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
     return m.meetingMessageType
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. 
 func (m *EventMessage) GetRecurrence()(PatternedRecurrenceable) {
     return m.recurrence
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. 
 func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     return m.startDateTime
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *EventMessage) GetType()(*EventType) {
     return m.type_escaped
 }
@@ -276,7 +276,7 @@ func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. 
 func (m *EventMessage) SetEndDateTime(value DateTimeTimeZoneable)() {
     m.endDateTime = value
 }
@@ -284,35 +284,35 @@ func (m *EventMessage) SetEndDateTime(value DateTimeTimeZoneable)() {
 func (m *EventMessage) SetEvent(value Eventable)() {
     m.event = value
 }
-// SetIsAllDay sets the isAllDay property value. The isAllDay property
+// SetIsAllDay sets the isAllDay property value. 
 func (m *EventMessage) SetIsAllDay(value *bool)() {
     m.isAllDay = value
 }
-// SetIsDelegated sets the isDelegated property value. The isDelegated property
+// SetIsDelegated sets the isDelegated property value. 
 func (m *EventMessage) SetIsDelegated(value *bool)() {
     m.isDelegated = value
 }
-// SetIsOutOfDate sets the isOutOfDate property value. The isOutOfDate property
+// SetIsOutOfDate sets the isOutOfDate property value. 
 func (m *EventMessage) SetIsOutOfDate(value *bool)() {
     m.isOutOfDate = value
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. 
 func (m *EventMessage) SetLocation(value Locationable)() {
     m.location = value
 }
-// SetMeetingMessageType sets the meetingMessageType property value. The meetingMessageType property
+// SetMeetingMessageType sets the meetingMessageType property value. 
 func (m *EventMessage) SetMeetingMessageType(value *MeetingMessageType)() {
     m.meetingMessageType = value
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. 
 func (m *EventMessage) SetRecurrence(value PatternedRecurrenceable)() {
     m.recurrence = value
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. 
 func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
     m.startDateTime = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *EventMessage) SetType(value *EventType)() {
     m.type_escaped = value
 }

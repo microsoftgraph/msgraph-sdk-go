@@ -7,11 +7,11 @@ import (
 // UserSettings 
 type UserSettings struct {
     Entity
-    // The contributionToContentDiscoveryAsOrganizationDisabled property
+    // 
     contributionToContentDiscoveryAsOrganizationDisabled *bool
-    // The contributionToContentDiscoveryDisabled property
+    // 
     contributionToContentDiscoveryDisabled *bool
-    // The shiftPreferences property
+    // 
     shiftPreferences ShiftPreferencesable
 }
 // NewUserSettings instantiates a new userSettings and sets the default values.
@@ -25,11 +25,11 @@ func NewUserSettings()(*UserSettings) {
 func CreateUserSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSettings(), nil
 }
-// GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
+// GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. 
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
     return m.contributionToContentDiscoveryAsOrganizationDisabled
 }
-// GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
+// GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. 
 func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     return m.contributionToContentDiscoveryDisabled
 }
@@ -68,7 +68,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetShiftPreferences gets the shiftPreferences property value. The shiftPreferences property
+// GetShiftPreferences gets the shiftPreferences property value. 
 func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     return m.shiftPreferences
 }
@@ -98,15 +98,15 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
+// SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. 
 func (m *UserSettings) SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)() {
     m.contributionToContentDiscoveryAsOrganizationDisabled = value
 }
-// SetContributionToContentDiscoveryDisabled sets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
+// SetContributionToContentDiscoveryDisabled sets the contributionToContentDiscoveryDisabled property value. 
 func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() {
     m.contributionToContentDiscoveryDisabled = value
 }
-// SetShiftPreferences sets the shiftPreferences property value. The shiftPreferences property
+// SetShiftPreferences sets the shiftPreferences property value. 
 func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
     m.shiftPreferences = value
 }

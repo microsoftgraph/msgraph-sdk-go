@@ -7,7 +7,7 @@ import (
 // AgreementFileLocalizationCollectionResponse 
 type AgreementFileLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AgreementFileLocalizationable
 }
 // NewAgreementFileLocalizationCollectionResponse instantiates a new AgreementFileLocalizationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AgreementFileLocalizationCollectionResponse) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AgreementFileLocalizationCollectionResponse) GetValue()([]AgreementFileLocalizationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AgreementFileLocalizationCollectionResponse) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AgreementFileLocalizationCollectionResponse) SetValue(value []AgreementFileLocalizationable)() {
     m.value = value
 }

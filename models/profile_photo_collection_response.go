@@ -7,7 +7,7 @@ import (
 // ProfilePhotoCollectionResponse 
 type ProfilePhotoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ProfilePhotoable
 }
 // NewProfilePhotoCollectionResponse instantiates a new ProfilePhotoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ProfilePhotoCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ProfilePhotoCollectionResponse) GetValue()([]ProfilePhotoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ProfilePhotoCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ProfilePhotoCollectionResponse) SetValue(value []ProfilePhotoable)() {
     m.value = value
 }

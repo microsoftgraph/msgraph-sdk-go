@@ -7,7 +7,7 @@ import (
 // SchedulingGroupCollectionResponse 
 type SchedulingGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SchedulingGroupable
 }
 // NewSchedulingGroupCollectionResponse instantiates a new SchedulingGroupCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SchedulingGroupCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SchedulingGroupCollectionResponse) GetValue()([]SchedulingGroupable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SchedulingGroupCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SchedulingGroupCollectionResponse) SetValue(value []SchedulingGroupable)() {
     m.value = value
 }

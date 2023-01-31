@@ -10,7 +10,7 @@ type Recipient struct {
     additionalData map[string]any
     // The recipient's email address.
     emailAddress EmailAddressable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewRecipient instantiates a new recipient and sets the default values.
@@ -77,7 +77,7 @@ func (m *Recipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Recipient) GetOdataType()(*string) {
     return m.odataType
 }
@@ -111,7 +111,7 @@ func (m *Recipient) SetAdditionalData(value map[string]any)() {
 func (m *Recipient) SetEmailAddress(value EmailAddressable)() {
     m.emailAddress = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Recipient) SetOdataType(value *string)() {
     m.odataType = value
 }

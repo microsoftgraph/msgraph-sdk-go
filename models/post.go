@@ -18,7 +18,7 @@ type Post struct {
     conversationThreadId *string
     // The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
     extensions []Extensionable
-    // The from property
+    // 
     from Recipientable
     // Indicates whether the post has at least one attachment. This is a default property.
     hasAttachments *bool
@@ -223,7 +223,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetFrom gets the from property value. The from property
+// GetFrom gets the from property value. 
 func (m *Post) GetFrom()(Recipientable) {
     return m.from
 }
@@ -381,7 +381,7 @@ func (m *Post) SetConversationThreadId(value *string)() {
 func (m *Post) SetExtensions(value []Extensionable)() {
     m.extensions = value
 }
-// SetFrom sets the from property value. The from property
+// SetFrom sets the from property value. 
 func (m *Post) SetFrom(value Recipientable)() {
     m.from = value
 }

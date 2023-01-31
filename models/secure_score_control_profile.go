@@ -38,13 +38,13 @@ type SecureScoreControlProfile struct {
     service *string
     // List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
     threats []string
-    // The tier property
+    // 
     tier *string
-    // The title property
+    // 
     title *string
-    // The userImpact property
+    // 
     userImpact *string
-    // The vendorInformation property
+    // 
     vendorInformation SecurityVendorInformationable
 }
 // NewSecureScoreControlProfile instantiates a new secureScoreControlProfile and sets the default values.
@@ -325,19 +325,19 @@ func (m *SecureScoreControlProfile) GetService()(*string) {
 func (m *SecureScoreControlProfile) GetThreats()([]string) {
     return m.threats
 }
-// GetTier gets the tier property value. The tier property
+// GetTier gets the tier property value. 
 func (m *SecureScoreControlProfile) GetTier()(*string) {
     return m.tier
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. 
 func (m *SecureScoreControlProfile) GetTitle()(*string) {
     return m.title
 }
-// GetUserImpact gets the userImpact property value. The userImpact property
+// GetUserImpact gets the userImpact property value. 
 func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
     return m.userImpact
 }
-// GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// GetVendorInformation gets the vendorInformation property value. 
 func (m *SecureScoreControlProfile) GetVendorInformation()(SecurityVendorInformationable) {
     return m.vendorInformation
 }
@@ -531,19 +531,19 @@ func (m *SecureScoreControlProfile) SetService(value *string)() {
 func (m *SecureScoreControlProfile) SetThreats(value []string)() {
     m.threats = value
 }
-// SetTier sets the tier property value. The tier property
+// SetTier sets the tier property value. 
 func (m *SecureScoreControlProfile) SetTier(value *string)() {
     m.tier = value
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. 
 func (m *SecureScoreControlProfile) SetTitle(value *string)() {
     m.title = value
 }
-// SetUserImpact sets the userImpact property value. The userImpact property
+// SetUserImpact sets the userImpact property value. 
 func (m *SecureScoreControlProfile) SetUserImpact(value *string)() {
     m.userImpact = value
 }
-// SetVendorInformation sets the vendorInformation property value. The vendorInformation property
+// SetVendorInformation sets the vendorInformation property value. 
 func (m *SecureScoreControlProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     m.vendorInformation = value
 }

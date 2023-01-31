@@ -7,7 +7,7 @@ import (
 // WorkbookSortFieldCollectionResponse 
 type WorkbookSortFieldCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WorkbookSortFieldable
 }
 // NewWorkbookSortFieldCollectionResponse instantiates a new WorkbookSortFieldCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WorkbookSortFieldCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WorkbookSortFieldCollectionResponse) GetValue()([]WorkbookSortFieldable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WorkbookSortFieldCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WorkbookSortFieldCollectionResponse) SetValue(value []WorkbookSortFieldable)() {
     m.value = value
 }

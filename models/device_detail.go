@@ -18,7 +18,7 @@ type DeviceDetail struct {
     isCompliant *bool
     // Indicates whether the device is managed.
     isManaged *bool
-    // The OdataType property
+    // 
     odataType *string
     // Indicates the operating system name and version used for signing in.
     operatingSystem *string
@@ -145,7 +145,7 @@ func (m *DeviceDetail) GetIsCompliant()(*bool) {
 func (m *DeviceDetail) GetIsManaged()(*bool) {
     return m.isManaged
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DeviceDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -239,7 +239,7 @@ func (m *DeviceDetail) SetIsCompliant(value *bool)() {
 func (m *DeviceDetail) SetIsManaged(value *bool)() {
     m.isManaged = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DeviceDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

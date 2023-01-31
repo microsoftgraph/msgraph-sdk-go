@@ -14,7 +14,7 @@ type AccessPackageAssignmentRequestRequirements struct {
     isApprovalRequiredForAdd *bool
     // Indicates whether a request to update must be approved by an approver.
     isApprovalRequiredForUpdate *bool
-    // The OdataType property
+    // 
     odataType *string
     // The description of the policy that the user is trying to request access using.
     policyDescription *string
@@ -137,7 +137,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetIsApprovalRequiredForAdd
 func (m *AccessPackageAssignmentRequestRequirements) GetIsApprovalRequiredForUpdate()(*bool) {
     return m.isApprovalRequiredForUpdate
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessPackageAssignmentRequestRequirements) GetOdataType()(*string) {
     return m.odataType
 }
@@ -231,7 +231,7 @@ func (m *AccessPackageAssignmentRequestRequirements) SetIsApprovalRequiredForAdd
 func (m *AccessPackageAssignmentRequestRequirements) SetIsApprovalRequiredForUpdate(value *bool)() {
     m.isApprovalRequiredForUpdate = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessPackageAssignmentRequestRequirements) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -14,9 +14,9 @@ type PrintJobStatus struct {
     details []PrintJobStateDetail
     // True if the job was acknowledged by a printer; false otherwise. Read-only.
     isAcquiredByPrinter *bool
-    // The OdataType property
+    // 
     odataType *string
-    // The state property
+    // 
     state *PrintJobProcessingState
 }
 // NewPrintJobStatus instantiates a new printJobStatus and sets the default values.
@@ -105,11 +105,11 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *PrintJobStatus) GetIsAcquiredByPrinter()(*bool) {
     return m.isAcquiredByPrinter
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PrintJobStatus) GetOdataType()(*string) {
     return m.odataType
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. 
 func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
     return m.state
 }
@@ -170,11 +170,11 @@ func (m *PrintJobStatus) SetDetails(value []PrintJobStateDetail)() {
 func (m *PrintJobStatus) SetIsAcquiredByPrinter(value *bool)() {
     m.isAcquiredByPrinter = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PrintJobStatus) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. 
 func (m *PrintJobStatus) SetState(value *PrintJobProcessingState)() {
     m.state = value
 }

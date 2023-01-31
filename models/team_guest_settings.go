@@ -12,7 +12,7 @@ type TeamGuestSettings struct {
     allowCreateUpdateChannels *bool
     // If set to true, guests can delete channels.
     allowDeleteChannels *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewTeamGuestSettings instantiates a new teamGuestSettings and sets the default values.
@@ -73,7 +73,7 @@ func (m *TeamGuestSettings) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamGuestSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *TeamGuestSettings) SetAllowCreateUpdateChannels(value *bool)() {
 func (m *TeamGuestSettings) SetAllowDeleteChannels(value *bool)() {
     m.allowDeleteChannels = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamGuestSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

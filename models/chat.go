@@ -8,7 +8,7 @@ import (
 // Chat 
 type Chat struct {
     Entity
-    // The chatType property
+    // 
     chatType *ChatType
     // Date and time at which the chat was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -48,7 +48,7 @@ func NewChat()(*Chat) {
 func CreateChatFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChat(), nil
 }
-// GetChatType gets the chatType property value. The chatType property
+// GetChatType gets the chatType property value. 
 func (m *Chat) GetChatType()(*ChatType) {
     return m.chatType
 }
@@ -382,7 +382,7 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetChatType sets the chatType property value. The chatType property
+// SetChatType sets the chatType property value. 
 func (m *Chat) SetChatType(value *ChatType)() {
     m.chatType = value
 }

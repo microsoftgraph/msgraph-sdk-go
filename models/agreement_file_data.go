@@ -10,7 +10,7 @@ type AgreementFileData struct {
     additionalData map[string]any
     // Data that represents the terms of use PDF document. Read-only.
     data []byte
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAgreementFileData instantiates a new agreementFileData and sets the default values.
@@ -57,7 +57,7 @@ func (m *AgreementFileData) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AgreementFileData) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *AgreementFileData) SetAdditionalData(value map[string]any)() {
 func (m *AgreementFileData) SetData(value []byte)() {
     m.data = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AgreementFileData) SetOdataType(value *string)() {
     m.odataType = value
 }

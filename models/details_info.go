@@ -8,7 +8,7 @@ import (
 type DetailsInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewDetailsInfo instantiates a new detailsInfo and sets the default values.
@@ -41,7 +41,7 @@ func (m *DetailsInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DetailsInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -65,7 +65,7 @@ func (m *DetailsInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *DetailsInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DetailsInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

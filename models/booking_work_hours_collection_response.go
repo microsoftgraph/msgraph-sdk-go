@@ -7,7 +7,7 @@ import (
 // BookingWorkHoursCollectionResponse 
 type BookingWorkHoursCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BookingWorkHoursable
 }
 // NewBookingWorkHoursCollectionResponse instantiates a new BookingWorkHoursCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BookingWorkHoursCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BookingWorkHoursCollectionResponse) GetValue()([]BookingWorkHoursable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BookingWorkHoursCollectionResponse) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BookingWorkHoursCollectionResponse) SetValue(value []BookingWorkHoursable)() {
     m.value = value
 }

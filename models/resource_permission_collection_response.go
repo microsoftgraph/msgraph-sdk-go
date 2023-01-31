@@ -7,7 +7,7 @@ import (
 // ResourcePermissionCollectionResponse 
 type ResourcePermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ResourcePermissionable
 }
 // NewResourcePermissionCollectionResponse instantiates a new ResourcePermissionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ResourcePermissionCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ResourcePermissionCollectionResponse) GetValue()([]ResourcePermissionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ResourcePermissionCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ResourcePermissionCollectionResponse) SetValue(value []ResourcePermissionable)() {
     m.value = value
 }

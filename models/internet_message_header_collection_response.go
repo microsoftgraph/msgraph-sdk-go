@@ -7,7 +7,7 @@ import (
 // InternetMessageHeaderCollectionResponse 
 type InternetMessageHeaderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []InternetMessageHeaderable
 }
 // NewInternetMessageHeaderCollectionResponse instantiates a new InternetMessageHeaderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *InternetMessageHeaderCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *InternetMessageHeaderCollectionResponse) GetValue()([]InternetMessageHeaderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *InternetMessageHeaderCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *InternetMessageHeaderCollectionResponse) SetValue(value []InternetMessageHeaderable)() {
     m.value = value
 }

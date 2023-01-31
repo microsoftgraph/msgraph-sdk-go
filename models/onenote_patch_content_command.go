@@ -6,13 +6,13 @@ import (
 
 // OnenotePatchContentCommand 
 type OnenotePatchContentCommand struct {
-    // The action property
+    // 
     action *OnenotePatchActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
     content *string
-    // The OdataType property
+    // 
     odataType *string
     // The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
     position *OnenotePatchInsertPosition
@@ -30,7 +30,7 @@ func NewOnenotePatchContentCommand()(*OnenotePatchContentCommand) {
 func CreateOnenotePatchContentCommandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenotePatchContentCommand(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. 
 func (m *OnenotePatchContentCommand) GetAction()(*OnenotePatchActionType) {
     return m.action
 }
@@ -97,7 +97,7 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OnenotePatchContentCommand) GetOdataType()(*string) {
     return m.odataType
 }
@@ -151,7 +151,7 @@ func (m *OnenotePatchContentCommand) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. 
 func (m *OnenotePatchContentCommand) SetAction(value *OnenotePatchActionType)() {
     m.action = value
 }
@@ -163,7 +163,7 @@ func (m *OnenotePatchContentCommand) SetAdditionalData(value map[string]any)() {
 func (m *OnenotePatchContentCommand) SetContent(value *string)() {
     m.content = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OnenotePatchContentCommand) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // TeamCollectionResponse 
 type TeamCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Teamable
 }
 // NewTeamCollectionResponse instantiates a new TeamCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TeamCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TeamCollectionResponse) GetValue()([]Teamable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TeamCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TeamCollectionResponse) SetValue(value []Teamable)() {
     m.value = value
 }

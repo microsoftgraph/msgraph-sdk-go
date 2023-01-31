@@ -10,7 +10,7 @@ type Win32LobAppInstallExperience struct {
     additionalData map[string]any
     // Indicates the type of restart action.
     deviceRestartBehavior *Win32LobAppRestartBehavior
-    // The OdataType property
+    // 
     odataType *string
     // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
@@ -69,7 +69,7 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Win32LobAppInstallExperience) GetOdataType()(*string) {
     return m.odataType
 }
@@ -115,7 +115,7 @@ func (m *Win32LobAppInstallExperience) SetAdditionalData(value map[string]any)()
 func (m *Win32LobAppInstallExperience) SetDeviceRestartBehavior(value *Win32LobAppRestartBehavior)() {
     m.deviceRestartBehavior = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Win32LobAppInstallExperience) SetOdataType(value *string)() {
     m.odataType = value
 }

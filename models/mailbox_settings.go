@@ -18,13 +18,13 @@ type MailboxSettings struct {
     delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions
     // The locale information for the user, including the preferred language and country/region.
     language LocaleInfoable
-    // The OdataType property
+    // 
     odataType *string
     // The time format for the user's mailbox.
     timeFormat *string
     // The default time zone for the user's mailbox.
     timeZone *string
-    // The userPurpose property
+    // 
     userPurpose *UserPurpose
     // The days of the week and hours in a specific time zone that the user works.
     workingHours WorkingHoursable
@@ -169,7 +169,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *MailboxSettings) GetLanguage()(LocaleInfoable) {
     return m.language
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MailboxSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -181,7 +181,7 @@ func (m *MailboxSettings) GetTimeFormat()(*string) {
 func (m *MailboxSettings) GetTimeZone()(*string) {
     return m.timeZone
 }
-// GetUserPurpose gets the userPurpose property value. The userPurpose property
+// GetUserPurpose gets the userPurpose property value. 
 func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
     return m.userPurpose
 }
@@ -285,7 +285,7 @@ func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *Delega
 func (m *MailboxSettings) SetLanguage(value LocaleInfoable)() {
     m.language = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MailboxSettings) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -297,7 +297,7 @@ func (m *MailboxSettings) SetTimeFormat(value *string)() {
 func (m *MailboxSettings) SetTimeZone(value *string)() {
     m.timeZone = value
 }
-// SetUserPurpose sets the userPurpose property value. The userPurpose property
+// SetUserPurpose sets the userPurpose property value. 
 func (m *MailboxSettings) SetUserPurpose(value *UserPurpose)() {
     m.userPurpose = value
 }

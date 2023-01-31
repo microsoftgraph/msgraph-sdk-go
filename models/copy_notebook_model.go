@@ -9,37 +9,37 @@ import (
 type CopyNotebookModel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The createdBy property
+    // 
     createdBy *string
-    // The createdByIdentity property
+    // 
     createdByIdentity IdentitySetable
-    // The createdTime property
+    // 
     createdTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The id property
+    // 
     id *string
-    // The isDefault property
+    // 
     isDefault *bool
-    // The isShared property
+    // 
     isShared *bool
-    // The lastModifiedBy property
+    // 
     lastModifiedBy *string
-    // The lastModifiedByIdentity property
+    // 
     lastModifiedByIdentity IdentitySetable
-    // The lastModifiedTime property
+    // 
     lastModifiedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The links property
+    // 
     links NotebookLinksable
-    // The name property
+    // 
     name *string
-    // The OdataType property
+    // 
     odataType *string
-    // The sectionGroupsUrl property
+    // 
     sectionGroupsUrl *string
-    // The sectionsUrl property
+    // 
     sectionsUrl *string
-    // The self property
+    // 
     self *string
-    // The userRole property
+    // 
     userRole *OnenoteUserRole
 }
 // NewCopyNotebookModel instantiates a new CopyNotebookModel and sets the default values.
@@ -57,15 +57,15 @@ func CreateCopyNotebookModelFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *CopyNotebookModel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. 
 func (m *CopyNotebookModel) GetCreatedBy()(*string) {
     return m.createdBy
 }
-// GetCreatedByIdentity gets the createdByIdentity property value. The createdByIdentity property
+// GetCreatedByIdentity gets the createdByIdentity property value. 
 func (m *CopyNotebookModel) GetCreatedByIdentity()(IdentitySetable) {
     return m.createdByIdentity
 }
-// GetCreatedTime gets the createdTime property value. The createdTime property
+// GetCreatedTime gets the createdTime property value. 
 func (m *CopyNotebookModel) GetCreatedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdTime
 }
@@ -234,55 +234,55 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. 
 func (m *CopyNotebookModel) GetId()(*string) {
     return m.id
 }
-// GetIsDefault gets the isDefault property value. The isDefault property
+// GetIsDefault gets the isDefault property value. 
 func (m *CopyNotebookModel) GetIsDefault()(*bool) {
     return m.isDefault
 }
-// GetIsShared gets the isShared property value. The isShared property
+// GetIsShared gets the isShared property value. 
 func (m *CopyNotebookModel) GetIsShared()(*bool) {
     return m.isShared
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. 
 func (m *CopyNotebookModel) GetLastModifiedBy()(*string) {
     return m.lastModifiedBy
 }
-// GetLastModifiedByIdentity gets the lastModifiedByIdentity property value. The lastModifiedByIdentity property
+// GetLastModifiedByIdentity gets the lastModifiedByIdentity property value. 
 func (m *CopyNotebookModel) GetLastModifiedByIdentity()(IdentitySetable) {
     return m.lastModifiedByIdentity
 }
-// GetLastModifiedTime gets the lastModifiedTime property value. The lastModifiedTime property
+// GetLastModifiedTime gets the lastModifiedTime property value. 
 func (m *CopyNotebookModel) GetLastModifiedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedTime
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. 
 func (m *CopyNotebookModel) GetLinks()(NotebookLinksable) {
     return m.links
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. 
 func (m *CopyNotebookModel) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CopyNotebookModel) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSectionGroupsUrl gets the sectionGroupsUrl property value. The sectionGroupsUrl property
+// GetSectionGroupsUrl gets the sectionGroupsUrl property value. 
 func (m *CopyNotebookModel) GetSectionGroupsUrl()(*string) {
     return m.sectionGroupsUrl
 }
-// GetSectionsUrl gets the sectionsUrl property value. The sectionsUrl property
+// GetSectionsUrl gets the sectionsUrl property value. 
 func (m *CopyNotebookModel) GetSectionsUrl()(*string) {
     return m.sectionsUrl
 }
-// GetSelf gets the self property value. The self property
+// GetSelf gets the self property value. 
 func (m *CopyNotebookModel) GetSelf()(*string) {
     return m.self
 }
-// GetUserRole gets the userRole property value. The userRole property
+// GetUserRole gets the userRole property value. 
 func (m *CopyNotebookModel) GetUserRole()(*OnenoteUserRole) {
     return m.userRole
 }
@@ -397,67 +397,67 @@ func (m *CopyNotebookModel) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *CopyNotebookModel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. 
 func (m *CopyNotebookModel) SetCreatedBy(value *string)() {
     m.createdBy = value
 }
-// SetCreatedByIdentity sets the createdByIdentity property value. The createdByIdentity property
+// SetCreatedByIdentity sets the createdByIdentity property value. 
 func (m *CopyNotebookModel) SetCreatedByIdentity(value IdentitySetable)() {
     m.createdByIdentity = value
 }
-// SetCreatedTime sets the createdTime property value. The createdTime property
+// SetCreatedTime sets the createdTime property value. 
 func (m *CopyNotebookModel) SetCreatedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdTime = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. 
 func (m *CopyNotebookModel) SetId(value *string)() {
     m.id = value
 }
-// SetIsDefault sets the isDefault property value. The isDefault property
+// SetIsDefault sets the isDefault property value. 
 func (m *CopyNotebookModel) SetIsDefault(value *bool)() {
     m.isDefault = value
 }
-// SetIsShared sets the isShared property value. The isShared property
+// SetIsShared sets the isShared property value. 
 func (m *CopyNotebookModel) SetIsShared(value *bool)() {
     m.isShared = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. 
 func (m *CopyNotebookModel) SetLastModifiedBy(value *string)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedByIdentity sets the lastModifiedByIdentity property value. The lastModifiedByIdentity property
+// SetLastModifiedByIdentity sets the lastModifiedByIdentity property value. 
 func (m *CopyNotebookModel) SetLastModifiedByIdentity(value IdentitySetable)() {
     m.lastModifiedByIdentity = value
 }
-// SetLastModifiedTime sets the lastModifiedTime property value. The lastModifiedTime property
+// SetLastModifiedTime sets the lastModifiedTime property value. 
 func (m *CopyNotebookModel) SetLastModifiedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedTime = value
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. 
 func (m *CopyNotebookModel) SetLinks(value NotebookLinksable)() {
     m.links = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. 
 func (m *CopyNotebookModel) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CopyNotebookModel) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSectionGroupsUrl sets the sectionGroupsUrl property value. The sectionGroupsUrl property
+// SetSectionGroupsUrl sets the sectionGroupsUrl property value. 
 func (m *CopyNotebookModel) SetSectionGroupsUrl(value *string)() {
     m.sectionGroupsUrl = value
 }
-// SetSectionsUrl sets the sectionsUrl property value. The sectionsUrl property
+// SetSectionsUrl sets the sectionsUrl property value. 
 func (m *CopyNotebookModel) SetSectionsUrl(value *string)() {
     m.sectionsUrl = value
 }
-// SetSelf sets the self property value. The self property
+// SetSelf sets the self property value. 
 func (m *CopyNotebookModel) SetSelf(value *string)() {
     m.self = value
 }
-// SetUserRole sets the userRole property value. The userRole property
+// SetUserRole sets the userRole property value. 
 func (m *CopyNotebookModel) SetUserRole(value *OnenoteUserRole)() {
     m.userRole = value
 }

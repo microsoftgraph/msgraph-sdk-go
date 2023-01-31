@@ -70,10 +70,6 @@ func NewItemTodoListsItemTasksItemAttachmentsRequestBuilder(rawUrl string, reque
 func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Count()(*ItemTodoListsItemTasksItemAttachmentsCountRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get attachments from users
 func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -92,6 +88,10 @@ func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseCollectionResponseable), nil
+}
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemTodoListsItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionRequestBuilder) {
+    return NewItemTodoListsItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create new navigation property to attachments for users
 func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) ToPostRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

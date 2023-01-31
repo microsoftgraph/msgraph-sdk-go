@@ -11,7 +11,7 @@ type DomainState struct {
     additionalData map[string]any
     // Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Type of asynchronous operation. The values can be ForceDelete or Verification
     operation *string
@@ -82,7 +82,7 @@ func (m *DomainState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *DomainState) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastActionDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *DomainState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -136,7 +136,7 @@ func (m *DomainState) SetAdditionalData(value map[string]any)() {
 func (m *DomainState) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastActionDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *DomainState) SetOdataType(value *string)() {
     m.odataType = value
 }

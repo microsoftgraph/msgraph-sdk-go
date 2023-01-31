@@ -10,7 +10,7 @@ type TrainingEventsContent struct {
     additionalData map[string]any
     // List of assigned trainings and their information in an attack simulation and training campaign.
     assignedTrainingsInfos []AssignedTrainingInfoable
-    // The OdataType property
+    // 
     odataType *string
     // Number of users who were assigned trainings in an attack simulation and training campaign.
     trainingsAssignedUserCount *int32
@@ -73,7 +73,7 @@ func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TrainingEventsContent) GetOdataType()(*string) {
     return m.odataType
 }
@@ -121,7 +121,7 @@ func (m *TrainingEventsContent) SetAdditionalData(value map[string]any)() {
 func (m *TrainingEventsContent) SetAssignedTrainingsInfos(value []AssignedTrainingInfoable)() {
     m.assignedTrainingsInfos = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TrainingEventsContent) SetOdataType(value *string)() {
     m.odataType = value
 }

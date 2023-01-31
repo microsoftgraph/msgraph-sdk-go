@@ -29,7 +29,7 @@ type RemoteItem struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional. Filename of the remote item. Read-only.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
     package_escaped Package_escapedable
@@ -310,7 +310,7 @@ func (m *RemoteItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
 func (m *RemoteItem) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RemoteItem) GetOdataType()(*string) {
     return m.odataType
 }
@@ -524,7 +524,7 @@ func (m *RemoteItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *RemoteItem) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RemoteItem) SetOdataType(value *string)() {
     m.odataType = value
 }

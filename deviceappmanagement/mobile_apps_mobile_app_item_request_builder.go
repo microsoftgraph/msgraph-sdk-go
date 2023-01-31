@@ -46,10 +46,6 @@ type MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *MobileAppsMobileAppItemRequestBuilder) Assign()(*MobileAppsItemAssignRequestBuilder) {
-    return NewMobileAppsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Assignments()(*MobileAppsItemAssignmentsRequestBuilder) {
     return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -81,13 +77,16 @@ func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*Mobil
     return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMobileAppsMobileAppItemRequestBuilderInternal instantiates a new MobileAppItemRequestBuilder and sets the default values.
-func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsMobileAppItemRequestBuilder) {
+func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mobileAppId *string)(*MobileAppsMobileAppItemRequestBuilder) {
     m := &MobileAppsMobileAppItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if mobileAppId != nil {
+        urlTplParams["mobileApp%2Did"] = *mobileAppId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -97,7 +96,7 @@ func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]
 func NewMobileAppsMobileAppItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsMobileAppItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileAppsMobileAppItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mobileApps for deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -134,13 +133,17 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
 }
-// ManagedMobileLobApp casts the previous resource to managedMobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) ManagedMobileLobApp()(*MobileAppsItemManagedMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphAssign()(*MobileAppsItemMicrosoftGraphAssignAssignRequestBuilder) {
+    return NewMobileAppsItemMicrosoftGraphAssignAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) MobileLobApp()(*MobileAppsItemMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphManagedMobileLobApp()(*MobileAppsItemMicrosoftGraphManagedMobileLobAppManagedMobileLobAppRequestBuilder) {
+    return NewMobileAppsItemMicrosoftGraphManagedMobileLobAppManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphMobileLobApp casts the previous resource to mobileLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphMobileLobApp()(*MobileAppsItemMicrosoftGraphMobileLobAppMobileLobAppRequestBuilder) {
+    return NewMobileAppsItemMicrosoftGraphMobileLobAppMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {
@@ -196,7 +199,10 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

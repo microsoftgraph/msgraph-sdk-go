@@ -13,7 +13,7 @@ type EducationAssignmentGrade struct {
     gradedBy IdentitySetable
     // Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     gradedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEducationAssignmentGrade instantiates a new educationAssignmentGrade and sets the default values.
@@ -92,7 +92,7 @@ func (m *EducationAssignmentGrade) GetGradedBy()(IdentitySetable) {
 func (m *EducationAssignmentGrade) GetGradedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.gradedDateTime
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationAssignmentGrade) GetOdataType()(*string) {
     return m.odataType
 }
@@ -136,7 +136,7 @@ func (m *EducationAssignmentGrade) SetGradedBy(value IdentitySetable)() {
 func (m *EducationAssignmentGrade) SetGradedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.gradedDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationAssignmentGrade) SetOdataType(value *string)() {
     m.odataType = value
 }

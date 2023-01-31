@@ -7,7 +7,7 @@ import (
 // UserScopeTeamsAppInstallationCollectionResponse 
 type UserScopeTeamsAppInstallationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UserScopeTeamsAppInstallationable
 }
 // NewUserScopeTeamsAppInstallationCollectionResponse instantiates a new UserScopeTeamsAppInstallationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UserScopeTeamsAppInstallationCollectionResponse) GetFieldDeserializers(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UserScopeTeamsAppInstallationCollectionResponse) GetValue()([]UserScopeTeamsAppInstallationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UserScopeTeamsAppInstallationCollectionResponse) Serialize(writer i878a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UserScopeTeamsAppInstallationCollectionResponse) SetValue(value []UserScopeTeamsAppInstallationable)() {
     m.value = value
 }

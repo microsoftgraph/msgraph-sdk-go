@@ -7,7 +7,7 @@ import (
 // UnifiedRoleAssignmentScheduleInstanceCollectionResponse 
 type UnifiedRoleAssignmentScheduleInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []UnifiedRoleAssignmentScheduleInstanceable
 }
 // NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse instantiates a new UnifiedRoleAssignmentScheduleInstanceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) GetFieldDeseri
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) GetValue()([]UnifiedRoleAssignmentScheduleInstanceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) Serialize(writ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) SetValue(value []UnifiedRoleAssignmentScheduleInstanceable)() {
     m.value = value
 }

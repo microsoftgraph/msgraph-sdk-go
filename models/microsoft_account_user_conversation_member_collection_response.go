@@ -7,7 +7,7 @@ import (
 // MicrosoftAccountUserConversationMemberCollectionResponse 
 type MicrosoftAccountUserConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MicrosoftAccountUserConversationMemberable
 }
 // NewMicrosoftAccountUserConversationMemberCollectionResponse instantiates a new MicrosoftAccountUserConversationMemberCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MicrosoftAccountUserConversationMemberCollectionResponse) GetFieldDeser
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MicrosoftAccountUserConversationMemberCollectionResponse) GetValue()([]MicrosoftAccountUserConversationMemberable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MicrosoftAccountUserConversationMemberCollectionResponse) Serialize(wri
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MicrosoftAccountUserConversationMemberCollectionResponse) SetValue(value []MicrosoftAccountUserConversationMemberable)() {
     m.value = value
 }

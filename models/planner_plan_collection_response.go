@@ -7,7 +7,7 @@ import (
 // PlannerPlanCollectionResponse 
 type PlannerPlanCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PlannerPlanable
 }
 // NewPlannerPlanCollectionResponse instantiates a new PlannerPlanCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PlannerPlanCollectionResponse) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PlannerPlanCollectionResponse) GetValue()([]PlannerPlanable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PlannerPlanCollectionResponse) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PlannerPlanCollectionResponse) SetValue(value []PlannerPlanable)() {
     m.value = value
 }

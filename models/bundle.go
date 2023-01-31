@@ -12,7 +12,7 @@ type Bundle struct {
     album Albumable
     // Number of children contained immediately within this container.
     childCount *int32
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewBundle instantiates a new bundle and sets the default values.
@@ -73,7 +73,7 @@ func (m *Bundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Bundle) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *Bundle) SetAlbum(value Albumable)() {
 func (m *Bundle) SetChildCount(value *int32)() {
     m.childCount = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Bundle) SetOdataType(value *string)() {
     m.odataType = value
 }

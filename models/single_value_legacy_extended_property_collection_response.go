@@ -7,7 +7,7 @@ import (
 // SingleValueLegacyExtendedPropertyCollectionResponse 
 type SingleValueLegacyExtendedPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SingleValueLegacyExtendedPropertyable
 }
 // NewSingleValueLegacyExtendedPropertyCollectionResponse instantiates a new SingleValueLegacyExtendedPropertyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SingleValueLegacyExtendedPropertyCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SingleValueLegacyExtendedPropertyCollectionResponse) GetValue()([]SingleValueLegacyExtendedPropertyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SingleValueLegacyExtendedPropertyCollectionResponse) Serialize(writer i
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SingleValueLegacyExtendedPropertyCollectionResponse) SetValue(value []SingleValueLegacyExtendedPropertyable)() {
     m.value = value
 }

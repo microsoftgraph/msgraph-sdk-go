@@ -7,7 +7,7 @@ import (
 // OrganizationCollectionResponse 
 type OrganizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Organizationable
 }
 // NewOrganizationCollectionResponse instantiates a new OrganizationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *OrganizationCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *OrganizationCollectionResponse) GetValue()([]Organizationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *OrganizationCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *OrganizationCollectionResponse) SetValue(value []Organizationable)() {
     m.value = value
 }

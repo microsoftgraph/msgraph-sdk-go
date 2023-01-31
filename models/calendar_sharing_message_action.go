@@ -6,15 +6,15 @@ import (
 
 // CalendarSharingMessageAction 
 type CalendarSharingMessageAction struct {
-    // The action property
+    // 
     action *CalendarSharingAction
-    // The actionType property
+    // 
     actionType *CalendarSharingActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The importance property
+    // 
     importance *CalendarSharingActionImportance
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewCalendarSharingMessageAction instantiates a new calendarSharingMessageAction and sets the default values.
@@ -28,11 +28,11 @@ func NewCalendarSharingMessageAction()(*CalendarSharingMessageAction) {
 func CreateCalendarSharingMessageActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendarSharingMessageAction(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. 
 func (m *CalendarSharingMessageAction) GetAction()(*CalendarSharingAction) {
     return m.action
 }
-// GetActionType gets the actionType property value. The actionType property
+// GetActionType gets the actionType property value. 
 func (m *CalendarSharingMessageAction) GetActionType()(*CalendarSharingActionType) {
     return m.actionType
 }
@@ -85,11 +85,11 @@ func (m *CalendarSharingMessageAction) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetImportance gets the importance property value. The importance property
+// GetImportance gets the importance property value. 
 func (m *CalendarSharingMessageAction) GetImportance()(*CalendarSharingActionImportance) {
     return m.importance
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CalendarSharingMessageAction) GetOdataType()(*string) {
     return m.odataType
 }
@@ -130,11 +130,11 @@ func (m *CalendarSharingMessageAction) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. 
 func (m *CalendarSharingMessageAction) SetAction(value *CalendarSharingAction)() {
     m.action = value
 }
-// SetActionType sets the actionType property value. The actionType property
+// SetActionType sets the actionType property value. 
 func (m *CalendarSharingMessageAction) SetActionType(value *CalendarSharingActionType)() {
     m.actionType = value
 }
@@ -142,11 +142,11 @@ func (m *CalendarSharingMessageAction) SetActionType(value *CalendarSharingActio
 func (m *CalendarSharingMessageAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetImportance sets the importance property value. The importance property
+// SetImportance sets the importance property value. 
 func (m *CalendarSharingMessageAction) SetImportance(value *CalendarSharingActionImportance)() {
     m.importance = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CalendarSharingMessageAction) SetOdataType(value *string)() {
     m.odataType = value
 }

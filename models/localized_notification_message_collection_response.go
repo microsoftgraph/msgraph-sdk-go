@@ -7,7 +7,7 @@ import (
 // LocalizedNotificationMessageCollectionResponse 
 type LocalizedNotificationMessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []LocalizedNotificationMessageable
 }
 // NewLocalizedNotificationMessageCollectionResponse instantiates a new LocalizedNotificationMessageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *LocalizedNotificationMessageCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LocalizedNotificationMessageCollectionResponse) GetValue()([]LocalizedNotificationMessageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *LocalizedNotificationMessageCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LocalizedNotificationMessageCollectionResponse) SetValue(value []LocalizedNotificationMessageable)() {
     m.value = value
 }

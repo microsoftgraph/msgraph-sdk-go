@@ -10,9 +10,9 @@ type TimeConstraint struct {
     activityDomain *ActivityDomain
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
-    // The timeSlots property
+    // 
     timeSlots []TimeSlotable
 }
 // NewTimeConstraint instantiates a new timeConstraint and sets the default values.
@@ -73,11 +73,11 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TimeConstraint) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTimeSlots gets the timeSlots property value. The timeSlots property
+// GetTimeSlots gets the timeSlots property value. 
 func (m *TimeConstraint) GetTimeSlots()([]TimeSlotable) {
     return m.timeSlots
 }
@@ -122,11 +122,11 @@ func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
 func (m *TimeConstraint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TimeConstraint) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTimeSlots sets the timeSlots property value. The timeSlots property
+// SetTimeSlots sets the timeSlots property value. 
 func (m *TimeConstraint) SetTimeSlots(value []TimeSlotable)() {
     m.timeSlots = value
 }

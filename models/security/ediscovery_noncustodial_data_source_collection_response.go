@@ -8,7 +8,7 @@ import (
 // EdiscoveryNoncustodialDataSourceCollectionResponse 
 type EdiscoveryNoncustodialDataSourceCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryNoncustodialDataSourceable
 }
 // NewEdiscoveryNoncustodialDataSourceCollectionResponse instantiates a new EdiscoveryNoncustodialDataSourceCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryNoncustodialDataSourceCollectionResponse) GetFieldDeserialize
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryNoncustodialDataSourceCollectionResponse) GetValue()([]EdiscoveryNoncustodialDataSourceable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryNoncustodialDataSourceCollectionResponse) Serialize(writer i8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryNoncustodialDataSourceCollectionResponse) SetValue(value []EdiscoveryNoncustodialDataSourceable)() {
     m.value = value
 }

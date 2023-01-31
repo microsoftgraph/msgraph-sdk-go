@@ -33,13 +33,16 @@ type ItemItemsItemChildrenDriveItemItemRequestBuilderGetRequestConfiguration str
     QueryParameters *ItemItemsItemChildrenDriveItemItemRequestBuilderGetQueryParameters
 }
 // NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
+func NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveItemId1 *string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
     m := &ItemItemsItemChildrenDriveItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/children/{driveItem%2Did1}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if driveItemId1 != nil {
+        urlTplParams["driveItem%2Did1"] = *driveItemId1
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(pathParameters 
 func NewItemItemsItemChildrenDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) Content()(*ItemItemsItemChildrenItemContentRequestBuilder) {

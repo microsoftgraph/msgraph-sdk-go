@@ -11,7 +11,7 @@ type WorkbookOperation struct {
     error WorkbookOperationErrorable
     // The resource URI for the result.
     resourceLocation *string
-    // The status property
+    // 
     status *WorkbookOperationStatus
 }
 // NewWorkbookOperation instantiates a new workbookOperation and sets the default values.
@@ -68,7 +68,7 @@ func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *WorkbookOperation) GetResourceLocation()(*string) {
     return m.resourceLocation
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. 
 func (m *WorkbookOperation) GetStatus()(*WorkbookOperationStatus) {
     return m.status
 }
@@ -107,7 +107,7 @@ func (m *WorkbookOperation) SetError(value WorkbookOperationErrorable)() {
 func (m *WorkbookOperation) SetResourceLocation(value *string)() {
     m.resourceLocation = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. 
 func (m *WorkbookOperation) SetStatus(value *WorkbookOperationStatus)() {
     m.status = value
 }

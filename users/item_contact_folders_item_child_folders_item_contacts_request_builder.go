@@ -72,10 +72,6 @@ func NewItemContactFoldersItemChildFoldersItemContactsRequestBuilder(rawUrl stri
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Count()(*ItemContactFoldersItemChildFoldersItemContactsCountRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
-    return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
 // [Find more info here]
 // 
@@ -97,6 +93,10 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) MicrosoftGraphDelta()(*ItemContactFoldersItemChildFoldersItemContactsMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemContactFoldersItemChildFoldersItemContactsMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToPostReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

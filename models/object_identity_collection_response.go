@@ -7,7 +7,7 @@ import (
 // ObjectIdentityCollectionResponse 
 type ObjectIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ObjectIdentityable
 }
 // NewObjectIdentityCollectionResponse instantiates a new ObjectIdentityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ObjectIdentityCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ObjectIdentityCollectionResponse) GetValue()([]ObjectIdentityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ObjectIdentityCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ObjectIdentityCollectionResponse) SetValue(value []ObjectIdentityable)() {
     m.value = value
 }

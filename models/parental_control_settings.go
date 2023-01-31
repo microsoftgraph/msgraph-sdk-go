@@ -12,7 +12,7 @@ type ParentalControlSettings struct {
     countriesBlockedForMinors []string
     // Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
     legalAgeGroupRule *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewParentalControlSettings instantiates a new parentalControlSettings and sets the default values.
@@ -77,7 +77,7 @@ func (m *ParentalControlSettings) GetFieldDeserializers()(map[string]func(i878a8
 func (m *ParentalControlSettings) GetLegalAgeGroupRule()(*string) {
     return m.legalAgeGroupRule
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ParentalControlSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -121,7 +121,7 @@ func (m *ParentalControlSettings) SetCountriesBlockedForMinors(value []string)()
 func (m *ParentalControlSettings) SetLegalAgeGroupRule(value *string)() {
     m.legalAgeGroupRule = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ParentalControlSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

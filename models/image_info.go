@@ -12,11 +12,11 @@ type ImageInfo struct {
     additionalData map[string]any
     // Optional; alt-text accessible content for the image
     alternateText *string
-    // The alternativeText property
+    // 
     alternativeText *string
     // Optional; URI that points to an icon which represents the application used to generate the activity
     iconUrl *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewImageInfo instantiates a new imageInfo and sets the default values.
@@ -42,7 +42,7 @@ func (m *ImageInfo) GetAdditionalData()(map[string]any) {
 func (m *ImageInfo) GetAlternateText()(*string) {
     return m.alternateText
 }
-// GetAlternativeText gets the alternativeText property value. The alternativeText property
+// GetAlternativeText gets the alternativeText property value. 
 func (m *ImageInfo) GetAlternativeText()(*string) {
     return m.alternativeText
 }
@@ -105,7 +105,7 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *ImageInfo) GetIconUrl()(*string) {
     return m.iconUrl
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ImageInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -161,7 +161,7 @@ func (m *ImageInfo) SetAdditionalData(value map[string]any)() {
 func (m *ImageInfo) SetAlternateText(value *string)() {
     m.alternateText = value
 }
-// SetAlternativeText sets the alternativeText property value. The alternativeText property
+// SetAlternativeText sets the alternativeText property value. 
 func (m *ImageInfo) SetAlternativeText(value *string)() {
     m.alternativeText = value
 }
@@ -169,7 +169,7 @@ func (m *ImageInfo) SetAlternativeText(value *string)() {
 func (m *ImageInfo) SetIconUrl(value *string)() {
     m.iconUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ImageInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // DomainCollectionResponse 
 type DomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Domainable
 }
 // NewDomainCollectionResponse instantiates a new DomainCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DomainCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DomainCollectionResponse) GetValue()([]Domainable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DomainCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DomainCollectionResponse) SetValue(value []Domainable)() {
     m.value = value
 }

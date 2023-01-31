@@ -7,7 +7,7 @@ import (
 // CalendarGroupCollectionResponse 
 type CalendarGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CalendarGroupable
 }
 // NewCalendarGroupCollectionResponse instantiates a new CalendarGroupCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CalendarGroupCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CalendarGroupCollectionResponse) GetValue()([]CalendarGroupable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CalendarGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CalendarGroupCollectionResponse) SetValue(value []CalendarGroupable)() {
     m.value = value
 }

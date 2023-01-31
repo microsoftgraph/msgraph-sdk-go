@@ -14,11 +14,11 @@ type WebApplication struct {
     implicitGrantSettings ImplicitGrantSettingsable
     // Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
     logoutUrl *string
-    // The OdataType property
+    // 
     odataType *string
     // Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
     redirectUris []string
-    // The redirectUriSettings property
+    // 
     redirectUriSettings []RedirectUriSettingsable
 }
 // NewWebApplication instantiates a new webApplication and sets the default values.
@@ -121,7 +121,7 @@ func (m *WebApplication) GetImplicitGrantSettings()(ImplicitGrantSettingsable) {
 func (m *WebApplication) GetLogoutUrl()(*string) {
     return m.logoutUrl
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WebApplication) GetOdataType()(*string) {
     return m.odataType
 }
@@ -129,7 +129,7 @@ func (m *WebApplication) GetOdataType()(*string) {
 func (m *WebApplication) GetRedirectUris()([]string) {
     return m.redirectUris
 }
-// GetRedirectUriSettings gets the redirectUriSettings property value. The redirectUriSettings property
+// GetRedirectUriSettings gets the redirectUriSettings property value. 
 func (m *WebApplication) GetRedirectUriSettings()([]RedirectUriSettingsable) {
     return m.redirectUriSettings
 }
@@ -199,7 +199,7 @@ func (m *WebApplication) SetImplicitGrantSettings(value ImplicitGrantSettingsabl
 func (m *WebApplication) SetLogoutUrl(value *string)() {
     m.logoutUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WebApplication) SetOdataType(value *string)() {
     m.odataType = value
 }
@@ -207,7 +207,7 @@ func (m *WebApplication) SetOdataType(value *string)() {
 func (m *WebApplication) SetRedirectUris(value []string)() {
     m.redirectUris = value
 }
-// SetRedirectUriSettings sets the redirectUriSettings property value. The redirectUriSettings property
+// SetRedirectUriSettings sets the redirectUriSettings property value. 
 func (m *WebApplication) SetRedirectUriSettings(value []RedirectUriSettingsable)() {
     m.redirectUriSettings = value
 }

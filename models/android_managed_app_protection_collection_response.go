@@ -7,7 +7,7 @@ import (
 // AndroidManagedAppProtectionCollectionResponse 
 type AndroidManagedAppProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidManagedAppProtectionable
 }
 // NewAndroidManagedAppProtectionCollectionResponse instantiates a new AndroidManagedAppProtectionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidManagedAppProtectionCollectionResponse) GetFieldDeserializers()(
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidManagedAppProtectionCollectionResponse) GetValue()([]AndroidManagedAppProtectionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidManagedAppProtectionCollectionResponse) Serialize(writer i878a80
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidManagedAppProtectionCollectionResponse) SetValue(value []AndroidManagedAppProtectionable)() {
     m.value = value
 }

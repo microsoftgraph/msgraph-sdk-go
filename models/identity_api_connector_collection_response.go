@@ -7,7 +7,7 @@ import (
 // IdentityApiConnectorCollectionResponse 
 type IdentityApiConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []IdentityApiConnectorable
 }
 // NewIdentityApiConnectorCollectionResponse instantiates a new IdentityApiConnectorCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *IdentityApiConnectorCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *IdentityApiConnectorCollectionResponse) GetValue()([]IdentityApiConnectorable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *IdentityApiConnectorCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *IdentityApiConnectorCollectionResponse) SetValue(value []IdentityApiConnectorable)() {
     m.value = value
 }

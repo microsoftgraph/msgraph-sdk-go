@@ -29,7 +29,7 @@ type UserSecurityState struct {
     logonLocation *string
     // Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
     logonType *LogonType
-    // The OdataType property
+    // 
     odataType *string
     // Active Directory (on-premises) Security Identifier (SID) of the user.
     onPremisesSecurityIdentifier *string
@@ -250,7 +250,7 @@ func (m *UserSecurityState) GetLogonLocation()(*string) {
 func (m *UserSecurityState) GetLogonType()(*LogonType) {
     return m.logonType
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *UserSecurityState) GetOdataType()(*string) {
     return m.odataType
 }
@@ -417,7 +417,7 @@ func (m *UserSecurityState) SetLogonLocation(value *string)() {
 func (m *UserSecurityState) SetLogonType(value *LogonType)() {
     m.logonType = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *UserSecurityState) SetOdataType(value *string)() {
     m.odataType = value
 }

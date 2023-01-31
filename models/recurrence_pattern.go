@@ -20,7 +20,7 @@ type RecurrencePattern struct {
     interval *int32
     // The month in which the event occurs.  This is a number from 1 to 12.
     month *int32
-    // The OdataType property
+    // 
     odataType *string
     // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
     type_escaped *RecurrencePatternType
@@ -153,7 +153,7 @@ func (m *RecurrencePattern) GetInterval()(*int32) {
 func (m *RecurrencePattern) GetMonth()(*int32) {
     return m.month
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RecurrencePattern) GetOdataType()(*string) {
     return m.odataType
 }
@@ -250,7 +250,7 @@ func (m *RecurrencePattern) SetInterval(value *int32)() {
 func (m *RecurrencePattern) SetMonth(value *int32)() {
     m.month = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RecurrencePattern) SetOdataType(value *string)() {
     m.odataType = value
 }

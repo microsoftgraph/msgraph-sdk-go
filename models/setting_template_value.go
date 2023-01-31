@@ -14,7 +14,7 @@ type SettingTemplateValue struct {
     description *string
     // Name of the setting.
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // Type of the setting.
     type_escaped *string
@@ -101,7 +101,7 @@ func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *SettingTemplateValue) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SettingTemplateValue) GetOdataType()(*string) {
     return m.odataType
 }
@@ -165,7 +165,7 @@ func (m *SettingTemplateValue) SetDescription(value *string)() {
 func (m *SettingTemplateValue) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SettingTemplateValue) SetOdataType(value *string)() {
     m.odataType = value
 }

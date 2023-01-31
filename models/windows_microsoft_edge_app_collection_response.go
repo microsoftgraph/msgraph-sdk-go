@@ -7,7 +7,7 @@ import (
 // WindowsMicrosoftEdgeAppCollectionResponse 
 type WindowsMicrosoftEdgeAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsMicrosoftEdgeAppable
 }
 // NewWindowsMicrosoftEdgeAppCollectionResponse instantiates a new WindowsMicrosoftEdgeAppCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsMicrosoftEdgeAppCollectionResponse) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsMicrosoftEdgeAppCollectionResponse) GetValue()([]WindowsMicrosoftEdgeAppable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsMicrosoftEdgeAppCollectionResponse) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsMicrosoftEdgeAppCollectionResponse) SetValue(value []WindowsMicrosoftEdgeAppable)() {
     m.value = value
 }

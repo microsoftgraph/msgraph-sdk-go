@@ -7,7 +7,7 @@ import (
 // EmailAddressCollectionResponse 
 type EmailAddressCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EmailAddressable
 }
 // NewEmailAddressCollectionResponse instantiates a new EmailAddressCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EmailAddressCollectionResponse) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EmailAddressCollectionResponse) GetValue()([]EmailAddressable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EmailAddressCollectionResponse) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EmailAddressCollectionResponse) SetValue(value []EmailAddressable)() {
     m.value = value
 }

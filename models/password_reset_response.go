@@ -10,7 +10,7 @@ type PasswordResetResponse struct {
     additionalData map[string]any
     // The Azure AD-generated password.
     newPassword *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewPasswordResetResponse instantiates a new passwordResetResponse and sets the default values.
@@ -57,7 +57,7 @@ func (m *PasswordResetResponse) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *PasswordResetResponse) GetNewPassword()(*string) {
     return m.newPassword
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PasswordResetResponse) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *PasswordResetResponse) SetAdditionalData(value map[string]any)() {
 func (m *PasswordResetResponse) SetNewPassword(value *string)() {
     m.newPassword = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PasswordResetResponse) SetOdataType(value *string)() {
     m.odataType = value
 }

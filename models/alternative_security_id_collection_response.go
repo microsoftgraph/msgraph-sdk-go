@@ -7,7 +7,7 @@ import (
 // AlternativeSecurityIdCollectionResponse 
 type AlternativeSecurityIdCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AlternativeSecurityIdable
 }
 // NewAlternativeSecurityIdCollectionResponse instantiates a new AlternativeSecurityIdCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AlternativeSecurityIdCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AlternativeSecurityIdCollectionResponse) GetValue()([]AlternativeSecurityIdable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AlternativeSecurityIdCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AlternativeSecurityIdCollectionResponse) SetValue(value []AlternativeSecurityIdable)() {
     m.value = value
 }

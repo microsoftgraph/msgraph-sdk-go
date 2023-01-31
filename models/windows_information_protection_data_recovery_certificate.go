@@ -15,7 +15,7 @@ type WindowsInformationProtectionDataRecoveryCertificate struct {
     description *string
     // Data recovery Certificate expiration datetime
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
     // Data recovery Certificate subject name
     subjectName *string
@@ -102,7 +102,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializ
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetOdataType()(*string) {
     return m.odataType
 }
@@ -166,7 +166,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) SetDescription(val
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetOdataType(value *string)() {
     m.odataType = value
 }

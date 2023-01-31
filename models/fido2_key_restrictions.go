@@ -14,7 +14,7 @@ type Fido2KeyRestrictions struct {
     enforcementType *Fido2RestrictionEnforcementType
     // Determines if the configured key enforcement is enabled.
     isEnforced *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewFido2KeyRestrictions instantiates a new fido2KeyRestrictions and sets the default values.
@@ -93,7 +93,7 @@ func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *Fido2KeyRestrictions) GetIsEnforced()(*bool) {
     return m.isEnforced
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Fido2KeyRestrictions) GetOdataType()(*string) {
     return m.odataType
 }
@@ -148,7 +148,7 @@ func (m *Fido2KeyRestrictions) SetEnforcementType(value *Fido2RestrictionEnforce
 func (m *Fido2KeyRestrictions) SetIsEnforced(value *bool)() {
     m.isEnforced = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Fido2KeyRestrictions) SetOdataType(value *string)() {
     m.odataType = value
 }

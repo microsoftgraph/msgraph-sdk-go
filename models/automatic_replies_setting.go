@@ -14,7 +14,7 @@ type AutomaticRepliesSetting struct {
     externalReplyMessage *string
     // The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
     internalReplyMessage *string
-    // The OdataType property
+    // 
     odataType *string
     // The date and time that automatic replies are set to end, if Status is set to Scheduled.
     scheduledEndDateTime DateTimeTimeZoneable
@@ -125,7 +125,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a8
 func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
     return m.internalReplyMessage
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AutomaticRepliesSetting) GetOdataType()(*string) {
     return m.odataType
 }
@@ -211,7 +211,7 @@ func (m *AutomaticRepliesSetting) SetExternalReplyMessage(value *string)() {
 func (m *AutomaticRepliesSetting) SetInternalReplyMessage(value *string)() {
     m.internalReplyMessage = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AutomaticRepliesSetting) SetOdataType(value *string)() {
     m.odataType = value
 }

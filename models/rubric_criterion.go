@@ -10,7 +10,7 @@ type RubricCriterion struct {
     additionalData map[string]any
     // The description of this criterion.
     description EducationItemBodyable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewRubricCriterion instantiates a new rubricCriterion and sets the default values.
@@ -57,7 +57,7 @@ func (m *RubricCriterion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RubricCriterion) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *RubricCriterion) SetAdditionalData(value map[string]any)() {
 func (m *RubricCriterion) SetDescription(value EducationItemBodyable)() {
     m.description = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RubricCriterion) SetOdataType(value *string)() {
     m.odataType = value
 }

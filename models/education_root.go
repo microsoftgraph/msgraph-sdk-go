@@ -8,15 +8,15 @@ import (
 type EducationRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The classes property
+    // 
     classes []EducationClassable
-    // The me property
+    // 
     me EducationUserable
-    // The OdataType property
+    // 
     odataType *string
-    // The schools property
+    // 
     schools []EducationSchoolable
-    // The users property
+    // 
     users []EducationUserable
 }
 // NewEducationRoot instantiates a new EducationRoot and sets the default values.
@@ -34,7 +34,7 @@ func CreateEducationRootFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *EducationRoot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetClasses gets the classes property value. The classes property
+// GetClasses gets the classes property value. 
 func (m *EducationRoot) GetClasses()([]EducationClassable) {
     return m.classes
 }
@@ -105,19 +105,19 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMe gets the me property value. The me property
+// GetMe gets the me property value. 
 func (m *EducationRoot) GetMe()(EducationUserable) {
     return m.me
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationRoot) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSchools gets the schools property value. The schools property
+// GetSchools gets the schools property value. 
 func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
     return m.schools
 }
-// GetUsers gets the users property value. The users property
+// GetUsers gets the users property value. 
 func (m *EducationRoot) GetUsers()([]EducationUserable) {
     return m.users
 }
@@ -177,23 +177,23 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *EducationRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetClasses sets the classes property value. The classes property
+// SetClasses sets the classes property value. 
 func (m *EducationRoot) SetClasses(value []EducationClassable)() {
     m.classes = value
 }
-// SetMe sets the me property value. The me property
+// SetMe sets the me property value. 
 func (m *EducationRoot) SetMe(value EducationUserable)() {
     m.me = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationRoot) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSchools sets the schools property value. The schools property
+// SetSchools sets the schools property value. 
 func (m *EducationRoot) SetSchools(value []EducationSchoolable)() {
     m.schools = value
 }
-// SetUsers sets the users property value. The users property
+// SetUsers sets the users property value. 
 func (m *EducationRoot) SetUsers(value []EducationUserable)() {
     m.users = value
 }

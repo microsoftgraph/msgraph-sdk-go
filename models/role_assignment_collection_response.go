@@ -7,7 +7,7 @@ import (
 // RoleAssignmentCollectionResponse 
 type RoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []RoleAssignmentable
 }
 // NewRoleAssignmentCollectionResponse instantiates a new RoleAssignmentCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *RoleAssignmentCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *RoleAssignmentCollectionResponse) GetValue()([]RoleAssignmentable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *RoleAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *RoleAssignmentCollectionResponse) SetValue(value []RoleAssignmentable)() {
     m.value = value
 }

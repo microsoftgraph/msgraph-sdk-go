@@ -7,7 +7,7 @@ import (
 // AggregationOptionCollectionResponse 
 type AggregationOptionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AggregationOptionable
 }
 // NewAggregationOptionCollectionResponse instantiates a new AggregationOptionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AggregationOptionCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AggregationOptionCollectionResponse) GetValue()([]AggregationOptionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AggregationOptionCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AggregationOptionCollectionResponse) SetValue(value []AggregationOptionable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // CancelMediaProcessingOperationCollectionResponse 
 type CancelMediaProcessingOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CancelMediaProcessingOperationable
 }
 // NewCancelMediaProcessingOperationCollectionResponse instantiates a new CancelMediaProcessingOperationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CancelMediaProcessingOperationCollectionResponse) GetFieldDeserializers
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CancelMediaProcessingOperationCollectionResponse) GetValue()([]CancelMediaProcessingOperationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CancelMediaProcessingOperationCollectionResponse) Serialize(writer i878
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CancelMediaProcessingOperationCollectionResponse) SetValue(value []CancelMediaProcessingOperationable)() {
     m.value = value
 }

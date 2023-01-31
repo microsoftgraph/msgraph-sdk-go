@@ -12,7 +12,7 @@ type AlternativeSecurityId struct {
     identityProvider *string
     // For internal use only
     key []byte
-    // The OdataType property
+    // 
     odataType *string
     // For internal use only
     type_escaped *int32
@@ -85,7 +85,7 @@ func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
 func (m *AlternativeSecurityId) GetKey()([]byte) {
     return m.key
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlternativeSecurityId) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *AlternativeSecurityId) SetIdentityProvider(value *string)() {
 func (m *AlternativeSecurityId) SetKey(value []byte)() {
     m.key = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlternativeSecurityId) SetOdataType(value *string)() {
     m.odataType = value
 }

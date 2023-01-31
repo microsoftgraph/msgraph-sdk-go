@@ -16,7 +16,7 @@ type ConversationThread struct {
     isLocked *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
     lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The posts property
+    // 
     posts []Postable
     // A short summary from the body of the latest post in this conversation. Returned by default.
     preview *string
@@ -165,7 +165,7 @@ func (m *ConversationThread) GetIsLocked()(*bool) {
 func (m *ConversationThread) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastDeliveredDateTime
 }
-// GetPosts gets the posts property value. The posts property
+// GetPosts gets the posts property value. 
 func (m *ConversationThread) GetPosts()([]Postable) {
     return m.posts
 }
@@ -275,7 +275,7 @@ func (m *ConversationThread) SetIsLocked(value *bool)() {
 func (m *ConversationThread) SetLastDeliveredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastDeliveredDateTime = value
 }
-// SetPosts sets the posts property value. The posts property
+// SetPosts sets the posts property value. 
 func (m *ConversationThread) SetPosts(value []Postable)() {
     m.posts = value
 }

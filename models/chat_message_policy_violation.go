@@ -12,7 +12,7 @@ type ChatMessagePolicyViolation struct {
     dlpAction *ChatMessagePolicyViolationDlpActionTypes
     // Justification text provided by the sender of the message when overriding a policy violation.
     justificationText *string
-    // The OdataType property
+    // 
     odataType *string
     // Information to display to the message sender about why the message was flagged as a violation.
     policyTip ChatMessagePolicyViolationPolicyTipable
@@ -109,7 +109,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i87
 func (m *ChatMessagePolicyViolation) GetJustificationText()(*string) {
     return m.justificationText
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ChatMessagePolicyViolation) GetOdataType()(*string) {
     return m.odataType
 }
@@ -186,7 +186,7 @@ func (m *ChatMessagePolicyViolation) SetDlpAction(value *ChatMessagePolicyViolat
 func (m *ChatMessagePolicyViolation) SetJustificationText(value *string)() {
     m.justificationText = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ChatMessagePolicyViolation) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,7 +7,7 @@ import (
 // AssignedTrainingInfoCollectionResponse 
 type AssignedTrainingInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AssignedTrainingInfoable
 }
 // NewAssignedTrainingInfoCollectionResponse instantiates a new AssignedTrainingInfoCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AssignedTrainingInfoCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AssignedTrainingInfoCollectionResponse) GetValue()([]AssignedTrainingInfoable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AssignedTrainingInfoCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AssignedTrainingInfoCollectionResponse) SetValue(value []AssignedTrainingInfoable)() {
     m.value = value
 }

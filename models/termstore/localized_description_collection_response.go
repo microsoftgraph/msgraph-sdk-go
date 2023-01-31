@@ -8,7 +8,7 @@ import (
 // LocalizedDescriptionCollectionResponse 
 type LocalizedDescriptionCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []LocalizedDescriptionable
 }
 // NewLocalizedDescriptionCollectionResponse instantiates a new LocalizedDescriptionCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *LocalizedDescriptionCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *LocalizedDescriptionCollectionResponse) GetValue()([]LocalizedDescriptionable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *LocalizedDescriptionCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *LocalizedDescriptionCollectionResponse) SetValue(value []LocalizedDescriptionable)() {
     m.value = value
 }

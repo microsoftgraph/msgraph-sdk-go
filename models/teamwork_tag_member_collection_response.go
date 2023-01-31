@@ -7,7 +7,7 @@ import (
 // TeamworkTagMemberCollectionResponse 
 type TeamworkTagMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TeamworkTagMemberable
 }
 // NewTeamworkTagMemberCollectionResponse instantiates a new TeamworkTagMemberCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TeamworkTagMemberCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TeamworkTagMemberCollectionResponse) GetValue()([]TeamworkTagMemberable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TeamworkTagMemberCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TeamworkTagMemberCollectionResponse) SetValue(value []TeamworkTagMemberable)() {
     m.value = value
 }

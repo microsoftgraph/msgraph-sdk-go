@@ -20,7 +20,7 @@ type TeamMemberSettings struct {
     allowCreateUpdateRemoveTabs *bool
     // If set to true, members can delete channels.
     allowDeleteChannels *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewTeamMemberSettings instantiates a new teamMemberSettings and sets the default values.
@@ -137,7 +137,7 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *TeamMemberSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -221,7 +221,7 @@ func (m *TeamMemberSettings) SetAllowCreateUpdateRemoveTabs(value *bool)() {
 func (m *TeamMemberSettings) SetAllowDeleteChannels(value *bool)() {
     m.allowDeleteChannels = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *TeamMemberSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -25,7 +25,7 @@ type CallRecord struct {
     sessions []Sessionable
     // UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The type property
+    // 
     type_escaped *CallType
     // Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
     version *int64
@@ -190,7 +190,7 @@ func (m *CallRecord) GetSessions()([]Sessionable) {
 func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. 
 func (m *CallRecord) GetType()(*CallType) {
     return m.type_escaped
 }
@@ -307,7 +307,7 @@ func (m *CallRecord) SetSessions(value []Sessionable)() {
 func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. 
 func (m *CallRecord) SetType(value *CallType)() {
     m.type_escaped = value
 }

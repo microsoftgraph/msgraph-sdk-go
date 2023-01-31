@@ -17,7 +17,7 @@ type Set struct {
     description *string
     // Name of the set for each languageTag.
     localizedNames []LocalizedNameable
-    // The parentGroup property
+    // 
     parentGroup Groupable
     // Custom properties for the set.
     properties []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable
@@ -158,7 +158,7 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
 func (m *Set) GetLocalizedNames()([]LocalizedNameable) {
     return m.localizedNames
 }
-// GetParentGroup gets the parentGroup property value. The parentGroup property
+// GetParentGroup gets the parentGroup property value. 
 func (m *Set) GetParentGroup()(Groupable) {
     return m.parentGroup
 }
@@ -266,7 +266,7 @@ func (m *Set) SetDescription(value *string)() {
 func (m *Set) SetLocalizedNames(value []LocalizedNameable)() {
     m.localizedNames = value
 }
-// SetParentGroup sets the parentGroup property value. The parentGroup property
+// SetParentGroup sets the parentGroup property value. 
 func (m *Set) SetParentGroup(value Groupable)() {
     m.parentGroup = value
 }

@@ -7,7 +7,7 @@ import (
 // DeviceManagementTroubleshootingEventCollectionResponse 
 type DeviceManagementTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceManagementTroubleshootingEventable
 }
 // NewDeviceManagementTroubleshootingEventCollectionResponse instantiates a new DeviceManagementTroubleshootingEventCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceManagementTroubleshootingEventCollectionResponse) GetFieldDeseria
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceManagementTroubleshootingEventCollectionResponse) GetValue()([]DeviceManagementTroubleshootingEventable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceManagementTroubleshootingEventCollectionResponse) Serialize(write
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceManagementTroubleshootingEventCollectionResponse) SetValue(value []DeviceManagementTroubleshootingEventable)() {
     m.value = value
 }

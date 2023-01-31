@@ -8,7 +8,7 @@ import (
 // EdiscoveryCaseCollectionResponse 
 type EdiscoveryCaseCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EdiscoveryCaseable
 }
 // NewEdiscoveryCaseCollectionResponse instantiates a new EdiscoveryCaseCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *EdiscoveryCaseCollectionResponse) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EdiscoveryCaseCollectionResponse) GetValue()([]EdiscoveryCaseable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *EdiscoveryCaseCollectionResponse) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EdiscoveryCaseCollectionResponse) SetValue(value []EdiscoveryCaseable)() {
     m.value = value
 }

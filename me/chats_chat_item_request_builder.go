@@ -47,13 +47,16 @@ type ChatsChatItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewChatsChatItemRequestBuilderInternal instantiates a new ChatItemRequestBuilder and sets the default values.
-func NewChatsChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsChatItemRequestBuilder) {
+func NewChatsChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, chatId *string)(*ChatsChatItemRequestBuilder) {
     m := &ChatsChatItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/chats/{chat%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if chatId != nil {
+        urlTplParams["chat%2Did"] = *chatId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewChatsChatItemRequestBuilderInternal(pathParameters map[string]string, re
 func NewChatsChatItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsChatItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewChatsChatItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewChatsChatItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property chats for me
 func (m *ChatsChatItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ChatsChatItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,10 +103,6 @@ func (m *ChatsChatItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
-// HideForUser provides operations to call the hideForUser method.
-func (m *ChatsChatItemRequestBuilder) HideForUser()(*ChatsItemHideForUserRequestBuilder) {
-    return NewChatsItemHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 func (m *ChatsChatItemRequestBuilder) InstalledApps()(*ChatsItemInstalledAppsRequestBuilder) {
     return NewChatsItemInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -122,14 +121,6 @@ func (m *ChatsChatItemRequestBuilder) InstalledAppsById(id string)(*ChatsItemIns
 // LastMessagePreview provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.
 func (m *ChatsChatItemRequestBuilder) LastMessagePreview()(*ChatsItemLastMessagePreviewRequestBuilder) {
     return NewChatsItemLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// MarkChatReadForUser provides operations to call the markChatReadForUser method.
-func (m *ChatsChatItemRequestBuilder) MarkChatReadForUser()(*ChatsItemMarkChatReadForUserRequestBuilder) {
-    return NewChatsItemMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// MarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
-func (m *ChatsChatItemRequestBuilder) MarkChatUnreadForUser()(*ChatsItemMarkChatUnreadForUserRequestBuilder) {
-    return NewChatsItemMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Members provides operations to manage the members property of the microsoft.graph.chat entity.
 func (m *ChatsChatItemRequestBuilder) Members()(*ChatsItemMembersRequestBuilder) {
@@ -160,6 +151,26 @@ func (m *ChatsChatItemRequestBuilder) MessagesById(id string)(*ChatsItemMessages
         urlTplParams["chatMessage%2Did"] = id
     }
     return NewChatsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// MicrosoftGraphHideForUser provides operations to call the hideForUser method.
+func (m *ChatsChatItemRequestBuilder) MicrosoftGraphHideForUser()(*ChatsItemMicrosoftGraphHideForUserHideForUserRequestBuilder) {
+    return NewChatsItemMicrosoftGraphHideForUserHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphMarkChatReadForUser provides operations to call the markChatReadForUser method.
+func (m *ChatsChatItemRequestBuilder) MicrosoftGraphMarkChatReadForUser()(*ChatsItemMicrosoftGraphMarkChatReadForUserMarkChatReadForUserRequestBuilder) {
+    return NewChatsItemMicrosoftGraphMarkChatReadForUserMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphMarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
+func (m *ChatsChatItemRequestBuilder) MicrosoftGraphMarkChatUnreadForUser()(*ChatsItemMicrosoftGraphMarkChatUnreadForUserMarkChatUnreadForUserRequestBuilder) {
+    return NewChatsItemMicrosoftGraphMarkChatUnreadForUserMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSendActivityNotification provides operations to call the sendActivityNotification method.
+func (m *ChatsChatItemRequestBuilder) MicrosoftGraphSendActivityNotification()(*ChatsItemMicrosoftGraphSendActivityNotificationSendActivityNotificationRequestBuilder) {
+    return NewChatsItemMicrosoftGraphSendActivityNotificationSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUnhideForUser provides operations to call the unhideForUser method.
+func (m *ChatsChatItemRequestBuilder) MicrosoftGraphUnhideForUser()(*ChatsItemMicrosoftGraphUnhideForUserUnhideForUserRequestBuilder) {
+    return NewChatsItemMicrosoftGraphUnhideForUserUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property chats in me
 func (m *ChatsChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, requestConfiguration *ChatsChatItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {
@@ -194,10 +205,6 @@ func (m *ChatsChatItemRequestBuilder) PinnedMessagesById(id string)(*ChatsItemPi
         urlTplParams["pinnedChatMessageInfo%2Did"] = id
     }
     return NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SendActivityNotification provides operations to call the sendActivityNotification method.
-func (m *ChatsChatItemRequestBuilder) SendActivityNotification()(*ChatsItemSendActivityNotificationRequestBuilder) {
-    return NewChatsItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 func (m *ChatsChatItemRequestBuilder) Tabs()(*ChatsItemTabsRequestBuilder) {
@@ -249,14 +256,13 @@ func (m *ChatsChatItemRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UnhideForUser provides operations to call the unhideForUser method.
-func (m *ChatsChatItemRequestBuilder) UnhideForUser()(*ChatsItemUnhideForUserRequestBuilder) {
-    return NewChatsItemUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

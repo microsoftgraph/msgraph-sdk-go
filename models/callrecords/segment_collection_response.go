@@ -8,7 +8,7 @@ import (
 // SegmentCollectionResponse 
 type SegmentCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Segmentable
 }
 // NewSegmentCollectionResponse instantiates a new SegmentCollectionResponse and sets the default values.
@@ -41,7 +41,7 @@ func (m *SegmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SegmentCollectionResponse) GetValue()([]Segmentable) {
     return m.value
 }
@@ -63,7 +63,7 @@ func (m *SegmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SegmentCollectionResponse) SetValue(value []Segmentable)() {
     m.value = value
 }

@@ -12,13 +12,13 @@ type AudioConferencing struct {
     conferenceId *string
     // A URL to the externally-accessible web page that contains dial-in information.
     dialinUrl *string
-    // The OdataType property
+    // 
     odataType *string
-    // The tollFreeNumber property
+    // 
     tollFreeNumber *string
     // List of toll-free numbers that are displayed in the meeting invite.
     tollFreeNumbers []string
-    // The tollNumber property
+    // 
     tollNumber *string
     // List of toll numbers that are displayed in the meeting invite.
     tollNumbers []string
@@ -129,11 +129,11 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AudioConferencing) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTollFreeNumber gets the tollFreeNumber property value. The tollFreeNumber property
+// GetTollFreeNumber gets the tollFreeNumber property value. 
 func (m *AudioConferencing) GetTollFreeNumber()(*string) {
     return m.tollFreeNumber
 }
@@ -141,7 +141,7 @@ func (m *AudioConferencing) GetTollFreeNumber()(*string) {
 func (m *AudioConferencing) GetTollFreeNumbers()([]string) {
     return m.tollFreeNumbers
 }
-// GetTollNumber gets the tollNumber property value. The tollNumber property
+// GetTollNumber gets the tollNumber property value. 
 func (m *AudioConferencing) GetTollNumber()(*string) {
     return m.tollNumber
 }
@@ -213,11 +213,11 @@ func (m *AudioConferencing) SetConferenceId(value *string)() {
 func (m *AudioConferencing) SetDialinUrl(value *string)() {
     m.dialinUrl = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AudioConferencing) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTollFreeNumber sets the tollFreeNumber property value. The tollFreeNumber property
+// SetTollFreeNumber sets the tollFreeNumber property value. 
 func (m *AudioConferencing) SetTollFreeNumber(value *string)() {
     m.tollFreeNumber = value
 }
@@ -225,7 +225,7 @@ func (m *AudioConferencing) SetTollFreeNumber(value *string)() {
 func (m *AudioConferencing) SetTollFreeNumbers(value []string)() {
     m.tollFreeNumbers = value
 }
-// SetTollNumber sets the tollNumber property value. The tollNumber property
+// SetTollNumber sets the tollNumber property value. 
 func (m *AudioConferencing) SetTollNumber(value *string)() {
     m.tollNumber = value
 }

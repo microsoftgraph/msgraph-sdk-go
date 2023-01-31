@@ -7,7 +7,7 @@ import (
 // DeviceCollectionResponse 
 type DeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Deviceable
 }
 // NewDeviceCollectionResponse instantiates a new DeviceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceCollectionResponse) GetValue()([]Deviceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceCollectionResponse) SetValue(value []Deviceable)() {
     m.value = value
 }

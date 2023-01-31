@@ -8,11 +8,11 @@ import (
 type SolutionsRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The bookingBusinesses property
+    // 
     bookingBusinesses []BookingBusinessable
-    // The bookingCurrencies property
+    // 
     bookingCurrencies []BookingCurrencyable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewSolutionsRoot instantiates a new SolutionsRoot and sets the default values.
@@ -30,11 +30,11 @@ func CreateSolutionsRootFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *SolutionsRoot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetBookingBusinesses gets the bookingBusinesses property value. The bookingBusinesses property
+// GetBookingBusinesses gets the bookingBusinesses property value. 
 func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusinessable) {
     return m.bookingBusinesses
 }
-// GetBookingCurrencies gets the bookingCurrencies property value. The bookingCurrencies property
+// GetBookingCurrencies gets the bookingCurrencies property value. 
 func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrencyable) {
     return m.bookingCurrencies
 }
@@ -81,7 +81,7 @@ func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SolutionsRoot) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,15 +125,15 @@ func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *SolutionsRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetBookingBusinesses sets the bookingBusinesses property value. The bookingBusinesses property
+// SetBookingBusinesses sets the bookingBusinesses property value. 
 func (m *SolutionsRoot) SetBookingBusinesses(value []BookingBusinessable)() {
     m.bookingBusinesses = value
 }
-// SetBookingCurrencies sets the bookingCurrencies property value. The bookingCurrencies property
+// SetBookingCurrencies sets the bookingCurrencies property value. 
 func (m *SolutionsRoot) SetBookingCurrencies(value []BookingCurrencyable)() {
     m.bookingCurrencies = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SolutionsRoot) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -10,7 +10,7 @@ type Hashes struct {
     additionalData map[string]any
     // The CRC32 value of the file in little endian (if available). Read-only.
     crc32Hash *string
-    // The OdataType property
+    // 
     odataType *string
     // A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
     quickXorHash *string
@@ -93,7 +93,7 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Hashes) GetOdataType()(*string) {
     return m.odataType
 }
@@ -157,7 +157,7 @@ func (m *Hashes) SetAdditionalData(value map[string]any)() {
 func (m *Hashes) SetCrc32Hash(value *string)() {
     m.crc32Hash = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Hashes) SetOdataType(value *string)() {
     m.odataType = value
 }

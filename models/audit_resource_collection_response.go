@@ -7,7 +7,7 @@ import (
 // AuditResourceCollectionResponse 
 type AuditResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AuditResourceable
 }
 // NewAuditResourceCollectionResponse instantiates a new AuditResourceCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AuditResourceCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AuditResourceCollectionResponse) GetValue()([]AuditResourceable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AuditResourceCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AuditResourceCollectionResponse) SetValue(value []AuditResourceable)() {
     m.value = value
 }

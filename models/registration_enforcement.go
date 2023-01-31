@@ -10,7 +10,7 @@ type RegistrationEnforcement struct {
     additionalData map[string]any
     // Run campaigns to remind users to set up targeted authentication methods.
     authenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaignable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewRegistrationEnforcement instantiates a new registrationEnforcement and sets the default values.
@@ -57,7 +57,7 @@ func (m *RegistrationEnforcement) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *RegistrationEnforcement) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *RegistrationEnforcement) SetAdditionalData(value map[string]any)() {
 func (m *RegistrationEnforcement) SetAuthenticationMethodsRegistrationCampaign(value AuthenticationMethodsRegistrationCampaignable)() {
     m.authenticationMethodsRegistrationCampaign = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *RegistrationEnforcement) SetOdataType(value *string)() {
     m.odataType = value
 }

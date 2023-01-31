@@ -7,7 +7,7 @@ import (
 // VppTokenCollectionResponse 
 type VppTokenCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []VppTokenable
 }
 // NewVppTokenCollectionResponse instantiates a new VppTokenCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *VppTokenCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *VppTokenCollectionResponse) GetValue()([]VppTokenable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *VppTokenCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *VppTokenCollectionResponse) SetValue(value []VppTokenable)() {
     m.value = value
 }

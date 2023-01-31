@@ -16,7 +16,7 @@ type AuditActor struct {
     auditActorType *string
     // IPAddress.
     ipAddress *string
-    // The OdataType property
+    // 
     odataType *string
     // Service Principal Name (SPN).
     servicePrincipalName *string
@@ -157,7 +157,7 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 func (m *AuditActor) GetIpAddress()(*string) {
     return m.ipAddress
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AuditActor) GetOdataType()(*string) {
     return m.odataType
 }
@@ -261,7 +261,7 @@ func (m *AuditActor) SetAuditActorType(value *string)() {
 func (m *AuditActor) SetIpAddress(value *string)() {
     m.ipAddress = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AuditActor) SetOdataType(value *string)() {
     m.odataType = value
 }

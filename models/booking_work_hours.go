@@ -8,9 +8,9 @@ import (
 type BookingWorkHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The day property
+    // 
     day *DayOfWeek
-    // The OdataType property
+    // 
     odataType *string
     // A list of start/end times during a day.
     timeSlots []BookingWorkTimeSlotable
@@ -30,7 +30,7 @@ func CreateBookingWorkHoursFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *BookingWorkHours) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDay gets the day property value. The day property
+// GetDay gets the day property value. 
 func (m *BookingWorkHours) GetDay()(*DayOfWeek) {
     return m.day
 }
@@ -73,7 +73,7 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *BookingWorkHours) GetOdataType()(*string) {
     return m.odataType
 }
@@ -118,11 +118,11 @@ func (m *BookingWorkHours) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *BookingWorkHours) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDay sets the day property value. The day property
+// SetDay sets the day property value. 
 func (m *BookingWorkHours) SetDay(value *DayOfWeek)() {
     m.day = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *BookingWorkHours) SetOdataType(value *string)() {
     m.odataType = value
 }

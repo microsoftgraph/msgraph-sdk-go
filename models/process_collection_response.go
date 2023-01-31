@@ -7,7 +7,7 @@ import (
 // ProcessCollectionResponse 
 type ProcessCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Processable
 }
 // NewProcessCollectionResponse instantiates a new ProcessCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ProcessCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ProcessCollectionResponse) GetValue()([]Processable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ProcessCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ProcessCollectionResponse) SetValue(value []Processable)() {
     m.value = value
 }

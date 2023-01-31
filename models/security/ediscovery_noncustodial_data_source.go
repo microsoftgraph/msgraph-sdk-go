@@ -12,7 +12,7 @@ type EdiscoveryNoncustodialDataSource struct {
     // Operation entity that represents the latest indexing for the non-custodial data source.
     lastIndexOperation EdiscoveryIndexOperationable
 }
-// NewEdiscoveryNoncustodialDataSource instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+// NewEdiscoveryNoncustodialDataSource instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
 func NewEdiscoveryNoncustodialDataSource()(*EdiscoveryNoncustodialDataSource) {
     m := &EdiscoveryNoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),

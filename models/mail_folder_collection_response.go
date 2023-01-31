@@ -7,7 +7,7 @@ import (
 // MailFolderCollectionResponse 
 type MailFolderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MailFolderable
 }
 // NewMailFolderCollectionResponse instantiates a new MailFolderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MailFolderCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MailFolderCollectionResponse) GetValue()([]MailFolderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MailFolderCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MailFolderCollectionResponse) SetValue(value []MailFolderable)() {
     m.value = value
 }

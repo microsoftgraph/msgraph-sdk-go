@@ -14,7 +14,7 @@ type LocalizedLabel struct {
     languageTag *string
     // The name of the label.
     name *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewLocalizedLabel instantiates a new localizedLabel and sets the default values.
@@ -89,7 +89,7 @@ func (m *LocalizedLabel) GetLanguageTag()(*string) {
 func (m *LocalizedLabel) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *LocalizedLabel) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *LocalizedLabel) SetLanguageTag(value *string)() {
 func (m *LocalizedLabel) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *LocalizedLabel) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -14,7 +14,7 @@ type AssignedPlan struct {
     assignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
     capabilityStatus *string
-    // The OdataType property
+    // 
     odataType *string
     // The name of the service; for example, exchange.
     service *string
@@ -99,7 +99,7 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AssignedPlan) GetOdataType()(*string) {
     return m.odataType
 }
@@ -163,7 +163,7 @@ func (m *AssignedPlan) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad9
 func (m *AssignedPlan) SetCapabilityStatus(value *string)() {
     m.capabilityStatus = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AssignedPlan) SetOdataType(value *string)() {
     m.odataType = value
 }

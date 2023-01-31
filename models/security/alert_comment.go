@@ -15,7 +15,7 @@ type AlertComment struct {
     createdByDisplayName *string
     // The time when the comment was submitted.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAlertComment instantiates a new alertComment and sets the default values.
@@ -90,7 +90,7 @@ func (m *AlertComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AlertComment) GetOdataType()(*string) {
     return m.odataType
 }
@@ -144,7 +144,7 @@ func (m *AlertComment) SetCreatedByDisplayName(value *string)() {
 func (m *AlertComment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AlertComment) SetOdataType(value *string)() {
     m.odataType = value
 }

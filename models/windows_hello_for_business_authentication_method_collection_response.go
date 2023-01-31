@@ -7,7 +7,7 @@ import (
 // WindowsHelloForBusinessAuthenticationMethodCollectionResponse 
 type WindowsHelloForBusinessAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsHelloForBusinessAuthenticationMethodable
 }
 // NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse instantiates a new WindowsHelloForBusinessAuthenticationMethodCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) GetField
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) GetValue()([]WindowsHelloForBusinessAuthenticationMethodable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) Serializ
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) SetValue(value []WindowsHelloForBusinessAuthenticationMethodable)() {
     m.value = value
 }

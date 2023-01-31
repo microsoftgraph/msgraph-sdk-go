@@ -12,7 +12,7 @@ type PhysicalOfficeAddress struct {
     city *string
     // The country or region. It's a free-format string value, for example, 'United States'.
     countryOrRegion *string
-    // The OdataType property
+    // 
     odataType *string
     // Office location such as building and office number for an organizational contact.
     officeLocation *string
@@ -121,7 +121,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PhysicalOfficeAddress) GetOdataType()(*string) {
     return m.odataType
 }
@@ -205,7 +205,7 @@ func (m *PhysicalOfficeAddress) SetCity(value *string)() {
 func (m *PhysicalOfficeAddress) SetCountryOrRegion(value *string)() {
     m.countryOrRegion = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PhysicalOfficeAddress) SetOdataType(value *string)() {
     m.odataType = value
 }

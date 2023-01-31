@@ -10,7 +10,7 @@ type ConditionalAccessSessionControl struct {
     additionalData map[string]any
     // Specifies whether the session control is enabled.
     isEnabled *bool
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewConditionalAccessSessionControl instantiates a new conditionalAccessSessionControl and sets the default values.
@@ -81,7 +81,7 @@ func (m *ConditionalAccessSessionControl) GetFieldDeserializers()(map[string]fun
 func (m *ConditionalAccessSessionControl) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ConditionalAccessSessionControl) GetOdataType()(*string) {
     return m.odataType
 }
@@ -115,7 +115,7 @@ func (m *ConditionalAccessSessionControl) SetAdditionalData(value map[string]any
 func (m *ConditionalAccessSessionControl) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ConditionalAccessSessionControl) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -7,11 +7,11 @@ import (
 // AuditLogRoot 
 type AuditLogRoot struct {
     Entity
-    // The directoryAudits property
+    // 
     directoryAudits []DirectoryAuditable
-    // The provisioning property
+    // 
     provisioning []ProvisioningObjectSummaryable
-    // The signIns property
+    // 
     signIns []SignInable
 }
 // NewAuditLogRoot instantiates a new AuditLogRoot and sets the default values.
@@ -25,7 +25,7 @@ func NewAuditLogRoot()(*AuditLogRoot) {
 func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRoot(), nil
 }
-// GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
+// GetDirectoryAudits gets the directoryAudits property value. 
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
     return m.directoryAudits
 }
@@ -76,11 +76,11 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetProvisioning gets the provisioning property value. The provisioning property
+// GetProvisioning gets the provisioning property value. 
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
     return m.provisioning
 }
-// GetSignIns gets the signIns property value. The signIns property
+// GetSignIns gets the signIns property value. 
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
     return m.signIns
 }
@@ -122,15 +122,15 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
+// SetDirectoryAudits sets the directoryAudits property value. 
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
     m.directoryAudits = value
 }
-// SetProvisioning sets the provisioning property value. The provisioning property
+// SetProvisioning sets the provisioning property value. 
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
     m.provisioning = value
 }
-// SetSignIns sets the signIns property value. The signIns property
+// SetSignIns sets the signIns property value. 
 func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
     m.signIns = value
 }

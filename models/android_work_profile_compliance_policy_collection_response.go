@@ -7,7 +7,7 @@ import (
 // AndroidWorkProfileCompliancePolicyCollectionResponse 
 type AndroidWorkProfileCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AndroidWorkProfileCompliancePolicyable
 }
 // NewAndroidWorkProfileCompliancePolicyCollectionResponse instantiates a new AndroidWorkProfileCompliancePolicyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) GetFieldDeseriali
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) GetValue()([]AndroidWorkProfileCompliancePolicyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) Serialize(writer 
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) SetValue(value []AndroidWorkProfileCompliancePolicyable)() {
     m.value = value
 }

@@ -7,7 +7,7 @@ import (
 // CloudAppSecurityStateCollectionResponse 
 type CloudAppSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []CloudAppSecurityStateable
 }
 // NewCloudAppSecurityStateCollectionResponse instantiates a new CloudAppSecurityStateCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *CloudAppSecurityStateCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *CloudAppSecurityStateCollectionResponse) GetValue()([]CloudAppSecurityStateable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *CloudAppSecurityStateCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *CloudAppSecurityStateCollectionResponse) SetValue(value []CloudAppSecurityStateable)() {
     m.value = value
 }

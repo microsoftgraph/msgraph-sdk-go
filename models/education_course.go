@@ -16,7 +16,7 @@ type EducationCourse struct {
     displayName *string
     // ID of the course from the syncing system.
     externalId *string
-    // The OdataType property
+    // 
     odataType *string
     // Subject of the course.
     subject *string
@@ -117,7 +117,7 @@ func (m *EducationCourse) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EducationCourse) GetOdataType()(*string) {
     return m.odataType
 }
@@ -191,7 +191,7 @@ func (m *EducationCourse) SetDisplayName(value *string)() {
 func (m *EducationCourse) SetExternalId(value *string)() {
     m.externalId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EducationCourse) SetOdataType(value *string)() {
     m.odataType = value
 }

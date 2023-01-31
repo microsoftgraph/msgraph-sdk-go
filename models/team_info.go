@@ -9,7 +9,7 @@ type TeamInfo struct {
     Entity
     // The name of the team.
     displayName *string
-    // The team property
+    // 
     team Teamable
     // The ID of the Azure Active Directory tenant.
     tenantId *string
@@ -84,7 +84,7 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetTeam gets the team property value. The team property
+// GetTeam gets the team property value. 
 func (m *TeamInfo) GetTeam()(Teamable) {
     return m.team
 }
@@ -122,7 +122,7 @@ func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *TeamInfo) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetTeam sets the team property value. The team property
+// SetTeam sets the team property value. 
 func (m *TeamInfo) SetTeam(value Teamable)() {
     m.team = value
 }

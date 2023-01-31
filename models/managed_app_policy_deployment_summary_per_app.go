@@ -12,7 +12,7 @@ type ManagedAppPolicyDeploymentSummaryPerApp struct {
     configurationAppliedUserCount *int32
     // Deployment of an app.
     mobileAppIdentifier MobileAppIdentifierable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewManagedAppPolicyDeploymentSummaryPerApp instantiates a new managedAppPolicyDeploymentSummaryPerApp and sets the default values.
@@ -73,7 +73,7 @@ func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetFieldDeserializers()(map[st
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetMobileAppIdentifier()(MobileAppIdentifierable) {
     return m.mobileAppIdentifier
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) GetOdataType()(*string) {
     return m.odataType
 }
@@ -117,7 +117,7 @@ func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetConfigurationAppliedUserCou
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetMobileAppIdentifier(value MobileAppIdentifierable)() {
     m.mobileAppIdentifier = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *ManagedAppPolicyDeploymentSummaryPerApp) SetOdataType(value *string)() {
     m.odataType = value
 }

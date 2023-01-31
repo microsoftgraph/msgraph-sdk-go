@@ -7,7 +7,7 @@ import (
 // DomainDnsRecordCollectionResponse 
 type DomainDnsRecordCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DomainDnsRecordable
 }
 // NewDomainDnsRecordCollectionResponse instantiates a new DomainDnsRecordCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DomainDnsRecordCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DomainDnsRecordCollectionResponse) GetValue()([]DomainDnsRecordable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DomainDnsRecordCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DomainDnsRecordCollectionResponse) SetValue(value []DomainDnsRecordable)() {
     m.value = value
 }

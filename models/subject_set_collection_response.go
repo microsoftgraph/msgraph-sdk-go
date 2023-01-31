@@ -7,7 +7,7 @@ import (
 // SubjectSetCollectionResponse 
 type SubjectSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SubjectSetable
 }
 // NewSubjectSetCollectionResponse instantiates a new SubjectSetCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SubjectSetCollectionResponse) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SubjectSetCollectionResponse) GetValue()([]SubjectSetable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SubjectSetCollectionResponse) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SubjectSetCollectionResponse) SetValue(value []SubjectSetable)() {
     m.value = value
 }

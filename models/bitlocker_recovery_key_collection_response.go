@@ -7,7 +7,7 @@ import (
 // BitlockerRecoveryKeyCollectionResponse 
 type BitlockerRecoveryKeyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []BitlockerRecoveryKeyable
 }
 // NewBitlockerRecoveryKeyCollectionResponse instantiates a new BitlockerRecoveryKeyCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *BitlockerRecoveryKeyCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *BitlockerRecoveryKeyCollectionResponse) GetValue()([]BitlockerRecoveryKeyable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *BitlockerRecoveryKeyCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *BitlockerRecoveryKeyCollectionResponse) SetValue(value []BitlockerRecoveryKeyable)() {
     m.value = value
 }

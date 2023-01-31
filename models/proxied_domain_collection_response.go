@@ -7,7 +7,7 @@ import (
 // ProxiedDomainCollectionResponse 
 type ProxiedDomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ProxiedDomainable
 }
 // NewProxiedDomainCollectionResponse instantiates a new ProxiedDomainCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ProxiedDomainCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ProxiedDomainCollectionResponse) GetValue()([]ProxiedDomainable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ProxiedDomainCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ProxiedDomainCollectionResponse) SetValue(value []ProxiedDomainable)() {
     m.value = value
 }

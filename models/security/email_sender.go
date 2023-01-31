@@ -14,7 +14,7 @@ type EmailSender struct {
     domainName *string
     // Sender email address.
     emailAddress *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEmailSender instantiates a new emailSender and sets the default values.
@@ -89,7 +89,7 @@ func (m *EmailSender) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EmailSender) GetOdataType()(*string) {
     return m.odataType
 }
@@ -143,7 +143,7 @@ func (m *EmailSender) SetDomainName(value *string)() {
 func (m *EmailSender) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EmailSender) SetOdataType(value *string)() {
     m.odataType = value
 }

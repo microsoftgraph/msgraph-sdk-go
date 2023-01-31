@@ -36,7 +36,7 @@ type ServicePrincipal struct {
     claimsMappingPolicies []ClaimsMappingPolicyable
     // Directory objects created by this service principal. Read-only. Nullable.
     createdObjects []DirectoryObjectable
-    // The delegatedPermissionClassifications property
+    // 
     delegatedPermissionClassifications []DelegatedPermissionClassificationable
     // Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string
@@ -44,7 +44,7 @@ type ServicePrincipal struct {
     disabledByMicrosoftStatus *string
     // The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string
-    // The endpoints property
+    // 
     endpoints []Endpointable
     // Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
     federatedIdentityCredentials []FederatedIdentityCredentialable
@@ -100,7 +100,7 @@ type ServicePrincipal struct {
     tokenIssuancePolicies []TokenIssuancePolicyable
     // The tokenLifetimePolicies assigned to this service principal.
     tokenLifetimePolicies []TokenLifetimePolicyable
-    // The transitiveMemberOf property
+    // 
     transitiveMemberOf []DirectoryObjectable
     // Specifies the verified publisher of the application which this service principal represents.
     verifiedPublisher VerifiedPublisherable
@@ -174,7 +174,7 @@ func (m *ServicePrincipal) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
 func (m *ServicePrincipal) GetCreatedObjects()([]DirectoryObjectable) {
     return m.createdObjects
 }
-// GetDelegatedPermissionClassifications gets the delegatedPermissionClassifications property value. The delegatedPermissionClassifications property
+// GetDelegatedPermissionClassifications gets the delegatedPermissionClassifications property value. 
 func (m *ServicePrincipal) GetDelegatedPermissionClassifications()([]DelegatedPermissionClassificationable) {
     return m.delegatedPermissionClassifications
 }
@@ -190,7 +190,7 @@ func (m *ServicePrincipal) GetDisabledByMicrosoftStatus()(*string) {
 func (m *ServicePrincipal) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetEndpoints gets the endpoints property value. The endpoints property
+// GetEndpoints gets the endpoints property value. 
 func (m *ServicePrincipal) GetEndpoints()([]Endpointable) {
     return m.endpoints
 }
@@ -891,7 +891,7 @@ func (m *ServicePrincipal) GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
 func (m *ServicePrincipal) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     return m.tokenLifetimePolicies
 }
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. 
 func (m *ServicePrincipal) GetTransitiveMemberOf()([]DirectoryObjectable) {
     return m.transitiveMemberOf
 }
@@ -1335,7 +1335,7 @@ func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicya
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObjectable)() {
     m.createdObjects = value
 }
-// SetDelegatedPermissionClassifications sets the delegatedPermissionClassifications property value. The delegatedPermissionClassifications property
+// SetDelegatedPermissionClassifications sets the delegatedPermissionClassifications property value. 
 func (m *ServicePrincipal) SetDelegatedPermissionClassifications(value []DelegatedPermissionClassificationable)() {
     m.delegatedPermissionClassifications = value
 }
@@ -1351,7 +1351,7 @@ func (m *ServicePrincipal) SetDisabledByMicrosoftStatus(value *string)() {
 func (m *ServicePrincipal) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetEndpoints sets the endpoints property value. The endpoints property
+// SetEndpoints sets the endpoints property value. 
 func (m *ServicePrincipal) SetEndpoints(value []Endpointable)() {
     m.endpoints = value
 }
@@ -1463,7 +1463,7 @@ func (m *ServicePrincipal) SetTokenIssuancePolicies(value []TokenIssuancePolicya
 func (m *ServicePrincipal) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)() {
     m.tokenLifetimePolicies = value
 }
-// SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
+// SetTransitiveMemberOf sets the transitiveMemberOf property value. 
 func (m *ServicePrincipal) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     m.transitiveMemberOf = value
 }

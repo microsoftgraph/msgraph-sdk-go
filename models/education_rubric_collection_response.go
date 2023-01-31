@@ -7,7 +7,7 @@ import (
 // EducationRubricCollectionResponse 
 type EducationRubricCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []EducationRubricable
 }
 // NewEducationRubricCollectionResponse instantiates a new EducationRubricCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *EducationRubricCollectionResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *EducationRubricCollectionResponse) GetValue()([]EducationRubricable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *EducationRubricCollectionResponse) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *EducationRubricCollectionResponse) SetValue(value []EducationRubricable)() {
     m.value = value
 }

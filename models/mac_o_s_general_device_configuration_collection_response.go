@@ -7,7 +7,7 @@ import (
 // MacOSGeneralDeviceConfigurationCollectionResponse 
 type MacOSGeneralDeviceConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []MacOSGeneralDeviceConfigurationable
 }
 // NewMacOSGeneralDeviceConfigurationCollectionResponse instantiates a new MacOSGeneralDeviceConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *MacOSGeneralDeviceConfigurationCollectionResponse) GetFieldDeserializer
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *MacOSGeneralDeviceConfigurationCollectionResponse) GetValue()([]MacOSGeneralDeviceConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *MacOSGeneralDeviceConfigurationCollectionResponse) Serialize(writer i87
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *MacOSGeneralDeviceConfigurationCollectionResponse) SetValue(value []MacOSGeneralDeviceConfigurationable)() {
     m.value = value
 }

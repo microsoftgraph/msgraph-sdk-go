@@ -10,7 +10,7 @@ type CertificationControl struct {
     additionalData map[string]any
     // Certification control name
     name *string
-    // The OdataType property
+    // 
     odataType *string
     // URL for the Microsoft Service Trust Portal
     url *string
@@ -69,7 +69,7 @@ func (m *CertificationControl) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *CertificationControl) GetName()(*string) {
     return m.name
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *CertificationControl) GetOdataType()(*string) {
     return m.odataType
 }
@@ -113,7 +113,7 @@ func (m *CertificationControl) SetAdditionalData(value map[string]any)() {
 func (m *CertificationControl) SetName(value *string)() {
     m.name = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *CertificationControl) SetOdataType(value *string)() {
     m.odataType = value
 }

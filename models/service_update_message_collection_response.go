@@ -7,7 +7,7 @@ import (
 // ServiceUpdateMessageCollectionResponse 
 type ServiceUpdateMessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ServiceUpdateMessageable
 }
 // NewServiceUpdateMessageCollectionResponse instantiates a new ServiceUpdateMessageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ServiceUpdateMessageCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ServiceUpdateMessageCollectionResponse) GetValue()([]ServiceUpdateMessageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ServiceUpdateMessageCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ServiceUpdateMessageCollectionResponse) SetValue(value []ServiceUpdateMessageable)() {
     m.value = value
 }

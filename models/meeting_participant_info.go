@@ -10,7 +10,7 @@ type MeetingParticipantInfo struct {
     additionalData map[string]any
     // Identity information of the participant.
     identity IdentitySetable
-    // The OdataType property
+    // 
     odataType *string
     // Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
     role *OnlineMeetingRole
@@ -81,7 +81,7 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80
 func (m *MeetingParticipantInfo) GetIdentity()(IdentitySetable) {
     return m.identity
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MeetingParticipantInfo) GetOdataType()(*string) {
     return m.odataType
 }
@@ -136,7 +136,7 @@ func (m *MeetingParticipantInfo) SetAdditionalData(value map[string]any)() {
 func (m *MeetingParticipantInfo) SetIdentity(value IdentitySetable)() {
     m.identity = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MeetingParticipantInfo) SetOdataType(value *string)() {
     m.odataType = value
 }

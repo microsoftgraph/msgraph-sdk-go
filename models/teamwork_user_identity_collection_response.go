@@ -7,7 +7,7 @@ import (
 // TeamworkUserIdentityCollectionResponse 
 type TeamworkUserIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TeamworkUserIdentityable
 }
 // NewTeamworkUserIdentityCollectionResponse instantiates a new TeamworkUserIdentityCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TeamworkUserIdentityCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TeamworkUserIdentityCollectionResponse) GetValue()([]TeamworkUserIdentityable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TeamworkUserIdentityCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TeamworkUserIdentityCollectionResponse) SetValue(value []TeamworkUserIdentityable)() {
     m.value = value
 }

@@ -8,7 +8,7 @@ import (
 type PendingOperations struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // A property that indicates that an operation that might update the binary content of a file is pending completion.
     pendingContentUpdate PendingContentUpdateable
@@ -53,7 +53,7 @@ func (m *PendingOperations) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *PendingOperations) GetOdataType()(*string) {
     return m.odataType
 }
@@ -87,7 +87,7 @@ func (m *PendingOperations) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *PendingOperations) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *PendingOperations) SetOdataType(value *string)() {
     m.odataType = value
 }

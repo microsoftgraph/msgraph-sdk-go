@@ -8,7 +8,7 @@ import (
 // EducationSubmission 
 type EducationSubmission struct {
     Entity
-    // The outcomes property
+    // 
     outcomes []EducationOutcomeable
     // User who moved the status of this submission to reassigned.
     reassignedBy IdentitySetable
@@ -16,7 +16,7 @@ type EducationSubmission struct {
     reassignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Who this submission is assigned to.
     recipient EducationSubmissionRecipientable
-    // The resources property
+    // 
     resources []EducationSubmissionResourceable
     // Folder where all file resources for this submission need to be stored.
     resourcesFolderUrl *string
@@ -30,7 +30,7 @@ type EducationSubmission struct {
     submittedBy IdentitySetable
     // Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     submittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The submittedResources property
+    // 
     submittedResources []EducationSubmissionResourceable
     // User who moved the resource from submitted into the working state.
     unsubmittedBy IdentitySetable
@@ -205,7 +205,7 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOutcomes gets the outcomes property value. The outcomes property
+// GetOutcomes gets the outcomes property value. 
 func (m *EducationSubmission) GetOutcomes()([]EducationOutcomeable) {
     return m.outcomes
 }
@@ -221,7 +221,7 @@ func (m *EducationSubmission) GetReassignedDateTime()(*i336074805fc853987abe6f7f
 func (m *EducationSubmission) GetRecipient()(EducationSubmissionRecipientable) {
     return m.recipient
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. 
 func (m *EducationSubmission) GetResources()([]EducationSubmissionResourceable) {
     return m.resources
 }
@@ -249,7 +249,7 @@ func (m *EducationSubmission) GetSubmittedBy()(IdentitySetable) {
 func (m *EducationSubmission) GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.submittedDateTime
 }
-// GetSubmittedResources gets the submittedResources property value. The submittedResources property
+// GetSubmittedResources gets the submittedResources property value. 
 func (m *EducationSubmission) GetSubmittedResources()([]EducationSubmissionResourceable) {
     return m.submittedResources
 }
@@ -305,7 +305,7 @@ func (m *EducationSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetOutcomes sets the outcomes property value. The outcomes property
+// SetOutcomes sets the outcomes property value. 
 func (m *EducationSubmission) SetOutcomes(value []EducationOutcomeable)() {
     m.outcomes = value
 }
@@ -321,7 +321,7 @@ func (m *EducationSubmission) SetReassignedDateTime(value *i336074805fc853987abe
 func (m *EducationSubmission) SetRecipient(value EducationSubmissionRecipientable)() {
     m.recipient = value
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. 
 func (m *EducationSubmission) SetResources(value []EducationSubmissionResourceable)() {
     m.resources = value
 }
@@ -349,7 +349,7 @@ func (m *EducationSubmission) SetSubmittedBy(value IdentitySetable)() {
 func (m *EducationSubmission) SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.submittedDateTime = value
 }
-// SetSubmittedResources sets the submittedResources property value. The submittedResources property
+// SetSubmittedResources sets the submittedResources property value. 
 func (m *EducationSubmission) SetSubmittedResources(value []EducationSubmissionResourceable)() {
     m.submittedResources = value
 }

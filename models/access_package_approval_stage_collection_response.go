@@ -7,7 +7,7 @@ import (
 // AccessPackageApprovalStageCollectionResponse 
 type AccessPackageApprovalStageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AccessPackageApprovalStageable
 }
 // NewAccessPackageApprovalStageCollectionResponse instantiates a new AccessPackageApprovalStageCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessPackageApprovalStageCollectionResponse) GetFieldDeserializers()(m
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AccessPackageApprovalStageCollectionResponse) GetValue()([]AccessPackageApprovalStageable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AccessPackageApprovalStageCollectionResponse) Serialize(writer i878a80d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AccessPackageApprovalStageCollectionResponse) SetValue(value []AccessPackageApprovalStageable)() {
     m.value = value
 }

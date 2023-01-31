@@ -7,7 +7,7 @@ import (
 // PhysicalOfficeAddressCollectionResponse 
 type PhysicalOfficeAddressCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []PhysicalOfficeAddressable
 }
 // NewPhysicalOfficeAddressCollectionResponse instantiates a new PhysicalOfficeAddressCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *PhysicalOfficeAddressCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *PhysicalOfficeAddressCollectionResponse) GetValue()([]PhysicalOfficeAddressable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *PhysicalOfficeAddressCollectionResponse) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *PhysicalOfficeAddressCollectionResponse) SetValue(value []PhysicalOfficeAddressable)() {
     m.value = value
 }

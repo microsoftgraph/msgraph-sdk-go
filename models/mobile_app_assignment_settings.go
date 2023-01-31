@@ -8,7 +8,7 @@ import (
 type MobileAppAssignmentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewMobileAppAssignmentSettings instantiates a new mobileAppAssignmentSettings and sets the default values.
@@ -46,6 +46,8 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
                         return NewWin32LobAppAssignmentSettings(), nil
                     case "#microsoft.graph.windowsAppXAppAssignmentSettings":
                         return NewWindowsAppXAppAssignmentSettings(), nil
+                    case "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings":
+                        return NewWindowsUniversalAppXAppAssignmentSettings(), nil
                 }
             }
         }
@@ -71,7 +73,7 @@ func (m *MobileAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MobileAppAssignmentSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -95,7 +97,7 @@ func (m *MobileAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 func (m *MobileAppAssignmentSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MobileAppAssignmentSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

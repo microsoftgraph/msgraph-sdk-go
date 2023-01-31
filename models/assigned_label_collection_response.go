@@ -7,7 +7,7 @@ import (
 // AssignedLabelCollectionResponse 
 type AssignedLabelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AssignedLabelable
 }
 // NewAssignedLabelCollectionResponse instantiates a new AssignedLabelCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AssignedLabelCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AssignedLabelCollectionResponse) GetValue()([]AssignedLabelable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AssignedLabelCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AssignedLabelCollectionResponse) SetValue(value []AssignedLabelable)() {
     m.value = value
 }

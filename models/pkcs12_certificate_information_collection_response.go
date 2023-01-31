@@ -7,7 +7,7 @@ import (
 // Pkcs12CertificateInformationCollectionResponse 
 type Pkcs12CertificateInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []Pkcs12CertificateInformationable
 }
 // NewPkcs12CertificateInformationCollectionResponse instantiates a new Pkcs12CertificateInformationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *Pkcs12CertificateInformationCollectionResponse) GetFieldDeserializers()
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *Pkcs12CertificateInformationCollectionResponse) GetValue()([]Pkcs12CertificateInformationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *Pkcs12CertificateInformationCollectionResponse) Serialize(writer i878a8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *Pkcs12CertificateInformationCollectionResponse) SetValue(value []Pkcs12CertificateInformationable)() {
     m.value = value
 }

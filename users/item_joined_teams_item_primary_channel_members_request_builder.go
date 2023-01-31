@@ -51,10 +51,6 @@ type ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Add provides operations to call the add method.
-func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Add()(*ItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilder) {
-    return NewItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) {
     m := &ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder{
@@ -99,6 +95,10 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
+}
+// MicrosoftGraphAdd provides operations to call the add method.
+func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) MicrosoftGraphAdd()(*ItemJoinedTeamsItemPrimaryChannelMembersMicrosoftGraphAddAddRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelMembersMicrosoftGraphAddAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add a conversationMember to a channel.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

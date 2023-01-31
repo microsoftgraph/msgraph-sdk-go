@@ -7,7 +7,7 @@ import (
 // ScopedRoleMembershipCollectionResponse 
 type ScopedRoleMembershipCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []ScopedRoleMembershipable
 }
 // NewScopedRoleMembershipCollectionResponse instantiates a new ScopedRoleMembershipCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *ScopedRoleMembershipCollectionResponse) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *ScopedRoleMembershipCollectionResponse) GetValue()([]ScopedRoleMembershipable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *ScopedRoleMembershipCollectionResponse) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *ScopedRoleMembershipCollectionResponse) SetValue(value []ScopedRoleMembershipable)() {
     m.value = value
 }

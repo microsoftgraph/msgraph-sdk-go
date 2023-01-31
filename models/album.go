@@ -10,7 +10,7 @@ type Album struct {
     additionalData map[string]any
     // Unique identifier of the [driveItem][] that is the cover of the album.
     coverImageItemId *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewAlbum instantiates a new album and sets the default values.
@@ -57,7 +57,7 @@ func (m *Album) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Album) GetOdataType()(*string) {
     return m.odataType
 }
@@ -91,7 +91,7 @@ func (m *Album) SetAdditionalData(value map[string]any)() {
 func (m *Album) SetCoverImageItemId(value *string)() {
     m.coverImageItemId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Album) SetOdataType(value *string)() {
     m.odataType = value
 }

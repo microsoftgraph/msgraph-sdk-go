@@ -7,7 +7,7 @@ import (
 // TimeOffReasonCollectionResponse 
 type TimeOffReasonCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []TimeOffReasonable
 }
 // NewTimeOffReasonCollectionResponse instantiates a new TimeOffReasonCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *TimeOffReasonCollectionResponse) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *TimeOffReasonCollectionResponse) GetValue()([]TimeOffReasonable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *TimeOffReasonCollectionResponse) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *TimeOffReasonCollectionResponse) SetValue(value []TimeOffReasonable)() {
     m.value = value
 }

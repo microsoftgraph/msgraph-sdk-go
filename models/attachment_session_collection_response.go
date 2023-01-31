@@ -7,7 +7,7 @@ import (
 // AttachmentSessionCollectionResponse 
 type AttachmentSessionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AttachmentSessionable
 }
 // NewAttachmentSessionCollectionResponse instantiates a new AttachmentSessionCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AttachmentSessionCollectionResponse) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AttachmentSessionCollectionResponse) GetValue()([]AttachmentSessionable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AttachmentSessionCollectionResponse) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AttachmentSessionCollectionResponse) SetValue(value []AttachmentSessionable)() {
     m.value = value
 }

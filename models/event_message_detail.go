@@ -8,7 +8,7 @@ import (
 type EventMessageDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewEventMessageDetail instantiates a new eventMessageDetail and sets the default values.
@@ -117,7 +117,7 @@ func (m *EventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *EventMessageDetail) GetOdataType()(*string) {
     return m.odataType
 }
@@ -141,7 +141,7 @@ func (m *EventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *EventMessageDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *EventMessageDetail) SetOdataType(value *string)() {
     m.odataType = value
 }

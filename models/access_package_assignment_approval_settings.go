@@ -12,7 +12,7 @@ type AccessPackageAssignmentApprovalSettings struct {
     isApprovalRequiredForAdd *bool
     // If false, then approval is not required for updates to requests in this policy.
     isApprovalRequiredForUpdate *bool
-    // The OdataType property
+    // 
     odataType *string
     // If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
     stages []AccessPackageApprovalStageable
@@ -89,7 +89,7 @@ func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForAdd()(
 func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForUpdate()(*bool) {
     return m.isApprovalRequiredForUpdate
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *AccessPackageAssignmentApprovalSettings) GetOdataType()(*string) {
     return m.odataType
 }
@@ -147,7 +147,7 @@ func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForAdd(va
 func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForUpdate(value *bool)() {
     m.isApprovalRequiredForUpdate = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *AccessPackageAssignmentApprovalSettings) SetOdataType(value *string)() {
     m.odataType = value
 }

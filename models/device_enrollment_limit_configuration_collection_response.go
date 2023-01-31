@@ -7,7 +7,7 @@ import (
 // DeviceEnrollmentLimitConfigurationCollectionResponse 
 type DeviceEnrollmentLimitConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []DeviceEnrollmentLimitConfigurationable
 }
 // NewDeviceEnrollmentLimitConfigurationCollectionResponse instantiates a new DeviceEnrollmentLimitConfigurationCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *DeviceEnrollmentLimitConfigurationCollectionResponse) GetFieldDeseriali
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *DeviceEnrollmentLimitConfigurationCollectionResponse) GetValue()([]DeviceEnrollmentLimitConfigurationable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *DeviceEnrollmentLimitConfigurationCollectionResponse) Serialize(writer 
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *DeviceEnrollmentLimitConfigurationCollectionResponse) SetValue(value []DeviceEnrollmentLimitConfigurationable)() {
     m.value = value
 }

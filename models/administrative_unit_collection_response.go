@@ -7,7 +7,7 @@ import (
 // AdministrativeUnitCollectionResponse 
 type AdministrativeUnitCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []AdministrativeUnitable
 }
 // NewAdministrativeUnitCollectionResponse instantiates a new AdministrativeUnitCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *AdministrativeUnitCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *AdministrativeUnitCollectionResponse) GetValue()([]AdministrativeUnitable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *AdministrativeUnitCollectionResponse) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *AdministrativeUnitCollectionResponse) SetValue(value []AdministrativeUnitable)() {
     m.value = value
 }

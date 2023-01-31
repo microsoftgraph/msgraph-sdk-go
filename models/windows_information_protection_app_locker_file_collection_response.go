@@ -7,7 +7,7 @@ import (
 // WindowsInformationProtectionAppLockerFileCollectionResponse 
 type WindowsInformationProtectionAppLockerFileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []WindowsInformationProtectionAppLockerFileable
 }
 // NewWindowsInformationProtectionAppLockerFileCollectionResponse instantiates a new WindowsInformationProtectionAppLockerFileCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *WindowsInformationProtectionAppLockerFileCollectionResponse) GetFieldDe
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *WindowsInformationProtectionAppLockerFileCollectionResponse) GetValue()([]WindowsInformationProtectionAppLockerFileable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *WindowsInformationProtectionAppLockerFileCollectionResponse) Serialize(
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *WindowsInformationProtectionAppLockerFileCollectionResponse) SetValue(value []WindowsInformationProtectionAppLockerFileable)() {
     m.value = value
 }

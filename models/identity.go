@@ -12,7 +12,7 @@ type Identity struct {
     displayName *string
     // Unique identifier for the identity.
     id *string
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIdentity instantiates a new identity and sets the default values.
@@ -113,7 +113,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 func (m *Identity) GetId()(*string) {
     return m.id
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *Identity) GetOdataType()(*string) {
     return m.odataType
 }
@@ -157,7 +157,7 @@ func (m *Identity) SetDisplayName(value *string)() {
 func (m *Identity) SetId(value *string)() {
     m.id = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *Identity) SetOdataType(value *string)() {
     m.odataType = value
 }

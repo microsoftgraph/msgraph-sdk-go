@@ -12,7 +12,7 @@ type OmaSetting struct {
     description *string
     // Display Name.
     displayName *string
-    // The OdataType property
+    // 
     odataType *string
     // OMA.
     omaUri *string
@@ -115,7 +115,7 @@ func (m *OmaSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *OmaSetting) GetOdataType()(*string) {
     return m.odataType
 }
@@ -169,7 +169,7 @@ func (m *OmaSetting) SetDescription(value *string)() {
 func (m *OmaSetting) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *OmaSetting) SetOdataType(value *string)() {
     m.odataType = value
 }

@@ -8,7 +8,7 @@ import (
 type SecurityResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The OdataType property
+    // 
     odataType *string
     // Name of the resource that is related to current alert. Required.
     resource *string
@@ -65,7 +65,7 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *SecurityResource) GetOdataType()(*string) {
     return m.odataType
 }
@@ -110,7 +110,7 @@ func (m *SecurityResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *SecurityResource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *SecurityResource) SetOdataType(value *string)() {
     m.odataType = value
 }

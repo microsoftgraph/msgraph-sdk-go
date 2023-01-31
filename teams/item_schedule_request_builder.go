@@ -103,6 +103,10 @@ func (m *ItemScheduleRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
+// MicrosoftGraphShare provides operations to call the share method.
+func (m *ItemScheduleRequestBuilder) MicrosoftGraphShare()(*ItemScheduleMicrosoftGraphShareShareRequestBuilder) {
+    return NewItemScheduleMicrosoftGraphShareShareRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // OfferShiftRequests provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 func (m *ItemScheduleRequestBuilder) OfferShiftRequests()(*ItemScheduleOfferShiftRequestsRequestBuilder) {
     return NewItemScheduleOfferShiftRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -181,10 +185,6 @@ func (m *ItemScheduleRequestBuilder) SchedulingGroupsById(id string)(*ItemSchedu
         urlTplParams["schedulingGroup%2Did"] = id
     }
     return NewItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Share provides operations to call the share method.
-func (m *ItemScheduleRequestBuilder) Share()(*ItemScheduleShareRequestBuilder) {
-    return NewItemScheduleShareRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Shifts provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 func (m *ItemScheduleRequestBuilder) Shifts()(*ItemScheduleShiftsRequestBuilder) {
@@ -296,7 +296,10 @@ func (m *ItemScheduleRequestBuilder) ToPutRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

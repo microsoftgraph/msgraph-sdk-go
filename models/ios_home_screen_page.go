@@ -12,7 +12,7 @@ type IosHomeScreenPage struct {
     displayName *string
     // A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
     icons []IosHomeScreenItemable
-    // The OdataType property
+    // 
     odataType *string
 }
 // NewIosHomeScreenPage instantiates a new iosHomeScreenPage and sets the default values.
@@ -77,7 +77,7 @@ func (m *IosHomeScreenPage) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *IosHomeScreenPage) GetIcons()([]IosHomeScreenItemable) {
     return m.icons
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *IosHomeScreenPage) GetOdataType()(*string) {
     return m.odataType
 }
@@ -125,7 +125,7 @@ func (m *IosHomeScreenPage) SetDisplayName(value *string)() {
 func (m *IosHomeScreenPage) SetIcons(value []IosHomeScreenItemable)() {
     m.icons = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *IosHomeScreenPage) SetOdataType(value *string)() {
     m.odataType = value
 }

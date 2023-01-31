@@ -12,7 +12,7 @@ type MacOSLobChildApp struct {
     buildNumber *string
     // The bundleId of the app.
     bundleId *string
-    // The OdataType property
+    // 
     odataType *string
     // The version number of the app.
     versionNumber *string
@@ -85,7 +85,7 @@ func (m *MacOSLobChildApp) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetOdataType gets the @odata.type property value. 
 func (m *MacOSLobChildApp) GetOdataType()(*string) {
     return m.odataType
 }
@@ -139,7 +139,7 @@ func (m *MacOSLobChildApp) SetBuildNumber(value *string)() {
 func (m *MacOSLobChildApp) SetBundleId(value *string)() {
     m.bundleId = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
+// SetOdataType sets the @odata.type property value. 
 func (m *MacOSLobChildApp) SetOdataType(value *string)() {
     m.odataType = value
 }

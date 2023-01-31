@@ -7,7 +7,7 @@ import (
 // SocialIdentityProviderCollectionResponse 
 type SocialIdentityProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
+    // 
     value []SocialIdentityProviderable
 }
 // NewSocialIdentityProviderCollectionResponse instantiates a new SocialIdentityProviderCollectionResponse and sets the default values.
@@ -40,7 +40,7 @@ func (m *SocialIdentityProviderCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. 
 func (m *SocialIdentityProviderCollectionResponse) GetValue()([]SocialIdentityProviderable) {
     return m.value
 }
@@ -62,7 +62,7 @@ func (m *SocialIdentityProviderCollectionResponse) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. 
 func (m *SocialIdentityProviderCollectionResponse) SetValue(value []SocialIdentityProviderable)() {
     m.value = value
 }
